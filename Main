@@ -1,99 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome to Engliza Academy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأسعار | Pricing - أكاديمية إنجليزا</title>
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f0f8ff;
-      color: #333;
       margin: 0;
       padding: 0;
+      background: #f5f7fa;
+      text-align: center;
+      line-height: 1.7;
     }
     header {
-      background-color: #0056b3;
+      background: #1e3c72;
       color: white;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
     }
-    main {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
+    header h1 { margin: 0; }
+    .pricing {
+      padding: 50px 20px;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    .plan {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+      padding: 25px;
     }
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 30px;
+    .plan h2 {
+      margin-bottom: 15px;
+      color: #1e3c72;
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 50px;
-    }
-    nav ul li {
-      display: inline;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #0056b3;
+    .price {
+      font-size: 26px;
+      margin: 15px 0;
+      color: #ff9800;
       font-weight: bold;
-      padding: 10px 15px;
-      border: 2px solid #0056b3;
-      border-radius: 5px;
-      transition: all 0.3s ease;
     }
-    nav ul li a:hover {
-      background-color: #0056b3;
+    .btn {
+      display: inline-block;
+      background: #ff9800;
       color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #e68900;
     }
     footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #e6f0ff;
-      font-size: 0.9rem;
-      color: #555;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      margin-top: 50px;
+      padding: 15px;
+      background: #1e3c72;
+      color: white;
+    }
+    .lang {
+      text-align: left;
+      direction: ltr;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to Engliza Academy</h1>
-  </header>
-  <main>
-    <p>Your journey to mastering English starts here! Explore our courses, tailored for all levels, and join thousands of learners achieving their language goals.</p>
-    
-    <nav>
+
+<header>
+  <h1>خطة الأسعار | Pricing Plan</h1>
+  <p>اختر خطتك وابدأ التعلم الآن 🚀 | Choose your plan and start learning 🚀</p>
+</header>
+
+<section class="pricing">
+  <div class="plan">
+    <h2>الكورس الكامل | Full Course</h2>
+    <p>📘 تعلم الإنجليزية من الصفر حتى الاحتراف  
+       | Learn English from zero to advanced</p>
+    <p>⏳ مدة الاشتراك: شهرين  
+       | Access duration: 2 months</p>
+    <p class="price">💲 93 USD</p>
+    <button class="btn" id="checkout-btn">اشتر الآن | Buy Now</button>
+
+    <div class="lang">
+      <h3>What’s included:</h3>
       <ul>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="refund.html">Refund Policy</a></li>
+        <li>📚 Daily lessons and exercises | دروس يومية وتمارين</li>
+        <li>🎧 Listening & speaking practice | تدريب استماع ومحادثة</li>
+        <li>📝 Grammar & writing support | قواعد وكتابة</li>
+        <li>💬 Community support | دعم من مجتمع الأكاديمية</li>
       </ul>
-    </nav>
-  </main>
-  <footer>
-    Contact us: <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a>
-  </footer>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 أكاديمية إنجليزا | Engliza Academy - All Rights Reserved</p>
+</footer>
+
+<script>
+  // تفعيل Paddle
+  Paddle.Initialize({ 
+    token: "pdl_live_apikey_01k2swzdc1bwztnchmcx1vpv0g_aW7hzZ9bXKFDgXrhj1scVF_Au5"
+  });
+
+  document.getElementById("checkout-btn").addEventListener("click", function(){
+    Paddle.Checkout.open({
+      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
+    });
+  });
+</script>
+
 </body>
 </html>
-<nav>
-  <ul>
-    <li><a href="terms.html">Terms & Conditions</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-    <li><a href="refund.html">Refund Policy</a></li>
-  </ul>
-</nav>
