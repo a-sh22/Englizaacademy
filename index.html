@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Engliza Academy | أكاديمية إنجليزا</title>
+<meta name="description" content="Engliza Academy — تعلم الإنجليزية بسهولة وثقة. دروس قصيرة واضحة وتمارين عملية على قناة خاصة.">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#F7F9FC; --text:#0F172A; --muted:#64748B; --card:#FFFFFF; --border:#E5E7EB;
+  --primary:#2563EB; --primary-600:#1E50BF; --gold:#D4AF37;
+  --shadow:0 14px 34px rgba(2,6,23,.08); --radius:18px; --maxw:1200px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text)}
+body{font-family:Cairo,Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+.container{max-width:var(--maxw);margin-inline:auto;padding:20px}
+
+/* Header */
+header{position:sticky;top:0;background:rgba(247,249,252,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:44px;height:44px;border-radius:12px;background:conic-gradient(from 210deg,var(--gold),#f3e9bf 25%,var(--gold) 50%,#f3e9bf 75%,var(--gold));display:grid;place-items:center;border:1px solid #ecdcae;font-weight:900}
+.title{display:flex;line-height:1}
+.title .en{font-weight:800}
+.title .ar{font-size:12px;color:var(--muted);font-weight:700}
+.actions{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;font-weight:800;transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.primary:hover{background:var(--primary-600)}
+.lang-switch{display:inline-flex;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.lang-switch button{padding:10px 12px;background:#fff;border:0;cursor:pointer;font-weight:800;color:var(--muted)}
+.lang-switch button.active{background:#111827;color:#fff}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:28px 0}
+.hero-media{background:linear-gradient(135deg,#ffffff,#eef2ff);border:1px solid var(--border);border-radius:22px;padding:12px;box-shadow:var(--shadow)}
+.hero-media .frame{border-radius:16px;overflow:hidden}
+.hero-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/11}
+.kicker{color:var(--gold);font-weight:900;margin-bottom:8px;font-size:14px;letter-spacing:.5px}
+h1{margin:0 0 10px 0;font-size:42px;line-height:1.25}
+.lead{color:var(--muted);margin:0 0 18px 0}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* quick nav cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;min-height:150px;transition:.2s transform,.2s box-shadow,.2s border-color;position:relative}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#dbe0e7}
+.card h3{margin:0 0 8px}
+.card p{margin:0;color:var(--muted)}
+.chip{position:absolute;inset-inline-start:12px;top:8px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);font-size:10px;font-weight:800;background:#fff;color:var(--primary)}
+
+/* blue block */
+.section{padding:14px 0;margin-top:6px}
+.section h2{font-size:28px;margin:16px 0 8px}
+.sub{color:var(--muted);margin:0 0 14px}
+.about-blue{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;background:linear-gradient(180deg,#f1f5ff,#eef6ff);border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:var(--shadow)}
+.about-blue h3{margin:0 0 8px}
+.about-blue p{margin:0;color:var(--muted)}
+.about-illustration{background:#fff;border:1px solid #dbe3f4;border-radius:16px;padding:10px}
+
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.testi{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;gap:12px}
+.avatar{width:54px;height:54px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;background:linear-gradient(135deg,#eff6ff,#e0e7ff);color:#1f2937;font-weight:900}
+.avatar[data-initial]::after{content:attr(data-initial)}
+.t-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.t-name{font-weight:900}
+.verified{font-size:12px;color:#059669;font-weight:800}
+.stars{color:#f59e0b;font-size:14px}
+.t-en{color:#374151;font-style:italic;margin-top:4px}
+
+/* buy box */
+.buy-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;display:grid;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:#fff;font-weight:800;color:var(--primary)}
+
+/* footer */
+footer{border-top:1px solid var(--border);margin-top:40px}
+.foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:18px 0;color:#6b7280}
+
+/* responsive */
+@media (max-width:1024px){
+  .grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr}
+  .about-blue{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  h1{font-size:32px}
+}
+
+/* language toggle */
+.lang-en{display:none}
+[data-lang="en"] .lang-ar{display:none}
+[data-lang="en"] .lang-en{display:initial}
+[data-lang="en"] html{direction:ltr}
+</style>
+</head>
+<body data-lang="ar" id="top">
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <div class="logo">E</div>
+      <div class="title"><span class="en">Engliza Academy</span><span class="ar">أكاديمية إنجليزا</span></div>
+    </a>
+    <div class="actions">
+      <div class="lang-switch" aria-label="Language switch">
+        <button id="btn-ar" class="active" type="button">AR</button>
+        <button id="btn-en" type="button">EN</button>
+      </div>
+      <a href="#buy" class="btn primary"><span class="lang-ar">اشترِ الكورس</span><span class="lang-en">Buy the Course</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-media">
+      <div class="frame">
+        <img src="images/hero-group.jpg" alt="طلاب الأكاديمية (عُماني، خليجي، بدلة)">
+      </div>
+    </div>
+    <div>
+      <div class="kicker"><span class="lang-ar">ابدأ اليوم · ضمان وضوح الشرح</span><span class="lang-en">Start Today · Clear, Proven Lessons</span></div>
+      <h1><span class="lang-ar">تعلم الإنجليزية بسهولة وبأسلوب يعكس الاحتراف والثقة</span><span class="lang-en">Learn English the Modern, Professional Way</span></h1>
+      <p class="lead"><span class="lang-ar">انضم لأكاديمية إنجليزا — دروس قصيرة وواضحة، أمثلة من الحياة الواقعية، وتمارين عملية على قناة تيليجرام خاصة.</span><span class="lang-en">Join Engliza Academy — short, clear lessons, real-life examples, and practical exercises in a private Telegram channel.</span></p>
+      <div class="hero-cta">
+        <a href="#buy" class="btn primary"><span class="lang-ar">ابدأ الآن</span><span class="lang-en">Start Now</span></a>
+        <a href="#course" class="btn"><span class="lang-ar">شاهد تفاصيل الكورس</span><span class="lang-en">See Course Details</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAV CARDS -->
+  <section class="grid" aria-label="Quick navigation">
+    <a class="card" href="#course"><span class="chip"><span class="lang-ar">المحتوى</span><span class="lang-en">Content</span></span>
+      <h3><span class="lang-ar">تفاصيل الكورس</span><span class="lang-en">Course Details</span></h3>
+      <p><span class="lang-ar">المستويات، ماذا ستتعلّم، وآراء الطلاب.</span><span class="lang-en">Levels, outcomes, and reviews.</span></p></a>
+    <a class="card" href="#about-me"><span class="chip"><span class="lang-ar">من أنا؟</span><span class="lang-en">About</span></span>
+      <h3><span class="lang-ar">تعرف عليّ</span><span class="lang-en">About Me</span></h3>
+      <p><span class="lang-ar">قصتي ورسالة الإلهام.</span><span class="lang-en">My story & message.</span></p></a>
+    <a class="card" href="#placement"><span class="chip"><span class="lang-ar">مستواك</span><span class="lang-en">Level</span></span>
+      <h3><span class="lang-ar">اختبر مستواك</span><span class="lang-en">Placement Test</span></h3>
+      <p><span class="lang-ar">اختبار 5–7 دقائق وتوصية بالمستوى.</span><span class="lang-en">5–7 minutes test + level recommendation.</span></p></a>
+  </section>
+
+  <!-- ABOUT BLUE BLOCK -->
+  <section class="section" id="about">
+    <div class="about-blue">
+      <div>
+        <h3><span class="lang-ar">عن الأكاديمية</span><span class="lang-en">About the Academy</span></h3>
+        <p><span class="lang-ar">نقدّم دورات واضحة وسلسة، مع تمارين عملية ودعم عبر قناة تيليجرام خاصة. هدفنا تبسيط اللغة وتثبيت المهارة بثقة.</span>
+           <span class="lang-en">We offer clear lessons with practical exercises and a private Telegram community, designed to make English simple and confident.</span></p>
+      </div>
+      <div class="about-illustration">
+        <img src="images/about-english.png" alt="English illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME (تعرف عليّ) -->
+  <section class="section" id="about-me">
+    <h2><span class="lang-ar">تعرف عليّ</span><span class="lang-en">About Me</span></h2>
+    <p class="sub"><span class="lang-ar">من أجل العثور على الطريق الصحيح عليك أن تضيع أولاً.</span><span class="lang-en">To find the right path, sometimes you must get lost first.</span></p>
+    <div class="about-blue" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <h3 style="margin-top:0"><span class="lang-ar">قصتي باختصار</span><span class="lang-en">My Story (Short)</span></h3>
+        <p><span class="lang-ar">كنت طالبة متعثّرة وحصلت على صفر في اختبار الإنجليزي وتعرّضت للاستهزاء. قررت أغيّر، درست يوميًا ودوّنت وتمرّنت حتى أصبحت الأولى على المدرسة. اليوم أُبسّط لك نفس الطريقة التي غيّرت حياتي.</span>
+           <span class="lang-en">I once scored zero in English and faced mockery. I studied daily, took notes, and practiced until I became top of my school. Now, I share the same method that changed my life.</span></p>
+        <h3><span class="lang-ar">رسالتي لك</span><span class="lang-en">My Message</span></h3>
+        <p><span class="lang-ar">الفشل ليس النهاية. قرارك اليوم يصنع الفرق. هدفي أبسّط لك اللغة وأثبت لك أنها أسهل مما تتصور.</span>
+           <span class="lang-en">Failure isn’t the end. Your decision today makes the difference. My goal is to simplify English and show it’s easier than you think.</span></p>
+      </div>
+      <div>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px">
+          <li class="pill">🎯 <span class="lang-ar">شرح واضح وسريع</span><span class="lang-en">Clear, fast explanations</span></li>
+          <li class="pill">💬 <span class="lang-ar">تطبيق ومحادثات</span><span class="lang-en">Practice & conversations</span></li>
+          <li class="pill">📲 <span class="lang-ar">قناة خاصة على تيليجرام</span><span class="lang-en">Private Telegram channel</span></li>
+          <li class="pill">📚 <span class="lang-ar">ملفات وتمارين قابلة للتحميل</span><span class="lang-en">Downloadable resources</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSE DETAILS -->
+  <section class="section" id="course">
+    <h2><span class="lang-ar">تفاصيل الكورس</span><span class="lang-en">Course Details</span></h2>
+    <p class="sub"><span class="lang-ar">تعلّم بثقة — منهج واضح، دروس قصيرة، وتمارين عملية.</span><span class="lang-en">Learn confidently — clear curriculum, short videos, practical drills.</span></p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="chip"><span class="lang-ar">المبتدئ</span><span class="lang-en">Beginner</span></span>
+        <h3><span class="lang-ar">الأساسيات</span><span class="lang-en">Foundations</span></h3>
+        <p class="lang-ar">الحروف، الأصوات، تكوين الجملة، مفردات أساسية، جُمل يومية.</p>
+        <p class="lang-en">Alphabet & sounds, sentence basics, essentials, daily phrases.</p>
+      </div>
+      <div class="card">
+        <span class="chip"><span class="lang-ar">المتوسط</span><span class="lang-en">Intermediate</span></span>
+        <h3><span class="lang-ar">محادثات عملية</span><span class="lang-en">Practical Speaking</span></h3>
+        <p class="lang-ar">محادثات، أزمنة أساسية، مفردات العمل والدراسة، تمارين تواصل.</p>
+        <p class="lang-en">Conversations, core tenses, work/study vocab, communication.</p>
+      </div>
+      <div class="card">
+        <span class="chip"><span class="lang-ar">المتقدم</span><span class="lang-en">Advanced</span></span>
+        <h3><span class="lang-ar">كتابة احترافية</span><span class="lang-en">Professional Writing</span></h3>
+        <p class="lang-ar">إيميلات رسمية/غير رسمية، قواعد متقدمة، عرض أفكار، تحسين النطق.</p>
+        <p class="lang-en">Formal/informal emails, advanced grammar, pitching, pronunciation.</p>
+      </div>
+    </div>
+
+    <ul class="pill" style="margin-top:8px;flex-wrap:wrap;gap:12px">
+      <li>🎥 <b><span class="lang-ar">دروس فيديو</span><span class="lang-en">Video lessons</span></b></li>
+      <li>📚 <b><span class="lang-ar">ملفات قابلة للتحميل</span><span class="lang-en">Downloadables</span></b></li>
+      <li>💬 <b><span class="lang-ar">دعم تيليجرام</span><span class="lang-en">Telegram support</span></b></li>
+      <li>🧠 <b><span class="lang-ar">تحديات تطبيقية</span><span class="lang-en">Practice challenges</span></b></li>
+    </ul>
+
+    <!-- REVIEWS -->
+    <div class="section" id="reviews">
+      <h2><span class="lang-ar">آراء الطلاب</span><span class="lang-en">Student Reviews</span></h2>
+      <div class="testi-grid">
+        <!-- 1 Ibrahim -->
+        <article class="testi">
+          <div class="avatar" data-initial="إ"></div>
+          <div>
+            <div class="t-head"><div class="t-name">إبراهيم | Ibrahim</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">شكراً على كل حاجة، الحمد لله نجحت وأواصل دراسة.</div>
+            <div class="t-en"><em>Thanks for everything—passed and continuing my studies.</em></div>
+          </div>
+        </article>
+
+        <!-- 2 Khalid -->
+        <article class="testi">
+          <div class="avatar" data-initial="خ"></div>
+          <div>
+            <div class="t-head"><div class="t-name">خالد | Khalid</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جدًا. بعد الكورس تعلّمت كثير؛ الكلاس خفيف والشرح ممتاز.</div>
+            <div class="t-en"><em>Before the course I only knew a few basics; learned a lot—light classes and great explanations.</em></div>
+          </div>
+        </article>
+
+        <!-- 3 Marwa -->
+        <article class="testi">
+          <div class="avatar" data-initial="م"></div>
+          <div>
+            <div class="t-head"><div class="t-name">مروى | Marwa</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">جبت في البرزنتيشن درجة كاملة — الوحيدة في الكلاس! شكرًا على الملاحظات والنطق.</div>
+            <div class="t-en"><em>Full mark in my presentation—the only one! Your notes & pronunciation tips helped a lot.</em></div>
+          </div>
+        </article>
+
+        <!-- 4 Faiza -->
+        <article class="testi">
+          <div class="avatar" data-initial="ف"></div>
+          <div>
+            <div class="t-head"><div class="t-name">فايزة | Faiza</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">شكراً ما قصرتي — خلّيتيني أحب الإنجليزي من أول الكورس. ارتحت وحسّيت بتطوّر.</div>
+            <div class="t-en"><em>You made me love English from the start; felt comfortable and noticed real progress.</em></div>
+          </div>
+        </article>
+
+        <!-- 5 Ali -->
+        <article class="testi">
+          <div class="avatar" data-initial="ع"></div>
+          <div>
+            <div class="t-head"><div class="t-name">علي | Ali</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">حرفيًا كل سؤال في بالي ألقى جوابه قبل ما أسأل. الكورس رهيب.</div>
+            <div class="t-en"><em>Every question I had was answered before I asked—amazing course.</em></div>
+          </div>
+        </article>
+
+        <!-- 6 Sultan -->
+        <article class="testi">
+          <div class="avatar" data-initial="س"></div>
+          <div>
+            <div class="t-head"><div class="t-name">سلطان | Sultan</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">واضح إن في شخص تعب عشان يوصل المعلومة بأبسط شكل. الطريقة سهلة لأي أحد.</div>
+            <div class="t-en"><em>It’s clear someone worked hard to make things simple; very easy to grasp.</em></div>
+          </div>
+        </article>
+
+        <!-- 7 Manar -->
+        <article class="testi">
+          <div class="avatar" data-initial="م"></div>
+          <div>
+            <div class="t-head"><div class="t-name">منار | Manar</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">تستاهلي كل ريال. الكورس ولا غلطة — تعليم واضح وبضمير.</div>
+            <div class="t-en"><em>Worth every penny—flawless teaching and done with heart.</em></div>
+          </div>
+        </article>
+
+        <!-- 8 Marwa (2) -->
+        <article class="testi">
+          <div class="avatar" data-initial="م"></div>
+          <div>
+            <div class="t-head"><div class="t-name">مروى | Marwa</div><div class="stars">★★★★★</div><div class="verified">✓ Verified</div></div>
+            <div class="t-ar">٥٠٪ من نجاحي بفضلك. كان نطقي ينتقده الجميع — الآن الكل يمدح الأكسنت.</div>
+            <div class="t-en"><em>50% of my success is thanks to you. People used to criticize my pronunciation; now they praise my accent.</em></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEMENT TEST -->
+  <section class="section" id="placement">
+    <h2><span class="lang-ar">اختبر مستواك</span><span class="lang-en">Placement Test</span></h2>
+    <p class="sub">
+      <span class="lang-ar">لا تعرف من أين تبدأ؟ اختبار سريع 5–7 دقائق يعطيك توصية بالمستوى وخطة بداية.</span>
+      <span class="lang-en">Not sure where to start? A quick 5–7 min test gives your level and a starter plan.</span>
+    </p>
+    <a class="btn primary" href="#" onclick="alert('أضف/ي هنا رابط الفورم لاحقًا (Google Form أو Typeform)');return false;">
+      <span class="lang-ar">ابدأ الاختبار</span><span class="lang-en">Start the Test</span>
+    </a>
+  </section>
+
+  <!-- BUY / PADDLE -->
+  <section class="section" id="buy">
+    <h2><span class="lang-ar">جاهزة للبدء؟</span><span class="lang-en">Ready to Start?</span></h2>
+    <div class="buy-box">
+      <div>
+        <b><span class="lang-ar">سعر الكورس: </span><span class="lang-en">Course Price: </span></b>
+        <span class="lang-en">$94</span> <span class="lang-ar">≈ 36 ر.ع</span>
+      </div>
+      <div class="pill">🔒 <span class="lang-ar">الدفع الآمن عبر Paddle</span><span class="lang-en">Secure payment via Paddle</span></div>
+
+      <a class="btn primary" id="paddle-checkout" href="#">
+        <span class="lang-ar">ادفعي الآن</span><span class="lang-en">Pay Now</span>
+      </a>
+
+      <small class="muted">
+        <span class="lang-ar">بعد الدفع مباشرة: سيصلك ملف فيه رابط القناة الخاصة بالكورس على تيليجرام + نسخة على الإيميل.</span>
+        <span class="lang-en">Right after payment: you’ll receive a file with the private Telegram link + an email copy.</span>
+      </small>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section class="section" id="privacy">
+    <h2><span class="lang-ar">سياسة الخصوصية</span><span class="lang-en">Privacy Policy</span></h2>
+    <p class="sub"><span class="lang-ar">نحترم خصوصيتك. نستخدم بياناتك فقط لتقديم الخدمة وتحسين التجربة.</span><span class="lang-en">We respect your privacy and only use your data to deliver and improve the service.</span></p>
+    <div class="about-blue" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <h3><span class="lang-ar">البيانات التي نجمعها</span><span class="lang-en">Data We Collect</span></h3>
+        <p><span class="lang-ar">الاسم، البريد الإلكتروني، تفاصيل الدفع (تدار عبر Paddle)، ونشاطك داخل الكورس.</span>
+           <span class="lang-en">Name, email, payment details (handled by Paddle), and basic course activity.</span></p>
+      </div>
+      <div>
+        <h3><span class="lang-ar">كيف نحميها</span><span class="lang-en">How We Protect It</span></h3>
+        <p><span class="lang-ar">اتصال آمن، وصول محدود، وعدم بيع البيانات لأطراف ثالثة.</span>
+           <span class="lang-en">Secure connection, limited access, no selling of data to third parties.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="payments">
+    <h2><span class="lang-ar">الدفع والاسترجاع</span><span class="lang-en">Payments & Refunds</span></h2>
+    <p class="sub"><span class="lang-ar">مدفوعات مؤمّنة عبر Paddle. سياسة استرجاع واضحة.</span><span class="lang-en">Secure payments via Paddle. Clear refund policy.</span></p>
+    <div class="about-blue" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <h3><span class="lang-ar">طرق الدفع</span><span class="lang-en">Payment Methods</span></h3>
+        <p><span class="lang-ar">بطاقات ائتمانية/خصم + PayPal (قد تختلف حسب بلدك).</span>
+           <span class="lang-en">Credit/debit cards + PayPal (availability varies by country).</span></p>
+      </div>
+      <div>
+        <h3><span class="lang-ar">سياسة الاسترجاع</span><span class="lang-en">Refund Policy</span></h3>
+        <p><span class="lang-ar">استرجاع خلال 7 أيام إذا لم يتم استهلاك المحتوى بشكل جوهري. قد تُطبّق شروط لمنع إساءة الاستخدام.</span>
+           <span class="lang-en">7-day refunds if content hasn’t been substantially consumed. Anti-abuse terms may apply.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="terms">
+    <h2><span class="lang-ar">الشروط والأحكام</span><span class="lang-en">Terms & Conditions</span></h2>
+    <p class="sub"><span class="lang-ar">باستخدامك الكورس فأنت توافق على الشروط التالية.</span><span class="lang-en">By using the course, you agree to the terms below.</span></p>
+    <div class="about-blue" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <h3><span class="lang-ar">الاستخدام والترخيص</span><span class="lang-en">Use & License</span></h3>
+        <p><span class="lang-ar">وصول شخصي غير قابل للنقل. يمنع مشاركة الروابط أو إعادة نشر المحتوى.</span>
+           <span class="lang-en">Personal, non-transferable access. No link sharing or re-publishing.</span></p>
+      </div>
+      <div>
+        <h3><span class="lang-ar">حقوق المحتوى</span><span class="lang-en">Content Rights</span></h3>
+        <p><span class="lang-ar">جميع المواد محمية بحقوق النشر. أي إساءة استخدام قد تؤدي لإيقاف الحساب.</span>
+           <span class="lang-en">All materials are copyright-protected. Misuse may lead to suspension.</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div>© <span id="year"></span> Engliza Academy — <span class="lang-ar">أكاديمية إنجليزا</span><span class="lang-en">Engliza Academy</span></div>
+    <div style="display:flex;gap:16px">
+      <a href="#about-me"><span class="lang-ar">تعرف عليّ</span><span class="lang-en">About</span></a>
+      <a href="#course"><span class="lang-ar">تفاصيل الكورس</span><span class="lang-en">Course</span></a>
+      <a href="#payments"><span class="lang-ar">الدفع/الاسترجاع</span><span class="lang-en">Payments</span></a>
+      <a href="#terms"><span class="lang-ar">الشروط</span><span class="lang-en">Terms</span></a>
+      <a href="https://instagram.com/engliza_academy_" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Paddle -->
+<script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+<script>
+// سنة الفوتر
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// تبديل اللغة والاتجاه
+const htmlEl=document.documentElement, bodyEl=document.body,
+      btnAr=document.getElementById('btn-ar'), btnEn=document.getElementById('btn-en');
+function setLang(l){if(l==='en'){bodyEl.setAttribute('data-lang','en');htmlEl.lang='en';htmlEl.dir='ltr';btnEn.classList.add('active');btnAr.classList.remove('active');}
+else{bodyEl.setAttribute('data-lang','ar');htmlEl.lang='ar';htmlEl.dir='rtl';btnAr.classList.add('active');btnEn.classList.remove('active');}
+try{localStorage.setItem('site-lang',l);}catch(e){}}
+btnAr.onclick=()=>setLang('ar'); btnEn.onclick=()=>setLang('en'); try{const s=localStorage.getItem('site-lang'); if(s) setLang(s);}catch(e){}
+
+// Paddle (بياناتك)
+Paddle.Setup({ vendor: 243729 });
+document.getElementById('paddle-checkout').addEventListener('click',function(e){
+  e.preventDefault();
+  Paddle.Checkout.open({ product:'pro_01k2vd4n1w9h2bfawn5y2t3zrm' });
+});
+</script>
+</body>
+</html>
