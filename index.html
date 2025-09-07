@@ -24,18 +24,6 @@
       z-index: 1000;
     }
     header h1 { font-size: 20px; font-weight: 900; color:#2563eb; }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 5%;
-      background: #f8fafc;
-      flex-wrap: wrap;
-    }
-    .hero-text { max-width: 500px; }
-    .hero-text h2 { font-size: 34px; font-weight: 900; margin: 0 0 15px; }
-    .hero-text p { font-size: 18px; margin-bottom: 20px; color:#475569; }
     .btn {
       display: inline-block;
       padding: 12px 22px;
@@ -47,37 +35,41 @@
       transition: 0.3s;
     }
     .btn:hover { background: #1e40af; }
-    .hero img {
-      max-width: 380px;
-      border-radius: 12px;
-    }
 
-    /* About */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 5%;
+      background: #f8fafc;
+      flex-wrap: wrap;
+    }
+    .hero-text { max-width: 500px; }
+    .hero-text h2 { font-size: 36px; font-weight: 900; margin: 0 0 15px; }
+    .hero-text p { font-size: 18px; margin-bottom: 20px; color:#475569; }
+    .hero img { max-width: 400px; border-radius: 12px; }
+
     .about {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 50px 5%;
+      padding: 60px 5%;
       flex-wrap: wrap;
     }
     .about-text { max-width: 500px; }
     .about-text h3 { font-size: 28px; margin-bottom: 15px; }
     .about-text p { color:#475569; margin-bottom: 20px; }
+    .about img { max-width: 340px; }
 
-    .about img {
-      max-width: 340px;
-    }
-
-    /* Cards */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
       gap: 20px;
-      padding: 40px 5%;
+      padding: 50px 5%;
     }
     .card {
       background: #f1f5f9;
-      padding: 20px;
+      padding: 25px;
       border-radius: 12px;
       text-align: center;
       font-weight: 700;
@@ -85,73 +77,6 @@
       transition: 0.3s;
     }
     .card:hover { background:#e0e7ff; }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .modal.show { display: flex; opacity: 1; }
-    .modal.hide { opacity: 0; }
-
-    .modal-content {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 700px;
-      max-height: 80vh;
-      overflow-y: auto;
-      position: relative;
-      text-align: right;
-      line-height: 1.8;
-      transform: translateY(-20px);
-      transition: transform 0.4s ease;
-    }
-    .modal.show .modal-content {
-      transform: translateY(0);
-    }
-
-    .modal-content h2 {
-      margin-top: 0;
-      color:#2563eb;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .highlight {
-      background: #e0e7ff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      margin: 15px 0;
-      font-weight: 700;
-      color:#1e40af;
-    }
-    .quote {
-      border-right: 4px solid #2563eb;
-      background: #f1f5f9;
-      padding: 12px 15px;
-      margin: 15px 0;
-      font-style: italic;
-      color:#334155;
-      border-radius: 8px;
-    }
-    .close {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 22px;
-      cursor: pointer;
-      font-weight: bold;
-      color:#ef4444;
-    }
 
     footer {
       background:#f8fafc;
@@ -167,110 +92,38 @@
 
 <header>
   <h1>أكاديمية إنجليزا</h1>
-  <a href="#buy" class="btn">اشترك الآن</a>
+  <a href="course.html" class="btn">اشترك الآن</a>
 </header>
 
 <section class="hero">
   <div class="hero-text">
     <h2>تعلم الإنجليزية بسهولة وبثقة</h2>
     <p>انضم لأكاديمية إنجليزا — دروس قصيرة وواضحة وتمارين عملية على قناة خاصة.</p>
-    <a href="#buy" class="btn">ابدأ الآن</a>
+    <a href="course.html" class="btn">ابدأ الآن</a>
   </div>
-  <img src="hero-group.jpg" alt="طلاب الأكاديمية">
+  <img src="images/hero-group.jpg" alt="طلاب الأكاديمية">
 </section>
 
 <section class="about">
   <div class="about-text">
     <h3>عن الأكاديمية</h3>
-    <p>نحن نقدم دورات عملية مصممة لتبسيط اللغة الإنجليزية، ومساعدتك على تطوير مهاراتك بثقة.</p>
-    <a class="btn" onclick="openModal('course')">تفاصيل الكورس</a>
+    <p>نقدم دورات عملية مصممة لتبسيط اللغة الإنجليزية، ومساعدتك على تطوير مهاراتك بثقة.</p>
+    <a class="btn" href="about.html">تعرف علي</a>
   </div>
-  <img src="about-english.png" alt="عن الأكاديمية">
+  <img src="images/about-english.png" alt="عن الأكاديمية">
 </section>
 
 <section class="cards">
-  <div class="card" onclick="openModal('course')">تفاصيل الكورس</div>
-  <div class="card" onclick="openModal('aboutme')">تعرف علي</div>
-  <div class="card" onclick="openModal('privacy')">سياسة الخصوصية</div>
-  <div class="card" onclick="openModal('refund')">سياسة الدفع والاسترجاع</div>
-  <div class="card" onclick="openModal('terms')">الشروط والأحكام</div>
+  <a class="card" href="course.html">📘 تفاصيل الكورس</a>
+  <a class="card" href="about.html">👩‍🏫 تعرف علي</a>
+  <a class="card" href="privacy.html">🔒 سياسة الخصوصية</a>
+  <a class="card" href="refund.html">💳 سياسة الدفع والاسترجاع</a>
+  <a class="card" href="terms.html">📜 الشروط والأحكام</a>
 </section>
-
-<!-- Modal Course -->
-<div id="course" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('course')">&times;</span>
-    <h2>📘 تفاصيل الكورس</h2>
-    <div class="highlight">تعلم بثقة — منهج واضح، دروس قصيرة، وتمارين عملية</div>
-    <p>هذا الكورس صُمم خصيصًا لك ليأخذك في رحلة ممتعة تُحولك من مبتدئ إلى محترف. مناسب لجميع المستويات: مبتدئ، متوسط، متقدم.</p>
-    <h3>آراء الطلاب</h3>
-    <div class="quote">✨ إبراهيم: شكراً على كل حاجة، الحمد لله نجحت وأواصل دراسة.</div>
-    <div class="quote">✨ خالد: قبل الكورس ما كنت أفهم إلا أشياء بسيطة، الآن فهمت الكثير!</div>
-    <div class="quote">✨ مروى: جبت في البرزنتيشن درجة كاملة، الوحيدة في الكلاس!</div>
-    <div class="quote">✨ فايزة: خلّيتيني أحب الإنجليزي من أول الكورس.</div>
-    <div class="quote">✨ علي: كل سؤال يجي في بالي ألقى جوابه قبل ما أسأل!</div>
-  </div>
-</div>
-
-<!-- Modal About -->
-<div id="aboutme" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('aboutme')">&times;</span>
-    <h2>👩‍🏫 تعرف علي</h2>
-    <div class="highlight">من أجل العثور على الطريق الصحيح عليك أن تضيع أولاً</div>
-    <h3 style="color:#2563eb">قصتي بإختصار</h3>
-    <p>كنت طالبة متعثّرة... واليوم أبسط لك نفس الطريقة التي غيّرت حياتي.</p>
-    <h3 style="color:#2563eb">قصتي بالتفصيل</h3>
-    <p>مرحبا، أنا عائشة... (القصة الطويلة مرتبة على فقرات مثل ما عطيتني).</p>
-  </div>
-</div>
-
-<!-- Privacy -->
-<div id="privacy" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('privacy')">&times;</span>
-    <h2>🔒 سياسة الخصوصية</h2>
-    <div class="highlight">نحترم خصوصيتك</div>
-    <p>بياناتك آمنة ولن نشاركها مع أي طرف ثالث.</p>
-  </div>
-</div>
-
-<!-- Refund -->
-<div id="refund" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('refund')">&times;</span>
-    <h2>💳 سياسة الدفع والاسترجاع</h2>
-    <div class="highlight">الاسترجاع خلال 7 أيام</div>
-    <p>الدفع عبر Paddle. الاسترجاع ممكن وفق الشروط.</p>
-  </div>
-</div>
-
-<!-- Terms -->
-<div id="terms" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('terms')">&times;</span>
-    <h2>📜 الشروط والأحكام</h2>
-    <div class="highlight">الوصول شخصي وغير قابل للنقل</div>
-    <p>مشاركة الروابط أو المحتوى ممنوعة وقد تؤدي إلى إيقاف الحساب.</p>
-  </div>
-</div>
 
 <footer>
   © 2025 أكاديمية إنجليزا
 </footer>
-
-<script>
-  function openModal(id){
-    const modal = document.getElementById(id);
-    modal.classList.add('show');
-    modal.classList.remove('hide');
-  }
-  function closeModal(id){
-    const modal = document.getElementById(id);
-    modal.classList.add('hide');
-    setTimeout(()=>{ modal.classList.remove('show'); },400);
-  }
-</script>
 
 </body>
 </html>
