@@ -265,7 +265,7 @@
   </div>
   <div class="back" onclick="hideDetails('reviews')">رجوع</div>
 </div>
-  <!-- Refund -->
+<!-- Refund -->
 <div id="refund" class="details">
   <h3 id="refund-title">💳 سياسة الدفع والاسترجاع</h3>
   <p id="refund-text">نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
@@ -321,27 +321,33 @@
 
   // === Slider Fix ===
   let currentSlide = 0;
+  function initSlider(){
+    const slides=document.querySelectorAll(".student");
+    document.querySelector(".slides").style.width = (slides.length*100)+"%";
+    updateDots(slides.length);
+  }
   function moveSlide(n){
-    const slides=document.querySelector(".slides");
-    const total=document.querySelectorAll(".student").length;
-    currentSlide=(currentSlide+n+total)%total;
-    slides.style.transform=`translateX(${-currentSlide*100}%)`;
-    updateDots(total);
+    const slides=document.querySelectorAll(".student");
+    currentSlide=(currentSlide+n+slides.length)%slides.length;
+    updateSlide();
+  }
+  function updateSlide(){
+    const slidesWrapper=document.querySelector(".slides");
+    slidesWrapper.style.transform="translateX(" + (-currentSlide*100) + "%)";
+    const dots=document.querySelectorAll(".dot");
+    dots.forEach((d,i)=>d.classList.toggle("active",i===currentSlide));
   }
   function updateDots(total){
     const indicators=document.querySelector(".indicators");
     indicators.innerHTML="";
     for(let i=0;i<total;i++){
       let dot=document.createElement("span");
-      dot.className="dot"+(i===currentSlide?" active":"");
-      dot.onclick=()=>{currentSlide=i;moveSlide(0)};
+      dot.className="dot"+(i===0?" active":"");
+      dot.onclick=()=>{currentSlide=i; updateSlide();}
       indicators.appendChild(dot);
     }
   }
-  window.onload=function(){
-    const total=document.querySelectorAll(".student").length;
-    updateDots(total);
-  }
+  window.onload=initSlider;
 
   // === Language Toggle Fix ===
   function toggleLang(){
@@ -350,12 +356,12 @@
       html.lang="en"; html.dir="ltr";
       document.getElementById("logo-text").innerText="Engliza Academy";
       document.getElementById("hero-title").innerText="Learn with Confidence at Engliza Academy";
-      document.getElementById("hero-desc").innerText="Your journey to mastering English starts here. Clear lessons, private channel, and practice.";
-      document.getElementById("about-text").innerText="We provide practical, simple English courses with direct support, private student channel, and exclusive surprises.";
+      document.getElementById("hero-desc").innerText="Your journey to mastering English starts here. Clear lessons, private channel, and daily practice.";
+      document.getElementById("about-text").innerText="We provide simple, practical English courses with direct support, private student channel, and exclusive surprises.";
       document.getElementById("refund-title").innerText="💳 Refund Policy";
-      document.getElementById("refund-text").innerText="We guarantee a refund within a certain period if you are not satisfied with the course, under the stated terms.";
+      document.getElementById("refund-text").innerText="We guarantee a refund within a set period if you are not satisfied with the course, according to the stated terms.";
       document.getElementById("privacy-title").innerText="🔒 Privacy Policy";
-      document.getElementById("privacy-text").innerText="We are committed to protecting your data and never sharing it with third parties without your permission.";
+      document.getElementById("privacy-text").innerText="We commit to protecting your data and never share it with third parties without your consent.";
       document.getElementById("terms-title").innerText="📄 Terms & Conditions";
       document.getElementById("terms-btn").innerText="Agree & Buy Now";
       document.getElementById("secure-text").innerText="Secure & Encrypted Payment via Paddle";
@@ -382,4 +388,3 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </body>
 </html>
-  
