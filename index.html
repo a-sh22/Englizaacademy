@@ -16,10 +16,6 @@
   .hero h2{font-size:32px;margin-bottom:15px;}
   .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
 
-  .about{display:flex;align-items:center;justify-content:center;gap:20px;padding:60px 20px;background:#1e293b;box-shadow:inset 0 0 30px rgba(37,99,235,.3);}
-  .about img{width:150px;border-radius:12px;}
-  .about p{max-width:500px;color:#e2e8f0;}
-
   .cards-section{padding:60px 20px;text-align:center;}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
   .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
@@ -85,27 +81,30 @@
 <!-- تفاصيل الكورس -->
 <div id="course" class="details">
   <h3 id="course-title">🚀 تفاصيل الكورس</h3>
-  <ul class="course-points">
+  <ul class="course-points" id="course-ar">
     <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم اللي يبغى يتطور أكثر.</li>
     <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي… الكورس يخدم أي فئة عمرية.</li>
     <li>📝 تمارين عملية وتطبيقات يومية تخليك تعيش اللغة مش بس تحفظها.</li>
     <li>🤝 جروب خاص للطلاب: تطرح أسئلتك، تناقش مع زملائك، وأنا أتابعك شخصيًا.</li>
     <li>🎁 مفاجآت ومواد حصرية داخل القناة.</li>
   </ul>
-  <p>🔥 ليش تبدأ الآن؟</p>
-  <p>كل يوم تأجله = خطوة ضايعة! غيرك بدأ اليوم، وبعد أشهر بيتكلم بطلاقة.</p>
-  <p>📌 المقاعد محدودة – العدد يغلق بمجرد الاكتفاء بالطلاب.</p>
-  <p>💡 لا تضيّع وقتك في فيديوهات متفرقة وتجارب ناقصة – هنا تبدأ رحلتك الحقيقية.</p>
-  <p>✅ اضغط الآن وخذ مكانك قبل ما يكتمل العدد</p>
-
-  <h3 style="color:#38bdf8;">💲 سعر الكورس: 109 دولار</h3>
+  <ul class="course-points" id="course-en" style="display:none;">
+    <li>🎯 Covers all levels: from zero, to intermediate, and even advanced learners.</li>
+    <li>👩‍🎓 Suitable for everyone: employees, school or university students… fits any age group.</li>
+    <li>📝 Practical exercises and daily applications to live the language, not just memorize it.</li>
+    <li>🤝 Private student group: ask questions, discuss with peers, and get personal follow-up.</li>
+    <li>🎁 Surprises and exclusive materials inside the channel.</li>
+  </ul>
+  <p id="extra-ar">🔥 ليش تبدأ الآن؟<br>كل يوم تأجله = خطوة ضايعة! غيرك بدأ اليوم، وبعد أشهر بيتكلم بطلاقة.<br>📌 المقاعد محدودة – العدد يغلق بمجرد الاكتفاء بالطلاب.<br>💡 لا تضيّع وقتك في فيديوهات متفرقة وتجارب ناقصة – هنا تبدأ رحلتك الحقيقية.<br>✅ اضغط الآن وخذ مكانك قبل ما يكتمل العدد</p>
+  <p id="extra-en" style="display:none;">🔥 Why start now?<br>Every day you delay = a lost step! Others started today, and in months they’ll speak fluently.<br>📌 Limited seats – registration closes once spots are full.<br>💡 Don’t waste time on scattered videos and incomplete trials – here starts your true journey.<br>✅ Click now and secure your place before it’s full.</p>
+  <h3 style="color:#38bdf8;"><span id="price-ar">💲 سعر الكورس: 109 دولار</span><span id="price-en" style="display:none;">💲 Course Price: $109</span></h3>
   <button onclick="buyNow()" class="btn-alt" id="buy-btn">ابدأ رحلتك الآن</button>
 
-  <!-- تواصل -->
   <div class="contact">
-    <p>إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
+    <p id="contact-ar">إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
+    <p id="contact-en" style="display:none;">If you face any issues or have questions, contact us:</p>
     <p><i class="fa-brands fa-instagram"></i> 
-      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
+      <a href="https://www.instagram.com/engliza_academy_" target="_blank">@_engliza_academy</a></p>
     <p><i class="fa-solid fa-envelope"></i> 
       <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a></p>
   </div>
@@ -116,90 +115,64 @@
 <!-- آراء الطلاب -->
 <div id="reviews" class="details">
   <h3 id="reviews-title">⭐ آراء الطلاب</h3>
-  <div class="reviews-grid">
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">إ</div><div><div class="name">إبراهيم | Ibrahim</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">شكراً على كل حاجة الحمد لله، نجحت بواصل دراسة.</div>
-    </div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">خ</div><div><div class="name">خالد | Khalid</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.</div>
-    </div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس، لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.</div>
-    </div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">ف</div><div><div class="name">فايزه | Faiza</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة</div>
-    </div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">ع</div><div><div class="name">علي | Ali</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.</div>
-    </div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">س</div><div><div class="name">سلطان | Sultan</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا، لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة.</div>
-    </div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">م</div><div><div class="name">منار | Manar</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير.</div>
-    </div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
-      <div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div>
-      <div class="stars">★★★★★</div>
-      <div class="review-text">٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div>
-    </div>
+  <div class="reviews-grid" id="reviews-ar">
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">إ</div><div><div class="name">إبراهيم | Ibrahim</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">شكراً على كل حاجة الحمد لله، نجحت بواصل دراسة.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">خ</div><div><div class="name">خالد | Khalid</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس، لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ف</div><div><div class="name">فايزة | Faiza</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ع</div><div><div class="name">علي | Ali</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">س</div><div><div class="name">سلطان | Sultan</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا، لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">منار | Manar</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div></div>
+  </div>
+
+  <div class="reviews-grid" id="reviews-en" style="display:none;">
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">E</div><div><div class="name">Ibrahim</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Thank you for everything, alhamdulillah, I succeeded and continue studying.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">K</div><div><div class="name">Khalid</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Hello Miss Aisha, before I barely understood English, but after taking the course with you I learned so many new things. Honestly, I benefited a lot, and the class was light and your explanation was perfect.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">M</div><div><div class="name">Marwa</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Miss, I got full marks in the presentation, I never expected that in technology class they’d give full marks in English. I was the only one in class, thanks a lot for your notes and help with pronunciation, may Allah reward you. Now I’m motivated to get full marks in everything else.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">F</div><div><div class="name">Faiza</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Thank you so much, you made me love English more since the beginning of the course. I feel comfortable and I see progress, I love you teacher.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">A</div><div><div class="name">Ali</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Literally, there is no question that comes to my mind except you answer it before I even ask. The course is amazing.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">S</div><div><div class="name">Sultan</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">He quickly understands that someone is working hard to deliver the information in the simplest way possible. Not because Sultan is smart, but because there’s someone who struggled and worked hard to reach this level and now explains in the easiest way.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">M</div><div><div class="name">Manar</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">You deserve every riyal. The course is flawless, really amazing, and your teaching shows that you teach with conscience.</div></div>
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">M</div><div><div class="name">Marwa</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">50% of my success is thanks to you, Miss. Before, everyone criticized my pronunciation even though I loved English. I kept practicing speaking, and now everywhere people praise my accent and pronunciation.</div></div>
   </div>
   <div class="back" onclick="hideDetails('reviews')">رجوع</div>
 </div>
 
-<!-- Refund -->
+<!-- سياسة الدفع -->
 <div id="refund" class="details">
   <h3 id="refund-title">💳 سياسة الدفع والاسترجاع</h3>
-  <p id="refund-text">نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
-  <div class="contact">
-    <p>إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
-    <p><i class="fa-brands fa-instagram"></i> 
-      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
-    <p><i class="fa-solid fa-envelope"></i> 
-      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a></p>
-  </div>
+  <p id="refund-ar">المبلغ لا يُسترجع بعد تفعيل الكورس لأنه منتج رقمي.</p>
+  <p id="refund-en" style="display:none;">No refunds after activation since this is a digital product.</p>
   <div class="back" onclick="hideDetails('refund')">رجوع</div>
 </div>
 
-<!-- Privacy -->
+<!-- سياسة الخصوصية -->
 <div id="privacy" class="details">
   <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
-  <p id="privacy-text">نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
+  <p id="privacy-ar">نحن نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث.</p>
+  <p id="privacy-en" style="display:none;">We are committed to protecting your data and never sharing it with third parties.</p>
   <div class="back" onclick="hideDetails('privacy')">رجوع</div>
 </div>
 
-<!-- Terms -->
+<!-- الشروط والأحكام -->
 <div id="terms" class="details">
   <h3 id="terms-title">📄 الشروط والأحكام</h3>
-  <ul id="terms-list">
+  <ul id="terms-ar">
     <li>الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.</li>
     <li>الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه.</li>
     <li>الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب.</li>
     <li>في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.</li>
-    <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
+    <li>بدفعك للكورس فأنت توافق على هذه الشروط.</li>
   </ul>
-  <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
-  <div class="contact">
-    <p>إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
-    <p><i class="fa-brands fa-instagram"></i> 
-      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
-    <p><i class="fa-solid fa-envelope"></i> 
-      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a></p>
-  </div>
+  <ul id="terms-en" style="display:none;">
+    <li>The course is digital and delivered immediately after payment, so no refunds after activation.</li>
+    <li>The subscription is personal only; sharing or leaking content is prohibited.</li>
+    <li>The academy reserves the right to update or modify content in the students’ best interest.</li>
+    <li>If the student breaks the rules (e.g., leaks content), the academy has the right to revoke access without compensation.</li>
+    <li>By paying, you agree to these terms.</li>
+  </ul>
+  <button onclick="buyNow()" class="btn-alt" id="terms-btn">ابدأ رحلتك الآن</button>
   <div class="back" onclick="hideDetails('terms')">رجوع</div>
 </div>
 
@@ -220,7 +193,6 @@
   function hideDetails(id){document.getElementById(id).style.display='none';}
   function buyNow(){Paddle.Checkout.open({items:[{priceId:"pro_01k2vd4n1w9h2bfawn5y2t3zrm",quantity:1}]});}
 
-  // Language toggle
   function toggleLang(){
     let html=document.documentElement;
     if(html.lang==="ar"){
@@ -233,19 +205,29 @@
       document.getElementById("card-refund").innerText="💳 Refund Policy";
       document.getElementById("card-privacy").innerText="🔒 Privacy Policy";
       document.getElementById("card-terms").innerText="📄 Terms & Conditions";
-      document.getElementById("course-title").innerText="🚀 Course Details";
-      document.getElementById("buy-btn").innerText="Start Your Journey Now";
-      document.getElementById("reviews-title").innerText="⭐ Student Reviews";
-      document.getElementById("refund-title").innerText="💳 Refund Policy";
-      document.getElementById("refund-text").innerText="We guarantee a refund within a certain period if you are not satisfied with the course.";
-      document.getElementById("privacy-title").innerText="🔒 Privacy Policy";
-      document.getElementById("privacy-text").innerText="We commit to protecting your data and never sharing it.";
-      document.getElementById("terms-title").innerText="📄 Terms & Conditions";
-      document.getElementById("terms-btn").innerText="Agree & Buy Now";
+      document.getElementById("course-ar").style.display="none";
+      document.getElementById("course-en").style.display="block";
+      document.getElementById("extra-ar").style.display="none";
+      document.getElementById("extra-en").style.display="block";
+      document.getElementById("price-ar").style.display="none";
+      document.getElementById("price-en").style.display="inline";
+      document.getElementById("contact-ar").style.display="none";
+      document.getElementById("contact-en").style.display="block";
+      document.getElementById("reviews-ar").style.display="none";
+      document.getElementById("reviews-en").style.display="grid";
+      document.getElementById("refund-ar").style.display="none";
+      document.getElementById("refund-en").style.display="block";
+      document.getElementById("privacy-ar").style.display="none";
+      document.getElementById("privacy-en").style.display="block";
+      document.getElementById("terms-ar").style.display="none";
+      document.getElementById("terms-en").style.display="block";
       document.getElementById("footer-text").innerText="© 2025 Engliza Academy – All Rights Reserved";
+      document.getElementById("buy-btn").innerText="Start Your Journey Now";
+      document.getElementById("terms-btn").innerText="Start Your Journey Now";
+      document.getElementById("reviews-title").innerText="⭐ Student Reviews";
       document.getElementById("lang-btn").innerText="AR";
     } else {
-      html.lang="ar"; html.dir="rtl"; location.reload();
+      location.reload();
     }
   }
 </script>
