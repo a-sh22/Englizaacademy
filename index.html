@@ -11,6 +11,7 @@
     background: #0f172a;
     color: #f1f5f9;
     line-height: 1.6;
+    transition: all 0.3s ease;
   }
   h1,h2,h3,h4 {margin:0}
   a {color: inherit; text-decoration: none;}
@@ -24,6 +25,12 @@
     box-shadow:0 0 15px rgba(37,99,235,0.4);
   }
   header h1 {font-size: 20px;}
+
+  .lang-toggle {
+    cursor:pointer;
+    font-weight:bold;
+    color:#93c5fd;
+  }
 
   .hero {
     text-align:center;
@@ -78,7 +85,36 @@
     box-shadow: 0 0 40px rgba(37,99,235,0.9);
     transform: translateY(-4px);
   }
+</style>
+</head>
+<body>
 
+<header>
+  <h1 id="logo-text">أكاديمية إنجليزا</h1>
+  <div class="lang-toggle" onclick="toggleLang()" id="lang-btn">EN</div>
+</header>
+
+<section class="hero">
+  <h2 id="hero-title">تعلّم بثقة مع أكاديمية إنجليزا</h2>
+  <p id="hero-desc">رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.</p>
+</section>
+
+<section class="about">
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="about">
+  <p id="about-text">نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
+</section>
+
+<section class="cards-section">
+  <h3>✨ استعرض الأقسام التالية</h3>
+  <div class="cards">
+    <div class="card" onclick="showDetails('course')"><i class="fa-solid fa-book"></i>تفاصيل الكورس</div>
+    <div class="card" onclick="showDetails('reviews')"><i class="fa-solid fa-star"></i>آراء الطلاب</div>
+    <div class="card" onclick="showDetails('refund')"><i class="fa-solid fa-credit-card"></i>سياسة الدفع والاسترجاع</div>
+    <div class="card" onclick="showDetails('privacy')"><i class="fa-solid fa-lock"></i>سياسة الخصوصية</div>
+    <div class="card" onclick="showDetails('terms')"><i class="fa-solid fa-file-contract"></i>الشروط والأحكام</div>
+  </div>
+</section>
+<style>
   .details {
     display:none;
     background:linear-gradient(135deg,#1e293b,#2e1065);
@@ -120,27 +156,12 @@
     gap:6px;
   }
   .secure-note i {color:#22c55e;}
-  .payment-icons {
-    margin-top:8px;
-    text-align:center;
-  }
-  .payment-icons img {
-    height:24px;
-    margin:0 5px;
-    vertical-align:middle;
-  }
+  .payment-icons {margin-top:8px; text-align:center;}
+  .payment-icons img {height:24px; margin:0 5px; vertical-align:middle;}
 
-  /* === Slider Styles === */
-  .slider {
-    position: relative;
-    overflow: hidden;
-    max-width: 600px;
-    margin: auto;
-  }
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
+  /* Slider */
+  .slider {position: relative; overflow: hidden; max-width: 600px; margin: auto;}
+  .slides {display: flex; transition: transform 0.5s ease;}
   .student {
     min-width: 100%;
     background:linear-gradient(135deg,#334155,#3b0764);
@@ -151,11 +172,7 @@
     gap:15px;
     align-items:flex-start;
   }
-  .student img {
-    width:50px;
-    height:50px;
-    border-radius:50%;
-  }
+  .student img {width:50px; height:50px; border-radius:50%;}
   .student .info {flex:1;}
   .student .name {font-weight:bold;}
   .student .verified {font-size:0.8em; color:lightgreen;}
@@ -165,14 +182,14 @@
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    font-size:24px;
+    font-size:16px; /* أصغر */
     background:#2563eb;
     color:#fff;
-    padding:8px 12px;
+    padding:5px 9px; /* أصغر */
     border-radius:50%;
     cursor:pointer;
     user-select:none;
-    box-shadow:0 0 10px rgba(37,99,235,0.6);
+    box-shadow:0 0 8px rgba(37,99,235,0.6);
   }
   .arrow.left {left:10px;}
   .arrow.right {right:10px;}
@@ -187,86 +204,27 @@
     cursor:pointer;
   }
   .dot.active {background:#2563eb;}
-
-  footer {
-    background:#0b1220;
-    padding:20px;
-    text-align:center;
-    color:#94a3b8;
-    margin-top:40px;
-    box-shadow:0 -5px 20px rgba(37,99,235,0.3);
-  }
 </style>
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script>
-  Paddle.Initialize({ seller: 243729 });
-
-  function showDetails(id){
-    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
-    document.getElementById(id).style.display='block';
-    window.scrollTo({top:document.getElementById(id).offsetTop-20,behavior:"smooth"});
-  }
-  function hideDetails(id){document.getElementById(id).style.display='none';}
-  function buyNow(){
-    Paddle.Checkout.open({
-      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
-    });
-  }
-
-  let currentSlide = 0;
-  function moveSlide(n){
-    const slides=document.querySelector(".slides");
-    const total=document.querySelectorAll(".student").length;
-    currentSlide=(currentSlide+n+total)%total;
-    slides.style.transform=`translateX(${-currentSlide*100}%)`;
-    updateDots();
-  }
-  function updateDots(){
-    document.querySelectorAll(".dot").forEach((dot,i)=>{
-      dot.classList.toggle("active",i===currentSlide);
-    });
-  }
-</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-
-<header>
-  <h1>أكاديمية إنجليزا</h1>
-  <div>AR | EN</div>
-</header>
-
-<section class="hero">
-  <h2>تعلّم بثقة مع أكاديمية إنجليزا</h2>
-  <p>رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.</p>
-</section>
-
-<section class="about">
-  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="about">
-  <p>نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
-</section>
-
-<section class="cards-section">
-  <h3>✨ استعرض الأقسام التالية</h3>
-  <div class="cards">
-    <div class="card" onclick="showDetails('course')"><i class="fa-solid fa-book"></i>تفاصيل الكورس</div>
-    <div class="card" onclick="showDetails('reviews')"><i class="fa-solid fa-star"></i>آراء الطلاب</div>
-    <div class="card" onclick="showDetails('refund')"><i class="fa-solid fa-credit-card"></i>سياسة الدفع والاسترجاع</div>
-    <div class="card" onclick="showDetails('privacy')"><i class="fa-solid fa-lock"></i>سياسة الخصوصية</div>
-    <div class="card" onclick="showDetails('terms')"><i class="fa-solid fa-file-contract"></i>الشروط والأحكام</div>
-  </div>
-</section>
 
 <!-- تفاصيل الكورس -->
 <div id="course" class="details">
   <h3>🚀 تفاصيل الكورس</h3>
   <ul>
-    <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم.</li>
-    <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي.</li>
-    <li>📝 تمارين عملية وتطبيقات يومية.</li>
-    <li>🤝 جروب خاص للطلاب مع متابعة شخصية.</li>
+    <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم اللي يبغى يتطور أكثر.</li>
+    <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي… الكورس يخدم أي فئة عمرية.</li>
+    <li>📝 تمارين عملية وتطبيقات يومية تخليك تعيش اللغة مش بس تحفظها.</li>
+    <li>🤝 جروب خاص للطلاب: تطرح أسئلتك، تناقش مع زملائك، وأنا أتابعك شخصيًا.</li>
     <li>🎁 مفاجآت ومواد حصرية داخل القناة.</li>
   </ul>
+
+  <h3 style="margin-top:20px;">🔥 ليش تبدأ الآن؟</h3>
+  <p>
+    كل يوم تأجله = خطوة ضايعة! غيرك بدأ اليوم، وبعد أشهر بيتكلم بطلاقة.<br>
+    📌 المقاعد محدودة – العدد يغلق بمجرد الاكتفاء بالطلاب.<br><br>
+    💡 لا تضيّع وقتك في فيديوهات متفرقة وتجارب ناقصة – هنا تبدأ رحلتك الحقيقية.<br>
+    ✅ اضغط الآن وخذ مكانك قبل ما يكتمل العدد
+  </p>
+
   <h3 style="color:#38bdf8; margin-top:20px;">💲 سعر الكورس: 109 دولار</h3>
   <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;">ابدأ رحلتك الآن</button>
   <div class="secure-note"><i class="fa-solid fa-lock"></i> الدفع آمن ومشفّر عبر Paddle</div>
@@ -283,14 +241,14 @@
   <h3>⭐ آراء الطلاب</h3>
   <div class="slider">
     <div class="slides">
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">إبراهيم | Ibrahim <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>شكراً على كل حاجة الحمد لله، نجحت بواصل دراسة.</p></div></div>
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">خالد | Khalid <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>قبل كنت ما أفهم... بصراحة استفدت كثير.</p></div></div>
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>ميس، جبت في البرزنتيشن درجة كاملة... الله يجزيك الجنة.</p></div></div>
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">فايزه | Faiza <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر.</p></div></div>
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">علي | Ali <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس رهيب.</p></div></div>
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">سلطان | Sultan <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>يفهم بسرعة أن في شخص يتعب عشان يوصل المعلومة.</p></div></div>
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">منار | Manar <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله تستاهل كل ريال والكورس ولا غلطة... وتعليمك واضح.</p></div></div>
-      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>٥٠٪؜ من نجاحي مس بفضلك والله... والحين الكل يمدح الأكسنت.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">إبراهيم | Ibrahim <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>شكراً على كل حاجةالحمد لله، نجحت بواصل دراسة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">خالد | Khalid <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس، لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">فايزه | Faiza <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">علي | Ali <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">سلطان | Sultan <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا، لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">منار | Manar <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</p></div></div>
     </div>
     <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
     <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
@@ -334,12 +292,66 @@
   <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;">أوافق وأشتري الآن</button>
   <div class="secure-note"><i class="fa-solid fa-lock"></i> الدفع آمن ومشفّر عبر Paddle</div>
   <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/w
-      div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
+  <div class="back" onclick="hideDetails('terms')">رجوع</div>
+</div>
 
 <footer>
   <p>© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
 </footer>
 
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({ seller: 243729 });
+
+  function showDetails(id){
+    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
+    document.getElementById(id).style.display='block';
+    window.scrollTo({top:document.getElementById(id).offsetTop-20,behavior:"smooth"});
+  }
+  function hideDetails(id){document.getElementById(id).style.display='none';}
+  function buyNow(){
+    Paddle.Checkout.open({
+      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
+    });
+  }
+
+  let currentSlide = 0;
+  function moveSlide(n){
+    const slides=document.querySelector(".slides");
+    const total=document.querySelectorAll(".student").length;
+    currentSlide=(currentSlide+n+total)%total;
+    slides.style.transform=`translateX(${-currentSlide*100}%)`;
+    updateDots();
+  }
+  function updateDots(){
+    document.querySelectorAll(".dot").forEach((dot,i)=>{
+      dot.classList.toggle("active",i===currentSlide);
+    });
+  }
+
+  function toggleLang(){
+    let html=document.documentElement;
+    if(html.lang==="ar"){
+      html.lang="en"; html.dir="ltr";
+      document.getElementById("logo-text").innerText="Engliza Academy";
+      document.getElementById("hero-title").innerText="Learn with Confidence at Engliza Academy";
+      document.getElementById("hero-desc").innerText="Your journey to mastering English starts here. Clear lessons, private channel, and practical exercises.";
+      document.getElementById("about-text").innerText="We provide simplified practical courses to learn English, with direct support, private student channel, and exclusive surprises.";
+      document.getElementById("lang-btn").innerText="AR";
+    } else {
+      html.lang="ar"; html.dir="rtl";
+      document.getElementById("logo-text").innerText="أكاديمية إنجليزا";
+      document.getElementById("hero-title").innerText="تعلّم بثقة مع أكاديمية إنجليزا";
+      document.getElementById("hero-desc").innerText="رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.";
+      document.getElementById("about-text").innerText="نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.";
+      document.getElementById("lang-btn").innerText="EN";
+    }
+  }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </body>
 </html>
