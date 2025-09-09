@@ -15,7 +15,6 @@
   h1,h2,h3,h4 {margin:0}
   a {color: inherit; text-decoration: none;}
 
-  /* Header */
   header {
     background: #1e293b;
     padding: 15px 30px;
@@ -25,19 +24,7 @@
     box-shadow:0 0 15px rgba(37,99,235,0.4);
   }
   header h1 {font-size: 20px;}
-  .btn {
-    background:#2563eb;
-    color:#fff;
-    padding:10px 16px;
-    border-radius:8px;
-    font-weight:bold;
-    transition:.2s;
-    border:none;
-    cursor:pointer;
-  }
-  .btn:hover {background:#1d4ed8;}
 
-  /* Hero */
   .hero {
     text-align:center;
     padding:60px 20px;
@@ -46,7 +33,6 @@
   .hero h2 {font-size: 32px; margin-bottom:15px;}
   .hero p {color:#cbd5e1; max-width:600px; margin:auto;}
 
-  /* About */
   .about {
     display:flex;
     align-items:center;
@@ -59,7 +45,6 @@
   .about img {width:150px; border-radius:12px;}
   .about p {max-width:500px; color:#e2e8f0;}
 
-  /* Cards */
   .cards-section {
     padding:60px 20px;
     text-align:center;
@@ -93,7 +78,7 @@
     box-shadow: 0 0 40px rgba(37,99,235,0.9);
     transform: translateY(-4px);
   }
-  .card i {font-size: 20px;}
+
   .details {
     display:none;
     background:linear-gradient(135deg,#1e293b,#2e1065);
@@ -113,33 +98,96 @@
     font-weight:bold;
     box-shadow:0 0 15px rgba(37,99,235,0.7);
   }
-
-  /* Students reviews */
-  .student {
-    background:linear-gradient(135deg,#334155,#3b0764);
-    border-radius:10px;
-    padding:12px;
-    margin-bottom:12px;
-    text-align:right;
-    box-shadow:0 0 15px rgba(37,99,235,0.5);
+  .btn-alt {
+    background:#7c3aed;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 0 15px rgba(124,58,237,0.6);
   }
-  .student .name {font-weight:bold;}
-  .stars {color:gold;}
+  .btn-alt:hover {background:#6d28d9;}
+  .secure-note {
+    margin-top:10px;
+    font-size: 0.9em;
+    color:#a5b4fc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+  }
+  .secure-note i {color:#22c55e;}
+  .payment-icons {
+    margin-top:8px;
+    text-align:center;
+  }
+  .payment-icons img {
+    height:24px;
+    margin:0 5px;
+    vertical-align:middle;
+  }
 
-  /* Lang switch */
-  .lang-switch {
-    position:fixed;
-    top:20px;
-    left:20px;
-    padding:8px 12px;
+  /* === Slider Styles === */
+  .slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .student {
+    min-width: 100%;
+    background:linear-gradient(135deg,#334155,#3b0764);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 0 15px rgba(37,99,235,0.5);
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+  }
+  .student img {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+  }
+  .student .info {flex:1;}
+  .student .name {font-weight:bold;}
+  .student .verified {font-size:0.8em; color:lightgreen;}
+  .stars {color:gold; margin:5px 0;}
+
+  .arrow {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:24px;
     background:#2563eb;
     color:#fff;
-    border-radius:8px;
+    padding:8px 12px;
+    border-radius:50%;
     cursor:pointer;
-    box-shadow:0 0 10px rgba(37,99,235,0.7);
+    user-select:none;
+    box-shadow:0 0 10px rgba(37,99,235,0.6);
   }
+  .arrow.left {left:10px;}
+  .arrow.right {right:10px;}
 
-  /* Footer */
+  .indicators {text-align:center; margin-top:10px;}
+  .dot {
+    height:10px; width:10px;
+    margin:0 5px;
+    background:#64748b;
+    border-radius:50%;
+    display:inline-block;
+    cursor:pointer;
+  }
+  .dot.active {background:#2563eb;}
+
   footer {
     background:#0b1220;
     padding:20px;
@@ -158,25 +206,34 @@
     document.getElementById(id).style.display='block';
     window.scrollTo({top:document.getElementById(id).offsetTop-20,behavior:"smooth"});
   }
-  function hideDetails(id){
-    document.getElementById(id).style.display='none';
-  }
+  function hideDetails(id){document.getElementById(id).style.display='none';}
   function buyNow(){
     Paddle.Checkout.open({
       items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
     });
   }
+
+  let currentSlide = 0;
+  function moveSlide(n){
+    const slides=document.querySelector(".slides");
+    const total=document.querySelectorAll(".student").length;
+    currentSlide=(currentSlide+n+total)%total;
+    slides.style.transform=`translateX(${-currentSlide*100}%)`;
+    updateDots();
+  }
+  function updateDots(){
+    document.querySelectorAll(".dot").forEach((dot,i)=>{
+      dot.classList.toggle("active",i===currentSlide);
+    });
+  }
 </script>
-<!-- أيقونات Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<div class="lang-switch">AR | EN</div>
-
 <header>
   <h1>أكاديمية إنجليزا</h1>
-  <button onclick="buyNow()" class="btn">اشترك الآن</button>
+  <div>AR | EN</div>
 </header>
 
 <section class="hero">
@@ -203,49 +260,82 @@
 <!-- تفاصيل الكورس -->
 <div id="course" class="details">
   <h3>🚀 تفاصيل الكورس</h3>
-  <p>هل تحلم تتقن اللغة الإنجليزية مهما كان مستواك؟<br>
-  الآن صار ممكن! كورس Engliza Academy على قناة خاصة في تيليجرام هو فرصتك الذهبية لتبدأ رحلة مختلفة كليًا.</p>
   <ul>
-    <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم اللي يبغى يتطور أكثر.</li>
-    <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي… الكورس يخدم أي فئة عمرية.</li>
-    <li>📝 تمارين عملية وتطبيقات يومية تخليك تعيش اللغة مش بس تحفظها.</li>
-    <li>🤝 جروب خاص للطلاب: تطرح أسئلتك، تناقش مع زملائك، وأنا أتابعك شخصيًا.</li>
+    <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم.</li>
+    <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي.</li>
+    <li>📝 تمارين عملية وتطبيقات يومية.</li>
+    <li>🤝 جروب خاص للطلاب مع متابعة شخصية.</li>
     <li>🎁 مفاجآت ومواد حصرية داخل القناة.</li>
   </ul>
-  <p>🔥 ليش تبدأ الآن؟<br>
-  كل يوم تأجله = خطوة ضايعة! غيرك بدأ اليوم، وبعد أشهر بيتكلم بطلاقة.<br>
-  📌 المقاعد محدودة – العدد يغلق بمجرد الاكتفاء بالطلاب.</p>
-  <p>💡 لا تضيّع وقتك في فيديوهات متفرقة وتجارب ناقصة – هنا تبدأ رحلتك الحقيقية.<br>
-  ✅ اضغط الآن وخذ مكانك قبل ما يكتمل العدد</p>
   <h3 style="color:#38bdf8; margin-top:20px;">💲 سعر الكورس: 109 دولار</h3>
-  <button onclick="buyNow()" class="btn" style="margin-top:15px;">اشتر الآن</button>
+  <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;">ابدأ رحلتك الآن</button>
+  <div class="secure-note"><i class="fa-solid fa-lock"></i> الدفع آمن ومشفّر عبر Paddle</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
   <div class="back" onclick="hideDetails('course')">رجوع</div>
 </div>
 
-<!-- باقي التفاصيل (آراء الطلاب والسياسات) -->
+<!-- آراء الطلاب -->
 <div id="reviews" class="details">
   <h3>⭐ آراء الطلاب</h3>
-  <!-- هنا آراء الطلاب -->
+  <div class="slider">
+    <div class="slides">
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">إبراهيم | Ibrahim <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>شكراً على كل حاجة الحمد لله، نجحت بواصل دراسة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">خالد | Khalid <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>قبل كنت ما أفهم... بصراحة استفدت كثير.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>ميس، جبت في البرزنتيشن درجة كاملة... الله يجزيك الجنة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">فايزه | Faiza <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">علي | Ali <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس رهيب.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">سلطان | Sultan <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>يفهم بسرعة أن في شخص يتعب عشان يوصل المعلومة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">منار | Manar <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله تستاهل كل ريال والكورس ولا غلطة... وتعليمك واضح.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>٥٠٪؜ من نجاحي مس بفضلك والله... والحين الكل يمدح الأكسنت.</p></div></div>
+    </div>
+    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+  </div>
+  <div class="indicators">
+    <span class="dot active" onclick="currentSlide=0;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=1;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=2;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=3;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=4;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=5;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=6;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=7;moveSlide(0)"></span>
+  </div>
   <div class="back" onclick="hideDetails('reviews')">رجوع</div>
 </div>
-
+<!-- Refund -->
 <div id="refund" class="details">
   <h3>💳 سياسة الدفع والاسترجاع</h3>
   <p>نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
   <div class="back" onclick="hideDetails('refund')">رجوع</div>
 </div>
 
+<!-- Privacy -->
 <div id="privacy" class="details">
   <h3>🔒 سياسة الخصوصية</h3>
   <p>نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
   <div class="back" onclick="hideDetails('privacy')">رجوع</div>
 </div>
 
+<!-- Terms -->
 <div id="terms" class="details">
   <h3>📄 الشروط والأحكام</h3>
-  <p>باستخدامك لموقعنا وخدماتنا فأنت توافق على جميع الشروط والسياسات المذكورة.</p>
-  <div class="back" onclick="hideDetails('terms')">رجوع</div>
-</div>
+  <ul>
+    <li>الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.</li>
+    <li>الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه.</li>
+    <li>الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب.</li>
+    <li>في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.</li>
+    <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
+  </ul>
+  <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;">أوافق وأشتري الآن</button>
+  <div class="secure-note"><i class="fa-solid fa-lock"></i> الدفع آمن ومشفّر عبر Paddle</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/w
+      div>
 
 <footer>
   <p>© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
