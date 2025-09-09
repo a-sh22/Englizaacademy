@@ -1,44 +1,255 @@
-Start Bootstrap Sign Up
-Generate more leads with a professional landing page!
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أكاديمية إنجليزا</title>
+<style>
+  body {
+    font-family: "Tahoma","Arial",sans-serif;
+    margin: 0;
+    background: #0f172a;
+    color: #f1f5f9;
+    line-height: 1.6;
+  }
+  h1,h2,h3,h4 {margin:0}
+  a {color: inherit; text-decoration: none;}
 
+  /* Header */
+  header {
+    background: #1e293b;
+    padding: 15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 15px rgba(37,99,235,0.4);
+  }
+  header h1 {font-size: 20px;}
+  .btn {
+    background:#2563eb;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.2s;
+    border:none;
+    cursor:pointer;
+  }
+  .btn:hover {background:#1d4ed8;}
 
-Email Address is required.
-Email Address Email is not valid.
-Submit
-Form submission successful!
-To activate this form, sign up at
+  /* Hero */
+  .hero {
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);
+  }
+  .hero h2 {font-size: 32px; margin-bottom:15px;}
+  .hero p {color:#cbd5e1; max-width:600px; margin:auto;}
 
-https://startbootstrap.com/solution/contact-forms
-Error sending message!
-Fully Responsive
+  /* About */
+  .about {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:60px 20px;
+    background:#1e293b;
+    box-shadow:inset 0 0 30px rgba(37,99,235,0.3);
+  }
+  .about img {width:150px; border-radius:12px;}
+  .about p {max-width:500px; color:#e2e8f0;}
 
-This theme will look great on any device, no matter the size!
+  /* Cards */
+  .cards-section {
+    padding:60px 20px;
+    text-align:center;
+  }
+  .cards-section h3 {
+    font-size: 22px;
+    margin-bottom:30px;
+    color:#93c5fd;
+  }
+  .cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+  }
+  .card {
+    background:linear-gradient(135deg,#1e293b,#2e1065);
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow: 0 0 20px rgba(37,99,235,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-weight:bold;
+  }
+  .card:hover {
+    background:linear-gradient(135deg,#334155,#3b0764);
+    box-shadow: 0 0 40px rgba(37,99,235,0.9);
+    transform: translateY(-4px);
+  }
+  .card i {font-size: 20px;}
+  .details {
+    display:none;
+    background:linear-gradient(135deg,#1e293b,#2e1065);
+    margin:20px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(37,99,235,0.6);
+  }
+  .back {
+    margin-top:15px;
+    display:inline-block;
+    padding:8px 14px;
+    background:#2563eb;
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(37,99,235,0.7);
+  }
 
-Bootstrap 5 Ready
+  /* Students reviews */
+  .student {
+    background:linear-gradient(135deg,#334155,#3b0764);
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:12px;
+    text-align:right;
+    box-shadow:0 0 15px rgba(37,99,235,0.5);
+  }
+  .student .name {font-weight:bold;}
+  .stars {color:gold;}
 
-Featuring the latest build of the new Bootstrap 5 framework!
+  /* Lang switch */
+  .lang-switch {
+    position:fixed;
+    top:20px;
+    left:20px;
+    padding:8px 12px;
+    background:#2563eb;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 0 10px rgba(37,99,235,0.7);
+  }
 
-Easy to Use
+  /* Footer */
+  footer {
+    background:#0b1220;
+    padding:20px;
+    text-align:center;
+    color:#94a3b8;
+    margin-top:40px;
+    box-shadow:0 -5px 20px rgba(37,99,235,0.3);
+  }
+</style>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({ seller: 243729 });
 
-Ready to use with your own content, or customize the source files!
+  function showDetails(id){
+    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
+    document.getElementById(id).style.display='block';
+    window.scrollTo({top:document.getElementById(id).offsetTop-20,behavior:"smooth"});
+  }
+  function hideDetails(id){
+    document.getElementById(id).style.display='none';
+  }
+  function buyNow(){
+    Paddle.Checkout.open({
+      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
+    });
+  }
+</script>
+<!-- أيقونات Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
-Fully Responsive Design
+<div class="lang-switch">AR | EN</div>
 
-When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!
+<header>
+  <h1>أكاديمية إنجليزا</h1>
+  <button onclick="buyNow()" class="btn">اشترك الآن</button>
+</header>
 
-Updated For Bootstrap 5
+<section class="hero">
+  <h2>تعلّم بثقة مع أكاديمية إنجليزا</h2>
+  <p>رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.</p>
+</section>
 
-Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!
+<section class="about">
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="about">
+  <p>نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
+</section>
 
-Easy to Use & Customize
+<section class="cards-section">
+  <h3>✨ استعرض الأقسام التالية</h3>
+  <div class="cards">
+    <div class="card" onclick="showDetails('course')"><i class="fa-solid fa-book"></i>تفاصيل الكورس</div>
+    <div class="card" onclick="showDetails('reviews')"><i class="fa-solid fa-star"></i>آراء الطلاب</div>
+    <div class="card" onclick="showDetails('refund')"><i class="fa-solid fa-credit-card"></i>سياسة الدفع والاسترجاع</div>
+    <div class="card" onclick="showDetails('privacy')"><i class="fa-solid fa-lock"></i>سياسة الخصوصية</div>
+    <div class="card" onclick="showDetails('terms')"><i class="fa-solid fa-file-contract"></i>الشروط والأحكام</div>
+  </div>
+</section>
 
-Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!
+<!-- تفاصيل الكورس -->
+<div id="course" class="details">
+  <h3>🚀 تفاصيل الكورس</h3>
+  <p>هل تحلم تتقن اللغة الإنجليزية مهما كان مستواك؟<br>
+  الآن صار ممكن! كورس Engliza Academy على قناة خاصة في تيليجرام هو فرصتك الذهبية لتبدأ رحلة مختلفة كليًا.</p>
+  <ul>
+    <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم اللي يبغى يتطور أكثر.</li>
+    <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي… الكورس يخدم أي فئة عمرية.</li>
+    <li>📝 تمارين عملية وتطبيقات يومية تخليك تعيش اللغة مش بس تحفظها.</li>
+    <li>🤝 جروب خاص للطلاب: تطرح أسئلتك، تناقش مع زملائك، وأنا أتابعك شخصيًا.</li>
+    <li>🎁 مفاجآت ومواد حصرية داخل القناة.</li>
+  </ul>
+  <p>🔥 ليش تبدأ الآن؟<br>
+  كل يوم تأجله = خطوة ضايعة! غيرك بدأ اليوم، وبعد أشهر بيتكلم بطلاقة.<br>
+  📌 المقاعد محدودة – العدد يغلق بمجرد الاكتفاء بالطلاب.</p>
+  <p>💡 لا تضيّع وقتك في فيديوهات متفرقة وتجارب ناقصة – هنا تبدأ رحلتك الحقيقية.<br>
+  ✅ اضغط الآن وخذ مكانك قبل ما يكتمل العدد</p>
+  <h3 style="color:#38bdf8; margin-top:20px;">💲 سعر الكورس: 109 دولار</h3>
+  <button onclick="buyNow()" class="btn" style="margin-top:15px;">اشتر الآن</button>
+  <div class="back" onclick="hideDetails('course')">رجوع</div>
+</div>
 
-What people are saying...
+<!-- باقي التفاصيل (آراء الطلاب والسياسات) -->
+<div id="reviews" class="details">
+  <h3>⭐ آراء الطلاب</h3>
+  <!-- هنا آراء الطلاب -->
+  <div class="back" onclick="hideDetails('reviews')">رجوع</div>
+</div>
 
-...
-Margaret E.
+<div id="refund" class="details">
+  <h3>💳 سياسة الدفع والاسترجاع</h3>
+  <p>نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
+  <div class="back" onclick="hideDetails('refund')">رجوع</div>
+</div>
 
-"This is fantastic! Thanks so much guys!"
+<div id="privacy" class="details">
+  <h3>🔒 سياسة الخصوصية</h3>
+  <p>نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
+  <div class="back" onclick="hideDetails('privacy')">رجوع</div>
+</div>
 
-...
+<div id="terms" class="details">
+  <h3>📄 الشروط والأحكام</h3>
+  <p>باستخدامك لموقعنا وخدماتنا فأنت توافق على جميع الشروط والسياسات المذكورة.</p>
+  <div class="back" onclick="hideDetails('terms')">رجوع</div>
+</div>
+
+<footer>
+  <p>© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
+</footer>
+
+</body>
+</html>
