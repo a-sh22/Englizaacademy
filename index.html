@@ -5,74 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>أكاديمية إنجليزا</title>
 <style>
-  body {
-    font-family: "Tahoma","Arial",sans-serif;
-    margin: 0;
-    background: #0f172a;
-    color: #f1f5f9;
-    line-height: 1.6;
-  }
+  body {font-family:"Tahoma","Arial",sans-serif;margin:0;background:#0f172a;color:#f1f5f9;line-height:1.6;}
   h1,h2,h3 {margin:0}
-  header {
-    background: #1e293b;
-    padding: 15px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 0 15px rgba(37,99,235,0.4);
-  }
-  header h1 {font-size: 20px;}
-  .lang-toggle {cursor:pointer; font-weight:bold; color:#93c5fd;}
+  header {background:#1e293b;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 15px rgba(37,99,235,.4);}
+  header h1{font-size:20px;}
+  .lang-toggle{cursor:pointer;font-weight:bold;color:#93c5fd;}
 
-  .hero {
-    text-align:center;
-    padding:60px 20px;
-    background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);
-  }
-  .hero h2 {font-size: 32px; margin-bottom:15px;}
-  .hero p {color:#cbd5e1; max-width:600px; margin:auto;}
+  .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
+  .hero h2{font-size:32px;margin-bottom:15px;}
+  .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
 
-  .about {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-    padding:60px 20px;
-    background:#1e293b;
-    box-shadow:inset 0 0 30px rgba(37,99,235,0.3);
-  }
-  .about img {width:150px; border-radius:12px;}
-  .about p {max-width:500px; color:#e2e8f0;}
+  .about{display:flex;align-items:center;justify-content:center;gap:20px;padding:60px 20px;background:#1e293b;box-shadow:inset 0 0 30px rgba(37,99,235,.3);}
+  .about img{width:150px;border-radius:12px;}
+  .about p{max-width:500px;color:#e2e8f0;}
 
-  .cards-section {
-    padding:60px 20px;
-    text-align:center;
-  }
-  .cards-section h3 {
-    font-size: 22px;
-    margin-bottom:30px;
-    color:#93c5fd;
-  }
-  .cards {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-  }
-  .card {
-    background:linear-gradient(135deg,#1e293b,#2e1065);
-    border-radius:12px;
-    padding:20px;
-    text-align:center;
-    cursor:pointer;
-    transition:.3s;
-    box-shadow: 0 0 20px rgba(37,99,235,0.4);
-    font-weight:bold;
-  }
-  .card:hover {
-    background:linear-gradient(135deg,#334155,#3b0764);
-    box-shadow: 0 0 40px rgba(37,99,235,0.9);
-    transform: translateY(-4px);
-  }
+  .cards-section{padding:60px 20px;text-align:center;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+  .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
+  .card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
+
+  .details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
+  .back{margin-top:15px;display:inline-block;padding:8px 14px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
+  .btn-alt{background:#7c3aed;color:#fff;padding:10px 16px;border-radius:8px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 15px rgba(124,58,237,.6);}
+  .btn-alt:hover{background:#6d28d9;}
+  .secure-note{margin-top:10px;font-size:.9em;color:#a5b4fc;}
+  .payment-icons img{height:24px;margin:0 5px;vertical-align:middle;}
+  .contact{margin-top:20px;font-size:.9em;}
+  .contact a{color:#38bdf8;text-decoration:none;}
+
+  /* Slider */
+  .slider{position:relative;overflow:hidden;max-width:600px;margin:auto;}
+  .slides{display:flex;transition:transform .5s ease;}
+  .student{width:100%;background:linear-gradient(135deg,#334155,#3b0764);border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);color:#fff;}
+  .stars{color:gold;margin:5px 0;}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);font-size:16px;background:#2563eb;color:#fff;padding:5px 9px;border-radius:50%;cursor:pointer;}
+  .arrow.left{left:10px;} .arrow.right{right:10px;}
+  .indicators{text-align:center;margin-top:10px;}
+  .dot{height:10px;width:10px;margin:0 5px;background:#64748b;border-radius:50%;display:inline-block;cursor:pointer;}
+  .dot.active{background:#2563eb;}
+
+  footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
 </style>
 </head>
 <body>
@@ -88,12 +60,11 @@
 </section>
 
 <section class="about">
-  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="about">
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="">
   <p id="about-text">نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
 </section>
 
 <section class="cards-section">
-  <h3>✨ استعرض الأقسام التالية</h3>
   <div class="cards">
     <div class="card" onclick="showDetails('course')" id="card-course">📘 تفاصيل الكورس</div>
     <div class="card" onclick="showDetails('reviews')" id="card-reviews">⭐ آراء الطلاب</div>
@@ -102,66 +73,6 @@
     <div class="card" onclick="showDetails('terms')" id="card-terms">📄 الشروط والأحكام</div>
   </div>
 </section>
-<style>
-  .details {
-    display:none;
-    background:linear-gradient(135deg,#1e293b,#2e1065);
-    margin:20px;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 0 25px rgba(37,99,235,0.6);
-  }
-  .back {
-    margin-top:15px;
-    display:inline-block;
-    padding:8px 14px;
-    background:#2563eb;
-    border-radius:8px;
-    cursor:pointer;
-    color:#fff;
-    font-weight:bold;
-    box-shadow:0 0 15px rgba(37,99,235,0.7);
-  }
-  .btn-alt {
-    background:#7c3aed;
-    color:#fff;
-    padding:10px 16px;
-    border-radius:8px;
-    font-weight:bold;
-    border:none;
-    cursor:pointer;
-    transition:.2s;
-    box-shadow:0 0 15px rgba(124,58,237,0.6);
-  }
-  .btn-alt:hover {background:#6d28d9;}
-  .secure-note {margin-top:10px; font-size:0.9em; color:#a5b4fc;}
-  .payment-icons {margin-top:8px; text-align:center;}
-  .payment-icons img {height:24px; margin:0 5px; vertical-align:middle;}
-
-  /* Slider */
-  .slider {position: relative; overflow: hidden; max-width: 600px; margin: auto;}
-  .slides {display: flex; transition: transform 0.5s ease;}
-  .student {
-    width:100%;
-    background:linear-gradient(135deg,#334155,#3b0764);
-    border-radius:12px;
-    padding:20px;
-    box-shadow:0 0 15px rgba(37,99,235,0.5);
-    color:#fff;
-  }
-  .stars {color:gold; margin:5px 0;}
-  .arrow {
-    position:absolute; top:50%; transform:translateY(-50%);
-    font-size:16px; background:#2563eb; color:#fff;
-    padding:5px 9px; border-radius:50%; cursor:pointer;
-  }
-  .arrow.left {left:10px;} .arrow.right {right:10px;}
-  .indicators {text-align:center; margin-top:10px;}
-  .dot {height:10px; width:10px; margin:0 5px; background:#64748b; border-radius:50%; display:inline-block; cursor:pointer;}
-  .dot.active {background:#2563eb;}
-  .contact {margin-top:20px; font-size:0.9em;}
-  .contact a {color:#38bdf8; text-decoration:none;}
-</style>
 
 <!-- تفاصيل الكورس -->
 <div id="course" class="details">
@@ -181,17 +92,13 @@
   <h3 style="color:#38bdf8;">💲 سعر الكورس: 109 دولار</h3>
   <button onclick="buyNow()" class="btn-alt" id="buy-btn">ابدأ رحلتك الآن</button>
 
-  <!-- قسم التواصل -->
+  <!-- تواصل -->
   <div class="contact">
     <p>إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
-    <p>
-      <i class="fa-brands fa-instagram"></i>
-      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a>
-    </p>
-    <p>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a>
-    </p>
+    <p><i class="fa-brands fa-instagram"></i> 
+      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
+    <p><i class="fa-solid fa-envelope"></i> 
+      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a></p>
   </div>
 
   <div class="back" onclick="hideDetails('course')">رجوع</div>
@@ -203,13 +110,13 @@
   <div class="slider">
     <div class="slides" id="slides">
       <div class="student">إبراهيم: شكراً على كل حاجةالحمد لله، نجحت بواصل دراسة.</div>
-      <div class="student">خالد: اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.</div>
-      <div class="student">مروى: ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس، لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.</div>
-      <div class="student">فايزه: والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة.</div>
-      <div class="student">علي: حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.</div>
-      <div class="student">سلطان: يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا، لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة.</div>
-      <div class="student">منار: والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير.</div>
-      <div class="student">مروى: ٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div>
+      <div class="student">خالد: اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ...</div>
+      <div class="student">مروى: ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ...</div>
+      <div class="student">فايزه: والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر ...</div>
+      <div class="student">علي: حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل ...</div>
+      <div class="student">سلطان: يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة ...</div>
+      <div class="student">منار: والله تستاهل كل ريال والكورس ولا غلطة ...</div>
+      <div class="student">مروى: ٥٠٪؜ من نجاحي مس بفضلك والله ...</div>
     </div>
     <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
     <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
@@ -217,24 +124,18 @@
   <div class="indicators" id="indicators"></div>
   <div class="back" onclick="hideDetails('reviews')">رجوع</div>
 </div>
+
 <!-- Refund -->
 <div id="refund" class="details">
   <h3 id="refund-title">💳 سياسة الدفع والاسترجاع</h3>
   <p id="refund-text">نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
-
-  <!-- قسم التواصل -->
   <div class="contact">
     <p>إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
-    <p>
-      <i class="fa-brands fa-instagram"></i>
-      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a>
-    </p>
-    <p>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a>
-    </p>
+    <p><i class="fa-brands fa-instagram"></i> 
+      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
+    <p><i class="fa-solid fa-envelope"></i> 
+      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a></p>
   </div>
-
   <div class="back" onclick="hideDetails('refund')">رجوع</div>
 </div>
 
@@ -242,20 +143,6 @@
 <div id="privacy" class="details">
   <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
   <p id="privacy-text">نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
-
-  <!-- قسم التواصل -->
-  <div class="contact">
-    <p>إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
-    <p>
-      <i class="fa-brands fa-instagram"></i>
-      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a>
-    </p>
-    <p>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a>
-    </p>
-  </div>
-
   <div class="back" onclick="hideDetails('privacy')">رجوع</div>
 </div>
 
@@ -270,20 +157,13 @@
     <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
   </ul>
   <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
-
-  <!-- قسم التواصل -->
   <div class="contact">
     <p>إذا واجهتك أي مشكلة أو لديك أسئلة تواصل معنا عبر:</p>
-    <p>
-      <i class="fa-brands fa-instagram"></i>
-      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a>
-    </p>
-    <p>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a>
-    </p>
+    <p><i class="fa-brands fa-instagram"></i> 
+      <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
+    <p><i class="fa-solid fa-envelope"></i> 
+      <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a></p>
   </div>
-
   <div class="back" onclick="hideDetails('terms')">رجوع</div>
 </div>
 
@@ -295,18 +175,9 @@
 <script>
   Paddle.Initialize({ seller: 243729 });
 
-  // إظهار وإخفاء التفاصيل
-  function showDetails(id){
-    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
-    document.getElementById(id).style.display='block';
-    window.scrollTo({top:document.getElementById(id).offsetTop-20,behavior:"smooth"});
-  }
+  function showDetails(id){document.querySelectorAll('.details').forEach(d=>d.style.display='none');document.getElementById(id).style.display='block';}
   function hideDetails(id){document.getElementById(id).style.display='none';}
-  function buyNow(){
-    Paddle.Checkout.open({
-      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
-    });
-  }
+  function buyNow(){Paddle.Checkout.open({items:[{priceId:"pro_01k2vd4n1w9h2bfawn5y2t3zrm",quantity:1}]});}
 
   // Slider
   let currentSlide=0;
@@ -343,8 +214,8 @@
       html.lang="en"; html.dir="ltr";
       document.getElementById("logo-text").innerText="Engliza Academy";
       document.getElementById("hero-title").innerText="Learn with Confidence at Engliza Academy";
-      document.getElementById("hero-desc").innerText="Your journey to mastering English starts here. Clear lessons, private channel, and daily practice.";
-      document.getElementById("about-text").innerText="We provide simplified English courses with direct support, private student channel, and surprises.";
+      document.getElementById("hero-desc").innerText="Your journey to mastering English starts here.";
+      document.getElementById("about-text").innerText="We provide simple and practical English courses with support, private student channel, and surprises.";
       document.getElementById("card-course").innerText="📘 Course Details";
       document.getElementById("card-reviews").innerText="⭐ Student Reviews";
       document.getElementById("card-refund").innerText="💳 Refund Policy";
@@ -356,14 +227,13 @@
       document.getElementById("refund-title").innerText="💳 Refund Policy";
       document.getElementById("refund-text").innerText="We guarantee a refund within a certain period if you are not satisfied with the course.";
       document.getElementById("privacy-title").innerText="🔒 Privacy Policy";
-      document.getElementById("privacy-text").innerText="We are committed to protecting your data and never sharing it with third parties.";
+      document.getElementById("privacy-text").innerText="We commit to protecting your data and never sharing it.";
       document.getElementById("terms-title").innerText="📄 Terms & Conditions";
       document.getElementById("terms-btn").innerText="Agree & Buy Now";
       document.getElementById("footer-text").innerText="© 2025 Engliza Academy – All Rights Reserved";
       document.getElementById("lang-btn").innerText="AR";
     } else {
-      html.lang="ar"; html.dir="rtl";
-      location.reload(); // نرجع للنصوص العربية الأصلية
+      html.lang="ar"; html.dir="rtl"; location.reload();
     }
   }
 </script>
