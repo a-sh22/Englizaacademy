@@ -35,6 +35,12 @@
   ul.course-list {list-style-type:"✅ ";padding-right:20px;}
   ul.course-list li{margin-bottom:10px;}
 
+  .secure-payment{color:#38bdf8;margin-top:10px;font-weight:bold;}
+  .payment-icons{margin-top:8px;font-size:26px;color:#f1f5f9;display:flex;gap:12px;justify-content:center;}
+  .contact-info{margin-top:20px;font-size:0.95em;}
+  .contact-info p{margin:5px 0;}
+  .contact-info i{margin-left:6px;color:#38bdf8;}
+
   /* Reviews grid */
   .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
   .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
@@ -92,6 +98,12 @@
   </ul>
   <h3 style="color:#38bdf8;" id="course-price">💲 سعر الكورس: 109 دولار</h3>
   <button onclick="buyNow()" class="btn-alt" id="buy-btn">ابدأ رحلتك الآن</button>
+  <div class="secure-payment" id="secure-text">🔒 الدفع آمن ومشفر عبر بادل</div>
+  <div class="payment-icons"><i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-brands fa-cc-paypal"></i></div>
+  <div class="contact-info" id="contact-info">
+    <p><i class="fa-solid fa-envelope"></i> englizaacademy@gmail.com</p>
+    <p><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
+  </div>
   <div class="back" onclick="hideDetails('course')">رجوع</div>
 </div>
 
@@ -136,6 +148,12 @@
     <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
   </ul>
   <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
+  <div class="secure-payment" id="secure-text-terms">🔒 الدفع آمن ومشفر عبر بادل</div>
+  <div class="payment-icons"><i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-brands fa-cc-paypal"></i></div>
+  <div class="contact-info" id="contact-info-terms">
+    <p><i class="fa-solid fa-envelope"></i> englizaacademy@gmail.com</p>
+    <p><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>
+  </div>
   <div class="back" onclick="hideDetails('terms')">رجوع</div>
 </div>
 
@@ -175,29 +193,16 @@
       document.getElementById("card-privacy").innerText="🔒 Privacy Policy";
       document.getElementById("card-terms").innerText="📄 Terms & Conditions";
       document.getElementById("course-title").innerText="🚀 Course Details";
-      document.getElementById("course-text").innerHTML=`
-        <li>🎯 Covers all levels: beginner, intermediate, and advanced learners.</li>
-        <li>👩‍🎓 Suitable for everyone: employees, school or university students, any age group.</li>
-        <li>📝 Practical exercises and daily applications to live the language, not just memorize it.</li>
-        <li>🤝 Private student group for questions, discussions, and my personal support.</li>
-        <li>🎁 Surprises and exclusive materials inside the channel.</li>
-        <li>🔥 Why start now? Every day you delay = a missed step!</li>
-        <li>📌 Limited seats – closes once full.</li>
-        <li>💡 Don’t waste time on scattered videos – this is your true journey.</li>`;
       document.getElementById("course-price").innerText="💲 Course Price: 109 USD";
       document.getElementById("buy-btn").innerText="Start Your Journey Now";
-      document.getElementById("reviews-title").innerText="⭐ Student Reviews";
-      document.getElementById("refund-title").innerText="💳 Refund Policy";
-      document.getElementById("refund-text").innerText="We guarantee a refund within a certain period if you are not satisfied with the course.";
-      document.getElementById("privacy-title").innerText="🔒 Privacy Policy";
-      document.getElementById("privacy-text").innerText="We commit to protecting your data and never sharing it.";
-      document.getElementById("terms-title").innerText="📄 Terms & Conditions";
-      document.getElementById("terms-list").innerHTML=`
-        <li>The course is digital and delivered immediately after payment, so no refund after activation.</li>
-        <li>Subscription is personal only. Sharing or leaking content is prohibited.</li>
-        <li>The academy has the right to update content for the benefit of students.</li>
-        <li>If rules are broken (like content leaking), access can be revoked without compensation.</li>
-        <li>By paying for the course, you agree to these terms.</li>`;
+      document.getElementById("secure-text").innerText="🔒 Secure & Encrypted Payment via Paddle";
+      document.getElementById("secure-text-terms").innerText="🔒 Secure & Encrypted Payment via Paddle";
+      document.getElementById("contact-info").innerHTML=`
+        <p><i class="fa-solid fa-envelope"></i> englizaacademy@gmail.com</p>
+        <p><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>`;
+      document.getElementById("contact-info-terms").innerHTML=`
+        <p><i class="fa-solid fa-envelope"></i> englizaacademy@gmail.com</p>
+        <p><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p>`;
       document.getElementById("terms-btn").innerText="Agree & Buy Now";
       document.getElementById("footer-text").innerText="© 2025 Engliza Academy – All Rights Reserved";
       document.getElementById("lang-btn").innerText="AR";
