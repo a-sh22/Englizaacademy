@@ -4,158 +4,347 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>أكاديمية إنجليزا</title>
+<style>
+  body {
+    font-family: "Tahoma","Arial",sans-serif;
+    margin: 0;
+    background: #0f172a;
+    color: #f1f5f9;
+    line-height: 1.6;
+  }
+  h1,h2,h3,h4 {margin:0}
+  a {color: inherit; text-decoration: none;}
+
+  header {
+    background: #1e293b;
+    padding: 15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 15px rgba(37,99,235,0.4);
+  }
+  header h1 {font-size: 20px;}
+
+  .hero {
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);
+  }
+  .hero h2 {font-size: 32px; margin-bottom:15px;}
+  .hero p {color:#cbd5e1; max-width:600px; margin:auto;}
+
+  .about {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:60px 20px;
+    background:#1e293b;
+    box-shadow:inset 0 0 30px rgba(37,99,235,0.3);
+  }
+  .about img {width:150px; border-radius:12px;}
+  .about p {max-width:500px; color:#e2e8f0;}
+
+  .cards-section {
+    padding:60px 20px;
+    text-align:center;
+  }
+  .cards-section h3 {
+    font-size: 22px;
+    margin-bottom:30px;
+    color:#93c5fd;
+  }
+  .cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+  }
+  .card {
+    background:linear-gradient(135deg,#1e293b,#2e1065);
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow: 0 0 20px rgba(37,99,235,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-weight:bold;
+  }
+  .card:hover {
+    background:linear-gradient(135deg,#334155,#3b0764);
+    box-shadow: 0 0 40px rgba(37,99,235,0.9);
+    transform: translateY(-4px);
+  }
+
+  .details {
+    display:none;
+    background:linear-gradient(135deg,#1e293b,#2e1065);
+    margin:20px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(37,99,235,0.6);
+  }
+  .back {
+    margin-top:15px;
+    display:inline-block;
+    padding:8px 14px;
+    background:#2563eb;
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(37,99,235,0.7);
+  }
+  .btn-alt {
+    background:#7c3aed;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 0 15px rgba(124,58,237,0.6);
+  }
+  .btn-alt:hover {background:#6d28d9;}
+  .secure-note {
+    margin-top:10px;
+    font-size: 0.9em;
+    color:#a5b4fc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+  }
+  .secure-note i {color:#22c55e;}
+  .payment-icons {
+    margin-top:8px;
+    text-align:center;
+  }
+  .payment-icons img {
+    height:24px;
+    margin:0 5px;
+    vertical-align:middle;
+  }
+
+  /* === Slider Styles === */
+  .slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .student {
+    min-width: 100%;
+    background:linear-gradient(135deg,#334155,#3b0764);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 0 15px rgba(37,99,235,0.5);
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+  }
+  .student img {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+  }
+  .student .info {flex:1;}
+  .student .name {font-weight:bold;}
+  .student .verified {font-size:0.8em; color:lightgreen;}
+  .stars {color:gold; margin:5px 0;}
+
+  .arrow {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:24px;
+    background:#2563eb;
+    color:#fff;
+    padding:8px 12px;
+    border-radius:50%;
+    cursor:pointer;
+    user-select:none;
+    box-shadow:0 0 10px rgba(37,99,235,0.6);
+  }
+  .arrow.left {left:10px;}
+  .arrow.right {right:10px;}
+
+  .indicators {text-align:center; margin-top:10px;}
+  .dot {
+    height:10px; width:10px;
+    margin:0 5px;
+    background:#64748b;
+    border-radius:50%;
+    display:inline-block;
+    cursor:pointer;
+  }
+  .dot.active {background:#2563eb;}
+
+  footer {
+    background:#0b1220;
+    padding:20px;
+    text-align:center;
+    color:#94a3b8;
+    margin-top:40px;
+    box-shadow:0 -5px 20px rgba(37,99,235,0.3);
+  }
+</style>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({ seller: 243729 });
+
+  function showDetails(id){
+    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
+    document.getElementById(id).style.display='block';
+    window.scrollTo({top:document.getElementById(id).offsetTop-20,behavior:"smooth"});
+  }
+  function hideDetails(id){document.getElementById(id).style.display='none';}
+  function buyNow(){
+    Paddle.Checkout.open({
+      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
+    });
+  }
+
+  let currentSlide = 0;
+  function moveSlide(n){
+    const slides=document.querySelector(".slides");
+    const total=document.querySelectorAll(".student").length;
+    currentSlide=(currentSlide+n+total)%total;
+    slides.style.transform=`translateX(${-currentSlide*100}%)`;
+    updateDots();
+  }
+  function updateDots(){
+    document.querySelectorAll(".dot").forEach((dot,i)=>{
+      dot.classList.toggle("active",i===currentSlide);
+    });
+  }
+</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css"> <!-- CSS في الجزء الثاني -->
 </head>
 <body>
 
 <header>
-  <h1 data-ar="أكاديمية إنجليزا" data-en="Engliza Academy">أكاديمية إنجليزا</h1>
-  <div class="lang-toggle" onclick="toggleLang()">AR | EN</div>
+  <h1>أكاديمية إنجليزا</h1>
+  <div>AR | EN</div>
 </header>
 
 <section class="hero">
-  <h2 data-ar="تعلّم بثقة مع أكاديمية إنجليزا" data-en="Learn with Confidence at Engliza Academy">
-    تعلّم بثقة مع أكاديمية إنجليزا
-  </h2>
-  <p data-ar="رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز."
-     data-en="Your journey to mastering English starts here. Clear lessons, a private channel, and practical exercises to help you excel.">
-     رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.
-  </p>
+  <h2>تعلّم بثقة مع أكاديمية إنجليزا</h2>
+  <p>رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.</p>
 </section>
 
 <section class="about">
   <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="about">
-  <p data-ar="نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة."
-     data-en="We provide simplified practical courses to teach English, with direct support, a private channel for students, and exclusive surprises to help you progress steadily.">
-     نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.
-  </p>
+  <p>نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
 </section>
 
 <section class="cards-section">
-  <h3 data-ar="✨ استعرض الأقسام التالية" data-en="✨ Explore Sections">✨ استعرض الأقسام التالية</h3>
+  <h3>✨ استعرض الأقسام التالية</h3>
   <div class="cards">
-    <div class="card" onclick="showDetails('course')"><i class="fa-solid fa-book"></i> <span data-ar="تفاصيل الكورس" data-en="Course Details">تفاصيل الكورس</span></div>
-    <div class="card" onclick="showDetails('reviews')"><i class="fa-solid fa-star"></i> <span data-ar="آراء الطلاب" data-en="Student Reviews">آراء الطلاب</span></div>
-    <div class="card" onclick="showDetails('refund')"><i class="fa-solid fa-credit-card"></i> <span data-ar="سياسة الدفع والاسترجاع" data-en="Refund Policy">سياسة الدفع والاسترجاع</span></div>
-    <div class="card" onclick="showDetails('privacy')"><i class="fa-solid fa-lock"></i> <span data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</span></div>
-    <div class="card" onclick="showDetails('terms')"><i class="fa-solid fa-file-contract"></i> <span data-ar="الشروط والأحكام" data-en="Terms & Conditions">الشروط والأحكام</span></div>
-    <div class="card" onclick="showDetails('contact')"><i class="fa-solid fa-envelope"></i> <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span></div>
+    <div class="card" onclick="showDetails('course')"><i class="fa-solid fa-book"></i>تفاصيل الكورس</div>
+    <div class="card" onclick="showDetails('reviews')"><i class="fa-solid fa-star"></i>آراء الطلاب</div>
+    <div class="card" onclick="showDetails('refund')"><i class="fa-solid fa-credit-card"></i>سياسة الدفع والاسترجاع</div>
+    <div class="card" onclick="showDetails('privacy')"><i class="fa-solid fa-lock"></i>سياسة الخصوصية</div>
+    <div class="card" onclick="showDetails('terms')"><i class="fa-solid fa-file-contract"></i>الشروط والأحكام</div>
   </div>
 </section>
 
 <!-- تفاصيل الكورس -->
 <div id="course" class="details">
-  <h3 data-ar="🚀 تفاصيل الكورس" data-en="🚀 Course Details">🚀 تفاصيل الكورس</h3>
+  <h3>🚀 تفاصيل الكورس</h3>
   <ul>
-    <li data-ar="🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم." data-en="🎯 Covers all levels: from beginner to advanced.">🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم.</li>
-    <li data-ar="👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي." data-en="👩‍🎓 Suitable for all: employees, school & university students.">👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي.</li>
-    <li data-ar="📝 تمارين عملية وتطبيقات يومية." data-en="📝 Practical exercises and daily applications.">📝 تمارين عملية وتطبيقات يومية.</li>
-    <li data-ar="🤝 جروب خاص للطلاب مع متابعة شخصية." data-en="🤝 Private student group with personal follow-up.">🤝 جروب خاص للطلاب مع متابعة شخصية.</li>
-    <li data-ar="🎁 مفاجآت ومواد حصرية داخل القناة." data-en="🎁 Surprises and exclusive materials inside the channel.">🎁 مفاجآت ومواد حصرية داخل القناة.</li>
+    <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم.</li>
+    <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي.</li>
+    <li>📝 تمارين عملية وتطبيقات يومية.</li>
+    <li>🤝 جروب خاص للطلاب مع متابعة شخصية.</li>
+    <li>🎁 مفاجآت ومواد حصرية داخل القناة.</li>
   </ul>
-  <h3 style="color:#38bdf8; margin-top:20px;" data-ar="💲 السعر: 109 دولار" data-en="💲 Price: $109">💲 السعر: 109 دولار</h3>
-  <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;" data-ar="ابدأ رحلتك الآن" data-en="Start Your Journey Now">ابدأ رحلتك الآن</button>
-  <div class="secure-note"><i class="fa-solid fa-lock"></i> <span data-ar="الدفع آمن ومشفّر عبر Paddle" data-en="Secure Payment via Paddle">الدفع آمن ومشفّر عبر Paddle</span></div>
+  <h3 style="color:#38bdf8; margin-top:20px;">💲 سعر الكورس: 109 دولار</h3>
+  <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;">ابدأ رحلتك الآن</button>
+  <div class="secure-note"><i class="fa-solid fa-lock"></i> الدفع آمن ومشفّر عبر Paddle</div>
   <div class="payment-icons">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
   </div>
-  <div class="back" onclick="hideDetails('course')" data-ar="رجوع" data-en="Back">رجوع</div>
+  <div class="back" onclick="hideDetails('course')">رجوع</div>
 </div>
 
-<!-- آراء الطلاب (كاملة) -->
+<!-- آراء الطلاب -->
 <div id="reviews" class="details">
-  <h3 data-ar="⭐ آراء الطلاب" data-en="⭐ Student Reviews">⭐ آراء الطلاب</h3>
-  <div class="cards">
-    <div class="card"><div class="name">إبراهيم | Ibrahim <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>شكراً على كل حاجة الحمد لله، نجحت بواصل دراسة.<br>Thank you for everything, Alhamdulillah I succeeded and continued studying.</p></div>
-    <div class="card"><div class="name">خالد | Khalid <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.<br>Hello Ms. Aisha, before I only understood very little English, but when I took the course with you I learned many new things. Honestly I benefited a lot, and the class was light and the explanation was excellent.</p></div>
-    <div class="card"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس، لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.<br>Miss, I got full marks in the presentation, thank God. I didn’t expect they would give full marks, especially in English. Thank you so much for your notes and pronunciation tips. May Allah reward you.</p></div>
-    <div class="card"><div class="name">فايزة | Faiza <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة.<br>Thank you so much, you made me love English more since the start of the course. I feel progress and I love you teacher.</p></div>
-    <div class="card"><div class="name">علي | Ali <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.<br>Literally, any question that comes to my mind, you answer it before I even ask. The course is amazing.</p></div>
-    <div class="card"><div class="name">سلطان | Sultan <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا، لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة.<br>You quickly realize that someone worked hard to deliver the information in the simplest way possible. Not because Sultan is smart, but because the teacher worked hard to make it easy for everyone.</p></div>
-    <div class="card"><div class="name">منار | Manar <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير.<br>Honestly, worth every penny. The course is flawless and your teaching clearly comes from sincerity.</p></div>
-    <div class="card"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق | Verified</span></div><div class="stars">★★★★★</div><p>٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.<br>50% of my success is because of you. Before, everyone criticized my pronunciation even though I loved the language. I kept practicing and now everyone praises my accent.</p></div>
+  <h3>⭐ آراء الطلاب</h3>
+  <div class="slider">
+    <div class="slides">
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">إبراهيم | Ibrahim <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>شكراً على كل حاجة الحمد لله، نجحت بواصل دراسة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">خالد | Khalid <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>قبل كنت ما أفهم... بصراحة استفدت كثير.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>ميس، جبت في البرزنتيشن درجة كاملة... الله يجزيك الجنة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">فايزه | Faiza <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">علي | Ali <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس رهيب.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">سلطان | Sultan <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>يفهم بسرعة أن في شخص يتعب عشان يوصل المعلومة.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">منار | Manar <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>والله تستاهل كل ريال والكورس ولا غلطة... وتعليمك واضح.</p></div></div>
+      <div class="student"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"><div class="info"><div class="name">مروى | Marwa <span class="verified">✓ مشترك موثّق</span></div><div class="stars">★★★★★</div><p>٥٠٪؜ من نجاحي مس بفضلك والله... والحين الكل يمدح الأكسنت.</p></div></div>
+    </div>
+    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
   </div>
-  <div class="back" onclick="hideDetails('reviews')" data-ar="رجوع" data-en="Back">رجوع</div>
+  <div class="indicators">
+    <span class="dot active" onclick="currentSlide=0;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=1;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=2;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=3;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=4;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=5;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=6;moveSlide(0)"></span>
+    <span class="dot" onclick="currentSlide=7;moveSlide(0)"></span>
+  </div>
+  <div class="back" onclick="hideDetails('reviews')">رجوع</div>
 </div>
 
-<!-- السياسات -->
+<!-- Refund -->
 <div id="refund" class="details">
-  <h3 data-ar="💳 سياسة الدفع والاسترجاع" data-en="💳 Refund Policy">💳 سياسة الدفع والاسترجاع</h3>
-  <p data-ar="نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة."
-     data-en="We guarantee a refund within a specified period if you are not satisfied with the course, under the stated conditions.">
-     نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.
-  </p>
-  <div class="back" onclick="hideDetails('refund')" data-ar="رجوع" data-en="Back">رجوع</div>
+  <h3>💳 سياسة الدفع والاسترجاع</h3>
+  <p>نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
+  <div class="back" onclick="hideDetails('refund')">رجوع</div>
 </div>
 
+<!-- Privacy -->
 <div id="privacy" class="details">
-  <h3 data-ar="🔒 سياسة الخصوصية" data-en="🔒 Privacy Policy">🔒 سياسة الخصوصية</h3>
-  <p data-ar="نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك."
-     data-en="We are committed to protecting your data and not sharing it with any third party without your consent.">
-     نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.
-  </p>
-  <div class="back" onclick="hideDetails('privacy')" data-ar="رجوع" data-en="Back">رجوع</div>
+  <h3>🔒 سياسة الخصوصية</h3>
+  <p>نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
+  <div class="back" onclick="hideDetails('privacy')">رجوع</div>
 </div>
 
+<!-- Terms -->
 <div id="terms" class="details">
-  <h3 data-ar="📄 الشروط والأحكام" data-en="📄 Terms & Conditions">📄 الشروط والأحكام</h3>
+  <h3>📄 الشروط والأحكام</h3>
   <ul>
-    <li data-ar="الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك."
-        data-en="The course is digital and delivered instantly after payment, so no refunds after activation.">
-        الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.
-    </li>
-    <li data-ar="الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه."
-        data-en="The subscription is personal only, and sharing or leaking the content is prohibited.">
-        الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه.
-    </li>
-    <li data-ar="الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب."
-        data-en="The academy reserves the right to modify or update the content for the students' benefit.">
-        الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب.
-    </li>
-    <li data-ar="في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض."
-        data-en="If a student violates the rules (such as leaking content), the academy has the right to cancel access without compensation.">
-        في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.
-    </li>
-    <li data-ar="بدفعك للكورس فأنت توافق على هذه الشروط"
-        data-en="By paying for the course, you agree to these terms.">
-        بدفعك للكورس فأنت توافق على هذه الشروط
-    </li>
+    <li>الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.</li>
+    <li>الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه.</li>
+    <li>الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب.</li>
+    <li>في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.</li>
+    <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
   </ul>
-  <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;" data-ar="أوافق وأشتري الآن" data-en="Agree & Buy Now">أوافق وأشتري الآن</button>
-  <div class="secure-note"><i class="fa-solid fa-lock"></i> <span data-ar="الدفع آمن ومشفّر عبر Paddle" data-en="Secure Payment via Paddle">الدفع آمن ومشفّر عبر Paddle</span></div>
+  <button onclick="buyNow()" class="btn-alt" style="margin-top:15px;">أوافق وأشتري الآن</button>
+  <div class="secure-note"><i class="fa-solid fa-lock"></i> الدفع آمن ومشفّر عبر Paddle</div>
   <div class="payment-icons">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
   </div>
-  <div class="back" onclick="hideDetails('terms')" data-ar="رجوع" data-en="Back">رجوع</div>
-</div>
-
-<!-- تواصل معنا -->
-<div id="contact" class="details">
-  <h3 data-ar="✉️ تواصل معنا" data-en="✉️ Contact Us">✉️ تواصل معنا</h3>
-  <p data-ar="إذا واجهت أي مشكلة أو لديك استفسار تواصل معنا"
-     data-en="If you face any problem or have inquiries, contact us">
-     إذا واجهت أي مشكلة أو لديك استفسار تواصل معنا
-  </p>
-  <div class="payment-icons">
-    <a href="mailto:englizaacademy@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"></a>
-    <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
-    </a>
-  </div>
-  <div class="back" onclick="hideDetails('contact')" data-ar="رجوع" data-en="Back">رجوع</div>
+  <div class="back" onclick="hideDetails('terms')">رجوع</div>
 </div>
 
 <footer>
-  <p data-ar="© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة" data-en="© 2025 Engliza Academy – All Rights Reserved">
-    © 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة
-  </p>
+  <p>© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
 </footer>
 
-<script src="script.js"></script> <!-- JS في الجزء الثاني -->
 </body>
 </html>
