@@ -28,7 +28,7 @@
   .details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
   .back{margin-top:15px;display:inline-block;padding:10px 18px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
 
-  /* زر الشراء */
+  /* زر الشراء الذهبي */
   .btn-alt{background:#FACC15;color:#000;padding:14px 24px;border-radius:10px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 20px rgba(250,204,21,.7);font-size:1.05em;}
   .btn-alt:hover{background:#eab308;}
 
@@ -131,6 +131,19 @@
 <!-- آراء الطلاب -->
 <div id="reviews" class="details">
   <h3 id="reviews-title">⭐ آراء الطلاب</h3>
+
+  <!-- CTA و زر شراء في بداية القسم -->
+  <div style="text-align:center; margin:35px 0 20px;">
+    <p id="reviews-cta1-text" style="font-size:1.1em; margin-bottom:10px;">اشترك اليوم وخلك قصّة النجاح الجاية🚀⭐️</p>
+    <button onclick="buyNow()" class="btn-alt" id="reviews-cta1-btn">ابدأ الآن</button>
+    <div class="secure-pay">🔒 الدفع آمن ومشفر عبر Paddle</div>
+    <div class="payment-icons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+    </div>
+  </div>
+
   <div class="reviews-grid" id="reviews-grid">
     <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">إ</div><div><div class="name">إبراهيم | Ibrahim</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">شكراً على كل حاجةالحمد لله، نجحت بواصل دراسة.</div></div>
     <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">خ</div><div><div class="name">خالد | Khalid</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.</div></div>
@@ -141,6 +154,19 @@
     <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">منار | Manar</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير</div></div>
     <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div></div>
   </div>
+
+  <!-- CTA و زر شراء في نهاية القسم -->
+  <div style="text-align:center; margin:30px 0;">
+    <p id="reviews-cta2-text" style="font-size:1.1em; margin-bottom:10px;">اشترك اليوم وخلك قصّة النجاح الجاية🚀⭐️</p>
+    <button onclick="buyNow()" class="btn-alt" id="reviews-cta2-btn">ابدأ الآن</button>
+    <div class="secure-pay">🔒 الدفع آمن ومشفر عبر Paddle</div>
+    <div class="payment-icons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+    </div>
+  </div>
+
   <div class="back">رجوع</div>
 </div>
 
@@ -187,6 +213,7 @@
 
   <div class="back">رجوع</div>
 </div>
+
 <!-- Story -->
 <div id="story" class="details">
   <h3 id="story-title">⭐ قصتي مع اللغة الإنجليزية</h3>
@@ -222,7 +249,7 @@
   <div class="back">رجوع</div>
 </div>
 
-<!-- FAQ -->
+<!-- FAQ بالنص الجديد -->
 <div id="faq" class="details">
   <h3 id="faq-title">❓ الأسئلة الشائعة</h3>
   <ul id="faq-text" class="faq-list" style="list-style:none;padding:0;">
@@ -287,34 +314,60 @@
       document.getElementById("card-story").innerText="⭐ My English Story";
       document.getElementById("card-faq").innerText="⁉️ FAQ";
 
+      /* Course */
       document.getElementById("course-title").innerText="🚀 Course Details";
+      document.getElementById("course-text").innerHTML=`
+        <li>🎯 Covers all levels: beginner, intermediate, and advanced learners.</li>
+        <li>👩‍🎓 Suitable for everyone: employees, school or university students, any age group.</li>
+        <li>📝 Practical exercises and daily applications to live the language, not just memorize it.</li>
+        <li>🤝 Private student group for questions, discussions, and my personal support.</li>
+        <li>🎁 Surprises and exclusive materials inside the channel.</li>
+        <li>🔥 Why start now? Every day you delay = a missed step!</li>
+        <li>📌 Limited seats – closes once full.</li>
+        <li>💡 Don’t waste time on scattered videos – this is your true journey.</li>`;
       document.getElementById("course-price").innerText="💲 Course Price: 109 USD";
       document.getElementById("buy-btn").innerText="Start Your Journey Now";
 
+      /* Reviews title + CTAs (top/bottom) */
       document.getElementById("reviews-title").innerText="⭐ Student Reviews";
+      document.getElementById("reviews-cta1-text").innerText="Subscribe today and be the next success story 🚀⭐️";
+      document.getElementById("reviews-cta1-btn").innerText="Start Now";
+      document.getElementById("reviews-cta2-text").innerText="Subscribe today and be the next success story 🚀⭐️";
+      document.getElementById("reviews-cta2-btn").innerText="Start Now";
+
+      /* Policies */
       document.getElementById("refund-title").innerText="💳 Refund Policy";
       document.getElementById("refund-text").innerText="We guarantee a refund within a certain period if you are not satisfied with the course.";
       document.getElementById("privacy-title").innerText="🔒 Privacy Policy";
       document.getElementById("privacy-text").innerText="We commit to protecting your data and not sharing it without your permission.";
       document.getElementById("terms-title").innerText="📄 Terms & Conditions";
+      document.getElementById("terms-list").innerHTML=`
+        <li>The course is digital and delivered immediately after payment, so no refunds after activation.</li>
+        <li>Subscription is personal only. Sharing or leaking content is prohibited.</li>
+        <li>The Academy has the right to update or modify content in students’ best interest.</li>
+        <li>If a student breaks the rules (e.g., leaks content), the Academy may revoke access without compensation.</li>
+        <li>By paying for the course, you agree to these terms.</li>`;
       document.getElementById("terms-btn").innerText="Agree & Buy Now";
 
+      /* Story */
       document.getElementById("story-title").innerText="⭐ My English Story";
       document.getElementById("story-text").innerHTML=`To find the right path you must sometimes get lost first…<br>But I won’t let you get lost 👌🏻.<br>I designed this course based on my own strategy, the one that changed my level and many students’ lives.<br><br>From a struggling student… to the top of my school in English.<br>I was in your place, confused, failing exams, but persistence helped me build an easy fast learning strategy.<br><br>That’s how Engliza Academy was born: to shorten your path and open new horizons 🚀.<br><br>🔥 The decisive step is now:<br>Don’t delay! Others started today and after months will speak fluently… what about you?`;
       document.getElementById("story-btn").innerText="Start Your Journey Now";
 
+      /* FAQ */
       document.getElementById("faq-title").innerText="❓ FAQ";
       document.getElementById("faq-text").innerHTML=`
-        <li><strong>📌 Is the course suitable if I start from zero?</strong><br>Absolutely 🙌 Even if you don’t know a single word, it takes you step by step until you speak and write confidently.</li>
-        <li><strong>📌 What if I have some basics?</strong><br>This is where it gets fun ✨, because you’ll find exercises and methods that take you from “I know a little” to “I use English daily fluently.”</li>
-        <li><strong>📌 What if I’m advanced?</strong><br>You’ll find advanced content: academic writing, formal emails, American & British expressions… moving you from just “good” to “a true professional.” 🚀</li>
-        <li><strong>📌 Suitable for students and employees?</strong><br>100% ✅ Whether you work or study, the course is flexible anytime.</li>
-        <li><strong>📌 How do I receive the course after payment?</strong><br>You’ll instantly get a private Telegram link with all lessons + exercises + student group.</li>
-        <li><strong>📌 Is there personal support?</strong><br>Yes 🎯 Not like other courses that leave you alone. You’ll have a group where you ask and I reply + peer discussions.</li>
-        <li><strong>📌 How long is access?</strong><br>You’ll have 2 full months of access. If you want to continue, you can renew.</li>
-        <li><strong>📌 Is the price worth it?</strong><br>Absolutely 👌 You’re not just paying for lessons, you’re investing in yourself: a clear plan, personal support, direct guidance, and development that opens doors for study, work, and travel opportunities.</li>`;
+        <li><strong>📌 Is the course suitable if I start from zero?</strong><br>Absolutely! 🙌 Even if you know no English, it takes you step-by-step until you speak and write confidently.</li>
+        <li><strong>📌 What if I have some basics?</strong><br>This is where it gets fun ✨ — you’ll find exercises and methods that take you quickly from “I know a little” to “I use English daily fluently.”</li>
+        <li><strong>📌 What if I’m advanced?</strong><br>Advanced content: academic writing, formal emails, American & British expressions — moving you from “good” to a real pro. 🚀</li>
+        <li><strong>📌 Does it work for students and employees?</strong><br>100% ✅ Flexible — follow it anytime.</li>
+        <li><strong>📌 How do I receive it after payment?</strong><br>You instantly get a private Telegram link with all lessons + exercises + the student group.</li>
+        <li><strong>📌 Is there personal support?</strong><br>Yes 🎯 Not like courses that leave you alone — you have a group, ask and I answer + peer discussions.</li>
+        <li><strong>📌 How long is access?</strong><br>Two full months — renew if you want to continue.</li>
+        <li><strong>📌 Is the price worth it?</strong><br>Absolutely 👌 You’re investing in yourself: a clear plan, personal follow-up, direct support, and development that opens doors for study, work, and travel.</li>`;
       document.getElementById("faq-btn").innerText="Start Learning Now";
 
+      /* Common */
       document.querySelectorAll('.contact-title').forEach(h=>h.innerText="📩 Contact Us");
       document.querySelectorAll('.secure-pay').forEach(s=>s.innerText="🔒 Secure payment via Paddle");
       document.querySelectorAll('.back').forEach(b=>b.innerText="Back");
