@@ -33,29 +33,14 @@
   ul.course-list {list-style-type:"✅ ";padding-right:20px;}
   ul.course-list li{margin-bottom:10px;}
 
-  .secure-payment{color:#38bdf8;margin-top:10px;font-weight:bold;text-align:center;}
-  .icon-cards{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:15px;}
-  .icon-card{background:#1e293b;border-radius:12px;padding:12px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:.3s;}
-  .icon-card:hover{box-shadow:0 0 25px rgba(37,99,235,.9);transform:translateY(-3px);}
-  .icon-card img{width:50px;height:auto;display:block;}
+  .secure-payment{color:#38bdf8;margin-top:15px;font-weight:bold;text-align:center;}
+  .payment-icons{display:flex;justify-content:center;gap:18px;margin-top:10px;}
+  .payment-icons img{width:50px;height:auto;}
 
   .contact-info{margin-top:20px;font-size:0.95em;text-align:center;}
-  .contact-info p{margin:8px 0;}
-  .contact-info .icon-cards{margin-top:10px;}
-
-  /* Reviews grid */
-  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-  .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
-  .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
-  .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-  .avatar{width:40px;height:40px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;}
-  .name{font-weight:bold;}
-  .verified{color:#38bdf8;font-size:0.8em;}
-  .stars{color:gold;margin:5px 0;}
-  .review-text{font-size:0.9em;white-space:pre-line;}
-  .quote-icon{position:absolute;top:15px;right:15px;font-size:20px;opacity:0.3;}
-
-  footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
+  .contact-info p{margin:8px 0;color:#a78bfa;font-weight:bold;}
+  .contact-icons{display:flex;justify-content:center;gap:25px;margin-top:10px;}
+  .contact-icons img{width:26px;height:26px;vertical-align:middle;margin-left:6px;}
 </style>
 </head>
 <body>
@@ -98,24 +83,79 @@
     <li>📌 المقاعد محدودة – العدد يغلق بمجرد الاكتفاء بالطلاب.</li>
     <li>💡 لا تضيّع وقتك في فيديوهات متفرقة وتجارب ناقصة – هنا تبدأ رحلتك الحقيقية.</li>
   </ul>
-  <h3 style="color:#38bdf8;" id="course-price">💲 سعر الكورس: 109 دولار</h3>
-  <button onclick="buyNow()" class="btn-alt" id="buy-btn">ابدأ رحلتك الآن</button>
+  <h3 style="color:#38bdf8;margin-bottom:15px;" id="course-price">💲 سعر الكورس: 109 دولار</h3>
+  <button onclick="buyNow()" class="btn-alt" id="buy-btn" style="margin-bottom:15px;">ابدأ رحلتك الآن</button>
   <div class="secure-payment" id="secure-text">🔒 الدفع آمن ومشفر عبر بادل</div>
-  <div class="icon-cards">
-    <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa"></div>
-    <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="MasterCard"></div>
-    <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal"></div>
+  <div class="payment-icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa" id="visa-icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="MasterCard" id="mc-icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal" id="paypal-icon">
   </div>
   <div class="contact-info">
     <p id="contact-title">📩 إذا واجهتك أي مشكلة أو لديك استفسار تواصل معنا عبر:</p>
-    <div class="icon-cards">
-      <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"><p>englizaacademy@gmail.com</p></div>
-      <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"><p><a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p></div>
+    <div class="contact-icons">
+      <span><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail" id="gmail-icon"> <span id="gmail-text">englizaacademy@gmail.com</span></span>
+      <span><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" id="ig-icon"> <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank" id="ig-text">@_engliza_academy</a></span>
     </div>
   </div>
-  <div class="back" onclick="hideDetails('course')">رجوع</div>
+  <div class="back" onclick="hideDetails('course')" id="back-course">رجوع</div>
 </div>
-  <!-- آراء الطلاب -->
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Initialize({ seller: 243729 });
+
+  function showDetails(id){
+    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
+    const el=document.getElementById(id);
+    el.style.display='block';
+    window.scrollTo({top:el.offsetTop-20,behavior:"smooth"});
+  }
+  function hideDetails(id){document.getElementById(id).style.display='none';}
+
+  function buyNow(){
+    Paddle.Checkout.open({
+      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
+    });
+  }
+
+  function toggleLang(){
+    let html=document.documentElement;
+    if(html.lang==="ar"){
+      html.lang="en"; html.dir="ltr";
+      document.getElementById("logo-text").innerText="Engliza Academy";
+      document.getElementById("hero-title").innerText="Learn with Confidence at Engliza Academy";
+      document.getElementById("hero-desc").innerText="Your journey to mastering English starts here. Clear lessons, private channel, and practice to achieve excellence.";
+      document.getElementById("about-text").innerText="We provide simplified practical English courses, with direct support, a private student channel, and exclusive surprises.";
+      document.getElementById("card-course").innerText="📘 Course Details";
+      document.getElementById("card-reviews").innerText="⭐ Student Reviews";
+      document.getElementById("card-refund").innerText="💳 Payment & Refund Policy";
+      document.getElementById("card-privacy").innerText="🔒 Privacy Policy";
+      document.getElementById("card-terms").innerText="📄 Terms & Conditions";
+      document.getElementById("course-title").innerText="🚀 Course Details";
+      document.getElementById("course-text").innerHTML=`
+        <li>🎯 Covers all levels: beginner, intermediate, and advanced learners.</li>
+        <li>👩‍🎓 Suitable for everyone: employees, school or university students, any age group.</li>
+        <li>📝 Practical exercises and daily applications to live the language, not just memorize it.</li>
+        <li>🤝 Private group for students: ask questions, discuss with classmates, and get my personal follow-up.</li>
+        <li>🎁 Exclusive surprises and materials inside the channel.</li>
+        <li>🔥 Why start now? Every day you delay = a lost step!</li>
+        <li>📌 Limited seats – enrollment closes once full.</li>
+        <li>💡 Don’t waste time on scattered videos – here your real journey begins.</li>`;
+      document.getElementById("course-price").innerText="💲 Course Price: 109 USD";
+      document.getElementById("buy-btn").innerText="Start Your Journey Now";
+      document.getElementById("secure-text").innerText="🔒 Secure & Encrypted Payment via Paddle";
+      document.getElementById("contact-title").innerText="📩 If you face any problem or have questions, contact us via:";
+      document.getElementById("gmail-text").innerText="englizaacademy@gmail.com";
+      document.getElementById("ig-text").innerText="@_engliza_academy";
+      document.getElementById("back-course").innerText="Back";
+      document.getElementById("lang-btn").innerText="AR";
+    } else {
+      location.reload();
+    }
+  }
+</script>
+<!-- آراء الطلاب -->
 <div id="reviews" class="details">
   <h3 id="reviews-title">⭐ آراء الطلاب</h3>
   <div class="reviews-grid" id="reviews-grid">
@@ -152,21 +192,21 @@
       <div class="stars">★★★★★</div><div class="review-text">٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div>
     </div>
   </div>
-  <div class="back" onclick="hideDetails('reviews')">رجوع</div>
+  <div class="back" onclick="hideDetails('reviews')" id="back-reviews">رجوع</div>
 </div>
 
 <!-- Refund -->
 <div id="refund" class="details">
   <h3 id="refund-title">💳 سياسة الدفع والاسترجاع</h3>
   <p id="refund-text">نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
-  <div class="back" onclick="hideDetails('refund')">رجوع</div>
+  <div class="back" onclick="hideDetails('refund')" id="back-refund">رجوع</div>
 </div>
 
 <!-- Privacy -->
 <div id="privacy" class="details">
   <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
   <p id="privacy-text">نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
-  <div class="back" onclick="hideDetails('privacy')">رجوع</div>
+  <div class="back" onclick="hideDetails('privacy')" id="back-privacy">رجوع</div>
 </div>
 
 <!-- Terms -->
@@ -179,68 +219,54 @@
     <li>في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.</li>
     <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
   </ul>
-  <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
+  <button onclick="buyNow()" class="btn-alt" id="terms-btn" style="margin-bottom:15px;">أوافق وأشتري الآن</button>
   <div class="secure-payment" id="secure-text-terms">🔒 الدفع آمن ومشفر عبر بادل</div>
-  <div class="icon-cards">
-    <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa"></div>
-    <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="MasterCard"></div>
-    <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal"></div>
+  <div class="payment-icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa" id="visa-icon-terms">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="MasterCard" id="mc-icon-terms">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal" id="paypal-icon-terms">
   </div>
-  <div class="contact-info" id="contact-info-terms">
+  <div class="contact-info">
     <p id="contact-title-terms">📩 إذا واجهتك أي مشكلة أو لديك استفسار تواصل معنا عبر:</p>
-    <div class="icon-cards">
-      <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"><p>englizaacademy@gmail.com</p></div>
-      <div class="icon-card"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"><p><a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank">@_engliza_academy</a></p></div>
+    <div class="contact-icons">
+      <span><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail"> <span id="gmail-text-terms">englizaacademy@gmail.com</span></span>
+      <span><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr" target="_blank" id="ig-text-terms">@_engliza_academy</a></span>
     </div>
   </div>
-  <div class="back" onclick="hideDetails('terms')">رجوع</div>
+  <div class="back" onclick="hideDetails('terms')" id="back-terms">رجوع</div>
 </div>
 
 <footer>
   <p id="footer-text">© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
 </footer>
 
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
-  Paddle.Initialize({ seller: 243729 });
-
-  function showDetails(id){
-    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
-    const el=document.getElementById(id);
-    el.style.display='block';
-    window.scrollTo({top:el.offsetTop-20,behavior:"smooth"});
-  }
-  function hideDetails(id){document.getElementById(id).style.display='none';}
-
-  function buyNow(){
-    Paddle.Checkout.open({
-      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
-    });
-  }
-
   function toggleLang(){
     let html=document.documentElement;
     if(html.lang==="ar"){
       html.lang="en"; html.dir="ltr";
-      document.getElementById("logo-text").innerText="Engliza Academy";
-      document.getElementById("hero-title").innerText="Learn with Confidence at Engliza Academy";
-      document.getElementById("hero-desc").innerText="Your journey to mastering English starts here.";
-      document.getElementById("about-text").innerText="We provide practical English courses with support, private student channel, and surprises.";
-      document.getElementById("card-course").innerText="📘 Course Details";
-      document.getElementById("card-reviews").innerText="⭐ Student Reviews";
-      document.getElementById("card-refund").innerText="💳 Refund Policy";
-      document.getElementById("card-privacy").innerText="🔒 Privacy Policy";
-      document.getElementById("card-terms").innerText="📄 Terms & Conditions";
-      document.getElementById("course-title").innerText="🚀 Course Details";
-      document.getElementById("course-price").innerText="💲 Course Price: 109 USD";
-      document.getElementById("buy-btn").innerText="Start Your Journey Now";
-      document.getElementById("secure-text").innerText="🔒 Secure & Encrypted Payment via Paddle";
-      document.getElementById("secure-text-terms").innerText="🔒 Secure & Encrypted Payment via Paddle";
-      document.getElementById("contact-title").innerText="📩 If you face any issue or have a question, contact us via:";
-      document.getElementById("contact-title-terms").innerText="📩 If you face any issue or have a question, contact us via:";
+      document.getElementById("reviews-title").innerText="⭐ Student Reviews";
+      document.getElementById("back-reviews").innerText="Back";
+      document.getElementById("refund-title").innerText="💳 Payment & Refund Policy";
+      document.getElementById("refund-text").innerText="We guarantee a refund within a certain period if you are not satisfied with the course.";
+      document.getElementById("back-refund").innerText="Back";
+      document.getElementById("privacy-title").innerText="🔒 Privacy Policy";
+      document.getElementById("privacy-text").innerText="We commit to protecting your data and never sharing it with third parties.";
+      document.getElementById("back-privacy").innerText="Back";
+      document.getElementById("terms-title").innerText="📄 Terms & Conditions";
+      document.getElementById("terms-list").innerHTML=`
+        <li>The course is digital and delivered immediately after payment, so no refund after activation.</li>
+        <li>Subscription is personal only. Sharing or leaking content is prohibited.</li>
+        <li>The academy has the right to update content for the benefit of students.</li>
+        <li>If rules are broken (like content leaking), access can be revoked without compensation.</li>
+        <li>By paying for the course, you agree to these terms.</li>`;
       document.getElementById("terms-btn").innerText="Agree & Buy Now";
+      document.getElementById("secure-text-terms").innerText="🔒 Secure & Encrypted Payment via Paddle";
+      document.getElementById("contact-title-terms").innerText="📩 If you face any problem or have questions, contact us via:";
+      document.getElementById("gmail-text-terms").innerText="englizaacademy@gmail.com";
+      document.getElementById("ig-text-terms").innerText="@_engliza_academy";
+      document.getElementById("back-terms").innerText="Back";
       document.getElementById("footer-text").innerText="© 2025 Engliza Academy – All Rights Reserved";
-      document.getElementById("lang-btn").innerText="AR";
     } else {
       location.reload();
     }
