@@ -8,209 +8,89 @@
 <style>
   body {font-family:"Tahoma","Arial",sans-serif;margin:0;background:#0f172a;color:#f1f5f9;line-height:1.6;}
   h1,h2,h3 {margin:0}
-  header {background:#1e293b;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 15px rgba(37,99,235,.4);}
-  header h1{font-size:20px;}
-
-  .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
-  .hero h2{font-size:32px;margin-bottom:15px;}
-  .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
-
-  .about{display:flex;align-items:center;justify-content:center;gap:20px;padding:60px 20px;background:#1e293b;box-shadow:inset 0 0 30px rgba(37,99,235,.3);}
-  .about img{width:150px;border-radius:12px;}
-  .about p{max-width:500px;color:#e2e8f0;}
-
   .cards-section{padding:60px 20px;text-align:center;}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
   .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
   .card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
-
   .details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
   .back{margin-top:15px;display:inline-block;padding:8px 14px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
-  .btn-alt{background:#FACC15;color:#000;padding:14px 22px;border-radius:8px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 15px rgba(250,204,21,.6);}
+  .btn-alt{background:#FACC15;color:#000;padding:12px 20px;border-radius:8px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 15px rgba(250,204,21,.6);}
   .btn-alt:hover{background:#eab308;}
-  .contact{margin-top:20px;font-size:.9em;}
-  .contact a{color:#38bdf8;text-decoration:none;}
-
-  ul.course-list {list-style-type:"✅ ";padding-right:20px;}
-  ul.course-list li{margin-bottom:10px;}
-
-  /* Reviews grid */
-  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-  .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
-  .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
-  .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-  .avatar{width:40px;height:40px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;}
-  .name{font-weight:bold;}
-  .verified{color:#38bdf8;font-size:0.8em;}
-  .stars{color:gold;margin:5px 0;}
-  .review-text{font-size:0.9em;white-space:pre-line;}
-  .quote-icon{position:absolute;top:15px;right:15px;font-size:20px;opacity:0.3;}
-
+  ul {text-align:left;margin:auto;max-width:600px;}
+  ul li{margin-bottom:10px;}
+  .secure-pay{margin-top:15px;color:#38bdf8;font-weight:bold;}
+  .payment-icons img{height:28px;margin:5px;}
   footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
 </style>
 </head>
 <body>
 
-<header>
-  <h1 id="logo-text">Engliza Academy</h1>
-</header>
-
-<section class="hero">
-  <h2 id="hero-title">Learn with Confidence at Engliza Academy</h2>
-  <p id="hero-desc">Your journey to mastering English starts here. Clear lessons, a private student channel, and practical exercises to achieve excellence.</p>
-</section>
-
-<section class="about">
-  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="">
-  <p id="about-text">We provide simple, practical English courses with direct support, a private channel for students, and exclusive surprises to help you progress step by step.</p>
-</section>
-
 <section class="cards-section">
   <div class="cards">
-    <div class="card" onclick="showDetails('course')" id="card-course">📘 Course Details</div>
-    <div class="card" onclick="showDetails('reviews')" id="card-reviews">⭐ Student Reviews</div>
-    <div class="card" onclick="showDetails('refund')" id="card-refund">💳 Refund Policy</div>
-    <div class="card" onclick="showDetails('privacy')" id="card-privacy">🔒 Privacy Policy</div>
-    <div class="card" onclick="showDetails('terms')" id="card-terms">📄 Terms & Conditions</div>
-    <div class="card" onclick="showDetails('story')" id="card-story">⭐ My English Journey</div>
-    <div class="card" onclick="showDetails('faq')" id="card-faq">⁉️ FAQs</div>
+    <div class="card" onclick="showDetails('course')">📘 Course Content Overview</div>
+    <div class="card" onclick="showDetails('terms')">📄 Terms & Conditions</div>
+    <div class="card" onclick="showDetails('privacy')">🔒 Privacy Policy</div>
+    <div class="card" onclick="showDetails('refund')">💳 Refund Policy</div>
   </div>
 </section>
 
-<!-- Course Details -->
+<!-- Course Content -->
 <div id="course" class="details">
-  <h3 id="course-title">🚀 Course Details</h3>
-  <ul id="course-text" class="course-list">
-    <li>🎯 Covers all levels: Beginner, Intermediate, and Advanced learners who want to improve further.</li>
-    <li>👩‍🎓 Suitable for everyone: employees, school/university students, any age group.</li>
-    <li>📝 Practical exercises and daily applications to help you live the language, not just memorize it.</li>
-    <li>🤝 Private student group for questions, discussions, and my personal follow-up.</li>
-    <li>🎁 Surprises and exclusive materials inside the channel.</li>
-    <li>🔥 Why start now? Every day you delay = a missed step!</li>
-    <li>📌 Limited seats – closes once the spots are full.</li>
-    <li>💡 Don’t waste time on scattered videos – this is your real journey.</li>
+  <h3>📘 Course Content Overview</h3>
+  <ul>
+    <li>Beginner Level: Alphabet, basics, greetings, simple sentences.</li>
+    <li>Intermediate Level: Grammar, vocabulary, listening tasks.</li>
+    <li>Advanced Level: Business emails, British vs. American style, presentations.</li>
+    <li>Practice: Daily exercises + student group on Telegram.</li>
+    <li>Bonus: Surprise PDFs, mini-dictionary, and extra materials.</li>
   </ul>
-  <h3 style="color:#38bdf8;" id="course-price">💲 Course Price: 109 USD</h3>
-  <button onclick="buyNow()" class="btn-alt" id="buy-btn">Start Your Journey Now</button>
+  <h3 style="color:#38bdf8;">💲 Course Price: 109 USD</h3>
+  <button onclick="buyNow()" class="btn-alt">Start Your Journey Now</button>
   <div class="secure-pay">🔒 Secure & Encrypted Payment via Paddle</div>
   <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height:28px;margin:5px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
   </div>
   <div class="back" onclick="hideDetails('course')">Back</div>
 </div>
 
-<!-- Student Reviews -->
-<div id="reviews" class="details">
-  <h3 id="reviews-title">⭐ Student Reviews</h3>
-  <div class="reviews-grid" id="reviews-grid">
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">I</div><div><div class="name">Ibrahim</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Thanks for everything! Alhamdulillah, I succeeded and continued my studies.</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">K</div><div><div class="name">Khalid</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Hello Miss Aisha, before I couldn’t understand English except for very simple things. After joining your course, I learned so much and benefited a lot. The classes are light and your explanations are perfect!</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">M</div><div><div class="name">Marwa</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Miss, I got full marks in my presentation! I never expected that, especially in English class. Thank you so much for your corrections and guidance, you motivated me to aim for full marks in all subjects.</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">F</div><div><div class="name">Faiza</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Thank you so much! You made me love English even more. From the start of the course I felt comfortable, and I see real progress. Love you teacher ❤️</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">A</div><div><div class="name">Ali</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Literally every question I had, you answered it before I even asked. The course is amazing!</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">S</div><div><div class="name">Sultan</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">You can feel that someone worked hard to deliver the knowledge in the simplest way. It’s not just my talent, but your effort that made me understand everything so easily.</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">M</div><div><div class="name">Manar</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Worth every penny! The course is flawless and your teaching shows true dedication.</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">M</div><div><div class="name">Marwa</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">50% of my success is thanks to you Miss. My pronunciation was weak and everyone criticized me. Now everyone praises my accent and fluency!</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">A</div><div><div class="name">Afrah</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">I joined the course because my friend Tasneem praised you and your English skills a lot 🥰</div></div>
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">S</div><div><div class="name">Sara</div><div class="verified">✓ Verified Student</div></div></div><div class="stars">★★★★★</div><div class="review-text">Honestly, this course is totally worth it + thanks for the honesty!</div></div>
-  </div>
-  <p style="text-align:center; margin:30px 0; font-size:1.1em;">Be the next success story 🚀⭐️</p>
-  <button onclick="buyNow()" class="btn-alt">Start Now</button>
-  <div class="secure-pay">🔒 Secure & Encrypted Payment via Paddle</div>
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height:28px;margin:5px;">
-  </div>
-  <div class="back" onclick="hideDetails('reviews')">Back</div>
-</div>
-<!-- Refund -->
-<div id="refund" class="details">
-  <h3 id="refund-title">💳 Refund Policy</h3>
-  <p id="refund-text">We guarantee a refund within the specified period if you are not satisfied with the course, according to the conditions described. 
-  <br><br><strong>Note:</strong> This is a digital product. Once access is granted, it cannot be refunded or returned.</p>
-  <div class="back" onclick="hideDetails('refund')">Back</div>
+<!-- Terms -->
+<div id="terms" class="details">
+  <h3>📄 Terms & Conditions</h3>
+  <ul>
+    <li>Access is personal only (no sharing).</li>
+    <li>Access valid for 2 months from purchase.</li>
+    <li>You agree not to redistribute or copy content.</li>
+    <li>Refund policy applies.</li>
+  </ul>
+  <div class="back" onclick="hideDetails('terms')">Back</div>
 </div>
 
 <!-- Privacy -->
 <div id="privacy" class="details">
-  <h3 id="privacy-title">🔒 Privacy Policy</h3>
-  <p id="privacy-text">We are committed to protecting your data and never sharing it with third parties without your permission.</p>
+  <h3>🔒 Privacy Policy</h3>
+  <ul>
+    <li>We only collect your name + email for delivering the course.</li>
+    <li>Your payment is processed securely by Paddle.</li>
+    <li>We don’t share your data with third parties.</li>
+    <li>You can contact us anytime to update or remove your data.</li>
+  </ul>
   <div class="back" onclick="hideDetails('privacy')">Back</div>
 </div>
 
-<!-- Terms -->
-<div id="terms" class="details">
-  <h3 id="terms-title">📄 Terms & Conditions</h3>
-  <ul id="terms-list">
-    <li>The course is digital and delivered immediately after payment, so no refund after activation.</li>
-    <li>The subscription is personal only. Sharing or leaking the content is strictly prohibited.</li>
-    <li>The academy has the right to update or modify the content to serve the students' interests.</li>
-    <li>If rules are broken (such as leaking the content), access will be revoked without compensation.</li>
-    <li>By paying for the course, you agree to these terms.</li>
+<!-- Refund -->
+<div id="refund" class="details">
+  <h3>💳 Refund Policy</h3>
+  <ul>
+    <li>Refunds are available within 7 days of purchase, only if you haven’t accessed the Telegram course yet.</li>
+    <li>Once access is granted, no refunds (since it’s a digital product).</li>
   </ul>
-  <button onclick="buyNow()" class="btn-alt" id="terms-btn">Agree & Buy Now</button>
-  <div class="secure-pay">🔒 Secure & Encrypted Payment via Paddle</div>
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height:28px;margin:5px;">
-  </div>
-  <div class="back" onclick="hideDetails('terms')">Back</div>
-</div>
-
-<!-- My Story -->
-<div id="story" class="details">
-  <h3 id="story-title">⭐ My English Journey</h3>
-  <p id="story-text">
-    To find the right path, sometimes you must first get lost…<br>
-    But I won’t let you get lost 👌🏻.<br>
-    That’s why I designed this course based on my own strategy that changed my English level and transformed the lives of many students. <br><br>
-    From a struggling student… to the top of my school in English.<br>
-    I was once in your place, feeling lost without a clear path. I used to fail exams, but with persistence I developed a simple and fast learning strategy.<br><br>
-    That’s how Engliza Academy was born: <br>
-    To shorten the road for you and open new horizons 🚀.<br><br>
-    🔥 The critical step is now:<br>
-    Don’t delay! Others started today, and in a few months they’ll be fluent… what about you?
-  </p>
-
-  <button onclick="buyNow()" class="btn-alt" id="story-btn">Start Your Journey Now</button>
-  <div class="secure-pay">🔒 Secure & Encrypted Payment via Paddle</div>
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height:28px;margin:5px;">
-  </div>
-  <div class="back" onclick="hideDetails('story')">Back</div>
-</div>
-
-<!-- FAQ -->
-<div id="faq" class="details">
-  <h3 id="faq-title">❓ Frequently Asked Questions</h3>
-  <ul id="faq-text" class="faq-list" style="list-style:none;padding:0;">
-    <li><strong>📌 Is this course suitable if I start from zero?</strong><br>Yes! 🙌 Even if you don’t know a single word, the course takes you step by step until you can speak and write with confidence.</li>
-    <li><strong>📌 What if I have some basics?</strong><br>This is where the fun begins ✨. You’ll find exercises and methods to quickly raise your level from “I know a little” to “I use English daily with fluency.”</li>
-    <li><strong>📌 And if I’m advanced?</strong><br>You’ll find advanced content: academic writing, professional emails, British & American expressions… so you can move from “good” to “professional 🚀.”</li>
-    <li><strong>📌 Is this course useful for both students and employees?</strong><br>100% ✅ Whether you have work or studies, the course is flexible and you can follow it at any time.</li>
-    <li><strong>📌 How will I receive the course after payment?</strong><br>Immediately after payment, you get a private Telegram link with all lessons + exercises + student group.</li>
-    <li><strong>📌 Is there personal follow-up?</strong><br>Yes 🎯 You’re not left alone like in other courses. You’ll have a private group where you can ask questions, get my answers, and interact with classmates.</li>
-    <li><strong>📌 How long will I have access?</strong><br>You get 2 full months of access. After that, your subscription ends unless you renew.</li>
-    <li><strong>📌 Is the price worth it?</strong><br>Definitely 👌 You’re not just buying lessons, you’re investing in yourself: a clear plan, personal support, group motivation, and an effective learning strategy that opens opportunities in study, jobs, and travel.</li>
-  </ul>
-  <button onclick="buyNow()" class="btn-alt">Start Learning Now</button>
-  <div class="secure-pay">🔒 Secure & Encrypted Payment via Paddle</div>
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" style="height:28px;margin:5px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="height:28px;margin:5px;">
-  </div>
-  <div class="back" onclick="hideDetails('faq')">Back</div>
+  <div class="back" onclick="hideDetails('refund')">Back</div>
 </div>
 
 <footer>
-  <p id="footer-text">© 2025 Engliza Academy – All Rights Reserved</p>
+  <p>© 2025 Engliza Academy – All Rights Reserved</p>
 </footer>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
