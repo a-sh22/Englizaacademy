@@ -26,6 +26,10 @@
   .secure-pay{margin-top:15px;color:#38bdf8;font-weight:bold;}
   .payment-icons img{height:28px;margin:5px;}
   footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
+  .review-card{background:#1e293b;border-radius:10px;padding:15px;margin:15px 0;box-shadow:0 0 10px rgba(37,99,235,.4);}
+  .review-header{display:flex;align-items:center;gap:10px;}
+  .avatar{width:40px;height:40px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;}
+  .stars{color:#FACC15;margin:5px 0;}
 </style>
 </head>
 <body>
@@ -35,13 +39,14 @@
 </header>
 
 <section class="hero">
-  <h2>Learn with Confidence at Engliza Academy</h2>
-  <p>Your journey to mastering English starts here. Pre-recorded lessons, practice materials, and exclusive PDF resources.</p>
+  <h2>Learn English with Engliza Academy</h2>
+  <p>Structured lessons, video modules, and PDF resources. 100% pre-recorded and accessible online.</p>
 </section>
 
 <section class="cards-section">
   <div class="cards">
     <div class="card" onclick="showDetails('course')">📘 Course Content Overview</div>
+    <div class="card" onclick="showDetails('delivery')">🚚 Delivery Method</div>
     <div class="card" onclick="showDetails('terms')">📑 Terms & Conditions</div>
     <div class="card" onclick="showDetails('privacy')">🔒 Privacy Policy</div>
     <div class="card" onclick="showDetails('refund')">💰 Refund Policy</div>
@@ -55,14 +60,14 @@
 <div id="course" class="details">
   <h3>📘 Course Content Overview</h3>
   <ul>
-    <li>Beginner Level: Alphabet, grammar basics, greetings, simple sentences.</li>
-    <li>Intermediate Level: Vocabulary, grammar, listening and reading tasks.</li>
+    <li>Beginner Level: Alphabet, basic grammar, greetings, simple sentences.</li>
+    <li>Intermediate Level: Vocabulary, grammar, listening, and reading tasks.</li>
     <li>Advanced Level: Business emails, presentations, British vs. American usage.</li>
-    <li>Practice: Pre-recorded exercises and tasks for self-study.</li>
-    <li>Bonus: Surprise PDFs, vocabulary lists, mini-dictionaries, and extra resources.</li>
+    <li>Practice: Pre-recorded exercises and guided reading/listening modules.</li>
+    <li>Bonus: Surprise PDFs, mini-dictionary, and additional learning resources.</li>
   </ul>
   <h3 style="color:#38bdf8;">💲 Course Price: 109 USD</h3>
-  <button onclick="buyNow()" class="btn-alt">Start Your Journey Now</button>
+  <button onclick="buyNow()" class="btn-alt">Enroll Now</button>
   <div class="secure-pay">🔒 Secure & Encrypted Payment via Paddle</div>
   <div class="payment-icons">
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
@@ -72,14 +77,26 @@
   <div class="back" onclick="hideDetails('course')">Back</div>
 </div>
 
+<!-- Delivery -->
+<div id="delivery" class="details">
+  <h3>🚚 Delivery Method</h3>
+  <p>Once you complete your purchase, you will receive:</p>
+  <ul>
+    <li>🔗 A private streaming link to access all video lessons online.</li>
+    <li>📄 Downloadable PDF resources with vocabulary, grammar, and exercises.</li>
+    <li>🎥 All lessons are pre-recorded and can be watched anytime.</li>
+  </ul>
+  <div class="back" onclick="hideDetails('delivery')">Back</div>
+</div>
+
 <!-- Terms -->
 <div id="terms" class="details">
   <h3>📑 Terms & Conditions</h3>
   <ul>
-    <li>Access is personal and non-transferable.</li>
-    <li>Access is valid for 2 months from the date of purchase.</li>
-    <li>No redistribution, resale, or copying of content.</li>
-    <li>Refund policy applies (see section below).</li>
+    <li>Access is for personal use only.</li>
+    <li>Course access is valid for 2 months from purchase.</li>
+    <li>No sharing, copying, or reselling of the course content.</li>
+    <li>Refund policy applies (see below).</li>
   </ul>
   <div class="back" onclick="hideDetails('terms')">Back</div>
 </div>
@@ -88,10 +105,9 @@
 <div id="privacy" class="details">
   <h3>🔒 Privacy Policy</h3>
   <ul>
-    <li>We only collect your name and email for course delivery.</li>
-    <li>All payments are processed securely via Paddle.</li>
-    <li>Your personal data is never shared with third parties.</li>
-    <li>You can request data removal or updates anytime.</li>
+    <li>We collect only your name and email to deliver course access.</li>
+    <li>Payments are securely processed by Paddle.</li>
+    <li>Your data will never be shared with third parties.</li>
   </ul>
   <div class="back" onclick="hideDetails('privacy')">Back</div>
 </div>
@@ -100,9 +116,9 @@
 <div id="refund" class="details">
   <h3>💰 Refund Policy</h3>
   <ul>
-    <li>Refunds are available within 7 days of purchase.</li>
-    <li>Refunds apply only if you haven’t accessed the Telegram course.</li>
-    <li>Once access is granted, refunds are not possible (digital product).</li>
+    <li>Refunds available within 7 days of purchase.</li>
+    <li>Refunds apply only if no lessons have been accessed.</li>
+    <li>Once access is granted, no refunds are possible (digital product).</li>
   </ul>
   <div class="back" onclick="hideDetails('refund')">Back</div>
 </div>
@@ -110,10 +126,26 @@
 <!-- Reviews -->
 <div id="reviews" class="details">
   <h3>⭐ Student Reviews</h3>
-  <p>See what our students are saying:</p>
-  <div class="review-card">"This course helped me move from zero to confident English speaker!"</div>
-  <div class="review-card">"Very structured, easy to follow, and the PDF gifts are amazing!"</div>
-  <div class="review-card">"I improved my English writing and speaking in just weeks!"</div>
+  <div class="review-card">
+    <div class="review-header"><div class="avatar">I</div><div><strong>Ibrahim</strong><br>✓ Verified Student</div></div>
+    <div class="stars">★★★★★</div>
+    <p>This course made learning English simple and enjoyable. Highly recommend!</p>
+  </div>
+  <div class="review-card">
+    <div class="review-header"><div class="avatar">M</div><div><strong>Marwa</strong><br>✓ Verified Student</div></div>
+    <div class="stars">★★★★★</div>
+    <p>I improved my grammar and speaking skills within weeks. Great structure.</p>
+  </div>
+  <div class="review-card">
+    <div class="review-header"><div class="avatar">K</div><div><strong>Khalid</strong><br>✓ Verified Student</div></div>
+    <div class="stars">★★★★★</div>
+    <p>Clear lessons and useful PDFs. Excellent value for money.</p>
+  </div>
+  <div class="review-card">
+    <div class="review-header"><div class="avatar">F</div><div><strong>Faiza</strong><br>✓ Verified Student</div></div>
+    <div class="stars">★★★★★</div>
+    <p>You made me love English more! From the start of the course, I felt motivated.</p>
+  </div>
   <div class="back" onclick="hideDetails('reviews')">Back</div>
 </div>
 
@@ -121,11 +153,10 @@
 <div id="faq" class="details">
   <h3>❓ Frequently Asked Questions</h3>
   <ul>
-    <li><strong>Is this course suitable if I’m starting from zero?</strong><br>Yes! It starts from the basics and grows step by step.</li>
-    <li><strong>What if I already know some English?</strong><br>The course has material for all levels: beginner, intermediate, advanced.</li>
-    <li><strong>Will I get extra resources?</strong><br>Yes, you’ll receive exclusive PDF materials and practice exercises.</li>
-    <li><strong>How do I access the course?</strong><br>You’ll get a private Telegram link after payment.</li>
-    <li><strong>How long will I have access?</strong><br>2 months of full access from the date of purchase.</li>
+    <li><strong>Is this course pre-recorded?</strong> Yes, all lessons are video modules you can watch anytime.</li>
+    <li><strong>Do I need extra apps?</strong> No, you access everything through a private streaming link.</li>
+    <li><strong>What about practice?</strong> You’ll get structured exercises and PDFs for self-study.</li>
+    <li><strong>How long do I have access?</strong> 2 months from the date of purchase.</li>
   </ul>
   <div class="back" onclick="hideDetails('faq')">Back</div>
 </div>
@@ -133,7 +164,7 @@
 <!-- Contact -->
 <div id="contact" class="details">
   <h3>📩 Contact Us</h3>
-  <p>For questions or support, reach us at:</p>
+  <p>If you have any questions, reach out to us at:</p>
   <p><strong>Email:</strong> englizaacademy@gmail.com</p>
   <div class="back" onclick="hideDetails('contact')">Back</div>
 </div>
