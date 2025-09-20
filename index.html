@@ -1,196 +1,303 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Engliza Academy</title>
+<title>أكاديمية إنجليزا</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   body {font-family:"Tahoma","Arial",sans-serif;margin:0;background:#0f172a;color:#f1f5f9;line-height:1.6;}
   h1,h2,h3 {margin:0}
   header {background:#1e293b;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 15px rgba(37,99,235,.4);}
   header h1{font-size:20px;}
+  .lang-toggle{cursor:pointer;font-weight:bold;color:#93c5fd;}
+
   .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
   .hero h2{font-size:32px;margin-bottom:15px;}
   .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
+
+  .about{display:flex;align-items:center;justify-content:center;gap:20px;padding:60px 20px;background:#1e293b;box-shadow:inset 0 0 30px rgba(37,99,235,.3);}
+  .about img{width:150px;border-radius:12px;}
+  .about p{max-width:500px;color:#e2e8f0;}
+
   .cards-section{padding:60px 20px;text-align:center;}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
   .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
   .card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
+
   .details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
-  .back{margin-top:15px;display:inline-block;padding:8px 14px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
-  .btn-alt{background:#FACC15;color:#000;padding:12px 20px;border-radius:8px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 15px rgba(250,204,21,.6);}
+  .back{margin-top:15px;display:inline-block;padding:10px 18px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
+
+  /* زر الشراء الذهبي */
+  .btn-alt{background:#FACC15;color:#000;padding:14px 24px;border-radius:10px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 20px rgba(250,204,21,.7);font-size:1.05em;}
   .btn-alt:hover{background:#eab308;}
-  ul {text-align:left;margin:auto;max-width:600px;}
-  ul li{margin-bottom:10px;}
-  .secure-pay{margin-top:15px;color:#38bdf8;font-weight:bold;}
-  .payment-icons img{height:28px;margin:5px;}
+
+  ul.course-list {list-style-type:"✅ ";padding-right:20px;}
+  ul.course-list li{margin-bottom:10px;}
+
+  /* Reviews grid */
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
+  .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
+  .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .avatar{width:40px;height:40px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;}
+  .name{font-weight:bold;}
+  .verified{color:#38bdf8;font-size:0.8em;}
+  .stars{color:gold;margin:5px 0;}
+  .review-text{font-size:0.9em;white-space:pre-line;}
+  .quote-icon{position:absolute;top:15px;right:15px;font-size:20px;opacity:0.3;}
+
   footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
-  .review-card{background:#1e293b;border-radius:10px;padding:15px;margin:15px 0;box-shadow:0 0 10px rgba(37,99,235,.4);}
-  .review-header{display:flex;align-items:center;gap:10px;}
-  .avatar{width:40px;height:40px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;}
-  .stars{color:#FACC15;margin:5px 0;}
+
+  /* الدفع والتواصل */
+  .secure-pay{color:#38bdf8;margin-top:10px;font-weight:bold;}
+  .payment-icons{margin-top:10px;display:flex;align-items:center;justify-content:center;}
+  .payment-icons img{height:28px;margin:0 8px;}
+  .fa-envelope{color:#ea4335;}
+  .fa-instagram{background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+  .contact-box{margin-top:25px;padding:15px;border:1px solid #38bdf8;border-radius:10px;background:#0f172a;text-align:right;}
+  .contact-box h4{color:#38bdf8;margin-bottom:10px;}
+  .contact-item{margin:8px 0;font-size:0.95em;}
+  .contact-item i{margin-left:8px;}
+
+  /* FAQ */
+  .faq-list li strong {color:#FACC15;}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Engliza Academy</h1>
+  <h1 id="logo-text">أكاديمية إنجليزا</h1>
+  <div class="lang-toggle" onclick="toggleLang()" id="lang-btn">EN</div>
 </header>
 
 <section class="hero">
-  <h2>Learn English with Engliza Academy</h2>
-  <p>Structured lessons, video modules, and PDF resources. 100% pre-recorded and accessible online.</p>
+  <h2 id="hero-title">تعلّم بثقة مع أكاديمية إنجليزا</h2>
+  <p id="hero-desc">رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، مجتمع نشط، وتمارين عملية توصلك للتميّز.</p>
 </section>
 
+<section class="about">
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="">
+  <p id="about-text">نحن نقدم كورسات عملية مسجّلة لتعليم اللغة الإنجليزية، مع مجتمع دعم نشط يناقش فيه الطلاب الأسئلة والمواضيع، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
+</section>
 <section class="cards-section">
   <div class="cards">
-    <div class="card" onclick="showDetails('course')">📘 Course Content Overview</div>
-    <div class="card" onclick="showDetails('delivery')">🚚 Delivery Method</div>
-    <div class="card" onclick="showDetails('terms')">📑 Terms & Conditions</div>
-    <div class="card" onclick="showDetails('privacy')">🔒 Privacy Policy</div>
-    <div class="card" onclick="showDetails('refund')">💰 Refund Policy</div>
-    <div class="card" onclick="showDetails('reviews')">⭐ Student Reviews</div>
-    <div class="card" onclick="showDetails('faq')">❓ Frequently Asked Questions</div>
-    <div class="card" onclick="showDetails('contact')">📩 Contact Us</div>
+    <div class="card" onclick="showDetails('course')" id="card-course">📘 تفاصيل الكورس</div>
+    <div class="card" onclick="showDetails('reviews')" id="card-reviews">⭐ آراء الطلاب</div>
+    <div class="card" onclick="showDetails('refund')" id="card-refund">💳 سياسة الدفع والاسترجاع</div>
+    <div class="card" onclick="showDetails('privacy')" id="card-privacy">🔒 سياسة الخصوصية</div>
+    <div class="card" onclick="showDetails('terms')" id="card-terms">📄 الشروط والأحكام</div>
+    <div class="card" onclick="showDetails('story')" id="card-story">⭐ قصتي مع الإنجليزية</div>
+    <div class="card" onclick="showDetails('faq')" id="card-faq">⁉️ الأسئلة الشائعة</div>
   </div>
 </section>
 
-<!-- Course Content -->
+<!-- تفاصيل الكورس -->
 <div id="course" class="details">
-  <h3>📘 Course Content Overview</h3>
-  <ul>
-    <li>Beginner Level: Alphabet, basic grammar, greetings, simple sentences.</li>
-    <li>Intermediate Level: Vocabulary, grammar, listening, and reading tasks.</li>
-    <li>Advanced Level: Business emails, presentations, British vs. American usage.</li>
-    <li>Practice: Pre-recorded exercises and guided reading/listening modules.</li>
-    <li>Bonus: Surprise PDFs, mini-dictionary, and additional learning resources.</li>
+  <h3 id="course-title">🚀 تفاصيل الكورس</h3>
+  <ul id="course-text" class="course-list">
+    <li>🎯 شامل لكل المستويات: من الصفر، إلى المتوسط، وحتى المتقدم اللي يبغى يتطور أكثر.</li>
+    <li>👩‍🎓 مناسب للجميع: موظف، طالب مدرسة أو جامعي… الكورس يخدم أي فئة عمرية.</li>
+    <li>📝 تمارين عملية وتطبيقات يومية تخليك تعيش اللغة مش بس تحفظها.</li>
+    <li>🌍 مجتمع دعم نشط: تطرح أسئلتك وتتناقش مع زملائك، وتحصل على إجابات وأفكار من طلاب آخرين.</li>
+    <li>🎁 مفاجآت ومواد حصرية داخل الكورس (ملفات PDF، قواميس مصغرة، تدريبات إضافية).</li>
+    <li>🔥 ليش تبدأ الآن؟ كل يوم تأجله = فرصة ضايعة!</li>
+    <li>📌 أماكن محدودة – لا تنتظر لآخر لحظة.</li>
+    <li>💡 لا تضيّع وقتك في فيديوهات متفرقة وتجارب ناقصة – هنا تبدأ رحلتك الحقيقية.</li>
   </ul>
-  <h3 style="color:#38bdf8;">💲 Course Price: 109 USD</h3>
-  <button onclick="buyNow()" class="btn-alt">Enroll Now</button>
-  <div class="secure-pay">🔒 Secure & Encrypted Payment via Paddle</div>
+  <h3 style="color:#38bdf8;" id="course-price">💲 سعر الكورس: 36 ريال عماني</h3>
+  <button onclick="buyNow()" class="btn-alt" id="buy-btn">ابدأ رحلتك الآن</button>
+
+  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
   <div class="payment-icons">
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
   </div>
-  <div class="back" onclick="hideDetails('course')">Back</div>
-</div>
 
-<!-- Delivery -->
-<div id="delivery" class="details">
-  <h3>🚚 Delivery Method</h3>
-  <p>Once you complete your purchase, you will receive:</p>
-  <ul>
-    <li>🔗 A private streaming link to access all video lessons online.</li>
-    <li>📄 Downloadable PDF resources with vocabulary, grammar, and exercises.</li>
-    <li>🎥 All lessons are pre-recorded and can be watched anytime.</li>
-  </ul>
-  <div class="back" onclick="hideDetails('delivery')">Back</div>
-</div>
+  <div class="contact-box">
+    <h4 class="contact-title">📩 تواصل معنا</h4>
+    <div class="contact-item"><i class="fa-solid fa-envelope"></i> englizaacademy@gmail.com</div>
+    <div class="contact-item"><i class="fa-brands fa-instagram"></i>
+      <a href="https://www.instagram.com/engliza_academy_" target="_blank">@_engliza_academy</a>
+    </div>
+  </div>
 
-<!-- Terms -->
-<div id="terms" class="details">
-  <h3>📑 Terms & Conditions</h3>
-  <ul>
-    <li>Access is for personal use only.</li>
-    <li>Course access is valid for 2 months from purchase.</li>
-    <li>No sharing, copying, or reselling of the course content.</li>
-    <li>Refund policy applies (see below).</li>
-  </ul>
-  <div class="back" onclick="hideDetails('terms')">Back</div>
+  <div class="back">رجوع</div>
 </div>
-
-<!-- Privacy -->
-<div id="privacy" class="details">
-  <h3>🔒 Privacy Policy</h3>
-  <ul>
-    <li>We collect only your name and email to deliver course access.</li>
-    <li>Payments are securely processed by Paddle.</li>
-    <li>Your data will never be shared with third parties.</li>
-  </ul>
-  <div class="back" onclick="hideDetails('privacy')">Back</div>
-</div>
-
-<!-- Refund -->
-<div id="refund" class="details">
-  <h3>💰 Refund Policy</h3>
-  <ul>
-    <li>Refunds available within 7 days of purchase.</li>
-    <li>Refunds apply only if no lessons have been accessed.</li>
-    <li>Once access is granted, no refunds are possible (digital product).</li>
-  </ul>
-  <div class="back" onclick="hideDetails('refund')">Back</div>
-</div>
-
-<!-- Reviews -->
+<!-- آراء الطلاب -->
 <div id="reviews" class="details">
-  <h3>⭐ Student Reviews</h3>
-  <div class="review-card">
-    <div class="review-header"><div class="avatar">I</div><div><strong>Ibrahim</strong><br>✓ Verified Student</div></div>
-    <div class="stars">★★★★★</div>
-    <p>This course made learning English simple and enjoyable. Highly recommend!</p>
-  </div>
-  <div class="review-card">
-    <div class="review-header"><div class="avatar">M</div><div><strong>Marwa</strong><br>✓ Verified Student</div></div>
-    <div class="stars">★★★★★</div>
-    <p>I improved my grammar and speaking skills within weeks. Great structure.</p>
-  </div>
-  <div class="review-card">
-    <div class="review-header"><div class="avatar">K</div><div><strong>Khalid</strong><br>✓ Verified Student</div></div>
-    <div class="stars">★★★★★</div>
-    <p>Clear lessons and useful PDFs. Excellent value for money.</p>
-  </div>
-  <div class="review-card">
-    <div class="review-header"><div class="avatar">F</div><div><strong>Faiza</strong><br>✓ Verified Student</div></div>
-    <div class="stars">★★★★★</div>
-    <p>You made me love English more! From the start of the course, I felt motivated.</p>
-  </div>
-  <div class="back" onclick="hideDetails('reviews')">Back</div>
-</div>
+  <h3 id="reviews-title">⭐ آراء الطلاب</h3>
 
+  <!-- دعوة وتحفيز -->
+  <div style="text-align:center; margin:35px 0 20px;">
+    <p style="font-size:1.1em; margin-bottom:10px;">كن جزء من مجتمعنا النشط ✨ وابدأ قصتك مع النجاح اليوم 🚀</p>
+    <button onclick="buyNow()" class="btn-alt">اشترك الآن</button>
+    <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+    <div class="payment-icons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+    </div>
+  </div>
+
+  <div class="reviews-grid" id="reviews-grid">
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">إ</div><div><div class="name">إبراهيم | Ibrahim</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">شكراً على كل حاجةالحمد لله، نجحت بواصل دراسة.</div>
+    </div>
+
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">خ</div><div><div class="name">خالد | Khalid</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.</div>
+    </div>
+
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس، لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.</div>
+    </div>
+
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">ف</div><div><div class="name">فايزه | Faiza</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة</div>
+    </div>
+
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">ع</div><div><div class="name">علي | Ali</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.</div>
+    </div>
+
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">س</div><div><div class="name">سلطان | Sultan</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا، لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة</div>
+    </div>
+
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">م</div><div><div class="name">منار | Manar</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير</div>
+    </div>
+
+    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i>
+      <div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div>
+    </div>
+  </div>
+
+  <!-- زر آخر -->
+  <div style="text-align:center; margin:30px 0;">
+    <p style="font-size:1.1em; margin-bottom:10px;">فرصتك تبدأ هنا – انضم لعائلة الأكاديمية 💜</p>
+    <button onclick="buyNow()" class="btn-alt">ابدأ الآن</button>
+    <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+    <div class="payment-icons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+    </div>
+  </div>
+
+  <div class="back">رجوع</div>
+</div>
 <!-- FAQ -->
 <div id="faq" class="details">
-  <h3>❓ Frequently Asked Questions</h3>
-  <ul>
-    <li><strong>Is this course pre-recorded?</strong> Yes, all lessons are video modules you can watch anytime.</li>
-    <li><strong>Do I need extra apps?</strong> No, you access everything through a private streaming link.</li>
-    <li><strong>What about practice?</strong> You’ll get structured exercises and PDFs for self-study.</li>
-    <li><strong>How long do I have access?</strong> 2 months from the date of purchase.</li>
+  <h3 id="faq-title">❓ الأسئلة الشائعة</h3>
+  <ul id="faq-text" class="faq-list" style="list-style:none;padding:0;">
+    <li><strong>📌 هل الكورس مناسب لو كنت أبدأ من الصفر؟</strong><br>أكيد! 🙌 حتى لو ما تعرف ولا كلمة إنجليزي، الكورس يبدأ معك خطوة بخطوة ويخليك توصل لمرحلة تتكلم وتكتب بثقة.</li>
+    <li><strong>📌 ولو عندي شوية أساسيات؟</strong><br>هنا المتعة ✨، لأنك بتلقى تمارين وأساليب ترفع مستواك بسرعة من “أعرف شوية” إلى “أستخدم اللغة يومياً بطلاقة”.</li>
+    <li><strong>📌 ولو أنا متقدّم؟</strong><br>بتلقى محتوى متطور: كتابة أكاديمية، إيميلات رسمية، تعابير أمريكية وبريطانية… يعني تنتقل من مجرد “كويس” إلى “محترف يُحسب حسابه”. 🚀</li>
+    <li><strong>📌 هل الكورس ينفع للطلاب والموظفين؟</strong><br>100% ✅ سواء عندك دوام أو دراسة، الكورس مرن تتابعه بأي وقت يناسبك.</li>
+    <li><strong>📌 كيف أستلم الكورس بعد الدفع؟</strong><br>بمجرد الدفع يوصلك رابط خاص فيه كل الدروس + التمارين + مجتمع الطلاب للتفاعل.</li>
+    <li><strong>📌 هل فيه متابعة شخصية؟</strong><br>مافي متابعة شخصية مباشرة، لكن عندك مجتمع دعم نشط تقدر تسأل فيه وتلقى تفاعل من زملائك + إجابات على استفساراتك.</li>
+    <li><strong>📌 كم مدة الوصول للكورس؟</strong><br>شهرين كاملين تتصفح وتطبق براحتك. ولو تحب تكمل، تقدر تجدد.</li>
+    <li><strong>📌 هل السعر يستاهل؟</strong><br>أكيد 👌 لأنك ما تدفع بس عشان دروس، أنت تستثمر في نفسك: خطة واضحة، دعم من مجتمع نشط، وتطوير يفتح لك أبواب دراسة وفرص عمل وسفر.</li>
   </ul>
-  <div class="back" onclick="hideDetails('faq')">Back</div>
+
+  <button onclick="buyNow()" class="btn-alt" id="faq-btn">ابدأ التعلم الآن</button>
+
+  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
+
+  <div class="back">رجوع</div>
 </div>
+<!-- Story -->
+<div id="story" class="details">
+  <h3 id="story-title">⭐ قصتي مع اللغة الإنجليزية</h3>
+  <p id="story-text">
+    من أجل العثور على الطريق الصحيح عليك أن تضيع أولاً…<br>
+    لكن أنا ما راح أخليك تضيع 👌🏻.<br>
+    عشان كذا صممت لك هذا الكورس المبني على استراتيجيتي الخاصة، اللي غيرت مستواي وغيرت مع كثير من الطلاب وكانت نقلة قوية في حياتهم.<br><br>
+    من طالبة متعثّرة… إلى الأولى على المدرسة في اللغة الإنجليزية.<br>
+    كنت في مكانك، أحس بالضياع والتخبط وما عندي طريق واضح للتعلم الصحيح. كنت أحصد الأصفار في الاختبارات، لكن مع الإصرار قدرت أطور استراتيجية تعلم سهلة وسريعة.<br><br>
+    ومن هنا طلعت فكرة كورس Engliza Academy:<br>
+    عشان أختصر لك الطريق وأفتح لك آفاق جديدة لمستقبلك 🚀.<br><br>
+    🔥 الخطوة الحاسمة عندك الآن:<br>
+    لا تأجل! غيرك بدأ اليوم وبعد أشهر بيتكلم بطلاقة… وإنت؟
+  </p>
 
-<!-- Contact -->
-<div id="contact" class="details">
-  <h3>📩 Contact Us</h3>
-  <p>If you have any questions, reach out to us at:</p>
-  <p><strong>Email:</strong> englizaacademy@gmail.com</p>
-  <div class="back" onclick="hideDetails('contact')">Back</div>
+  <button onclick="buyNow()" class="btn-alt" id="story-btn">ابدأ رحلتك الآن</button>
+
+  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
+
+  <div class="back">رجوع</div>
 </div>
+<!-- Terms -->
+<div id="terms" class="details">
+  <h3 id="terms-title">📄 الشروط والأحكام</h3>
+  <ul id="terms-list">
+    <li>الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.</li>
+    <li>الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه.</li>
+    <li>الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب.</li>
+    <li>في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.</li>
+    <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
+  </ul>
+  <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
 
-<footer>
-  <p>© 2025 Engliza Academy – All Rights Reserved</p>
-</footer>
+  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
 
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script>
-  Paddle.Initialize({ seller: 243729 });
-
-  function showDetails(id){
-    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
-    const el=document.getElementById(id);
-    el.style.display='block';
-    window.scrollTo({top:el.offsetTop-20,behavior:"smooth"});
-  }
-  function hideDetails(id){document.getElementById(id).style.display='none';}
-
-  function buyNow(){
-    Paddle.Checkout.open({
-      items: [{ priceId: "pro_01k2vd4n1w9h2bfawn5y2t3zrm", quantity: 1 }]
-    });
-  }
-</script>
-
-</body>
-</html>
+  <div class="back">رجوع</div>
+</div>
+  <!-- Refund -->
+<div id="refund" class="details">
+  <h3 id="refund-title">💳 سياسة الدفع والاسترجاع</h3>
+  <p id="refund-text">نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
+  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
+  <div class="back">رجوع</div>
+</<!-- Privacy -->
+<div id="privacy" class="details">
+  <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
+  <p id="privacy-text">نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
+  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
+  <div class="back">رجوع</div>
+</div>
