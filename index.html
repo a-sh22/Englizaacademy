@@ -76,7 +76,77 @@
   .contact-box h4{color:#38bdf8;margin-bottom:10px;}
   .contact-item{margin:8px 0;font-size:0.95em;}
   .contact-item i{margin-left:8px;}
+/* EarLo container */
+.earlo-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
 
+/* EarLo mascot */
+.earlo-mascot {
+  position: absolute;
+  bottom: 0;
+  right: -160px;
+  width: 140px;
+  animation:
+    earlo-slide 1.5s ease-out forwards 2s,
+    earlo-wave 1s ease-in-out infinite 3.5s;
+  transform-origin: bottom center;
+}
+
+/* Speech bubble */
+.earlo-bubble {
+  position: absolute;
+  bottom: 110px;
+  right: 40px;
+  background: #ffffff;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  animation: bubble-show 0.6s ease-out forwards 3.2s;
+  white-space: nowrap;
+}
+
+/* Bubble tail */
+.earlo-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 18px;
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: #ffffff transparent transparent;
+}
+
+/* Animations */
+@keyframes earlo-slide {
+  from { right: -160px; }
+  to { right: 20px; }
+}
+
+@keyframes earlo-wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(6deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes bubble-show {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   /* FAQ */
   .faq-list li strong {color:#FACC15;}
 </style>
@@ -94,11 +164,14 @@
 </section>
 
 <section class="about">
+  <div class="earlo-container">
   <img
-  src="images/images/earlo.png"
-  alt="EarLo mascot"
-  class="earlo-mascot"
-/>
+    src="images/images/earlo.png"
+    alt="EarLo mascot"
+    class="earlo-mascot"
+  />
+  <div class="earlo-bubble">أهلاً أنا إيرلو 👋🐰</div>
+</div>
   
   <p id="about-text">نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
 </section>
