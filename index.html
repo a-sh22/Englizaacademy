@@ -101,32 +101,54 @@
   /* ===== Mobile Spacing Optimization ===== */
 @media (max-width: 768px) {
 
-  .hero {
-    padding: 45px 18px;
-  }
-
   .about {
-    padding: 45px 20px;
-    gap: 25px;
-  }
-
-  .about-text h3 {
-    font-size: 23px;
-    margin-bottom: 14px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-    line-height: 1.8;
+    flex-direction: row;     /* نفس الآيباد */
+    align-items: center;
+    gap: 16px;
   }
 
   .earlo {
-    width: 220px;
+    width: 160px;            /* أصغر للجوال */
+    flex-shrink: 0;          /* لا تنضغط */
   }
 
-  .cards-section {
-    padding: 40px 16px;
+  .about-text {
+    max-width: none;         /* أهم سطر */
+    flex: 1;
   }
+
+  .about-text h3 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: right;
+  }
+@media (max-width: 480px) {
+
+  .about {
+    gap: 14px;              /* تقارب أخف */
+  }
+
+  .earlo {
+    width: 135px;           /* أصغر شوي للجوالات الصغيرة */
+  }
+
+  .about-text h3 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+.about-text p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.about-text {
+  max-width: 320px;
 }
 
 /* ===== Earlo Floating Animation ===== */
