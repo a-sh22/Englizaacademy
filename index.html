@@ -1,93 +1,69 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>أكاديمية إنجليزا</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-body {
-  font-family:"Tahoma","Arial",sans-serif;
-  margin:0;
-  background:#0f172a;
-  color:#f1f5f9;
-  line-height:1.6;
-}
+  body {font-family:"Tahoma","Arial",sans-serif;margin:0;background:#0f172a;color:#f1f5f9;line-height:1.6;}
+  h1,h2,h3 {margin:0}
+  header {background:#1e293b;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 15px rgba(37,99,235,.4);}
+  header h1{font-size:20px;}
+  .lang-toggle{cursor:pointer;font-weight:bold;color:#93c5fd;}
 
-h1,h2,h3 {margin:0}
+  .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
+  .hero h2{font-size:32px;margin-bottom:15px;}
+  .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
 
-header {
-  background:#1e293b;
-  padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 0 15px rgba(37,99,235,.4);
-}
+  .about{display:flex;align-items:center;justify-content:center;gap:20px;padding:60px 20px;background:#1e293b;box-shadow:inset 0 0 30px rgba(37,99,235,.3);}
+  .about img{width:150px;border-radius:12px;}
+  .about p{max-width:500px;color:#e2e8f0;}
 
-header h1{font-size:20px;}
-.lang-toggle{cursor:pointer;font-weight:bold;color:#93c5fd;}
+  .cards-section{padding:60px 20px;text-align:center;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+  .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
+  .card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
 
-.hero{
-  text-align:center;
-  padding:60px 20px;
-  background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);
-}
+  .details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
+  .back{margin-top:15px;display:inline-block;padding:10px 18px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
 
-.hero h2{font-size:32px;margin-bottom:15px;}
-.hero p{color:#cbd5e1;max-width:600px;margin:auto;}
+  /* زر الشراء الذهبي */
+  .btn-alt{background:#FACC15;color:#000;padding:14px 24px;border-radius:10px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 20px rgba(250,204,21,.7);font-size:1.05em;}
+  .btn-alt:hover{background:#eab308;}
 
-/* ABOUT */
-.about{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:40px;
-  padding:80px 40px;
-}
+  ul.course-list {list-style-type:"✅ ";padding-right:20px;}
+  ul.course-list li{margin-bottom:10px;}
 
-.about-text{
-  max-width:520px;
-}
+  /* Reviews grid */
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
+  .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
+  .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .avatar{width:40px;height:40px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;}
+  .name{font-weight:bold;}
+  .verified{color:#38bdf8;font-size:0.8em;}
+  .stars{color:gold;margin:5px 0;}
+  .review-text{font-size:0.9em;white-space:pre-line;}
+  .quote-icon{position:absolute;top:15px;right:15px;font-size:20px;opacity:0.3;}
 
-.earlo{
-  width:260px;
-  transform-origin:bottom center;
-}
+  footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
 
-/* باقي التنسيقات */
-.cards-section{padding:60px 20px;text-align:center;}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
-.card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
+  /* الدفع والتواصل */
+  .secure-pay{color:#38bdf8;margin-top:10px;font-weight:bold;}
+  .payment-icons{margin-top:10px;display:flex;align-items:center;justify-content:center;}
+  .payment-icons img{height:28px;margin:0 8px;}
+  .fa-envelope{color:#ea4335;}
+  .fa-instagram{background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+  .contact-box{margin-top:25px;padding:15px;border:1px solid #38bdf8;border-radius:10px;background:#0f172a;text-align:right;}
+  .contact-box h4{color:#38bdf8;margin-bottom:10px;}
+  .contact-item{margin:8px 0;font-size:0.95em;}
+  .contact-item i{margin-left:8px;}
 
-.details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
-.back{margin-top:15px;display:inline-block;padding:10px 18px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
-
-.btn-alt{
-  background:#FACC15;
-  color:#000;
-  padding:14px 24px;
-  border-radius:10px;
-  font-weight:bold;
-  border:none;
-  cursor:pointer;
-  transition:.2s;
-  box-shadow:0 0 20px rgba(250,204,21,.7);
-  font-size:1.05em;
-}
-
-.btn-alt:hover{background:#eab308;}
-
-ul.course-list{list-style-type:"✅ ";padding-right:20px;}
-ul.course-list li{margin-bottom:10px;}
-
-footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
+  /* FAQ */
+  .faq-list li strong {color:#FACC15;}
 </style>
-
 </head>
 <body>
 
@@ -98,42 +74,43 @@ footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-to
 
 <section class="hero">
   <h2 id="hero-title">تعلّم بثقة مع أكاديمية إنجليزا</h2>
-  <p id="hero-desc">
-    رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا.
-    دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.
-  </p>
+  <p id="hero-desc">رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.</p>
 </section>
 
 <section class="about">
-
-  <div class="about-text">
-    <h3>تعلّم الإنجليزي… مو كدراسة، بل كجزء منك ✨</h3>
-    <p>
-      تتكلم بثقة،<br>
-      تفهم بدون ترجمة،<br>
-      وتحس إن الإنجليزي صار جزء من تفكيرك — مو مادة دراسية.
-      <br><br>
-      أنت مو ضعيف في الإنجليزي.<br>
-      أنت بس ما لقيت الطريقة الصح.
-    </p>
-  </div>
-
-  <div class="earlo-container">
-    <img src="earlo.png" class="earlo" alt="EarLo mascot">
-  </div>
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="">
+  <p id="about-text">نحن نقدم دورات عملية مبسطة لتعليم اللغة الإنجليزية، مع دعم مباشر، قناة خاصة للطلاب، ومفاجآت حصرية تساعدك على التطور بخطوات ثابتة.</p>
 </section>
 <section class="cards-section">
   <div class="cards">
-  <div class="card" onclick="showDetails('course')" id="card-course">📘 تفاصيل الكورس</div>
-  <div class="card" onclick="showDetails('reviews')" id="card-reviews">⭐ آراء الطلاب</div>
-  <div class="card" onclick="showDetails('story')" id="card-story">🌟 قصتي مع الإنجليزية</div>
-  <div class="card" onclick="showDetails('faq')" id="card-faq">❓ الأسئلة الشائعة</div>
 
-  <!-- آخر شي -->
-  <div class="card" onclick="showDetails('terms')" id="card-terms">📄 الشروط والأحكام</div>
-  <div class="card" onclick="showDetails('privacy')" id="card-privacy">🔒 سياسة الخصوصية</div>
-</div>
-  
+    <div class="card" onclick="showDetails('course')" id="card-course">
+      📘 تفاصيل الكورس
+    </div>
+
+    <div class="card" onclick="showDetails('reviews')" id="card-reviews">
+      ⭐ آراء الطلاب
+    </div>
+
+    <div class="card" onclick="showDetails('story')" id="card-story">
+      🌟 قصتي مع الإنجليزية
+    </div>
+
+    <div class="card" onclick="showDetails('faq')" id="card-faq">
+      ❓ الأسئلة الشائعة
+    </div>
+
+    <div class="card" onclick="showDetails('privacy')" id="card-privacy">
+      🔒 سياسة الخصوصية
+    </div>
+
+    <div class="card" onclick="showDetails('terms')" id="card-terms">
+      📄 الشروط والأحكام
+    </div>
+
+  </div>
+</section>
+
 </section>
 <!-- تفاصيل الكورس -->
 <div id="course" class="details">
@@ -223,6 +200,26 @@ footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-to
 <!-- 🔻 باقي الأقسام: الشروط والأحكام، قصتي، FAQ، الخصوصية، الاسترجاع، الفوتر -->
 <!-- نفس النصوص الأصلية، مع التعديلات (PayTabs + مجتمع طلابي + السعر الجديد) -->
 
+<!-- الشروط والأحكام -->
+<div id="terms" class="details">
+  <h3 id="terms-title">📄 الشروط والأحكام</h3>
+  <ul id="terms-list">
+    <li>الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.</li>
+    <li>الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه.</li>
+    <li>الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب.</li>
+    <li>في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.</li>
+    <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
+  </ul>
+  <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
+
+  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  </div>
+
+  <div class="back">رجوع</div>
 </div>
 
 <!-- قصتي -->
@@ -277,29 +274,7 @@ footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-to
 
   <div class="back">رجوع</div>
 </div>
-<!-- الشروط والأحكام -->
-<div id="terms" class="details">
-  <h3 id="terms-title">📄 الشروط والأحكام</h3>
-  <ul id="terms-list">
-    <li>هذا البرنامج التدريبي هو محتوى رقمي يتم تفعيل الوصول إليه فور إتمام عملية الدفع.</li>
-    <li>نظرًا لطبيعة المحتوى الرقمي وإتاحة الوصول الكامل مباشرة، لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.</li>
-    <li>الاشتراك مخصص للاستخدام الشخصي فقط، ويُمنع منعًا باتًا مشاركة المحتوى أو تسريبه أو إعادة بيعه بأي شكل.</li>
-    <li>تحتفظ الأكاديمية بحق تطوير أو تحديث محتوى البرنامج بما يضمن جودة التجربة التعليمية وتحقيق أفضل فائدة للطلاب.</li>
-    <li>في حال مخالفة أي من الشروط، بما في ذلك إساءة استخدام المحتوى أو تسريبه، يحق للأكاديمية إيقاف الوصول دون أي التزام بتعويض.</li>
-    <li>بإتمام عملية الدفع، فإنك تؤكد اطّلاعك وموافقتك الكاملة على هذه الشروط والأحكام.</li>
-  </ul>
 
-  <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
-
-  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-  </div>
-
-  <div class="back">رجوع</div>
-</div>
 <!-- سياسة الخصوصية -->
 <div id="privacy" class="details">
   <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
