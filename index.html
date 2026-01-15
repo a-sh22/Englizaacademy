@@ -173,6 +173,31 @@
   opacity: 1;
   transform: translateY(0);
 }
+  /* ===== CTA Micro Interaction (Soft Pulse) ===== */
+@keyframes ctaPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(250, 204, 21, 0.9);
+    transform: scale(1.03);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.6);
+    transform: scale(1);
+  }
+}
+
+/* يشتغل كل 6 ثواني */
+.btn-alt {
+  animation: ctaPulse 6s ease-in-out infinite;
+}
+
+/* يوقف النبض عند اللمس */
+.btn-alt:hover {
+  animation: none;
+}
 </style>
 </head>
 <body>
@@ -453,31 +478,39 @@
 </footer>
 
 <script>
-  function showDetails(id){
-    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
-    const el=document.getElementById(id);
-    el.style.display='block';
-    window.scrollTo({top:el.offsetTop-20,behavior:"smooth"});
-  }
-  function hideAllDetails(){ document.querySelectorAll('.details').forEach(d=>d.style.display='none'); }
-  document.addEventListener('click',e=>{if(e.target.classList.contains('back')) hideAllDetails();});
-  function buyNow(){ alert("سيتم تحويلك لصفحة الدفع عبر PayTabs"); }
-  <script>
-  const revealElements = document.querySelectorAll('.card, .between-cta');
+/* ===== Details Toggle ===== */
+function showDetails(id) {
+  document.querySelectorAll('.details').forEach(d => d.style.display = 'none');
+  const el = document.getElementById(id);
+  el.style.display = 'block';
+  window.scrollTo({ top: el.offsetTop - 20, behavior: "smooth" });
+}
 
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.2
+function hideAllDetails() {
+  document.querySelectorAll('.details').forEach(d => d.style.display = 'none');
+}
+
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('back')) hideAllDetails();
+});
+
+function buyNow() {
+  alert("سيتم تحويلك لصفحة الدفع عبر PayTabs");
+}
+
+/* ===== Scroll Reveal (Cards + CTA) ===== */
+const revealElements = document.querySelectorAll('.card, .between-cta');
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      revealObserver.unobserve(entry.target);
+    }
   });
+}, { threshold: 0.2 });
 
-  revealElements.forEach(el => revealObserver.observe(el));
-</script>
+revealElements.forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
