@@ -98,6 +98,59 @@
 
   /* FAQ */
   .faq-list li strong {color:#FACC15;}
+  /* ===== Mobile Spacing Optimization ===== */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 45px 18px;
+  }
+
+  .about {
+    padding: 45px 20px;
+    gap: 25px;
+  }
+
+  .about-text h3 {
+    font-size: 23px;
+    margin-bottom: 14px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .earlo {
+    width: 220px;
+  }
+
+  .cards-section {
+    padding: 40px 16px;
+  }
+}
+
+/* ===== Earlo Floating Animation ===== */
+@keyframes earloFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.earlo {
+  animation: earloFloat 4s ease-in-out infinite;
+}
+
+/* ===== Between About & Cards CTA ===== */
+.between-cta {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.between-cta p {
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #e5e7eb;
+}
 </style>
 </head>
 <body>
@@ -130,7 +183,16 @@
     <img src="earlo.png" class="earlo" alt="Earlo mascot">
   </div>
 </section>
-  
+  <section class="between-cta">
+  <p>
+    جاهز تبدأ رحلتك؟ ✨<br>
+    اختر اللي يناسبك وخلك أقرب لهدفك
+  </p>
+
+  <button class="btn-alt" onclick="showDetails('course')">
+    شوف تفاصيل الكورس 🚀
+  </button>
+</section>
 <section class="cards-section">
   <div class="cards">
 
