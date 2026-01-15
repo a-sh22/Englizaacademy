@@ -151,6 +151,28 @@
   margin-bottom: 18px;
   color: #e5e7eb;
 }
+  /* ===== Cards Scroll Fade + Slide ===== */
+.card {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+  /* ===== CTA Scroll Fade + Slide ===== */
+.between-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.between-cta.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
@@ -440,6 +462,22 @@
   function hideAllDetails(){ document.querySelectorAll('.details').forEach(d=>d.style.display='none'); }
   document.addEventListener('click',e=>{if(e.target.classList.contains('back')) hideAllDetails();});
   function buyNow(){ alert("سيتم تحويلك لصفحة الدفع عبر PayTabs"); }
+  <script>
+  const revealElements = document.querySelectorAll('.card, .between-cta');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+</script>
 </script>
 </body>
 </html>
