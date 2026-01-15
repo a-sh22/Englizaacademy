@@ -4,206 +4,141 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>أكاديمية إنجليزا</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-/* ===== الأساس ===== */
-body {
-  font-family: "Tahoma","Arial",sans-serif;
-  margin: 0;
-  background: #0f172a;
-  color: #f1f5f9;
-  line-height: 1.6;
-}
-h1,h2,h3 { margin: 0; }
+  body {font-family:"Tahoma","Arial",sans-serif;margin:0;background:#0f172a;color:#f1f5f9;line-height:1.6;}
+  h1,h2,h3 {margin:0}
+  header {background:#1e293b;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 15px rgba(37,99,235,.4);}
+  header h1{font-size:20px;}
+  .lang-toggle{cursor:pointer;font-weight:bold;color:#93c5fd;}
 
-/* ===== HEADER ===== */
-header {
-  background: #1e293b;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 0 15px rgba(37,99,235,.4);
-}
-header h1 { font-size: 20px; }
-.lang-toggle {
-  cursor: pointer;
-  font-weight: bold;
-  color: #93c5fd;
-}
-
-/* ===== HERO ===== */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(180deg,#0f172a 0%,#1e293b 100%);
-  box-shadow: inset 0 -30px 40px rgba(37,99,235,.35);
-}
-.hero h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-.hero p {
-  color: #cbd5e1;
-  max-width: 600px;
-  margin: auto;
-}
-
-/* ===== ABOUT (نفس الشكل القديم + إيرلو) ===== */
+  .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
+  .hero h2{font-size:32px;margin-bottom:15px;}
+  .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
+/* ===== ABOUT (FIXED LAYOUT) ===== */
 .about {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
-  padding: 60px 20px;
-  background: #1e293b;
-  box-shadow: inset 0 0 30px rgba(37,99,235,.3);
+  gap: 40px;
+  padding: 70px 40px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.35);
 }
 
 .about-text {
   max-width: 520px;
-}
-
-.about-text h3 {
-  font-size: 26px;
-  margin-bottom: 18px;
-  color: #e5e7eb;
-}
-
-.about-text p {
-  font-size: 17px;
   line-height: 1.9;
-  color: #cbd5e1;
 }
 
-/* تلوين ذكي */
-.highlight { color: #FACC15; }
-.soft { color: #e5e7eb; }
-.highlight.strong {
+.about-line {
+  display: block;
+  font-size: 17px;
+  color: #e5e7eb;
+  margin-bottom: 10px;
+}
+
+.about-line.space {
+  margin-bottom: 22px;
+}
+
+.about-line.highlight {
+  color: #FACC15;
+  font-weight: bold;
+}
+
+.about-line.strong {
   font-size: 18px;
   font-weight: bold;
 }
 
-/* ===== EARLO ===== */
 .earlo-container {
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
 }
+
 .earlo {
   width: 260px;
 }
 
-/* ===== CARDS ===== */
-.cards-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
-}
-.card {
-  background: linear-gradient(135deg,#1e293b,#2e1065);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: .3s;
-  box-shadow: 0 0 20px rgba(37,99,235,.4);
-  font-weight: bold;
-}
-.card:hover {
-  background: linear-gradient(135deg,#334155,#3b0764);
-  box-shadow: 0 0 40px rgba(37,99,235,.9);
-  transform: translateY(-4px);
-}
+  .cards-section{padding:60px 20px;text-align:center;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+  .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
+  .card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
 
-/* ===== DETAILS ===== */
-.details {
-  display: none;
-  background: linear-gradient(135deg,#1e293b,#2e1065);
-  margin: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(37,99,235,.6);
-}
-.back {
-  margin-top: 15px;
-  display: inline-block;
-  padding: 10px 18px;
-  background: #2563eb;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-}
+  .details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
+  .back{margin-top:15px;display:inline-block;padding:10px 18px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
 
-/* ===== زر الشراء ===== */
-.btn-alt {
-  background: #FACC15;
-  color: #000;
-  padding: 14px 24px;
-  border-radius: 10px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: .2s;
-  box-shadow: 0 0 20px rgba(250,204,21,.7);
-  font-size: 1.05em;
-}
-.btn-alt:hover { background: #eab308; }
+  /* زر الشراء الذهبي */
+  .btn-alt{background:#FACC15;color:#000;padding:14px 24px;border-radius:10px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 20px rgba(250,204,21,.7);font-size:1.05em;}
+  .btn-alt:hover{background:#eab308;}
 
-/* ===== إضافات عامة ===== */
-ul.course-list { list-style-type:"✅ "; padding-right:20px; }
-ul.course-list li { margin-bottom:10px; }
+  ul.course-list {list-style-type:"✅ ";padding-right:20px;}
+  ul.course-list li{margin-bottom:10px;}
 
-footer {
-  background:#0b1220;
-  padding:20px;
-  text-align:center;
-  color:#94a3b8;
-  margin-top:40px;
-}
+  /* Reviews grid */
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
+  .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
+  .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .avatar{width:40px;height:40px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;}
+  .name{font-weight:bold;}
+  .verified{color:#38bdf8;font-size:0.8em;}
+  .stars{color:gold;margin:5px 0;}
+  .review-text{font-size:0.9em;white-space:pre-line;}
+  .quote-icon{position:absolute;top:15px;right:15px;font-size:20px;opacity:0.3;}
 
-.secure-pay { color:#38bdf8; margin-top:10px; font-weight:bold; }
-.payment-icons {
-  margin-top:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.payment-icons img { height:28px; margin:0 8px; }
+  footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
 
-.faq-list li strong { color:#FACC15; }
+  /* الدفع والتواصل */
+  .secure-pay{color:#38bdf8;margin-top:10px;font-weight:bold;}
+  .payment-icons{margin-top:10px;display:flex;align-items:center;justify-content:center;}
+  .payment-icons img{height:28px;margin:0 8px;}
+  .fa-envelope{color:#ea4335;}
+  .fa-instagram{background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+  .contact-box{margin-top:25px;padding:15px;border:1px solid #38bdf8;border-radius:10px;background:#0f172a;text-align:right;}
+  .contact-box h4{color:#38bdf8;margin-bottom:10px;}
+  .contact-item{margin:8px 0;font-size:0.95em;}
+  .contact-item i{margin-left:8px;}
+
+  /* FAQ */
+  .faq-list li strong {color:#FACC15;}
 </style>
 </head>
-  <section class="about">
+<body>
 
-  <!-- النص (يسار) -->
+<header>
+  <h1 id="logo-text">أكاديمية إنجليزا</h1>
+  <div class="lang-toggle" onclick="toggleLang()" id="lang-btn">EN</div>
+</header>
+
+<section class="hero">
+  <h2 id="hero-title">تعلّم بثقة مع أكاديمية إنجليزا</h2>
+  <p id="hero-desc">رحلتك لتتقن اللغة الإنجليزية تبدأ من هنا. دروس واضحة، قناة خاصة، وتمارين عملية توصلك للتميّز.</p>
+</section>
+
+<section class="about">
+
   <div class="about-text">
-    <h3>✨ تعلّم الإنجليزي… مو كدراسة، بل كجزء منك</h3>
+    <span class="about-line highlight strong">✨ تعلّم الإنجليزي…</span>
+    <span class="about-line">مو كدراسة،</span>
+    <span class="about-line space">بل كجزء منك</span>
 
-    <p>
-      <span class="soft">تتعلّم تتكلم بثقة،</span><br>
-      <span class="soft">تفهم بدون ترجمة،</span><br>
-      <span class="highlight strong">وتحس إن الإنجليزي صار جزء منك</span>
-      <span class="soft">— مو مادة دراسية</span>
-      <br><br>
-      <span class="highlight strong">أنت مو ضعيف في الإنجليزي</span><br>
-      <span class="soft">أنت بس ما لقيت الطريقة الصح</span>
-    </p>
+    <span class="about-line">تتعلم تتكلم بثقة،</span>
+    <span class="about-line">تفهم بدون ترجمة،</span>
+    <span class="about-line highlight strong">وتحس إن الإنجليزي صار جزء منك</span>
+    <span class="about-line space">مو مادة دراسية</span>
+
+    <span class="about-line highlight strong">أنت مو ضعيف في الإنجليزي</span>
+    <span class="about-line">أنت بس ما لقيت الطريقة الصح</span>
   </div>
 
-  <!-- إيرلو (يمين) -->
   <div class="earlo-container">
     <img src="earlo.png" class="earlo" alt="Earlo mascot">
   </div>
-
 </section>
+  
 <section class="cards-section">
   <div class="cards">
 
