@@ -111,20 +111,20 @@
     gap: 20px;
   }
 
-  .about-text {
-    max-width: 340px;        /* يمنع نزول الكلام بشكل سيء */
+   .about-text {
+    max-width: 360px;     /* العرض الذهبي */
   }
 
   .about-text p {
-    font-size: 15px;
-    line-height: 1.75;
-    text-align: right;
-    white-space: normal;
+    font-size: 15.5px;
+    line-height: 1.85;
+    word-spacing: 1px;
   }
 
   .about-text br {
     display: none;
   }
+}
 
   /* ===== CTA Centering (Perfect Center) ===== */
   .between-cta {
@@ -237,6 +237,54 @@
 .btn-alt:hover {
   animation: none;
 }
+  
+  /* ===== Mobile Optimization (Phones Only) ===== */
+  @media (max-width: 480px) {
+
+    .about-text {
+      max-width: 360px;
+    }
+
+    .about-text p {
+      line-height: 1.85;
+      font-size: 15.5px;
+      word-spacing: 1px;
+    }
+
+    .about-text br {
+      display: none;
+    }
+  }
+
+  /* ===== CTA Button Fix (آخر شي) ===== */
+  @media (max-width: 480px) {
+
+    .between-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .between-cta .btn-alt {
+      margin: 0;
+      transform: translateX(0);
+    }
+  .earlo {
+  width: 260px;
+  animation: earloLife 4s ease-in-out infinite;
+}
+
+@keyframes earloLife {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
 </style>
 </head>
 <body>
