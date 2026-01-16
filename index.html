@@ -15,67 +15,64 @@
   .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
   .hero h2{font-size:32px;margin-bottom:15px;}
   .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
-/* ===== FINAL MOBILE TUNING (Clean & Balanced) ===== */
-@media (max-width: 480px) {
-
-  .about {
-    display: grid;
-    grid-template-columns: 1fr auto; /* نص + إيرلو */
-    align-items: center;
-    gap: 14px;
-  }
-
-  .about-text {
-    min-width: 0; /* يمنع تكسير الأسطر */
-  }
-
-  .about-lines {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .about-line {
-    font-size: 15.5px;
-    line-height: 1.9;
-    color: #e5e7eb;
-    white-space: normal;
-    word-break: normal;
-  }
-
-  .about-line.strong {
-    font-weight: bold;
-    color: #FACC15;
-  }
-
-  /* ⭐ إيرلو: أقصى اليسار + حجم متوازن ⭐ */
-  .earlo {
-    width: clamp(150px, 34vw, 175px);
-   margin-inline-start: auto;  /* هذا السطر يبعده أقصى اليسار */
-  }
-
+/* ===== ABOUT – FINAL & CLEAN ===== */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 70px 40px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.35);
 }
 
+.about-text {
+  flex: 1 1 55%;
+  min-width: 0; /* يمنع تكسير الكلام */
+}
+
+.about-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-line {
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: #e5e7eb;
+}
+
+.about-line.strong {
+  font-weight: bold;
+  color: #FACC15;
+}
+
+.about .btn-alt {
+  display: block;
+  margin: 25px auto 0;
+}
+
+/* ===== EARLO ===== */
 .earlo {
   width: 260px;
   animation: earloLife 4s ease-in-out infinite;
 }
 
-/* ===== Earlo Animation ===== */
 @keyframes earloLife {
   0%   { transform: translateY(0) scale(1); }
   50%  { transform: translateY(-6px) scale(1.02); }
   100% { transform: translateY(0) scale(1); }
 }
 
-/* ===== FINAL MOBILE FIX (Phones Only) ===== */
+/* ===== FINAL MOBILE FIX (PHONES ONLY) ===== */
 @media (max-width: 480px) {
 
   .about {
     display: grid;
     grid-template-columns: 1fr auto; /* نص + إيرلو */
-    gap: 14px;
     align-items: center;
+    gap: 14px;
   }
 
   .about-text {
@@ -89,12 +86,13 @@
     word-break: normal;
   }
 
-  /* ⭐ حجم إيرلو المتوازن للجوال ⭐ */
+  /* ⭐ إيرلو متوازن + أقصى اليسار ⭐ */
   .earlo {
-    width: clamp(140px, 32vw, 180px);
+    width: clamp(150px, 34vw, 175px);
+    margin-inline-start: auto;
   }
 
-  /* زر شوف تفاصيل الكورس في النص تمامًا */
+  /* زر شوف تفاصيل الكورس بالمنتصف */
   .about .btn-alt {
     margin: 20px auto 0;
   }
@@ -226,8 +224,7 @@
 .btn-alt:hover {
   animation: none;
 }
- /* ===== About Text Reveal Animation ===== */
-.about-lines {
+ .about-lines {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -236,7 +233,7 @@
 .about-lines.show {
   opacity: 1;
   transform: translateY(0);
-} 
+}
 </style>
 </head>
 <body>
@@ -260,19 +257,22 @@
   <div class="about-text">
 
     <div class="about-lines">
-      <div class="soft">تعلّم تتكلم بثقة</div>
-      <div class="soft">تفهم بدون ترجمة</div>
-      <div class="highlight strong">وتحس إن الإنجليزي صار جزء منك</div>
-      <div class="soft">مو مادة دراسية</div>
-    </div>
+      <div class="about-line soft">تعلّم تتكلم بثقة</div>
+      <div class="about-line soft">تفهم بدون ترجمة</div>
+      <div class="about-line strong">وتحس إن الإنجليزي صار جزء منك</div>
+      <div class="about-line soft">مو مادة دراسية</div>
 
-    <div class="about-lines">
-      <div class="highlight strong">أنت مو ضعيف في الإنجليزي</div>
-      <div class="soft">أنت بس ما لقيت الطريقة الصح</div>
+      <div class="about-line strong">أنت مو ضعيف في الإنجليزي</div>
+      <div class="about-line soft">أنت بس ما لقيت الطريقة الصح</div>
     </div>
 
   </div>
 
+  <div class="earlo-container">
+    <img src="earlo.png" class="earlo" alt="شخصية إيرلو">
+  </div>
+
+</section>
   <div class="earlo-container">
     <img src="earlo.png" class="earlo" alt="شخصية إيرلو">
   </div>
