@@ -104,21 +104,43 @@
   /* ===== Mobile Optimization (Phones Only) ===== */
 @media (max-width: 480px) {
 
+  /* ===== About Layout (Same as iPad) ===== */
+  .about {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-text {
+    max-width: 340px;        /* يمنع نزول الكلام بشكل سيء */
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.75;
+    text-align: right;
+    white-space: normal;
+  }
+
+  .about-text br {
+    display: none;
+  }
+
+  /* ===== CTA Centering (Perfect Center) ===== */
   .between-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
   }
 
   .between-cta .btn-alt {
-    display: inline-block;
+    display: block;
     margin: 0 auto;
   }
 
 }
-  .about {
-    flex-direction: row;        /* نفس الآيباد */
-    align-items: center;
-    gap: 20px;
-  }
 
   .earlo {
     width: 220px;               /* واضح بدون ضغط */
