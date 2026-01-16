@@ -52,7 +52,47 @@
   display: block;
   margin: 25px auto 0;
 }
+/* ===== MOBILE FIX – TEXT FREE, EARLO FLOATING ===== */
+@media (max-width: 480px) {
 
+  .about {
+    position: relative;
+    padding: 60px 20px;
+  }
+
+  /* النص يأخذ العرض كامل */
+  .about-text {
+    width: 100%;
+  }
+
+  .about-lines {
+    max-width: 100%;
+  }
+
+  .about-line {
+    font-size: 15.5px;
+    line-height: 1.9;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  /* إيرلو داخل الإطار لكن خارج التدفق */
+  .earlo-container {
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    pointer-events: none;
+  }
+
+  .earlo {
+    width: 165px; /* متوسط – بطل – ما يكسر */
+  }
+
+  .about .btn-alt {
+    margin: 26px auto 0;
+    display: block;
+  }
+}
 /* ===== EARLO ===== */
 .earlo {
   width: 260px;
