@@ -100,31 +100,28 @@
   .contact-item i{margin-left:8px;}  
    /* FAQ */
   .faq-list li strong {color:#FACC15;}
-  /* ===== Mobile Spacing Optimization ===== */
-  /* ===== Mobile Optimization (Phones Only) ===== */
-@media (max-width: 480px) {
+  
+ @media (max-width: 480px) {
 
-  /* ===== About Layout (Same as iPad) ===== */
   .about {
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+    align-items: flex-start; /* يبدأ من فوق */
   }
 
-   .about-text {
-    max-width: 360px;     /* العرض الذهبي */
+  .about-text {
+    max-width: 100%;
+    flex: 1;
   }
 
   .about-text p {
     font-size: 15.5px;
-    line-height: 1.85;
-    word-spacing: 1px;
+    line-height: 1.9;
+    word-spacing: 0.5px;
+    text-align: right;
   }
 
   .about-text br {
     display: none;
   }
-}
 
   /* ===== CTA Centering (Perfect Center) ===== */
   .between-cta {
@@ -254,22 +251,16 @@
     .about-text br {
       display: none;
     }
-  }
-
-  /* ===== CTA Button Fix (آخر شي) ===== */
   @media (max-width: 480px) {
-
-    .between-cta {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .between-cta .btn-alt {
-      margin: 0;
-      transform: translateX(0);
-    }
-  .earlo {
+  .between-cta .btn-alt {
+    display: block;
+    margin: 0 auto !important;
+    left: 0;
+    right: 0;
+    transform: none !important;
+  }
+}
+    .earlo {
   width: 260px;
   animation: earloLife 4s ease-in-out infinite;
 }
@@ -284,7 +275,9 @@
   100% {
     transform: translateY(0) scale(1);
   }
+}
 
+ 
 </style>
 </head>
 <body>
