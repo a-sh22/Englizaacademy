@@ -101,17 +101,19 @@
    /* FAQ */
   .faq-list li strong {color:#FACC15;}
   /* ===== FINAL MOBILE FIX (About + Earlo + Text) ===== */
+/* ===== FINAL MOBILE FIX – ABOUT SECTION ===== */
 @media (max-width: 480px) {
 
   .about {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
+    padding: 50px 18px; /* مسافة صح عن الهيرو */
   }
 
   .earlo {
-    width: 220px;          /* حجم متوسط حقيقي */
+    width: 180px;        /* متوسط – بطل بدون ما يخنق */
     flex-shrink: 0;
     animation: earloLife 4s ease-in-out infinite;
   }
@@ -122,10 +124,14 @@
   }
 
   .about-text p {
-    font-size: 15.5px;
+    font-size: 15px;
     line-height: 1.9;
     text-align: right;
-    white-space: normal;
+  }
+
+  /* نخلي الـ spans يلفّوا كسطور طبيعية */
+  .about-text span {
+    display: inline;
   }
 }
 
@@ -292,13 +298,28 @@
 <section class="about">
 
   <div class="about-text">
-  <p>
-تعلّم تتكلم بثقة وتفهم بدون ترجمة، وتحس إن الإنجليزي صار جزء منك مو مادة دراسية.
-<br><br>
-<strong>أنت مو ضعيف في الإنجليزي</strong>، أنت بس ما لقيت الطريقة الصح.
-</p>
+    <p>
+      <span class="soft">تعلّم تتكلم بثقة،</span>
+      <span class="soft">تفهم بدون ترجمة،</span>
+      <span class="highlight strong">وتحس إن الإنجليزي صار جزء منك</span>
+      <span class="soft">مو مادة دراسية</span>
+
+      <br><br>
+
+      <span class="highlight strong">أنت مو ضعيف في الإنجليزي</span><br>
+      <span class="soft">أنت بس ما لقيت الطريقة الصح</span>
+    </p>
   </div>
 
+  <div class="earlo-container">
+    <img src="earlo.png" class="earlo" alt="شخصية إيرلو">
+  </div>
+
+</section>
+  <span class="highlight strong">أنت مو ضعيف في الإنجليزي</span><br>
+  <span class="soft">أنت بس ما لقيت الطريقة الصح</span>
+</p>
+  
   <div class="earlo-container">
     <img
       src="earlo.png"
