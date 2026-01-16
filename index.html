@@ -101,47 +101,29 @@
   .contact-box{margin-top:25px;padding:15px;border:1px solid #38bdf8;border-radius:10px;background:#0f172a;text-align:right;}
   .contact-box h4{color:#38bdf8;margin-bottom:10px;}
   .contact-item{margin:8px 0;font-size:0.95em;}
-  .contact-item i{margin-left:8px;}
-
-  /* FAQ */
+  .contact-item i{margin-left:8px;}  
+   /* FAQ */
   .faq-list li strong {color:#FACC15;}
   /* ===== Mobile Spacing Optimization ===== */
-@media (max-width: 768px) {
-
-  .about {
-    flex-direction: row;     /* نفس الآيباد */
-    align-items: center;
-    gap: 16px;
-  }
-
-  .earlo {
-    width: 160px;            /* أصغر للجوال */
-    flex-shrink: 0;          /* لا تنضغط */
-  }
-
-  .about-text {
-    max-width: none;         /* أهم سطر */
-    flex: 1;
-  }
-
-  .about-text h3 {
-    font-size: 20px;
-    line-height: 1.4;
-  }
-
-  .about-text p {
-    font-size: 15px;
-    line-height: 1.6;
-    text-align: right;
-  }
+  /* ===== Mobile Optimization (Phones Only) ===== */
 @media (max-width: 480px) {
 
   .about {
-    gap: 14px;              /* تقارب أخف */
+    flex-direction: row;        /* نفس الآيباد */
+    align-items: center;
+    gap: 20px;
   }
 
   .earlo {
-    width: 135px;           /* أصغر شوي للجوالات الصغيرة */
+    width: 220px;               /* واضح بدون ضغط */
+  }
+
+  .earlo-container {
+    flex-shrink: 0;
+  }
+
+  .about-text {
+    max-width: none;            /* لا نقيّد النص */
   }
 
   .about-text h3 {
@@ -149,17 +131,18 @@
     line-height: 1.35;
   }
 
-.about-text p {
-  font-size: 14px;
-  line-height: 1.55;
-}
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    white-space: normal;
+    word-break: normal;
+  }
 
-.about-text {
-  max-width: 320px;
-}
-/* ===== Fix CTA Position on Small Mobiles ===== */
-@media (max-width: 480px) {
+  .about-text br {
+    display: none;              /* نلغي النزول الغبي */
+  }
 
+  /* CTA */
   .between-cta {
     width: 100%;
     text-align: center;
@@ -178,41 +161,6 @@
   .between-cta .btn-alt {
     margin: 0 auto;
   }
-@media (max-width: 480px) {
-  .earlo {
-    width: 200px;   /* أكبر وواضح */
-  }
-
-  .earlo-container {
-    flex-shrink: 0;
-  }
-
-  .about {
-    gap: 20px; /* توازن بين النص وإيرلو */
-  }
-}
-}
-/* ===== Earlo Floating Animation ===== */
-@keyframes earloFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
-}
-
-.earlo {
-  animation: earloFloat 4s ease-in-out infinite;
-}
-
-/* ===== Between About & Cards CTA ===== */
-.between-cta {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.between-cta p {
-  font-size: 18px;
-  margin-bottom: 18px;
-  color: #e5e7eb;
 }
   /* ===== Cards Scroll Fade + Slide ===== */
 .card {
