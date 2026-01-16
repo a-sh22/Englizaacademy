@@ -100,41 +100,40 @@
   .contact-item i{margin-left:8px;}  
    /* FAQ */
   .faq-list li strong {color:#FACC15;}
-  
- @media (max-width: 480px) {
+  /* ===== FINAL MOBILE FIX (About + Earlo + Text) ===== */
+@media (max-width: 480px) {
 
+  /* نحافظ على نفس تخطيط الآيباد */
   .about {
-    display: flex;
-    align-items: center;   /* ⭐ هذا المفتاح */
+    flex-direction: row;
+    align-items: center;
     gap: 18px;
   }
 
-  /* إيرلو: حجم متوسط ذكي */
+  /* حجم إيرلو: متوسط – بطل – بدون كسر النص */
   .earlo {
-    flex-basis: 150px;     /* لا كبير ولا صغير */
-    max-width: 150px;
-    width: 100%;
+    width: 210px;   /* الحجم الذهبي */
     flex-shrink: 0;
+    animation: earloLife 4s ease-in-out infinite;
   }
 
-  /* النص */
+  /* النص ياخذ مساحته الطبيعية */
   .about-text {
     flex: 1;
     max-width: none;
   }
 
-  .about-text h3 {
-    font-size: 18px;
-    line-height: 1.4;
-    margin-bottom: 10px;
+  /* أهم سطر: نرجّع النص كنص طبيعي */
+  .about-text span {
+    display: inline;
   }
 
   .about-text p {
     font-size: 15.5px;
-    line-height: 1.85;
-    white-space: normal;
-    word-break: normal;
+    line-height: 1.9;
+    word-spacing: 0.5px;
     text-align: right;
+    white-space: normal;
   }
 
   /* نلغي النزول اليدوي */
@@ -142,6 +141,14 @@
     display: none;
   }
 }
+
+/* ===== Earlo Life Animation ===== */
+@keyframes earloLife {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-6px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
   /* ===== CTA Centering (Perfect Center) ===== */
   .between-cta {
     display: flex;
