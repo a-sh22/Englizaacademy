@@ -18,12 +18,60 @@
 .about {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 24px;
   padding: 70px 40px;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   border-radius: 20px;
   box-shadow: 0 0 40px rgba(37, 99, 235, 0.35);
+}
+  /* ===== About Final Stable Layout ===== */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.about-text {
+  flex: 1 1 55%;
+  min-width: 0; /* هذا السطر السحري */
+}
+
+.about-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-line {
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: #e5e7eb;
+}
+
+.about-line.strong {
+  font-weight: bold;
+  color: #FACC15;
+}
+
+/* ===== Mobile Fix (نهائي) ===== */
+@media (max-width: 480px) {
+
+  .about {
+    gap: 16px;
+  }
+
+  .earlo {
+    width: 200px; /* متوسط وواضح */
+  }
+
+  .about-text {
+    flex: 1 1 auto;
+  }
+
+  .about-line {
+    font-size: 15.5px;
+    line-height: 1.9;
+  }
 }
 .about .btn-alt {
   display: block;
