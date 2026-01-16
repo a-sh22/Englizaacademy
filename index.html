@@ -103,43 +103,37 @@
   /* ===== FINAL MOBILE FIX (About + Earlo + Text) ===== */
 @media (max-width: 480px) {
 
-  /* نحافظ على نفس تخطيط الآيباد */
   .about {
+    display: flex;
     flex-direction: row;
     align-items: center;
     gap: 18px;
   }
 
-  /* حجم إيرلو: متوسط – بطل – بدون كسر النص */
   .earlo {
-    width: 210px;   /* الحجم الذهبي */
+    width: 220px;          /* حجم متوسط حقيقي */
     flex-shrink: 0;
     animation: earloLife 4s ease-in-out infinite;
   }
 
-  /* النص ياخذ مساحته الطبيعية */
   .about-text {
     flex: 1;
     max-width: none;
   }
 
-  /* أهم سطر: نرجّع النص كنص طبيعي */
-  .about-text span {
-    display: inline;
-  }
-
   .about-text p {
     font-size: 15.5px;
     line-height: 1.9;
-    word-spacing: 0.5px;
     text-align: right;
     white-space: normal;
   }
+}
 
-  /* نلغي النزول اليدوي */
-  .about-text br {
-    display: none;
-  }
+/* حركة إيرلو */
+@keyframes earloLife {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-6px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
 }
 
 /* ===== Earlo Life Animation ===== */
@@ -298,14 +292,11 @@
 <section class="about">
 
   <div class="about-text">
-    <h3>✨ تعلّم الإنجليزي… مو دراسة، بل جزء منك</h3>
-    <p>
-      تعلّم تتكلم بثقة، تفهم بدون ترجمة،
-      وتحس إن الإنجليزي صار جزء منك — مو مادة دراسية.
-      <br><br>
-      <span class="highlight strong">أنت مو ضعيف في الإنجليزي</span>،
-      أنت بس ما لقيت <span class="highlight">الطريقة الصح</span>.
-    </p>
+  <p>
+تعلّم تتكلم بثقة وتفهم بدون ترجمة، وتحس إن الإنجليزي صار جزء منك مو مادة دراسية.
+<br><br>
+<strong>أنت مو ضعيف في الإنجليزي</strong>، أنت بس ما لقيت الطريقة الصح.
+</p>
   </div>
 
   <div class="earlo-container">
