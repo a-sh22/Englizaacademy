@@ -100,40 +100,6 @@
   .contact-item i{margin-left:8px;}  
    /* FAQ */
   .faq-list li strong {color:#FACC15;}
-  /* ===== FINAL MOBILE FIX (About + Earlo + Text) ===== */
-/* ===== FINAL MOBILE FIX – ABOUT SECTION ===== */
-@media (max-width: 480px) {
-
-  .about {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    padding: 50px 18px; /* مسافة صح عن الهيرو */
-  }
-
-  .earlo {
-    width: 180px;        /* متوسط – بطل بدون ما يخنق */
-    flex-shrink: 0;
-    animation: earloLife 4s ease-in-out infinite;
-  }
-
-  .about-text {
-    flex: 1;
-    max-width: none;
-  }
-
-  .about-text p {
-    font-size: 15px;
-    line-height: 1.9;
-    text-align: right;
-  }
-
-  /* نخلي الـ spans يلفّوا كسطور طبيعية */
-  .about-text span {
-    display: inline;
-  }
-}
 
 /* ===== Earlo Life Animation ===== */
 @keyframes earloLife {
@@ -268,7 +234,57 @@
     transform: translateY(0) scale(1);
   }
 }
+/* ===== FINAL MOBILE FIX – ABOUT SECTION ===== */
+@media (max-width: 480px) {
 
+  .about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 50px 18px; /* مسافة صح عن الهيرو */
+  }
+
+  .earlo {
+    width: 180px;        /* متوسط – بطل بدون ما يخنق */
+    flex-shrink: 0;
+    animation: earloLife 4s ease-in-out infinite;
+  }
+
+  .about-text {
+    flex: 1;
+    max-width: none;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: right;
+  }
+
+  /* نخلي الـ spans يلفّوا كسطور طبيعية */
+  .about-text span {
+    display: inline;
+  }
+}
+
+/* حركة إيرلو */
+@keyframes earloLife {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-6px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+.hero {
+  margin-bottom: 40px;
+}
+
+.about {
+  margin-bottom: 40px;
+}
+
+.between-cta {
+  margin-top: 40px;
+}    
  
 </style>
 </head>
@@ -291,37 +307,25 @@
 <section class="about">
 
   <div class="about-text">
-    <p>
-      <span class="soft">تعلّم تتكلم بثقة،</span>
-      <span class="soft">تفهم بدون ترجمة،</span>
-      <span class="highlight strong">وتحس إن الإنجليزي صار جزء منك</span>
-      <span class="soft">مو مادة دراسية</span>
+    <h3>✨ تعلّم الإنجليزي… مو كدراسة، بل كجزء منك</h3>
 
-      <br><br>
+    <div class="about-lines">
+      <div class="soft">تعلّم تتكلم بثقة</div>
+      <div class="soft">تفهم بدون ترجمة</div>
+      <div class="highlight strong">وتحس إن الإنجليزي صار جزء منك</div>
+      <div class="soft">مو مادة دراسية</div>
+    </div>
 
-      <span class="highlight strong">أنت مو ضعيف في الإنجليزي</span><br>
-      <span class="soft">أنت بس ما لقيت الطريقة الصح</span>
-    </p>
+    <div class="about-lines">
+      <div class="highlight strong">أنت مو ضعيف في الإنجليزي</div>
+      <div class="soft">أنت بس ما لقيت الطريقة الصح</div>
+    </div>
   </div>
 
   <div class="earlo-container">
     <img src="earlo.png" class="earlo" alt="شخصية إيرلو">
   </div>
-
-</section>
-  <span class="highlight strong">أنت مو ضعيف في الإنجليزي</span><br>
-  <span class="soft">أنت بس ما لقيت الطريقة الصح</span>
-</p>
   
-  <div class="earlo-container">
-    <img
-      src="earlo.png"
-      class="earlo"
-      alt="شخصية إيرلو التعليمية لمساعدة المتعلمين على إتقان اللغة الإنجليزية"
-      loading="lazy"
-    >
-  </div>
-
 </section>
     
   <section class="between-cta">
