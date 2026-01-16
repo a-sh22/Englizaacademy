@@ -15,6 +15,7 @@
   .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
   .hero h2{font-size:32px;margin-bottom:15px;}
   .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
+./* ===== ABOUT – FINAL & CLEAN ===== */
 .about {
   display: flex;
   align-items: center;
@@ -24,16 +25,10 @@
   border-radius: 20px;
   box-shadow: 0 0 40px rgba(37, 99, 235, 0.35);
 }
-  /* ===== About Final Stable Layout ===== */
-.about {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
 
 .about-text {
   flex: 1 1 55%;
-  min-width: 0; /* هذا السطر السحري */
+  min-width: 0; /* يمنع تكسير الكلام */
 }
 
 .about-lines {
@@ -53,58 +48,53 @@
   color: #FACC15;
 }
 
-/* ===== Mobile Fix (نهائي) ===== */
+.about .btn-alt {
+  display: block;
+  margin: 25px auto 0;
+}
+
+.earlo {
+  width: 260px;
+  animation: earloLife 4s ease-in-out infinite;
+}
+
+/* ===== Earlo Animation ===== */
+@keyframes earloLife {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-6px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* ===== FINAL MOBILE FIX (Phones Only) ===== */
 @media (max-width: 480px) {
 
   .about {
-    gap: 16px;
-  }
-
-  .earlo {
-    width: 200px; /* متوسط وواضح */
+    display: grid;
+    grid-template-columns: 1fr auto; /* نص + إيرلو */
+    gap: 14px;
+    align-items: center;
   }
 
   .about-text {
-    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .about-line {
     font-size: 15.5px;
     line-height: 1.9;
+    white-space: normal;
+    word-break: normal;
   }
-}
-.about .btn-alt {
-  display: block;
-  margin: 25px auto 0 auto;
-}
-.about-text {
-  max-width: 520px;
-  line-height: 1.9;
-}
 
-.about-text h3 {
-  font-size: 26px;
-  margin-bottom: 18px;
-  color: #e5e7eb;
-}
+  /* ⭐ حجم إيرلو المتوازن للجوال ⭐ */
+  .earlo {
+    width: clamp(140px, 32vw, 180px);
+  }
 
-.about-text p {
-  font-size: 17px;
-  color: #cbd5e1;
-}
-
-/* التلوين فقط */
-.highlight {
-  color: #FACC15;
-}
-
-.highlight.strong {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.earlo {
-  width: 260px;
+  /* زر شوف تفاصيل الكورس في النص تمامًا */
+  .about .btn-alt {
+    margin: 20px auto 0;
+  }
 }
   .cards-section{padding:60px 20px;text-align:center;}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
@@ -148,13 +138,6 @@
   .contact-item i{margin-left:8px;}  
    /* FAQ */
   .faq-list li strong {color:#FACC15;}
-
-/* ===== Earlo Life Animation ===== */
-@keyframes earloLife {
-  0%   { transform: translateY(0) scale(1); }
-  50%  { transform: translateY(-6px) scale(1.02); }
-  100% { transform: translateY(0) scale(1); }
-}
 
   /* ===== CTA Centering (Perfect Center) ===== */
   .between-cta {
@@ -241,67 +224,6 @@
   animation: none;
 }
   
-  /* ===== Mobile Optimization (Phones Only) ===== */
-  @media (max-width: 480px) {
-
-    .about-text {
-      max-width: 360px;
-    }
-
-    .about-text p {
-      line-height: 1.85;
-      font-size: 15.5px;
-      word-spacing: 1px;
-    }
-
-    .about-text br {
-      display: none;
-    }
-  @media (max-width: 480px) {
-  .between-cta .btn-alt {
-    display: block;
-    margin: 0 auto !important;
-    left: 0;
-    right: 0;
-    transform: none !important;
-  }
-}
-    .earlo {
-  width: 260px;
-  animation: earloLife 4s ease-in-out infinite;
-}
-
-@keyframes earloLife {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-6px) scale(1.02);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-    .about-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-@media (max-width: 480px) {
-  .about-text {
-    flex: 1;
-  }
-
-  .about-lines {
-    gap: 8px;
-  }
-
-  .about-text div {
-    font-size: 15.5px;
-    line-height: 1.9;
-  }
-}
 </style>
 </head>
 <body>
