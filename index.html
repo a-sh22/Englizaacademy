@@ -104,25 +104,44 @@
  @media (max-width: 480px) {
 
   .about {
-    align-items: flex-start; /* يبدأ من فوق */
+    display: flex;
+    align-items: center;   /* ⭐ هذا المفتاح */
+    gap: 18px;
   }
 
+  /* إيرلو: حجم متوسط ذكي */
+  .earlo {
+    flex-basis: 150px;     /* لا كبير ولا صغير */
+    max-width: 150px;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  /* النص */
   .about-text {
-    max-width: 100%;
     flex: 1;
+    max-width: none;
+  }
+
+  .about-text h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 10px;
   }
 
   .about-text p {
     font-size: 15.5px;
-    line-height: 1.9;
-    word-spacing: 0.5px;
+    line-height: 1.85;
+    white-space: normal;
+    word-break: normal;
     text-align: right;
   }
 
+  /* نلغي النزول اليدوي */
   .about-text br {
     display: none;
   }
-
+}
   /* ===== CTA Centering (Perfect Center) ===== */
   .between-cta {
     display: flex;
@@ -139,33 +158,6 @@
 
 }
 
-  .earlo {
-    width: 220px;               /* واضح بدون ضغط */
-  }
-
-  .earlo-container {
-    flex-shrink: 0;
-  }
-
-  .about-text {
-    max-width: none;            /* لا نقيّد النص */
-  }
-
-  .about-text h3 {
-    font-size: 18px;
-    line-height: 1.35;
-  }
-
-  .about-text p {
-    font-size: 15px;
-    line-height: 1.8;
-    white-space: normal;
-    word-break: normal;
-  }
-
-  .about-text br {
-    display: none;              /* نلغي النزول الغبي */
-  }
 
   /* CTA */
   .between-cta {
