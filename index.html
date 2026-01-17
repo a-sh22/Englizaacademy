@@ -123,9 +123,52 @@ footer {
   font-size: 14px;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 480px) {
-  .hero-text {
+.hero {
+  padding: 70px 20px 40px;
+}
+
+.hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+.hero-text h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.hero-text p {
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ===== EARLO ===== */
+.hero-earlo {
+  flex-shrink: 0;
+}
+
+.earlo {
+  width: 180px;
+  animation: earloBreath 4.5s ease-in-out infinite;
+}
+
+@keyframes earloBreath {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.03); }
+  100% { transform: translateY(0) scale(1); }
+}
+  @media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
     text-align: center;
   }
 
@@ -135,6 +178,7 @@ footer {
 
   .earlo {
     width: 150px;
+    margin-top: 20px;
   }
 }
 </style>
@@ -156,21 +200,26 @@ footer {
 
   <!-- إيرلو + النص -->
   <div class="hero-flex">
+<section class="hero">
+
+  <div class="hero-inner">
 
     <div class="hero-text">
       <h2>تعلّم اللغة الإنجليزية بثقة</h2>
       <p>
-        خذ راحتك 👋  
-        واختر المسار اللي يناسبك في تعلّم الإنجليزي
+        أهلاً فيك 👋  
+        خذ راحتك، واختر الطريق اللي يناسبك.
       </p>
     </div>
 
-    <img src="earlo.png" alt="إيرلو" class="earlo">
+    <div class="hero-earlo">
+      <img src="earlo.png" alt="إيرلو" class="earlo">
+    </div>
 
   </div>
 
 </section>
-
+  
 <section class="choice-section">
 
   <div class="choice-box" onclick="location.href='free.html'">
