@@ -447,19 +447,22 @@
   .pain-intro-sub {
     font-size: 16.5px;
   }
-}
-  .back-icon {
-  position: absolute;
-  top: 18px;
-  right: 20px;
+    .back-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   cursor: pointer;
-  font-size: 18px;
-  color: #FACC15;
-  z-index: 1000;
+  font-size: 14px;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
 }
 
-.back-icon:hover {
-  opacity: 0.8;
+.back-header i {
+  font-size: 13px;
+}
+
+.back-header:hover {
+  color: #FACC15;
 }
 </style>
 </head>
@@ -467,14 +470,13 @@
   
 <header>
   <h1 id="logo-text">أكاديمية إنجليزا</h1>
-  <div class="lang-toggle" onclick="toggleLang()" id="lang-btn">EN</div>
+
+  <div class="back-header" onclick="history.back()" title="الرجوع للصفحة السابقة">
+    <i class="fa-solid fa-arrow-right"></i>
+    <span>رجوع للصفحة السابقة</span>
+  </div>
 </header>
-
-<!-- زر الرجوع -->
-<div class="back-icon" onclick="history.back()" title="الرجوع">
-  <i class="fa-solid fa-arrow-right"></i>
-</div>
-
+  
 <section class="hero">
   <h1 id="hero-title">
     تعلّم اللغة الإنجليزية بثقة
