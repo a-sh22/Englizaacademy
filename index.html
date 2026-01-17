@@ -30,31 +30,34 @@ header h1 {
 /* ===== HERO ===== */
 .hero {
   padding: 80px 20px 40px;
-  text-align: center;
 }
 
-/* النص الترحيبي العلوي */
+/* النص الترحيبي */
 .hero-intro {
+  text-align: center;
   color: #94a3b8;
   font-size: 15.5px;
   margin-bottom: 40px;
   line-height: 1.7;
 }
 
-/* محتوى الهيرو (نص + إيرلو) */
+/* ⭐ هنا الإصلاح الحقيقي */
 .hero-inner {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 32px;
+
+  flex-wrap: nowrap;     /* ❌ امنع النزول */
 }
 
 /* النص */
 .hero-text {
   max-width: 520px;
   text-align: right;
+  min-width: 0;          /* ⭐ مهم جدًا */
 }
 
 .hero-text h2 {
@@ -130,24 +133,25 @@ footer {
   font-size: 14px;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .hero-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text {
-    text-align: center;
-  }
-
+/* ===== SMALL PHONES ===== */
+@media (max-width: 400px) {
   .hero-text h2 {
-    font-size: 26px;
+    font-size: 22px;
+  }
+
+  .hero-text p {
+    font-size: 14.5px;
+    line-height: 1.7;
   }
 
   .earlo {
-    width: 150px;
-    margin-top: 20px;
+    width: 155px;
+  }
+}
+
+@media (max-width: 360px) {
+  .earlo {
+    width: 145px;
   }
 }
 </style>
