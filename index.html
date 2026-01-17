@@ -11,19 +11,18 @@
 مناسب للمبتدئين، المتوسطين، وحتى المتقدمين المتشتتين.
 تعلّم التحدث والفهم بثقة بدون ترجمة أو حفظ ممل، مع تمارين تطبيقية.
 ">
-  <!-- Open Graph / Social Sharing -->
+ <!-- Open Graph / Social Sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="أكاديمية إنجليزا">
 
 <meta property="og:title" content="تعلم اللغة الإنجليزية بثقة | من الصفر إلى الاحتراف">
 <meta property="og:description" content="كورس عملي يخلّيك تتكلم وتفهم الإنجليزي بثقة. مناسب للمبتدئين، المتوسطين، وحتى المتقدمين المتشتتين — بدون ترجمة، بدون حفظ ممل.">
 
-<meta property="og:url" content="https://www.englizaacademy.com">
-<meta property="og:image" content="https://www.englizaacademy.com/earlo.png">
+<meta property="og:url" content="https://www.englizaacademy.com/">
+<meta property="og:image" content="https://www.englizaacademy.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="تعلم اللغة الإنجليزية بثقة مع أكاديمية إنجليزا">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   body {font-family:"Tahoma","Arial",sans-serif;margin:0;background:#0f172a;color:#f1f5f9;line-height:1.6;}
   h1,h2,h3 {margin:0}
@@ -202,6 +201,75 @@
   color: #94a3b8;
   font-size: 14.5px;
 }
+  /* ===== PAIN SECTION ===== */
+.pain-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pain-title {
+  font-size: 26px;
+  margin-bottom: 50px;
+  color: #e5e7eb;
+}
+
+.pain-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* الدوائر */
+.pain-circle {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #1e293b, #0f172a);
+  box-shadow: 0 0 35px rgba(37,99,235,0.45);
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.pain-circle h4 {
+  color: #FACC15;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.pain-circle p {
+  color: #e5e7eb;
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+/* الأسهم */
+.pain-arrow {
+  font-size: 26px;
+  margin: 22px 0;
+  color: #FACC15;
+  filter: drop-shadow(0 0 6px rgba(250,204,21,0.6));
+  transform: rotate(90deg);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* عند الظهور */
+.pain-circle.show,
+.pain-arrow.show {
+  opacity: 1;
+  transform: translateY(0) rotate(90deg);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .pain-circle {
+    max-width: 320px;
+    border-radius: 26px; /* مربعات ناعمة بدل دائرة كاملة */
+  }
+}
 </style>
 </head>
 <body>
@@ -251,25 +319,63 @@
   </div>
 
 </section>
+<section class="pain-section">
 
+  <h3 class="pain-title">❓ هل تحس إنك في واحد من هذي الحالات؟</h3>
+
+  <div class="pain-flow">
+
+    <div class="pain-circle">
+      <h4>تفهم… بس ما تقدر تتكلم بثقة</h4>
+      <p>
+        تسمع وتفهم بعض الكلام،  
+        لكن وقت الكلام تتجمّد  
+        وتخاف تغلط مهما درست.
+      </p>
+    </div>
+
+    <div class="pain-arrow">➜</div>
+
+    <div class="pain-circle">
+      <h4>جرّبت طرق كثير… بدون نتيجة</h4>
+      <p>
+        كورسات، فيديوهات، تطبيقات  
+        لكن تحس مكانك سر  
+        بدون خطة واضحة تمشي عليها.
+      </p>
+    </div>
+
+    <div class="pain-arrow">➜</div>
+
+    <div class="pain-circle">
+      <h4>تحس الإنجليزي أعقد مما لازم</h4>
+      <p>
+        قواعد، ترجمة، حفظ ممل  
+        وتتمنى طريقة أبسط  
+        طبيعية… بدون ضغط.
+      </p>
+    </div>
+
+  </div>
+</section>
+  
 <div class="between-cta">
   <p>جاهز تبدأ رحلتك؟ ✨<br>اختر اللي يناسبك وخلك أقرب لهدفك</p>
   <button class="btn-alt" onclick="showDetails('course')">
     شوف تفاصيل الكورس
   </button>
 </div>
-
 <section class="cards-section">
   <div class="cards">
     <div class="card" onclick="showDetails('course')" id="card-course">📘 تفاصيل الكورس</div>
     <div class="card" onclick="showDetails('reviews')" id="card-reviews">⭐ آراء الطلاب</div>
-    <div class="card" onclick="showDetails('terms')" id="card-terms">📄 الشروط والأحكام</div>
     <div class="card" onclick="showDetails('story')" id="card-story">⭐ قصتي مع الإنجليزية</div>
     <div class="card" onclick="showDetails('faq')" id="card-faq">⁉️ الأسئلة الشائعة</div>
+    <div class="card" onclick="showDetails('terms')" id="card-terms">📄 الشروط والأحكام</div>
     <div class="card" onclick="showDetails('privacy')" id="card-privacy">🔒 سياسة الخصوصية</div>
-    <div class="card" onclick="showDetails('refund')" id="card-refund">💳 سياسة الدفع والاسترجاع</div>
   </div>
 </section>
+
 <!-- تفاصيل الكورس -->
 <div id="course" class="details">
   <h3 id="course-title">🚀 تفاصيل الكورس</h3>
@@ -358,16 +464,21 @@
 <!-- 🔻 باقي الأقسام: الشروط والأحكام، قصتي، FAQ، الخصوصية، الاسترجاع، الفوتر -->
 <!-- نفس النصوص الأصلية، مع التعديلات (PayTabs + مجتمع طلابي + السعر الجديد) -->
 
-<!-- الشروط والأحكام -->
-<div id="terms" class="details">
-  <h3 id="terms-title">📄 الشروط والأحكام</h3>
-  <ul id="terms-list">
-    <li>الكورس رقمي يُرسل مباشرة بعد الدفع، لذلك لا يمكن استرجاع المبلغ بعد تفعيل الاشتراك.</li>
-    <li>الاشتراك شخصي فقط، وممنوع مشاركة المحتوى أو تسريبه.</li>
-    <li>الأكاديمية تملك حق تعديل أو تحديث المحتوى بما يخدم مصلحة الطلاب.</li>
-    <li>في حال خالف الطالب القواعد (مثل تسريب المحتوى) يحق للأكاديمية إلغاء وصوله للكورس بدون تعويض.</li>
-    <li>بدفعك للكورس فأنت توافق على هذه الشروط</li>
-  </ul>
+<div class="terms-content">
+  <h3>📄 الشروط والأحكام</h3>
+  <p>
+    • الكورس محتوى رقمي يتم تفعيل الوصول إليه مباشرة بعد الدفع 💻✨<br>
+    • نظرًا لطبيعة المحتوى الرقمي، لا يمكن استرجاع المبلغ بعد التفعيل.<br>
+    • الاشتراك شخصي، ونرجو عدم مشاركة المحتوى أو تسريبه احترامًا لحقوق الجميع 🤍<br>
+    • يحق لأكاديمية إنجليزا تحديث أو تطوير محتوى الكورس بما يخدم مصلحتك التعليمية 📘🚀<br>
+    • في حال إساءة استخدام المحتوى (مثل المشاركة غير المصرّح بها)، قد يتم إيقاف الوصول حفاظًا على حقوق الأكاديمية والطلاب.<br><br>
+
+    💙 نعدك أن هدفنا الأول هو مساعدتك على التعلّم والتطوّر،  
+    وفي حال واجهت أي مشكلة أو استفسار، فريقنا دائمًا جاهز لدعمك ومساعدتك 🤝✨<br><br>
+
+    بإتمام عملية الشراء، أنت توافق على هذه الشروط، ونتمنى لك رحلة ممتعة ومثمرة في تعلّم اللغة الإنجليزية 🌟
+  </p>
+</div>
   <button onclick="buyNow()" class="btn-alt" id="terms-btn">أوافق وأشتري الآن</button>
 
   <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
@@ -461,6 +572,22 @@
   function hideAllDetails(){ document.querySelectorAll('.details').forEach(d=>d.style.display='none'); }
   document.addEventListener('click',e=>{if(e.target.classList.contains('back')) hideAllDetails();});
   function buyNow(){ alert("سيتم تحويلك لصفحة الدفع عبر PayTabs"); }
+</script>
+  <script>
+const painElements = document.querySelectorAll('.pain-circle, .pain-arrow');
+
+const painObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      painObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+if (painElements.length) {
+  painElements.forEach(el => painObserver.observe(el));
+}
 </script>
 </body>
 </html>
