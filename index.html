@@ -29,29 +29,31 @@ header h1 {
 
 /* ===== HERO ===== */
 .hero {
+  padding: 80px 20px 40px;
   text-align: center;
-  padding: 70px 20px 40px;
 }
 
-/* النص العلوي */
+/* النص الترحيبي العلوي */
 .hero-intro {
   color: #94a3b8;
-  font-size: 15px;
-  margin-bottom: 35px;
+  font-size: 15.5px;
+  margin-bottom: 40px;
   line-height: 1.7;
 }
 
-/* ترتيب إيرلو + النص */
-.hero-flex {
+/* محتوى الهيرو (نص + إيرلو) */
+.hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px;
-  flex-wrap: wrap;
 }
 
+/* النص */
 .hero-text {
-  max-width: 420px;
+  max-width: 520px;
   text-align: right;
 }
 
@@ -62,13 +64,18 @@ header h1 {
 
 .hero-text p {
   color: #cbd5e1;
-  font-size: 16.5px;
+  font-size: 17px;
   line-height: 1.8;
 }
 
 /* ===== EARLO ===== */
+.hero-earlo {
+  flex-shrink: 0;
+}
+
 .earlo {
   width: 180px;
+  display: block;
   animation: earloBreath 4.5s ease-in-out infinite;
 }
 
@@ -84,7 +91,7 @@ header h1 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   max-width: 900px;
-  margin: 60px auto 80px;
+  margin: 70px auto 80px;
   padding: 0 20px;
 }
 
@@ -123,52 +130,14 @@ footer {
   font-size: 14px;
 }
 
-.hero {
-  padding: 70px 20px 40px;
-}
-
-.hero-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.hero-text {
-  max-width: 520px;
-}
-
-.hero-text h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
-.hero-text p {
-  color: #cbd5e1;
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-/* ===== EARLO ===== */
-.hero-earlo {
-  flex-shrink: 0;
-}
-
-.earlo {
-  width: 180px;
-  animation: earloBreath 4.5s ease-in-out infinite;
-}
-
-@keyframes earloBreath {
-  0% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-6px) scale(1.03); }
-  100% { transform: translateY(0) scale(1); }
-}
-  @media (max-width: 768px) {
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
   .hero-inner {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
     text-align: center;
   }
 
@@ -192,15 +161,10 @@ footer {
 
 <section class="hero">
 
-  <!-- النص العلوي -->
   <div class="hero-intro">
     أهلاً بك في أكاديمية إنجليزا<br>
     هنا تبدأ رحلتك مع اللغة الإنجليزية بأسلوب مختلف
   </div>
-
-  <!-- إيرلو + النص -->
-  <div class="hero-flex">
-<section class="hero">
 
   <div class="hero-inner">
 
@@ -219,7 +183,7 @@ footer {
   </div>
 
 </section>
-  
+
 <section class="choice-section">
 
   <div class="choice-box" onclick="location.href='free.html'">
