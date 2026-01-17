@@ -33,25 +33,40 @@ header h1 {
   padding: 70px 20px 40px;
 }
 
-.hero h2 {
+/* النص العلوي */
+.hero-intro {
+  color: #94a3b8;
+  font-size: 15px;
+  margin-bottom: 35px;
+  line-height: 1.7;
+}
+
+/* ترتيب إيرلو + النص */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 420px;
+  text-align: right;
+}
+
+.hero-text h2 {
   font-size: 32px;
   margin-bottom: 12px;
 }
 
-.hero p {
+.hero-text p {
   color: #cbd5e1;
-  font-size: 17px;
-  max-width: 520px;
-  margin: 0 auto;
+  font-size: 16.5px;
+  line-height: 1.8;
 }
 
 /* ===== EARLO ===== */
-.earlo-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
-}
-
 .earlo {
   width: 180px;
   animation: earloBreath 4.5s ease-in-out infinite;
@@ -69,7 +84,7 @@ header h1 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   max-width: 900px;
-  margin: 0 auto 80px;
+  margin: 60px auto 80px;
   padding: 0 20px;
 }
 
@@ -110,7 +125,11 @@ footer {
 
 /* ===== MOBILE ===== */
 @media (max-width: 480px) {
-  .hero h2 {
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-text h2 {
     font-size: 26px;
   }
 
@@ -128,16 +147,29 @@ footer {
 </header>
 
 <section class="hero">
-  <h2>تعلّم اللغة الإنجليزية بثقة</h2>
-  <p>
-    أهلاً فيك 👋  
-    خذ راحتك، واختر الطريق اللي يناسبك.
-  </p>
-</section>
 
-<div class="earlo-wrapper">
-  <img src="earlo.png" alt="إيرلو" class="earlo">
-</div>
+  <!-- النص العلوي -->
+  <div class="hero-intro">
+    أهلاً بك في أكاديمية إنجليزا<br>
+    هنا تبدأ رحلتك مع اللغة الإنجليزية بأسلوب مختلف
+  </div>
+
+  <!-- إيرلو + النص -->
+  <div class="hero-flex">
+
+    <div class="hero-text">
+      <h2>تعلّم اللغة الإنجليزية بثقة</h2>
+      <p>
+        خذ راحتك 👋  
+        واختر المسار اللي يناسبك في تعلّم الإنجليزي
+      </p>
+    </div>
+
+    <img src="earlo.png" alt="إيرلو" class="earlo">
+
+  </div>
+
+</section>
 
 <section class="choice-section">
 
