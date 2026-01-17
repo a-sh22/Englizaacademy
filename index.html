@@ -201,73 +201,73 @@
   color: #94a3b8;
   font-size: 14.5px;
 }
-  /* ===== PAIN SECTION ===== */
+  /* ===== PAIN POINTS SECTION ===== */
 .pain-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.pain-title {
-  font-size: 26px;
-  margin-bottom: 50px;
-  color: #e5e7eb;
-}
-
-.pain-flow {
+  padding: 70px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 26px;
 }
 
-/* الدوائر */
-.pain-circle {
-  width: 100%;
-  max-width: 420px;
-  padding: 28px 24px;
-  border-radius: 50%;
-  background: radial-gradient(circle at top, #1e293b, #0f172a);
-  box-shadow: 0 0 35px rgba(37,99,235,0.45);
-  margin: 0 auto;
+/* المربعات */
+.pain-box {
+  max-width: 520px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 0 35px rgba(37,99,235,0.35);
+  text-align: right;
+
+  /* حركة الدخول */
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.pain-circle h4 {
+.pain-box.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.pain-box h3 {
   color: #FACC15;
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.pain-circle p {
+.pain-box p {
   color: #e5e7eb;
   font-size: 15.5px;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
-/* الأسهم */
+/* السهم */
 .pain-arrow {
-  font-size: 26px;
-  margin: 22px 0;
   color: #FACC15;
-  filter: drop-shadow(0 0 6px rgba(250,204,21,0.6));
-  transform: rotate(90deg);
+  font-size: 28px;
   opacity: 0;
-  transition: opacity 0.8s ease;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* عند الظهور */
-.pain-circle.show,
 .pain-arrow.show {
   opacity: 1;
-  transform: translateY(0) rotate(90deg);
+  transform: scale(1);
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 480px) {
-  .pain-circle {
-    max-width: 320px;
-    border-radius: 26px; /* مربعات ناعمة بدل دائرة كاملة */
+  .pain-box {
+    padding: 24px 20px;
+  }
+
+  .pain-box h3 {
+    font-size: 16.5px;
+  }
+
+  .pain-box p {
+    font-size: 15px;
   }
 }
 </style>
@@ -321,42 +321,37 @@
 </section>
 <section class="pain-section">
 
-  <h3 class="pain-title">❓ هل تحس إنك في واحد من هذي الحالات؟</h3>
-
-  <div class="pain-flow">
-
-    <div class="pain-circle">
-      <h4>تفهم… بس ما تقدر تتكلم بثقة</h4>
-      <p>
-        تسمع وتفهم بعض الكلام،  
-        لكن وقت الكلام تتجمّد  
-        وتخاف تغلط مهما درست.
-      </p>
-    </div>
-
-    <div class="pain-arrow">➜</div>
-
-    <div class="pain-circle">
-      <h4>جرّبت طرق كثير… بدون نتيجة</h4>
-      <p>
-        كورسات، فيديوهات، تطبيقات  
-        لكن تحس مكانك سر  
-        بدون خطة واضحة تمشي عليها.
-      </p>
-    </div>
-
-    <div class="pain-arrow">➜</div>
-
-    <div class="pain-circle">
-      <h4>تحس الإنجليزي أعقد مما لازم</h4>
-      <p>
-        قواعد، ترجمة، حفظ ممل  
-        وتتمنى طريقة أبسط  
-        طبيعية… بدون ضغط.
-      </p>
-    </div>
-
+  <div class="pain-box">
+    <h3>❓ تفهم شوي… بس ما تقدر تتكلم بثقة</h3>
+    <p>
+      تسمع وتفهم بعض الكلام،  
+      لكن لما يجي وقت الكلام تتجمّد،  
+      تتردد وتخاف تغلط مهما درست أو حفظت.
+    </p>
   </div>
+
+  <div class="pain-arrow">➜</div>
+
+  <div class="pain-box">
+    <h3>😓 جرّبت طرق كثير… بدون نتيجة</h3>
+    <p>
+      كورسات، فيديوهات، تطبيقات،  
+      وبعد كل هذا تحس إنك مكانك سر  
+      بدون خطة واضحة تمشي عليها.
+    </p>
+  </div>
+
+  <div class="pain-arrow">➜</div>
+
+  <div class="pain-box">
+    <h3>🤯 تحس الإنجليزي أصعب مما لازم</h3>
+    <p>
+      قواعد، ترجمة، حفظ ممل،  
+      وتتمنى تتعلمه بطريقة أبسط  
+      طبيعية… بدون ضغط.
+    </p>
+  </div>
+
 </section>
   
 <div class="between-cta">
@@ -574,20 +569,18 @@
   function buyNow(){ alert("سيتم تحويلك لصفحة الدفع عبر PayTabs"); }
 </script>
   <script>
-const painElements = document.querySelectorAll('.pain-circle, .pain-arrow');
+  const painItems = document.querySelectorAll('.pain-box, .pain-arrow');
 
-const painObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      painObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
+  const painObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        painObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
 
-if (painElements.length) {
-  painElements.forEach(el => painObserver.observe(el));
-}
+  painItems.forEach(item => painObserver.observe(item));
 </script>
 </body>
 </html>
