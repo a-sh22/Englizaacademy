@@ -1,842 +1,169 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-تعلم اللغة الإنجليزية بثقة | من الصفر إلى الاحتراف – أكاديمية إنجليزا
-</title>
-  <meta name="description" content="
-كورس عملي لتعلم اللغة الإنجليزية من الصفر حتى الاحتراف.
-مناسب للمبتدئين، المتوسطين، وحتى المتقدمين المتشتتين.
-تعلّم التحدث والفهم بثقة بدون ترجمة أو حفظ ممل، مع تمارين تطبيقية.
-">
- <!-- Open Graph / Social Sharing -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="أكاديمية إنجليزا">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أكاديمية إنجليزا | اختر طريقك</title>
 
-<meta property="og:title" content="تعلم اللغة الإنجليزية بثقة | من الصفر إلى الاحتراف">
-<meta property="og:description" content="كورس عملي يخلّيك تتكلم وتفهم الإنجليزي بثقة. مناسب للمبتدئين، المتوسطين، وحتى المتقدمين المتشتتين — بدون ترجمة، بدون حفظ ممل.">
-
-<meta property="og:url" content="https://www.englizaacademy.com/">
-<meta property="og:image" content="https://www.englizaacademy.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="تعلم اللغة الإنجليزية بثقة مع أكاديمية إنجليزا">
 <style>
-  body {font-family:"Tahoma","Arial",sans-serif;margin:0;background:#0f172a;color:#f1f5f9;line-height:1.6;}
-  h1,h2,h3 {margin:0}
-  header {background:#1e293b;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 15px rgba(37,99,235,.4);}
-  header h1{font-size:20px;}
-  .lang-toggle{cursor:pointer;font-weight:bold;color:#93c5fd;}
-
-  .hero{text-align:center;padding:60px 20px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);}
-  .hero h2{font-size:32px;margin-bottom:15px;}
-  .hero p{color:#cbd5e1;max-width:600px;margin:auto;}
-
-  .about{display:flex;align-items:center;justify-content:center;gap:20px;padding:60px 20px;background:#1e293b;box-shadow:inset 0 0 30px rgba(37,99,235,.3);}
-  .about img{width:150px;border-radius:12px;}
-  .about p{max-width:500px;color:#e2e8f0;}
-
-  .cards-section{padding:60px 20px;text-align:center;}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-  .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
-  .card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
-
-  .details{display:none;background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
-  .back{margin-top:15px;display:inline-block;padding:10px 18px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
-
-  /* زر الشراء الذهبي */
-  .btn-alt{background:#FACC15;color:#000;padding:14px 24px;border-radius:10px;font-weight:bold;border:none;cursor:pointer;transition:.2s;box-shadow:0 0 20px rgba(250,204,21,.7);font-size:1.05em;}
-  .btn-alt:hover{background:#eab308;}
-
-  ul.course-list {list-style-type:"✅ ";padding-right:20px;}
-  ul.course-list li{margin-bottom:10px;}
-
-  /* Reviews grid */
-  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-  .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
-  .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
-  .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-  .avatar{width:40px;height:40px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;}
-  .name{font-weight:bold;}
-  .verified{color:#38bdf8;font-size:0.8em;}
-  .stars{color:gold;margin:5px 0;}
-  .review-text{font-size:0.9em;white-space:pre-line;}
-  .quote-icon{position:absolute;top:15px;right:15px;font-size:20px;opacity:0.3;}
-
-  footer{background:#0b1220;padding:20px;text-align:center;color:#94a3b8;margin-top:40px;}
-
-  /* الدفع والتواصل */
-  .secure-pay{color:#38bdf8;margin-top:10px;font-weight:bold;}
-  .payment-icons{margin-top:10px;display:flex;align-items:center;justify-content:center;}
-  .payment-icons img{height:28px;margin:0 8px;}
-  .fa-envelope{color:#ea4335;}
-  .fa-instagram{background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-                -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-  .contact-box{margin-top:25px;padding:15px;border:1px solid #38bdf8;border-radius:10px;background:#0f172a;text-align:right;}
-  .contact-box h4{color:#38bdf8;margin-bottom:10px;}
-  .contact-item{margin:8px 0;font-size:0.95em;}
-  .contact-item i{margin-left:8px;}
-
-  /* FAQ */
-  .faq-list li strong {color:#FACC15;}
-  /* ===== ABOUT SECTION ===== */
-.about {
-  padding: 60px 20px;
+body {
+  margin: 0;
+  font-family: "Tahoma", Arial, sans-serif;
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  color: #f1f5f9;
 }
 
-.about-box {
+/* ===== HEADER ===== */
+header {
+  padding: 16px 30px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* يبعد إيرلو لأقصى اليسار */
-  gap: 28px;
-  padding: 50px 40px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(37, 99, 235, 0.35);
+  background: #1e293b;
+  box-shadow: 0 0 15px rgba(37,99,235,.4);
 }
 
-.about-text {
-  flex: 1;
-  max-width: 520px; /* توازن مثالي للنص */
+header h1 {
+  font-size: 20px;
 }
 
-.about-title {
-  font-size: 26px;
-  margin-bottom: 18px;
-  color: #e5e7eb;
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 70px 20px 40px;
 }
 
-.about-paragraph {
-  font-size: 17px;
-  line-height: 1.9;
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.hero p {
   color: #cbd5e1;
-}
-
-/* ألوان نفسية */
-.highlight {
-  color: #FACC15;
-}
-
-.muted {
-  color: #e5e7eb;
+  font-size: 17px;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 /* ===== EARLO ===== */
+.earlo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
 .earlo {
-  width: clamp(160px, 32vw, 220px);
+  width: 180px;
   animation: earloBreath 4.5s ease-in-out infinite;
 }
 
 @keyframes earloBreath {
-  0%   { transform: translateY(0) scale(1); }
-  50%  { transform: translateY(-6px) scale(1.02); }
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.03); }
   100% { transform: translateY(0) scale(1); }
 }
 
-/* ===== CTA ===== */
-.between-cta {
-  text-align: center;
-  padding: 20px 20px 20px; /* قللنا المسافات */
-  margin: 20px auto;       /* يخليه في النص بصريًا */
-}
-
-.between-cta p {
-  font-size: 18px;
-  margin-bottom: 18px;
-  color: #e5e7eb;
-}
-
-/* زر ذهبي نابض */
-.btn-alt {
-  background: #FACC15;
-  color: #000;
-  padding: 14px 26px;
-  border-radius: 12px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  animation: ctaPulse 6s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(250, 204, 21, 0.7);
-}
-
-@keyframes ctaPulse {
-  0%,100% {
-    transform: scale(1);
-    box-shadow: 0 0 20px rgba(250, 204, 21, 0.6);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(250, 204, 21, 0.9);
-  }
-}
-
-.btn-alt:hover {
-  animation: none;
-}
-
-/* ===== MOBILE (Clean & Stable) ===== */
-@media (max-width: 480px) {
-
-  .about-box {
-    gap: 16px;
-    padding: 40px 20px;
-  }
-
-  .earlo {
-    width: 170px; /* متوسط مثالي للجوال */
-  }
-
-  .about-title {
-    font-size: 20px;
-  }
-
-  .about-paragraph {
-    font-size: 15.5px;
-    line-height: 1.85;
-  }
-}
-  .hero-trust {
-  margin-top: 14px;
-  color: #94a3b8;
-  font-size: 14.5px;
-}
-  /* ===== PAIN POINTS SECTION ===== */
-.pain-section {
-  padding: 70px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 26px;
-}
-
-/* المربعات */
-.pain-box {
-  max-width: 520px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 18px;
-  padding: 28px 26px;
-  box-shadow: 0 0 35px rgba(37,99,235,0.35);
-  text-align: right;
-
-  /* حركة الدخول */
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.pain-box.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.pain-box h3 {
-  color: #FACC15;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.pain-box p {
-  color: #e5e7eb;
-  font-size: 15.5px;
-  line-height: 1.9;
-}
-
-/* السهم */
-.pain-arrow {
-  color: #FACC15;
-  font-size: 28px;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.pain-arrow.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.section-title {
-  color: #f1f5f9;
-  font-size: 24px;
-  margin-bottom: 14px;
-}
-
-.sub-title {
-  color: #FACC15;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.lead-text {
-  color: #e5e7eb;
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.lead-text.muted {
-  color: #cbd5e1;
-}
-
-.elegant-list {
-  list-style: none;
-  padding-right: 0;
-}
-
-.elegant-list li {
-  padding-right: 18px;
-  position: relative;
-  margin-bottom: 8px;
-  color: #e5e7eb;
-}
-
-.elegant-list li::before {
-  content: "•";
-  position: absolute;
-  right: 0;
-  color: #FACC15;
-  font-size: 18px;
-}
-
-.elegant-list.soft li::before {
-  color: #94a3b8;
-}
-
-.result-title {
-  margin-top: 16px;
-  font-weight: bold;
-  color: #f1f5f9;
-}
-
-.closing-text {
-  color: #e5e7eb;
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.price-title {
-  color: #FACC15;
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-.price {
-  font-size: 18px;
-  color: #f1f5f9;
-}
-
-.price span {
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-  .program-title {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 12px;
-  color: #e5e7eb;
-}
-
-.program-intro {
-  text-align: center;
-  max-width: 620px;
-  margin: 0 auto 40px;
-  color: #cbd5e1;
-  line-height: 1.8;
-}
-
-.program-grid {
+/* ===== CHOICE BOXES ===== */
+.choice-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
 }
 
-.program-box {
+.choice-box {
   background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 0 25px rgba(37,99,235,.35);
+  border-radius: 20px;
+  padding: 32px 26px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 35px rgba(37,99,235,.35);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.program-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 40px rgba(37,99,235,.55);
+.choice-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px rgba(37,99,235,.6);
 }
 
-.program-box h4 {
+.choice-box h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
   color: #FACC15;
-  margin-bottom: 10px;
-  font-size: 17px;
 }
 
-.program-box p {
+.choice-box p {
+  font-size: 15.5px;
   color: #e5e7eb;
   line-height: 1.8;
-  font-size: 15.5px;
 }
 
-.program-price {
+/* ===== FOOTER ===== */
+footer {
   text-align: center;
-  margin: 35px 0 18px;
-}
-
-.price-main {
-  display: block;
-  font-size: 26px;
-  font-weight: bold;
-  color: #FACC15;
-}
-
-.price-sub {
-  display: block;
-  font-size: 14.5px;
+  padding: 20px;
   color: #94a3b8;
-}
-
-.price-note {
   font-size: 14px;
-  color: #cbd5e1;
-  margin-top: 6px;
 }
 
-.btn-buy {
-  display: block;
-  margin: 20px auto;
-  background: #FACC15;
-  color: #000;
-  padding: 14px 30px;
-  border-radius: 12px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  animation: ctaPulse 6s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(250,204,21,.7);
-}
-
-.btn-buy:hover {
-  animation: none;
-}
-  .pain-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 80px auto 40px;
-  padding: 0 16px;
-}
-
-.pain-intro-main {
-  font-size: 22px;
-  font-weight: 600;
-  color: #e5e7eb; /* أبيض مائل للرمادي */
-  margin-bottom: 10px;
-}
-
-.pain-intro-sub {
-  font-size: 18px;
-  font-weight: 500;
-  color: #FACC15; /* ذهبي نفسي */
-}
-  @media (max-width: 480px) {
-  .pain-intro-main {
-    font-size: 19px;
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 26px;
   }
 
-  .pain-intro-sub {
-    font-size: 16.5px;
+  .earlo {
+    width: 150px;
   }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1 id="logo-text">أكاديمية إنجليزا</h1>
-  <div class="lang-toggle" onclick="toggleLang()" id="lang-btn">EN</div>
+  <h1>أكاديمية إنجليزا</h1>
 </header>
+
 <section class="hero">
-  <h1 id="hero-title">
-    تعلّم اللغة الإنجليزية بثقة
-  </h1>
-
-  <p id="hero-desc">
-    كورس عملي يساعدك تفهم وتتكلم الإنجليزي
-    <br>
-    بدون تعقيد أو حفظ ممل
-  </p>
-</section>
-  
-<section class="about">
-
-  <div class="about-box">
-
-    <div class="about-text">
-      <h3 class="about-title">
-        ✨ تعلّم الإنجليزي… <span class="muted">مو دراسة</span>،
-        بل <span class="highlight">جزء منك</span>
-      </h3>
-
-      <p class="about-paragraph">
-        تعلّم <strong>تتكلم بثقة</strong>،
-        تفهم <strong>بدون ترجمة</strong>،
-        وتحس إن الإنجليزي صار <span class="highlight">جزء منك</span>
-        — <span class="muted">مو مادة دراسية</span>.
-        <br><br>
-        <strong class="highlight">أنت مو ضعيف في الإنجليزي</strong>،
-        <span class="muted">أنت بس ما لقيت</span>
-        <span class="highlight">الطريقة الصح</span>.
-      </p>
-    </div>
-
-    <div class="earlo-container">
-      <img src="earlo.png" class="earlo" alt="شخصية إيرلو">
-    </div>
-</section>
-  </div>
-<div class="pain-intro">
-  <p class="pain-intro-main">
-    الكل من حولك يتكلم إنجليزي بثقة…
-  </p>
-
-  <p class="pain-intro-sub">
-    بس أنت تحس نفسك عالق في وحدة من هذي الحالات؟
-  </p>
-</div>
-
-<section class="pain-section">
-
-  <div class="pain-box">
-    <h3>❓ تفهم شوي… بس ما تقدر تتكلم بثقة</h3>
-    <p>
-      تسمع وتفهم بعض الكلام،  
-      لكن لما يجي وقت الكلام تتجمّد،  
-      تتردد وتخاف تغلط مهما درست أو حفظت.
-    </p>
-  </div>
-
-  <div class="pain-arrow">➜</div>
-
-  <div class="pain-box">
-    <h3>😓 جرّبت طرق كثير… بدون نتيجة</h3>
-    <p>
-      كورسات، فيديوهات، تطبيقات،  
-      وبعد كل هذا تحس إنك مكانك سر  
-      بدون خطة واضحة تمشي عليها.
-    </p>
-  </div>
-
-  <div class="pain-arrow">➜</div>
-
-  <div class="pain-box">
-    <h3>🤯 تحس الإنجليزي أصعب مما لازم</h3>
-    <p>
-      قواعد، ترجمة، حفظ ممل،  
-      وتتمنى تتعلمه بطريقة أبسط  
-      طبيعية… بدون ضغط.
-    </p>
-  </div>
-
-</section>
-  
-<div class="between-cta">
-  <p>جاهز تبدأ رحلتك؟ ✨<br>اختر اللي يناسبك وخلك أقرب لهدفك</p>
-  <button class="btn-alt" onclick="showDetails('course')">
-    شوف تفاصيل الكورس
-  </button>
-</div>
-<section class="cards-section">
-  <div class="cards">
-    <div class="card" onclick="showDetails('course')" id="card-course">📘 تفاصيل الكورس</div>
-    <div class="card" onclick="showDetails('reviews')" id="card-reviews">⭐ آراء الطلاب</div>
-    <div class="card" onclick="showDetails('story')" id="card-story">⭐ قصتي مع الإنجليزية</div>
-    <div class="card" onclick="showDetails('faq')" id="card-faq">⁉️ الأسئلة الشائعة</div>
-    <div class="card" onclick="showDetails('terms')" id="card-terms">📄 الشروط والأحكام</div>
-    <div class="card" onclick="showDetails('privacy')" id="card-privacy">🔒 سياسة الخصوصية</div>
-  </div>
-</section>
-
-<div id="course" class="details">
-
-  <h3 class="program-title">تفاصيل البرنامج</h3>
-
-  <p class="program-intro">
-    هذا البرنامج ما صُمّم لمستوى واحد فقط،  
-    بل ليخدمك <strong>مهما كان وضعك الحالي مع اللغة الإنجليزية</strong>.
-  </p>
-
-  <div class="program-grid">
-
-    <div class="program-box">
-      <h4>لغة تُعاش… مو قواعد تُحفظ</h4>
-      <p>
-        هنا ما نكدّسك بالقواعد ثم نتركك تائه.  
-        تتعلّم الإنجليزي بنفس الطريقة الطبيعية:
-        تسمع، تفهم، تربط، ثم تتكلم بدون تفكير أو ضغط.
-      </p>
-    </div>
-
-    <div class="program-box">
-      <h4>تفهم قبل ما تتكلم</h4>
-      <p>
-        قبل ما نطلب منك تتكلم،  
-        نخليك <strong>تفهم فعليًا</strong> متى وليش وكيف تُستخدم الجملة.  
-        عشان لما تتكلم… يطلع الكلام منك بسلاسة.
-      </p>
-    </div>
-
-    <div class="program-box">
-      <h4>طريقة بسيطة تناسب الجميع</h4>
-      <p>
-        سواء كنت مبتدئ، متوسط،  
-        أو حتى <strong>متقدّم لكن حاس إن لغتك متشتّتة</strong>،  
-        البرنامج يساعدك ترتّب معرفتك وتبني أساس أقوى.
-      </p>
-    </div>
-
-    <div class="program-box">
-      <h4>حتى المتقدّمين يستفيدون</h4>
-      <p>
-        لو مستواك متقدّم لكن:
-        تتردد، تترجم بعقلك، أو تحس إن لغتك مو مستقرة،  
-        هذا البرنامج يعيد بناء فهمك بشكل أعمق  
-        ويطوّر استخدامك للغة بثقة أعلى.
-      </p>
-    </div>
-
-    <div class="program-box">
-      <h4>تخرج وإنت مختلف فعلًا</h4>
-      <p>
-        مع الوقت تلاحظ إنك:
-        تفهم أكثر، تتكلم أهدى،  
-        وتستخدم الإنجليزي كجزء منك  
-        مو كمادة دراسية.
-      </p>
-    </div>
-
-    <div class="program-box">
-      <h4>بيئة داعمة وآمنة</h4>
-      <p>
-        ما راح تكون لحالك.  
-        مجتمع طلاب مثلك،  
-        تسأل، تناقش، وتتعلّم بدون إحراج  
-        لأن التعلّم الحقيقي يحتاج أمان.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="program-price">
-    <span class="price-main">40 ريال عماني</span>
-    <span class="price-sub">(≈ 104 دولار أمريكي)</span>
-    <p class="price-note">وصول كامل · تحديثات مستمرة · مجتمع داعم</p>
-  </div>
-
-  <button class="btn-buy" onclick="buyNow()">ابدأ رحلتك الآن</button>
-
-  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
-
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-  </div>
-<div class="contact-box">
-  <h4 class="contact-title">📩 تواصل معنا</h4>
-
-  <div class="contact-item">
-    <i class="fa-solid fa-envelope"></i>
-    englizaacademy@gmail.com
-  </div>
-
-  <div class="contact-item">
-    <i class="fa-brands fa-instagram"></i>
-    <a href="https://www.instagram.com/engliza_academy_?igsh=eDdtM2cyNXFwMDJr&utm_source=qr"
-       target="_blank">
-      @_engliza_academy
-    </a>
-  </div>
-</div>
-  <div class="back">رجوع</div>
-</div>
-<!-- آراء الطلاب -->
-<div id="reviews" class="details">
-  <h3 id="reviews-title">⭐ آراء الطلاب</h3>
-
-  <div style="text-align:center; margin:25px 0; font-size:1.1em; font-weight:bold; color:#FACC15;">
-    كن انت القصة القادمة و ابدأ رحلتك الآن 🚀⭐️
-  </div>
-
-  <div class="reviews-grid" id="reviews-grid">
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">إ</div><div><div class="name">إبراهيم | Ibrahim</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">شكراً على كل حاجةالحمد لله، نجحت بواصل دراسة.</div></div>
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">خ</div><div><div class="name">خالد | Khalid</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">اهلاً و مرحبا مس عائشة ،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جداً ولما خذيت كورس معك، الكورس فيه أشياء ما كنت أعرفها، وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبداً.</div></div>
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">ميس، جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس، لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.</div></div>
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ف</div><div><div class="name">فايزه | Faiza</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة</div></div>
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ع</div><div><div class="name">علي | Ali</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.</div></div>
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">س</div><div><div class="name">سلطان | Sultan</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا، لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة</div></div>
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">منار | Manar</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير</div></div>
-
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div></div>
-
-    <!-- رأي زهراء -->
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ز</div><div><div class="name">زهراء | Zahraa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">أنا خذيت الكورس من مدح صديقتي تسنيم للكورس و تمكنك باللغة ماشاء الله 🌷</div></div>
-
-    <!-- رأي عبدالله -->
-    <div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ع</div><div><div class="name">عبدالله | Abdullah</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">السلام عليكم الكورس صدق صدق يستاهل أي مبلغ ينطلب فيه + شكراً على المصداقية</div></div>
-
-  </div>
-
-  <div style="text-align:center; margin:25px 0; font-size:1.1em; font-weight:bold; color:#FACC15;">
-    كن انت القصة القادمة و ابدأ رحلتك الآن 🚀⭐️
-  </div>
-
-  <div style="text-align:center; margin:30px 0;">
-    <button onclick="buyNow()" class="btn-alt" id="reviews-cta2-btn">ابدأ الآن</button>
-    <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
-    <div class="payment-icons">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-    </div>
-  </div>
-
-  <div class="back">رجوع</div>
-</div>
-<div id="terms" class="details">
-
-  <h3>📄 الشروط والأحكام</h3>
-
+  <h2>تعلّم اللغة الإنجليزية بثقة</h2>
   <p>
-    • الكورس محتوى رقمي يتم تفعيل الوصول إليه مباشرة بعد الدفع 💻✨<br>
-    • نظرًا لطبيعة المحتوى الرقمي، لا يمكن استرجاع المبلغ بعد التفعيل.<br>
-    • الاشتراك شخصي، ونرجو عدم مشاركة المحتوى أو تسريبه احترامًا لحقوق الجميع 🤍<br>
-    • يحق لأكاديمية إنجليزا تحديث أو تطوير محتوى الكورس بما يخدم مصلحتك التعليمية 📘🚀<br>
-    • في حال إساءة استخدام المحتوى (مثل المشاركة غير المصرّح بها)، قد يتم إيقاف الوصول حفاظًا على حقوق الأكاديمية والطلاب.<br><br>
-
-    💙 نعدك أن هدفنا الأول هو مساعدتك على التعلّم والتطوّر،  
-    وفي حال واجهت أي مشكلة أو استفسار، فريقنا دائمًا جاهز لدعمك ومساعدتك 🤝✨<br><br>
-
-    بإتمام عملية الشراء، أنت توافق على هذه الشروط،  
-    ونتمنى لك رحلة ممتعة ومثمرة في تعلّم اللغة الإنجليزية 🌟
+    أهلاً فيك 👋  
+    خذ راحتك، واختر الطريق اللي يناسبك.
   </p>
+</section>
 
-  <button onclick="buyNow()" class="btn-alt" id="terms-btn">
-    أوافق وأبدأ الآن
-  </button>
+<div class="earlo-wrapper">
+  <img src="earlo.png" alt="إيرلو" class="earlo">
+</div>
 
-  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
+<section class="choice-section">
 
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  <div class="choice-box" onclick="location.href='free.html'">
+    <h3>🎓 أبغى أتعلم مجانًا</h3>
+    <p>
+      محتوى مجاني، ملفات، تمارين،
+      وفيديوهات تساعدك تبدأ وتفهم اللغة
+      بدون أي التزام.
+    </p>
   </div>
 
-  <div class="back">رجوع</div>
-</div>
-
-<!-- قصتي -->
-<div id="story" class="details">
-  <h3 id="story-title">⭐ قصتي مع اللغة الإنجليزية</h3>
-  <p id="story-text">
-    من أجل العثور على الطريق الصحيح عليك أن تضيع أولاً…<br>
-    لكن أنا ما راح أخليك تضيع 👌🏻.<br>
-    عشان كذا صممت لك هذا الكورس المبني على استراتيجيتي الخاصة، اللي غيرت مستواي وغيرت مع كثير من الطلاب وكانت نقلة قوية في حياتهم.<br><br>
-    من طالبة متعثّرة… إلى الأولى على المدرسة في اللغة الإنجليزية.<br>
-    كنت في مكانك، أحس بالضياع والتخبط وما عندي طريق واضح للتعلم الصحيح. كنت أحصد الأصفار في الاختبارات، لكن مع الإصرار قدرت أطور استراتيجية تعلم سهلة وسريعة.<br><br>
-    ومن هنا طلعت فكرة كورس Engliza Academy:<br>
-    عشان أختصر لك الطريق وأفتح لك آفاق جديدة لمستقبلك 🚀.<br><br>
-    🔥 الخطوة الحاسمة عندك الآن:<br>
-    لا تأجل! غيرك بدأ اليوم وبعد أشهر بيتكلم بطلاقة… وإنت؟
-  </p>
-
-  <button onclick="buyNow()" class="btn-alt" id="story-btn">ابدأ رحلتك الآن</button>
-
-  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+  <div class="choice-box" onclick="location.href='sales.html'">
+    <h3>💎 أبغى البرنامج الكامل</h3>
+    <p>
+      برنامج تدريبي متكامل يخليك
+      تفهم، تتكلم، وتستخدم الإنجليزي
+      بثقة وبطريقة طبيعية.
+    </p>
   </div>
 
-  <div class="back">رجوع</div>
-</div>
-
-<!-- FAQ -->
-<div id="faq" class="details">
-  <h3 id="faq-title">❓ الأسئلة الشائعة</h3>
-  <ul id="faq-text" class="faq-list" style="list-style:none;padding:0;">
-    <li><strong>📌 هل الكورس مناسب لو كنت أبدأ من الصفر؟</strong><br>أكيد! 🙌 حتى لو ما تعرف ولا كلمة إنجليزي، الكورس يبدأ معك خطوة بخطوة ويخليك توصل لمرحلة تتكلم وتكتب بثقة.</li>
-    <li><strong>📌 ولو عندي شوية أساسيات؟</strong><br>هنا المتعة ✨، لأنك بتلقى تمارين وأساليب ترفع مستواك بسرعة من “أعرف شوية” إلى “أستخدم اللغة يومياً بطلاقة”.</li>
-    <li><strong>📌 ولو أنا متقدّم؟</strong><br>بتلقى محتوى متطور: كتابة أكاديمية، إيميلات رسمية، تعابير أمريكية وبريطانية… يعني تنتقل من مجرد “كويس” إلى “محترف يُحسب حسابه”. 🚀</li>
-    <li><strong>📌 هل الكورس ينفع للطلاب والموظفين؟</strong><br>100% ✅ سواء عندك دوام أو دراسة، الكورس مرن تتابعه بأي وقت يناسبك.</li>
-    <li><strong>📌 كيف أستلم الكورس بعد الدفع؟</strong><br>بمجرد الدفع يوصلك رابط خاص على تيليجرام فيه كل الدروس + التمارين + جروب الطلاب للتفاعل.</li>
-    <li><strong>📌 هل فيه مجتمع طلابي؟</strong><br>إيه 🎯 عندك جروب خاص فيه نقاشات وأسئلة وإجابات من زملاءك + دعمي المباشر، وهذا يساعدك تتطور أسرع وتبقى محفّز.</li>
-    <li><strong>📌 كم مدة الوصول للكورس؟</strong><br>شهرين كاملين تتصفح وتطبق براحتك. ولو تحب تكمل، تقدر تجدد.</li>
-    <li><strong>📌 هل السعر يستاهل؟</strong><br>أكيد 👌 لأنك ما تدفع بس عشان دروس، أنت تستثمر في نفسك: خطة واضحة، مجتمع طلابي محفز، دعم مباشر، وتطوير يفتح لك أبواب دراسة وفرص عمل وسفر ما كنت تحلم فيها</li>
-  </ul>
-
-  <button onclick="buyNow()" class="btn-alt" id="faq-btn">ابدأ التعلم الآن</button>
-
-  <div class="secure-pay">🔒 الدفع آمن ومشفر عبر PayTabs</div>
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-  </div>
-
-  <div class="back">رجوع</div>
-</div>
-
-<!-- سياسة الخصوصية -->
-<div id="privacy" class="details">
-  <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
-  <p id="privacy-text">نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
-  <div class="back">رجوع</div>
-</div>
-
-<!-- سياسة الدفع والاسترجاع -->
-<div id="refund" class="details">
-  <h3 id="refund-title">💳 سياسة الدفع والاسترجاع</h3>
-  <p id="refund-text">نضمن لك استرجاع المبلغ خلال مدة محددة إذا لم تكن راضيًا عن الكورس، وفق الشروط الموضحة.</p>
-  <div class="back">رجوع</div>
-</div>
+</section>
 
 <footer>
-  <p id="footer-text">© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
+  © 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة
 </footer>
 
-<script>
-  function showDetails(id){
-    document.querySelectorAll('.details').forEach(d=>d.style.display='none');
-    const el=document.getElementById(id);
-    el.style.display='block';
-    window.scrollTo({top:el.offsetTop-20,behavior:"smooth"});
-  }
-  function hideAllDetails(){ document.querySelectorAll('.details').forEach(d=>d.style.display='none'); }
-  document.addEventListener('click',e=>{if(e.target.classList.contains('back')) hideAllDetails();});
-  function buyNow(){ alert("سيتم تحويلك لصفحة الدفع عبر PayTabs"); }
-</script>
-  <script>
-  const painItems = document.querySelectorAll('.pain-box, .pain-arrow');
-
-  const painObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        painObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  painItems.forEach(item => painObserver.observe(item));
-</script>
 </body>
 </html>
