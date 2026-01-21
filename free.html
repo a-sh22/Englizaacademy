@@ -28,9 +28,6 @@ header h1 {
 }
 
 .back-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
   cursor: pointer;
   font-size: 14px;
   color: #FACC15;
@@ -38,7 +35,7 @@ header h1 {
 
 /* ===== HERO ===== */
 .hero {
-  padding: 60px 20px 30px;
+  padding: 60px 20px 20px;
 }
 
 .hero-inner {
@@ -67,7 +64,7 @@ header h1 {
 
 /* ===== EARLO ===== */
 .hero-earlo img {
-  width: 170px;
+  width: 160px;
   animation: earloBreath 4.5s ease-in-out infinite;
 }
 
@@ -77,93 +74,48 @@ header h1 {
   100% { transform: translateY(0); }
 }
 
-/* ===== LEVEL CHECK ===== */
-.level-check {
-  margin: 20px auto 20px;
-  padding: 32px 30px;
-  max-width: 580px;
+/* ===== LEVEL GUIDE (NEW CLEAN VERSION) ===== */
+.level-guide {
+  max-width: 1000px;
+  margin: 10px auto 40px;
+  padding: 0 20px;
   text-align: center;
-
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.25);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,.45),
-    inset 0 0 30px rgba(255,255,255,.05);
 }
 
-.level-title {
-  font-size: 22px;
+.level-guide .line-main {
+  font-size: 18px;
   font-weight: 800;
   color: #f8fafc;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
-.level-text {
-  font-size: 17px;
-  color: #f1f5f9;
-  line-height: 1.9;
-  margin-bottom: 26px;
+.level-guide .line-main span {
+  color: #FACC15;
 }
 
-/* ===== BUTTON ===== */
-.level-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 15px 30px;
-  border-radius: 18px;
-  font-size: 16.5px;
+.level-guide .test-btn {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 10px 22px;
+  font-size: 15.5px;
   font-weight: 800;
   color: #0f172a;
+  background: #FACC15;
+  border-radius: 14px;
   text-decoration: none;
-
-  background: linear-gradient(135deg, #facc15, #fde047);
-
-  box-shadow: 0 12px 35px rgba(250,204,21,.45);
-  transition: all .35s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.level-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 45px rgba(250,204,21,.65);
+.level-guide .test-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(250,204,21,.45);
 }
 
-.level-note {
-  margin-top: 18px;
-  font-size: 15px;
+.level-guide .line-alt {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 700;
   color: #e5e7eb;
-  line-height: 1.7;
-}
-
-/* ===== VISUAL BREAK + ARROW ===== */
-.level-divider {
-  margin: 18px auto 35px;
-  text-align: center;
-  color: #cbd5e1;
-}
-
-.level-divider span {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.down-arrow {
-  font-size: 20px;
-  animation: arrowMove 1.6s ease-in-out infinite;
-  opacity: 0.9;
-}
-
-@keyframes arrowMove {
-  0% { transform: translateY(0); opacity: .6; }
-  50% { transform: translateY(6px); opacity: 1; }
-  100% { transform: translateY(0); opacity: .6; }
 }
 
 /* ===== LEVEL BOXES ===== */
@@ -244,44 +196,50 @@ header h1 {
   </div>
 </section>
 
-<div class="level-check">
-  <p class="level-title">مو متأكد من مستواك في الإنجليزي؟</p>
+<!-- ===== LEVEL GUIDE ===== -->
+<div class="level-guide">
+  <div class="line-main">
+    لو مو متأكد من مستواك، تقدر <span>تحدده باختبار بسيط</span> جهزناه لك
+  </div>
 
-  <p class="level-text">
-    لو حاب تعرف من وين تبدأ بالضبط، جهّزنا لك اختبار بسيط وسريع
-    يحدد لك مستواك الحقيقي خلال كم دقيقة.
-  </p>
-
-  <a href="placement-test.html" class="level-btn">
-    🧭 حدّد مستواك
+  <a href="placement-test.html" class="test-btn">
+    أبغى أحدد مستواي
   </a>
 
-  <p class="level-note">
-    ولو ما تحب الاختبارات أو ما حاب تختبر الآن، عادي جدًا 🤍  
-    تقدر تبدأ مباشرة من الدروس المجانية وتختار المستوى اللي يناسبك.
-  </p>
-</div>
-
-<div class="level-divider">
-  <span>ابدأ التعلّم من هنا</span>
-  <div class="down-arrow">↓</div>
+  <div class="line-alt">
+    ولو تفضّل تبدأ مباشرة، اختَر المستوى اللي تحسّه مناسب لك من الدروس بالأسفل 👇🏻✨
+  </div>
 </div>
 
 <section class="level-section">
+
   <div class="level-box" onclick="location.href='free-beginner.html'">
     <h3>🟢 مبتدئ – ابدأ من هنا</h3>
-    <p>لو مستواك صفر أو تعرف كلمات بسيطة، هذا المسار مناسب لك.</p>
+    <p>
+      لو مستواك صفر أو تعرف كلمات بسيطة،
+      وما تقدر تكوّن جمل أو تفهم المحادثات،
+      هذا المسار مناسب لك تمامًا.
+    </p>
   </div>
 
   <div class="level-box" onclick="location.href='free-intermediate.html'">
     <h3>🟡 متوسط – طوّر لغتك</h3>
-    <p>تفهم كثير لكن تتردد في الكلام؟ هنا تبدأ ترتّب مستواك.</p>
+    <p>
+      تفهم كثير لكن تتردد في الكلام،
+      أو تحس لغتك واقفة مكانها،
+      هنا تبدأ ترتّب وتطوّر مستواك.
+    </p>
   </div>
 
   <div class="level-box" onclick="location.href='free-advanced.html'">
     <h3>🔵 متقدّم – ثبّت وارتقِ</h3>
-    <p>مستواك جيد وتبغى تصقله؟ هذا المسار لك.</p>
+    <p>
+      لو مستواك جيد لكن تحس بتشتت،
+      أو تبغى تصقل لغتك وتستخدمها بثقة أعلى،
+      هذا المسار لك.
+    </p>
   </div>
+
 </section>
 
 </body>
