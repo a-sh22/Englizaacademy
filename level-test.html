@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار تحديد المستوى | أكاديمية إنجليزا</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Tahoma",Arial,sans-serif;
+  background:linear-gradient(180deg,#0f172a,#1e293b);
+  color:#f1f5f9;
+}
+
+.container{
+  max-width:720px;
+  margin:40px auto;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.intro{
+  text-align:center;
+  color:#cbd5e1;
+  font-size:15.5px;
+  margin-bottom:35px;
+  line-height:1.7;
+}
+
+.question{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border-radius:16px;
+  padding:22px;
+  margin-bottom:20px;
+  box-shadow:0 0 25px rgba(37,99,235,.35);
+}
+
+.question h3{
+  font-size:17px;
+  margin-bottom:14px;
+  color:#FACC15;
+}
+
+.option{
+  background:#020617;
+  border:1px solid #334155;
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:10px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.option:hover{
+  background:#1e293b;
+}
+
+.option input{
+  display:none;
+}
+
+.submit-btn{
+  display:block;
+  margin:35px auto 10px;
+  background:#FACC15;
+  color:#000;
+  padding:14px 28px;
+  border-radius:12px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(250,204,21,.7);
+}
+
+.note{
+  text-align:center;
+  color:#94a3b8;
+  font-size:14px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>اختبار تحديد المستوى</h1>
+<p class="intro">
+اختبار بسيط وسريع ✨  
+ما يحتاج تسجيل، ولا يحاسبك  
+بس يحدد أفضل نقطة تبدأ منها.
+</p>
+
+<form id="levelTest">
+
+<!-- Q1 -->
+<div class="question">
+<h3>1️⃣ اختر الجملة الصحيحة:</h3>
+<label class="option">
+<input type="radio" name="q1" value="2"> She doesn’t like coffee.
+</label>
+<label class="option">
+<input type="radio" name="q1" value="0"> She don’t like coffee.
+</label>
+<label class="option">
+<input type="radio" name="q1" value="0"> She not like coffee.
+</label>
+</div>
+
+<!-- Q2 -->
+<div class="question">
+<h3>2️⃣ معنى الجملة:  
+“I’ve been studying English for two years.”</h3>
+<label class="option">
+<input type="radio" name="q2" value="2"> أدرس الإنجليزي منذ سنتين وما زلت مستمر
+</label>
+<label class="option">
+<input type="radio" name="q2" value="1"> درست الإنجليزي وانتهيت
+</label>
+<label class="option">
+<input type="radio" name="q2" value="0"> سأبدأ دراسة الإنجليزي
+</label>
+</div>
+
+<!-- Q3 -->
+<div class="question">
+<h3>3️⃣ أكمل الجملة الأنسب:</h3>
+<p style="color:#cbd5e1">If I ___ more time, I would travel.</p>
+<label class="option">
+<input type="radio" name="q3" value="2"> had
+</label>
+<label class="option">
+<input type="radio" name="q3" value="1"> have
+</label>
+<label class="option">
+<input type="radio" name="q3" value="0"> will have
+</label>
+</div>
+
+<!-- Q4 -->
+<div class="question">
+<h3>4️⃣ أي جملة تُستخدم في موقف رسمي؟</h3>
+<label class="option">
+<input type="radio" name="q4" value="2"> I would appreciate your response.
+</label>
+<label class="option">
+<input type="radio" name="q4" value="1"> Can you reply please?
+</label>
+<label class="option">
+<input type="radio" name="q4" value="0"> Reply me fast.
+</label>
+</div>
+
+<!-- Q5 -->
+<div class="question">
+<h3>5️⃣ لما تسمع شخص يقول:  
+“Break the ice”  
+تفهم إنها تعني:</h3>
+<label class="option">
+<input type="radio" name="q5" value="2"> كسر التوتر وبداية تواصل
+</label>
+<label class="option">
+<input type="radio" name="q5" value="0"> كسر شيء فعلي
+</label>
+<label class="option">
+<input type="radio" name="q5" value="0"> تجاهل الحديث
+</label>
+</div>
+
+<button type="button" class="submit-btn" onclick="calculateLevel()">
+اعرف مستواي
+</button>
+
+<p class="note">⌛ يستغرق أقل من دقيقة</p>
+
+</form>
+</div>
+
+<script>
+function calculateLevel(){
+  let score = 0;
+  const totalQuestions = 5;
+
+  for(let i=1;i<=totalQuestions;i++){
+    const q = document.querySelector(`input[name="q${i}"]:checked`);
+    if(!q){
+      alert("فضلاً أجب على جميع الأسئلة 🤍");
+      return;
+    }
+    score += parseInt(q.value);
+  }
+
+  if(score <= 4){
+    window.location.href = "free-beginner.html";
+  } else if(score <= 7){
+    window.location.href = "free-intermediate.html";
+  } else {
+    window.location.href = "free-advanced.html";
+  }
+}
+</script>
+
+</body>
+</html>
