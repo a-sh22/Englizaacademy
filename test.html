@@ -8,7 +8,7 @@
 <style>
 body{
   margin:0;
-  font-family:Tahoma,Arial,sans-serif;
+  font-family:Tahoma, Arial, sans-serif;
   background:linear-gradient(180deg,#0f172a,#1e293b);
   color:#f1f5f9;
 }
@@ -25,105 +25,65 @@ h1{
 }
 
 .question{
-  background:#0f172a;
-  border-radius:16px;
+  margin-bottom:28px;
   padding:20px;
-  margin-bottom:20px;
-  box-shadow:0 0 25px rgba(37,99,235,.25);
+  background:rgba(255,255,255,.06);
+  border-radius:16px;
+  box-shadow:0 0 20px rgba(37,99,235,.25);
 }
 
 .question h3{
-  margin-bottom:12px;
-  font-size:18px;
+  font-size:17px;
+  margin-bottom:14px;
 }
 
 .options label{
   display:block;
-  padding:10px 14px;
-  margin-bottom:8px;
-  border-radius:10px;
-  background:#1e293b;
+  margin:8px 0;
   cursor:pointer;
-  transition:.2s;
 }
 
-.options label:hover{
-  background:#334155;
+.options input{
+  margin-left:8px;
 }
 
 button{
   display:block;
-  margin:30px auto;
-  padding:14px 28px;
+  margin:40px auto;
+  padding:14px 34px;
   font-size:17px;
   font-weight:800;
+  background:#FACC15;
+  color:#0f172a;
   border:none;
   border-radius:18px;
   cursor:pointer;
-  background:#facc15;
-  color:#0f172a;
+  transition:.3s;
 }
 
 button:hover{
-  box-shadow:0 10px 30px rgba(250,204,21,.5);
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(250,204,21,.45);
 }
 
-.result{
+/* ===== RESULT ===== */
+#result{
   display:none;
   text-align:center;
   margin-top:40px;
 }
 
 .result-box{
-  background:#0f172a;
-  padding:30px;
+  background:rgba(255,255,255,.06);
   border-radius:22px;
-  box-shadow:0 0 40px rgba(37,99,235,.35);
-}
-
-.result h2{
-  margin-bottom:12px;
-}
-
-.result p{
-  line-height:1.8;
-  color:#e5e7eb;
-}
-
-.actions{
-  margin-top:25px;
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.actions a{
-  padding:12px 22px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:800;
-}
-
-.free{
-  background:#1e293b;
-  color:#f8fafc;
-  box-shadow:0 0 20px rgba(37,99,235,.4);
-}
-
-.buy{
-  background:#facc15;
-  color:#0f172a;
-  box-shadow:0 0 25px rgba(250,204,21,.5);
+  padding:30px;
+  box-shadow:0 0 30px rgba(37,99,235,.35);
 }
 
 .earlo{
-  margin-bottom:15px;
-}
-
-.earlo img{
   width:120px;
-  animation:breath 4s ease-in-out infinite;
+  margin:0 auto 20px;
+  animation:breath 4.5s ease-in-out infinite;
 }
 
 @keyframes breath{
@@ -131,119 +91,150 @@ button:hover{
   50%{transform:translateY(-6px)}
   100%{transform:translateY(0)}
 }
+
+.result-text{
+  font-size:17px;
+  line-height:1.9;
+  margin:20px 0;
+}
+
+.points{
+  text-align:right;
+  margin:18px auto;
+  max-width:500px;
+}
+
+.points li{
+  margin-bottom:8px;
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+
+.actions a{
+  padding:12px 22px;
+  border-radius:16px;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.free{
+  background:#2563eb;
+  color:#fff;
+}
+
+.buy{
+  background:#FACC15;
+  color:#0f172a;
+}
 </style>
 </head>
 
 <body>
 
-<div class="container" id="quiz">
-
+<div class="container">
 <h1>اختبار تحديد المستوى</h1>
 
-<!-- الأسئلة الأساسية -->
-<div class="question">
-<h3>1. I ___ happy.</h3>
-<div class="options">
-<label><input type="radio" name="q1" value="1"> am</label>
-<label><input type="radio" name="q1"> is</label>
-<label><input type="radio" name="q1"> are</label>
-<label><input type="radio" name="q1"> be</label>
-</div>
-</div>
+<form id="quiz">
 
-<div class="question">
-<h3>2. Choose the correct sentence:</h3>
-<div class="options">
-<label><input type="radio" name="q2"> She happy</label>
-<label><input type="radio" name="q2" value="1"> She is happy</label>
-<label><input type="radio" name="q2"> She happy is</label>
-<label><input type="radio" name="q2"> She be happy</label>
-</div>
-</div>
+<!-- ===== الأسئلة 1–17 ===== -->
+<script>
+const questions = [
+{q:"Choose the correct word: I ___ happy.",a:0,opts:["am","is","are","be"]},
+{q:"Choose the correct sentence:",a:1,opts:["She happy","She is happy","She happy is","She be happy"]},
+{q:"Choose the correct word: I ___ a student.",a:2,opts:["are","is","am","be"]},
+{q:"Choose the correct sentence:",a:1,opts:["I no like coffee","I don’t like coffee","I not like coffee","I doesn’t like coffee"]},
+{q:"Yesterday, I ___ tired.",a:1,opts:["am","was","were","is"]},
+{q:"She has ___ friends here.",a:1,opts:["much","many","a lot","very"]},
+{q:"Which sentence is correct?",a:1,opts:["He go to work every day","He goes to work every day","He going to work every day","He is go to work"]},
+{q:"What does this mean? I’m looking for my keys.",a:1,opts:["I lost them forever","I’m searching now","I found them","I will look later"]},
+{q:"When I arrived, they ___ dinner.",a:1,opts:["eat","were eating","ate","have eaten"]},
+{q:"Choose the natural sentence:",a:1,opts:["I’m agree with you","I agree with you","I agreeing with you","I agree you"]},
+{q:"What does this sentence mean? I’ve lived here for 5 years.",a:1,opts:["I don’t live here now","I live here now and started 5 years ago","I will live here","I lived here long ago"]},
+{q:"Choose the correct sentence:",a:1,opts:["I don’t know what does he want","I don’t know what he wants","I don’t know what he want","I don’t know what wants he"]},
+{q:"I stopped ___ coffee.",a:0,opts:["drinking","drink","to drink","drank"]},
+{q:"By the time I arrived, they ___",a:2,opts:["left","have left","had left","were leaving"]},
 
-<div class="question">
-<h3>3. Yesterday, I ___ tired.</h3>
-<div class="options">
-<label><input type="radio" name="q3"> am</label>
-<label><input type="radio" name="q3" value="1"> was</label>
-<label><input type="radio" name="q3"> were</label>
-<label><input type="radio" name="q3"> is</label>
-</div>
-</div>
+/* ===== الأسئلة الصعبة ===== */
+{q:"Hardly ___ arrived when the meeting started.",a:1,opts:["I had","had I","I arrived","did I arrived"],hard:true},
+{q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"],hard:true},
+{q:"If I had known about the meeting, I would have attended. This means:",a:2,opts:["The meeting is future","I attended","I didn’t attend","I don’t want to attend"],hard:true}
+];
 
-<!-- الأسئلة المتقدمة (تحسم المستوى) -->
-<div class="question">
-<h3>4. I stopped ___ coffee.</h3>
-<div class="options">
-<label><input type="radio" name="q4" value="1"> drinking</label>
-<label><input type="radio" name="q4"> drink</label>
-<label><input type="radio" name="q4"> to drink</label>
-<label><input type="radio" name="q4"> drank</label>
-</div>
-</div>
+const quiz=document.getElementById("quiz");
 
-<div class="question">
-<h3>5. By the time I arrived, they ___.</h3>
-<div class="options">
-<label><input type="radio" name="q5"> left</label>
-<label><input type="radio" name="q5"> have left</label>
-<label><input type="radio" name="q5" value="1"> had left</label>
-<label><input type="radio" name="q5"> were leaving</label>
-</div>
-</div>
+questions.forEach((q,i)=>{
+  let html=`<div class="question">
+  <h3>${i+1}. ${q.q}</h3><div class="options">`;
+  q.opts.forEach((o,j)=>{
+    html+=`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`;
+  });
+  html+=`</div></div>`;
+  quiz.insertAdjacentHTML("beforeend",html);
+});
+</script>
 
-<div class="question">
-<h3>6. I don’t know what ___.</h3>
-<div class="options">
-<label><input type="radio" name="q6"> does he want</label>
-<label><input type="radio" name="q6" value="1"> he wants</label>
-<label><input type="radio" name="q6"> he want</label>
-<label><input type="radio" name="q6"> wants he</label>
-</div>
-</div>
+<button type="button" onclick="submitQuiz()">اعرف نتيجتي</button>
+</form>
 
-<button onclick="showResult()">شوف نتيجتي</button>
-</div>
-
-<!-- النتيجة -->
-<div class="container result" id="result">
+<div id="result">
   <div class="result-box">
-    <div class="earlo">
-      <img src="earlo.png" alt="إيرلو">
-    </div>
-    <h2 id="levelTitle"></h2>
-    <p id="levelText"></p>
-
+    <img src="earlo.png" class="earlo" alt="EarLo">
+    <div class="result-text" id="resultText"></div>
+    <ul class="points" id="points"></ul>
     <div class="actions">
       <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
-      <a href="sales.html" class="buy">استكشف البرنامج الكامل</a>
+      <a href="sales.html" class="buy">البرنامج الكامل</a>
     </div>
   </div>
 </div>
 
+</div>
+
 <script>
-function showResult(){
-  let score = 0;
-  document.querySelectorAll('input[value="1"]:checked').forEach(()=>score++);
-
-  document.getElementById("quiz").style.display="none";
-  document.getElementById("result").style.display="block";
-
-  let title="", text="";
-
-  if(score <= 2){
-    title="مستواك: مبتدئ 🌱";
-    text="بداية ممتازة! الأساسيات تحتاج ترتيب بسيط، ومع المسار الصحيح تقدر تتقدم بسرعة.";
-  }else if(score <= 4){
-    title="مستواك: متوسط 🚀";
-    text="واضح عندك قاعدة جيدة، تحتاج صقل واستخدام أعمق للغة.";
-  }else{
-    title="مستواك: متقدم 🔥";
-    text="مستواك قوي فعلًا. القواعد والمعنى عندك واضحين، والمرحلة الجاية هي الطلاقة والثقة.";
+function submitQuiz(){
+let score=0,hardOK=true;
+questions.forEach((q,i)=>{
+  const ans=document.querySelector(`input[name="q${i}"]:checked`);
+  if(ans && +ans.value===q.a){
+    score++;
+  }else if(q.hard){
+    hardOK=false;
   }
+});
 
-  document.getElementById("levelTitle").innerText = title;
-  document.getElementById("levelText").innerText = text;
+let level="",msg="",points="";
+
+if(score<=6){
+level="مبتدئ";
+msg="حلو 👌 واضح إنك في بداية الطريق، وهذا أفضل وقت تبدأ فيه صح.";
+points=["تحتاج تأسيس واضح","تبني ثقة خطوة خطوة","تفهم اللغة بدون حفظ"];
+}
+else if(score<=12){
+level="متوسط";
+msg="مستواك طيب 👏 بس تحس أحيانًا إنك واقف مكانك.";
+points=["تفهم أكثر مما تتكلم","تحتاج ترتيب الأفكار","تبي ثقة أعلى"];
+}
+else if(hardOK){
+level="متقدم";
+msg="مستواك متقدم، وهذا واضح 👏 لكن خليني أكون صريح معك.";
+points=["تتردد في التعبير الدقيق","كلامك صحيح بس مو طبيعي","تبغى طلاقة وثقة أعلى"];
+}else{
+level="قوي";
+msg="مستواك قوي 👌 لكن لسه في فرق بسيط بينك وبين المتقدم الحقيقي.";
+points=["تفهم بسرعة","تحتاج دقة أعلى","تبي استخدام طبيعي أكثر"];
+}
+
+document.getElementById("resultText").innerHTML=`<strong>${level}</strong><br>${msg}`;
+document.getElementById("points").innerHTML=points.map(p=>`<li>• ${p}</li>`).join("");
+document.getElementById("quiz").style.display="none";
+document.getElementById("result").style.display="block";
+window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 
