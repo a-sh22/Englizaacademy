@@ -71,19 +71,12 @@ button:hover{
 /* ===== RESULT ===== */
 #result{
   display:none;
-  margin-top:40px;
-  animation:fadeIn .7s ease forwards;
+  margin-top:50px;
 }
 
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px)}
-  to{opacity:1; transform:translateY(0)}
-}
-
-/* ===== RESULT LAYOUT ===== */
 .result-box{
   display:flex;
-  gap:30px;
+  gap:32px;
   align-items:flex-start;
   flex-wrap:wrap;
 }
@@ -105,29 +98,30 @@ button:hover{
   100%{transform:translateY(0)}
 }
 
-/* ===== TEXT SIDE ===== */
+/* ===== CONTENT ===== */
 .result-right{
   flex:1;
 }
 
-/* ===== GLOW BLOCK (وهمي فقط) ===== */
+/* Glow وهمي فقط */
 .result-glow{
-  padding:22px;
-  border-radius:22px;
+  padding:20px 22px;
+  margin-bottom:22px;
+  border-radius:20px;
   box-shadow:0 0 26px rgba(37,99,235,.35);
-  margin-bottom:26px;
 }
 
 .level-title{
   font-size:24px;
   font-weight:900;
-  margin-bottom:10px;
   color:#FACC15;
+  margin-bottom:10px;
 }
 
 .result-text{
   font-size:17px;
   line-height:1.9;
+  color:#f8fafc;
 }
 
 /* ===== PAIN POINTS ===== */
@@ -135,7 +129,7 @@ button:hover{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:12px;
-  margin:18px 0 26px;
+  margin:18px 0 28px;
 }
 
 .pain{
@@ -151,40 +145,51 @@ button:hover{
 /* ===== PATHS ===== */
 .paths-title{
   font-size:18px;
-  font-weight:800;
-  margin:26px 0 18px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+}
+
+.path-box{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .path-note{
-  font-size:15px;
-  font-weight:700;
-  margin-bottom:8px;
+  font-size:14.5px;
   color:#e5e7eb;
+  line-height:1.6;
 }
 
-/* ===== ACTIONS ===== */
-.actions{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
+.path-note.highlight{
+  color:#fde68a;
+  font-weight:700;
 }
 
+/* ===== BUTTONS ===== */
 .actions a{
-  padding:13px 22px;
+  padding:14px 22px;
   border-radius:16px;
-  font-weight:800;
+  font-weight:900;
   text-decoration:none;
+  text-align:center;
   transition:.3s;
 }
 
 .free{
   background:rgba(255,255,255,.08);
   color:#f8fafc;
-  box-shadow:0 0 18px rgba(37,99,235,.35);
+  box-shadow:0 0 20px rgba(37,99,235,.35);
 }
 
 .free:hover{
-  box-shadow:0 0 28px rgba(37,99,235,.55);
+  box-shadow:0 0 32px rgba(37,99,235,.55);
 }
 
 .buy{
@@ -198,15 +203,12 @@ button:hover{
   box-shadow:0 16px 38px rgba(250,204,21,.65);
 }
 
-/* ===== CONFETTI ===== */
-.confetti{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  z-index:999;
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .result-box{
+    flex-direction:column;
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -217,53 +219,60 @@ button:hover{
 <h1>اختبار تحديد المستوى</h1>
 
 <form id="quiz"></form>
+
 <button onclick="submitQuiz()">اعرف نتيجتي</button>
 
 <div id="result">
-<canvas class="confetti" id="confetti"></canvas>
+  <div class="result-box">
 
-<div class="result-box">
-
-  <div class="result-left">
-    <img src="earlo.png" alt="إيرلو">
-  </div>
-
-  <div class="result-right">
-
-    <div class="result-glow">
-      <div class="level-title" id="levelTitle"></div>
-      <div class="result-text" id="resultText"></div>
+    <div class="result-left">
+      <img src="earlo.png" alt="إيرلو">
     </div>
 
-    <div class="pain-boxes" id="painBoxes"></div>
+    <div class="result-right">
 
-    <div class="paths-title">
-      عشان كذا جهّزنا لك مسارين حسب اللي يناسبك 👇
-    </div>
-
-    <div class="actions">
-      <div>
-        <div class="path-note">
-          لو حاب تعيش التجربة بهدوء وتشوف أسلوبنا في الشرح 👌
-        </div>
-        <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
+      <div class="result-glow">
+        <div class="level-title" id="levelTitle"></div>
+        <div class="result-text" id="resultText"></div>
       </div>
 
-      <div>
-        <div class="path-note">
-          ولو حاب نقلة أسرع بخطة واضحة ومحتوى كامل ودعم 👇
-        </div>
-        <a href="sales.html" class="buy">جاهز للنقلة الجاية 🚀</a>
-      </div>
-    </div>
+      <div class="pain-boxes" id="painBoxes"></div>
 
+      <div class="paths-title">
+        عشان كذا جهّزنا لك مسارين حسب اللي يناسبك 👇
+      </div>
+
+      <div class="actions">
+
+        <div class="path-box">
+          <div class="path-note">
+            لو حاب تعيش التجربة بهدوء وتشوف أسلوبنا في الشرح 👌
+          </div>
+          <a href="free.html" class="free">
+            ابدأ بالمحتوى المجاني
+          </a>
+        </div>
+
+        <div class="path-box">
+          <div class="path-note highlight">
+            ولو حاب نقلة أسرع بخطة واضحة ومحتوى كامل ودعم 👇
+          </div>
+          <a href="sales.html" class="buy">
+            جاهز للنقلة الجاية 🚀
+          </a>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>
-</div>
+
 </div>
 
 <script>
-const questions=[
+/* ===== QUESTIONS ===== */
+const questions = [
 {q:"Choose the correct word: I ___ happy.",a:0,opts:["am","is","are","be"]},
 {q:"Choose the correct sentence:",a:1,opts:["She happy","She is happy","She happy is","She be happy"]},
 {q:"Choose the correct word: I ___ a student.",a:2,opts:["are","is","am","be"]},
@@ -285,58 +294,53 @@ const questions=[
 
 const quiz=document.getElementById("quiz");
 questions.forEach((q,i)=>{
-let h=`<div class="question"><h3>${i+1}. ${q.q}</h3><div class="options">`;
-q.opts.forEach((o,j)=>h+=`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`);
-h+=`</div></div>`;
-quiz.insertAdjacentHTML("beforeend",h);
+  let html=`<div class="question"><h3>${i+1}. ${q.q}</h3><div class="options">`;
+  q.opts.forEach((o,j)=>{
+    html+=`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`;
+  });
+  html+=`</div></div>`;
+  quiz.insertAdjacentHTML("beforeend",html);
 });
 
 function submitQuiz(){
 let score=0,hardOK=true;
 questions.forEach((q,i)=>{
-const a=document.querySelector(`input[name="q${i}"]:checked`);
-if(a&&+a.value===q.a)score++;
-else if(q.hard)hardOK=false;
+  const ans=document.querySelector(\`input[name="q\${i}"]:checked\`);
+  if(ans && +ans.value===q.a) score++;
+  else if(q.hard) hardOK=false;
 });
 
-let level,text,pains;
+let level="",text="",pains=[];
+
 if(score<=6){
 level="مبتدئ";
 text="أنت في بداية الطريق، وهذا أفضل وقت تبني فيه الأساس الصح.";
 pains=["تحتاج تأسيس واضح","تبني الثقة خطوة خطوة","تفهم بدون حفظ"];
-}else if(score<=12){
+}
+else if(score<=12){
 level="متوسط";
-text="مستواك جيد 👌 لكن تحتاج قفزة منظمة.";
-pains=["تفهم أكثر مما تتكلم","ترتيب الأفكار","ثقة أعلى"];
-}else if(hardOK){
+text="مستواك جيد 👌 لكن القفزة الجاية تحتاج تنظيم وطريقة أوضح.";
+pains=["تفهم أكثر مما تتكلم","تحتاج ترتيب الأفكار","تبي ثقة أعلى"];
+}
+else if(hardOK){
 level="متقدم";
-text="مستواك متقدم 👏 الفرق الآن في الدقة والطلاقة.";
-pains=["تردد بسيط","لغة صحيحة غير طبيعية","ثقة أعلى"];
-}else{
+text="مستواك متقدم 👏 الفرق الآن في الدقة والطلاقة الطبيعية.";
+pains=["تردد بسيط بالتعبير","لغة صحيحة بس مو طبيعية","تبي ثقة أعلى"];
+}
+else{
 level="قوي";
-text="مستواك قوي جدًا وقريب من الاحتراف.";
-pains=["تفهم بسرعة","تحتاج دقة","استخدام طبيعي"];
+text="مستواك قوي جدًا، ومع ضبط بسيط توصل للاحتراف.";
+pains=["تفهم بسرعة","تحتاج دقة أعلى","تبي استخدام طبيعي"];
 }
 
 document.getElementById("levelTitle").innerText=`مستواك الحالي: ${level}`;
 document.getElementById("resultText").innerText=text;
 document.getElementById("painBoxes").innerHTML=pains.map(p=>`<div class="pain">${p}</div>`).join("");
+
 quiz.style.display="none";
 document.querySelector("button").style.display="none";
 document.getElementById("result").style.display="block";
-confetti();
-}
-
-function confetti(){
-const c=document.getElementById("confetti"),x=c.getContext("2d");
-c.width=innerWidth;c.height=innerHeight;
-let p=[...Array(80)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*5+2}));
-let t=0;
-(function d(){
-x.clearRect(0,0,c.width,c.height);
-p.forEach(o=>{x.fillStyle="rgba(250,204,21,.25)";x.beginPath();x.arc(o.x,o.y,o.r,0,6.28);x.fill();o.y+=.6;});
-if(t++<120)requestAnimationFrame(d);
-})();
+window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 
