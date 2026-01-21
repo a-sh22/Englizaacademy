@@ -33,14 +33,32 @@ header h1 {
   color: #FACC15;
 }
 
-/* ===== HERO ===== */
-.hero {
-  padding: 60px 20px 20px;
+/* ===== HERO GLOW WRAPPER ===== */
+.hero-glow {
+  max-width: 1050px;
+  margin: 50px auto 40px;
+  padding: 40px 30px;
+  border-radius: 28px;
+  position: relative;
 }
 
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(250,204,21,.18),
+    rgba(37,99,235,.18)
+  );
+  filter: blur(40px);
+  opacity: .7;
+  z-index: -1;
+}
+
+/* ===== HERO ===== */
 .hero-inner {
-  max-width: 1000px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,10 +92,10 @@ header h1 {
   100% { transform: translateY(0); }
 }
 
-/* ===== LEVEL GUIDE (NEW CLEAN VERSION) ===== */
+/* ===== LEVEL GUIDE ===== */
 .level-guide {
   max-width: 1000px;
-  margin: 10px auto 40px;
+  margin: 10px auto 50px;
   padding: 0 20px;
   text-align: center;
 }
@@ -86,7 +104,7 @@ header h1 {
   font-size: 18px;
   font-weight: 800;
   color: #f8fafc;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .level-guide .line-main span {
@@ -95,7 +113,7 @@ header h1 {
 
 .level-guide .test-btn {
   display: inline-block;
-  margin: 12px 0;
+  margin: 8px 0 12px;
   padding: 10px 22px;
   font-size: 15.5px;
   font-weight: 800;
@@ -112,7 +130,6 @@ header h1 {
 }
 
 .level-guide .line-alt {
-  margin-top: 8px;
   font-size: 16px;
   font-weight: 700;
   color: #e5e7eb;
@@ -179,7 +196,8 @@ header h1 {
   <div class="back-header" onclick="history.back()">← رجوع</div>
 </header>
 
-<section class="hero">
+<!-- ===== HERO WITH GLOW ===== -->
+<section class="hero-glow">
   <div class="hero-inner">
     <div class="hero-text">
       <h2>مسارك في التعلّم يبدأ من هنا</h2>
@@ -211,6 +229,7 @@ header h1 {
   </div>
 </div>
 
+<!-- ===== LEVELS ===== -->
 <section class="level-section">
 
   <div class="level-box" onclick="location.href='free-beginner.html'">
