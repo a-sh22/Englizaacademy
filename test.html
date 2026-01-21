@@ -6,244 +6,245 @@
 <title>اختبار تحديد المستوى | أكاديمية إنجليزا</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: "Tahoma", Arial, sans-serif;
-  background: radial-gradient(circle at top, #1e293b, #020617);
-  color: #f8fafc;
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:linear-gradient(180deg,#0f172a,#1e293b);
+  color:#f1f5f9;
 }
 
-.container {
-  max-width: 820px;
-  margin: 40px auto;
-  padding: 20px;
+.container{
+  max-width:900px;
+  margin:40px auto;
+  padding:20px;
 }
 
-/* ===== CARD ===== */
-.card {
-  background: rgba(15,23,42,.75);
-  border-radius: 22px;
-  padding: 34px 30px;
-  box-shadow: 0 0 40px rgba(37,99,235,.25);
+h1{
+  text-align:center;
+  margin-bottom:30px;
 }
 
-/* ===== HEADER ===== */
-h1 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 10px;
+.question{
+  background:#0f172a;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 0 25px rgba(37,99,235,.25);
 }
 
-.sub {
-  text-align: center;
-  color: #cbd5e1;
-  font-size: 16px;
-  margin-bottom: 30px;
+.question h3{
+  margin-bottom:12px;
+  font-size:18px;
 }
 
-/* ===== QUESTION ===== */
-.question {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 22px;
+.options label{
+  display:block;
+  padding:10px 14px;
+  margin-bottom:8px;
+  border-radius:10px;
+  background:#1e293b;
+  cursor:pointer;
+  transition:.2s;
 }
 
-/* ===== OPTIONS ===== */
-.options {
-  display: grid;
-  gap: 14px;
+.options label:hover{
+  background:#334155;
 }
 
-.option {
-  background: rgba(255,255,255,.06);
-  border-radius: 14px;
-  padding: 14px 16px;
-  cursor: pointer;
-  transition: .25s;
-  border: 1px solid rgba(255,255,255,.08);
+button{
+  display:block;
+  margin:30px auto;
+  padding:14px 28px;
+  font-size:17px;
+  font-weight:800;
+  border:none;
+  border-radius:18px;
+  cursor:pointer;
+  background:#facc15;
+  color:#0f172a;
 }
 
-.option:hover {
-  background: rgba(37,99,235,.25);
+button:hover{
+  box-shadow:0 10px 30px rgba(250,204,21,.5);
 }
 
-.option.selected {
-  background: rgba(37,99,235,.45);
-  border-color: #3b82f6;
+.result{
+  display:none;
+  text-align:center;
+  margin-top:40px;
 }
 
-/* ===== BUTTON ===== */
-.btn {
-  margin-top: 26px;
-  padding: 14px 28px;
-  border-radius: 16px;
-  background: linear-gradient(135deg,#facc15,#fde047);
-  color: #020617;
-  font-size: 16px;
-  font-weight: 800;
-  cursor: pointer;
-  border: none;
+.result-box{
+  background:#0f172a;
+  padding:30px;
+  border-radius:22px;
+  box-shadow:0 0 40px rgba(37,99,235,.35);
 }
 
-/* ===== RESULT ===== */
-.result {
-  text-align: center;
+.result h2{
+  margin-bottom:12px;
 }
 
-.level {
-  font-size: 32px;
-  font-weight: 900;
-  margin-bottom: 10px;
+.result p{
+  line-height:1.8;
+  color:#e5e7eb;
 }
 
-.msg {
-  font-size: 17px;
-  line-height: 1.8;
-  color: #e5e7eb;
-  margin-bottom: 24px;
+.actions{
+  margin-top:25px;
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
-/* ===== CTA ===== */
-.cta {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
+.actions a{
+  padding:12px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:800;
 }
 
-.cta a {
-  text-decoration: none;
-  padding: 14px 22px;
-  border-radius: 14px;
-  font-weight: 800;
+.free{
+  background:#1e293b;
+  color:#f8fafc;
+  box-shadow:0 0 20px rgba(37,99,235,.4);
 }
 
-.free {
-  background: rgba(37,99,235,.35);
-  color: #fff;
+.buy{
+  background:#facc15;
+  color:#0f172a;
+  box-shadow:0 0 25px rgba(250,204,21,.5);
 }
 
-.buy {
-  background: linear-gradient(135deg,#22c55e,#4ade80);
-  color: #022c22;
+.earlo{
+  margin-bottom:15px;
 }
 
-/* ===== EARLO ===== */
-.earlo {
-  width: 120px;
-  margin: 20px auto;
-  animation: breathe 4s ease-in-out infinite;
+.earlo img{
+  width:120px;
+  animation:breath 4s ease-in-out infinite;
 }
 
-@keyframes breathe {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+@keyframes breath{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="card" id="app"></div>
+<div class="container" id="quiz">
+
+<h1>اختبار تحديد المستوى</h1>
+
+<!-- الأسئلة الأساسية -->
+<div class="question">
+<h3>1. I ___ happy.</h3>
+<div class="options">
+<label><input type="radio" name="q1" value="1"> am</label>
+<label><input type="radio" name="q1"> is</label>
+<label><input type="radio" name="q1"> are</label>
+<label><input type="radio" name="q1"> be</label>
+</div>
 </div>
 
-<audio id="clickSound">
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9d98b0a8c1.mp3">
-</audio>
+<div class="question">
+<h3>2. Choose the correct sentence:</h3>
+<div class="options">
+<label><input type="radio" name="q2"> She happy</label>
+<label><input type="radio" name="q2" value="1"> She is happy</label>
+<label><input type="radio" name="q2"> She happy is</label>
+<label><input type="radio" name="q2"> She be happy</label>
+</div>
+</div>
+
+<div class="question">
+<h3>3. Yesterday, I ___ tired.</h3>
+<div class="options">
+<label><input type="radio" name="q3"> am</label>
+<label><input type="radio" name="q3" value="1"> was</label>
+<label><input type="radio" name="q3"> were</label>
+<label><input type="radio" name="q3"> is</label>
+</div>
+</div>
+
+<!-- الأسئلة المتقدمة (تحسم المستوى) -->
+<div class="question">
+<h3>4. I stopped ___ coffee.</h3>
+<div class="options">
+<label><input type="radio" name="q4" value="1"> drinking</label>
+<label><input type="radio" name="q4"> drink</label>
+<label><input type="radio" name="q4"> to drink</label>
+<label><input type="radio" name="q4"> drank</label>
+</div>
+</div>
+
+<div class="question">
+<h3>5. By the time I arrived, they ___.</h3>
+<div class="options">
+<label><input type="radio" name="q5"> left</label>
+<label><input type="radio" name="q5"> have left</label>
+<label><input type="radio" name="q5" value="1"> had left</label>
+<label><input type="radio" name="q5"> were leaving</label>
+</div>
+</div>
+
+<div class="question">
+<h3>6. I don’t know what ___.</h3>
+<div class="options">
+<label><input type="radio" name="q6"> does he want</label>
+<label><input type="radio" name="q6" value="1"> he wants</label>
+<label><input type="radio" name="q6"> he want</label>
+<label><input type="radio" name="q6"> wants he</label>
+</div>
+</div>
+
+<button onclick="showResult()">شوف نتيجتي</button>
+</div>
+
+<!-- النتيجة -->
+<div class="container result" id="result">
+  <div class="result-box">
+    <div class="earlo">
+      <img src="earlo.png" alt="إيرلو">
+    </div>
+    <h2 id="levelTitle"></h2>
+    <p id="levelText"></p>
+
+    <div class="actions">
+      <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
+      <a href="sales.html" class="buy">استكشف البرنامج الكامل</a>
+    </div>
+  </div>
+</div>
 
 <script>
-const questions = [
-  {q:"I ___ happy.", a:["am","is","are","be"], c:0},
-  {q:"She ___ happy.", a:["happy","is happy","happy is","be happy"], c:1},
-  {q:"I ___ a student.", a:["are","is","am","be"], c:2},
-  {q:"I ___ like coffee.", a:["no","don’t","not","doesn’t"], c:1},
-  {q:"Yesterday, I ___ tired.", a:["am","was","were","is"], c:1},
-  {q:"She has ___ friends here.", a:["much","many","a lot","very"], c:1},
-  {q:"He ___ to work every day.", a:["go","goes","going","is go"], c:1},
-  {q:"“I’m looking for my keys” means:", a:["lost forever","searching now","found","later"], c:1},
-  {q:"When I arrived, they ___ dinner.", a:["eat","were eating","ate","have eaten"], c:1},
-  {q:"I ___ with you.", a:["am agree","agree","agreeing","agree you"], c:1},
-  {q:"“I’ve lived here for 5 years” means:", a:["not now","still living","future","long ago"], c:1},
-  {q:"I don’t know what ___ want.", a:["does he","he wants","he want","wants he"], c:1},
-  {q:"I stopped ___ coffee.", a:["drink","drinking","to drink","drank"], c:1},
-
-  /* ==== ELITE ==== */
-  {q:"Hard: He speaks English ___ fluently than before.", a:["more","most","much","very"], c:0, elite:true},
-  {q:"Hard: Rarely ___ such dedication.", a:["I see","do I see","see I","I do see"], c:1, elite:true},
-  {q:"Hard: No sooner ___ than it started raining.", a:["had we arrived","we arrived","did we arrive","have we arrived"], c:0, elite:true}
-];
-
-let index=0, score=0, eliteCorrect=0, selected=null;
-const app=document.getElementById("app");
-
-function render(){
-  if(index<questions.length){
-    const q=questions[index];
-    app.innerHTML=`
-      <div class="question">${q.q}</div>
-      <div class="options">
-        ${q.a.map((o,i)=>`<div class="option" onclick="select(${i})">${o}</div>`).join("")}
-      </div>
-      <button class="btn" onclick="next()">التالي</button>
-    `;
-  } else showResult();
-}
-
-function select(i){
-  document.querySelectorAll(".option").forEach(o=>o.classList.remove("selected"));
-  document.querySelectorAll(".option")[i].classList.add("selected");
-  selected=i;
-  document.getElementById("clickSound").play();
-}
-
-function next(){
-  if(selected===null) return;
-  const q=questions[index];
-  if(selected===q.c){
-    if(q.elite) eliteCorrect++;
-    else score++;
-  }
-  selected=null;
-  index++;
-  render();
-}
-
 function showResult(){
-  let level="مبتدئ", free="free-beginner.html", msg="";
-  if(score>=11){
-    if(eliteCorrect===3){
-      level="متقدم";
-      free="free-advanced.html";
-      msg="مستواك قوي جدًا 👏 واضح إن عندك تحكم ممتاز في اللغة وتفكير لغوي متقدم.";
-    } else {
-      level="قوي";
-      free="free-intermediate.html";
-      msg="أساسك ممتاز جدًا، ومع شوية صقل وانتظام توصل لمرحلة متقدمة بثقة.";
-    }
-  } else if(score>=6){
-    level="متوسط";
-    free="free-intermediate.html";
-    msg="تفهم اللغة بشكل جيد، لكن تحتاج ثبات وممارسة عشان تتكلم براحة.";
-  } else {
-    msg="بدايتك صحيحة 👌 ومع التدرّج الصح بتلاحظ فرق واضح بسرعة.";
+  let score = 0;
+  document.querySelectorAll('input[value="1"]:checked').forEach(()=>score++);
+
+  document.getElementById("quiz").style.display="none";
+  document.getElementById("result").style.display="block";
+
+  let title="", text="";
+
+  if(score <= 2){
+    title="مستواك: مبتدئ 🌱";
+    text="بداية ممتازة! الأساسيات تحتاج ترتيب بسيط، ومع المسار الصحيح تقدر تتقدم بسرعة.";
+  }else if(score <= 4){
+    title="مستواك: متوسط 🚀";
+    text="واضح عندك قاعدة جيدة، تحتاج صقل واستخدام أعمق للغة.";
+  }else{
+    title="مستواك: متقدم 🔥";
+    text="مستواك قوي فعلًا. القواعد والمعنى عندك واضحين، والمرحلة الجاية هي الطلاقة والثقة.";
   }
 
-  app.innerHTML=`
-    <div class="result">
-      <img src="earlo.png" class="earlo">
-      <div class="level">مستواك: ${level}</div>
-      <div class="msg">${msg}</div>
-      <div class="cta">
-        <a href="${free}" class="free">ابدأ بالمحتوى المجاني</a>
-        <a href="buy.html" class="buy">استكشف البرنامج الكامل</a>
-      </div>
-    </div>
-  `;
+  document.getElementById("levelTitle").innerText = title;
+  document.getElementById("levelText").innerText = text;
 }
-
-render();
 </script>
 
 </body>
