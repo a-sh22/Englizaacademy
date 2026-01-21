@@ -33,31 +33,19 @@ header h1 {
   color: #FACC15;
 }
 
-/* ===== HERO GLOW WRAPPER ===== */
+/* ===== HERO GLOW (واضح مثل الأكورديون) ===== */
 .hero-glow {
   max-width: 1050px;
   margin: 50px auto 40px;
   padding: 40px 30px;
-  border-radius: 28px;
-  position: relative;
+  border-radius: 26px;
+  box-shadow:
+    0 0 0 1px rgba(250,204,21,.35),
+    0 0 35px rgba(250,204,21,.35),
+    0 0 60px rgba(37,99,235,.25);
 }
 
-.hero-glow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 28px;
-  background: linear-gradient(
-    135deg,
-    rgba(250,204,21,.18),
-    rgba(37,99,235,.18)
-  );
-  filter: blur(40px);
-  opacity: .7;
-  z-index: -1;
-}
-
-/* ===== HERO ===== */
+/* ===== HERO CONTENT ===== */
 .hero-inner {
   display: flex;
   align-items: center;
@@ -95,7 +83,7 @@ header h1 {
 /* ===== LEVEL GUIDE ===== */
 .level-guide {
   max-width: 1000px;
-  margin: 10px auto 50px;
+  margin: 0 auto 50px;
   padding: 0 20px;
   text-align: center;
 }
@@ -104,7 +92,7 @@ header h1 {
   font-size: 18px;
   font-weight: 800;
   color: #f8fafc;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .level-guide .line-main span {
@@ -113,7 +101,7 @@ header h1 {
 
 .level-guide .test-btn {
   display: inline-block;
-  margin: 8px 0 12px;
+  margin: 10px 0;
   padding: 10px 22px;
   font-size: 15.5px;
   font-weight: 800;
