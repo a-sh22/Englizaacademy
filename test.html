@@ -24,6 +24,7 @@ h1{
   margin-bottom:30px;
 }
 
+/* ===== QUESTIONS ===== */
 .question{
   margin-bottom:28px;
   padding:20px;
@@ -66,24 +67,37 @@ button:hover{
   box-shadow:0 10px 25px rgba(250,204,21,.45);
 }
 
-/* ===== RESULT ===== */
+/* ===== RESULT ANIMATION ===== */
 #result{
   display:none;
-  text-align:center;
-  margin-top:40px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.6s ease;
 }
 
+#result.show{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== RESULT LAYOUT ===== */
 .result-box{
-  background:rgba(255,255,255,.06);
-  border-radius:22px;
-  padding:30px;
-  box-shadow:0 0 30px rgba(37,99,235,.35);
+  display:flex;
+  align-items:flex-start;
+  gap:32px;
+  flex-wrap:wrap;
+  margin-top:20px;
 }
 
-.earlo{
-  width:120px;
-  margin:0 auto 20px;
-  animation:breath 4.5s ease-in-out infinite;
+.result-earlo{
+  flex:0 0 150px;
+  text-align:center;
+}
+
+.result-earlo img{
+  width:140px;
+  animation:breath 4s ease-in-out infinite;
 }
 
 @keyframes breath{
@@ -92,45 +106,97 @@ button:hover{
   100%{transform:translateY(0)}
 }
 
+.result-content{
+  flex:1;
+}
+
+/* ===== TEXT REVEAL ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(10px);
+  transition:.5s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.level-title{
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
 .result-text{
   font-size:17px;
   line-height:1.9;
-  margin:20px 0;
+  margin-bottom:16px;
 }
 
-.points{
-  text-align:right;
-  margin:18px auto;
-  max-width:500px;
+/* ===== PAIN POINTS ===== */
+.pain-boxes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
+  margin:18px 0 24px;
 }
 
-.points li{
-  margin-bottom:8px;
+.pain{
+  background:rgba(255,255,255,.05);
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+  font-size:14.5px;
+  font-weight:700;
+  box-shadow:0 0 18px rgba(37,99,235,.35);
+}
+
+/* ===== ACTIONS ===== */
+.paths{
+  margin-bottom:12px;
+  font-weight:800;
 }
 
 .actions{
   display:flex;
-  justify-content:center;
   gap:14px;
-  margin-top:28px;
   flex-wrap:wrap;
 }
 
 .actions a{
   padding:12px 22px;
   border-radius:16px;
-  text-decoration:none;
   font-weight:800;
+  text-decoration:none;
+  transition:.3s;
 }
 
-.free{
-  background:#2563eb;
-  color:#fff;
+.actions .free{
+  background:rgba(255,255,255,.1);
+  color:#f1f5f9;
+  box-shadow:0 0 18px rgba(37,99,235,.35);
 }
 
-.buy{
+.actions .free:hover{
+  background:rgba(255,255,255,.18);
+}
+
+.actions .buy{
   background:#FACC15;
   color:#0f172a;
+}
+
+.actions .buy:hover{
+  box-shadow:0 10px 28px rgba(250,204,21,.5);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:520px){
+  .result-box{
+    flex-direction:column;
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -140,9 +206,36 @@ button:hover{
 <div class="container">
 <h1>اختبار تحديد المستوى</h1>
 
-<form id="quiz">
+<form id="quiz"></form>
 
-<!-- ===== الأسئلة 1–17 ===== -->
+<button type="button" onclick="submitQuiz()">اعرف نتيجتي</button>
+
+<div id="result">
+  <div class="result-box">
+    <div class="result-earlo">
+      <img src="earlo.png" alt="EarLo">
+    </div>
+
+    <div class="result-content">
+      <div class="level-title reveal" id="levelTitle"></div>
+      <div class="result-text reveal" id="resultText"></div>
+
+      <div class="pain-boxes" id="points"></div>
+
+      <div class="paths reveal">
+        اختر المسار اللي يناسبك 👇
+      </div>
+
+      <div class="actions reveal">
+        <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
+        <a href="sales.html" class="buy">البرنامج الكامل</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
 <script>
 const questions = [
 {q:"Choose the correct word: I ___ happy.",a:0,opts:["am","is","are","be"]},
@@ -159,82 +252,67 @@ const questions = [
 {q:"Choose the correct sentence:",a:1,opts:["I don’t know what does he want","I don’t know what he wants","I don’t know what he want","I don’t know what wants he"]},
 {q:"I stopped ___ coffee.",a:0,opts:["drinking","drink","to drink","drank"]},
 {q:"By the time I arrived, they ___",a:2,opts:["left","have left","had left","were leaving"]},
-
-/* ===== الأسئلة الصعبة ===== */
 {q:"Hardly ___ arrived when the meeting started.",a:1,opts:["I had","had I","I arrived","did I arrived"],hard:true},
 {q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"],hard:true},
 {q:"If I had known about the meeting, I would have attended. This means:",a:2,opts:["The meeting is future","I attended","I didn’t attend","I don’t want to attend"],hard:true}
 ];
 
 const quiz=document.getElementById("quiz");
-
 questions.forEach((q,i)=>{
-  let html=`<div class="question">
-  <h3>${i+1}. ${q.q}</h3><div class="options">`;
-  q.opts.forEach((o,j)=>{
-    html+=`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`;
-  });
-  html+=`</div></div>`;
-  quiz.insertAdjacentHTML("beforeend",html);
-});
-</script>
-
-<button type="button" onclick="submitQuiz()">اعرف نتيجتي</button>
-</form>
-
-<div id="result">
-  <div class="result-box">
-    <img src="earlo.png" class="earlo" alt="EarLo">
-    <div class="result-text" id="resultText"></div>
-    <ul class="points" id="points"></ul>
-    <div class="actions">
-      <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
-      <a href="sales.html" class="buy">البرنامج الكامل</a>
+  quiz.innerHTML+=`
+  <div class="question">
+    <h3>${i+1}. ${q.q}</h3>
+    <div class="options">
+      ${q.opts.map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`).join("")}
     </div>
-  </div>
-</div>
-
-</div>
-
-<script>
-function submitQuiz(){
-let score=0,hardOK=true;
-questions.forEach((q,i)=>{
-  const ans=document.querySelector(`input[name="q${i}"]:checked`);
-  if(ans && +ans.value===q.a){
-    score++;
-  }else if(q.hard){
-    hardOK=false;
-  }
+  </div>`;
 });
 
-let level="",msg="",points="";
+function submitQuiz(){
+  let score=0,hardOK=true;
+  questions.forEach((q,i)=>{
+    const ans=document.querySelector(`input[name="q${i}"]:checked`);
+    if(ans && +ans.value===q.a) score++;
+    else if(q.hard) hardOK=false;
+  });
 
-if(score<=6){
-level="مبتدئ";
-msg="حلو 👌 واضح إنك في بداية الطريق، وهذا أفضل وقت تبدأ فيه صح.";
-points=["تحتاج تأسيس واضح","تبني ثقة خطوة خطوة","تفهم اللغة بدون حفظ"];
-}
-else if(score<=12){
-level="متوسط";
-msg="مستواك طيب 👏 بس تحس أحيانًا إنك واقف مكانك.";
-points=["تفهم أكثر مما تتكلم","تحتاج ترتيب الأفكار","تبي ثقة أعلى"];
-}
-else if(hardOK){
-level="متقدم";
-msg="مستواك متقدم، وهذا واضح 👏 لكن خليني أكون صريح معك.";
-points=["تتردد في التعبير الدقيق","كلامك صحيح بس مو طبيعي","تبغى طلاقة وثقة أعلى"];
-}else{
-level="قوي";
-msg="مستواك قوي 👌 لكن لسه في فرق بسيط بينك وبين المتقدم الحقيقي.";
-points=["تفهم بسرعة","تحتاج دقة أعلى","تبي استخدام طبيعي أكثر"];
-}
+  let level,msg,points;
 
-document.getElementById("resultText").innerHTML=`<strong>${level}</strong><br>${msg}`;
-document.getElementById("points").innerHTML=points.map(p=>`<li>• ${p}</li>`).join("");
-document.getElementById("quiz").style.display="none";
-document.getElementById("result").style.display="block";
-window.scrollTo({top:0,behavior:"smooth"});
+  if(score<=6){
+    level="مستواك الحالي: مبتدئ";
+    msg="حلو 👌 أنت في بداية الطريق، وهذا أفضل وقت تبني فيه أساس صح من البداية.";
+    points=["تحتاج تأسيس واضح","تبني ثقة خطوة خطوة","تفهم اللغة بدون حفظ"];
+  }else if(score<=12){
+    level="مستواك الحالي: متوسط";
+    msg="مستواك طيب 👏 لكن واضح إنك تحتاج ترتيب وتثبيت.";
+    points=["تفهم أكثر مما تتكلم","تحتاج تنظيم أفكارك","تبغى ثقة أعلى"];
+  }else if(hardOK){
+    level="مستواك الحالي: متقدم";
+    msg="مستواك قوي 👌 لكن لسه في فرق بين الصحة والطبيعية.";
+    points=["تردد في التعبير الدقيق","كلامك صحيح بس مو طبيعي","تبغى طلاقة أعلى"];
+  }else{
+    level="مستواك الحالي: قوي";
+    msg="قاعد توصل للمستوى المتقدم، وباقي لك لمسة احتراف.";
+    points=["فهم سريع","تحتاج دقة أعلى","تطوير استخدامك اليومي"];
+  }
+
+  document.getElementById("levelTitle").textContent=level;
+  document.getElementById("resultText").textContent=msg;
+  document.getElementById("points").innerHTML=points.map(p=>`<div class="pain">✨ ${p}</div>`).join("");
+
+  document.getElementById("quiz").style.display="none";
+  document.querySelector("button").style.display="none";
+
+  const res=document.getElementById("result");
+  res.classList.add("show");
+
+  setTimeout(()=>{
+    document.querySelectorAll(".reveal").forEach((el,i)=>{
+      setTimeout(()=>el.classList.add("show"),i*150);
+    });
+  },200);
+
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 
