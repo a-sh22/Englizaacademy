@@ -76,9 +76,10 @@ header h1 {
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
-/* ===== LEVEL CHECK – GLASS CARD ===== */
+
+/* ===== LEVEL CHECK ===== */
 .level-check {
-  margin: 20px auto 60px;
+  margin: 20px auto 20px;
   padding: 32px 30px;
   max-width: 580px;
   text-align: center;
@@ -100,7 +101,6 @@ header h1 {
   font-weight: 800;
   color: #f8fafc;
   margin-bottom: 14px;
-  letter-spacing: .3px;
 }
 
 .level-text {
@@ -110,7 +110,7 @@ header h1 {
   margin-bottom: 26px;
 }
 
-/* ===== GLASS BUTTON ===== */
+/* ===== BUTTON ===== */
 .level-btn {
   display: inline-flex;
   align-items: center;
@@ -125,18 +125,13 @@ header h1 {
 
   background: linear-gradient(135deg, #facc15, #fde047);
 
-  box-shadow:
-    0 12px 35px rgba(250,204,21,.45),
-    inset 0 0 0 rgba(255,255,255,0);
-
+  box-shadow: 0 12px 35px rgba(250,204,21,.45);
   transition: all .35s ease;
 }
 
 .level-btn:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 18px 45px rgba(250,204,21,.65),
-    inset 0 0 12px rgba(255,255,255,.35);
+  box-shadow: 0 18px 45px rgba(250,204,21,.65);
 }
 
 .level-note {
@@ -144,6 +139,67 @@ header h1 {
   font-size: 15px;
   color: #e5e7eb;
   line-height: 1.7;
+}
+
+/* ===== VISUAL BREAK + ARROW ===== */
+.level-divider {
+  margin: 18px auto 35px;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.level-divider span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.down-arrow {
+  font-size: 20px;
+  animation: arrowMove 1.6s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes arrowMove {
+  0% { transform: translateY(0); opacity: .6; }
+  50% { transform: translateY(6px); opacity: 1; }
+  100% { transform: translateY(0); opacity: .6; }
+}
+
+/* ===== LEVEL BOXES ===== */
+.level-section {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.level-box {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 18px;
+  padding: 28px 24px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(37,99,235,.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.level-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 45px rgba(37,99,235,.6);
+}
+
+.level-box h3 {
+  color: #FACC15;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.level-box p {
+  color: #e5e7eb;
+  font-size: 15.5px;
+  line-height: 1.8;
 }
 
 /* ===== MOBILE ===== */
@@ -173,7 +229,6 @@ header h1 {
 
 <section class="hero">
   <div class="hero-inner">
-
     <div class="hero-text">
       <h2>مسارك في التعلّم يبدأ من هنا</h2>
       <p>
@@ -186,7 +241,6 @@ header h1 {
     <div class="hero-earlo">
       <img src="earlo.png" alt="إيرلو">
     </div>
-
   </div>
 </section>
 
@@ -199,44 +253,35 @@ header h1 {
   </p>
 
   <a href="placement-test.html" class="level-btn">
-    🧭 أحدد مستواي
+    🧭 حدّد مستواك
   </a>
 
   <p class="level-note">
-    ولو ما حاب تختبر، ولا تحب الاختبارات أصلًا،
-    تقدر تكمل تحت وتبدأ مباشرة من الدروس المجانية
-    وتختار المستوى اللي تحسّه مناسب لك.
+    ولو ما تحب الاختبارات أو ما حاب تختبر الآن، عادي جدًا 🤍  
+    تقدر تبدأ مباشرة من الدروس المجانية وتختار المستوى اللي يناسبك.
   </p>
 </div>
-<section class="level-section">
 
+<div class="level-divider">
+  <span>ابدأ التعلّم من هنا</span>
+  <div class="down-arrow">↓</div>
+</div>
+
+<section class="level-section">
   <div class="level-box" onclick="location.href='free-beginner.html'">
     <h3>🟢 مبتدئ – ابدأ من هنا</h3>
-    <p>
-      لو مستواك صفر أو تعرف كلمات بسيطة،
-      وما تقدر تكوّن جمل أو تفهم المحادثات،
-      هذا المسار مناسب لك تمامًا.
-    </p>
+    <p>لو مستواك صفر أو تعرف كلمات بسيطة، هذا المسار مناسب لك.</p>
   </div>
 
   <div class="level-box" onclick="location.href='free-intermediate.html'">
     <h3>🟡 متوسط – طوّر لغتك</h3>
-    <p>
-      تفهم كثير لكن تتردد في الكلام،
-      أو تحس لغتك واقفة مكانها،
-      هنا تبدأ ترتّب وتطوّر مستواك.
-    </p>
+    <p>تفهم كثير لكن تتردد في الكلام؟ هنا تبدأ ترتّب مستواك.</p>
   </div>
 
   <div class="level-box" onclick="location.href='free-advanced.html'">
     <h3>🔵 متقدّم – ثبّت وارتقِ</h3>
-    <p>
-      لو مستواك جيد لكن تحس بتشتت،
-      أو تبغى تصقل لغتك وتستخدمها بثقة أعلى،
-      هذا المسار لك.
-    </p>
+    <p>مستواك جيد وتبغى تصقله؟ هذا المسار لك.</p>
   </div>
-
 </section>
 
 </body>
