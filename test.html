@@ -48,6 +48,7 @@ h1{
   margin-left:8px;
 }
 
+/* ===== BUTTON ===== */
 button{
   display:block;
   margin:40px auto;
@@ -67,36 +68,32 @@ button:hover{
   box-shadow:0 10px 25px rgba(250,204,21,.45);
 }
 
-/* ===== RESULT ANIMATION ===== */
+/* ===== RESULT ===== */
 #result{
   display:none;
-  opacity:0;
-  transform:translateY(30px);
-  transition:.6s ease;
+  margin-top:40px;
+  animation:fadeIn .7s ease forwards;
 }
 
-#result.show{
-  display:block;
-  opacity:1;
-  transform:translateY(0);
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
 }
 
-/* ===== RESULT LAYOUT ===== */
 .result-box{
   display:flex;
+  gap:30px;
   align-items:flex-start;
-  gap:32px;
   flex-wrap:wrap;
-  margin-top:20px;
 }
 
-.result-earlo{
-  flex:0 0 150px;
+.result-left{
+  flex:0 0 140px;
   text-align:center;
 }
 
-.result-earlo img{
-  width:140px;
+.result-left img{
+  width:120px;
   animation:breath 4s ease-in-out infinite;
 }
 
@@ -106,58 +103,41 @@ button:hover{
   100%{transform:translateY(0)}
 }
 
-.result-content{
+.result-right{
   flex:1;
-}
-
-/* ===== TEXT REVEAL ===== */
-.reveal{
-  opacity:0;
-  transform:translateY(10px);
-  transition:.5s ease;
-}
-
-.reveal.show{
-  opacity:1;
-  transform:translateY(0);
 }
 
 .level-title{
   font-size:24px;
   font-weight:900;
   margin-bottom:10px;
+  color:#FACC15;
 }
 
 .result-text{
   font-size:17px;
   line-height:1.9;
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 
-/* ===== PAIN POINTS ===== */
 .pain-boxes{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:14px;
-  margin:18px 0 24px;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+  margin:18px 0 26px;
 }
 
 .pain{
-  background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.06);
   padding:14px;
   border-radius:14px;
   text-align:center;
+  box-shadow:0 0 16px rgba(37,99,235,.35);
   font-size:14.5px;
   font-weight:700;
-  box-shadow:0 0 18px rgba(37,99,235,.35);
 }
 
 /* ===== ACTIONS ===== */
-.paths{
-  margin-bottom:12px;
-  font-weight:800;
-}
-
 .actions{
   display:flex;
   gap:14px;
@@ -165,38 +145,43 @@ button:hover{
 }
 
 .actions a{
-  padding:12px 22px;
+  padding:13px 22px;
   border-radius:16px;
   font-weight:800;
   text-decoration:none;
   transition:.3s;
 }
 
-.actions .free{
-  background:rgba(255,255,255,.1);
-  color:#f1f5f9;
+.free{
+  background:rgba(255,255,255,.08);
+  color:#f8fafc;
   box-shadow:0 0 18px rgba(37,99,235,.35);
 }
 
-.actions .free:hover{
-  background:rgba(255,255,255,.18);
+.free:hover{
+  box-shadow:0 0 28px rgba(37,99,235,.55);
 }
 
-.actions .buy{
+.buy{
   background:#FACC15;
   color:#0f172a;
+  box-shadow:0 10px 28px rgba(250,204,21,.45);
 }
 
-.actions .buy:hover{
-  box-shadow:0 10px 28px rgba(250,204,21,.5);
+.buy:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 38px rgba(250,204,21,.65);
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:520px){
-  .result-box{
-    flex-direction:column;
-    text-align:center;
-  }
+/* ===== CONFETTI ===== */
+.confetti{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:999;
 }
 </style>
 </head>
@@ -208,27 +193,25 @@ button:hover{
 
 <form id="quiz"></form>
 
-<button type="button" onclick="submitQuiz()">اعرف نتيجتي</button>
+<button onclick="submitQuiz()">اعرف نتيجتي</button>
 
 <div id="result">
+  <canvas class="confetti" id="confetti"></canvas>
+
   <div class="result-box">
-    <div class="result-earlo">
-      <img src="earlo.png" alt="EarLo">
+    <div class="result-left">
+      <img src="earlo.png" alt="إيرلو">
     </div>
 
-    <div class="result-content">
-      <div class="level-title reveal" id="levelTitle"></div>
-      <div class="result-text reveal" id="resultText"></div>
+    <div class="result-right">
+      <div class="level-title" id="levelTitle"></div>
+      <div class="result-text" id="resultText"></div>
 
-      <div class="pain-boxes" id="points"></div>
+      <div class="pain-boxes" id="painBoxes"></div>
 
-      <div class="paths reveal">
-        اختر المسار اللي يناسبك 👇
-      </div>
-
-      <div class="actions reveal">
+      <div class="actions">
         <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
-        <a href="sales.html" class="buy">البرنامج الكامل</a>
+        <a href="sales.html" class="buy" id="buyBtn">جاهز للنقلة الجاية 🚀</a>
       </div>
     </div>
   </div>
@@ -237,6 +220,7 @@ button:hover{
 </div>
 
 <script>
+/* ===== QUESTIONS ===== */
 const questions = [
 {q:"Choose the correct word: I ___ happy.",a:0,opts:["am","is","are","be"]},
 {q:"Choose the correct sentence:",a:1,opts:["She happy","She is happy","She happy is","She be happy"]},
@@ -252,6 +236,8 @@ const questions = [
 {q:"Choose the correct sentence:",a:1,opts:["I don’t know what does he want","I don’t know what he wants","I don’t know what he want","I don’t know what wants he"]},
 {q:"I stopped ___ coffee.",a:0,opts:["drinking","drink","to drink","drank"]},
 {q:"By the time I arrived, they ___",a:2,opts:["left","have left","had left","were leaving"]},
+
+/* HARD */
 {q:"Hardly ___ arrived when the meeting started.",a:1,opts:["I had","had I","I arrived","did I arrived"],hard:true},
 {q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"],hard:true},
 {q:"If I had known about the meeting, I would have attended. This means:",a:2,opts:["The meeting is future","I attended","I didn’t attend","I don’t want to attend"],hard:true}
@@ -259,60 +245,80 @@ const questions = [
 
 const quiz=document.getElementById("quiz");
 questions.forEach((q,i)=>{
-  quiz.innerHTML+=`
-  <div class="question">
-    <h3>${i+1}. ${q.q}</h3>
-    <div class="options">
-      ${q.opts.map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`).join("")}
-    </div>
-  </div>`;
+  let html=`<div class="question"><h3>${i+1}. ${q.q}</h3><div class="options">`;
+  q.opts.forEach((o,j)=>{
+    html+=`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`;
+  });
+  html+=`</div></div>`;
+  quiz.insertAdjacentHTML("beforeend",html);
 });
 
+/* ===== SUBMIT ===== */
 function submitQuiz(){
-  let score=0,hardOK=true;
-  questions.forEach((q,i)=>{
-    const ans=document.querySelector(`input[name="q${i}"]:checked`);
-    if(ans && +ans.value===q.a) score++;
-    else if(q.hard) hardOK=false;
-  });
+let score=0,hardOK=true;
+questions.forEach((q,i)=>{
+  const ans=document.querySelector(`input[name="q${i}"]:checked`);
+  if(ans && +ans.value===q.a) score++;
+  else if(q.hard) hardOK=false;
+});
 
-  let level,msg,points;
+let level="",text="",pains=[];
 
-  if(score<=6){
-    level="مستواك الحالي: مبتدئ";
-    msg="حلو 👌 أنت في بداية الطريق، وهذا أفضل وقت تبني فيه أساس صح من البداية.";
-    points=["تحتاج تأسيس واضح","تبني ثقة خطوة خطوة","تفهم اللغة بدون حفظ"];
-  }else if(score<=12){
-    level="مستواك الحالي: متوسط";
-    msg="مستواك طيب 👏 لكن واضح إنك تحتاج ترتيب وتثبيت.";
-    points=["تفهم أكثر مما تتكلم","تحتاج تنظيم أفكارك","تبغى ثقة أعلى"];
-  }else if(hardOK){
-    level="مستواك الحالي: متقدم";
-    msg="مستواك قوي 👌 لكن لسه في فرق بين الصحة والطبيعية.";
-    points=["تردد في التعبير الدقيق","كلامك صحيح بس مو طبيعي","تبغى طلاقة أعلى"];
-  }else{
-    level="مستواك الحالي: قوي";
-    msg="قاعد توصل للمستوى المتقدم، وباقي لك لمسة احتراف.";
-    points=["فهم سريع","تحتاج دقة أعلى","تطوير استخدامك اليومي"];
-  }
+if(score<=6){
+level="مبتدئ";
+text="أنت في بداية الطريق، وهذا أفضل وقت تبني فيه الأساس الصح. مع الخطة الصحيحة، التقدم يكون أسرع مما تتوقع.";
+pains=["تحتاج تأسيس واضح","تبني الثقة خطوة خطوة","تفهم بدون حفظ"];
+}
+else if(score<=12){
+level="متوسط";
+text="مستواك جيد 👌 لكن غالبًا تحس إنك واقف مكانك. القفزة الجاية تحتاج تنظيم وطريقة أوضح.";
+pains=["تفهم أكثر مما تتكلم","تحتاج ترتيب الأفكار","تبي ثقة أعلى"];
+}
+else if(hardOK){
+level="متقدم";
+text="مستواك متقدم 👏 لكن الفرق الحقيقي الآن هو الدقة والطلاقة الطبيعية.";
+pains=["تردد بسيط بالتعبير","لغة صحيحة لكن مو طبيعية","تبي ثقة أعلى"];
+}
+else{
+level="قوي";
+text="مستواك قوي جدًا، ومع شوية ضبط تقدر توصل لمرحلة احترافية فعلًا.";
+pains=["تفهم بسرعة","تحتاج دقة أعلى","تبي استخدام طبيعي"];
+}
 
-  document.getElementById("levelTitle").textContent=level;
-  document.getElementById("resultText").textContent=msg;
-  document.getElementById("points").innerHTML=points.map(p=>`<div class="pain">✨ ${p}</div>`).join("");
+document.getElementById("levelTitle").innerText=`مستواك الحالي: ${level}`;
+document.getElementById("resultText").innerText=text;
+document.getElementById("painBoxes").innerHTML=pains.map(p=>`<div class="pain">${p}</div>`).join("");
 
-  document.getElementById("quiz").style.display="none";
-  document.querySelector("button").style.display="none";
+quiz.style.display="none";
+document.querySelector("button").style.display="none";
+document.getElementById("result").style.display="block";
+confetti();
+}
 
-  const res=document.getElementById("result");
-  res.classList.add("show");
-
-  setTimeout(()=>{
-    document.querySelectorAll(".reveal").forEach((el,i)=>{
-      setTimeout(()=>el.classList.add("show"),i*150);
-    });
-  },200);
-
-  window.scrollTo({top:0,behavior:"smooth"});
+/* ===== CONFETTI SOFT ===== */
+function confetti(){
+const c=document.getElementById("confetti");
+const ctx=c.getContext("2d");
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+let pieces=[];
+for(let i=0;i<80;i++){
+pieces.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*6+2});
+}
+let t=0;
+function draw(){
+ctx.clearRect(0,0,c.width,c.height);
+pieces.forEach(p=>{
+ctx.fillStyle="rgba(250,204,21,.25)";
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+p.y+=0.5;
+});
+t++;
+if(t<120) requestAnimationFrame(draw);
+}
+draw();
 }
 </script>
 
