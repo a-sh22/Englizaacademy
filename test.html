@@ -12,17 +12,12 @@ body{
   background:linear-gradient(180deg,#0f172a,#1e293b);
   color:#f1f5f9;
 }
-
 .container{
   max-width:900px;
   margin:40px auto;
   padding:20px;
 }
-
-h1{
-  text-align:center;
-  margin-bottom:10px;
-}
+h1{text-align:center;margin-bottom:10px}
 
 /* ===== NOTICE ===== */
 .notice{
@@ -46,21 +41,9 @@ h1{
   border-radius:16px;
   box-shadow:0 0 18px rgba(37,99,235,.25);
 }
-
-.question h3{
-  font-size:16.5px;
-  margin-bottom:12px;
-}
-
-.options label{
-  display:block;
-  margin:8px 0;
-  cursor:pointer;
-}
-
-.options input{
-  margin-left:8px;
-}
+.question h3{font-size:16.5px;margin-bottom:12px}
+.options label{display:block;margin:8px 0;cursor:pointer}
+.options input{margin-left:8px}
 
 /* ===== BUTTON ===== */
 button{
@@ -76,64 +59,38 @@ button{
   cursor:pointer;
   transition:.3s;
 }
-
 button:hover{
   transform:translateY(-2px);
   box-shadow:0 10px 25px rgba(250,204,21,.45);
 }
 
 /* ===== RESULT ===== */
-#result{
-  display:none;
-  margin-top:50px;
-}
-
-.result-box{
-  display:flex;
-  gap:26px;
-  align-items:flex-start;
-  flex-wrap:wrap;
-}
-
-/* ===== EARLO ===== */
-.result-left{
-  flex:0 0 120px;
-  text-align:center;
-}
-
-.result-left img{
-  width:110px;
-  animation:breath 4s ease-in-out infinite;
-}
-
-@keyframes breath{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
-  100%{transform:translateY(0)}
-}
-
-/* ===== CONTENT ===== */
-.result-right{
-  flex:1;
-}
-
+#result{display:none;margin-top:50px}
+.result-box{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.result-left{flex:0 0 120px;text-align:center}
+.result-left img{width:110px;animation:breath 4s ease-in-out infinite}
+@keyframes breath{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.result-right{flex:1}
 .result-glow{
   padding:18px 20px;
-  margin-bottom:22px;
+  margin-bottom:16px;
   border-radius:18px;
   box-shadow:0 0 22px rgba(37,99,235,.35);
 }
-
 .level-title{
   font-size:22px;
   font-weight:900;
   color:#FACC15;
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
+.result-text{font-size:16px;line-height:1.7}
 
-.result-text{
-  font-size:16.5px;
-  line-height:1.8;
+/* ===== CONVERSION LINE ===== */
+.conversion-line{
+  margin-top:10px;
+  font-size:15px;
+  color:#fde68a;
+  font-weight:700;
 }
 
 /* ===== PAIN POINTS ===== */
@@ -143,7 +100,6 @@ button:hover{
   gap:12px;
   margin:18px 0 26px;
 }
-
 .pain{
   background:rgba(255,255,255,.06);
   padding:13px;
@@ -155,36 +111,15 @@ button:hover{
 }
 
 /* ===== PATHS ===== */
-.paths-title{
-  font-size:17px;
-  font-weight:900;
-  margin-bottom:14px;
-}
-
+.paths-title{font-size:17px;font-weight:900;margin-bottom:14px}
 .actions{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:18px;
 }
-
-.path-box{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.path-note{
-  font-size:14.5px;
-  color:#e5e7eb;
-  line-height:1.6;
-}
-
-.path-note.highlight{
-  color:#fde68a;
-  font-weight:700;
-}
-
-/* ===== BUTTONS ===== */
+.path-box{display:flex;flex-direction:column;gap:10px}
+.path-note{font-size:14.5px;color:#e5e7eb;line-height:1.6}
+.path-note.highlight{color:#fde68a;font-weight:700}
 .actions a{
   padding:14px 22px;
   border-radius:16px;
@@ -193,53 +128,35 @@ button:hover{
   text-align:center;
   transition:.3s;
 }
-
 .free{
   background:rgba(255,255,255,.04);
   color:#f8fafc;
-  backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,.22);
-  box-shadow:0 0 22px rgba(37,99,235,.45);
 }
-
-.free:hover{
-  box-shadow:0 0 34px rgba(37,99,235,.65);
-}
-
 .buy{
   background:#FACC15;
   color:#0f172a;
-  box-shadow:0 10px 26px rgba(250,204,21,.45);
-}
-
-.buy:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(250,204,21,.65);
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:600px){
-  .result-box{
-    flex-direction:column;
-    text-align:center;
-  }
+  .result-box{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
 <h1>اختبار تحديد المستوى</h1>
 
 <div class="notice">
-خذ نفس 🌿 ولا تجاوب بشكل عشوائي.  
-هذا الاختبار مصمم يحدد مستواك الحقيقي، فحاول تركز وتجاوب بصدق عشان تطلع لك نتيجة دقيقة.
+خذ نفس 🌿  
+الاختبار هذا مو للضغط عليك،  
+بل عشان نعرف من وين تبدأ صح.
 </div>
 
 <form id="quiz"></form>
-
 <button type="button" onclick="submitQuiz()">اعرف نتيجتي</button>
 
 <div id="result">
@@ -250,36 +167,33 @@ button:hover{
     </div>
 
     <div class="result-right">
-
       <div class="result-glow">
         <div class="level-title" id="levelTitle"></div>
         <div class="result-text" id="resultText"></div>
+        <div class="conversion-line" id="conversionLine"></div>
       </div>
 
       <div class="pain-boxes" id="painBoxes"></div>
 
       <div class="paths-title">
-        عشان كذا جهّزنا لك مسارين حسب اللي يناسبك 👇
+        تقدر تختار المسار اللي يناسبك 👇
       </div>
 
       <div class="actions">
-
         <div class="path-box">
           <div class="path-note">
-            لو حاب تبدأ بهدوء وتشوف أسلوبنا قبل أي التزام 👌
+            لو حاب تبدأ بهدوء وتشوف أسلوبنا
           </div>
-          <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
+          <a id="freeLink" href="free.html" class="free">ابدأ من مستواك</a>
         </div>
 
         <div class="path-box">
           <div class="path-note highlight">
-            ولو حاب نقلة أسرع بخطة واضحة ومتابعة 👇
+            ولو تبغى نقلة أسرع بخطة واضحة
           </div>
           <a href="sales.html" class="buy">جاهز للنقلة الجاية 🚀</a>
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
@@ -303,9 +217,9 @@ const questions = [
 {q:"Choose the correct sentence:",a:1,opts:["I don’t know what does he want","I don’t know what he wants","I don’t know what he want","I don’t know what wants he"]},
 {q:"I stopped ___ coffee.",a:0,opts:["drinking","drink","to drink","drank"]},
 {q:"By the time I arrived, they ___",a:2,opts:["left","have left","had left","were leaving"]},
-{q:"Hardly ___ arrived when the meeting started.",a:1,opts:["I had","had I","I arrived","did I arrived"],hard:true},
-{q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"],hard:true},
-{q:"If I had known about the meeting, I would have attended. This means:",a:2,opts:["The meeting is future","I attended","I didn’t attend","I don’t want to attend"],hard:true}
+{q:"Hardly ___ arrived when the meeting started.",a:1,opts:["I had","had I","I arrived","did I arrived"]},
+{q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"]},
+{q:"If I had known about the meeting, I would have attended. This means:",a:2,opts:["The meeting is future","I attended","I didn’t attend","I don’t want to attend"]}
 ];
 
 const quiz=document.getElementById("quiz");
@@ -318,54 +232,62 @@ questions.forEach((q,i)=>{
   quiz.insertAdjacentHTML("beforeend",html);
 });
 
-/* ===== SUBMIT LOGIC (REAL EVALUATION) ===== */
+/* ===== SMART EVALUATION ===== */
 function submitQuiz(){
+  let basic=0, mid=0, adv=0;
 
-let basicCorrect = 0; // 1–5
-let midCorrect   = 0; // 6–11
-let advCorrect   = 0; // 12–17
+  questions.forEach((q,i)=>{
+    const ans=document.querySelector(`input[name="q${i}"]:checked`);
+    if(ans && +ans.value===q.a){
+      if(i<=4) basic++;
+      else if(i<=10) mid++;
+      else adv++;
+    }
+  });
 
-questions.forEach((q,i)=>{
-  const ans=document.querySelector(`input[name="q${i}"]:checked`);
-  if(ans && +ans.value===q.a){
-    if(i<=4) basicCorrect++;
-    else if(i<=10) midCorrect++;
-    else advCorrect++;
+  const score =
+    (basic/5)*0.4 +
+    (mid/6)*0.4 +
+    (adv/6)*0.2;
+
+  let level="", text="", pains=[], line="", free="free.html";
+
+  if(score < 0.4){
+    level="مبتدئ";
+    text="واضح إن الأساس يحتاج ترتيب من البداية.";
+    pains=["تأسيس","ثقة","نطق صحيح"];
+    line="الخبر الحلو؟ البداية الصح بتوفر عليك وقت كثير.";
+    free="free-beginner.html";
+  }else if(score < 0.65){
+    level="متوسط";
+    text="تفهم كثير، لكن الكلام ما يطلع بسلاسة.";
+    pains=["تردد","تفكير زائد","قلة طلاقة"];
+    line="مشكلتك مو ذكاء… بل طريقة.";
+    free="free-intermediate.html";
+  }else if(score < 0.85){
+    level="قوي";
+    text="مستواك قوي، وتحتاج صقل بسيط.";
+    pains=["دقة","تنظيم","ثقة"];
+    line="الفرق بينك وبين الطلاقة أقرب مما تتوقع.";
+    free="free-upper.html";
+  }else{
+    level="متقدم";
+    text="مستواك متقدم 👏";
+    pains=["احتراف","تفاصيل","طبيعية"];
+    line="هنا التفاصيل الصغيرة تصنع الفرق الكبير.";
+    free="free-advanced.html";
   }
-});
 
-let level="",text="",pains=[];
+  document.getElementById("levelTitle").innerText=`مستواك الحالي: ${level}`;
+  document.getElementById("resultText").innerText=text;
+  document.getElementById("conversionLine").innerText=line;
+  document.getElementById("painBoxes").innerHTML=pains.map(p=>`<div class="pain">${p}</div>`).join("");
+  document.getElementById("freeLink").href=free;
 
-if(basicCorrect < 3){
-  level="مبتدئ";
-  text="واضح إن الأساسيات تحتاج تقوية، والبداية الصح هنا بتفرق معك كثير.";
-  pains=["تأسيس واضح","بناء الثقة خطوة خطوة","فهم بدون حفظ"];
-}
-else if(midCorrect < 4){
-  level="متوسط";
-  text="تفهم كثير، لكن تحتاج ترتيب وربط أقوى بين القواعد والاستخدام.";
-  pains=["تفهم أكثر مما تتكلم","تردد في التعبير","تحتاج طلاقة"];
-}
-else if(advCorrect < 4){
-  level="قوي";
-  text="مستواك قوي 👌 ومع شوية صقل توصل لمرحلة متقدمة جدًا.";
-  pains=["دقة أعلى","استخدام طبيعي","ثقة أكبر"];
-}
-else{
-  level="متقدم";
-  text="مستواك متقدم 👏 الفرق الآن في الاحتراف والدقة العالية.";
-  pains=["تفاصيل لغوية","طلاقة","تعبير طبيعي"];
-}
-
-document.getElementById("levelTitle").innerText=`مستواك الحالي: ${level}`;
-document.getElementById("resultText").innerText=text;
-document.getElementById("painBoxes").innerHTML=
-  pains.map(p=>`<div class="pain">${p}</div>`).join("");
-
-quiz.style.display="none";
-document.querySelector("button").style.display="none";
-document.getElementById("result").style.display="block";
-window.scrollTo({top:0,behavior:"smooth"});
+  quiz.style.display="none";
+  document.querySelector("button").style.display="none";
+  document.getElementById("result").style.display="block";
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 
