@@ -127,45 +127,84 @@ button:hover{
   line-height:1.95;
 }
 
-/* PAIN POINTS */
-.pain-boxes{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:14px;
-  margin-bottom:32px;
+/* PAIN SECTION */
+.pain-wrapper{
+  background:rgba(255,255,255,.06);
+  padding:20px 22px;
+  border-radius:20px;
+  box-shadow:0 0 22px rgba(37,99,235,.35);
+  margin:0 0 32px;
 }
 
-.pain{
-  background:rgba(255,255,255,.06);
-  padding:16px;
-  border-radius:16px;
-  box-shadow:0 0 18px rgba(37,99,235,.35);
+.pain-title{
+  font-size:16.5px;
+  font-weight:900;
+  color:#fde68a;
+  margin-bottom:12px;
+}
+
+.pain-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.pain-list li{
+  position:relative;
+  padding-right:18px;
+  margin-bottom:10px;
   font-size:15px;
   line-height:1.7;
 }
 
-/* PATHS */
-.paths-title{
-  font-size:17.5px;
+.pain-list li::before{
+  content:"•";
+  position:absolute;
+  right:0;
+  color:#FACC15;
   font-weight:900;
-  margin-bottom:18px;
 }
 
-.actions{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
+/* ملاحظات المسارات */
+.path-note{
+  font-size:14.5px;
+  line-height:1.6;
+  margin-bottom:6px;
+  color:#e5e7eb;
 }
 
-.actions a{
-  padding:18px 26px;
-  border-radius:20px;
-  font-weight:900;
-  text-decoration:none;
-  text-align:center;
-  font-size:16px;
+.path-note.safe{
+  color:#cbd5f5;
 }
 
+.path-note.highlight{
+  color:#fde68a;
+  font-weight:700;
+}
+
+/* زر المحتوى المجاني (آمن نفسيًا) */
+.free{
+  background:rgba(255,255,255,.06);
+  color:#f8fafc;
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 0 18px rgba(37,99,235,.28);
+}
+
+.free:hover{
+  box-shadow:0 0 30px rgba(37,99,235,.45);
+}
+
+/* زر البرنامج (قرار قوي) */
+.buy{
+  background:#FACC15;
+  color:#0f172a;
+  box-shadow:0 12px 30px rgba(250,204,21,.45);
+}
+
+.buy:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 40px rgba(250,204,21,.65);
+}
 .free{
   background:rgba(255,255,255,.05);
   color:#f8fafc;
@@ -185,6 +224,70 @@ button:hover{
     align-items:flex-start;
   }
 }
+  /* ===== MOBILE SPACING FIX ===== */
+@media (max-width: 600px){
+
+  /* المسافة بعد إيرلو + مربع المستوى */
+  .result-glow{
+    margin-bottom:28px;
+    padding:20px 18px;
+  }
+
+  /* صندوق نقاط الألم */
+  .pain-boxes{
+    margin:22px 0 34px;
+    gap:14px;
+  }
+
+  .pain{
+    padding:16px 14px;
+    font-size:14.5px;
+    line-height:1.7;
+  }
+
+  /* مسارات القرار */
+  .actions{
+    gap:26px;
+  }
+
+  .path-box{
+    padding:14px 12px;
+  }
+
+  .path-note{
+    margin-bottom:10px;
+    font-size:14.5px;
+  }
+
+  /* زر المحتوى المجاني */
+  .free{
+    padding:16px 20px;
+    font-size:15.5px;
+  }
+
+  /* زر البرنامج */
+  .buy{
+    padding:18px 20px;
+    font-size:16px;
+  }
+}
+  /* ===== READ FLOW ANIMATION ===== */
+.reveal-step{
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+
+.reveal-step.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* تأخير بسيط لكل قسم */
+.delay-1{transition-delay:.1s;}
+.delay-2{transition-delay:.3s;}
+.delay-3{transition-delay:.5s;}
+  
 </style>
 </head>
 
@@ -214,25 +317,43 @@ button:hover{
 
     <div class="result-right">
 
-      <div class="result-glow">
+      <div class="result-glow reveal-step delay-1">
         <div class="level-title" id="levelTitle"></div>
         <div class="result-text" id="resultText"></div>
       </div>
+      
+<div class="pain-wrapper">
+  <div class="pain-title">وش اللي يوقفك حالياً؟</div>
+ <div class="pain-boxes reveal-step delay-2" id="painBoxes"></div>
+</div>
 
-      <div class="pain-boxes" id="painBoxes"></div>
+     <div class="paths-title reveal-step delay-3">
+  عشان كذا جهّزنا لك مسارين حسب اللي يناسبك 👇
+</div>
 
-      <div class="paths-title">
-        عشان كذا جهّزنا لك مسارين حسب اللي يناسبك 👇
-      </div>
+<div class="actions reveal-step delay-3">
 
-      <div class="actions">
-        <a href="free.html" class="free">
-          ابدأ بالتعلّم المجاني من المستوى المناسب لك
-        </a>
-        <a href="sales.html" class="buy">
-          جاهز للنقلة الجاية 🚀
-        </a>
-      </div>
+  <!-- المسار الآمن -->
+  <div class="path-box">
+    <div class="path-note safe">
+      لو حاب تبدأ بهدوء وتفهم طريقتنا بدون التزام 👌
+    </div>
+    <a href="free.html" class="free">
+      ابدأ بالتعلّم المجاني من مستواك
+    </a>
+  </div>
+
+  <!-- المسار السريع -->
+  <div class="path-box">
+    <div class="path-note highlight">
+      ولو حاب تختصر الطريق بخطة واضحة ودعم 👇
+    </div>
+    <a href="sales.html" class="buy">
+      جاهز للنقلة الجاية 🚀
+    </a>
+  </div>
+
+</div>
 
     </div>
   </div>
@@ -319,11 +440,21 @@ function submitQuiz(){
 
   document.getElementById("levelTitle").innerText=`مستواك الحالي: ${level}`;
   document.getElementById("resultText").innerText=text;
-  document.getElementById("painBoxes").innerHTML=pains.map(p=>`<div class="pain">${p}</div>`).join("");
+ document.getElementById("painBoxes").innerHTML =
+  `<ul class="pain-list">
+    ${pains.map(p=>`<li>${p}</li>`).join("")}
+   </ul>`;
 
   quiz.style.display="none";
   document.getElementById("result").style.display="block";
   window.scrollTo({top:0,behavior:"smooth"});
+  setTimeout(revealResult, 100);
+}
+</script>
+  <script>
+function revealResult(){
+  document.querySelectorAll('.reveal-step')
+    .forEach(el => el.classList.add('show'));
 }
 </script>
 
