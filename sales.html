@@ -505,6 +505,45 @@
     transform: translateX(-2px);
   }
 }
+  .price-psych{
+  margin-top:14px;
+  font-size:15.5px;
+  color:#e5e7eb;
+  line-height:1.6;
+}
+
+.price-glow{
+  display:inline-block;
+  margin-top:4px;
+  font-weight:900;
+  color:#FACC15;
+  animation:softGlow 3.5s ease-in-out infinite;
+}
+
+/* توهج ناعم جداً */
+@keyframes softGlow{
+  0%{
+    text-shadow:0 0 6px rgba(250,204,21,.25);
+    opacity:.85;
+  }
+  50%{
+    text-shadow:
+      0 0 14px rgba(250,204,21,.55),
+      0 0 24px rgba(250,204,21,.35);
+    opacity:1;
+  }
+  100%{
+    text-shadow:0 0 6px rgba(250,204,21,.25);
+    opacity:.85;
+  }
+}
+
+/* الميزات تكون أهدى */
+.price-features{
+  margin-top:10px;
+  font-size:14px;
+  color:#cbd5e1;
+}
 </style>
 </head>
 <body>
@@ -690,10 +729,18 @@
   </div>
 
   <div class="program-price">
-    <span class="price-main">40 ريال عماني</span>
-    <span class="price-sub">(≈ 104 دولار أمريكي)</span>
-    <p class="price-note">وصول كامل · تحديثات مستمرة · مجتمع داعم</p>
+  <span class="price-main">40 ريال عماني</span>
+  <span class="price-sub">(≈ 104 دولار أمريكي)</span>
+
+  <div class="price-psych">
+    أقل من سعر كورس شهر واحد في معهد…<br>
+    <span class="price-glow">لكن بنتيجة تبقى معك.</span>
   </div>
+
+  <p class="price-features">
+    وصول كامل · تحديثات مستمرة · مجتمع داعم
+  </p>
+</div>
 
   <button class="btn-buy" onclick="buyNow()">ابدأ رحلتك الآن</button>
 
