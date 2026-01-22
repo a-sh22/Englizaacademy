@@ -21,7 +21,26 @@ body{
 
 h1{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:12px;
+}
+
+/* ===== NOTE ===== */
+.quiz-note{
+  max-width:760px;
+  margin:0 auto 34px;
+  text-align:center;
+  font-size:15.5px;
+  line-height:1.9;
+  color:#e5e7eb;
+  background:rgba(255,255,255,.04);
+  padding:16px 18px;
+  border-radius:16px;
+  box-shadow:0 0 18px rgba(37,99,235,.28);
+}
+
+.quiz-note strong{
+  color:#FACC15;
+  font-weight:900;
 }
 
 /* ===== QUESTIONS ===== */
@@ -81,7 +100,6 @@ button:hover{
   flex-wrap:wrap;
 }
 
-/* ===== EARLO ===== */
 .result-left{
   flex:0 0 120px;
   text-align:center;
@@ -98,12 +116,10 @@ button:hover{
   100%{transform:translateY(0)}
 }
 
-/* ===== CONTENT ===== */
 .result-right{
   flex:1;
 }
 
-/* Glow وهمي */
 .result-glow{
   padding:18px 20px;
   margin-bottom:22px;
@@ -121,10 +137,8 @@ button:hover{
 .result-text{
   font-size:16.5px;
   line-height:1.8;
-  color:#f8fafc;
 }
 
-/* ===== PAIN POINTS ===== */
 .pain-boxes{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
@@ -142,7 +156,6 @@ button:hover{
   font-weight:700;
 }
 
-/* ===== PATHS ===== */
 .paths-title{
   font-size:17px;
   font-weight:900;
@@ -163,7 +176,6 @@ button:hover{
 
 .path-note{
   font-size:14.5px;
-  color:#e5e7eb;
   line-height:1.6;
 }
 
@@ -172,46 +184,26 @@ button:hover{
   font-weight:700;
 }
 
-/* ===== BUTTONS ===== */
 .actions a{
   padding:14px 22px;
   border-radius:16px;
   font-weight:900;
   text-decoration:none;
   text-align:center;
-  transition:.3s;
 }
 
 .free{
   background:rgba(255,255,255,.04);
   color:#e5e7eb;
   backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-
   border:1px solid rgba(255,255,255,.18);
-  box-shadow:
-    0 0 18px rgba(37,99,235,.25),
-    inset 0 0 12px rgba(255,255,255,.04);
-}
-
-.free:hover{
-  box-shadow:
-    0 0 28px rgba(37,99,235,.45),
-    inset 0 0 18px rgba(255,255,255,.08);
 }
 
 .buy{
   background:#FACC15;
   color:#0f172a;
-  box-shadow:0 10px 26px rgba(250,204,21,.45);
 }
 
-.buy:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(250,204,21,.65);
-}
-
-/* ===== MOBILE ===== */
 @media(max-width:600px){
   .result-box{
     flex-direction:column;
@@ -226,19 +218,22 @@ button:hover{
 <div class="container">
 <h1>اختبار تحديد المستوى</h1>
 
-<form id="quiz"></form>
+<div class="quiz-note">
+  <strong>خذ نفس قبل ما تبدأ 🌿</strong><br>
+  هذا الاختبار مصمَّم يحدد مستواك الحقيقي.
+  حاول ما تجاوب عشوائي وخذ وقتك في كل سؤال
+  عشان تطلع لك نتيجة دقيقة وتبدأ من المكان الصح.
+</div>
 
+<form id="quiz"></form>
 <button type="button" onclick="submitQuiz()">اعرف نتيجتي</button>
 
 <div id="result">
   <div class="result-box">
-
     <div class="result-left">
       <img src="earlo.png" alt="إيرلو">
     </div>
-
     <div class="result-right">
-
       <div class="result-glow">
         <div class="level-title" id="levelTitle"></div>
         <div class="result-text" id="resultText"></div>
@@ -246,28 +241,19 @@ button:hover{
 
       <div class="pain-boxes" id="painBoxes"></div>
 
-      <div class="paths-title">
-        عشان كذا جهّزنا لك مسارين حسب اللي يناسبك 👇
-      </div>
+      <div class="paths-title">جهّزنا لك مسارين 👇</div>
 
       <div class="actions">
-
         <div class="path-box">
-          <div class="path-note">
-            لو حاب تبدأ بهدوء وتجرّب أسلوبنا في الشرح 👌
-          </div>
+          <div class="path-note">ابدأ بهدوء وجرّب المحتوى المجاني 👌</div>
           <a href="free.html" class="free">ابدأ بالمحتوى المجاني</a>
         </div>
 
         <div class="path-box">
-          <div class="path-note highlight">
-            ولو حاب نقلة أسرع بخطة واضحة ومتابعة 👇
-          </div>
+          <div class="path-note highlight">نقلة أسرع بخطة كاملة ودعم 👇</div>
           <a href="sales.html" class="buy">جاهز للنقلة الجاية 🚀</a>
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
@@ -275,25 +261,24 @@ button:hover{
 </div>
 
 <script>
-/* ===== QUESTIONS ===== */
 const questions = [
-{q:"Choose the correct word: I ___ happy.",a:0,opts:["am","is","are","be"]},
-{q:"Choose the correct sentence:",a:1,opts:["She happy","She is happy","She happy is","She be happy"]},
-{q:"Choose the correct word: I ___ a student.",a:2,opts:["are","is","am","be"]},
-{q:"Choose the correct sentence:",a:1,opts:["I no like coffee","I don’t like coffee","I not like coffee","I doesn’t like coffee"]},
-{q:"Yesterday, I ___ tired.",a:1,opts:["am","was","were","is"]},
-{q:"She has ___ friends here.",a:1,opts:["much","many","a lot","very"]},
-{q:"Which sentence is correct?",a:1,opts:["He go to work every day","He goes to work every day","He going to work every day","He is go to work"]},
-{q:"What does this mean? I’m looking for my keys.",a:1,opts:["I lost them forever","I’m searching now","I found them","I will look later"]},
-{q:"When I arrived, they ___ dinner.",a:1,opts:["eat","were eating","ate","have eaten"]},
-{q:"Choose the natural sentence:",a:1,opts:["I’m agree with you","I agree with you","I agreeing with you","I agree you"]},
-{q:"What does this sentence mean? I’ve lived here for 5 years.",a:1,opts:["I don’t live here now","I live here now and started 5 years ago","I will live here","I lived here long ago"]},
-{q:"Choose the correct sentence:",a:1,opts:["I don’t know what does he want","I don’t know what he wants","I don’t know what he want","I don’t know what wants he"]},
-{q:"I stopped ___ coffee.",a:0,opts:["drinking","drink","to drink","drank"]},
-{q:"By the time I arrived, they ___",a:2,opts:["left","have left","had left","were leaving"]},
-{q:"Hardly ___ arrived when the meeting started.",a:1,opts:["I had","had I","I arrived","did I arrived"],hard:true},
-{q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"],hard:true},
-{q:"If I had known about the meeting, I would have attended. This means:",a:2,opts:["The meeting is future","I attended","I didn’t attend","I don’t want to attend"],hard:true}
+{q:"Choose the correct word: I ___ happy.",a:0,opts:["am","is","are","be"],lvl:"A0"},
+{q:"Choose the correct sentence:",a:1,opts:["She happy","She is happy","She happy is","She be happy"],lvl:"A0"},
+{q:"Choose the correct word: I ___ a student.",a:2,opts:["are","is","am","be"],lvl:"A0"},
+{q:"Choose the correct sentence:",a:1,opts:["I no like coffee","I don’t like coffee","I not like coffee","I doesn’t like coffee"],lvl:"A1"},
+{q:"Yesterday, I ___ tired.",a:1,opts:["am","was","were","is"],lvl:"A1"},
+{q:"She has ___ friends here.",a:1,opts:["much","many","a lot","very"],lvl:"A2"},
+{q:"Which sentence is correct?",a:1,opts:["He go","He goes","He going","He is go"],lvl:"A2"},
+{q:"I’m looking for my keys means:",a:1,opts:["lost forever","searching now","found","later"],lvl:"A2"},
+{q:"When I arrived, they ___ dinner.",a:1,opts:["eat","were eating","ate","have eaten"],lvl:"B1"},
+{q:"Choose the natural sentence:",a:1,opts:["I’m agree","I agree","I agreeing","I agree you"],lvl:"B1"},
+{q:"I’ve lived here for 5 years means:",a:1,opts:["don’t live","live now","future","long ago"],lvl:"B1"},
+{q:"Choose the correct sentence:",a:1,opts:["what does he want","what he wants","what he want","what wants he"],lvl:"B1"},
+{q:"I stopped ___ coffee.",a:0,opts:["drinking","drink","to drink","drank"],lvl:"B2"},
+{q:"By the time I arrived, they ___",a:2,opts:["left","have left","had left","were leaving"],lvl:"B2"},
+{q:"Hardly ___ arrived when…",a:1,opts:["I had","had I","I arrived","did I arrived"],lvl:"B2",hard:true},
+{q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"],lvl:"B2",hard:true},
+{q:"If I had known… means:",a:2,opts:["future","attended","didn’t attend","don’t want"],lvl:"B2",hard:true}
 ];
 
 const quiz=document.getElementById("quiz");
@@ -307,34 +292,43 @@ questions.forEach((q,i)=>{
 });
 
 function submitQuiz(){
-let score=0,hardOK=true;
+let correct={A0:0,A1:0,A2:0,B1:0,B2:0};
+let total={A0:0,A1:0,A2:0,B1:0,B2:0};
+let hardFail=false;
+
 questions.forEach((q,i)=>{
+  total[q.lvl]++;
   const ans=document.querySelector(`input[name="q${i}"]:checked`);
-  if(ans && +ans.value===q.a) score++;
-  else if(q.hard) hardOK=false;
+  if(ans && +ans.value===q.a) correct[q.lvl]++;
+  else if(q.hard) hardFail=true;
 });
 
-let level="",text="",pains=[];
+let level,text,pains;
 
-if(score<=6){
-level="مبتدئ";
-text="أنت في بداية الطريق، وهذا أفضل وقت تبني فيه الأساس الصح.";
-pains=["تحتاج تأسيس واضح","تبني الثقة خطوة خطوة","تفهم بدون حفظ"];
+if(correct.A0 < 2){
+  level="مبتدئ";
+  text="الأساس يحتاج شغل، والبداية الصح بتفرق كثير.";
+  pains=["تأسيس واضح","ثقة","فهم بدون حفظ"];
 }
-else if(score<=12){
-level="متوسط";
-text="مستواك جيد 👌 لكن القفزة الجاية تحتاج تنظيم وطريقة أوضح.";
-pains=["تفهم أكثر مما تتكلم","تحتاج ترتيب الأفكار","تبي ثقة أعلى"];
+else if(correct.A1 < 2){
+  level="مبتدئ";
+  text="الأساس موجود لكن يحتاج تثبيت.";
+  pains=["نفي وأزمنة","ثقة","تركيب جمل"];
 }
-else if(hardOK){
-level="متقدم";
-text="مستواك متقدم 👏 الفرق الآن في الدقة والطلاقة الطبيعية.";
-pains=["تردد بسيط بالتعبير","لغة صحيحة بس مو طبيعية","تبي ثقة أعلى"];
+else if(correct.A2 < 2){
+  level="متوسط";
+  text="تفهم كثير لكن الاستخدام يحتاج ترتيب.";
+  pains=["تردد","تنظيم","طلاقة"];
+}
+else if(hardFail){
+  level="قوي";
+  text="مستواك قوي لكن تحتاج دقة أعلى.";
+  pains=["تفاصيل","طبيعية","ثقة"];
 }
 else{
-level="قوي";
-text="مستواك قوي جدًا، ومع ضبط بسيط توصل للاحتراف.";
-pains=["تفهم بسرعة","تحتاج دقة أعلى","تبي استخدام طبيعي"];
+  level="متقدم";
+  text="مستواك متقدم 👏";
+  pains=["دقة","طلاقة","احتراف"];
 }
 
 document.getElementById("levelTitle").innerText=`مستواك الحالي: ${level}`;
