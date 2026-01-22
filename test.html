@@ -12,28 +12,33 @@ body{
   background:linear-gradient(180deg,#0f172a,#1e293b);
   color:#f1f5f9;
 }
+
 .container{
   max-width:900px;
   margin:40px auto;
   padding:20px;
 }
-h1{text-align:center;margin-bottom:10px}
 
-/* ===== NOTICE ===== */
+h1{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+/* NOTICE */
 .notice{
   max-width:720px;
   margin:0 auto 30px;
-  padding:14px 18px;
+  padding:16px 20px;
   text-align:center;
   font-size:15px;
-  line-height:1.7;
+  line-height:1.8;
   color:#e5e7eb;
   background:rgba(255,255,255,.05);
   border-radius:14px;
   box-shadow:0 0 18px rgba(37,99,235,.25);
 }
 
-/* ===== QUESTIONS ===== */
+/* QUESTIONS */
 .question{
   margin-bottom:26px;
   padding:18px;
@@ -41,17 +46,29 @@ h1{text-align:center;margin-bottom:10px}
   border-radius:16px;
   box-shadow:0 0 18px rgba(37,99,235,.25);
 }
-.question h3{font-size:16.5px;margin-bottom:12px}
-.options label{display:block;margin:8px 0;cursor:pointer}
-.options input{margin-left:8px}
 
-/* ===== BUTTON ===== */
+.question h3{
+  font-size:16.5px;
+  margin-bottom:12px;
+}
+
+.options label{
+  display:block;
+  margin:8px 0;
+  cursor:pointer;
+}
+
+.options input{
+  margin-left:8px;
+}
+
+/* BUTTON */
 button{
   display:block;
   margin:40px auto;
-  padding:14px 34px;
+  padding:14px 36px;
   font-size:17px;
-  font-weight:800;
+  font-weight:900;
   background:#FACC15;
   color:#0f172a;
   border:none;
@@ -59,105 +76,134 @@ button{
   cursor:pointer;
   transition:.3s;
 }
+
 button:hover{
   transform:translateY(-2px);
   box-shadow:0 10px 25px rgba(250,204,21,.45);
 }
 
-/* ===== RESULT ===== */
-#result{display:none;margin-top:50px}
-.result-box{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
-.result-left{flex:0 0 120px;text-align:center}
-.result-left img{width:110px;animation:breath 4s ease-in-out infinite}
-@keyframes breath{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-.result-right{flex:1}
+/* RESULT */
+#result{
+  display:none;
+  margin-top:40px;
+}
+
+.result-box{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+}
+
+/* EARLO */
+.result-left img{
+  width:100px;
+  animation:breath 4s ease-in-out infinite;
+}
+
+@keyframes breath{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+}
+
+/* RESULT CONTENT */
 .result-glow{
-  padding:18px 20px;
-  margin-bottom:16px;
+  padding:18px 22px;
   border-radius:18px;
   box-shadow:0 0 22px rgba(37,99,235,.35);
+  margin-bottom:20px;
 }
+
 .level-title{
   font-size:22px;
   font-weight:900;
   color:#FACC15;
-  margin-bottom:6px;
-}
-.result-text{font-size:16px;line-height:1.7}
-
-/* ===== CONVERSION LINE ===== */
-.conversion-line{
-  margin-top:10px;
-  font-size:15px;
-  color:#fde68a;
-  font-weight:700;
+  margin-bottom:8px;
 }
 
-/* ===== PAIN POINTS ===== */
+.result-text{
+  font-size:16.5px;
+  line-height:1.9;
+}
+
+/* PAIN POINTS */
 .pain-boxes{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:12px;
-  margin:18px 0 26px;
-}
-.pain{
-  background:rgba(255,255,255,.06);
-  padding:13px;
-  border-radius:14px;
-  text-align:center;
-  box-shadow:0 0 14px rgba(37,99,235,.35);
-  font-size:14px;
-  font-weight:700;
+  margin-bottom:30px;
 }
 
-/* ===== PATHS ===== */
-.paths-title{font-size:17px;font-weight:900;margin-bottom:14px}
+.pain{
+  background:rgba(255,255,255,.06);
+  padding:14px;
+  border-radius:14px;
+  box-shadow:0 0 14px rgba(37,99,235,.35);
+  font-size:14.5px;
+}
+
+/* PATHS */
+.paths-title{
+  font-size:17px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+
 .actions{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:18px;
 }
-.path-box{display:flex;flex-direction:column;gap:10px}
-.path-note{font-size:14.5px;color:#e5e7eb;line-height:1.6}
-.path-note.highlight{color:#fde68a;font-weight:700}
+
 .actions a{
-  padding:14px 22px;
-  border-radius:16px;
+  padding:16px 24px;
+  border-radius:18px;
   font-weight:900;
   text-decoration:none;
   text-align:center;
-  transition:.3s;
 }
+
 .free{
-  background:rgba(255,255,255,.04);
+  background:rgba(255,255,255,.05);
   color:#f8fafc;
-  border:1px solid rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.2);
 }
+
 .buy{
   background:#FACC15;
   color:#0f172a;
+  box-shadow:0 10px 26px rgba(250,204,21,.45);
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:600px){
-  .result-box{flex-direction:column;text-align:center}
+  .result-box{
+    flex-direction:row;
+    align-items:center;
+  }
+
+  .result-left img{
+    width:90px;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <h1>اختبار تحديد المستوى</h1>
 
-<div class="notice">
+<div class="notice" id="notice">
 خذ نفس 🌿  
-الاختبار هذا مو للضغط عليك،  
-بل عشان نعرف من وين تبدأ صح.
+هذا الاختبار مو للضغط عليك،  
+لكن عشان نعرف بالضبط من وين تبدأ بالطريقة الصح.
 </div>
 
 <form id="quiz"></form>
-<button type="button" onclick="submitQuiz()">اعرف نتيجتي</button>
+
+<button id="submitBtn" onclick="submitQuiz()">اعرف نتيجتي</button>
 
 <div id="result">
   <div class="result-box">
@@ -167,129 +213,5 @@ button:hover{
     </div>
 
     <div class="result-right">
-      <div class="result-glow">
-        <div class="level-title" id="levelTitle"></div>
-        <div class="result-text" id="resultText"></div>
-        <div class="conversion-line" id="conversionLine"></div>
-      </div>
 
-      <div class="pain-boxes" id="painBoxes"></div>
-
-      <div class="paths-title">
-        تقدر تختار المسار اللي يناسبك 👇
-      </div>
-
-      <div class="actions">
-        <div class="path-box">
-          <div class="path-note">
-            لو حاب تبدأ بهدوء وتشوف أسلوبنا
-          </div>
-          <a id="freeLink" href="free.html" class="free">ابدأ من مستواك</a>
-        </div>
-
-        <div class="path-box">
-          <div class="path-note highlight">
-            ولو تبغى نقلة أسرع بخطة واضحة
-          </div>
-          <a href="sales.html" class="buy">جاهز للنقلة الجاية 🚀</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<script>
-/* ===== QUESTIONS ===== */
-const questions = [
-{q:"Choose the correct word: I ___ happy.",a:0,opts:["am","is","are","be"]},
-{q:"Choose the correct sentence:",a:1,opts:["She happy","She is happy","She happy is","She be happy"]},
-{q:"Choose the correct word: I ___ a student.",a:2,opts:["are","is","am","be"]},
-{q:"Choose the correct sentence:",a:1,opts:["I no like coffee","I don’t like coffee","I not like coffee","I doesn’t like coffee"]},
-{q:"Yesterday, I ___ tired.",a:1,opts:["am","was","were","is"]},
-{q:"She has ___ friends here.",a:1,opts:["much","many","a lot","very"]},
-{q:"Which sentence is correct?",a:1,opts:["He go to work every day","He goes to work every day","He going to work every day","He is go to work"]},
-{q:"What does this mean? I’m looking for my keys.",a:1,opts:["I lost them forever","I’m searching now","I found them","I will look later"]},
-{q:"When I arrived, they ___ dinner.",a:1,opts:["eat","were eating","ate","have eaten"]},
-{q:"Choose the natural sentence:",a:1,opts:["I’m agree with you","I agree with you","I agreeing with you","I agree you"]},
-{q:"What does this sentence mean? I’ve lived here for 5 years.",a:1,opts:["I don’t live here now","I live here now and started 5 years ago","I will live here","I lived here long ago"]},
-{q:"Choose the correct sentence:",a:1,opts:["I don’t know what does he want","I don’t know what he wants","I don’t know what he want","I don’t know what wants he"]},
-{q:"I stopped ___ coffee.",a:0,opts:["drinking","drink","to drink","drank"]},
-{q:"By the time I arrived, they ___",a:2,opts:["left","have left","had left","were leaving"]},
-{q:"Hardly ___ arrived when the meeting started.",a:1,opts:["I had","had I","I arrived","did I arrived"]},
-{q:"She speaks English ___ to work internationally.",a:1,opts:["enough good","well enough","too well","very enough"]},
-{q:"If I had known about the meeting, I would have attended. This means:",a:2,opts:["The meeting is future","I attended","I didn’t attend","I don’t want to attend"]}
-];
-
-const quiz=document.getElementById("quiz");
-questions.forEach((q,i)=>{
-  let html=`<div class="question"><h3>${i+1}. ${q.q}</h3><div class="options">`;
-  q.opts.forEach((o,j)=>{
-    html+=`<label><input type="radio" name="q${i}" value="${j}">${o}</label>`;
-  });
-  html+=`</div></div>`;
-  quiz.insertAdjacentHTML("beforeend",html);
-});
-
-/* ===== SMART EVALUATION ===== */
-function submitQuiz(){
-  let basic=0, mid=0, adv=0;
-
-  questions.forEach((q,i)=>{
-    const ans=document.querySelector(`input[name="q${i}"]:checked`);
-    if(ans && +ans.value===q.a){
-      if(i<=4) basic++;
-      else if(i<=10) mid++;
-      else adv++;
-    }
-  });
-
-  const score =
-    (basic/5)*0.4 +
-    (mid/6)*0.4 +
-    (adv/6)*0.2;
-
-  let level="", text="", pains=[], line="", free="free.html";
-
-  if(score < 0.4){
-    level="مبتدئ";
-    text="واضح إن الأساس يحتاج ترتيب من البداية.";
-    pains=["تأسيس","ثقة","نطق صحيح"];
-    line="الخبر الحلو؟ البداية الصح بتوفر عليك وقت كثير.";
-    free="free-beginner.html";
-  }else if(score < 0.65){
-    level="متوسط";
-    text="تفهم كثير، لكن الكلام ما يطلع بسلاسة.";
-    pains=["تردد","تفكير زائد","قلة طلاقة"];
-    line="مشكلتك مو ذكاء… بل طريقة.";
-    free="free-intermediate.html";
-  }else if(score < 0.85){
-    level="قوي";
-    text="مستواك قوي، وتحتاج صقل بسيط.";
-    pains=["دقة","تنظيم","ثقة"];
-    line="الفرق بينك وبين الطلاقة أقرب مما تتوقع.";
-    free="free-upper.html";
-  }else{
-    level="متقدم";
-    text="مستواك متقدم 👏";
-    pains=["احتراف","تفاصيل","طبيعية"];
-    line="هنا التفاصيل الصغيرة تصنع الفرق الكبير.";
-    free="free-advanced.html";
-  }
-
-  document.getElementById("levelTitle").innerText=`مستواك الحالي: ${level}`;
-  document.getElementById("resultText").innerText=text;
-  document.getElementById("conversionLine").innerText=line;
-  document.getElementById("painBoxes").innerHTML=pains.map(p=>`<div class="pain">${p}</div>`).join("");
-  document.getElementById("freeLink").href=free;
-
-  quiz.style.display="none";
-  document.querySelector("button").style.display="none";
-  document.getElementById("result").style.display="block";
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-</script>
-
-</body>
-</html>
+      <div class="result-gl
