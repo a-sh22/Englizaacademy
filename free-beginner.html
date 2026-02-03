@@ -13,39 +13,66 @@ body{
   color:#f1f5f9;
 }
 
-/* CONTAINER */
-.container{
-  max-width:900px;
-  margin:40px auto;
-  padding:20px;
-}
-
-/* HEADER */
+/* ===== HEADER ===== */
 header{
+  padding:16px 22px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:30px;
+  background:#1e293b;
+  position:relative;
 }
 
-header h1{
-  font-size:20px;
-}
+header h1{font-size:18px;}
 
 .back{
-  cursor:pointer;
   color:#FACC15;
+  cursor:pointer;
   font-size:14px;
 }
 
-/* HERO */
+/* Glow فاصل */
+header::after{
+  content:"";
+  position:absolute;
+  bottom:-1px;
+  right:0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(37,99,235,.7),
+    transparent
+  );
+  box-shadow:0 0 14px rgba(37,99,235,.6);
+}
+
+/* ===== HERO ===== */
 .hero{
-  text-align:center;
-  margin-bottom:40px;
+  max-width:980px;
+  margin:40px auto;
+  padding:30px 22px;
+  border-radius:22px;
+  box-shadow:0 0 28px rgba(37,99,235,.28);
+  display:flex;
+  gap:30px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hero-text h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.hero-text p{
+  color:#cbd5e1;
+  line-height:1.8;
 }
 
 .hero img{
-  width:130px;
+  width:140px;
   animation:breath 4s ease-in-out infinite;
 }
 
@@ -55,136 +82,79 @@ header h1{
   100%{transform:translateY(0)}
 }
 
-.hero h2{
-  font-size:26px;
-  margin:14px 0 8px;
-  color:#FACC15;
-}
-
-.hero p{
-  color:#cbd5e1;
-  line-height:1.8;
-}
-
-/* WHAT YOU’LL GET */
+/* ===== WHAT YOU LEARN ===== */
 .learn-box{
-  background:rgba(255,255,255,.06);
-  border-radius:20px;
+  max-width:820px;
+  margin:20px auto 40px;
   padding:22px;
-  margin-bottom:40px;
-  box-shadow:0 0 24px rgba(37,99,235,.35);
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 0 22px rgba(37,99,235,.28);
 }
 
 .learn-box h3{
-  margin-bottom:16px;
-  font-size:18px;
+  margin-bottom:14px;
+  color:#FACC15;
 }
 
-.learn-list{
+.learn-box ul{
   list-style:none;
   padding:0;
   margin:0;
 }
 
-.learn-list li{
-  margin-bottom:10px;
-  position:relative;
-  padding-right:18px;
-  line-height:1.8;
+.learn-box li{
+  margin:8px 0;
+  font-size:15.5px;
 }
 
-.learn-list li::before{
-  content:"•";
-  position:absolute;
-  right:0;
-  color:#FACC15;
-  font-weight:900;
-}
-
-/* LESSONS */
+/* ===== LESSONS ===== */
 .section-title{
-  font-size:20px;
-  margin-bottom:20px;
-  font-weight:900;
+  text-align:center;
+  margin:40px 0 20px;
+  font-size:22px;
 }
 
 .lessons{
+  max-width:1000px;
+  margin:0 auto 80px;
+  padding:0 20px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
+  gap:22px;
 }
 
-.lesson-card{
-  background:rgba(255,255,255,.05);
+.lesson{
+  background:rgba(255,255,255,.06);
+  padding:22px;
   border-radius:18px;
-  padding:18px;
-  box-shadow:0 0 18px rgba(37,99,235,.25);
-  transition:.3s;
+  box-shadow:0 0 20px rgba(37,99,235,.3);
 }
 
-.lesson-card:hover{
-  box-shadow:0 0 30px rgba(37,99,235,.45);
-}
-
-.lesson-card h4{
-  margin-bottom:6px;
+.lesson h4{
   color:#FACC15;
+  margin-bottom:10px;
 }
 
-.lesson-card p{
+.lesson p{
   font-size:14.5px;
   color:#e5e7eb;
-  line-height:1.6;
+  line-height:1.7;
 }
 
-/* VIDEO PLACEHOLDER */
-.video-box{
-  margin-top:12px;
-  background:#020617;
-  border-radius:14px;
-  height:150px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#475569;
-  font-size:14px;
-}
-
-/* CTA */
-.cta{
-  text-align:center;
-  margin:60px 0 20px;
-}
-
-.cta p{
-  margin-bottom:14px;
-  color:#cbd5e1;
-}
-
-.cta a{
-  background:#FACC15;
-  color:#0f172a;
-  padding:16px 28px;
-  border-radius:20px;
-  text-decoration:none;
-  font-weight:900;
-  box-shadow:0 12px 30px rgba(250,204,21,.45);
-}
-
-.cta a:hover{
-  transform:translateY(-2px);
-}
-
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media(max-width:600px){
-  .hero h2{font-size:22px;}
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero img{width:120px;}
 }
 </style>
 </head>
 
 <body>
-
-<div class="container">
 
 <header>
   <h1>أكاديمية إنجليزا</h1>
@@ -192,19 +162,21 @@ header h1{
 </header>
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
+  <div class="hero-text">
+    <h2>المستوى المبتدئ</h2>
+    <p>
+      هنا تبدأ من الصفر خطوة خطوة،  
+      بدون ضغط… وبدون تعقيد.
+    </p>
+  </div>
   <img src="earlo.png" alt="إيرلو">
-  <h2>المستوى المبتدئ</h2>
-  <p>
-    هنا تبدأ من الصفر بدون ضغط 🤍<br>
-    خطوة خطوة… لحد ما تقدر تتكلم عن نفسك بثقة.
-  </p>
-</div>
+</section>
 
-<!-- WHAT YOU’LL LEARN -->
+<!-- WHAT YOU LEARN -->
 <div class="learn-box">
   <h3>خطوات بسيطة تخليك:</h3>
-  <ul class="learn-list">
+  <ul>
     <li>تتكلم عن نفسك بسهولة</li>
     <li>تفهم الأساسيات بدون تعقيد</li>
     <li>تكوّن جمل قصيرة صحيحة</li>
@@ -212,50 +184,57 @@ header h1{
   </ul>
 </div>
 
-<!-- LESSONS -->
-<div class="section-title">الدروس</div>
+<h3 class="section-title">الدروس</h3>
 
-<div class="lessons">
+<section class="lessons">
 
-  <div class="lesson-card">
+  <!-- الحروف -->
+  <div class="lesson">
+    <h4>الحروف الإنجليزية A–Z</h4>
+    <p>
+      تتعلم شكل الحرف وصوته بطريقة بسيطة ومجزأة  
+      (4 فيديوهات قصيرة).
+    </p>
+  </div>
+
+  <!-- الضمائر -->
+  <div class="lesson">
     <h4>الضمائر وملحقاتها</h4>
-    <p>أنا – هو – هي + my / his / her</p>
-    <div class="video-box">سيظهر الفيديو هنا</div>
+    <p>
+      I – my – me  
+      he – his – him  
+      she – her – her
+    </p>
   </div>
 
-  <div class="lesson-card">
+  <!-- am is are -->
+  <div class="lesson">
     <h4>am / is / are</h4>
-    <p>تكوين جملة بسيطة</p>
-    <div class="video-box">سيظهر الفيديو هنا</div>
+    <p>
+      تكوين جملة – نفي – سؤال  
+      حتى تعرف تقول: أنا سعيد / هل أنا سعيد؟
+    </p>
   </div>
 
-  <div class="lesson-card">
+  <!-- الصفات -->
+  <div class="lesson">
     <h4>الصفات</h4>
-    <p>أنا سعيد – أنا متعب – أنا حزين</p>
-    <div class="video-box">سيظهر الفيديو هنا</div>
+    <p>
+      سعيد – متعب – طويل – قصير  
+      تبني جمل بسيطة عن نفسك.
+    </p>
   </div>
 
-  <div class="lesson-card">
-    <h4>النفي</h4>
-    <p>I am not – She is not</p>
-    <div class="video-box">سيظهر الفيديو هنا</div>
+  <!-- was were -->
+  <div class="lesson">
+    <h4>was / were (الماضي)</h4>
+    <p>
+      جملة عادية – نفي – سؤال  
+      عشان تقدر تقول: كنت متعب / هل كنت متعب؟
+    </p>
   </div>
 
-  <div class="lesson-card">
-    <h4>الأسئلة</h4>
-    <p>Am I? – Is he?</p>
-    <div class="video-box">سيظهر الفيديو هنا</div>
-  </div>
-
-</div>
-
-<!-- CTA -->
-<div class="cta">
-  <p>لو حسّيتي إنك تبغي خطة كاملة وتطوير أسرع 👇</p>
-  <a href="sales.html">الانتقال للبرنامج الكامل</a>
-</div>
-
-</div>
+</section>
 
 </body>
 </html>
