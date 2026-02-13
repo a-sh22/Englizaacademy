@@ -65,7 +65,23 @@ header h1{
   color:#cbd5e1;
   line-height:1.8;
 }
+.hero-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  flex-wrap:wrap;
+}
 
+.hero-text{
+  max-width:520px;
+}
+
+.hero-earlo{
+  width:130px;
+  animation:breath 4s ease-in-out infinite;
+}
+  
 /* WHAT YOU’LL GET */
 .learn-box{
   background:rgba(255,255,255,.06);
@@ -252,6 +268,23 @@ header h1{
 .back:hover{
   text-shadow:0 0 10px rgba(250,204,21,.55);
 }
+
+  @media(max-width:600px){
+
+  .hero-inner{
+    flex-direction:row;   /* يظلوا جنب بعض */
+    justify-content:center;
+    text-align:right;
+  }
+
+  .hero-text{
+    max-width:70%;
+  }
+
+  .hero-earlo{
+    width:110px;
+  }
+}
 </style>
 </head>
 
@@ -266,14 +299,22 @@ header h1{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="earlo.png" alt="إيرلو">
-  <h2>المستوى المبتدئ</h2>
-  <p>
-    هنا تبدأ من الصفر بدون ضغط 🤍<br>
-    خطوة خطوة… لحد ما تقدر تتكلم عن نفسك بثقة.
-  </p>
-</div>
 
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <h2>المستوى المبتدئ</h2>
+      <p>
+        هنا تبدأ من الصفر بدون ضغط 🤍<br>
+        خطوة خطوة… لحد ما تقدر تتكلم عن نفسك بثقة.
+      </p>
+    </div>
+
+    <img src="earlo.png" alt="إيرلو" class="hero-earlo">
+
+  </div>
+
+</div>
 <!-- WHAT YOU’LL LEARN -->
 <div class="learn-box">
   <h3>خطوات بسيطة تخليك:</h3>
