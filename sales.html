@@ -596,79 +596,43 @@
   color:#FACC15;
   font-weight:600;
 }
-  /* ============================= */
-/* تحسين مربعات رحلة 3 شهور */
+/* ============================= */
+/* جعل مربعات البرنامج مثل pain-box */
 /* ============================= */
 
-.journey-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 25px;
-}
-
-.journey-box {
-  background: linear-gradient(135deg,#1e293b,#2e1065);
-  padding: 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(250,204,21,0.25);
-  box-shadow: 
-    0 0 18px rgba(37,99,235,.18),
-    inset 0 0 10px rgba(250,204,21,.05);
+.journey-box,
+.program-box {
+  max-width: 520px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 0 35px rgba(37,99,235,0.35);
   text-align: right;
-  font-size: 14.5px;
-  line-height: 1.8;
-  max-width: 90%;
-  margin: 0 auto;
-  transition: all .3s ease;
 }
 
-.journey-box h4 {
-  font-size: 15.5px;
-  margin-bottom: 8px;
+/* توحيد العناوين */
+.journey-box h4,
+.program-box h4 {
   color: #FACC15;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
+/* توحيد النص */
+.journey-box p,
+.program-box p {
+  color: #e5e7eb;
+  font-size: 15.5px;
+  line-height: 1.9;
+}
 
-/* ============================= */
-/* تحسين مربعات تفاصيل البرنامج */
-/* ============================= */
-
+/* نخليهم تحت بعض زي pain */
+.journey-grid,
 .program-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 30px;
-}
-
-.program-box {
-  background: linear-gradient(135deg,#1e293b,#2e1065);
-  padding: 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(250,204,21,0.25);
-  box-shadow: 
-    0 0 18px rgba(37,99,235,.18),
-    inset 0 0 10px rgba(250,204,21,.05);
-  text-align: right;
-  font-size: 14.5px;
-  line-height: 1.8;
-  max-width: 85%;
-  margin: 0 auto;
-  transition: all .3s ease;
-}
-
-.program-box h4 {
-  font-size: 15.5px;
-  margin-bottom: 8px;
-  color: #FACC15;
-}
-
-
-/* ✨ لمسة فخامة إضافية عند اللمس (مهم للجوال) */
-
-.journey-box:active,
-.program-box:active {
-  transform: scale(0.98);
+  align-items: center;
+  gap: 26px;
 }
 </style>
 </head>
