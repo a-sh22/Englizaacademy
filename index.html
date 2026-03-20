@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4E5N64PVS"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-B4E5N64PVS');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
@@ -1236,8 +1244,15 @@ font-size:18px;
 </footer>
 
 <script>
+function buyNow(){ 
+  gtag('event', 'click_buy', {
+    event_category: 'button',
+    event_label: 'Buy Now'
+  });
+
+  alert("سيتم تحويلك لصفحة الدفع عبر PayTabs");
+}  
   
-  function buyNow(){ alert("سيتم تحويلك لصفحة الدفع عبر PayTabs"); }
 </script>
   <script>
   const painItems = document.querySelectorAll('.pain-box, .pain-arrow');
@@ -1261,4 +1276,19 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 </script>
 </body>
+    <script>
+let scrollTracked = false;
+
+window.addEventListener("scroll", () => {
+  let scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+
+  if (!scrollTracked && scrollPercent > 50) {
+    gtag('event', 'scroll_50', {
+      event_category: 'engagement',
+      event_label: 'Scrolled 50%'
+    });
+    scrollTracked = true;
+  }
+});
+</script>
 </html>
