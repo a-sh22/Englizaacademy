@@ -70,6 +70,10 @@ gtag('config', 'G-B4E5N64PVS');
   .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
   .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
   .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  #reviews-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
   .avatar{width:40px;height:40px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;}
   .name{font-weight:bold;}
   .verified{color:#38bdf8;font-size:0.8em;}
@@ -110,7 +114,11 @@ gtag('config', 'G-B4E5N64PVS');
   box-shadow: 0 0 25px rgba(37,99,235,.35);
   cursor: pointer;
 }
-
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 .faq-question {
   color: #FACC15;
   font-weight: 600;
@@ -666,14 +674,18 @@ gtag('config', 'G-B4E5N64PVS');
   
 <section class="hero">
   <h1 id="hero-title">
-    تعلّم اللغة الإنجليزية بثقة
+    جربت تتعلم إنجليزي كثير… وما ضبط معك؟<br>
+    تدرس وتنسى وترجع لنفس النقطة؟
   </h1>
+<p id="hero-desc">
+  هنا تبدأ بالطريقة الصح وتوصل لمستوى<br>
+  تستخدم فيه الإنجليزي بثقة
+</p>
+  <p class="hero-trust">
+  مو محتوى مكرر… طريقة مجرّبة فعليًا<br>
+  مع طلاب وصلوا لنتائج حقيقية
+</p>
 
-  <p id="hero-desc">
-    كورس عملي يساعدك تفهم وتتكلم الإنجليزي
-    <br>
-    بدون تعقيد أو حفظ ممل
-  </p>
 </section>
 
 <section class="about">
@@ -766,7 +778,7 @@ gtag('config', 'G-B4E5N64PVS');
 </div>
 
 <!-- هنا يبدأ قسم تفاصيل البرنامج -->
-<div id="course" style="margin-top:100px;">
+<div id="course" class="section">
 
   <h3 class="program-title">تفاصيل البرنامج</h3>
 
@@ -915,20 +927,15 @@ gtag('config', 'G-B4E5N64PVS');
 
   </div>
 
-
-  <!-- زر الشراء -->
-<div style="margin-top:30px;">
-  <button class="btn-buy" onclick="buyNow()" style="
-    font-size:20px;
-    padding:18px 38px;
-    border-radius:14px;
-    font-weight:800;
-    letter-spacing:0.3px;
-  ">
-    احجز مقعدك الآن
-  </button>
-</div>
-
+<button class="btn-buy" onclick="buyNow()" style="
+  font-size:20px;
+  padding:18px 38px;
+  border-radius:14px;
+  font-weight:800;
+  letter-spacing:0.3px;
+">
+  احجز الآن بالسعر الحالي
+</button>
 
   <!-- الأمان -->
   <div class="secure-pay" style="margin-top:18px;">
@@ -970,7 +977,7 @@ font-size:18px;
 </div> <!-- إغلاق سكشن course -->
   
 <!-- آراء الطلاب -->
-<div id="reviews" class="details">
+<div id="reviews" class="section">
   <h3 id="reviews-title">⭐ آراء الطلاب</h3>
 
   <div style="text-align:center; margin:25px 0; font-size:1.1em; font-weight:bold; color:#FACC15;">
@@ -1019,8 +1026,8 @@ font-size:18px;
 </div> <!-- نهاية reviews -->
 
 <!-- FAQ -->
-<div id="faq" class="details">
-
+<div id="faq" class="section">
+<div class="details">
   <h3 id="faq-title">❓ الأسئلة الشائعة</h3>
 
   <p class="faq-hint">
@@ -1162,14 +1169,14 @@ font-size:18px;
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg">
   </div>
-
-
 </div>
-    
-  </div> <!-- نهاية FAQ -->
-
+</div>
+ 
   <!-- قصتي -->
-<div id="story" class="details">
+<div id="story" class="section">
+
+  <div class="details">
+    
   <h3 id="story-title">⭐ قصتي مع اللغة الإنجليزية</h3>
   <p id="story-text">
     من أجل العثور على الطريق الصحيح عليك أن تضيع أولاً…<br>
@@ -1193,8 +1200,12 @@ font-size:18px;
   </div>
   
 </div>
+
+  </div>
   
-  <div id="terms" class="details">
+   <div id="terms" class="section">
+
+  <div class="details">
 
   <h3>📄 الشروط والأحكام</h3>
 
@@ -1224,16 +1235,22 @@ font-size:18px;
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
   </div>
 
-  
+  </div>
+     
 </div>
   
 <!-- سياسة الخصوصية -->
-<div id="privacy" class="details">
+
+  <div id="privacy" class="section">
+
+  <div class="details">
+    
   <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
   <p id="privacy-text">نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
   
 </div>
-
+</div>
+  
 <footer>
   <p id="footer-text">© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
 </footer>
