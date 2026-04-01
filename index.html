@@ -703,7 +703,7 @@ body {
   }
 
 }
-  /* ===== PERFECT BALANCE (FINAL) ===== */
+/* ===== FIX ONLY LOWER SECTIONS (FINAL) ===== */
 
 #course,
 #reviews,
@@ -712,13 +712,11 @@ body {
 #terms,
 #privacy {
   max-width: 520px;   /* الحجم المثالي للجوال */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px 14px;
-  text-align: right;
+  margin: 0 auto;
+  padding: 40px 16px;
 }
 
-/* إصلاح الميل لليسار (المهم جدًا) */
+/* توسيط ومنع أي ميل */
 #course *,
 #reviews *,
 #faq *,
@@ -728,15 +726,25 @@ body {
   box-sizing: border-box;
 }
 
-/* البوكسات */
-#course .details,
-#reviews .details,
-#faq .details,
+/* تصغير المربعات بشكل متوازن */
+#course .program-box,
+#course .journey-box,
+#reviews .review-card,
+#faq .faq-item,
 #story .details,
 #terms .details,
 #privacy .details {
-  margin: 16px auto;
+  max-width: 460px;
   width: 100%;
+  margin: 0 auto;
+}
+
+/* إصلاح قسم الآراء */
+#reviews .reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  justify-items: center;
 }
 
 /* تحسين النص */
@@ -746,8 +754,8 @@ body {
 #story p,
 #terms p,
 #privacy p {
-  font-size: 15px;
-  line-height: 1.75;
+  font-size: 14.5px;
+  line-height: 1.7;
 }
 
 /* العناوين */
