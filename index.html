@@ -134,10 +134,10 @@ body {
   cursor: pointer;
 }
 .section {
-  padding: 60px 20px;
+  padding: 40px 14px;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 .faq-question {
   color: #FACC15;
@@ -703,14 +703,9 @@ body {
   }
 
 }
-/* ===== FINAL PERFECT MOBILE FIX ===== */
+/* ===== PERFECT MOBILE (NO BIG SIZE + NO SHIFT) ===== */
 
-/* منع أي ميل نهائي */
-html, body {
-  overflow-x: hidden;
-}
-
-/* نفس عرض pain-box بالضبط */
+/* الحاوية */
 #course,
 #reviews,
 #faq,
@@ -718,12 +713,12 @@ html, body {
 #terms,
 #privacy {
   width: 100%;
-  max-width: 520px;
+  max-width: 480px;   /* أصغر = نفس pain-box */
   margin: 0 auto;
-  padding: 40px 12px;
+  padding: 30px 12px;
 }
 
-/* أهم سطر (يوقف التمدد الغلط) */
+/* كل العناصر */
 #course *,
 #reviews *,
 #faq *,
@@ -734,35 +729,34 @@ html, body {
   max-width: 100%;
 }
 
-/* 🔥 نفس تصميم pain-box بالضبط */
+/* البوكسات (تصغير فعلي) */
 .program-box,
 .journey-box,
 .review-card,
 .faq-item,
 .details {
   width: 100%;
-  max-width: 480px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 22px 18px; /* أصغر = نفس pain */
-  border-radius: 16px;
+  padding: 18px 14px;   /* كان كبير → صغرناه */
+  border-radius: 14px;
 }
 
-/* إصلاح reviews (كان سبب الكبر) */
-#reviews .reviews-grid {
+/* 🔥 إصلاح الآراء (سبب التضخيم) */
+.reviews-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
-/* تصغير النصوص مثل pain-box */
+/* النصوص (تصغير حقيقي) */
 .program-box p,
 .journey-box p,
 .review-text,
 .faq-answer,
 .details p {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 13.8px;
+  line-height: 1.6;
 }
 
 /* العناوين */
@@ -773,24 +767,13 @@ html, body {
 #story h3,
 #terms h3,
 #privacy h3 {
-  font-size: 17px;
+  font-size: 16.5px;
 }
 
-/* السعر (كان كبير زيادة) */
+/* السعر (كان ضخم) */
 #pricing div {
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-/* تقليل المسافات */
-#course,
-#reviews,
-#faq,
-#story,
-#terms,
-#privacy {
-  padding-top: 35px;
-  padding-bottom: 35px;
+  max-width: 100%;
+  text-align: center;
 }
 </style>
 </head>
