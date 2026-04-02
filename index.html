@@ -649,7 +649,7 @@ body {
 
 .journey-box,
 .program-box {
-  max-width: 520px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 16px 14px;
   border-radius: 18px;
@@ -680,7 +680,7 @@ body {
 .program-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* ← هذا السطر أضيفيه */
+  align-items: stretch;  
   gap: 26px;
 }
   /* خلي سكشن البرنامج نفس pain-section بالضبط */
@@ -767,7 +767,24 @@ max-width: 480px;
   max-width: 100%;
   text-align: center;
 }
-  
+  /* FIX MOBILE WIDTH BUG */
+@media (max-width: 480px) {
+
+  .program-box,
+  .journey-box,
+  .details,
+  .pain-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+}
 </style>
 </head>
 <body>
