@@ -73,8 +73,14 @@ body {
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
   .card{background:linear-gradient(135deg,#1e293b,#2e1065);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(37,99,235,.4);font-weight:bold;}
   .card:hover{background:linear-gradient(135deg,#334155,#3b0764);box-shadow:0 0 40px rgba(37,99,235,.9);transform:translateY(-4px);}
-
-  .details{background:linear-gradient(135deg,#1e293b,#2e1065);margin:20px;padding:20px;border-radius:12px;box-shadow:0 0 25px rgba(37,99,235,.6);}
+  .details {
+  background:linear-gradient(135deg,#1e293b,#2e1065);
+  margin: 12px auto;   /* بدل 20px */
+  padding: 18px 14px;  /* أصغر */
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(37,99,235,.6);
+  max-width: 480px;    /* أهم سطر */
+}
   .back{margin-top:15px;display:inline-block;padding:10px 18px;background:#2563eb;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold;}
 
   /* زر الشراء الذهبي */
@@ -85,7 +91,11 @@ body {
   ul.course-list li{margin-bottom:10px;}
 
   /* Reviews grid */
-  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .reviews-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
   .review-card{position:relative;border-radius:12px;padding:20px;box-shadow:0 0 15px rgba(37,99,235,.5);transition:transform .3s, box-shadow .3s;color:#fff;}
   .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
   .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
@@ -647,7 +657,7 @@ body {
 .program-box {
   max-width: 520px;
   margin: 0 auto;
-  padding: 28px 26px;
+  padding: 16px 14px;
   border-radius: 18px;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   box-shadow: 0 0 35px rgba(37,99,235,0.35);
@@ -705,7 +715,6 @@ body {
 }
 /* ===== PERFECT MOBILE (NO BIG SIZE + NO SHIFT) ===== */
 
-/* الحاوية */
 #course,
 #reviews,
 #faq,
@@ -713,22 +722,17 @@ body {
 #terms,
 #privacy {
   width: 100%;
-  max-width: 480px;   /* أصغر = نفس pain-box */
+  max-width: 480px;
   margin: 0 auto;
-  padding: 30px 12px;
+  padding: 24px 12px; /* صغرناه شوي */
 }
-
-/* كل العناصر */
-#course *,
-#reviews *,
-#faq *,
-#story *,
-#terms *,
-#privacy * {
-  box-sizing: border-box;
-  max-width: 100%;
+#course .details,
+#story .details,
+#terms .details,
+#privacy .details {
+  margin: 12px auto;
+  padding: 18px 14px;
 }
-
 /* البوكسات (تصغير فعلي) */
 .program-box,
 .journey-box,
@@ -736,7 +740,7 @@ body {
 .faq-item,
 .details {
   width: 100%;
-  max-width: 100%;
+max-width: 480px;
   margin: 0 auto;
   padding: 18px 14px;   /* كان كبير → صغرناه */
   border-radius: 14px;
