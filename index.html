@@ -269,7 +269,6 @@ body {
 @media (max-width: 480px) {
 
   .about-box {
-    gap: 16px;
     padding: 40px 20px;
   }
 
@@ -290,6 +289,27 @@ body {
   margin-top: 14px;
   color: #94a3b8;
   font-size: 14.5px;
+}
+  .about-box {
+  flex-direction: row; /* يخلي إيرلو جنب النص */
+  align-items: center;
+  gap: 12px;
+}
+.about-text {
+  text-align: right;
+}
+.about-text {
+  flex: 1;
+  min-width: 0; /* 🔥 يمنع التمدد */
+}
+
+.earlo-container {
+  width: 120px; /* حجم ثابت لإيرلو */
+  flex-shrink: 0; /* 🔥 يمنع التخريب */
+}
+
+.earlo {
+  width: 100%;
 }
   /* ===== PAIN POINTS SECTION ===== */
 .pain-section {
@@ -801,7 +821,42 @@ body {
   }
 
 }
-  
+  .section-box {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 25px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(37,99,235,0.35);
+  box-sizing: border-box;
+}
+  /* ===== HERO FADE IN PREMIUM ===== */
+
+.hero h1,
+.hero p {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.hero h1 {
+  animation-delay: 0.1s;
+}
+
+.hero #hero-desc {
+  animation-delay: 0.25s;
+}
+
+.hero .hero-trust {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 </head>
 <body>
@@ -813,18 +868,20 @@ body {
 </header>
   
 <section class="hero">
+
   <h1 id="hero-title">
-    جربت تتعلم إنجليزي كثير… وما ضبط معك؟<br>
-    تدرس وتنسى وترجع لنفس النقطة؟
+    جربت تتعلم إنجليزي… وما ضبط؟
   </h1>
-<p id="hero-desc">
-  هنا تبدأ بالطريقة الصح وتوصل لمستوى<br>
-  تستخدم فيه الإنجليزي بثقة
-</p>
+
+  <p id="hero-desc">
+    تدرس وتنسى… وترجع لنفس النقطة؟<br>
+    مو لأنك ما تقدر…<br>
+    بل لأن الطريقة كانت غلط.
+  </p>
+
   <p class="hero-trust">
-  مو محتوى مكرر… طريقة مجرّبة فعليًا<br>
-  مع طلاب وصلوا لنتائج حقيقية
-</p>
+    ✨ هنا تبدأ صح — وتتكلم بثقة.
+  </p>
 
 </section>
 
@@ -1165,6 +1222,7 @@ font-size:18px;
 </div> <!-- نهاية reviews -->
 
 <!-- FAQ -->
+  <div class="section-box">
 <div id="faq" class="section">
 <div class="details">
   <h3 id="faq-title">❓ الأسئلة الشائعة</h3>
@@ -1308,10 +1366,11 @@ font-size:18px;
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg">
   </div>
-</div>
-</div>
- 
+</div> <!-- details -->
+</div> <!-- faq -->
+</div> <!-- section-box -->
   <!-- قصتي -->
+    <div class="section-box">
 <div id="story" class="section">
 
   <div class="details">
@@ -1337,11 +1396,11 @@ font-size:18px;
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
   </div>
-  
-</div>
+  </div> <!-- details -->
+</div> <!-- story -->
+</div> <!-- section-box -->
 
-  </div>
-  
+    <div class="section-box">
    <div id="terms" class="section">
 
   <div class="details">
@@ -1373,22 +1432,22 @@ font-size:18px;
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
   </div>
-
-  </div>
-     
-</div>
+</div> <!-- details -->
+</div> <!-- terms -->
+</div> <!-- section-box 🔥 -->
+  
   
 <!-- سياسة الخصوصية -->
-
+<div class="section-box">
   <div id="privacy" class="section">
 
   <div class="details">
     
   <h3 id="privacy-title">🔒 سياسة الخصوصية</h3>
   <p id="privacy-text">نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث بدون إذن منك.</p>
-  
-</div>
-</div>
+</div> <!-- details -->
+</div> <!-- privacy -->
+</div> <!-- section-box -->
   
 <footer>
   <p id="footer-text">© 2025 أكاديمية إنجليزا – جميع الحقوق محفوظة</p>
