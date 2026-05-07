@@ -86,21 +86,48 @@ gtag('config', 'G-B4E5N64PVS');
 
   ul.course-list {list-style-type:"✅ ";padding-right:20px;}
   ul.course-list li{margin-bottom:10px;}
-  .reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  /* ===== REVIEWS ===== */
+
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
 }
-  .review-card{
-  position: relative;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(37,99,235,.5);
-  transition: transform .3s, box-shadow .3s;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+.review-card{
+  position:relative;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 0 15px rgba(37,99,235,.5);
+  transition:transform .3s, box-shadow .3s;
+  color:#fff;
+  background:linear-gradient(135deg,#1e293b,#2e1065);
+}
+
+.review-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(37,99,235,.8);
+}
+
+.review-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.review-text{
+  font-size:0.95em;
+  line-height:1.8;
+  white-space:pre-line;
+}
+
+.quote-icon{
+  position:absolute;
+  top:15px;
+  right:15px;
+  font-size:20px;
+  opacity:.3;
 }
   .review-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(37,99,235,.8);}
   .review-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
@@ -136,17 +163,44 @@ gtag('config', 'G-B4E5N64PVS');
   margin: 8px 0 30px;
 }
 
-.faq-grid {
-  display: grid;
-  gap: 16px;
+/* ===== FAQ ===== */
+
+.faq-grid{
+  display:grid;
+  gap:20px;
 }
 
-.faq-item {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 14px;
-  padding: 18px 20px;
-  box-shadow: 0 0 25px rgba(37,99,235,.35);
-  cursor: pointer;
+.faq-item{
+  background:linear-gradient(135deg,#1e293b,#2e1065);
+  border-radius:16px;
+  padding:22px 20px;
+  box-shadow:0 0 25px rgba(37,99,235,.35);
+  cursor:pointer;
+  transition:.3s;
+}
+
+.faq-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 35px rgba(37,99,235,.5);
+}
+
+.faq-question{
+  color:#FACC15;
+  font-weight:600;
+  font-size:16px;
+  line-height:1.8;
+}
+
+.faq-answer{
+  display:none;
+  margin-top:12px;
+  color:#e5e7eb;
+  line-height:1.9;
+  font-size:15px;
+}
+
+.faq-item.active .faq-answer{
+  display:block;
 }
 .faq-question {
   color: #FACC15;
@@ -842,16 +896,6 @@ max-width: 360px;
   padding: 70px 20px;
   gap: 26px;
 }  
-    #reviews .review-card {
-  max-width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-}
-
-.review-text {
-  font-size: 13.5px;
-  line-height: 1.6;
-}
 
 .review-header {
   gap: 8px;
@@ -874,10 +918,7 @@ max-width: 360px;
 .stars {
   font-size: 13px;
 }
-    .reviews-grid {
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
+    
 }
   .section-box {
   max-width: 520px;
