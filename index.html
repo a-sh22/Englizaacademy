@@ -967,6 +967,25 @@ max-width: 360px;
     transform: translateY(0);
   }
 }
+/* حاوية فخمة للآراء والأسئلة */
+
+.reviews-wrapper,
+.faq-wrapper{
+  background:linear-gradient(135deg,#0b1327,#111c3d);
+  border:1px solid rgba(96,165,250,.12);
+
+  border-radius:28px;
+
+  padding:28px 20px;
+
+  box-shadow:
+    0 0 30px rgba(37,99,235,.18),
+    0 0 80px rgba(37,99,235,.08);
+
+  position:relative;
+
+  overflow:hidden;
+}
   
 </style>
 </head>
@@ -1284,7 +1303,8 @@ font-size:18px;
 </div> <!-- إغلاق سكشن course -->
   
 <!-- آراء الطلاب -->
-<div id="reviews" class="section">
+<div class="reviews-wrapper">
+  
   <h3 id="reviews-title">⭐ آراء الطلاب</h3>
 
   <div style="text-align:center; margin:25px 0; font-size:1.1em; font-weight:bold; color:#FACC15;">
@@ -1331,9 +1351,10 @@ font-size:18px;
     </div>
   </div>
 </div> <!-- نهاية reviews -->
-
+</div> <!-- نهاية reviews-wrapper -->
+  
 <!-- FAQ -->
-  <div class="section-box">
+  <div class="faq-wrapper">
 <div id="faq" class="section">
 <div class="details">
   <h3 id="faq-title">❓ الأسئلة الشائعة</h3>
@@ -1462,6 +1483,7 @@ font-size:18px;
       </div>
     </div>
 </div> <!-- نهاية faq-grid -->
+  </div> <!-- نهاية faq-wrapper -->
 <div class="cta-section">
   
   <button onclick="buyNow()" class="btn-alt faq-cta">
