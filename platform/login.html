@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Engliza Academy | Login</title>
 
 <style>
@@ -126,63 +130,185 @@ h1{
     background:#f8fbff;
 }
 
+.form-container{
+    display:none;
+    margin-top:20px;
+}
+
+.form-container input{
+    width:100%;
+    padding:14px;
+    border:1px solid #d8d8d8;
+    border-radius:12px;
+    margin-bottom:12px;
+    font-size:15px;
+}
+
+.submit-btn{
+    margin-top:10px;
+}
+
+.forgot-password{
+    display:block;
+    margin-top:4px;
+    margin-bottom:12px;
+    color:#2f6bff;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.password-note{
+    font-size:14px !important;
+    color:#555 !important;
+    margin-top:4px;
+    margin-bottom:14px !important;
+    line-height:1.7;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <div class="header">
+<div class="header">
 
-        <p class="welcome-text">
-            أهلًا بك في
-        </p>
+<p class="welcome-text">
+أهلًا بك في
+</p>
 
-        <div class="logo-row">
+<div class="logo-row">
 
-            <img src="../owl.PNG" class="logo">
+<img src="../owl.PNG" class="logo">
 
-            <h1>Engliza Academy</h1>
+<h1>Engliza Academy</h1>
 
-        </div>
+</div>
 
-        <p class="subtitle">
-            ابدأ رحلتك التعليمية أو أكمل من حيث توقفت
-        </p>
+<p class="subtitle">
+ابدأ رحلتك التعليمية أو أكمل من حيث توقفت
+</p>
 
-    </div>
+</div>
+<div class="card">
 
-    <div class="card">
+    <h2>👤 تسجيل الدخول</h2>
 
-        <h2>👤 تسجيل الدخول</h2>
+    <p>
+        لديك حساب بالفعل؟ سجّل دخولك من هنا.
+    </p>
 
-        <p>
-            لديك حساب بالفعل؟ سجّل دخولك من هنا.
-        </p>
+    <button
+        id="loginBtn"
+        class="btn-login"
+        onclick="showLogin()">
 
-        <button class="btn-login">
+        تسجيل الدخول
+
+    </button>
+
+    <div id="loginForm" class="form-container">
+
+        <input
+            type="email"
+            placeholder="البريد الإلكتروني">
+
+        <input
+            type="password"
+            placeholder="كلمة المرور">
+
+        <a href="#" class="forgot-password">
+
+            نسيت كلمة المرور؟
+
+        </a>
+
+        <button class="btn-login submit-btn">
+
             تسجيل الدخول
+
         </button>
 
     </div>
+<div class="card">
 
-    <div class="card">
+    <h2>✨ إنشاء حساب</h2>
 
-        <h2>✨ إنشاء حساب</h2>
+    <p>
+        أول زيارة لك؟ أنشئ حسابك للبدء.
+    </p>
 
-        <p>
-            أول زيارة لك؟ أنشئ حسابك للبدء.
+    <button
+        id="registerBtn"
+        class="btn-register"
+        onclick="showRegister()">
+
+        إنشاء حساب
+
+    </button>
+
+    <div id="registerForm" class="form-container">
+
+        <input
+            type="text"
+            placeholder="الاسم الكامل">
+
+        <input
+            type="email"
+            placeholder="البريد الإلكتروني">
+
+        <input
+            type="password"
+            placeholder="كلمة المرور">
+
+        <p class="password-note">
+
+            🔒 احتفظ بكلمة المرور في مكان آمن، ستحتاج إليها عند تسجيل الدخول مستقبلًا.
+
         </p>
 
-        <button class="btn-register">
-            إنشاء حساب
+        <button class="btn-login submit-btn">
+
+            إنشاء الحساب
+
         </button>
 
     </div>
 
 </div>
 
+</div>
+
+<script>
+
+function showLogin(){
+
+    document.getElementById("loginForm").style.display = "block";
+
+    document.getElementById("loginBtn").style.display = "none";
+
+    document.getElementById("registerForm").style.display = "none";
+
+    document.getElementById("registerBtn").style.display = "block";
+}
+
+function showRegister(){
+
+    document.getElementById("registerForm").style.display = "block";
+
+    document.getElementById("registerBtn").style.display = "none";
+
+    document.getElementById("loginForm").style.display = "none";
+
+    document.getElementById("loginBtn").style.display = "block";
+}
+
+</script>
+
 </body>
+
 </html>
-`
+    
+</div>
