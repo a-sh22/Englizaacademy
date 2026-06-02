@@ -105,9 +105,11 @@ h1{
 .btn-login:hover{
     opacity:.95;
 }
+    
 .btn-register:hover{
     background:#f8fbff;
 }
+    
     .form-container{
     display:none;
     margin-top:20px;
@@ -133,6 +135,12 @@ h1{
     color:#2f6bff;
     text-decoration:none;
     font-size:14px;
+}
+    .password-note{
+    font-size:14px;
+    color:#555;
+    line-height:1.7;
+    margin-bottom:14px;
 }
 </style>
 </head>
@@ -189,15 +197,52 @@ h1{
 
 </div>
     <div class="card">
-        <h2>✨ إنشاء حساب</h2>
-        <p>
-            أول زيارة لك؟ أنشئ حسابك للبدء.
+
+    <h2>✨ إنشاء حساب</h2>
+
+    <p>
+        إذا كانت هذه أول مرة تدخل فيها إلى المنصة.
+    </p>
+
+    <button
+        id="registerBtn"
+        class="btn-register"
+        onclick="showRegister()">
+
+        إنشاء حساب
+
+    </button>
+
+    <div id="registerForm" class="form-container">
+
+        <input
+            type="text"
+            placeholder="الاسم الكامل">
+
+        <input
+            type="email"
+            placeholder="البريد الإلكتروني">
+
+        <input
+            type="password"
+            placeholder="كلمة المرور">
+
+        <p class="password-note">
+
+            🔒 احتفظ بكلمة المرور في مكان آمن، ستحتاج إليها عند تسجيل الدخول لاحقًا.
+
         </p>
-        <button class="btn-register">
-            إنشاء حساب
+
+        <button class="btn-login submit-btn">
+
+            إنشاء الحساب
+
         </button>
+
     </div>
+
 </div>
+    </div>
     <script>
 
 function showLogin(){
@@ -205,6 +250,14 @@ function showLogin(){
     document.getElementById("loginForm").style.display = "block";
 
     document.getElementById("loginBtn").style.display = "none";
+
+}
+
+function showRegister(){
+
+    document.getElementById("registerForm").style.display = "block";
+
+    document.getElementById("registerBtn").style.display = "none";
 
 }
 
