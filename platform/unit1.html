@@ -307,7 +307,15 @@ font-size:17px;
 color:#555;
 font-weight:500;
 }
-
+ 
+.last-lesson{
+margin-bottom:30px;
+font-size:20px;
+color:#555;
+font-weight:500;
+line-height:2;
+}
+ 
 .tip-box{
 gap:20px;
 }
@@ -420,7 +428,7 @@ width:100%;
 <div class="progress-bar">
 <div class="progress" style="width:0%;"></div>
 </div>
-<button class="start-btn">
+<button id="lettersBtn" class="start-btn">
 🚀 ابدأ الدرس
 </button>
 </div>
@@ -446,7 +454,7 @@ width:100%;
 <div class="progress" style="width:60%;"></div>
 </div>
 
-<button class="continue-btn">
+<button id="pronounsBtn" class="continue-btn">
 ▶️ متابعة الدرس
 </button>
 
@@ -467,7 +475,7 @@ width:100%;
 <div class="progress-bar">
 <div class="progress" style="width:100%;"></div>
 </div>
-<button class="done-btn">
+<button id="isBtn" class="done-btn">
 ✅ مكتمل
 </button>
 </div>
@@ -487,7 +495,7 @@ width:100%;
 <div class="progress-bar">
 <div class="progress" style="width:20%;"></div>
 </div>
-<button class="continue-btn">
+<button id="wasBtn" class="continue-btn">
 ▶️ متابعة الدرس
 </button>
 </div>
@@ -501,7 +509,7 @@ width:100%;
 ⭐ نسبة الإنجاز الكلية: 45%
 <br><br>
 💜 آخر درس وصلت إليه:
-<br><br>
+<p class="last-lesson">
 🔤 الحروف الإنجليزية A-Z - الجزء الثاني
 </p>
 <button class="continue-btn">
@@ -530,7 +538,71 @@ width:100%;
 </div>
 
 </div>
-
+<script>
+/* بيانات الدروس */
+let lessons = {
+letters:0,
+pronouns:60,
+isamare:100,
+waswere:20
+};
+/* تحديث الأزرار */
+function updateButtons(){
+// الحروف
+if(lessons.letters==0){
+document.getElementById("lettersBtn").innerHTML="🚀 ابدأ الدرس";
+document.getElementById("lettersBtn").className="start-btn";
+}
+else if(lessons.letters<100){
+document.getElementById("lettersBtn").innerHTML="▶️ متابعة الدرس";
+document.getElementById("lettersBtn").className="continue-btn";
+}
+else{
+document.getElementById("lettersBtn").innerHTML="✅ مكتمل";
+document.getElementById("lettersBtn").className="done-btn";
+}
+// الضمائر
+if(lessons.pronouns==0){
+document.getElementById("pronounsBtn").innerHTML="🚀 ابدأ الدرس";
+document.getElementById("pronounsBtn").className="start-btn";
+}
+else if(lessons.pronouns<100){
+document.getElementById("pronounsBtn").innerHTML="▶️ متابعة الدرس";
+document.getElementById("pronounsBtn").className="continue-btn";
+}
+else{
+document.getElementById("pronounsBtn").innerHTML="✅ مكتمل";
+document.getElementById("pronounsBtn").className="done-btn";
+}
+// Is Am Are
+if(lessons.isamare==0){
+document.getElementById("isBtn").innerHTML="🚀 ابدأ الدرس";
+document.getElementById("isBtn").className="start-btn";
+}
+else if(lessons.isamare<100){
+document.getElementById("isBtn").innerHTML="▶️ متابعة الدرس";
+document.getElementById("isBtn").className="continue-btn";
+}
+else{
+document.getElementById("isBtn").innerHTML="✅ مكتمل";
+document.getElementById("isBtn").className="done-btn";
+}
+// Was Were
+if(lessons.waswere==0){
+document.getElementById("wasBtn").innerHTML="🚀 ابدأ الدرس";
+document.getElementById("wasBtn").className="start-btn";
+}
+else if(lessons.waswere<100){
+document.getElementById("wasBtn").innerHTML="▶️ متابعة الدرس";
+document.getElementById("wasBtn").className="continue-btn";
+}
+else{
+document.getElementById("wasBtn").innerHTML="✅ مكتمل";
+document.getElementById("wasBtn").className="done-btn";
+}
+}
+updateButtons();
+</script>
 </body>
 
 </html>
