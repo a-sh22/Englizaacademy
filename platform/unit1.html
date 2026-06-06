@@ -229,6 +229,38 @@ transform:translateY(-3px);
 
 }
 
+ /* شريط التقدم */
+
+.progress-bar{
+
+width:100%;
+
+height:14px;
+
+background:#edf1ff;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:15px;
+
+}
+
+.progress{
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+border-radius:20px;
+
+}
+  
 /* الجوال */
 
 @media(max-width:768px){
@@ -296,24 +328,7 @@ width:100%;
 
 }
 
-.progress-bar{
-width:100%;
-height:14px;
-background:#edf1ff;
-border-radius:20px;
-overflow:hidden;
-margin-top:15px;
-}
-.progress{
-height:100%;
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-border-radius:20px;
-}
-
+  
 </style>
 
 </head>
@@ -384,9 +399,10 @@ border-radius:20px;
 🎥 ٣ أجزاء • ٣ فيديوهات
 <br><br>
 ⭐ الإنجاز: 0%
-<br><br>
-🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜
 </p>
+<div class="progress-bar">
+<div class="progress" style="width:0%;"></div>
+</div>
 <button class="start-btn">
 🚀 ابدأ الدرس
 </button>
@@ -402,13 +418,21 @@ border-radius:20px;
 🎥 جزء واحد • فيديو واحد
 <br><br>
 ⭐ الإنجاز: 60%
-<br><br>
-🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜
+</p>
+<div class="progress-bar">
+<div class="progress" style="width:60%;"></div>
+</div>
+  
+<button class="continue-btn">
+▶️ متابعة الدرس
+</button>
+</div>
 </p>
 <button class="continue-btn">
 ▶️ متابعة الدرس
 </button>
 </div>
+  
 <!-- الدرس الثالث -->
 <div class="unit">
 <h3>
@@ -420,13 +444,15 @@ border-radius:20px;
 🎥 ٣ أجزاء • ٣ فيديوهات
 <br><br>
 ⭐ الإنجاز: 100%
-<br><br>
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
 </p>
+<div class="progress-bar">
+<div class="progress" style="width:100%;"></div>
+</div>
 <button class="done-btn">
 ✅ مكتمل
 </button>
 </div>
+  
 <!-- الدرس الرابع -->
 <div class="unit">
 <h3>
@@ -438,9 +464,10 @@ border-radius:20px;
 🎥 ٣ أجزاء • ٣ فيديوهات
 <br><br>
 ⭐ الإنجاز: 20%
-<br><br>
-🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜
 </p>
+<div class="progress-bar">
+<div class="progress" style="width:20%;"></div>
+</div>
 <button class="continue-btn">
 ▶️ متابعة الدرس
 </button>
