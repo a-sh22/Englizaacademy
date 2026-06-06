@@ -110,9 +110,10 @@ margin-bottom:25px;
 }
 
 .card p{
-font-size:20px;
-line-height:2;
-color:#666;
+font-size:22px;
+line-height:2.2;
+color:#4d4d4d;
+font-weight:600;
 }
 
 /* بطاقة البومة */
@@ -213,9 +214,37 @@ border:2px solid #b8ebc8;
 
 .prev-btn:hover,
 .done-btn:hover{
-transform:translateY(-3px);
+transform:translateY(-5px);
+}
+  
+.prev-btn,
+.done-btn,
+.next-lesson-btn{
+
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+transition:.3s;
+
 }
 
+.prev-btn:hover,
+.done-btn:hover,
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.18);
+
+}
+
+.prev-btn:active,
+.done-btn:active,
+.next-lesson-btn:active{
+
+transform:scale(.97);
+
+}
+  
 /* بطاقة النجاح */
 
 .success-text{
@@ -274,6 +303,95 @@ transition:.3s;
 .more-btn:hover{
 
 transform:translateY(-3px);
+
+}
+  .exercise{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:50px;
+
+margin:35px 0;
+
+}
+
+.exercise-right{
+
+flex:1;
+
+}
+
+.exercise-left{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+min-width:220px;
+
+}
+
+.exercise-answer{
+
+display:none;
+
+color:#6f43ff;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+.exercise p{
+
+font-size:24px;
+
+font-weight:600;
+
+color:#444;
+
+line-height:2.2;
+
+}
+
+/* الجوال */
+
+@media(max-width:768px){
+
+.exercise{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:25px;
+
+}
+
+.exercise-left{
+
+width:100%;
+
+}
+
+.exercise p{
+
+font-size:18px;
+
+}
+
+.exercise-answer{
+
+font-size:20px;
+
+}
 
 }
   
@@ -453,147 +571,362 @@ font-size:16px;
 
 <!-- السؤال الأول -->
 
-<p>
+<div class="exercise">
 
+<div class="exercise-right">
+<p>
 🏠 ترجم:
 
 <br><br>
 
 بيتي
+</p>
+</div>
 
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+بيت = house
 </p>
 
 <button onclick="showAnswer('answer1')">
-
 👀 عرض الإجابة
-
 </button>
 
-<p id="answer1" style="display:none; color:#6f43ff; font-weight:bold;">
-
+<p id="answer1" class="exercise-answer">
 My house
-
 </p>
+</div>
+
+</div>
 
 <hr><br>
 
 <!-- السؤال الثاني -->
 
-<p>
+<div class="exercise">
 
+<div class="exercise-right">
+<p>
 🏠 ترجم:
 
 <br><br>
 
 بيتها
+</p>
+</div>
 
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+بيت = house
 </p>
 
 <button onclick="showAnswer('answer2')">
-
 👀 عرض الإجابة
-
 </button>
 
-<p id="answer2" style="display:none; color:#6f43ff; font-weight:bold;">
-
+<p id="answer2" class="exercise-answer">
 Her house
-
 </p>
+</div>
+
+</div>
 
 <hr><br>
 
 <!-- السؤال الثالث -->
 
-<p>
+<div class="exercise">
 
+<div class="exercise-right">
+<p>
 🏠 ترجم:
 
 <br><br>
 
 بيتنا
+</p>
+</div>
 
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+بيت = house
 </p>
 
 <button onclick="showAnswer('answer3')">
-
 👀 عرض الإجابة
-
 </button>
 
-<p id="answer3" style="display:none; color:#6f43ff; font-weight:bold;">
-
+<p id="answer3" class="exercise-answer">
 Our house
-
 </p>
+</div>
+
+</div>
 
 <hr><br>
 
 <!-- السؤال الرابع -->
 
-<p>
+<div class="exercise">
 
+<div class="exercise-right">
+<p>
 🏠 ترجم:
 
 <br><br>
 
 بيتهم
+</p>
+</div>
 
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+بيت = house
 </p>
 
 <button onclick="showAnswer('answer4')">
-
 👀 عرض الإجابة
-
 </button>
 
-<p id="answer4" style="display:none; color:#6f43ff; font-weight:bold;">
-
+<p id="answer4" class="exercise-answer">
 Their house
-
 </p>
+</div>
+
+</div>
 
 <hr><br>
 
 <!-- السؤال الخامس -->
 
-<p>
+<div class="exercise">
 
+<div class="exercise-right">
+<p>
 🏠 ترجم:
 
 <br><br>
 
 بيتك
+</p>
+</div>
 
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+بيت = house
 </p>
 
 <button onclick="showAnswer('answer5')">
-
 👀 عرض الإجابة
-
 </button>
 
-<p id="answer5" style="display:none; color:#6f43ff; font-weight:bold;">
-
+<p id="answer5" class="exercise-answer">
 Your house
-
 </p>
+</div>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال السادس -->
+
+<div class="exercise">
+
+<div class="exercise-right">
+<p>
+🎒 ترجم:
+
 <br><br>
 
-<button onclick="showMoreExercises()"
-class="more-btn">
+حقيبتي
+</p>
+</div>
 
-✨ تمارين إضافية
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
 
+<br><br>
+
+حقيبة = bag
+</p>
+
+<button onclick="showAnswer('answer6')">
+👀 عرض الإجابة
 </button>
-  <div id="extraExercises" style="display:none;">
 
-<br>
+<p id="answer6" class="exercise-answer">
+My bag
+</p>
+</div>
 
-<hr>
+</div>
 
-<br>
+<hr><br>
 
+<!-- السؤال السابع -->
+
+<div class="exercise">
+
+<div class="exercise-right">
+<p>
+👨 ترجم:
+
+<br><br>
+
+أبوه
+</p>
+</div>
+
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+أب = father
+</p>
+
+<button onclick="showAnswer('answer7')">
+👀 عرض الإجابة
+</button>
+
+<p id="answer7" class="exercise-answer">
+His father
+</p>
+</div>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال الثامن -->
+
+<div class="exercise">
+
+<div class="exercise-right">
+<p>
+👩 ترجم:
+
+<br><br>
+
+أمها
+</p>
+</div>
+
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+أم = mother
+</p>
+
+<button onclick="showAnswer('answer8')">
+👀 عرض الإجابة
+</button>
+
+<p id="answer8" class="exercise-answer">
+Her mother
+</p>
+</div>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال التاسع -->
+
+<div class="exercise">
+
+<div class="exercise-right">
+<p>
+📖 ترجم:
+
+<br><br>
+
+كتابي
+</p>
+</div>
+
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+كتاب = book
+</p>
+
+<button onclick="showAnswer('answer9')">
+👀 عرض الإجابة
+</button>
+
+<p id="answer9" class="exercise-answer">
+My book
+</p>
+</div>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال العاشر -->
+
+<div class="exercise">
+
+<div class="exercise-right">
+<p>
+🏫 ترجم:
+
+<br><br>
+
+مدرستنا
+</p>
+</div>
+
+<div class="exercise-left">
+<p>
+💡 للمساعدة:
+
+<br><br>
+
+مدرسة = school
+</p>
+
+<button onclick="showAnswer('answer10')">
+👀 عرض الإجابة
+</button>
+
+<p id="answer10" class="exercise-answer">
+Our school
+</p>
+</div>
+
+</div>
+  
 <h2>
 🌟 تمارين إضافية
 </h2>
