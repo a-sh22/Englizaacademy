@@ -301,6 +301,58 @@ font-size:20px;
 
 }
 
+  .choice-btn{
+
+display:block;
+
+width:100%;
+
+margin-bottom:15px;
+
+padding:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+border-radius:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.correct{
+
+background:#e8fff0 !important;
+
+color:#0f8b4c !important;
+
+border:2px solid #b8ebc8 !important;
+
+}
+
+.wrong{
+
+background:#ffe8e8 !important;
+
+color:#c62828 !important;
+
+border:2px solid #ffb8b8 !important;
+
+}
+
+.result-text{
+
+margin-top:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+  
 </style>
 
 </head>
@@ -330,7 +382,7 @@ font-size:20px;
 
 <h1 class="title">
 
-😊 الصفات | الجزء الأول
+ الصفات | الجزء الأول
 
 </h1>
 
@@ -424,127 +476,6 @@ I am happy.
 
 </div>
 
-<!-- اكتب بنفسك -->
-
-<div class="card">
-
-<h2>
-
-✏️ اكتب بنفسك
-
-</h2>
-
-<p>
-
-💜 حاول الإجابة بنفسك أولاً، ثم استخدم زر "عرض الإجابة" للتأكد من إجابتك.
-
-</p>
-
-<br>
-
-<!-- السؤال الأول -->
-
-<p>
-
-😊 أنا سعيد.
-
-</p>
-
-<input class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button onclick="showAnswer('answer1')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer1"
-class="exercise-answer">
-
-I am happy.
-
-</p>
-
-<hr><br>
-
-<!-- السؤال الثاني -->
-
-<p>
-
-😴 هي متعبة.
-
-</p>
-
-<input class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button onclick="showAnswer('answer2')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer2"
-class="exercise-answer">
-
-She is tired.
-
-</p>
-
-<hr><br>
-
-<!-- السؤال الثالث -->
-
-<p>
-
-💪 هو قوي.
-
-</p>
-
-<input class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button onclick="showAnswer('answer3')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer3"
-class="exercise-answer">
-
-He is strong.
-
-</p>
-
-<hr><br>
-
-<!-- السؤال الرابع -->
-
-<p>
-
-😠 نحن غاضبون.
-
-</p>
-
-<input class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button onclick="showAnswer('answer4')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer4"
-class="exercise-answer">
-
-We are angry.
-
-</p>
-
-</div>
 <!-- اختر الإجابة الصحيحة -->
 
 <div class="card">
@@ -557,7 +488,7 @@ We are angry.
 
 <p>
 
-💜 اقرأ الجملة جيداً، ثم اضغط على الإجابة الصحيحة.
+• اقرأ الجملة جيداً، ثم اضغط على الإجابة الصحيحة.
 
 </p>
 
@@ -565,27 +496,37 @@ We are angry.
 
 <!-- السؤال الأول -->
 
+<div class="quiz-question">
+
 <p>
 
 😊 أنا جاهز.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result1')">
 
-I am bad.
+I am bad
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result1')">
+
+I am ready
 
 </button>
 
-<button>
+<p id="result1" class="result-text"></p>
 
-I am ready.
-
-</button>
+</div>
 
 <hr><br>
 
 <!-- السؤال الثاني -->
+
+<div class="quiz-question">
 
 <p>
 
@@ -593,21 +534,29 @@ I am ready.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result2')">
 
-She is busy.
+She is busy
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result2')">
+
+She is sad
 
 </button>
 
-<button>
+<p id="result2" class="result-text"></p>
 
-She is sad.
-
-</button>
+</div>
 
 <hr><br>
 
 <!-- السؤال الثالث -->
+
+<div class="quiz-question">
 
 <p>
 
@@ -615,21 +564,29 @@ She is sad.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result3')">
 
-He is weak.
+He is weak
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result3')">
+
+He is strong
 
 </button>
 
-<button>
+<p id="result3" class="result-text"></p>
 
-He is strong.
-
-</button>
+</div>
 
 <hr><br>
 
 <!-- السؤال الرابع -->
+
+<div class="quiz-question">
 
 <p>
 
@@ -637,19 +594,27 @@ He is strong.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result4')">
 
-It is big.
+It is big
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result4')">
+
+It is small
 
 </button>
 
-<button>
-
-It is small.
-
-</button>
+<p id="result4" class="result-text"></p>
 
 </div>
+
+</div>
+
+
 
 <!-- هل تريد تمارين إضافية -->
 
@@ -663,7 +628,7 @@ It is small.
 
 <p>
 
-💜 هذه التمارين مختلفة قليلاً.
+• هذه التمارين مختلفة قليلاً.
 
 <br><br>
 
@@ -682,6 +647,8 @@ onclick="showMoreExercises()">
 
 </div>
 
+
+
 <!-- التمارين الإضافية -->
 
 <div class="card"
@@ -696,7 +663,7 @@ style="display:none;">
 
 <p>
 
-💜 اضغط على الإجابة الصحيحة.
+• اضغط على الإجابة الصحيحة.
 
 </p>
 
@@ -704,27 +671,37 @@ style="display:none;">
 
 <!-- السؤال الخامس -->
 
+<div class="quiz-question">
+
 <p>
 
 😊 نحن سعداء.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result5')">
 
-We are angry.
+We are angry
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result5')">
+
+We are happy
 
 </button>
 
-<button>
+<p id="result5" class="result-text"></p>
 
-We are happy.
-
-</button>
+</div>
 
 <hr><br>
 
 <!-- السؤال السادس -->
+
+<div class="quiz-question">
 
 <p>
 
@@ -732,21 +709,29 @@ We are happy.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result6')">
 
-He is angry.
+He is angry
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result6')">
+
+He is bored
 
 </button>
 
-<button>
+<p id="result6" class="result-text"></p>
 
-He is bored.
-
-</button>
+</div>
 
 <hr><br>
 
 <!-- السؤال السابع -->
+
+<div class="quiz-question">
 
 <p>
 
@@ -754,21 +739,29 @@ He is bored.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result7')">
 
-She is slow.
+She is slow
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result7')">
+
+She is fast
 
 </button>
 
-<button>
+<p id="result7" class="result-text"></p>
 
-She is fast.
-
-</button>
+</div>
 
 <hr><br>
 
 <!-- السؤال الثامن -->
+
+<div class="quiz-question">
 
 <p>
 
@@ -776,20 +769,26 @@ She is fast.
 
 </p>
 
-<button>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'result8')">
 
-I am weak.
+I am weak
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'result8')">
+
+I am strong
 
 </button>
 
-<button>
-
-I am strong.
-
-</button>
+<p id="result8" class="result-text"></p>
 
 </div>
 
+</div>
+  
 <!-- كيف ترفع مستواك بسرعة -->
 
 <div class="card">
@@ -806,49 +805,13 @@ I am strong.
 
 <br><br>
 
-💜 لا يشترط أن تدرس ساعات طويلة، لكن حاول أن تكون مستمراً.
+• لا يشترط أن تدرس ساعات طويلة، لكن حاول أن تكون مستمراً.
 
 <br><br>
 
 ✨ الطالب الذي يراجع يومياً ويتدرب كثيراً، يتقدم أسرع من الطالب الذي يحفظ كثيراً ثم يتوقف.
 
 </p>
-
-</div>
-
-<!-- نصيحة البومة -->
-
-<div class="card">
-
-<div class="tip-box">
-
-<img src="../success.owl.PNG">
-
-<div class="tip-text">
-
-<h2>
-
-🌟 نصيحتي لك
-
-</h2>
-
-<p>
-
-ليس المطلوب أن تحفظ جميع الصفات في يوم واحد.
-
-<br><br>
-
-💜 خذ 4 أو 5 كلمات فقط، واستخدمها كثيراً داخل جمل، ثم انتقل إلى كلمات جديدة.
-
-<br><br>
-
-ومع الوقت ستجد أن الكلمات أصبحت سهلة وطبيعية.
-
-</p>
-
-</div>
-
-</div>
 
 </div>
 
@@ -916,6 +879,7 @@ style="width:100%;">
 </div>
 
 </div>
+  
 <!-- JavaScript -->
 
 <script>
@@ -949,6 +913,60 @@ window.location.href="this-that-part1.html";
 
 });
 
+  function checkAnswer(button,isCorrect,resultId){
+
+let result =
+document.getElementById(resultId);
+
+let allButtons =
+button.parentElement.querySelectorAll(".choice-btn");
+
+allButtons.forEach(btn=>{
+
+btn.disabled=true;
+
+});
+
+if(isCorrect){
+
+button.classList.add("correct");
+
+button.innerHTML+=" ✔️";
+
+result.innerHTML=
+"✅ لقد اخترت الإجابة الصحيحة.";
+
+result.style.color="#0f8b4c";
+
+}
+
+else{
+
+button.classList.add("wrong");
+
+button.innerHTML+=" ✖️";
+
+result.innerHTML=
+"❌ لقد اخترت الإجابة الخاطئة.";
+
+result.style.color="#c62828";
+
+allButtons.forEach(btn=>{
+
+if(btn.getAttribute("onclick").includes("true")){
+
+btn.classList.add("correct");
+
+btn.innerHTML+=" ✔️";
+
+}
+
+});
+
+}
+
+}
+  
 </script>
 
 </body>
