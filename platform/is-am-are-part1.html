@@ -587,6 +587,7 @@ class="back-btn">
 </div>
 
 </div> 
+ 
   <!-- اكتب بنفسك -->
 
 <div class="card">
@@ -626,7 +627,7 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input1','result1','I am fine')">
+onclick="checkWriting('input1','result1',['I am fine',"I'm fine"])">
 
 ✨ أريد التحقق من إجابتي
 
@@ -665,8 +666,8 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input2','result2','She is happy')">
-
+onclick="checkWriting('input2','result2',['She is happy',"She's happy"])">
+ 
 ✨ أريد التحقق من إجابتي
 
 </button>
@@ -704,8 +705,8 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input3','result3','He is ready')">
-
+onclick="checkWriting('input3','result3',['He is ready',"He's ready"])">
+ 
 ✨ أريد التحقق من إجابتي
 
 </button>
@@ -743,8 +744,8 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input4','result4','We are okay')">
-
+onclick="checkWriting('input4','result4',['We are okay',"We're okay"])">
+ 
 ✨ أريد التحقق من إجابتي
 
 </button>
@@ -1196,7 +1197,7 @@ Is • Am • Are
 // التحقق من الإجابات الكتابية
 // ==========================
 
-function checkWriting(inputId,resultId,correctAnswer){
+function checkWriting(inputId,resultId,correctAnswers){
 
 let input =
 document.getElementById(inputId);
@@ -1210,14 +1211,8 @@ document.getElementById(resultId);
 let userAnswer =
 input.value
 .toLowerCase()
-.trim();
-
-
-// الإجابة الصحيحة
-
-let answer =
-correctAnswer
-.toLowerCase();
+.trim()
+.replace(/\s+/g," ");
 
 
 // إزالة الألوان القديمة
@@ -1226,7 +1221,18 @@ input.classList.remove("correct-input");
 input.classList.remove("wrong-input");
 
 
-if(userAnswer===answer){
+// جميع الإجابات الصحيحة
+
+let answers =
+correctAnswers.map(answer=>
+answer
+.toLowerCase()
+.trim()
+.replace(/\s+/g," ")
+);
+
+
+if(answers.includes(userAnswer)){
 
 input.classList.add("correct-input");
 
@@ -1243,7 +1249,7 @@ else{
 input.classList.add("wrong-input");
 
 result.innerHTML =
-"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ الإجابة الصحيحة هي:<br><br>"+correctAnswer;
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"+correctAnswers[0];
 
 result.style.color =
 "#c62828";
@@ -1251,8 +1257,7 @@ result.style.color =
 }
 
 }
-
-
+ 
 
 // ==========================
 // أسئلة الاختيار
