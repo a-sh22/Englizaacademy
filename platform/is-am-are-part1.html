@@ -501,7 +501,7 @@ class="back-btn">
 
 <h1 class="title">
 
-✨ Is • Am • Are
+ Is • Am • Are
 
 </h1>
 
@@ -572,7 +572,6 @@ class="back-btn">
 
 </p>
 
-
 <!-- السؤال الأول -->
 
 <div class="question-box">
@@ -593,9 +592,9 @@ class="back-btn">
 id="input1"
 class="write-box"
 placeholder="اكتب إجابتك هنا">
- 
+
 <button
-onclick='checkWriting("input1","result1",["I am fine","I am fine","I\'m fine"])'
+onclick="checkWriting('input1','result1',['I am fine','Im fine'])">
 
 ✨ أريد التحقق من إجابتي
 
@@ -634,8 +633,8 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick='checkWriting("input2","result2",["She is happy","She\'s happy"])'
- 
+onclick="checkWriting('input2','result2',['She is happy','Shes happy'])">
+
 ✨ أريد التحقق من إجابتي
 
 </button>
@@ -673,8 +672,8 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick='checkWriting("input3","result3",["He is ready","He\'s ready"])'
- 
+onclick="checkWriting('input3','result3',['He is ready','Hes ready'])">
+
 ✨ أريد التحقق من إجابتي
 
 </button>
@@ -712,8 +711,8 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick='checkWriting("input4","result4",["We are okay","We\'re okay"])'
- 
+onclick="checkWriting('input4','result4',['We are okay','Were okay'])">
+
 ✨ أريد التحقق من إجابتي
 
 </button>
@@ -725,8 +724,8 @@ class="answer-result">
 </p>
 
 </div>
+ 
 
-</div>
   <!-- اختر الإجابة الصحيحة -->
 
 <div class="card">
@@ -1180,7 +1179,8 @@ let userAnswer =
 input.value
 .toLowerCase()
 .trim()
-.replace(/\s+/g," ");
+.replace(/\s+/g," ")
+.replace(/'/g,"");
 
 
 // إزالة الألوان القديمة
@@ -1197,6 +1197,7 @@ answer
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ")
+.replace(/'/g,"")
 );
 
 
@@ -1217,7 +1218,7 @@ else{
 input.classList.add("wrong-input");
 
 result.innerHTML =
-"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"+correctAnswers[0];
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ الإجابة الصحيحة هي:<br><br>"+correctAnswers[0];
 
 result.style.color =
 "#c62828";
@@ -1225,6 +1226,7 @@ result.style.color =
 }
 
 }
+ 
  
 
 // ==========================
