@@ -4,7 +4,8 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>الضمائر وملحقاتها | Engliza Academy</title>
 
@@ -66,8 +67,9 @@ margin-bottom:15px;
 .subtitle{
 text-align:center;
 font-size:22px;
-line-height:2;
-color:#666;
+line-height:2.2;
+font-weight:600;
+color:#555;
 margin-bottom:40px;
 }
 
@@ -112,8 +114,8 @@ margin-bottom:25px;
 .card p{
 font-size:22px;
 line-height:2.2;
-color:#4d4d4d;
 font-weight:600;
+color:#444;
 }
 
 /* بطاقة البومة */
@@ -134,7 +136,6 @@ flex:1;
 }
 
 .tip-text h2{
-color:#1f3c88;
 font-size:34px;
 margin-bottom:20px;
 }
@@ -142,10 +143,121 @@ margin-bottom:20px;
 .tip-text p{
 font-size:21px;
 line-height:2;
-color:#666;
+color:#555;
 }
 
-  /* شريط التقدم */
+/* صندوق الكتابة */
+
+.write-box{
+width:100%;
+padding:18px;
+border:2px solid #dce4ff;
+border-radius:18px;
+font-size:20px;
+outline:none;
+margin-top:15px;
+margin-bottom:20px;
+transition:.3s;
+}
+
+.correct-input{
+background:#e8fff0;
+border:2px solid #b8ebc8;
+color:#0f8b4c;
+}
+
+.wrong-input{
+background:#ffe8e8;
+border:2px solid #ffb8b8;
+color:#c62828;
+}
+
+.answer-result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+/* أسئلة الاختيار */
+
+.choice-btn{
+display:block;
+width:100%;
+margin-bottom:15px;
+padding:18px;
+font-size:18px;
+font-weight:bold;
+border-radius:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+.correct{
+background:#e8fff0 !important;
+color:#0f8b4c !important;
+border:2px solid #b8ebc8 !important;
+}
+
+.wrong{
+background:#ffe8e8 !important;
+color:#c62828 !important;
+border:2px solid #ffb8b8 !important;
+}
+
+.result-text{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+/* الأزرار */
+
+.card button{
+background:#f5f7ff;
+color:#1f3c88;
+border:2px solid #dce4ff;
+padding:16px 25px;
+border-radius:18px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.card button:hover{
+transform:translateY(-3px);
+}
+
+/* زر التمارين الإضافية */
+
+.show-more-btn{
+width:100%;
+padding:22px;
+border:none;
+border-radius:25px;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+color:white;
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.show-more-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 18px 40px rgba(0,0,0,.2);
+}
+
+.show-more-btn:active{
+transform:scale(.97);
+}
+
+/* شريط التقدم */
 
 .progress-bar{
 width:100%;
@@ -159,25 +271,6 @@ margin-top:20px;
 .progress{
 height:100%;
 background:linear-gradient(90deg,#3768ff,#6f43ff);
-border-radius:20px;
-}
-
-/* أزرار عرض الإجابة */
-
-.card button{
-background:#f5f7ff;
-color:#1f3c88;
-border:2px solid #dce4ff;
-padding:14px 25px;
-border-radius:18px;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-}
-
-.card button:hover{
-transform:translateY(-3px);
 }
 
 /* أزرار التنقل */
@@ -212,40 +305,27 @@ color:#0f8b4c;
 border:2px solid #b8ebc8;
 }
 
-.prev-btn:hover,
-.done-btn:hover{
-transform:translateY(-5px);
-}
-  
 .prev-btn,
 .done-btn,
 .next-lesson-btn{
-
 box-shadow:0 10px 25px rgba(0,0,0,.12);
-
 transition:.3s;
-
 }
 
 .prev-btn:hover,
 .done-btn:hover,
 .next-lesson-btn:hover{
-
 transform:translateY(-5px);
-
 box-shadow:0 18px 40px rgba(0,0,0,.18);
-
 }
 
 .prev-btn:active,
 .done-btn:active,
 .next-lesson-btn:active{
-
 transform:scale(.97);
-
 }
-  
-/* بطاقة النجاح */
+
+/* بطاقة النهاية */
 
 .success-text{
 font-size:24px;
@@ -274,149 +354,6 @@ color:white;
 background:linear-gradient(90deg,#3768ff,#6f43ff);
 }
 
-
-  .exercise{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-gap:50px;
-
-margin:35px 0;
-
-}
-
-.exercise-right{
-
-flex:1;
-
-}
-
-.exercise-left{
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-min-width:220px;
-
-align-items:flex-start;
-
-}
-
-.exercise-answer{
-
-display:none;
-
-color:#6f43ff;
-
-font-size:24px;
-
-font-weight:bold;
-
-}
-
-.exercise p{
-
-font-size:24px;
-
-font-weight:600;
-
-color:#444;
-
-line-height:2.2;
-
-}
-
-  .more-card{
-
-text-align:center;
-
-}
-
-.show-more-btn{
-
-width:100%;
-
-padding:22px;
-
-border:none;
-
-border-radius:25px;
-
-font-size:22px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-color:white;
-
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-
-box-shadow:0 12px 30px rgba(0,0,0,.15);
-
-transition:.3s;
-
-}
-
-.show-more-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 18px 40px rgba(0,0,0,.2);
-
-}
-
-.show-more-btn:active{
-
-transform:scale(.97);
-
-}
-  
-/* الجوال */
-
-@media(max-width:768px){
-
-.exercise{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-gap:25px;
-
-}
-
-.exercise-left{
-
-width:100%;
-
-}
-
-.exercise p{
-
-font-size:18px;
-
-}
-
-.exercise-answer{
-
-font-size:20px;
-
-}
-
-}
-  
 /* الجوال */
 
 @media(max-width:768px){
@@ -447,8 +384,6 @@ font-size:17px;
 }
 
 .tip-box{
-display:flex;
-align-items:center;
 gap:20px;
 }
 
@@ -465,12 +400,16 @@ margin-bottom:12px;
 font-size:16px;
 }
 
+.answer-result,
+.result-text{
+font-size:18px;
+}
+
 }
 
 </style>
 
 </head>
-
 <body>
 
 <div class="container">
@@ -480,11 +419,15 @@ font-size:16px;
 <div class="top-bar">
 
 <a href="letters-part3.html" class="back-btn">
+
 ⬅️ رجوع
+
 </a>
 
 <div class="owl-circle">
+
 <img src="../okay.owl.PNG">
+
 </div>
 
 </div>
@@ -492,7 +435,9 @@ font-size:16px;
 <!-- العنوان -->
 
 <h1 class="title">
+
 👤 الضمائر وملحقاتها
+
 </h1>
 
 <p class="subtitle">
@@ -513,12 +458,14 @@ font-size:16px;
 
 </div>
 
-  <!-- الملاحظات -->
+<!-- الملاحظات -->
 
 <div class="card">
 
 <h2>
+
 📝 ملاحظات مهمة
+
 </h2>
 
 <p>
@@ -552,12 +499,14 @@ font-size:16px;
 <div class="tip-text">
 
 <h2>
+
 🌟 نصيحتي لك
+
 </h2>
 
 <p>
 
-لا تحاول حفظ جميع الضمائر دفعة واحدة، بل افهمها واستخدمها كثيراً، وستصبح طبيعية مع الوقت. 💜
+لا تحاول حفظ جميع الضمائر دفعة واحدة، بل افهمها واستخدمها كثيراً، وستصبح طبيعية مع الوقت.
 
 </p>
 
@@ -567,403 +516,23 @@ font-size:16px;
 
 </div>
 
-<!-- التمارين -->
-
 <div class="card">
 
 <h2>
-✏️ تدرب بنفسك
+
+✏️ اكتب بنفسك
+
 </h2>
 
 <p>
 
-💜 لا تشيل هم الكلمات إذا كانت جديدة عليك.
-
-<br><br>
-
-هدفنا هنا ليس حفظ الكلمات، بل فهم طريقة استخدام الضمائر وملحقاتها.
-
-<br><br>
-
-حاول الإجابة بنفسك أولاً، ثم اضغط على "عرض الإجابة" للتأكد من إجابتك.
+💜 حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
 
 </p>
 
 <br>
 
 <!-- السؤال الأول -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-<p>
-🏠 ترجم:
-
-<br><br>
-
-بيتي
-</p>
-</div>
-
-<div class="exercise-left">
-<p>
-💡 للمساعدة:
-
-<br><br>
-
-بيت = house
-</p>
-
-<button onclick="showAnswer('answer1')">
-👀 عرض الإجابة
-</button>
-
-<p id="answer1" class="exercise-answer">
-My house
-</p>
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الثاني -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-<p>
-🏠 ترجم:
-
-<br><br>
-
-بيتها
-</p>
-</div>
-
-<div class="exercise-left">
-<p>
-💡 للمساعدة:
-
-<br><br>
-
-بيت = house
-</p>
-
-<button onclick="showAnswer('answer2')">
-👀 عرض الإجابة
-</button>
-
-<p id="answer2" class="exercise-answer">
-Her house
-</p>
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الثالث -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-<p>
-🏠 ترجم:
-
-<br><br>
-
-بيتنا
-</p>
-</div>
-
-<div class="exercise-left">
-<p>
-💡 للمساعدة:
-
-<br><br>
-
-بيت = house
-</p>
-
-<button onclick="showAnswer('answer3')">
-👀 عرض الإجابة
-</button>
-
-<p id="answer3" class="exercise-answer">
-Our house
-</p>
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الرابع -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-<p>
-🏠 ترجم:
-
-<br><br>
-
-بيتهم
-</p>
-</div>
-
-<div class="exercise-left">
-<p>
-💡 للمساعدة:
-
-<br><br>
-
-بيت = house
-</p>
-
-<button onclick="showAnswer('answer4')">
-👀 عرض الإجابة
-</button>
-
-<p id="answer4" class="exercise-answer">
-Their house
-</p>
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الخامس -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-<p>
-🏠 ترجم:
-
-<br><br>
-
-بيتك
-</p>
-</div>
-
-<div class="exercise-left">
-<p>
-💡 للمساعدة:
-
-<br><br>
-
-بيت = house
-</p>
-
-<button onclick="showAnswer('answer5')">
-👀 عرض الإجابة
-</button>
-
-<p id="answer5" class="exercise-answer">
-Your house
-</p>
-</div>
-
-</div>
-
-<hr><br>
-
-<div id="moreCard" class="more-card">
-
-<h2>
-🌟 هل تريد تمارين إضافية؟
-</h2>
-
-<p>
-
-💜 إذا كنت ترغب في التدريب أكثر، يمكنك إظهار خمسة تمارين إضافية بسيطة.
-
-</p>
-
-<button class="show-more-btn"
-onclick="showMoreExercises()">
-
-✨ نعم، أريد
-
-</button>
-
-</div>
-
-
-<div id="extraExercises" style="display:none;">
-
-<hr><br>
-
-<h2>
-🌟 تمارين إضافية
-</h2>
-
-<p>
-
-💜 لا تشيل هم الكلمات إذا كانت جديدة عليك.
-
-<br><br>
-
-هدفنا هنا ليس حفظ الكلمات، بل فهم طريقة استخدام الضمائر وملحقاتها.
-
-</p>
-
-
-<!-- السؤال السادس -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-🎒 ترجم:
-
-<br><br>
-
-حقيبتي
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-حقيبة = bag
-
-</p>
-
-<button onclick="showAnswer('answer6')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer6" class="exercise-answer">
-
-My bag
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
-
-
-<!-- السؤال السابع -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-👨 ترجم:
-
-<br><br>
-
-أبوه
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-أب = father
-
-</p>
-
-<button onclick="showAnswer('answer7')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer7" class="exercise-answer">
-
-His father
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
-
-
-<!-- السؤال الثامن -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-👩 ترجم:
-
-<br><br>
-
-أمها
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-أم = mother
-
-</p>
-
-<button onclick="showAnswer('answer8')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer8" class="exercise-answer">
-
-Her mother
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
-
-
-<!-- السؤال التاسع -->
-
-<div class="exercise">
-
-<div class="exercise-right">
 
 <p>
 
@@ -975,10 +544,6 @@ Her mother
 
 </p>
 
-</div>
-
-<div class="exercise-left">
-
 <p>
 
 💡 للمساعدة:
@@ -989,30 +554,65 @@ Her mother
 
 </p>
 
-<button onclick="showAnswer('answer9')">
+<input id="input1"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
 
-👀 عرض الإجابة
+<button
+onclick="checkWriting('input1','result1','My book')">
+
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer9" class="exercise-answer">
-
-My book
+<p id="result1"
+class="answer-result">
 
 </p>
 
-</div>
+<hr><br>
 
-</div>
+<!-- السؤال الثاني -->
+
+<p>
+
+🎒 ترجم:
+
+<br><br>
+
+حقيبتها
+
+</p>
+
+<p>
+
+💡 للمساعدة:
+
+<br><br>
+
+حقيبة = bag
+
+</p>
+
+<input id="input2"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting('input2','result2','Her bag')">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p id="result2"
+class="answer-result">
+
+</p>
 
 <hr><br>
 
-
-<!-- السؤال العاشر -->
-
-<div class="exercise">
-
-<div class="exercise-right">
+<!-- السؤال الثالث -->
 
 <p>
 
@@ -1024,10 +624,6 @@ My book
 
 </p>
 
-</div>
-
-<div class="exercise-left">
-
 <p>
 
 💡 للمساعدة:
@@ -1038,130 +634,581 @@ My book
 
 </p>
 
-<button onclick="showAnswer('answer10')">
+<input id="input3"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
 
-👀 عرض الإجابة
+<button
+onclick="checkWriting('input3','result3','Our school')">
+
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer10" class="exercise-answer">
+<p id="result3"
+class="answer-result">
 
-Our school
+</p>
+
+<hr><br>
+
+<!-- السؤال الرابع -->
+
+<p>
+
+🏠 ترجم:
+
+<br><br>
+
+بيتهم
+
+</p>
+
+<p>
+
+💡 للمساعدة:
+
+<br><br>
+
+بيت = house
+
+</p>
+
+<input id="input4"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting('input4','result4','Their house')">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p id="result4"
+class="answer-result">
 
 </p>
 
 </div>
-
-</div>
-
-</div>
-  
-  </div>
-  
-<!-- تقدم الدرس -->
-
 <div class="card">
 
 <h2>
-⭐ تقدمك في الدرس
+
+🎯 اختر الإجابة الصحيحة
+
 </h2>
 
 <p>
 
-100%
-
-<br><br>
-
-📍 فيديو واحد
+💜 اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
 
 </p>
 
-<div class="progress-bar">
+<br>
 
-<div class="progress" style="width:100%;"></div>
+<!-- السؤال الأول -->
 
-</div>
+<div class="quiz-question">
 
-</div>
+<p>
 
-<!-- أزرار التنقل -->
+👨 ترجم:
 
-<div class="buttons">
+<br><br>
 
-<button class="prev-btn">
+أبوه
 
-⬅️ العودة إلى درس الحروف
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
+
+Her father
 
 </button>
 
-<button class="done-btn">
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
 
-✅ أنهيت الدرس
+His father
 
 </button>
 
+<p id="choice1"
+class="result-text">
+
+</p>
+
 </div>
 
-<!-- بطاقة النهاية -->
+<hr><br>
 
-<div class="card">
+<!-- السؤال الثاني -->
+
+<div class="quiz-question">
+
+<p>
+
+👩 ترجم:
+
+<br><br>
+
+أمها
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
+
+Her mother
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+Their mother
+
+</button>
+
+<p id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال الثالث -->
+
+<div class="quiz-question">
+
+<p>
+
+📱 ترجم:
+
+<br><br>
+
+هاتفك
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+Your phone
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+My phone
+
+</button>
+
+<p id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال الرابع -->
+
+<div class="quiz-question">
+
+<p>
+
+🚗 ترجم:
+
+<br><br>
+
+سيارتنا
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+Their car
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+Our car
+
+</button>
+
+<p id="choice4"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+<div class="card"
+id="extraExercises"
+style="display:none;">
 
 <h2>
-⭐ أحسنت!
+
+🌟 تمارين إضافية
+
 </h2>
 
-<p class="success-text">
+<p>
 
-🎉 لقد أنهيت درس الضمائر وملحقاتها بنجاح.
-
-<br><br>
-
-✨ وأصبحت جاهزاً للانتقال إلى:
-
-<br><br>
-
-<span class="next-lesson-name">
-
-Is • Am • Are
-
-</span>
-
-<br><br>
-
-💜 استمر، فأنت تبني أساس اللغة الإنجليزية خطوة بخطوة.
+💜 اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
 
 </p>
 
-<button class="next-lesson-btn">
+<br>
 
-🚀 الانتقال إلى درس Is • Am • Are
+<!-- السؤال الأول -->
+
+<div class="quiz-question">
+
+<p>
+
+🐱 ترجم:
+
+<br><br>
+
+قطتي
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
+
+My cat
 
 </button>
 
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
+
+His cat
+
+</button>
+
+<p id="choice5"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال الثاني -->
+
+<div class="quiz-question">
+
+<p>
+
+🏡 ترجم:
+
+<br><br>
+
+منزلها
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+Our home
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
+
+Her home
+
+</button>
+
+<p id="choice6"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال الثالث -->
+
+<div class="quiz-question">
+
+<p>
+
+🎒 ترجم:
+
+<br><br>
+
+حقيبتك
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice7')">
+
+Your bag
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice7')">
+
+Their bag
+
+</button>
+
+<p id="choice7"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr><br>
+
+<!-- السؤال الرابع -->
+
+<div class="quiz-question">
+
+<p>
+
+📖 ترجم:
+
+<br><br>
+
+كتابهم
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice8')">
+
+My book
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice8')">
+
+Their book
+
+</button>
+
+<p id="choice8"
+class="result-text">
+
+</p>
+
 </div>
 
 </div>
 
-<!-- JavaScript -->
-
+  <!-- JavaScript -->
 <script>
 
-function showAnswer(answerId){
+// ==========================
+// التحقق من الإجابات الكتابية
+// ==========================
 
-document.getElementById(answerId).style.display="block";
+function checkWriting(inputId,resultId,correctAnswer){
+
+let input =
+document.getElementById(inputId);
+
+let result =
+document.getElementById(resultId);
+
+
+// إجابة الطالب
+let userAnswer =
+input.value
+.toLowerCase()
+.trim();
+
+
+// الإجابة الصحيحة
+let answer =
+correctAnswer
+.toLowerCase();
+
+
+// إزالة الألوان القديمة
+input.classList.remove("correct-input");
+input.classList.remove("wrong-input");
+
+
+if(userAnswer===answer){
+
+input.classList.add("correct-input");
+
+result.innerHTML =
+"✅ لقد كتبت الإجابة الصحيحة.";
+
+result.style.color = "#0f8b4c";
 
 }
+
+else{
+
+input.classList.add("wrong-input");
+
+result.innerHTML =
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>💜 الإجابة الصحيحة هي:<br><br>"+correctAnswer;
+
+result.style.color = "#c62828";
+
+}
+
+}
+
+
+
+// ==========================
+// أسئلة الاختيار
+// ==========================
+
+function checkAnswer(button,isCorrect,resultId){
+
+let result =
+document.getElementById(resultId);
+
+let allButtons =
+button.parentElement.querySelectorAll(".choice-btn");
+
+
+// تعطيل الأزرار بعد الاختيار
+allButtons.forEach(btn=>{
+
+btn.disabled = true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add("correct");
+
+button.innerHTML += " ✔️";
+
+result.innerHTML =
+"✅ لقد اخترت الإجابة الصحيحة.";
+
+result.style.color = "#0f8b4c";
+
+}
+
+else{
+
+button.classList.add("wrong");
+
+button.innerHTML += " ✖️";
+
+result.innerHTML =
+"❌ لقد اخترت الإجابة الخاطئة.";
+
+result.style.color = "#c62828";
+
+
+// إظهار الإجابة الصحيحة باللون الأخضر
+allButtons.forEach(btn=>{
+
+if(btn.getAttribute("onclick").includes("true")){
+
+btn.classList.add("correct");
+
+btn.innerHTML += " ✔️";
+
+}
+
+});
+
+}
+
+}
+
+
+
+// ==========================
+// إظهار التمارين الإضافية
+// ==========================
 
 function showMoreExercises(){
 
-document.getElementById("extraExercises").style.display="block";
+document.getElementById("extraExercises")
+.style.display = "block";
 
-document.getElementById("moreCard").style.display="none";
+document.getElementById("moreCard")
+.style.display = "none";
 
 }
+
+
+
+// ==========================
+// الانتقال للدرس التالي
+// ==========================
+
+document.querySelector(".next-lesson-btn")
+.addEventListener("click",function(){
+
+window.location.href =
+"is-am-are-part1.html";
+
+});
+
+
+
+// ==========================
+// زر العودة
+// ==========================
+
+document.querySelector(".prev-btn")
+.addEventListener("click",function(){
+
+window.location.href =
+"letters-part3.html";
+
+});
+
+
+
+// ==========================
+// زر أنهيت الدرس
+// ==========================
+
+document.querySelector(".done-btn")
+.addEventListener("click",function(){
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+});
 
 </script>
 
 </body>
 
 </html>
+  
