@@ -297,10 +297,8 @@ transform:translateY(-5px);
 box-shadow:0 18px 40px rgba(0,0,0,.2);
 }
 
-.show-more-btn:active{
-transform:scale(.97);
-}
- /* شريط التقدم */
+
+/* شريط التقدم */
 
 .progress-bar{
 width:100%;
@@ -318,7 +316,6 @@ background:linear-gradient(
 #3768ff,
 #6f43ff
 );
-border-radius:20px;
 }
 
 
@@ -339,7 +336,6 @@ border-radius:20px;
 font-size:18px;
 font-weight:bold;
 cursor:pointer;
-transition:.3s;
 }
 
 .prev-btn{
@@ -352,26 +348,6 @@ border:2px solid #dce4ff;
 background:#e8fff0;
 color:#0f8b4c;
 border:2px solid #b8ebc8;
-}
-
-.prev-btn,
-.done-btn,
-.next-lesson-btn{
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-transition:.3s;
-}
-
-.prev-btn:hover,
-.done-btn:hover,
-.next-lesson-btn:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.18);
-}
-
-.prev-btn:active,
-.done-btn:active,
-.next-lesson-btn:active{
-transform:scale(.97);
 }
 
 
@@ -448,7 +424,6 @@ width:110px;
 
 .tip-text h2{
 font-size:24px;
-margin-bottom:12px;
 }
 
 .tip-text p{
@@ -473,7 +448,7 @@ font-size:17px;
 </style>
 
 </head>
- <body>
+<body>
 
 <div class="container">
 
@@ -507,7 +482,7 @@ class="back-btn">
 
 <p class="subtitle">
 
-  في هذا الدرس ستتعلم تكوين الجملة العادية بطريقة سهلة جداً.
+في هذا الدرس ستتعلم تكوين الجملة العادية بطريقة سهلة جداً.
 
 </p>
 
@@ -555,8 +530,7 @@ class="back-btn">
 
 </div>
 
-
-  <!-- اكتب بنفسك -->
+<!-- اكتب بنفسك -->
 
 <div class="card">
 
@@ -571,6 +545,7 @@ class="back-btn">
 • حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
 
 </p>
+
 
 <!-- السؤال الأول -->
 
@@ -724,9 +699,9 @@ class="answer-result">
 </p>
 
 </div>
- 
 
-  <!-- اختر الإجابة الصحيحة -->
+</div>
+ <!-- اختر الإجابة الصحيحة -->
 
 <div class="card">
 
@@ -783,7 +758,7 @@ class="result-text">
 
 <p class="question-title">
 
- ترجم:  😌هي جميلة
+ ترجم: 😌 هي جميلة
 
 </p>
 
@@ -851,7 +826,7 @@ class="result-text">
 
 <p class="question-title">
 
- ترجم: 💪🏻أنت قوي
+ ترجم:💪🏻 أنت قوي
 
 </p>
 
@@ -877,10 +852,7 @@ class="result-text">
 </div>
 
 </div>
-
-
-
-<!-- هل تريد تمارين إضافية؟ -->
+ <!-- هل تريد تمارين إضافية؟ -->
 
 <div class="card"
 id="moreCard">
@@ -1003,7 +975,7 @@ class="result-text">
 
 <p class="question-title">
 
- ترجم: 😊أنت سعيد
+ ترجم:😊 أنت سعيد
 
 </p>
 
@@ -1037,7 +1009,7 @@ class="result-text">
 
 <p class="question-title">
 
- ترجم: 😪أنا متعب
+ ترجم: 😪 أنا متعب
 
 </p>
 
@@ -1063,8 +1035,7 @@ class="result-text">
 </div>
 
 </div>
-  
-<!-- تقدمك في الدرس -->
+ <!-- تقدمك في الدرس -->
 
 <div class="card">
 
@@ -1154,13 +1125,9 @@ Is • Am • Are
 </div>
 
 </div>
+ <script>
 
-
-
-<!-- JavaScript -->
-
-<script>
-  // ==========================
+// ==========================
 // التحقق من الإجابات الكتابية
 // ==========================
 
@@ -1193,11 +1160,13 @@ input.classList.remove("wrong-input");
 
 let answers =
 correctAnswers.map(answer=>
+
 answer
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ")
 .replace(/'/g,"")
+
 );
 
 
@@ -1218,7 +1187,7 @@ else{
 input.classList.add("wrong-input");
 
 result.innerHTML =
-"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ الإجابة الصحيحة هي:<br><br>"+correctAnswers[0];
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>💜 إحدى الإجابات الصحيحة هي:<br><br>"+correctAnswers[0];
 
 result.style.color =
 "#c62828";
@@ -1226,8 +1195,8 @@ result.style.color =
 }
 
 }
- 
- 
+
+
 
 // ==========================
 // أسئلة الاختيار
@@ -1239,11 +1208,10 @@ let result =
 document.getElementById(resultId);
 
 let allButtons =
-button.parentElement
-.querySelectorAll(".choice-btn");
+button.parentElement.querySelectorAll(".choice-btn");
 
 
-// تعطيل الأزرار بعد الاختيار
+// تعطيل الأزرار
 
 allButtons.forEach(btn=>{
 
@@ -1283,8 +1251,7 @@ result.style.color =
 
 allButtons.forEach(btn=>{
 
-if(btn.getAttribute("onclick")
-.includes("true")){
+if(btn.getAttribute("onclick").includes("true")){
 
 btn.classList.add("correct");
 
