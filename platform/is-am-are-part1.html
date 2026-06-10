@@ -1147,7 +1147,7 @@ input.value
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ")
-.replace(/'/g,"");
+.replace(/['’]/g,"");
 
 
 // إزالة الألوان القديمة
@@ -1159,13 +1159,12 @@ input.classList.remove("wrong-input");
 // تجهيز الإجابات الصحيحة
 
 let answers =
-correctAnswers.map(answer=>
-
+correctAnswers.map(answer =>
 answer
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ")
-.replace(/['’]/g,"");
+.replace(/['’]/g,"")
 );
 
 
@@ -1186,7 +1185,7 @@ else{
 input.classList.add("wrong-input");
 
 result.innerHTML =
-"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"+correctAnswers[0];
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>💜 إحدى الإجابات الصحيحة هي:<br><br>"+correctAnswers[0];
 
 result.style.color =
 "#c62828";
