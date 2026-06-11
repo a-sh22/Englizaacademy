@@ -4,9 +4,15 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Is • Am • Are | الأسئلة | Engliza Academy</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Is • Am • Are | الأسئلة | Engliza Academy
+
+</title>
 
 <style>
 
@@ -18,7 +24,11 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#eef4ff,#f7f3ff);
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
 padding:30px 20px;
 }
 
@@ -26,6 +36,7 @@ padding:30px 20px;
 max-width:1000px;
 margin:auto;
 }
+
 
 /* الأعلى */
 
@@ -47,12 +58,16 @@ font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
+
+/* البومة */
+
 .owl-circle img{
 width:80px;
 height:80px;
 border-radius:50%;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
+
 
 /* العنوان */
 
@@ -70,6 +85,7 @@ line-height:2;
 color:#666;
 margin-bottom:40px;
 }
+
 
 /* الفيديو */
 
@@ -93,6 +109,7 @@ font-weight:bold;
 color:#1f3c88;
 }
 
+
 /* البطاقات */
 
 .card{
@@ -112,87 +129,107 @@ margin-bottom:25px;
 .card p{
 font-size:22px;
 line-height:2.2;
-color:#4d4d4d;
 font-weight:600;
+color:#4d4d4d;
 }
 
-/* بطاقة البومة */
 
-.tip-box{
-display:flex;
-align-items:center;
-gap:35px;
-}
+/* الأسئلة */
 
-.tip-box img{
-width:170px;
-flex-shrink:0;
-}
-
-.tip-text{
-flex:1;
-}
-
-.tip-text h2{
-color:#1f3c88;
-font-size:34px;
-margin-bottom:20px;
-}
-
-.tip-text p{
-font-size:21px;
-line-height:2;
-color:#666;
-}
-
-/* التمارين */
-
-.exercise{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:50px;
+.question-box{
 margin:35px 0;
 }
 
-.exercise-right{
-flex:1;
-}
-
-.exercise-left{
-display:flex;
-flex-direction:column;
-gap:20px;
-min-width:220px;
-align-items:flex-start;
-}
-
-.exercise p{
+.question-title{
 font-size:24px;
-font-weight:600;
+font-weight:bold;
 color:#444;
-line-height:2.2;
+margin-bottom:12px;
 }
 
-/* مربع الكتابة */
+.help-text{
+font-size:20px;
+line-height:1.8;
+color:#666;
+margin-bottom:20px;
+}
+
+.question-divider{
+margin:35px 0;
+border:none;
+height:1px;
+background:#e5e5e5;
+}
+
+
+/* خانة الكتابة */
 
 .write-box{
 width:100%;
 padding:18px;
-border-radius:20px;
 border:2px solid #dce4ff;
+border-radius:20px;
 font-size:20px;
 outline:none;
+transition:.3s;
+margin-bottom:18px;
 }
 
-/* الإجابات */
 
-.exercise-answer{
-display:none;
-color:#6f43ff;
-font-size:24px;
+/* ألوان التصحيح */
+
+.correct-input{
+background:#e8fff0;
+border:2px solid #b8ebc8;
+color:#0f8b4c;
+}
+
+.wrong-input{
+background:#ffe8e8;
+border:2px solid #ffb8b8;
+color:#c62828;
+}
+
+
+/* النص الناتج */
+
+.answer-result,
+.result-text{
+margin-top:18px;
+font-size:20px;
 font-weight:bold;
 }
+
+
+/* أزرار الاختيارات */
+
+.choice-btn{
+display:block;
+width:100%;
+padding:18px;
+margin-bottom:15px;
+font-size:18px;
+font-weight:bold;
+border-radius:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+
+/* الصحيح والخاطئ */
+
+.correct{
+background:#e8fff0 !important;
+border:2px solid #b8ebc8 !important;
+color:#0f8b4c !important;
+}
+
+.wrong{
+background:#ffe8e8 !important;
+border:2px solid #ffb8b8 !important;
+color:#c62828 !important;
+}
+
 
 /* الأزرار */
 
@@ -218,11 +255,8 @@ box-shadow:0 18px 40px rgba(0,0,0,.18);
 transform:scale(.97);
 }
 
-/* بطاقة التمارين الإضافية */
 
-.more-card{
-text-align:center;
-}
+/* زر التمارين الإضافية */
 
 .show-more-btn{
 width:100%;
@@ -233,26 +267,15 @@ font-size:22px;
 font-weight:bold;
 cursor:pointer;
 color:white;
-
 background:linear-gradient(
 90deg,
 #3768ff,
 #6f43ff
 );
-
 box-shadow:0 12px 30px rgba(0,0,0,.15);
-
 transition:.3s;
 }
 
-.show-more-btn:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.2);
-}
-
-.show-more-btn:active{
-transform:scale(.97);
-}
 
 /* شريط التقدم */
 
@@ -274,6 +297,7 @@ background:linear-gradient(
 );
 }
 
+
 /* أزرار التنقل */
 
 .buttons{
@@ -283,27 +307,14 @@ margin-bottom:35px;
 }
 
 .prev-btn,
-.done-btn,
-.next-lesson-btn{
-
+.done-btn{
 flex:1;
-
 padding:18px;
-
 border:none;
-
 border-radius:20px;
-
-font-size:20px;
-
+font-size:18px;
 font-weight:bold;
-
 cursor:pointer;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-
 }
 
 .prev-btn{
@@ -318,39 +329,8 @@ color:#0f8b4c;
 border:2px solid #b8ebc8;
 }
 
-.next-lesson-btn{
 
-width:100%;
-
-color:white;
-
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-
-}
-
-.prev-btn:hover,
-.done-btn:hover,
-.next-lesson-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 18px 40px rgba(0,0,0,.18);
-
-}
-
-.prev-btn:active,
-.done-btn:active,
-.next-lesson-btn:active{
-
-transform:scale(.97);
-
-}
-
-/* بطاقة النجاح */
+/* بطاقة النهاية */
 
 .success-text{
 font-size:24px;
@@ -359,6 +339,30 @@ font-weight:600;
 text-align:center;
 color:#555;
 }
+
+.next-lesson-name{
+font-size:32px;
+font-weight:bold;
+color:#6f43ff;
+}
+
+.next-lesson-btn{
+width:100%;
+margin-top:25px;
+border:none;
+padding:18px;
+border-radius:20px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+color:white;
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+}
+
 
 /* الجوال */
 
@@ -389,49 +393,17 @@ font-size:28px;
 font-size:17px;
 }
 
-.tip-box{
-gap:20px;
-}
-
-.tip-box img{
-width:110px;
-}
-
-.tip-text h2{
-font-size:24px;
-margin-bottom:12px;
-}
-
-.tip-text p{
-font-size:16px;
-}
-
-.exercise{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-gap:25px;
-
-}
-
-.exercise-left{
-
-width:100%;
-
-}
-
-.exercise p{
-
-font-size:18px;
-
-}
-
-.exercise-answer{
-
+.question-title{
 font-size:20px;
+}
 
+.help-text{
+font-size:17px;
+}
+
+.answer-result,
+.result-text{
+font-size:17px;
 }
 
 }
@@ -447,7 +419,8 @@ font-size:20px;
 
 <div class="top-bar">
 
-<a href="is-am-are-negative.html" class="back-btn">
+<a href="is-am-are-negative.html"
+class="back-btn">
 
 ⬅️ رجوع
 
@@ -461,19 +434,21 @@ font-size:20px;
 
 </div>
 
+
 <!-- العنوان -->
 
 <h1 class="title">
 
-❓ Is • Am • Are | الأسئلة
+ Is • Am • Are | الأسئلة
 
 </h1>
 
 <p class="subtitle">
 
- في هذا الدرس ستتعلم كيف تسأل باستخدام Is و Am و Are بطريقة سهلة جداً.
+في هذا الدرس ستتعلم كيف تسأل باستخدام Is و Am و Are بطريقة سهلة جداً.
 
 </p>
+
 
 <!-- الفيديو -->
 
@@ -499,55 +474,20 @@ font-size:20px;
 
 <p>
 
-✅ في الأسئلة، تأتي Is و Am و Are في بداية الجملة.
+✅ كرر التمارين أكثر من مرة، فالتكرار يصنع الفرق.
 
 <br><br>
 
-✅ لا تحفظ الأمثلة فقط، بل حاول أن تفهم الفكرة.
+✅ حاول تكوين أمثلة جديدة من عندك.
 
 <br><br>
 
-✅ كرر الأمثلة أكثر من مرة، فالتكرار يصنع الفرق.
-
-<br><br>
-
-✅ خصص كراساً أو دفتراً للملاحظات، واكتب فيه أهم القواعد والأمثلة حتى يسهل عليك مراجعتها لاحقاً.
-
-<br><br>
-
-✅ لا بأس إذا احتجت لإعادة الفيديو، فالتعلم خطوة بخطوة هو الطريق الصحيح. 💜
+🌟 لا تنسَ حل التمارين الموجودة في الأسفل، فهي ستساعدك على تثبيت الدرس بشكل أفضل.
 
 </p>
 
 </div>
 
-<!-- نصيحة البومة -->
-
-<div class="card">
-
-<div class="tip-box">
-
-<img src="../success.owl.PNG">
-
-<div class="tip-text">
-
-<h2>
-
-🌟 نصيحتي لك
-
-</h2>
-
-<p>
-
-لا تقلق إذا شعرت أن ترتيب الكلمات مختلف قليلاً، فمع كثرة الأمثلة ستصبح الأسئلة سهلة جداً. 
-
-</p>
-
-</div>
-
-</div>
-
-</div>
 
 <!-- اكتب بنفسك -->
 
@@ -561,368 +501,357 @@ font-size:20px;
 
 <p>
 
- حاول كتابة الإجابة بنفسك أولاً، ثم تأكد منها من خلال زر عرض الإجابة.
+• حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
 
 </p>
 
-<br>
 
 <!-- السؤال الأول -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
- هل أنت بخير؟
+• ترجم: هل أنت بخير؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-fine = بخير
+💡 للمساعدة: بخير = fine
 
 </p>
 
-<input class="write-box"
+<input
+id="input1"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer1')">
+<button
+onclick="checkWriting(
+'input1',
+'result1',
+[
+'Are you fine?'
+])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer1" class="exercise-answer">
-
-Are you fine?
+<p
+id="result1"
+class="answer-result">
 
 </p>
 
 </div>
 
-</div>
+<hr class="question-divider">
 
-<hr><br>
 
 <!-- السؤال الثاني -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
- هل هي سعيدة؟
+• ترجم: هل هي سعيدة؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-happy = سعيدة
+💡 للمساعدة: سعيدة = happy
 
 </p>
 
-<input class="write-box"
+<input
+id="input2"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer2')">
+<button
+onclick="checkWriting(
+'input2',
+'result2',
+[
+'Is she happy?'
+])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer2" class="exercise-answer">
-
-Is she happy?
+<p
+id="result2"
+class="answer-result">
 
 </p>
 
 </div>
 
-</div>
+<hr class="question-divider">
 
-<hr><br>
 
 <!-- السؤال الثالث -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
- هل هو جاهز؟
+• ترجم: هل هو جاهز؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-ready = جاهز
+💡 للمساعدة: جاهز = ready
 
 </p>
 
-<input class="write-box"
+<input
+id="input3"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer3')">
+<button
+onclick="checkWriting(
+'input3',
+'result3',
+[
+'Is he ready?'
+])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer3" class="exercise-answer">
-
-Is he ready?
+<p
+id="result3"
+class="answer-result">
 
 </p>
 
 </div>
 
-</div>
+<hr class="question-divider">
 
-<hr><br>
 
 <!-- السؤال الرابع -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
- هل نحن بخير؟
+• ترجم: هل نحن بخير؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-okay = بخير
+💡 للمساعدة: بخير = okay
 
 </p>
 
-<input class="write-box"
+<input
+id="input4"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer4')">
+<button
+onclick="checkWriting(
+'input4',
+'result4',
+[
+'Are we okay?'
+])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer4" class="exercise-answer">
-
-Are we okay?
+<p
+id="result4"
+class="answer-result">
 
 </p>
 
 </div>
 
 </div>
-
-</div>
-<!-- تدرب بنفسك -->
+ <!-- اختر الإجابة الصحيحة -->
 
 <div class="card">
 
 <h2>
 
-🌟 تدرب بنفسك
+🎯 اختر الإجابة الصحيحة
 
 </h2>
 
 <p>
 
-• هذه التمارين للمراجعة السريعة.
+• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
 
-<br><br>
+</p>
 
- • حاول الإجابة بنفسك أولاً ثم تأكد من الحل.
+
+<!-- السؤال الأول -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل هم سعداء؟
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
+
+Are they happy?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
+
+They are happy.
+
+</button>
+
+<p id="choice1"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+<!-- السؤال الثاني -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل أنت جاهز؟
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
+
+Are you ready?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+You are ready.
+
+</button>
+
+<p id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+<!-- السؤال الثالث -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل أنا بخير؟
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+Am I fine?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+I am fine.
+
+</button>
+
+<p id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+<!-- السؤال الرابع -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل هي جميلة؟
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+Is she beautiful?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+She is beautiful.
+
+</button>
+
+<p id="choice4"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- هل تريد تمارين إضافية؟ -->
+
+<div class="card"
+id="moreCard">
+
+<h2>
+
+🌟 هل ترغب في تحدٍ إضافي؟
+
+</h2>
+
+<p>
+
+• إذا كنت ترغب في التدريب أكثر، يمكنك إظهار مجموعة أخرى من التمارين.
 
 </p>
 
 <br>
-
-<!-- السؤال الأول -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-✨ هل هم سعداء؟
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-happy = سعداء
-
-</p>
-
-<button onclick="showAnswer('answer5')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer5" class="exercise-answer">
-
-Are they happy?
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الثاني -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-✨ هل أنت جاهز؟
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-ready = جاهز
-
-</p>
-
-<button onclick="showAnswer('answer6')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer6" class="exercise-answer">
-
-Are you ready?
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الثالث -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-✨ هل أنا بخير؟
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-fine = بخير
-
-</p>
-
-<button onclick="showAnswer('answer7')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer7" class="exercise-answer">
-
-Am I fine?
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- بطاقة التمارين الإضافية -->
-
-<div id="moreCard" class="more-card">
-
-<h2>
-
-🌟 هل تريد تمارين إضافية؟
-
-</h2>
-
-<p>
-
- إذا كنت ترغب في التدريب أكثر، يمكنك إظهار ثلاثة تمارين إضافية.
-
-</p>
 
 <button class="show-more-btn"
 onclick="showMoreExercises()">
@@ -933,11 +862,13 @@ onclick="showMoreExercises()">
 
 </div>
 
+
+
 <!-- التمارين الإضافية -->
 
-<div id="extraExercises" style="display:none;">
-
-<hr><br>
+<div class="card"
+id="extraExercises"
+style="display:none;">
 
 <h2>
 
@@ -945,143 +876,148 @@ onclick="showMoreExercises()">
 
 </h2>
 
-<br>
-
-<!-- السؤال الرابع -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
 <p>
 
-✨ هل هو بخير؟
+• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
 
 </p>
 
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-fine = بخير
-
-</p>
-
-<button onclick="showAnswer('answer8')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer8" class="exercise-answer">
-
-Is he fine?
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
 
 <!-- السؤال الخامس -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
-✨ هل هي جاهزة؟
+⭐ ترجم: هل هو بخير؟
 
 </p>
 
-</div>
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-ready = جاهزة
-
-</p>
-
-<button onclick="showAnswer('answer9')">
-
-👀 عرض الإجابة
+Is he fine?
 
 </button>
 
-<p id="answer9" class="exercise-answer">
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
 
-Is she ready?
+He is fine.
+
+</button>
+
+<p id="choice5"
+class="result-text">
 
 </p>
 
 </div>
 
-</div>
+<hr class="question-divider">
 
-<hr><br>
 
 <!-- السؤال السادس -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
-✨ هل نحن سعداء؟
+⭐ ترجم: هل هي جاهزة؟
 
 </p>
 
-</div>
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-happy = سعداء
-
-</p>
-
-<button onclick="showAnswer('answer10')">
-
-👀 عرض الإجابة
+Is she ready?
 
 </button>
 
-<p id="answer10" class="exercise-answer">
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+She is ready.
+
+</button>
+
+<p id="choice6"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+<!-- السؤال السابع -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل نحن سعداء؟
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice7')">
 
 Are we happy?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice7')">
+
+We are happy.
+
+</button>
+
+<p id="choice7"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+<!-- السؤال الثامن -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل أنت متعب؟
+
+</p>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice8')">
+
+Are you tired?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice8')">
+
+You are tired.
+
+</button>
+
+<p id="choice8"
+class="result-text">
 
 </p>
 
 </div>
 
 </div>
-
-</div>
-
-</div>
-
-<!-- تقدم الدرس -->
+ <!-- تقدم الدرس -->
 
 <div class="card">
 
@@ -1093,7 +1029,7 @@ Are we happy?
 
 <p>
 
-100%
+لقد أنهيت هذا الجزء بنجاح.
 
 <br><br>
 
@@ -1103,11 +1039,16 @@ Are we happy?
 
 <div class="progress-bar">
 
-<div class="progress" style="width:100%;"></div>
+<div class="progress"
+style="width:100%;">
 
 </div>
 
 </div>
+
+</div>
+
+
 
 <!-- أزرار التنقل -->
 
@@ -1139,39 +1080,15 @@ Are we happy?
 
 <p class="success-text">
 
-🎉 لقد أنهيت جزء الأسئلة بنجاح.
+🎉 أنهيت هذا الجزء بنجاح.
 
 <br><br>
 
-✨ والآن أصبحت قادراً على تكوين:
-
-<br><br>
-
-✅ الجمل العادية.
-
-<br><br>
-
-✅ الجمل المنفية.
-
-<br><br>
-
-✅ الأسئلة باستخدام Is • Am • Are.
-
-<br><br>
-
- وهذا يعني أنك بدأت فعلاً في تكوين الجمل الإنجليزية بنفسك، وهذه خطوة رائعة يفخر بها كل متعلم جديد. 🥹💜
-
-<br><br>
-
-🚀 والآن حان وقت الانتقال إلى الماضي مع:
+• والآن حان وقت تعلم:
 
 <br><br>
 
 🕰️ Was • Were
-
-<br><br>
-
-👌🏻 استمر، فأنت لا تحفظ اللغة فقط، بل تبني أساساً قوياً ستعتمد عليه في كل ما ستتعلمه لاحقاً.
 
 </p>
 
@@ -1182,26 +1099,224 @@ Are we happy?
 </button>
 
 </div>
+ 
 
-</div>
-
-<!-- JavaScript -->
 
 <script>
 
-function showAnswer(answerId){
+// ==========================
+// تنظيف النص
+// ==========================
 
-document.getElementById(answerId).style.display="block";
+function normalizeText(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/\s+/g," ")
+.replace(/['’]/g,"");
 
 }
+
+
+
+// ==========================
+// التحقق من الإجابات الكتابية
+// ==========================
+
+function checkWriting(inputId,resultId,correctAnswers){
+
+let input =
+document.getElementById(inputId);
+
+let result =
+document.getElementById(resultId);
+
+let userAnswer =
+normalizeText(input.value);
+
+
+// إزالة الألوان القديمة
+
+input.classList.remove("correct-input");
+input.classList.remove("wrong-input");
+
+
+// تجهيز الإجابات الصحيحة
+
+let answers =
+correctAnswers.map(answer =>
+normalizeText(answer)
+);
+
+
+// التحقق
+
+if(answers.includes(userAnswer)){
+
+input.classList.add("correct-input");
+
+result.innerHTML =
+"✅ لقد كتبت الإجابة الصحيحة.";
+
+result.style.color =
+"#0f8b4c";
+
+}
+
+else{
+
+input.classList.add("wrong-input");
+
+result.innerHTML =
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
++ correctAnswers[0];
+
+result.style.color =
+"#c62828";
+
+}
+
+}
+
+
+
+// ==========================
+// أسئلة الاختيار
+// ==========================
+
+function checkAnswer(button,isCorrect,resultId){
+
+let result =
+document.getElementById(resultId);
+
+let allButtons =
+button.parentElement.querySelectorAll(".choice-btn");
+
+
+// تعطيل الأزرار
+
+allButtons.forEach(btn=>{
+
+btn.disabled = true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add("correct");
+
+button.innerHTML += " ✔️";
+
+result.innerHTML =
+"✅ لقد اخترت الإجابة الصحيحة.";
+
+result.style.color =
+"#0f8b4c";
+
+}
+
+else{
+
+button.classList.add("wrong");
+
+button.innerHTML += " ✖️";
+
+result.innerHTML =
+"❌ لقد اخترت الإجابة الخاطئة.";
+
+result.style.color =
+"#c62828";
+
+
+// إظهار الإجابة الصحيحة
+
+allButtons.forEach(btn=>{
+
+if(btn.getAttribute("onclick").includes("true")){
+
+btn.classList.add("correct");
+
+btn.innerHTML += " ✔️";
+
+}
+
+});
+
+}
+
+}
+
+
+
+// ==========================
+// التمارين الإضافية
+// ==========================
 
 function showMoreExercises(){
 
-document.getElementById("extraExercises").style.display="block";
+document
+.getElementById("extraExercises")
+.style.display =
+"block";
 
-document.getElementById("moreCard").style.display="none";
+document
+.getElementById("moreCard")
+.style.display =
+"none";
 
 }
+
+
+
+// ==========================
+// زر العودة
+// ==========================
+
+document
+.querySelector(".prev-btn")
+.addEventListener("click",function(){
+
+window.location.href =
+"is-am-are-negative.html";
+
+});
+
+
+
+// ==========================
+// زر أنهيت الدرس
+// ==========================
+
+document
+.querySelector(".done-btn")
+.addEventListener("click",function(){
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+});
+
+
+
+// ==========================
+// الدرس التالي
+// ==========================
+
+document
+.querySelector(".next-lesson-btn")
+.addEventListener("click",function(){
+
+window.location.href =
+"was-were-part1.html";
+
+});
 
 </script>
 
