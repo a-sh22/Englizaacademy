@@ -1112,6 +1112,8 @@ Is • Am • Are
 // التحقق من الإجابات الكتابية
 // ==========================
 
+  alert("JavaScript works");
+  
 function checkWriting(inputId,resultId,correctAnswers){
 
 let input =
@@ -1124,23 +1126,20 @@ let userAnswer =
 input.value
 .toLowerCase()
 .trim()
-.replace(/\s+/g," ");
+.replace(/\s+/g," ")
+.replace(/['’]/g,"");
 
 input.classList.remove("correct-input");
 input.classList.remove("wrong-input");
 
-let answers = [];
-
-for(let i=0;i<correctAnswers.length;i++){
-
-answers.push(
-correctAnswers[i]
+let answers =
+correctAnswers.map(answer =>
+answer
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ")
+.replace(/['’]/g,"")
 );
-
-}
 
 if(answers.includes(userAnswer)){
 
@@ -1168,7 +1167,6 @@ result.style.color =
 }
 
 }
-  
 
 
 // ==========================
