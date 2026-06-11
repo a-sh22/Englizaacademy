@@ -18,7 +18,11 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#eef4ff,#f7f3ff);
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
 padding:30px 20px;
 }
 
@@ -45,6 +49,11 @@ color:#1f3c88;
 font-size:18px;
 font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.back-btn:hover{
+transform:translateY(-4px);
 }
 
 .owl-circle img{
@@ -53,6 +62,7 @@ height:80px;
 border-radius:50%;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
+
 
 /* العنوان */
 
@@ -68,8 +78,9 @@ text-align:center;
 font-size:22px;
 line-height:2;
 color:#666;
-margin-bottom:40px;
+margin-bottom:45px;
 }
+
 
 /* الفيديو */
 
@@ -78,7 +89,7 @@ background:white;
 padding:30px;
 border-radius:35px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
+margin-bottom:40px;
 }
 
 .video-placeholder{
@@ -93,20 +104,21 @@ font-weight:bold;
 color:#1f3c88;
 }
 
+
 /* البطاقات */
 
 .card{
 background:white;
 padding:40px;
 border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+margin-bottom:40px;
 }
 
 .card h2{
 color:#1f3c88;
 font-size:34px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .card p{
@@ -115,114 +127,152 @@ line-height:2.2;
 color:#4d4d4d;
 font-weight:600;
 }
+ /* الأسئلة */
 
-/* بطاقة البومة */
-
-.tip-box{
-display:flex;
-align-items:center;
-gap:35px;
+.question-box{
+margin:55px 0;
 }
 
-.tip-box img{
-width:170px;
-flex-shrink:0;
+.question-title{
+font-size:24px;
+font-weight:bold;
+color:#444;
+line-height:2;
+margin-bottom:25px;
 }
 
-.tip-text{
-flex:1;
-}
-
-.tip-text h2{
-color:#1f3c88;
-font-size:34px;
-margin-bottom:20px;
-}
-
-.tip-text p{
-font-size:21px;
+.help-text{
+font-size:20px;
 line-height:2;
 color:#666;
+margin-bottom:30px;
 }
 
-/* التمارين */
-
-.exercise{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:50px;
-margin:35px 0;
+.question-divider{
+margin:55px 0;
+border:none;
+height:1px;
+background:#e7e7e7;
 }
 
-.exercise-right{
-flex:1;
-}
-
-.exercise-left{
-display:flex;
-flex-direction:column;
-gap:20px;
-min-width:220px;
-align-items:flex-start;
-}
-
-.exercise p{
-font-size:24px;
-font-weight:600;
-color:#444;
-line-height:2.2;
-}
 
 /* مربع الكتابة */
 
 .write-box{
 width:100%;
-padding:18px;
-border-radius:20px;
+padding:20px;
+border-radius:22px;
 border:2px solid #dce4ff;
 font-size:20px;
 outline:none;
+transition:.3s;
+margin-bottom:30px;
+background:white;
 }
 
-/* الإجابات */
+.write-box:focus{
+border-color:#6f43ff;
+box-shadow:0 0 0 6px rgba(111,67,255,.12);
+}
 
-.exercise-answer{
-display:none;
-color:#6f43ff;
-font-size:24px;
+
+/* ألوان التصحيح */
+
+.correct-input{
+background:#e8fff0;
+border:2px solid #b8ebc8;
+color:#0f8b4c;
+}
+
+.wrong-input{
+background:#ffe8e8;
+border:2px solid #ffb8b8;
+color:#c62828;
+}
+
+
+/* نص النتيجة */
+
+.answer-result,
+.result-text{
+margin-top:30px;
+font-size:20px;
 font-weight:bold;
+line-height:2;
 }
 
-/* الأزرار */
+
+/* حاوية الاختيارات */
+
+.choice-container{
+display:flex;
+gap:18px;
+margin-top:30px;
+margin-bottom:20px;
+}
+
+
+/* أزرار الاختيارات */
+
+.choice-btn{
+flex:1;
+padding:22px;
+background:white;
+border:2px solid #dce4ff;
+border-radius:22px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.choice-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+
+/* الصحيح والخاطئ */
+
+.correct{
+background:#e8fff0 !important;
+border:2px solid #b8ebc8 !important;
+color:#0f8b4c !important;
+}
+
+.wrong{
+background:#ffe8e8 !important;
+border:2px solid #ffb8b8 !important;
+color:#c62828 !important;
+}
+ 
+/* الأزرار العامة */
 
 .card button{
 background:#f5f7ff;
 color:#1f3c88;
 border:2px solid #dce4ff;
-padding:16px 28px;
-border-radius:20px;
+padding:18px 28px;
+border-radius:22px;
 font-size:18px;
 font-weight:bold;
 cursor:pointer;
 transition:.3s;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+box-shadow:0 10px 25px rgba(0,0,0,.10);
 }
 
 .card button:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.18);
+transform:translateY(-4px);
+box-shadow:0 18px 40px rgba(0,0,0,.15);
 }
 
 .card button:active{
 transform:scale(.97);
 }
 
-/* بطاقة التمارين الإضافية */
 
-.more-card{
-text-align:center;
-}
+/* زر التمارين الإضافية */
 
 .show-more-btn{
 width:100%;
@@ -240,19 +290,20 @@ background:linear-gradient(
 #6f43ff
 );
 
-box-shadow:0 12px 30px rgba(0,0,0,.15);
+box-shadow:0 14px 35px rgba(0,0,0,.18);
 
 transition:.3s;
 }
 
 .show-more-btn:hover{
 transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.2);
+box-shadow:0 20px 45px rgba(0,0,0,.22);
 }
 
 .show-more-btn:active{
 transform:scale(.97);
 }
+
 
 /* شريط التقدم */
 
@@ -262,7 +313,7 @@ height:14px;
 background:#edf1ff;
 border-radius:20px;
 overflow:hidden;
-margin-top:20px;
+margin-top:25px;
 }
 
 .progress{
@@ -273,6 +324,7 @@ background:linear-gradient(
 #6f43ff
 );
 }
+
 
 /* أزرار التنقل */
 
@@ -288,11 +340,11 @@ margin-bottom:35px;
 
 flex:1;
 
-padding:18px;
+padding:20px;
 
 border:none;
 
-border-radius:20px;
+border-radius:22px;
 
 font-size:20px;
 
@@ -319,9 +371,7 @@ border:2px solid #b8ebc8;
 }
 
 .next-lesson-btn{
-
 width:100%;
-
 color:white;
 
 background:linear-gradient(
@@ -329,37 +379,268 @@ background:linear-gradient(
 #3768ff,
 #6f43ff
 );
-
 }
 
 .prev-btn:hover,
 .done-btn:hover,
 .next-lesson-btn:hover{
-
 transform:translateY(-5px);
-
 box-shadow:0 18px 40px rgba(0,0,0,.18);
-
 }
 
 .prev-btn:active,
 .done-btn:active,
 .next-lesson-btn:active{
-
 transform:scale(.97);
-
 }
 
-/* بطاقة النجاح */
+
+/* بطاقة النهاية */
 
 .success-text{
 font-size:24px;
-line-height:2.2;
+line-height:2.4;
 font-weight:600;
 text-align:center;
 color:#555;
 }
 
+/* ==========================
+   تحسين البطاقات
+========================== */
+
+.card{
+background:white;
+padding:40px;
+border-radius:35px;
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+margin-bottom:35px;
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:
+0 22px 50px rgba(0,0,0,.12);
+}
+
+
+/* ==========================
+   حركة ظهور البطاقات
+========================== */
+
+.card{
+animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   خانة الكتابة
+========================== */
+
+.write-box{
+
+width:100%;
+padding:20px;
+border-radius:22px;
+border:2px solid #dce4ff;
+font-size:20px;
+outline:none;
+transition:.3s;
+margin-bottom:30px;
+
+}
+
+.write-box:focus{
+
+border-color:#6f43ff;
+
+box-shadow:
+0 0 0 5px rgba(111,67,255,.15);
+
+}
+
+
+/* ==========================
+   أزرار الاختيارات
+========================== */
+
+.choice-container{
+
+display:flex;
+gap:18px;
+margin-top:30px;
+margin-bottom:20px;
+
+}
+
+.choice-btn{
+
+flex:1;
+
+padding:22px;
+
+background:white;
+
+border:2px solid #dce4ff;
+
+border-radius:22px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.choice-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 18px 40px rgba(0,0,0,.14);
+
+}
+
+.choice-btn:active{
+
+transform:scale(.97);
+
+}
+
+
+/* ==========================
+   الإجابة الصحيحة
+========================== */
+
+.correct{
+
+background:#e8fff0 !important;
+
+border:2px solid #b8ebc8 !important;
+
+color:#0f8b4c !important;
+
+box-shadow:
+0 12px 30px rgba(15,139,76,.15);
+
+}
+
+
+/* ==========================
+   الإجابة الخاطئة
+========================== */
+
+.wrong{
+
+background:#ffe8e8 !important;
+
+border:2px solid #ffb8b8 !important;
+
+color:#c62828 !important;
+
+box-shadow:
+0 12px 30px rgba(198,40,40,.15);
+
+}
+
+
+/* ==========================
+   النصوص الناتجة
+========================== */
+
+.answer-result,
+.result-text{
+
+margin-top:25px;
+
+font-size:20px;
+
+font-weight:bold;
+
+line-height:2;
+
+animation:fadeResult .4s ease;
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+
+transform:translateY(8px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   خط الفواصل
+========================== */
+
+.question-divider{
+
+margin:55px 0;
+
+border:none;
+
+height:1px;
+
+background:#ececec;
+
+}
+
+
+/* ==========================
+   الأزرار المعطلة
+========================== */
+
+.choice-btn:disabled{
+
+cursor:default;
+
+opacity:.95;
+
+}
+ 
 /* الجوال */
 
 @media(max-width:768px){
@@ -389,45 +670,223 @@ font-size:28px;
 font-size:17px;
 }
 
-.tip-box{
-gap:20px;
-}
-
-.tip-box img{
-width:110px;
-}
-
-.tip-text h2{
-font-size:24px;
-margin-bottom:12px;
-}
-
-.tip-text p{
-font-size:16px;
-}
-
-.exercise{
-flex-direction:column;
-align-items:flex-start;
-gap:25px;
-}
-
-.exercise-left{
-width:100%;
-}
-
-.exercise p{
-font-size:18px;
-}
-
-.exercise-answer{
+.question-title{
 font-size:20px;
 }
 
+.help-text{
+font-size:17px;
 }
 
-</style>
+.answer-result,
+.result-text{
+font-size:17px;
+}
 
+.choice-container{
+flex-direction:column;
+}
+
+.choice-btn{
+width:100%;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.prev-btn,
+.done-btn{
+width:100%;
+}
+
+.success-text{
+font-size:19px;
+line-height:2.2;
+}
+
+}
+
+ /* ==========================
+   حركة ظهور النتيجة
+========================== */
+
+.answer-result,
+.result-text{
+
+animation:fadeResult .4s ease;
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   اهتزاز عند الخطأ
+========================== */
+
+.shake{
+
+animation:shake .3s;
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
+
+}
+ 
+ /* ==========================
+   احتفال الإجابة الصحيحة
+========================== */
+
+.celebration{
+
+font-size:28px;
+margin-bottom:15px;
+
+animation:celebrate 1.2s ease forwards;
+
+}
+
+@keyframes celebrate{
+
+0%{
+
+opacity:0;
+transform:translateY(20px) scale(.5);
+
+}
+
+30%{
+
+opacity:1;
+transform:translateY(0) scale(1.2);
+
+}
+
+70%{
+
+opacity:1;
+transform:translateY(-8px);
+
+}
+
+100%{
+
+opacity:0;
+transform:translateY(-20px);
+
+}
+
+}
+
+ /* ==========================
+   نجوم الاحتفال
+========================== */
+
+.confetti{
+
+position:relative;
+
+height:0;
+
+}
+
+.star{
+
+position:absolute;
+
+font-size:22px;
+
+opacity:0;
+
+animation:flyStars 1.4s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+
+left:10%;
+animation-delay:0s;
+
+}
+
+.star:nth-child(2){
+
+left:30%;
+animation-delay:.1s;
+
+}
+
+.star:nth-child(3){
+
+left:50%;
+animation-delay:.2s;
+
+}
+
+.star:nth-child(4){
+
+left:70%;
+animation-delay:.15s;
+
+}
+
+.star:nth-child(5){
+
+left:90%;
+animation-delay:.05s;
+
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+transform:translateY(20px) scale(.4);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+transform:translateY(-70px) rotate(360deg) scale(1.3);
+
+}
+
+}
+ 
+ </style>
+ 
 </head>
 <body>
 
@@ -497,11 +956,11 @@ font-size:20px;
 
 <br><br>
 
-🌟 لا تقلق إذا أخطأت، فالأخطاء جزء طبيعي من التعلم.
+✅ لا تقلق إذا أخطأت، فالأخطاء جزء طبيعي من التعلم.
 
 <br><br>
 
-💜 لا تنسَ حل جميع التمارين الموجودة في الأسفل، فهي ستساعدك على ترسيخ الدرس بشكل أفضل.
+✅ لا تنسَ حل جميع التمارين الموجودة في الأسفل، فهي ستساعدك على ترسيخ الدرس بشكل أفضل.
 
 </p>
 
@@ -677,158 +1136,94 @@ class="answer-result">
 </div>
  
 <!-- اختر الإجابة الصحيحة -->
-
 <div class="card">
-
 <h2>
-
 🎯 اختر الإجابة الصحيحة
-
 </h2>
-
 <p>
-
 • اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
-
 </p>
-
-
 <!-- السؤال الأول -->
-
 <div class="question-box">
-
 <p class="question-title">
-
 ⭐ ترجم: كانوا سعداء
-
 </p>
-
+<div class="choice-container">
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice1')">
-
 They were happy
-
 </button>
-
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
-
 They was happy
-
 </button>
-
+</div>
 <p id="choice1"
 class="result-text">
-
 </p>
-
 </div>
-
 <hr class="question-divider">
-
-
 <!-- السؤال الثاني -->
-
 <div class="question-box">
-
 <p class="question-title">
-
 ⭐ ترجم: كنت جاهزاً
-
 </p>
-
+<div class="choice-container">
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice2')">
-
 You were ready
-
 </button>
-
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice2')">
-
 You was ready
-
 </button>
-
+</div>
 <p id="choice2"
 class="result-text">
-
 </p>
-
 </div>
-
 <hr class="question-divider">
-
-
 <!-- السؤال الثالث -->
-
 <div class="question-box">
-
 <p class="question-title">
-
 ⭐ ترجم: كنت بخير
-
 </p>
-
+<div class="choice-container">
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice3')">
-
 You were fine
-
 </button>
-
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice3')">
-
 You was fine
-
 </button>
-
+</div>
 <p id="choice3"
 class="result-text">
-
 </p>
-
 </div>
-
 <hr class="question-divider">
-
-
 <!-- السؤال الرابع -->
-
 <div class="question-box">
-
 <p class="question-title">
-
 ⭐ ترجم: كنت سعيداً
-
 </p>
-
+<div class="choice-container">
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice4')">
-
 I was happy
-
 </button>
-
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice4')">
-
 I were happy
-
 </button>
-
+</div>
 <p id="choice4"
 class="result-text">
-
 </p>
-
+</div>
 </div>
 
-</div>
-
- 
 <!-- تقدم الدرس -->
 
 <div class="card">
@@ -928,8 +1323,6 @@ return text
 
 }
 
-
-
 // ==========================
 // التحقق من الإجابات الكتابية
 // ==========================
@@ -953,6 +1346,7 @@ normalizeText(input.value);
 
 input.classList.remove("correct-input");
 input.classList.remove("wrong-input");
+input.classList.remove("shake");
 
 
 // تجهيز الإجابات الصحيحة
@@ -970,7 +1364,16 @@ if(answers.includes(userAnswer)){
 input.classList.add("correct-input");
 
 result.innerHTML =
-"✅ لقد كتبت الإجابة الصحيحة.";
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ لقد كتبت الإجابة الصحيحة.';
 
 result.style.color =
 "#0f8b4c";
@@ -981,7 +1384,16 @@ else{
 
 input.classList.add("wrong-input");
 
+input.classList.add("shake");
+
+setTimeout(function(){
+
+input.classList.remove("shake");
+
+},300);
+
 result.innerHTML =
+
 "❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
 + correctAnswers[0];
 
@@ -1023,7 +1435,16 @@ button.classList.add("correct");
 button.innerHTML += " ✔️";
 
 result.innerHTML =
-"✅ لقد اخترت الإجابة الصحيحة.";
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ لقد اخترت الإجابة الصحيحة.';
 
 result.style.color =
 "#0f8b4c";
@@ -1037,7 +1458,7 @@ button.classList.add("wrong");
 button.innerHTML += " ✖️";
 
 result.innerHTML =
-"❌ لقد اخترت الإجابة الخاطئة.";
+"😅 ❌ لقد اخترت الإجابة الخاطئة.";
 
 result.style.color =
 "#c62828";
