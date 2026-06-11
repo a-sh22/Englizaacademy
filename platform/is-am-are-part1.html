@@ -1120,32 +1120,27 @@ document.getElementById(inputId);
 let result =
 document.getElementById(resultId);
 
-
-// إجابة الطالب
-
 let userAnswer =
 input.value
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ");
 
-
-// إزالة الألوان القديمة
-
 input.classList.remove("correct-input");
 input.classList.remove("wrong-input");
 
+let answers = [];
 
-// تجهيز الإجابات الصحيحة
+for(let i=0;i<correctAnswers.length;i++){
 
-let answers =
-correctAnswers.map(answer =>
-answer
+answers.push(
+correctAnswers[i]
 .toLowerCase()
 .trim()
 .replace(/\s+/g," ")
 );
 
+}
 
 if(answers.includes(userAnswer)){
 
@@ -1164,7 +1159,7 @@ else{
 input.classList.add("wrong-input");
 
 result.innerHTML =
-"❌ لقد كتبت الإجابة بطريقة خاطئة. ✅ إحدى الإجابات الصحيحة هي: "
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
 + correctAnswers[0];
 
 result.style.color =
@@ -1173,7 +1168,7 @@ result.style.color =
 }
 
 }
-
+  
 
 
 // ==========================
