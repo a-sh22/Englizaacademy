@@ -403,8 +403,10 @@ line-height:2.4;
 font-weight:600;
 text-align:center;
 color:#555;
+margin-top:20px;
 }
 
+ 
 /* ==========================
    تحسين البطاقات
 ========================== */
@@ -638,6 +640,120 @@ background:#ececec;
 cursor:default;
 
 opacity:.95;
+
+}
+
+/* ==========================
+   احتفال بطاقة النهاية
+========================== */
+
+.final-confetti{
+
+position:relative;
+
+height:50px;
+
+margin-bottom:15px;
+
+overflow:hidden;
+
+}
+
+
+/* النجوم */
+
+.final-star{
+
+position:absolute;
+
+font-size:30px;
+
+opacity:0;
+
+animation:finalStars 3s ease-in-out infinite;
+
+}
+
+
+/* أماكن النجوم */
+
+.final-star:nth-child(1){
+
+left:10%;
+
+animation-delay:0s;
+
+}
+
+.final-star:nth-child(2){
+
+left:30%;
+
+animation-delay:.3s;
+
+}
+
+.final-star:nth-child(3){
+
+left:50%;
+
+animation-delay:.6s;
+
+}
+
+.final-star:nth-child(4){
+
+left:70%;
+
+animation-delay:.9s;
+
+}
+
+.final-star:nth-child(5){
+
+left:90%;
+
+animation-delay:1.2s;
+
+}
+
+
+/* الحركة */
+
+@keyframes finalStars{
+
+0%{
+
+opacity:0;
+transform:
+translateY(25px)
+scale(.5)
+rotate(0deg);
+
+}
+
+25%{
+
+opacity:1;
+
+}
+
+70%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-35px)
+scale(1.4)
+rotate(360deg);
+
+}
 
 }
  
@@ -1279,7 +1395,16 @@ class="result-text">
 ⭐ أحسنت!
 
 </h2>
+<div class="final-confetti">
 
+<span class="final-star">✨</span>
+<span class="final-star">⭐</span>
+<span class="final-star">🌟</span>
+<span class="final-star">⭐</span>
+<span class="final-star">✨</span>
+
+</div>
+ 
 <p class="success-text">
 
 🎉 أنهيت هذا الجزء بنجاح.
