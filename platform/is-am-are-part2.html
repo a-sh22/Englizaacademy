@@ -253,6 +253,25 @@ font-weight:bold;
 }
 
 
+/* أزرار الصفحة */
+
+.card button{
+background:#f5f7ff;
+color:#1f3c88;
+border:2px solid #dce4ff;
+padding:16px 25px;
+border-radius:18px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.card button:hover{
+transform:translateY(-3px);
+}
+
+
 /* زر التمارين الإضافية */
 
 .show-more-btn{
@@ -271,6 +290,11 @@ background:linear-gradient(
 );
 box-shadow:0 12px 30px rgba(0,0,0,.15);
 transition:.3s;
+}
+
+.show-more-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 18px 40px rgba(0,0,0,.2);
 }
 
 
@@ -496,11 +520,11 @@ Is • Am • Are | النفي
 
 <br><br>
 
-✅ لا بأس إذا احتجت إلى إعادة الفيديو.
+✅ لا تنتقل إلى الدرس التالي قبل أن تشعر أنك فهمت الدرس جيداً.
 
 <br><br>
 
-✅ حاول تكوين جمل جديدة بنفسك.
+✅ لا بأس إذا احتجت إلى إعادة الفيديو.
 
 </p>
 
@@ -755,7 +779,7 @@ class="answer-result">
 
 <p class="question-title">
 
- ترجم:☹️ أنا لست سعيداً
+☹️ ترجم: أنا لست سعيداً
 
 </p>
 
@@ -789,21 +813,21 @@ class="result-text">
 
 <p class="question-title">
 
- ترجم:🙅🏻‍♀️ هي ليست جاهزة
+🙅🏻‍♀️ ترجم: هي ليست جاهزة
 
 </p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
-
-She are not ready
-
-</button>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice2')">
 
 She is not ready
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+She are not ready
 
 </button>
 
@@ -823,21 +847,21 @@ class="result-text">
 
 <p class="question-title">
 
- ترجم: 🤒 هم ليسوا بخير
+🤒 ترجم: هم ليسوا بخير
 
 </p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
-
-They are not fine
-
-</button>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice3')">
 
 They is not fine
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+They are not fine
 
 </button>
 
@@ -857,21 +881,21 @@ class="result-text">
 
 <p class="question-title">
 
- ترجم: 👌🏻أنت لست متعباً
+👌🏻 ترجم: أنت لست متعباً
 
 </p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
-
-You is not tired
-
-</button>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice4')">
 
 You are not tired
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+You is not tired
 
 </button>
 
@@ -938,21 +962,21 @@ style="display:none;">
 
 <p class="question-title">
 
-• ترجم: نحن لسنا جاهزين
+💪🏻 ترجم: هو ليس قوياً
 
 </p>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice5')">
 
-We are not ready
+He is not strong
 
 </button>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice5')">
 
-We is not ready
+He are not strong
 
 </button>
 
@@ -972,21 +996,21 @@ class="result-text">
 
 <p class="question-title">
 
-• ترجم: هو ليس سعيداً
+🌟 ترجم: نحن لسنا جاهزين
 
 </p>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice6')">
 
-He are not happy
+We is not ready
 
 </button>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice6')">
 
-He is not happy
+We are not ready
 
 </button>
 
@@ -1006,21 +1030,21 @@ class="result-text">
 
 <p class="question-title">
 
-• ترجم: أنتم لستم بخير
+😊 ترجم: أنت لست سعيداً
 
 </p>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,true,'choice7')">
 
-You are not okay
+You are not happy
 
 </button>
 
 <button class="choice-btn"
 onclick="checkAnswer(this,false,'choice7')">
 
-You am not okay
+You am not happy
 
 </button>
 
@@ -1040,19 +1064,19 @@ class="result-text">
 
 <p class="question-title">
 
-• ترجم: أنا لست متعباً
+😪 ترجم: أنا لست متعباً
 
 </p>
 
 <button class="choice-btn"
-onclick="checkAnswer(this,false,'choice8')">
+onclick="checkAnswer(this.false,'choice8')">
 
 I are not tired
 
 </button>
 
 <button class="choice-btn"
-onclick="checkAnswer(this,true,'choice8')">
+onclick="checkAnswer(this,false,'choice8')"
 
 I am not tired
 
@@ -1066,9 +1090,6 @@ class="result-text">
 </div>
 
 </div>
-
-
-
 <!-- تقدمك في الدرس -->
 
 <div class="card">
@@ -1162,16 +1183,15 @@ style="width:100%;">
 <script>
 
 // ==========================
-// تنظيف النص قبل المقارنة
+// تنظيف النص
 // ==========================
 
-function normalizeAnswer(text){
+function normalizeText(text){
 
 return text
 .toLowerCase()
 .trim()
-.replace(/\s+/g," ")
-.replace(/’/g,"'");
+.replace(/\s+/g," ");
 
 }
 
@@ -1190,27 +1210,29 @@ let result =
 document.getElementById(resultId);
 
 
-input.classList.remove(
-"correct-input",
-"wrong-input"
-);
-
+// إجابة الطالب
 
 let userAnswer =
-normalizeAnswer(input.value);
+normalizeText(input.value);
 
+
+// إزالة الألوان القديمة
+
+input.classList.remove("correct-input");
+input.classList.remove("wrong-input");
+
+
+// تجهيز الإجابات الصحيحة
 
 let answers =
 correctAnswers.map(answer=>
-normalizeAnswer(answer)
+normalizeText(answer)
 );
 
 
 if(answers.includes(userAnswer)){
 
-input.classList.add(
-"correct-input"
-);
+input.classList.add("correct-input");
 
 result.innerHTML =
 "✅ لقد كتبت الإجابة الصحيحة.";
@@ -1222,12 +1244,10 @@ result.style.color =
 
 else{
 
-input.classList.add(
-"wrong-input"
-);
+input.classList.add("wrong-input");
 
 result.innerHTML =
-"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
+"❌ لقد كتبت الإجابة بطريقة خاطئة. ✅ إحدى الإجابات الصحيحة هي: "
 + correctAnswers[0];
 
 result.style.color =
@@ -1243,19 +1263,13 @@ result.style.color =
 // أسئلة الاختيار
 // ==========================
 
-function checkAnswer(
-button,
-isCorrect,
-resultId
-){
+function checkAnswer(button,isCorrect,resultId){
 
 let result =
 document.getElementById(resultId);
 
 let allButtons =
-button.parentElement.querySelectorAll(
-".choice-btn"
-);
+button.parentElement.querySelectorAll(".choice-btn");
 
 
 // تعطيل الأزرار
@@ -1269,12 +1283,9 @@ btn.disabled = true;
 
 if(isCorrect){
 
-button.classList.add(
-"correct"
-);
+button.classList.add("correct");
 
-button.innerHTML +=
-" ✔️";
+button.innerHTML += " ✔️";
 
 result.innerHTML =
 "✅ لقد اخترت الإجابة الصحيحة.";
@@ -1286,12 +1297,9 @@ result.style.color =
 
 else{
 
-button.classList.add(
-"wrong"
-);
+button.classList.add("wrong");
 
-button.innerHTML +=
-" ✖️";
+button.innerHTML += " ✖️";
 
 result.innerHTML =
 "❌ لقد اخترت الإجابة الخاطئة.";
@@ -1304,18 +1312,11 @@ result.style.color =
 
 allButtons.forEach(btn=>{
 
-if(
-btn
-.getAttribute("onclick")
-.includes("true")
-){
+if(btn.getAttribute("onclick").includes("true")){
 
-btn.classList.add(
-"correct"
-);
+btn.classList.add("correct");
 
-btn.innerHTML +=
-" ✔️";
+btn.innerHTML += " ✔️";
 
 }
 
@@ -1334,19 +1335,12 @@ btn.innerHTML +=
 function showMoreExercises(){
 
 document
-.getElementById(
-"extraExercises"
-)
-.style.display =
-"block";
-
+.getElementById("extraExercises")
+.style.display = "block";
 
 document
-.getElementById(
-"moreCard"
-)
-.style.display =
-"none";
+.getElementById("moreCard")
+.style.display = "none";
 
 }
 
@@ -1357,18 +1351,13 @@ document
 // ==========================
 
 document
-.querySelector(
-".next-lesson-btn"
-)
-.addEventListener(
-"click",
-function(){
+.querySelector(".next-lesson-btn")
+.addEventListener("click",function(){
 
 window.location.href =
 "questions-is-am-are.html";
 
-}
-);
+});
 
 
 
@@ -1377,18 +1366,13 @@ window.location.href =
 // ==========================
 
 document
-.querySelector(
-".prev-btn"
-)
-.addEventListener(
-"click",
-function(){
+.querySelector(".prev-btn")
+.addEventListener("click",function(){
 
 window.location.href =
 "is-am-are-part1.html";
 
-}
-);
+});
 
 
 
@@ -1397,27 +1381,21 @@ window.location.href =
 // ==========================
 
 document
-.querySelector(
-".done-btn"
-)
-.addEventListener(
-"click",
-function(){
+.querySelector(".done-btn")
+.addEventListener("click",function(){
 
 window.scrollTo({
 
-top:
-document.body.scrollHeight,
+top:document.body.scrollHeight,
 
-behavior:
-"smooth"
+behavior:"smooth"
 
 });
 
-}
-);
+});
 
 </script>
 
 </body>
+
 </html>
