@@ -1125,6 +1125,7 @@ Is • Am • Are
 </div>
 
 </div>
+ 
  <script>
 
 // ==========================
@@ -1139,18 +1140,21 @@ document.getElementById(inputId);
 let result =
 document.getElementById(resultId);
 
+
 // إجابة الطالب
 
 let userAnswer =
 input.value
 .toLowerCase()
 .trim()
-.replace(/\s+/g,” “);
+.replace(/\s+/g," ");
+
 
 // إزالة الألوان القديمة
 
-input.classList.remove(“correct-input”);
-input.classList.remove(“wrong-input”);
+input.classList.remove("correct-input");
+input.classList.remove("wrong-input");
+
 
 // تجهيز الإجابات الصحيحة
 
@@ -1159,34 +1163,38 @@ correctAnswers.map(answer =>
 answer
 .toLowerCase()
 .trim()
-.replace(/\s+/g,” “)
+.replace(/\s+/g," ")
 );
+
 
 if(answers.includes(userAnswer)){
 
-input.classList.add(“correct-input”);
+input.classList.add("correct-input");
 
 result.innerHTML =
-“✅ لقد كتبت الإجابة الصحيحة.”;
+"✅ لقد كتبت الإجابة الصحيحة.";
 
 result.style.color =
-“#0f8b4c”;
+"#0f8b4c";
 
 }
 
 else{
 
-input.classList.add(“wrong-input”);
+input.classList.add("wrong-input");
 
 result.innerHTML =
-“❌ لقد كتبت الإجابة بطريقة خاطئة.✅ إحدى الإجابات الصحيحة هي:”+correctAnswers[0];
+"❌ لقد كتبت الإجابة بطريقة خاطئة. ✅ إحدى الإجابات الصحيحة هي: "
++ correctAnswers[0];
 
 result.style.color =
-“#c62828”;
+"#c62828";
 
 }
 
 }
+
+
 
 // ==========================
 // أسئلة الاختيار
