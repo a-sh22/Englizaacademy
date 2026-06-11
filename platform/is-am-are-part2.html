@@ -602,13 +602,14 @@ onclick="checkWriting(
 'result1',
 [
 'I am not fine',
-'I\'m not fine'
+'I\'m not fine',
+'Im not fine'
 ])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
-
+  
 <p
 id="result1"
 class="answer-result">
@@ -648,13 +649,15 @@ onclick="checkWriting(
 [
 'He is not ready',
 'He\'s not ready',
-'He isn\'t ready'
+'Hes not ready',
+'He isn\'t ready',
+'He isnt ready'
 ])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
-
+  
 <p
 id="result2"
 class="answer-result">
@@ -694,13 +697,15 @@ onclick="checkWriting(
 [
 'She is not happy',
 'She\'s not happy',
-'She isn\'t happy'
+'Shes not happy',
+'She isn\'t happy',
+'She isnt happy'
 ])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
-
+  
 <p
 id="result3"
 class="answer-result">
@@ -740,12 +745,15 @@ onclick="checkWriting(
 [
 'We are not okay',
 'We\'re not okay',
-'We aren\'t okay'
+'Were not okay',
+'We aren\'t okay',
+'We arent okay'
 ])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
+  
 
 <p
 id="result4"
@@ -1191,10 +1199,10 @@ function normalizeText(text){
 return text
 .toLowerCase()
 .trim()
-.replace(/\s+/g," ");
+.replace(/\s+/g," ")
+.replace(/['’]/g,"");
 
 }
-
 
 
 // ==========================
