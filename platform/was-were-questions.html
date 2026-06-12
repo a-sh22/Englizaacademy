@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Was • Were | الأسئلة | Engliza Academy</title>
-
+ 
 <style>
 
 *{
@@ -18,7 +18,11 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#eef4ff,#f7f3ff);
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
 padding:30px 20px;
 }
 
@@ -26,6 +30,7 @@ padding:30px 20px;
 max-width:1000px;
 margin:auto;
 }
+
 
 /* الأعلى */
 
@@ -45,6 +50,11 @@ color:#1f3c88;
 font-size:18px;
 font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.back-btn:hover{
+transform:translateY(-4px);
 }
 
 .owl-circle img{
@@ -53,6 +63,7 @@ height:80px;
 border-radius:50%;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
+
 
 /* العنوان */
 
@@ -68,8 +79,9 @@ text-align:center;
 font-size:22px;
 line-height:2;
 color:#666;
-margin-bottom:40px;
+margin-bottom:45px;
 }
+
 
 /* الفيديو */
 
@@ -78,7 +90,7 @@ background:white;
 padding:30px;
 border-radius:35px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
+margin-bottom:40px;
 }
 
 .video-placeholder{
@@ -93,20 +105,28 @@ font-weight:bold;
 color:#1f3c88;
 }
 
+
 /* البطاقات */
 
 .card{
 background:white;
 padding:40px;
 border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+margin-bottom:40px;
+transition:.35s;
+animation:fadeUp .6s ease;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 22px 50px rgba(0,0,0,.12);
 }
 
 .card h2{
 color:#1f3c88;
 font-size:34px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .card p{
@@ -115,6 +135,7 @@ line-height:2.2;
 color:#4d4d4d;
 font-weight:600;
 }
+
 
 /* بطاقة البومة */
 
@@ -134,8 +155,8 @@ flex:1;
 }
 
 .tip-text h2{
-color:#1f3c88;
 font-size:34px;
+color:#1f3c88;
 margin-bottom:20px;
 }
 
@@ -145,50 +166,132 @@ line-height:2;
 color:#666;
 }
 
-/* التمارين */
 
-.exercise{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:50px;
-margin:35px 0;
+/* الأسئلة */
+
+.question-box{
+margin:55px 0;
 }
 
-.exercise-right{
-flex:1;
-}
-
-.exercise-left{
-display:flex;
-flex-direction:column;
-gap:20px;
-min-width:220px;
-align-items:flex-start;
-}
-
-.exercise p{
+.question-title{
 font-size:24px;
-font-weight:600;
+font-weight:bold;
 color:#444;
-line-height:2.2;
+line-height:2;
+margin-bottom:25px;
 }
+
+.help-text{
+font-size:20px;
+line-height:2;
+color:#666;
+margin-bottom:30px;
+}
+
+.question-divider{
+margin:55px 0;
+border:none;
+height:1px;
+background:#ececec;
+}
+
+
+/* خانة الكتابة */
 
 .write-box{
 width:100%;
-padding:18px;
-border-radius:20px;
+padding:20px;
+border-radius:22px;
 border:2px solid #dce4ff;
 font-size:20px;
 outline:none;
+transition:.3s;
+margin-bottom:30px;
+background:white;
 }
 
-.exercise-answer{
-display:none;
-color:#6f43ff;
-font-size:24px;
-font-weight:bold;
+.write-box:focus{
+border-color:#6f43ff;
+box-shadow:0 0 0 6px rgba(111,67,255,.12);
 }
+
+
+/* التصحيح */
+
+.correct-input{
+background:#e8fff0;
+border:2px solid #b8ebc8;
+color:#0f8b4c;
+}
+
+.wrong-input{
+background:#ffe8e8;
+border:2px solid #ffb8b8;
+color:#c62828;
+}
+
+
+/* النص الناتج */
+
+.answer-result,
+.result-text{
+margin-top:30px;
+font-size:20px;
+font-weight:bold;
+line-height:2;
+animation:fadeResult .4s ease;
+}
+
+
+/* الاختيارات */
+
+.choice-container{
+display:flex;
+gap:18px;
+margin-top:30px;
+margin-bottom:20px;
+}
+
+.choice-btn{
+flex:1;
+padding:22px;
+background:white;
+border:2px solid #dce4ff;
+border-radius:22px;
+font-size:18px;
+font-weight:bold;
+color:#1f3c88;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.choice-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 18px 40px rgba(0,0,0,.14);
+}
+
+.choice-btn:active{
+transform:scale(.97);
+}
+
+.choice-btn:disabled{
+cursor:default;
+opacity:.95;
+}
+
+.correct{
+background:#e8fff0 !important;
+border:2px solid #b8ebc8 !important;
+color:#0f8b4c !important;
+}
+
+.wrong{
+background:#ffe8e8 !important;
+border:2px solid #ffb8b8 !important;
+color:#c62828 !important;
+}
+
 
 /* الأزرار */
 
@@ -196,29 +299,26 @@ font-weight:bold;
 background:#f5f7ff;
 color:#1f3c88;
 border:2px solid #dce4ff;
-padding:16px 28px;
-border-radius:20px;
+padding:18px 28px;
+border-radius:22px;
 font-size:18px;
 font-weight:bold;
 cursor:pointer;
 transition:.3s;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+box-shadow:0 10px 25px rgba(0,0,0,.10);
 }
 
 .card button:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.18);
+transform:translateY(-4px);
+box-shadow:0 18px 40px rgba(0,0,0,.15);
 }
 
 .card button:active{
 transform:scale(.97);
 }
 
-/* بطاقة التمارين الإضافية */
 
-.more-card{
-text-align:center;
-}
+/* زر التمارين الإضافية */
 
 .show-more-btn{
 width:100%;
@@ -227,17 +327,15 @@ border:none;
 border-radius:25px;
 font-size:22px;
 font-weight:bold;
-cursor:pointer;
 color:white;
-background:linear-gradient(90deg,#3768ff,#6f43ff);
-box-shadow:0 12px 30px rgba(0,0,0,.15);
-transition:.3s;
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+box-shadow:0 14px 35px rgba(0,0,0,.18);
 }
 
-.show-more-btn:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.2);
-}
 
 /* شريط التقدم */
 
@@ -247,13 +345,18 @@ height:14px;
 background:#edf1ff;
 border-radius:20px;
 overflow:hidden;
-margin-top:20px;
+margin-top:25px;
 }
 
 .progress{
 height:100%;
-background:linear-gradient(90deg,#3768ff,#6f43ff);
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
 }
+
 
 /* أزرار التنقل */
 
@@ -268,9 +371,9 @@ margin-bottom:35px;
 .next-lesson-btn{
 
 flex:1;
-padding:18px;
+padding:20px;
 border:none;
-border-radius:20px;
+border-radius:22px;
 font-size:20px;
 font-weight:bold;
 cursor:pointer;
@@ -293,48 +396,146 @@ border:2px solid #b8ebc8;
 
 .next-lesson-btn{
 width:100%;
-background:linear-gradient(90deg,#3768ff,#6f43ff);
 color:white;
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
 }
 
-.prev-btn:hover,
-.done-btn:hover,
-.next-lesson-btn:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.18);
-}
 
 /* بطاقة نهاية الوحدة */
 
 .final-unit-card{
-
-background:linear-gradient(135deg,#6f43ff,#8d6bff);
-
+background:linear-gradient(
+135deg,
+#6f43ff,
+#8d6bff
+);
 }
 
 .final-unit-card h2{
-
 color:#ffe082;
-
-font-size:42px;
-
 text-align:center;
-
+font-size:42px;
 }
 
 .final-unit-text{
-
 color:white !important;
-
 font-size:25px !important;
-
-font-weight:600;
-
 line-height:2.3 !important;
-
 text-align:center;
+}
+
+
+/* الحركات */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
 
 }
+
+@keyframes fadeResult{
+
+from{
+opacity:0;
+transform:translateY(10px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+
+/* اهتزاز الخطأ */
+
+.shake{
+animation:shake .3s;
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
+
+}
+
+
+/* نجوم الاحتفال */
+
+.confetti{
+position:relative;
+height:0;
+}
+
+.star{
+position:absolute;
+font-size:22px;
+opacity:0;
+animation:flyStars 1.4s ease-out forwards;
+}
+
+.star:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.star:nth-child(2){
+left:30%;
+animation-delay:.1s;
+}
+
+.star:nth-child(3){
+left:50%;
+animation-delay:.2s;
+}
+
+.star:nth-child(4){
+left:70%;
+animation-delay:.15s;
+}
+
+.star:nth-child(5){
+left:90%;
+animation-delay:.05s;
+}
+
+@keyframes flyStars{
+
+0%{
+opacity:0;
+transform:translateY(20px) scale(.4);
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+transform:translateY(-70px)
+rotate(360deg)
+scale(1.3);
+}
+
+}
+
 
 /* الجوال */
 
@@ -381,31 +582,36 @@ font-size:24px;
 font-size:16px;
 }
 
-.exercise{
-flex-direction:column;
-align-items:flex-start;
-gap:25px;
-}
-
-.exercise-left{
-width:100%;
-}
-
-.exercise p{
-font-size:18px;
-}
-
-.exercise-answer{
+.question-title{
 font-size:20px;
+}
+
+.help-text{
+font-size:17px;
+}
+
+.answer-result,
+.result-text{
+font-size:17px;
+}
+
+.choice-container{
+flex-direction:column;
+}
+
+.buttons{
+flex-direction:column;
 }
 
 .final-unit-text{
 font-size:18px !important;
+line-height:2.2 !important;
 }
 
 }
 
 </style>
+ 
 
 </head>
 <body>
@@ -456,7 +662,7 @@ font-size:18px !important;
 
 </div>
 
-<!-- الملاحظات -->
+ <!-- الملاحظات -->
 
 <div class="card">
 
@@ -468,51 +674,21 @@ font-size:18px !important;
 
 <p>
 
-✅ في الأسئلة، تأتي Was و Were في بداية الجملة.
+✅ لا تقلق إذا أخطأت، فالأخطاء جزء طبيعي من التعلم.
 
 <br><br>
 
-✅ لا تحفظ الأمثلة فقط، بل افهم الفكرة.
+✅ حاول تكوين أسئلة جديدة من عندك باستخدام الكلمات التي تعرفتها في الدرس.
 
 <br><br>
 
-✅ كرر الأمثلة أكثر من مرة.
+✅ لا تكتفِ بقراءة الحلول، بل حاول الإجابة بنفسك أولاً.
 
 <br><br>
 
-✅ خصص كراساً للملاحظات واكتب فيه أهم القواعد والأمثلة حتى يسهل عليك مراجعتها.
-
-<br><br>
-
-✅ لا بأس إذا احتجت لإعادة الفيديو.
+✅ لا تنسَ حل التمارين الموجودة في الأسفل، فالتدريب هو ما سيثبت الدرس ويطور مستواك.
 
 </p>
-
-</div>
-
-<!-- نصيحة البومة -->
-
-<div class="card">
-
-<div class="tip-box">
-
-<img src="../success.owl.PNG">
-
-<div class="tip-text">
-
-<h2>
-
-🌟 نصيحتي لك
-
-</h2>
-
-<p>
-
- كلما تمرنت اكثر على فكرة الدرس كلما تحسن مستواك ، فحاول كتابة امثلة بنفسك.
-
-</p>
-
-</div>
 
 </div>
 
@@ -530,356 +706,332 @@ font-size:18px !important;
 
 <p>
 
- حاول كتابة الإجابة بنفسك أولاً، ثم تأكد منها من خلال زر عرض الإجابة.
+• حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
 
 </p>
 
-<br>
 
 <!-- السؤال الأول -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
-✨ هل كنت بخير؟
+• ترجم: هل كنت بخير؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-fine = بخير
+💡 للمساعدة: بخير = fine
 
 </p>
 
-<input class="write-box"
+<input
+id="input1"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer1')">
+<button
+onclick="checkWriting('input1','result1',['Were you fine'])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer1" class="exercise-answer">
-
-Were you fine?
+<p
+id="result1"
+class="answer-result">
 
 </p>
 
 </div>
 
-</div>
+<hr class="question-divider">
 
-<hr><br>
 
 <!-- السؤال الثاني -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
-✨ هل كانت سعيدة؟
+• ترجم: هل كانت سعيدة؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-happy = سعيدة
+💡 للمساعدة: سعيدة = happy
 
 </p>
 
-<input class="write-box"
+<input
+id="input2"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer2')">
+<button
+onclick="checkWriting('input2','result2',['Was she happy'])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer2" class="exercise-answer">
-
-Was she happy?
+<p
+id="result2"
+class="answer-result">
 
 </p>
 
 </div>
 
-</div>
+<hr class="question-divider">
 
-<hr><br>
 
 <!-- السؤال الثالث -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
-✨ هل كان جاهزاً؟
+• ترجم: هل كان جاهزاً؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-ready = جاهز
+💡 للمساعدة: جاهز = ready
 
 </p>
 
-<input class="write-box"
+<input
+id="input3"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer3')">
+<button
+onclick="checkWriting('input3','result3',['Was he ready'])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer3" class="exercise-answer">
-
-Was he ready?
+<p
+id="result3"
+class="answer-result">
 
 </p>
 
 </div>
 
-</div>
+<hr class="question-divider">
 
-<hr><br>
 
 <!-- السؤال الرابع -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
-✨ هل كنا بخير؟
+• ترجم: هل كنا بخير؟
 
 </p>
 
-</div>
+<p class="help-text">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-okay = بخير
+💡 للمساعدة: بخير = okay
 
 </p>
 
-<input class="write-box"
+<input
+id="input4"
+class="write-box"
 placeholder="اكتب إجابتك هنا">
 
-<button onclick="showAnswer('answer4')">
+<button
+onclick="checkWriting('input4','result4',['Were we okay'])">
 
-👀 عرض الإجابة
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="answer4" class="exercise-answer">
-
-Were we okay?
+<p
+id="result4"
+class="answer-result">
 
 </p>
 
 </div>
 
 </div>
-
-</div>
-<!-- تدرب بنفسك -->
 
 <div class="card">
 
 <h2>
 
-🌟 تدرب بنفسك
+🎯 اختر الإجابة الصحيحة
 
 </h2>
 
 <p>
 
-• هذه التمارين للمراجعة السريعة.
-
-<br><br>
-
-• حاول الإجابة بنفسك أولاً ثم تأكد من الحل.
+• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
 
 </p>
 
-<br>
 
-<!-- السؤال الأول -->
 
-<div class="exercise">
+<div class="question-box">
 
-<div class="exercise-right">
+<p class="question-title">
 
-<p>
-
-✨ هل كانوا سعداء؟
+⭐ ترجم: هل كانوا سعداء؟
 
 </p>
 
-</div>
+<div class="choice-container">
 
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-happy = سعداء
-
-</p>
-
-<button onclick="showAnswer('answer5')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer5" class="exercise-answer">
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
 
 Were they happy?
 
-</p>
+</button>
 
-</div>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
 
-</div>
-
-<hr><br>
-
-<!-- السؤال الثاني -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-✨ هل كنت جاهزاً؟
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-ready = جاهز
-
-</p>
-
-<button onclick="showAnswer('answer6')">
-
-👀 عرض الإجابة
+Was they happy?
 
 </button>
 
-<p id="answer6" class="exercise-answer">
+</div>
+
+<p id="choice1"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل كنت جاهزاً؟
+
+</p>
+
+<div class="choice-container">
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
 
 Were you ready?
 
-</p>
+</button>
 
-</div>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
 
-</div>
-
-<hr><br>
-
-<!-- السؤال الثالث -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-✨ هل كنت بخير؟
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-fine = بخير
-
-</p>
-
-<button onclick="showAnswer('answer7')">
-
-👀 عرض الإجابة
+Was you ready?
 
 </button>
 
-<p id="answer7" class="exercise-answer">
+</div>
+
+<p id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل كنت بخير؟
+
+</p>
+
+<div class="choice-container">
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
 
 Were you fine?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+Was you fine?
+
+</button>
+
+</div>
+
+<p id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل كان بخير؟
+
+</p>
+
+<div class="choice-container">
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+Was he fine?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+Were he fine?
+
+</button>
+
+</div>
+
+<p id="choice4"
+class="result-text">
 
 </p>
 
 </div>
 
 </div>
+ 
+ <!-- هل تريد تمارين إضافية؟ -->
 
-<hr><br>
-
-<!-- بطاقة التمارين الإضافية -->
-
-<div id="moreCard" class="more-card">
+<div class="card"
+id="moreCard">
 
 <h2>
 
@@ -889,11 +1041,14 @@ Were you fine?
 
 <p>
 
- إذا كنت ترغب في التدريب أكثر، يمكنك إظهار ثلاثة تمارين إضافية بسيطة.
+إذا كنت ترغب في التدريب أكثر، يمكنك إظهار مجموعة أخرى من التمارين.
 
 </p>
 
-<button class="show-more-btn"
+<br>
+
+<button
+class="show-more-btn"
 onclick="showMoreExercises()">
 
 ✨ نعم، أريد
@@ -901,12 +1056,11 @@ onclick="showMoreExercises()">
 </button>
 
 </div>
-
 <!-- التمارين الإضافية -->
 
-<div id="extraExercises" style="display:none;">
-
-<hr><br>
+<div class="card"
+id="extraExercises"
+style="display:none;">
 
 <h2>
 
@@ -914,142 +1068,123 @@ onclick="showMoreExercises()">
 
 </h2>
 
-<br>
-
-<!-- السؤال الرابع -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
 <p>
 
-✨ هل كان بخير؟
+• اقرأ الجملة جيداً، ثم اختر الإجابة الصحيحة.
 
 </p>
 
-</div>
 
-<div class="exercise-left">
 
-<p>
+<div class="question-box">
 
-💡 للمساعدة:
+<p class="question-title">
 
-<br><br>
-
-fine = بخير
+⭐ ترجم: هل كانت جاهزة؟
 
 </p>
 
-<button onclick="showAnswer('answer8')">
+<div class="choice-container">
 
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer8" class="exercise-answer">
-
-Was he fine?
-
-</p>
-
-</div>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الخامس -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-✨ هل كانت جاهزة؟
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-ready = جاهزة
-
-</p>
-
-<button onclick="showAnswer('answer9')">
-
-👀 عرض الإجابة
-
-</button>
-
-<p id="answer9" class="exercise-answer">
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
 
 Was she ready?
 
-</p>
+</button>
 
-</div>
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
 
-</div>
-
-<hr><br>
-
-<!-- السؤال السادس -->
-
-<div class="exercise">
-
-<div class="exercise-right">
-
-<p>
-
-✨ هل كنا سعداء؟
-
-</p>
-
-</div>
-
-<div class="exercise-left">
-
-<p>
-
-💡 للمساعدة:
-
-<br><br>
-
-happy = سعداء
-
-</p>
-
-<button onclick="showAnswer('answer10')">
-
-👀 عرض الإجابة
+Were she ready?
 
 </button>
 
-<p id="answer10" class="exercise-answer">
+</div>
+
+<p id="choice5"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل كنا سعداء؟
+
+</p>
+
+<div class="choice-container">
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
 
 Were we happy?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+Was we happy?
+
+</button>
+
+</div>
+
+<p id="choice6"
+class="result-text">
+
+</p>
+
+</div>
+
+<hr class="question-divider">
+
+
+
+<div class="question-box">
+
+<p class="question-title">
+
+⭐ ترجم: هل كنت بخير؟
+
+</p>
+
+<div class="choice-container">
+
+<button class="choice-btn"
+onclick="checkAnswer(this,true,'choice7')">
+
+Were you fine?
+
+</button>
+
+<button class="choice-btn"
+onclick="checkAnswer(this,false,'choice7')">
+
+Was you fine?
+
+</button>
+
+</div>
+
+<p id="choice7"
+class="result-text">
 
 </p>
 
 </div>
 
 </div>
-
-</div>
-
-</div>
-
+ 
 <!-- تقدم الدرس -->
 
 <div class="card">
@@ -1106,21 +1241,31 @@ Were we happy?
 
 </h2>
 
+<div class="confetti">
+
+<span class="star">✨</span>
+<span class="star">⭐</span>
+<span class="star">🌟</span>
+<span class="star">✨</span>
+<span class="star">⭐</span>
+
+</div>
+
 <p class="final-unit-text">
 
 🎉 لقد أنهيت وحدة الأفعال المساعدة بنجاح.
 
 <br><br>
 
-✨ وأصبحت الآن قادراً على التحدث عن الحاضر والماضي بطريقة بسيطة، وتكوين جمل وأسئلة تساعدك على التعبير عن نفسك باللغة الإنجليزية.
+✨ وأصبحت الآن قادراً على تكوين الجمل والأسئلة في الحاضر والماضي.
 
 <br><br>
 
-⭐ لقد بنيت أساساً مهماً جداً، وفي الوحدات القادمة ستتعلم أكثر وأكثر، خطوة بخطوة.
+⭐ لقد بنيت أساساً مهماً جداً، والرحلة الجميلة ما زالت في بدايتها.
 
 <br><br>
 
-🚀 استمر، فما زالت رحلتك في تعلم اللغة الإنجليزية مليئة بالكثير من الأشياء الجميلة التي ستكتشفها.
+🚀 والآن حان وقت الانتقال إلى الوحدة التالية.
 
 </p>
 
@@ -1131,26 +1276,263 @@ Were we happy?
 </button>
 
 </div>
-
+ 
 </div>
-
+ 
 <!-- JavaScript -->
 
 <script>
 
-function showAnswer(answerId){
+// ==========================
+// تنظيف النص
+// ==========================
 
-document.getElementById(answerId).style.display="block";
+function normalizeText(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/\s+/g," ")
+.replace(/['’]/g,"")
+.replace(/[?.؟!,]/g,"");
 
 }
+
+
+
+// ==========================
+// التحقق من الإجابات الكتابية
+// ==========================
+
+function checkWriting(inputId,resultId,correctAnswers){
+
+let input =
+document.getElementById(inputId);
+
+let result =
+document.getElementById(resultId);
+
+
+// إجابة الطالب
+
+let userAnswer =
+normalizeText(input.value);
+
+
+// إزالة الألوان القديمة
+
+input.classList.remove("correct-input");
+input.classList.remove("wrong-input");
+input.classList.remove("shake");
+
+
+// تجهيز الإجابات الصحيحة
+
+let answers =
+correctAnswers.map(answer =>
+normalizeText(answer)
+);
+
+
+// التحقق
+
+if(answers.includes(userAnswer)){
+
+input.classList.add("correct-input");
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ لقد كتبت الإجابة الصحيحة.';
+
+result.style.color =
+"#0f8b4c";
+
+}
+
+else{
+
+input.classList.add("wrong-input");
+
+input.classList.add("shake");
+
+setTimeout(function(){
+
+input.classList.remove("shake");
+
+},300);
+
+result.innerHTML =
+
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
++ correctAnswers[0];
+
+result.style.color =
+"#c62828";
+
+}
+
+}
+
+
+
+
+// ==========================
+// أسئلة الاختيار
+// ==========================
+
+function checkAnswer(button,isCorrect,resultId){
+
+let result =
+document.getElementById(resultId);
+
+let allButtons =
+button.parentElement.querySelectorAll(".choice-btn");
+
+
+// تعطيل الأزرار
+
+allButtons.forEach(btn=>{
+
+btn.disabled = true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add("correct");
+
+button.innerHTML += " ✔️";
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ لقد اخترت الإجابة الصحيحة.';
+
+result.style.color =
+"#0f8b4c";
+
+}
+
+else{
+
+button.classList.add("wrong");
+
+button.innerHTML += " ✖️";
+
+result.innerHTML =
+"😅 ❌ لقد اخترت الإجابة الخاطئة.";
+
+result.style.color =
+"#c62828";
+
+
+// إظهار الإجابة الصحيحة
+
+allButtons.forEach(btn=>{
+
+if(btn.getAttribute("onclick").includes("true")){
+
+btn.classList.add("correct");
+
+btn.innerHTML += " ✔️";
+
+}
+
+});
+
+}
+
+}
+
+
+
+
+// ==========================
+// التمارين الإضافية
+// ==========================
 
 function showMoreExercises(){
 
-document.getElementById("extraExercises").style.display="block";
+document
+.getElementById("extraExercises")
+.style.display =
+"block";
 
-document.getElementById("moreCard").style.display="none";
+document
+.getElementById("moreCard")
+.style.display =
+"none";
 
 }
+
+
+
+
+// ==========================
+// زر العودة
+// ==========================
+
+document
+.querySelector(".prev-btn")
+.addEventListener("click",function(){
+
+window.location.href =
+"was-were-negative.html";
+
+});
+
+
+
+
+// ==========================
+// زر أنهيت الدرس
+// ==========================
+
+document
+.querySelector(".done-btn")
+.addEventListener("click",function(){
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+});
+
+
+
+
+// ==========================
+// الوحدة التالية
+// ==========================
+
+document
+.querySelector(".next-lesson-btn")
+.addEventListener("click",function(){
+
+window.location.href =
+"present-simple-part1.html";
+
+});
 
 </script>
 
