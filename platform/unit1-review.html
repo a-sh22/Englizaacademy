@@ -587,14 +587,26 @@ transform:translateY(-4px);
 .answer-box{
 
 min-height:100px;
+
 background:#fafbff;
+
 border:2px dashed #b9c8ff;
+
 border-radius:25px;
+
 padding:20px;
+
 margin-bottom:25px;
+
 display:flex;
+
 flex-wrap:wrap;
+
 gap:15px;
+
+direction:ltr;
+
+align-items:center;
 
 }
 
@@ -631,6 +643,11 @@ font-weight:bold;
 
 box-shadow:0 10px 25px rgba(0,0,0,.12);
 
+  display:flex;
+
+align-items:center;
+
+justify-content:center;
 }
   
 </style>
@@ -694,11 +711,11 @@ class="back-btn">
 
 <p>
 
-لا تقلق إذا أخطأت أو نسيت بعض الأشياء، فهذا أمر طبيعي.
+•لا تقلق إذا أخطأت أو نسيت بعض الأشياء، فهذا أمر طبيعي.
 
 <br><br>
 
-حاول حل التحديات بنفسك أولاً، فالممارسة هي التي تثبت المعلومات وتطور مستواك.
+•حاول حل التحديات بنفسك أولاً، فالممارسة هي التي تثبت المعلومات وتطور مستواك.
 
 </p>
 
@@ -787,7 +804,7 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input2','result2',['He was not busy','He wasn't busy'])">
+onclick="checkWriting('input2','result2',['He was not busy',"He wasn't busy"])"
 
 ✨ أريد التحقق من إجابتي
 
@@ -1509,14 +1526,36 @@ class="result-text">
 function normalizeText(text){
 
 return text
+
 .toLowerCase()
+
 .trim()
+
 .replace(/\s+/g," ")
-.replace(/['’]/g,"")
-.replace(/[?.؟!,]/g,"");
+
+.replace(/[?.؟!,]/g,"")
+
+.replace(/’/g,"'")
+
+.replace("i'm","i am")
+
+.replace("you're","you are")
+
+.replace("he's","he is")
+
+.replace("she's","she is")
+
+.replace("it's","it is")
+
+.replace("we're","we are")
+
+.replace("they're","they are")
+
+.replace("wasn't","was not")
+
+.replace("weren't","were not");
 
 }
-
 
 
 // ==========================
