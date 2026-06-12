@@ -470,6 +470,106 @@ font-size:17px;
 
 }
 
+  /* اهتزاز عند الخطأ */
+
+.shake{
+animation:shake .3s;
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
+
+}
+
+
+/* نجوم الاحتفال */
+
+.confetti{
+
+position:relative;
+
+height:0;
+
+}
+
+.star{
+
+position:absolute;
+
+font-size:22px;
+
+opacity:0;
+
+animation:flyStars 1.4s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+
+left:10%;
+animation-delay:0s;
+
+}
+
+.star:nth-child(2){
+
+left:30%;
+animation-delay:.1s;
+
+}
+
+.star:nth-child(3){
+
+left:50%;
+animation-delay:.2s;
+
+}
+
+.star:nth-child(4){
+
+left:70%;
+animation-delay:.15s;
+
+}
+
+.star:nth-child(5){
+
+left:90%;
+animation-delay:.05s;
+
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+transform:translateY(20px) scale(.4);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+transform:translateY(-70px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+  
 </style>
 
 </head>
@@ -1191,9 +1291,18 @@ if(userAnswer===answer){
 
 input.classList.add("correct-input");
 
-result.innerHTML =
-"✅ لقد كتبت الإجابة الصحيحة.";
+result.innerHTML=
 
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ لقد كتبت الإجابة الصحيحة.';
+  
 result.style.color =
 "#0f8b4c";
 
@@ -1203,8 +1312,17 @@ else{
 
 input.classList.add("wrong-input");
 
+input.classList.add("shake");
+
+setTimeout(function(){
+
+input.classList.remove("shake");
+
+},300);
+
 result.innerHTML =
-"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ الإجابة الصحيحة هي:<br><br>"+correctAnswer;
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
++ correctAnswers[0];
 
 result.style.color =
 "#c62828";
@@ -1244,9 +1362,18 @@ button.classList.add("correct");
 
 button.innerHTML += " ✔️";
 
-result.innerHTML =
-"✅ لقد اخترت الإجابة الصحيحة.";
+result.innerHTML=
 
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ لقد اخترت الإجابة الصحيحة.';
+  
 result.style.color =
 "#0f8b4c";
 
