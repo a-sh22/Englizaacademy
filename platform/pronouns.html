@@ -1253,7 +1253,24 @@ Is • Am • Are
 <!-- JavaScript -->
 
 <script>
-  // ==========================
+// ==========================
+// تنظيف النص
+// ==========================
+
+function normalizeText(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/\s+/g," ")
+.replace(/['’]/g,"")
+.replace(/[?.؟!,]/g,"");
+
+}
+
+
+
+// ==========================
 // التحقق من الإجابات الكتابية
 // ==========================
 
@@ -1269,23 +1286,23 @@ document.getElementById(resultId);
 // إجابة الطالب
 
 let userAnswer =
-input.value
-.toLowerCase()
-.trim();
+normalizeText(input.value);
 
 
 // الإجابة الصحيحة
 
 let answer =
-correctAnswer
-.toLowerCase();
+normalizeText(correctAnswer);
 
 
 // إزالة الألوان القديمة
 
 input.classList.remove("correct-input");
 input.classList.remove("wrong-input");
+input.classList.remove("shake");
 
+
+// التحقق
 
 if(userAnswer===answer){
 
@@ -1302,7 +1319,7 @@ result.innerHTML=
 '</div>'+
 
 '✅ لقد كتبت الإجابة الصحيحة.';
-  
+
 result.style.color =
 "#0f8b4c";
 
@@ -1330,8 +1347,7 @@ result.style.color =
 }
 
 }
-
-
+  
 
 // ==========================
 // أسئلة الاختيار
