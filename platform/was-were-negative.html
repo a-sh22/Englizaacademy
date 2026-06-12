@@ -137,36 +137,6 @@ font-weight:600;
 }
 
 
-/* بطاقة البومة */
-
-.tip-box{
-display:flex;
-align-items:center;
-gap:35px;
-}
-
-.tip-box img{
-width:170px;
-flex-shrink:0;
-}
-
-.tip-text{
-flex:1;
-}
-
-.tip-text h2{
-font-size:34px;
-color:#1f3c88;
-margin-bottom:20px;
-}
-
-.tip-text p{
-font-size:21px;
-line-height:2;
-color:#666;
-}
-
-
 /* الأسئلة */
 
 .question-box{
@@ -216,7 +186,7 @@ box-shadow:0 0 0 6px rgba(111,67,255,.12);
 }
 
 
-/* التصحيح */
+/* ألوان التصحيح */
 
 .correct-input{
 background:#e8fff0;
@@ -243,7 +213,7 @@ animation:fadeResult .4s ease;
 }
 
 
-/* الاختيارات */
+/* أزرار الاختيارات */
 
 .choice-container{
 display:flex;
@@ -279,6 +249,9 @@ transform:scale(.97);
 cursor:default;
 opacity:.95;
 }
+
+
+/* الإجابة الصحيحة والخاطئة */
 
 .correct{
 background:#e8fff0 !important;
@@ -358,9 +331,7 @@ background:linear-gradient(
 #6f43ff
 );
 }
-
-
-/* أزرار التنقل */
+ /* أزرار التنقل */
 
 .buttons{
 display:flex;
@@ -397,6 +368,7 @@ border:2px solid #b8ebc8;
 }
 
 .next-lesson-btn{
+
 width:100%;
 color:white;
 
@@ -405,6 +377,25 @@ background:linear-gradient(
 #3768ff,
 #6f43ff
 );
+
+}
+
+.prev-btn:hover,
+.done-btn:hover,
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.18);
+
+}
+
+.prev-btn:active,
+.done-btn:active,
+.next-lesson-btn:active{
+
+transform:scale(.97);
+
 }
 
 
@@ -419,7 +410,7 @@ color:#555;
 }
 
 
-/* الحركات */
+/* حركة ظهور البطاقات */
 
 @keyframes fadeUp{
 
@@ -435,6 +426,9 @@ transform:translateY(0);
 
 }
 
+
+/* حركة ظهور النتائج */
+
 @keyframes fadeResult{
 
 from{
@@ -449,8 +443,13 @@ transform:translateY(0);
 
 }
 
+
+/* اهتزاز الخطأ */
+
 .shake{
+
 animation:shake .3s;
+
 }
 
 @keyframes shake{
@@ -460,6 +459,68 @@ animation:shake .3s;
 50%{transform:translateX(6px);}
 75%{transform:translateX(-6px);}
 100%{transform:translateX(0);}
+
+}
+
+
+/* النجوم المتطايرة */
+
+.confetti{
+
+position:relative;
+height:0;
+
+}
+
+.star{
+
+position:absolute;
+font-size:22px;
+opacity:0;
+animation:flyStars 1.4s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.star:nth-child(2){
+left:30%;
+animation-delay:.1s;
+}
+
+.star:nth-child(3){
+left:50%;
+animation-delay:.2s;
+}
+
+.star:nth-child(4){
+left:70%;
+animation-delay:.15s;
+}
+
+.star:nth-child(5){
+left:90%;
+animation-delay:.05s;
+}
+
+@keyframes flyStars{
+
+0%{
+opacity:0;
+transform:translateY(20px) scale(.4);
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+transform:translateY(-70px) rotate(360deg) scale(1.3);
+}
 
 }
 
@@ -510,8 +571,17 @@ font-size:17px;
 flex-direction:column;
 }
 
+.choice-btn{
+width:100%;
+}
+
 .buttons{
 flex-direction:column;
+}
+
+.prev-btn,
+.done-btn{
+width:100%;
 }
 
 .success-text{
@@ -550,13 +620,13 @@ line-height:2.2;
 
 <h1 class="title">
 
- Was • Were | النفي
+Was • Were | النفي
 
 </h1>
 
 <p class="subtitle">
 
- في هذا الدرس ستتعلم كيف تنفي الجمل في الماضي باستخدام Was و Were.
+في هذا الدرس ستتعلم كيف تنفي الجمل في الماضي باستخدام Was و Were.
 
 </p>
 
@@ -598,8 +668,8 @@ line-height:2.2;
 </p>
 
 </div>
-
  
+
 <!-- اكتب بنفسك -->
 
 <div class="card">
@@ -639,7 +709,7 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input1','result1',['I was not fine'])">
+onclick="checkWriting('input1','result1',['I was not fine','I wasn\'t fine'])">
 
 ✨ أريد التحقق من إجابتي
 
@@ -678,7 +748,7 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input2','result2',['She was not happy'])">
+onclick="checkWriting('input2','result2',['She was not happy','She wasn\'t happy'])">
 
 ✨ أريد التحقق من إجابتي
 
@@ -717,7 +787,7 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input3','result3',['He was not ready'])">
+onclick="checkWriting('input3','result3',['He was not ready','He wasn\'t ready'])">
 
 ✨ أريد التحقق من إجابتي
 
@@ -756,7 +826,7 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input4','result4',['We were not okay'])">
+onclick="checkWriting('input4','result4',['We were not okay','We weren\'t okay'])">
 
 ✨ أريد التحقق من إجابتي
 
@@ -771,7 +841,7 @@ class="answer-result">
 </div>
 
 </div>
- <!-- اختر الإجابة الصحيحة -->
+<!-- اختر الإجابة الصحيحة -->
 
 <div class="card">
 
@@ -783,7 +853,7 @@ class="answer-result">
 
 <p>
 
-• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
+• اقرأ الجملة جيداً، ثم اختر الإجابة الصحيحة.
 
 </p>
 
@@ -817,7 +887,9 @@ They was not happy
 </div>
 
 <p id="choice1"
-class="result-text"></p>
+class="result-text">
+
+</p>
 
 </div>
 
@@ -853,7 +925,9 @@ You was not ready
 </div>
 
 <p id="choice2"
-class="result-text"></p>
+class="result-text">
+
+</p>
 
 </div>
 
@@ -889,7 +963,9 @@ You was not fine
 </div>
 
 <p id="choice3"
-class="result-text"></p>
+class="result-text">
+
+</p>
 
 </div>
 
@@ -925,11 +1001,14 @@ He were not fine
 </div>
 
 <p id="choice4"
-class="result-text"></p>
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
+
 
 
 <!-- هل تريد تمارين إضافية؟ -->
@@ -962,6 +1041,7 @@ onclick="showMoreExercises()">
 </div>
 
 
+
 <!-- التمارين الإضافية -->
 
 <div class="card"
@@ -980,6 +1060,8 @@ style="display:none;">
 
 </p>
 
+
+<!-- السؤال الأول -->
 
 <div class="question-box">
 
@@ -1008,12 +1090,16 @@ She were not ready
 </div>
 
 <p id="choice5"
-class="result-text"></p>
+class="result-text">
+
+</p>
 
 </div>
 
 <hr class="question-divider">
 
+
+<!-- السؤال الثاني -->
 
 <div class="question-box">
 
@@ -1042,12 +1128,16 @@ We was not happy
 </div>
 
 <p id="choice6"
-class="result-text"></p>
+class="result-text">
+
+</p>
 
 </div>
 
 <hr class="question-divider">
 
+
+<!-- السؤال الثالث -->
 
 <div class="question-box">
 
@@ -1076,12 +1166,13 @@ I were not fine
 </div>
 
 <p id="choice7"
-class="result-text"></p>
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
- 
 <!-- تقدم الدرس -->
 
 <div class="card">
@@ -1104,11 +1195,15 @@ class="result-text"></p>
 
 <div class="progress-bar">
 
-<div class="progress" style="width:100%;"></div>
+<div class="progress"
+style="width:100%;">
 
 </div>
 
 </div>
+
+</div>
+
 
 <!-- أزرار التنقل -->
 
@@ -1170,6 +1265,8 @@ class="result-text"></p>
 
 </div>
  
+</div>
+
 <!-- JavaScript -->
 
 <script>
@@ -1190,6 +1287,7 @@ return text
 }
 
 
+
 // ==========================
 // التحقق من الإجابات الكتابية
 // ==========================
@@ -1202,12 +1300,15 @@ document.getElementById(inputId);
 let result =
 document.getElementById(resultId);
 
+
 let userAnswer =
 normalizeText(input.value);
+
 
 input.classList.remove("correct-input");
 input.classList.remove("wrong-input");
 input.classList.remove("shake");
+
 
 let answers =
 correctAnswers.map(answer =>
@@ -1405,7 +1506,6 @@ window.location.href=
 });
 
 </script>
- 
-</body>
 
+</body>
 </html>
