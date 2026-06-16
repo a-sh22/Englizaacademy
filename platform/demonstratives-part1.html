@@ -883,62 +883,6 @@ z-index:999;
 
 }
 
-.popup-box{
-
-background:white;
-
-padding:40px;
-
-border-radius:35px;
-
-max-width:500px;
-
-width:90%;
-
-text-align:center;
-
-animation:fadeUp .5s ease;
-
-}
-
-.popup-box img{
-
-width:150px;
-
-margin-bottom:25px;
-
-}
-
-.popup-box h2{
-
-color:#1f3c88;
-
-font-size:34px;
-
-margin-bottom:20px;
-
-}
-
-.popup-box p{
-
-font-size:22px;
-
-line-height:2.2;
-
-color:#555;
-
-font-weight:600;
-
-}
-
-.close-popup-btn{
-
-margin-top:30px;
-
-width:100%;
-
-}
-
 
 /* فيديو الدرس */
 
@@ -1046,17 +990,6 @@ color:#c62828;
 
 
 /* ==========================
-ظهور نافذة النجاح
-========================== */
-
-.popup-overlay.show{
-
-display:flex;
-
-}
-
-
-/* ==========================
 بطاقة الفيديو
 ========================== */
 
@@ -1151,33 +1084,6 @@ border-width:2px;
 }
 
 
-/* نافذة النجاح */
-
-.popup-box{
-
-padding:30px;
-
-}
-
-.popup-box img{
-
-width:100px;
-
-}
-
-.popup-box h2{
-
-font-size:28px;
-
-}
-
-.popup-box p{
-
-font-size:18px;
-
-line-height:2.1;
-
-}
 
 
 /* الأزرار الخاصة بترتيب الكلمات */
@@ -1253,7 +1159,7 @@ class="back-btn">
 
 <h1 class="title">
 
- أدوات الإشارة | الجزء الأول
+أدوات الإشارة | الجزء الأول
 
 </h1>
 
@@ -1261,11 +1167,9 @@ class="back-btn">
 
 في هذا الدرس ستتعلم كيفية استخدام:
 
-This • That • These • Those
-
 <br><br>
 
-ثم ستتدرب عليها من خلال مجموعة متنوعة من التمارين الممتعة.
+This • That • These • Those
 
 </p>
 
@@ -2463,47 +2367,6 @@ class="answer-result">
 
 </div>
 
-<!-- نافذة النجاح -->
-
-<div
-id="successPopup"
-class="popup-overlay">
-
-<div class="popup-box">
-
-<img src="../success.owl.PNG">
-
-<h2>
-
-🏆 أحسنت!
-
-</h2>
-
-<p>
-
-🎉 لقد أنهيت الدرس بنجاح.
-
-<br><br>
-
-✨ وأصبحت الآن قادراً على استخدام:
-
-<br><br>
-
-This • That • These • Those
-
-</p>
-
-<button
-class="close-popup-btn"
-onclick="closePopup()">
-
-❌ إغلاق
-
-</button>
-
-</div>
-
-</div>
 
 <!-- بطاقة النهاية -->
 
@@ -3103,17 +2966,17 @@ input.dataset.done =
 finalChallengeScore++;
 
 }
-
-
-// إذا انتهى التحدي
+ 
 
 if(
 finalChallengeScore === 3
 ){
 
-showFinishPopup();
-
-}
+document
+.querySelector(".final-card")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
@@ -3163,40 +3026,6 @@ inputId,
 resultId,
 correctAnswers
 );
-
-}
-
-
-
-// ==========================
-// إظهار نافذة النجاح
-// ==========================
-
-function showFinishPopup(){
-
-document
-.getElementById(
-"successPopup"
-)
-.style.display =
-"flex";
-
-}
-
-
-
-// ==========================
-// إغلاق النافذة
-// ==========================
-
-function closePopup(){
-
-document
-.getElementById(
-"successPopup"
-)
-.style.display =
-"none";
 
 }
 
