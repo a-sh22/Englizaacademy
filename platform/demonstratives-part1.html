@@ -1377,7 +1377,7 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input2',
 'result2',
-['That is a car',"That's a car"]
+['That is a car']
 )">
 
 ✨ أريد التحقق من إجابتي
@@ -1627,13 +1627,13 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input4',
 'result4',
-['That is a cat',"That's a cat"]
+['That is a cat']
 )">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
-
+ 
 <p
 id="result4"
 class="answer-result">
@@ -1958,7 +1958,7 @@ books
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'choice5')">
+onclick="checkAnswer(this,false,'choice5')">
 
 are
 
@@ -1966,12 +1966,12 @@ are
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'choice5')">
+onclick="checkAnswer(this,true,'choice5')">
 
 This
 
 </button>
-
+ 
 </div>
 
 <p
@@ -2000,7 +2000,7 @@ class="result-text">
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'choice6')">
+onclick="checkAnswer(this,false,'choice6')">
 
 are
 
@@ -2016,12 +2016,12 @@ cars
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'choice6')">
+onclick="checkAnswer(this,true,'choice6')">
 
 That
 
 </button>
-
+ 
 </div>
 
 <p
@@ -2370,7 +2370,7 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkChallenge(
 'challenge1',
 'challengeResult1',
-['That is a car',"That's a car"]
+['That is a car']
 )">
 
 ✨ أريد التحقق من إجابتي
@@ -2556,25 +2556,25 @@ return text
 .replace(/\s+/g," ")
 .replace(/[?.؟!,]/g,"")
 .replace(/’/g,"'")
+.replace(/'/g,"")
 
 .replace("that's","that is")
 .replace("it's","it is")
 
-.replace("they're","they are")
-.replace("you're","you are")
-.replace("we're","we are")
+.replace("theyre","they are")
+.replace("youre","you are")
+.replace("were","we are")
 
-.replace("he's","he is")
-.replace("she's","she is")
+.replace("hes","he is")
+.replace("shes","she is")
 
-.replace("isn't","is not")
-.replace("aren't","are not")
+.replace("isnt","is not")
+.replace("arent","are not")
 
-.replace("wasn't","was not")
-.replace("weren't","were not");
+.replace("wasnt","was not")
+.replace("werent","were not");
 
 }
-
 
 
 // ==========================
