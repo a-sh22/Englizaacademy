@@ -419,8 +419,9 @@ class="back-btn">
 كلمات السؤال
 </h1>
 <p class="subtitle">
-• في هذا الدرس ستتعلم كيفية استخدام كلمات السؤال مثل What و Where و Who و Why و When و How مع الأفعال المساعدة، حتى تتمكن من فهم الأسئلة وتكوينها بطريقة سهلة ومناسبة للمبتدئين.
+• في هذا الدرس ستتعلم كيفية فهم وتكوين الأسئلة باللغة الإنجليزية.
 </p>
+  
 <!-- بطاقة الفيديو -->
 <div class="video-card">
 <iframe
@@ -429,6 +430,7 @@ src="ضع رابط الفيديو هنا"
 allowfullscreen>
 </iframe>
 </div>
+
 <!-- أكمل السؤال -->
 <div class="card">
 <h2>
@@ -440,7 +442,7 @@ allowfullscreen>
 <!-- السؤال الأول -->
 <div class="question-box">
 <p class="question-title">
-❓ Where ___ you?
+❓ Where ___ she?
 </p>
 <input
 id="input1"
@@ -450,7 +452,7 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input1',
 'result1',
-['are']
+['is']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -463,7 +465,7 @@ class="answer-result">
 <!-- السؤال الثاني -->
 <div class="question-box">
 <p class="question-title">
-❓ Who ___ he?
+❓ How ___ they?
 </p>
 <input
 id="input2"
@@ -473,7 +475,7 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input2',
 'result2',
-['is']
+['are']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -486,7 +488,7 @@ class="answer-result">
 <!-- السؤال الثالث -->
 <div class="question-box">
 <p class="question-title">
-❓ How ___ they?
+❓ Who ___ he?
 </p>
 <input
 id="input3"
@@ -496,7 +498,7 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input3',
 'result3',
-['are']
+['is']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -506,40 +508,41 @@ class="answer-result">
 </p>
 </div>
 </div>
-
- <!-- رتب السؤال -->
+<!-- رتب السؤال -->
 <div class="card">
 <h2>
 🧩 رتب السؤال
 </h2>
 <p>
 • اضغط على الكلمات بالترتيب الصحيح لتكوين السؤال.
-<br><br>
-• إذا أخطأت أو أردت تغيير إجابتك، اضغط على زر إعادة الترتيب.
 </p>
 <!-- السؤال الأول -->
 <div class="question-box">
 <p class="question-title">
-✨ رتب الكلمات لتكوين سؤال صحيح
+✨ رتب الكلمات
 </p>
 <div
 class="word-container"
-id="words1"
-data-answer="Where are you">
+id="words1">
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
-you
+class
 </button>
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
-Where
+When
 </button>
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
-are
+the
+</button>
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+is
 </button>
 </div>
 <div
@@ -550,7 +553,7 @@ id="answerBox1">
 <button
 onclick="checkSentence(
 'answerBox1',
-'Where are you',
+'When is the class',
 'resultSort1'
 )">
 ✨ أريد التحقق من إجابتي
@@ -572,26 +575,30 @@ class="result-text">
 <!-- السؤال الثاني -->
 <div class="question-box">
 <p class="question-title">
-✨ رتب الكلمات لتكوين سؤال صحيح
+✨ رتب الكلمات
 </p>
 <div
 class="word-container"
-id="words2"
-data-answer="Who is he">
+id="words2">
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
-he
+here
 </button>
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
-Who
+they
 </button>
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
-is
+Why
+</button>
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+are
 </button>
 </div>
 <div
@@ -602,7 +609,7 @@ id="answerBox2">
 <button
 onclick="checkSentence(
 'answerBox2',
-'Who is he',
+'Why are they here',
 'resultSort2'
 )">
 ✨ أريد التحقق من إجابتي
@@ -622,101 +629,72 @@ class="result-text">
 </div>
 <hr class="question-divider">
 <!-- السؤال الثالث -->
-
 <div class="question-box">
-
 <p class="question-title">
-
-✨ رتب الكلمات لتكوين سؤال صحيح
-
+✨ رتب الكلمات
 </p>
-
 <div
 class="word-container"
-id="words3"
-data-answer="Where are they">
-
+id="words3">
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox3')">
-
-they
-
+phone
 </button>
-
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox3')">
-
+my
+</button>
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox3')">
 Where
-
 </button>
-
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox3')">
-
-are
-
+is
 </button>
-
 </div>
-
 <div
 class="answer-box"
 id="answerBox3">
-
 </div>
-
 <div class="sort-buttons">
-
 <button
 onclick="checkSentence(
 'answerBox3',
-'Where are they',
+'Where is my phone',
 'resultSort3'
 )">
-
 ✨ أريد التحقق من إجابتي
-
 </button>
-
 <button
 onclick="resetSentence(
 'words3',
 'answerBox3'
 )">
-
 🔄 إعادة الترتيب
-
 </button>
-
 </div>
-
 <p
 id="resultSort3"
 class="result-text">
-
 </p>
-
 </div>
-
-  </div>
-  
- <!-- اكتشف الخطأ وصححه -->
+</div>
+<!-- اكتشف الخطأ وصححه -->
 <div class="card">
 <h2>
 🔎 اكتشف الخطأ وصححه
 </h2>
 <p>
 • تحتوي كل جملة على خطأ واحد فقط.
-<br><br>
-• حاول اكتشاف الخطأ وتصحيحه بنفسك.
 </p>
-<!-- السؤال الأول -->
 <div class="question-box">
 <p class="question-title">
-❌ Where is you?
+❌ Where are she?
 </p>
 <input
 id="input4"
@@ -726,7 +704,7 @@ placeholder="صحح الجملة">
 onclick="checkWriting(
 'input4',
 'result4',
-['Where are you']
+['Where is she']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -736,10 +714,9 @@ class="answer-result">
 </p>
 </div>
 <hr class="question-divider">
-<!-- السؤال الثاني -->
 <div class="question-box">
 <p class="question-title">
-❌ How is they?
+❌ Who are he?
 </p>
 <input
 id="input5"
@@ -749,7 +726,7 @@ placeholder="صحح الجملة">
 onclick="checkWriting(
 'input5',
 'result5',
-['How are they']
+['Who is he']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -759,10 +736,9 @@ class="answer-result">
 </p>
 </div>
 <hr class="question-divider">
-<!-- السؤال الثالث -->
 <div class="question-box">
 <p class="question-title">
-❌ Who are he?
+❌ Why is they here?
 </p>
 <input
 id="input6"
@@ -772,7 +748,7 @@ placeholder="صحح الجملة">
 onclick="checkWriting(
 'input6',
 'result6',
-['Who is he']
+['Why are they here']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -782,19 +758,17 @@ class="answer-result">
 </p>
 </div>
 </div>
-
-  <!-- ترجم بنفسك -->
+<!-- ترجم بنفسك -->
 <div class="card">
 <h2>
 ✏️ ترجم بنفسك
 </h2>
 <p>
-• حاول ترجمة الجملة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
+• حاول الترجمة بنفسك أولاً.
 </p>
-<!-- السؤال الأول -->
 <div class="question-box">
 <p class="question-title">
-🌍 أين القط؟
+🌍 أين هاتفي؟
 </p>
 <input
 id="input7"
@@ -804,7 +778,7 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input7',
 'result7',
-['Where is the cat']
+['Where is my phone']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -814,10 +788,9 @@ class="answer-result">
 </p>
 </div>
 <hr class="question-divider">
-<!-- السؤال الثاني -->
 <div class="question-box">
 <p class="question-title">
-👤 من هو؟
+👤 من هي؟
 </p>
 <input
 id="input8"
@@ -827,7 +800,7 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input8',
 'result8',
-['Who is he']
+['Who is she']
 )">
 ✨ أريد التحقق من إجابتي
 </button>
@@ -837,44 +810,30 @@ class="answer-result">
 </p>
 </div>
 <hr class="question-divider">
-
-</div>
-
-  <!-- السؤال الثالث -->
-
 <div class="question-box">
-
 <p class="question-title">
-
-😊 كيف حالهم؟
-
+❓ لماذا هم هنا؟
 </p>
-
 <input
 id="input9"
 class="write-box"
 placeholder="اكتب إجابتك هنا">
-
 <button
 onclick="checkWriting(
 'input9',
 'result9',
-['How are they']
+['Why are they here']
 )">
-
 ✨ أريد التحقق من إجابتي
-
 </button>
-
 <p
 id="result9"
 class="answer-result">
-
 </p>
-
+</div>
 </div>
 
-</div>
+  
 <!-- طبّق ما تعلمته -->
 <div class="card">
 <h2>
