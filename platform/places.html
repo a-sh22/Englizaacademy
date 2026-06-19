@@ -9,14 +9,12 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
-
 الأماكن | Engliza Academy
-
 </title>
 
 <style>
 
-/* جميع التنسيقات العامة */
+/* جميع العناصر */
 
 *{
 margin:0;
@@ -24,6 +22,8 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
+
+/* الصفحة */
 
 body{
 
@@ -44,6 +44,7 @@ max-width:1000px;
 margin:auto;
 
 }
+
 
 /* الأعلى */
 
@@ -99,6 +100,7 @@ box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
+
 /* العنوان */
 
 .title{
@@ -127,7 +129,10 @@ color:#555;
 
 margin-bottom:50px;
 
+word-wrap:break-word;
+
 }
+
 
 /* بطاقة الفيديو */
 
@@ -160,6 +165,7 @@ border-radius:25px;
 margin-top:25px;
 
 }
+
 
 /* البطاقات */
 
@@ -215,35 +221,10 @@ font-weight:600;
 
 color:#4d4d4d;
 
-}
-
-/* بطاقة النصيحة */
-
-.tip-box{
-
-display:flex;
-
-flex-direction:row-reverse;
-
-align-items:center;
-
-gap:30px;
+word-wrap:break-word;
 
 }
 
-.tip-box img{
-
-width:150px;
-
-flex-shrink:0;
-
-}
-
-.tip-text{
-
-flex:1;
-
-}
 
 /* الأسئلة */
 
@@ -265,6 +246,8 @@ color:#444;
 
 margin-bottom:25px;
 
+word-wrap:break-word;
+
 }
 
 .help-text{
@@ -276,6 +259,8 @@ line-height:2;
 color:#666;
 
 margin-bottom:30px;
+
+word-wrap:break-word;
 
 }
 
@@ -290,6 +275,7 @@ height:1px;
 background:#ececec;
 
 }
+
 
 /* مربع الكتابة */
 
@@ -323,6 +309,7 @@ box-shadow:0 0 0 6px rgba(111,67,255,.12);
 
 }
 
+
 /* النتائج */
 
 .answer-result,
@@ -338,7 +325,12 @@ line-height:2;
 
 animation:fadeResult .4s ease;
 
+word-wrap:break-word;
+
+overflow:hidden;
+
 }
+
 
 /* الأزرار */
 
@@ -364,6 +356,8 @@ transition:.3s;
 
 box-shadow:0 10px 25px rgba(0,0,0,.10);
 
+user-select:none;
+
 }
 
 .card button:hover{
@@ -373,6 +367,7 @@ transform:translateY(-4px);
 box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
+
 
 /* ترتيب الكلمات */
 
@@ -406,6 +401,8 @@ cursor:pointer;
 
 transition:.3s;
 
+user-select:none;
+
 }
 
 .word-btn:hover{
@@ -436,6 +433,8 @@ gap:15px;
 
 align-items:center;
 
+align-content:flex-start;
+
 }
 
 .selected-word{
@@ -458,8 +457,7 @@ font-weight:bold;
 
 }
 
-  
-  .sort-buttons{
+.sort-buttons{
 
 display:flex;
 
@@ -468,33 +466,47 @@ gap:20px;
 margin-top:30px;
 
 }
-
-  
-/* ألوان التصحيح */
+  /* ألوان التصحيح */
 
 .correct-input{
+
 background:#e8fff0;
+
 border:2px solid #b8ebc8;
+
 color:#0f8b4c;
+
 }
 
 .wrong-input{
+
 background:#ffe8e8;
+
 border:2px solid #ffb8b8;
+
 color:#c62828;
+
 }
 
 .success-text{
+
 color:#0f8b4c;
+
 }
 
 .error-text{
-color:#c62828;
-}
-  
 
-  .shake{
+color:#c62828;
+
+}
+
+
+/* الاهتزاز */
+
+.shake{
+
 animation:shake .3s;
+
 }
 
 @keyframes shake{
@@ -521,7 +533,245 @@ transform:translateX(0);
 
 }
 
-  
+
+/* بطاقة تذكّر */
+
+.remember-card{
+
+background:linear-gradient(
+135deg,
+#fff8df,
+#fff2bf
+);
+
+border:2px solid #ffe082;
+
+}
+
+.remember-card h2{
+
+color:#b8860b;
+
+}
+
+.remember-card p{
+
+color:#5f5330;
+
+}
+
+
+/* بطاقة النهاية */
+
+.final-card{
+
+background:linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+}
+
+.final-card h2{
+
+color:#ffe082;
+
+font-size:42px;
+
+text-align:center;
+
+}
+
+.final-text{
+
+color:white !important;
+
+font-size:24px !important;
+
+line-height:2.4 !important;
+
+text-align:center;
+
+}
+
+
+/* زر الدرس التالي */
+
+.next-unit-btn{
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+border-radius:25px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+box-shadow:0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+.next-unit-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+/* النجوم المتطايرة */
+
+.confetti{
+
+position:relative;
+
+height:0;
+
+}
+
+.star{
+
+position:absolute;
+
+font-size:22px;
+
+opacity:0;
+
+animation:flyStars 1.4s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+
+left:10%;
+
+animation-delay:0s;
+
+}
+
+.star:nth-child(2){
+
+left:30%;
+
+animation-delay:.1s;
+
+}
+
+.star:nth-child(3){
+
+left:50%;
+
+animation-delay:.2s;
+
+}
+
+.star:nth-child(4){
+
+left:70%;
+
+animation-delay:.15s;
+
+}
+
+.star:nth-child(5){
+
+left:90%;
+
+animation-delay:.05s;
+
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+
+transform:translateY(20px) scale(.4);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-70px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+
+
+/* الأنيميشن */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
 /* الجوال */
 
 @media(max-width:768px){
@@ -562,136 +812,61 @@ font-size:20px;
 
 }
 
-.tip-box{
+.sort-buttons{
 
 flex-direction:column;
 
-text-align:center;
+}
+
+.word-container{
+
+gap:10px;
 
 }
 
-.tip-box img{
+.word-btn{
 
-width:110px;
-
-}
+width:100%;
 
 }
 
-/* الأنيميشن */
+.answer-box{
 
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(20px);
+min-height:80px;
 
 }
 
-to{
+.next-unit-btn{
 
-opacity:1;
-transform:translateY(0);
+font-size:20px;
 
 }
 
 }
 
-@keyframes fadeResult{
-
-from{
-
-opacity:0;
-transform:translateY(10px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-  .confetti{
-position:relative;
-height:0;
-}
-
-.star{
-position:absolute;
-font-size:22px;
-opacity:0;
-animation:flyStars 1.4s ease-out forwards;
-}
-
-.star:nth-child(1){
-left:10%;
-animation-delay:0s;
-}
-
-.star:nth-child(2){
-left:30%;
-animation-delay:.1s;
-}
-
-.star:nth-child(3){
-left:50%;
-animation-delay:.2s;
-}
-
-.star:nth-child(4){
-left:70%;
-animation-delay:.15s;
-}
-
-.star:nth-child(5){
-left:90%;
-animation-delay:.05s;
-}
-
-@keyframes flyStars{
-
-0%{
-opacity:0;
-transform:translateY(20px) scale(.4);
-}
-
-20%{
-opacity:1;
-}
-
-100%{
-opacity:0;
-transform:
-translateY(-70px)
-rotate(360deg)
-scale(1.3);
-}
-
-}
-  
 </style>
 
 </head>
-
-  <body>
+<body>
 
 <div class="container">
 
 <!-- الأعلى -->
+
 <div class="top-bar">
 
-<a href="question-words.html"
+<a
+href="question-words.html"
 class="back-btn">
+
 ⬅️ رجوع
+
 </a>
 
 <div class="owl-circle">
+
 <img src="../okay.owl.PNG">
+
 </div>
 
 </div>
@@ -699,11 +874,15 @@ class="back-btn">
 <!-- العنوان -->
 
 <h1 class="title">
+
 الأماكن
+
 </h1>
 
 <p class="subtitle">
+
 • في هذا الدرس ستتعلم بعض أسماء الأماكن باللغة الإنجليزية.
+
 </p>
 
 <!-- بطاقة الفيديو -->
@@ -714,6 +893,7 @@ class="back-btn">
 class="video-frame"
 src="ضع رابط الفيديو هنا"
 allowfullscreen>
+
 </iframe>
 
 </div>
@@ -723,11 +903,15 @@ allowfullscreen>
 <div class="card">
 
 <h2>
+
 ✏️ أكمل الكلمة
+
 </h2>
 
 <p>
+
 • حاول كتابة الحرف أو الجزء الناقص من الكلمة.
+
 </p>
 
 <!-- السؤال الأول -->
@@ -735,7 +919,9 @@ allowfullscreen>
 <div class="question-box">
 
 <p class="question-title">
+
 🏠 Hous__
+
 </p>
 
 <input
@@ -749,12 +935,15 @@ onclick="checkWriting(
 'result1',
 ['e']
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <p
 id="result1"
 class="answer-result">
+
 </p>
 
 </div>
@@ -766,7 +955,9 @@ class="answer-result">
 <div class="question-box">
 
 <p class="question-title">
+
 🏫 Scho__
+
 </p>
 
 <input
@@ -780,12 +971,15 @@ onclick="checkWriting(
 'result2',
 ['ol']
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <p
 id="result2"
 class="answer-result">
+
 </p>
 
 </div>
@@ -797,7 +991,9 @@ class="answer-result">
 <div class="question-box">
 
 <p class="question-title">
+
 🏥 Hospit__
+
 </p>
 
 <input
@@ -811,28 +1007,35 @@ onclick="checkWriting(
 'result3',
 ['al']
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <p
 id="result3"
 class="answer-result">
+
 </p>
 
 </div>
 
 </div>
 
-<!-- رتب الجملة -->
+ <!-- رتب الجملة -->
 
 <div class="card">
 
 <h2>
+
 🧩 رتب الجملة
+
 </h2>
 
 <p>
+
 • اضغط على الكلمات بالترتيب الصحيح لتكوين الجملة.
+
 </p>
 
 <!-- السؤال الأول -->
@@ -840,7 +1043,9 @@ class="answer-result">
 <div class="question-box">
 
 <p class="help-text">
+
 🏠 هذا منزلي
+
 </p>
 
 <div
@@ -876,6 +1081,7 @@ is
 <div
 class="answer-box"
 id="answerBox1">
+
 </div>
 
 <div class="sort-buttons">
@@ -886,7 +1092,9 @@ onclick="checkSentence(
 'This is my house',
 'resultSort1'
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <button
@@ -894,7 +1102,9 @@ onclick="resetSentence(
 'words1',
 'answerBox1'
 )">
+
 🔄 إعادة الترتيب
+
 </button>
 
 </div>
@@ -902,6 +1112,7 @@ onclick="resetSentence(
 <p
 id="resultSort1"
 class="result-text">
+
 </p>
 
 </div>
@@ -913,7 +1124,9 @@ class="result-text">
 <div class="question-box">
 
 <p class="help-text">
+
 🏫 هذه مدرستك
+
 </p>
 
 <div
@@ -935,7 +1148,7 @@ your
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
-That
+This
 </button>
 
 <button
@@ -949,6 +1162,7 @@ is
 <div
 class="answer-box"
 id="answerBox2">
+
 </div>
 
 <div class="sort-buttons">
@@ -959,7 +1173,9 @@ onclick="checkSentence(
 'This is your school',
 'resultSort2'
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <button
@@ -967,7 +1183,9 @@ onclick="resetSentence(
 'words2',
 'answerBox2'
 )">
+
 🔄 إعادة الترتيب
+
 </button>
 
 </div>
@@ -975,6 +1193,7 @@ onclick="resetSentence(
 <p
 id="resultSort2"
 class="result-text">
+
 </p>
 
 </div>
@@ -986,7 +1205,9 @@ class="result-text">
 <div class="question-box">
 
 <p class="help-text">
-🍽️ هذا مطعم 
+
+🍽️ هذا مطعم
+
 </p>
 
 <div
@@ -1002,6 +1223,12 @@ restaurant
 <button
 class="word-btn"
 onclick="addWord(this,'answerBox3')">
+a
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox3')">
 This
 </button>
 
@@ -1011,16 +1238,12 @@ onclick="addWord(this,'answerBox3')">
 is
 </button>
 
-<button
-class="word-btn"
-onclick="addWord(this,'answerBox3')">
-a
-</button>
 </div>
 
 <div
 class="answer-box"
 id="answerBox3">
+
 </div>
 
 <div class="sort-buttons">
@@ -1031,7 +1254,9 @@ onclick="checkSentence(
 'This is a restaurant',
 'resultSort3'
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <button
@@ -1039,7 +1264,9 @@ onclick="resetSentence(
 'words3',
 'answerBox3'
 )">
+
 🔄 إعادة الترتيب
+
 </button>
 
 </div>
@@ -1047,28 +1274,36 @@ onclick="resetSentence(
 <p
 id="resultSort3"
 class="result-text">
+
 </p>
 
 </div>
 
 </div>
-
 <!-- ترجم بنفسك -->
 
 <div class="card">
 
 <h2>
+
 ✏️ ترجم بنفسك
+
 </h2>
 
 <p>
+
 • حاول الترجمة بنفسك أولاً.
+
 </p>
+
+<!-- السؤال الأول -->
 
 <div class="question-box">
 
 <p class="question-title">
-🏠 هذا منزل.
+
+🏦 هذا بنك.
+
 </p>
 
 <input
@@ -1080,24 +1315,31 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input4',
 'result4',
-['This is a house']
+['This is a bank']
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <p
 id="result4"
 class="answer-result">
+
 </p>
 
 </div>
 
 <hr class="question-divider">
 
+<!-- السؤال الثاني -->
+
 <div class="question-box">
 
 <p class="question-title">
-🏫 هذه مدرسة.
+
+🏨 هذا فندق.
+
 </p>
 
 <input
@@ -1109,24 +1351,31 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input5',
 'result5',
-['This is a school']
+['This is a hotel']
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <p
 id="result5"
 class="answer-result">
+
 </p>
 
 </div>
 
 <hr class="question-divider">
 
+<!-- السؤال الثالث -->
+
 <div class="question-box">
 
 <p class="question-title">
-🏥 هذا مستشفى.
+
+📚 هذه مكتبة.
+
 </p>
 
 <input
@@ -1138,54 +1387,54 @@ placeholder="اكتب إجابتك هنا">
 onclick="checkWriting(
 'input6',
 'result6',
-['This is a hospital']
+['This is a library']
 )">
+
 ✨ أريد التحقق من إجابتي
+
 </button>
 
 <p
 id="result6"
 class="answer-result">
+
 </p>
 
 </div>
 
 </div>
 
-<!-- النصيحة -->
+  <!-- تذكّر -->
 
-<div class="card">
-
-<div class="tip-box">
-
-<img src="../success.owl.PNG">
-
-<div class="tip-text">
+<div class="card remember-card">
 
 <h2>
+
 ⭐ تذكّر
+
 </h2>
 
 <p>
+
 حتى لو أخطأت في بعض التمارين، فهذا أمر طبيعي.
 
 <br><br>
 
 ✨ مع الوقت والتدريب ستتعلم كل شيء، وستصبح أقوى في اللغة الإنجليزية.
+
 </p>
 
 </div>
 
-</div>
 
-</div>
-
-  <!-- بطاقة النهاية -->
+<!-- بطاقة النهاية -->
 
 <div class="card final-card">
 
 <h2>
+
 🏆 أحسنت!
+
 </h2>
 
 <p class="final-text">
@@ -1214,7 +1463,7 @@ class="answer-result">
 
 <!-- نهاية container -->
 
-<script>
+  <script>
 
 // ==========================
 // تنظيف النص
@@ -1255,14 +1504,8 @@ document.getElementById(inputId);
 let result =
 document.getElementById(resultId);
 
-
-// إجابة الطالب
-
 let userAnswer =
 normalizeText(input.value);
-
-
-// الإجابات الصحيحة
 
 let answers =
 correctAnswers.map(
@@ -1270,17 +1513,11 @@ answer =>
 normalizeText(answer)
 );
 
-
-// إزالة الألوان القديمة
-
 input.classList.remove(
 "correct-input",
 "wrong-input",
 "shake"
 );
-
-
-// التحقق
 
 if(
 answers.includes(userAnswer)
@@ -1292,7 +1529,14 @@ input.classList.add(
 
 result.innerHTML =
 
-"✅ أحسنت! إجابتك صحيحة.";
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+'✅ أحسنت! إجابتك صحيحة.';
 
 result.className =
 "answer-result success-text";
@@ -1409,12 +1653,10 @@ document.getElementById(
 resultId
 );
 
-
 let words =
 answerBox.querySelectorAll(
 ".selected-word"
 );
-
 
 let userSentence = "";
 
@@ -1424,7 +1666,6 @@ userSentence +=
 word.innerText + " ";
 
 });
-
 
 userSentence =
 normalizeText(
@@ -1436,11 +1677,9 @@ normalizeText(
 correctSentence
 );
 
-
 answerBox.classList.remove(
 "shake"
 );
-
 
 if(
 userSentence === correctSentence
@@ -1448,7 +1687,14 @@ userSentence === correctSentence
 
 result.innerHTML =
 
-"✅ أحسنت! لقد رتبت الجملة بطريقة صحيحة.";
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+'✅ أحسنت! لقد رتبت الجملة بطريقة صحيحة.';
 
 result.className =
 "result-text success-text";
@@ -1514,7 +1760,6 @@ word
 
 }
 
-
 shuffleWords("words1");
 shuffleWords("words2");
 shuffleWords("words3");
@@ -1576,3 +1821,5 @@ window.location.href =
 </body>
 
 </html>
+
+  
