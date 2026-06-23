@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Engliza Academy
+
+</title>
+
+<style>
+
+/* =======================
+General
+======================= */
+
+*{
+
+margin:0;
+padding:0;
+
+box-sizing:border-box;
+
+font-family:
+Arial,
+sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:#f7f9fc;
+
+color:#222;
+
+overflow-x:hidden;
+
+}
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:0 25px;
+
+}
+
+section{
+
+padding:110px 0;
+
+}
+
+button{
+
+font-family:inherit;
+
+cursor:pointer;
+
+}
+
+
+/* =======================
+Typography
+======================= */
+
+.section-title{
+
+font-size:52px;
+
+text-align:center;
+
+color:#1f3c88;
+
+margin-bottom:20px;
+
+}
+
+.section-subtitle{
+
+font-size:22px;
+
+line-height:2;
+
+text-align:center;
+
+color:#666;
+
+max-width:900px;
+
+margin:auto;
+
+margin-bottom:70px;
+
+}
+
+
+/* =======================
+Navbar
+======================= */
+
+.navbar{
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+background:white;
+
+box-shadow:
+
+0 10px 35px rgba(
+0,
+0,
+0,
+.05
+);
+
+}
+
+.nav-content{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:20px 25px;
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:35px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+font-size:17px;
+
+font-weight:bold;
+
+color:#555;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#6f43ff;
+
+}
+
+
+/* =======================
+Hero
+======================= */
+
+.hero{
+
+padding:
+
+120px 0 100px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#eef4ff,
+
+#faf6ff
+
+);
+
+}
+
+.hero-content{
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+gap:70px;
+
+}
+
+.hero-left{
+
+flex:1;
+
+}
+
+.hero-title{
+
+font-size:68px;
+
+line-height:1.2;
+
+color:#1f3c88;
+
+margin-bottom:30px;
+
+}
+
+.hero-description{
+
+font-size:22px;
+
+line-height:2;
+
+color:#666;
+
+margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+padding:
+
+20px 38px;
+
+border:none;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:white;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#3768ff,
+
+#6f43ff
+
+);
+
+transition:.3s;
+
+box-shadow:
+
+0 15px 40px rgba(
+0,
+0,
+0,
+.15
+);
+
+}
+
+.primary-btn:hover{
+
+transform:
+
+translateY(-5px);
+
+}
+
+.secondary-btn{
+
+padding:
+
+20px 38px;
+
+border-radius:18px;
+
+border:
+
+2px solid #dce4ff;
+
+background:white;
+
+font-size:18px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.secondary-btn:hover{
+
+transform:
+
+translateY(-5px);
+
+}
+
+.hero-right{
+
+flex:1;
+
+}
+/* =======================
+Hero Preview Card
+======================= */
+
+.preview-card{
+
+background:white;
+
+padding:45px;
+
+border-radius:35px;
+
+box-shadow:
+
+0 20px 60px rgba(
+0,
+0,
+0,
+.08
+);
+
+animation:
+
+fadeUp .8s ease;
+
+}
+
+.preview-card h3{
+
+font-size:34px;
+
+color:#1f3c88;
+
+margin-bottom:30px;
+
+}
+
+.preview-card p{
+
+font-size:20px;
+
+line-height:2;
+
+color:#666;
+
+}
+
+
+/* =======================
+Statistics
+======================= */
+
+.stats{
+
+padding:
+
+90px 0;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(
+220px,
+1fr
+)
+);
+
+gap:30px;
+
+}
+
+.stat-card{
+
+background:white;
+
+padding:45px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:
+
+0 15px 40px rgba(
+0,
+0,
+0,
+.08
+);
+
+}
+
+.stat-number{
+
+font-size:52px;
+
+font-weight:bold;
+
+color:#6f43ff;
+
+margin-bottom:20px;
+
+}
+
+.stat-text{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+
+/* =======================
+Cards
+======================= */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(
+300px,
+1fr
+)
+);
+
+gap:35px;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:
+
+0 15px 45px rgba(
+0,
+0,
+0,
+.08
+);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:
+
+translateY(-8px);
+
+box-shadow:
+
+0 25px 60px rgba(
+0,
+0,
+0,
+.12
+);
+
+}
+
+.card-icon{
+
+font-size:50px;
+
+margin-bottom:25px;
+
+}
+
+.card h3{
+
+font-size:30px;
+
+color:#1f3c88;
+
+margin-bottom:20px;
+
+}
+
+.card p{
+
+font-size:19px;
+
+line-height:2;
+
+color:#666;
+
+}
+
+
+/* =======================
+Platform Mockup
+======================= */
+
+.platform-preview{
+
+background:white;
+
+padding:60px;
+
+border-radius:40px;
+
+box-shadow:
+
+0 20px 60px rgba(
+0,
+0,
+0,
+.08
+);
+
+}
+
+.platform-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(
+240px,
+1fr
+)
+);
+
+gap:30px;
+
+}
+
+.platform-box{
+
+background:
+
+#f7f9fc;
+
+padding:35px;
+
+border-radius:25px;
+
+text-align:center;
+
+}
+
+.platform-box h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:20px;
+
+}
+
+.platform-box p{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#666;
+
+}
+
+
+/* =======================
+Pricing
+======================= */
+
+.pricing-card{
+
+max-width:800px;
+
+margin:auto;
+
+background:white;
+
+padding:70px;
+
+border-radius:40px;
+
+text-align:center;
+
+box-shadow:
+
+0 20px 60px rgba(
+0,
+0,
+0,
+.08
+);
+
+}
+
+.price{
+
+font-size:80px;
+
+font-weight:bold;
+
+color:#6f43ff;
+
+margin:
+
+30px 0;
+
+}
+
+.price-subtitle{
+
+font-size:22px;
+
+line-height:2;
+
+color:#666;
+
+}
+
+/* =======================
+Testimonials
+======================= */
+
+.testimonials{
+
+background:
+
+linear-gradient(
+135deg,
+#eef4ff,
+#faf6ff
+);
+
+}
+
+.testimonial-card{
+
+background:white;
+
+padding:45px;
+
+border-radius:35px;
+
+box-shadow:
+
+0 15px 45px rgba(
+0,
+0,
+0,
+.08
+);
+
+}
+
+.testimonial-card p{
+
+font-size:20px;
+
+line-height:2.2;
+
+color:#555;
+
+margin-bottom:25px;
+
+}
+
+.testimonial-name{
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+}
+
+
+/* =======================
+FAQ
+======================= */
+
+.faq-box{
+
+background:white;
+
+padding:35px;
+
+border-radius:30px;
+
+box-shadow:
+
+0 15px 40px rgba(
+0,
+0,
+0,
+.08
+);
+
+margin-bottom:25px;
+
+}
+
+.faq-box h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:20px;
+
+}
+
+.faq-box p{
+
+font-size:19px;
+
+line-height:2;
+
+color:#666;
+
+}
+
+
+/* =======================
+Contact
+======================= */
+
+.contact-card{
+
+text-align:center;
+
+}
+
+.contact-card h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:20px;
+
+}
+
+.contact-card p{
+
+font-size:19px;
+
+line-height:2;
+
+color:#666;
+
+}
+
+
+/* =======================
+Footer
+======================= */
+
+footer{
+
+background:#1f3c88;
+
+padding:90px 0;
+
+color:white;
+
+text-align:center;
+
+}
+
+footer h2{
+
+font-size:42px;
+
+margin-bottom:30px;
+
+}
+
+footer p{
+
+font-size:20px;
+
+line-height:2;
+
+opacity:.95;
+
+}
+
+.footer-links{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+}
+
+.footer-links a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+color:#ffe082;
+
+}
+
+
+/* =======================
+Animation
+======================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+}
+
+
+/* =======================
+Mobile
+======================= */
+
+@media(max-width:900px){
+
+.hero-content{
+
+flex-direction:column;
+
+}
+
+.hero-title{
+
+font-size:48px;
+
+}
+
+.section-title{
+
+font-size:40px;
+
+}
+
+.section-subtitle{
+
+font-size:18px;
+
+}
+
+.hero-description{
+
+font-size:18px;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.price{
+
+font-size:60px;
+
+}
+
+.pricing-card{
+
+padding:45px;
+
+}
+
+.card{
+
+padding:30px;
+
+}
+
+.preview-card{
+
+padding:35px;
+
+}
+
+.platform-preview{
+
+padding:35px;
+
+}
+
+footer h2{
+
+font-size:34px;
+
+}
+
+footer p{
+
+font-size:18px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+  <body>
+
+
+<!-- =======================
+Navbar
+======================= -->
+
+<nav class="navbar">
+
+<div class="nav-content">
+
+<div class="logo">
+
+Engliza Academy
+
+</div>
+
+<div class="nav-links">
+
+<a href="#features">
+
+Features
+
+</a>
+
+<a href="#how">
+
+How It Works
+
+</a>
+
+<a href="#platform">
+
+Platform
+
+</a>
+
+<a href="#pricing">
+
+Pricing
+
+</a>
+
+<a href="#faq">
+
+FAQ
+
+</a>
+
+<a href="#contact">
+
+Contact
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- =======================
+Hero
+======================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+
+<!-- Left -->
+
+<div class="hero-left">
+
+<h1 class="hero-title">
+
+Learn English Through A Complete Learning Platform
+
+</h1>
+
+
+<p class="hero-description">
+
+Engliza Academy provides a structured learning experience designed specifically for Arabic speakers.
+
+Students receive lessons, exercises, revision materials, progress tracking, and access to a supportive learning community.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<button class="primary-btn">
+
+Explore The Program
+
+</button>
+
+
+<button class="secondary-btn">
+
+How It Works
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- Right -->
+
+<div class="hero-right">
+
+<div class="preview-card">
+
+<h3>
+
+📚 Complete Learning Experience
+
+</h3>
+
+
+<p>
+
+✔ Structured lessons
+
+<br><br>
+
+✔ Interactive exercises
+
+<br><br>
+
+✔ Revision materials
+
+<br><br>
+
+✔ Progress tracking
+
+<br><br>
+
+✔ Student community
+
+<br><br>
+
+✔ Questions and support
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================
+Statistics
+======================= -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+
+<div class="stat-card">
+
+<div class="stat-number">
+
+📚
+
+</div>
+
+<div class="stat-text">
+
+Complete Learning Platform
+
+</div>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="stat-number">
+
+📝
+
+</div>
+
+<div class="stat-text">
+
+Exercises & Reviews
+
+</div>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="stat-number">
+
+👥
+
+</div>
+
+<div class="stat-text">
+
+Student Community
+
+</div>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<div class="stat-number">
+
+💬
+
+</div>
+
+<div class="stat-text">
+
+Continuous Support
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- =======================
+Why Engliza Academy
+======================= -->
+
+<section
+class="section"
+id="features">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Why Engliza Academy
+
+</h2>
+
+<p class="section-subtitle">
+
+A complete learning experience designed to help Arabic speakers build confidence in English step by step.
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📚
+
+</div>
+
+<h3>
+
+Structured Learning Path
+
+</h3>
+
+<p>
+
+Lessons are organized in a clear sequence to help students progress naturally from the basics to more advanced skills.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📝
+
+</div>
+
+<h3>
+
+Interactive Exercises
+
+</h3>
+
+<p>
+
+Practice activities and exercises help students apply what they learn and strengthen their understanding.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+🔄
+
+</div>
+
+<h3>
+
+Revision Materials
+
+</h3>
+
+<p>
+
+Students can revisit important topics and reinforce their learning through revision resources.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📈
+
+</div>
+
+<h3>
+
+Progress Tracking
+
+</h3>
+
+<p>
+
+Learners can monitor their progress and gradually improve their English skills over time.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+👥
+
+</div>
+
+<h3>
+
+Student Community
+
+</h3>
+
+<p>
+
+Students become part of a supportive learning community where they can stay motivated and connected.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+💬
+
+</div>
+
+<h3>
+
+Questions & Support
+
+</h3>
+
+<p>
+
+Students can ask questions and receive guidance whenever they need assistance.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- =======================
+How It Works
+======================= -->
+
+<section
+class="section"
+id="how">
+
+<div class="container">
+
+<h2 class="section-title">
+
+How It Works
+
+</h2>
+
+<p class="section-subtitle">
+
+Students can start learning in just a few simple steps.
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="card-icon">
+
+🛒
+
+</div>
+
+<h3>
+
+Purchase
+
+</h3>
+
+<p>
+
+Students purchase the program securely through the website.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+🔓
+
+</div>
+
+<h3>
+
+Access The Platform
+
+</h3>
+
+<p>
+
+After payment, students receive access to the learning platform.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📚
+
+</div>
+
+<h3>
+
+Study Lessons
+
+</h3>
+
+<p>
+
+Students follow structured lessons designed specifically for Arabic speakers.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📝
+
+</div>
+
+<h3>
+
+Practice & Revision
+
+</h3>
+
+<p>
+
+Exercises and revision materials help students strengthen their understanding.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+👥
+
+</div>
+
+<h3>
+
+Join The Community
+
+</h3>
+
+<p>
+
+Students become part of a supportive learning community where they can stay motivated.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📈
+
+</div>
+
+<h3>
+
+Track Progress
+
+</h3>
+
+<p>
+
+Learners continue improving step by step while building confidence in English.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- =======================
+Inside The Platform
+======================= -->
+
+<section
+class="section"
+id="platform">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Inside The Platform
+
+</h2>
+
+<p class="section-subtitle">
+
+Students receive access to a complete learning environment designed to make studying easier and more enjoyable.
+
+</p>
+
+
+<div class="platform-preview">
+
+<div class="platform-grid">
+
+
+<div class="platform-box">
+
+<h3>
+
+📚 Lessons
+
+</h3>
+
+<p>
+
+Structured lessons designed to help students progress step by step.
+
+</p>
+
+</div>
+
+
+
+<div class="platform-box">
+
+<h3>
+
+📝 Exercises
+
+</h3>
+
+<p>
+
+Interactive practice activities help learners strengthen their understanding.
+
+</p>
+
+</div>
+
+
+
+<div class="platform-box">
+
+<h3>
+
+🔄 Reviews
+
+</h3>
+
+<p>
+
+Revision materials allow students to revisit important topics and reinforce learning.
+
+</p>
+
+</div>
+
+
+
+<div class="platform-box">
+
+<h3>
+
+📈 Progress Tracking
+
+</h3>
+
+<p>
+
+Students can monitor their development and continue improving with confidence.
+
+</p>
+
+</div>
+
+
+
+<div class="platform-box">
+
+<h3>
+
+👥 Community
+
+</h3>
+
+<p>
+
+Learners become part of a supportive student community where they stay motivated and connected.
+
+</p>
+
+</div>
+
+
+
+<div class="platform-box">
+
+<h3>
+
+💬 Questions & Support
+
+</h3>
+
+<p>
+
+Students can ask questions and receive guidance whenever they need assistance.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- =======================
+What Students Learn
+======================= -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+What Students Learn
+
+</h2>
+
+<p class="section-subtitle">
+
+Engliza Academy helps students develop essential English skills through a structured and practical approach.
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📖
+
+</div>
+
+<h3>
+
+Grammar Foundations
+
+</h3>
+
+<p>
+
+Students build a strong understanding of English grammar step by step.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📚
+
+</div>
+
+<h3>
+
+Vocabulary Development
+
+</h3>
+
+<p>
+
+Learners expand their vocabulary and improve their ability to understand and communicate.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+🎧
+
+</div>
+
+<h3>
+
+Listening Practice
+
+</h3>
+
+<p>
+
+Students strengthen their listening skills through practical learning activities.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📄
+
+</div>
+
+<h3>
+
+Reading Skills
+
+</h3>
+
+<p>
+
+Learners improve their reading comprehension and understanding of written English.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+✍️
+
+</div>
+
+<h3>
+
+Writing Skills
+
+</h3>
+
+<p>
+
+Students gradually develop confidence in expressing themselves through writing.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+🗣️
+
+</div>
+
+<h3>
+
+Speaking Confidence
+
+</h3>
+
+<p>
+
+The program helps learners become more confident when using English in daily situations.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- =======================
+Student Support
+======================= -->
+
+<section
+class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Student Support
+
+</h2>
+
+<p class="section-subtitle">
+
+Learning becomes easier when students receive guidance, support, and motivation throughout their journey.
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="card-icon">
+
+👥
+
+</div>
+
+<h3>
+
+Private Community
+
+</h3>
+
+<p>
+
+Students become part of a dedicated learning community where they can interact and stay motivated.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+❓
+
+</div>
+
+<h3>
+
+Questions & Answers
+
+</h3>
+
+<p>
+
+Learners can ask questions whenever they need clarification and receive guidance.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+💬
+
+</div>
+
+<h3>
+
+Continuous Guidance
+
+</h3>
+
+<p>
+
+Students are supported throughout their learning journey to help them stay consistent and confident.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+🎯
+
+</div>
+
+<h3>
+
+Step-By-Step Progress
+
+</h3>
+
+<p>
+
+The learning experience is designed to help students advance gradually without feeling overwhelmed.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+🌟
+
+</div>
+
+<h3>
+
+Motivation & Encouragement
+
+</h3>
+
+<p>
+
+Students are encouraged to stay committed and continue improving their English skills.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📈
+
+</div>
+
+<h3>
+
+Long-Term Growth
+
+</h3>
+
+<p>
+
+The goal is to help learners build confidence and achieve lasting progress in English.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- =======================
+Pricing
+======================= -->
+
+<section
+class="section"
+id="pricing">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Simple Pricing
+
+</h2>
+
+<p class="section-subtitle">
+
+One payment. Lifetime access. No monthly subscription.
+
+</p>
+
+
+<div class="pricing-card">
+
+<div class="card-icon">
+
+💎
+
+</div>
+
+
+<h3
+style="
+font-size:42px;
+margin-bottom:20px;
+">
+
+Complete Learning Program
+
+</h3>
+
+
+<p
+class="price-subtitle">
+
+Designed specifically for Arabic speakers.
+
+</p>
+
+
+<div class="price">
+
+$104
+
+</div>
+
+
+<p
+class="price-subtitle">
+
+One-Time Payment
+
+<br><br>
+
+Lifetime Access
+
+<br><br>
+
+No Subscription Required
+
+</p>
+
+
+<br><br>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📚
+
+</div>
+
+<h3>
+
+Full Platform Access
+
+</h3>
+
+<p>
+
+Access lessons, learning materials, and structured content.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+📝
+
+</div>
+
+<h3>
+
+Exercises & Reviews
+
+</h3>
+
+<p>
+
+Practice activities and revision materials help reinforce learning.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+👥
+
+</div>
+
+<h3>
+
+Student Community
+
+</h3>
+
+<p>
+
+Become part of a supportive learning community.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+
+💬
+
+</div>
+
+<h3>
+
+Questions & Support
+
+</h3>
+
+<p>
+
+Students can ask questions and receive guidance whenever needed.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<br><br><br>
+
+
+<button class="primary-btn">
+
+Get Started
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================
+Platform Preview
+======================= -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Platform Preview
+
+</h2>
+
+<p class="section-subtitle">
+
+Take a closer look at some parts of the learning experience available inside Engliza Academy.
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<img
+src="images/lessons-preview.png"
+style="
+width:100%;
+border-radius:25px;
+margin-bottom:25px;
+">
+
+<h3>
+
+Lessons
+
+</h3>
+
+<p>
+
+Structured lessons designed to help students progress step by step.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/exercises-preview.png"
+style="
+width:100%;
+border-radius:25px;
+margin-bottom:25px;
+">
+
+<h3>
+
+Exercises
+
+</h3>
+
+<p>
+
+Interactive activities help students practice and strengthen their understanding.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/progress-preview.png"
+style="
+width:100%;
+border-radius:25px;
+margin-bottom:25px;
+">
+
+<h3>
+
+Progress Tracking
+
+</h3>
+
+<p>
+
+Students can follow their learning journey and continue improving with confidence.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/community-preview.png"
+style="
+width:100%;
+border-radius:25px;
+margin-bottom:25px;
+">
+
+<h3>
+
+Student Community
+
+</h3>
+
+<p>
+
+Learners become part of a supportive community where they can stay motivated and connected.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+  
+  
+  <!-- =======================
+Learning Experience
+======================= -->
+
+<section
+class="section testimonials">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Learning Experience
+
+</h2>
+
+<p class="section-subtitle">
+
+Engliza Academy focuses on creating a supportive and enjoyable learning journey for Arabic speakers.
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="testimonial-card">
+
+<p>
+
+Students follow a structured learning path designed to make English easier and more accessible.
+
+</p>
+
+<div class="testimonial-name">
+
+📚 Structured Learning
+
+</div>
+
+</div>
+
+
+
+<div class="testimonial-card">
+
+<p>
+
+Exercises, revision materials, and continuous practice help students strengthen their understanding.
+
+</p>
+
+<div class="testimonial-name">
+
+📝 Practical Learning
+
+</div>
+
+</div>
+
+
+
+<div class="testimonial-card">
+
+<p>
+
+Community support and guidance help learners stay motivated throughout their journey.
+
+</p>
+
+<div class="testimonial-name">
+
+👥 Support & Motivation
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- =======================
+FAQ
+======================= -->
+
+<section
+class="section"
+id="faq">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Frequently Asked Questions
+
+</h2>
+
+<p class="section-subtitle">
+
+Everything students need to know before joining Engliza Academy.
+
+</p>
+
+
+<div class="faq-box">
+
+<h3>
+
+How do students access the program?
+
+</h3>
+
+<p>
+
+Students receive access to the learning platform after completing their purchase.
+
+</p>
+
+</div>
+
+
+
+<div class="faq-box">
+
+<h3>
+
+Is the program self-paced?
+
+</h3>
+
+<p>
+
+Yes. Students can study at their own pace and progress step by step.
+
+</p>
+
+</div>
+
+
+
+<div class="faq-box">
+
+<h3>
+
+Is support included?
+
+</h3>
+
+<p>
+
+Yes. Students can ask questions and receive learning guidance whenever needed.
+
+</p>
+
+</div>
+
+
+
+<div class="faq-box">
+
+<h3>
+
+Who is this program for?
+
+</h3>
+
+<p>
+
+The program is designed specifically for Arabic speakers who want to improve their English skills.
+
+</p>
+
+</div>
+
+
+
+<div class="faq-box">
+
+<h3>
+
+Is there a student community?
+
+</h3>
+
+<p>
+
+Yes. Students become part of a supportive learning community where they can stay motivated and connected.
+
+</p>
+
+</div>
+
+
+
+<div class="faq-box">
+
+<h3>
+
+What skills are covered?
+
+</h3>
+
+<p>
+
+The program helps students develop grammar, vocabulary, listening, reading, writing, and speaking confidence.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =======================
+About Engliza Academy
+======================= -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+About Engliza Academy
+
+</h2>
+
+<p class="section-subtitle">
+
+Engliza Academy is an online English learning platform created specifically for Arabic speakers.
+
+Our mission is to make learning English easier through structured lessons, exercises, revision materials, and continuous support.
+
+Students receive access to a complete learning experience designed to help them build confidence and progress step by step.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================
+Contact Information
+======================= -->
+
+<section
+class="section"
+id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Contact Information
+
+</h2>
+
+<p class="section-subtitle">
+
+Students can reach us through the following channels.
+
+</p>
+
+
+<div class="grid">
+
+
+<div class="card contact-card">
+
+<div class="card-icon">
+
+📧
+
+</div>
+
+<h3>
+
+Email
+
+</h3>
+
+<p>
+
+support@englizaacademy.com
+
+</p>
+
+</div>
+
+
+
+<div class="card contact-card">
+
+<div class="card-icon">
+
+📷
+
+</div>
+
+<h3>
+
+Instagram
+
+</h3>
+
+<p>
+
+@_engliza_academy
+
+</p>
+
+</div>
+
+
+
+<div class="card contact-card">
+
+<div class="card-icon">
+
+👥
+
+</div>
+
+<h3>
+
+Student Community
+
+</h3>
+
+<p>
+
+Private community available for enrolled students.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================
+Footer
+======================= -->
+
+<footer>
+
+<div class="container">
+
+<h2>
+
+Engliza Academy
+
+</h2>
+
+<p>
+
+Helping Arabic speakers build confidence in English through a complete learning platform.
+
+</p>
+
+
+<div class="footer-links">
+
+<a href="about.html">
+
+About Us
+
+</a>
+
+<a href="privacy.html">
+
+Privacy Policy
+
+</a>
+
+<a href="terms.html">
+
+Terms & Conditions
+
+</a>
+
+<a href="refund.html">
+
+Refund Policy
+
+</a>
+
+<a href="#contact">
+
+Contact
+
+</a>
+
+</div>
+
+
+<br><br>
+
+<p>
+
+© 2026 Engliza Academy
+
+<br><br>
+
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+
+
+</body>
+
+</html>
+
+
+ 
