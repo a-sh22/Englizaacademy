@@ -403,25 +403,30 @@ display:flex;
 
 align-items:center;
 
-gap:25px;
+justify-content:space-between;
 
-padding:28px 35px;
+gap:30px;
 
 }
 
+   
 .message-card img{
 
-width:120px;
+width:130px;
 
 flex-shrink:0;
 
+display:block;
+
 }
 
+   
 .message-content{
 
 flex:1;
 
 }
+   
 
 .message-content h2{
 
@@ -1059,7 +1064,37 @@ transform:translateY(0);
 
 }
 
+.stage-border-green{
 
+border:4px solid #34c759;
+
+}
+
+.stage-border-blue{
+
+border:4px solid #2d7ff9;
+
+}
+
+.stage-border-purple{
+
+border:4px solid #7b4dff;
+
+}
+
+.stage-border-orange{
+
+border:4px solid #ff9800;
+
+}
+
+.stage-border-gold{
+
+border:4px solid #d4a017;
+
+}
+
+   
 /* ==========================
    الجوال
 ========================== */
@@ -1088,12 +1123,25 @@ padding:28px;
 .message-card,
 .final-card{
 
-flex-direction:column;
+display:flex;
 
-text-align:center;
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
 
 }
 
+.intro-content,
+.message-content,
+.final-content{
+
+flex:1;
+
+}
+
+   
 .intro-image img{
 
 width:140px;
@@ -1226,12 +1274,6 @@ class="back-btn">
 
 <div class="card intro-card">
 
-<div class="intro-image">
-
-<img src="../success.owl.PNG">
-
-</div>
-
 <div class="intro-content">
 
 <h2>
@@ -1305,8 +1347,8 @@ style="width:20%;">
 
   <!-- بطاقة المرحلة الأولى -->
 
-<div class="card">
-
+<div class="card stage-border-green">
+   
 <!-- السؤال الأول -->
 
 <div class="question-box">
@@ -1509,14 +1551,15 @@ style="width:40%;">
 
 <!-- بطاقة المرحلة الثانية -->
 
-<div class="card">
-<div class="question-box">
+<div class="card stage-border-blue">
   
 <!-- السؤال الأول -->
 
+<div class="question-box">
+
 <p class="question-title">
 
-🎯 ما لون الموز؟
+🎯 ما لون السماء؟
 
 </p>
 
@@ -1524,17 +1567,17 @@ style="width:40%;">
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
+onclick="checkAnswer(this,true,'id="choice5"')">
 
-Yellow
+Blue
 
 </button>
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
+onclick="checkAnswer(this,false,'choice5')"
 
-Blue
+Green
 
 </button>
 
@@ -1712,8 +1755,8 @@ style="width:60%;">
 
   <!-- بطاقة المرحلة الثالثة -->
 
-<div class="card">
-
+<div class="card stage-border-purple">
+   
 <!-- السؤال الأول -->
 
 <div class="question-box">
@@ -1938,7 +1981,7 @@ style="width:80%;">
 
 <!-- بطاقة المرحلة الرابعة -->
 
-<div class="card">
+<div class="card stage-border-orange">
 
 <!-- السؤال الأول -->
 
@@ -2148,7 +2191,7 @@ style="width:100%;">
 
   <!-- بطاقة التحدي النهائي -->
 
-<div class="card challenge-card">
+<div class="card stage-border-gold">
 
 <!-- السؤال الأول -->
 
