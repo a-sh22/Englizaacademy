@@ -1120,16 +1120,17 @@ padding:28px;
 }
 
 .intro-card,
-.message-card,
-.final-card{
+.message-card{
 
 display:flex;
 
 align-items:center;
 
-justify-content:space-between;
+justify-content:flex-start;
 
-gap:20px;
+gap:16px;
+
+text-align:right;
 
 }
 
@@ -1141,7 +1142,26 @@ flex:1;
 
 }
 
-   
+.message-content h2{
+
+margin-bottom:8px;
+
+}
+
+.message-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin:0;
+
+color:#444;
+
+font-weight:600;
+
+}
+
 .intro-image img{
 
 width:140px;
@@ -1151,6 +1171,10 @@ width:140px;
 .message-card img{
 
 width:100px;
+
+flex-shrink:0;
+
+display:block;
 
 }
 
@@ -1278,21 +1302,21 @@ class="back-btn">
 
 <h2>
 
- هل أنت مستعد؟ •
+ 🤓 هل أنت مستعد؟ 
 
 </h2>
 
 <p>
 
-لقد تعلمت العديد من المهارات في هذه الوحدة.
+• لقد تعلمت العديد من المهارات في هذه الوحدة.
 
 <br><br>
 
-✨ الآن حان وقت مراجعتها والتأكد من إتقانها.
+• الآن حان وقت مراجعتها والتأكد من إتقانها.
 
 <br><br>
 
-استمتع بالمراجعة، وحاول الإجابة بنفسك قبل التحقق من الحل.
+ • استمتع بالمراجعة، وحاول الإجابة بنفسك قبل التحقق من الحل.
 
 </p>
 
@@ -1494,12 +1518,10 @@ class="answer-result">
 
 <p>
 
-لقد أنهيت المرحلة الأولى بنجاح. 🎉
-
-<br>
-
-🚀 لنرفع مستوى التحدي قليلاً.
+• لقد أنهيت المرحلة الأولى بنجاح. <br>
+• لنرفع مستوى التحدي قليلاً.
 </p>
+   
 
 </div>
 
@@ -1566,15 +1588,13 @@ style="width:40%;">
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'id="choice5"')">
+onclick="checkAnswer(this,true,'choice5')"
 
 Blue
 
-</button>
-
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'choice5')"
+onclick="checkAnswer(this,false,'choice5')">
 
 Green
 
@@ -1583,7 +1603,7 @@ Green
 </div>
 
 <p
-id="choice2"
+id="choice5"
 class="result-text">
 
 </p>
@@ -1697,11 +1717,9 @@ class="result-text">
 
 <p>
 
-أصبحت في منتصف المراجعة. 🎉
+• أصبحت في منتصف المراجعة. <br>
 
-<br>
-
-✨ بقيت مراحل قليلة للوصول إلى النهاية.
+• بقيت مراحل قليلة للوصول إلى النهاية.
 
 </p>
    
@@ -2130,11 +2148,9 @@ class="answer-result">
 
 <p>
 
-لقد وصلت إلى آخر مرحلة. 🎉
+• لقد وصلت إلى آخر مرحلة. <br>
 
-<br>
-
-🏆 بقي التحدي النهائي، ثم ستكون جاهزًا للانتقال إلى الوحدة الثالثة.
+• بقي التحدي النهائي، ثم ستكون جاهزًا للانتقال إلى الوحدة الثالثة.
 
 </p>
 
