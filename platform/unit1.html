@@ -1,40 +1,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport"
+
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
-<title>الوحدة الأولى | Engliza Academy</title>
+
+<title>
+
+الوحدة الأولى | Engliza Academy
+
+</title>
 
 <style>
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+
 }
 
 body{
-background:linear-gradient(135deg,#eef4ff,#f7f3ff);
+
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
 padding:30px 20px;
+
 }
 
 .container{
-max-width:1000px;
+
+max-width:1050px;
 margin:auto;
+
 }
 
-/* الجزء العلوي */
+
+/* ==========================
+   الأعلى
+========================== */
 
 .top-bar{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:40px;
+
 }
 
 .back-btn{
+
 background:white;
 padding:14px 25px;
 border-radius:18px;
@@ -43,566 +69,792 @@ color:#1f3c88;
 font-size:18px;
 font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+
 }
 
 .back-btn:hover{
-transform:translateY(-3px);
+
+transform:translateY(-4px);
+
 }
 
 .owl-circle img{
+
 width:80px;
 height:80px;
 border-radius:50%;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
+
 }
 
-/* العنوان */
+
+/* ==========================
+   عنوان الوحدة
+========================== */
 
 .title{
+
 text-align:center;
 font-size:52px;
 color:#1f3c88;
-margin:20px 0 15px;
+margin-bottom:18px;
+
 }
 
 .subtitle{
+
 text-align:center;
 font-size:22px;
+font-weight:600;
 line-height:2;
 color:#555;
-font-weight:500;
-margin-bottom:40px;
+margin-bottom:55px;
+
 }
 
-/* الفيديو */
 
-.video-box{
-background:white;
-padding:30px;
-border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
-}
-
-.video-placeholder{
-height:250px;
-background:#f5f7ff;
-border-radius:25px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:32px;
-font-weight:bold;
-color:#1f3c88;
-}
-
-/* البطاقات */
+/* ==========================
+   البطاقات العامة
+========================== */
 
 .card{
+
 background:white;
 padding:40px;
 border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-top:25px;
-margin-bottom:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+margin-bottom:40px;
+transition:.35s;
+animation:fadeUp .6s ease;
+
 }
 
-.card h2{
-color:#1f3c88;
-font-size:34px;
-margin-bottom:25px;
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 22px 50px rgba(0,0,0,.12);
+
 }
 
-.card p{
-font-size:20px;
-line-height:2;
-color:#555;
-font-weight:500;
-}
 
-/* بطاقات البومة */
+/* ==========================
+   بطاقة الفيديو
+========================== */
 
-.tip-box{
-display:flex;
-flex-direction:row-reverse;
-align-items:center;
-gap:35px;
-}
+.video-card iframe{
 
-.tip-box img{
-width:170px;
-flex-shrink:0;
-}
-
-.tip-text{
-flex:1;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.tip-text h2{
-color:#1f3c88;
-font-size:34px;
-margin-bottom:20px;
-}
-
-.tip-text p{
-font-size:21px;
-line-height:2;
-color:#555;
-font-weight:500;
-}
-
-.tip-text button{
-margin-top:25px;
-}
-
-/* الدروس */
-
-/* الدروس */
-
-.units{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-align-items:stretch;
-}
-
-.unit{
-background:white;
-padding:30px;
-border-radius:30px;
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-transition:.3s;
-
-display:flex;
-flex-direction:column;
-
-height:100%;
-}
-
-.unit:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.12);
-}
-
-.unit h3{
-color:#1f3c88;
-font-size:28px;
-margin-bottom:18px;
-}
-
-.unit p{
-font-size:18px;
-line-height:1.9;
-color:#555;
-font-weight:500;
-margin-bottom:15px;
-}
-
-/* يجعل الزر ينزل لأسفل البطاقة دائماً */
-
-.unit button{
-margin-top:auto;
-}
- 
-/* شريط التقدم */
-
-.progress-bar{
 width:100%;
-height:14px;
-background:#edf1ff;
-border-radius:20px;
-overflow:hidden;
-margin-bottom:25px;
+aspect-ratio:16/9;
+border:none;
+border-radius:25px;
+
 }
 
-.progress{
-height:100%;
+
+/* ==========================
+   بطاقة البومة
+========================== */
+
+.message-card{
+
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:25px;
+
+}
+
+.message-card img{
+
+width:130px;
+flex-shrink:0;
+display:block;
+
+}
+
+.message-content{
+
+flex:1;
+
+}
+
+.message-content h2{
+
+font-size:32px;
+color:#1f3c88;
+margin-bottom:12px;
+
+}
+
+.message-content p{
+
+font-size:22px;
+line-height:1.9;
+font-weight:600;
+color:#444;
+margin:0;
+
+}
+
+
+/* ==========================
+   بطاقات الدروس
+========================== */
+
+.lesson-card{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:25px;
+
+}
+
+.lesson-info h2{
+
+font-size:30px;
+color:#1f3c88;
+margin-bottom:12px;
+
+}
+
+.lesson-info p{
+
+font-size:22px;
+font-weight:600;
+color:#555;
+
+}
+
+
+/* ==========================
+   زر الدرس
+========================== */
+
+.start-btn{
+
 background:linear-gradient(
 90deg,
 #3768ff,
 #6f43ff
 );
-border-radius:20px;
-}
 
-/* الأزرار */
-
-.start-btn,
-.continue-btn,
-.done-btn{
-width:100%;
+color:white;
 border:none;
-padding:16px 35px;
-border-radius:18px;
-font-size:18px;
+padding:18px 32px;
+border-radius:22px;
+font-size:20px;
 font-weight:bold;
 cursor:pointer;
 transition:.3s;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+
 }
 
-.start-btn{
+.start-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.20);
+
+}
+
+
+/* ==========================
+   بطاقة النهاية
+========================== */
+
+.final-card{
+
+text-align:center;
+
 background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
+135deg,
+#6f43ff,
+#8f6dff
 );
+
+}
+
+.final-card h2{
+
+font-size:40px;
+color:#ffe082;
+margin-bottom:20px;
+
+}
+
+.final-card p{
+
+font-size:22px;
+line-height:2;
+font-weight:600;
 color:white;
-box-shadow:0 10px 25px rgba(111,67,255,.25);
+margin-bottom:30px;
+
 }
 
-.continue-btn{
-background:#f5f7ff;
-color:#1f3c88;
-border:2px solid #dce4ff;
+
+/* ==========================
+   الحركات
+========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
 }
 
-.done-btn{
-background:#e8fff0;
-color:#0f8b4c;
-border:2px solid #b8ebc8;
+to{
+
+opacity:1;
+transform:translateY(0);
+
 }
 
-.start-btn:hover,
-.continue-btn:hover,
-.done-btn:hover{
-transform:translateY(-3px);
 }
 
-/* آخر درس */
 
-.last-lesson{
-margin-bottom:25px;
-}
-
-/* الجوال */
+/* ==========================
+   الجوال
+========================== */
 
 @media(max-width:768px){
 
 .title{
+
 font-size:38px;
+
 }
 
 .subtitle{
-font-size:18px;
-}
 
-.video-placeholder{
-height:180px;
-font-size:24px;
+font-size:18px;
+
 }
 
 .card{
-padding:30px;
+
+padding:28px;
+
 }
 
-.card h2{
-font-size:28px;
+.message-card{
+
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:16px;
+
 }
 
-.card p{
-font-size:17px;
-color:#555;
-font-weight:500;
-}
- 
-.last-lesson{
-margin-bottom:30px;
-font-size:20px;
-color:#555;
-font-weight:500;
-line-height:2;
-}
- 
-.tip-box{
-gap:20px;
+.message-card img{
+
+width:95px;
+
 }
 
-.tip-box img{
-width:110px;
-}
+.message-content h2{
 
-.tip-text h2{
 font-size:24px;
-margin-bottom:12px;
+
 }
 
-.tip-text p{
-font-size:16px;
-line-height:1.9;
-color:#555;
-font-weight:500;
+.message-content p{
+
+font-size:17px;
+line-height:1.8;
+
 }
 
-.unit h3{
-font-size:23px;
+.lesson-card{
+
+flex-direction:column;
+align-items:stretch;
+gap:20px;
+
 }
 
-.unit p{
-font-size:16px;
-color:#555;
-font-weight:500;
+.lesson-info{
+
+text-align:center;
+
 }
 
-.start-btn,
-.continue-btn,
-.done-btn{
+.lesson-info h2{
+
+font-size:24px;
+
+}
+
+.lesson-info p{
+
+font-size:18px;
+
+}
+
+.start-btn{
+
 width:100%;
+
 }
 
 }
 
 </style>
- 
+
 </head>
-  
+
 <body>
+
 <div class="container">
-<!-- الأعلى -->
+
+<!-- ==========================
+        الأعلى
+========================== -->
+
 <div class="top-bar">
-<a href="beginner.html" class="back-btn">
+
+<a
+href="beginner.html"
+class="back-btn">
+
 ⬅️ رجوع
+
 </a>
+
 <div class="owl-circle">
+
 <img src="../owl.start.PNG">
+
 </div>
+
 </div>
-<!-- العنوان -->
+
+
+<!-- ==========================
+      عنوان الوحدة
+========================== -->
+
 <h1 class="title">
-✨ الوحدة الأولى: البداية الصحيحة
+
+ الوحدة الأولى: البداية الصحيحة📘
+
 </h1>
+
 <p class="subtitle">
- لا تقلق إذا كنت تبدأ من الصفر، فهذه الوحدة مناسبة حتى لو كنت لا تعرف أي شيء في اللغة الإنجليزية.
+
+ابدأ رحلتك في تعلم أساسيات اللغة الإنجليزية خطوة بخطوة.
+
 </p>
-<!-- الفيديو الترحيبي -->
-<div class="video-box">
-<div class="video-placeholder">
-🎥 الفيديو الترحيبي
+
+
+<!-- ==========================
+      فيديو الترحيب
+========================== -->
+
+<div class="card video-card">
+
+<iframe
+src=""
+title="فيديو الوحدة الأولى"
+allowfullscreen>
+
+</iframe>
+
 </div>
-</div>
-<!-- ماذا سنتعلم -->
-<div class="card">
-<h2>
-📚 ماذا سنتعلم في هذه الوحدة؟
-</h2>
-<p>
-✅ الحروف الإنجليزية A-Z.<br><br>
-✅ الضمائر وملحقاتها.<br><br>
-✅ الأفعال المساعدة بالمضارع (Is - Am - Are).<br><br>
-✅ الأفعال المساعدة بالماضي (Was - Were).
-</p>
-</div>
-<!-- نصيحة البومة -->
-<div class="card">
-<div class="tip-box">
+
+
+<!-- ==========================
+      بطاقة البومة
+========================== -->
+
+<div class="card message-card">
+
 <img src="../owl.heart.PNG">
-<div class="tip-text">
+
+<div class="message-content">
+
 <h2>
-🌟 نصيحتي لك
+
+ أهلاً بك!
+
 </h2>
+
 <p>
-لا تهتم بسرعة تقدمك، المهم أن تستمر. فالتطور الحقيقي يأتي مع الاستمرار وليس مع الاستعجال. 💜
+
+ابدأ من أول درس، وتقدم بالترتيب حتى تستفيد بأفضل شكل. 💙
+
 </p>
+
 </div>
+
 </div>
-</div>
-<!-- عنوان الدروس -->
-<h1 class="title">
-📚 دروس الوحدة الأولى
-</h1>
-<div class="units">
-<!-- الدرس الأول -->
-<div class="unit">
-<h3>
-🔤 الحروف الإنجليزية A-Z
-</h3>
+
+ <!-- ==========================
+        الدروس
+========================== -->
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الأول
+
+</h2>
+
 <p>
-تعلم شكل الحروف الكبيرة والصغيرة وطريقة نطقها الصحيحة.
-<br><br>
-🎥 ٣ أجزاء • ٣ فيديوهات
-<br><br>
-⭐ الإنجاز: 0%
+
+الحروف الإنجليزية A-Z | الجزء الأول
+
 </p>
-<div class="progress-bar">
-<div class="progress" style="width:0%;"></div>
+
 </div>
-<button id="lettersBtn" class="start-btn">
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson1.html'">
+
 🚀 ابدأ الدرس
-</button>
-</div>
-<!-- الدرس الثاني -->
-<div class="unit">
-<h3>
-👤 الضمائر وملحقاتها
-</h3>
 
-<p>
-تعلم الضمائر وكيف تستخدمها داخل الجمل.
-
-<br><br>
-
-🎥 جزء واحد • فيديو واحد
-
-<br><br>
-
-⭐ الإنجاز: 60%
-</p>
-
-<div class="progress-bar">
-<div class="progress" style="width:60%;"></div>
-</div>
-
-<button id="pronounsBtn" class="continue-btn">
-▶️ متابعة الدرس
 </button>
 
 </div>
-  
-<!-- الدرس الثالث -->
-<div class="unit">
-<h3>
-✨ Is • Am • Are
-</h3>
-<p>
-تعلم الجمل العادية والنفي والأسئلة.
-<br><br>
-🎥 ٣ أجزاء • ٣ فيديوهات
-<br><br>
-⭐ الإنجاز: 100%
-</p>
-<div class="progress-bar">
-<div class="progress" style="width:100%;"></div>
-</div>
-<button id="isBtn" class="done-btn">
-✅ مكتمل
-</button>
-</div>
-  
-<!-- الدرس الرابع -->
-<div class="unit">
-<h3>
-🕰️ Was • Were
-</h3>
-<p>
-تعلم الماضي والنفي والأسئلة.
-<br><br>
-🎥 ٣ أجزاء • ٣ فيديوهات
-<br><br>
-⭐ الإنجاز: 20%
-</p>
-<div class="progress-bar">
-<div class="progress" style="width:20%;"></div>
-</div>
-<button id="wasBtn" class="continue-btn">
-▶️ متابعة الدرس
-</button>
-</div>
-</div>
-<!-- تقدم الوحدة -->
-<div class="card">
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
 <h2>
-📈 تقدمك في الوحدة
+
+📖 الدرس الثاني
+
 </h2>
+
 <p>
-⭐ نسبة الإنجاز الكلية: 45%
-<br><br>
-💜 آخر درس وصلت إليه:
-<p class="last-lesson">
-🔤 الحروف الإنجليزية A-Z - الجزء الثاني
+
+الحروف الإنجليزية A-Z | الجزء الثاني
+
 </p>
-<button class="continue-btn">
-▶️ متابعة من حيث توقفت
-</button>
+
 </div>
-<!-- بطاقة النهاية -->
-<div class="card">
-<div class="tip-box">
-<img src="../earlo .PNG">
-<div class="tip-text">
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson2.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
 <h2>
-⭐ أحسنت!
+
+📖 الدرس الثالث
+
 </h2>
+
 <p>
-بعد إنهاء جميع دروس هذه الوحدة ستكون جاهزاً للانتقال إلى الوحدة الثانية بإذن الله.
+
+الحروف الإنجليزية A-Z | الجزء الثالث
+
 </p>
-<button class="start-btn">
-➡️ الانتقال إلى الوحدة الثانية
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson3.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الرابع
+
+</h2>
+
+<p>
+
+الضمائر وملحقاتها
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson4.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الخامس
+
+</h2>
+
+<p>
+
+Is • Am • Are | الجملة المثبتة
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson5.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس السادس
+
+</h2>
+
+<p>
+
+Is • Am • Are | النفي
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson6.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس السابع
+
+</h2>
+
+<p>
+
+Is • Am • Are | السؤال
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson7.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الثامن
+
+</h2>
+
+<p>
+
+Was • Were | الجملة المثبتة
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson8.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس التاسع
+
+</h2>
+
+<p>
+
+Was • Were | النفي
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson9.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس العاشر
+
+</h2>
+
+<p>
+
+Was • Were | السؤال
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='lesson10.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+ <!-- ==========================
+      بطاقة النهاية
+========================== -->
+
+<div class="card final-card">
+
+<h2>
+
+🏆 أحسنت!
+
+</h2>
+
+<p>
+
+بعد إكمال جميع دروس هذه الوحدة،
+
+<br><br>
+
+أنت الآن جاهز لمراجعة الوحدة الأولى واختبار نفسك.
+
+</p>
+
+<button
+class="start-btn"
+onclick="window.location.href='unit1-review.html'">
+
+🚀 مراجعة الوحدة الأولى
+
 </button>
 
 </div>
 
 </div>
 
-</div>
+<!-- نهاية container -->
 
-</div>
 <script>
-/* بيانات الدروس */
-let lessons = {
-letters:0,
-pronouns:60,
-isamare:100,
-waswere:20
-};
-/* تحديث الأزرار */
-function updateButtons(){
-// الحروف
-if(lessons.letters==0){
-document.getElementById("lettersBtn").innerHTML="🚀 ابدأ الدرس";
-document.getElementById("lettersBtn").className="start-btn";
+
+// زر مراجعة الوحدة
+
+document.querySelector(".final-card .start-btn").addEventListener(
+
+"click",
+
+function(){
+
+window.location.href="unit1-review.html";
+
 }
-else if(lessons.letters<100){
-document.getElementById("lettersBtn").innerHTML="▶️ متابعة الدرس";
-document.getElementById("lettersBtn").className="continue-btn";
-}
-else{
-document.getElementById("lettersBtn").innerHTML="✅ مكتمل";
-document.getElementById("lettersBtn").className="done-btn";
-}
-// الضمائر
-if(lessons.pronouns==0){
-document.getElementById("pronounsBtn").innerHTML="🚀 ابدأ الدرس";
-document.getElementById("pronounsBtn").className="start-btn";
-}
-else if(lessons.pronouns<100){
-document.getElementById("pronounsBtn").innerHTML="▶️ متابعة الدرس";
-document.getElementById("pronounsBtn").className="continue-btn";
-}
-else{
-document.getElementById("pronounsBtn").innerHTML="✅ مكتمل";
-document.getElementById("pronounsBtn").className="done-btn";
-}
-// Is Am Are
-if(lessons.isamare==0){
-document.getElementById("isBtn").innerHTML="🚀 ابدأ الدرس";
-document.getElementById("isBtn").className="start-btn";
-}
-else if(lessons.isamare<100){
-document.getElementById("isBtn").innerHTML="▶️ متابعة الدرس";
-document.getElementById("isBtn").className="continue-btn";
-}
-else{
-document.getElementById("isBtn").innerHTML="✅ مكتمل";
-document.getElementById("isBtn").className="done-btn";
-}
-// Was Were
-if(lessons.waswere==0){
-document.getElementById("wasBtn").innerHTML="🚀 ابدأ الدرس";
-document.getElementById("wasBtn").className="start-btn";
-}
-else if(lessons.waswere<100){
-document.getElementById("wasBtn").innerHTML="▶️ متابعة الدرس";
-document.getElementById("wasBtn").className="continue-btn";
-}
-else{
-document.getElementById("wasBtn").innerHTML="✅ مكتمل";
-document.getElementById("wasBtn").className="done-btn";
-}
-}
-updateButtons();
+
+);
+
 </script>
+
 </body>
 
 </html>
+
+ 
+ 
