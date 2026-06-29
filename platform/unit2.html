@@ -4,40 +4,63 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport"
+
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>الوحدة الثانية | Engliza Academy</title>
+<title>
+
+الوحدة الثانية | Engliza Academy
+
+</title>
 
 <style>
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+
 }
 
 body{
-background:linear-gradient(135deg,#eef4ff,#f7f3ff);
+
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
 padding:30px 20px;
+
 }
 
 .container{
-max-width:1000px;
+
+max-width:1050px;
 margin:auto;
+
 }
 
-/* الأعلى */
+
+/* ==========================
+   الأعلى
+========================== */
 
 .top-bar{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:40px;
+
 }
 
 .back-btn{
+
 background:white;
 padding:14px 25px;
 border-radius:18px;
@@ -46,261 +69,339 @@ color:#1f3c88;
 font-size:18px;
 font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
 }
 
 .owl-circle img{
+
 width:80px;
 height:80px;
 border-radius:50%;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
+
 }
 
-/* العنوان */
+
+/* ==========================
+   عنوان الوحدة
+========================== */
 
 .title{
+
 text-align:center;
 font-size:52px;
 color:#1f3c88;
-margin-bottom:15px;
+margin-bottom:18px;
+
 }
 
 .subtitle{
+
 text-align:center;
-font-size:23px;
-line-height:2.3;
-color:#4b4b4b;
+font-size:22px;
 font-weight:600;
-margin-bottom:40px;
+line-height:2;
+color:#555;
+margin-bottom:55px;
+
 }
 
-/* الفيديو */
 
-.video-box{
-background:white;
-padding:30px;
-border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
-}
-
-.video-placeholder{
-height:250px;
-background:#f5f7ff;
-border-radius:25px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:32px;
-font-weight:bold;
-color:#1f3c88;
-}
-
-/* البطاقات */
+/* ==========================
+   البطاقات العامة
+========================== */
 
 .card{
+
 background:white;
 padding:40px;
 border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+margin-bottom:40px;
+transition:.35s;
+animation:fadeUp .6s ease;
+
 }
 
-.card h2{
-font-size:34px;
-color:#1f3c88;
-margin-bottom:25px;
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 22px 50px rgba(0,0,0,.12);
+
 }
 
-.card p{
-font-size:22px;
-line-height:2.3;
-font-weight:700;
-color:#3f3f3f;
+
+/* ==========================
+   بطاقة الفيديو
+========================== */
+
+.video-card iframe{
+
+width:100%;
+aspect-ratio:16/9;
+border:none;
+border-radius:25px;
+
 }
 
-/* بطاقة البومة */
 
-.tip-box{
+/* ==========================
+   بطاقة البومة
+========================== */
+
+.message-card{
+
 display:flex;
 align-items:center;
-gap:35px;
+justify-content:flex-start;
+gap:25px;
+
 }
 
-.tip-box img{
-width:170px;
+.message-card img{
+
+width:130px;
 flex-shrink:0;
+display:block;
+
 }
 
-.tip-text{
+.message-content{
+
 flex:1;
+
 }
 
-  .tip-text p{
+.message-content h2{
+
+font-size:32px;
+color:#1f3c88;
+margin-bottom:12px;
+
+}
+
+.message-content p{
 
 font-size:22px;
-
-line-height:2.4;
-
-color:#555;
-
-margin-bottom:18px;
-
+line-height:1.9;
 font-weight:600;
+color:#444;
+margin:0;
 
 }
-  
-/* بطاقات الدروس */
+
+
+/* ==========================
+   بطاقات الدروس
+========================== */
 
 .lesson-card{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:28px;
-border-radius:25px;
-background:#f8faff;
-border:2px solid #dce4ff;
-margin-bottom:20px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+gap:25px;
+
 }
 
-.lesson-card:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.15);
-}
+.lesson-info h2{
 
-.lesson-name{
-font-size:24px;
-font-weight:bold;
+font-size:30px;
 color:#1f3c88;
+margin-bottom:12px;
+
 }
 
-.lesson-arrow{
-font-size:28px;
-}
-
-/* شريط التقدم */
-
-.progress-bar{
-width:100%;
-height:14px;
-background:#edf1ff;
-border-radius:20px;
-overflow:hidden;
-margin-top:20px;
-}
-
-.progress{
-height:100%;
-background:linear-gradient(90deg,#3768ff,#6f43ff);
-border-radius:20px;
-}
-
-/* زر الانتقال */
-  
-.next-unit-btn{
-
-width:100%;
-
-padding:24px;
-
-border:none;
-
-border-radius:25px;
+.lesson-info p{
 
 font-size:22px;
+font-weight:600;
+color:#555;
 
+}
+
+
+/* ==========================
+   زر الدرس
+========================== */
+
+.start-btn{
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+border:none;
+padding:18px 32px;
+border-radius:22px;
+font-size:20px;
 font-weight:bold;
-
 cursor:pointer;
-
-color:#1f3c88;
-
-background:white;
-
-box-shadow:0 15px 35px rgba(0,0,0,.25);
-
 transition:.3s;
-
-}
-  
-.next-unit-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 20px 45px rgba(0,0,0,.3);
+box-shadow:0 12px 30px rgba(0,0,0,.15);
 
 }
 
-.next-unit-btn:active{
+.start-btn:hover{
 
-transform:scale(.97);
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.20);
 
 }
-  
-/* بطاقة النهاية */
+
+
+/* ==========================
+   بطاقة النهاية
+========================== */
 
 .final-card{
-background:linear-gradient(135deg,#3768ff,#6f43ff);
+
+text-align:center;
+
+background:linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
 }
 
 .final-card h2{
-color:white;
-text-align:center;
+
 font-size:40px;
+color:#ffe082;
+margin-bottom:20px;
+
 }
 
-.final-text{
-color:white !important;
-font-size:24px !important;
-line-height:2.3 !important;
-text-align:center;
+.final-card p{
+
+font-size:22px;
+line-height:2;
+font-weight:600;
+color:white;
+margin-bottom:30px;
+
 }
 
-/* الجوال */
+
+/* ==========================
+   الحركات
+========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   الجوال
+========================== */
 
 @media(max-width:768px){
 
 .title{
+
 font-size:38px;
+
 }
 
 .subtitle{
-font-size:18px;
-}
 
-.video-placeholder{
-height:180px;
-font-size:24px;
+font-size:18px;
+
 }
 
 .card{
-padding:30px;
+
+padding:28px;
+
 }
 
-.card h2{
-font-size:28px;
+.message-card{
+
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:16px;
+
 }
 
-.card p{
+.message-card img{
+
+width:95px;
+
+}
+
+.message-content h2{
+
+font-size:24px;
+
+}
+
+.message-content p{
+
 font-size:17px;
+line-height:1.8;
+
 }
 
-.tip-box{
+.lesson-card{
+
+flex-direction:column;
+align-items:stretch;
 gap:20px;
+
 }
 
-.tip-box img{
-width:110px;
+.lesson-info{
+
+text-align:center;
+
 }
 
-.lesson-name{
+.lesson-info h2{
+
+font-size:24px;
+
+}
+
+.lesson-info p{
+
 font-size:18px;
+
 }
 
-.final-text{
-font-size:18px !important;
+.start-btn{
+
+width:100%;
+
 }
 
 }
@@ -308,15 +409,20 @@ font-size:18px !important;
 </style>
 
 </head>
-<body>
+
+  <body>
 
 <div class="container">
 
-<!-- الأعلى -->
+<!-- ==========================
+        الأعلى
+========================== -->
 
 <div class="top-bar">
 
-<a href="unit1-review.html" class="back-btn">
+<a
+href="unit1-review.html"
+class="back-btn">
 
 ⬅️ رجوع
 
@@ -330,64 +436,59 @@ font-size:18px !important;
 
 </div>
 
-<!-- العنوان -->
+
+<!-- ==========================
+      عنوان الوحدة
+========================== -->
 
 <h1 class="title">
 
-🌟 الوحدة الثانية
+📘 الوحدة الثانية
 
 </h1>
 
 <p class="subtitle">
 
-✨ في هذه الوحدة ستتعلم كلمات جديدة وتكوّن جمل أكثر تنوعاً للتعبير عن الأشياء والأشخاص من حولك.
+ستتعلم في هذه الوحدة كلمات وتراكيب جديدة تساعدك على تكوين جمل أكثر تنوعًا.
 
 </p>
 
-<!-- الفيديو -->
 
-<div class="video-box">
+<!-- ==========================
+      فيديو الترحيب
+========================== -->
 
-<div class="video-placeholder">
+<div class="card video-card">
 
-🎥 فيديو الوحدة
+<iframe
+src=""
+title="فيديو الوحدة الثانية"
+allowfullscreen>
+
+</iframe>
 
 </div>
 
-</div>
 
-  
-<!-- نصيحة البومة -->
+<!-- ==========================
+      بطاقة البومة
+========================== -->
 
-<div class="card">
-
-<div class="tip-box">
+<div class="card message-card">
 
 <img src="../success.owl.PNG">
 
-<div class="tip-text">
+<div class="message-content">
 
 <h2>
 
-🌟 نصيحتي لك
+ أهلاً بك!
 
 </h2>
 
 <p>
 
-✅ لا تحاول حفظ الكلمات فقط.
-
-</p>
-
-<p>
-
-✅ استخدم الكلمات كثيراً داخل جمل وفي حياتك اليومية.
-
-</p>
-
-<p>
-
-✅ مع الاستمرار والممارسة ستصبح اللغة أسهل بإذن الله.
+اتمنى لك رحلة ممتعة في هذه الوحدة💙.
 
 </p>
 
@@ -395,415 +496,457 @@ font-size:18px !important;
 
 </div>
 
-</div>
+<!-- ==========================
+        الدروس
+========================== -->
 
-<!-- دروس الوحدة -->
+<div class="card lesson-card">
 
-<div class="card">
+<div class="lesson-info">
 
 <h2>
 
-📖 دروس الوحدة الثانية
+📖 الدرس الأول
 
 </h2>
-  <!-- الصفات -->
 
-<div class="lesson-card">
-
-<div class="lesson-name">
+<p>
 
 😊 الصفات | الجزء الأول
 
-</div>
-
-<div class="lesson-arrow">
-
-➡️
+</p>
 
 </div>
 
-</div>
+<button
+class="start-btn"
+onclick="window.location.href='adjectives-part1.html'">
 
-<!-- أدوات الإشارة 1 -->
+🚀 ابدأ الدرس
 
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-👈 أدوات الإشارة | الجزء الأول
+</button>
 
 </div>
 
-<div class="lesson-arrow">
 
-➡️
 
-</div>
+<div class="card lesson-card">
 
-</div>
-
-<!-- أدوات الإشارة 2 -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-👈 أدوات الإشارة | الجزء الثاني
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- أفراد العائلة -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-👨‍👩‍👧 أفراد العائلة
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- الأرقام 1 -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-🔢 الأرقام | الجزء الأول
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- الأرقام 2 -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-🔢 الأرقام | الجزء الثاني
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- الأرقام 3 -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-🔢 الأرقام | الجزء الثالث
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- كلمات السؤال -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-❓ كلمات السؤال
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- الأماكن -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-🏫 الأماكن
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- الأشياء اليومية -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-📱 الأشياء اليومية
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- الألوان -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-🎨 الألوان
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- كلمات الزمن -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-⏰ كلمات الزمن
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-<!-- كلمات الربط -->
-
-<div class="lesson-card">
-
-<div class="lesson-name">
-
-🔗 And • But • Maybe
-
-</div>
-
-<div class="lesson-arrow">
-
-➡️
-
-</div>
-
-</div>
-
-</div>
-
-<!-- تقدمك -->
-
-<div class="card">
+<div class="lesson-info">
 
 <h2>
 
-⭐ تقدمك في الوحدة
+📖 الدرس الثاني
 
 </h2>
 
 <p>
 
-0%
-
-<br><br>
-
-📍 13 درساً
+👈 أدوات الإشارة | الجزء الأول
 
 </p>
 
-<div class="progress-bar">
+</div>
 
-<div class="progress"
-style="width:0%;">
+<button
+class="start-btn"
+onclick="window.location.href='this-that-part1.html'">
+
+🚀 ابدأ الدرس
+
+</button>
 
 </div>
 
-</div>
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الثالث
+
+</h2>
+
+<p>
+
+👈 أدوات الإشارة | الجزء الثاني
+
+</p>
 
 </div>
 
-<!-- بطاقة النهاية -->
+<button
+class="start-btn"
+onclick="window.location.href='this-that-part2.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الرابع
+
+</h2>
+
+<p>
+
+👨‍👩‍👧 أفراد العائلة
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='family-members.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الخامس
+
+</h2>
+
+<p>
+
+🔢 الأرقام | الجزء الأول
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='numbers-part1.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس السادس
+
+</h2>
+
+<p>
+
+🔢 الأرقام | الجزء الثاني
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='numbers-part2.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس السابع
+
+</h2>
+
+<p>
+
+🔢 الأرقام | الجزء الثالث
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='numbers-part3.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الثامن
+
+</h2>
+
+<p>
+
+❓ كلمات السؤال
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='question-words.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس التاسع
+
+</h2>
+
+<p>
+
+🏫 الأماكن
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='places.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس العاشر
+
+</h2>
+
+<p>
+
+📱 الأشياء اليومية
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='daily-objects.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الحادي عشر
+
+</h2>
+
+<p>
+
+🎨 الألوان
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='colors.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الثاني عشر
+
+</h2>
+
+<p>
+
+⏰ كلمات الزمن
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='days-of-week.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+
+
+<div class="card lesson-card">
+
+<div class="lesson-info">
+
+<h2>
+
+📖 الدرس الثالث عشر
+
+</h2>
+
+<p>
+
+🔗 And • But • Maybe
+
+</p>
+
+</div>
+
+<button
+class="start-btn"
+onclick="window.location.href='and-but-maybe.html'">
+
+🚀 ابدأ الدرس
+
+</button>
+
+</div>
+
+  <!-- ==========================
+      بطاقة النهاية
+========================== -->
 
 <div class="card final-card">
 
 <h2>
 
-⭐ جاهز للانطلاق؟
+🏆 أحسنت!
 
 </h2>
 
-<p class="final-text">
+<p>
 
-✨ في هذه الوحدة ستتعلم كلمات وتراكيب جديدة تساعدك على وصف الأشياء والأشخاص والتعبير عن حياتك اليومية.
-
-<br><br>
-
-✨ خذ كل درس خطوة بخطوة، ولا تقلق إذا احتجت إلى إعادة بعض الدروس.
+بعد إكمالك جميع دروس هذه الوحدة،
 
 <br><br>
 
-✨ استمر، فكل درس تنهيه يقربك أكثر من التحدث باللغة الإنجليزية بثقة.
+أنت الآن جاهز لمراجعة الوحدة الثانية واختبار نفسك.
 
 </p>
 
-<button class="next-unit-btn">
+<button
+class="start-btn"
+onclick="window.location.href='unit2-review.html'">
 
-🚀 الانتقال إلى أول درس
+🚀 مراجعة الوحدة الثانية
 
 </button>
 
 </div>
 
 </div>
-  <!-- JavaScript -->
+
+<!-- نهاية container -->
 
 <script>
 
-// الانتقال إلى أول درس
+// زر مراجعة الوحدة
 
-document.querySelector(".next-unit-btn")
-.addEventListener("click",function(){
+document
+.querySelector(".start-btn")
+.addEventListener(
 
-window.location.href="adjectives-part1.html";
+"click",
 
-});
+function(){
 
+window.location.href="unit2-review.html";
 
-// فتح الدروس عند الضغط عليها
+}
 
-const lessons=document.querySelectorAll(".lesson-card");
-
-lessons[0].addEventListener("click",function(){
-
-window.location.href="adjectives-part1.html";
-
-});
-
-lessons[1].addEventListener("click",function(){
-
-window.location.href="this-that-part1.html";
-
-});
-
-lessons[2].addEventListener("click",function(){
-
-window.location.href="this-that-part2.html";
-
-});
-
-lessons[3].addEventListener("click",function(){
-
-window.location.href="family-members.html";
-
-});
-
-lessons[4].addEventListener("click",function(){
-
-window.location.href="numbers-part1.html";
-
-});
-
-lessons[5].addEventListener("click",function(){
-
-window.location.href="numbers-part2.html";
-
-});
-
-lessons[6].addEventListener("click",function(){
-
-window.location.href="numbers-part3.html";
-
-});
-
-lessons[7].addEventListener("click",function(){
-
-window.location.href="question-words.html";
-
-});
-
-lessons[8].addEventListener("click",function(){
-
-window.location.href="places.html";
-
-});
-
-lessons[9].addEventListener("click",function(){
-
-window.location.href="daily-objects.html";
-
-});
-
-lessons[10].addEventListener("click",function(){
-
-window.location.href="colors.html";
-
-});
-
-lessons[11].addEventListener("click",function(){
-
-window.location.href="days-of-week.html";
-
-});
-
-lessons[12].addEventListener("click",function(){
-
-window.location.href="and-but-maybe.html";
-
-});
+);
 
 </script>
 
 </body>
 
 </html>
+
+  
+  
