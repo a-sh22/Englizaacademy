@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Adjectives | الجزء الثالث | Engliza Academy
+
+</title>
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+   
+
+body{
+
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+}
+
+.container{
+
+max-width:1050px;
+margin:auto;
+
+}
+
+
+/* ==========================
+   الأعلى
+========================== */
+
+.top-bar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+
+}
+
+.back-btn{
+
+background:white;
+padding:14px 25px;
+border-radius:18px;
+text-decoration:none;
+color:#1f3c88;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.owl-circle img{
+
+width:80px;
+height:80px;
+border-radius:50%;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================
+   عنوان الدرس
+========================== */
+
+.title{
+
+text-align:center;
+font-size:52px;
+color:#1f3c88;
+margin-bottom:18px;
+
+}
+
+.subtitle{
+
+text-align:center;
+font-size:22px;
+font-weight:600;
+line-height:2;
+color:#555;
+margin-bottom:55px;
+
+}
+
+
+/* ==========================
+   البطاقات العامة
+========================== */
+
+.card{
+
+background:white;
+padding:40px;
+border-radius:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+margin-bottom:40px;
+transition:.35s;
+animation:fadeUp .6s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 22px 50px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================
+   بطاقة الفيديو
+========================== */
+
+.video-card iframe{
+
+width:100%;
+aspect-ratio:16/9;
+border:none;
+border-radius:25px;
+display:block;
+}
+
+
+/* ==========================
+   بطاقة البومة
+========================== */
+
+.message-card{
+
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:25px;
+
+}
+
+.message-card img{
+
+width:130px;
+flex-shrink:0;
+display:block;
+
+}
+
+.message-content{
+
+flex:1;
+
+}
+
+.message-content h2{
+
+font-size:32px;
+color:#1f3c88;
+margin-bottom:12px;
+
+}
+
+.message-content p{
+
+font-size:22px;
+line-height:1.9;
+font-weight:600;
+color:#444;
+margin:0;
+
+}
+
+
+/* ==========================
+   صندوق السؤال
+========================== */
+
+
+.question-title{
+
+font-size:24px;
+font-weight:bold;
+line-height:2;
+color:#1f3c88;
+margin-bottom:25px;
+
+}
+
+.help-text{
+
+font-size:30px;
+font-weight:700;
+line-height:1.8;
+color:#222;
+text-align:center;
+margin:35px 0;
+
+}
+   
+ /* ==========================
+   مربع الكتابة
+========================== */
+
+.write-box{
+
+width:100%;
+padding:20px;
+border-radius:22px;
+border:2px solid #dce4ff;
+font-size:20px;
+outline:none;
+transition:.3s;
+margin-bottom:28px;
+background:white;
+
+}
+
+.write-box:focus{
+
+border-color:#6f43ff;
+
+box-shadow:0 0 0 6px rgba(111,67,255,.12);
+
+}
+
+
+/* ==========================
+   النتائج
+========================== */
+
+.answer-result,
+.result-text{
+
+margin-top:25px;
+font-size:20px;
+font-weight:bold;
+line-height:2;
+animation:fadeResult .4s ease;
+
+}
+
+
+/* ==========================
+   الاختيارات
+========================== */
+
+.choice-container{
+
+display:flex;
+gap:18px;
+margin:30px 0 20px;
+
+}
+
+.choice-btn{
+
+flex:1;
+padding:24px;
+background:white;
+border:2px solid #dce4ff;
+border-radius:22px;
+font-size:20px;
+font-weight:bold;
+color:#1f3c88;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.choice-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.14);
+
+}
+
+.choice-btn:disabled{
+
+cursor:default;
+opacity:.95;
+
+}
+
+
+/* ==========================
+   الأزرار
+========================== */
+
+.card button{
+
+background:#f5f7ff;
+color:#1f3c88;
+border:2px solid #dce4ff;
+padding:18px 28px;
+border-radius:22px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.card button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.card button:active{
+
+transform:scale(.97);
+
+}
+
+
+/* ==========================
+   ألوان التصحيح
+========================== */
+
+.correct-input{
+
+background:#e8fff0;
+border:2px solid #b8ebc8;
+color:#0f8b4c;
+
+}
+
+.wrong-input{
+
+background:#ffe8e8;
+border:2px solid #ffb8b8;
+color:#c62828;
+
+}
+
+.correct{
+
+background:#e8fff0 !important;
+border:2px solid #b8ebc8 !important;
+color:#0f8b4c !important;
+
+}
+
+.wrong{
+
+background:#ffe8e8 !important;
+border:2px solid #ffb8b8 !important;
+color:#c62828 !important;
+
+}
+
+.success-text{
+
+color:#0f8b4c;
+
+}
+
+.error-text{
+
+color:#c62828;
+
+}
+
+  /* ==========================
+   ترتيب الكلمات
+========================== */
+
+.word-container{
+
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin:30px 0;
+
+}
+
+.word-btn{
+
+background:#f4f7ff;
+border:2px solid #dce4ff;
+border-radius:18px;
+padding:16px 24px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.word-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.answer-box{
+
+min-height:100px;
+background:#fafbff;
+border:2px dashed #b9c8ff;
+border-radius:25px;
+padding:20px;
+margin-bottom:25px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+direction:ltr;
+align-items:center;
+
+}
+
+.selected-word{
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+padding:16px 22px;
+border-radius:18px;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+user-select:none;
+
+}
+
+
+/* ==========================
+   النجوم المتطايرة
+========================== */
+
+.confetti{
+
+position:relative;
+height:0;
+
+}
+
+.star{
+
+position:absolute;
+font-size:22px;
+opacity:0;
+animation:flyStars 1.4s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+
+left:10%;
+animation-delay:0s;
+
+}
+
+.star:nth-child(2){
+
+left:30%;
+animation-delay:.1s;
+
+}
+
+.star:nth-child(3){
+
+left:50%;
+animation-delay:.2s;
+
+}
+
+.star:nth-child(4){
+
+left:70%;
+animation-delay:.15s;
+
+}
+
+.star:nth-child(5){
+
+left:90%;
+animation-delay:.05s;
+
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+transform:translateY(20px) scale(.4);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+transform:translateY(-70px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+
+
+/* ==========================
+   الاهتزاز
+========================== */
+
+.shake{
+
+animation:shake .3s;
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
+
+}
+
+
+/* ==========================
+   بطاقة النهاية
+========================== */
+
+.final-card{
+
+text-align:center;
+
+background:linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+}
+
+.final-card h2{
+
+font-size:40px;
+color:#ffe082;
+margin-bottom:20px;
+
+}
+
+.final-card p{
+
+font-size:22px;
+line-height:2;
+font-weight:600;
+color:white;
+margin-bottom:30px;
+
+}
+
+.next-lesson-btn{
+
+width:100%;
+padding:22px;
+border:none;
+border-radius:24px;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+
+background:white;
+
+color:#6f43ff;
+
+box-shadow:0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+/* ==========================
+   الحركات
+========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   الجوال
+========================== */
+
+@media(max-width:768px){
+
+.title{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+.card{
+
+padding:28px;
+
+}
+
+.message-card{
+
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:16px;
+
+}
+
+.message-card img{
+
+width:95px;
+
+}
+
+.message-content h2{
+
+font-size:24px;
+
+}
+
+.message-content p{
+
+font-size:17px;
+line-height:1.8;
+
+}
+
+.choice-container{
+
+flex-direction:column;
+gap:14px;
+
+}
+
+.question-title{
+
+font-size:20px;
+
+}
+
+   .help-text{
+
+font-size:24px;
+
+}
+   
+.answer-result,
+.result-text{
+
+font-size:17px;
+
+}
+
+.word-btn{
+
+font-size:16px;
+
+padding:14px 18px;
+
+}
+
+.selected-word{
+
+font-size:16px;
+
+padding:14px 18px;
+
+}
+
+.answer-box{
+
+min-height:90px;
+
+}
+
+.final-card h2{
+
+font-size:30px;
+
+}
+
+.final-card p{
+
+font-size:18px;
+
+}
+
+.next-lesson-btn{
+
+width:100%;
+
+}
+.next-lesson-btn:active{
+
+transform:scale(.97);
+
+}
+
+   .help-text{
+
+font-size:24px;
+
+}
+   
+}
+
+  
+</style>
+
+</head>
+  
+  <body>
+
+<div class="container">
+
+<!-- ==========================
+        الأعلى
+========================== -->
+
+<div class="top-bar">
+
+<a
+href="unit4.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+<div class="owl-circle">
+
+<img src="../okay.owl.PNG">
+
+</div>
+
+</div>
+
+
+<!-- ==========================
+      عنوان الدرس
+========================== -->
+
+<h1 class="title">
+
+📖 Adjectives | الجزء الثالث
+
+</h1>
+  
+<p class="subtitle">
+
+تعلّم صفات جديدة تساعدك على وصف الأشخاص والأشياء والتعبير بطريقة أفضل.
+
+</p>
+
+<!-- ==========================
+      فيديو الدرس
+========================== -->
+
+<div class="card video-card">
+
+<iframe
+src=""
+title="Adjectives | الجزء الثالث"
+allowfullscreen>
+</iframe>
+  
+</div>
+
+
+<div class="card message-card">
+
+<img src="../success.owl.PNG">
+
+<div class="message-content">
+
+<h2>
+
+✨ كلمات جديدة!
+
+</h2>
+
+<p>
+
+• في هذا الدرس ستتعلم صفات جديدة تساعدك على وصف الأشخاص والأشياء بطريقة أفضل.
+
+<br><br>
+
+• حاول أن تفهم معنى كل صفة وكيف تستخدمها داخل الجملة.
+
+</p>
+
+</div>
+
+</div>
+  
+
+<!-- ==========================
+      التمارين
+========================== -->
+
+
+<!-- السؤال الأول -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+هذا الكرسي مريح.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+This chair is ___.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
+
+comfortable
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
+
+careless
+
+</button>
+
+</div>
+
+<p
+id="choice1"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الثاني -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+هو شخص مهمل.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+He is ___.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
+
+careless
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+serious
+
+</button>
+
+</div>
+
+<p
+id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الثالث -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🌍 ترجم الجملة إلى الإنجليزية
+
+</p>
+
+<p class="help-text">
+
+أنا ممتن لمساعدتك.
+
+</p>
+
+<input
+id="input1"
+class="write-box"
+placeholder="اكتب الترجمة">
+
+<button
+onclick="checkWriting(
+'input1',
+'result1',
+[
+'I am thankful for your help'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result1"
+class="answer-result">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الرابع -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🧩 رتب الكلمات لتكوين جملة صحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+أنا ممتن لعائلتي.
+
+</p>
+
+<div
+class="word-container"
+id="words1">
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+
+grateful
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+
+I am
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+
+for my family
+
+</button>
+
+</div>
+
+<div
+class="answer-box"
+id="answerBox1">
+
+</div>
+
+<button
+onclick="checkSentence(
+'answerBox1',
+'I am grateful for my family',
+'resultSort1'
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="resultSort1"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الخامس -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+السيارتان مختلفتان.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+The two cars are ___.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+different
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+same
+
+</button>
+
+</div>
+
+<p
+id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال السادس -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+لدينا نفس السيارة.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+We have the ___ car.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+same
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+different
+
+</button>
+
+</div>
+
+<p
+id="choice4"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال السابع -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+الفيل ضخم.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+The elephant is ___.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
+
+huge
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
+
+cute
+
+</button>
+
+</div>
+
+<p
+id="choice5"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الثامن -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🌍 ترجم الجملة إلى الإنجليزية
+
+</p>
+
+<p class="help-text">
+
+لدي منزل كبير.
+
+</p>
+
+<input
+id="input2"
+class="write-box"
+placeholder="اكتب الترجمة">
+
+<button
+onclick="checkWriting(
+'input2',
+'result2',
+[
+'I have a large house'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result2"
+class="answer-result">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال التاسع -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+إنها امرأة جميلة.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+She is a ___ woman.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
+
+beautiful
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+handsome
+
+</button>
+
+</div>
+
+<p
+id="choice6"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال العاشر -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ اكتب الكلمة المناسبة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+إنها فتاة جميلة.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+She is a ___ girl.
+
+</p>
+
+<input
+id="input3"
+class="write-box"
+placeholder="اكتب الإجابة">
+
+<button
+onclick="checkWriting(
+'input3',
+'result3',
+[
+'pretty'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result3"
+class="answer-result">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الحادي عشر -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+هو رجل وسيم.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+He is a ___ man.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice7')">
+
+handsome
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice7')">
+
+silly
+
+</button>
+
+</div>
+
+<p
+id="choice7"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الثاني عشر -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🌍 ترجم الجملة إلى الإنجليزية
+
+</p>
+
+<p class="help-text">
+
+القطة لطيفة.
+
+</p>
+
+<input
+id="input4"
+class="write-box"
+placeholder="اكتب الترجمة">
+
+<button
+onclick="checkWriting(
+'input4',
+'result4',
+[
+'The cat is cute'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الثالث عشر -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🧩 رتب الكلمات لتكوين جملة صحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+هو شجاع.
+
+</p>
+
+<div
+class="word-container"
+id="words2">
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+
+brave
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+
+He
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+
+is
+
+</button>
+
+</div>
+
+<div
+class="answer-box"
+id="answerBox2">
+
+</div>
+
+<button
+onclick="checkSentence(
+'answerBox2',
+'He is brave',
+'resultSort2'
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="resultSort2"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الرابع عشر -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ اكتب الكلمة المناسبة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+صديقي ودود.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+My friend is ___.
+
+</p>
+
+<input
+id="input5"
+class="write-box"
+placeholder="اكتب الإجابة">
+
+<button
+onclick="checkWriting(
+'input5',
+'result5',
+[
+'friendly'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result5"
+class="answer-result">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال الخامس عشر -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
+لا تكن سخيفًا.
+
+</p>
+
+<p class="help-text" dir="ltr">
+
+Don't be ___.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice8')">
+
+silly
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice8')">
+
+serious
+
+</button>
+
+</div>
+
+<p
+id="choice8"
+class="result-text">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- السؤال السادس عشر -->
+
+<div class="card">
+
+<div class="question-box">
+
+<p class="question-title">
+
+🌍 ترجم الجملة إلى الإنجليزية
+
+</p>
+
+<p class="help-text">
+
+هو جاد.
+
+</p>
+
+<input
+id="input6"
+class="write-box"
+placeholder="اكتب الترجمة">
+
+<button
+onclick="checkWriting(
+'input6',
+'result6',
+[
+'He is serious'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result6"
+class="answer-result">
+
+</p>
+
+</div>
+
+</div>
+
+  
+  
+<div class="card final-card">
+
+<h2>
+
+🏆 أحسنت!
+
+</h2>
+
+<p>
+
+لقد أنهيت الجزء الثالث من درس الصفات بنجاح.
+
+<br><br>
+
+أنت الآن تعرف صفات جديدة تساعدك على التعبير والوصف بشكل أفضل.
+
+</p>
+
+<button
+class="next-lesson-btn"
+onclick="window.location.href='lesson-next.html'">
+
+🚀 الانتقال إلى الدرس التالي
+
+</button>
+
+</div>
+  
+    
+<!-- نهاية container -->
+
+ <script>
+
+// ==========================
+// تنظيف النص
+// ==========================
+
+function normalizeText(text){
+
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/’/g,"'")
+
+// ==========================
+// معالجة الاختصارات أولًا
+// قبل حذف علامة '
+// ==========================
+
+.replace(/\bi'm\b/g,"i am")
+.replace(/\bi've\b/g,"i have")
+.replace(/\bi'd\b/g,"i would")
+.replace(/\bi'll\b/g,"i will")
+
+.replace(/\bhe's\b/g,"he is")
+.replace(/\bshe's\b/g,"she is")
+.replace(/\bit's\b/g,"it is")
+
+.replace(/\byou're\b/g,"you are")
+.replace(/\bwe're\b/g,"we are")
+.replace(/\bthey're\b/g,"they are")
+
+.replace(/\bhasn't\b/g,"has not")
+.replace(/\bhaven't\b/g,"have not")
+
+.replace(/\bisn't\b/g,"is not")
+.replace(/\baren't\b/g,"are not")
+.replace(/\bwasn't\b/g,"was not")
+.replace(/\bweren't\b/g,"were not")
+
+.replace(/\bdon't\b/g,"do not")
+.replace(/\bdoesn't\b/g,"does not")
+.replace(/\bdidn't\b/g,"did not")
+
+.replace(/\bcan't\b/g,"cannot")
+.replace(/\bwon't\b/g,"will not")
+
+// ==========================
+// حذف علامات الترقيم
+// ==========================
+
+.replace(/[.,!?؟]/g,"")
+
+.replace(/'/g,"")
+
+.replace(/-/g," ")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+   
+
+// ==========================
+// التحقق من الأسئلة الكتابية
+// ==========================
+
+function checkWriting(
+inputId,
+resultId,
+correctAnswers
+){
+
+let input =
+document.getElementById(inputId);
+
+let result =
+document.getElementById(resultId);
+
+
+let userAnswer =
+normalizeText(
+input.value
+);
+
+
+let answers =
+correctAnswers.map(answer=>
+
+normalizeText(answer)
+
+);
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
+
+
+result.className =
+"answer-result success-text";
+
+}
+
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},300);
+
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br><b>"
++
+correctAnswers[0]
++
+"</b>";
+
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+
+  // ==========================
+// التحقق من إجابة العمر
+// ==========================
+
+function checkAgeAnswer(
+inputId,
+resultId
+){
+
+let input =
+document.getElementById(inputId);
+
+let result =
+document.getElementById(resultId);
+
+
+let userAnswer =
+normalizeText(
+input.value
+);
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+// قبول:
+// I am 18
+// I'm 18
+// I am 22 years old
+// I'm 22 years old
+
+let agePattern =
+/^i am \d+( years old)?$/;
+
+
+if(
+agePattern.test(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد أجبت عن السؤال بطريقة صحيحة.';
+
+
+result.className =
+"answer-result success-text";
+
+}
+
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},300);
+
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة.<br><br>💡 أجب باستخدام:<br><br><b>I am + عمرك</b>";
+
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+   
+ // ==========================
+// أسئلة الاختيار
+// ==========================
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+let result =
+document.getElementById(
+resultId
+);
+
+let allButtons =
+button.parentElement
+.querySelectorAll(
+".choice-btn"
+);
+
+
+// منع الضغط مرة أخرى
+
+allButtons.forEach(btn=>{
+
+btn.disabled = true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add(
+"correct"
+);
+
+button.innerHTML +=
+" ✔️";
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
+
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+button.classList.add(
+"wrong",
+"shake"
+);
+
+setTimeout(function(){
+
+button.classList.remove(
+"shake"
+);
+
+},300);
+
+button.innerHTML +=
+" ✖️";
+
+
+result.innerHTML =
+
+"😅❌ لقد اخترت الإجابة الخاطئة.";
+
+
+result.className =
+"result-text error-text";
+
+
+// إظهار الإجابة الصحيحة
+
+allButtons.forEach(btn=>{
+
+if(
+btn.getAttribute("onclick")
+.includes("true")
+){
+
+btn.classList.add(
+"correct"
+);
+
+if(
+!btn.innerHTML.includes("✔️")
+){
+
+btn.innerHTML +=
+" ✔️";
+
+}
+
+}
+
+});
+
+}
+
+}
+
+   // ==========================
+// إضافة كلمة
+// ==========================
+
+function addWord(
+button,
+answerBoxId
+){
+
+if(
+button.style.display==="none"
+){
+
+return;
+
+}
+
+let answerBox =
+document.getElementById(
+answerBoxId
+);
+
+let newWord =
+document.createElement(
+"div"
+);
+
+newWord.className =
+"selected-word";
+
+newWord.innerText =
+button.innerText;
+
+answerBox.appendChild(
+newWord
+);
+
+button.style.display =
+"none";
+
+}
+
+
+
+// ==========================
+// إعادة الترتيب
+// ==========================
+
+function resetSentence(
+wordsId,
+answerBoxId
+){
+
+let container =
+document.getElementById(
+wordsId
+);
+
+container
+.querySelectorAll(
+".word-btn"
+)
+.forEach(button=>{
+
+button.style.display =
+"inline-block";
+
+});
+
+document
+.getElementById(
+answerBoxId
+)
+.innerHTML = "";
+
+}
+
+
+
+// ==========================
+// التحقق من ترتيب الكلمات
+// ==========================
+
+function checkSentence(
+answerBoxId,
+correctSentence,
+resultId
+){
+
+let answerBox =
+document.getElementById(
+answerBoxId
+);
+
+let result =
+document.getElementById(
+resultId
+);
+
+let words =
+answerBox.querySelectorAll(
+".selected-word"
+);
+
+let userSentence = "";
+
+words.forEach(word=>{
+
+userSentence +=
+word.innerText + " ";
+
+});
+
+userSentence =
+normalizeText(
+userSentence
+);
+
+correctSentence =
+normalizeText(
+correctSentence
+);
+
+answerBox.classList.remove(
+"shake"
+);
+
+
+if(
+userSentence===correctSentence
+){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
+
+result.className =
+"result-text success-text";
+
+answerBox.style.borderColor =
+"#8fd19e";
+
+answerBox.style.background =
+"#eefdf3";
+
+}
+
+else{
+
+answerBox.classList.add(
+"shake"
+);
+
+setTimeout(function(){
+
+answerBox.classList.remove(
+"shake"
+);
+
+},300);
+
+answerBox.style.borderColor =
+"#ffb8b8";
+
+answerBox.style.background =
+"#fff2f2";
+
+result.innerHTML =
+
+"😅❌ ترتيب الكلمات غير صحيح.";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+
+// ==========================
+// خلط الكلمات
+// ==========================
+
+function shuffleWords(
+containerId
+){
+
+let container =
+document.getElementById(
+containerId
+);
+
+if(
+!container){
+
+return;
+
+}
+
+let buttons =
+Array.from(
+container.querySelectorAll(
+".word-btn"
+)
+);
+
+buttons.sort(
+()=>Math.random()-0.5
+);
+
+container.innerHTML="";
+
+buttons.forEach(button=>{
+
+container.appendChild(
+button
+);
+
+});
+
+}
+
+ // ==========================
+// خلط كلمات الترتيب
+// ==========================
+
+shuffleWords("words1");
+shuffleWords("words2");
+
+</script>
+
+</body>
+
+</html>  
+   
+  
+
