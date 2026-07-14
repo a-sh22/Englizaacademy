@@ -1,266 +1,1132 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Engliza Academy | Login</title>
+
+
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
+
+
 body{
+
     min-height:100vh;
+
     display:flex;
+
     justify-content:center;
+
     align-items:flex-start;
+
     background:linear-gradient(
         135deg,
         #eef4ff,
         #f3efff
     );
+
     padding:50px 20px;
+
 }
+
+
 .container{
+
     width:100%;
+
     max-width:420px;
+
 }
+
+
 .header{
+
     text-align:center;
+
     margin-bottom:35px;
+
 }
+
+
 .welcome-text{
+
     font-size:20px;
+
     color:#555;
+
     margin-bottom:0;
+
     font-weight:600;
+
 }
+
+
 .logo-row{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     gap:14px;
+
     margin-top:8px;
+
     margin-bottom:18px;
+
 }
+
+
 .logo{
+
     width:95px;
+
     height:95px;
+
     border-radius:50%;
+
     object-fit:cover;
+
 }
+
+
 h1{
+
     font-size:28px;
+
     color:#1f3c88;
+
     font-weight:700;
+
 }
+
+
 .subtitle{
+
     color:#555;
+
     line-height:1.8;
+
     font-size:17px;
+
 }
+
+
 .card{
+
     background:white;
+
     border-radius:22px;
+
     padding:26px;
+
     margin-bottom:22px;
+
     box-shadow:0 10px 30px rgba(0,0,0,.08);
+
 }
+
+
 .card h2{
+
     color:#1f3c88;
+
     margin-bottom:14px;
+
     font-size:34px;
+
 }
+
+
 .card p{
+
     color:#444;
+
     font-size:16px;
+
     line-height:1.8;
+
     font-weight:500;
+
     margin-bottom:18px;
+
 }
+
+
 .btn-login{
+
     width:100%;
+
     padding:16px;
+
     border:none;
+
     border-radius:14px;
+
     background:#2f6bff;
+
     color:white;
+
     font-size:18px;
+
     font-weight:600;
+
     cursor:pointer;
+
 }
+
+
 .btn-register{
+
     width:100%;
+
     padding:16px;
+
     border:2px solid #2f6bff;
+
     border-radius:14px;
+
     background:white;
+
     color:#2f6bff;
+
     font-size:18px;
+
     font-weight:600;
+
     cursor:pointer;
+
 }
+
+
 .btn-login:hover{
+
     opacity:.95;
+
 }
-    
+
+
 .btn-register:hover{
+
     background:#f8fbff;
+
 }
-    
-    .form-container{
+
+
+.form-container{
+
     display:none;
+
     margin-top:20px;
+
 }
+
 
 .form-container input{
+
     width:100%;
+
     padding:14px;
+
     border:1px solid #d8d8d8;
+
     border-radius:12px;
+
     margin-bottom:12px;
+
     font-size:15px;
+
 }
+
 
 .submit-btn{
+
     margin-top:10px;
+
 }
+
 
 .forgot-password{
+
     display:block;
+
     margin-top:4px;
+
     margin-bottom:12px;
+
     color:#2f6bff;
+
     text-decoration:none;
+
     font-size:14px;
+
 }
-    .password-note{
+
+
+.password-note{
+
     font-size:14px;
+
     color:#555;
+
     line-height:1.7;
+
     margin-bottom:14px;
+
 }
+
+
+.message{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    text-align:center;
+
+}
+
+
+.success{
+
+    display:block;
+
+    background:#e8f7ed;
+
+    color:#18763b;
+
+}
+
+
+.error{
+
+    display:block;
+
+    background:#fff0f0;
+
+    color:#c62828;
+
+}
+
+
+button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
 </style>
+
 </head>
+
+
 <body>
+
+
 <div class="container">
+
+
     <div class="header">
+
+
         <p class="welcome-text">
+
             أهلًا بك في
+
         </p>
+
+
         <div class="logo-row">
+
+
             <img src="../owl.PNG" class="logo">
-            <h1>Engliza Academy</h1>
+
+
+            <h1>
+
+                Engliza Academy
+
+            </h1>
+
+
         </div>
+
+
         <p class="subtitle">
+
             ابدأ رحلتك التعليمية أو أكمل من حيث توقفت
+
         </p>
+
+
     </div>
+
+
+
     <div class="card">
 
-    <h2>👤 تسجيل الدخول</h2>
 
-    <p>
-        لديك حساب بالفعل؟ سجّل دخولك من هنا.
-    </p>
+        <h2>
 
-    <button
-        id="loginBtn"
-        class="btn-login"
-        onclick="showLogin()">
+            👤 تسجيل الدخول
 
-        تسجيل الدخول
+        </h2>
 
-    </button>
 
-    <div id="loginForm" class="form-container">
+        <p>
 
-        <input
-            type="email"
-            placeholder="البريد الإلكتروني">
+            لديك حساب بالفعل؟ سجّل دخولك من هنا.
 
-        <input
-            type="password"
-            placeholder="كلمة المرور">
+        </p>
 
-        <a href="#" class="forgot-password">
-            نسيت كلمة المرور؟
-        </a>
 
-        <button class="btn-login submit-btn">
+        <button
+            id="loginBtn"
+            class="btn-login"
+            onclick="showLogin()">
+
             تسجيل الدخول
+
         </button>
+
+
+
+        <div
+            id="loginForm"
+            class="form-container">
+
+
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="البريد الإلكتروني">
+
+
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="كلمة المرور">
+
+
+            <a
+                href="#"
+                id="forgotPassword"
+                class="forgot-password">
+
+                نسيت كلمة المرور؟
+
+            </a>
+
+
+            <button
+                id="loginSubmitBtn"
+                class="btn-login submit-btn">
+
+                تسجيل الدخول
+
+            </button>
+
+
+            <div
+                id="loginMessage"
+                class="message">
+            </div>
+
+
+        </div>
+
 
     </div>
 
-</div>
+
+
+
     <div class="card">
 
-    <h2>✨ إنشاء حساب</h2>
 
-    <p>
-        إذا كانت هذه أول مرة تدخل فيها إلى المنصة.
-    </p>
+        <h2>
 
-    <button
-        id="registerBtn"
-        class="btn-register"
-        onclick="showRegister()">
+            ✨ إنشاء حساب
 
-        إنشاء حساب
+        </h2>
 
-    </button>
 
-    <div id="registerForm" class="form-container">
+        <p>
 
-        <input
-            type="text"
-            placeholder="الاسم الكامل">
-
-        <input
-            type="email"
-            placeholder="البريد الإلكتروني">
-
-        <input
-            type="password"
-            placeholder="كلمة المرور">
-
-        <p class="password-note">
-
-            🔒 احتفظ بكلمة المرور في مكان آمن، ستحتاج إليها عند تسجيل الدخول لاحقًا.
+            إذا كانت هذه أول مرة تدخل فيها إلى المنصة.
 
         </p>
 
-        <button class="btn-login submit-btn">
 
-            إنشاء الحساب
+        <button
+            id="registerBtn"
+            class="btn-register"
+            onclick="showRegister()">
+
+            إنشاء حساب
 
         </button>
 
+
+
+        <div
+            id="registerForm"
+            class="form-container">
+
+
+            <input
+                id="registerName"
+                type="text"
+                placeholder="الاسم الكامل">
+
+
+            <input
+                id="registerEmail"
+                type="email"
+                placeholder="البريد الإلكتروني">
+
+
+            <input
+                id="registerPassword"
+                type="password"
+                placeholder="كلمة المرور">
+
+
+            <p class="password-note">
+
+                🔒 احتفظ بكلمة المرور في مكان آمن، ستحتاج إليها عند تسجيل الدخول لاحقًا.
+
+            </p>
+
+
+            <button
+                id="registerSubmitBtn"
+                class="btn-login submit-btn">
+
+                إنشاء الحساب
+
+            </button>
+
+
+            <div
+                id="registerMessage"
+                class="message">
+            </div>
+
+
+        </div>
+
+
     </div>
 
+
 </div>
-    </div>
-    <script>
+
+
+
+<script type="module">
+
+
+import {
+
+    initializeApp
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+
+import {
+
+    getAuth,
+
+    createUserWithEmailAndPassword,
+
+    signInWithEmailAndPassword,
+
+    sendPasswordResetEmail,
+
+    updateProfile
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+
+    authDomain: "engliza-academy.firebaseapp.com",
+
+    projectId: "engliza-academy",
+
+    storageBucket: "engliza-academy.firebasestorage.app",
+
+    messagingSenderId: "389916153039",
+
+    appId: "1:389916153039:web:95b8a3056b1718cfd353ba",
+
+    measurementId: "G-7S608ZTN0W"
+
+};
+
+
+
+const app = initializeApp(firebaseConfig);
+
+
+const auth = getAuth(app);
+
+
+
+
+const loginEmail =
+
+document.getElementById("loginEmail");
+
+
+const loginPassword =
+
+document.getElementById("loginPassword");
+
+
+const loginSubmitBtn =
+
+document.getElementById("loginSubmitBtn");
+
+
+const loginMessage =
+
+document.getElementById("loginMessage");
+
+
+
+
+const registerName =
+
+document.getElementById("registerName");
+
+
+const registerEmail =
+
+document.getElementById("registerEmail");
+
+
+const registerPassword =
+
+document.getElementById("registerPassword");
+
+
+const registerSubmitBtn =
+
+document.getElementById("registerSubmitBtn");
+
+
+const registerMessage =
+
+document.getElementById("registerMessage");
+
+
+
+
+function showMessage(element, text, type){
+
+    element.textContent = text;
+
+    element.className =
+
+    "message " + type;
+
+}
+
+
+
+
+function getArabicError(errorCode){
+
+
+    switch(errorCode){
+
+
+        case "auth/email-already-in-use":
+
+            return "هذا البريد الإلكتروني مسجل بالفعل.";
+
+
+        case "auth/invalid-email":
+
+            return "البريد الإلكتروني غير صحيح.";
+
+
+        case "auth/weak-password":
+
+            return "كلمة المرور ضعيفة. يجب أن تتكون من 6 أحرف على الأقل.";
+
+
+        case "auth/invalid-credential":
+
+            return "البريد الإلكتروني أو كلمة المرور غير صحيحة.";
+
+
+        case "auth/user-not-found":
+
+            return "لا يوجد حساب مسجل بهذا البريد الإلكتروني.";
+
+
+        case "auth/wrong-password":
+
+            return "كلمة المرور غير صحيحة.";
+
+
+        case "auth/missing-password":
+
+            return "يرجى كتابة كلمة المرور.";
+
+
+        case "auth/too-many-requests":
+
+            return "تم إجراء محاولات كثيرة. يرجى المحاولة لاحقًا.";
+
+
+        default:
+
+            return "حدث خطأ. يرجى المحاولة مرة أخرى.";
+
+    }
+
+}
+
+
+
+
+registerSubmitBtn.addEventListener(
+
+"click",
+
+async function(){
+
+
+    const name =
+
+    registerName.value.trim();
+
+
+    const email =
+
+    registerEmail.value.trim();
+
+
+    const password =
+
+    registerPassword.value;
+
+
+
+    if(
+
+        name === "" ||
+
+        email === "" ||
+
+        password === ""
+
+    ){
+
+        showMessage(
+
+            registerMessage,
+
+            "يرجى تعبئة جميع الحقول.",
+
+            "error"
+
+        );
+
+
+        return;
+
+    }
+
+
+
+    registerSubmitBtn.disabled = true;
+
+
+    registerSubmitBtn.textContent =
+
+    "جارٍ إنشاء الحساب...";
+
+
+
+    try{
+
+
+        const userCredential =
+
+        await createUserWithEmailAndPassword(
+
+            auth,
+
+            email,
+
+            password
+
+        );
+
+
+
+        await updateProfile(
+
+            userCredential.user,
+
+            {
+
+                displayName:name
+
+            }
+
+        );
+
+
+
+        showMessage(
+
+            registerMessage,
+
+            "تم إنشاء الحساب بنجاح. سيتم نقلك إلى المنصة.",
+
+            "success"
+
+        );
+
+
+
+        setTimeout(
+
+            function(){
+
+                window.location.href = "home.html";
+
+            },
+
+            1500
+
+        );
+
+
+    }
+
+
+    catch(error){
+
+
+        showMessage(
+
+            registerMessage,
+
+            getArabicError(error.code),
+
+            "error"
+
+        );
+
+
+        registerSubmitBtn.disabled = false;
+
+
+        registerSubmitBtn.textContent =
+
+        "إنشاء الحساب";
+
+    }
+
+
+}
+
+);
+
+
+
+
+loginSubmitBtn.addEventListener(
+
+"click",
+
+async function(){
+
+
+    const email =
+
+    loginEmail.value.trim();
+
+
+    const password =
+
+    loginPassword.value;
+
+
+
+    if(
+
+        email === "" ||
+
+        password === ""
+
+    ){
+
+        showMessage(
+
+            loginMessage,
+
+            "يرجى كتابة البريد الإلكتروني وكلمة المرور.",
+
+            "error"
+
+        );
+
+
+        return;
+
+    }
+
+
+
+    loginSubmitBtn.disabled = true;
+
+
+    loginSubmitBtn.textContent =
+
+    "جارٍ تسجيل الدخول...";
+
+
+
+    try{
+
+
+        await signInWithEmailAndPassword(
+
+            auth,
+
+            email,
+
+            password
+
+        );
+
+
+
+        showMessage(
+
+            loginMessage,
+
+            "تم تسجيل الدخول بنجاح. سيتم نقلك إلى المنصة.",
+
+            "success"
+
+        );
+
+
+
+        setTimeout(
+
+            function(){
+
+                window.location.href = "home.html";
+
+            },
+
+            1500
+
+        );
+
+
+    }
+
+
+    catch(error){
+
+
+        showMessage(
+
+            loginMessage,
+
+            getArabicError(error.code),
+
+            "error"
+
+        );
+
+
+        loginSubmitBtn.disabled = false;
+
+
+        loginSubmitBtn.textContent =
+
+        "تسجيل الدخول";
+
+    }
+
+
+}
+
+);
+
+
+
+
+document
+.getElementById("forgotPassword")
+.addEventListener(
+
+"click",
+
+async function(event){
+
+
+    event.preventDefault();
+
+
+    const email =
+
+    loginEmail.value.trim();
+
+
+
+    if(email === ""){
+
+
+        showMessage(
+
+            loginMessage,
+
+            "اكتب بريدك الإلكتروني أولًا، ثم اضغط على نسيت كلمة المرور.",
+
+            "error"
+
+        );
+
+
+        return;
+
+    }
+
+
+
+    try{
+
+
+        await sendPasswordResetEmail(
+
+            auth,
+
+            email
+
+        );
+
+
+        showMessage(
+
+            loginMessage,
+
+            "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
+
+            "success"
+
+        );
+
+
+    }
+
+
+    catch(error){
+
+
+        showMessage(
+
+            loginMessage,
+
+            getArabicError(error.code),
+
+            "error"
+
+        );
+
+
+    }
+
+
+}
+
+);
+
+
+</script>
+
+
+
+<script>
+
 
 function showLogin(){
 
-    document.getElementById("loginForm").style.display = "block";
 
-    document.getElementById("loginBtn").style.display = "none";
+    document
+    .getElementById("loginForm")
+    .style
+    .display = "block";
+
+
+    document
+    .getElementById("loginBtn")
+    .style
+    .display = "none";
+
 
 }
+
+
 
 function showRegister(){
 
-    document.getElementById("registerForm").style.display = "block";
 
-    document.getElementById("registerBtn").style.display = "none";
+    document
+    .getElementById("registerForm")
+    .style
+    .display = "block";
+
+
+    document
+    .getElementById("registerBtn")
+    .style
+    .display = "none";
+
 
 }
 
+
 </script>
+
+
 </body>
+
 </html>
