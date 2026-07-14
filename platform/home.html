@@ -191,6 +191,15 @@ h1{
 }
 
 
+.btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
 @media(max-width:768px){
 
 
@@ -284,7 +293,9 @@ h1{
             </p>
 
 
-            <button class="btn">
+            <button
+                id="startLearningBtn"
+                class="btn">
 
                 الدخول
 
@@ -407,6 +418,17 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 
+import {
+
+    getFirestore,
+
+    doc,
+
+    getDoc
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
 
 const firebaseConfig = {
 
@@ -447,11 +469,29 @@ getAuth(app);
 
 
 
+const db =
+
+getFirestore(app);
+
+
+
 const studentName =
 
 document.getElementById(
     "studentName"
 );
+
+
+
+const startLearningBtn =
+
+document.getElementById(
+    "startLearningBtn"
+);
+
+
+
+let currentUser = null;
 
 
 
@@ -463,6 +503,9 @@ onAuthStateChanged(
 
 
         if(user){
+
+
+            currentUser = user;
 
 
             studentName.textContent =
@@ -481,6 +524,138 @@ onAuthStateChanged(
             window.location.href =
 
             "login.html";
+
+
+        }
+
+
+    }
+
+);
+
+
+
+startLearningBtn.addEventListener(
+
+    "click",
+
+    async function(){
+
+
+        if(!currentUser){
+
+            return;
+
+        }
+
+
+        startLearningBtn.disabled = true;
+
+
+        startLearningBtn.textContent =
+
+        "جارٍ التحميل...";
+
+
+        try{
+
+
+            const userDocument =
+
+            await getDoc(
+
+                doc(
+
+                    db,
+
+                    "users",
+
+                    currentUser.uid
+
+                )
+
+            );
+
+
+
+            if(!userDocument.exists()){
+
+
+                alert(
+
+                    "لم يتم العثور على بيانات المستخدم."
+
+                );
+
+
+                startLearningBtn.disabled = false;
+
+
+                startLearningBtn.textContent =
+
+                "الدخول";
+
+
+                return;
+
+            }
+
+
+
+            const userData =
+
+            userDocument.data();
+
+
+
+            if(
+
+                userData.placementTestCompleted === true
+
+            ){
+
+
+                window.location.href =
+
+                "levels.html";
+
+
+            }
+
+
+            else{
+
+
+                window.location.href =
+
+                "Welcome.html";
+
+
+            }
+
+
+        }
+
+
+        catch(error){
+
+
+            console.error(error);
+
+
+            alert(
+
+                "حدث خطأ أثناء تحميل بياناتك. حاول مرة أخرى."
+
+            );
+
+
+            startLearningBtn.disabled = false;
+
+
+            startLearningBtn.textContent =
+
+            "الدخول";
 
 
         }
