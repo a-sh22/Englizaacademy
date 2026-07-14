@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Engliza Academy | Levels
+</title>
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f6f2ff
+);
+
+min-height:100vh;
+
+padding:45px 20px;
+
+}
+
+.container{
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+.back-btn{
+
+display:inline-block;
+
+background:white;
+
+padding:14px 24px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+box-shadow:
+0 10px 25px
+rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+.header{
+
+text-align:center;
+
+margin-bottom:40px;
+
+position:relative;
+
+}
+
+.header img{
+
+width:90px;
+
+margin-bottom:18px;
+
+}
+
+.header h1{
+
+font-size:52px;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+.header p{
+
+font-size:22px;
+
+color:#666;
+
+line-height:1.9;
+
+}
+
+.levels{
+
+display:grid;
+
+gap:25px;
+
+}
+
+.level{
+
+background:white;
+
+border-radius:28px;
+
+padding:30px;
+
+box-shadow:
+
+0 12px 30px
+
+rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.level:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+.level h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+}
+
+.level p{
+
+font-size:19px;
+
+color:#555;
+
+line-height:1.9;
+
+margin-bottom:20px;
+
+}
+
+.btn{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:15px;
+
+background:#2f6bff;
+
+color:white;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.btn:hover{
+
+opacity:.95;
+
+}
+
+.current{
+
+border:4px solid #6b46ff;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ffffff,
+
+#f4efff
+
+);
+
+}
+
+.current-badge{
+
+display:inline-block;
+
+background:#6b46ff;
+
+color:white;
+
+padding:8px 18px;
+
+border-radius:40px;
+
+font-size:15px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+.completed{
+
+border:3px solid #35b36c;
+
+}
+
+.completed-badge{
+
+display:inline-block;
+
+background:#35b36c;
+
+color:white;
+
+padding:8px 18px;
+
+border-radius:40px;
+
+font-size:15px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+.locked{
+
+opacity:.65;
+
+}
+
+.locked .btn{
+
+background:#bfc5d6;
+
+cursor:not-allowed;
+
+}
+
+.note{
+
+margin-top:40px;
+
+background:white;
+
+padding:28px;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 30px
+rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.note h3{
+
+color:#1f3c88;
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+.note p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#555;
+
+}
+
+@media(max-width:768px){
+
+.header h1{
+
+font-size:38px;
+
+}
+
+.header p{
+
+font-size:18px;
+
+}
+
+.level h2{
+
+font-size:26px;
+
+}
+
+.level p{
+
+font-size:17px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a
+href="home.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+<div class="header">
+
+<img
+src="../owl.PNG">
+
+<h1>
+
+📚 المستويات التعليمية
+
+</h1>
+
+<p>
+
+اختر المستوى الذي ترغب في متابعته.
+
+</p>
+
+</div>
+
+<div class="levels">
+
+  <!-- Beginner -->
+
+<div
+id="beginnerLevel"
+class="level">
+
+<span
+id="beginnerBadge"
+class="current-badge"
+style="display:none">
+
+🔥 مستواك الحالي
+
+</span>
+
+<span
+id="beginnerCompleted"
+class="completed-badge"
+style="display:none">
+
+✅ مكتمل
+
+</span>
+
+<h2>
+
+🟢 المستوى المبتدئ
+
+</h2>
+
+<p>
+
+ابدأ رحلتك في اللغة الإنجليزية من الأساسيات وحتى تكوين الجمل والتحدث بثقة.
+
+</p>
+
+<button
+id="beginnerBtn"
+class="btn">
+
+ابدأ التعلم
+
+</button>
+
+</div>
+
+
+
+<!-- Pre Intermediate -->
+
+<div
+id="preLevel"
+class="level locked">
+
+<span
+id="preBadge"
+class="current-badge"
+style="display:none">
+
+🔥 مستواك الحالي
+
+</span>
+
+<span
+id="preCompleted"
+class="completed-badge"
+style="display:none">
+
+✅ مكتمل
+
+</span>
+
+<h2>
+
+🟡 ما قبل المتوسط
+
+</h2>
+
+<p>
+
+ستبدأ باستخدام اللغة بطريقة طبيعية والتحدث عن الحياة اليومية بثقة أكبر.
+
+</p>
+
+<button
+id="preBtn"
+class="btn"
+disabled>
+
+🔒 أكمل المستوى السابق
+
+</button>
+
+</div>
+
+
+
+<!-- Intermediate -->
+
+<div
+id="intermediateLevel"
+class="level locked">
+
+<span
+id="intermediateBadge"
+class="current-badge"
+style="display:none">
+
+🔥 مستواك الحالي
+
+</span>
+
+<span
+id="intermediateCompleted"
+class="completed-badge"
+style="display:none">
+
+✅ مكتمل
+
+</span>
+
+<h2>
+
+🟠 المستوى المتوسط
+
+</h2>
+
+<p>
+
+ستتعلم التعبير بطلاقة أكبر وفهم المحادثات والنصوص المتوسطة.
+
+</p>
+
+<button
+id="intermediateBtn"
+class="btn"
+disabled>
+
+🔒 أكمل المستوى السابق
+
+</button>
+
+</div>
+
+
+
+<!-- Upper -->
+
+<div
+id="upperLevel"
+class="level locked">
+
+<span
+id="upperBadge"
+class="current-badge"
+style="display:none">
+
+🔥 مستواك الحالي
+
+</span>
+
+<span
+id="upperCompleted"
+class="completed-badge"
+style="display:none">
+
+✅ مكتمل
+
+</span>
+
+<h2>
+
+🔵 فوق المتوسط
+
+</h2>
+
+<p>
+
+ابدأ باستخدام اللغة بطلاقة أكبر في المواقف المختلفة والكتابة الاحترافية.
+
+</p>
+
+<button
+id="upperBtn"
+class="btn"
+disabled>
+
+🔒 أكمل المستوى السابق
+
+</button>
+
+</div>
+
+
+
+<!-- Advanced -->
+
+<div
+id="advancedLevel"
+class="level locked">
+
+<span
+id="advancedBadge"
+class="current-badge"
+style="display:none">
+
+🔥 مستواك الحالي
+
+</span>
+
+<span
+id="advancedCompleted"
+class="completed-badge"
+style="display:none">
+
+✅ مكتمل
+
+</span>
+
+<h2>
+
+🟣 المستوى المتقدم
+
+</h2>
+
+<p>
+
+آخر مرحلة في رحلتك التعليمية، ستصل فيها إلى مستوى احترافي في اللغة الإنجليزية.
+
+</p>
+
+<button
+id="advancedBtn"
+class="btn"
+disabled>
+
+🔒 أكمل المستوى السابق
+
+</button>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="note">
+
+<h3>
+
+🏆 رحلة الإنجاز
+
+</h3>
+
+<p>
+
+كلما أنهيت مستوى سيتم فتح المستوى التالي تلقائيًا، مع الاحتفاظ بجميع مستوياتك السابقة لتتمكن من الرجوع إليها في أي وقت.
+
+</p>
+
+</div>
+
+</div>
+
+  <script type="module">
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+
+    authDomain: "engliza-academy.firebaseapp.com",
+
+    projectId: "engliza-academy",
+
+    storageBucket: "engliza-academy.firebasestorage.app",
+
+    messagingSenderId: "389916153039",
+
+    appId: "1:389916153039:web:95b8a3056b1718cfd353ba",
+
+    measurementId: "G-7S608ZTN0W"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+
+
+const beginnerLevel =
+document.getElementById("beginnerLevel");
+
+const preLevel =
+document.getElementById("preLevel");
+
+const intermediateLevel =
+document.getElementById("intermediateLevel");
+
+const upperLevel =
+document.getElementById("upperLevel");
+
+const advancedLevel =
+document.getElementById("advancedLevel");
+
+
+
+const beginnerBtn =
+document.getElementById("beginnerBtn");
+
+const preBtn =
+document.getElementById("preBtn");
+
+const intermediateBtn =
+document.getElementById("intermediateBtn");
+
+const upperBtn =
+document.getElementById("upperBtn");
+
+const advancedBtn =
+document.getElementById("advancedBtn");
+
+
+
+const beginnerBadge =
+document.getElementById("beginnerBadge");
+
+const preBadge =
+document.getElementById("preBadge");
+
+const intermediateBadge =
+document.getElementById("intermediateBadge");
+
+const upperBadge =
+document.getElementById("upperBadge");
+
+const advancedBadge =
+document.getElementById("advancedBadge");
+
+
+
+const beginnerCompleted =
+document.getElementById("beginnerCompleted");
+
+const preCompleted =
+document.getElementById("preCompleted");
+
+const intermediateCompleted =
+document.getElementById("intermediateCompleted");
+
+const upperCompleted =
+document.getElementById("upperCompleted");
+
+const advancedCompleted =
+document.getElementById("advancedCompleted");
+
+
+    function resetLevel(level){
+
+    level.classList.remove("current");
+    level.classList.remove("completed");
+    level.classList.add("locked");
+
+}
+
+function unlockLevel(level,button){
+
+    level.classList.remove("locked");
+
+    button.disabled = false;
+
+    button.textContent = "ابدأ التعلم";
+
+}
+
+function makeCurrent(level,badge){
+
+    level.classList.add("current");
+
+    badge.style.display = "inline-block";
+
+}
+
+function makeCompleted(level,badge){
+
+    level.classList.add("completed");
+
+    badge.style.display = "inline-block";
+
+}
+
+async function loadLevels(user){
+
+    const snapshot = await getDoc(
+
+        doc(
+            db,
+            "users",
+            user.uid
+        )
+
+    );
+
+    if(!snapshot.exists()){
+
+        alert("تعذر العثور على بيانات المستخدم.");
+
+        return;
+
+    }
+
+    const data = snapshot.data();
+
+    const currentLevel = data.currentLevel;
+
+  if(data.placementTestCompleted === false){
+
+    window.location.href = "welcome.html";
+
+    return;
+
+}
+
+
+    resetLevel(beginnerLevel);
+
+    resetLevel(preLevel);
+
+    resetLevel(intermediateLevel);
+
+    resetLevel(upperLevel);
+
+    resetLevel(advancedLevel);
+
+
+
+    beginnerBadge.style.display="none";
+    preBadge.style.display="none";
+    intermediateBadge.style.display="none";
+    upperBadge.style.display="none";
+    advancedBadge.style.display="none";
+
+    beginnerCompleted.style.display="none";
+    preCompleted.style.display="none";
+    intermediateCompleted.style.display="none";
+    upperCompleted.style.display="none";
+    advancedCompleted.style.display="none";
+
+
+
+    beginnerBtn.disabled=true;
+    preBtn.disabled=true;
+    intermediateBtn.disabled=true;
+    upperBtn.disabled=true;
+    advancedBtn.disabled=true;
+
+
+
+    beginnerBtn.textContent="🔒 أكمل المستوى السابق";
+    preBtn.textContent="🔒 أكمل المستوى السابق";
+    intermediateBtn.textContent="🔒 أكمل المستوى السابق";
+    upperBtn.textContent="🔒 أكمل المستوى السابق";
+    advancedBtn.textContent="🔒 أكمل المستوى السابق";
+
+
+
+    switch(currentLevel){
+
+        case "beginner":
+
+            unlockLevel(
+                beginnerLevel,
+                beginnerBtn
+            );
+
+            makeCurrent(
+                beginnerLevel,
+                beginnerBadge
+            );
+
+        break;
+
+
+
+        case "preIntermediate":
+
+            unlockLevel(
+                beginnerLevel,
+                beginnerBtn
+            );
+
+            unlockLevel(
+                preLevel,
+                preBtn
+            );
+
+            makeCompleted(
+                beginnerLevel,
+                beginnerCompleted
+            );
+
+            makeCurrent(
+                preLevel,
+                preBadge
+            );
+
+        break;
+
+
+
+        case "intermediate":
+
+            unlockLevel(beginnerLevel,beginnerBtn);
+
+            unlockLevel(preLevel,preBtn);
+
+            unlockLevel(intermediateLevel,intermediateBtn);
+
+            makeCompleted(beginnerLevel,beginnerCompleted);
+
+            makeCompleted(preLevel,preCompleted);
+
+            makeCurrent(intermediateLevel,intermediateBadge);
+
+        break;
+
+
+
+        case "upper":
+
+            unlockLevel(beginnerLevel,beginnerBtn);
+
+            unlockLevel(preLevel,preBtn);
+
+            unlockLevel(intermediateLevel,intermediateBtn);
+
+            unlockLevel(upperLevel,upperBtn);
+
+            makeCompleted(beginnerLevel,beginnerCompleted);
+
+            makeCompleted(preLevel,preCompleted);
+
+            makeCompleted(intermediateLevel,intermediateCompleted);
+
+            makeCurrent(upperLevel,upperBadge);
+
+        break;
+
+
+
+        case "advanced":
+
+            unlockLevel(beginnerLevel,beginnerBtn);
+
+            unlockLevel(preLevel,preBtn);
+
+            unlockLevel(intermediateLevel,intermediateBtn);
+
+            unlockLevel(upperLevel,upperBtn);
+
+            unlockLevel(advancedLevel,advancedBtn);
+
+            makeCompleted(beginnerLevel,beginnerCompleted);
+
+            makeCompleted(preLevel,preCompleted);
+
+            makeCompleted(intermediateLevel,intermediateCompleted);
+
+            makeCompleted(upperLevel,upperCompleted);
+
+            makeCurrent(advancedLevel,advancedBadge);
+
+        break;
+
+
+
+        default:
+
+            unlockLevel(
+                beginnerLevel,
+                beginnerBtn
+            );
+
+            makeCurrent(
+                beginnerLevel,
+                beginnerBadge
+            );
+
+    }
+
+}
+
+
+    onAuthStateChanged(
+
+    auth,
+
+    async function(user){
+
+        if(!user){
+
+            window.location.href = "login.html";
+
+            return;
+
+        }
+
+        try{
+
+            await loadLevels(user);
+
+        }
+
+        catch(error){
+
+            console.error(error);
+
+            alert(
+
+                "حدث خطأ أثناء تحميل المستويات."
+
+            );
+
+        }
+
+    }
+
+);
+
+
+beginnerBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        window.location.href =
+
+        "beginner.html";
+
+    }
+
+);
+
+
+
+preBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        window.location.href =
+
+        "pre-intermediate.html";
+
+    }
+
+);
+
+
+
+intermediateBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        window.location.href =
+
+        "intermediate.html";
+
+    }
+
+);
+
+
+
+upperBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        window.location.href =
+
+        "upper-intermediate.html";
+
+    }
+
+);
+
+
+
+advancedBtn.addEventListener(
+
+    "click",
+
+    function(){
+
+        window.location.href =
+
+        "advanced.html";
+
+    }
+
+);
+
+    
+</script>
+
+</body>
+
+</html>
+
+    
+  
