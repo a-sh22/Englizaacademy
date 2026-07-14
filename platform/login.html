@@ -570,8 +570,20 @@ import {
 
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
+import {
 
+    getFirestore,
 
+    doc,
+
+    setDoc,
+
+    serverTimestamp
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+    
+
+    
 const firebaseConfig = {
 
     apiKey: "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
@@ -597,6 +609,8 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
+    
+    const db = getFirestore(app);
 
 
 
@@ -807,7 +821,32 @@ async function(){
 
         );
 
+await setDoc(
 
+    doc(
+        db,
+        "users",
+        userCredential.user.uid
+    ),
+
+    {
+
+        name: name,
+
+        email: email,
+
+        placementTestCompleted: false,
+
+        currentLevel: null,
+
+        lastLesson: null,
+
+        createdAt: serverTimestamp()
+
+    }
+
+);
+        
 
         showMessage(
 
