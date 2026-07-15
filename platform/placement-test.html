@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Engliza Academy | Placement Test
+
+</title>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+min-height:100vh;
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:40px 20px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.container{
+
+width:100%;
+
+max-width:900px;
+
+}
+
+.header{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.logo{
+
+width:95px;
+
+height:95px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+margin-bottom:18px;
+
+}
+
+.header h1{
+
+font-size:42px;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+.header p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+.progress-info{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:12px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+}
+
+.progress-bar{
+
+height:14px;
+
+background:#dde5ff;
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin-bottom:35px;
+
+}
+
+.progress{
+
+width:0%;
+
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+transition:.35s;
+
+}
+
+.screen{
+
+display:none;
+
+}
+
+.screen.active{
+
+display:block;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:32px;
+
+padding:45px;
+
+box-shadow:
+
+0 18px 40px
+
+rgba(0,0,0,.08);
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:10px 18px;
+
+background:#edf3ff;
+
+color:#3768ff;
+
+border-radius:40px;
+
+font-size:15px;
+
+font-weight:bold;
+
+margin-bottom:28px;
+
+}
+
+.title{
+
+font-size:34px;
+
+font-weight:bold;
+
+line-height:1.8;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+}
+
+.text{
+
+font-size:20px;
+
+line-height:2;
+
+color:#555;
+
+margin-bottom:35px;
+
+}
+
+.question{
+
+font-size:32px;
+
+font-weight:bold;
+
+line-height:1.8;
+
+color:#1f3c88;
+
+margin-bottom:35px;
+
+}
+
+.reading-box{
+
+display:none;
+
+background:#f8fbff;
+
+border:2px solid #dfe8ff;
+
+padding:25px;
+
+border-radius:22px;
+
+margin-bottom:30px;
+
+}
+
+.reading-box p{
+
+font-size:20px;
+
+line-height:2;
+
+color:#444;
+
+}
+
+.listening-box{
+
+display:none;
+
+background:#f8fbff;
+
+border:2px solid #dfe8ff;
+
+padding:25px;
+
+border-radius:22px;
+
+margin-bottom:30px;
+
+text-align:center;
+
+}
+
+.listening-box h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:10px;
+
+}
+
+.listening-box p{
+
+font-size:17px;
+
+color:#666;
+
+margin-bottom:18px;
+
+}
+
+#audioPlayer{
+
+width:100%;
+
+}
+
+.answers{
+
+display:grid;
+
+gap:18px;
+
+margin-bottom:35px;
+
+}
+
+.answer{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:18px;
+
+border:2px solid #dde5ff;
+
+border-radius:18px;
+
+cursor:pointer;
+
+transition:.25s;
+
+font-size:20px;
+
+font-weight:600;
+
+color:#444;
+
+}
+
+.answer:hover{
+
+border-color:#3768ff;
+
+background:#f7f9ff;
+
+}
+
+.answer.selected{
+
+background:#edf3ff;
+
+border-color:#3768ff;
+
+}
+
+.answer input{
+
+transform:scale(1.3);
+
+}
+
+.bottom{
+
+display:flex;
+
+justify-content:flex-end;
+
+margin-top:35px;
+
+}
+
+.btn{
+
+border:none;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+padding:18px 48px;
+
+border-radius:18px;
+
+font-size:21px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.btn:disabled{
+
+opacity:.45;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+
+  .profile-question{
+
+display:flex;
+
+flex-direction:column;
+
+margin-bottom:28px;
+
+}
+
+.profile-question label{
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:10px;
+
+}
+
+.profile-question select{
+
+width:100%;
+
+padding:16px;
+
+border:2px solid #dde5ff;
+
+border-radius:16px;
+
+font-size:17px;
+
+background:white;
+
+color:#444;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.profile-question select:focus{
+
+border-color:#3768ff;
+
+box-shadow:
+
+0 0 0 4px rgba(55,104,255,.12);
+
+}
+
+  
+@media(max-width:768px){
+
+.card{
+
+padding:28px;
+
+}
+
+.header h1{
+
+font-size:34px;
+
+}
+
+.header p{
+
+font-size:17px;
+
+}
+
+.question{
+
+font-size:24px;
+
+}
+
+.answer{
+
+font-size:17px;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+.bottom{
+
+justify-content:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<img
+src="../owl.PNG"
+class="logo">
+
+<h1>
+
+اختبار تحديد المستوى
+
+</h1>
+
+<p>
+
+أجب عن الأسئلة بهدوء، وسيحدد لك النظام أفضل نقطة تبدأ منها في رحلتك التعليمية.
+
+</p>
+
+</div>
+
+<div class="progress-info">
+
+<span id="questionCounter">
+
+السؤال 1 من 24
+
+</span>
+
+<span id="progressPercent">
+
+0%
+
+</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div
+id="progress"
+class="progress">
+
+</div>
+
+</div>
+
+  <!-- ========================= -->
+<!-- شاشة التعرف على الطالب -->
+<!-- ========================= -->
+
+<div
+id="profileScreen"
+class="screen active">
+
+<div class="card">
+
+<span class="badge">
+
+👋 قبل أن نبدأ
+
+</span>
+
+<h2 class="title">
+
+عرّفنا عليك قليلًا 🤓
+
+</h2>
+
+<p class="text">
+
+هذه الأسئلة لا تحدد مستواك، وإنما تساعدنا على التعرف عليك وتحسين تجربتك التعليمية.
+
+</p>
+
+<div class="profile-question">
+
+<label>
+
+كيف تصف مستواك الحالي؟
+
+</label>
+
+<select id="selfLevel">
+
+<option value="">
+اختر إجابة
+</option>
+
+<option value="firstTime">
+هذه أول مرة أتعلم الإنجليزية
+</option>
+
+<option value="basic">
+أعرف بعض الكلمات والجمل البسيطة
+</option>
+
+<option value="conversation">
+أستطيع إجراء محادثة بسيطة
+</option>
+
+<option value="good">
+أستطيع التحدث بشكل جيد
+</option>
+
+<option value="unknown">
+لست متأكدًا
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="profile-question">
+
+<label>
+
+ما أكثر مهارة ترغب في تطويرها؟
+
+</label>
+
+<select id="learningGoal">
+
+<option value="">
+اختر إجابة
+</option>
+
+<option value="speaking">
+التحدث
+</option>
+
+<option value="listening">
+الاستماع
+</option>
+
+<option value="reading">
+القراءة
+</option>
+
+<option value="writing">
+الكتابة
+</option>
+
+<option value="all">
+جميع المهارات
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="profile-question">
+
+<label>
+
+ما أكبر صعوبة تواجهها؟
+
+</label>
+
+<select id="difficulty">
+
+<option value="">
+اختر إجابة
+</option>
+
+<option value="movies">
+فهم الأفلام
+</option>
+
+<option value="conversation">
+فهم المتحدثين
+</option>
+
+<option value="speaking">
+التحدث
+</option>
+
+<option value="writing">
+الكتابة
+</option>
+
+<option value="vocabulary">
+حفظ الكلمات
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="profile-question">
+
+<label>
+
+كم مرة تستخدم الإنجليزية؟
+
+</label>
+
+<select id="usage">
+
+<option value="">
+اختر إجابة
+</option>
+
+<option value="daily">
+يوميًا
+</option>
+
+<option value="weekly">
+عدة مرات أسبوعيًا
+</option>
+
+<option value="sometimes">
+أحيانًا
+</option>
+
+<option value="rarely">
+نادرًا
+</option>
+
+<option value="never">
+تقريبًا لا أستخدمها
+</option>
+
+</select>
+
+</div>
+
+<div class="bottom">
+
+<button
+id="startTestBtn"
+class="btn">
+
+ابدأ الاختبار 🚀
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- شاشة الاختبار -->
+<!-- ========================= -->
+
+<div
+id="testScreen"
+class="screen">
+
+<div class="card">
+
+<span
+id="questionType"
+class="badge">
+
+Grammar
+
+</span>
+
+
+
+<div
+id="readingBox"
+class="reading-box">
+
+<p id="readingText">
+
+</p>
+
+</div>
+
+
+
+<div
+id="listeningBox"
+class="listening-box">
+
+<h3>
+
+🎧 استمع للمقطع
+
+</h3>
+
+<p>
+
+يمكن تشغيل المقطع مرتين فقط.
+
+</p>
+
+<button
+id="playAudioBtn"
+class="btn">
+
+▶️ تشغيل المقطع (2/2)
+
+</button>
+
+<audio
+id="audioPlayer">
+
+</audio>
+
+</div>
+
+
+
+<h2
+id="questionText"
+class="question">
+
+</h2>
+
+
+
+<div
+id="answers"
+class="answers">
+
+</div>
+
+
+
+<div class="bottom">
+
+<button
+id="nextBtn"
+class="btn"
+disabled>
+
+التالي →
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- شاشة حساب النتيجة -->
+<!-- ========================= -->
+
+<div
+id="loadingScreen"
+class="screen">
+
+<div class="card"
+style="text-align:center;">
+
+<span class="badge">
+
+⏳
+
+</span>
+
+<h2 class="title">
+
+جاري تحديد مستواك...
+
+</h2>
+
+<p class="text">
+
+يرجى الانتظار قليلًا، نقوم الآن بتحليل إجاباتك واختيار المستوى الأنسب لك.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- شاشة النتيجة -->
+<!-- ========================= -->
+
+<div
+id="resultScreen"
+class="screen">
+
+<div class="card"
+style="text-align:center;">
+
+<span class="badge">
+
+🎉
+
+</span>
+
+<h2 class="title">
+
+تم تحديد مستواك
+
+</h2>
+
+<h1
+id="resultLevel"
+style="
+font-size:48px;
+color:#3768ff;
+margin:25px 0;
+">
+
+المستوى المبتدئ
+
+</h1>
+
+<p
+id="resultDescription"
+class="text">
+
+سيظهر هنا وصف المستوى المناسب لك.
+
+</p>
+
+<div class="bottom">
+
+<button
+id="goToLevelsBtn"
+class="btn">
+
+🚀 ابدأ رحلتك التعليمية
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+ </div>
+
+  <script type="module">
+
+import {
+initializeApp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+import {
+getAuth,
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+import {
+getFirestore,
+doc,
+updateDoc
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+const firebaseConfig={
+
+apiKey:"AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+
+authDomain:"engliza-academy.firebaseapp.com",
+
+projectId:"engliza-academy",
+
+storageBucket:"engliza-academy.firebasestorage.app",
+
+messagingSenderId:"389916153039",
+
+appId:"1:389916153039:web:95b8a3056b1718cfd353ba",
+
+measurementId:"G-7S608ZTN0W"
+
+};
+
+const app=
+
+initializeApp(firebaseConfig);
+
+const auth=
+
+getAuth(app);
+
+const db=
+
+getFirestore(app);
+
+    // =========================
+// عناصر الصفحة
+// =========================
+
+const profileScreen =
+document.getElementById("profileScreen");
+
+const testScreen =
+document.getElementById("testScreen");
+
+const loadingScreen =
+document.getElementById("loadingScreen");
+
+const resultScreen =
+document.getElementById("resultScreen");
+
+
+const questionCounter =
+document.getElementById("questionCounter");
+
+const progressPercent =
+document.getElementById("progressPercent");
+
+const progress =
+document.getElementById("progress");
+
+
+const questionType =
+document.getElementById("questionType");
+
+const questionText =
+document.getElementById("questionText");
+
+const answers =
+document.getElementById("answers");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+
+const readingBox =
+document.getElementById("readingBox");
+
+const readingText =
+document.getElementById("readingText");
+
+
+const listeningBox =
+document.getElementById("listeningBox");
+
+const audioPlayer =
+document.getElementById("audioPlayer");
+
+const playAudioBtn =
+document.getElementById("playAudioBtn");
+
+audioPlayer.addEventListener(
+
+"ended",
+
+function(){
+
+if(audioPlayCount<2){
+
+playAudioBtn.disabled=false;
+
+playAudioBtn.textContent=
+
+`▶️ تشغيل المقطع (${2-audioPlayCount}/2)`;
+
+}
+
+else{
+
+playAudioBtn.disabled=true;
+
+playAudioBtn.textContent=
+
+"✅ تم استخدام محاولتي الاستماع";
+
+}
+
+}
+
+);
+
+playAudioBtn.addEventListener(
+
+"click",
+
+async function(){
+
+if(audioPlayCount>=2){
+
+return;
+
+}
+
+// نعطل الزر أثناء تشغيل الصوت
+
+playAudioBtn.disabled=true;
+
+// نزيد العداد
+
+audioPlayCount++;
+
+// تشغيل المقطع من البداية
+
+audioPlayer.currentTime=0;
+
+try{
+
+await audioPlayer.play();
+
+}
+
+catch(error){
+
+console.error(error);
+
+playAudioBtn.disabled=false;
+
+
+
+console.log("الصوت غير موجود بعد.");
+
+
+}
+
+}
+
+);
+    
+    
+    
+const resultLevel =
+document.getElementById("resultLevel");
+
+const resultDescription =
+document.getElementById("resultDescription");
+
+const goToLevelsBtn =
+document.getElementById("goToLevelsBtn");
+
+
+const startTestBtn =
+document.getElementById("startTestBtn");
+
+
+const selfLevel =
+document.getElementById("selfLevel");
+
+const learningGoal =
+document.getElementById("learningGoal");
+
+const difficulty =
+document.getElementById("difficulty");
+
+const usage =
+document.getElementById("usage");
+    
+
+  // =========================
+// متغيرات الاختبار
+// =========================
+
+let currentQuestion = 0;
+
+let currentUser = null;
+
+let selectedAnswer = null;
+
+let answersResult = [];
+
+let scoreA1 = 0;
+let scoreA2 = 0;
+let scoreB1 = 0;
+let scoreB2 = 0;
+
+let audioPlayCount = 0;
+
+let currentAudioQuestion = -1;
+    
+
+// =========================
+// بنك الأسئلة
+// =========================
+
+const questions = [
+
+/* =======================
+A1
+======================= */
+
+{
+
+level:"A1",
+
+type:"Grammar",
+
+question:"I am very ________. I need some food.",
+
+choices:[
+"hungry",
+"tired",
+"thirsty",
+"cold"
+],
+
+correct:0
+
+},
+
+{
+
+level:"A1",
+
+type:"Grammar",
+
+question:"She ________ a teacher.",
+
+choices:[
+"am",
+"is",
+"are",
+"be"
+],
+
+correct:1
+
+},
+
+{
+
+level:"A1",
+
+type:"Grammar",
+
+question:"I love swimming, but I am not very good ________ it.",
+
+choices:[
+"in",
+"with",
+"at",
+"for"
+],
+
+correct:2
+
+},
+
+{
+
+level:"A1",
+
+type:"Vocabulary",
+
+question:"Jane loves fashion. She would like to become a ________.",
+
+choices:[
+"singer",
+"painter",
+"model",
+"cleaner"
+],
+
+correct:2
+
+},
+
+{
+
+level:"A1",
+
+type:"Listening",
+
+audio:"audio/a1-listening.mp3",
+
+question:"Where is Tom likely going?",
+
+choices:[
+"To the park",
+"To a restaurant",
+"On a trip",
+"To the grocery store"
+],
+
+correct:2
+
+},
+
+{
+
+level:"A1",
+
+type:"Reading",
+
+reading:
+
+"Sara has a small cat. Every morning she gives it food and fresh water before going to school.",
+
+question:
+
+"What does Sara do before going to school?",
+
+choices:[
+
+"She feeds her cat",
+
+"She watches TV",
+
+"She goes shopping",
+
+"She visits a friend"
+
+],
+
+correct:0
+
+},
+
+
+
+/* =======================
+A2
+======================= */
+
+{
+
+level:"A2",
+
+type:"Grammar",
+
+question:"I usually ________ breakfast at 7 a.m.",
+
+choices:[
+"have",
+"eat",
+"take",
+"has"
+],
+
+correct:0
+
+},
+
+{
+
+level:"A2",
+
+type:"Vocabulary",
+
+question:"You need to hurry up or we won't ________ the train.",
+
+choices:[
+"meet",
+"take",
+"catch",
+"run"
+],
+
+correct:2
+
+},
+
+{
+
+level:"A2",
+
+type:"Grammar",
+
+question:"She has got only ________ money left.",
+
+choices:[
+"few",
+"little",
+"less",
+"bit"
+],
+
+correct:1
+
+},
+
+{
+
+level:"A2",
+
+type:"Vocabulary",
+
+question:"If you study hard, you will have the ________ to get a scholarship.",
+
+choices:[
+"chance",
+"luck",
+"hope",
+"result"
+],
+
+correct:0
+
+},
+
+{
+
+level:"A2",
+
+type:"Listening",
+
+audio:"audio/a2-listening.mp3",
+
+question:"Where does Anna visit?",
+
+choices:[
+"A bookstore",
+"A library",
+"A school",
+"A café"
+],
+
+correct:1
+
+},
+
+{
+
+level:"A2",
+
+type:"Reading",
+
+reading:
+
+"Omar enjoys riding his bicycle every weekend. He usually goes to the beach with his brother and spends two hours there.",
+
+question:
+
+"Where does Omar usually go?",
+
+choices:[
+
+"The beach",
+
+"The library",
+
+"The mall",
+
+"The airport"
+
+],
+
+correct:0
+
+},
+
+/* =======================
+B1
+======================= */
+
+{
+
+level:"B1",
+
+type:"Vocabulary",
+
+question:"The researchers are ________ an important study on climate change.",
+
+choices:[
+"carrying out",
+"making out",
+"searching out",
+"working out"
+],
+
+correct:0
+
+},
+
+{
+
+level:"B1",
+
+type:"Grammar",
+
+question:"Did you have any trouble ________ the meeting location?",
+
+choices:[
+"locate",
+"to locate",
+"locating",
+"locating for"
+],
+
+correct:2
+
+},
+
+{
+
+level:"B1",
+
+type:"Grammar",
+
+question:"They ________ in this city for five years.",
+
+choices:[
+"live",
+"lives",
+"have lived",
+"living"
+],
+
+correct:2
+
+},
+
+{
+
+level:"B1",
+
+type:"Vocabulary",
+
+question:"The meat is incredibly ________. What recipe did you use?",
+
+choices:[
+"mild",
+"soft",
+"gentle",
+"tender"
+],
+
+correct:3
+
+},
+
+{
+
+level:"B1",
+
+type:"Listening",
+
+audio:"audio/b1-listening.mp3",
+
+question:"What do the woman's children spend most of their time doing?",
+
+choices:[
+"Watching TV",
+"Playing outside",
+"Using phones and the internet",
+"Reading books"
+],
+
+correct:2
+
+},
+
+{
+
+level:"B1",
+
+type:"Reading",
+
+reading:
+
+"David recently started working from home. At first, he found it difficult to stay focused, but after creating a daily schedule, he became much more productive.",
+
+question:
+
+"Why did David become more productive?",
+
+choices:[
+
+"He bought a new computer",
+
+"He created a daily schedule",
+
+"He changed his job",
+
+"He moved to another city"
+
+],
+
+correct:1
+
+},
+
+
+
+/* =======================
+B2
+======================= */
+
+{
+
+level:"B2",
+
+type:"Grammar",
+
+question:"He managed to pass the exam ________ he didn't study much.",
+
+choices:[
+"although",
+"so",
+"because",
+"since"
+],
+
+correct:0
+
+},
+
+{
+
+level:"B2",
+
+type:"Vocabulary",
+
+question:"The young scientist's groundbreaking research led to her ________ as a leader in her field.",
+
+choices:[
+"knowledge",
+"recognition",
+"understanding",
+"familiarity"
+],
+
+correct:1
+
+},
+
+{
+
+level:"B2",
+
+type:"Grammar",
+
+question:"She insisted ________ finishing the project by herself.",
+
+choices:[
+"in",
+"for",
+"to",
+"on"
+],
+
+correct:3
+
+},
+
+{
+
+level:"B2",
+
+type:"Grammar",
+
+question:"This is the book ________ I was telling you about.",
+
+choices:[
+"who",
+"whose",
+"which",
+"whom"
+],
+
+correct:2
+
+},
+
+{
+
+level:"B2",
+
+type:"Listening",
+
+audio:"audio/b2-listening.mp3",
+
+question:"What is the main topic of the speaker?",
+
+choices:[
+"Starting a business",
+
+"Protecting the environment",
+
+"Learning a new language",
+
+"Traveling abroad"
+
+],
+
+correct:1
+
+},
+
+{
+
+level:"B2",
+
+type:"Reading",
+
+reading:
+
+"Many companies now allow employees to work remotely. Although this offers greater flexibility, it also requires strong time-management skills and clear communication with colleagues to remain productive.",
+
+question:
+
+"According to the passage, what is important for remote workers?",
+
+choices:[
+
+"Buying expensive equipment",
+
+"Living close to the office",
+
+"Managing time and communicating well",
+
+"Working longer hours"
+
+],
+
+correct:2
+
+}
+
+];
+
+
+    // =========================
+// عرض السؤال الحالي
+// =========================
+
+function showQuestion(){
+
+selectedAnswer = null;
+
+nextBtn.disabled = true;
+
+const q = questions[currentQuestion];
+
+questionCounter.textContent =
+`السؤال ${currentQuestion+1} من ${questions.length}`;
+
+const percent =
+Math.round(
+((currentQuestion+1)/questions.length)*100
+);
+
+progress.style.width =
+percent + "%";
+
+progressPercent.textContent =
+percent + "%";
+
+questionType.textContent =
+q.type;
+
+questionText.textContent =
+q.question;
+
+
+
+// إخفاء القراءة والاستماع أولاً
+
+readingBox.style.display = "none";
+
+listeningBox.style.display = "none";
+
+audioPlayer.pause();
+
+audioPlayer.currentTime=0;
+  
+
+// إذا كان السؤال قراءة
+
+if(q.type==="Reading"){
+
+readingBox.style.display="block";
+
+readingText.textContent=
+q.reading;
+
+}
+
+// إذا كان السؤال استماع
+
+if(q.type==="Listening"){
+
+listeningBox.style.display="block";
+
+audioPlayer.src=q.audio;
+
+audioPlayer.load();
+
+if(currentAudioQuestion!==currentQuestion){
+
+currentAudioQuestion=currentQuestion;
+
+audioPlayCount=0;
+
+playAudioBtn.disabled=false;
+
+playAudioBtn.textContent="▶️ تشغيل المقطع (2/2)";
+
+}
+
+}
+
+
+
+// تنظيف الخيارات السابقة
+
+answers.innerHTML="";
+
+
+
+// إنشاء الخيارات
+
+q.choices.forEach(
+
+function(choice,index){
+
+const label =
+
+document.createElement("label");
+
+label.className="answer";
+
+
+
+label.innerHTML=`
+
+<input
+type="radio"
+name="answer">
+
+<span>${choice}</span>
+
+`;
+
+
+
+label.addEventListener(
+
+"click",
+
+function(){
+
+document
+
+.querySelectorAll(".answer")
+
+.forEach(
+
+item=>item.classList.remove("selected")
+
+);
+
+label.classList.add("selected");
+
+selectedAnswer=index;
+
+nextBtn.disabled=false;
+
+}
+
+);
+
+
+
+answers.appendChild(label);
+
+}
+
+);
+
+}
+
+
+ // =========================
+// بدء الاختبار
+// =========================
+
+startTestBtn.addEventListener(
+
+"click",
+
+function(){
+
+if(
+
+selfLevel.value==="" ||
+
+learningGoal.value==="" ||
+
+difficulty.value==="" ||
+
+usage.value===""
+
+){
+
+alert(
+
+"يرجى الإجابة عن جميع الأسئلة أولًا."
+
+);
+
+return;
+
+}
+
+
+
+profileScreen.classList.remove("active");
+
+testScreen.classList.add("active");
+
+
+
+currentQuestion=0;
+
+  answersResult=[];
+
+scoreA1=0;
+
+scoreA2=0;
+
+scoreB1=0;
+
+scoreB2=0;
+
+ audioPlayCount=0;
+
+currentAudioQuestion=-1;
+  
+showQuestion();
+
+}
+
+);
+    
+
+    // =========================
+// زر التالي
+// =========================
+
+nextBtn.addEventListener(
+
+"click",
+
+function(){
+
+if(selectedAnswer===null){
+
+return;
+
+}
+
+
+
+// حفظ إجابة الطالب
+
+answersResult.push({
+
+question:
+
+currentQuestion,
+
+selected:
+
+selectedAnswer,
+
+correct:
+
+questions[currentQuestion].correct,
+
+level:
+
+questions[currentQuestion].level
+
+});
+
+
+
+// حساب درجات كل مستوى
+
+if(
+
+selectedAnswer===
+
+questions[currentQuestion].correct
+
+){
+
+switch(
+
+questions[currentQuestion].level
+
+){
+
+case "A1":
+
+scoreA1++;
+
+break;
+
+case "A2":
+
+scoreA2++;
+
+break;
+
+case "B1":
+
+scoreB1++;
+
+break;
+
+case "B2":
+
+scoreB2++;
+
+break;
+
+}
+
+}
+
+
+
+// السؤال التالي
+
+currentQuestion++;
+
+
+// =========================
+// الإيقاف المبكر
+// =========================
+
+if(
+
+(currentQuestion===6 && scoreA1<5)
+
+||
+
+(currentQuestion===12 && scoreA2<5)
+
+||
+
+(currentQuestion===18 && scoreB1<5)
+
+){
+
+testScreen.classList.remove("active");
+
+loadingScreen.classList.add("active");
+
+setTimeout(
+
+function(){
+
+calculateLevel();
+
+},
+
+1500);
+
+return;
+
+}
+  
+
+// هل انتهى الاختبار؟
+
+if(
+
+currentQuestion>=questions.length
+
+){
+
+testScreen.classList.remove(
+
+"active"
+
+);
+
+loadingScreen.classList.add(
+
+"active"
+
+);
+
+
+
+// سنحسب المستوى في الجزء القادم
+
+setTimeout(
+
+function(){
+
+calculateLevel();
+
+},
+
+2000
+
+);
+
+return;
+
+}
+
+
+
+// عرض السؤال التالي
+
+showQuestion();
+
+}
+   
+);
+
+  
+    
+
+    // =========================
+// تحديد المستوى
+// =========================
+
+// =========================
+// التحقق من الانتقال للمستوى التالي
+// =========================
+
+
+ function calculateLevel(){
+
+let currentLevel="";
+let placementResult="";
+let description="";
+let levelName="";
+
+// رسب في A1
+
+if(scoreA1<5){
+
+currentLevel="beginner";
+
+placementResult="A1";
+
+levelName="🟢 المستوى المبتدئ";
+  
+description=
+"ننصحك بالبدء من المستوى المبتدئ لبناء أساس قوي في اللغة الإنجليزية.";
+
+}
+
+
+// نجح A1 لكنه رسب في A2
+
+else if(scoreA2<5){
+
+currentLevel="preIntermediate";
+
+placementResult="A2";
+
+levelName="🟡 ما قبل المتوسط";
+  
+description=
+"لديك أساس جيد، والمرحلة الأنسب لك هي ما قبل المتوسط.";
+
+}
+
+
+// نجح A2 لكنه رسب في B1
+
+else if(scoreB1<5){
+
+currentLevel="intermediate";
+
+placementResult="B1";
+
+  levelName="🟠 المستوى المتوسط";
+  
+description=
+"مستواك جيد، ويمكنك البدء من المستوى المتوسط.";
+
+}
+
+
+// نجح B1 لكنه رسب في B2
+
+else if(scoreB2<5){
+
+currentLevel="upper";
+
+placementResult="B2";
+
+  levelName="🔵 فوق المتوسط";
+  
+description=
+"أداؤك ممتاز، والمرحلة المناسبة لك هي فوق المتوسط.";
+
+}
+
+
+// اجتاز جميع المستويات
+
+else{
+
+currentLevel="advanced";
+
+placementResult="B2+";
+
+levelName="🟣 المستوى المتقدم";
+  
+description=
+"تهانينا! مستواك متقدم، ويمكنك البدء مباشرة بالمستوى المتقدم.";
+
+}
+
+   
+showResult(
+
+currentLevel,
+
+placementResult,
+
+levelName,
+
+description
+
+);
+
+}
+    
+
+// =========================
+// عرض النتيجة
+// =========================
+
+async function showResult(
+
+currentLevel,
+
+placementResult,
+
+levelName,
+
+description
+
+){
+
+loadingScreen.classList.remove("active");
+
+resultScreen.classList.add("active");
+
+resultLevel.textContent=
+
+levelName;
+
+resultDescription.textContent=
+
+description;
+
+await savePlacementResult(
+
+currentLevel,
+
+placementResult
+
+);
+
+}
+    
+
+
+// =========================
+// الانتقال إلى صفحة المستويات
+// =========================
+
+goToLevelsBtn.addEventListener(
+
+"click",
+
+function(){
+
+window.location.href="levels.html";
+
+}
+
+);
+    
+    
+
+
+    
+    // =========================
+// التحقق من تسجيل الدخول
+// =========================
+
+onAuthStateChanged(
+
+auth,
+
+async function(user){
+
+if(!user){
+
+window.location.href="login.html";
+
+return;
+
+}
+
+currentUser=user;
+
+}
+
+);
+
+
+
+// =========================
+// حفظ النتيجة
+// =========================
+
+async function savePlacementResult(
+
+currentLevel,
+
+placementResult
+
+){
+
+await updateDoc(
+
+doc(
+
+db,
+
+"users",
+
+currentUser.uid
+
+),
+
+{
+
+placementTestCompleted:true,
+
+placementResult:placementResult,
+
+currentLevel:currentLevel,
+
+learningGoal:learningGoal.value,
+
+biggestDifficulty:difficulty.value,
+
+englishUsage:usage.value,
+
+selfLevel:selfLevel.value
+
+}
+
+);
+
+}
+
+    
+</script>
+
+</body>
+
+</html>  
