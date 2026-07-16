@@ -546,6 +546,8 @@ class="logo">
 
 </div>
 
+  <div id="progressContainer"> 
+    
 <div class="progress-info">
 
 <span id="questionCounter">
@@ -572,6 +574,9 @@ class="progress">
 
 </div>
 
+</div>
+  
+    
   <!-- ========================= -->
 <!-- شاشة التعرف على الطالب -->
 <!-- ========================= -->
@@ -1045,6 +1050,9 @@ document.getElementById("progressPercent");
 const progress =
 document.getElementById("progress");
 
+const progressContainer =
+document.getElementById("progressContainer");
+    
 
 const questionType =
 document.getElementById("questionType");
@@ -2272,6 +2280,8 @@ loadingScreen.classList.remove("active");
 
 resultScreen.classList.add("active");
 
+document.getElementById("progressContainer").style.display = "none";
+  
 resultLevel.textContent=
 
 levelName;
