@@ -70,6 +70,8 @@ font-weight:600;
 color:#555;
 margin-bottom:50px;
 }
+
+  
 /* بطاقة الفيديو */
 .video-card{
 background:white;
@@ -79,13 +81,27 @@ box-shadow:0 15px 40px rgba(0,0,0,.08);
 margin-bottom:40px;
 animation:fadeUp .6s ease;
 }
-.video-frame{
-width:100%;
-aspect-ratio:16/9;
-border:none;
-border-radius:25px;
-margin-top:25px;
+
+
+.video-box{
+background:white;
+padding:0;
+border-radius:35px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+margin-bottom:35px;
+overflow:hidden;
 }
+  
+
+.video-box video{
+width:100%;
+display:block;
+aspect-ratio:16/9;
+object-fit:cover;
+border-radius:0;
+}
+
+  
 /* البطاقات */
 .card{
 background:white;
@@ -445,14 +461,31 @@ And • But • Maybe
 • في هذا الدرس ستتعلم كلمات الربط البسيطة:
 And و But و Maybe.
 </p>
+
+  
 <!-- بطاقة الفيديو -->
-<div class="video-card">
-<iframe
-class="video-frame"
-src="ضع رابط الفيديو هنا"
-allowfullscreen>
-</iframe>
+
+<div class="video-box">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="https://videos.englizaacademy.com/beginner/Lesson%2024.mp4.MP4"
+type="video/quicktime">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
 </div>
+  
+</div>
+
+
+
 <!-- رتب الجملة -->
 <div class="card">
 <h2>
