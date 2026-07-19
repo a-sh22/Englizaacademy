@@ -151,21 +151,28 @@ animation:fadeUp .6s ease;
 
 }
 
-.video-frame{
+  
 
+.video-box{
+background:white;
+padding:0;
+border-radius:35px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+margin-bottom:35px;
+overflow:hidden;
+}
+
+  
+.video-box video{
 width:100%;
-
+display:block;
 aspect-ratio:16/9;
-
-border:none;
-
-border-radius:25px;
-
-margin-top:25px;
-
+object-fit:cover;
+border-radius:0;
 }
 
 
+  
 /* البطاقات */
 
 .card{
@@ -845,14 +852,22 @@ class="back-btn">
 
 <!-- بطاقة الفيديو -->
 
-<div class="video-card">
+<div class="video-box">
 
-<iframe
-class="video-frame"
-src="ضع رابط الفيديو هنا"
-allowfullscreen>
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
 
-</iframe>
+<source
+src="https://videos.englizaacademy.com/beginner/Lesson%2021.mp4.MP4"
+type="video/quicktime">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
 
 </div>
 
