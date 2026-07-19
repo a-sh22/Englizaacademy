@@ -143,15 +143,24 @@ box-shadow:0 22px 50px rgba(0,0,0,.12);
    بطاقة الفيديو
 ========================== */
 
-.video-card iframe{
-
-width:100%;
-aspect-ratio:16/9;
-border:none;
-border-radius:25px;
-display:block;
+.video-box{
+background:white;
+padding:0;
+border-radius:35px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+margin-bottom:35px;
+overflow:hidden;
 }
 
+
+ .video-box video{
+width:100%;
+display:block;
+aspect-ratio:16/9;
+object-fit:cover;
+border-radius:0;
+}
+   
 
 /* ==========================
    بطاقة البومة
@@ -852,13 +861,22 @@ class="back-btn">
       فيديو الدرس
 ========================== -->
 
-<div class="card video-card">
+<div class="video-box">
 
-<iframe
-src=""
-title="How Are You? & What's Up?"
-allowfullscreen>
-</iframe>
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="https://videos.englizaacademy.com/beginner/Lesson%2036.mp4.MP4"
+type="video/quicktime">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
 
 </div>
 
