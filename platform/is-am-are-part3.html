@@ -91,11 +91,13 @@ margin-bottom:40px;
 
 .video-box{
 background:white;
-padding:30px;
+padding:0;
 border-radius:35px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
 margin-bottom:35px;
+overflow:hidden;
 }
+ 
 
 .video-placeholder{
 height:250px;
@@ -507,7 +509,18 @@ scale(1.3);
 }
 
 }
+
+
+.video-box video{
+width:100%;
+display:block;
+aspect-ratio:16/9;
+object-fit:cover;
+border-radius:35px;
+}
  
+
+
 </style>
 
 </head>
@@ -552,11 +565,43 @@ class="back-btn">
 
 <!-- الفيديو -->
 
+<h2>🎥 الجزء الأول</h2>
+
 <div class="video-box">
 
-<div class="video-placeholder">
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
 
-🎥 فيديو الدرس
+<source
+src="https://videos.englizaacademy.com/beginner/%20%20%20%20Lesson%207.mp4.MP4"
+type="video/quicktime">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
+
+<h2 style="margin:40px 0 20px;color:#1f3c88;">
+🎥 الجزء الثاني
+</h2>
+
+<div class="video-box">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="https://videos.englizaacademy.com/beginner/%20%20%20%20Lesson%208.mp4.MP4"
+type="video/quicktime">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
 
 </div>
 
