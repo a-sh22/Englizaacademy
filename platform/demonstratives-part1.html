@@ -886,22 +886,13 @@ z-index:999;
 
 /* فيديو الدرس */
 
-.video-card{
-
-padding:25px;
-
-}
-
-.video-frame{
-
-width:100%;
-
-aspect-ratio:16/9;
-
-border:none;
-
-border-radius:25px;
-
+.video-box{
+background:white;
+padding:0;
+border-radius:35px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+margin-bottom:35px;
+overflow:hidden;
 }
 
 
@@ -1125,6 +1116,15 @@ gap:10px;
 
 }
 
+
+.video-box video{
+width:100%;
+display:block;
+aspect-ratio:16/9;
+object-fit:cover;
+border-radius:35px;
+}
+ 
 </style>
 
 </head>
@@ -1177,16 +1177,25 @@ This • That • These • Those
 
 <!-- بطاقة الفيديو -->
 
-<div class="video-card">
+<div class="video-box">
 
-<iframe
-class="video-frame"
-src="ضع رابط الفيديو هنا"
-allowfullscreen>
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
 
-</iframe>
+<source
+src="https://videos.englizaacademy.com/beginner/Lesson%2014.mp4.MP4"
+type="video/quicktime">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
 
 </div>
+
+</div>
+ 
 <!-- اكتب بنفسك -->
 
 <div class="card">
