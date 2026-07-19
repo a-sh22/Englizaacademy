@@ -148,18 +148,16 @@ animation:fadeUp .6s ease;
 
 }
 
-.video-frame{
 
-width:100%;
-
-aspect-ratio:16/9;
-
-border:none;
-
-border-radius:25px;
-
+.video-box{
+background:white;
+padding:0;
+border-radius:35px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+margin-bottom:35px;
+overflow:hidden;
 }
-
+ 
 
 /* البطاقات */
 
@@ -881,7 +879,15 @@ margin-bottom:25px;
 
 }
   
-  
+.video-box video{
+width:100%;
+display:block;
+aspect-ratio:16/9;
+object-fit:cover;
+border-radius:0;
+}
+
+ 
 </style>
 
 </head>
@@ -928,20 +934,22 @@ class="back-btn">
 
 <!-- الفيديو الأول -->
 
-<div class="video-card">
+<div class="video-box">
 
-<h2>
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
 
-🎥 أفراد العائلة
+<source
+src="https://videos.englizaacademy.com/beginner/Lesson%2016.mp4.MP4"
+type="video/quicktime">
 
-</h2>
+متصفحك لا يدعم تشغيل الفيديو.
 
-<iframe
-class="video-frame"
-src="ضع رابط الفيديو الأول هنا"
-allowfullscreen>
+</video>
 
-</iframe>
+</div>
 
 </div>
 
