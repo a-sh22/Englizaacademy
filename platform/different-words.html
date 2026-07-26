@@ -239,7 +239,7 @@ margin:35px 0;
    مربع الكتابة
 ========================== */
 
-.write-box{
+.writing-input{
 
 width:100%;
 padding:20px;
@@ -253,7 +253,7 @@ background:white;
 
 }
 
-.write-box:focus{
+.writing-input:focus{
 
 border-color:#6f43ff;
 
@@ -841,6 +841,22 @@ margin-bottom:18px;
 border:1px solid #cfe0ff;
 }
 
+
+.resource-card{
+border:3px solid #4A7DFF;
+box-shadow:0 12px 30px rgba(74,125,255,.12);
+}
+
+
+.resource-card{
+transition:.25s;
+}
+
+.resource-card:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 40px rgba(74,125,255,.18);
+}
+ 
  
   
 </style>
@@ -967,7 +983,7 @@ type="video/quicktime">
 </p>
 
 <a
-href="href="similar-words.pdf.pdf""
+href="similar-words.pdf.pdf"
 target="_blank"
 class="download-btn">
 
@@ -1567,8 +1583,6 @@ onclick="checkWriting(
 <p id="result11" class="result-text"></p>
 
 </div>
-
- </div>
  
 
 <div class="card final-card">
@@ -1599,7 +1613,7 @@ onclick="window.location.href='lesson2.html'">
 
 </div>
 
- </div>
+
     
 <!-- نهاية container -->
 
@@ -1675,8 +1689,8 @@ return text
 
 function checkWriting(
 inputId,
-resultId,
-correctAnswers
+correctAnswers,
+resultId
 ){
 
 let input =
