@@ -836,7 +836,181 @@ line-height:2;
   
 }
 
-  
+
+/* ==========================
+   Interactive Vocabulary
+========================== */
+
+.vocab{
+
+display:inline;
+position:relative;
+font-weight:600;
+cursor:pointer;
+
+border-bottom:2px solid #7b61ff;
+
+transition:.25s;
+
+}
+
+.vocab:hover{
+
+color:#5f3dff;
+
+}
+
+.vocab.active{
+
+background:#ece8ff;
+
+border-radius:8px;
+
+padding:2px 4px;
+
+}
+
+#vocab-popup{
+
+position:fixed;
+
+display:none;
+
+width:320px;
+
+background:white;
+
+border:2px solid #e5e8ff;
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+z-index:99999;
+
+animation:popupShow .18s ease;
+
+}
+
+#vocab-popup.show{
+
+display:block;
+
+}
+
+#vocab-popup h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:8px;
+
+}
+
+#vocab-popup .type{
+
+font-size:15px;
+
+font-weight:bold;
+
+color:#6f43ff;
+
+margin-bottom:16px;
+
+}
+
+#vocab-popup .meaning{
+
+font-size:22px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+color:#222;
+
+}
+
+#vocab-popup .example{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#444;
+
+margin-bottom:10px;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+#vocab-popup .translation{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#666;
+
+margin-bottom:18px;
+
+}
+
+.speak-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:16px;
+
+background:#eef2ff;
+
+color:#1f3c88;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.speak-btn:hover{
+
+background:#dfe7ff;
+
+}
+
+@keyframes popupShow{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+   
 </style>
 
 </head>
@@ -941,8 +1115,35 @@ class="back-btn">
 
 <div class="reading-text">
 
-Ahmed wakes up at 7:00 every morning. He brushes his teeth and washes his face. Then he eats breakfast with his family. He drinks tea, but he doesn't drink coffee. Does he drive to work? No, he doesn't. He goes to work by bus at 8:00. He comes home at 5:00 and watches TV in the evening.
+Ahmed
+<span class="vocab" data-word="wakes-up">wakes up</span>
+at 7:00
+<span class="vocab" data-word="every">every</span>
+morning.
 
+He brushes his teeth and washes his face.
+
+Then he eats
+<span class="vocab" data-word="breakfast">breakfast</span>
+with his family.
+
+He drinks
+<span class="vocab" data-word="tea">tea</span>,
+but he doesn't drink
+<span class="vocab" data-word="coffee">coffee</span>.
+
+Does he drive to work?
+
+No, he doesn't.
+
+He goes to work by
+<span class="vocab" data-word="bus">bus</span>
+at 8:00.
+
+He comes home at 5:00 and watches
+<span class="vocab" data-word="tv">TV</span>
+in the evening.
+   
 </div>
 
 </div>
@@ -1245,7 +1446,42 @@ onclick="checkWriting(
 
 <div class="reading-text">
 
-Sara lives with her family in a small house. She has one brother and two sisters. Her father works in a hospital. Her mother teaches English at a school. Does Sara have a pet? Yes, she does. She has a small cat, and she loves it very much. Every evening, the family eats dinner together.
+Sara
+<span class="vocab" data-word="lives">lives</span>
+with her
+<span class="vocab" data-word="family">family</span>
+in a
+<span class="vocab" data-word="small-house">small house</span>.
+
+She has one
+<span class="vocab" data-word="brother">brother</span>
+and two
+<span class="vocab" data-word="sisters">sisters</span>.
+
+Her father works in a
+<span class="vocab" data-word="hospital">hospital</span>.
+
+Her mother
+<span class="vocab" data-word="teaches">teaches</span>
+English at a
+<span class="vocab" data-word="school">school</span>.
+
+Does Sara have a
+<span class="vocab" data-word="pet">pet</span>?
+
+Yes, she does.
+
+She has a small
+<span class="vocab" data-word="cat">cat</span>,
+and she
+<span class="vocab" data-word="loves">loves</span>
+it very much.
+
+<span class="vocab" data-word="every">Every</span>
+evening, the family
+<span class="vocab" data-word="eats">eats</span>
+<span class="vocab" data-word="dinner">dinner</span>
+together.
 
 </div>
 
@@ -1547,13 +1783,50 @@ onclick="checkWriting(
 
 <div class="reading-text">
 
-Omar likes sports very much. He plays football every Friday with his friends. He also likes reading books in the evening. He doesn't watch TV every day. Does he like swimming? Yes, he does. Sometimes he swims with his brother at the beach. Omar enjoys his free time because he always does something fun.
+Omar
+<span class="vocab" data-word="likes">likes</span>
+<span class="vocab" data-word="sports">sports</span>
+very much.
+
+He
+<span class="vocab" data-word="plays">plays</span>
+<span class="vocab" data-word="football">football</span>
+every Friday with his
+<span class="vocab" data-word="friends">friends</span>.
+
+He also likes
+<span class="vocab" data-word="reading">reading</span>
+<span class="vocab" data-word="books">books</span>
+in the evening.
+
+He doesn't
+<span class="vocab" data-word="watch">watch</span>
+<span class="vocab" data-word="tv">TV</span>
+every day.
+
+Does he like
+<span class="vocab" data-word="swimming">swimming</span>?
+
+Yes, he does.
+
+Sometimes he
+<span class="vocab" data-word="swims">swims</span>
+with his
+<span class="vocab" data-word="brother">brother</span>
+at the
+<span class="vocab" data-word="beach">beach</span>.
+
+Omar
+<span class="vocab" data-word="enjoys">enjoys</span>
+his
+<span class="vocab" data-word="free-time">free time</span>
+because he always does something
+<span class="vocab" data-word="fun">fun</span>.
 
 </div>
 
 </div>
-
-
+   
 
 <!-- =========================================================
                     📝 أسئلة الفقرة
@@ -1849,8 +2122,21 @@ onclick="checkWriting(
 
 <div class="reading-text">
 
-Ali is a student at a middle school. He goes to school from Sunday to Thursday. His favorite subject is English because he likes learning new words. He doesn't arrive late for school. Does he do his homework every day? Yes, he does. After school, he studies for one hour and then plays with his friends. Ali enjoys school because he learns something new every day.
+Ali is a <span class="vocab" data-word="student">student</span> at a <span class="vocab" data-word="middle-school">middle school</span>.
 
+He <span class="vocab" data-word="goes">goes</span> to <span class="vocab" data-word="school">school</span> from <span class="vocab" data-word="sunday">Sunday</span> to <span class="vocab" data-word="thursday">Thursday</span>.
+
+His <span class="vocab" data-word="favorite-subject">favorite subject</span> is <span class="vocab" data-word="english">English</span> because he likes <span class="vocab" data-word="learning">learning</span> new <span class="vocab" data-word="words">words</span>.
+
+He doesn't <span class="vocab" data-word="arrive">arrive</span> <span class="vocab" data-word="late">late</span> for school.
+
+Does he do his <span class="vocab" data-word="homework">homework</span> every day?
+
+Yes, he does.
+
+After school, he <span class="vocab" data-word="studies">studies</span> for <span class="vocab" data-word="one-hour">one hour</span> and then <span class="vocab" data-word="plays">plays</span> with his <span class="vocab" data-word="friends">friends</span>.
+
+Ali <span class="vocab" data-word="enjoys">enjoys</span> school because he <span class="vocab" data-word="learns">learns</span> something new every day.
 </div>
 
 </div>
@@ -2175,10 +2461,38 @@ onclick="window.location.href='lesson-next.html'">
 
 </div>
 
+
+<!-- ==========================
+     Vocabulary Popup
+========================== -->
+
+<div id="vocab-popup">
+
+<h3 id="popup-word"></h3>
+
+<div id="popup-type" class="type"></div>
+
+<div id="popup-meaning" class="meaning"></div>
+
+<div id="popup-example" class="example"></div>
+
+<div id="popup-translation" class="translation"></div>
+
+<button
+class="speak-btn"
+id="popup-speak">
+
+🔊 استمع للنطق
+
+</button>
+
+</div>   
   
     
 <!-- نهاية container -->
 
+</div>
+   
  <script>
 
 // ==========================
@@ -2824,6 +3138,900 @@ btn.innerHTML="📖 عرض الجمل";
 shuffleWords("words1");
 shuffleWords("words2");
 
+
+    
+// ==========================
+// Interactive Vocabulary
+// ==========================
+
+const vocabulary = {
+
+"wakes-up":{
+
+word:"wake up",
+
+type:"Verb (فعل)",
+
+meaning:"يستيقظ",
+
+example:"I wake up at 7:00 every day.",
+
+translation:"أنا أستيقظ الساعة السابعة كل يوم."
+
+},
+
+"every":{
+
+word:"every",
+
+type:"Determiner (محدد)",
+
+meaning:"كل",
+
+example:"She studies every day.",
+
+translation:"هي تدرس كل يوم."
+
+},
+
+"breakfast":{
+
+word:"breakfast",
+
+type:"Noun (اسم)",
+
+meaning:"وجبة الإفطار",
+
+example:"I eat breakfast at 8:00.",
+
+translation:"أنا أتناول الإفطار الساعة الثامنة."
+
+},
+
+"tea":{
+
+word:"tea",
+
+type:"Noun (اسم)",
+
+meaning:"شاي",
+
+example:"He drinks tea every morning.",
+
+translation:"هو يشرب الشاي كل صباح."
+
+},
+
+"coffee":{
+
+word:"coffee",
+
+type:"Noun (اسم)",
+
+meaning:"قهوة",
+
+example:"She doesn't drink coffee.",
+
+translation:"هي لا تشرب القهوة."
+
+},
+
+"bus":{
+
+word:"bus",
+
+type:"Noun (اسم)",
+
+meaning:"حافلة",
+
+example:"They go to school by bus.",
+
+translation:"هم يذهبون إلى المدرسة بالحافلة."
+
+},
+
+"tv":{
+
+word:"TV",
+
+type:"Noun (اسم)",
+
+meaning:"التلفاز",
+
+example:"We watch TV every evening.",
+
+translation:"نحن نشاهد التلفاز كل مساء."
+
+}
+
+    
+
+"lives":{
+
+word:"live",
+
+type:"Verb (فعل)",
+
+meaning:"يعيش",
+
+example:"Sara lives with her family.",
+
+translation:"سارة تعيش مع عائلتها."
+
+},
+
+"family":{
+
+word:"family",
+
+type:"Noun (اسم)",
+
+meaning:"عائلة",
+
+example:"I love my family.",
+
+translation:"أنا أحب عائلتي."
+
+},
+
+"small-house":{
+
+word:"small house",
+
+type:"Noun Phrase (عبارة اسمية)",
+
+meaning:"منزل صغير",
+
+example:"They live in a small house.",
+
+translation:"هم يعيشون في منزل صغير."
+
+},
+
+"brother":{
+
+word:"brother",
+
+type:"Noun (اسم)",
+
+meaning:"أخ",
+
+example:"My brother is a doctor.",
+
+translation:"أخي طبيب."
+
+},
+
+"sisters":{
+
+word:"sisters",
+
+type:"Noun (اسم)",
+
+meaning:"أخوات",
+
+example:"She has two sisters.",
+
+translation:"لديها أختان."
+
+},
+
+"hospital":{
+
+word:"hospital",
+
+type:"Noun (اسم)",
+
+meaning:"مستشفى",
+
+example:"He works in a hospital.",
+
+translation:"هو يعمل في مستشفى."
+
+},
+
+"teaches":{
+
+word:"teach",
+
+type:"Verb (فعل)",
+
+meaning:"يدرّس",
+
+example:"She teaches English.",
+
+translation:"هي تدرّس اللغة الإنجليزية."
+
+},
+
+"school":{
+
+word:"school",
+
+type:"Noun (اسم)",
+
+meaning:"مدرسة",
+
+example:"The children go to school.",
+
+translation:"الأطفال يذهبون إلى المدرسة."
+
+},
+
+"pet":{
+
+word:"pet",
+
+type:"Noun (اسم)",
+
+meaning:"حيوان أليف",
+
+example:"Do you have a pet?",
+
+translation:"هل لديك حيوان أليف؟"
+
+},
+
+"cat":{
+
+word:"cat",
+
+type:"Noun (اسم)",
+
+meaning:"قطة",
+
+example:"The cat is sleeping.",
+
+translation:"القطة نائمة."
+
+},
+
+"loves":{
+
+word:"love",
+
+type:"Verb (فعل)",
+
+meaning:"يحب",
+
+example:"She loves her cat.",
+
+translation:"هي تحب قطتها."
+
+},
+
+"eats":{
+
+word:"eat",
+
+type:"Verb (فعل)",
+
+meaning:"يأكل",
+
+example:"They eat dinner together.",
+
+translation:"هم يتناولون العشاء معًا."
+
+},
+
+"dinner":{
+
+word:"dinner",
+
+type:"Noun (اسم)",
+
+meaning:"العشاء",
+
+example:"We have dinner at 7:00.",
+
+translation:"نتناول العشاء الساعة السابعة."
+
+},
+
+"likes":{
+
+word:"like",
+
+type:"Verb (فعل)",
+
+meaning:"يحب",
+
+example:"Omar likes sports.",
+
+translation:"عمر يحب الرياضة."
+
+},
+
+"sports":{
+
+word:"sports",
+
+type:"Noun (اسم)",
+
+meaning:"الرياضة",
+
+example:"Sports are good for your health.",
+
+translation:"الرياضة مفيدة لصحتك."
+
+},
+
+"plays":{
+
+word:"play",
+
+type:"Verb (فعل)",
+
+meaning:"يلعب",
+
+example:"He plays football every Friday.",
+
+translation:"هو يلعب كرة القدم كل يوم جمعة."
+
+},
+
+"football":{
+
+word:"football",
+
+type:"Noun (اسم)",
+
+meaning:"كرة القدم",
+
+example:"Football is my favorite sport.",
+
+translation:"كرة القدم هي رياضتي المفضلة."
+
+},
+
+"friends":{
+
+word:"friends",
+
+type:"Noun (اسم)",
+
+meaning:"أصدقاء",
+
+example:"He plays with his friends.",
+
+translation:"هو يلعب مع أصدقائه."
+
+},
+
+"reading":{
+
+word:"reading",
+
+type:"Noun (اسم)",
+
+meaning:"القراءة",
+
+example:"Reading is a useful hobby.",
+
+translation:"القراءة هواية مفيدة."
+
+},
+
+"books":{
+
+word:"books",
+
+type:"Noun (اسم)",
+
+meaning:"كتب",
+
+example:"She reads many books.",
+
+translation:"هي تقرأ الكثير من الكتب."
+
+},
+
+"watch":{
+
+word:"watch",
+
+type:"Verb (فعل)",
+
+meaning:"يشاهد",
+
+example:"They watch TV every evening.",
+
+translation:"هم يشاهدون التلفاز كل مساء."
+
+},
+
+"swimming":{
+
+word:"swimming",
+
+type:"Noun (اسم)",
+
+meaning:"السباحة",
+
+example:"Swimming is good exercise.",
+
+translation:"السباحة رياضة مفيدة."
+
+},
+
+"swims":{
+
+word:"swim",
+
+type:"Verb (فعل)",
+
+meaning:"يسبح",
+
+example:"He swims at the beach.",
+
+translation:"هو يسبح في الشاطئ."
+
+},
+
+"beach":{
+
+word:"beach",
+
+type:"Noun (اسم)",
+
+meaning:"شاطئ",
+
+example:"We go to the beach in summer.",
+
+translation:"نذهب إلى الشاطئ في الصيف."
+
+},
+
+"enjoys":{
+
+word:"enjoy",
+
+type:"Verb (فعل)",
+
+meaning:"يستمتع",
+
+example:"She enjoys reading books.",
+
+translation:"هي تستمتع بقراءة الكتب."
+
+},
+
+"free-time":{
+
+word:"free time",
+
+type:"Noun Phrase (عبارة اسمية)",
+
+meaning:"وقت الفراغ",
+
+example:"I read in my free time.",
+
+translation:"أقرأ في وقت فراغي."
+
+},
+
+"fun":{
+
+word:"fun",
+
+type:"Adjective (صفة)",
+
+meaning:"ممتع",
+
+example:"The game is fun.",
+
+translation:"اللعبة ممتعة."
+
+},
+
+
+"student":{
+
+word:"student",
+
+type:"Noun (اسم)",
+
+meaning:"طالب",
+
+example:"Ali is a student.",
+
+translation:"علي طالب."
+
+},
+
+"middle-school":{
+
+word:"middle school",
+
+type:"Noun Phrase (عبارة اسمية)",
+
+meaning:"المدرسة المتوسطة",
+
+example:"She studies at a middle school.",
+
+translation:"هي تدرس في مدرسة متوسطة."
+
+},
+
+"goes":{
+
+word:"go",
+
+type:"Verb (فعل)",
+
+meaning:"يذهب",
+
+example:"He goes to school every day.",
+
+translation:"هو يذهب إلى المدرسة كل يوم."
+
+},
+
+"sunday":{
+
+word:"Sunday",
+
+type:"Noun (اسم)",
+
+meaning:"الأحد",
+
+example:"School starts on Sunday.",
+
+translation:"تبدأ المدرسة يوم الأحد."
+
+},
+
+"thursday":{
+
+word:"Thursday",
+
+type:"Noun (اسم)",
+
+meaning:"الخميس",
+
+example:"We finish school on Thursday.",
+
+translation:"ننهي الدراسة يوم الخميس."
+
+},
+
+"favorite-subject":{
+
+word:"favorite subject",
+
+type:"Noun Phrase (عبارة اسمية)",
+
+meaning:"المادة المفضلة",
+
+example:"English is my favorite subject.",
+
+translation:"اللغة الإنجليزية هي مادتي المفضلة."
+
+},
+
+"english":{
+
+word:"English",
+
+type:"Noun (اسم)",
+
+meaning:"اللغة الإنجليزية",
+
+example:"She studies English.",
+
+translation:"هي تدرس اللغة الإنجليزية."
+
+},
+
+"learning":{
+
+word:"learning",
+
+type:"Noun (اسم)",
+
+meaning:"التعلم",
+
+example:"Learning English is fun.",
+
+translation:"تعلم الإنجليزية ممتع."
+
+},
+
+"words":{
+
+word:"words",
+
+type:"Noun (اسم)",
+
+meaning:"كلمات",
+
+example:"I learn new words every day.",
+
+translation:"أتعلم كلمات جديدة كل يوم."
+
+},
+
+"arrive":{
+
+word:"arrive",
+
+type:"Verb (فعل)",
+
+meaning:"يصل",
+
+example:"They arrive at school early.",
+
+translation:"هم يصلون إلى المدرسة مبكرًا."
+
+},
+
+"late":{
+
+word:"late",
+
+type:"Adjective (صفة)",
+
+meaning:"متأخر",
+
+example:"He is never late.",
+
+translation:"هو لا يتأخر أبدًا."
+
+},
+
+"homework":{
+
+word:"homework",
+
+type:"Noun (اسم)",
+
+meaning:"الواجب المنزلي",
+
+example:"I finish my homework before dinner.",
+
+translation:"أنهي واجبي المنزلي قبل العشاء."
+
+},
+
+"studies":{
+
+word:"study",
+
+type:"Verb (فعل)",
+
+meaning:"يدرس",
+
+example:"He studies for one hour.",
+
+translation:"هو يدرس لمدة ساعة."
+
+},
+
+"one-hour":{
+
+word:"one hour",
+
+type:"Time Expression (تعبير زمني)",
+
+meaning:"ساعة واحدة",
+
+example:"She studies for one hour.",
+
+translation:"هي تدرس لمدة ساعة واحدة."
+
+},
+
+"learns":{
+
+word:"learn",
+
+type:"Verb (فعل)",
+
+meaning:"يتعلم",
+
+example:"He learns something new every day.",
+
+translation:"هو يتعلم شيئًا جديدًا كل يوم."
+
+},
+    
+
+
+    
+const popup = document.getElementById("vocab-popup");
+
+const popupWord =
+document.getElementById("popup-word");
+
+const popupType =
+document.getElementById("popup-type");
+
+const popupMeaning =
+document.getElementById("popup-meaning");
+
+const popupExample =
+document.getElementById("popup-example");
+
+const popupTranslation =
+document.getElementById("popup-translation");
+
+const popupSpeak =
+document.getElementById("popup-speak");
+
+let activeWord = null;
+
+
+document.querySelectorAll(".vocab").forEach(word=>{
+
+word.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+const key =
+this.dataset.word;
+
+const data =
+vocabulary[key];
+
+if(!data){
+
+return;
+
+}
+
+
+// إذا ضغط على نفس الكلمة مرة ثانية
+
+if(activeWord===this){
+
+popup.classList.remove("show");
+
+this.classList.remove("active");
+
+activeWord=null;
+
+return;
+
+}
+
+
+// إزالة التحديد من أي كلمة
+
+document.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+
+this.classList.add("active");
+
+activeWord=this;
+
+
+// تعبئة البيانات
+
+popupWord.textContent =
+data.word;
+
+popupType.textContent =
+data.type;
+
+popupMeaning.textContent =
+data.meaning;
+
+popupExample.textContent =
+data.example;
+
+popupTranslation.textContent =
+data.translation;
+
+
+// زر النطق
+
+popupSpeak.onclick=function(){
+
+const speech =
+new SpeechSynthesisUtterance(
+data.word
+);
+
+speech.lang="en-US";
+
+speech.rate=0.9;
+
+window.speechSynthesis.cancel();
+
+window.speechSynthesis.speak(
+speech
+);
+
+};
+
+
+// مكان البطاقة
+
+const rect =
+this.getBoundingClientRect();
+
+popup.style.display="block";
+
+popup.classList.add("show");
+
+const popupWidth =
+320;
+
+let left =
+rect.left+
+(window.scrollX);
+
+left-=
+popupWidth/2;
+
+left+=
+rect.width/2;
+
+
+// منع خروج البطاقة من الشاشة
+
+if(left<15){
+
+left=15;
+
+}
+
+if(
+left+popupWidth>
+window.innerWidth-15
+){
+
+left=
+window.innerWidth-
+popupWidth-
+15;
+
+}
+
+
+popup.style.left=
+left+"px";
+
+
+popup.style.top=
+window.scrollY+
+rect.bottom+
+15+
+"px";
+
+});
+
+});
+
+
+// الضغط خارج البطاقة
+
+document.addEventListener(
+"click",
+function(){
+
+popup.classList.remove("show");
+
+popup.style.display = "none";
+   
+document
+.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+activeWord=null;
+
+});
+    
+    
 </script>
 
 </body>
