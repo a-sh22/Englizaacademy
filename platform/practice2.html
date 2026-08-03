@@ -836,7 +836,181 @@ line-height:2;
   
 }
 
-  
+
+/* ==========================
+   Interactive Vocabulary
+========================== */
+
+.vocab{
+
+display:inline;
+position:relative;
+font-weight:600;
+cursor:pointer;
+
+border-bottom:2px solid #7b61ff;
+
+transition:.25s;
+
+}
+
+.vocab:hover{
+
+color:#5f3dff;
+
+}
+
+.vocab.active{
+
+background:#ece8ff;
+
+border-radius:8px;
+
+padding:2px 4px;
+
+}
+
+#vocab-popup{
+
+position: absolute;
+
+display:none;
+
+width:320px;
+
+background:white;
+
+border:2px solid #e5e8ff;
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+z-index:99999;
+
+animation:popupShow .18s ease;
+
+}
+
+#vocab-popup.show{
+
+display:block;
+
+}
+
+#vocab-popup h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:8px;
+
+}
+
+#vocab-popup .type{
+
+font-size:15px;
+
+font-weight:bold;
+
+color:#6f43ff;
+
+margin-bottom:16px;
+
+}
+
+#vocab-popup .meaning{
+
+font-size:22px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+color:#222;
+
+}
+
+#vocab-popup .example{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#444;
+
+margin-bottom:10px;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+#vocab-popup .translation{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#666;
+
+margin-bottom:18px;
+
+}
+
+.speak-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:16px;
+
+background:#eef2ff;
+
+color:#1f3c88;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.speak-btn:hover{
+
+background:#dfe7ff;
+
+}
+
+@keyframes popupShow{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+   
 </style>
 
 </head>
@@ -874,13 +1048,13 @@ class="back-btn">
 
 <h1 class="title">
 
-📖 قراءة | Present continuous
+📖 قراءة | Present Simple
 
 </h1>
 
 <p class="subtitle">
 
-هنا ستتدرب على المضارع المستمر من خلال قراءة نصوص و الاجابة على أسئلتها
+هنا ستتدرب على المضارع البسيط من خلال قراءة نصوص و الاجابة على أسئلتها
 
 </p>
 
@@ -899,21 +1073,21 @@ class="back-btn">
 
 <h2>
 
-✨ نصيحة قبل أن تبدأ
+📖 قبل أن تبدأ القراءة
 
 </h2>
 
 <p>
 
-لا تحاول ترجمة كل كلمة تقرؤها.
+ستلاحظ أن بعض الكلمات تحتها خط.
 
 <br><br>
 
-اقرأ الفقرة كاملة أولًا، ثم حاول فهم الفكرة العامة.
+اضغط على أي كلمة منها، وسيظهر لك معناها، ونوعها، ومثال عليها، مع ترجمتها وطريقة نطقها.
 
 <br><br>
 
-إذا وجدت كلمة جديدة، فلا تقلق. حاول معرفة معناها من خلال الجملة، ثم أجب عن الأسئلة.
+استخدم هذه الميزة إذا واجهت كلمة جديدة، ثم أكمل القراءة وحاول فهم الفقرة.
 
 </p>
 
@@ -925,6 +1099,8 @@ class="back-btn">
 
 
 
+  
+
 <!-- =========================================================
                     📖 Reading 1
 ========================================================= -->
@@ -933,13 +1109,60 @@ class="back-btn">
 
 <h2 style="font-size:32px;color:#1f3c88;margin-bottom:30px;">
 
-📖 Reading 1 – At the Park
+📖 Reading 1 – Daily Routine
 
 </h2>
 
 <div class="reading-text">
 
-Ahmed is walking in the park now. He is wearing a blue T-shirt and black shoes. His friends are playing football near the trees. Ahmed is not playing football because he is tired. Is he sitting on a bench? No, he isn't. He is drinking water and talking with his friends. Everyone is having a good time in the park.
+Ahmed is
+<span class="vocab" data-word="walking">walking</span>
+in the
+<span class="vocab" data-word="park">park</span>
+<span class="vocab" data-word="now">now</span>.
+
+He is
+<span class="vocab" data-word="wearing">wearing</span>
+a
+<span class="vocab" data-word="blue-tshirt">blue T-shirt</span>
+and
+<span class="vocab" data-word="black-shoes">black shoes</span>.
+
+His
+<span class="vocab" data-word="friends">friends</span>
+are
+<span class="vocab" data-word="playing">playing</span>
+<span class="vocab" data-word="football">football</span>
+near the
+<span class="vocab" data-word="trees">trees</span>.
+
+Ahmed is not
+<span class="vocab" data-word="playing">playing</span>
+football because he is
+<span class="vocab" data-word="tired">tired</span>.
+
+Is he
+<span class="vocab" data-word="sitting">sitting</span>
+on a
+<span class="vocab" data-word="bench">bench</span>?
+
+No, he isn't.
+
+He is
+<span class="vocab" data-word="drinking">drinking</span>
+<span class="vocab" data-word="water">water</span>
+and
+<span class="vocab" data-word="talking">talking</span>
+with his
+<span class="vocab" data-word="friends">friends</span>.
+
+<span class="vocab" data-word="everyone">Everyone</span>
+is
+<span class="vocab" data-word="having">having</span>
+a
+<span class="vocab" data-word="good-time">good time</span>
+in the
+<span class="vocab" data-word="park">park</span>.
 
 </div>
 
@@ -960,8 +1183,7 @@ Ahmed is walking in the park now. He is wearing a blue T-shirt and black shoes. 
 </h2>
 
 </div>
-
-
+   
 <!-- =========================================================
                     📝 Question 1
 ========================================================= -->
@@ -1004,6 +1226,7 @@ At school
 
 </div>
 
+   
 <!-- =========================================================
                     📝 Question 2
 ========================================================= -->
@@ -1046,7 +1269,7 @@ No, he isn't.
 
 </div>
 
-   
+
 <!-- =========================================================
                     📝 Question 3
 ========================================================= -->
@@ -1059,7 +1282,7 @@ No, he isn't.
 
 </p>
 
-<p class="help-text" dir="ltr" style="text-align:left;">
+<p style="font-size:20px;font-weight:bold;margin-bottom:18px;">
 
 Ahmed is wearing a blue T-shirt.
 
@@ -1067,17 +1290,21 @@ Ahmed is wearing a blue T-shirt.
 
 <input
 id="r1write1"
-class="write-box"
 type="text"
-placeholder="اكتب إجابتك هنا...">
+class="writing-input"
+placeholder="اكتب إجابتك هنا..."
+>
+
+<br><br>
 
 <button
+class="check-btn"
 onclick="checkWriting(
 'r1write1',
 'r1result1',
 [
 'Ahmed is not wearing a blue T-shirt.',
-'Ahmed isn''t wearing a blue T-shirt.'
+'Ahmed isn\'t wearing a blue T-shirt.'
 ]
 )">
 
@@ -1085,12 +1312,14 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r1result1" class="answer-result"></p>
+<p id="r1result1" class="result-text"></p>
 
-</div>
+</div>   
 
 
-<!-- =========================================================
+   
+
+  <!-- =========================================================
                     📖 Reading 2
 ========================================================= -->
 
@@ -1098,16 +1327,64 @@ onclick="checkWriting(
 
 <h2 style="font-size:32px;color:#1f3c88;margin-bottom:30px;">
 
-📖 Reading 2 – At Home
+📖 Reading 2 – My Family
 
 </h2>
 
 <div class="reading-text">
 
-Sara is helping her mother in the kitchen. Her mother is cooking dinner for the family. Sara is washing the vegetables carefully. Her little brother is not helping because he is doing his homework. Is her father watching TV? No, he isn't. He is setting the table for dinner. Everyone is working together to prepare a nice meal.
+Sara is
+<span class="vocab" data-word="helping">helping</span>
+her
+<span class="vocab" data-word="mother">mother</span>
+in the
+<span class="vocab" data-word="kitchen">kitchen</span>.
+
+Her mother is
+<span class="vocab" data-word="cooking">cooking</span>
+<span class="vocab" data-word="dinner">dinner</span>
+for the
+<span class="vocab" data-word="family">family</span>.
+
+Sara is
+<span class="vocab" data-word="washing">washing</span>
+the
+<span class="vocab" data-word="vegetables">vegetables</span>
+<span class="vocab" data-word="carefully">carefully</span>.
+
+Her
+<span class="vocab" data-word="little-brother">little brother</span>
+is not
+<span class="vocab" data-word="helping">helping</span>
+because he is
+<span class="vocab" data-word="doing">doing</span>
+his
+<span class="vocab" data-word="homework">homework</span>.
+
+Is her
+<span class="vocab" data-word="father">father</span>
+<span class="vocab" data-word="watching">watching</span>
+<span class="vocab" data-word="tv">TV</span>?
+
+No, he isn't.
+
+He is
+<span class="vocab" data-word="setting">setting</span>
+the
+<span class="vocab" data-word="table">table</span>
+for
+<span class="vocab" data-word="dinner">dinner</span>.
+
+<span class="vocab" data-word="everyone">Everyone</span>
+is
+<span class="vocab" data-word="working">working</span>
+<span class="vocab" data-word="together">together</span>
+to
+<span class="vocab" data-word="prepare">prepare</span>
+a
+<span class="vocab" data-word="nice-meal">nice meal</span>.
 
 </div>
-
 </div>
 
 
@@ -1126,7 +1403,6 @@ Sara is helping her mother in the kitchen. Her mother is cooking dinner for the 
 
 </div>
    
-
 <!-- =========================================================
                     📝 Question 1
 ========================================================= -->
@@ -1149,17 +1425,17 @@ Where is Sara helping her mother?
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'r2q1')">
+onclick="checkAnswer(this,false,'r2q1')">
 
-In the kitchen
+In the garden
 
 </button>
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'r2q1')">
+onclick="checkAnswer(this,true,'r2q1')">
 
-In the garden
+In the kitchen
 
 </button>
 
@@ -1169,8 +1445,7 @@ In the garden
 
 </div>
 
-
-
+   
 <!-- =========================================================
                     📝 Question 2
 ========================================================= -->
@@ -1214,7 +1489,6 @@ No, he isn't.
 </div>
 
 
-
 <!-- =========================================================
                     📝 Question 3
 ========================================================= -->
@@ -1227,7 +1501,7 @@ No, he isn't.
 
 </p>
 
-<p class="help-text" dir="ltr" style="text-align:left;">
+<p style="font-size:20px;font-weight:bold;margin-bottom:18px;">
 
 Sara is washing the vegetables.
 
@@ -1235,17 +1509,21 @@ Sara is washing the vegetables.
 
 <input
 id="r2write1"
-class="write-box"
 type="text"
-placeholder="اكتب إجابتك هنا...">
+class="writing-input"
+placeholder="اكتب إجابتك هنا..."
+>
+
+<br><br>
 
 <button
+class="check-btn"
 onclick="checkWriting(
 'r2write1',
 'r2result1',
 [
 'Sara is not washing the vegetables.',
-'Sara isn''t washing the vegetables.'
+'Sara isn\'t washing the vegetables.'
 ]
 )">
 
@@ -1253,145 +1531,13 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r2result1" class="answer-result"></p>
+<p id="r2result1" class="result-text"></p>
 
 </div>
+   
+ 
 
-
-
-<!-- =========================================================
-                    📝 Question 4
-========================================================= -->
-
-<div class="card">
-
-<p class="question-title">
-
-✍️ حوّل الجملة إلى سؤال.
-
-</p>
-
-<p class="help-text" dir="ltr" style="text-align:left;">
-
-Her mother is cooking dinner.
-
-</p>
-
-<input
-id="r2write2"
-class="write-box"
-type="text"
-placeholder="اكتب إجابتك هنا...">
-
-<button
-onclick="checkWriting(
-'r2write2',
-'r2result2',
-[
-'Is her mother cooking dinner?'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r2result2" class="answer-result"></p>
-
-</div>
-
-
-
-<!-- =========================================================
-                    📝 Question 5
-========================================================= -->
-
-<div class="card">
-
-<p class="question-title">
-
-✍️ أجب عن السؤال.
-
-</p>
-
-<p class="help-text" dir="ltr" style="text-align:left;">
-
-Is Sara's little brother helping?
-
-</p>
-
-<input
-id="r2write3"
-class="write-box"
-type="text"
-placeholder="اكتب إجابتك هنا...">
-
-<button
-onclick="checkWriting(
-'r2write3',
-'r2result3',
-[
-'No, he is not.',
-'No, he isn''t.',
-'No he is not',
-'No he isn''t'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r2result3" class="answer-result"></p>
-
-</div>
-
-
-
-<!-- =========================================================
-                    📝 Question 6
-========================================================= -->
-
-<div class="card">
-
-<p class="question-title">
-
-✍️ اكتب جملة واحدة باستخدام الكلمة الآتية.
-
-</p>
-
-<p style="font-size:20px;font-weight:bold;color:#555;margin-bottom:18px;">
-
-استخدم الكلمة:
-
-<b>kitchen</b>
-
-</p>
-
-<input
-id="r2write4"
-class="write-box"
-type="text"
-placeholder="اكتب جملتك هنا...">
-
-<button
-onclick="checkWriting(
-'r2write4',
-'r2result4',
-[
-'Sara is helping her mother in the kitchen.',
-'She is helping her mother in the kitchen.'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r2result4" class="answer-result"></p>
-
-</div>
-
+   
 
 <!-- =========================================================
                     📖 Reading 3
@@ -1401,19 +1547,69 @@ onclick="checkWriting(
 
 <h2 style="font-size:32px;color:#1f3c88;margin-bottom:30px;">
 
-📖 Reading 3 – In the Classroom
+📖 Reading 3 – Hobbies
 
 </h2>
 
 <div class="reading-text">
 
-The students are sitting in the classroom now. The teacher is explaining a new English lesson. Some students are writing in their notebooks. One student is not listening because he is looking out of the window. Is the teacher using the computer? Yes, she is. She is showing pictures to the class. Everyone is learning something new today.
+The
+<span class="vocab" data-word="students">students</span>
+are
+<span class="vocab" data-word="sitting">sitting</span>
+in the
+<span class="vocab" data-word="classroom">classroom</span>
+<span class="vocab" data-word="now">now</span>.
+
+The
+<span class="vocab" data-word="teacher">teacher</span>
+is
+<span class="vocab" data-word="explaining">explaining</span>
+a
+<span class="vocab" data-word="new">new</span>
+<span class="vocab" data-word="english-lesson">English lesson</span>.
+
+Some
+<span class="vocab" data-word="students">students</span>
+are
+<span class="vocab" data-word="writing">writing</span>
+in their
+<span class="vocab" data-word="notebooks">notebooks</span>.
+
+One
+<span class="vocab" data-word="student">student</span>
+is not
+<span class="vocab" data-word="listening">listening</span>
+because he is
+<span class="vocab" data-word="looking">looking</span>
+out of the
+<span class="vocab" data-word="window">window</span>.
+
+Is the
+<span class="vocab" data-word="teacher">teacher</span>
+<span class="vocab" data-word="using">using</span>
+the
+<span class="vocab" data-word="computer">computer</span>?
+
+Yes, she is.
+
+She is
+<span class="vocab" data-word="showing">showing</span>
+<span class="vocab" data-word="pictures">pictures</span>
+to the
+<span class="vocab" data-word="class">class</span>.
+
+<span class="vocab" data-word="everyone">Everyone</span>
+is
+<span class="vocab" data-word="learning">learning</span>
+something
+<span class="vocab" data-word="new">new</span>
+<span class="vocab" data-word="today">today</span>.
 
 </div>
-
+   
 </div>
-
-
+   
 
 <!-- =========================================================
                     📝 أسئلة الفقرة
@@ -1428,7 +1624,7 @@ The students are sitting in the classroom now. The teacher is explaining a new E
 </h2>
 
 </div>
-
+   
 
 <!-- =========================================================
                     📝 Question 1
@@ -1452,17 +1648,17 @@ What is the teacher explaining?
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'r3q1')">
+onclick="checkAnswer(this,false,'r3q1')">
 
-A new English lesson
+A math lesson
 
 </button>
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'r3q1')">
+onclick="checkAnswer(this,true,'r3q1')">
 
-A math lesson
+A new English lesson
 
 </button>
 
@@ -1473,8 +1669,7 @@ A math lesson
 </div>
 
 
-
-<!-- =========================================================
+  <!-- =========================================================
                     📝 Question 2
 ========================================================= -->
 
@@ -1517,7 +1712,6 @@ No, she isn't.
 </div>
 
 
-
 <!-- =========================================================
                     📝 Question 3
 ========================================================= -->
@@ -1530,7 +1724,7 @@ No, she isn't.
 
 </p>
 
-<p class="help-text" dir="ltr" style="text-align:left;">
+<p style="font-size:20px;font-weight:bold;margin-bottom:18px;">
 
 The students are writing in their notebooks.
 
@@ -1538,17 +1732,21 @@ The students are writing in their notebooks.
 
 <input
 id="r3write1"
-class="write-box"
 type="text"
-placeholder="اكتب إجابتك هنا...">
+class="writing-input"
+placeholder="اكتب إجابتك هنا..."
+>
+
+<br><br>
 
 <button
+class="check-btn"
 onclick="checkWriting(
 'r3write1',
 'r3result1',
 [
 'The students are not writing in their notebooks.',
-'The students aren''t writing in their notebooks.'
+'The students aren\'t writing in their notebooks.'
 ]
 )">
 
@@ -1556,147 +1754,13 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r3result1" class="answer-result"></p>
+<p id="r3result1" class="result-text"></p>
 
-</div>
-
-
-
-<!-- =========================================================
-                    📝 Question 4
-========================================================= -->
-
-<div class="card">
-
-<p class="question-title">
-
-✍️ حوّل الجملة إلى سؤال.
-
-</p>
-
-<p class="help-text" dir="ltr" style="text-align:left;">
-
-The teacher is showing pictures.
-
-</p>
-
-<input
-id="r3write2"
-class="write-box"
-type="text"
-placeholder="اكتب إجابتك هنا...">
-
-<button
-onclick="checkWriting(
-'r3write2',
-'r3result2',
-[
-'Is the teacher showing pictures?'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r3result2" class="answer-result"></p>
-
-</div>
+</div>   
 
 
 
-<!-- =========================================================
-                    📝 Question 5
-========================================================= -->
-
-<div class="card">
-
-<p class="question-title">
-
-✍️ أجب عن السؤال.
-
-</p>
-
-<p class="help-text" dir="ltr" style="text-align:left;">
-
-Is one student listening?
-
-</p>
-
-<input
-id="r3write3"
-class="write-box"
-type="text"
-placeholder="اكتب إجابتك هنا...">
-
-<button
-onclick="checkWriting(
-'r3write3',
-'r3result3',
-[
-'No, he is not.',
-'No, he isn''t.',
-'No he is not',
-'No he isn''t'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r3result3" class="answer-result"></p>
-
-</div>
-
-
-
-<!-- =========================================================
-                    📝 Question 6
-========================================================= -->
-
-<div class="card">
-
-<p class="question-title">
-
-✍️ اكتب جملة واحدة باستخدام الكلمة الآتية.
-
-</p>
-
-<p style="font-size:20px;font-weight:bold;color:#555;margin-bottom:18px;">
-
-استخدم الكلمة:
-
-<b>classroom</b>
-
-</p>
-
-<input
-id="r3write4"
-class="write-box"
-type="text"
-placeholder="اكتب جملتك هنا...">
-
-<button
-onclick="checkWriting(
-'r3write4',
-'r3result4',
-[
-'The students are sitting in the classroom.',
-'They are sitting in the classroom.'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r3result4" class="answer-result"></p>
-
-</div>
-
-
- <!-- ==========================
+<!-- ==========================
       بطاقة النهاية
 ========================== -->
 
@@ -1704,20 +1768,20 @@ onclick="checkWriting(
 
 <h2>
 
-🎉 مبروك!
+ !مبروك 🎉
 
 </h2>
 
 <p>
 
 لقد أنهيت تدريبات القراءة الخاصة بزمن
-<b>Present Continuous</b>
+<b>Present Simple</b>
 بنجاح.
 
 <br><br>
 
 أصبحت الآن تستطيع قراءة نصوص قصيرة، وفهم الأفكار الرئيسية، والإجابة عن الأسئلة، واستخدام زمن
-<b>Present Continuous</b>
+<b>Present Simple</b>
 في الكتابة.
 
 </p>
@@ -1730,14 +1794,40 @@ onclick="window.location.href='lesson-next.html'">
 
 </button>
 
-</div> 
+</div>
 
 
+<!-- ==========================
+     Vocabulary Popup
+========================== -->
 
+<div id="vocab-popup">
+
+<h3 id="popup-word"></h3>
+
+<div id="popup-type" class="type"></div>
+
+<div id="popup-meaning" class="meaning"></div>
+
+<div id="popup-example" class="example"></div>
+
+<div id="popup-translation" class="translation"></div>
+
+<button
+class="speak-btn"
+id="popup-speak">
+
+🔊 استمع للنطق
+
+</button>
+
+</div>   
   
     
 <!-- نهاية container -->
 
+</div>
+   
  <script>
 
 // ==========================
@@ -2383,6 +2473,699 @@ btn.innerHTML="📖 عرض الجمل";
 shuffleWords("words1");
 shuffleWords("words2");
 
+
+    
+// ==========================
+// Interactive Vocabulary
+// ==========================
+
+const vocabulary = {
+
+"walking":{
+word:"walk",
+type:"Verb (فعل)",
+meaning:"يمشي",
+example:"Ahmed is walking in the park.",
+translation:"أحمد يمشي في الحديقة."
+},
+
+"park":{
+word:"park",
+type:"Noun (اسم)",
+meaning:"حديقة",
+example:"The children are playing in the park.",
+translation:"الأطفال يلعبون في الحديقة."
+},
+
+"now":{
+word:"now",
+type:"Adverb (ظرف)",
+meaning:"الآن",
+example:"She is studying now.",
+translation:"هي تدرس الآن."
+},
+
+"wearing":{
+word:"wear",
+type:"Verb (فعل)",
+meaning:"يرتدي",
+example:"She is wearing a red dress.",
+translation:"هي ترتدي فستانًا أحمر."
+},
+
+"blue-tshirt":{
+word:"blue T-shirt",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"قميص أزرق",
+example:"He is wearing a blue T-shirt.",
+translation:"هو يرتدي قميصًا أزرق."
+},
+
+"black-shoes":{
+word:"black shoes",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"حذاء أسود",
+example:"He is wearing black shoes.",
+translation:"هو يرتدي حذاءً أسود."
+},
+
+"playing":{
+word:"play",
+type:"Verb (فعل)",
+meaning:"يلعب",
+example:"The boys are playing football.",
+translation:"الأولاد يلعبون كرة القدم."
+},
+
+"trees":{
+word:"trees",
+type:"Noun (اسم)",
+meaning:"أشجار",
+example:"The trees are very tall.",
+translation:"الأشجار طويلة جدًا."
+},
+
+"tired":{
+word:"tired",
+type:"Adjective (صفة)",
+meaning:"متعب",
+example:"I am tired after work.",
+translation:"أنا متعب بعد العمل."
+},
+
+"sitting":{
+word:"sit",
+type:"Verb (فعل)",
+meaning:"يجلس",
+example:"She is sitting on a chair.",
+translation:"هي تجلس على كرسي."
+},
+
+"bench":{
+word:"bench",
+type:"Noun (اسم)",
+meaning:"مقعد",
+example:"They are sitting on a bench.",
+translation:"هم يجلسون على مقعد."
+},
+
+"drinking":{
+word:"drink",
+type:"Verb (فعل)",
+meaning:"يشرب",
+example:"He is drinking water.",
+translation:"هو يشرب الماء."
+},
+
+"water":{
+word:"water",
+type:"Noun (اسم)",
+meaning:"ماء",
+example:"Water is good for your health.",
+translation:"الماء مفيد لصحتك."
+},
+
+"talking":{
+word:"talk",
+type:"Verb (فعل)",
+meaning:"يتحدث",
+example:"They are talking together.",
+translation:"هم يتحدثون معًا."
+},
+
+"everyone":{
+word:"everyone",
+type:"Pronoun (ضمير)",
+meaning:"الجميع",
+example:"Everyone is happy today.",
+translation:"الجميع سعيد اليوم."
+},
+
+"having":{
+word:"have",
+type:"Verb (فعل)",
+meaning:"يقضي / لديه",
+example:"They are having a good time.",
+translation:"إنهم يقضون وقتًا ممتعًا."
+},
+
+"good-time":{
+word:"good time",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"وقت ممتع",
+example:"We are having a good time.",
+translation:"نحن نقضي وقتًا ممتعًا."
+},
+    
+
+"helping":{
+word:"help",
+type:"Verb (فعل)",
+meaning:"يساعد",
+example:"Sara is helping her mother.",
+translation:"سارة تساعد والدتها."
+},
+
+"mother":{
+word:"mother",
+type:"Noun (اسم)",
+meaning:"أم",
+example:"Her mother is cooking dinner.",
+translation:"والدتها تطبخ العشاء."
+},
+
+"kitchen":{
+word:"kitchen",
+type:"Noun (اسم)",
+meaning:"مطبخ",
+example:"Sara is in the kitchen.",
+translation:"سارة في المطبخ."
+},
+
+"cooking":{
+word:"cook",
+type:"Verb (فعل)",
+meaning:"يطبخ",
+example:"Her mother is cooking dinner.",
+translation:"والدتها تطبخ العشاء."
+},
+
+"dinner":{
+word:"dinner",
+type:"Noun (اسم)",
+meaning:"العشاء",
+example:"The family is eating dinner.",
+translation:"العائلة تتناول العشاء."
+},
+
+"family":{
+word:"family",
+type:"Noun (اسم)",
+meaning:"العائلة",
+example:"The family is together.",
+translation:"العائلة معًا."
+},
+
+"washing":{
+word:"wash",
+type:"Verb (فعل)",
+meaning:"يغسل",
+example:"Sara is washing the vegetables.",
+translation:"سارة تغسل الخضروات."
+},
+
+"vegetables":{
+word:"vegetables",
+type:"Noun (اسم)",
+meaning:"الخضروات",
+example:"Vegetables are healthy.",
+translation:"الخضروات صحية."
+},
+
+"carefully":{
+word:"carefully",
+type:"Adverb (ظرف)",
+meaning:"بعناية",
+example:"She is washing the vegetables carefully.",
+translation:"هي تغسل الخضروات بعناية."
+},
+
+"little-brother":{
+word:"little brother",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"الأخ الصغير",
+example:"Her little brother is doing his homework.",
+translation:"أخوها الصغير يؤدي واجبه المنزلي."
+},
+
+"doing":{
+word:"do",
+type:"Verb (فعل)",
+meaning:"يقوم بـ",
+example:"He is doing his homework.",
+translation:"هو يؤدي واجبه المنزلي."
+},
+
+"homework":{
+word:"homework",
+type:"Noun (اسم)",
+meaning:"الواجب المنزلي",
+example:"He is doing his homework.",
+translation:"هو يؤدي واجبه المنزلي."
+},
+
+"father":{
+word:"father",
+type:"Noun (اسم)",
+meaning:"أب",
+example:"Her father is setting the table.",
+translation:"والدها يجهز الطاولة."
+},
+
+"watching":{
+word:"watch",
+type:"Verb (فعل)",
+meaning:"يشاهد",
+example:"He is watching TV.",
+translation:"هو يشاهد التلفاز."
+},
+
+"tv":{
+word:"TV",
+type:"Noun (اسم)",
+meaning:"التلفاز",
+example:"They are watching TV.",
+translation:"هم يشاهدون التلفاز."
+},
+
+"setting":{
+word:"set",
+type:"Verb (فعل)",
+meaning:"يجهز",
+example:"He is setting the table.",
+translation:"هو يجهز الطاولة."
+},
+
+"table":{
+word:"table",
+type:"Noun (اسم)",
+meaning:"طاولة",
+example:"The plates are on the table.",
+translation:"الأطباق على الطاولة."
+},
+
+"everyone":{
+word:"everyone",
+type:"Pronoun (ضمير)",
+meaning:"الجميع",
+example:"Everyone is working together.",
+translation:"الجميع يعمل معًا."
+},
+
+"working":{
+word:"work",
+type:"Verb (فعل)",
+meaning:"يعمل",
+example:"Everyone is working together.",
+translation:"الجميع يعمل معًا."
+},
+
+"together":{
+word:"together",
+type:"Adverb (ظرف)",
+meaning:"معًا",
+example:"They are working together.",
+translation:"هم يعملون معًا."
+},
+
+"prepare":{
+word:"prepare",
+type:"Verb (فعل)",
+meaning:"يحضّر",
+example:"They are preparing a meal.",
+translation:"هم يحضرون وجبة."
+},
+
+"nice-meal":{
+word:"nice meal",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"وجبة لذيذة",
+example:"They are preparing a nice meal.",
+translation:"هم يحضرون وجبة لذيذة."
+},
+
+
+"students":{
+word:"students",
+type:"Noun (اسم)",
+meaning:"الطلاب",
+example:"The students are sitting in the classroom.",
+translation:"الطلاب يجلسون في الفصل."
+},
+
+"sitting":{
+word:"sit",
+type:"Verb (فعل)",
+meaning:"يجلس",
+example:"The students are sitting in the classroom.",
+translation:"الطلاب يجلسون في الفصل."
+},
+
+"classroom":{
+word:"classroom",
+type:"Noun (اسم)",
+meaning:"الفصل الدراسي",
+example:"The students are in the classroom.",
+translation:"الطلاب في الفصل الدراسي."
+},
+
+"now":{
+word:"now",
+type:"Adverb (ظرف)",
+meaning:"الآن",
+example:"The teacher is teaching now.",
+translation:"المعلمة تشرح الآن."
+},
+
+"teacher":{
+word:"teacher",
+type:"Noun (اسم)",
+meaning:"المعلم / المعلمة",
+example:"The teacher is explaining the lesson.",
+translation:"المعلمة تشرح الدرس."
+},
+
+"explaining":{
+word:"explain",
+type:"Verb (فعل)",
+meaning:"يشرح",
+example:"The teacher is explaining the lesson.",
+translation:"المعلمة تشرح الدرس."
+},
+
+"new":{
+word:"new",
+type:"Adjective (صفة)",
+meaning:"جديد",
+example:"This is a new lesson.",
+translation:"هذا درس جديد."
+},
+
+"english-lesson":{
+word:"English lesson",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"درس اللغة الإنجليزية",
+example:"The teacher is explaining a new English lesson.",
+translation:"المعلمة تشرح درسًا جديدًا في اللغة الإنجليزية."
+},
+
+"writing":{
+word:"write",
+type:"Verb (فعل)",
+meaning:"يكتب",
+example:"The students are writing.",
+translation:"الطلاب يكتبون."
+},
+
+"notebooks":{
+word:"notebooks",
+type:"Noun (اسم)",
+meaning:"دفاتر",
+example:"The students are writing in their notebooks.",
+translation:"الطلاب يكتبون في دفاترهم."
+},
+
+"student":{
+word:"student",
+type:"Noun (اسم)",
+meaning:"طالب",
+example:"One student is looking out of the window.",
+translation:"أحد الطلاب ينظر خارج النافذة."
+},
+
+"listening":{
+word:"listen",
+type:"Verb (فعل)",
+meaning:"يستمع",
+example:"The student is listening carefully.",
+translation:"الطالب يستمع بعناية."
+},
+
+"looking":{
+word:"look",
+type:"Verb (فعل)",
+meaning:"ينظر",
+example:"He is looking out of the window.",
+translation:"هو ينظر خارج النافذة."
+},
+
+"window":{
+word:"window",
+type:"Noun (اسم)",
+meaning:"نافذة",
+example:"The window is open.",
+translation:"النافذة مفتوحة."
+},
+
+"using":{
+word:"use",
+type:"Verb (فعل)",
+meaning:"يستخدم",
+example:"The teacher is using the computer.",
+translation:"المعلمة تستخدم الحاسوب."
+},
+
+"computer":{
+word:"computer",
+type:"Noun (اسم)",
+meaning:"حاسوب",
+example:"The computer is on the desk.",
+translation:"الحاسوب على المكتب."
+},
+
+"showing":{
+word:"show",
+type:"Verb (فعل)",
+meaning:"يعرض",
+example:"She is showing pictures.",
+translation:"هي تعرض صورًا."
+},
+
+"pictures":{
+word:"pictures",
+type:"Noun (اسم)",
+meaning:"صور",
+example:"The teacher is showing pictures.",
+translation:"المعلمة تعرض صورًا."
+},
+
+"class":{
+word:"class",
+type:"Noun (اسم)",
+meaning:"الفصل",
+example:"The class is quiet.",
+translation:"الفصل هادئ."
+},
+
+"everyone":{
+word:"everyone",
+type:"Pronoun (ضمير)",
+meaning:"الجميع",
+example:"Everyone is learning.",
+translation:"الجميع يتعلم."
+},
+
+"learning":{
+word:"learn",
+type:"Verb (فعل)",
+meaning:"يتعلم",
+example:"Everyone is learning something new.",
+translation:"الجميع يتعلم شيئًا جديدًا."
+},
+
+"today":{
+word:"today",
+type:"Adverb (ظرف)",
+meaning:"اليوم",
+example:"We are studying today.",
+translation:"نحن ندرس اليوم."
+},
+  
+  
+const popup = document.getElementById("vocab-popup");
+
+const popupWord =
+document.getElementById("popup-word");
+
+const popupType =
+document.getElementById("popup-type");
+
+const popupMeaning =
+document.getElementById("popup-meaning");
+
+const popupExample =
+document.getElementById("popup-example");
+
+const popupTranslation =
+document.getElementById("popup-translation");
+
+const popupSpeak =
+document.getElementById("popup-speak");
+
+let activeWord = null;
+
+
+document.querySelectorAll(".vocab").forEach(word=>{
+
+word.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+const key =
+this.dataset.word;
+
+const data =
+vocabulary[key];
+
+if(!data){
+
+return;
+
+}
+
+
+// إذا ضغط على نفس الكلمة مرة ثانية
+
+if(activeWord===this){
+
+popup.classList.remove("show");
+
+this.classList.remove("active");
+
+activeWord=null;
+
+return;
+
+}
+
+
+// إزالة التحديد من أي كلمة
+
+document.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+
+this.classList.add("active");
+
+activeWord=this;
+
+
+// تعبئة البيانات
+
+popupWord.textContent =
+data.word;
+
+popupType.textContent =
+data.type;
+
+popupMeaning.textContent =
+data.meaning;
+
+popupExample.textContent =
+data.example;
+
+popupTranslation.textContent =
+data.translation;
+
+
+// زر النطق
+
+popupSpeak.onclick=function(){
+
+const speech =
+new SpeechSynthesisUtterance(
+data.word
+);
+
+speech.lang="en-US";
+
+speech.rate=0.9;
+
+window.speechSynthesis.cancel();
+
+window.speechSynthesis.speak(
+speech
+);
+
+};
+
+
+// مكان البطاقة
+
+const rect =
+this.getBoundingClientRect();
+
+popup.style.display="block";
+
+popup.classList.add("show");
+
+const popupWidth =
+320;
+
+let left =
+rect.left+
+(window.scrollX);
+
+left-=
+popupWidth/2;
+
+left+=
+rect.width/2;
+
+
+// منع خروج البطاقة من الشاشة
+
+if(left<15){
+
+left=15;
+
+}
+
+if(
+left+popupWidth>
+window.innerWidth-15
+){
+
+left=
+window.innerWidth-
+popupWidth-
+15;
+
+}
+
+
+popup.style.left=
+left+"px";
+
+
+popup.style.top=
+window.scrollY+
+rect.bottom+
+15+
+"px";
+
+});
+
+});
+
+
+// الضغط خارج البطاقة
+
+document.addEventListener(
+"click",
+function(){
+
+popup.classList.remove("show");
+
+popup.style.display = "none";
+   
+document
+.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+activeWord=null;
+
+});
+    
+    
 </script>
 
 </body>
@@ -2390,4 +3173,3 @@ shuffleWords("words2");
 </html>  
    
   
-
