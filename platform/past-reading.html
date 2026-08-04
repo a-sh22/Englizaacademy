@@ -833,6 +833,181 @@ line-height:2;
 }
 
 
+
+/* ==========================
+   Interactive Vocabulary
+========================== */
+
+.vocab{
+
+display:inline;
+position:relative;
+font-weight:600;
+cursor:pointer;
+
+border-bottom:2px solid #7b61ff;
+
+transition:.25s;
+
+}
+
+.vocab:hover{
+
+color:#5f3dff;
+
+}
+
+.vocab.active{
+
+background:#ece8ff;
+
+border-radius:8px;
+
+padding:2px 4px;
+
+}
+
+#vocab-popup{
+
+position: absolute;
+
+display:none;
+
+width:320px;
+
+background:white;
+
+border:2px solid #e5e8ff;
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+z-index:99999;
+
+animation:popupShow .18s ease;
+
+}
+
+#vocab-popup.show{
+
+display:block;
+
+}
+
+#vocab-popup h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:8px;
+
+}
+
+#vocab-popup .type{
+
+font-size:15px;
+
+font-weight:bold;
+
+color:#6f43ff;
+
+margin-bottom:16px;
+
+}
+
+#vocab-popup .meaning{
+
+font-size:22px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+color:#222;
+
+}
+
+#vocab-popup .example{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#444;
+
+margin-bottom:10px;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+#vocab-popup .translation{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#666;
+
+margin-bottom:18px;
+
+}
+
+.speak-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:16px;
+
+background:#eef2ff;
+
+color:#1f3c88;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.speak-btn:hover{
+
+background:#dfe7ff;
+
+}
+
+@keyframes popupShow{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+   
   
 }
 
@@ -884,7 +1059,6 @@ class="back-btn">
 
 </p>
 
-
 <!-- ==========================
       🦉 Reading Tips
 ========================== -->
@@ -899,21 +1073,21 @@ class="back-btn">
 
 <h2>
 
-✨ نصيحة قبل أن تبدأ
+📖 قبل أن تبدأ القراءة
 
 </h2>
 
 <p>
 
-لا تحاول ترجمة كل كلمة تقرؤها.
+ستلاحظ أن بعض الكلمات تحتها خط.
 
 <br><br>
 
-اقرأ الفقرة كاملة أولًا، ثم حاول فهم الفكرة العامة.
+اضغط على أي كلمة منها، وسيظهر لك معناها، ونوعها، ومثال عليها، مع ترجمتها وطريقة نطقها.
 
 <br><br>
 
-إذا وجدت كلمة جديدة، فلا تقلق. حاول معرفة معناها من خلال الجملة، ثم أجب عن الأسئلة.
+استخدم هذه الميزة إذا واجهت كلمة جديدة، ثم أكمل القراءة وحاول فهم الفقرة.
 
 </p>
 
@@ -938,7 +1112,49 @@ class="back-btn">
 
 <div class="reading-text">
 
-Last weekend, Ahmed visited his grandparents. He played football with his cousins in the afternoon, and they had lunch together. In the evening, Ahmed went home and watched a movie with his family. He enjoyed the weekend very much because he spent time with the people he loved.
+<span class="vocab" data-word="last-weekend">Last weekend</span>,
+<span class="vocab" data-word="ahmed">Ahmed</span>
+<span class="vocab" data-word="visited">visited</span>
+his
+<span class="vocab" data-word="grandparents">grandparents</span>.
+
+He
+<span class="vocab" data-word="played">played</span>
+<span class="vocab" data-word="football">football</span>
+with his
+<span class="vocab" data-word="cousins">cousins</span>
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="afternoon">afternoon</span>,
+and they
+<span class="vocab" data-word="had">had</span>
+<span class="vocab" data-word="lunch">lunch</span>
+<span class="vocab" data-word="together">together</span>.
+
+<span class="vocab" data-word="in">In</span>
+the
+<span class="vocab" data-word="evening">evening</span>,
+Ahmed
+<span class="vocab" data-word="went">went</span>
+<span class="vocab" data-word="home">home</span>
+and
+<span class="vocab" data-word="watched">watched</span>
+a
+<span class="vocab" data-word="movie">movie</span>
+with his
+<span class="vocab" data-word="family">family</span>.
+
+He
+<span class="vocab" data-word="enjoyed">enjoyed</span>
+the
+<span class="vocab" data-word="weekend">weekend</span>
+very much because he
+<span class="vocab" data-word="spent">spent</span>
+<span class="vocab" data-word="time">time</span>
+with the
+<span class="vocab" data-word="people">people</span>
+he
+<span class="vocab" data-word="loved">loved</span>.
 
 </div>
 
@@ -950,16 +1166,23 @@ Last weekend, Ahmed visited his grandparents. He played football with his cousin
                     📝 أسئلة الفقرة
 ========================================================= -->
 
-<div class="card">
+<div class="card" style="text-align:center;">
 
-<h2 style="font-size:30px;color:#1f3c88;margin-bottom:45px;">
+<h2 style="font-size:30px;color:#1f3c88;margin:0;">
 
 📝 أسئلة الفقرة
 
 </h2>
 
+</div>
 
-<!-- ========================= -->
+
+
+<!-- =========================================================
+                    📝 Question 1
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -995,10 +1218,15 @@ To the beach
 
 <p id="r1q1" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 2
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1034,10 +1262,15 @@ He watched a movie.
 
 <p id="r1q2" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 3
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1053,11 +1286,15 @@ Did Ahmed play football with his cousins?
 
 <input
 id="r1write1"
-class="write-box"
 type="text"
-placeholder="Write your answer...">
+class="writing-input"
+placeholder="Write your answer..."
+>
+
+<br><br>
 
 <button
+class="check-btn"
 onclick="checkWriting(
 'r1write1',
 'r1result1',
@@ -1071,9 +1308,10 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r1result1" class="answer-result"></p>
+<p id="r1result1" class="result-text"></p>
 
 </div>
+   
   
 
 
@@ -1091,28 +1329,88 @@ onclick="checkWriting(
 
 <div class="reading-text">
 
-Last month, Sara went to the museum with her classmates. They left school at 8:00 in the morning and arrived at the museum one hour later. They saw many old things, took a lot of photos, and learned interesting facts about history. After that, they ate lunch together in the park before they went back to school. Everyone enjoyed the trip very much.
+<span class="vocab" data-word="last-month">Last month</span>,
+<span class="vocab" data-word="sara">Sara</span>
+<span class="vocab" data-word="went">went</span>
+to the
+<span class="vocab" data-word="museum">museum</span>
+with her
+<span class="vocab" data-word="classmates">classmates</span>.
+
+They
+<span class="vocab" data-word="left">left</span>
+<span class="vocab" data-word="school">school</span>
+<span class="vocab" data-word="at">at</span>
+8:00
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="morning">morning</span>
+and
+<span class="vocab" data-word="arrived">arrived</span>
+<span class="vocab" data-word="at">at</span>
+the
+<span class="vocab" data-word="museum">museum</span>
+<span class="vocab" data-word="one-hour-later">one hour later</span>.
+
+They
+<span class="vocab" data-word="saw">saw</span>
+many
+<span class="vocab" data-word="old-things">old things</span>,
+<span class="vocab" data-word="took">took</span>
+a lot of
+<span class="vocab" data-word="photos">photos</span>,
+and
+<span class="vocab" data-word="learned">learned</span>
+<span class="vocab" data-word="interesting">interesting</span>
+<span class="vocab" data-word="facts">facts</span>
+about
+<span class="vocab" data-word="history">history</span>.
+
+<span class="vocab" data-word="after-that">After that</span>,
+they
+<span class="vocab" data-word="ate">ate</span>
+<span class="vocab" data-word="lunch">lunch</span>
+<span class="vocab" data-word="together">together</span>
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="park">park</span>
+before they
+<span class="vocab" data-word="went">went</span>
+back to
+<span class="vocab" data-word="school">school</span>.
+
+<span class="vocab" data-word="everyone">Everyone</span>
+<span class="vocab" data-word="enjoyed">enjoyed</span>
+the
+<span class="vocab" data-word="trip">trip</span>
+very much.
 
 </div>
 
 </div>
-
 
 
 <!-- =========================================================
                     📝 أسئلة الفقرة
 ========================================================= -->
 
-<div class="card">
+<div class="card" style="text-align:center;">
 
-<h2 style="font-size:30px;color:#1f3c88;margin-bottom:45px;">
+<h2 style="font-size:30px;color:#1f3c88;margin:0;">
 
 📝 أسئلة الفقرة
 
 </h2>
 
+</div>
 
-<!-- ========================= -->
+
+
+<!-- =========================================================
+                    📝 Question 1
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1148,10 +1446,15 @@ To the zoo
 
 <p id="r2q1" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 2
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1187,10 +1490,15 @@ They played football.
 
 <p id="r2q2" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 3
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1206,11 +1514,15 @@ Did they take photos?
 
 <input
 id="r2write1"
-class="write-box"
 type="text"
-placeholder="Write your answer...">
+class="writing-input"
+placeholder="Write your answer..."
+>
+
+<br><br>
 
 <button
+class="check-btn"
 onclick="checkWriting(
 'r2write1',
 'r2result1',
@@ -1224,9 +1536,10 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r2result1" class="answer-result"></p>
+<p id="r2result1" class="result-text"></p>
 
 </div>
+   
 
 
 <!-- =========================================================
@@ -1243,28 +1556,71 @@ onclick="checkWriting(
 
 <div class="reading-text">
 
-Last summer, Omar traveled to Paris with his family. They visited the Eiffel Tower, walked through the beautiful streets, and tried delicious French food. Omar also bought some gifts for his friends before they returned home. He was very happy because it was his first visit to Paris.
+<span class="vocab" data-word="last-summer">Last summer</span>,
+<span class="vocab" data-word="omar">Omar</span>
+<span class="vocab" data-word="traveled">traveled</span>
+to
+<span class="vocab" data-word="paris">Paris</span>
+with his
+<span class="vocab" data-word="family">family</span>.
+
+They
+<span class="vocab" data-word="visited">visited</span>
+the
+<span class="vocab" data-word="eiffel-tower">Eiffel Tower</span>,
+<span class="vocab" data-word="walked">walked</span>
+through the
+<span class="vocab" data-word="beautiful">beautiful</span>
+<span class="vocab" data-word="streets">streets</span>,
+and
+<span class="vocab" data-word="tried">tried</span>
+<span class="vocab" data-word="delicious">delicious</span>
+<span class="vocab" data-word="french-food">French food</span>.
+
+<span class="vocab" data-word="omar">Omar</span>
+also
+<span class="vocab" data-word="bought">bought</span>
+some
+<span class="vocab" data-word="gifts">gifts</span>
+for his
+<span class="vocab" data-word="friends">friends</span>
+before they
+<span class="vocab" data-word="returned">returned</span>
+<span class="vocab" data-word="home">home</span>.
+
+He was very
+<span class="vocab" data-word="happy">happy</span>
+because it was his
+<span class="vocab" data-word="first-visit">first visit</span>
+to
+<span class="vocab" data-word="paris">Paris</span>.
 
 </div>
-
+   
 </div>
-
 
 
 <!-- =========================================================
                     📝 أسئلة الفقرة
 ========================================================= -->
 
-<div class="card">
+<div class="card" style="text-align:center;">
 
-<h2 style="font-size:30px;color:#1f3c88;margin-bottom:45px;">
+<h2 style="font-size:30px;color:#1f3c88;margin:0;">
 
 📝 أسئلة الفقرة
 
 </h2>
 
+</div>
 
-<!-- ========================= -->
+
+
+<!-- =========================================================
+                    📝 Question 1
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1300,10 +1656,15 @@ London
 
 <p id="r3q1" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 2
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1339,10 +1700,15 @@ Some gifts
 
 <p id="r3q2" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 3
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1358,11 +1724,15 @@ Who did Omar travel with?
 
 <input
 id="r3write1"
-class="write-box"
 type="text"
-placeholder="Write your answer...">
+class="writing-input"
+placeholder="Write your answer..."
+>
+
+<br><br>
 
 <button
+class="check-btn"
 onclick="checkWriting(
 'r3write1',
 'r3result1',
@@ -1376,12 +1746,11 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r3result1" class="answer-result"></p>
+<p id="r3result1" class="result-text"></p>
 
 </div>
 
-  
-  
+
 
 <!-- ==========================
       بطاقة النهاية
@@ -1423,6 +1792,34 @@ onclick="window.location.href='lesson-next.html'">
     
 <!-- نهاية container -->
 
+
+<!-- ==========================
+     Vocabulary Popup
+========================== -->
+
+<div id="vocab-popup">
+
+<h3 id="popup-word"></h3>
+
+<div id="popup-type" class="type"></div>
+
+<div id="popup-meaning" class="meaning"></div>
+
+<div id="popup-example" class="example"></div>
+
+<div id="popup-translation" class="translation"></div>
+
+<button
+class="speak-btn"
+id="popup-speak">
+
+🔊 استمع للنطق
+
+</button>
+
+</div>
+
+   
  <script>
 
 // ==========================
@@ -2068,6 +2465,788 @@ btn.innerHTML="📖 عرض الجمل";
 shuffleWords("words1");
 shuffleWords("words2");
 
+
+// ==========================
+// Interactive Vocabulary
+// ==========================
+
+const vocabulary = {
+
+"last-weekend":{
+word:"last weekend",
+type:"Time Expression (تعبير زمني)",
+meaning:"عطلة نهاية الأسبوع الماضية",
+example:"I visited my uncle last weekend.",
+translation:"زرت عمي في عطلة نهاية الأسبوع الماضية."
+},
+
+"ahmed":{
+word:"Ahmed",
+type:"Proper Noun (اسم علم)",
+meaning:"أحمد",
+example:"Ahmed is my friend.",
+translation:"أحمد صديقي."
+},
+
+"visited":{
+word:"visit",
+type:"Verb (فعل)",
+meaning:"زار",
+example:"We visited the museum yesterday.",
+translation:"زرنا المتحف أمس."
+},
+
+"grandparents":{
+word:"grandparents",
+type:"Noun (اسم)",
+meaning:"الأجداد",
+example:"She loves her grandparents.",
+translation:"هي تحب أجدادها."
+},
+
+"played":{
+word:"play",
+type:"Verb (فعل)",
+meaning:"لعب",
+example:"The boys played football.",
+translation:"لعب الأولاد كرة القدم."
+},
+
+"football":{
+word:"football",
+type:"Noun (اسم)",
+meaning:"كرة القدم",
+example:"They played football after school.",
+translation:"لعبوا كرة القدم بعد المدرسة."
+},
+
+"cousins":{
+word:"cousins",
+type:"Noun (اسم)",
+meaning:"أبناء العم / أبناء الخال",
+example:"I visited my cousins.",
+translation:"زرت أبناء عمي."
+},
+
+"in":{
+word:"in",
+type:"Preposition (حرف جر)",
+meaning:"في",
+example:"We study in the morning.",
+translation:"نحن ندرس في الصباح."
+},
+
+"afternoon":{
+word:"afternoon",
+type:"Noun (اسم)",
+meaning:"فترة بعد الظهر",
+example:"I read in the afternoon.",
+translation:"أقرأ في فترة بعد الظهر."
+},
+
+"had":{
+word:"have",
+type:"Verb (فعل)",
+meaning:"تناول / كان لديه",
+example:"We had lunch together.",
+translation:"تناولنا الغداء معًا."
+},
+
+"lunch":{
+word:"lunch",
+type:"Noun (اسم)",
+meaning:"الغداء",
+example:"Lunch is ready.",
+translation:"الغداء جاهز."
+},
+
+"together":{
+word:"together",
+type:"Adverb (ظرف)",
+meaning:"معًا",
+example:"We studied together.",
+translation:"درسنا معًا."
+},
+
+"evening":{
+word:"evening",
+type:"Noun (اسم)",
+meaning:"المساء",
+example:"We watched TV in the evening.",
+translation:"شاهدنا التلفاز في المساء."
+},
+
+"went":{
+word:"go",
+type:"Verb (فعل)",
+meaning:"ذهب",
+example:"She went home early.",
+translation:"ذهبت إلى المنزل مبكرًا."
+},
+
+"home":{
+word:"home",
+type:"Noun (اسم)",
+meaning:"المنزل",
+example:"He went home after work.",
+translation:"ذهب إلى المنزل بعد العمل."
+},
+
+"watched":{
+word:"watch",
+type:"Verb (فعل)",
+meaning:"شاهد",
+example:"They watched a movie.",
+translation:"شاهدوا فيلمًا."
+},
+
+"movie":{
+word:"movie",
+type:"Noun (اسم)",
+meaning:"فيلم",
+example:"The movie was interesting.",
+translation:"كان الفيلم ممتعًا."
+},
+
+"family":{
+word:"family",
+type:"Noun (اسم)",
+meaning:"العائلة",
+example:"My family is very kind.",
+translation:"عائلتي لطيفة جدًا."
+},
+
+"enjoyed":{
+word:"enjoy",
+type:"Verb (فعل)",
+meaning:"استمتع",
+example:"We enjoyed the trip.",
+translation:"استمتعنا بالرحلة."
+},
+
+"weekend":{
+word:"weekend",
+type:"Noun (اسم)",
+meaning:"عطلة نهاية الأسبوع",
+example:"I relax on the weekend.",
+translation:"أسترخي في عطلة نهاية الأسبوع."
+},
+
+"spent":{
+word:"spend",
+type:"Verb (فعل)",
+meaning:"قضى",
+example:"They spent the day together.",
+translation:"قضوا اليوم معًا."
+},
+
+"time":{
+word:"time",
+type:"Noun (اسم)",
+meaning:"وقت",
+example:"Time is important.",
+translation:"الوقت مهم."
+},
+
+"people":{
+word:"people",
+type:"Noun (اسم)",
+meaning:"الناس",
+example:"The people were friendly.",
+translation:"كان الناس ودودين."
+},
+
+"loved":{
+word:"love",
+type:"Verb (فعل)",
+meaning:"أحب",
+example:"She loved the gift.",
+translation:"أحبت الهدية."
+},
+
+
+"last-month":{
+word:"last month",
+type:"Time Expression (تعبير زمني)",
+meaning:"الشهر الماضي",
+example:"We traveled last month.",
+translation:"سافرنا الشهر الماضي."
+},
+
+"sara":{
+word:"Sara",
+type:"Proper Noun (اسم علم)",
+meaning:"سارة",
+example:"Sara is my friend.",
+translation:"سارة صديقتي."
+},
+
+"went":{
+word:"go",
+type:"Verb (فعل)",
+meaning:"ذهب",
+example:"They went to the museum.",
+translation:"ذهبوا إلى المتحف."
+},
+
+"museum":{
+word:"museum",
+type:"Noun (اسم)",
+meaning:"متحف",
+example:"The museum is very interesting.",
+translation:"المتحف ممتع جدًا."
+},
+
+"classmates":{
+word:"classmates",
+type:"Noun (اسم)",
+meaning:"زملاء الصف",
+example:"She studies with her classmates.",
+translation:"هي تدرس مع زملاء صفها."
+},
+
+"left":{
+word:"leave",
+type:"Verb (فعل)",
+meaning:"غادر",
+example:"We left home early.",
+translation:"غادرنا المنزل مبكرًا."
+},
+
+"school":{
+word:"school",
+type:"Noun (اسم)",
+meaning:"مدرسة",
+example:"The students are at school.",
+translation:"الطلاب في المدرسة."
+},
+
+"at":{
+word:"at",
+type:"Preposition (حرف جر)",
+meaning:"عند / في (للوقت المحدد)",
+example:"The lesson starts at 8:00.",
+translation:"يبدأ الدرس الساعة الثامنة."
+},
+
+"in":{
+word:"in",
+type:"Preposition (حرف جر)",
+meaning:"في",
+example:"We study in the morning.",
+translation:"نحن ندرس في الصباح."
+},
+
+"morning":{
+word:"morning",
+type:"Noun (اسم)",
+meaning:"الصباح",
+example:"I exercise every morning.",
+translation:"أمارس الرياضة كل صباح."
+},
+
+"arrived":{
+word:"arrive",
+type:"Verb (فعل)",
+meaning:"وصل",
+example:"They arrived at the museum.",
+translation:"وصلوا إلى المتحف."
+},
+
+"one-hour-later":{
+word:"one hour later",
+type:"Time Expression (تعبير زمني)",
+meaning:"بعد ساعة",
+example:"We arrived one hour later.",
+translation:"وصلنا بعد ساعة."
+},
+
+"saw":{
+word:"see",
+type:"Verb (فعل)",
+meaning:"رأى",
+example:"We saw many animals.",
+translation:"رأينا الكثير من الحيوانات."
+},
+
+"old-things":{
+word:"old things",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"أشياء قديمة",
+example:"The museum has many old things.",
+translation:"يحتوي المتحف على الكثير من الأشياء القديمة."
+},
+
+"took":{
+word:"take",
+type:"Verb (فعل)",
+meaning:"التقط",
+example:"They took many photos.",
+translation:"التقطوا الكثير من الصور."
+},
+
+"photos":{
+word:"photos",
+type:"Noun (اسم)",
+meaning:"صور",
+example:"I took some photos.",
+translation:"التقطت بعض الصور."
+},
+
+"learned":{
+word:"learn",
+type:"Verb (فعل)",
+meaning:"تعلّم",
+example:"The students learned new words.",
+translation:"تعلم الطلاب كلمات جديدة."
+},
+
+"interesting":{
+word:"interesting",
+type:"Adjective (صفة)",
+meaning:"ممتع / شيق",
+example:"The lesson was interesting.",
+translation:"كان الدرس ممتعًا."
+},
+
+"facts":{
+word:"facts",
+type:"Noun (اسم)",
+meaning:"حقائق",
+example:"We learned interesting facts.",
+translation:"تعلمنا حقائق ممتعة."
+},
+
+"history":{
+word:"history",
+type:"Noun (اسم)",
+meaning:"التاريخ",
+example:"History is my favorite subject.",
+translation:"التاريخ مادتي المفضلة."
+},
+
+"after-that":{
+word:"after that",
+type:"Expression (تعبير)",
+meaning:"بعد ذلك",
+example:"After that, we went home.",
+translation:"بعد ذلك ذهبنا إلى المنزل."
+},
+
+"ate":{
+word:"eat",
+type:"Verb (فعل)",
+meaning:"أكل",
+example:"They ate lunch together.",
+translation:"تناولوا الغداء معًا."
+},
+
+"lunch":{
+word:"lunch",
+type:"Noun (اسم)",
+meaning:"الغداء",
+example:"Lunch was delicious.",
+translation:"كان الغداء لذيذًا."
+},
+
+"together":{
+word:"together",
+type:"Adverb (ظرف)",
+meaning:"معًا",
+example:"They studied together.",
+translation:"درسوا معًا."
+},
+
+"park":{
+word:"park",
+type:"Noun (اسم)",
+meaning:"حديقة",
+example:"The children played in the park.",
+translation:"لعب الأطفال في الحديقة."
+},
+
+"everyone":{
+word:"everyone",
+type:"Pronoun (ضمير)",
+meaning:"الجميع",
+example:"Everyone was happy.",
+translation:"كان الجميع سعداء."
+},
+
+"enjoyed":{
+word:"enjoy",
+type:"Verb (فعل)",
+meaning:"استمتع",
+example:"We enjoyed the trip.",
+translation:"استمتعنا بالرحلة."
+},
+
+"trip":{
+word:"trip",
+type:"Noun (اسم)",
+meaning:"رحلة",
+example:"The trip was amazing.",
+translation:"كانت الرحلة رائعة."
+},
+
+
+"last-summer":{
+word:"last summer",
+type:"Time Expression (تعبير زمني)",
+meaning:"الصيف الماضي",
+example:"We traveled last summer.",
+translation:"سافرنا الصيف الماضي."
+},
+
+"omar":{
+word:"Omar",
+type:"Proper Noun (اسم علم)",
+meaning:"عمر",
+example:"Omar likes traveling.",
+translation:"عمر يحب السفر."
+},
+
+"traveled":{
+word:"travel",
+type:"Verb (فعل)",
+meaning:"سافر",
+example:"They traveled to Paris.",
+translation:"سافروا إلى باريس."
+},
+
+"paris":{
+word:"Paris",
+type:"Proper Noun (اسم علم)",
+meaning:"باريس",
+example:"Paris is a famous city.",
+translation:"باريس مدينة مشهورة."
+},
+
+"family":{
+word:"family",
+type:"Noun (اسم)",
+meaning:"العائلة",
+example:"I love my family.",
+translation:"أنا أحب عائلتي."
+},
+
+"visited":{
+word:"visit",
+type:"Verb (فعل)",
+meaning:"زار",
+example:"We visited the museum.",
+translation:"زرنا المتحف."
+},
+
+"eiffel-tower":{
+word:"Eiffel Tower",
+type:"Proper Noun (اسم علم)",
+meaning:"برج إيفل",
+example:"The Eiffel Tower is in Paris.",
+translation:"برج إيفل يقع في باريس."
+},
+
+"walked":{
+word:"walk",
+type:"Verb (فعل)",
+meaning:"مشى",
+example:"They walked in the city.",
+translation:"مشوا في المدينة."
+},
+
+"beautiful":{
+word:"beautiful",
+type:"Adjective (صفة)",
+meaning:"جميلة",
+example:"The streets are beautiful.",
+translation:"الشوارع جميلة."
+},
+
+"streets":{
+word:"streets",
+type:"Noun (اسم)",
+meaning:"شوارع",
+example:"The streets are clean.",
+translation:"الشوارع نظيفة."
+},
+
+"tried":{
+word:"try",
+type:"Verb (فعل)",
+meaning:"جرّب",
+example:"They tried new food.",
+translation:"جربوا طعامًا جديدًا."
+},
+
+"delicious":{
+word:"delicious",
+type:"Adjective (صفة)",
+meaning:"لذيذ",
+example:"The food was delicious.",
+translation:"كان الطعام لذيذًا."
+},
+
+"french-food":{
+word:"French food",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"الطعام الفرنسي",
+example:"French food is delicious.",
+translation:"الطعام الفرنسي لذيذ."
+},
+
+"bought":{
+word:"buy",
+type:"Verb (فعل)",
+meaning:"اشترى",
+example:"She bought a new bag.",
+translation:"اشترت حقيبة جديدة."
+},
+
+"gifts":{
+word:"gifts",
+type:"Noun (اسم)",
+meaning:"هدايا",
+example:"They bought gifts for their friends.",
+translation:"اشتروا هدايا لأصدقائهم."
+},
+
+"friends":{
+word:"friends",
+type:"Noun (اسم)",
+meaning:"أصدقاء",
+example:"My friends are kind.",
+translation:"أصدقائي لطفاء."
+},
+
+"returned":{
+word:"return",
+type:"Verb (فعل)",
+meaning:"عاد",
+example:"They returned home at night.",
+translation:"عادوا إلى المنزل ليلًا."
+},
+
+"home":{
+word:"home",
+type:"Noun (اسم)",
+meaning:"المنزل",
+example:"They went home.",
+translation:"ذهبوا إلى المنزل."
+},
+
+"happy":{
+word:"happy",
+type:"Adjective (صفة)",
+meaning:"سعيد",
+example:"Omar was happy.",
+translation:"كان عمر سعيدًا."
+},
+
+"first-visit":{
+word:"first visit",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"الزيارة الأولى",
+example:"It was my first visit to Paris.",
+translation:"كانت زيارتي الأولى إلى باريس."
+},
+
+};   
+   
+
+const popup = document.getElementById("vocab-popup");
+
+const popupWord =
+document.getElementById("popup-word");
+
+const popupType =
+document.getElementById("popup-type");
+
+const popupMeaning =
+document.getElementById("popup-meaning");
+
+const popupExample =
+document.getElementById("popup-example");
+
+const popupTranslation =
+document.getElementById("popup-translation");
+
+const popupSpeak =
+document.getElementById("popup-speak");
+
+let activeWord = null;
+
+
+document.querySelectorAll(".vocab").forEach(word=>{
+
+word.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+const key =
+this.dataset.word;
+
+const data =
+vocabulary[key];
+
+if(!data){
+
+return;
+
+}
+
+
+// إذا ضغط على نفس الكلمة مرة ثانية
+
+if(activeWord===this){
+
+popup.classList.remove("show");
+
+this.classList.remove("active");
+
+activeWord=null;
+
+return;
+
+}
+
+
+// إزالة التحديد من أي كلمة
+
+document.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+
+this.classList.add("active");
+
+activeWord=this;
+
+
+// تعبئة البيانات
+
+popupWord.textContent =
+data.word;
+
+popupType.textContent =
+data.type;
+
+popupMeaning.textContent =
+data.meaning;
+
+popupExample.textContent =
+data.example;
+
+popupTranslation.textContent =
+data.translation;
+
+
+// زر النطق
+
+popupSpeak.onclick=function(){
+
+const speech =
+new SpeechSynthesisUtterance(
+data.word
+);
+
+speech.lang="en-US";
+
+speech.rate=0.9;
+
+window.speechSynthesis.cancel();
+
+window.speechSynthesis.speak(
+speech
+);
+
+};
+
+
+// مكان البطاقة
+
+const rect =
+this.getBoundingClientRect();
+
+popup.style.display="block";
+
+popup.classList.add("show");
+
+const popupWidth =
+320;
+
+let left =
+rect.left+
+(window.scrollX);
+
+left-=
+popupWidth/2;
+
+left+=
+rect.width/2;
+
+
+// منع خروج البطاقة من الشاشة
+
+if(left<15){
+
+left=15;
+
+}
+
+if(
+left+popupWidth>
+window.innerWidth-15
+){
+
+left=
+window.innerWidth-
+popupWidth-
+15;
+
+}
+
+
+popup.style.left=
+left+"px";
+
+
+popup.style.top=
+window.scrollY+
+rect.bottom+
+15+
+"px";
+
+});
+
+});
+
+
+// الضغط خارج البطاقة
+
+document.addEventListener(
+"click",
+function(){
+
+popup.classList.remove("show");
+
+popup.style.display = "none";
+   
+document
+.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+activeWord=null;
+
+});
+   
+    
 </script>
 
 </body>
