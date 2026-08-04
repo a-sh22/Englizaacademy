@@ -250,7 +250,7 @@ margin:40px 0;
    مربع الكتابة
 ========================== */
 
-.write-box{
+.writing-input{
 
 width:100%;
 padding:20px;
@@ -264,7 +264,7 @@ background:white;
 
 }
 
-.write-box:focus{
+.writing-input:focus{
 
 border-color:#6f43ff;
 
@@ -836,7 +836,181 @@ line-height:2;
   
 }
 
-  
+
+/* ==========================
+   Interactive Vocabulary
+========================== */
+
+.vocab{
+
+display:inline;
+position:relative;
+font-weight:600;
+cursor:pointer;
+
+border-bottom:2px solid #7b61ff;
+
+transition:.25s;
+
+}
+
+.vocab:hover{
+
+color:#5f3dff;
+
+}
+
+.vocab.active{
+
+background:#ece8ff;
+
+border-radius:8px;
+
+padding:2px 4px;
+
+}
+
+#vocab-popup{
+
+position: absolute;
+
+display:none;
+
+width:320px;
+
+background:white;
+
+border:2px solid #e5e8ff;
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+z-index:99999;
+
+animation:popupShow .18s ease;
+
+}
+
+#vocab-popup.show{
+
+display:block;
+
+}
+
+#vocab-popup h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:8px;
+
+}
+
+#vocab-popup .type{
+
+font-size:15px;
+
+font-weight:bold;
+
+color:#6f43ff;
+
+margin-bottom:16px;
+
+}
+
+#vocab-popup .meaning{
+
+font-size:22px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+color:#222;
+
+}
+
+#vocab-popup .example{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#444;
+
+margin-bottom:10px;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+#vocab-popup .translation{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#666;
+
+margin-bottom:18px;
+
+}
+
+.speak-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:16px;
+
+background:#eef2ff;
+
+color:#1f3c88;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.speak-btn:hover{
+
+background:#dfe7ff;
+
+}
+
+@keyframes popupShow{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+   
 </style>
 
 </head>
@@ -874,15 +1048,14 @@ class="back-btn">
 
 <h1 class="title">
 
-📖 قراءة | In • On • At
-
+📖 قراءة | Present Simple
 
 </h1>
 
 <p class="subtitle">
 
-ستقرأ أربعة نصوص قصيرة، وستشاهد كيف تُستخدم كلمات in و on و at داخل مواقف حقيقية، ثم تجيب عن أسئلة بسيطة لفهم النص.
-  
+هنا ستتدرب على المضارع البسيط من خلال قراءة نصوص و الاجابة على أسئلتها
+
 </p>
 
 
@@ -900,22 +1073,21 @@ class="back-btn">
 
 <h2>
 
-💡 نصيحة صغيرة
+📖 قبل أن تبدأ القراءة
 
 </h2>
 
 <p>
 
-لا تتوقف عند كل كلمة لا تعرفها.
+ستلاحظ أن بعض الكلمات تحتها خط.
 
 <br><br>
 
-حاول فهم معنى الجملة كاملة، ثم لاحظ كيف استُخدمت
-<span dir="ltr">in</span>،
-<span dir="ltr">on</span>
-و
-<span dir="ltr">at</span>
-داخلها.
+اضغط على أي كلمة منها، وسيظهر لك معناها، ونوعها، ومثال عليها، مع ترجمتها وطريقة نطقها.
+
+<br><br>
+
+استخدم هذه الميزة إذا واجهت كلمة جديدة، ثم أكمل القراءة وحاول فهم الفقرة.
 
 </p>
 
@@ -926,55 +1098,79 @@ class="back-btn">
 </div>
 
 
-<!-- =========================================================
-                    📖 Reading 1
-========================================================= -->
-
-<div class="card reading-card">
-
-<h2 style="font-size:32px;color:#1f3c88;margin-bottom:30px;">
-
-📖 Reading 1 – My School Day
-
-</h2>
-
 <div class="reading-text">
 
-Adam is a student.<br><br>
+Adam is a <span class="vocab" data-word="student">student</span>.
 
-He wakes up at 6:30 every morning.<br><br>
+He <span class="vocab" data-word="wakes-up">wakes up</span>
+<span class="vocab" data-word="at">at</span>
+6:30
+<span class="vocab" data-word="every-morning">every morning</span>.
 
-He studies English in the morning before school.<br><br>
+He <span class="vocab" data-word="studies">studies</span>
+<span class="vocab" data-word="english">English</span>
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="morning">morning</span>
+before
+<span class="vocab" data-word="school">school</span>.
 
-He goes to school on Sunday, Monday, Tuesday, Wednesday, and Thursday.<br><br>
+He goes to school
+<span class="vocab" data-word="on">on</span>
+<span class="vocab" data-word="days">Sunday, Monday, Tuesday, Wednesday, and Thursday</span>.
 
-His classes start at 8:00.<br><br>
+His
+<span class="vocab" data-word="classes">classes</span>
+start
+<span class="vocab" data-word="at">at</span>
+8:00.
 
-Today, he is sitting on the bus and talking to his friend.<br><br>
+<span class="vocab" data-word="today">Today</span>,
+he is
+<span class="vocab" data-word="sitting">sitting</span>
+<span class="vocab" data-word="on">on</span>
+the
+<span class="vocab" data-word="bus">bus</span>
+and
+<span class="vocab" data-word="talking">talking</span>
+to his
+<span class="vocab" data-word="friend">friend</span>.
 
-His school bag is in the bus, and he is happy because he likes school.
+His
+<span class="vocab" data-word="school-bag">school bag</span>
+is
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="bus">bus</span>,
+and he is
+<span class="vocab" data-word="happy">happy</span>
+because he likes
+<span class="vocab" data-word="school">school</span>.
 
 </div>
-
-</div>
-
-
+  
 
 <!-- =========================================================
-                    📝 Questions
+                    📝 أسئلة الفقرة
 ========================================================= -->
 
-<div class="card">
+<div class="card" style="text-align:center;">
 
-<h2 style="font-size:30px;color:#1f3c88;margin-bottom:45px;">
+<h2 style="font-size:30px;color:#1f3c88;margin:0;">
 
 📝 أسئلة الفقرة
 
 </h2>
 
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 1
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1010,11 +1206,15 @@ At 8:00
 
 <p id="r1q1" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
 
-<!-- ========================= -->
+<!-- =========================================================
+                    📝 Question 2
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1024,7 +1224,7 @@ At 8:00
 
 <p class="help-text" dir="ltr" style="text-align:left;">
 
-Adam studies English _____ the morning.
+Adam studies English _ the morning.
 
 </p>
 
@@ -1049,11 +1249,15 @@ onclick="checkWriting(
 
 <p id="r1result1" class="answer-result"></p>
 
-<hr class="question-divider">
+</div>
 
 
 
-<!-- ========================= -->
+<!-- =========================================================
+                    📝 Question 3
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1089,11 +1293,15 @@ onclick="checkWriting(
 
 <p id="r1result2" class="answer-result"></p>
 
-<hr class="question-divider">
+</div>
 
 
 
-<!-- ========================= -->
+<!-- =========================================================
+                    📝 Question 4
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1130,57 +1338,99 @@ At home
 <p id="r1q2" class="result-text"></p>
 
 </div>
-  
 
-<!-- =========================================================
-                    📖 Reading 2
-========================================================= -->
-
-<div class="card reading-card">
-
-<h2 style="font-size:32px;color:#1f3c88;margin-bottom:30px;">
-
-📖 Reading 2 – A Family Trip
-
-</h2>
+   
 
 <div class="reading-text">
 
-Today is Friday.<br><br>
+<span class="vocab" data-word="today">Today</span>
+is
+<span class="vocab" data-word="friday">Friday</span>.
 
-The Brown family is going to the beach.<br><br>
+The
+<span class="vocab" data-word="brown-family">Brown family</span>
+is going to the
+<span class="vocab" data-word="beach">beach</span>.
 
-They are in the car at 9:00 in the morning.<br><br>
+They are
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="car">car</span>
+<span class="vocab" data-word="at">at</span>
+9:00
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="morning">morning</span>.
 
-The children are talking and laughing in the car.<br><br>
+The
+<span class="vocab" data-word="children">children</span>
+are
+<span class="vocab" data-word="talking">talking</span>
+and
+<span class="vocab" data-word="laughing">laughing</span>
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="car">car</span>.
 
-They arrive at the beach and sit on the sand.<br><br>
+They
+<span class="vocab" data-word="arrive">arrive</span>
+<span class="vocab" data-word="at">at</span>
+the
+<span class="vocab" data-word="beach">beach</span>
+and
+<span class="vocab" data-word="sit">sit</span>
+<span class="vocab" data-word="on">on</span>
+the
+<span class="vocab" data-word="sand">sand</span>.
 
-Now the children are playing in the water, and their parents are watching them.<br><br>
+<span class="vocab" data-word="now">Now</span>
+the
+<span class="vocab" data-word="children">children</span>
+are
+<span class="vocab" data-word="playing">playing</span>
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="water">water</span>,
+and their
+<span class="vocab" data-word="parents">parents</span>
+are
+<span class="vocab" data-word="watching">watching</span>
+them.
 
-The family is very happy because they enjoy spending time together.
-
-</div>
+The
+<span class="vocab" data-word="family">family</span>
+is very
+<span class="vocab" data-word="happy">happy</span>
+because they
+<span class="vocab" data-word="enjoy">enjoy</span>
+<span class="vocab" data-word="spending-time">spending time</span>
+<span class="vocab" data-word="together">together</span>.
 
 </div>
 
 
 
 <!-- =========================================================
-                    📝 Questions
+                    📝 أسئلة الفقرة
 ========================================================= -->
 
-<div class="card">
+<div class="card" style="text-align:center;">
 
-<h2 style="font-size:30px;color:#1f3c88;margin-bottom:45px;">
+<h2 style="font-size:30px;color:#1f3c88;margin:0;">
 
 📝 أسئلة الفقرة
 
 </h2>
 
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 1
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1216,11 +1466,15 @@ At the beach
 
 <p id="r2q1" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
 
-<!-- ========================= -->
+<!-- =========================================================
+                    📝 Question 2
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1230,7 +1484,7 @@ At the beach
 
 <p class="help-text" dir="ltr" style="text-align:left;">
 
-They sit _____ the sand.
+They sit _ the sand.
 
 </p>
 
@@ -1255,11 +1509,15 @@ onclick="checkWriting(
 
 <p id="r2result1" class="answer-result"></p>
 
-<hr class="question-divider">
+</div>
 
 
 
-<!-- ========================= -->
+<!-- =========================================================
+                    📝 Question 3
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1296,57 +1554,101 @@ onclick="checkWriting(
 <p id="r2result2" class="answer-result"></p>
 
 </div>
-  
 
-<!-- =========================================================
-                    📖 Reading 3
-========================================================= -->
 
-<div class="card reading-card">
-
-<h2 style="font-size:32px;color:#1f3c88;margin-bottom:30px;">
-
-📖 Reading 3 – At the Library
-
-</h2>
-
+   
 <div class="reading-text">
 
-Mona likes reading books.<br><br>
+<span class="vocab" data-word="mona">Mona</span>
+likes
+<span class="vocab" data-word="reading">reading</span>
+<span class="vocab" data-word="books">books</span>.
 
-Every Saturday, she goes to the library with her sister.<br><br>
+<span class="vocab" data-word="every-saturday">Every Saturday</span>,
+she
+<span class="vocab" data-word="goes">goes</span>
+to the
+<span class="vocab" data-word="library">library</span>
+with her
+<span class="vocab" data-word="sister">sister</span>.
 
-Today, they are at the library at 10:00 in the morning.<br><br>
+<span class="vocab" data-word="today">Today</span>,
+they are
+<span class="vocab" data-word="at">at</span>
+the
+<span class="vocab" data-word="library">library</span>
+<span class="vocab" data-word="at">at</span>
+10:00
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="morning">morning</span>.
 
-Mona is sitting on a chair and reading an English book.<br><br>
+<span class="vocab" data-word="mona">Mona</span>
+is
+<span class="vocab" data-word="sitting">sitting</span>
+<span class="vocab" data-word="on">on</span>
+a
+<span class="vocab" data-word="chair">chair</span>
+and
+<span class="vocab" data-word="reading">reading</span>
+an
+<span class="vocab" data-word="english-book">English book</span>.
 
-Her sister is looking for a new book in the history section.<br><br>
+Her
+<span class="vocab" data-word="sister">sister</span>
+is
+<span class="vocab" data-word="looking">looking</span>
+for a
+<span class="vocab" data-word="new">new</span>
+<span class="vocab" data-word="book">book</span>
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="history-section">history section</span>.
 
-Their bags are on the table, and their phones are in the bags.<br><br>
+Their
+<span class="vocab" data-word="bags">bags</span>
+are
+<span class="vocab" data-word="on">on</span>
+the
+<span class="vocab" data-word="table">table</span>,
+and their
+<span class="vocab" data-word="phones">phones</span>
+are
+<span class="vocab" data-word="in">in</span>
+the
+<span class="vocab" data-word="bags">bags</span>.
 
-They are happy because they love reading together.
+They are
+<span class="vocab" data-word="happy">happy</span>
+because they
+<span class="vocab" data-word="love">love</span>
+<span class="vocab" data-word="reading">reading</span>
+<span class="vocab" data-word="together">together</span>.
 
 </div>
 
-</div>
-
-
-
+   
 <!-- =========================================================
-                    📝 Questions
+                    📝 أسئلة الفقرة
 ========================================================= -->
 
-<div class="card">
+<div class="card" style="text-align:center;">
 
-<h2 style="font-size:30px;color:#1f3c88;margin-bottom:45px;">
+<h2 style="font-size:30px;color:#1f3c88;margin:0;">
 
 📝 أسئلة الفقرة
 
 </h2>
 
+</div>
 
 
-<!-- ========================= -->
+
+<!-- =========================================================
+                    📝 Question 1
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1356,7 +1658,7 @@ They are happy because they love reading together.
 
 <p style="font-size:20px;font-weight:bold;margin-bottom:18px;">
 
-Where are Mona and her sister?
+Where is the family at 9:00?
 
 </p>
 
@@ -1364,29 +1666,33 @@ Where are Mona and her sister?
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'r3q1')">
+onclick="checkAnswer(this,true,'r2q1')">
 
-At the library
+In the car
 
 </button>
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'r3q1')">
+onclick="checkAnswer(this,false,'r2q1')">
 
-At school
+At the beach
 
 </button>
 
 </div>
 
-<p id="r3q1" class="result-text"></p>
+<p id="r2q1" class="result-text"></p>
 
-<hr class="question-divider">
+</div>
 
 
 
-<!-- ========================= -->
+<!-- =========================================================
+                    📝 Question 2
+========================================================= -->
+
+<div class="card">
 
 <p class="question-title">
 
@@ -1396,20 +1702,20 @@ At school
 
 <p class="help-text" dir="ltr" style="text-align:left;">
 
-Their bags are _____ the table.
+They sit _ the sand.
 
 </p>
 
 <input
-id="r3write1"
+id="r2write1"
 class="write-box"
 type="text"
 placeholder="Write your answer...">
 
 <button
 onclick="checkWriting(
-'r3write1',
-'r3result1',
+'r2write1',
+'r2result1',
 [
 'on'
 ]
@@ -1419,181 +1725,18 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r3result1" class="answer-result"></p>
-
-<hr class="question-divider">
-
-
-
-<!-- ========================= -->
-
-<p class="question-title">
-
-✍️ أجب عن السؤال.
-
-</p>
-
-<p class="help-text" dir="ltr" style="text-align:left;">
-
-Where are their phones?
-
-</p>
-
-<input
-id="r3write2"
-class="write-box"
-type="text"
-placeholder="Write your answer...">
-
-<button
-onclick="checkWriting(
-'r3write2',
-'r3result2',
-[
-'They are in the bags.',
-'The phones are in the bags.',
-'In the bags.'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r3result2" class="answer-result"></p>
-
-</div>
-
-
-<!-- =========================================================
-                    📖 Reading 4
-========================================================= -->
-
-<div class="card reading-card">
-
-<h2 style="font-size:32px;color:#1f3c88;margin-bottom:30px;">
-
-📖 Reading 4 – A Day in the Park
-
-</h2>
-
-<div class="reading-text">
-
-It is Sunday morning.<br><br>
-
-The Green family is at the park.<br><br>
-
-The children are playing on the grass with a ball.<br><br>
-
-Their parents are sitting on a bench and talking.<br><br>
-
-At 12:00, the family eats lunch together.<br><br>
-
-The food is in a big bag, and the drinks are on the table.<br><br>
-
-Everyone is smiling because they enjoy spending time together in the park.
-
-</div>
+<p id="r2result1" class="answer-result"></p>
 
 </div>
 
 
 
 <!-- =========================================================
-                    📝 Questions
+                    📝 Question 3
 ========================================================= -->
 
 <div class="card">
 
-<h2 style="font-size:30px;color:#1f3c88;margin-bottom:45px;">
-
-📝 أسئلة الفقرة
-
-</h2>
-
-
-
-<!-- ========================= -->
-
-<p class="question-title">
-
-🎯 اختر الإجابة الصحيحة.
-
-</p>
-
-<p style="font-size:20px;font-weight:bold;margin-bottom:18px;">
-
-Where is the Green family?
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r4q1')">
-
-At the park
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r4q1')">
-
-At school
-
-</button>
-
-</div>
-
-<p id="r4q1" class="result-text"></p>
-
-<hr class="question-divider">
-
-
-
-<!-- ========================= -->
-
-<p class="question-title">
-
-✍️ أكمل الفراغ.
-
-</p>
-
-<p class="help-text" dir="ltr" style="text-align:left;">
-
-The children are playing _____ the grass.
-
-</p>
-
-<input
-id="r4write1"
-class="write-box"
-type="text"
-placeholder="Write your answer...">
-
-<button
-onclick="checkWriting(
-'r4write1',
-'r4result1',
-[
-'on'
-]
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p id="r4result1" class="answer-result"></p>
-
-<hr class="question-divider">
-
-
-
-<!-- ========================= -->
-
 <p class="question-title">
 
 ✍️ أجب عن السؤال.
@@ -1602,24 +1745,23 @@ onclick="checkWriting(
 
 <p class="help-text" dir="ltr" style="text-align:left;">
 
-Where is the food?
+Are the children playing in the water?
 
 </p>
 
 <input
-id="r4write2"
+id="r2write2"
 class="write-box"
 type="text"
 placeholder="Write your answer...">
 
 <button
 onclick="checkWriting(
-'r4write2',
-'r4result2',
+'r2write2',
+'r2result2',
 [
-'It is in a big bag.',
-'The food is in a big bag.',
-'In a big bag.'
+'Yes, they are.',
+'Yes they are'
 ]
 )">
 
@@ -1627,52 +1769,13 @@ onclick="checkWriting(
 
 </button>
 
-<p id="r4result2" class="answer-result"></p>
-
-<hr class="question-divider">
-
-
-
-<!-- ========================= -->
-
-<p class="question-title">
-
-🎯 اختر الإجابة الصحيحة.
-
-</p>
-
-<p style="font-size:20px;font-weight:bold;margin-bottom:18px;">
-
-Where are the drinks?
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r4q2')">
-
-In the bag
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r4q2')">
-
-On the table
-
-</button>
+<p id="r2result2" class="answer-result"></p>
 
 </div>
 
-<p id="r4q2" class="result-text"></p>
 
-</div>
 
-  
-  
+
 <!-- ==========================
       بطاقة النهاية
 ========================== -->
@@ -1681,17 +1784,21 @@ On the table
 
 <h2>
 
-🎉 أحسنت!
+ !مبروك 🎉
 
 </h2>
 
 <p>
 
-لقد أنهيت هذا الدرس بنجاح.
+لقد أنهيت تدريبات القراءة الخاصة بزمن
+<b>Present Simple</b>
+بنجاح.
 
 <br><br>
 
-استمر خطوة بعد خطوة، وستلاحظ أن القراءة باللغة الإنجليزية تصبح أسهل مع كل درس.
+أصبحت الآن تستطيع قراءة نصوص قصيرة، وفهم الأفكار الرئيسية، والإجابة عن الأسئلة، واستخدام زمن
+<b>Present Simple</b>
+في الكتابة.
 
 </p>
 
@@ -1705,10 +1812,38 @@ onclick="window.location.href='lesson-next.html'">
 
 </div>
 
- </div> 
+
+<!-- ==========================
+     Vocabulary Popup
+========================== -->
+
+<div id="vocab-popup">
+
+<h3 id="popup-word"></h3>
+
+<div id="popup-type" class="type"></div>
+
+<div id="popup-meaning" class="meaning"></div>
+
+<div id="popup-example" class="example"></div>
+
+<div id="popup-translation" class="translation"></div>
+
+<button
+class="speak-btn"
+id="popup-speak">
+
+🔊 استمع للنطق
+
+</button>
+
+</div>   
+  
     
 <!-- نهاية container -->
 
+</div>
+   
  <script>
 
 // ==========================
@@ -2354,6 +2489,622 @@ btn.innerHTML="📖 عرض الجمل";
 shuffleWords("words1");
 shuffleWords("words2");
 
+
+    
+// ==========================
+// Interactive Vocabulary
+// ==========================
+
+const vocabulary = {
+
+"student":{
+word:"student",
+type:"Noun (اسم)",
+meaning:"طالب",
+example:"Adam is a student.",
+translation:"آدم طالب."
+},
+
+"wakes-up":{
+word:"wake up",
+type:"Verb (فعل)",
+meaning:"يستيقظ",
+example:"He wakes up at 6:30.",
+translation:"هو يستيقظ الساعة 6:30."
+},
+
+"at":{
+word:"at",
+type:"Preposition (حرف جر)",
+meaning:"يُستخدم مع الوقت المحدد",
+example:"The class starts at 8:00.",
+translation:"يبدأ الدرس الساعة 8:00."
+},
+
+"every-morning":{
+word:"every morning",
+type:"Time Expression (تعبير زمني)",
+meaning:"كل صباح",
+example:"He studies every morning.",
+translation:"هو يدرس كل صباح."
+},
+
+"in":{
+word:"in",
+type:"Preposition (حرف جر)",
+meaning:"في",
+example:"She studies in the morning.",
+translation:"هي تدرس في الصباح."
+},
+
+"morning":{
+word:"morning",
+type:"Noun (اسم)",
+meaning:"الصباح",
+example:"Good morning!",
+translation:"صباح الخير!"
+},
+
+"studies":{
+word:"study",
+type:"Verb (فعل)",
+meaning:"يدرس",
+example:"He studies English.",
+translation:"هو يدرس الإنجليزية."
+},
+
+"english":{
+word:"English",
+type:"Noun (اسم)",
+meaning:"اللغة الإنجليزية",
+example:"She likes English.",
+translation:"هي تحب اللغة الإنجليزية."
+},
+
+"school":{
+word:"school",
+type:"Noun (اسم)",
+meaning:"مدرسة",
+example:"The children are at school.",
+translation:"الأطفال في المدرسة."
+},
+
+"on":{
+word:"on",
+type:"Preposition (حرف جر)",
+meaning:"يُستخدم مع أيام الأسبوع",
+example:"We study on Sunday.",
+translation:"نحن ندرس يوم الأحد."
+},
+
+"days":{
+word:"days of the week",
+type:"Time Expression (تعبير زمني)",
+meaning:"أيام الأسبوع",
+example:"School is from Sunday to Thursday.",
+translation:"المدرسة من الأحد إلى الخميس."
+},
+
+"classes":{
+word:"classes",
+type:"Noun (اسم)",
+meaning:"الحصص الدراسية",
+example:"His classes start at 8:00.",
+translation:"تبدأ حصصه الساعة الثامنة."
+},
+
+"today":{
+word:"today",
+type:"Adverb (ظرف)",
+meaning:"اليوم",
+example:"Today is Sunday.",
+translation:"اليوم هو الأحد."
+},
+
+"sitting":{
+word:"sit",
+type:"Verb (فعل)",
+meaning:"يجلس",
+example:"He is sitting on the bus.",
+translation:"هو جالس في الحافلة."
+},
+
+"bus":{
+word:"bus",
+type:"Noun (اسم)",
+meaning:"حافلة",
+example:"The children are on the bus.",
+translation:"الأطفال في الحافلة."
+},
+
+"talking":{
+word:"talk",
+type:"Verb (فعل)",
+meaning:"يتحدث",
+example:"They are talking together.",
+translation:"هم يتحدثون معًا."
+},
+
+"friend":{
+word:"friend",
+type:"Noun (اسم)",
+meaning:"صديق",
+example:"Ahmed is my friend.",
+translation:"أحمد صديقي."
+},
+
+"school-bag":{
+word:"school bag",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"حقيبة مدرسية",
+example:"My school bag is new.",
+translation:"حقيبتي المدرسية جديدة."
+},
+
+"happy":{
+word:"happy",
+type:"Adjective (صفة)",
+meaning:"سعيد",
+example:"He is happy today.",
+translation:"هو سعيد اليوم."
+},
+
+
+"friday":{
+word:"Friday",
+type:"Noun (اسم)",
+meaning:"الجمعة",
+example:"Today is Friday.",
+translation:"اليوم هو الجمعة."
+},
+
+"brown-family":{
+word:"Brown family",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"عائلة براون",
+example:"The Brown family is going to the beach.",
+translation:"عائلة براون ذاهبة إلى الشاطئ."
+},
+
+"beach":{
+word:"beach",
+type:"Noun (اسم)",
+meaning:"شاطئ",
+example:"They are at the beach.",
+translation:"هم على الشاطئ."
+},
+
+"car":{
+word:"car",
+type:"Noun (اسم)",
+meaning:"سيارة",
+example:"They are in the car.",
+translation:"هم في السيارة."
+},
+
+"children":{
+word:"children",
+type:"Noun (اسم)",
+meaning:"الأطفال",
+example:"The children are happy.",
+translation:"الأطفال سعداء."
+},
+
+"laughing":{
+word:"laugh",
+type:"Verb (فعل)",
+meaning:"يضحك",
+example:"The children are laughing.",
+translation:"الأطفال يضحكون."
+},
+
+"arrive":{
+word:"arrive",
+type:"Verb (فعل)",
+meaning:"يصل",
+example:"They arrive at the beach.",
+translation:"هم يصلون إلى الشاطئ."
+},
+
+"sit":{
+word:"sit",
+type:"Verb (فعل)",
+meaning:"يجلس",
+example:"They sit on the sand.",
+translation:"هم يجلسون على الرمل."
+},
+
+"sand":{
+word:"sand",
+type:"Noun (اسم)",
+meaning:"الرمل",
+example:"The children are playing on the sand.",
+translation:"الأطفال يلعبون على الرمل."
+},
+
+"now":{
+word:"now",
+type:"Adverb (ظرف)",
+meaning:"الآن",
+example:"They are playing now.",
+translation:"هم يلعبون الآن."
+},
+
+"water":{
+word:"water",
+type:"Noun (اسم)",
+meaning:"الماء",
+example:"The children are playing in the water.",
+translation:"الأطفال يلعبون في الماء."
+},
+
+"parents":{
+word:"parents",
+type:"Noun (اسم)",
+meaning:"الوالدان",
+example:"Their parents are watching them.",
+translation:"والداهم يشاهدانهم."
+},
+
+"watching":{
+word:"watch",
+type:"Verb (فعل)",
+meaning:"يشاهد",
+example:"Their parents are watching them.",
+translation:"والداهم يشاهدانهم."
+},
+
+"family":{
+word:"family",
+type:"Noun (اسم)",
+meaning:"العائلة",
+example:"The family is happy.",
+translation:"العائلة سعيدة."
+},
+
+"enjoy":{
+word:"enjoy",
+type:"Verb (فعل)",
+meaning:"يستمتع",
+example:"They enjoy spending time together.",
+translation:"هم يستمتعون بقضاء الوقت معًا."
+},
+
+"spending-time":{
+word:"spending time",
+type:"Verb Phrase (عبارة فعلية)",
+meaning:"قضاء الوقت",
+example:"They enjoy spending time together.",
+translation:"هم يستمتعون بقضاء الوقت معًا."
+},
+
+"together":{
+word:"together",
+type:"Adverb (ظرف)",
+meaning:"معًا",
+example:"The family eats together.",
+translation:"العائلة تأكل معًا."
+},
+
+
+
+"mona":{
+word:"Mona",
+type:"Proper Noun (اسم علم)",
+meaning:"مونا",
+example:"Mona likes reading books.",
+translation:"مونا تحب قراءة الكتب."
+},
+
+"books":{
+word:"books",
+type:"Noun (اسم)",
+meaning:"كتب",
+example:"She likes reading books.",
+translation:"هي تحب قراءة الكتب."
+},
+
+"every-saturday":{
+word:"Every Saturday",
+type:"Time Expression (تعبير زمني)",
+meaning:"كل يوم سبت",
+example:"She goes to the library every Saturday.",
+translation:"هي تذهب إلى المكتبة كل يوم سبت."
+},
+
+"goes":{
+word:"go",
+type:"Verb (فعل)",
+meaning:"يذهب",
+example:"She goes to the library.",
+translation:"هي تذهب إلى المكتبة."
+},
+
+"library":{
+word:"library",
+type:"Noun (اسم)",
+meaning:"مكتبة",
+example:"They are at the library.",
+translation:"هم في المكتبة."
+},
+
+"sister":{
+word:"sister",
+type:"Noun (اسم)",
+meaning:"أخت",
+example:"She goes with her sister.",
+translation:"هي تذهب مع أختها."
+},
+
+"chair":{
+word:"chair",
+type:"Noun (اسم)",
+meaning:"كرسي",
+example:"She is sitting on a chair.",
+translation:"هي تجلس على كرسي."
+},
+
+"english-book":{
+word:"English book",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"كتاب باللغة الإنجليزية",
+example:"She is reading an English book.",
+translation:"هي تقرأ كتابًا باللغة الإنجليزية."
+},
+
+"looking":{
+word:"look",
+type:"Verb (فعل)",
+meaning:"يبحث / ينظر",
+example:"She is looking for a new book.",
+translation:"هي تبحث عن كتاب جديد."
+},
+
+"book":{
+word:"book",
+type:"Noun (اسم)",
+meaning:"كتاب",
+example:"This book is interesting.",
+translation:"هذا الكتاب ممتع."
+},
+
+"history-section":{
+word:"history section",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"قسم التاريخ",
+example:"The history section is upstairs.",
+translation:"قسم التاريخ في الطابق العلوي."
+},
+
+"bags":{
+word:"bags",
+type:"Noun (اسم)",
+meaning:"حقائب",
+example:"Their bags are on the table.",
+translation:"حقائبهم على الطاولة."
+},
+
+"table":{
+word:"table",
+type:"Noun (اسم)",
+meaning:"طاولة",
+example:"The books are on the table.",
+translation:"الكتب على الطاولة."
+},
+
+"phones":{
+word:"phones",
+type:"Noun (اسم)",
+meaning:"هواتف",
+example:"Their phones are in the bags.",
+translation:"هواتفهم داخل الحقائب."
+},
+
+"love":{
+word:"love",
+type:"Verb (فعل)",
+meaning:"يحب",
+example:"They love reading together.",
+translation:"هم يحبون القراءة معًا."
+},
+
+};
+   
+  
+const popup = document.getElementById("vocab-popup");
+
+const popupWord =
+document.getElementById("popup-word");
+
+const popupType =
+document.getElementById("popup-type");
+
+const popupMeaning =
+document.getElementById("popup-meaning");
+
+const popupExample =
+document.getElementById("popup-example");
+
+const popupTranslation =
+document.getElementById("popup-translation");
+
+const popupSpeak =
+document.getElementById("popup-speak");
+
+let activeWord = null;
+
+
+document.querySelectorAll(".vocab").forEach(word=>{
+
+word.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+const key =
+this.dataset.word;
+
+const data =
+vocabulary[key];
+
+if(!data){
+
+return;
+
+}
+
+
+// إذا ضغط على نفس الكلمة مرة ثانية
+
+if(activeWord===this){
+
+popup.classList.remove("show");
+
+this.classList.remove("active");
+
+activeWord=null;
+
+return;
+
+}
+
+
+// إزالة التحديد من أي كلمة
+
+document.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+
+this.classList.add("active");
+
+activeWord=this;
+
+
+// تعبئة البيانات
+
+popupWord.textContent =
+data.word;
+
+popupType.textContent =
+data.type;
+
+popupMeaning.textContent =
+data.meaning;
+
+popupExample.textContent =
+data.example;
+
+popupTranslation.textContent =
+data.translation;
+
+
+// زر النطق
+
+popupSpeak.onclick=function(){
+
+const speech =
+new SpeechSynthesisUtterance(
+data.word
+);
+
+speech.lang="en-US";
+
+speech.rate=0.9;
+
+window.speechSynthesis.cancel();
+
+window.speechSynthesis.speak(
+speech
+);
+
+};
+
+
+// مكان البطاقة
+
+const rect =
+this.getBoundingClientRect();
+
+popup.style.display="block";
+
+popup.classList.add("show");
+
+const popupWidth =
+320;
+
+let left =
+rect.left+
+(window.scrollX);
+
+left-=
+popupWidth/2;
+
+left+=
+rect.width/2;
+
+
+// منع خروج البطاقة من الشاشة
+
+if(left<15){
+
+left=15;
+
+}
+
+if(
+left+popupWidth>
+window.innerWidth-15
+){
+
+left=
+window.innerWidth-
+popupWidth-
+15;
+
+}
+
+
+popup.style.left=
+left+"px";
+
+
+popup.style.top=
+window.scrollY+
+rect.bottom+
+15+
+"px";
+
+});
+
+});
+
+
+// الضغط خارج البطاقة
+
+document.addEventListener(
+"click",
+function(){
+
+popup.classList.remove("show");
+
+popup.style.display = "none";
+   
+document
+.querySelectorAll(".vocab")
+.forEach(w=>{
+
+w.classList.remove("active");
+
+});
+
+activeWord=null;
+
+});
+    
+    
 </script>
 
 </body>
