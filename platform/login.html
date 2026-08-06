@@ -865,7 +865,8 @@ async function(){
 
         );
 
-await setDoc(
+
+     await setDoc(
 
     doc(
         db,
@@ -885,11 +886,23 @@ await setDoc(
 
         lastLesson: null,
 
-        createdAt: serverTimestamp()
+        createdAt: serverTimestamp(),
+
+        coins: 0,
+
+        streak: 0,
+
+        completedLessons: [],
+
+        completedUnits: [],
+
+        unlockedWords: [],
+
+        unlockedExpressions: []
 
     }
 
-);
+);   
         
 
         showMessage(
