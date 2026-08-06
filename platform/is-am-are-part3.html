@@ -634,30 +634,21 @@ type="video/quicktime">
 </div>
 
 
-<!-- اكتب بنفسك -->
+<!-- ================================================= -->
+<!-- السؤال الأول -->
+<!-- ================================================= -->
 
-<div class="card">
+<h2 class="section-title">
 
-<h2>
-
-✏️ اكتب بنفسك
+📝 تدرب الآن
 
 </h2>
 
-<p>
-
-• حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: هل أنت بخير؟
+✏️ ترجم: هل أنت بخير؟
 
 </p>
 
@@ -692,22 +683,125 @@ class="answer-result">
 
 </div>
 
-<hr class="question-divider">
 
 
+<!-- ================================================= -->
 <!-- السؤال الثاني -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: هل هي سعيدة؟
+🎯 اختر الإجابة الصحيحة
 
 </p>
 
 <p class="help-text">
 
-💡 للمساعدة: سعيدة = happy
+ترجم: هل هي سعيدة؟
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
+
+Is she happy?
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
+
+She is happy.
+
+</button>
+
+<p
+id="choice1"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثالث -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+🔍 اكتشف الخطأ
+
+</p>
+
+<p class="help-text">
+
+ما الكلمة الخاطئة في الجملة؟
+
+</p>
+
+<p class="question-title">
+
+He is ready?
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+He
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
+
+is
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+ready
+
+</button>
+
+<p
+id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الرابع -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+✏️ ترجم: هل نحن بخير؟
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: بخير = okay
 
 </p>
 
@@ -721,7 +815,7 @@ onclick="checkWriting(
 'input2',
 'result2',
 [
-'Is she happy?'
+'Are we okay?'
 ])">
 
 ✨ أريد التحقق من إجابتي
@@ -735,23 +829,126 @@ class="answer-result">
 </p>
 
 </div>
+ 
 
-<hr class="question-divider">
 
+<!-- ================================================= -->
+<!-- السؤال الخامس -->
+<!-- ================================================= -->
 
-<!-- السؤال الثالث -->
-
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: هل هو جاهز؟
+🎯 اختر الإجابة الصحيحة
 
 </p>
 
 <p class="help-text">
 
-💡 للمساعدة: جاهز = ready
+ترجم: هل هم سعداء؟
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+Are they happy?
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+They are happy.
+
+</button>
+
+<p
+id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال السادس -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+🔍 اكتشف الخطأ
+
+</p>
+
+<p class="help-text">
+
+ما الكلمة الخاطئة في الجملة؟
+
+</p>
+
+<p class="question-title">
+
+You are ready?
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+You
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+are
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+ready
+
+</button>
+
+<p
+id="choice4"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال السابع -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+✏️ ترجم: هل أنا بخير؟
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: بخير = fine
 
 </p>
 
@@ -765,7 +962,7 @@ onclick="checkWriting(
 'input3',
 'result3',
 [
-'Is he ready?'
+'Am I fine?'
 ])">
 
 ✨ أريد التحقق من إجابتي
@@ -780,206 +977,55 @@ class="answer-result">
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال الرابع -->
+<!-- ================================================= -->
+<!-- السؤال الثامن -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: هل نحن بخير؟
+🎯 اختر الإجابة الصحيحة
 
 </p>
 
 <p class="help-text">
 
-💡 للمساعدة: بخير = okay
+ترجم: هل هي جميلة؟
 
 </p>
-
-<input
-id="input4"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting(
-'input4',
-'result4',
-[
-'Are we okay?'
-])">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result4"
-class="answer-result">
-
-</p>
-
-</div>
-
-</div>
- <!-- اختر الإجابة الصحيحة -->
-
-<div class="card">
-
-<h2>
-
-🎯 اختر الإجابة الصحيحة
-
-</h2>
-
-<p>
-
-• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-⭐ ترجم: هل هم سعداء؟
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice1')">
-
-Are they happy?
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice1')">
-
-They are happy.
-
-</button>
-
-<p id="choice1"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-⭐ ترجم: هل أنت جاهز؟
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
-
-Are you ready?
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
-
-You are ready.
-
-</button>
-
-<p id="choice2"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-⭐ ترجم: هل أنا بخير؟
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
-
-Am I fine?
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
-
-I am fine.
-
-</button>
-
-<p id="choice3"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-⭐ ترجم: هل هي جميلة؟
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice4')">
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
 
 Is she beautiful?
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
 
 She is beautiful.
 
 </button>
 
-<p id="choice4"
+<p
+id="choice5"
 class="result-text">
 
 </p>
 
 </div>
 
-</div>
 
 
-
+<!-- ================================================= -->
 <!-- هل تريد تمارين إضافية؟ -->
+<!-- ================================================= -->
 
 <div class="card"
 id="moreCard">
@@ -998,7 +1044,8 @@ id="moreCard">
 
 <br>
 
-<button class="show-more-btn"
+<button
+class="show-more-btn"
 onclick="showMoreExercises()">
 
 ✨ نعم، أريد
@@ -1009,9 +1056,12 @@ onclick="showMoreExercises()">
 
 
 
+<!-- ================================================= -->
 <!-- التمارين الإضافية -->
+<!-- ================================================= -->
 
-<div class="card"
+<div
+class="card"
 id="extraExercises"
 style="display:none;">
 
@@ -1021,232 +1071,239 @@ style="display:none;">
 
 </h2>
 
-<p>
-
-• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
-
-</p>
 
 
-<!-- السؤال الخامس -->
+<!-- السؤال التاسع -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-⭐ ترجم: هل هو بخير؟
+🔍 اكتشف الخطأ
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice5')">
+<p class="help-text">
 
-Is he fine?
+ما الكلمة الخاطئة في الجملة؟
+
+</p>
+
+<p class="question-title">
+
+We are okay?
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+We
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice5')">
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
 
-He is fine.
+are
 
 </button>
 
-<p id="choice5"
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+okay
+
+</button>
+
+<p
+id="choice6"
 class="result-text">
 
 </p>
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال السادس -->
+<!-- السؤال العاشر -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-⭐ ترجم: هل هي جاهزة؟
+✏️ ترجم: هل هو بخير؟
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice6')">
+<p class="help-text">
+
+💡 للمساعدة: بخير = fine
+
+</p>
+
+<input
+id="input4"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input4',
+'result4',
+[
+'Is he fine?'
+])">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- السؤال الحادي عشر -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p class="help-text">
+
+ترجم: هل هي جاهزة؟
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice7')">
 
 Is she ready?
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice6')">
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice7')">
 
 She is ready.
 
 </button>
 
-<p id="choice6"
+<p
+id="choice7"
 class="result-text">
 
 </p>
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال السابع -->
+<!-- السؤال الثاني عشر -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-⭐ ترجم: هل نحن سعداء؟
+✏️ ترجم: هل أنتم متعبون؟
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice7')">
+<p class="help-text">
 
-Are we happy?
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice7')">
-
-We are happy.
-
-</button>
-
-<p id="choice7"
-class="result-text">
+💡 للمساعدة: متعبون = tired
 
 </p>
 
-</div>
+<input
+id="input5"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
 
-<hr class="question-divider">
+<button
+onclick="checkWriting(
+'input5',
+'result5',
+[
+'Are you tired?'
+])">
 
-
-<!-- السؤال الثامن -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-⭐ ترجم: هل أنت متعب؟
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice8')">
-
-Are you tired?
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice8')">
-
-You are tired.
-
-</button>
-
-<p id="choice8"
-class="result-text">
+<p
+id="result5"
+class="answer-result">
 
 </p>
 
 </div>
 
 </div>
- <!-- تقدم الدرس -->
+
+ 
+
+<!-- ==========================
+      بطاقة النهاية
+========================== -->
 
 <div class="card">
 
 <h2>
 
-⭐ تقدمك في الدرس
-
-</h2>
-
-<p>
-
-لقد أنهيت هذا الجزء بنجاح.
-
-<br><br>
-
-📍 فيديو واحد
-
-</p>
-
-<div class="progress-bar">
-
-<div class="progress"
-style="width:100%;">
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- أزرار التنقل -->
-
-<div class="buttons">
-
-<button class="prev-btn">
-
-⬅️ العودة إلى درس النفي
-
-</button>
-
-<button class="done-btn">
-
-✅ أنهيت الدرس
-
-</button>
-
-</div>
-
-<!-- بطاقة النهاية -->
-
-<div class="card">
-
-<h2>
-
-⭐ أحسنت!
+🏆 أحسنت!
 
 </h2>
 
 <p class="success-text">
 
-🎉 أنهيت هذا الجزء بنجاح.
+لقد أنهيت هذا الدرس بنجاح.
 
 <br><br>
 
-• والآن حان وقت تعلم:
+🪙 ستحصل على <strong>5 كوينز</strong> كمكافأة لإكمال الدرس.
 
 <br><br>
 
-🕰️ Was • Were
+والآن أنت جاهز للانتقال إلى درس:
+
+<br><br>
+
+<span class="next-lesson-name">
+
+Was • Were
+
+</span>
 
 </p>
 
-<button class="next-lesson-btn">
+<button
+class="next-lesson-btn"
+onclick="finishLesson('is-am-are-question','was-were-part1.html')">
 
-🚀 الانتقال إلى Was • Were
+🚀 الانتقال إلى الدرس التالي
 
 </button>
 
 </div>
+
  
-
-
 <script>
 
 // ==========================
