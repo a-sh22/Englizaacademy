@@ -161,11 +161,40 @@ color:#666;
 }
 
 
-/* تنسيق الأسئلة */
+/* ==========================
+   عنوان القسم
+========================== */
 
-.question-box{
-margin:35px 0;
+.section-title{
+text-align:center;
+font-size:34px;
+color:#1f3c88;
+margin:40px 0 25px;
 }
+
+
+/* ==========================
+   بطاقة السؤال
+========================== */
+
+.question-card{
+background:white;
+padding:35px;
+border-radius:30px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+margin-bottom:25px;
+transition:.3s;
+}
+
+.question-card:hover{
+transform:translateY(-3px);
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+
+/* ==========================
+   محتوى السؤال
+========================== */
 
 .question-title{
 font-size:24px;
@@ -181,11 +210,11 @@ line-height:1.8;
 margin-bottom:20px;
 }
 
+
+/* لم تعد نحتاج الفاصل */
+
 .question-divider{
-margin:35px 0;
-border:none;
-height:1px;
-background:#e5e5e5;
+display:none;
 }
 
 
@@ -444,6 +473,16 @@ font-size:17px;
 font-size:17px;
 }
 
+
+.section-title{
+font-size:28px;
+}
+
+.question-card{
+padding:25px;
+}
+
+ 
 }
 
  /* اهتزاز عند الخطأ */
@@ -655,30 +694,24 @@ type="video/quicktime">
 </div>
 
 </div>
-<!-- اكتب بنفسك -->
 
-<div class="card">
 
-<h2>
 
-✏️ اكتب بنفسك
+<!-- ================================================= -->
+<!-- السؤال الأول -->
+<!-- ================================================= -->
+
+<h2 class="section-title">
+
+📝 تدرب الآن
 
 </h2>
 
-<p>
-
-• حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: أنا لست بخير
+✏️ ترجم: أنا لست بخير
 
 </p>
 
@@ -706,7 +739,7 @@ onclick="checkWriting(
 ✨ أريد التحقق من إجابتي
 
 </button>
-  
+
 <p
 id="result1"
 class="answer-result">
@@ -715,22 +748,125 @@ class="answer-result">
 
 </div>
 
-<hr class="question-divider">
 
 
+<!-- ================================================= -->
 <!-- السؤال الثاني -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: هو ليس جاهزاً
+🎯 اختر الإجابة الصحيحة
 
 </p>
 
 <p class="help-text">
 
-💡 للمساعدة: جاهز = ready
+ترجم: هي ليست جاهزة
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
+
+She is not ready
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
+
+She are not ready
+
+</button>
+
+<p
+id="choice1"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثالث -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+🔍 اكتشف الخطأ
+
+</p>
+
+<p class="help-text">
+
+ما الكلمة الخاطئة؟
+
+</p>
+
+<p class="question-title">
+
+He are not happy.
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+He
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
+
+are
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+happy
+
+</button>
+
+<p
+id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الرابع -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+✏️ ترجم: نحن لسنا بخير
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: بخير = okay
 
 </p>
 
@@ -744,17 +880,17 @@ onclick="checkWriting(
 'input2',
 'result2',
 [
-'He is not ready',
-'He\'s not ready',
-'Hes not ready',
-'He isn\'t ready',
-'He isnt ready'
+'We are not okay',
+'We\'re not okay',
+'Were not okay',
+'We aren\'t okay',
+'We arent okay'
 ])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
-  
+
 <p
 id="result2"
 class="answer-result">
@@ -762,17 +898,120 @@ class="answer-result">
 </p>
 
 </div>
+ 
 
-<hr class="question-divider">
 
+<!-- ================================================= -->
+<!-- السؤال الخامس -->
+<!-- ================================================= -->
 
-<!-- السؤال الثالث -->
-
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: هي ليست سعيدة
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p class="help-text">
+
+ترجم: هم ليسوا بخير
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+They is not fine
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+They are not fine
+
+</button>
+
+<p
+id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال السادس -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+🔍 اكتشف الخطأ
+
+</p>
+
+<p class="help-text">
+
+ما الكلمة الخاطئة؟
+
+</p>
+
+<p class="question-title">
+
+You is not tired.
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+You
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+is
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+tired
+
+</button>
+
+<p
+id="choice4"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال السابع -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+✏️ ترجم: هي ليست سعيدة
 
 </p>
 
@@ -802,7 +1041,7 @@ onclick="checkWriting(
 ✨ أريد التحقق من إجابتي
 
 </button>
-  
+
 <p
 id="result3"
 class="answer-result">
@@ -811,22 +1050,125 @@ class="answer-result">
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال الرابع -->
+<!-- ================================================= -->
+<!-- السؤال الثامن -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-• ترجم: نحن لسنا بخير
+🎯 اختر الإجابة الصحيحة
 
 </p>
 
 <p class="help-text">
 
-💡 للمساعدة: بخير = okay
+ترجم: أنت لست متعباً
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
+
+You are not tired
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
+
+You is not tired
+
+</button>
+
+<p
+id="choice5"
+class="result-text">
+
+</p>
+
+</div>
+
+ 
+
+<!-- ================================================= -->
+<!-- السؤال التاسع -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+🔍 اكتشف الخطأ
+
+</p>
+
+<p class="help-text">
+
+ما الكلمة الخاطئة؟
+
+</p>
+
+<p class="question-title">
+
+I are a student.
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+I
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
+
+are
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+student
+
+</button>
+
+<p
+id="choice6"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال العاشر -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
+
+✏️ ترجم: هو ليس جاهزًا
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: جاهز = ready
 
 </p>
 
@@ -840,17 +1182,16 @@ onclick="checkWriting(
 'input4',
 'result4',
 [
-'We are not okay',
-'We\'re not okay',
-'Were not okay',
-'We aren\'t okay',
-'We arent okay'
+'He is not ready',
+'He\'s not ready',
+'Hes not ready',
+'He isn\'t ready',
+'He isnt ready'
 ])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
-  
 
 <p
 id="result4"
@@ -860,393 +1201,110 @@ class="answer-result">
 
 </div>
 
-</div>
-<!-- اختر الإجابة الصحيحة -->
 
-<div class="card">
 
-<h2>
+<!-- ================================================= -->
+<!-- السؤال الحادي عشر -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<p class="question-title">
 
 🎯 اختر الإجابة الصحيحة
 
-</h2>
+</p>
 
-<p>
+<p class="help-text">
 
-• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
+ترجم: نحن لسنا جاهزين
 
 </p>
 
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-☹️ ترجم: أنا لست سعيداً
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice1')">
-
-I am not happy
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice1')">
-
-I is not happy
-
-</button>
-
-<p id="choice1"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🙅🏻‍♀️ ترجم: هي ليست جاهزة
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
-
-She is not ready
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
-
-She are not ready
-
-</button>
-
-<p id="choice2"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🤒 ترجم: هم ليسوا بخير
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
-
-They is not fine
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
-
-They are not fine
-
-</button>
-
-<p id="choice3"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-👌🏻 ترجم: أنت لست متعباً
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice4')">
-
-You are not tired
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
-
-You is not tired
-
-</button>
-
-<p id="choice4"
-class="result-text">
-
-</p>
-
-</div>
-
-</div>
-<!-- هل تريد تمارين إضافية؟ -->
-
-<div class="card"
-id="moreCard">
-
-<h2>
-
-🌟 هل ترغب في تحدٍ إضافي؟
-
-</h2>
-
-<p>
-
-• إذا كنت ترغب في التدريب أكثر، يمكنك إظهار مجموعة أخرى من التمارين.
-
-</p>
-
-<br>
-
-<button class="show-more-btn"
-onclick="showMoreExercises()">
-
-✨ نعم، أريد
-
-</button>
-
-</div>
-
-
-
-<!-- التمارين الإضافية -->
-
-<div class="card"
-id="extraExercises"
-style="display:none;">
-
-<h2>
-
-🌟 تمارين إضافية
-
-</h2>
-
-<p>
-
-• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
-
-</p>
-
-
-<!-- السؤال الخامس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-💪🏻 ترجم: هو ليس قوياً
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice5')">
-
-He is not strong
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice5')">
-
-He are not strong
-
-</button>
-
-<p id="choice5"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال السادس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🌟 ترجم: نحن لسنا جاهزين
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice6')">
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice7')">
 
 We is not ready
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice6')">
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice7')">
 
 We are not ready
 
 </button>
 
-<p id="choice6"
+<p
+id="choice7"
 class="result-text">
 
 </p>
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال السابع -->
+<!-- ================================================= -->
+<!-- السؤال الثاني عشر -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
 
 <p class="question-title">
 
-😊 ترجم: أنت لست سعيداً
+🔍 اكتشف الخطأ
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice7')">
+<p class="help-text">
 
-You are not happy
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice7')">
-
-You am not happy
-
-</button>
-
-<p id="choice7"
-class="result-text">
+ما الكلمة الخاطئة؟
 
 </p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثامن -->
-
-<div class="question-box">
 
 <p class="question-title">
 
-😪 ترجم: أنا لست متعباً
+She are a doctor.
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this.false,'choice8')">
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice8')">
 
-I are not tired
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice8')"
-
-I am not tired
+She
 
 </button>
 
-<p id="choice8"
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice8')">
+
+are
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice8')">
+
+doctor
+
+</button>
+
+<p
+id="choice8"
 class="result-text">
 
 </p>
 
 </div>
 
-</div>
-<!-- تقدمك في الدرس -->
 
-<div class="card">
-
-<h2>
-
-⭐ تقدمك في الدرس
-
-</h2>
-
-<p>
-
-لقد أنهيت هذا الجزء بنجاح.
-
-<br><br>
-
-📍 فيديو واحد
-
-</p>
-
-<div class="progress-bar">
-
-<div class="progress"
-style="width:100%;">
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- أزرار التنقل -->
-
-<div class="buttons">
-
-<button class="prev-btn">
-
-⬅️ العودة إلى الجزء الأول
-
-</button>
-
-<button class="done-btn">
-
-✅ أنهيت الدرس
-
-</button>
-
-</div>
-
-
+ 
 
 <!-- بطاقة النهاية -->
 
@@ -1264,7 +1322,11 @@ style="width:100%;">
 
 <br><br>
 
-🌟 والجزء القادم سيجعلك تتعلم المزيد عن:
+💰 لقد حصلت على <strong>5 Coins</strong> كمكافأة لإكمال هذا الدرس.
+
+<br><br>
+
+والجزء القادم سيجعلك تتعلم المزيد عن:
 
 <br><br>
 
@@ -1276,7 +1338,9 @@ style="width:100%;">
 
 </p>
 
-<button class="next-lesson-btn">
+<button
+class="next-lesson-btn"
+onclick="finishLesson('is-am-are-part2','is-am-are-part3.html')">
 
 🚀 الانتقال إلى درس الأسئلة
 
@@ -1285,6 +1349,8 @@ style="width:100%;">
 </div>
 
 </div>
+
+ 
 <script>
 
 // ==========================
