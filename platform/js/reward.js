@@ -463,10 +463,11 @@ overlay.style.display="none";
 
 }
 
+
+
 // ==========================================================
 // إنهاء الدرس وإضافة المكافأة
 // ==========================================================
-
 
 export async function completeLesson(lessonId){
 
@@ -478,7 +479,6 @@ return false;
 
 rewardRunning=true;
 
-
 if(!navigator.onLine){
 
 alert("⚠️ لا يوجد اتصال بالإنترنت.");
@@ -489,7 +489,6 @@ return false;
 
 }
 
-
 const user=auth.currentUser;
 
 if(!user){
@@ -499,7 +498,6 @@ rewardRunning=false;
 return false;
 
 }
-
 
 const userRef=doc(
 db,
@@ -517,9 +515,7 @@ return false;
 
 }
 
-
 const data=snap.data();
-
 
 // سبق أخذ المكافأة
 
@@ -536,13 +532,11 @@ return false;
 
 }
 
-
 const oldCoins=data.coins || 0;
 
-const reward=REWARDS.lesson;  
-  
-const newCoins=oldCoins+reward;
+const reward=REWARDS.lesson;
 
+const newCoins=oldCoins+reward;
 
 // حفظ البيانات
 
@@ -556,6 +550,7 @@ lastLesson:lessonId
 
 });
 
+// إضافة سجل المكافأة
 
 await addRewardHistory({
 
@@ -566,8 +561,6 @@ coins:reward,
 type:"lesson"
 
 });
-  
-  
 
 // عرض المكافأة
 
@@ -581,43 +574,11 @@ reward
 
 );
 
-
 rewardRunning=false;
 
 return true;
 
 }
-
-
-
-export async function getCoins(){
-
-const user=auth.currentUser;
-
-if(!user){
-
-return 0;
-
-}
-
-const userRef=doc(
-db,
-"users",
-user.uid
-);
-
-const snap=await getDoc(userRef);
-
-if(!snap.exists()){
-
-return 0;
-
-}
-
-return snap.data().coins || 0;
-
-}
-
 
 
 
