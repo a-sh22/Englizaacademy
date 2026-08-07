@@ -685,6 +685,10 @@ getCoins
 import{
 auth
 }from "./js/firebase.js";
+
+import{
+onAuthStateChanged
+}from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
       
 
 // ==========================================
@@ -954,14 +958,15 @@ card.style.transform=
 }
 
 
+onAuthStateChanged(auth, async(user)=>{
 
-alert(auth.currentUser ? auth.currentUser.uid : "لا يوجد مستخدم");
-
-const history = await getRewardHistory();
-
-alert("عدد السجلات: " + history.length);
+if(!user){
+return;
+}
 
 await loadHistory();
+
+});
       
 
 </script>
