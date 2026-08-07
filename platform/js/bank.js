@@ -485,14 +485,56 @@ return await getBankStats();
 
 
 // ==========================================================
+// قراءة عدد العملات
+// ==========================================================
+
+import{
+
+getCoins
+
+}from "./reward.js";
+
+
+
+// ==========================================================
+// تحديث رصيد صفحة البنك
+// ==========================================================
+
+export async function refreshBankBalance(){
+
+const balance=
+
+document.getElementById(
+
+"coinBalance"
+
+);
+
+if(!balance){
+
+return;
+
+}
+
+const coins=
+
+await getCoins();
+
+balance.textContent=
+
+coins;
+
+}
+
+
+
+// ==========================================================
 // تشغيل نظام البنك
 // ==========================================================
 
 export async function initializeBank(){
 
-return await refreshBankUI();
+await refreshBankBalance();
 
 }
-
-
 
