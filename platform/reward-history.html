@@ -10,16 +10,20 @@ name="viewport"
 content="width=device-width,initial-scale=1.0">
 
 <title>
+
 📜 سجل المكافآت
+
 </title>
 
 <style>
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+
 }
 
 body{
@@ -44,7 +48,9 @@ margin:auto;
 
 }
 
-/* الأعلى */
+/* ==========================
+      الأعلى
+========================== */
 
 .header{
 
@@ -67,34 +73,35 @@ object-fit:cover;
 .backBtn{
 
 background:white;
-
 border:none;
-
 padding:14px 22px;
-
 border-radius:18px;
-
 font-size:22px;
-
 font-weight:bold;
-
 color:#1f3c88;
-
 cursor:pointer;
-
 box-shadow:
 0 10px 25px rgba(0,0,0,.08);
 
+transition:.25s;
+
 }
+
+.backBtn:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* ==========================
+      بطاقة الترحيب
+========================== */
 
 .hero{
 
 background:white;
-
 border-radius:28px;
-
 padding:35px;
-
 box-shadow:
 0 18px 45px rgba(0,0,0,.08);
 
@@ -107,9 +114,7 @@ margin-bottom:35px;
 .hero h1{
 
 font-size:38px;
-
 color:#1f3c88;
-
 margin-bottom:18px;
 
 }
@@ -117,14 +122,119 @@ margin-bottom:18px;
 .hero p{
 
 font-size:22px;
-
 color:#555;
-
 line-height:1.9;
+margin-bottom:25px;
 
 }
 
-/* السجل */
+/* ==========================
+      الإحصائيات
+========================== */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(220px,1fr)
+);
+
+gap:24px;
+
+margin-bottom:40px;
+
+}
+
+.stat-card{
+
+background:white;
+
+border-radius:28px;
+
+padding:28px;
+
+text-align:center;
+
+box-shadow:
+0 16px 40px rgba(0,0,0,.08);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.stat-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+right:0;
+
+height:8px;
+
+background:
+
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+.stat-icon{
+
+font-size:48px;
+
+margin-bottom:15px;
+
+}
+
+.stat-title{
+
+font-size:19px;
+
+color:#666;
+
+margin-bottom:12px;
+
+}
+
+.stat-value{
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+}
+
+/* ==========================
+      عنوان السجل
+========================== */
+
+.section-title{
+
+font-size:34px;
+
+color:#1f3c88;
+
+margin-bottom:28px;
+
+}
+
+/* ==========================
+      بطاقات السجل
+========================== */
 
 .history{
 
@@ -132,20 +242,20 @@ display:flex;
 
 flex-direction:column;
 
-gap:22px;
+gap:24px;
 
 }
 
-.history-card{
+.reward-card{
 
 background:white;
 
-border-radius:25px;
+border-radius:28px;
 
-padding:28px;
+padding:30px;
 
 box-shadow:
-0 15px 35px rgba(0,0,0,.08);
+0 16px 40px rgba(0,0,0,.08);
 
 display:flex;
 
@@ -153,51 +263,173 @@ justify-content:space-between;
 
 align-items:center;
 
+gap:25px;
+
+  
+position:relative;
+
+overflow:hidden;
+
+  
 }
 
-.left h2{
 
-font-size:26px;
+
+.reward-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:8px;
+
+background:
+
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+  
+.reward-left{
+
+display:flex;
+
+align-items:center;
+
+gap:22px;
+
+}
+
+
+.reward-icon{
+
+width:72px;
+
+height:72px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+font-size:36px;
+
+flex-shrink:0;
+
+}
+
+  
+
+.reward-info h3{
+
+font-size:27px;
 
 color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+.reward-info p{
+
+font-size:20px;
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+.reward-right{
+
+text-align:left;
+
+min-width:150px;
+
+}
+
+.reward-coins{
+
+font-size:32px;
+
+font-weight:bold;
+
+color:#e09a00;
 
 margin-bottom:10px;
 
 }
 
-.left p{
+.reward-date{
 
 font-size:18px;
 
-color:#777;
+color:#888;
 
 }
 
-.right{
+/* ==========================
+      السجل الفارغ
+========================== */
+
+.empty-card{
+
+display:none;
+
+background:white;
+
+padding:45px;
+
+border-radius:28px;
+
+box-shadow:
+0 16px 40px rgba(0,0,0,.08);
 
 text-align:center;
 
 }
 
-.coins{
+.empty-card h2{
 
 font-size:34px;
 
-font-weight:bold;
+color:#1f3c88;
 
-color:#ffb300;
-
-margin-bottom:8px;
+margin-bottom:18px;
 
 }
 
-.type{
+.empty-card p{
 
-font-size:17px;
+font-size:21px;
 
 color:#666;
 
+line-height:2;
+
 }
+
+/* ==========================
+      الجوال
+========================== */
 
 @media(max-width:768px){
 
@@ -213,31 +445,48 @@ font-size:18px;
 
 }
 
-.history-card{
+.backBtn{
 
-flex-direction:column;
-
-gap:18px;
-
-text-align:center;
+font-size:18px;
+padding:12px 18px;
 
 }
 
-.left h2{
+.reward-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.reward-right{
+
+text-align:right;
+
+}
+
+.reward-info h3{
 
 font-size:22px;
 
 }
 
-.left p{
+.reward-info p{
 
-font-size:16px;
+font-size:17px;
 
 }
 
-.coins{
+.stat-value{
 
-font-size:30px;
+font-size:28px;
+
+}
+
+.section-title{
+
+font-size:28px;
 
 }
 
@@ -277,12 +526,117 @@ onclick="history.back()">
 
 <p>
 
-هنا ستجد جميع العملات التي حصلت عليها،
-ومتى حصلت عليها أثناء رحلتك التعليمية.
+هنا يمكنك مشاهدة جميع المكافآت التي حصلت عليها أثناء رحلتك التعليمية داخل الأكاديمية.
 
 </p>
 
 </div>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+🪙
+
+</div>
+
+<div class="stat-title">
+
+إجمالي العملات
+
+</div>
+
+<div
+class="stat-value"
+id="totalCoins">
+
+0
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+🎁
+
+</div>
+
+<div class="stat-title">
+
+عدد المكافآت
+
+</div>
+
+<div
+class="stat-value"
+id="rewardCount">
+
+0
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+📚
+
+</div>
+
+<div class="stat-title">
+
+الدروس المكتملة
+
+</div>
+
+<div
+class="stat-value"
+id="lessonCount">
+
+0
+
+</div>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-icon">
+
+🏆
+
+</div>
+
+<div class="stat-title">
+
+آخر مكافأة
+
+</div>
+
+<div
+class="stat-value"
+id="lastReward">
+
+—
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+آخر المكافآت
+
+</h2>
 
 <div
 class="history"
@@ -290,8 +644,320 @@ id="historyContainer">
 
 </div>
 
+<div
+class="empty-card"
+id="emptyCard">
+
+<h2>
+
+📭 لا توجد مكافآت بعد
+
+</h2>
+
+<p>
+
+ابدأ أول درس داخل الأكاديمية،
+واجمع أول مكافأة لك، وستظهر هنا تلقائياً.
+
+</p>
+
+</div>
+
+
+</div>
+
+<script type="module">
+
+import{
+
+getRewardHistory,
+formatRewardDate
+
+}from "./js/history.js";
+
+import{
+
+getCoins
+
+}from "./js/reward.js";
+
+
+
+// ==========================================
+// عناصر الصفحة
+// ==========================================
+
+const historyContainer=
+
+document.getElementById(
+
+"historyContainer"
+
+);
+
+const emptyCard=
+
+document.getElementById(
+
+"emptyCard"
+
+);
+
+const totalCoins=
+
+document.getElementById(
+
+"totalCoins"
+
+);
+
+const rewardCount=
+
+document.getElementById(
+
+"rewardCount"
+
+);
+
+const lessonCount=
+
+document.getElementById(
+
+"lessonCount"
+
+);
+
+const lastReward=
+
+document.getElementById(
+
+"lastReward"
+
+);
+
+
+
+// ==========================================
+// تحميل السجل
+// ==========================================
+
+async function loadHistory(){
+
+const history=
+
+await getRewardHistory();
+
+const coins=
+
+await getCoins();
+
+totalCoins.textContent=
+
+coins;
+
+rewardCount.textContent=
+
+history.length;
+
+
+
+const lessons=
+
+history.filter(
+
+item=>item.type==="lesson"
+
+);
+
+lessonCount.textContent=
+
+lessons.length;
+
+
+
+if(history.length){
+
+lastReward.textContent=
+
+formatRewardDate(
+
+history[0].createdAt
+
+);
+
+}else{
+
+lastReward.textContent="—";
+
+}
+
+
+
+if(history.length===0){
+
+emptyCard.style.display="block";
+
+return;
+
+}
+
+
+
+history.forEach(item=>{
+
+const card=
+
+document.createElement("div");
+
+card.className=
+
+"reward-card";
+
+
+card.style.opacity="0";
+
+card.style.transform="translateY(25px)";
+
+  
+
+let icon="🎁";
+
+let title="مكافأة";
+
+
+
+switch(item.type){
+
+case"lesson":
+
+icon="📚";
+
+title="درس مكتمل";
+
+break;
+
+
+
+case"unit":
+
+icon="🏆";
+
+title="وحدة مكتملة";
+
+break;
+
+
+
+case"review":
+
+icon="📝";
+
+title="مراجعة مكتملة";
+
+break;
+
+
+
+case"game":
+
+icon="🎮";
+
+title="لعبة مكتملة";
+
+break;
+
+
+
+case"daily":
+
+icon="🔥";
+
+title="إنجاز يومي";
+
+break;
+
+}
+
+
+
+card.innerHTML=`
+
+<div class="reward-left">
+
+<div class="reward-icon">
+
+${icon}
+
+</div>
+
+<div class="reward-info">
+
+<h3>
+
+${title}
+
+</h3>
+
+<p>
+
+${item.title}
+
+</p>
+
+</div>
+
+</div>
+
+<div class="reward-right">
+
+<div class="reward-coins">
+
++${item.coins} 🪙
+
+</div>
+
+<div class="reward-date">
+
+🕒 ${formatRewardDate(item.createdAt)}
+
+</div>
+
+</div>
+
+`;
+
+
+
+historyContainer.appendChild(card);
+
+setTimeout(()=>{
+
+card.style.transition=
+
+".45s";
+
+card.style.opacity="1";
+
+card.style.transform=
+
+"translateY(0)";
+
+},80);
+  
+
+});
+
+}
+
+
+
+await loadHistory();
+
+</script>
+
 </div>
 
 </body>
 
-</html>
+</html>  
+  
