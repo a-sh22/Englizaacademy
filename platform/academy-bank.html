@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>
+
+🏦 بنك المكافآت
+
+</title>
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f3efff
+);
+
+padding:35px 18px 60px;
+
+min-height:100vh;
+
+}
+
+.container{
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.logo{
+
+width:82px;
+
+height:82px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+.backBtn{
+
+background:white;
+
+border:none;
+
+padding:14px 22px;
+
+border-radius:18px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+cursor:pointer;
+
+box-shadow:
+
+0 10px 25px
+rgba(0,0,0,.08);
+
+transition:.25s;
+
+}
+
+.backBtn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.hero{
+
+background:white;
+
+border-radius:28px;
+
+padding:35px;
+
+box-shadow:
+
+0 18px 45px
+rgba(0,0,0,.08);
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+color:#555;
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+.balance{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:
+
+15px 26px;
+
+border-radius:999px;
+
+background:#fff8e6;
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#e09a00;
+
+border:
+
+2px solid #ffe08a;
+
+}
+
+.balance span{
+
+color:#1f3c88;
+
+}
+
+
+.vaults{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(280px,1fr)
+);
+
+gap:26px;
+
+}
+
+
+
+.vault{
+
+background:white;
+
+border-radius:28px;
+
+padding:32px;
+
+text-align:center;
+
+cursor:pointer;
+
+box-shadow:
+
+0 16px 40px
+rgba(0,0,0,.08);
+
+transition:.28s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.vault:hover{
+
+transform:
+
+translateY(-6px);
+
+}
+
+
+
+.vault::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:8px;
+
+background:
+
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+
+.vaultIcon{
+
+font-size:62px;
+
+margin-bottom:18px;
+
+}
+
+
+
+.vault h2{
+
+color:#1f3c88;
+
+font-size:29px;
+
+margin-bottom:14px;
+
+}
+
+
+
+.vault p{
+
+color:#666;
+
+font-size:19px;
+
+line-height:1.9;
+
+min-height:70px;
+
+}
+
+
+
+.vaultBtn{
+
+margin-top:22px;
+
+display:inline-block;
+
+padding:
+
+13px 24px;
+
+border-radius:999px;
+
+background:#2f6bff;
+
+color:white;
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+
+  
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.balance{
+
+font-size:23px;
+
+}
+
+.backBtn{
+
+font-size:18px;
+
+padding:12px 18px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<img
+src="../owl.PNG"
+class="logo">
+
+<button
+class="backBtn"
+onclick="history.back()">
+
+⬅️ رجوع
+
+</button>
+
+</div>
+
+<div class="hero">
+
+<h1>
+
+🏦 بنك المكافآت
+
+</h1>
+
+<p>
+
+اجمع العملات أثناء تعلمك داخل الأكاديمية،
+ثم استبدلها بمكافآت تساعدك على تطوير
+لغتك الإنجليزية بطريقة ممتعة.
+
+</p>
+
+<div class="balance">
+
+🪙
+
+رصيدك الحالي
+
+<span id="coinBalance">
+
+0
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- خزائن البنك -->
+<!-- ========================================= -->
+
+<div class="vaults">
+
+
+<div class="vault"
+
+onclick="location.href='phrase-bank.html'">
+
+
+<div class="vaultIcon">
+
+🏦
+
+</div>
+
+
+<h2>
+
+🗣️ بنك العبارات
+
+</h2>
+
+
+<p>
+
+افتح عبارات جديدة
+بشرح فيديو قصير.
+
+</p>
+
+
+<div class="vaultBtn">
+
+افتح الخزنة →
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="vault"
+
+onclick="location.href='word-bank.html'">
+
+
+<div class="vaultIcon">
+
+🏦
+
+</div>
+
+
+<h2>
+
+📖 بنك الكلمات
+
+</h2>
+
+
+<p>
+
+افتح كلمات جديدة
+بشرح فيديو قصير.
+
+</p>
+
+
+<div class="vaultBtn">
+
+افتح الخزنة →
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="vault"
+
+onclick="location.href='bag.html'">
+
+
+<div class="vaultIcon">
+
+🎒
+
+</div>
+
+
+<h2>
+
+حقيبتي
+
+</h2>
+
+
+<p>
+
+جميع مشترياتك
+محفوظة هنا.
+
+</p>
+
+
+<div class="vaultBtn">
+
+فتح →
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script type="module">
+
+import{
+
+initializeBank,
+refreshBankBalance
+
+}from "./js/bank.js";
+
+
+
+import{
+
+playCoinSound
+
+}from "./js/reward.js";
+
+
+
+await initializeBank();
+
+
+
+await refreshBankBalance();
+
+
+
+// ==========================================
+// عناصر الصفحة
+// ==========================================
+
+const vaults=
+
+document.querySelectorAll(
+
+".vault"
+
+);
+
+
+
+let vaultBusy=false;
+
+
+
+// ==========================================
+// فتح الخزنة
+// ==========================================
+
+async function openVault(
+
+vault,
+page
+
+){
+
+if(vaultBusy){
+
+return;
+
+}
+
+vaultBusy=true;
+
+
+
+playCoinSound();
+
+
+
+vault.style.transition=
+
+".35s";
+
+
+
+vault.style.transform=
+
+"scale(.95)";
+
+
+
+await new Promise(resolve=>
+
+setTimeout(
+
+resolve,
+
+170
+
+)
+
+);
+
+
+
+vault.style.transform=
+
+"scale(1.05)";
+
+
+
+await new Promise(resolve=>
+
+setTimeout(
+
+resolve,
+
+170
+
+)
+
+);
+
+
+
+window.location.href=
+
+page;
+
+}
+
+
+
+// ==========================================
+// ربط الخزائن
+// ==========================================
+
+vaults[0].onclick=()=>{
+
+openVault(
+
+vaults[0],
+
+"phrase-bank.html"
+
+);
+
+};
+
+
+
+vaults[1].onclick=()=>{
+
+openVault(
+
+vaults[1],
+
+"word-bank.html"
+
+);
+
+};
+
+
+
+vaults[2].onclick=()=>{
+
+openVault(
+
+vaults[2],
+
+"bag.html"
+
+);
+
+};
+
+</script>
+
+</div>
+
+</body>
+
+</html>
+
+    
