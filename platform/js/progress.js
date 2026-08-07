@@ -3,51 +3,26 @@
 // الجزء الأول
 // ==========================================================
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import {
+
+auth,
+db
+
+} from "./firebase.js";
 
 import {
 
-getAuth,
 onAuthStateChanged
 
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 import {
-getFirestore,
+
 doc,
 getDoc,
 updateDoc
+
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-
-
-
-// ==========================================================
-// Firebase
-// ==========================================================
-
-const firebaseConfig={
-
-apiKey:"AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
-
-authDomain:"engliza-academy.firebaseapp.com",
-
-projectId:"engliza-academy",
-
-storageBucket:"engliza-academy.firebasestorage.app",
-
-messagingSenderId:"389916153039",
-
-appId:"1:389916153039:web:95b8a3056b1718cfd353ba",
-
-measurementId:"G-7S608ZTN0W"
-
-};
-
-const app=initializeApp(firebaseConfig);
-
-const auth=getAuth(app);
-
-const db=getFirestore(app);
 
 
 
