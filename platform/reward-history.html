@@ -682,6 +682,10 @@ getCoins
 }from "./js/reward.js";
 
 
+import{
+auth
+}from "./js/firebase.js";
+      
 
 // ==========================================
 // عناصر الصفحة
@@ -950,6 +954,8 @@ card.style.transform=
 }
 
 
+
+alert(auth.currentUser ? auth.currentUser.uid : "لا يوجد مستخدم");
 
 const history = await getRewardHistory();
 
