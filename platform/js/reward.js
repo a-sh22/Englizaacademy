@@ -734,4 +734,49 @@ window.finishLesson = finishLesson;
 
 
 
+// ==========================================================
+// حفظ سجل المكافآت
+// ==========================================================
+
+export async function addRewardHistory(
+
+title,
+type,
+coins
+
+){
+
+const user=auth.currentUser;
+
+if(!user){
+
+return;
+
+}
+
+const userRef=doc(
+db,
+"users",
+user.uid
+);
+
+await updateDoc(userRef,{
+
+rewardHistory:arrayUnion({
+
+title,
+
+type,
+
+coins,
+
+date:new Date()
+
+})
+
+});
+
+}
+
+
 
