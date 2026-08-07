@@ -589,6 +589,42 @@ return true;
 
 
 
+
+// ==========================================================
+// قراءة عدد العملات
+// ==========================================================
+
+export async function getCoins(){
+
+const user=auth.currentUser;
+
+if(!user){
+
+return 0;
+
+}
+
+const userRef=doc(
+db,
+"users",
+user.uid
+);
+
+const snap=await getDoc(userRef);
+
+if(!snap.exists()){
+
+return 0;
+
+}
+
+return snap.data().coins || 0;
+
+}
+
+
+
+
 // ==========================================================
 // تحميل عدد العملات عند فتح الصفحة
 // ==========================================================
