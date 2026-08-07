@@ -226,6 +226,75 @@ h1{
 
 }
 
+
+/* ==========================
+شريط الحالة
+========================== */
+
+.status-bar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:white;
+
+padding:14px 20px;
+
+border-radius:18px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+}
+
+.status-item{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+background:#f8f9ff;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.status-item:hover{
+
+transform:translateY(-2px);
+
+background:#eef3ff;
+
+}
+
+.status-item span{
+
+font-size:20px;
+
+color:#ff9800;
+
+}
+
+
+    
 </style>
 
 </head>
@@ -236,6 +305,35 @@ h1{
 
 <div class="container">
 
+
+
+<!-- شريط الحالة -->
+
+<div class="status-bar">
+
+    <div id="streakBox" class="status-item">
+
+        🔥
+        <span id="streakCounter">
+            0
+        </span>
+
+        أيام
+
+    </div>
+
+    <div id="coinBox" class="status-item">
+
+        🪙
+        <span id="coinCounter">
+            0
+        </span>
+
+    </div>
+
+</div>
+
+    
 
     <div class="header">
 
