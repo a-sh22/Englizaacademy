@@ -6,7 +6,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
 import {
-getAuth
+
+getAuth,
+onAuthStateChanged
+
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 import {
@@ -55,7 +58,8 @@ const db=getFirestore(app);
 export async function saveLastLesson(
 
 lessonId,
-lessonUrl
+lessonUrl,
+unitId
 
 ){
 
@@ -85,12 +89,14 @@ lastLesson:{
 
 id:lessonId,
 
+unit:unitId,
+
 url:lessonUrl,
 
 updatedAt:Date.now()
 
 }
-
+  
 }
 
 );
@@ -184,6 +190,8 @@ progress[unitId]={
 
 completedLessons:[],
 
+lastLesson:null,
+
 totalLessons:totalLessons,
 
 progress:0
@@ -191,6 +199,7 @@ progress:0
 };
 
 }
+
 
 
 // إضافة الدرس إذا لم يكن مضافًا
@@ -577,7 +586,8 @@ totalLessons
 await saveLastLesson(
 
 lessonId,
-lessonUrl
+lessonUrl,
+unitId
 
 );
 
@@ -589,5 +599,6 @@ totalLessons
 
 );
 
-}
+await refreshProgressBar();
 
+}
