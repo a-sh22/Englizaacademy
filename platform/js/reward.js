@@ -469,7 +469,13 @@ overlay.style.display="none";
 // إنهاء الدرس وإضافة المكافأة
 // ==========================================================
 
-export async function completeLesson(lessonId){
+export async function completeLesson(
+
+lessonId,
+
+lessonTitle
+
+){
 
 if(rewardRunning){
 
@@ -554,13 +560,14 @@ lastLesson:lessonId
 
 await addRewardHistory({
 
-title:`أنهيت الدرس: ${lessonId}`,
+title:`أنهيت الدرس: ${lessonTitle}`,
 
 coins:reward,
 
 type:"lesson"
 
 });
+ 
 
 // عرض المكافأة
 
@@ -633,15 +640,20 @@ export async function finishLesson(
 
 lessonId,
 
+lessonTitle,
+
 nextPage
 
 ){
+ 
 
 const success=
 
 await completeLesson(
 
-lessonId
+lessonId,
+
+lessonTitle
 
 );
 
@@ -692,52 +704,6 @@ nextPage;
 
 window.finishLesson = finishLesson;
 
-
-
-
-// ==========================================================
-// حفظ سجل المكافآت
-// ==========================================================
-
-export async function addRewardHistory(
-
-title,
-type,
-coins
-
-){
-
-const user=auth.currentUser;
-
-if(!user){
-
-return;
-
-}
-
-const userRef=doc(
-db,
-"users",
-user.uid
-);
-
-await updateDoc(userRef,{
-
-rewardHistory:arrayUnion({
-
-title,
-
-type,
-
-coins,
-
-date:new Date()
-
-})
-
-});
-
-}
 
 
 
