@@ -560,7 +560,7 @@ lastLesson:lessonId
 
 await addRewardHistory({
 
-title:`أنهيت الدرس: ${lessonTitle}`,
+title:lessonTitle,
 
 coins:reward,
 
