@@ -16,6 +16,15 @@ onAuthStateChanged
 
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
+
+import{
+
+addRewardHistory
+
+}from "./history.js";
+
+
+
 import {
 
 doc,
@@ -413,7 +422,7 @@ badge.textContent=value;
 // عرض نافذة المكافأة
 // ==========================================================
 
-export async function showRewardPopup(oldCoins,newCoins){
+export async function showRewardPopup(oldCoins,newCoins,reward){
 
 createRewardUI();
 
@@ -429,9 +438,14 @@ const button=document.getElementById("rewardBtn");
 
 overlay.style.display="flex";
 
+
+ document.getElementById("rewardText").innerHTML=
+`لقد حصلت على <b>${reward} Coins</b> كمكافأة لإنهاء الدرس.`; 
+
+
 button.disabled=true;
 
-plus.textContent="+5";
+plus.textContent="+"+reward;
 
 balance.textContent=oldCoins;
 
@@ -525,14 +539,16 @@ return false;
 
 const oldCoins=data.coins || 0;
 
-const newCoins=oldCoins+5;
+const reward=REWARDS.lesson;  
+  
+const newCoins=oldCoins+reward;
 
 
 // حفظ البيانات
 
 await updateDoc(userRef,{
 
-coins:increment(5),
+coins:increment(reward),
 
 completedLessons:arrayUnion(lessonId),
 
@@ -541,13 +557,27 @@ lastLesson:lessonId
 });
 
 
+await addRewardHistory({
+
+title:`أنهيت الدرس: ${lessonId}`,
+
+coins:reward,
+
+type:"lesson"
+
+});
+  
+  
+
 // عرض المكافأة
 
 await showRewardPopup(
 
 oldCoins,
 
-newCoins
+newCoins,
+
+reward
 
 );
 
