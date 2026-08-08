@@ -97,11 +97,10 @@ return true;
 // قراءة السجل
 // ==========================================================
 
+
 export async function getRewardHistory(){
 
-const user=
-
-auth.currentUser;
+const user=auth.currentUser;
 
 if(!user){
 
@@ -143,19 +142,23 @@ const history=
 
 data.rewardHistory || [];
 
-
-
 history.sort(
 
-(a,b)=>
+(a,b)=>{
 
-b.createdAt.seconds-
+const aTime=
 
-a.createdAt.seconds
+a.createdAt?.seconds || 0;
+
+const bTime=
+
+b.createdAt?.seconds || 0;
+
+return bTime-aTime;
+
+}
 
 );
-
-
 
 return history;
 
