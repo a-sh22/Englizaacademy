@@ -63,35 +63,26 @@ let rewardRunning=false;
 
 
 
-
 // ==========================================================
 // 🔊 نظام أصوات العملات
 // ==========================================================
 
-const REWARD_SOUND=
-"https://videos.englizaacademy.com/Pre-Intermediate/coin-reward.wav";
+// صوت شراء العبارة
+const purchaseAudio = new Audio(
+"https://videos.englizaacademy.com/Pre-Intermediate/coin-purchase.wav"
+);
 
-const PURCHASE_SOUND=
-"https://videos.englizaacademy.com/Pre-Intermediate/coin-purchase.wav";
+purchaseAudio.preload="auto";
+purchaseAudio.volume=.7;
 
 
-// ==========================================================
-// 🎉 صوت مكافأة إنهاء الدرس
-// ==========================================================
+// صوت مكافأة إنهاء الدرس
+const rewardAudio = new Audio(
+"https://videos.englizaacademy.com/Pre-Intermediate/coin-reward.wav"
+);
 
-export function playRewardSound(){
-
-const audio=new Audio(REWARD_SOUND);
-
-audio.preload="auto";
-
-audio.volume=.7;
-
-audio.currentTime=0;
-
-audio.play().catch(()=>{});
-
-}
+rewardAudio.preload="auto";
+rewardAudio.volume=.7;
 
 
 // ==========================================================
@@ -100,33 +91,75 @@ audio.play().catch(()=>{});
 
 export function playPurchaseSound(){
 
-const audio=new Audio(PURCHASE_SOUND);
+purchaseAudio.currentTime=0;
 
-audio.preload="auto";
+const promise=purchaseAudio.play();
 
-audio.volume=.7;
+if(promise){
 
-audio.currentTime=0;
+promise.catch(error=>{
 
-audio.play().catch(()=>{});
+console.log(
+"Purchase sound could not play:",
+error
+);
+
+});
+
+}
 
 }
 
 
 // ==========================================================
-// 🔓 تهيئة الصوت من ضغطة المستخدم
-// تعمل مع iPhone / Safari
+// 🎉 صوت مكافأة إنهاء الدرس
+// ==========================================================
+
+export function playRewardSound(){
+
+rewardAudio.currentTime=0;
+
+const promise=rewardAudio.play();
+
+if(promise){
+
+promise.catch(error=>{
+
+console.log(
+"Reward sound could not play:",
+error
+);
+
+});
+
+}
+
+}
+
+
+
+// ==========================================================
+// 🔓 تهيئة أصوات العملات بعد ضغطة المستخدم
 // ==========================================================
 
 export function unlockCoinSound(){
 
-const audio=new Audio(PURCHASE_SOUND);
+const audios=[
+purchaseAudio,
+rewardAudio
+];
 
-audio.volume=0;
+audios.forEach(audio=>{
 
 audio.muted=true;
 
-audio.play().then(()=>{
+audio.currentTime=0;
+
+const promise=audio.play();
+
+if(promise){
+
+promise.then(()=>{
 
 audio.pause();
 
@@ -134,10 +167,17 @@ audio.currentTime=0;
 
 audio.muted=false;
 
-}).catch(()=>{});
+}).catch(()=>{
+
+audio.muted=false;
+
+});
 
 }
 
+});
+
+}
 
 
 
