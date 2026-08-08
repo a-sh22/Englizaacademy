@@ -164,6 +164,301 @@ color:#555;
 }
 
 
+/* ==========================================================
+   بطاقات الأسئلة المستقلة
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:25px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+/* الخط الذهبي أعلى بطاقة السؤال */
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* رقم السؤال */
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:18px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* نوع السؤال */
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+
+/* عنوان السؤال */
+
+.question-card .question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+line-height:1.8;
+
+}
+
+
+/* المساعدة */
+
+.question-card .help-text{
+
+font-size:18px;
+
+color:#666;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   أزرار ترتيب الكلمات
+========================================================== */
+
+.word-order-area{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin:20px 0;
+
+}
+
+.word-btn{
+
+border:2px solid #dce4ff;
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+padding:12px 18px;
+
+border-radius:15px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.word-btn:hover{
+
+transform:translateY(-2px);
+
+background:#eef4ff;
+
+}
+
+.word-btn.selected{
+
+background:#e8fff0;
+
+border-color:#b8ebc8;
+
+color:#0f8b4c;
+
+}
+
+
+/* الكلمات التي اختارها الطالب */
+
+.selected-words{
+
+min-height:58px;
+
+padding:14px;
+
+border:2px dashed #dce4ff;
+
+border-radius:18px;
+
+background:#fafbff;
+
+margin-bottom:18px;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+line-height:1.8;
+
+}
+
+
+/* أزرار ترتيب الكلمات */
+
+.order-actions{
+
+display:flex;
+
+gap:12px;
+
+}
+
+.order-check-btn,
+.order-reset-btn{
+
+flex:1;
+
+border:none;
+
+padding:15px;
+
+border-radius:17px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.order-check-btn{
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+}
+
+.order-reset-btn{
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+}
+
+.order-check-btn:hover,
+.order-reset-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   نتيجة السؤال
+========================================================== */
+
+.question-result{
+
+margin-top:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+line-height:1.8;
+
+}
+
+
+
+  
 /* تنسيق الأسئلة الجديد */
 
 .question-box{
@@ -192,6 +487,179 @@ background:#e5e5e5;
 }
 
 
+
+/* ==========================================================
+   بطاقات الأسئلة المنفصلة
+========================================================== */
+
+.question-card{
+
+margin-bottom:35px;
+
+}
+
+.question-card h2{
+
+margin-bottom:25px;
+
+}
+
+
+/* ==========================================================
+   ترتيب الكلمات
+========================================================== */
+
+.word-order{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin:25px 0;
+
+justify-content:center;
+
+}
+
+.word-btn{
+
+background:#f5f7ff !important;
+
+color:#1f3c88 !important;
+
+border:2px solid #dce4ff !important;
+
+padding:14px 22px !important;
+
+border-radius:16px !important;
+
+font-size:19px !important;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.word-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.word-btn.selected{
+
+opacity:.45;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+
+/* الكلمات التي اختارها الطالب */
+
+.selected-words{
+
+min-height:65px;
+
+padding:15px;
+
+border:2px dashed #dce4ff;
+
+border-radius:18px;
+
+background:#fafbff;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.selected-word{
+
+background:#eef4ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+padding:10px 18px;
+
+border-radius:14px;
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+
+/* زر التحقق */
+
+.check-order-btn{
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+) !important;
+
+color:white !important;
+
+border:none !important;
+
+width:100%;
+
+margin-top:5px;
+
+}
+
+
+/* النتيجة الصحيحة */
+
+.order-correct{
+
+background:#e8fff0;
+
+border:2px solid #b8ebc8;
+
+color:#0f8b4c;
+
+}
+
+
+/* النتيجة الخاطئة */
+
+.order-wrong{
+
+background:#ffe8e8;
+
+border:2px solid #ffb8b8;
+
+color:#c62828;
+
+}
+
+
+
+
+  
 /* صندوق الكتابة */
 
 .write-box{
@@ -718,26 +1186,36 @@ type="video/quicktime">
 </p>
 
 
-<!-- السؤال الأول -->
+<!-- ==========================================================
+     🧠 قسم التمارين المختلطة
+========================================================== -->
+
+
+<!-- ==========================================================
+     السؤال 1 | اكتب بنفسك
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+✏️ اكتب بنفسك
+</h2>
 
 <div class="question-box">
 
 <p class="question-title">
-
 📖 ترجم: كتابي
-
 </p>
 
 <p class="help-text">
-
 💡 للمساعدة: كتاب = book
-
 </p>
 
 <input
 id="input1"
 class="write-box"
-placeholder="اكتب إجابتك هنا">
+placeholder="اكتب إجابتك هنا"
+>
 
 <button
 onclick="checkWriting('input1','result1','My book')">
@@ -749,34 +1227,151 @@ onclick="checkWriting('input1','result1','My book')">
 <p
 id="result1"
 class="answer-result">
-
 </p>
 
 </div>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- السؤال الثاني -->
+
+<!-- ==========================================================
+     السؤال 2 | اختيار
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+🎯 اختر الإجابة الصحيحة
+</h2>
 
 <div class="question-box">
 
 <p class="question-title">
+👨 ترجم: أبوه
+</p>
 
-🎒 ترجم: حقيبتها
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
 
+His father
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
+
+Her father
+
+</button>
+
+<p
+id="choice1"
+class="result-text">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 3 | ترتيب الكلمات
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+🔤 رتّب الكلمات
+</h2>
+
+<div class="question-box">
+
+<p class="question-title">
+📖 رتّب الكلمات لتكوين جملة صحيحة:
 </p>
 
 <p class="help-text">
+💡 المعنى: كتابي
+</p>
 
+<div
+class="word-order"
+data-answer="My book">
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+book
+
+</button>
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+My
+
+</button>
+
+</div>
+
+<div
+class="selected-words"
+id="order1">
+</div>
+
+<button
+class="check-order-btn"
+type="button"
+onclick="checkWordOrder('order1','My book','orderResult1')">
+
+✨ تحقق من الإجابة
+
+</button>
+
+<p
+id="orderResult1"
+class="answer-result">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 4 | اكتب بنفسك
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+✏️ اكتب بنفسك
+</h2>
+
+<div class="question-box">
+
+<p class="question-title">
+🎒 ترجم: حقيبتها
+</p>
+
+<p class="help-text">
 💡 للمساعدة: حقيبة = bag
-
 </p>
 
 <input
 id="input2"
 class="write-box"
-placeholder="اكتب إجابتك هنا">
+placeholder="اكتب إجابتك هنا"
+>
 
 <button
 onclick="checkWriting('input2','result2','Her bag')">
@@ -788,34 +1383,151 @@ onclick="checkWriting('input2','result2','Her bag')">
 <p
 id="result2"
 class="answer-result">
-
 </p>
 
 </div>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- السؤال الثالث -->
+
+<!-- ==========================================================
+     السؤال 5 | اختيار
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+🎯 اختر الإجابة الصحيحة
+</h2>
 
 <div class="question-box">
 
 <p class="question-title">
+👩 ترجم: أمها
+</p>
 
-🏫 ترجم: مدرستنا
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
 
+Her mother
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+Their mother
+
+</button>
+
+<p
+id="choice2"
+class="result-text">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 6 | ترتيب الكلمات
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+🔤 رتّب الكلمات
+</h2>
+
+<div class="question-box">
+
+<p class="question-title">
+🏠 رتّب الكلمات لتكوين جملة صحيحة:
 </p>
 
 <p class="help-text">
+💡 المعنى: منزلها
+</p>
 
+<div
+class="word-order"
+data-answer="Her home">
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+home
+
+</button>
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+Her
+
+</button>
+
+</div>
+
+<div
+class="selected-words"
+id="order2">
+</div>
+
+<button
+class="check-order-btn"
+type="button"
+onclick="checkWordOrder('order2','Her home','orderResult2')">
+
+✨ تحقق من الإجابة
+
+</button>
+
+<p
+id="orderResult2"
+class="answer-result">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 7 | اكتب بنفسك
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+✏️ اكتب بنفسك
+</h2>
+
+<div class="question-box">
+
+<p class="question-title">
+🏫 ترجم: مدرستنا
+</p>
+
+<p class="help-text">
 💡 للمساعدة: مدرسة = school
-
 </p>
 
 <input
 id="input3"
 class="write-box"
-placeholder="اكتب إجابتك هنا">
+placeholder="اكتب إجابتك هنا"
+>
 
 <button
 onclick="checkWriting('input3','result3','Our school')">
@@ -827,34 +1539,151 @@ onclick="checkWriting('input3','result3','Our school')">
 <p
 id="result3"
 class="answer-result">
-
 </p>
 
 </div>
 
-<hr class="question-divider">
+</div>
 
 
-<!-- السؤال الرابع -->
+
+<!-- ==========================================================
+     السؤال 8 | اختيار
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+🎯 اختر الإجابة الصحيحة
+</h2>
 
 <div class="question-box">
 
 <p class="question-title">
+📱 ترجم: هاتفك
+</p>
 
-🏠 ترجم: بيتهم
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
 
+Your phone
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+My phone
+
+</button>
+
+<p
+id="choice3"
+class="result-text">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 9 | ترتيب الكلمات
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+🔤 رتّب الكلمات
+</h2>
+
+<div class="question-box">
+
+<p class="question-title">
+🚗 رتّب الكلمات لتكوين جملة صحيحة:
 </p>
 
 <p class="help-text">
+💡 المعنى: سيارتنا
+</p>
 
+<div
+class="word-order"
+data-answer="Our car">
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+car
+
+</button>
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+Our
+
+</button>
+
+</div>
+
+<div
+class="selected-words"
+id="order3">
+</div>
+
+<button
+class="check-order-btn"
+type="button"
+onclick="checkWordOrder('order3','Our car','orderResult3')">
+
+✨ تحقق من الإجابة
+
+</button>
+
+<p
+id="orderResult3"
+class="answer-result">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 10 | اكتب بنفسك
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+✏️ اكتب بنفسك
+</h2>
+
+<div class="question-box">
+
+<p class="question-title">
+🏠 ترجم: بيتهم
+</p>
+
+<p class="help-text">
 💡 للمساعدة: بيت = house
-
 </p>
 
 <input
 id="input4"
 class="write-box"
-placeholder="اكتب إجابتك هنا">
+placeholder="اكتب إجابتك هنا"
+>
 
 <button
 onclick="checkWriting('input4','result4','Their house')">
@@ -866,163 +1695,124 @@ onclick="checkWriting('input4','result4','Their house')">
 <p
 id="result4"
 class="answer-result">
-
 </p>
 
 </div>
 
 </div>
-<!-- اختر الإجابة الصحيحة -->
 
-<div class="card">
+
+
+<!-- ==========================================================
+     السؤال 11 | اختيار
+========================================================== -->
+
+<div class="card question-card">
 
 <h2>
-
 🎯 اختر الإجابة الصحيحة
-
 </h2>
 
-<p>
-
-• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
 <div class="question-box">
 
 <p class="question-title">
-
-👨 ترجم: أبوه
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice1')">
-
-His father
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice1')">
-
-Her father
-
-</button>
-
-<p id="choice1"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-👩 ترجم: أمها
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
-
-Her mother
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
-
-Their mother
-
-</button>
-
-<p id="choice2"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📱 ترجم: هاتفك
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
-
-Your phone
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
-
-My phone
-
-</button>
-
-<p id="choice3"
-class="result-text">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
 🚗 ترجم: سيارتنا
-
 </p>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'choice4')">
 
 Our car
 
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'choice4')">
 
 Their car
 
 </button>
 
-<p id="choice4"
+<p
+id="choice4"
 class="result-text">
-
 </p>
 
 </div>
 
 </div>
+
+
+
+<!-- ==========================================================
+     السؤال 12 | ترتيب الكلمات
+========================================================== -->
+
+<div class="card question-card">
+
+<h2>
+🔤 رتّب الكلمات
+</h2>
+
+<div class="question-box">
+
+<p class="question-title">
+📚 رتّب الكلمات لتكوين جملة صحيحة:
+</p>
+
+<p class="help-text">
+💡 المعنى: كتابهم
+</p>
+
+<div
+class="word-order"
+data-answer="Their book">
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+book
+
+</button>
+
+<button
+class="word-btn"
+type="button"
+onclick="selectWord(this)">
+
+Their
+
+</button>
+
+</div>
+
+<div
+class="selected-words"
+id="order4">
+</div>
+
+<button
+class="check-order-btn"
+type="button"
+onclick="checkWordOrder('order4','Their book','orderResult4')">
+
+✨ تحقق من الإجابة
+
+</button>
+
+<p
+id="orderResult4"
+class="answer-result">
+</p>
+
+</div>
+
+</div>
+
 
 
 
@@ -1209,7 +1999,10 @@ class="result-text">
 </div>
 
 </div>
+  
+  
 
+  
 
 <!-- بطاقة النهاية -->
 
@@ -1242,15 +2035,30 @@ Is • Am • Are
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson('pronouns','is-am-are-part1.html')">
+onclick="finishLesson(
+'pronouns',
+'الضمائر وملحقاتها',
+'is-am-are-part1.html'
+)">
 
 🚀 الدرس التالي
 
 </button>
   
 </div>
-  
+
 </div>
+
+  
+<script type="module">
+
+import { finishLesson } from "./js/reward.js";
+
+window.finishLesson = finishLesson;
+
+</script>
+
+
   
 <!-- JavaScript -->
 
@@ -1431,6 +2239,145 @@ btn.innerHTML += " ✔️";
 
 
 
+
+// ==========================
+// ترتيب الكلمات
+// ==========================
+
+function selectWord(button){
+
+if(button.classList.contains("selected")){
+
+return;
+
+}
+
+const wordOrder =
+button.closest(".word-order");
+
+const card =
+button.closest(".question-card");
+
+const selectedContainer =
+card.querySelector(".selected-words");
+
+
+// إنشاء الكلمة المختارة
+
+const selectedWord =
+document.createElement("button");
+
+selectedWord.type="button";
+
+selectedWord.className="selected-word";
+
+selectedWord.textContent=
+button.textContent.trim();
+
+
+// عند الضغط على الكلمة المختارة يمكن إزالتها
+
+selectedWord.onclick=function(){
+
+selectedWord.remove();
+
+button.classList.remove("selected");
+
+};
+
+
+// إضافة الكلمة
+
+selectedContainer.appendChild(
+selectedWord
+);
+
+button.classList.add("selected");
+
+}
+
+
+
+// ==========================
+// التحقق من ترتيب الكلمات
+// ==========================
+
+function checkWordOrder(
+containerId,
+correctAnswer,
+resultId
+){
+
+const container =
+document.getElementById(containerId);
+
+const result =
+document.getElementById(resultId);
+
+
+const words =
+Array.from(
+container.querySelectorAll(".selected-word")
+);
+
+
+// تحويل الكلمات إلى جملة
+
+const userAnswer =
+words
+.map(word =>
+word.textContent.trim()
+)
+.join(" ");
+
+
+// تنظيف الإجابة باستخدام
+// نفس النظام الموجود في الصفحة
+
+const user =
+normalizeText(userAnswer);
+
+const correct =
+normalizeText(correctAnswer);
+
+
+// إزالة الحالات السابقة
+
+result.classList.remove(
+"order-correct",
+"order-wrong"
+);
+
+
+// التحقق
+
+if(user===correct){
+
+result.classList.add(
+"order-correct"
+);
+
+result.innerHTML=
+"✅ أحسنت! ترتيب الكلمات صحيح.";
+
+}else{
+
+result.classList.add(
+"order-wrong"
+);
+
+result.innerHTML=
+"❌ الترتيب غير صحيح.<br><br>"+
+"✅ الترتيب الصحيح هو:<br><br>"+
+correctAnswer;
+
+}
+
+}
+
+
+  
+
 // ==========================
 // التمارين الإضافية
 // ==========================
@@ -1448,55 +2395,6 @@ document
 
 }
 
-
-
-// ==========================
-// زر الدرس التالي
-// ==========================
-
-document
-.querySelector(".next-lesson-btn")
-.addEventListener("click",function(){
-
-window.location.href =
-"is-am-are.html";
-
-});
-
-
-
-// ==========================
-// زر العودة
-// ==========================
-
-document
-.querySelector(".prev-btn")
-.addEventListener("click",function(){
-
-window.location.href =
-"letters-part3.html";
-
-});
-
-
-
-// ==========================
-// زر أنهيت الدرس
-// ==========================
-
-document
-.querySelector(".done-btn")
-.addEventListener("click",function(){
-
-window.scrollTo({
-
-top:document.body.scrollHeight,
-
-behavior:"smooth"
-
-});
-
-});
 
 </script>
 
