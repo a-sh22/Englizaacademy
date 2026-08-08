@@ -62,69 +62,71 @@ let rewardRunning=false;
 
 
 
+
+
 // ==========================================================
-// 🔊 نظام صوت العملات
-// يعمل بشكل أفضل على iPhone / Safari
+// 🔊 نظام أصوات العملات
 // ==========================================================
 
-let coinAudio=null;
+const REWARD_SOUND=
+"https://videos.englizaacademy.com/Pre-Intermediate/coin-reward.wav";
+
+const PURCHASE_SOUND=
+"https://videos.englizaacademy.com/Pre-Intermediate/coin-purchase.wav";
 
 
-// تجهيز الصوت
+// ==========================================================
+// 🎉 صوت مكافأة إنهاء الدرس
+// ==========================================================
 
-function prepareCoinSound(){
+export function playRewardSound(){
 
-if(!coinAudio){
+const audio=new Audio(REWARD_SOUND);
 
-coinAudio=new Audio(
-"https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=coins-2-89738.mp3"
-);
+audio.preload="auto";
 
-coinAudio.preload="auto";
-
-coinAudio.volume=.45;
-
-}
-
-return coinAudio;
-
-}
-
-
-// تشغيل الصوت
-
-export function playCoinSound(){
-
-const audio=prepareCoinSound();
+audio.volume=.7;
 
 audio.currentTime=0;
 
-const promise=audio.play();
-
-if(promise){
-
-promise.catch(()=>{});
-
-}
+audio.play().catch(()=>{});
 
 }
 
 
-// تهيئة الصوت من ضغطة المستخدم
+// ==========================================================
+// 🪙 صوت شراء العبارة
+// ==========================================================
+
+export function playPurchaseSound(){
+
+const audio=new Audio(PURCHASE_SOUND);
+
+audio.preload="auto";
+
+audio.volume=.7;
+
+audio.currentTime=0;
+
+audio.play().catch(()=>{});
+
+}
+
+
+// ==========================================================
+// 🔓 تهيئة الصوت من ضغطة المستخدم
+// تعمل مع iPhone / Safari
+// ==========================================================
 
 export function unlockCoinSound(){
 
-const audio=prepareCoinSound();
+const audio=new Audio(PURCHASE_SOUND);
+
+audio.volume=0;
 
 audio.muted=true;
 
-audio.currentTime=0;
-
-const promise=audio.play();
-
-if(promise){
-
-promise.then(()=>{
+audio.play().then(()=>{
 
 audio.pause();
 
@@ -132,15 +134,11 @@ audio.currentTime=0;
 
 audio.muted=false;
 
-}).catch(()=>{
-
-audio.muted=false;
-
-});
+}).catch(()=>{});
 
 }
 
-}
+
 
 
 // ==========================================================
@@ -489,7 +487,7 @@ export async function showRewardPopup(oldCoins,newCoins,reward){
 
 createRewardUI();
 
-playCoinSound();
+playRewardSound();
 
 const overlay=document.getElementById("rewardOverlay");
 
