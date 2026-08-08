@@ -63,21 +63,84 @@ let rewardRunning=false;
 
 
 // ==========================================================
-// تشغيل صوت العملات
+// 🔊 نظام صوت العملات
+// يعمل بشكل أفضل على iPhone / Safari
 // ==========================================================
 
-export function playCoinSound(){
+let coinAudio=null;
 
-const audio=new Audio(
+
+// تجهيز الصوت
+
+function prepareCoinSound(){
+
+if(!coinAudio){
+
+coinAudio=new Audio(
 "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=coins-2-89738.mp3"
 );
 
-audio.volume=.45;
+coinAudio.preload="auto";
 
-audio.play().catch(()=>{});
+coinAudio.volume=.45;
 
 }
 
+return coinAudio;
+
+}
+
+
+// تشغيل الصوت
+
+export function playCoinSound(){
+
+const audio=prepareCoinSound();
+
+audio.currentTime=0;
+
+const promise=audio.play();
+
+if(promise){
+
+promise.catch(()=>{});
+
+}
+
+}
+
+
+// تهيئة الصوت من ضغطة المستخدم
+
+export function unlockCoinSound(){
+
+const audio=prepareCoinSound();
+
+audio.muted=true;
+
+audio.currentTime=0;
+
+const promise=audio.play();
+
+if(promise){
+
+promise.then(()=>{
+
+audio.pause();
+
+audio.currentTime=0;
+
+audio.muted=false;
+
+}).catch(()=>{
+
+audio.muted=false;
+
+});
+
+}
+
+}
 
 
 // ==========================================================
