@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>
+🗣️ بنك العبارات
+</title>
+
+<style>
+
+/* ==========================================================
+   الأساس
+========================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f3efff
+);
+
+padding:35px 18px 60px;
+
+min-height:100vh;
+
+}
+
+.container{
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+
+/* ==========================================================
+   الأعلى
+========================================================== */
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.logo{
+
+width:82px;
+
+height:82px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+.backBtn{
+
+background:white;
+
+border:none;
+
+padding:14px 22px;
+
+border-radius:18px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px
+rgba(0,0,0,.08);
+
+transition:.25s;
+
+}
+
+.backBtn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   البطاقة الرئيسية
+========================================================== */
+
+.hero{
+
+background:white;
+
+border-radius:28px;
+
+padding:35px;
+
+box-shadow:
+0 18px 45px
+rgba(0,0,0,.08);
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+}
+
+.hero p{
+
+font-size:21px;
+
+color:#555;
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+
+/* ==========================================================
+   رصيد العملات
+========================================================== */
+
+.balance{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:
+15px 26px;
+
+border-radius:999px;
+
+background:#fff8e6;
+
+font-size:27px;
+
+font-weight:bold;
+
+color:#e09a00;
+
+border:
+2px solid #ffe08a;
+
+}
+
+.balance span{
+
+color:#1f3c88;
+
+}
+
+
+/* ==========================================================
+   عنوان القسم
+========================================================== */
+
+.section-title{
+
+font-size:34px;
+
+color:#1f3c88;
+
+margin-bottom:28px;
+
+}
+
+
+/* ==========================================================
+   شبكة العبارات
+========================================================== */
+
+.phrase-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(300px,1fr)
+);
+
+gap:26px;
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.backBtn{
+
+font-size:18px;
+
+padding:12px 18px;
+
+}
+
+.balance{
+
+font-size:23px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.phrase-grid{
+
+grid-template-columns:
+1fr;
+
+}
+
+}
+
+
+
+
+/* ==========================================================
+   بطاقات العبارات
+========================================================== */
+
+.phrase-card{
+
+background:white;
+
+border-radius:28px;
+
+padding:30px;
+
+box-shadow:
+0 16px 40px
+rgba(0,0,0,.08);
+
+position:relative;
+
+overflow:hidden;
+
+transition:.28s;
+
+}
+
+.phrase-card:hover{
+
+transform:
+translateY(-5px);
+
+}
+
+
+/* الخط الذهبي أعلى البطاقة */
+
+.phrase-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:8px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* ==========================================================
+   رأس البطاقة
+========================================================== */
+
+.phrase-header{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:22px;
+
+}
+
+.phrase-icon{
+
+width:68px;
+
+height:68px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+font-size:34px;
+
+flex-shrink:0;
+
+}
+
+.phrase-title{
+
+flex:1;
+
+}
+
+.phrase-title h3{
+
+font-size:25px;
+
+color:#1f3c88;
+
+margin-bottom:7px;
+
+}
+
+.phrase-title p{
+
+font-size:17px;
+
+color:#888;
+
+}
+
+
+/* ==========================================================
+   منطقة الفيديو
+========================================================== */
+
+.phrase-video{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+border-radius:20px;
+
+overflow:hidden;
+
+background:#f5f7ff;
+
+margin-bottom:22px;
+
+}
+
+.phrase-video video{
+
+width:100%;
+
+height:100%;
+
+display:block;
+
+object-fit:cover;
+
+}
+
+
+/* ==========================================================
+   البطاقة المغلقة
+========================================================== */
+
+.locked-content{
+
+background:#f8f9ff;
+
+border:2px solid #e4e8ff;
+
+border-radius:20px;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+.lock-icon{
+
+font-size:48px;
+
+margin-bottom:12px;
+
+}
+
+.locked-content h4{
+
+font-size:22px;
+
+color:#1f3c88;
+
+margin-bottom:10px;
+
+}
+
+.locked-content p{
+
+font-size:17px;
+
+color:#777;
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+}
+
+
+/* ==========================================================
+   سعر العبارة
+========================================================== */
+
+.phrase-price{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:7px;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:20px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   زر فتح العبارة
+========================================================== */
+
+.unlock-btn{
+
+width:100%;
+
+border:none;
+
+padding:16px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+font-size:19px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+0 10px 25px
+rgba(55,104,255,.25);
+
+}
+
+.unlock-btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+.unlock-btn:disabled{
+
+opacity:.6;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+
+/* ==========================================================
+   العبارة المفتوحة
+========================================================== */
+
+.unlocked-content{
+
+display:none;
+
+}
+
+
+/* حالة الفتح */
+
+.phrase-card.unlocked
+.unlocked-content{
+
+display:block;
+
+}
+
+
+/* إخفاء القفل بعد الفتح */
+
+.phrase-card.unlocked
+.locked-content{
+
+display:none;
+
+}
+
+
+/* ==========================================================
+   شارة العبارة المفتوحة
+========================================================== */
+
+.unlocked-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:7px;
+
+padding:9px 15px;
+
+border-radius:999px;
+
+background:#eef4ff;
+
+border:2px solid #dce5ff;
+
+color:#1f3c88;
+
+font-size:16px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   الفيديو المفتوح
+========================================================== */
+
+.unlocked-content .phrase-video{
+
+margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+.phrase-card{
+
+padding:25px;
+
+}
+
+.phrase-header{
+
+gap:14px;
+
+}
+
+.phrase-icon{
+
+width:60px;
+
+height:60px;
+
+font-size:30px;
+
+}
+
+.phrase-title h3{
+
+font-size:21px;
+
+}
+
+.phrase-title p{
+
+font-size:15px;
+
+}
+
+.locked-content{
+
+padding:22px 18px;
+
+}
+
+.locked-content h4{
+
+font-size:20px;
+
+}
+
+.phrase-price{
+
+font-size:18px;
+
+}
+
+.unlock-btn{
+
+font-size:18px;
+
+padding:15px;
+
+}
+
+}
+  
+ 
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- ========================================================
+     الأعلى
+========================================================= -->
+
+<div class="header">
+
+<img
+src="../owl.PNG"
+class="logo">
+
+<button
+class="backBtn"
+onclick="history.back()">
+
+⬅️ رجوع
+
+</button>
+
+</div>
+
+
+<!-- ========================================================
+     المقدمة
+========================================================= -->
+
+<div class="hero">
+
+<h1>
+
+🗣️ بنك العبارات
+
+</h1>
+
+<p>
+
+اكتشف عبارات جديدة تساعدك على تطوير
+لغتك الإنجليزية بطريقة ممتعة وعملية.
+
+<br>
+
+كل عبارة تحتوي على شرح فيديو قصير،
+وبمجرد فتحها تصبح محفوظة في حقيبتك.
+
+</p>
+
+
+<div class="balance">
+
+🪙
+
+رصيدك الحالي:
+
+<span id="coinBalance">
+
+0
+
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ========================================================
+     العبارات
+========================================================= -->
+
+<h2 class="section-title">
+
+🗣️ العبارات المتاحة
+
+</h2>
+
+
+<div
+class="phrase-grid"
+id="phraseGrid">
+
+</div>
+
+
+</div>
+
+<script type="module">
+
+// ==========================================================
+// 🗣️ بيانات بنك العبارات
+// ==========================================================
+
+const phrases=[
+
+{
+id:"phrase-01",
+
+title:"العبارة الأولى",
+
+price:10,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/Phrase%201.MP4"
+
+},
+
+{
+id:"phrase-02",
+
+title:"العبارة الثانية",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-03",
+
+title:"العبارة الثالثة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-04",
+
+title:"العبارة الرابعة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-05",
+
+title:"العبارة الخامسة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-06",
+
+title:"العبارة السادسة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-07",
+
+title:"العبارة السابعة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-08",
+
+title:"العبارة الثامنة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-09",
+
+title:"العبارة التاسعة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-10",
+
+title:"العبارة العاشرة",
+
+price:10,
+
+video:""
+
+},
+
+{
+id:"phrase-11",
+
+title:"العبارة الحادية عشرة",
+
+price:10,
+
+video:""
+
+}
+
+];
+
+
+// ==========================================================
+// 🗂️ إنشاء بطاقات العبارات
+// ==========================================================
+
+const phraseGrid = document.getElementById("phraseGrid");
+
+
+function createPhraseCard(phrase){
+
+const card = document.createElement("div");
+
+card.className = "phrase-card";
+
+card.dataset.id = phrase.id;
+
+
+card.innerHTML = `
+
+<!-- ==========================================
+     رأس البطاقة
+========================================== -->
+
+<div class="phrase-header">
+
+<div class="phrase-icon">
+
+🗣️
+
+</div>
+
+<div class="phrase-title">
+
+<h3>
+
+${phrase.title}
+
+</h3>
+
+<p>
+
+شرح فيديو قصير
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ==========================================
+     المحتوى المغلق
+========================================== -->
+
+<div class="locked-content">
+
+<div class="lock-icon">
+
+🔒
+
+</div>
+
+<h4>
+
+هذه العبارة مغلقة
+
+</h4>
+
+<p>
+
+افتح العبارة وشاهد شرحها
+في فيديو قصير.
+
+</p>
+
+<div class="phrase-price">
+
+🪙
+
+${phrase.price}
+
+كوينز
+
+</div>
+
+<button
+class="unlock-btn"
+type="button">
+
+🔓 فتح العبارة
+
+</button>
+
+</div>
+
+
+<!-- ==========================================
+     المحتوى المفتوح
+========================================== -->
+
+<div class="unlocked-content">
+
+<div class="unlocked-badge">
+
+✅ العبارة مفتوحة
+
+</div>
+
+<div class="phrase-video">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="${phrase.video}"
+type="video/mp4">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
+
+</div>
+
+`;
+
+return card;
+
+}
+
+
+// ==========================================================
+// عرض جميع العبارات
+// ==========================================================
+
+phrases.forEach(phrase=>{
+
+const card = createPhraseCard(phrase);
+
+phraseGrid.appendChild(card);
+
+});
+  
+
+
+// ==========================================================
+// 🏦 نظام شراء العبارات
+// ==========================================================
+
+import{
+
+auth,
+db
+
+}from "./js/firebase.js";
+
+
+import{
+
+doc,
+getDoc,
+updateDoc,
+arrayUnion,
+increment
+
+}from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+import{
+
+onAuthStateChanged
+
+}from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+import{
+
+playCoinSound
+
+}from "./js/reward.js";
+  
+
+// ==========================================================
+// التحقق من المستخدم والعبارات المملوكة
+// ==========================================================
+
+async function loadPhraseOwnership(user){
+
+if(!user){
+
+return;
+
+}
+
+
+const userRef=
+
+doc(
+db,
+"users",
+user.uid
+);
+
+
+const snap=
+
+await getDoc(userRef);
+
+
+if(!snap.exists()){
+
+return;
+
+}
+
+
+const data=
+
+snap.data();
+
+
+const ownedPhrases=
+
+data.ownedPhrases || [];
+
+
+phrases.forEach(phrase=>{
+
+const card=
+
+document.querySelector(
+
+`.phrase-card[data-id="${phrase.id}"]`
+
+);
+
+
+if(!card){
+
+return;
+
+}
+
+
+if(
+ownedPhrases.includes(phrase.id)
+){
+
+card.classList.add("unlocked");
+
+}
+
+});
+
+}
+
+
+// ==========================================================
+// شراء العبارة
+// ==========================================================
+
+async function unlockPhrase(
+
+phrase,
+button
+){
+
+const user=
+
+auth.currentUser;
+
+
+if(!user){
+
+alert("⚠️ يجب تسجيل الدخول أولًا.");
+
+return;
+
+}
+
+
+button.disabled=true;
+
+
+try{
+
+
+const userRef=
+
+doc(
+db,
+"users",
+user.uid
+);
+
+
+const snap=
+
+await getDoc(userRef);
+
+
+if(!snap.exists()){
+
+alert("⚠️ لم يتم العثور على حسابك.");
+
+button.disabled=false;
+
+return;
+
+}
+
+
+const data=
+
+snap.data();
+
+
+const coins=
+
+data.coins || 0;
+
+
+const ownedPhrases=
+
+data.ownedPhrases || [];
+
+
+  
+// ==========================================================
+// العبارة مملوكة مسبقًا
+// ==========================================================
+
+if(
+ownedPhrases.includes(phrase.id)
+){
+
+const card=
+
+document.querySelector(
+
+`.phrase-card[data-id="${phrase.id}"]`
+
+);
+
+
+if(card){
+
+card.classList.add("unlocked");
+
+}
+
+button.disabled=false;
+
+return;
+
+}
+
+
+// ==========================================================
+// التحقق من الرصيد
+// ==========================================================
+
+if(coins < phrase.price){
+
+alert(
+
+`🪙 رصيدك غير كافٍ.\n\nرصيدك الحالي: ${coins} كوينز\nسعر العبارة: ${phrase.price} كوينز`
+
+);
+
+button.disabled=false;
+
+return;
+
+}
+
+
+// ==========================================================
+// تأكيد الشراء
+// ==========================================================
+
+const confirmed=
+
+confirm(
+
+`هل تريد فتح هذه العبارة مقابل ${phrase.price} كوينز؟`
+
+);
+
+
+if(!confirmed){
+
+button.disabled=false;
+
+return;
+
+}
+
+
+// ==========================================================
+// خصم العملات وحفظ العبارة
+// ==========================================================
+
+await updateDoc(
+
+userRef,
+
+{
+
+coins:
+increment(-phrase.price),
+
+ownedPhrases:
+arrayUnion(phrase.id)
+
+}
+
+);
+
+
+
+// ==========================================================
+// 🔊 صوت نجاح الشراء
+// ==========================================================
+
+playCoinSound();
+
+  
+
+  
+// ==========================================================
+// فتح البطاقة مباشرة
+// ==========================================================
+
+const card=
+
+document.querySelector(
+
+`.phrase-card[data-id="${phrase.id}"]`
+
+);
+
+
+if(card){
+
+card.classList.add("unlocked");
+
+}
+
+
+// ==========================================================
+// تحديث الرصيد أعلى الصفحة
+// ==========================================================
+
+const balance=
+
+document.getElementById(
+
+"coinBalance"
+
+);
+
+
+if(balance){
+
+balance.textContent=
+
+coins - phrase.price;
+
+}
+
+
+}catch(error){
+
+console.error(
+"Phrase purchase error:",
+error
+);
+
+alert(
+
+"⚠️ حدث خطأ أثناء فتح العبارة. حاول مرة أخرى."
+
+);
+
+}
+
+
+button.disabled=false;
+
+}
+
+
+// ==========================================================
+// ربط أزرار فتح العبارات
+// ==========================================================
+
+document
+.querySelectorAll(".phrase-card")
+.forEach(card=>{
+
+
+const phraseId=
+
+card.dataset.id;
+
+
+const phrase=
+
+phrases.find(
+
+item=>
+item.id===phraseId
+
+);
+
+
+const button=
+
+card.querySelector(
+".unlock-btn"
+);
+
+
+if(!phrase || !button){
+
+return;
+
+}
+
+
+button.addEventListener(
+
+"click",
+
+()=>{
+
+unlockPhrase(
+
+phrase,
+button
+
+);
+
+}
+
+);
+
+});
+
+
+// ==========================================================
+// تشغيل النظام بعد التأكد من تسجيل الدخول
+// ==========================================================
+
+onAuthStateChanged(
+
+auth,
+
+async(user)=>{
+
+if(!user){
+
+return;
+
+}
+
+
+const userRef=
+
+doc(
+db,
+"users",
+user.uid
+);
+
+
+const snap=
+
+await getDoc(userRef);
+
+
+if(!snap.exists()){
+
+return;
+
+}
+
+
+const data=
+
+snap.data();
+
+
+const coins=
+
+data.coins || 0;
+
+
+const balance=
+
+document.getElementById(
+"coinBalance"
+);
+
+
+if(balance){
+
+balance.textContent=
+coins;
+
+}
+
+
+await loadPhraseOwnership(user);
+
+}
+
+);
+
+
+  
+</script>
+  
+  
