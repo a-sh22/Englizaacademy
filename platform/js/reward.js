@@ -744,6 +744,9 @@ lessonTitle,
 nextPage
 
 ){
+
+
+unlockCoinSound(); 
  
 
 const success=
