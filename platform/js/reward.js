@@ -96,7 +96,7 @@ let rewardRunning=false;
 //
 // lesson → إنهاء درس = 5 Coins
 // unit   → إكمال وحدة كاملة = 15 Coins
-// review → مراجعة وحدة = 15 Coins
+// review → مراجعة وحدة = 5 Coins
 // daily  → المكافأة اليومية = 10 Coins
 // game   → إكمال لعبة = 3 Coins
 // ==========================================================
@@ -1288,12 +1288,77 @@ nextPage;
 }
 
 
+
+// ==========================================================
+// تشغيل مكافأة مراجعة الوحدة مع زر الانتقال
+// ==========================================================
+
+export async function finishReview(
+
+reviewId,
+
+reviewTitle,
+
+nextPage
+
+){
+
+unlockCoinSound();
+
+const success =
+await completeReview(
+
+reviewId,
+
+reviewTitle
+
+);
+
+
+// إذا حصل على المكافأة
+// ننتظر إغلاق بطاقة المكافأة ثم ننتقل
+
+if(success){
+
+const btn =
+document.getElementById(
+"rewardBtn"
+);
+
+btn.onclick=function(){
+
+document
+.getElementById(
+"rewardOverlay"
+)
+.style.display="none";
+
+window.location.href =
+nextPage;
+
+};
+
+}
+
+else{
+
+window.location.href =
+nextPage;
+
+}
+
+}
+
+
+
+
+
 // ==========================================================
 // إتاحة الدوال للـ HTML
 // ==========================================================
 
 window.finishLesson = finishLesson;
 
-
+window.finishReview = finishReview;
 
 
