@@ -840,6 +840,157 @@ font-size:24px;
 
 
 
+/* ==========================================================
+   بطاقة نهاية الوحدة
+========================================================== */
+
+.final-unit-card{
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#8d6bff
+);
+
+color:white;
+
+padding:45px 35px;
+
+border-radius:35px;
+
+box-shadow:
+0 20px 50px rgba(111,67,255,.30);
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+/* عنوان نهاية الوحدة */
+
+.final-unit-card h2{
+
+color:#ffd84d;
+
+font-size:38px;
+
+margin-bottom:25px;
+
+}
+
+
+/* نص نهاية الوحدة */
+
+.final-unit-card .final-unit-text{
+
+color:white;
+
+font-size:24px;
+
+line-height:2.4;
+
+font-weight:600;
+
+text-align:center;
+
+}
+
+
+/* اسم الوحدة التالية */
+
+.final-unit-card .next-unit-name{
+
+color:white;
+
+font-size:30px;
+
+font-weight:bold;
+
+}
+
+
+/* زر الوحدة التالية */
+
+.final-unit-card .next-lesson-btn{
+
+background:white;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+width:100%;
+
+margin-top:25px;
+
+padding:18px;
+
+border-radius:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.12);
+
+}
+
+
+/* حركة الزر */
+
+.final-unit-card .next-lesson-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 16px 35px rgba(0,0,0,.18);
+
+}
+
+
+/* الجوال */
+
+@media(max-width:768px){
+
+.final-unit-card{
+
+padding:35px 22px;
+
+}
+
+.final-unit-card h2{
+
+font-size:32px;
+
+}
+
+.final-unit-card .final-unit-text{
+
+font-size:19px;
+
+line-height:2.2;
+
+}
+
+.final-unit-card .next-unit-name{
+
+font-size:24px;
+
+}
+
+}
+
+
+ 
+
 /* الحركات */
 
 @keyframes fadeUp{
@@ -2113,16 +2264,15 @@ class="answer-result">
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson(
-'unit1-complete',
-'إكمال الوحدة الأولى',
+onclick="finishUnit(
+'unit1',
+'الوحدة الأولى',
 'unit2.html'
 )">
 
 🚀 الانتقال إلى الوحدة الثانية
 
 </button>
-
 
 </div> 
 
@@ -2522,14 +2672,50 @@ answerBox.classList.remove("shake");
 </script>
 
 
-
 <script type="module">
 
 import {
-finishLesson
+completeUnit
 } from "./js/reward.js";
 
-window.finishLesson = finishLesson;
+window.finishUnit = async function(
+unitId,
+unitTitle,
+nextPage
+){
+
+const success =
+await completeUnit(
+unitId,
+unitTitle
+);
+
+if(success){
+
+const btn =
+document.getElementById("rewardBtn");
+
+btn.onclick=function(){
+
+document
+.getElementById("rewardOverlay")
+.style.display="none";
+
+window.location.href =
+nextPage;
+
+};
+
+}
+
+else{
+
+window.location.href =
+nextPage;
+
+}
+
+};
 
 </script>
 
