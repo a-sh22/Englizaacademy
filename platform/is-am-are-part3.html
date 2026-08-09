@@ -136,33 +136,138 @@ color:#4d4d4d;
 }
 
 
-/* الأسئلة */
 
-.question-box{
-margin:35px 0;
+/* ==========================================================
+   هوية بطاقات الأسئلة - نفس درس النفي
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
 }
 
-.question-title{
-font-size:24px;
+
+/* الخط الذهبي أعلى البطاقة */
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* عنوان السؤال */
+
+.question-card .question-title{
+
+font-size:23px;
+
 font-weight:bold;
-color:#444;
-margin-bottom:12px;
-}
 
-.help-text{
-font-size:20px;
+color:#1f3c88;
+
+margin-bottom:15px;
+
 line-height:1.8;
+
+}
+
+
+/* المساعدة */
+
+.question-card .help-text{
+
+font-size:18px;
+
 color:#666;
-margin-bottom:20px;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
 }
 
-.question-divider{
-margin:35px 0;
-border:none;
-height:1px;
-background:#e5e5e5;
+
+/* رقم السؤال */
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:17px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
 }
 
+
+/* نوع السؤال */
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+
+ 
 
 /* خانة الكتابة */
 
@@ -332,39 +437,99 @@ border:2px solid #b8ebc8;
 }
 
 
-/* بطاقة النهاية */
 
-.success-text{
-font-size:24px;
-line-height:2.2;
-font-weight:600;
-text-align:center;
-color:#555;
-}
 
-.next-lesson-name{
-font-size:32px;
-font-weight:bold;
-color:#6f43ff;
-}
+/* ==========================
+   بطاقة النهاية الملونة
+========================== */
 
-.next-lesson-btn{
-width:100%;
-margin-top:25px;
-border:none;
-padding:18px;
-border-radius:20px;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-color:white;
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
+.final-card{
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#7b4cff
 );
+
+color:white;
+
+padding:45px 35px;
+
+border-radius:35px;
+
+box-shadow:
+0 20px 50px rgba(111,67,255,.30);
+
+text-align:center;
+
 }
 
+
+/* عنوان النهاية */
+
+.final-card h2{
+
+color:#ffd84d;
+
+font-size:38px;
+
+margin-bottom:25px;
+
+}
+
+
+/* نص النهاية */
+
+.final-card .success-text{
+
+color:white;
+
+}
+
+
+/* اسم الدرس القادم */
+
+.final-card .next-lesson-name{
+
+color:white;
+
+font-size:32px;
+
+font-weight:bold;
+
+}
+
+
+/* زر الدرس القادم */
+
+.final-card .next-lesson-btn{
+
+background:white;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+width:100%;
+
+margin-top:25px;
+
+padding:18px;
+
+border-radius:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+ 
 
 /* الجوال */
 
@@ -634,8 +799,10 @@ type="video/quicktime">
 </div>
 
 
+
+
 <!-- ================================================= -->
-<!-- السؤال الأول -->
+<!-- 📝 الأسئلة -->
 <!-- ================================================= -->
 
 <h2 class="section-title">
@@ -644,11 +811,24 @@ type="video/quicktime">
 
 </h2>
 
+
+<!-- ================================================= -->
+<!-- السؤال الأول -->
+<!-- ================================================= -->
+
 <div class="card question-card">
+
+<div class="question-number">
+1
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
 
 <p class="question-title">
 
-✏️ ترجم: هل أنت بخير؟
+ترجم: هل أنت بخير؟
 
 </p>
 
@@ -691,13 +871,15 @@ class="answer-result">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+2
+</div>
 
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ترجم: هل هي سعيدة؟
 
@@ -735,13 +917,15 @@ class="result-text">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+3
+</div>
 
+<div class="question-type">
 🔍 اكتشف الخطأ
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ما الكلمة الخاطئة في الجملة؟
 
@@ -793,9 +977,17 @@ class="result-text">
 
 <div class="card question-card">
 
+<div class="question-number">
+4
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
 <p class="question-title">
 
-✏️ ترجم: هل نحن بخير؟
+ترجم: هل نحن بخير؟
 
 </p>
 
@@ -829,7 +1021,7 @@ class="answer-result">
 </p>
 
 </div>
- 
+
 
 
 <!-- ================================================= -->
@@ -838,13 +1030,15 @@ class="answer-result">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+5
+</div>
 
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ترجم: هل هم سعداء؟
 
@@ -882,13 +1076,15 @@ class="result-text">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+6
+</div>
 
+<div class="question-type">
 🔍 اكتشف الخطأ
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ما الكلمة الخاطئة في الجملة؟
 
@@ -940,9 +1136,17 @@ class="result-text">
 
 <div class="card question-card">
 
+<div class="question-number">
+7
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
 <p class="question-title">
 
-✏️ ترجم: هل أنا بخير؟
+ترجم: هل أنا بخير؟
 
 </p>
 
@@ -985,13 +1189,15 @@ class="answer-result">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+8
+</div>
 
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ترجم: هل هي جميلة؟
 
@@ -1022,6 +1228,324 @@ class="result-text">
 </div>
 
 
+
+<!-- ================================================= -->
+<!-- هل تريد تمارين إضافية؟ -->
+<!-- ================================================= -->
+
+<div
+class="card"
+id="moreCard">
+
+<h2>
+
+🌟 هل ترغب في تحدٍ إضافي؟
+
+</h2>
+
+<p>
+
+• إذا كنت ترغب في التدريب أكثر، يمكنك إظهار مجموعة أخرى من التمارين.
+
+</p>
+
+<br>
+
+<button
+class="show-more-btn"
+onclick="showMoreExercises()">
+
+✨ نعم، أريد
+
+</button>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- التمارين الإضافية -->
+<!-- ================================================= -->
+
+<div
+class="card"
+id="extraExercises"
+style="display:none;">
+
+<h2>
+
+🌟 تمارين إضافية
+
+</h2>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال التاسع -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+9
+</div>
+
+<div class="question-type">
+🔍 اكتشف الخطأ
+</div>
+
+<p class="question-title">
+
+ما الكلمة الخاطئة في الجملة؟
+
+</p>
+
+<p class="question-title">
+
+We are okay?
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+We
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
+
+are
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+okay
+
+</button>
+
+<p
+id="choice6"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال العاشر -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+10
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+ترجم: هل هو بخير؟
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: بخير = fine
+
+</p>
+
+<input
+id="input4"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input4',
+'result4',
+[
+'Is he fine?'
+])">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الحادي عشر -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+11
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
+
+<p class="question-title">
+
+ترجم: هل هي جاهزة؟
+
+</p>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice7')">
+
+Is she ready?
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice7')">
+
+She is ready.
+
+</button>
+
+<p
+id="choice7"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثاني عشر -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+12
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+ترجم: هل أنتم متعبون؟
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: متعبون = tired
+
+</p>
+
+<input
+id="input5"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input5',
+'result5',
+[
+'Are you tired?'
+])">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result5"
+class="answer-result">
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================== -->
+<!-- بطاقة النهاية -->
+<!-- ========================== -->
+
+<div class="card final-card">
+
+<h2>
+
+🏆 أحسنت!
+
+</h2>
+
+<p class="success-text">
+
+لقد أنهيت هذا الدرس بنجاح.
+
+<br><br>
+
+🪙 ستحصل على <strong>5 كوينز</strong> كمكافأة لإكمال الدرس.
+
+<br><br>
+
+والآن أنت جاهز للانتقال إلى درس:
+
+<br><br>
+
+<span class="next-lesson-name">
+
+Was • Were
+
+</span>
+
+</p>
+
+<button
+class="next-lesson-btn"
+onclick="finishLesson(
+'is-am-are-part3',
+'Is • Am • Are | الأسئلة',
+'was-were-part1.html'
+)">
+
+🚀 الانتقال إلى الدرس التالي
+
+</button>
+
+</div>
+
+</div>
+
+
+ 
 
 <!-- ================================================= -->
 <!-- هل تريد تمارين إضافية؟ -->
@@ -1263,7 +1787,7 @@ class="answer-result">
       بطاقة النهاية
 ========================== -->
 
-<div class="card">
+<div class="card final-card">
 
 <h2>
 
