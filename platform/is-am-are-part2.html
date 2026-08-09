@@ -1685,22 +1685,21 @@ else{
 
 button.classList.add("wrong");
 
+button.classList.add("shake");
+
 button.innerHTML += " ✖️";
 
-result.innerHTML=
-
-'<div class="confetti">'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'<span class="star">🌟</span>'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'</div>'+
-
-'❌ لقد اخترت الإجابة الخاطئة.';
+result.innerHTML =
+"❌ لقد اخترت الإجابة الخاطئة.";
 
 result.style.color =
 "#c62828";
+
+setTimeout(function(){
+
+button.classList.remove("shake");
+
+},300);
 
 
 // إظهار الإجابة الصحيحة
