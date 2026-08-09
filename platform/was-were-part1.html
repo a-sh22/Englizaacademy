@@ -271,11 +271,19 @@ display:flex;
 
 flex-wrap:wrap;
 
-gap:12px;
+justify-content:center;
 
-margin-top:20px;
+align-items:center;
 
-margin-bottom:20px;
+gap:16px;
+
+row-gap:18px;
+
+margin-top:25px;
+
+margin-bottom:25px;
+
+padding:10px 5px;
 
 }
 
@@ -288,9 +296,9 @@ color:#1f3c88;
 
 border:2px solid #dce4ff;
 
-padding:14px 20px;
+padding:15px 24px;
 
-border-radius:18px;
+border-radius:20px;
 
 font-size:18px;
 
@@ -300,18 +308,29 @@ cursor:pointer;
 
 transition:.3s;
 
-}
+box-shadow:
+0 6px 16px rgba(0,0,0,.06);
 
+min-width:85px;
+
+flex:0 0 auto;
+
+}
 
 .word-btn:hover{
 
 transform:translateY(-3px);
 
 box-shadow:
-0 8px 20px rgba(0,0,0,.10);
+0 10px 22px rgba(0,0,0,.10);
 
 }
 
+.word-btn:active{
+
+transform:scale(.96);
+
+}
 
 .word-btn.selected{
 
@@ -321,20 +340,28 @@ border-color:#6f43ff;
 
 color:#6f43ff;
 
+box-shadow:
+0 8px 20px rgba(111,67,255,.15);
+
 }
 
+   
 
 .order-answer{
 
-min-height:60px;
+min-height:70px;
 
-padding:15px;
+padding:18px 20px;
 
-margin-top:20px;
+margin-top:25px;
+
+margin-bottom:18px;
 
 border:2px dashed #dce4ff;
 
-border-radius:18px;
+border-radius:20px;
+
+background:#fafbff;
 
 font-size:20px;
 
@@ -344,12 +371,23 @@ color:#555;
 
 line-height:1.8;
 
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
 }
+   
 
 
 .clear-order-btn{
 
-margin-top:12px;
+margin-top:0 !important;
+
+margin-bottom:15px;
 
 background:#f5f7ff !important;
 
@@ -357,9 +395,9 @@ color:#1f3c88 !important;
 
 border:2px solid #dce4ff !important;
 
-padding:12px 20px !important;
+padding:13px 22px !important;
 
-border-radius:16px !important;
+border-radius:18px !important;
 
 font-size:16px !important;
 
@@ -367,6 +405,15 @@ box-shadow:none !important;
 
 }
 
+.clear-order-btn:hover{
+
+background:#eee9ff !important;
+
+border-color:#cfc2ff !important;
+
+}
+
+   
 
 /* الجوال */
 
@@ -402,13 +449,31 @@ font-size:16px;
 
 }
 
+
+
+.word-order-container{
+
+gap:14px;
+
+row-gap:16px;
+
+padding:12px 5px;
+
+}
+
 .word-btn{
+
+padding:13px 18px;
 
 font-size:16px;
 
-padding:12px 16px;
+min-width:80px;
+
+border-radius:18px;
 
 }
+   
+   
 
 .order-answer{
 
@@ -1062,6 +1127,113 @@ line-height:2.2;
 
 }
 
+
+/* ==========================
+   بطاقة النهاية - الشكل النهائي
+========================== */
+
+.card.final-card{
+
+background:linear-gradient(
+135deg,
+#6f43ff,
+#8b5cf6
+) !important;
+
+color:white;
+
+padding:45px 35px;
+
+border-radius:35px;
+
+box-shadow:
+0 20px 50px rgba(111,67,255,.30);
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.card.final-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 25px 55px rgba(111,67,255,.35);
+
+}
+
+.card.final-card h2{
+
+color:#ffd84d;
+
+font-size:38px;
+
+margin-bottom:25px;
+
+}
+
+.card.final-card .success-text{
+
+color:white;
+
+font-size:24px;
+
+line-height:2.4;
+
+}
+
+.card.final-card .next-lesson-name{
+
+color:white;
+
+font-size:32px;
+
+font-weight:bold;
+
+}
+
+.card.final-card .next-lesson-btn{
+
+width:100%;
+
+margin-top:25px;
+
+padding:18px;
+
+border-radius:20px;
+
+background:white;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+font-size:20px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.card.final-card .next-lesson-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 16px 35px rgba(0,0,0,.18);
+
+}
+
+
+
+
+   
  /* ==========================
    حركة ظهور النتيجة
 ========================== */
@@ -1248,7 +1420,121 @@ object-fit:cover;
 border-radius:35px;
 }
 
- 
+
+
+/* ==========================
+   عنوان قسم التمارين
+========================== */
+
+.practice-header{
+
+background:linear-gradient(
+135deg,
+#ffffff,
+#f8f6ff
+);
+
+border-radius:30px;
+
+padding:25px 30px;
+
+margin:45px 0 30px;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.07);
+
+border:1px solid #eee9ff;
+
+}
+
+.practice-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+background:#eee9ff;
+
+box-shadow:
+0 8px 20px rgba(111,67,255,.12);
+
+}
+
+.practice-header h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin:0 0 5px;
+
+}
+
+.practice-header p{
+
+font-size:18px;
+
+color:#777;
+
+margin:0;
+
+line-height:1.7;
+
+}
+
+@media(max-width:768px){
+
+.practice-header{
+
+padding:22px;
+
+gap:15px;
+
+}
+
+.practice-header h2{
+
+font-size:26px;
+
+}
+
+.practice-header p{
+
+font-size:15px;
+
+}
+
+.practice-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:26px;
+
+}
+
+}
+
+
+
+   
  </style>
  
 </head>
@@ -1345,11 +1631,25 @@ type="video/quicktime">
 <!-- 📝 الأسئلة -->
 <!-- ================================================= -->
 
-<h2 class="section-title">
+<div class="practice-header">
 
-📝 تدرب الآن
+<div class="practice-icon">
+📝
+</div>
 
+<div>
+
+<h2>
+تدرب الآن
 </h2>
+
+<p>
+اختبر فهمك للدرس من خلال مجموعة متنوعة من التمارين.
+</p>
+
+</div>
+
+</div>
 
 
 <!-- ================================================= -->
@@ -2148,59 +2448,6 @@ class="answer-result">
 
 
 
-<!-- ========================== -->
-<!-- بطاقة النهاية -->
-<!-- ========================== -->
-
-<div class="card final-card">
-
-<h2>
-
-🏆 أحسنت!
-
-</h2>
-
-<p class="success-text">
-
-🎉 أنهيت درس الجملة العادية بنجاح.
-
-<br><br>
-
-🪙 ستحصل على <strong>5 Coins</strong> كمكافأة لإكمال الدرس.
-
-<br><br>
-
-والآن أنت جاهز للانتقال إلى:
-
-<br><br>
-
-<span class="next-lesson-name">
-
-Was • Were | النفي
-
-</span>
-
-</p>
-
-<button
-class="next-lesson-btn"
-onclick="finishLesson(
-'was-were-part1',
-'Was • Were | الجملة العادية',
-'was-were-negative.html'
-)">
-
-🚀 الانتقال إلى درس النفي
-
-</button>
-
-</div>
-
-</div>
-
- 
-
-
  <!-- ==========================
      بطاقة النهاية
 ========================== -->
@@ -2249,7 +2496,8 @@ onclick="finishLesson(
 
 </div>
 
- 
+ </div>
+   
 
 <!-- JavaScript -->
 
