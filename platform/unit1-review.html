@@ -168,6 +168,351 @@ background:#ececec;
 }
 
 
+/* ==========================================================
+   هوية بطاقات أسئلة المراجعة
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+/* الخط الذهبي أعلى البطاقة */
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* رقم السؤال */
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:17px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* نوع السؤال */
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+
+/* عنوان السؤال */
+
+.question-card .question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+line-height:1.8;
+
+}
+
+
+/* المساعدة */
+
+.question-card .help-text{
+
+font-size:18px;
+
+color:#666;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
+}
+
+
+/* ترتيب الكلمات */
+
+.question-card .word-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+align-items:center;
+
+column-gap:18px;
+
+row-gap:16px;
+
+margin:25px 0;
+
+padding:12px 8px;
+
+}
+
+
+/* أزرار الكلمات */
+
+.question-card .word-btn{
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+padding:15px 24px;
+
+border-radius:20px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+}
+
+
+/* الكلمة المختارة */
+
+.selected-word{
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+padding:15px 22px;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+/* صندوق الإجابة */
+
+.question-card .answer-box{
+
+min-height:70px;
+
+background:#fafbff;
+
+border:2px dashed #b9c8ff;
+
+border-radius:22px;
+
+padding:15px 20px;
+
+margin-bottom:20px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+direction:ltr;
+
+align-items:center;
+
+}
+
+
+/* أزرار الترتيب */
+
+.question-card .sort-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:18px;
+
+flex-wrap:wrap;
+
+}
+
+
+/* زر إعادة الترتيب */
+
+.question-card .sort-buttons button:last-child{
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+}
+
+
+/* الجوال */
+
+@media(max-width:768px){
+
+.question-card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+.question-card .question-title{
+
+font-size:20px;
+
+}
+
+.question-card .help-text{
+
+font-size:16px;
+
+}
+
+.question-number{
+
+min-width:44px;
+
+height:44px;
+
+font-size:16px;
+
+}
+
+.question-card .word-container{
+
+column-gap:14px;
+
+row-gap:16px;
+
+}
+
+.question-card .word-btn{
+
+font-size:16px;
+
+padding:13px 18px;
+
+min-width:80px;
+
+}
+
+.question-card .answer-box{
+
+font-size:17px;
+
+min-height:60px;
+
+}
+
+.question-card .sort-buttons{
+
+flex-direction:column;
+
+}
+
+.question-card .sort-buttons button{
+
+width:100%;
+
+}
+
+}
+
+
+
+  
 /* مربع الكتابة */
 
 .write-box{
@@ -726,30 +1071,26 @@ class="back-btn">
 </div>
 
 
-<!-- اكتب بنفسك -->
 
-<div class="card">
+<!-- ================================================= -->
+<!-- 📝 بداية أسئلة مراجعة الوحدة -->
+<!-- ================================================= -->
 
-<h2>
+<!-- السؤال 1 - كتابة -->
 
+<div class="card question-card">
+
+<div class="question-number">
+1
+</div>
+
+<div class="question-type">
 ✏️ اكتب بنفسك
-
-</h2>
-
-<p>
-
-• حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
-😊 ترجم: أنا سعيد
+ترجم: أنا سعيد
 
 </p>
 
@@ -765,7 +1106,11 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input1','result1',['I am happy'])">
+onclick="checkWriting(
+'input1',
+'result1',
+['I am happy']
+)">
 
 ✨ أريد التحقق من إجابتي
 
@@ -779,16 +1124,214 @@ class="answer-result">
 
 </div>
 
-<hr class="question-divider">
 
+<!-- السؤال 2 - اختيار -->
 
-<!-- السؤال الثاني -->
+<div class="card question-card">
 
-<div class="question-box">
+<div class="question-number">
+2
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
 
 <p class="question-title">
 
-😴 ترجم: هو لم يكن مشغولاً
+ترجم: هل كانوا جاهزين؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+true,
+'choice2'
+)">
+
+Were they ready?
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'choice2'
+)">
+
+Was they ready?
+
+</button>
+
+</div>
+
+<p
+id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- السؤال 3 - اكتشاف الخطأ -->
+
+<div class="card question-card">
+
+<div class="question-number">
+3
+</div>
+
+<div class="question-type">
+🔎 اكتشف الخطأ وصححه
+</div>
+
+<p class="question-title">
+
+❌ He are happy.
+
+</p>
+
+<p class="help-text">
+
+ما الجملة الصحيحة؟
+
+</p>
+
+<input
+id="input6"
+class="write-box"
+placeholder="صحح الجملة">
+
+<button
+onclick="checkWriting(
+'input6',
+'result6',
+['He is happy']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result6"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- السؤال 4 - ترتيب -->
+
+<div class="card question-card">
+
+<div class="question-number">
+4
+</div>
+
+<div class="question-type">
+🧩 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة صحيحة:
+
+</p>
+
+<div
+class="word-container"
+id="words1"
+data-answer="I am happy">
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+
+happy
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+
+I
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+
+am
+
+</button>
+
+</div>
+
+<div
+class="answer-box"
+id="answerBox1">
+</div>
+
+<div class="sort-buttons">
+
+<button
+onclick="checkSentence(
+'answerBox1',
+'I am happy',
+'resultSort1'
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<button
+onclick="resetSentence(
+'words1',
+'answerBox1'
+)">
+
+🔄 إعادة الترتيب
+
+</button>
+
+</div>
+
+<p
+id="resultSort1"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- السؤال 5 - كتابة -->
+
+<div class="card question-card">
+
+<div class="question-number">
+5
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+ترجم: هو لم يكن مشغولاً
 
 </p>
 
@@ -822,198 +1365,46 @@ class="answer-result">
 
 </div>
 
-<hr class="question-divider">
 
+<!-- السؤال 6 - اختيار -->
 
-<!-- السؤال الثالث -->
+<div class="card question-card">
 
-<div class="question-box">
-
-<p class="question-title">
-
-😊 ترجم: هل كانوا سعداء؟
-
-</p>
-
-<p class="help-text">
-
-💡 للمساعدة: happy = سعداء
-
-</p>
-
-<input
-id="input3"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting('input3','result3',['Were they happy'])">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result3"
-class="answer-result">
-
-</p>
-
+<div class="question-number">
+6
 </div>
 
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🏠 ترجم: بيتنا
-
-</p>
-
-<p class="help-text">
-
-💡 للمساعدة: house = منزل
-
-</p>
-
-<input
-id="input4"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting('input4','result4',['Our house'])">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result4"
-class="answer-result">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الخامس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-⭐ ترجم: كانت جاهزة
-
-</p>
-
-<p class="help-text">
-
-💡 للمساعدة: ready = جاهزة
-
-</p>
-
-<input
-id="input5"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting('input5','result5',['She was ready'])">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result5"
-class="answer-result">
-
-</p>
-
-</div>
-
-</div>
-<!-- اختر الإجابة الصحيحة -->
-
-<div class="card">
-
-<h2>
-
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
-
-</h2>
-
-<p>
-
-• اقرأ الجملة جيداً، ثم اختر الإجابة الصحيحة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
-⭐ ترجم: هل كانوا جاهزين؟
+ترجم: لم تكن سعيدة
 
 </p>
 
 <div class="choice-container">
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice1')">
-
-Were they ready?
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice1')">
-
-Was they ready?
-
-</button>
-
-</div>
-
-<p id="choice1"
-class="result-text"></p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-⭐ ترجم: لم تكن سعيدة
-
-</p>
-
-<div class="choice-container">
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'choice6'
+)">
 
 She were not happy
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+true,
+'choice6'
+)">
 
 She was not happy
 
@@ -1021,75 +1412,26 @@ She was not happy
 
 </div>
 
-<p id="choice2"
-class="result-text"></p>
-
-</div>
-
-</div>
-
-
-
-<!-- اكتشف الخطأ -->
-
-<div class="card">
-
-<h2>
-
-🔎 اكتشف الخطأ وصححه
-
-</h2>
-
-<p>
-
-• تحتوي الجملة التالية على خطأ واحد.
-
-<br><br>
-
-• حاول معرفة الخطأ وتصحيحه بنفسك.
-
-</p>
-
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ He are happy.
-
-</p>
-
-<p class="help-text">
-
-ما الجملة الصحيحة؟
-
-</p>
-
-<input
-id="input6"
-class="write-box"
-placeholder="صحح الجملة">
-
-<button
-onclick="checkWriting('input6','result6',['He is happy'])">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
 <p
-id="result6"
-class="answer-result">
+id="choice6"
+class="result-text">
 
 </p>
 
 </div>
 
 
-<hr class="question-divider">
+<!-- السؤال 7 - اكتشاف الخطأ -->
 
+<div class="card question-card">
 
-<div class="question-box">
+<div class="question-number">
+7
+</div>
+
+<div class="question-type">
+🔎 اكتشف الخطأ وصححه
+</div>
 
 <p class="question-title">
 
@@ -1109,7 +1451,11 @@ class="write-box"
 placeholder="صحح الجملة">
 
 <button
-onclick="checkWriting('input7','result7',['They were ready'])">
+onclick="checkWriting(
+'input7',
+'result7',
+['They were ready']
+)">
 
 ✨ أريد التحقق من إجابتي
 
@@ -1123,28 +1469,18 @@ class="answer-result">
 
 </div>
 
+
+<!-- السؤال 8 - نوع الجملة -->
+
+<div class="card question-card">
+
+<div class="question-number">
+8
 </div>
 
-
-
-<!-- نوع الجملة -->
-
-<div class="card">
-
-<h2>
-
+<div class="question-type">
 🧠 ما نوع الجملة؟
-
-</h2>
-
-<p>
-
-• اختر نوع الجملة التالية.
-
-</p>
-
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
@@ -1154,172 +1490,46 @@ Were you busy?
 
 <div class="choice-container">
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'choice8'
+)">
 
 جملة عادية
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'choice8'
+)">
 
 جملة نفي
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+true,
+'choice8'
+)">
 
 سؤال
 
 </button>
 
 </div>
-
-<p id="choice3"
-class="result-text"></p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<div class="question-box">
-
-<p class="question-title">
-
-She was not ready.
-
-</p>
-
-<div class="choice-container">
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
-
-سؤال
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice4')">
-
-نفي
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
-
-جملة عادية
-
-</button>
-
-</div>
-
-<p id="choice4"
-class="result-text"></p>
-
-</div>
-
-</div>
-<!-- رتب الكلمات -->
-
-<div class="card">
-
-<h2>
-
-🧩 رتب الكلمات
-
-</h2>
-
-<p>
-
-• اضغط على الكلمات بالترتيب الصحيح لتكوين الجملة.
-
-<br><br>
-
-• إذا أردت تغيير إجابتك قبل التحقق، اضغط على زر إعادة الترتيب.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-✨ رتب الكلمات لتكوين جملة صحيحة
-
-</p>
-
-
-<div class="word-container"
-id="words1"
-data-answer="I am happy">
-
-<button class="word-btn"
-onclick="addWord(this,'answerBox1')">
-
-happy
-
-</button>
-
-<button class="word-btn"
-onclick="addWord(this,'answerBox1')">
-
-I
-
-</button>
-
-<button class="word-btn"
-onclick="addWord(this,'answerBox1')">
-
-am
-
-</button>
-
-</div>
-
-
-<div class="answer-box"
-id="answerBox1">
-
-</div>
-
-
-<div class="sort-buttons">
-
-<button
-onclick="checkSentence(
-'answerBox1',
-'I am happy',
-'resultSort1'
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-
-<button
-onclick="resetSentence(
-'words1',
-'answerBox1'
-)">
-
-🔄 إعادة الترتيب
-
-</button>
-
-</div>
-
 
 <p
-id="resultSort1"
+id="choice8"
 class="result-text">
 
 </p>
@@ -1327,38 +1537,47 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- السؤال 9 - ترتيب -->
 
+<div class="card question-card">
 
-<!-- السؤال الثاني -->
+<div class="question-number">
+9
+</div>
 
-<div class="question-box">
+<div class="question-type">
+🧩 رتب الكلمات
+</div>
 
 <p class="question-title">
 
-✨ رتب الكلمات لتكوين سؤال
+رتب الكلمات لتكوين سؤال:
 
 </p>
 
-<div class="word-container"
+<div
+class="word-container"
 id="words2"
 data-answer="Were you ready?">
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
 ready?
 
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
 Were
 
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
 you
@@ -1367,12 +1586,10 @@ you
 
 </div>
 
-
-<div class="answer-box"
+<div
+class="answer-box"
 id="answerBox2">
-
 </div>
-
 
 <div class="sort-buttons">
 
@@ -1387,7 +1604,6 @@ onclick="checkSentence(
 
 </button>
 
-
 <button
 onclick="resetSentence(
 'words2',
@@ -1400,7 +1616,6 @@ onclick="resetSentence(
 
 </div>
 
-
 <p
 id="resultSort2"
 class="result-text">
@@ -1408,37 +1623,220 @@ class="result-text">
 </p>
 
 </div>
-<hr class="question-divider">
 
-<!-- السؤال الثالث -->
 
-<div class="question-box">
+<!-- السؤال 10 - كتابة -->
+
+<div class="card question-card">
+
+<div class="question-number">
+10
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
 
 <p class="question-title">
 
-✨ رتب الكلمات لتكوين جملة في الماضي
+ترجم: هل كانوا سعداء؟
 
 </p>
 
-<div class="word-container"
+<p class="help-text">
+
+💡 للمساعدة: happy = سعداء
+
+</p>
+
+<input
+id="input3"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input3',
+'result3',
+['Were they happy']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result3"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- السؤال 11 - اختيار -->
+
+<div class="card question-card">
+
+<div class="question-number">
+11
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
+
+<p class="question-title">
+
+ترجم: كانت جاهزة
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+true,
+'choice11'
+)">
+
+She was ready
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'choice11'
+)">
+
+She were ready
+
+</button>
+
+</div>
+
+<p
+id="choice11"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- السؤال 12 - نوع الجملة -->
+
+<div class="card question-card">
+
+<div class="question-number">
+12
+</div>
+
+<div class="question-type">
+🧠 ما نوع الجملة؟
+</div>
+
+<p class="question-title">
+
+She was not ready.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'choice12'
+)">
+
+سؤال
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+true,
+'choice12'
+)">
+
+نفي
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'choice12'
+)">
+
+جملة عادية
+
+</button>
+
+</div>
+
+<p
+id="choice12"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- السؤال 13 - ترتيب -->
+
+<div class="card question-card">
+
+<div class="question-number">
+13
+</div>
+
+<div class="question-type">
+🧩 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة في الماضي:
+
+</p>
+
+<div
+class="word-container"
 id="words3"
 data-answer="They were happy">
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox3')">
 
 happy
 
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox3')">
 
 They
 
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox3')">
 
 were
@@ -1447,12 +1845,10 @@ were
 
 </div>
 
-
-<div class="answer-box"
+<div
+class="answer-box"
 id="answerBox3">
-
 </div>
-
 
 <div class="sort-buttons">
 
@@ -1467,7 +1863,6 @@ onclick="checkSentence(
 
 </button>
 
-
 <button
 onclick="resetSentence(
 'words3',
@@ -1480,7 +1875,6 @@ onclick="resetSentence(
 
 </div>
 
-
 <p
 id="resultSort3"
 class="result-text">
@@ -1488,12 +1882,62 @@ class="result-text">
 </p>
 
 </div>
-  
+
+
+<!-- السؤال 14 - كتابة -->
+
+<div class="card question-card">
+
+<div class="question-number">
+14
 </div>
 
-  </div>
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
 
-    <div class="card final-card">
+<p class="question-title">
+
+ترجم: بيتنا
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: house = منزل
+
+</p>
+
+<input
+id="input4"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input4',
+'result4',
+['Our house']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- نهاية أسئلة المراجعة -->
+<!-- ================================================= -->
+  
+<div class="card final-card">
 
 <h2>
 
@@ -1507,17 +1951,29 @@ class="result-text">
 
 <br><br>
 
-🚀 وأصبحت الآن مستعداً للانتقال إلى الوحدة الثانية.
+🪙 ستحصل على <strong>5 Coins</strong>
+كمكافأة لإكمال مراجعة الوحدة.
+
+<br><br>
+
+🚀 والآن حان وقت الانتقال إلى الوحدة الثانية.
 
 </p>
 
-<button class="next-unit-btn">
+<button
+class="next-unit-btn"
+onclick="finishReview(
+'unit1-review',
+'مراجعة الوحدة الأولى',
+'unit2.html'
+)">
 
 🚀 الانتقال إلى الوحدة الثانية
 
 </button>
 
 </div>
+    
     
 <!-- JavaScript -->
 
@@ -1910,21 +2366,6 @@ word+
 
 
 // ==========================
-// زر الوحدة الثانية
-// ==========================
-
-document
-.querySelector(".next-unit-btn")
-.addEventListener("click",function(){
-
-window.location.href =
-"unit2.html";
-
-});
-
-
-
-// ==========================
 // زر الرجوع
 // ==========================
 
@@ -1951,6 +2392,18 @@ shuffleWords("words2");
 shuffleWords("words3");
 </script>
 
-</body>
+  
+<script type="module">
 
+import {
+finishReview
+} from "./js/reward.js";
+
+window.finishReview = finishReview;
+
+</script>
+
+  
+</body>
+  
 </html>
