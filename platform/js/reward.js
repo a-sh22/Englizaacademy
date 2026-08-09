@@ -41,24 +41,66 @@ increment
 // إعدادات النظام
 // ==========================================================
 
-export const REWARDS={
+// ==========================================================
+// 🪙 أنواع المكافآت
+// ==========================================================
 
-lesson:5,
+export const REWARDS = {
 
-review:15,
+    lesson: {
+        coins: 5,
+        title: "إنهاء الدرس",
+        message: "كمكافأة لإنهاء الدرس.",
+        historyType: "lesson"
+    },
 
-unit:50,
+    unit: {
+        coins: 15,
+        title: "إكمال الوحدة",
+        message: "كمكافأة لإكمال الوحدة كاملة.",
+        historyType: "unit"
+    },
 
-daily:10,
+    review: {
+        coins: 15,
+        title: "مراجعة الوحدة",
+        message: "كمكافأة لإكمال مراجعة الوحدة.",
+        historyType: "review"
+    },
 
-game:3
+    daily: {
+        coins: 10,
+        title: "المكافأة اليومية",
+        message: "كمكافأة لإكمال المهمة اليومية.",
+        historyType: "daily"
+    },
+
+    game: {
+        coins: 3,
+        title: "اللعبة",
+        message: "كمكافأة لإكمال اللعبة.",
+        historyType: "game"
+    }
 
 };
 
 
-
 // يمنع الضغط أكثر من مرة
 let rewardRunning=false;
+
+
+
+
+// ==========================================================
+// 📌 أنواع المكافآت الموجودة في النظام
+//
+// lesson → إنهاء درس = 5 Coins
+// unit   → إكمال وحدة كاملة = 15 Coins
+// review → مراجعة وحدة = 15 Coins
+// daily  → المكافأة اليومية = 10 Coins
+// game   → إكمال لعبة = 3 Coins
+// ==========================================================
+
 
 
 
@@ -523,7 +565,12 @@ badge.textContent=value;
 // عرض نافذة المكافأة
 // ==========================================================
 
-export async function showRewardPopup(oldCoins,newCoins,reward){
+export async function showRewardPopup(
+oldCoins,
+newCoins,
+reward,
+rewardData
+){
 
 createRewardUI();
 
@@ -540,9 +587,9 @@ const button=document.getElementById("rewardBtn");
 overlay.style.display="flex";
 
 
- document.getElementById("rewardText").innerHTML=
-`لقد حصلت على <b>${reward} Coins</b> كمكافأة لإنهاء الدرس.`; 
-
+ document.getElementById("rewardText").innerHTML =
+`لقد حصلت على <b>${reward} Coins</b> ${rewardData.message}`;
+ 
 
 button.disabled=true;
 
@@ -641,7 +688,9 @@ return false;
 
 const oldCoins=data.coins || 0;
 
-const reward=REWARDS.lesson;
+const rewardData = REWARDS.lesson;
+
+const reward = rewardData.coins;
 
 const newCoins=oldCoins+reward;
 
@@ -665,7 +714,7 @@ title:lessonTitle,
 
 coins:reward,
 
-type:"lesson"
+type:rewardData.historyType
 
 });
  
@@ -678,7 +727,9 @@ oldCoins,
 
 newCoins,
 
-reward
+reward,
+
+rewardData
 
 );
 
@@ -687,6 +738,405 @@ rewardRunning=false;
 return true;
 
 }
+
+
+
+// ==========================================================
+// 🏆 إكمال الوحدة وإضافة مكافأة الوحدة
+// ==========================================================
+
+export async function completeUnit(
+
+unitId,
+
+unitTitle
+
+){
+
+if(rewardRunning){
+
+return false;
+
+}
+
+rewardRunning=true;
+
+
+// التأكد من الاتصال
+
+if(!navigator.onLine){
+
+alert("⚠️ لا يوجد اتصال بالإنترنت.");
+
+rewardRunning=false;
+
+return false;
+
+}
+
+
+// المستخدم
+
+const user=auth.currentUser;
+
+if(!user){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+
+// مرجع المستخدم
+
+const userRef=doc(
+db,
+"users",
+user.uid
+);
+
+
+// قراءة البيانات
+
+const snap=await getDoc(userRef);
+
+if(!snap.exists()){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+
+const data=snap.data();
+
+
+// سبق إكمال الوحدة
+
+if(
+
+data.completedUnits &&
+data.completedUnits.includes(unitId)
+
+){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+
+// الرصيد الحالي
+
+const oldCoins=data.coins || 0;
+
+
+// مكافأة الوحدة
+
+const rewardData = REWARDS.unit;
+
+const reward = rewardData.coins;
+
+
+// الرصيد الجديد
+
+const newCoins=
+oldCoins+reward;
+
+
+// حفظ البيانات
+
+await updateDoc(userRef,{
+
+coins:increment(reward),
+
+completedUnits:arrayUnion(unitId),
+
+lastUnit:unitId
+
+});
+
+
+// إضافة سجل المكافأة
+
+await addRewardHistory({
+
+title:unitTitle,
+
+coins:reward,
+
+type:rewardData.historyType
+
+});
+
+
+// عرض نافذة المكافأة
+
+await showRewardPopup(
+
+oldCoins,
+
+newCoins,
+
+reward,
+
+rewardData
+
+);
+
+
+rewardRunning=false;
+
+return true;
+
+}
+
+
+
+
+
+// ==========================================================
+// 🎮 إكمال اللعبة وإضافة مكافأة اللعبة
+// ==========================================================
+
+export async function completeGame(
+
+gameId,
+
+gameTitle
+
+){
+
+if(rewardRunning){
+
+return false;
+
+}
+
+rewardRunning=true;
+
+if(!navigator.onLine){
+
+alert("⚠️ لا يوجد اتصال بالإنترنت.");
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const user=auth.currentUser;
+
+if(!user){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const userRef=doc(
+db,
+"users",
+user.uid
+);
+
+const snap=await getDoc(userRef);
+
+if(!snap.exists()){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const data=snap.data();
+
+if(
+
+data.completedGames &&
+data.completedGames.includes(gameId)
+
+){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const oldCoins=data.coins || 0;
+
+const rewardData=REWARDS.game;
+
+const reward=rewardData.coins;
+
+const newCoins=
+oldCoins+reward;
+
+await updateDoc(userRef,{
+
+coins:increment(reward),
+
+completedGames:arrayUnion(gameId),
+
+lastGame:gameId
+
+});
+
+await addRewardHistory({
+
+title:gameTitle,
+
+coins:reward,
+
+type:rewardData.historyType
+
+});
+
+await showRewardPopup(
+
+oldCoins,
+
+newCoins,
+
+reward,
+
+rewardData
+
+);
+
+rewardRunning=false;
+
+return true;
+
+}
+
+
+
+
+// ==========================================================
+// 🔄 إكمال مراجعة الوحدة وإضافة مكافأة المراجعة
+// ==========================================================
+
+export async function completeReview(
+
+reviewId,
+
+reviewTitle
+
+){
+
+if(rewardRunning){
+
+return false;
+
+}
+
+rewardRunning=true;
+
+if(!navigator.onLine){
+
+alert("⚠️ لا يوجد اتصال بالإنترنت.");
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const user=auth.currentUser;
+
+if(!user){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const userRef=doc(
+db,
+"users",
+user.uid
+);
+
+const snap=await getDoc(userRef);
+
+if(!snap.exists()){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const data=snap.data();
+
+if(
+
+data.completedReviews &&
+data.completedReviews.includes(reviewId)
+
+){
+
+rewardRunning=false;
+
+return false;
+
+}
+
+const oldCoins=data.coins || 0;
+
+const rewardData=REWARDS.review;
+
+const reward=rewardData.coins;
+
+const newCoins=
+oldCoins+reward;
+
+await updateDoc(userRef,{
+
+coins:increment(reward),
+
+completedReviews:arrayUnion(reviewId),
+
+lastReview:reviewId
+
+});
+
+await addRewardHistory({
+
+title:reviewTitle,
+
+coins:reward,
+
+type:rewardData.historyType
+
+});
+
+await showRewardPopup(
+
+oldCoins,
+
+newCoins,
+
+reward,
+
+rewardData
+
+);
+
+rewardRunning=false;
+
+return true;
+
+}
+
 
 
 
