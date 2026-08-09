@@ -62,7 +62,7 @@ export const REWARDS = {
     },
 
     review: {
-        coins: 15,
+        coins: 5,
         title: "مراجعة الوحدة",
         message: "كمكافأة لإكمال مراجعة الوحدة.",
         historyType: "review"
