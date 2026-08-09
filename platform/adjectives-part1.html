@@ -149,6 +149,855 @@ margin-top:15px;
 margin-bottom:20px;
 }
 
+
+
+/* ==========================================================
+   هوية بطاقات الأسئلة
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
+animation:fadeUp .6s ease;
+
+}
+
+
+/* الخط الذهبي أعلى البطاقة */
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* رقم السؤال */
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:17px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* نوع السؤال */
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+
+/* عنوان السؤال */
+
+.question-card .question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+line-height:1.8;
+
+}
+
+
+/* المساعدة */
+
+.question-card .help-text{
+
+font-size:18px;
+
+color:#666;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
+}
+
+
+
+/* ==========================================================
+   بطاقة أفضل طريقة لحفظ الكلمات
+========================================================== */
+
+.vocabulary-method-card{
+
+padding:35px;
+
+}
+
+
+/* ==========================
+   العنوان
+========================== */
+
+.method-header{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+margin-bottom:30px;
+
+}
+
+.method-icon{
+
+width:62px;
+
+height:62px;
+
+flex-shrink:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:20px;
+
+background:#fff7df;
+
+border:2px solid #ffe39a;
+
+font-size:30px;
+
+box-shadow:
+0 8px 20px rgba(255,179,0,.10);
+
+}
+
+.method-header h2{
+
+margin:0 0 7px 0 !important;
+
+font-size:30px !important;
+
+color:#1f3c88;
+
+}
+
+.method-subtitle{
+
+margin:0 !important;
+
+font-size:17px !important;
+
+line-height:1.7 !important;
+
+font-weight:600 !important;
+
+color:#777 !important;
+
+}
+
+
+/* ==========================
+   أقسام البطاقة
+========================== */
+
+.method-section{
+
+padding:25px;
+
+border-radius:25px;
+
+margin-bottom:20px;
+
+}
+
+
+/* الطريقة الخاطئة */
+
+.wrong-method{
+
+background:#fff8f8;
+
+border:1px solid #ffe1e1;
+
+}
+
+
+/* الطريقة الصحيحة */
+
+.correct-method{
+
+background:#f7fbff;
+
+border:1px solid #dce8ff;
+
+}
+
+
+/* ==========================
+   عنوان القسم
+========================== */
+
+.section-label{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:8px 14px;
+
+border-radius:50px;
+
+font-size:15px;
+
+font-weight:bold;
+
+margin-bottom:15px;
+
+}
+
+.wrong-label{
+
+background:#ffeaea;
+
+color:#c62828;
+
+}
+
+.correct-label{
+
+background:#e9fff1;
+
+color:#0f8b4c;
+
+}
+
+
+/* ==========================
+   النص الرئيسي
+========================== */
+
+.method-main-text{
+
+font-size:21px !important;
+
+line-height:1.9 !important;
+
+font-weight:700 !important;
+
+color:#3f3f3f !important;
+
+margin-bottom:18px !important;
+
+}
+
+
+/* ==========================
+   مثال الكلمة
+========================== */
+
+.word-example{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
+
+padding:20px;
+
+background:white;
+
+border-radius:20px;
+
+border:2px solid #f0e4e4;
+
+font-size:24px;
+
+font-weight:bold;
+
+direction:ltr;
+
+}
+
+.english-word{
+
+color:#1f3c88;
+
+}
+
+.arabic-word{
+
+color:#666;
+
+direction:rtl;
+
+}
+
+.arrow{
+
+color:#ffb300;
+
+font-size:22px;
+
+}
+
+
+/* ==========================
+   صندوق التنبيه
+========================== */
+
+.warning-box{
+
+margin-top:15px;
+
+padding:15px 18px;
+
+background:#fff;
+
+border-right:4px solid #ffb300;
+
+border-radius:15px;
+
+color:#666;
+
+font-size:17px;
+
+line-height:1.8;
+
+font-weight:600;
+
+}
+
+
+/* ==========================
+   مثال الجملة
+========================== */
+
+.sentence-example{
+
+background:white;
+
+border-radius:22px;
+
+padding:24px;
+
+text-align:center;
+
+border:2px solid #dfe7ff;
+
+box-shadow:
+0 8px 20px rgba(31,60,136,.06);
+
+}
+
+.sentence-english{
+
+font-size:27px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+direction:ltr;
+
+margin-bottom:10px;
+
+}
+
+.sentence-arabic{
+
+font-size:18px;
+
+font-weight:600;
+
+color:#777;
+
+}
+
+
+/* ==========================
+   نصيحة أخيرة
+========================== */
+
+.method-tip{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-top:25px;
+
+padding:18px 20px;
+
+background:linear-gradient(
+135deg,
+#f8f6ff,
+#f1f5ff
+);
+
+border-radius:20px;
+
+border:1px solid #e3ddff;
+
+}
+
+.tip-icon{
+
+font-size:25px;
+
+flex-shrink:0;
+
+}
+
+.method-tip p{
+
+margin:0 !important;
+
+font-size:17px !important;
+
+line-height:1.9 !important;
+
+font-weight:600 !important;
+
+color:#555 !important;
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+.vocabulary-method-card{
+
+padding:24px 20px;
+
+}
+
+
+/* العنوان */
+
+.method-header{
+
+align-items:flex-start;
+
+gap:14px;
+
+margin-bottom:24px;
+
+}
+
+.method-icon{
+
+width:52px;
+
+height:52px;
+
+border-radius:17px;
+
+font-size:25px;
+
+}
+
+.method-header h2{
+
+font-size:24px !important;
+
+line-height:1.5 !important;
+
+}
+
+.method-subtitle{
+
+font-size:15px !important;
+
+line-height:1.7 !important;
+
+}
+
+
+/* الأقسام */
+
+.method-section{
+
+padding:20px 17px;
+
+border-radius:22px;
+
+margin-bottom:16px;
+
+}
+
+
+/* العنوان */
+
+.section-label{
+
+font-size:14px;
+
+padding:7px 12px;
+
+}
+
+
+/* النص */
+
+.method-main-text{
+
+font-size:18px !important;
+
+line-height:1.9 !important;
+
+margin-bottom:15px !important;
+
+}
+
+
+/* الكلمة والترجمة */
+
+.word-example{
+
+padding:17px 12px;
+
+gap:10px;
+
+font-size:21px;
+
+border-radius:18px;
+
+}
+
+
+/* التنبيه */
+
+.warning-box{
+
+font-size:15px;
+
+line-height:1.8;
+
+padding:13px 15px;
+
+}
+
+
+/* الجملة */
+
+.sentence-example{
+
+padding:20px 12px;
+
+border-radius:18px;
+
+}
+
+.sentence-english{
+
+font-size:24px;
+
+margin-bottom:8px;
+
+}
+
+.sentence-arabic{
+
+font-size:16px;
+
+}
+
+
+/* الخلاصة */
+
+.method-tip{
+
+align-items:flex-start;
+
+padding:15px;
+
+gap:11px;
+
+}
+
+.method-tip p{
+
+font-size:15px !important;
+
+line-height:1.9 !important;
+
+}
+
+}
+
+
+
+  
+/* ==========================================================
+   ترتيب الكلمات
+========================================================== */
+
+.word-order-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+align-items:center;
+
+column-gap:18px;
+
+row-gap:16px;
+
+margin-top:25px;
+
+margin-bottom:25px;
+
+padding:12px 8px;
+
+}
+
+
+/* أزرار الكلمات */
+
+.word-btn{
+
+background:#f5f7ff !important;
+
+color:#1f3c88 !important;
+
+border:2px solid #dce4ff !important;
+
+padding:15px 24px !important;
+
+border-radius:20px !important;
+
+font-size:18px !important;
+
+font-weight:bold !important;
+
+cursor:pointer;
+
+transition:.3s;
+
+min-width:85px;
+
+flex:0 0 auto;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.06);
+
+}
+
+
+/* الكلمة المختارة */
+
+.word-btn.selected{
+
+background:#eee9ff !important;
+
+border-color:#6f43ff !important;
+
+color:#6f43ff !important;
+
+}
+
+
+/* صندوق الإجابة */
+
+.order-answer{
+
+min-height:65px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:15px 20px;
+
+margin-top:20px;
+
+border:2px dashed #dce4ff;
+
+border-radius:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#555;
+
+line-height:1.8;
+
+text-align:center;
+
+background:#fafbff;
+
+}
+
+
+/* زر إعادة الترتيب */
+
+.clear-order-btn{
+
+margin-top:15px !important;
+
+background:#f5f7ff !important;
+
+color:#1f3c88 !important;
+
+border:2px solid #dce4ff !important;
+
+padding:13px 22px !important;
+
+border-radius:18px !important;
+
+font-size:16px !important;
+
+box-shadow:none !important;
+
+}
+
+
+/* الجوال */
+
+@media(max-width:768px){
+
+.question-card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+.question-card .question-title{
+
+font-size:20px;
+
+}
+
+.question-card .help-text{
+
+font-size:16px;
+
+}
+
+.question-number{
+
+min-width:44px;
+
+height:44px;
+
+font-size:16px;
+
+}
+
+.word-order-container{
+
+column-gap:14px;
+
+row-gap:16px;
+
+}
+
+.word-btn{
+
+font-size:16px !important;
+
+padding:13px 18px !important;
+
+min-width:80px;
+
+}
+
+.order-answer{
+
+font-size:18px;
+
+min-height:60px;
+
+}
+
+}
+
+
+  
 /* أزرار الإجابة */
 
 .card button{
@@ -452,417 +1301,609 @@ type="video/quicktime">
 
 </div>
 
+
 <!-- أفضل طريقة لحفظ الكلمات -->
 
-<div class="card">
+<div class="card vocabulary-method-card">
 
-<h2>
+    <div class="method-header">
 
-🌟 أفضل طريقة لحفظ الكلمات
+        <div class="method-icon">
+            🌟
+        </div>
 
-</h2>
+        <div>
+            <h2>
+                أفضل طريقة لحفظ الكلمات
+            </h2>
 
-<p>
+            <p class="method-subtitle">
+                لا تحفظ الكلمة وحدها، تعلّم كيف تستخدمها.
+            </p>
+        </div>
 
-❌ لا تحفظ الكلمة وترجمتها فقط.
+    </div>
 
-<br><br>
 
-فمثلاً:
+    <!-- الطريقة الخاطئة -->
 
-<br><br>
+    <div class="method-section wrong-method">
 
-happy = سعيد
+        <div class="section-label wrong-label">
+            ❌ الطريقة الأقل فاعلية
+        </div>
 
-<br><br>
+        <p class="method-main-text">
+            لا تحفظ الكلمة وترجمتها فقط.
+        </p>
 
-هذا وحده لا يكفي.
 
-<br><br>
+        <div class="word-example">
 
-✅ الأفضل أن تستخدم الكلمة داخل جملة.
+            <span class="english-word">
+                happy
+            </span>
 
-<br><br>
+            <span class="arrow">
+                →
+            </span>
 
-I am happy.
+            <span class="arabic-word">
+                سعيد
+            </span>
 
-<br><br>
+        </div>
 
-كلما استخدمت الكلمات داخل جمل أكثر، أصبحت اللغة أسهل وأكثر طبيعية.
 
-</p>
+        <div class="warning-box">
+
+            ⚠️ معرفة الترجمة وحدها لا تكفي لتعرف كيف تستخدم الكلمة داخل جملة.
+
+        </div>
+
+    </div>
+
+
+    <!-- الطريقة الأفضل -->
+
+    <div class="method-section correct-method">
+
+        <div class="section-label correct-label">
+            ✅ الطريقة الأفضل
+        </div>
+
+        <p class="method-main-text">
+            استخدم الكلمة داخل جملة.
+        </p>
+
+
+        <div class="sentence-example">
+
+            <div class="sentence-english">
+                I am happy.
+            </div>
+
+            <div class="sentence-arabic">
+                أنا سعيد.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- الخلاصة -->
+
+    <div class="method-tip">
+
+        <span class="tip-icon">
+            💡
+        </span>
+
+        <p>
+            كلما استخدمت الكلمات داخل جمل أكثر،
+            أصبحت اللغة أسهل وأكثر طبيعية.
+        </p>
+
+    </div>
 
 </div>
+  
 
-<!-- اختر الإجابة الصحيحة -->
 
-<div class="card">
+<!-- ================================================= -->
+<!-- السؤال الأول - اختيار -->
+<!-- ================================================= -->
 
-<h2>
+<div class="card question-card">
 
+<div class="question-number">
+1
+</div>
+
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</h2>
+<p class="question-title">
 
-<p>
-
-• اقرأ الجملة جيداً، ثم اضغط على الإجابة الصحيحة.
-
-</p>
-
-<br>
-
-<!-- السؤال الأول -->
-
-<div class="quiz-question">
-
-<p>
-
-😊 أنا جاهز.
+😊 ترجم: أنا جاهز.
 
 </p>
 
-<button class="choice-btn"
+<div class="choice-container">
+
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'result1')">
 
 I am bad
 
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'result1')">
 
 I am ready
 
 </button>
 
-<p id="result1" class="result-text"></p>
-
 </div>
 
-<hr><br>
-
-<!-- السؤال الثاني -->
-
-<div class="quiz-question">
-
-<p>
-
-😴 هي مشغولة.
+<p
+id="result1"
+class="result-text">
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'result2')">
-
-She is busy
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'result2')">
-
-She is sad
-
-</button>
-
-<p id="result2" class="result-text"></p>
-
 </div>
 
-<hr><br>
 
-<!-- السؤال الثالث -->
 
-<div class="quiz-question">
+<!-- ================================================= -->
+<!-- السؤال الثاني - كتابة -->
+<!-- ================================================= -->
 
-<p>
+<div class="card question-card">
 
-💪 هو ضعيف.
+<div class="question-number">
+2
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+😴 ترجم: هي مشغولة.
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'result3')">
+<p class="help-text">
 
-He is weak
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'result3')">
-
-He is strong
-
-</button>
-
-<p id="result3" class="result-text"></p>
-
-</div>
-
-<hr><br>
-
-<!-- السؤال الرابع -->
-
-<div class="quiz-question">
-
-<p>
-
-📦 إنه صغير.
+💡 للمساعدة: busy = مشغولة
 
 </p>
 
-<button class="choice-btn"
+<input
+id="input2"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input2',
+'result2',
+['She is busy']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result2"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثالث - ترتيب -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+3
+</div>
+
+<div class="question-type">
+🔤 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة صحيحة:
+
+</p>
+
+<p class="help-text">
+
+💡 المعنى: هو ضعيف.
+
+</p>
+
+<div
+class="word-order-container"
+id="order3">
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order3','weak')">
+
+weak
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order3','He')">
+
+He
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order3','is')">
+
+is
+
+</button>
+
+</div>
+
+<div
+class="order-answer"
+id="answer3">
+
+اضغط على الكلمات بالترتيب الصحيح
+
+</div>
+
+<button
+class="clear-order-btn"
+onclick="clearOrder('order3','answer3')">
+
+↩️ إعادة الترتيب
+
+</button>
+
+<button
+onclick="checkWordOrder(
+'order3',
+'answer3',
+'result3',
+['He','is','weak']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result3"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الرابع - اختيار -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+4
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
+
+<p class="question-title">
+
+📦 ترجم: إنه صغير.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'result4')">
 
 It is big
 
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'result4')">
 
 It is small
 
 </button>
 
-<p id="result4" class="result-text"></p>
-
 </div>
 
-</div>
-
-
-
-<!-- هل تريد تمارين إضافية -->
-
-<div class="card" id="moreCard">
-
-<h2>
-
-🌟 هل تريد تمارين إضافية؟
-
-</h2>
-
-<p>
-
-• هذه التمارين مختلفة قليلاً.
-
-<br><br>
-
-اقرأ الجملة، ثم حاول اختيار الإجابة الصحيحة بنفسك.
+<p
+id="result4"
+class="result-text">
 
 </p>
 
-<br>
+</div>
 
-<button class="show-more-btn"
-onclick="showMoreExercises()">
 
-✨ نعم، أريد
+
+<!-- ================================================= -->
+<!-- السؤال الخامس - كتابة -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+5
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+😊 ترجم: نحن سعداء.
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: happy = سعداء
+
+</p>
+
+<input
+id="input5"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input5',
+'result5',
+['We are happy']
+)">
+
+✨ أريد التحقق من إجابتي
 
 </button>
 
+<p
+id="result5"
+class="answer-result">
+
+</p>
+
 </div>
 
 
 
-<!-- التمارين الإضافية -->
+<!-- ================================================= -->
+<!-- السؤال السادس - اختيار -->
+<!-- ================================================= -->
 
-<div class="card"
-id="extraExercises"
-style="display:none;">
+<div class="card question-card">
 
-<h2>
-
-🌟 تمارين إضافية
-
-</h2>
-
-<p>
-
-• اضغط على الإجابة الصحيحة.
-
-</p>
-
-<br>
-
-<!-- السؤال الخامس -->
-
-<div class="quiz-question">
-
-<p>
-
-😊 نحن سعداء.
-
-</p>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'result5')">
-
-We are angry
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'result5')">
-
-We are happy
-
-</button>
-
-<p id="result5" class="result-text"></p>
-
+<div class="question-number">
+6
 </div>
 
-<hr><br>
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
 
-<!-- السؤال السادس -->
+<p class="question-title">
 
-<div class="quiz-question">
-
-<p>
-
-😡 هو غاضب.
+😡 ترجم: هو غاضب.
 
 </p>
 
-<button class="choice-btn"
+<div class="choice-container">
+
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'result6')">
 
 He is angry
 
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'result6')">
 
 He is bored
 
 </button>
 
-<p id="result6" class="result-text"></p>
-
 </div>
 
-<hr><br>
-
-<!-- السؤال السابع -->
-
-<div class="quiz-question">
-
-<p>
-
-🏃 هي سريعة.
+<p
+id="result6"
+class="result-text">
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'result7')">
-
-She is slow
-
-</button>
-
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'result7')">
-
-She is fast
-
-</button>
-
-<p id="result7" class="result-text"></p>
-
 </div>
 
-<hr><br>
 
-<!-- السؤال الثامن -->
 
-<div class="quiz-question">
+<!-- ================================================= -->
+<!-- السؤال السابع - ترتيب -->
+<!-- ================================================= -->
 
-<p>
+<div class="card question-card">
 
-💪 أنا قوي.
+<div class="question-number">
+7
+</div>
+
+<div class="question-type">
+🔤 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة صحيحة:
 
 </p>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'result8')">
+<p class="help-text">
 
-I am weak
+💡 المعنى: هي سريعة.
+
+</p>
+
+<div
+class="word-order-container"
+id="order7">
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order7','fast')">
+
+fast
 
 </button>
 
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'result8')">
+<button
+class="word-btn"
+onclick="selectWord(this,'order7','She')">
 
-I am strong
+She
 
 </button>
 
-<p id="result8" class="result-text"></p>
+<button
+class="word-btn"
+onclick="selectWord(this,'order7','is')">
+
+is
+
+</button>
 
 </div>
 
+<div
+class="order-answer"
+id="answer7">
+
+اضغط على الكلمات بالترتيب الصحيح
+
 </div>
+
+<button
+class="clear-order-btn"
+onclick="clearOrder('order7','answer7')">
+
+↩️ إعادة الترتيب
+
+</button>
+
+<button
+onclick="checkWordOrder(
+'order7',
+'answer7',
+'result7',
+['She','is','fast']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result7"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثامن - كتابة -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+8
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+💪 ترجم: أنا قوي.
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: strong = قوي
+
+</p>
+
+<input
+id="input8"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input8',
+'result8',
+['I am strong']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result8"
+class="answer-result">
+
+</p>
+
+</div>
+
   
-<!-- كيف ترفع مستواك بسرعة -->
-
-<div class="card">
-
-<h2>
-
-🚀 كيف ترفع مستواك بسرعة؟
-
-</h2>
-
-<p>
-
-⏰ كلما زاد وقت المذاكرة والمراجعة، زاد مستواك في اللغة الإنجليزية.
-
-<br><br>
-
-• لا يشترط أن تدرس ساعات طويلة، لكن حاول أن تكون مستمراً.
-
-<br><br>
-
-• الطالب الذي يراجع يومياً ويتدرب كثيراً، يتقدم أسرع من الطالب الذي يحفظ كثيراً ثم يتوقف.
-
-</p>
-
-</div>
-
-<!-- تقدمك -->
-
-<div class="card">
-
-<h2>
-
-⭐ تقدمك في الدرس
-
-</h2>
-
-<p>
-
-100%
-
-<br><br>
-
-📍 فيديو واحد
-
-</p>
-
-<div class="progress-bar">
-
-<div class="progress"
-style="width:100%;">
-
-</div>
-
-</div>
-
-</div>
 
 <!-- بطاقة النهاية -->
 
@@ -888,73 +1929,185 @@ style="width:100%;">
 
 </p>
 
-<button class="next-lesson-btn">
+<button
+class="next-lesson-btn"
+onclick="finishLesson(
+'unit2-lesson1-adjectives',
+'الصفات | الجزء الأول',
+'this-that-part1.html'
+)">
 
 🚀 الانتقال إلى الدرس التالي
 
 </button>
-
+  
 </div>
 
 </div>
   
 <!-- JavaScript -->
 
+
 <script>
 
-// إظهار الإجابات
+// ==========================================================
+// تنظيف النص
+// ==========================================================
 
-function showAnswer(answerId){
+function normalizeText(text){
 
-document.getElementById(answerId).style.display="block";
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/\s+/g," ")
+
+.replace(/[?.؟!,]/g,"")
+
+.replace(/’/g,"'")
+
+.replace(/'/g,"");
 
 }
 
 
-// إظهار التمارين الإضافية
 
-function showMoreExercises(){
+// ==========================================================
+// التحقق من الإجابات الكتابية
+// ==========================================================
 
-document.getElementById("extraExercises").style.display="block";
+function checkWriting(
+inputId,
+resultId,
+correctAnswers
+){
 
-document.getElementById("moreCard").style.display="none";
-
-}
-
-
-// الانتقال للدرس التالي
-
-document.querySelector(".next-lesson-btn")
-.addEventListener("click",function(){
-
-window.location.href="this-that-part1.html";
-
-});
-
-  function checkAnswer(button,isCorrect,resultId){
+let input =
+document.getElementById(inputId);
 
 let result =
 document.getElementById(resultId);
 
-let allButtons =
-button.parentElement.querySelectorAll(".choice-btn");
 
-allButtons.forEach(btn=>{
+let userAnswer =
+normalizeText(input.value);
+
+
+input.classList.remove("correct-input");
+input.classList.remove("wrong-input");
+input.classList.remove("shake");
+
+
+let answers =
+correctAnswers.map(answer =>
+normalizeText(answer)
+);
+
+
+if(answers.includes(userAnswer)){
+
+input.classList.add("correct-input");
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ لقد كتبت الإجابة الصحيحة.';
+
+
+result.style.color =
+"#0f8b4c";
+
+}
+
+else{
+
+input.classList.add("wrong-input");
+
+input.classList.add("shake");
+
+
+setTimeout(function(){
+
+input.classList.remove("shake");
+
+},300);
+
+
+result.innerHTML =
+
+"❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>"+
+"✅ إحدى الإجابات الصحيحة هي:<br><br>"+
+correctAnswers[0];
+
+
+result.style.color =
+"#c62828";
+
+}
+
+}
+
+
+
+// ==========================================================
+// أسئلة الاختيار
+// ==========================================================
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+let result =
+document.getElementById(resultId);
+
+
+let allButtons =
+button
+.parentElement
+.querySelectorAll(".choice-btn");
+
+
+allButtons.forEach(function(btn){
 
 btn.disabled=true;
 
 });
 
+
 if(isCorrect){
 
 button.classList.add("correct");
 
-button.innerHTML+=" ✔️";
+button.innerHTML += " ✔️";
 
-result.innerHTML=
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
 "✅ لقد اخترت الإجابة الصحيحة.";
 
-result.style.color="#0f8b4c";
+
+result.style.color =
+"#0f8b4c";
 
 }
 
@@ -962,20 +2115,27 @@ else{
 
 button.classList.add("wrong");
 
-button.innerHTML+=" ✖️";
+button.innerHTML += " ✖️";
 
-result.innerHTML=
+
+result.innerHTML =
 "❌ لقد اخترت الإجابة الخاطئة.";
 
-result.style.color="#c62828";
 
-allButtons.forEach(btn=>{
+result.style.color =
+"#c62828";
 
-if(btn.getAttribute("onclick").includes("true")){
+
+allButtons.forEach(function(btn){
+
+if(
+btn.getAttribute("onclick")
+.includes("true")
+){
 
 btn.classList.add("correct");
 
-btn.innerHTML+=" ✔️";
+btn.innerHTML += " ✔️";
 
 }
 
@@ -984,8 +2144,223 @@ btn.innerHTML+=" ✔️";
 }
 
 }
-  
+
+
+
+// ==========================================================
+// نظام ترتيب الكلمات
+// ==========================================================
+
+let wordOrders = {};
+
+
+
+// ==========================================================
+// اختيار كلمة
+// ==========================================================
+
+function selectWord(
+button,
+containerId,
+word
+){
+
+if(!wordOrders[containerId]){
+
+wordOrders[containerId] = [];
+
+}
+
+
+// منع اختيار الكلمة أكثر من مرة
+
+if(
+button.classList.contains("selected")
+){
+
+return;
+
+}
+
+
+// إضافة الكلمة
+
+wordOrders[containerId].push(word);
+
+button.classList.add("selected");
+
+
+// تحديث صندوق الإجابة
+
+let answerBox =
+document.getElementById(
+containerId.replace(
+"order",
+"answer"
+)
+);
+
+
+answerBox.innerHTML =
+wordOrders[containerId].join(" ");
+
+}
+
+
+
+// ==========================================================
+// إعادة ترتيب السؤال
+// ==========================================================
+
+function clearOrder(
+containerId,
+answerId
+){
+
+wordOrders[containerId] = [];
+
+
+let container =
+document.getElementById(containerId);
+
+
+let buttons =
+container.querySelectorAll(".word-btn");
+
+
+buttons.forEach(function(button){
+
+button.classList.remove("selected");
+
+button.disabled=false;
+
+});
+
+
+document.getElementById(answerId).innerHTML =
+"اضغط على الكلمات بالترتيب الصحيح";
+
+}
+
+
+
+// ==========================================================
+// التحقق من ترتيب الكلمات
+// ==========================================================
+
+function checkWordOrder(
+containerId,
+answerId,
+resultId,
+correctOrder
+){
+
+let result =
+document.getElementById(resultId);
+
+
+let userOrder =
+wordOrders[containerId] || [];
+
+
+result.innerHTML = "";
+
+
+// التأكد من اختيار جميع الكلمات
+
+if(
+userOrder.length !==
+correctOrder.length
+){
+
+result.innerHTML =
+"⚠️ رتب جميع الكلمات أولاً.";
+
+result.style.color =
+"#c62828";
+
+return;
+
+}
+
+
+// مقارنة الإجابة
+
+let isCorrect =
+userOrder.every(function(
+word,
+index
+){
+
+return normalizeText(word) ===
+normalizeText(correctOrder[index]);
+
+});
+
+
+// الإجابة الصحيحة
+
+if(isCorrect){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+"✅ أحسنت! ترتيب الجملة صحيح.";
+
+
+result.style.color =
+"#0f8b4c";
+
+
+let buttons =
+document
+.getElementById(containerId)
+.querySelectorAll(".word-btn");
+
+
+buttons.forEach(function(button){
+
+button.disabled=true;
+
+});
+
+}
+
+
+// الإجابة الخاطئة
+
+else{
+
+result.innerHTML =
+"❌ ترتيب الجملة غير صحيح. حاول مرة أخرى.";
+
+result.style.color =
+"#c62828";
+
+}
+
+}
+
 </script>
+
+
+<script type="module">
+
+import {
+finishLesson
+} from "./js/reward.js";
+
+window.finishLesson = finishLesson;
+
+</script>
+  
 
 </body>
 
