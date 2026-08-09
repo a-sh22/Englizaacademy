@@ -128,34 +128,298 @@ line-height:2.2;
 color:#4d4d4d;
 font-weight:600;
 }
- /* الأسئلة */
 
-.question-box{
-margin:55px 0;
+
+
+/* ==========================================================
+   هوية بطاقات الأسئلة
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
 }
 
-.question-title{
-font-size:24px;
+
+/* الخط الذهبي أعلى البطاقة */
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* رقم السؤال */
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:17px;
+
 font-weight:bold;
-color:#444;
-line-height:2;
-margin-bottom:25px;
+
+margin-bottom:18px;
+
 }
 
-.help-text{
-font-size:20px;
-line-height:2;
+
+/* نوع السؤال */
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+
+/* عنوان السؤال */
+
+.question-card .question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+line-height:1.8;
+
+}
+
+
+/* المساعدة */
+
+.question-card .help-text{
+
+font-size:18px;
+
 color:#666;
-margin-bottom:30px;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
 }
 
-.question-divider{
-margin:55px 0;
-border:none;
-height:1px;
-background:#e7e7e7;
+
+/* ==========================================================
+   سؤال ترتيب الجملة
+========================================================== */
+
+.word-order-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-top:20px;
+
+margin-bottom:20px;
+
 }
 
+
+.word-btn{
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+padding:14px 20px;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.word-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.10);
+
+}
+
+
+.word-btn.selected{
+
+background:#eee9ff;
+
+border-color:#6f43ff;
+
+color:#6f43ff;
+
+}
+
+
+.order-answer{
+
+min-height:60px;
+
+padding:15px;
+
+margin-top:20px;
+
+border:2px dashed #dce4ff;
+
+border-radius:18px;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#555;
+
+line-height:1.8;
+
+}
+
+
+.clear-order-btn{
+
+margin-top:12px;
+
+background:#f5f7ff !important;
+
+color:#1f3c88 !important;
+
+border:2px solid #dce4ff !important;
+
+padding:12px 20px !important;
+
+border-radius:16px !important;
+
+font-size:16px !important;
+
+box-shadow:none !important;
+
+}
+
+
+/* الجوال */
+
+@media(max-width:768px){
+
+.question-card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+.question-card .question-title{
+
+font-size:20px;
+
+}
+
+.question-card .help-text{
+
+font-size:16px;
+
+}
+
+.question-number{
+
+min-width:44px;
+
+height:44px;
+
+font-size:16px;
+
+}
+
+.word-btn{
+
+font-size:16px;
+
+padding:12px 16px;
+
+}
+
+.order-answer{
+
+font-size:18px;
+
+}
+
+}
+
+
+ 
 
 /* مربع الكتابة */
 
@@ -306,94 +570,6 @@ transform:scale(.97);
 }
 
 
-/* شريط التقدم */
-
-.progress-bar{
-width:100%;
-height:14px;
-background:#edf1ff;
-border-radius:20px;
-overflow:hidden;
-margin-top:25px;
-}
-
-.progress{
-height:100%;
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-}
-
-
-/* أزرار التنقل */
-
-.buttons{
-display:flex;
-gap:20px;
-margin-bottom:35px;
-}
-
-.prev-btn,
-.done-btn,
-.next-lesson-btn{
-
-flex:1;
-
-padding:20px;
-
-border:none;
-
-border-radius:22px;
-
-font-size:20px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-
-}
-
-.prev-btn{
-background:#f5f7ff;
-color:#1f3c88;
-border:2px solid #dce4ff;
-}
-
-.done-btn{
-background:#e8fff0;
-color:#0f8b4c;
-border:2px solid #b8ebc8;
-}
-
-.next-lesson-btn{
-width:100%;
-color:white;
-
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-}
-
-.prev-btn:hover,
-.done-btn:hover,
-.next-lesson-btn:hover{
-transform:translateY(-5px);
-box-shadow:0 18px 40px rgba(0,0,0,.18);
-}
-
-.prev-btn:active,
-.done-btn:active,
-.next-lesson-btn:active{
-transform:scale(.97);
-}
 
 
 /* بطاقة النهاية */
@@ -406,6 +582,99 @@ text-align:center;
 color:#555;
 margin-top:20px;
 }
+
+
+
+/* ==========================
+   بطاقة النهاية الملونة
+========================== */
+
+.final-card{
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#7b4cff
+);
+
+color:white;
+
+padding:45px 35px;
+
+border-radius:35px;
+
+box-shadow:
+0 20px 50px rgba(111,67,255,.30);
+
+text-align:center;
+
+}
+
+
+/* عنوان النهاية */
+
+.final-card h2{
+
+color:#ffd84d;
+
+font-size:38px;
+
+margin-bottom:25px;
+
+}
+
+
+/* نص النهاية */
+
+.final-card .success-text{
+
+color:white;
+
+}
+
+
+/* اسم الدرس القادم */
+
+.final-card .next-lesson-name{
+
+color:white;
+
+font-size:32px;
+
+font-weight:bold;
+
+}
+
+
+/* زر الدرس القادم */
+
+.final-card .next-lesson-btn{
+
+background:white;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+width:100%;
+
+margin-top:25px;
+
+padding:18px;
+
+border-radius:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
 
  
 /* ==========================
@@ -641,37 +910,6 @@ background:#ececec;
 cursor:default;
 
 opacity:.95;
-
-}
-
-/* ==========================
-   احتفال بطاقة النهاية
-========================== */
-
-.final-confetti{
-
-position:relative;
-
-height:50px;
-
-margin-bottom:15px;
-
-overflow:hidden;
-
-}
-
-
-/* النجوم */
-
-.final-star{
-
-position:absolute;
-
-font-size:30px;
-
-opacity:0;
-
-animation:finalStars 3s ease-in-out infinite;
 
 }
 
@@ -1102,30 +1340,35 @@ type="video/quicktime">
 </div>
  
 
-<!-- اكتب بنفسك -->
 
-<div class="card">
+<!-- ================================================= -->
+<!-- 📝 الأسئلة -->
+<!-- ================================================= -->
 
-<h2>
+<h2 class="section-title">
 
-✏️ اكتب بنفسك
+📝 تدرب الآن
 
 </h2>
 
-<p>
 
-• حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
+<!-- ================================================= -->
+<!-- السؤال الأول - كتابة -->
+<!-- ================================================= -->
 
-</p>
+<div class="card question-card">
 
+<div class="question-number">
+1
+</div>
 
-<!-- السؤال الأول -->
-
-<div class="question-box">
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
 
 <p class="question-title">
 
-• ترجم: كنت بخير
+ترجم: كنت بخير
 
 </p>
 
@@ -1141,67 +1384,188 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input1','result1',['I was fine'])">
+onclick="checkWriting(
+'input1',
+'result1',
+[
+'I was fine'
+])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="result1"
+<p
+id="result1"
 class="answer-result">
 
 </p>
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال الثاني -->
+<!-- ================================================= -->
+<!-- السؤال الثاني - اختيار -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
+
+<div class="question-number">
+2
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
 
 <p class="question-title">
 
-• ترجم: كانت سعيدة
+ترجم: كانوا سعداء
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice1')">
+
+They were happy
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice1')">
+
+They was happy
+
+</button>
+
+</div>
+
+<p
+id="choice1"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثالث - ترتيب -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+3
+</div>
+
+<div class="question-type">
+🔤 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة صحيحة:
 
 </p>
 
 <p class="help-text">
 
-💡 للمساعدة: سعيدة = happy
+💡 المعنى: كانت سعيدة.
 
 </p>
 
-<input
-id="input2"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
+<div
+class="word-order-container"
+id="order3">
 
 <button
-onclick="checkWriting('input2','result2',['She was happy'])">
+class="word-btn"
+onclick="selectWord(this,'order3','was')">
+
+was
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order3','happy')">
+
+happy
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order3','She')">
+
+She
+
+</button>
+
+</div>
+
+<div
+class="order-answer"
+id="answer3">
+
+اضغط على الكلمات بالترتيب الصحيح
+
+</div>
+
+<button
+class="clear-order-btn"
+onclick="clearOrder('order3','answer3')">
+
+↩️ إعادة الترتيب
+
+</button>
+
+<button
+onclick="checkWordOrder(
+'order3',
+'answer3',
+'result3',
+['She','was','happy']
+)">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="result2"
+<p
+id="result3"
 class="answer-result">
 
 </p>
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال الثالث -->
+<!-- ================================================= -->
+<!-- السؤال الرابع - كتابة -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
+
+<div class="question-number">
+4
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
 
 <p class="question-title">
 
-• ترجم: كان جاهزاً
+ترجم: كان جاهزًا
 
 </p>
 
@@ -1212,40 +1576,404 @@ class="answer-result">
 </p>
 
 <input
-id="input3"
+id="input2"
 class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input3','result3',['He was ready'])">
+onclick="checkWriting(
+'input2',
+'result4',
+[
+'He was ready'
+])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="result3"
+<p
+id="result4"
 class="answer-result">
 
 </p>
 
 </div>
 
-<hr class="question-divider">
 
 
-<!-- السؤال الرابع -->
+<!-- ================================================= -->
+<!-- السؤال الخامس - اختيار -->
+<!-- ================================================= -->
 
-<div class="question-box">
+<div class="card question-card">
+
+<div class="question-number">
+5
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
 
 <p class="question-title">
 
-• ترجم: كنا بخير
+ترجم: كنا بخير
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
+
+We were okay
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
+
+We was okay
+
+</button>
+
+</div>
+
+<p
+id="choice5"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال السادس - ترتيب -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+6
+</div>
+
+<div class="question-type">
+🔤 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة صحيحة:
 
 </p>
 
 <p class="help-text">
 
-💡 للمساعدة: بخير = okay
+💡 المعنى: كانوا في المنزل.
+
+</p>
+
+<div
+class="word-order-container"
+id="order6">
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order6','They')">
+
+They
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order6','were')">
+
+were
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order6','home')">
+
+home
+
+</button>
+
+</div>
+
+<div
+class="order-answer"
+id="answer6">
+
+اضغط على الكلمات بالترتيب الصحيح
+
+</div>
+
+<button
+class="clear-order-btn"
+onclick="clearOrder('order6','answer6')">
+
+↩️ إعادة الترتيب
+
+</button>
+
+<button
+onclick="checkWordOrder(
+'order6',
+'answer6',
+'result6',
+['They','were','home']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result6"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال السابع - كتابة -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+7
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+ترجم: كنت سعيدًا
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: سعيد = happy
+
+</p>
+
+<input
+id="input3"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input3',
+'result7',
+[
+'I was happy'
+])">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result7"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثامن - اختيار -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+8
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
+
+<p class="question-title">
+
+ترجم: كنت جاهزًا
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice8')">
+
+You were ready
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice8')">
+
+You was ready
+
+</button>
+
+</div>
+
+<p
+id="choice8"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال التاسع - ترتيب -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+9
+</div>
+
+<div class="question-type">
+🔤 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة صحيحة:
+
+</p>
+
+<p class="help-text">
+
+💡 المعنى: كانت في المدرسة.
+
+</p>
+
+<div
+class="word-order-container"
+id="order9">
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order9','She')">
+
+She
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order9','school')">
+
+school
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order9','was')">
+
+was
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order9','at')">
+
+at
+
+</button>
+
+</div>
+
+<div
+class="order-answer"
+id="answer9">
+
+اضغط على الكلمات بالترتيب الصحيح
+
+</div>
+
+<button
+class="clear-order-btn"
+onclick="clearOrder('order9','answer9')">
+
+↩️ إعادة الترتيب
+
+</button>
+
+<button
+onclick="checkWordOrder(
+'order9',
+'answer9',
+'result9',
+['She','was','at','school']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result9"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال العاشر - كتابة -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+10
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+ترجم: كانوا بخير
+
+</p>
+
+<p class="help-text">
+
+💡 للمساعدة: بخير = fine
 
 </p>
 
@@ -1255,196 +1983,272 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
-onclick="checkWriting('input4','result4',['We were okay'])">
+onclick="checkWriting(
+'input4',
+'result10',
+[
+'They were fine'
+])">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="result4"
+<p
+id="result10"
 class="answer-result">
 
 </p>
 
 </div>
 
+
+
+<!-- ================================================= -->
+<!-- السؤال الحادي عشر - اختيار -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+11
 </div>
- 
-<!-- اختر الإجابة الصحيحة -->
-<div class="card">
-<h2>
+
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
-</h2>
-<p>
-• اقرأ الجملة جيداً، ثم اختر الإجابة التي تعتقد أنها صحيحة.
-</p>
-<!-- السؤال الأول -->
-<div class="question-box">
-<p class="question-title">
-⭐ ترجم: كانوا سعداء
-</p>
-<div class="choice-container">
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice1')">
-They were happy
-</button>
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice1')">
-They was happy
-</button>
-</div>
-<p id="choice1"
-class="result-text">
-</p>
-</div>
-<hr class="question-divider">
-<!-- السؤال الثاني -->
-<div class="question-box">
-<p class="question-title">
-⭐ ترجم: كنت جاهزاً
-</p>
-<div class="choice-container">
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
-You were ready
-</button>
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
-You was ready
-</button>
-</div>
-<p id="choice2"
-class="result-text">
-</p>
-</div>
-<hr class="question-divider">
-<!-- السؤال الثالث -->
-<div class="question-box">
-<p class="question-title">
-⭐ ترجم: كنت بخير
-</p>
-<div class="choice-container">
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
-You were fine
-</button>
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
-You was fine
-</button>
-</div>
-<p id="choice3"
-class="result-text">
-</p>
-</div>
-<hr class="question-divider">
-<!-- السؤال الرابع -->
-<div class="question-box">
-<p class="question-title">
-⭐ ترجم: كنت سعيداً
-</p>
-<div class="choice-container">
-<button class="choice-btn"
-onclick="checkAnswer(this,true,'choice4')">
-I was happy
-</button>
-<button class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
-I were happy
-</button>
-</div>
-<p id="choice4"
-class="result-text">
-</p>
-</div>
 </div>
 
-<!-- تقدم الدرس -->
+<p class="question-title">
 
-<div class="card">
+ترجم: كانت سعيدة
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice11')">
+
+She was happy
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice11')">
+
+She were happy
+
+</button>
+
+</div>
+
+<p
+id="choice11"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- السؤال الثاني عشر - ترتيب -->
+<!-- ================================================= -->
+
+<div class="card question-card">
+
+<div class="question-number">
+12
+</div>
+
+<div class="question-type">
+🔤 رتب الكلمات
+</div>
+
+<p class="question-title">
+
+رتب الكلمات لتكوين جملة صحيحة:
+
+</p>
+
+<p class="help-text">
+
+💡 المعنى: كنا سعداء.
+
+</p>
+
+<div
+class="word-order-container"
+id="order12">
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order12','happy')">
+
+happy
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order12','We')">
+
+We
+
+</button>
+
+<button
+class="word-btn"
+onclick="selectWord(this,'order12','were')">
+
+were
+
+</button>
+
+</div>
+
+<div
+class="order-answer"
+id="answer12">
+
+اضغط على الكلمات بالترتيب الصحيح
+
+</div>
+
+<button
+class="clear-order-btn"
+onclick="clearOrder('order12','answer12')">
+
+↩️ إعادة الترتيب
+
+</button>
+
+<button
+onclick="checkWordOrder(
+'order12',
+'answer12',
+'result12',
+['We','were','happy']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result12"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ========================== -->
+<!-- بطاقة النهاية -->
+<!-- ========================== -->
+
+<div class="card final-card">
 
 <h2>
 
-⭐ تقدمك في الدرس
+🏆 أحسنت!
 
 </h2>
 
-<p>
-
-100%
-
-<br><br>
-
-📍 فيديو واحد
-
-</p>
-
-<div class="progress-bar">
-
-<div class="progress" style="width:100%;"></div>
-
-</div>
-
-</div>
-
-<!-- أزرار التنقل -->
-
-<div class="buttons">
-
-<button class="prev-btn">
-
-⬅️ العودة إلى Is • Am • Are | الأسئلة
-
-</button>
-
-<button class="done-btn">
-
-✅ أنهيت الدرس
-
-</button>
-
-</div>
-
- <!-- بطاقة النهاية -->
-
-<div class="card">
-
-<h2>
-
-⭐ أحسنت!
-
-</h2>
-<div class="final-confetti">
-
-<span class="final-star">✨</span>
-<span class="final-star">⭐</span>
-<span class="final-star">🌟</span>
-<span class="final-star">⭐</span>
-<span class="final-star">✨</span>
-
-</div>
- 
 <p class="success-text">
 
-🎉 أنهيت هذا الجزء بنجاح.
+🎉 أنهيت درس الجملة العادية بنجاح.
 
 <br><br>
 
-🕰️ والآن حان وقت تعلم:
+🪙 ستحصل على <strong>5 Coins</strong> كمكافأة لإكمال الدرس.
 
 <br><br>
 
-• Was • Were | النفي
+والآن أنت جاهز للانتقال إلى:
+
+<br><br>
+
+<span class="next-lesson-name">
+
+Was • Were | النفي
+
+</span>
 
 </p>
 
-<button class="next-lesson-btn">
+<button
+class="next-lesson-btn"
+onclick="finishLesson(
+'was-were-part1',
+'Was • Were | الجملة العادية',
+'was-were-negative.html'
+)">
 
 🚀 الانتقال إلى درس النفي
 
 </button>
 
 </div>
+
+</div>
+
+ 
+
+
+ <!-- ==========================
+     بطاقة النهاية
+========================== -->
+
+<div class="card final-card">
+
+<h2>
+
+🏆 أحسنت!
+
+</h2>
+
+<p class="success-text">
+
+🎉 أنهيت درس الجملة العادية بنجاح.
+
+<br><br>
+
+🪙 ستحصل على <strong>5 Coins</strong> كمكافأة لإكمال الدرس.
+
+<br><br>
+
+والآن أنت جاهز للانتقال إلى:
+
+<br><br>
+
+<span class="next-lesson-name">
+
+Was • Were | النفي
+
+</span>
+
+</p>
+
+<button
+class="next-lesson-btn"
+onclick="finishLesson(
+'was-were-part1',
+'Was • Were | الجملة العادية',
+'was-were-negative.html'
+)">
+
+🚀 الانتقال إلى درس النفي
+
+</button>
+
+</div>
+
  
 
 <!-- JavaScript -->
@@ -1628,6 +2432,207 @@ btn.innerHTML += " ✔️";
 
 
 
+
+// ==========================
+// نظام ترتيب الكلمات
+// ==========================
+
+let wordOrders = {};
+
+
+// اختيار كلمة
+
+function selectWord(button,containerId,word){
+
+if(!wordOrders[containerId]){
+
+wordOrders[containerId] = [];
+
+}
+
+
+// إذا كانت الكلمة مختارة مسبقًا
+
+if(button.classList.contains("selected")){
+
+return;
+
+}
+
+
+// إضافة الكلمة
+
+wordOrders[containerId].push(word);
+
+button.classList.add("selected");
+
+
+// تحديث الإجابة الظاهرة
+
+let answerBox =
+document.getElementById(
+containerId.replace("order","answer")
+);
+
+answerBox.innerHTML =
+wordOrders[containerId].join(" ");
+
+}
+
+
+// ==========================
+// إعادة ترتيب السؤال
+// ==========================
+
+function clearOrder(containerId,answerId){
+
+wordOrders[containerId] = [];
+
+let container =
+document.getElementById(containerId);
+
+let buttons =
+container.querySelectorAll(".word-btn");
+
+buttons.forEach(function(button){
+
+button.classList.remove("selected");
+
+});
+
+
+document.getElementById(answerId).innerHTML =
+"اضغط على الكلمات بالترتيب الصحيح";
+
+}
+
+
+// ==========================
+// التحقق من ترتيب الكلمات
+// ==========================
+
+function checkWordOrder(
+containerId,
+answerId,
+resultId,
+correctOrder
+){
+
+let result =
+document.getElementById(resultId);
+
+let userOrder =
+wordOrders[containerId] || [];
+
+
+// إزالة النتائج القديمة
+
+result.innerHTML = "";
+
+
+// التحقق من عدد الكلمات
+
+if(userOrder.length !== correctOrder.length){
+
+result.innerHTML =
+"⚠️ رتب جميع الكلمات أولاً.";
+
+result.style.color =
+"#c62828";
+
+let answerBox =
+document.getElementById(answerId);
+
+answerBox.classList.add("shake");
+
+setTimeout(function(){
+
+answerBox.classList.remove("shake");
+
+},300);
+
+return;
+
+}
+
+
+// مقارنة الترتيب
+
+let isCorrect =
+userOrder.every(function(word,index){
+
+return normalizeText(word) ===
+normalizeText(correctOrder[index]);
+
+});
+
+
+// الإجابة الصحيحة
+
+if(isCorrect){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+"✅ أحسنت! ترتيب الجملة صحيح.";
+
+result.style.color =
+"#0f8b4c";
+
+
+// تعطيل الكلمات
+
+let buttons =
+document
+.getElementById(containerId)
+.querySelectorAll(".word-btn");
+
+buttons.forEach(function(button){
+
+button.disabled = true;
+
+});
+
+}
+
+
+// الإجابة الخاطئة
+
+else{
+
+result.innerHTML =
+"❌ ترتيب الجملة غير صحيح. حاول مرة أخرى.";
+
+result.style.color =
+"#c62828";
+
+
+let answerBox =
+document.getElementById(answerId);
+
+answerBox.classList.add("shake");
+
+setTimeout(function(){
+
+answerBox.classList.remove("shake");
+
+},300);
+
+}
+
+}
+
+
+
+ 
+
 // ==========================
 // إظهار التمارين الإضافية
 // ==========================
@@ -1648,6 +2653,19 @@ document
 
 </script>
 
+
+<script type="module">
+
+import {
+finishLesson
+} from "./js/reward.js";
+
+window.finishLesson = finishLesson;
+
+</script>
+
+
+ 
 </body>
 
 </html>
