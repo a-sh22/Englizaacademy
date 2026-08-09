@@ -541,7 +541,7 @@ type="video/quicktime">
 </p>
 
 <button
-class="next-btn"
+class="next-lesson-btn"
 onclick="finishLesson(
 'letters-part3',
 'الحروف الإنجليزية A-Z | الجزء الثالث',
@@ -556,7 +556,15 @@ onclick="finishLesson(
 
 </div>
 
-<script type="module" src="./js/reward.js"></script>
+<script type="module">
+
+import {
+finishLesson
+} from "./js/reward.js";
+
+window.finishLesson = finishLesson;
+
+</script>
  
 </body>
 
