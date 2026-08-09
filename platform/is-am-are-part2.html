@@ -173,49 +173,165 @@ margin:40px 0 25px;
 }
 
 
-/* ==========================
-   بطاقة السؤال
-========================== */
+
+/* ==========================================================
+   هوية بطاقات الأسئلة
+========================================================== */
 
 .question-card{
+
 background:white;
-padding:35px;
+
+padding:30px;
+
 border-radius:30px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:25px;
-transition:.3s;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
 }
 
-.question-card:hover{
-transform:translateY(-3px);
-box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+/* الخط الذهبي أعلى البطاقة */
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
 }
 
 
-/* ==========================
-   محتوى السؤال
-========================== */
+/* رقم السؤال */
 
-.question-title{
-font-size:24px;
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:17px;
+
 font-weight:bold;
-color:#444;
+
+margin-bottom:18px;
+
+}
+
+
+/* نوع السؤال */
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
 margin-bottom:12px;
+
 }
 
-.help-text{
-font-size:20px;
-color:#666;
+
+/* عنوان السؤال */
+
+.question-card .question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
 line-height:1.8;
-margin-bottom:20px;
+
 }
 
 
-/* لم تعد نحتاج الفاصل */
+/* المساعدة */
 
-.question-divider{
-display:none;
+.question-card .help-text{
+
+font-size:18px;
+
+color:#666;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
 }
+
+
+/* الجوال */
+
+@media(max-width:768px){
+
+.question-card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+.question-card .question-title{
+
+font-size:20px;
+
+}
+
+.question-card .help-text{
+
+font-size:16px;
+
+}
+
+}
+
+
+   
 
 
 /* خانة الكتابة */
@@ -328,61 +444,83 @@ box-shadow:0 18px 40px rgba(0,0,0,.2);
 }
 
 
-/* شريط التقدم */
-
-.progress-bar{
-width:100%;
-height:14px;
-background:#edf1ff;
-border-radius:20px;
-overflow:hidden;
-margin-top:20px;
-}
-
-.progress{
-height:100%;
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-}
-
-
-/* أزرار التنقل */
-
-.buttons{
-display:flex;
-gap:20px;
-margin-bottom:35px;
-}
-
-.prev-btn,
-.done-btn{
-flex:1;
-padding:18px;
-border:none;
-border-radius:20px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.prev-btn{
-background:#f5f7ff;
-color:#1f3c88;
-border:2px solid #dce4ff;
-}
-
-.done-btn{
-background:#e8fff0;
-color:#0f8b4c;
-border:2px solid #b8ebc8;
-}
-
 
 /* بطاقة النهاية */
 
+
+
+/* ==========================
+   بطاقة النهاية الملونة
+========================== */
+
+.final-card{
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#7b4cff
+);
+
+color:white;
+
+padding:45px 35px;
+
+border-radius:35px;
+
+box-shadow:
+0 20px 50px rgba(111,67,255,.30);
+
+text-align:center;
+
+}
+
+
+/* عنوان النهاية */
+
+.final-card h2{
+
+color:#ffd84d;
+
+font-size:38px;
+
+margin-bottom:25px;
+
+}
+
+
+/* نص النهاية */
+
+.final-card .success-text{
+
+color:white;
+
+}
+
+
+/* اسم الدرس القادم */
+
+.final-card .next-lesson-name{
+
+color:white;
+
+}
+
+
+/* زر الدرس القادم */
+
+.final-card .next-lesson-btn{
+
+background:white;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+}
+
+
+   
 .success-text{
 font-size:24px;
 line-height:2.2;
@@ -698,7 +836,7 @@ type="video/quicktime">
 
 
 <!-- ================================================= -->
-<!-- السؤال الأول -->
+<!-- 📝 الأسئلة -->
 <!-- ================================================= -->
 
 <h2 class="section-title">
@@ -707,11 +845,24 @@ type="video/quicktime">
 
 </h2>
 
+
+<!-- ================================================= -->
+<!-- السؤال الأول -->
+<!-- ================================================= -->
+
 <div class="card question-card">
+
+<div class="question-number">
+1
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
 
 <p class="question-title">
 
-✏️ ترجم: أنا لست بخير
+ترجم: أنا لست بخير
 
 </p>
 
@@ -756,13 +907,15 @@ class="answer-result">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+2
+</div>
 
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ترجم: هي ليست جاهزة
 
@@ -800,13 +953,15 @@ class="result-text">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+3
+</div>
 
+<div class="question-type">
 🔍 اكتشف الخطأ
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ما الكلمة الخاطئة؟
 
@@ -858,9 +1013,17 @@ class="result-text">
 
 <div class="card question-card">
 
+<div class="question-number">
+4
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
 <p class="question-title">
 
-✏️ ترجم: نحن لسنا بخير
+ترجم: نحن لسنا بخير
 
 </p>
 
@@ -898,7 +1061,7 @@ class="answer-result">
 </p>
 
 </div>
- 
+
 
 
 <!-- ================================================= -->
@@ -907,13 +1070,15 @@ class="answer-result">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+5
+</div>
 
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ترجم: هم ليسوا بخير
 
@@ -951,13 +1116,15 @@ class="result-text">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+6
+</div>
 
+<div class="question-type">
 🔍 اكتشف الخطأ
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ما الكلمة الخاطئة؟
 
@@ -1009,9 +1176,17 @@ class="result-text">
 
 <div class="card question-card">
 
+<div class="question-number">
+7
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
 <p class="question-title">
 
-✏️ ترجم: هي ليست سعيدة
+ترجم: هي ليست سعيدة
 
 </p>
 
@@ -1058,13 +1233,15 @@ class="answer-result">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+8
+</div>
 
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ترجم: أنت لست متعباً
 
@@ -1094,7 +1271,7 @@ class="result-text">
 
 </div>
 
- 
+
 
 <!-- ================================================= -->
 <!-- السؤال التاسع -->
@@ -1102,13 +1279,15 @@ class="result-text">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+9
+</div>
 
+<div class="question-type">
 🔍 اكتشف الخطأ
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ما الكلمة الخاطئة؟
 
@@ -1160,9 +1339,17 @@ class="result-text">
 
 <div class="card question-card">
 
+<div class="question-number">
+10
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
 <p class="question-title">
 
-✏️ ترجم: هو ليس جاهزًا
+ترجم: هو ليس جاهزًا
 
 </p>
 
@@ -1209,13 +1396,15 @@ class="answer-result">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+11
+</div>
 
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ترجم: نحن لسنا جاهزين
 
@@ -1253,13 +1442,15 @@ class="result-text">
 
 <div class="card question-card">
 
-<p class="question-title">
+<div class="question-number">
+12
+</div>
 
+<div class="question-type">
 🔍 اكتشف الخطأ
+</div>
 
-</p>
-
-<p class="help-text">
+<p class="question-title">
 
 ما الكلمة الخاطئة؟
 
@@ -1303,18 +1494,19 @@ class="result-text">
 
 </div>
 
-
+   
  
 
 <!-- بطاقة النهاية -->
 
-<div class="card">
+<div class="card final-card">
 
 <h2>
 
 ⭐ أحسنت!
 
 </h2>
+   
 
 <p class="success-text">
 
@@ -1340,7 +1532,11 @@ class="result-text">
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson('is-am-are-part2','is-am-are-part3.html')">
+onclick="finishLesson(
+'is-am-are-part2',
+'Is • Am • Are | النفي',
+'is-am-are-part3.html'
+)">
 
 🚀 الانتقال إلى درس الأسئلة
 
@@ -1544,57 +1740,20 @@ document
 }
 
 
-
-// ==========================
-// زر الانتقال للدرس القادم
-// ==========================
-
-document
-.querySelector(".next-lesson-btn")
-.addEventListener("click",function(){
-
-window.location.href =
-"questions-is-am-are.html";
-
-});
+</script>
 
 
+<script type="module">
 
-// ==========================
-// زر العودة
-// ==========================
+import {
+finishLesson
+} from "./js/reward.js";
 
-document
-.querySelector(".prev-btn")
-.addEventListener("click",function(){
-
-window.location.href =
-"is-am-are-part1.html";
-
-});
-
-
-
-// ==========================
-// زر أنهيت الدرس
-// ==========================
-
-document
-.querySelector(".done-btn")
-.addEventListener("click",function(){
-
-window.scrollTo({
-
-top:document.body.scrollHeight,
-
-behavior:"smooth"
-
-});
-
-});
+window.finishLesson = finishLesson;
 
 </script>
 
 </body>
 
 </html>
+  
