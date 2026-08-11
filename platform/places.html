@@ -14,6 +14,10 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* ==========================================================
+   الأساس
+========================================================== */
+
 *{
 margin:0;
 padding:0;
@@ -231,22 +235,35 @@ word-wrap:break-word;
 
 
 /* ==========================================================
-   بطاقة تدرب الآن
+   🎯 تدرب الآن
+   نفس الهوية الصغيرة الأفقية
 ========================================================== */
 
 .practice-intro{
 
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:25px;
+
+padding:28px 35px;
+
 background:linear-gradient(
 135deg,
-#f4f7ff,
-#eee9ff
+#f7f4ff,
+#eef2ff
 );
 
-border:2px solid #dce4ff;
+border:2px solid #ddd4ff;
 
 position:relative;
 
 overflow:hidden;
+
+min-height:150px;
 
 }
 
@@ -256,17 +273,17 @@ content:"";
 
 position:absolute;
 
-width:180px;
+width:150px;
 
-height:180px;
+height:150px;
 
 border-radius:50%;
 
-background:rgba(111,67,255,.08);
+background:rgba(111,67,255,.06);
 
-top:-80px;
+top:-85px;
 
-left:-50px;
+left:-45px;
 
 }
 
@@ -276,17 +293,47 @@ content:"";
 
 position:absolute;
 
-width:130px;
+width:110px;
 
-height:130px;
+height:110px;
 
 border-radius:50%;
 
-background:rgba(55,104,255,.07);
+background:rgba(55,104,255,.05);
 
-bottom:-70px;
+bottom:-65px;
 
-right:-40px;
+right:-35px;
+
+}
+
+.practice-icon{
+
+width:72px;
+
+height:72px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#f5f1ff;
+
+border:2px solid #ddd4ff;
+
+font-size:36px;
+
+flex-shrink:0;
+
+position:relative;
+
+z-index:1;
+
+box-shadow:0 8px 20px rgba(111,67,255,.10);
 
 }
 
@@ -296,33 +343,29 @@ position:relative;
 
 z-index:1;
 
-text-align:center;
+flex:1;
 
 }
 
-.practice-icon{
+.practice-content h2{
 
-font-size:48px;
-
-margin-bottom:15px;
-
-}
-
-.practice-intro h2{
-
-justify-content:center;
+font-size:34px;
 
 color:#1f3c88;
 
-margin-bottom:15px;
+margin-bottom:8px;
 
 }
 
-.practice-intro p{
-
-color:#555;
+.practice-content p{
 
 font-size:20px;
+
+line-height:2;
+
+color:#666;
+
+margin:0;
 
 }
 
@@ -341,7 +384,7 @@ border-radius:35px;
 
 box-shadow:0 15px 40px rgba(0,0,0,.08);
 
-margin-bottom:28px;
+margin-bottom:30px;
 
 transition:.35s;
 
@@ -365,12 +408,12 @@ right:0;
 
 left:0;
 
-height:6px;
+height:7px;
 
 background:linear-gradient(
 90deg,
-#3768ff,
-#6f43ff
+#ffd45a,
+#e7ae25
 );
 
 }
@@ -383,11 +426,14 @@ box-shadow:0 22px 50px rgba(0,0,0,.12);
 
 }
 
+
+/* رقم السؤال */
+
 .question-number{
 
-width:52px;
+width:56px;
 
-height:52px;
+height:56px;
 
 border-radius:50%;
 
@@ -397,47 +443,58 @@ align-items:center;
 
 justify-content:center;
 
-background:#fff8df;
+background:#fffaf0;
 
 border:2px solid #ffe082;
 
-color:#b8860b;
+color:#c28b16;
 
-font-size:20px;
+font-size:21px;
 
 font-weight:bold;
 
 margin-bottom:22px;
 
+box-shadow:0 6px 15px rgba(218,166,45,.10);
+
 }
+
+
+/* نوع السؤال */
 
 .question-type{
 
-font-size:20px;
+font-size:21px;
 
 font-weight:bold;
 
-color:#777;
+color:#b8860b;
 
 margin-bottom:12px;
 
 }
 
+
+/* عنوان السؤال */
+
 .question-title{
 
-font-size:25px;
+font-size:26px;
 
 font-weight:bold;
 
 line-height:2;
 
-color:#1f3c88;
+color:#b8860b;
 
 margin-bottom:25px;
 
 word-wrap:break-word;
 
 }
+
+
+/* النص المساعد */
 
 .help-text{
 
@@ -490,34 +547,10 @@ box-shadow:0 0 0 6px rgba(111,67,255,.12);
 
 
 /* ==========================================================
-   النتائج
-========================================================== */
-
-.answer-result,
-.result-text{
-
-margin-top:25px;
-
-font-size:20px;
-
-font-weight:bold;
-
-line-height:2;
-
-animation:fadeResult .4s ease;
-
-word-wrap:break-word;
-
-overflow:hidden;
-
-}
-
-
-/* ==========================================================
    أزرار الأسئلة
 ========================================================== */
 
-.question-card > button{
+.question-card button{
 
 background:#f5f7ff;
 
@@ -543,11 +576,35 @@ user-select:none;
 
 }
 
-.question-card > button:hover{
+.question-card button:hover{
 
 transform:translateY(-4px);
 
 box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+
+/* ==========================================================
+   النتائج
+========================================================== */
+
+.answer-result,
+.result-text{
+
+margin-top:25px;
+
+font-size:20px;
+
+font-weight:bold;
+
+line-height:2;
+
+animation:fadeResult .4s ease;
+
+word-wrap:break-word;
+
+overflow:hidden;
 
 }
 
@@ -570,23 +627,25 @@ margin:30px 0;
 
 .word-btn{
 
-background:#f4f7ff;
+background:#f4f7ff !important;
 
-border:2px solid #dce4ff;
+border:2px solid #dce4ff !important;
 
-border-radius:18px;
+border-radius:18px !important;
 
-padding:16px 25px;
+padding:16px 25px !important;
 
-font-size:18px;
+font-size:18px !important;
 
-font-weight:bold;
+font-weight:bold !important;
 
 cursor:pointer;
 
 transition:.3s;
 
 user-select:none;
+
+color:#1f3c88 !important;
 
 }
 
@@ -642,6 +701,9 @@ font-weight:bold;
 
 }
 
+
+/* أزرار الترتيب */
+
 .sort-buttons{
 
 display:flex;
@@ -652,35 +714,9 @@ margin-top:30px;
 
 }
 
-.question-card .sort-buttons button{
+.sort-buttons button{
 
-background:#f5f7ff;
-
-color:#1f3c88;
-
-border:2px solid #dce4ff;
-
-padding:18px 28px;
-
-border-radius:22px;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(0,0,0,.10);
-
-}
-
-.question-card .sort-buttons button:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 18px 40px rgba(0,0,0,.15);
+flex:1;
 
 }
 
@@ -861,15 +897,15 @@ font-weight:bold;
 
 cursor:pointer;
 
-color:white;
+color:white !important;
 
 background:linear-gradient(
 90deg,
 #3768ff,
 #6f43ff
-);
+) !important;
 
-box-shadow:0 14px 35px rgba(0,0,0,.18);
+box-shadow:0 14px 35px rgba(0,0,0,.18) !important;
 
 transition:.3s;
 
@@ -879,13 +915,13 @@ transition:.3s;
 
 transform:translateY(-5px);
 
-box-shadow:0 20px 45px rgba(0,0,0,.22);
+box-shadow:0 20px 45px rgba(0,0,0,.22) !important;
 
 }
 
 
 /* ==========================================================
-   النجوم
+   النجوم المتطايرة
 ========================================================== */
 
 .confetti{
@@ -1047,27 +1083,69 @@ padding:30px;
 
 }
 
-.question-title{
+.question-number{
 
-font-size:20px;
+width:52px;
+
+height:52px;
+
+font-size:19px;
 
 }
 
 .question-type{
 
-font-size:17px;
+font-size:18px;
+
+}
+
+.question-title{
+
+font-size:21px;
+
+}
+
+.help-text{
+
+font-size:18px;
 
 }
 
 .practice-intro{
 
-padding:35px 25px;
+padding:24px 22px;
+
+gap:18px;
+
+min-height:125px;
 
 }
 
-.practice-intro p{
+.practice-icon{
 
-font-size:18px;
+width:60px;
+
+height:60px;
+
+font-size:30px;
+
+border-radius:18px;
+
+}
+
+.practice-content h2{
+
+font-size:27px;
+
+margin-bottom:5px;
+
+}
+
+.practice-content p{
+
+font-size:17px;
+
+line-height:1.9;
 
 }
 
@@ -1105,14 +1183,46 @@ font-size:20px;
 
 
 /* ==========================================================
-   ربط الأزرار بالنظام
+   منع مشاكل شكل الأزرار
 ========================================================== */
 
 .question-card button{
 
-user-select:none;
-
 -webkit-tap-highlight-color:transparent;
+
+}
+
+
+/* ==========================================================
+   زر الترتيب لا يتأثر بتنسيق word-btn
+========================================================== */
+
+.sort-buttons button{
+
+background:#f5f7ff !important;
+
+color:#1f3c88 !important;
+
+border:2px solid #dce4ff !important;
+
+}
+
+
+/* ==========================================================
+   زر الانتقال النهائي
+========================================================== */
+
+.final-card .next-unit-btn{
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+) !important;
+
+color:white !important;
+
+border:none !important;
 
 }
 
@@ -1187,11 +1297,13 @@ allowfullscreen>
 
 <div class="card practice-intro">
 
-<div class="practice-content">
-
 <div class="practice-icon">
+
 📝
+
 </div>
+
+<div class="practice-content">
 
 <h2>
 
@@ -1203,10 +1315,6 @@ allowfullscreen>
 
 اختبر فهمك من خلال مجموعة متنوعة من الأسئلة.
 
-<br>
-
-حاول الإجابة بنفسك أولاً، ثم تحقق من إجابتك.
-
 </p>
 
 </div>
@@ -1215,7 +1323,7 @@ allowfullscreen>
 
 
 <!-- ==========================================================
-     السؤال 1 — كتابة
+     السؤال 1
 ========================================================== -->
 
 <div class="question-card">
@@ -1266,7 +1374,7 @@ class="answer-result">
 
 
 <!-- ==========================================================
-     السؤال 2 — ترتيب
+     السؤال 2
 ========================================================== -->
 
 <div class="question-card">
@@ -1362,7 +1470,7 @@ class="result-text">
 
 
 <!-- ==========================================================
-     السؤال 3 — كتابة
+     السؤال 3
 ========================================================== -->
 
 <div class="question-card">
@@ -1413,7 +1521,7 @@ class="answer-result">
 
 
 <!-- ==========================================================
-     السؤال 4 — ترجمة
+     السؤال 4
 ========================================================== -->
 
 <div class="question-card">
@@ -1423,7 +1531,7 @@ class="answer-result">
 </div>
 
 <div class="question-type">
-🌍 ترجم بنفسك
+✏️ ترجم بنفسك
 </div>
 
 <p class="question-title">
@@ -1464,7 +1572,7 @@ class="answer-result">
 
 
 <!-- ==========================================================
-     السؤال 5 — ترتيب
+     السؤال 5
 ========================================================== -->
 
 <div class="question-card">
@@ -1560,7 +1668,7 @@ class="result-text">
 
 
 <!-- ==========================================================
-     السؤال 6 — كتابة
+     السؤال 6
 ========================================================== -->
 
 <div class="question-card">
@@ -1611,7 +1719,7 @@ class="answer-result">
 
 
 <!-- ==========================================================
-     السؤال 7 — ترجمة
+     السؤال 7
 ========================================================== -->
 
 <div class="question-card">
@@ -1621,7 +1729,7 @@ class="answer-result">
 </div>
 
 <div class="question-type">
-🌍 ترجم بنفسك
+✏️ ترجم بنفسك
 </div>
 
 <p class="question-title">
@@ -1662,7 +1770,7 @@ class="answer-result">
 
 
 <!-- ==========================================================
-     السؤال 8 — ترتيب
+     السؤال 8
 ========================================================== -->
 
 <div class="question-card">
@@ -1758,7 +1866,7 @@ class="result-text">
 
 
 <!-- ==========================================================
-     السؤال 9 — ترجمة
+     السؤال 9
 ========================================================== -->
 
 <div class="question-card">
@@ -1768,7 +1876,7 @@ class="result-text">
 </div>
 
 <div class="question-type">
-🌍 ترجم بنفسك
+✏️ ترجم بنفسك
 </div>
 
 <p class="question-title">
@@ -1809,7 +1917,7 @@ class="answer-result">
 
 
 <!-- ==========================================================
-     بطاقة تذكّر
+     تذكّر
 ========================================================== -->
 
 <div class="card remember-card">
@@ -1834,7 +1942,7 @@ class="answer-result">
 
 
 <!-- ==========================================================
-     بطاقة النهاية
+     النهاية
 ========================================================== -->
 
 <div class="card final-card">
@@ -1868,26 +1976,20 @@ class="next-unit-btn">
 
 </div>
 
+
 </div>
 
 
 <!-- ==========================================================
      JavaScript
+     بدون تغيير في منطق الأسئلة
 ========================================================== -->
 
 <script>
 
-/* ==========================================================
-   نظام المكافآت
-========================================================== */
-
-const LESSON_ID = "places";
-
-
-/* ==========================
-   تنظيف النص
-========================== */
-
+// ==========================
+// تنظيف النص
+// ==========================
 function normalizeText(text){
 
 return text
@@ -1909,10 +2011,9 @@ return text
 }
 
 
-/* ==========================
-   التحقق من الإجابات الكتابية
-========================== */
-
+// ==========================
+// التحقق من الإجابات الكتابية
+// ==========================
 function checkWriting(
 inputId,
 resultId,
@@ -1920,10 +2021,14 @@ correctAnswers
 ){
 
 let input =
-document.getElementById(inputId);
+document.getElementById(
+inputId
+);
 
 let result =
-document.getElementById(resultId);
+document.getElementById(
+resultId
+);
 
 let userAnswer =
 normalizeText(input.value);
@@ -1993,10 +2098,9 @@ result.className =
 }
 
 
-/* ==========================
-   إضافة كلمة
-========================== */
-
+// ==========================
+// إضافة كلمة
+// ==========================
 function addWord(
 button,
 answerBoxId
@@ -2028,10 +2132,9 @@ button.style.display =
 }
 
 
-/* ==========================
-   إعادة الترتيب
-========================== */
-
+// ==========================
+// إعادة الترتيب
+// ==========================
 function resetSentence(
 wordsId,
 answerBoxId
@@ -2057,10 +2160,9 @@ answerBoxId
 }
 
 
-/* ==========================
-   التحقق من ترتيب الكلمات
-========================== */
-
+// ==========================
+// التحقق من ترتيب الكلمات
+// ==========================
 function checkSentence(
 answerBoxId,
 correctSentence,
@@ -2151,10 +2253,9 @@ result.className =
 }
 
 
-/* ==========================
-   خلط الكلمات عند فتح الصفحة
-========================== */
-
+// ==========================
+// خلط الكلمات عند فتح الصفحة
+// ==========================
 function shuffleWords(
 containerId
 ){
@@ -2192,10 +2293,9 @@ shuffleWords("words2");
 shuffleWords("words3");
 
 
-/* ==========================
-   دعم زر Enter
-========================== */
-
+// ==========================
+// دعم زر Enter
+// ==========================
 document
 .querySelectorAll(
 ".write-box"
@@ -2224,10 +2324,9 @@ this.nextElementSibling.click();
 });
 
 
-/* ==========================
-   زر الانتقال للدرس التالي
-========================== */
-
+// ==========================
+// زر الانتقال للدرس التالي
+// ==========================
 document
 .querySelector(
 ".next-unit-btn"
@@ -2244,7 +2343,7 @@ if(
 typeof completeLesson === "function"
 ){
 
-await completeLesson(LESSON_ID);
+await completeLesson("places");
 
 }
 
@@ -2259,7 +2358,7 @@ error
 }
 
 window.location.href =
-"ضع-رابط-الدرس-التالي.html";
+"things.html";
 
 }
 
@@ -2267,11 +2366,14 @@ window.location.href =
 
 </script>
 
+
 <!-- نظام المكافآت -->
+
 <script
 type="module"
 src="../rewards.js">
 </script>
+
 
 </body>
 
