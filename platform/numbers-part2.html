@@ -16,11 +16,17 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* ==========================================================
+   الأساس
+========================================================== */
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+
 }
 
 body{
@@ -44,7 +50,9 @@ margin:auto;
 }
 
 
-/* الأعلى */
+/* ==========================================================
+   الأعلى
+========================================================== */
 
 .top-bar{
 
@@ -74,7 +82,8 @@ font-size:18px;
 
 font-weight:bold;
 
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
 
 transition:.3s;
 
@@ -94,12 +103,15 @@ height:80px;
 
 border-radius:50%;
 
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
 
 }
 
 
-/* العنوان */
+/* ==========================================================
+   العنوان
+========================================================== */
 
 .title{
 
@@ -130,45 +142,45 @@ margin-bottom:50px;
 }
 
 
-/* بطاقة الفيديو */
+/* ==========================================================
+   الفيديو
+========================================================== */
 
-.video-card{
+.video-box{
 
 background:white;
 
-padding:25px;
+padding:0;
 
 border-radius:35px;
 
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
 
 margin-bottom:40px;
+
+overflow:hidden;
 
 animation:fadeUp .6s ease;
 
 }
 
-  
-.video-box{
-background:white;
-padding:0;
-border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
-overflow:hidden;
-}
+.video-box video{
 
-
-  .video-box video{
 width:100%;
-display:block;
-aspect-ratio:16/9;
-object-fit:cover;
-border-radius:0;
-}
-  
 
-/* البطاقات */
+display:block;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+}
+
+
+/* ==========================================================
+   البطاقات العامة
+========================================================== */
 
 .card{
 
@@ -178,9 +190,10 @@ padding:40px;
 
 border-radius:35px;
 
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
 
-margin-bottom:40px;
+margin-bottom:35px;
 
 transition:.35s;
 
@@ -190,9 +203,10 @@ animation:fadeUp .6s ease;
 
 .card:hover{
 
-transform:translateY(-4px);
+transform:translateY(-3px);
 
-box-shadow:0 22px 50px rgba(0,0,0,.12);
+box-shadow:
+0 22px 50px rgba(0,0,0,.12);
 
 }
 
@@ -208,7 +222,7 @@ font-size:34px;
 
 color:#1f3c88;
 
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
 
@@ -225,7 +239,9 @@ color:#4d4d4d;
 }
 
 
-/* بطاقة البومة */
+/* ==========================================================
+   بطاقة البومة
+========================================================== */
 
 .tip-box{
 
@@ -241,6 +257,8 @@ gap:30px;
 
 width:150px;
 
+height:auto;
+
 flex-shrink:0;
 
 }
@@ -249,65 +267,238 @@ flex-shrink:0;
 
 flex:1;
 
-}
-
-
-/* الأسئلة */
-
-.question-box{
-
-margin:55px 0;
+min-width:0;
 
 }
 
-.question-title{
+.tip-text h2{
 
-font-size:24px;
+margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   عنوان التدريب
+========================================================== */
+
+.practice-header{
+
+background:linear-gradient(
+135deg,
+#ffffff,
+#f8f6ff
+);
+
+border-radius:30px;
+
+padding:25px 30px;
+
+margin:45px 0 30px;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.07);
+
+border:1px solid #eee9ff;
+
+}
+
+.practice-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+background:#eee9ff;
+
+box-shadow:
+0 8px 20px rgba(111,67,255,.12);
+
+flex-shrink:0;
+
+}
+
+.practice-header h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin:0 0 5px;
+
+}
+
+.practice-header p{
+
+font-size:18px;
+
+color:#777;
+
+margin:0;
+
+line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   بطاقات الأسئلة
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
+animation:fadeUp .6s ease;
+
+}
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* رقم السؤال */
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:17px;
 
 font-weight:bold;
 
-line-height:2;
-
-color:#444;
-
-margin-bottom:25px;
+margin-bottom:18px;
 
 }
+
+
+/* نوع السؤال */
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+
+/* عنوان السؤال */
+
+.question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+line-height:1.8;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+}
+
+
+/* النص المساعد */
 
 .help-text{
 
-font-size:20px;
+font-size:17px !important;
 
-line-height:2;
+line-height:1.8 !important;
 
-color:#666;
+font-weight:600 !important;
 
-margin-bottom:30px;
+color:#666 !important;
 
-}
-
-.question-divider{
-
-margin:55px 0;
-
-border:none;
-
-height:1px;
-
-background:#ececec;
+margin-bottom:18px;
 
 }
 
 
-/* مربع الكتابة */
+/* ==========================================================
+   مربع الكتابة
+========================================================== */
 
 .write-box{
 
 width:100%;
 
-padding:20px;
+padding:18px;
 
-border-radius:22px;
+border-radius:20px;
 
 border:2px solid #dce4ff;
 
@@ -317,7 +508,9 @@ outline:none;
 
 transition:.3s;
 
-margin-bottom:30px;
+margin-top:5px;
+
+margin-bottom:18px;
 
 background:white;
 
@@ -327,65 +520,64 @@ background:white;
 
 border-color:#6f43ff;
 
-box-shadow:0 0 0 6px rgba(111,67,255,.12);
+box-shadow:
+0 0 0 6px rgba(111,67,255,.12);
 
 }
 
 
-/* النتائج */
+/* ==========================================================
+   زر التحقق
+========================================================== */
 
-.answer-result,
-.result-text{
+.check-answer-btn{
 
-margin-top:25px;
+display:block;
 
-font-size:20px;
+width:100%;
 
-font-weight:bold;
+margin-top:10px;
 
-line-height:2;
+padding:17px 20px;
 
-animation:fadeResult .4s ease;
+background:linear-gradient(
+135deg,
+#f5f7ff,
+#eee9ff
+) !important;
 
-}
+color:#1f3c88 !important;
 
+border:2px solid #dce4ff !important;
 
-/* الأزرار */
+border-radius:18px !important;
 
-.card button{
-
-background:#f5f7ff;
-
-color:#1f3c88;
-
-border:2px solid #dce4ff;
-
-padding:18px 28px;
-
-border-radius:22px;
-
-font-size:18px;
+font-size:18px !important;
 
 font-weight:bold;
 
 cursor:pointer;
 
-transition:.3s;
+transition:.25s;
 
-box-shadow:0 10px 25px rgba(0,0,0,.10);
-
-}
-
-.card button:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 18px 40px rgba(0,0,0,.15);
+box-shadow:
+0 7px 20px rgba(31,60,136,.06);
 
 }
 
+.check-answer-btn:hover{
 
-/* أزرار الاختيار */
+transform:translateY(-3px);
+
+box-shadow:
+0 12px 28px rgba(31,60,136,.12);
+
+}
+
+
+/* ==========================================================
+   أزرار الاختيار
+========================================================== */
 
 .choice-container{
 
@@ -393,9 +585,9 @@ display:flex;
 
 gap:18px;
 
-margin-top:30px;
+margin-top:25px;
 
-margin-bottom:20px;
+margin-bottom:10px;
 
 }
 
@@ -403,33 +595,35 @@ margin-bottom:20px;
 
 flex:1;
 
-padding:22px;
+padding:18px 20px;
 
-background:white;
+background:#f5f7ff !important;
 
-border:2px solid #dce4ff;
+border:2px solid #dce4ff !important;
 
-border-radius:22px;
+border-radius:20px !important;
 
-font-size:18px;
+font-size:18px !important;
 
 font-weight:bold;
 
-color:#1f3c88;
+color:#1f3c88 !important;
 
 cursor:pointer;
 
 transition:.3s;
 
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+box-shadow:
+0 7px 20px rgba(31,60,136,.05);
 
 }
 
 .choice-btn:hover{
 
-transform:translateY(-4px);
+transform:translateY(-3px);
 
-box-shadow:0 18px 40px rgba(0,0,0,.14);
+box-shadow:
+0 12px 28px rgba(31,60,136,.10);
 
 }
 
@@ -442,172 +636,41 @@ opacity:.95;
 }
 
 
-/* ترتيب الحروف */
+/* ==========================================================
+   النتائج
+========================================================== */
 
-.word-container{
+.answer-result,
+.result-text{
 
-display:flex;
+margin-top:20px;
 
-flex-wrap:wrap;
-
-gap:15px;
-
-margin:30px 0;
-
-}
-
-.word-btn{
-
-background:#f4f7ff;
-
-border:2px solid #dce4ff;
-
-border-radius:18px;
-
-padding:16px 25px;
-
-font-size:18px;
+font-size:19px;
 
 font-weight:bold;
 
-cursor:pointer;
+line-height:2;
 
-transition:.3s;
-
-}
-
-.word-btn:hover{
-
-transform:translateY(-4px);
+animation:fadeResult .4s ease;
 
 }
 
-.answer-box{
+.success-text{
 
-min-height:100px;
-
-background:#fafbff;
-
-border:2px dashed #b9c8ff;
-
-border-radius:25px;
-
-padding:20px;
-
-margin:30px 0;
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-align-items:center;
+color:#0f8b4c;
 
 }
 
-.selected-word{
+.error-text{
 
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-
-color:white;
-
-padding:16px 22px;
-
-border-radius:18px;
-
-font-size:18px;
-
-font-weight:bold;
-
-  display:flex;
-
-align-items:center;
-
-justify-content:center;
-}
-
-
-/* ترتيب الأرقام */
-
-.number-grid{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-margin:30px 0;
-
-}
-
-.number-btn{
-
-min-width:100px;
-
-}
-
-  .number-answer{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(80px,1fr));
-
-gap:15px;
-
-margin-top:35px;
-
-margin-bottom:35px;
-
-}
-
-.number-slot{
-
-height:80px;
-
-min-height:80px;
-
-background:#fafbff;
-
-border:2px dashed #b9c8ff;
-
-border-radius:20px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:18px;
-
-font-weight:bold;
-
-color:#555;
-
-}
-  
-
-/* أزرار إعادة الترتيب */
-
-.sort-buttons{
-
-display:flex;
-
-gap:20px;
-
-margin-top:30px;
+color:#c62828;
 
 }
 
 
-/* ألوان التصحيح */
+/* ==========================================================
+   ألوان التصحيح
+========================================================== */
 
 .correct-input{
 
@@ -650,7 +713,244 @@ color:#c62828 !important;
 }
 
 
-/* بطاقة النهاية */
+/* ==========================================================
+   ترتيب الحروف
+========================================================== */
+
+.word-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+align-items:center;
+
+column-gap:18px;
+
+row-gap:18px;
+
+margin:25px 0;
+
+padding:10px 5px;
+
+}
+
+.word-btn{
+
+background:#f5f7ff !important;
+
+color:#1f3c88 !important;
+
+border:2px solid #dce4ff !important;
+
+border-radius:20px !important;
+
+padding:15px 24px !important;
+
+font-size:18px !important;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 7px 18px rgba(0,0,0,.05);
+
+}
+
+.word-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 12px 25px rgba(0,0,0,.10);
+
+}
+
+.answer-box{
+
+min-height:70px;
+
+background:#fafbff;
+
+border:2px dashed #b9c8ff;
+
+border-radius:22px;
+
+padding:15px 20px;
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:19px;
+
+font-weight:bold;
+
+}
+
+.selected-word{
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+padding:14px 20px;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.12);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+/* ==========================================================
+   ترتيب الأرقام
+========================================================== */
+
+.number-grid{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+margin:25px 0;
+
+}
+
+.number-btn{
+
+background:#f5f7ff !important;
+
+color:#1f3c88 !important;
+
+border:2px solid #dce4ff !important;
+
+border-radius:20px !important;
+
+padding:15px 20px !important;
+
+font-size:18px !important;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+min-width:100px;
+
+box-shadow:
+0 7px 18px rgba(0,0,0,.05);
+
+}
+
+.number-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 12px 25px rgba(0,0,0,.10);
+
+}
+
+.number-answer{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(80px,1fr));
+
+gap:15px;
+
+margin:25px 0;
+
+}
+
+.number-slot{
+
+height:80px;
+
+min-height:80px;
+
+background:#fafbff;
+
+border:2px dashed #b9c8ff;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#555;
+
+}
+
+
+/* ==========================================================
+   أزرار الترتيب
+========================================================== */
+
+.sort-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:18px;
+
+}
+
+.sort-buttons button{
+
+flex:1;
+
+}
+
+
+/* ==========================================================
+   بطاقة النهاية
+========================================================== */
 
 .final-card{
 
@@ -670,22 +970,28 @@ font-size:42px;
 
 text-align:center;
 
+justify-content:center;
+
 }
 
 .final-text{
 
 color:white !important;
 
-font-size:24px !important;
+font-size:21px !important;
 
-line-height:2.4 !important;
+line-height:2 !important;
+
+font-weight:600 !important;
 
 text-align:center;
 
 }
 
 
-/* زر الدرس التالي */
+/* ==========================================================
+   زر الدرس التالي
+========================================================== */
 
 .next-unit-btn{
 
@@ -693,25 +999,26 @@ width:100%;
 
 padding:22px;
 
-border:none;
+border:none !important;
 
-border-radius:25px;
+border-radius:25px !important;
 
-font-size:22px;
+font-size:22px !important;
 
 font-weight:bold;
 
 cursor:pointer;
 
-color:white;
+color:white !important;
 
 background:linear-gradient(
 90deg,
 #3768ff,
 #6f43ff
-);
+) !important;
 
-box-shadow:0 14px 35px rgba(0,0,0,.18);
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
 
 transition:.3s;
 
@@ -721,27 +1028,21 @@ transition:.3s;
 
 transform:translateY(-5px);
 
-box-shadow:0 20px 45px rgba(0,0,0,.22);
+box-shadow:
+0 20px 45px rgba(0,0,0,.22);
+
+}
+
+.next-unit-btn:active{
+
+transform:scale(.97);
 
 }
 
 
-/* النجوم */
-
-.success-text{
-
-color:#0f8b4c;
-
-}
-
-.error-text{
-
-color:#c62828;
-
-}
-
-
-/* اهتزاز الخطأ */
+/* ==========================================================
+   اهتزاز الخطأ
+========================================================== */
 
 .shake{
 
@@ -760,13 +1061,16 @@ animation:shake .3s;
 }
 
 
-/* الأنيميشن */
+/* ==========================================================
+   الأنيميشن
+========================================================== */
 
 @keyframes fadeUp{
 
 from{
 
 opacity:0;
+
 transform:translateY(20px);
 
 }
@@ -774,6 +1078,7 @@ transform:translateY(20px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -785,6 +1090,7 @@ transform:translateY(0);
 from{
 
 opacity:0;
+
 transform:translateY(10px);
 
 }
@@ -792,6 +1098,7 @@ transform:translateY(10px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -799,80 +1106,23 @@ transform:translateY(0);
 }
 
 
-/* الجوال */
-
-@media(max-width:768px){
-
-.title{
-
-font-size:38px;
-
-}
-
-.subtitle{
-
-font-size:18px;
-
-}
-
-.card{
-
-padding:30px;
-
-}
-
-.card h2{
-
-font-size:28px;
-
-}
-
-.card p{
-
-font-size:17px;
-
-}
-
-.question-title{
-
-font-size:20px;
-
-}
-
-.choice-container{
-
-flex-direction:column;
-
-}
-
-.sort-buttons{
-
-flex-direction:column;
-
-}
-
-.tip-box{
-
-gap:20px;
-
-}
-
-.tip-box img{
-
-width:110px;
-
-}
-
-}
-
-
-/* النجوم المتطايرة */
+/* ==========================================================
+   النجوم
+========================================================== */
 
 .confetti{
 
 position:relative;
 
-height:0;
+width:100%;
+
+height:45px;
+
+margin-top:5px;
+
+pointer-events:none;
+
+overflow:visible;
 
 }
 
@@ -880,11 +1130,14 @@ height:0;
 
 position:absolute;
 
+bottom:0;
+
 font-size:22px;
 
 opacity:0;
 
-animation:flyStars 1.4s ease-out forwards;
+animation:
+flyStars 1.4s ease-out forwards;
 
 }
 
@@ -934,7 +1187,9 @@ animation-delay:.05s;
 
 opacity:0;
 
-transform:translateY(20px) scale(.4);
+transform:
+translateY(20px)
+scale(.4);
 
 }
 
@@ -958,16 +1213,379 @@ scale(1.3);
 }
 
 
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:20px 14px;
+
+}
+
+.title{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+line-height:2;
+
+margin-bottom:35px;
+
+}
+
+.card{
+
+padding:25px 20px;
+
+border-radius:28px;
+
+}
+
+.card h2{
+
+font-size:27px;
+
+}
+
+.card p{
+
+font-size:17px;
+
+}
+
+
+/* بطاقة البومة */
+
+.tip-box{
+
+display:flex;
+
+flex-direction:row;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+padding:5px 0;
+
+}
+
+.tip-box img{
+
+width:75px;
+
+height:auto;
+
+flex-shrink:0;
+
+}
+
+.tip-text{
+
+flex:1;
+
+min-width:0;
+
+text-align:right;
+
+}
+
+.tip-text h2{
+
+font-size:23px;
+
+line-height:1.5;
+
+margin-bottom:8px;
+
+}
+
+.tip-text p{
+
+font-size:16px !important;
+
+line-height:1.8 !important;
+
+margin:0;
+
+}
+
+
+/* عنوان التدريب */
+
+.practice-header{
+
+padding:20px;
+
+gap:14px;
+
+margin:35px 0 25px;
+
+border-radius:25px;
+
+}
+
+.practice-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:26px;
+
+border-radius:17px;
+
+}
+
+.practice-header h2{
+
+font-size:26px;
+
+}
+
+.practice-header p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+
+/* بطاقات الأسئلة */
+
+.question-card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+border-radius:27px;
+
+}
+
+.question-number{
+
+min-width:44px;
+
+height:44px;
+
+font-size:16px;
+
+}
+
+.question-title{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+.help-text{
+
+font-size:16px !important;
+
+}
+
+.choice-container{
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.choice-btn{
+
+width:100%;
+
+padding:16px !important;
+
+}
+
+.word-container{
+
+column-gap:12px;
+
+row-gap:14px;
+
+padding:10px 2px;
+
+}
+
+.word-btn{
+
+font-size:16px !important;
+
+padding:13px 17px !important;
+
+border-radius:17px !important;
+
+}
+
+.answer-box{
+
+min-height:65px;
+
+padding:13px;
+
+gap:10px;
+
+font-size:17px;
+
+}
+
+.selected-word{
+
+font-size:16px;
+
+padding:12px 16px;
+
+}
+
+.sort-buttons{
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.sort-buttons button{
+
+width:100%;
+
+}
+
+.number-grid{
+
+gap:10px;
+
+}
+
+.number-btn{
+
+min-width:75px;
+
+padding:13px 15px !important;
+
+font-size:16px !important;
+
+}
+
+.number-answer{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:10px;
+
+}
+
+.number-slot{
+
+height:65px;
+
+min-height:65px;
+
+font-size:16px;
+
+}
+
+.final-card h2{
+
+font-size:34px;
+
+}
+
+.final-text{
+
+font-size:17px !important;
+
+line-height:2 !important;
+
+}
+
+.next-unit-btn{
+
+font-size:19px !important;
+
+padding:19px;
+
+}
+
+}
+
+
+/* ==========================================================
+   الجوال الصغير جدًا
+========================================================== */
+
+@media(max-width:380px){
+
+.tip-box{
+
+gap:9px;
+
+}
+
+.tip-box img{
+
+width:68px;
+
+}
+
+.tip-text h2{
+
+font-size:21px;
+
+}
+
+.tip-text p{
+
+font-size:15px !important;
+
+}
+
+.question-card{
+
+padding:23px 17px;
+
+}
+
+.number-btn{
+
+min-width:68px;
+
+font-size:15px !important;
+
+}
+
+}
+
 </style>
 
 </head>
 
-  <body>
+<body>
 
 <div class="container">
 
 
-<!-- الأعلى -->
+<!-- ==========================================================
+     الأعلى
+========================================================== -->
 
 <div class="top-bar">
 
@@ -987,8 +1605,9 @@ class="back-btn">
 </div>
 
 
-
-<!-- العنوان -->
+<!-- ==========================================================
+     العنوان
+========================================================== -->
 
 <h1 class="title">
 
@@ -1003,8 +1622,9 @@ class="back-btn">
 </p>
 
 
-
-<!-- بطاقة الفيديو -->
+<!-- ==========================================================
+     الفيديو
+========================================================== -->
 
 <div class="video-box">
 
@@ -1022,15 +1642,13 @@ type="video/quicktime">
 </video>
 
 </div>
-  
-</div>
 
 
-<!-- نصيحة مهمة -->
+<!-- ==========================================================
+     بطاقة البومة
+========================================================== -->
 
-<div class="card">
-
-<div class="tip-box">
+<div class="card tip-box">
 
 <img src="../success.owl.PNG">
 
@@ -1038,13 +1656,13 @@ type="video/quicktime">
 
 <h2>
 
-⭐ نصيحة مهمة
+💡 سرّ التعلّم
 
 </h2>
 
 <p>
 
-لا تحاول حفظ الأرقام فقط، بل كرر قراءتها واستخدمها كثيراً.
+لا تحفظ الرقم وحده؛ كرر قراءته بصوتك، ثم حاول كتابته من الذاكرة.
 
 <br><br>
 
@@ -1056,28 +1674,51 @@ type="video/quicktime">
 
 </div>
 
+
+<!-- ==========================================================
+     تدرب الآن
+========================================================== -->
+
+<div class="practice-header">
+
+<div class="practice-icon">
+
+📝
+
 </div>
 
-  <!-- اكتب بنفسك -->
-
-<div class="card">
+<div>
 
 <h2>
 
-✏️ اكتب بنفسك
+تدرب الآن
 
 </h2>
 
 <p>
 
-• حاول الإجابة بنفسك أولاً، ثم اضغط على الزر للتأكد من إجابتك.
+اختبر فهمك من خلال أسئلة متنوعة.
 
 </p>
 
+</div>
 
-<!-- السؤال الأول -->
+</div>
 
-<div class="question-box">
+
+<!-- ==========================================================
+     السؤال 1 | كتابة
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+1
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
 
 <p class="question-title">
 
@@ -1091,6 +1732,7 @@ class="write-box"
 placeholder="اكتب إجابتك هنا">
 
 <button
+class="check-answer-btn"
 onclick="checkWriting(
 'input1',
 'result1',
@@ -1110,107 +1752,25 @@ class="answer-result">
 </div>
 
 
-<hr class="question-divider">
+<!-- ==========================================================
+     السؤال 2 | اختيار
+========================================================== -->
 
+<div class="question-card">
 
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🔢 ترجم: خمسة عشر
-
-</p>
-
-<input
-id="input2"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input2',
-'result2',
-['Fifteen']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result2"
-class="answer-result">
-
-</p>
-
+<div class="question-number">
+2
 </div>
 
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🔢 ترجم: تسعة عشر
-
-</p>
-
-<input
-id="input3"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input3',
-'result3',
-['Nineteen']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result3"
-class="answer-result">
-
-</p>
-
-</div>
-
-</div>
-
- <!-- اختر الإجابة الصحيحة -->
-
-<div class="card">
-
-<h2>
-
+<div class="question-type">
 🎯 اختر الإجابة الصحيحة
-
-</h2>
-
-<p>
-
-• اقرأ الكلمة جيداً، ثم اختر الإجابة الصحيحة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
 🔢 ما معنى:
+
+<br>
 
 Twelve
 
@@ -1245,398 +1805,25 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- ==========================================================
+     السؤال 3 | ترتيب الأرقام
+========================================================== -->
 
+<div class="question-card">
 
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🔢 ما معنى:
-
-Fourteen
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
-
-أربعة
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
-
-أربعة عشر
-
-</button>
-
+<div class="question-number">
+3
 </div>
 
-<p
-id="choice2"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🔢 ما معنى:
-
-Seventeen
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
-
-سبعة عشر
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
-
-تسعة عشر
-
-</button>
-
-</div>
-
-<p
-id="choice3"
-class="result-text">
-
-</p>
-
-</div>
-
-</div>
-
- <!-- غيّر كلمة واحدة فقط -->
-
-<div class="card">
-
-<h2>
-
-🔄 غيّر كلمة واحدة فقط
-
-</h2>
-
-<p>
-
-• اقرأ الرقم جيداً.
-
-<br><br>
-
-• غيّر كلمة واحدة فقط حتى تصبح الإجابة الجديدة صحيحة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🔢 Thirteen
-
-</p>
-
-<p class="help-text">
-
-إذا أضفت واحداً، فما الرقم الجديد؟
-
-</p>
-
-<input
-id="input4"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input4',
-'result4',
-['Fourteen']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result4"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🔢 Sixteen
-
-</p>
-
-<p class="help-text">
-
-إذا أنقصت واحداً، فما الرقم الجديد؟
-
-</p>
-
-<input
-id="input5"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input5',
-'result5',
-['Fifteen']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result5"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🔢 Eighteen
-
-</p>
-
-<p class="help-text">
-
-إذا أضفت واحداً، فما الرقم الجديد؟
-
-</p>
-
-<input
-id="input6"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input6',
-'result6',
-['Nineteen']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result6"
-class="answer-result">
-
-</p>
-
-</div>
-
-</div>
-<!-- اكتشف الخطأ وصححه -->
-
-<div class="card">
-
-<h2>
-
-🔎 اكتشف الخطأ وصححه
-
-</h2>
-
-<p>
-
-• تحتوي كل كلمة على خطأ واحد فقط.
-
-<br><br>
-
-• حاول اكتشاف الخطأ وتصحيحه بنفسك.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ Twelf
-
-</p>
-
-<input
-id="input7"
-class="write-box"
-placeholder="صحح الكلمة">
-
-<button
-onclick="checkWriting(
-'input7',
-'result7',
-['Twelve']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result7"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ Thirten
-
-</p>
-
-<input
-id="input8"
-class="write-box"
-placeholder="صحح الكلمة">
-
-<button
-onclick="checkWriting(
-'input8',
-'result8',
-['Thirteen']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result8"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ Seventen
-
-</p>
-
-<input
-id="input9"
-class="write-box"
-placeholder="صحح الكلمة">
-
-<button
-onclick="checkWriting(
-'input9',
-'result9',
-['Seventeen']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result9"
-class="answer-result">
-
-</p>
-
-</div>
-
-</div>
-
-  <!-- رتب الأرقام -->
-
-<div class="card">
-
-<h2>
-
+<div class="question-type">
 🔢 رتب الأرقام
+</div>
 
-</h2>
+<p class="question-title">
 
-<p>
-
-• اضغط على الأرقام بالترتيب الصحيح.
-
-<br><br>
-
-• استمر حتى تكمل الأرقام من Eleven إلى Nineteen.
+رتب الأرقام من Eleven إلى Nineteen:
 
 </p>
-
 
 <div
 class="number-grid"
@@ -1745,14 +1932,15 @@ id="numberAnswer">
 <div class="sort-buttons">
 
 <button
+class="check-answer-btn"
 onclick="checkNumbers()">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-
 <button
+class="check-answer-btn"
 onclick="resetNumbers()">
 
 🔄 إعادة الترتيب
@@ -1770,30 +1958,217 @@ class="result-text">
 
 </div>
 
- <!-- اختر الحرف الناقص -->
 
-<div class="card">
+<!-- ==========================================================
+     السؤال 4 | غيّر كلمة
+========================================================== -->
 
-<h2>
+<div class="question-card">
 
-🔤 اختر الحرف الناقص
+<div class="question-number">
+4
+</div>
 
-</h2>
+<div class="question-type">
+🔄 غيّر كلمة واحدة فقط
+</div>
 
-<p>
+<p class="question-title">
 
-• اقرأ الكلمة جيداً.
-
-<br><br>
-
-• اختر الحرف الصحيح لإكمال الكلمة.
+🔢 Thirteen
 
 </p>
 
+<p class="help-text">
 
-<!-- السؤال الأول -->
+إذا أضفت واحداً، فما الرقم الجديد؟
 
-<div class="question-box">
+</p>
+
+<input
+id="input4"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input4',
+'result4',
+['Fourteen']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 5 | تصحيح
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+5
+</div>
+
+<div class="question-type">
+🔎 اكتشف الخطأ وصححه
+</div>
+
+<p class="question-title">
+
+❌ Twelf
+
+</p>
+
+<input
+id="input7"
+class="write-box"
+placeholder="صحح الكلمة">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input7',
+'result7',
+['Twelve']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result7"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 6 | كتابة
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+6
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+🔢 ترجم: خمسة عشر
+
+</p>
+
+<input
+id="input2"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input2',
+'result2',
+['Fifteen']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result2"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 7 | اختيار
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+7
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
+
+<p class="question-title">
+
+🔢 ما معنى:
+
+<br>
+
+Fourteen
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+أربعة
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
+
+أربعة عشر
+
+</button>
+
+</div>
+
+<p
+id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 8 | الحرف الناقص
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+8
+</div>
+
+<div class="question-type">
+🔤 اختر الحرف الناقص
+</div>
 
 <p class="question-title">
 
@@ -1830,12 +2205,216 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- ==========================================================
+     السؤال 9 | غيّر كلمة
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+9
+</div>
+
+<div class="question-type">
+🔄 غيّر كلمة واحدة فقط
+</div>
+
+<p class="question-title">
+
+🔢 Sixteen
+
+</p>
+
+<p class="help-text">
+
+إذا أنقصت واحداً، فما الرقم الجديد؟
+
+</p>
+
+<input
+id="input5"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input5',
+'result5',
+['Fifteen']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result5"
+class="answer-result">
+
+</p>
+
+</div>
 
 
-<!-- السؤال الثاني -->
+<!-- ==========================================================
+     السؤال 10 | تصحيح
+========================================================== -->
 
-<div class="question-box">
+<div class="question-card">
+
+<div class="question-number">
+10
+</div>
+
+<div class="question-type">
+🔎 اكتشف الخطأ وصححه
+</div>
+
+<p class="question-title">
+
+❌ Thirten
+
+</p>
+
+<input
+id="input8"
+class="write-box"
+placeholder="صحح الكلمة">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input8',
+'result8',
+['Thirteen']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result8"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 11 | كتابة
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+11
+</div>
+
+<div class="question-type">
+✏️ اكتب بنفسك
+</div>
+
+<p class="question-title">
+
+🔢 ترجم: تسعة عشر
+
+</p>
+
+<input
+id="input3"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input3',
+'result3',
+['Nineteen']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result3"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 12 | اختيار
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+12
+</div>
+
+<div class="question-type">
+🎯 اختر الإجابة الصحيحة
+</div>
+
+<p class="question-title">
+
+🔢 ما معنى:
+
+<br>
+
+Seventeen
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+سبعة عشر
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+تسعة عشر
+
+</button>
+
+</div>
+
+<p
+id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 13 | الحرف الناقص
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+13
+</div>
+
+<div class="question-type">
+🔤 اختر الحرف الناقص
+</div>
 
 <p class="question-title">
 
@@ -1872,12 +2451,117 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- ==========================================================
+     السؤال 14 | غيّر كلمة
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+14
+</div>
+
+<div class="question-type">
+🔄 غيّر كلمة واحدة فقط
+</div>
+
+<p class="question-title">
+
+🔢 Eighteen
+
+</p>
+
+<p class="help-text">
+
+إذا أضفت واحداً، فما الرقم الجديد؟
+
+</p>
+
+<input
+id="input6"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input6',
+'result6',
+['Nineteen']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result6"
+class="answer-result">
+
+</p>
+
+</div>
 
 
-<!-- السؤال الثالث -->
+<!-- ==========================================================
+     السؤال 15 | تصحيح
+========================================================== -->
 
-<div class="question-box">
+<div class="question-card">
+
+<div class="question-number">
+15
+</div>
+
+<div class="question-type">
+🔎 اكتشف الخطأ وصححه
+</div>
+
+<p class="question-title">
+
+❌ Seventen
+
+</p>
+
+<input
+id="input9"
+class="write-box"
+placeholder="صحح الكلمة">
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'input9',
+'result9',
+['Seventeen']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result9"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================================================
+     السؤال 16 | الحرف الناقص
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+16
+</div>
+
+<div class="question-type">
+🔤 اختر الحرف الناقص
+</div>
 
 <p class="question-title">
 
@@ -1913,9 +2597,10 @@ class="result-text">
 
 </div>
 
-</div>
-  
- <!-- بطاقة النهاية -->
+
+<!-- ==========================================================
+     بطاقة النهاية
+========================================================== -->
 
 <div class="card final-card">
 
@@ -1939,7 +2624,8 @@ class="result-text">
 
 </p>
 
-<button class="next-unit-btn">
+<button
+class="next-unit-btn">
 
 🚀 الانتقال إلى الأرقام | الجزء الثالث
 
@@ -1950,45 +2636,63 @@ class="result-text">
 
 </div>
 
-<!-- نهاية container -->
 
-   <script>
+<!-- ==========================================================
+     JavaScript
+========================================================== -->
 
-     // ==========================
+<script>
+
+
+// ==========================
 // تنظيف النص
 // ==========================
+
 function normalizeText(text){
 
 return text
+
 .toLowerCase()
+
 .trim()
+
 .replace(/\s+/g," ")
+
 .replace(/[?.؟!,]/g,"")
+
 .replace(/’/g,"'")
 
 .replace("i'm","i am")
+
 .replace("he's","he is")
+
 .replace("she's","she is")
+
 .replace("it's","it is")
+
 .replace("that's","that is")
 
 .replace("they're","they are")
+
 .replace("you're","you are")
+
 .replace("we're","we are")
 
 .replace("isn't","is not")
+
 .replace("aren't","are not")
 
 .replace("wasn't","was not")
+
 .replace("weren't","were not");
 
 }
 
 
-
 // ==========================
 // التحقق من الأسئلة الكتابية
 // ==========================
+
 function checkWriting(
 inputId,
 resultId,
@@ -2025,11 +2729,13 @@ input.classList.add(
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ لقد كتبت الإجابة الصحيحة.';
@@ -2060,6 +2766,7 @@ input.classList.remove(
 result.innerHTML =
 
 "❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
+
 +
 correctAnswers[0];
 
@@ -2072,10 +2779,10 @@ result.className =
 }
 
 
-
 // ==========================
 // أسئلة الاختيار
 // ==========================
+
 function checkAnswer(
 button,
 isCorrect,
@@ -2114,11 +2821,13 @@ button.innerHTML +=
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
@@ -2141,7 +2850,6 @@ button.innerHTML +=
 
 
 result.innerHTML =
-
 "❌ لقد اخترت الإجابة الخاطئة.";
 
 
@@ -2177,12 +2885,12 @@ btn.innerHTML +=
 }
 
 }
-     
 
 
-      // ==========================
+// ==========================
 // إضافة رقم
 // ==========================
+
 function addNumber(
 button
 ){
@@ -2213,10 +2921,10 @@ break;
 }
 
 
-
 // ==========================
 // إعادة ترتيب الأرقام
 // ==========================
+
 function resetNumbers(){
 
 document
@@ -2230,6 +2938,7 @@ button.style.display =
 
 });
 
+
 document
 .querySelectorAll(
 "#numberAnswer .number-slot"
@@ -2240,6 +2949,7 @@ slot.innerText = "";
 
 });
 
+
 document.getElementById(
 "numberResult"
 ).innerHTML = "";
@@ -2247,10 +2957,10 @@ document.getElementById(
 }
 
 
-
 // ==========================
 // التحقق من ترتيب الأرقام
 // ==========================
+
 function checkNumbers(){
 
 let result =
@@ -2272,6 +2982,7 @@ slot.innerText
 );
 
 });
+
 
 let correctAnswer = [
 
@@ -2297,11 +3008,13 @@ JSON.stringify(correctAnswer)
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد رتبت الأرقام بطريقة صحيحة.';
@@ -2334,8 +3047,8 @@ document
 
 },300);
 
-result.innerHTML =
 
+result.innerHTML =
 "❌ ترتيب الأرقام غير صحيح.";
 
 
@@ -2347,10 +3060,10 @@ result.className =
 }
 
 
-
 // ==========================
 // دعم زر Enter
 // ==========================
+
 document
 .querySelectorAll(".write-box")
 .forEach(input=>{
@@ -2373,28 +3086,46 @@ this.nextElementSibling.click();
 });
 
 
+</script>
 
-// ==========================
-// زر الانتقال للدرس التالي
-// ==========================
+
+<!-- ==========================================================
+     نظام المكافآت + الانتقال
+========================================================== -->
+
+<script type="module">
+
+import {
+finishLesson
+} from "./js/reward.js";
+
+
+window.finishLesson =
+finishLesson;
+
+
 document
 .querySelector(".next-unit-btn")
 .addEventListener(
-
 "click",
-
 function(){
 
-window.location.href =
-"numbers-part3.html";
+finishLesson(
 
-}
+"unit2-lesson7-numbers-part2",
+
+"الأرقام | الجزء الثاني",
+
+"numbers-part3.html"
 
 );
+
+}
+);
+
 </script>
+
 
 </body>
 
 </html>
-     
-  
