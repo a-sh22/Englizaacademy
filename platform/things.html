@@ -14,7 +14,9 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* جميع العناصر */
+/* ==========================================================
+   الأساس
+========================================================== */
 
 *{
 margin:0;
@@ -22,9 +24,6 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
-
-
-/* الصفحة */
 
 body{
 
@@ -47,7 +46,9 @@ margin:auto;
 }
 
 
-/* الأعلى */
+/* ==========================================================
+   الأعلى
+========================================================== */
 
 .top-bar{
 
@@ -102,7 +103,9 @@ box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 
-/* العنوان */
+/* ==========================================================
+   العنوان
+========================================================== */
 
 .title{
 
@@ -133,49 +136,177 @@ margin-bottom:50px;
 }
 
 
-/* بطاقة الفيديو */
+/* ==========================================================
+   الفيديو
+========================================================== */
 
-.video-card{
+.video-box{
 
 background:white;
 
-padding:25px;
+padding:0;
 
 border-radius:35px;
 
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 margin-bottom:40px;
 
-animation:fadeUp .6s ease;
-
-}
-
-  
-
-.video-box{
-background:white;
-padding:0;
-border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
 overflow:hidden;
+
 }
 
-  
 .video-box video{
+
 width:100%;
+
 display:block;
+
 aspect-ratio:16/9;
+
 object-fit:cover;
+
 border-radius:0;
+
 }
 
 
-  
-/* البطاقات */
+/* ==========================================================
+   🎯 تدرب الآن
+========================================================== */
 
-.card{
+.practice-intro{
+
+display:flex;
+
+align-items:center;
+
+gap:22px;
+
+padding:22px 30px;
+
+background:white;
+
+border:2px solid #ddd4ff;
+
+border-radius:30px;
+
+box-shadow:0 12px 30px rgba(111,67,255,.08);
+
+margin-bottom:40px;
+
+position:relative;
+
+overflow:hidden;
+
+min-height:auto;
+
+}
+
+.practice-intro::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+background:rgba(111,67,255,.05);
+
+top:-70px;
+
+left:-40px;
+
+}
+
+.practice-intro::after{
+
+content:"";
+
+position:absolute;
+
+width:100px;
+
+height:100px;
+
+border-radius:50%;
+
+background:rgba(55,104,255,.04);
+
+bottom:-65px;
+
+right:-35px;
+
+}
+
+.practice-icon{
+
+width:62px;
+
+height:62px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#f5f1ff;
+
+border:2px solid #ddd4ff;
+
+font-size:30px;
+
+flex-shrink:0;
+
+position:relative;
+
+z-index:1;
+
+}
+
+.practice-content{
+
+position:relative;
+
+z-index:1;
+
+}
+
+.practice-content h2{
+
+font-size:30px;
+
+color:#1f3c88;
+
+margin-bottom:3px;
+
+}
+
+.practice-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#666;
+
+margin:0;
+
+}
+
+
+/* ==========================================================
+   بطاقات الأسئلة
+========================================================== */
+
+.question-card{
 
 background:white;
 
@@ -185,15 +316,41 @@ border-radius:35px;
 
 box-shadow:0 15px 40px rgba(0,0,0,.08);
 
-margin-bottom:40px;
+margin-bottom:30px;
 
 transition:.35s;
 
 animation:fadeUp .6s ease;
 
+position:relative;
+
+overflow:hidden;
+
 }
 
-.card:hover{
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+right:0;
+
+left:0;
+
+height:7px;
+
+background:linear-gradient(
+90deg,
+#ffd45a,
+#e7ae25
+);
+
+}
+
+.question-card:hover{
 
 transform:translateY(-4px);
 
@@ -201,48 +358,74 @@ box-shadow:0 22px 50px rgba(0,0,0,.12);
 
 }
 
-.card h2{
 
-font-size:34px;
+/* ==========================================================
+   رقم السؤال
+========================================================== */
 
-color:#1f3c88;
+.question-number{
 
-margin-bottom:30px;
+width:56px;
+
+height:56px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#fffaf0;
+
+border:2px solid #ffe082;
+
+color:#c28b16;
+
+font-size:21px;
+
+font-weight:bold;
+
+margin-bottom:22px;
 
 }
 
-.card p{
 
-font-size:22px;
+/* ==========================================================
+   نوع السؤال
+========================================================== */
 
-line-height:2.3;
+.question-type{
 
-font-weight:600;
+font-size:21px;
 
-color:#4d4d4d;
+font-weight:bold;
 
-}
+color:#777;
 
-
-/* الأسئلة */
-
-.question-box{
-
-margin:55px 0;
+margin-bottom:12px;
 
 }
+
+
+/* ==========================================================
+   عنوان السؤال
+========================================================== */
 
 .question-title{
 
-font-size:24px;
+font-size:26px;
 
 font-weight:bold;
 
 line-height:2;
 
-color:#444;
+color:#1f3c88;
 
 margin-bottom:25px;
+
+word-wrap:break-word;
 
 }
 
@@ -256,22 +439,14 @@ color:#666;
 
 margin-bottom:30px;
 
-}
-
-.question-divider{
-
-margin:55px 0;
-
-border:none;
-
-height:1px;
-
-background:#ececec;
+word-wrap:break-word;
 
 }
 
 
-/* مربع الكتابة */
+/* ==========================================================
+   مربع الكتابة
+========================================================== */
 
 .write-box{
 
@@ -304,7 +479,9 @@ box-shadow:0 0 0 6px rgba(111,67,255,.12);
 }
 
 
-/* النتائج */
+/* ==========================================================
+   النتائج
+========================================================== */
 
 .answer-result,
 .result-text{
@@ -319,12 +496,18 @@ line-height:2;
 
 animation:fadeResult .4s ease;
 
+word-wrap:break-word;
+
+overflow:hidden;
+
 }
 
 
-/* الأزرار */
+/* ==========================================================
+   الأزرار
+========================================================== */
 
-.card button{
+.question-card button{
 
 background:#f5f7ff;
 
@@ -346,9 +529,11 @@ transition:.3s;
 
 box-shadow:0 10px 25px rgba(0,0,0,.10);
 
+user-select:none;
+
 }
 
-.card button:hover{
+.question-card button:hover{
 
 transform:translateY(-4px);
 
@@ -357,7 +542,9 @@ box-shadow:0 18px 40px rgba(0,0,0,.15);
 }
 
 
-/* ترتيب الكلمات */
+/* ==========================================================
+   ترتيب الكلمات
+========================================================== */
 
 .word-container{
 
@@ -373,21 +560,25 @@ margin:30px 0;
 
 .word-btn{
 
-background:#f4f7ff;
+background:#f4f7ff !important;
 
-border:2px solid #dce4ff;
+border:2px solid #dce4ff !important;
 
-border-radius:18px;
+border-radius:18px !important;
 
-padding:16px 25px;
+padding:16px 25px !important;
 
-font-size:18px;
+font-size:18px !important;
 
 font-weight:bold;
 
 cursor:pointer;
 
 transition:.3s;
+
+user-select:none;
+
+color:#1f3c88 !important;
 
 }
 
@@ -419,6 +610,8 @@ gap:15px;
 
 align-items:center;
 
+align-content:flex-start;
+
 }
 
 .selected-word{
@@ -441,6 +634,11 @@ font-weight:bold;
 
 }
 
+
+/* ==========================================================
+   أزرار الترتيب
+========================================================== */
+
 .sort-buttons{
 
 display:flex;
@@ -452,7 +650,9 @@ margin-top:30px;
 }
 
 
-/* خيارات اختر الإجابة الصحيحة */
+/* ==========================================================
+   الاختيارات
+========================================================== */
 
 .choice-container{
 
@@ -467,30 +667,35 @@ margin-top:30px;
 }
 
 .choice-btn{
+
 width:100%;
+
 text-align:center;
+
 }
 
 
-/* ألوان التصحيح */
+/* ==========================================================
+   ألوان التصحيح
+========================================================== */
 
 .correct-input{
 
-background:#e8fff0;
+background:#e8fff0 !important;
 
-border:2px solid #b8ebc8;
+border:2px solid #b8ebc8 !important;
 
-color:#0f8b4c;
+color:#0f8b4c !important;
 
 }
 
 .wrong-input{
 
-background:#ffe8e8;
+background:#ffe8e8 !important;
 
-border:2px solid #ffb8b8;
+border:2px solid #ffb8b8 !important;
 
-color:#c62828;
+color:#c62828 !important;
 
 }
 
@@ -507,7 +712,9 @@ color:#c62828;
 }
 
 
-/* الاهتزاز */
+/* ==========================================================
+   الاهتزاز
+========================================================== */
 
 .shake{
 
@@ -518,15 +725,21 @@ animation:shake .3s;
 @keyframes shake{
 
 0%{transform:translateX(0);}
+
 25%{transform:translateX(-6px);}
+
 50%{transform:translateX(6px);}
+
 75%{transform:translateX(-6px);}
+
 100%{transform:translateX(0);}
 
 }
 
 
-/* بطاقة تذكّر */
+/* ==========================================================
+   بطاقة تذكّر
+========================================================== */
 
 .remember-card{
 
@@ -539,6 +752,14 @@ background:linear-gradient(
 border:2px solid #ffe082;
 
 text-align:center;
+
+padding:45px;
+
+border-radius:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:40px;
 
 }
 
@@ -558,10 +779,16 @@ color:#5f5330;
 
 line-height:2.5;
 
+font-size:22px;
+
+font-weight:600;
+
 }
 
 
-/* بطاقة النهاية */
+/* ==========================================================
+   بطاقة النهاية
+========================================================== */
 
 .final-card{
 
@@ -570,6 +797,14 @@ background:linear-gradient(
 #6f43ff,
 #8f6dff
 );
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:40px;
 
 }
 
@@ -582,6 +817,8 @@ color:#ffe082;
 font-size:42px;
 
 text-align:center;
+
+margin-bottom:30px;
 
 }
 
@@ -598,7 +835,9 @@ text-align:center;
 }
 
 
-/* زر الدرس التالي */
+/* ==========================================================
+   زر الدرس التالي
+========================================================== */
 
 .next-unit-btn{
 
@@ -606,25 +845,25 @@ width:100%;
 
 padding:22px;
 
-border:none;
+border:none !important;
 
-border-radius:25px;
+border-radius:25px !important;
 
-font-size:22px;
+font-size:22px !important;
 
 font-weight:bold;
 
 cursor:pointer;
 
-color:white;
+color:white !important;
 
 background:linear-gradient(
 90deg,
 #3768ff,
 #6f43ff
-);
+) !important;
 
-box-shadow:0 14px 35px rgba(0,0,0,.18);
+box-shadow:0 14px 35px rgba(0,0,0,.18) !important;
 
 transition:.3s;
 
@@ -634,12 +873,14 @@ transition:.3s;
 
 transform:translateY(-5px);
 
-box-shadow:0 20px 45px rgba(0,0,0,.22);
+box-shadow:0 20px 45px rgba(0,0,0,.22) !important;
 
 }
 
 
-/* النجوم المتطايرة */
+/* ==========================================================
+   النجوم
+========================================================== */
 
 .confetti{
 
@@ -662,28 +903,43 @@ animation:flyStars 1.4s ease-out forwards;
 }
 
 .star:nth-child(1){
+
 left:10%;
+
 animation-delay:0s;
+
 }
 
 .star:nth-child(2){
+
 left:30%;
+
 animation-delay:.1s;
+
 }
 
 .star:nth-child(3){
+
 left:50%;
+
 animation-delay:.2s;
+
 }
 
 .star:nth-child(4){
+
 left:70%;
+
 animation-delay:.15s;
+
 }
 
 .star:nth-child(5){
+
 left:90%;
+
 animation-delay:.05s;
+
 }
 
 @keyframes flyStars{
@@ -691,6 +947,7 @@ animation-delay:.05s;
 0%{
 
 opacity:0;
+
 transform:translateY(20px) scale(.4);
 
 }
@@ -715,13 +972,16 @@ scale(1.3);
 }
 
 
-/* الأنيميشن */
+/* ==========================================================
+   الأنيميشن
+========================================================== */
 
 @keyframes fadeUp{
 
 from{
 
 opacity:0;
+
 transform:translateY(20px);
 
 }
@@ -729,6 +989,7 @@ transform:translateY(20px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -740,6 +1001,7 @@ transform:translateY(0);
 from{
 
 opacity:0;
+
 transform:translateY(10px);
 
 }
@@ -747,6 +1009,7 @@ transform:translateY(10px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -754,7 +1017,9 @@ transform:translateY(0);
 }
 
 
-/* الجوال */
+/* ==========================================================
+   الجوال
+========================================================== */
 
 @media(max-width:768px){
 
@@ -770,27 +1035,37 @@ font-size:18px;
 
 }
 
-.card{
+.question-card{
 
 padding:30px;
 
 }
 
-.card h2{
+.question-number{
 
-font-size:28px;
+width:52px;
+
+height:52px;
+
+font-size:19px;
 
 }
 
-.card p{
+.question-type{
 
-font-size:17px;
+font-size:18px;
 
 }
 
 .question-title{
 
-font-size:20px;
+font-size:21px;
+
+}
+
+.help-text{
+
+font-size:18px;
 
 }
 
@@ -800,21 +1075,90 @@ flex-direction:column;
 
 }
 
-  .choice-btn{
-width:100%;
+.word-container{
+
+gap:10px;
+
 }
-  
+
+.word-btn{
+
+width:100%;
+
+}
+
+.choice-btn{
+
+width:100%;
+
+}
+
+.practice-intro{
+
+padding:18px 20px;
+
+gap:16px;
+
+border-radius:25px;
+
+}
+
+.practice-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:27px;
+
+border-radius:17px;
+
+}
+
+.practice-content h2{
+
+font-size:25px;
+
+}
+
+.practice-content p{
+
+font-size:16px;
+
+}
+
+.final-text{
+
+font-size:20px !important;
+
+}
+
+}
+
+
+/* ==========================================================
+   نظام الدرس
+========================================================== */
+
+.lesson-page{
+
+min-height:100vh;
+
 }
 
 </style>
 
 </head>
 
- <body>
 
-<div class="container">
+<body>
 
-<!-- الأعلى -->
+<div class="container lesson-page">
+
+
+<!-- ========================================================
+     الأعلى
+========================================================= -->
 
 <div class="top-bar">
 
@@ -835,7 +1179,9 @@ class="back-btn">
 </div>
 
 
-<!-- العنوان -->
+<!-- ========================================================
+     العنوان
+========================================================= -->
 
 <h1 class="title">
 
@@ -850,7 +1196,9 @@ class="back-btn">
 </p>
 
 
-<!-- بطاقة الفيديو -->
+<!-- ========================================================
+     الفيديو
+========================================================= -->
 
 <div class="video-box">
 
@@ -869,33 +1217,65 @@ type="video/quicktime">
 
 </div>
 
+
+<!-- ========================================================
+     تدرب الآن
+========================================================= -->
+
+<div class="practice-intro">
+
+<div class="practice-icon">
+
+📝
+
 </div>
 
-
-<!-- أكمل الكلمة -->
-
-<div class="card">
+<div class="practice-content">
 
 <h2>
 
-✏️ أكمل الكلمة
+🎯 تدرب الآن
 
 </h2>
 
 <p>
 
-• حاول كتابة الحرف أو الجزء الناقص من الكلمة.
+اختبر فهمك من خلال أسئلة متنوعة.
 
 </p>
 
+</div>
 
-<!-- السؤال الأول -->
+</div>
 
-<div class="question-box">
+
+<!-- ========================================================
+     السؤال 1 — كتابة
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+1
+
+</div>
+
+<div class="question-type">
+
+✏️ أكمل الكلمة
+
+</div>
 
 <p class="question-title">
 
 📖 Boo__
+
+</p>
+
+<p class="help-text">
+
+• حاول كتابة الحرف أو الجزء الناقص من الكلمة.
 
 </p>
 
@@ -923,102 +1303,24 @@ class="answer-result">
 
 </div>
 
-<hr class="question-divider">
 
+<!-- ========================================================
+     السؤال 2 — ترتيب
+========================================================= -->
 
-<!-- السؤال الثاني -->
+<div class="question-card">
 
-<div class="question-box">
+<div class="question-number">
 
-<p class="question-title">
-
-📱 Pho__
-
-</p>
-
-<input
-id="input2"
-class="write-box"
-placeholder="اكتب الجزء الناقص">
-
-<button
-onclick="checkWriting(
-'input2',
-'result2',
-['ne']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result2"
-class="answer-result">
-
-</p>
+2
 
 </div>
 
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🖥️ Scre__
-
-</p>
-
-<input
-id="input3"
-class="write-box"
-placeholder="اكتب الجزء الناقص">
-
-<button
-onclick="checkWriting(
-'input3',
-'result3',
-['en']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result3"
-class="answer-result">
-
-</p>
-
-</div>
-
-</div>
-
-  <!-- رتب الجملة -->
-
-<div class="card">
-
-<h2>
+<div class="question-type">
 
 🧩 رتب الجملة
 
-</h2>
-
-<p>
-
-• اضغط على الكلمات بالترتيب الصحيح لتكوين الجملة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="help-text">
 
@@ -1103,12 +1405,213 @@ class="result-text">
 
 </div>
 
-<hr class="question-divider">
+
+<!-- ========================================================
+     السؤال 3 — ترجمة
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+3
+
+</div>
+
+<div class="question-type">
+
+✏️ ترجم بنفسك
+
+</div>
+
+<p class="question-title">
+
+📌 هذا دبوس.
+
+</p>
+
+<p class="help-text">
+
+• حاول الترجمة بنفسك أولاً.
+
+</p>
+
+<input
+id="input4"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input4',
+'result4',
+['This is a pin']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
 
 
-<!-- السؤال الثاني -->
+<!-- ========================================================
+     السؤال 4 — اختيار
+========================================================= -->
 
-<div class="question-box">
+<div class="question-card">
+
+<div class="question-number">
+
+4
+
+</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+✏️ ما معنى "قلم"؟
+
+</p>
+
+<p class="help-text">
+
+• اختر الإجابة الصحيحة.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkChoice(
+this,
+'Pen',
+'choiceResult1'
+)">
+
+Pen
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkChoice(
+this,
+'Pen',
+'choiceResult1'
+)">
+
+Book
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkChoice(
+this,
+'Pen',
+'choiceResult1'
+)">
+
+Chair
+
+</button>
+
+</div>
+
+<p
+id="choiceResult1"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ========================================================
+     السؤال 5 — كتابة
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+5
+
+</div>
+
+<div class="question-type">
+
+✏️ أكمل الكلمة
+
+</div>
+
+<p class="question-title">
+
+📱 Pho__
+
+</p>
+
+<p class="help-text">
+
+• حاول كتابة الحرف أو الجزء الناقص من الكلمة.
+
+</p>
+
+<input
+id="input2"
+class="write-box"
+placeholder="اكتب الجزء الناقص">
+
+<button
+onclick="checkWriting(
+'input2',
+'result2',
+['ne']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result2"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ========================================================
+     السؤال 6 — ترتيب
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+6
+
+</div>
+
+<div class="question-type">
+
+🧩 رتب الجملة
+
+</div>
 
 <p class="help-text">
 
@@ -1193,12 +1696,213 @@ class="result-text">
 
 </div>
 
-<hr class="question-divider">
+
+<!-- ========================================================
+     السؤال 7 — ترجمة
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+7
+
+</div>
+
+<div class="question-type">
+
+✏️ ترجم بنفسك
+
+</div>
+
+<p class="question-title">
+
+📁 هذا ملف.
+
+</p>
+
+<p class="help-text">
+
+• حاول الترجمة بنفسك أولاً.
+
+</p>
+
+<input
+id="input5"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input5',
+'result5',
+['This is a file']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result5"
+class="answer-result">
+
+</p>
+
+</div>
 
 
-<!-- السؤال الثالث -->
+<!-- ========================================================
+     السؤال 8 — اختيار
+========================================================= -->
 
-<div class="question-box">
+<div class="question-card">
+
+<div class="question-number">
+
+8
+
+</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+✏️ ما معنى "قلم رصاص"؟
+
+</p>
+
+<p class="help-text">
+
+• اختر الإجابة الصحيحة.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkChoice(
+this,
+'Pencil',
+'choiceResult2'
+)">
+
+Screen
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkChoice(
+this,
+'Pencil',
+'choiceResult2'
+)">
+
+Pencil
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkChoice(
+this,
+'Pencil',
+'choiceResult2'
+)">
+
+Phone
+
+</button>
+
+</div>
+
+<p
+id="choiceResult2"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ========================================================
+     السؤال 9 — كتابة
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+9
+
+</div>
+
+<div class="question-type">
+
+✏️ أكمل الكلمة
+
+</div>
+
+<p class="question-title">
+
+🖥️ Scre__
+
+</p>
+
+<p class="help-text">
+
+• حاول كتابة الحرف أو الجزء الناقص من الكلمة.
+
+</p>
+
+<input
+id="input3"
+class="write-box"
+placeholder="اكتب الجزء الناقص">
+
+<button
+onclick="checkWriting(
+'input3',
+'result3',
+['en']
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result3"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ========================================================
+     السؤال 10 — ترتيب
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+10
+
+</div>
+
+<div class="question-type">
+
+🧩 رتب الجملة
+
+</div>
 
 <p class="help-text">
 
@@ -1283,106 +1987,34 @@ class="result-text">
 
 </div>
 
+
+<!-- ========================================================
+     السؤال 11 — ترجمة
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+11
+
 </div>
 
- <!-- ترجم بنفسك -->
-
-<div class="card">
-
-<h2>
+<div class="question-type">
 
 ✏️ ترجم بنفسك
 
-</h2>
-
-<p>
-
-• حاول الترجمة بنفسك أولاً.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📌 هذا دبوس.
-
-</p>
-
-<input
-id="input4"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input4',
-'result4',
-['This is a pin']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result4"
-class="answer-result">
-
-</p>
-
 </div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📁 هذا ملف.
-
-</p>
-
-<input
-id="input5"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input5',
-'result5',
-['This is a file']
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result5"
-class="answer-result">
-
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
 
 <p class="question-title">
 
 💻 هذا حاسوب.
+
+</p>
+
+<p class="help-text">
+
+• حاول الترجمة بنفسك أولاً.
 
 </p>
 
@@ -1410,136 +2042,24 @@ class="answer-result">
 
 </div>
 
+
+<!-- ========================================================
+     السؤال 12 — اختيار
+========================================================= -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+12
+
 </div>
 
- <!-- اختر الإجابة الصحيحة -->
-
-<div class="card">
-
-<h2>
+<div class="question-type">
 
 🎯 اختر الإجابة الصحيحة
 
-</h2>
-
-<p>
-
-• اختر الإجابة الصحيحة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-✏️ ما معنى "قلم"؟
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkChoice(
-this,
-'Pen',
-'choiceResult1'
-)">
-Pen
-</button>
-
-<button
-class="choice-btn"
-onclick="checkChoice(
-this,
-'Pen',
-'choiceResult1'
-)">
-Book
-</button>
-
-<button
-class="choice-btn"
-onclick="checkChoice(
-this,
-'Pen',
-'choiceResult1'
-)">
-Chair
-</button>
-
 </div>
-
-<p
-id="choiceResult1"
-class="answer-result">
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-✏️ ما معنى "قلم رصاص"؟
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkChoice(
-this,
-'Pencil',
-'choiceResult2'
-)">
-Screen
-</button>
-
-<button
-class="choice-btn"
-onclick="checkChoice(
-this,
-'Pencil',
-'choiceResult2'
-)">
-Pencil
-</button>
-
-<button
-class="choice-btn"
-onclick="checkChoice(
-this,
-'Pencil',
-'choiceResult2'
-)">
-Phone
-</button>
-
-</div>
-
-<p
-id="choiceResult2"
-class="answer-result">
-</p>
-
-</div>
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
 
 <p class="question-title">
 
@@ -1547,6 +2067,12 @@ class="answer-result">
 
 </p>
 
+<p class="help-text">
+
+• اختر الإجابة الصحيحة.
+
+</p>
+
 <div class="choice-container">
 
 <button
@@ -1556,7 +2082,9 @@ this,
 'Eraser',
 'choiceResult3'
 )">
+
 Notebook
+
 </button>
 
 <button
@@ -1566,7 +2094,9 @@ this,
 'Eraser',
 'choiceResult3'
 )">
+
 Bag
+
 </button>
 
 <button
@@ -1576,7 +2106,9 @@ this,
 'Eraser',
 'choiceResult3'
 )">
+
 Eraser
+
 </button>
 
 </div>
@@ -1584,15 +2116,17 @@ Eraser
 <p
 id="choiceResult3"
 class="answer-result">
+
 </p>
 
 </div>
 
-</div>
 
-  <!-- تذكّر -->
+<!-- ========================================================
+     تذكّر
+========================================================= -->
 
-<div class="card remember-card">
+<div class="remember-card">
 
 <h2>
 
@@ -1612,9 +2146,12 @@ class="answer-result">
 
 </div>
 
-  <!-- بطاقة النهاية -->
 
-<div class="card final-card">
+<!-- ========================================================
+     بطاقة النهاية
+========================================================= -->
+
+<div class="final-card">
 
 <h2>
 
@@ -1636,7 +2173,13 @@ class="answer-result">
 
 </p>
 
-<button class="next-unit-btn">
+<button
+class="next-unit-btn"
+onclick="finishLesson(
+'daily-things',
+'الأشياء اليومية',
+'colours.html'
+)">
 
 🚀 الانتقال إلى الدرس التالي
 
@@ -1644,12 +2187,15 @@ class="answer-result">
 
 </div>
 
+
 </div>
 
-<!-- نهاية container -->
 
-   
-  <script>
+<!-- ========================================================
+     JavaScript — منطق التصحيح نفسه
+========================================================= -->
+
+<script>
 
 // ==========================
 // تنظيف النص
@@ -1685,10 +2231,14 @@ correctAnswers
 ){
 
 let input =
-document.getElementById(inputId);
+document.getElementById(
+inputId
+);
 
 let result =
-document.getElementById(resultId);
+document.getElementById(
+resultId
+);
 
 
 let userAnswer =
@@ -1764,7 +2314,8 @@ result.className =
 
 }
 
-  // ==========================
+
+// ==========================
 // إضافة كلمة
 // ==========================
 function addWord(
@@ -2001,6 +2552,7 @@ result.className =
 
 }
 
+
 // ==========================
 // خلط الكلمات عند فتح الصفحة
 // ==========================
@@ -2070,27 +2622,21 @@ this.nextElementSibling.click();
 
 });
 
+</script>
 
-// ==========================
-// زر الدرس التالي
-// ==========================
-document
-.querySelector(
-".next-unit-btn"
-)
-.addEventListener(
 
-"click",
+<!-- ========================================================
+     نظام الدروس
+========================================================= -->
 
-function(){
+<script type="module">
 
-window.location.href =
-"colours.html";
+import { finishLesson } from "./js/reward.js";
 
-}
+window.finishLesson = finishLesson;
 
-);
-    </script>
+</script>
+
 
 </body>
 
