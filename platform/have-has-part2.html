@@ -124,7 +124,7 @@ background:white;
 padding:40px;
 border-radius:35px;
 box-shadow:0 15px 40px rgba(0,0,0,.08);
-margin-bottom:40px;
+margin-bottom:30px;
 transition:.35s;
 animation:fadeUp .6s ease;
 
@@ -144,23 +144,26 @@ box-shadow:0 22px 50px rgba(0,0,0,.12);
 ========================== */
 
 .video-box{
+
 background:white;
 padding:0;
 border-radius:35px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
 margin-bottom:35px;
 overflow:hidden;
+
 }
 
+.video-box video{
 
- .video-box video{
 width:100%;
 display:block;
 aspect-ratio:16/9;
 object-fit:cover;
 border-radius:0;
+
 }
-   
+
 
 /* ==========================
    بطاقة البومة
@@ -209,9 +212,202 @@ margin:0;
 
 
 /* ==========================
-   صندوق السؤال
+   بطاقة تدرب الآن
 ========================== */
 
+.practice-card{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+background:white;
+
+padding:24px 30px;
+
+border-radius:30px;
+
+border:2px solid #ddd4ff;
+
+box-shadow:0 12px 30px rgba(111,67,255,.08);
+
+margin-bottom:35px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.practice-card::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+background:rgba(111,67,255,.05);
+
+left:-45px;
+
+top:-65px;
+
+}
+
+.practice-icon{
+
+width:62px;
+height:62px;
+
+border-radius:20px;
+
+background:#f5f1ff;
+
+border:2px solid #ddd4ff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+flex-shrink:0;
+
+position:relative;
+
+z-index:1;
+
+}
+
+.practice-content{
+
+position:relative;
+
+z-index:1;
+
+}
+
+.practice-content h2{
+
+font-size:30px;
+
+color:#1f3c88;
+
+margin-bottom:5px;
+
+}
+
+.practice-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#666;
+
+font-weight:600;
+
+}
+
+
+/* ==========================
+   بطاقات الأسئلة
+========================== */
+
+.question-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+transition:.35s;
+
+animation:fadeUp .6s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+right:0;
+left:0;
+
+height:7px;
+
+background:linear-gradient(
+90deg,
+#ffd45a,
+#e7ae25
+);
+
+}
+
+.question-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 22px 50px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================
+   رقم السؤال
+========================== */
+
+.question-number{
+
+width:56px;
+
+height:56px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#fffaf0;
+
+border:2px solid #ffe082;
+
+color:#c28b16;
+
+font-size:21px;
+
+font-weight:bold;
+
+margin-bottom:22px;
+
+}
+
+
+/* ==========================
+   عنوان السؤال
+========================== */
 
 .question-title{
 
@@ -233,21 +429,30 @@ text-align:center;
 margin:35px 0;
 
 }
-   
- /* ==========================
+
+
+/* ==========================
    مربع الكتابة
 ========================== */
 
 .write-box{
 
 width:100%;
+
 padding:20px;
+
 border-radius:22px;
+
 border:2px solid #dce4ff;
+
 font-size:20px;
+
 outline:none;
+
 transition:.3s;
+
 margin-bottom:28px;
+
 background:white;
 
 }
@@ -269,9 +474,13 @@ box-shadow:0 0 0 6px rgba(111,67,255,.12);
 .result-text{
 
 margin-top:25px;
+
 font-size:20px;
+
 font-weight:bold;
+
 line-height:2;
+
 animation:fadeResult .4s ease;
 
 }
@@ -284,7 +493,9 @@ animation:fadeResult .4s ease;
 .choice-container{
 
 display:flex;
+
 gap:18px;
+
 margin:30px 0 20px;
 
 }
@@ -292,15 +503,25 @@ margin:30px 0 20px;
 .choice-btn{
 
 flex:1;
+
 padding:24px;
+
 background:white;
+
 border:2px solid #dce4ff;
+
 border-radius:22px;
+
 font-size:20px;
+
 font-weight:bold;
+
 color:#1f3c88;
+
 cursor:pointer;
+
 transition:.3s;
+
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 }
@@ -316,6 +537,7 @@ box-shadow:0 18px 40px rgba(0,0,0,.14);
 .choice-btn:disabled{
 
 cursor:default;
+
 opacity:.95;
 
 }
@@ -325,22 +547,31 @@ opacity:.95;
    الأزرار
 ========================== */
 
-.card button{
+.question-card button{
 
 background:#f5f7ff;
+
 color:#1f3c88;
+
 border:2px solid #dce4ff;
+
 padding:18px 28px;
+
 border-radius:22px;
+
 font-size:18px;
+
 font-weight:bold;
+
 cursor:pointer;
+
 transition:.3s;
+
 box-shadow:0 10px 25px rgba(0,0,0,.10);
 
 }
 
-.card button:hover{
+.question-card button:hover{
 
 transform:translateY(-4px);
 
@@ -348,7 +579,7 @@ box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
 
-.card button:active{
+.question-card button:active{
 
 transform:scale(.97);
 
@@ -362,7 +593,9 @@ transform:scale(.97);
 .correct-input{
 
 background:#e8fff0;
+
 border:2px solid #b8ebc8;
+
 color:#0f8b4c;
 
 }
@@ -370,7 +603,9 @@ color:#0f8b4c;
 .wrong-input{
 
 background:#ffe8e8;
+
 border:2px solid #ffb8b8;
+
 color:#c62828;
 
 }
@@ -378,7 +613,9 @@ color:#c62828;
 .correct{
 
 background:#e8fff0 !important;
+
 border:2px solid #b8ebc8 !important;
+
 color:#0f8b4c !important;
 
 }
@@ -386,7 +623,9 @@ color:#0f8b4c !important;
 .wrong{
 
 background:#ffe8e8 !important;
+
 border:2px solid #ffb8b8 !important;
+
 color:#c62828 !important;
 
 }
@@ -403,15 +642,19 @@ color:#c62828;
 
 }
 
-  /* ==========================
+
+/* ==========================
    ترتيب الكلمات
 ========================== */
 
 .word-container{
 
 display:flex;
+
 gap:15px;
+
 flex-wrap:wrap;
+
 margin:30px 0;
 
 }
@@ -419,12 +662,19 @@ margin:30px 0;
 .word-btn{
 
 background:#f4f7ff;
+
 border:2px solid #dce4ff;
+
 border-radius:18px;
+
 padding:16px 24px;
+
 font-size:18px;
+
 font-weight:bold;
+
 cursor:pointer;
+
 transition:.3s;
 
 }
@@ -438,15 +688,25 @@ transform:translateY(-4px);
 .answer-box{
 
 min-height:100px;
+
 background:#fafbff;
+
 border:2px dashed #b9c8ff;
+
 border-radius:25px;
+
 padding:20px;
+
 margin-bottom:25px;
+
 display:flex;
+
 flex-wrap:wrap;
+
 gap:15px;
+
 direction:ltr;
+
 align-items:center;
 
 }
@@ -460,23 +720,213 @@ background:linear-gradient(
 );
 
 color:white;
+
 padding:16px 22px;
+
 border-radius:18px;
+
 font-size:18px;
+
 font-weight:bold;
+
 box-shadow:0 10px 25px rgba(0,0,0,.12);
+
 user-select:none;
 
 }
 
 
 /* ==========================
-   النجوم المتطايرة
+   بطاقة don't / doesn't
+========================== */
+
+.dont-doesnt-card{
+
+background:linear-gradient(
+135deg,
+#f8f6ff,
+#eef4ff
+);
+
+border:2px solid #ddd4ff;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:40px;
+
+animation:fadeUp .6s ease;
+
+}
+
+.dont-doesnt-title{
+
+text-align:center;
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:30px;
+
+}
+
+.dont-doesnt-intro{
+
+text-align:center;
+
+font-size:21px;
+
+line-height:2.2;
+
+font-weight:600;
+
+color:#555;
+
+margin-bottom:30px;
+
+}
+
+.dont-doesnt-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:25px;
+
+}
+
+.dont-doesnt-box{
+
+padding:30px;
+
+border-radius:28px;
+
+text-align:center;
+
+}
+
+.dont-box{
+
+background:#eef4ff;
+
+border:2px solid #cbd8ff;
+
+}
+
+.doesnt-box{
+
+background:#fff8df;
+
+border:2px solid #ffe082;
+
+}
+
+.dont-doesnt-box h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+.dont-box h3{
+
+color:#1f3c88;
+
+}
+
+.doesnt-box h3{
+
+color:#b8860b;
+
+}
+
+.dont-doesnt-word{
+
+font-size:40px;
+
+font-weight:800;
+
+margin:15px 0 20px;
+
+}
+
+.dont-box .dont-doesnt-word{
+
+color:#3768ff;
+
+}
+
+.doesnt-box .dont-doesnt-word{
+
+color:#b8860b;
+
+}
+
+.dont-doesnt-example{
+
+font-size:19px;
+
+line-height:2.1;
+
+font-weight:600;
+
+color:#444;
+
+}
+
+.dont-doesnt-example strong{
+
+color:#6f43ff;
+
+}
+
+.dont-doesnt-summary{
+
+margin-top:28px;
+
+padding:24px;
+
+background:white;
+
+border-radius:24px;
+
+border:2px dashed #c9bfff;
+
+text-align:center;
+
+}
+
+.dont-doesnt-summary p{
+
+font-size:20px;
+
+line-height:2.2;
+
+font-weight:700;
+
+color:#444;
+
+margin:0;
+
+}
+
+
+/* ==========================
+   النجوم
 ========================== */
 
 .confetti{
 
 position:relative;
+
 height:0;
 
 }
@@ -484,8 +934,11 @@ height:0;
 .star{
 
 position:absolute;
+
 font-size:22px;
+
 opacity:0;
+
 animation:flyStars 1.4s ease-out forwards;
 
 }
@@ -493,6 +946,7 @@ animation:flyStars 1.4s ease-out forwards;
 .star:nth-child(1){
 
 left:10%;
+
 animation-delay:0s;
 
 }
@@ -500,6 +954,7 @@ animation-delay:0s;
 .star:nth-child(2){
 
 left:30%;
+
 animation-delay:.1s;
 
 }
@@ -507,6 +962,7 @@ animation-delay:.1s;
 .star:nth-child(3){
 
 left:50%;
+
 animation-delay:.2s;
 
 }
@@ -514,6 +970,7 @@ animation-delay:.2s;
 .star:nth-child(4){
 
 left:70%;
+
 animation-delay:.15s;
 
 }
@@ -521,6 +978,7 @@ animation-delay:.15s;
 .star:nth-child(5){
 
 left:90%;
+
 animation-delay:.05s;
 
 }
@@ -530,6 +988,7 @@ animation-delay:.05s;
 0%{
 
 opacity:0;
+
 transform:translateY(20px) scale(.4);
 
 }
@@ -543,6 +1002,7 @@ opacity:1;
 100%{
 
 opacity:0;
+
 transform:translateY(-70px)
 rotate(360deg)
 scale(1.3);
@@ -565,9 +1025,13 @@ animation:shake .3s;
 @keyframes shake{
 
 0%{transform:translateX(0);}
+
 25%{transform:translateX(-6px);}
+
 50%{transform:translateX(6px);}
+
 75%{transform:translateX(-6px);}
+
 100%{transform:translateX(0);}
 
 }
@@ -592,7 +1056,9 @@ background:linear-gradient(
 .final-card h2{
 
 font-size:40px;
+
 color:#ffe082;
+
 margin-bottom:20px;
 
 }
@@ -600,9 +1066,13 @@ margin-bottom:20px;
 .final-card p{
 
 font-size:22px;
+
 line-height:2;
+
 font-weight:600;
+
 color:white;
+
 margin-bottom:30px;
 
 }
@@ -610,11 +1080,17 @@ margin-bottom:30px;
 .next-lesson-btn{
 
 width:100%;
+
 padding:22px;
+
 border:none;
+
 border-radius:24px;
+
 font-size:22px;
+
 font-weight:bold;
+
 cursor:pointer;
 
 background:white;
@@ -645,6 +1121,7 @@ box-shadow:0 20px 45px rgba(0,0,0,.22);
 from{
 
 opacity:0;
+
 transform:translateY(20px);
 
 }
@@ -652,6 +1129,7 @@ transform:translateY(20px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -663,6 +1141,7 @@ transform:translateY(0);
 from{
 
 opacity:0;
+
 transform:translateY(10px);
 
 }
@@ -670,6 +1149,7 @@ transform:translateY(10px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -695,7 +1175,7 @@ font-size:18px;
 
 }
 
-.card{
+.question-card{
 
 padding:28px;
 
@@ -704,8 +1184,11 @@ padding:28px;
 .message-card{
 
 display:flex;
+
 align-items:center;
+
 justify-content:flex-start;
+
 gap:16px;
 
 }
@@ -725,6 +1208,7 @@ font-size:24px;
 .message-content p{
 
 font-size:17px;
+
 line-height:1.8;
 
 }
@@ -732,6 +1216,7 @@ line-height:1.8;
 .choice-container{
 
 flex-direction:column;
+
 gap:14px;
 
 }
@@ -742,12 +1227,12 @@ font-size:20px;
 
 }
 
-   .help-text{
+.help-text{
 
 font-size:24px;
 
 }
-   
+
 .answer-result,
 .result-text{
 
@@ -794,28 +1279,105 @@ font-size:18px;
 width:100%;
 
 }
+
 .next-lesson-btn:active{
 
 transform:scale(.97);
 
 }
 
-   .help-text{
+.practice-card{
 
-font-size:24px;
+padding:19px 20px;
+
+gap:15px;
 
 }
-   
+
+.practice-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:27px;
+
 }
 
-  
+.practice-content h2{
+
+font-size:25px;
+
+}
+
+.practice-content p{
+
+font-size:16px;
+
+}
+
+.dont-doesnt-card{
+
+padding:28px;
+
+}
+
+.dont-doesnt-title{
+
+font-size:28px;
+
+}
+
+.dont-doesnt-intro{
+
+font-size:17px;
+
+}
+
+.dont-doesnt-grid{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+}
+
+.dont-doesnt-box{
+
+padding:25px;
+
+}
+
+.dont-doesnt-word{
+
+font-size:36px;
+
+}
+
+.dont-doesnt-example{
+
+font-size:17px;
+
+}
+
+.dont-doesnt-summary p{
+
+font-size:17px;
+
+}
+
+}
+
 </style>
 
 </head>
-  
-  <body>
+
+
+<body>
+
 
 <div class="container">
+
 
 <!-- ==========================
         الأعلى
@@ -877,8 +1439,6 @@ type="video/quicktime">
 </video>
 
 </div>
-   
-</div>
 
 
 <!-- ==========================
@@ -906,20 +1466,54 @@ type="video/quicktime">
 فكل محاولة صحيحة أو خاطئة تساعدك على التعلم أكثر.
 
 </p>
-  
+
 </div>
 
 </div>
+
 
 <!-- ==========================
-      التمارين
+      بطاقة تدرب الآن
 ========================== -->
 
-<!-- السؤال الأول -->
+<div class="practice-card">
 
-<div class="card">
+<div class="practice-icon">
 
-<div class="question-box">
+📝
+
+</div>
+
+<div class="practice-content">
+
+<h2>
+
+🎯 تدرب الآن
+
+</h2>
+
+<p>
+
+اختبر فهمك من خلال الأسئلة التالية.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الأول
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+1
+
+</div>
 
 <p class="question-title">
 
@@ -961,15 +1555,18 @@ class="result-text">
 
 </div>
 
+
+<!-- ==========================
+      السؤال الثاني
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+2
+
 </div>
-
-
-
-<!-- السؤال الثاني -->
-
-<div class="card">
-
-<div class="question-box">
 
 <p class="question-title">
 
@@ -1011,15 +1608,18 @@ class="result-text">
 
 </div>
 
+
+<!-- ==========================
+      السؤال الثالث
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+3
+
 </div>
-
-
-
-<!-- السؤال الثالث -->
-
-<div class="card">
-
-<div class="question-box">
 
 <p class="question-title">
 
@@ -1060,15 +1660,18 @@ class="answer-result">
 
 </div>
 
+
+<!-- ==========================
+      السؤال الرابع
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+4
+
 </div>
-
-
-
-<!-- السؤال الرابع -->
-
-<div class="card">
-
-<div class="question-box">
 
 <p class="question-title">
 
@@ -1139,15 +1742,18 @@ class="result-text">
 
 </div>
 
+
+<!-- ==========================
+      السؤال الخامس
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+5
+
 </div>
-
-
-
-<!-- السؤال الخامس -->
-
-<div class="card">
-
-<div class="question-box">
 
 <p class="question-title">
 
@@ -1166,7 +1772,6 @@ id="input2"
 class="write-box"
 placeholder="صحح الجملة">
 
-<button
 <button
 onclick="checkWriting(
 'input2',
@@ -1189,9 +1794,425 @@ class="answer-result">
 
 </div>
 
+
+<!-- ==========================
+      السؤال السادس
+      اسم مفرد
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+6
+
 </div>
-  
- 
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p class="help-text">
+
+Sara ___ have a new phone.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+don't
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+doesn't
+
+</button>
+
+</div>
+
+<p
+id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال السابع
+      اسم مفرد
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+7
+
+</div>
+
+<p class="question-title">
+
+✍️ اكتب الكلمة المناسبة
+
+</p>
+
+<p class="help-text">
+
+Ahmed ___ have a bicycle.
+
+</p>
+
+<input
+id="input3"
+class="write-box"
+placeholder="اكتب الإجابة">
+
+<button
+onclick="checkWriting(
+'input3',
+'result3',
+[
+'doesn\'t',
+'does not'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result3"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الثامن
+      جمع
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+8
+
+</div>
+
+<p class="question-title">
+
+🧩 رتب الكلمات لتكوين جملة صحيحة
+
+</p>
+
+<div
+class="word-container"
+id="words2">
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+
+don't
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+
+My parents
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+
+have
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox2')">
+
+a car
+
+</button>
+
+</div>
+
+<div
+class="answer-box"
+id="answerBox2">
+
+</div>
+
+<button
+onclick="checkSentence(
+'answerBox2',
+'My parents do not have a car',
+'resultSort2'
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="resultSort2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال التاسع
+      جمع
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+9
+
+</div>
+
+<p class="question-title">
+
+🔎 اكتشف الخطأ وصححه
+
+</p>
+
+<p class="help-text">
+
+❌ The students doesn't have books.
+
+</p>
+
+<input
+id="input4"
+class="write-box"
+placeholder="صحح الجملة">
+
+<button
+onclick="checkWriting(
+'input4',
+'result4',
+[
+'The students don\'t have books',
+'The students do not have books'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال العاشر
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+10
+
+</div>
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة
+
+</p>
+
+<p class="help-text">
+
+My brother ___ have a computer.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+doesn't
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+don't
+
+</button>
+
+</div>
+
+<p
+id="choice4"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      بطاقة قاعدة don't / doesn't
+========================== -->
+
+<div class="dont-doesnt-card">
+
+<h2 class="dont-doesnt-title">
+
+⭐ تذكّر القاعدة
+
+</h2>
+
+<p class="dont-doesnt-intro">
+
+عند تكوين الجملة المنفية، نختار بين
+<strong>don't</strong> و <strong>doesn't</strong>
+بحسب ما إذا كان الفاعل مفردًا أو جمعًا.
+
+</p>
+
+
+<div class="dont-doesnt-grid">
+
+
+<!-- الجمع -->
+
+<div class="dont-doesnt-box dont-box">
+
+<h3>
+
+👥 الجمع
+
+</h3>
+
+<div class="dont-doesnt-word">
+
+don't
+
+</div>
+
+<p class="dont-doesnt-example">
+
+نستخدم <strong>don't</strong>
+
+مع الجمع.
+
+<br><br>
+
+👨👨 My brothers <strong>don't</strong> have a car.
+
+<br>
+
+👩👩 My sisters <strong>don't</strong> have phones.
+
+<br>
+
+📚 The students <strong>don't</strong> have books.
+
+</p>
+
+</div>
+
+
+<!-- المفرد -->
+
+<div class="dont-doesnt-box doesnt-box">
+
+<h3>
+
+👤 المفرد
+
+</h3>
+
+<div class="dont-doesnt-word">
+
+doesn't
+
+</div>
+
+<p class="dont-doesnt-example">
+
+نستخدم <strong>doesn't</strong>
+
+مع المفرد.
+
+<br><br>
+
+👨 My father <strong>doesn't</strong> have a bike.
+
+<br>
+
+👩 Sara <strong>doesn't</strong> have a car.
+
+<br>
+
+🐱 My cat <strong>doesn't</strong> have a bed.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="dont-doesnt-summary">
+
+<p>
+
+✨ مفرد → <strong>doesn't</strong>
+
+<br><br>
+
+✨ جمع → <strong>don't</strong>
+
+</p>
+
+</div>
+
+</div>
+
+
 <!-- ==========================
       بطاقة النهاية
 ========================== -->
@@ -1216,7 +2237,7 @@ class="answer-result">
 
 <button
 class="next-lesson-btn"
-onclick="window.location.href='have-has-part3.html'">
+onclick="goToNextLesson()">
 
 🚀 الانتقال إلى الدرس الثالث
 
@@ -1224,11 +2245,12 @@ onclick="window.location.href='have-has-part3.html'">
 
 </div>
 
+
 </div>
 
-<!-- نهاية container -->
 
- <script>
+<script>
+
 
 // ==========================
 // تنظيف النص
@@ -1284,7 +2306,6 @@ return text
 .trim();
 
 }
-
 
 
 // ==========================
@@ -1386,7 +2407,8 @@ result.className =
 
 }
 
- // ==========================
+
+// ==========================
 // أسئلة الاختيار
 // ==========================
 
@@ -1452,6 +2474,7 @@ button.classList.add(
 "shake"
 );
 
+
 setTimeout(function(){
 
 button.classList.remove(
@@ -1459,6 +2482,7 @@ button.classList.remove(
 );
 
 },300);
+
 
 button.innerHTML +=
 " ✖️";
@@ -1486,6 +2510,7 @@ btn.classList.add(
 "correct"
 );
 
+
 if(
 !btn.innerHTML.includes("✔️")
 ){
@@ -1503,7 +2528,8 @@ btn.innerHTML +=
 
 }
 
-   // ==========================
+
+// ==========================
 // إضافة كلمة
 // ==========================
 
@@ -1525,26 +2551,30 @@ document.getElementById(
 answerBoxId
 );
 
+
 let newWord =
 document.createElement(
 "div"
 );
 
+
 newWord.className =
 "selected-word";
 
+
 newWord.innerText =
 button.innerText;
+
 
 answerBox.appendChild(
 newWord
 );
 
+
 button.style.display =
 "none";
 
 }
-
 
 
 // ==========================
@@ -1561,6 +2591,7 @@ document.getElementById(
 wordsId
 );
 
+
 container
 .querySelectorAll(
 ".word-btn"
@@ -1572,6 +2603,7 @@ button.style.display =
 
 });
 
+
 document
 .getElementById(
 answerBoxId
@@ -1579,7 +2611,6 @@ answerBoxId
 .innerHTML = "";
 
 }
-
 
 
 // ==========================
@@ -1597,17 +2628,21 @@ document.getElementById(
 answerBoxId
 );
 
+
 let result =
 document.getElementById(
 resultId
 );
+
 
 let words =
 answerBox.querySelectorAll(
 ".selected-word"
 );
 
+
 let userSentence = "";
+
 
 words.forEach(word=>{
 
@@ -1616,15 +2651,18 @@ word.innerText + " ";
 
 });
 
+
 userSentence =
 normalizeText(
 userSentence
 );
 
+
 correctSentence =
 normalizeText(
 correctSentence
 );
+
 
 answerBox.classList.remove(
 "shake"
@@ -1647,11 +2685,14 @@ result.innerHTML =
 
 '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
 
+
 result.className =
 "result-text success-text";
 
+
 answerBox.style.borderColor =
 "#8fd19e";
+
 
 answerBox.style.background =
 "#eefdf3";
@@ -1664,6 +2705,7 @@ answerBox.classList.add(
 "shake"
 );
 
+
 setTimeout(function(){
 
 answerBox.classList.remove(
@@ -1672,15 +2714,19 @@ answerBox.classList.remove(
 
 },300);
 
+
 answerBox.style.borderColor =
 "#ffb8b8";
+
 
 answerBox.style.background =
 "#fff2f2";
 
+
 result.innerHTML =
 
 "😅❌ ترتيب الكلمات غير صحيح.";
+
 
 result.className =
 "result-text error-text";
@@ -1688,7 +2734,6 @@ result.className =
 }
 
 }
-
 
 
 // ==========================
@@ -1704,12 +2749,15 @@ document.getElementById(
 containerId
 );
 
+
 if(
-!container){
+!container
+){
 
 return;
 
 }
+
 
 let buttons =
 Array.from(
@@ -1718,11 +2766,14 @@ container.querySelectorAll(
 )
 );
 
+
 buttons.sort(
 ()=>Math.random()-0.5
 );
 
+
 container.innerHTML="";
+
 
 buttons.forEach(button=>{
 
@@ -1734,17 +2785,102 @@ button
 
 }
 
- // ==========================
+
+// ==========================
 // خلط كلمات الترتيب
 // ==========================
 
 shuffleWords("words1");
 
+shuffleWords("words2");
+
+
+// ==========================
+// دعم زر Enter
+// ==========================
+
+document
+.querySelectorAll(
+".write-box"
+)
+.forEach(input=>{
+
+input.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key==="Enter"
+){
+
+event.preventDefault();
+
+this.nextElementSibling.click();
+
+}
+
+}
+
+);
+
+});
+
+
+// ==========================
+// الانتقال للدرس التالي
+// ==========================
+
+function goToNextLesson(){
+
+if(
+typeof window.finishLesson === "function"
+){
+
+window.finishLesson(
+
+"unit3-have-has-part2",
+
+"Have & Has | الجزء الثاني",
+
+"have-has-part3.html"
+
+);
+
+}
+
+else{
+
+window.location.href =
+"have-has-part3.html";
+
+}
+
+}
+
 </script>
+
+
+<!-- =========================================================
+     نظام الدروس والمكافآت
+========================================================= -->
+
+<script type="module">
+
+import {
+
+finishLesson
+
+}
+
+from "./js/reward.js";
+
+
+window.finishLesson =
+finishLesson;
+
+</script>
+
 
 </body>
 
-</html>  
-   
-  
-
+</html>
