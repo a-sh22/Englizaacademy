@@ -10,18 +10,23 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
-
 كلمات الزمن | Engliza Academy
-
 </title>
+
 
 <style>
 
+/* =========================================================
+   الأساس
+========================================================= */
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+
 }
 
 body{
@@ -39,22 +44,20 @@ padding:30px 20px;
 .container{
 
 max-width:1000px;
-
 margin:auto;
 
 }
 
 
-/* الأعلى */
+/* =========================================================
+   الأعلى
+========================================================= */
 
 .top-bar{
 
 display:flex;
-
-justify-content:space-between;
-
+justify-content:flex-start;
 align-items:center;
-
 margin-bottom:40px;
 
 }
@@ -87,20 +90,10 @@ transform:translateY(-4px);
 
 }
 
-.owl-circle img{
 
-width:80px;
-
-height:80px;
-
-border-radius:50%;
-
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-}
-
-
-/* العنوان */
+/* =========================================================
+   العنوان
+========================================================= */
 
 .title{
 
@@ -131,9 +124,171 @@ margin-bottom:50px;
 }
 
 
-/* البطاقات */
+/* =========================================================
+   الفيديو
+========================================================= */
 
-.card{
+.video-box{
+
+background:white;
+
+padding:0;
+
+border-radius:35px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+overflow:hidden;
+
+}
+
+.video-box video{
+
+width:100%;
+
+display:block;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+}
+
+
+/* =========================================================
+   بطاقة تدرب الآن
+========================================================= */
+
+.practice-intro{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+background:white;
+
+padding:22px 28px;
+
+border-radius:30px;
+
+border:2px solid #ddd4ff;
+
+box-shadow:0 12px 30px rgba(111,67,255,.08);
+
+margin-bottom:35px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.practice-intro::before{
+
+content:"";
+
+position:absolute;
+
+width:110px;
+
+height:110px;
+
+border-radius:50%;
+
+background:rgba(111,67,255,.05);
+
+top:-65px;
+
+left:-35px;
+
+}
+
+.practice-intro::after{
+
+content:"";
+
+position:absolute;
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+background:rgba(55,104,255,.04);
+
+bottom:-55px;
+
+right:-30px;
+
+}
+
+.practice-icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:19px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#f5f1ff;
+
+border:2px solid #ddd4ff;
+
+font-size:29px;
+
+flex-shrink:0;
+
+position:relative;
+
+z-index:1;
+
+}
+
+.practice-content{
+
+position:relative;
+
+z-index:1;
+
+}
+
+.practice-content h2{
+
+font-size:30px;
+
+color:#1f3c88;
+
+margin-bottom:3px;
+
+}
+
+.practice-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+
+/* =========================================================
+   بطاقات الأسئلة
+========================================================= */
+
+.question-card{
 
 background:white;
 
@@ -143,15 +298,41 @@ border-radius:35px;
 
 box-shadow:0 15px 40px rgba(0,0,0,.08);
 
-margin-bottom:40px;
+margin-bottom:30px;
 
 transition:.35s;
 
 animation:fadeUp .6s ease;
 
+position:relative;
+
+overflow:hidden;
+
 }
 
-.card:hover{
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+right:0;
+
+left:0;
+
+height:7px;
+
+background:linear-gradient(
+90deg,
+#ffd45a,
+#e7ae25
+);
+
+}
+
+.question-card:hover{
 
 transform:translateY(-4px);
 
@@ -159,93 +340,74 @@ box-shadow:0 22px 50px rgba(0,0,0,.12);
 
 }
 
-.card h2{
+
+/* =========================================================
+   رقم السؤال
+========================================================= */
+
+.question-number{
+
+width:56px;
+
+height:56px;
+
+border-radius:50%;
 
 display:flex;
 
 align-items:center;
 
-gap:12px;
+justify-content:center;
 
-font-size:34px;
+background:#fffaf0;
 
-color:#1f3c88;
+border:2px solid #ffe082;
 
-margin-bottom:30px;
+color:#c28b16;
 
-}
+font-size:21px;
 
-.card p{
+font-weight:bold;
 
-font-size:22px;
-
-line-height:2.3;
-
-font-weight:600;
-
-color:#4d4d4d;
+margin-bottom:22px;
 
 }
 
 
-/* بطاقة الفيديو */
+/* =========================================================
+   نوع السؤال
+========================================================= */
 
-.video-card{
+.question-type{
 
-background:white;
+font-size:21px;
 
-padding:25px;
+font-weight:bold;
 
-border-radius:35px;
+color:#777;
 
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-margin-bottom:40px;
-
-animation:fadeUp .6s ease;
+margin-bottom:12px;
 
 }
 
 
-.video-box{
-background:white;
-padding:0;
-border-radius:35px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:35px;
-overflow:hidden;
-}
-
-
-.video-box video{
-width:100%;
-display:block;
-aspect-ratio:16/9;
-object-fit:cover;
-border-radius:0;
-}
-
-
-  
-/* الأسئلة */
-
-.question-box{
-
-margin:55px 0;
-
-}
+/* =========================================================
+   النص
+========================================================= */
 
 .question-title{
 
-font-size:24px;
+font-size:26px;
 
 font-weight:bold;
 
 line-height:2;
 
-color:#444;
+color:#1f3c88;
 
 margin-bottom:25px;
+
+word-wrap:break-word;
 
 }
 
@@ -259,22 +421,14 @@ color:#666;
 
 margin-bottom:30px;
 
-}
-
-.question-divider{
-
-margin:55px 0;
-
-border:none;
-
-height:1px;
-
-background:#ececec;
+word-wrap:break-word;
 
 }
 
 
-/* مربع الكتابة */
+/* =========================================================
+   مربع الكتابة
+========================================================= */
 
 .write-box{
 
@@ -307,7 +461,9 @@ box-shadow:0 0 0 6px rgba(111,67,255,.12);
 }
 
 
-/* النتائج */
+/* =========================================================
+   النتائج
+========================================================= */
 
 .answer-result,
 .result-text{
@@ -322,61 +478,30 @@ line-height:2;
 
 animation:fadeResult .4s ease;
 
-}
+word-wrap:break-word;
 
-
-/* أزرار الاختيار */
-
-.choice-container{
-
-display:flex;
-
-gap:18px;
-
-margin-top:30px;
-
-margin-bottom:20px;
+overflow:hidden;
 
 }
 
-.choice-btn{
+.success-text{
 
-flex:1;
-
-padding:22px;
-
-background:white;
-
-border:2px solid #dce4ff;
-
-border-radius:22px;
-
-font-size:18px;
-
-font-weight:bold;
-
-color:#1f3c88;
-
-cursor:pointer;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+color:#0f8b4c;
 
 }
 
-.choice-btn:hover{
+.error-text{
 
-transform:translateY(-4px);
-
-box-shadow:0 18px 40px rgba(0,0,0,.14);
+color:#c62828;
 
 }
 
 
-/* الأزرار */
+/* =========================================================
+   الأزرار
+========================================================= */
 
-.card button{
+.question-card button{
 
 background:#f5f7ff;
 
@@ -398,9 +523,11 @@ transition:.3s;
 
 box-shadow:0 10px 25px rgba(0,0,0,.10);
 
+user-select:none;
+
 }
 
-.card button:hover{
+.question-card button:hover{
 
 transform:translateY(-4px);
 
@@ -408,35 +535,94 @@ box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
 
-.card button:active{
+.question-card button:active{
 
 transform:scale(.97);
 
 }
 
 
-/* التصحيح */
+/* =========================================================
+   الاختيارات
+========================================================= */
+
+.choice-container{
+
+display:flex;
+
+gap:18px;
+
+margin-top:30px;
+
+margin-bottom:20px;
+
+}
+
+.choice-btn{
+
+flex:1;
+
+padding:22px !important;
+
+background:#f5f7ff !important;
+
+border:2px solid #dce4ff !important;
+
+border-radius:22px !important;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1f3c88 !important;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.choice-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.14);
+
+}
+
+
+/* =========================================================
+   التصحيح
+========================================================= */
 
 .correct-input{
 
-background:#e8fff0;
-border:2px solid #b8ebc8;
-color:#0f8b4c;
+background:#e8fff0 !important;
+
+border:2px solid #b8ebc8 !important;
+
+color:#0f8b4c !important;
 
 }
 
 .wrong-input{
 
-background:#ffe8e8;
-border:2px solid #ffb8b8;
-color:#c62828;
+background:#ffe8e8 !important;
+
+border:2px solid #ffb8b8 !important;
+
+color:#c62828 !important;
 
 }
 
 .correct{
 
 background:#e8fff0 !important;
+
 border:2px solid #b8ebc8 !important;
+
 color:#0f8b4c !important;
 
 }
@@ -444,7 +630,9 @@ color:#0f8b4c !important;
 .wrong{
 
 background:#ffe8e8 !important;
+
 border:2px solid #ffb8b8 !important;
+
 color:#c62828 !important;
 
 }
@@ -452,237 +640,15 @@ color:#c62828 !important;
 .choice-btn:disabled{
 
 cursor:default;
+
 opacity:.95;
 
 }
 
 
-/* النجوم */
-
-.confetti{
-
-position:relative;
-
-height:0;
-
-}
-
-.star{
-
-position:absolute;
-
-font-size:22px;
-
-opacity:0;
-
-animation:flyStars 1.4s ease-out forwards;
-
-}
-
-.star:nth-child(1){
-left:10%;
-animation-delay:0s;
-}
-
-.star:nth-child(2){
-left:30%;
-animation-delay:.1s;
-}
-
-.star:nth-child(3){
-left:50%;
-animation-delay:.2s;
-}
-
-.star:nth-child(4){
-left:70%;
-animation-delay:.15s;
-}
-
-.star:nth-child(5){
-left:90%;
-animation-delay:.05s;
-}
-
-@keyframes flyStars{
-
-0%{
-
-opacity:0;
-transform:translateY(20px) scale(.4);
-
-}
-
-20%{
-
-opacity:1;
-
-}
-
-100%{
-
-opacity:0;
-transform:translateY(-70px)
-rotate(360deg)
-scale(1.3);
-
-}
-
-}
-
-
-/* الاهتزاز */
-
-.shake{
-
-animation:shake .3s;
-
-}
-
-@keyframes shake{
-
-0%{transform:translateX(0);}
-25%{transform:translateX(-6px);}
-50%{transform:translateX(6px);}
-75%{transform:translateX(-6px);}
-100%{transform:translateX(0);}
-
-}
-
-
-/* ظهور العناصر */
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes fadeResult{
-
-from{
-
-opacity:0;
-transform:translateY(10px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-
-/* ألوان النتائج */
-
-.success-text{
-
-color:#0f8b4c;
-
-}
-
-.error-text{
-
-color:#c62828;
-
-}
-
-
-/* بطاقة النهاية */
-
-.final-card{
-
-background:linear-gradient(
-135deg,
-#6f43ff,
-#8f6dff
-);
-
-}
-
-.final-card h2{
-
-color:#ffe082;
-
-font-size:42px;
-
-text-align:center;
-
-}
-
-.final-text{
-
-color:white !important;
-
-font-size:24px !important;
-
-line-height:2.4 !important;
-
-font-weight:600;
-
-text-align:center;
-
-}
-
-
-/* زر الدرس التالي */
-
-.next-unit-btn{
-
-width:100%;
-
-padding:22px;
-
-border:none;
-
-border-radius:25px;
-
-font-size:22px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-color:white;
-
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-
-box-shadow:0 14px 35px rgba(0,0,0,.18);
-
-transition:.3s;
-
-}
-
-.next-unit-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 20px 45px rgba(0,0,0,.22);
-
-}
-
-  
-/* بطاقات ترتيب الكلمات */
+/* =========================================================
+   ترتيب الكلمات
+========================================================= */
 
 .word-container{
 
@@ -698,21 +664,23 @@ margin:30px 0;
 
 .word-btn{
 
-background:#f4f7ff;
+background:#f4f7ff !important;
 
-border:2px solid #dce4ff;
+border:2px solid #dce4ff !important;
 
-border-radius:18px;
+border-radius:18px !important;
 
-padding:16px 25px;
+padding:16px 25px !important;
 
-font-size:18px;
+font-size:18px !important;
 
 font-weight:bold;
 
 cursor:pointer;
 
 transition:.3s;
+
+color:#1f3c88 !important;
 
 }
 
@@ -734,7 +702,7 @@ border-radius:25px;
 
 padding:20px;
 
-margin-bottom:25px;
+margin:30px 0;
 
 display:flex;
 
@@ -746,9 +714,10 @@ direction:ltr;
 
 align-items:center;
 
+align-content:flex-start;
+
 }
 
-  
 .selected-word{
 
 background:linear-gradient(
@@ -788,7 +757,9 @@ margin-top:20px;
 }
 
 
-/* التحدي الأخير */
+/* =========================================================
+   التحدي
+========================================================= */
 
 .challenge-card{
 
@@ -796,148 +767,343 @@ border:3px solid #ffe082;
 
 }
 
-/* بطاقة البداية */
 
-.intro-card{
+/* =========================================================
+   النجوم
+========================================================= */
 
-padding:35px;
+.confetti{
 
-}
+position:relative;
 
-.intro-content{
-
-display:flex;
-
-align-items:center;
-
-gap:30px;
+height:0;
 
 }
 
-.intro-owl{
+.star{
 
-width:160px;
+position:absolute;
 
-flex-shrink:0;
+font-size:22px;
 
-}
+opacity:0;
 
-.intro-text{
-
-flex:1;
+animation:flyStars 1.4s ease-out forwards;
 
 }
 
-.intro-text h2{
+.star:nth-child(1){
 
-margin-bottom:15px;
+left:10%;
 
-font-size:32px;
-
-}
-
-.intro-text p{
-
-font-size:18px;
-
-line-height:2;
+animation-delay:0s;
 
 }
 
-/* الجوال */
+.star:nth-child(2){
 
-@media(max-width:768px){
+left:30%;
 
-.intro-content{
-
-flex-direction:row;
-
-gap:15px;
+animation-delay:.1s;
 
 }
 
-.intro-owl{
+.star:nth-child(3){
 
-width:110px;
+left:50%;
 
-}
-
-.intro-text h2{
-
-font-size:24px;
+animation-delay:.2s;
 
 }
 
-.intro-text p{
+.star:nth-child(4){
 
-font-size:15px;
+left:70%;
 
-line-height:1.9;
+animation-delay:.15s;
+
+}
+
+.star:nth-child(5){
+
+left:90%;
+
+animation-delay:.05s;
+
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+
+transform:translateY(20px) scale(.4);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-70px)
+rotate(360deg)
+scale(1.3);
 
 }
 
 }
-  
-  
-/* الجوال */
+
+
+/* =========================================================
+   الاهتزاز
+========================================================= */
+
+.shake{
+
+animation:shake .3s;
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+
+25%{transform:translateX(-6px);}
+
+50%{transform:translateX(6px);}
+
+75%{transform:translateX(-6px);}
+
+100%{transform:translateX(0);}
+
+}
+
+
+/* =========================================================
+   الأنيميشن
+========================================================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* =========================================================
+   بطاقة النهاية
+========================================================= */
+
+.final-card{
+
+background:linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:40px;
+
+}
+
+.final-card h2{
+
+color:#ffe082;
+
+font-size:42px;
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.final-text{
+
+color:white !important;
+
+font-size:24px !important;
+
+line-height:2.4 !important;
+
+font-weight:600;
+
+text-align:center;
+
+}
+
+
+/* =========================================================
+   زر الدرس التالي
+========================================================= */
+
+.next-unit-btn{
+
+width:100%;
+
+padding:22px !important;
+
+border:none !important;
+
+border-radius:25px !important;
+
+font-size:22px !important;
+
+font-weight:bold;
+
+cursor:pointer;
+
+color:white !important;
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+) !important;
+
+box-shadow:0 14px 35px rgba(0,0,0,.18) !important;
+
+transition:.3s;
+
+}
+
+.next-unit-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.22) !important;
+
+}
+
+
+/* =========================================================
+   الجوال
+========================================================= */
 
 @media(max-width:768px){
 
 .title{
+
 font-size:38px;
+
 }
 
 .subtitle{
+
 font-size:18px;
+
 }
 
-.card{
+.question-card{
+
 padding:30px;
+
 }
 
-.card h2{
-font-size:28px;
+.question-number{
+
+width:52px;
+
+height:52px;
+
+font-size:19px;
+
 }
 
-.card p{
-font-size:17px;
+.question-type{
+
+font-size:18px;
+
 }
 
 .question-title{
-font-size:20px;
+
+font-size:21px;
+
 }
 
 .help-text{
+
 font-size:17px;
+
 }
 
 .answer-result,
 .result-text{
+
 font-size:17px;
+
 }
 
 .choice-container{
+
 flex-direction:column;
-}
-
-.owl-circle img{
-width:65px;
-height:65px;
-}
-
-.video-card{
-padding:20px;
-}
-
-  .word-container{
-
-gap:10px;
 
 }
 
 .sort-buttons{
 
 flex-direction:column;
+
+}
+
+.word-container{
+
+gap:10px;
+
+}
+
+.word-btn{
+
+width:100%;
 
 }
 
@@ -954,19 +1120,62 @@ font-size:16px;
 padding:14px 18px;
 
 }
-  
+
+.practice-intro{
+
+padding:18px 20px;
+
+gap:16px;
+
+border-radius:25px;
+
+}
+
+.practice-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:27px;
+
+border-radius:17px;
+
+}
+
+.practice-content h2{
+
+font-size:25px;
+
+}
+
+.practice-content p{
+
+font-size:16px;
+
+}
+
+.final-text{
+
+font-size:20px !important;
+
+}
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
 <div class="container">
 
 
-<!-- الأعلى -->
+<!-- =====================================================
+     الأعلى
+====================================================== -->
 
 <div class="top-bar">
 
@@ -978,16 +1187,12 @@ class="back-btn">
 
 </a>
 
-<div class="owl-circle">
-
-<img src="../okay.owl.PNG">
-
-</div>
-
 </div>
 
 
-<!-- العنوان -->
+<!-- =====================================================
+     العنوان
+====================================================== -->
 
 <h1 class="title">
 
@@ -1002,7 +1207,9 @@ class="back-btn">
 </p>
 
 
-<!-- بطاقة الفيديو -->
+<!-- =====================================================
+     الفيديو
+====================================================== -->
 
 <div class="video-box">
 
@@ -1021,34 +1228,30 @@ type="video/quicktime">
 
 </div>
 
+
+<!-- =====================================================
+     تدرب الآن
+====================================================== -->
+
+<div class="practice-intro">
+
+<div class="practice-icon">
+
+📝
+
 </div>
 
-
-<!-- بطاقة انتقالية -->
-
-<div class="card intro-card">
-
-<div class="intro-content">
-
-<img
-src="../success.owl.PNG"
-class="intro-owl">
-
-<div class="intro-text">
+<div class="practice-content">
 
 <h2>
 
- هيا نبدأ التدريب
+🎯 تدرب الآن
 
 </h2>
 
 <p>
 
-لقد تعلمت كلمات الزمن الأساسية.
-
-<br><br>
-
-✨ الآن حان وقت التطبيق والتأكد من فهمك للدرس.
+اختبر فهمك من خلال أسئلة متنوعة.
 
 </p>
 
@@ -1056,29 +1259,21 @@ class="intro-owl">
 
 </div>
 
-</div>
-  
-  
-  <!-- اكتب بنفسك -->
 
-<div class="card">
+<!-- =====================================================
+     السؤال 1
+     كتابة
+====================================================== -->
 
-<h2>
+<div class="question-card">
+
+<div class="question-number">1</div>
+
+<div class="question-type">
 
 ✏️ اكتب بنفسك
 
-</h2>
-
-<p>
-
-• حاول ترجمة الجمل بنفسك، ثم تحقق من إجابتك.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
@@ -1113,108 +1308,20 @@ class="answer-result">
 </div>
 
 
-<hr class="question-divider">
+<!-- =====================================================
+     السؤال 2
+     اختيار
+====================================================== -->
 
+<div class="question-card">
 
-<!-- السؤال الثاني -->
+<div class="question-number">2</div>
 
-<div class="question-box">
-
-<p class="question-title">
-
-🌙 ترجم: أمس كان يوماً جيداً
-
-</p>
-
-<input
-id="input2"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input2',
-'result2',
-[
-'Yesterday was a good day'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result2"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📅 ترجم: هذا الشهر جيد
-
-</p>
-
-<input
-id="input3"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input3',
-'result3',
-[
-'This month is good'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result3"
-class="answer-result">
-
-</p>
-
-</div>
-
-</div>
-  
-
-  <!-- اختر الإجابة الصحيحة -->
-
-<div class="card">
-
-<h2>
+<div class="question-type">
 
 🎯 اختر الإجابة الصحيحة
 
-</h2>
-
-<p>
-
-• اقرأ السؤال جيداً، ثم اختر الإجابة الصحيحة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
@@ -1251,241 +1358,20 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- =====================================================
+     السؤال 3
+     مفرد وجمع
+====================================================== -->
 
+<div class="question-card">
 
-<!-- السؤال الثاني -->
+<div class="question-number">3</div>
 
-<div class="question-box">
-
-<p class="question-title">
-
-🌙 ما ترجمة كلمة "أمس"؟
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
-
-Today
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
-
-Yesterday
-
-</button>
-
-</div>
-
-<p
-id="choice2"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🚀 ما ترجمة كلمة "غداً"؟
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
-
-Yesterday
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
-
-Tomorrow
-
-</button>
-
-</div>
-
-<p
-id="choice3"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📅 ما ترجمة كلمة "أيام"؟
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
-
-Day
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice4')">
-
-Days
-
-</button>
-
-</div>
-
-<p
-id="choice4"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الخامس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📆 ما ترجمة كلمة "أسابيع"؟
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice5')">
-
-Weeks
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice5')">
-
-Week
-
-</button>
-
-</div>
-
-<p
-id="choice5"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال السادس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🗓️ ما ترجمة كلمة "سنوات"؟
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice6')">
-
-Year
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice6')">
-
-Years
-
-</button>
-
-</div>
-
-<p
-id="choice6"
-class="result-text">
-
-</p>
-
-</div>
-
-</div>
-
-<!-- مفرد أم جمع؟ -->
-
-<div class="card">
-
-<h2>
+<div class="question-type">
 
 🔄 مفرد أم جمع؟
 
-</h2>
-
-<p>
-
-• اختر الكلمة الإنجليزية الصحيحة.
-
-<br><br>
-
-• انتبه هل الكلمة مفرد أم جمع.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
@@ -1522,649 +1408,20 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- =====================================================
+     السؤال 4
+     ترتيب
+====================================================== -->
 
+<div class="question-card">
 
-<!-- السؤال الثاني -->
+<div class="question-number">4</div>
 
-<div class="question-box">
-
-<p class="question-title">
-
-📆 ترجمة: أسبوع
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice8')">
-
-Week
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice8')">
-
-Weeks
-
-</button>
-
-</div>
-
-<p
-id="choice8"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🗓️ ترجمة: أشهر
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice9')">
-
-Month
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice9')">
-
-Months
-
-</button>
-
-</div>
-
-<p
-id="choice9"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🎉 ترجمة: سنة
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice10')">
-
-Year
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice10')">
-
-Years
-
-</button>
-
-</div>
-
-<p
-id="choice10"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الخامس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🎊 ترجمة: سنوات
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice11')">
-
-Year
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice11')">
-
-Years
-
-</button>
-
-</div>
-
-<p
-id="choice11"
-class="result-text">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال السادس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📚 ترجمة: أسابيع
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice12')">
-
-Weeks
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice12')">
-
-Week
-
-</button>
-
-</div>
-
-<p
-id="choice12"
-class="result-text">
-
-</p>
-
-</div>
-
-</div>
-
-  <!-- ترجم الجملة -->
-
-<div class="card">
-
-<h2>
-
-🧩 ترجم الجملة
-
-</h2>
-
-<p>
-
-• استخدم ما تعلمته في الدروس السابقة.
-
-<br><br>
-
-• انتبه للضمائر و is / am / are وأدوات الإشارة.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🌞 ترجم: اليوم أنا سعيد
-
-</p>
-
-<input
-id="input5"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input5',
-'result5',
-[
-'Today I am happy'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result5"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📅 ترجم: هذا الأسبوع جيد
-
-</p>
-
-<input
-id="input6"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input6',
-'result6',
-[
-'This week is good'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result6"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🌙 ترجم: أمس كان يوماً جيداً
-
-</p>
-
-<input
-id="input7"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input7',
-'result7',
-[
-'Yesterday was a good day'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result7"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-🚀 ترجم: غداً نحن سعداء
-
-</p>
-
-<input
-id="input8"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input8',
-'result8',
-[
-'Tomorrow we are happy'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result8"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الخامس -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-📚 ترجم: هذه الأيام جيدة
-
-</p>
-
-<input
-id="input9"
-class="write-box"
-placeholder="اكتب إجابتك هنا">
-
-<button
-onclick="checkWriting(
-'input9',
-'result9',
-[
-'These days are good'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result9"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-</div>
-
-
- <!-- اكتشف الخطأ وصححه -->
-
-<div class="card">
-
-<h2>
-
-🔎 اكتشف الخطأ وصححه
-
-</h2>
-
-<p>
-
-• تحتوي كل جملة على خطأ واحد فقط.
-
-<br><br>
-
-• حاول اكتشاف الخطأ وتصحيحه بنفسك.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ Today we is happy.
-
-</p>
-
-<input
-id="input11"
-class="write-box"
-placeholder="صحح الجملة">
-
-<button
-onclick="checkWriting(
-'input11',
-'result11',
-[
-'Today we are happy'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result11"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثاني -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ These day are good.
-
-</p>
-
-<input
-id="input12"
-class="write-box"
-placeholder="صحح الجملة">
-
-<button
-onclick="checkWriting(
-'input12',
-'result12',
-[
-'These days are good'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result12"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الثالث -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ This weeks is good.
-
-</p>
-
-<input
-id="input13"
-class="write-box"
-placeholder="صحح الجملة">
-
-<button
-onclick="checkWriting(
-'input13',
-'result13',
-[
-'This week is good'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result13"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-<!-- السؤال الرابع -->
-
-<div class="question-box">
-
-<p class="question-title">
-
-❌ Tomorrow we am happy.
-
-</p>
-
-<input
-id="input14"
-class="write-box"
-placeholder="صحح الجملة">
-
-<button
-onclick="checkWriting(
-'input14',
-'result14',
-[
-'Tomorrow we are happy'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-<p
-id="result14"
-class="answer-result">
-
-</p>
-
-</div>
-
-
-<hr class="question-divider">
-
-
-</div>
-
-
-  <!-- رتب الكلمات -->
-
-<div class="card">
-
-<h2>
+<div class="question-type">
 
 🧩 رتب الكلمات
 
-</h2>
-
-<p>
-
-• اضغط على الكلمات بالترتيب الصحيح لتكوين الجملة.
-
-<br><br>
-
-• إذا أخطأت أو أردت تغيير إجابتك، اضغط على زر إعادة الترتيب.
-
-</p>
-
-
-<!-- السؤال الأول -->
-
-<div class="question-box">
+</div>
 
 <p class="question-title">
 
@@ -2211,13 +1468,11 @@ we
 
 </div>
 
-
 <div
 class="answer-box"
 id="answerBox1">
 
 </div>
-
 
 <div class="sort-buttons">
 
@@ -2253,12 +1508,370 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- =====================================================
+     السؤال 5
+     كتابة
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">5</div>
+
+<div class="question-type">
+
+✏️ اكتب بنفسك
+
+</div>
+
+<p class="question-title">
+
+🌙 ترجم: أمس كان يوماً جيداً
+
+</p>
+
+<input
+id="input2"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input2',
+'result2',
+[
+'Yesterday was a good day'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result2"
+class="answer-result">
+
+</p>
+
+</div>
 
 
-<!-- السؤال الثاني -->
+<!-- =====================================================
+     السؤال 6
+     اختيار
+====================================================== -->
 
-<div class="question-box">
+<div class="question-card">
+
+<div class="question-number">6</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+🌙 ما ترجمة كلمة "أمس"؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice2')">
+
+Today
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice2')">
+
+Yesterday
+
+</button>
+
+</div>
+
+<p
+id="choice2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 7
+     مفرد وجمع
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">7</div>
+
+<div class="question-type">
+
+🔄 مفرد أم جمع؟
+
+</div>
+
+<p class="question-title">
+
+📆 ترجمة: أسبوع
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice8')">
+
+Week
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice8')">
+
+Weeks
+
+</button>
+
+</div>
+
+<p
+id="choice8"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 8
+     تصحيح خطأ
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">8</div>
+
+<div class="question-type">
+
+🔎 اكتشف الخطأ وصححه
+
+</div>
+
+<p class="question-title">
+
+❌ Today we is happy.
+
+</p>
+
+<p class="help-text">
+
+• تحتوي الجملة على خطأ واحد فقط. حاول اكتشافه وتصحيحه.
+
+</p>
+
+<input
+id="input11"
+class="write-box"
+placeholder="صحح الجملة">
+
+<button
+onclick="checkWriting(
+'input11',
+'result11',
+[
+'Today we are happy'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result11"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 9
+     اختيار
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">9</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+🚀 ما ترجمة كلمة "غداً"؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice3')">
+
+Yesterday
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice3')">
+
+Tomorrow
+
+</button>
+
+</div>
+
+<p
+id="choice3"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 10
+     كتابة
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">10</div>
+
+<div class="question-type">
+
+✏️ اكتب بنفسك
+
+</div>
+
+<p class="question-title">
+
+📅 ترجم: هذا الشهر جيد
+
+</p>
+
+<input
+id="input3"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input3',
+'result3',
+[
+'This month is good'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result3"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 11
+     مفرد وجمع
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">11</div>
+
+<div class="question-type">
+
+🔄 مفرد أم جمع؟
+
+</div>
+
+<p class="question-title">
+
+🗓️ ترجمة: أشهر
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice9')">
+
+Month
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice9')">
+
+Months
+
+</button>
+
+</div>
+
+<p
+id="choice9"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 12
+     ترتيب
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">12</div>
+
+<div class="question-type">
+
+🧩 رتب الكلمات
+
+</div>
 
 <p class="question-title">
 
@@ -2305,13 +1918,11 @@ is
 
 </div>
 
-
 <div
 class="answer-box"
 id="answerBox2">
 
 </div>
-
 
 <div class="sort-buttons">
 
@@ -2347,12 +1958,320 @@ class="result-text">
 </div>
 
 
-<hr class="question-divider">
+<!-- =====================================================
+     السؤال 13
+     اختيار
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">13</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+📅 ما ترجمة كلمة "أيام"؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+Day
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
+
+Days
+
+</button>
+
+</div>
+
+<p
+id="choice4"
+class="result-text">
+
+</p>
+
+</div>
 
 
-<!-- السؤال الثالث -->
+<!-- =====================================================
+     السؤال 14
+     ترجمة
+====================================================== -->
 
-<div class="question-box">
+<div class="question-card">
+
+<div class="question-number">14</div>
+
+<div class="question-type">
+
+🧩 ترجم الجملة
+
+</div>
+
+<p class="question-title">
+
+🌞 ترجم: اليوم أنا سعيد
+
+</p>
+
+<input
+id="input5"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input5',
+'result5',
+[
+'Today I am happy'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result5"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 15
+     مفرد وجمع
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">15</div>
+
+<div class="question-type">
+
+🔄 مفرد أم جمع؟
+
+</div>
+
+<p class="question-title">
+
+🎉 ترجمة: سنة
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice10')">
+
+Year
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice10')">
+
+Years
+
+</button>
+
+</div>
+
+<p
+id="choice10"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 16
+     تصحيح خطأ
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">16</div>
+
+<div class="question-type">
+
+🔎 اكتشف الخطأ وصححه
+
+</div>
+
+<p class="question-title">
+
+❌ These day are good.
+
+</p>
+
+<p class="help-text">
+
+• تحتوي الجملة على خطأ واحد فقط.
+
+</p>
+
+<input
+id="input12"
+class="write-box"
+placeholder="صحح الجملة">
+
+<button
+onclick="checkWriting(
+'input12',
+'result12',
+[
+'These days are good'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result12"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 17
+     اختيار
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">17</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+📆 ما ترجمة كلمة "أسابيع"؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice5')">
+
+Weeks
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice5')">
+
+Week
+
+</button>
+
+</div>
+
+<p
+id="choice5"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 18
+     كتابة
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">18</div>
+
+<div class="question-type">
+
+🧩 ترجم الجملة
+
+</div>
+
+<p class="question-title">
+
+📅 ترجم: هذا الأسبوع جيد
+
+</p>
+
+<input
+id="input6"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input6',
+'result6',
+[
+'This week is good'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result6"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 19
+     ترتيب
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">19</div>
+
+<div class="question-type">
+
+🧩 رتب الكلمات
+
+</div>
 
 <p class="question-title">
 
@@ -2399,13 +2318,11 @@ are
 
 </div>
 
-
 <div
 class="answer-box"
 id="answerBox3">
 
 </div>
-
 
 <div class="sort-buttons">
 
@@ -2440,32 +2357,423 @@ class="result-text">
 
 </div>
 
+
+<!-- =====================================================
+     السؤال 20
+     مفرد وجمع
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">20</div>
+
+<div class="question-type">
+
+🔄 مفرد أم جمع؟
+
 </div>
 
- <!-- التحدي الأخير -->
+<p class="question-title">
 
-<div class="card challenge-card">
-
-<h2>
-
-🌟 التحدي الأخير
-
-</h2>
-
-<p>
-
-• حاول حل الأسئلة التالية بنفسك.
-
-<br><br>
-
-• استخدم ما تعلمته من كلمات الزمن والضمائر و is / am / are والنفي.
+🎊 ترجمة: سنوات
 
 </p>
 
+<div class="choice-container">
 
-<!-- السؤال الأول -->
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice11')">
 
-<div class="question-box">
+Year
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice11')">
+
+Years
+
+</button>
+
+</div>
+
+<p
+id="choice11"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 21
+     تصحيح خطأ
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">21</div>
+
+<div class="question-type">
+
+🔎 اكتشف الخطأ وصححه
+
+</div>
+
+<p class="question-title">
+
+❌ This weeks is good.
+
+</p>
+
+<p class="help-text">
+
+• تحتوي الجملة على خطأ واحد فقط.
+
+</p>
+
+<input
+id="input13"
+class="write-box"
+placeholder="صحح الجملة">
+
+<button
+onclick="checkWriting(
+'input13',
+'result13',
+[
+'This week is good'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result13"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 22
+     اختيار
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">22</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+🗓️ ما ترجمة كلمة "سنوات"؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice6')">
+
+Year
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice6')">
+
+Years
+
+</button>
+
+</div>
+
+<p
+id="choice6"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 23
+     ترجمة
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">23</div>
+
+<div class="question-type">
+
+🧩 ترجم الجملة
+
+</div>
+
+<p class="question-title">
+
+🌙 ترجم: أمس كان يوماً جيداً
+
+</p>
+
+<input
+id="input7"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input7',
+'result7',
+[
+'Yesterday was a good day'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result7"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 24
+     مفرد وجمع
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">24</div>
+
+<div class="question-type">
+
+🔄 مفرد أم جمع؟
+
+</div>
+
+<p class="question-title">
+
+📚 ترجمة: أسابيع
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice12')">
+
+Weeks
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice12')">
+
+Week
+
+</button>
+
+</div>
+
+<p
+id="choice12"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 25
+     تصحيح خطأ
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">25</div>
+
+<div class="question-type">
+
+🔎 اكتشف الخطأ وصححه
+
+</div>
+
+<p class="question-title">
+
+❌ Tomorrow we am happy.
+
+</p>
+
+<p class="help-text">
+
+• تحتوي الجملة على خطأ واحد فقط.
+
+</p>
+
+<input
+id="input14"
+class="write-box"
+placeholder="صحح الجملة">
+
+<button
+onclick="checkWriting(
+'input14',
+'result14',
+[
+'Tomorrow we are happy'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result14"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 26
+     ترجمة
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">26</div>
+
+<div class="question-type">
+
+🧩 ترجم الجملة
+
+</div>
+
+<p class="question-title">
+
+🚀 ترجم: غداً نحن سعداء
+
+</p>
+
+<input
+id="input8"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input8',
+'result8',
+[
+'Tomorrow we are happy'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result8"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 27
+     ترجمة
+====================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">27</div>
+
+<div class="question-type">
+
+🧩 ترجم الجملة
+
+</div>
+
+<p class="question-title">
+
+📚 ترجم: هذه الأيام جيدة
+
+</p>
+
+<input
+id="input9"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'input9',
+'result9',
+[
+'These days are good'
+]
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<p
+id="result9"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     السؤال 28
+     التحدي الأخير
+====================================================== -->
+
+<div class="question-card challenge-card">
+
+<div class="question-number">28</div>
+
+<div class="question-type">
+
+🌟 التحدي الأخير
+
+</div>
 
 <p class="question-title">
 
@@ -2510,12 +2818,20 @@ class="answer-result">
 </div>
 
 
-<hr class="question-divider">
+<!-- =====================================================
+     السؤال 29
+     التحدي الأخير
+====================================================== -->
 
+<div class="question-card challenge-card">
 
-<!-- السؤال الثاني -->
+<div class="question-number">29</div>
 
-<div class="question-box">
+<div class="question-type">
+
+🌟 التحدي الأخير
+
+</div>
 
 <p class="question-title">
 
@@ -2544,7 +2860,7 @@ onclick="checkChallenge(
 'challengeResult2',
 [
 'He is not here today',
-'He isn't here today'
+'He isn\'t here today'
 ]
 )">
 
@@ -2560,12 +2876,12 @@ class="answer-result">
 
 </div>
 
-</div>
-  
 
-  <!-- بطاقة النهاية -->
+<!-- =====================================================
+     بطاقة النهاية
+====================================================== -->
 
-<div class="card final-card">
+<div class="final-card">
 
 <h2>
 
@@ -2583,7 +2899,9 @@ class="answer-result">
 
 </p>
 
-<button class="next-unit-btn">
+<button
+class="next-unit-btn"
+onclick="goToNextLesson()">
 
 🚀 الانتقال إلى الدرس التالي
 
@@ -2594,13 +2912,12 @@ class="answer-result">
 
 </div>
 
-<!-- نهاية container -->
 
-  <script>
+<script>
 
-// ==========================
-// تنظيف النص
-// ==========================
+/* =========================================================
+   تنظيف النص
+========================================================= */
 
 function normalizeText(text){
 
@@ -2628,10 +2945,9 @@ return text
 }
 
 
-
-// ==========================
-// التحقق من الأسئلة الكتابية
-// ==========================
+/* =========================================================
+   التحقق من الأسئلة الكتابية
+========================================================= */
 
 function checkWriting(
 inputId,
@@ -2645,23 +2961,19 @@ document.getElementById(inputId);
 let result =
 document.getElementById(resultId);
 
-
 let userAnswer =
 normalizeText(input.value);
-
 
 let answers =
 correctAnswers.map(answer=>
 normalizeText(answer)
 );
 
-
 input.classList.remove(
 "correct-input",
 "wrong-input",
 "shake"
 );
-
 
 if(
 answers.includes(userAnswer)
@@ -2670,7 +2982,6 @@ answers.includes(userAnswer)
 input.classList.add(
 "correct-input"
 );
-
 
 result.innerHTML =
 
@@ -2684,12 +2995,10 @@ result.innerHTML =
 
 '✅ لقد كتبت الإجابة الصحيحة.';
 
-
 result.className =
 "answer-result success-text";
 
 }
-
 
 else{
 
@@ -2697,7 +3006,6 @@ input.classList.add(
 "wrong-input",
 "shake"
 );
-
 
 setTimeout(function(){
 
@@ -2707,13 +3015,11 @@ input.classList.remove(
 
 },300);
 
-
 result.innerHTML =
 
 "❌ لقد كتبت الإجابة بطريقة خاطئة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br>"
 +
 correctAnswers[0];
-
 
 result.className =
 "answer-result error-text";
@@ -2723,10 +3029,9 @@ result.className =
 }
 
 
-
-// ==========================
-// أسئلة الاختيار
-// ==========================
+/* =========================================================
+   أسئلة الاختيار
+========================================================= */
 
 function checkAnswer(
 button,
@@ -2739,22 +3044,17 @@ document.getElementById(
 resultId
 );
 
-
 let allButtons =
 button.parentElement
 .querySelectorAll(
 ".choice-btn"
 );
 
-
-// منع الضغط مرة أخرى
-
 allButtons.forEach(btn=>{
 
 btn.disabled = true;
 
 });
-
 
 if(isCorrect){
 
@@ -2764,7 +3064,6 @@ button.classList.add(
 
 button.innerHTML +=
 " ✔️";
-
 
 result.innerHTML =
 
@@ -2777,7 +3076,6 @@ result.innerHTML =
 '</div>'+
 
 '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
-
 
 result.className =
 "result-text success-text";
@@ -2805,17 +3103,11 @@ button.classList.remove(
 button.innerHTML +=
 " ✖️";
 
-
 result.innerHTML =
-
 "❌ لقد اخترت الإجابة الخاطئة.";
-
 
 result.className =
 "result-text error-text";
-
-
-// إظهار الإجابة الصحيحة
 
 allButtons.forEach(btn=>{
 
@@ -2844,12 +3136,12 @@ btn.innerHTML +=
 
 }
 
-
 }
 
- // ==========================
-// إضافة كلمة
-// ==========================
+
+/* =========================================================
+   إضافة كلمة
+========================================================= */
 
 function addWord(
 button,
@@ -2860,7 +3152,6 @@ let answerBox =
 document.getElementById(
 answerBoxId
 );
-
 
 let newWord =
 document.createElement(
@@ -2873,11 +3164,9 @@ newWord.className =
 newWord.innerText =
 button.innerText;
 
-
 answerBox.appendChild(
 newWord
 );
-
 
 button.style.display =
 "none";
@@ -2885,10 +3174,9 @@ button.style.display =
 }
 
 
-
-// ==========================
-// إعادة الترتيب
-// ==========================
+/* =========================================================
+   إعادة الترتيب
+========================================================= */
 
 function resetSentence(
 wordsId,
@@ -2906,7 +3194,6 @@ button.style.display =
 
 });
 
-
 document
 .getElementById(
 answerBoxId
@@ -2916,10 +3203,9 @@ answerBoxId
 }
 
 
-
-// ==========================
-// التحقق من ترتيب الكلمات
-// ==========================
+/* =========================================================
+   التحقق من ترتيب الكلمات
+========================================================= */
 
 function checkSentence(
 answerBoxId,
@@ -2937,15 +3223,12 @@ document.getElementById(
 resultId
 );
 
-
 let words =
 answerBox.querySelectorAll(
 ".selected-word"
 );
 
-
 let userSentence = "";
-
 
 words.forEach(word=>{
 
@@ -2954,23 +3237,19 @@ word.innerText + " ";
 
 });
 
-
 userSentence =
 normalizeText(
 userSentence
 );
-
 
 correctSentence =
 normalizeText(
 correctSentence
 );
 
-
 answerBox.classList.remove(
 "shake"
 );
-
 
 if(
 userSentence === correctSentence
@@ -2988,19 +3267,16 @@ result.innerHTML =
 
 '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
 
-
 result.className =
 "result-text success-text";
 
 }
-
 
 else{
 
 answerBox.classList.add(
 "shake"
 );
-
 
 setTimeout(function(){
 
@@ -3010,11 +3286,8 @@ answerBox.classList.remove(
 
 },300);
 
-
 result.innerHTML =
-
 "❌ ترتيب الكلمات غير صحيح.";
-
 
 result.className =
 "result-text error-text";
@@ -3024,10 +3297,9 @@ result.className =
 }
 
 
-
-// ==========================
-// خلط الكلمات
-// ==========================
+/* =========================================================
+   خلط الكلمات
+========================================================= */
 
 function shuffleWords(
 containerId
@@ -3038,29 +3310,23 @@ document.getElementById(
 containerId
 );
 
-
 if(!container){
 
 return;
 
 }
 
-
 let sentence =
 container.dataset.answer;
 
-
 let words =
 sentence.split(" ");
-
 
 words.sort(
 () => Math.random() - 0.5
 );
 
-
 container.innerHTML = "";
-
 
 words.forEach(word=>{
 
@@ -3085,16 +3351,17 @@ word+
 
 }
 
-// ==========================
-// عداد التحدي الأخير
-// ==========================
+
+/* =========================================================
+   عداد التحدي الأخير
+========================================================= */
 
 let finalChallengeScore = 0;
 
 
-// ==========================
-// التحقق من التحدي الأخير
-// ==========================
+/* =========================================================
+   التحقق من التحدي الأخير
+========================================================= */
 
 function checkFinalChallenge(
 inputId,
@@ -3103,36 +3370,26 @@ correctAnswers
 ){
 
 let input =
-document.getElementById(
-inputId
-);
+document.getElementById(inputId);
 
 let result =
-document.getElementById(
-resultId
-);
-
+document.getElementById(resultId);
 
 let userAnswer =
 normalizeText(
 input.value
 );
 
-
 let answers =
 correctAnswers.map(answer=>
-
 normalizeText(answer)
-
 );
-
 
 input.classList.remove(
 "correct-input",
 "wrong-input",
 "shake"
 );
-
 
 if(
 answers.includes(userAnswer)
@@ -3141,7 +3398,6 @@ answers.includes(userAnswer)
 input.classList.add(
 "correct-input"
 );
-
 
 result.innerHTML =
 
@@ -3155,12 +3411,8 @@ result.innerHTML =
 
 '✅ إجابة صحيحة.';
 
-
 result.className =
 "answer-result success-text";
-
-
-// منع زيادة العداد أكثر من مرة
 
 if(
 !input.dataset.done
@@ -3172,9 +3424,6 @@ input.dataset.done =
 finalChallengeScore++;
 
 }
-
-
-// عدد أسئلة التحدي = 4
 
 if(
 finalChallengeScore === 2
@@ -3188,16 +3437,12 @@ behavior:"smooth"
 
 }
 
-}
-
-
 else{
 
 input.classList.add(
 "wrong-input",
 "shake"
 );
-
 
 setTimeout(function(){
 
@@ -3207,10 +3452,8 @@ input.classList.remove(
 
 },300);
 
-
 result.innerHTML =
 "❌ حاول مرة أخرى.";
-
 
 result.className =
 "answer-result error-text";
@@ -3220,10 +3463,9 @@ result.className =
 }
 
 
-
-// ==========================
-// دعم الاسم القديم
-// ==========================
+/* =========================================================
+   دعم الاسم القديم
+========================================================= */
 
 function checkChallenge(
 inputId,
@@ -3240,10 +3482,9 @@ correctAnswers
 }
 
 
-
-// ==========================
-// خلط كلمات ترتيب الجمل
-// ==========================
+/* =========================================================
+   خلط كلمات ترتيب الجمل
+========================================================= */
 
 shuffleWords("words1");
 
@@ -3252,30 +3493,84 @@ shuffleWords("words2");
 shuffleWords("words3");
 
 
-
-// ==========================
-// زر الانتقال للدرس التالي
-// ==========================
+/* =========================================================
+   دعم زر Enter
+========================================================= */
 
 document
-.querySelector(".next-unit-btn")
-.addEventListener(
+.querySelectorAll(
+".write-box"
+)
+.forEach(input=>{
 
-"click",
+input.addEventListener(
+"keydown",
+function(event){
 
-function(){
+if(
+event.key === "Enter"
+){
 
-window.location.href =
-"next-lesson.html";
+event.preventDefault();
+
+this.nextElementSibling.click();
+
+}
 
 }
 
 );
 
+});
+
+
+/* =========================================================
+   الانتقال عبر نظام الدروس
+========================================================= */
+
+function goToNextLesson(){
+
+if(
+typeof window.finishLesson === "function"
+){
+
+window.finishLesson(
+"time-words",
+"كلمات الزمن",
+"last-lesson.html"
+);
+
+}
+
+else{
+
+window.location.href =
+"last-lesson.html";
+
+}
+
+}
+
 </script>
+
+
+<!-- =========================================================
+     نظام الدروس والمكافآت الموجود مسبقًا
+========================================================= -->
+
+<script type="module">
+
+import {
+finishLesson
+}
+from "./js/reward.js";
+
+window.finishLesson =
+finishLesson;
+
+</script>
+
 
 </body>
 
 </html>
-
-  
