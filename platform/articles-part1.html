@@ -305,6 +305,8 @@ position:relative;
 
 z-index:1;
 
+flex:1;
+
 }
 
 .practice-content h2{
@@ -326,6 +328,48 @@ line-height:1.8;
 color:#666;
 
 font-weight:600;
+
+}
+
+.practice-btn{
+
+display:block;
+
+padding:16px 24px;
+
+border-radius:20px;
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:bold;
+
+white-space:nowrap;
+
+box-shadow:0 10px 25px rgba(55,104,255,.18);
+
+transition:.3s;
+
+position:relative;
+
+z-index:1;
+
+}
+
+.practice-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 16px 35px rgba(55,104,255,.25);
 
 }
 
@@ -1044,6 +1088,14 @@ font-size:16px;
 
 }
 
+.practice-btn{
+
+padding:14px 18px;
+
+font-size:16px;
+
+}
+
 }
 
 </style>
@@ -1064,7 +1116,7 @@ font-size:16px;
 <div class="top-bar">
 
 <a
-href="unit3.html"
+href="unit2-pre.html"
 class="back-btn">
 
 ⬅️ رجوع
@@ -1185,6 +1237,14 @@ type="video/quicktime">
 </p>
 
 </div>
+
+<a
+href="a-an-part2.html"
+class="practice-btn">
+
+🚀 ابدأ التدريب
+
+</a>
 
 </div>
 
@@ -1639,7 +1699,9 @@ class="answer-result">
       بطاقة النهاية
 ========================== -->
 
-<div class="card final-card">
+<div
+class="card final-card"
+id="lesson-complete">
 
 <h2>
 
@@ -1673,9 +1735,6 @@ onclick="goToNextLesson()">
 
 <!-- =========================================================
      نظام الدروس والمكافآت
-     
-     يسجل إكمال الدرس ويمنح المكافأة المعتادة
-     ثم يسمح بالانتقال إلى الدرس التالي.
 ========================================================= -->
 
 <script type="module">
@@ -1697,6 +1756,20 @@ finishLesson;
 
 
 <script>
+
+
+// ==========================
+// هوية الدرس
+// ==========================
+
+const LESSON_ID =
+"pre-unit2-a-an-part1";
+
+const LESSON_TITLE =
+"A & An | الجزء الأول";
+
+const NEXT_LESSON =
+"a-an-part2.html";
 
 
 // ==========================
@@ -1840,10 +1913,9 @@ input.classList.remove(
 
 result.innerHTML =
 
-"😅❌ إجابتك غير صحيحة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br><b>"
-+
-correctAnswers[0]
-+
+"😅❌ إجابتك غير صحيحة.<br><br>"+
+"✅ إحدى الإجابات الصحيحة هي:<br><br><b>"+
+correctAnswers[0]+
 "</b>";
 
 
@@ -2242,7 +2314,7 @@ shuffleWords("words1");
 
 
 // ==========================
-// الانتقال إلى الدرس التالي
+// إنهاء الدرس والانتقال
 // ==========================
 
 function goToNextLesson(){
@@ -2253,11 +2325,11 @@ typeof window.finishLesson === "function"
 
 window.finishLesson(
 
-"unit3-a-an-part1",
+LESSON_ID,
 
-"A & An | الجزء الأول",
+LESSON_TITLE,
 
-"articles-part2.html"
+NEXT_LESSON
 
 );
 
@@ -2266,7 +2338,7 @@ window.finishLesson(
 else{
 
 window.location.href =
-"a-an-part2.html";
+NEXT_LESSON;
 
 }
 
