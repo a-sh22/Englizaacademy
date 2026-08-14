@@ -10,7 +10,7 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
-Comparing Ages | مقارنة الأعمار | Engliza Academy
+Jobs | الوظائف | Engliza Academy
 </title>
 
 <style>
@@ -23,7 +23,7 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 
 }
-   
+
 
 body{
 
@@ -143,22 +143,25 @@ box-shadow:0 22px 50px rgba(0,0,0,.12);
 ========================== */
 
 .video-box{
+
 background:white;
 padding:0;
 border-radius:35px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
 margin-bottom:35px;
 overflow:hidden;
+
 }
 
 .video-box video{
+
 width:100%;
 display:block;
 aspect-ratio:16/9;
 object-fit:cover;
 border-radius:0;
+
 }
-   
 
 
 /* ==========================
@@ -208,9 +211,192 @@ margin:0;
 
 
 /* ==========================
-   صندوق السؤال
+   بطاقة تدرب الآن
 ========================== */
 
+.practice-card{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+background:white;
+
+padding:24px 30px;
+
+border-radius:30px;
+
+border:2px solid #ddd4ff;
+
+box-shadow:0 12px 30px rgba(111,67,255,.08);
+
+margin-bottom:35px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.practice-card::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+height:120px;
+
+border-radius:50%;
+
+background:rgba(111,67,255,.05);
+
+left:-45px;
+top:-65px;
+
+}
+
+.practice-icon{
+
+width:62px;
+height:62px;
+
+border-radius:20px;
+
+background:#f5f1ff;
+
+border:2px solid #ddd4ff;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:30px;
+
+flex-shrink:0;
+
+position:relative;
+z-index:1;
+
+}
+
+.practice-content{
+
+position:relative;
+z-index:1;
+
+}
+
+.practice-content h2{
+
+font-size:30px;
+
+color:#1f3c88;
+
+margin-bottom:5px;
+
+}
+
+.practice-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#666;
+
+font-weight:600;
+
+}
+
+
+/* ==========================
+   هوية بطاقات الأسئلة
+========================== */
+
+.question-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+transition:.35s;
+
+animation:fadeUp .6s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+right:0;
+left:0;
+
+height:7px;
+
+background:linear-gradient(
+90deg,
+#ffd45a,
+#e7ae25
+);
+
+}
+
+.question-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 22px 50px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================
+   رقم السؤال
+========================== */
+
+.question-number{
+
+width:56px;
+height:56px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#fffaf0;
+
+border:2px solid #ffe082;
+
+color:#c28b16;
+
+font-size:21px;
+font-weight:bold;
+
+margin-bottom:22px;
+
+}
+
+
+/* ==========================
+   صندوق السؤال
+========================== */
 
 .question-title{
 
@@ -232,8 +418,9 @@ text-align:center;
 margin:35px 0;
 
 }
-   
- /* ==========================
+
+
+/* ==========================
    مربع الكتابة
 ========================== */
 
@@ -321,7 +508,41 @@ opacity:.95;
 
 
 /* ==========================
-   الأزرار
+   أزرار بطاقات الأسئلة
+========================== */
+
+.question-card button{
+
+background:#f5f7ff;
+color:#1f3c88;
+border:2px solid #dce4ff;
+padding:18px 28px;
+border-radius:22px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.question-card button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.question-card button:active{
+
+transform:scale(.97);
+
+}
+
+
+/* ==========================
+   أزرار البطاقات العامة
 ========================== */
 
 .card button{
@@ -347,15 +568,15 @@ box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
 
-.card h2{
-
-margin-bottom:28px;
-
-}
-   
 .card button:active{
 
 transform:scale(.97);
+
+}
+
+.card h2{
+
+margin-bottom:28px;
 
 }
 
@@ -408,7 +629,8 @@ color:#c62828;
 
 }
 
-  /* ==========================
+
+/* ==========================
    ترتيب الكلمات
 ========================== */
 
@@ -619,7 +841,6 @@ margin-bottom:30px;
 
 }
 
-  
 .next-lesson-btn{
 
 width:100%;
@@ -708,7 +929,8 @@ font-size:18px;
 
 }
 
-.card{
+.card,
+.question-card{
 
 padding:28px;
 
@@ -755,12 +977,12 @@ font-size:20px;
 
 }
 
-   .help-text{
+.help-text{
 
 font-size:24px;
 
 }
-   
+
 .answer-result,
 .result-text{
 
@@ -807,28 +1029,79 @@ font-size:18px;
 width:100%;
 
 }
+
 .next-lesson-btn:active{
 
 transform:scale(.97);
 
 }
 
-   .help-text{
+.practice-card{
 
-font-size:24px;
+padding:19px 20px;
+
+gap:15px;
 
 }
-   
+
+.practice-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:27px;
+
 }
 
-  
+.practice-content h2{
+
+font-size:25px;
+
+}
+
+.practice-content p{
+
+font-size:16px;
+
+}
+
+}
+
+
+/* ==========================
+   أمثلة الحياة اليومية
+========================== */
+
+.example-text{
+
+font-size:20px;
+line-height:2.2;
+
+}
+
+.example-text p{
+
+margin-bottom:32px;
+
+}
+
+.example-tip{
+
+margin-bottom:0;
+
+}
+
 </style>
 
 </head>
-  
-  <body>
+
+
+<body>
+
 
 <div class="container">
+
 
 <!-- ==========================
         الأعلى
@@ -858,14 +1131,18 @@ class="back-btn">
 ========================== -->
 
 <h1 class="title">
+
 👨‍⚕️ الوظائف
+
 </h1>
-  
+
+
 <p class="subtitle">
 
 تعرّف على أسماء أشهر الوظائف باللغة الإنجليزية، وتعلّم كيف تستخدمها في جمل بسيطة.
 
 </p>
+
 
 <!-- ==========================
       فيديو الدرس
@@ -887,69 +1164,123 @@ type="video/quicktime">
 </video>
 
 </div>
-  
-</div>
+
+
+<!-- ==========================
+      بطاقة الجمل اليومية
+========================== -->
 
 <div class="card">
 
-<h2>💬 جمل من الحياة اليومية</h2>
+<h2>
+
+💬 جمل من الحياة اليومية
+
+</h2>
 
 <button
 onclick="toggleExamples()"
 style="margin-top:10px;">
+
 📖 عرض الجمل
+
 </button>
 
-<div id="examplesBox" style="display:none;margin-top:45px;line-height:2.5;">
 
-<p style="margin-bottom:32px;">
-<b>He is a doctor.</b><br>
-هو طبيب.
-</p>
-
-<p style="margin-bottom:32px;">
-<b>She is a teacher.</b><br>
-هي معلمة.
-</p>
-
-<p style="margin-bottom:32px;">
-<b>My mother is a nurse.</b><br>
-أمي ممرضة.
-</p>
-
-<p style="margin-bottom:32px;">
-<b>My father is an engineer.</b><br>
-أبي مهندس.
-</p>
-
-<p style="margin-bottom:32px;">
-<b>My brother wants to be a pilot.</b><br>
-أخي يريد أن يصبح طيارًا.
-</p>
-
-<p style="margin-bottom:32px;">
-<b>The firefighter is very brave.</b><br>
-رجل الإطفاء شجاع جدًا.
-</p>
-
-<p style="margin-bottom:32px;">
-<b>The chef is cooking dinner.</b><br>
-الطاهي يطبخ العشاء.
-</p>
-
-<p style="margin-bottom:32px;">
-<b>The police officer helps people.</b><br>
-رجل الشرطة يساعد الناس.
-</p>
+<div
+id="examplesBox"
+class="example-text"
+style="display:none;margin-top:45px;">
 
 <p>
-<b>💡 ملاحظة:</b><br><br>
 
-نستخدم <span dir="ltr"><b>a</b></span> أو <span dir="ltr"><b>an</b></span> قبل أسماء الوظائف عند وصف شخص.
+<b>He is a doctor.</b><br>
+
+هو طبيب.
+
+</p>
+
+
+<p>
+
+<b>She is a teacher.</b><br>
+
+هي معلمة.
+
+</p>
+
+
+<p>
+
+<b>My mother is a nurse.</b><br>
+
+أمي ممرضة.
+
+</p>
+
+
+<p>
+
+<b>My father is an engineer.</b><br>
+
+أبي مهندس.
+
+</p>
+
+
+<p>
+
+<b>My brother wants to be a pilot.</b><br>
+
+أخي يريد أن يصبح طيارًا.
+
+</p>
+
+
+<p>
+
+<b>The firefighter is very brave.</b><br>
+
+رجل الإطفاء شجاع جدًا.
+
+</p>
+
+
+<p>
+
+<b>The chef is cooking dinner.</b><br>
+
+الطاهي يطبخ العشاء.
+
+</p>
+
+
+<p>
+
+<b>The police officer helps people.</b><br>
+
+رجل الشرطة يساعد الناس.
+
+</p>
+
+
+<p class="example-tip">
+
+<b>💡 ملاحظة:</b>
 
 <br><br>
 
-<b>He is a doctor.</b><br>
+نستخدم
+<span dir="ltr"><b>a</b></span>
+أو
+<span dir="ltr"><b>an</b></span>
+قبل أسماء الوظائف عند وصف شخص.
+
+<br><br>
+
+<b>He is a doctor.</b>
+
+<br>
 
 <b>She is an engineer.</b>
 
@@ -958,105 +1289,189 @@ style="margin-top:10px;">
 </div>
 
 </div>
-   
 
-    
+
 <!-- ==========================
-      التمارين
+      بطاقة تدرب الآن
 ========================== -->
 
-<!-- السؤال الأول -->
+<div class="practice-card">
 
-<div class="card">
+<div class="practice-icon">
+
+📝
+
+</div>
+
+<div class="practice-content">
+
+<h2>
+
+🎯 تدرب الآن
+
+</h2>
+
+<p>
+
+اختبر فهمك من خلال الأسئلة التالية.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الأول
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+1
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 🎯 اختر الإجابة الصحيحة
+
 </p>
 
 <p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
 هو طبيب.
+
 </p>
 
 <p class="help-text" dir="ltr">
+
 He is a ___.
+
 </p>
 
 <div class="choice-container">
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'choice1')">
+
 doctor
+
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
+
 teacher
+
 </button>
 
 </div>
 
-<p id="choice1" class="result-text"></p>
+<p
+id="choice1"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
 
+<!-- ==========================
+      السؤال الثاني
+========================== -->
 
-<!-- السؤال الثاني -->
+<div class="question-card">
 
-<div class="card">
+<div class="question-number">
+
+2
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 🎯 اختر الإجابة الصحيحة
+
 </p>
 
 <p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
 هي معلمة.
+
 </p>
 
 <p class="help-text" dir="ltr">
+
 She is a ___.
+
 </p>
 
 <div class="choice-container">
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'choice2')">
+
 teacher
+
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'choice2')">
+
 chef
+
 </button>
 
 </div>
 
-<p id="choice2" class="result-text"></p>
+<p
+id="choice2"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
 
+<!-- ==========================
+      السؤال الثالث
+========================== -->
 
-<!-- السؤال الثالث -->
+<div class="question-card">
 
-<div class="card">
+<div class="question-number">
+
+3
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 🌍 ترجم الجملة إلى الإنجليزية
+
 </p>
 
 <p class="help-text">
+
 أبي مهندس.
+
 </p>
 
 <input
@@ -1064,125 +1479,207 @@ id="input1"
 class="write-box"
 placeholder="اكتب الترجمة">
 
-<button onclick="checkWriting('input1','result1',['My father is an engineer'])">
+<button
+onclick="checkWriting(
+'input1',
+'result1',
+[
+'My father is an engineer'
+]
+)">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="result1" class="answer-result"></p>
+<p
+id="result1"
+class="answer-result">
+
+</p>
 
 </div>
 
 </div>
 
 
+<!-- ==========================
+      السؤال الرابع
+========================== -->
 
-<!-- السؤال الرابع -->
+<div class="question-card">
 
-<div class="card">
+<div class="question-number">
+
+4
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 🧩 رتب الكلمات لتكوين جملة صحيحة
+
 </p>
 
 <p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
 أمي ممرضة.
+
 </p>
 
-<div class="word-container" id="words1">
+<div
+class="word-container"
+id="words1">
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox1')">
+
 My mother
+
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox1')">
+
 is
+
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox1')">
+
 a nurse
+
 </button>
 
 </div>
 
-<div class="answer-box" id="answerBox1"></div>
+<div
+class="answer-box"
+id="answerBox1">
 
-<button onclick="checkSentence('answerBox1','My mother is a nurse','resultSort1')">
+</div>
+
+<button
+onclick="checkSentence(
+'answerBox1',
+'My mother is a nurse',
+'resultSort1'
+)">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="resultSort1" class="result-text"></p>
+<p
+id="resultSort1"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
 
+<!-- ==========================
+      السؤال الخامس
+========================== -->
 
-<!-- السؤال الخامس -->
+<div class="question-card">
 
-<div class="card">
+<div class="question-number">
+
+5
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 🎯 اختر الإجابة الصحيحة
+
 </p>
 
 <p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
 الطاهي يطبخ العشاء.
+
 </p>
 
 <p class="help-text" dir="ltr">
+
 The ___ is cooking dinner.
+
 </p>
 
 <div class="choice-container">
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'choice3')">
+
 chef
+
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'choice3')">
+
 pilot
+
 </button>
 
 </div>
 
-<p id="choice3" class="result-text"></p>
+<p
+id="choice3"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
 
+<!-- ==========================
+      السؤال السادس
+========================== -->
 
-<!-- السؤال السادس -->
+<div class="question-card">
 
-<div class="card">
+<div class="question-number">
+
+6
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 ✍️ اكتب الكلمة المناسبة
+
 </p>
 
 <p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
 رجل الشرطة يساعد الناس.
+
 </p>
 
 <p class="help-text" dir="ltr">
+
 The ______ helps people.
+
 </p>
 
 <input
@@ -1190,32 +1687,54 @@ id="input2"
 class="write-box"
 placeholder="اكتب الإجابة">
 
-<button onclick="checkWriting('input2','result2',['police officer'])">
+<button
+onclick="checkWriting(
+'input2',
+'result2',
+[
+'police officer'
+]
+)">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="result2" class="answer-result"></p>
+<p
+id="result2"
+class="answer-result">
+
+</p>
 
 </div>
 
 </div>
 
 
+<!-- ==========================
+      السؤال السابع
+========================== -->
 
-<!-- السؤال السابع -->
+<div class="question-card">
 
-<div class="card">
+<div class="question-number">
+
+7
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 🌍 ترجم الجملة إلى الإنجليزية
+
 </p>
 
 <p class="help-text">
+
 أخي يريد أن يصبح طيارًا.
+
 </p>
 
 <input
@@ -1223,72 +1742,116 @@ id="input3"
 class="write-box"
 placeholder="اكتب الترجمة">
 
-<button onclick="checkWriting('input3','result3',['My brother wants to be a pilot'])">
+<button
+onclick="checkWriting(
+'input3',
+'result3',
+[
+'My brother wants to be a pilot'
+]
+)">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="result3" class="answer-result"></p>
+<p
+id="result3"
+class="answer-result">
+
+</p>
 
 </div>
 
 </div>
 
 
+<!-- ==========================
+      السؤال الثامن
+========================== -->
 
-<!-- السؤال الثامن -->
+<div class="question-card">
 
-<div class="card">
+<div class="question-number">
+
+8
+
+</div>
 
 <div class="question-box">
 
 <p class="question-title">
+
 🧩 رتب الكلمات لتكوين جملة صحيحة
+
 </p>
 
 <p style="font-size:20px;font-weight:bold;color:#666;margin-bottom:18px;">
+
 رجل الإطفاء شجاع جدًا.
+
 </p>
 
-<div class="word-container" id="words2">
+<div
+class="word-container"
+id="words2">
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox2')">
+
 The firefighter
+
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox2')">
+
 is
+
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox2')">
+
 very brave
+
 </button>
 
 </div>
 
-<div class="answer-box" id="answerBox2"></div>
+<div
+class="answer-box"
+id="answerBox2">
 
-<button onclick="checkSentence('answerBox2','The firefighter is very brave','resultSort2')">
+</div>
+
+<button
+onclick="checkSentence(
+'answerBox2',
+'The firefighter is very brave',
+'resultSort2'
+)">
 
 ✨ أريد التحقق من إجابتي
 
 </button>
 
-<p id="resultSort2" class="result-text"></p>
+<p
+id="resultSort2"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
-
-
 
 
 <!-- ==========================
-      نهاية المستوى
+      بطاقة النهاية
 ========================== -->
 
 <div class="card final-card">
@@ -1311,21 +1874,65 @@ very brave
 
 <button
 class="next-lesson-btn"
-onclick="window.location.href='lesson-next.html'">
+onclick="finishJobsLesson()">
 
 ✨ الانتقال إلى المستوى التالي
 
 </button>
 
 </div>
-    
-<!-- نهاية container -->
 
- <script>
 
-// ==========================
+</div>
+
+
+<!-- =========================================================
+     ربط نظام المكافآت
+========================================================= -->
+
+<script type="module">
+
+import {
+
+finishLesson
+
+}
+
+from "./js/reward.js";
+
+
+window.finishLesson =
+finishLesson;
+
+</script>
+
+
+<script>
+
+
+// =========================================================
+// إعدادات الدرس
+// =========================================================
+
+const UNIT_ID =
+"unit4";
+
+const LESSON_ID =
+"jobs";
+
+const LESSON_TITLE =
+"Jobs | الوظائف";
+
+const LESSON_REWARD =
+5;
+
+const NEXT_LESSON_PAGE =
+"lesson-next.html";
+
+
+// =========================================================
 // تنظيف النص
-// ==========================
+// =========================================================
 
 function normalizeText(text){
 
@@ -1337,10 +1944,10 @@ return text
 
 .replace(/’/g,"'")
 
-// ==========================
-// معالجة الاختصارات أولًا
-// قبل حذف علامة '
-// ==========================
+
+/* ==========================
+   معالجة الاختصارات أولًا
+========================== */
 
 .replace(/\bi'm\b/g,"i am")
 .replace(/\bi've\b/g,"i have")
@@ -1370,9 +1977,10 @@ return text
 .replace(/\bcan't\b/g,"cannot")
 .replace(/\bwon't\b/g,"will not")
 
-// ==========================
-// حذف علامات الترقيم
-// ==========================
+
+/* ==========================
+   حذف علامات الترقيم
+========================== */
 
 .replace(/[.,!?؟]/g,"")
 
@@ -1385,11 +1993,11 @@ return text
 .trim();
 
 }
-   
 
-// ==========================
+
+// =========================================================
 // التحقق من الأسئلة الكتابية
-// ==========================
+// =========================================================
 
 function checkWriting(
 inputId,
@@ -1437,11 +2045,13 @@ input.classList.add(
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
@@ -1473,8 +2083,10 @@ input.classList.remove(
 result.innerHTML =
 
 "😅❌ إجابتك غير صحيحة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br><b>"
+
 +
 correctAnswers[0]
+
 +
 "</b>";
 
@@ -1487,106 +2099,9 @@ result.className =
 }
 
 
-  // ==========================
-// التحقق من إجابة العمر
-// ==========================
-
-function checkAgeAnswer(
-inputId,
-resultId
-){
-
-let input =
-document.getElementById(inputId);
-
-let result =
-document.getElementById(resultId);
-
-
-let userAnswer =
-normalizeText(
-input.value
-);
-
-
-input.classList.remove(
-"correct-input",
-"wrong-input",
-"shake"
-);
-
-
-// قبول:
-// I am 18
-// I'm 18
-// I am 22 years old
-// I'm 22 years old
-
-let agePattern =
-/^i am \d+( years old)?$/;
-
-
-if(
-agePattern.test(userAnswer)
-){
-
-input.classList.add(
-"correct-input"
-);
-
-
-result.innerHTML =
-
-'<div class="confetti">'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'<span class="star">🌟</span>'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'</div>'+
-
-'✅ أحسنت! لقد أجبت عن السؤال بطريقة صحيحة.';
-
-
-result.className =
-"answer-result success-text";
-
-}
-
-
-else{
-
-input.classList.add(
-"wrong-input",
-"shake"
-);
-
-
-setTimeout(function(){
-
-input.classList.remove(
-"shake"
-);
-
-},300);
-
-
-result.innerHTML =
-
-"😅❌ إجابتك غير صحيحة.<br><br>💡 أجب باستخدام:<br><br><b>I am + عمرك</b>";
-
-
-result.className =
-"answer-result error-text";
-
-}
-
-}
-
-   
- // ==========================
+// =========================================================
 // أسئلة الاختيار
-// ==========================
+// =========================================================
 
 function checkAnswer(
 button,
@@ -1598,6 +2113,7 @@ let result =
 document.getElementById(
 resultId
 );
+
 
 let allButtons =
 button.parentElement
@@ -1621,6 +2137,7 @@ button.classList.add(
 "correct"
 );
 
+
 button.innerHTML +=
 " ✔️";
 
@@ -1628,11 +2145,13 @@ button.innerHTML +=
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
@@ -1650,6 +2169,7 @@ button.classList.add(
 "shake"
 );
 
+
 setTimeout(function(){
 
 button.classList.remove(
@@ -1657,6 +2177,7 @@ button.classList.remove(
 );
 
 },300);
+
 
 button.innerHTML +=
 " ✖️";
@@ -1684,6 +2205,7 @@ btn.classList.add(
 "correct"
 );
 
+
 if(
 !btn.innerHTML.includes("✔️")
 ){
@@ -1701,9 +2223,10 @@ btn.innerHTML +=
 
 }
 
-   // ==========================
+
+// =========================================================
 // إضافة كلمة
-// ==========================
+// =========================================================
 
 function addWord(
 button,
@@ -1718,25 +2241,31 @@ return;
 
 }
 
+
 let answerBox =
 document.getElementById(
 answerBoxId
 );
+
 
 let newWord =
 document.createElement(
 "div"
 );
 
+
 newWord.className =
 "selected-word";
+
 
 newWord.innerText =
 button.innerText;
 
+
 answerBox.appendChild(
 newWord
 );
+
 
 button.style.display =
 "none";
@@ -1744,10 +2273,9 @@ button.style.display =
 }
 
 
-
-// ==========================
+// =========================================================
 // إعادة الترتيب
-// ==========================
+// =========================================================
 
 function resetSentence(
 wordsId,
@@ -1758,6 +2286,7 @@ let container =
 document.getElementById(
 wordsId
 );
+
 
 container
 .querySelectorAll(
@@ -1770,6 +2299,7 @@ button.style.display =
 
 });
 
+
 document
 .getElementById(
 answerBoxId
@@ -1779,10 +2309,9 @@ answerBoxId
 }
 
 
-
-// ==========================
+// =========================================================
 // التحقق من ترتيب الكلمات
-// ==========================
+// =========================================================
 
 function checkSentence(
 answerBoxId,
@@ -1795,17 +2324,21 @@ document.getElementById(
 answerBoxId
 );
 
+
 let result =
 document.getElementById(
 resultId
 );
+
 
 let words =
 answerBox.querySelectorAll(
 ".selected-word"
 );
 
+
 let userSentence = "";
+
 
 words.forEach(word=>{
 
@@ -1814,15 +2347,18 @@ word.innerText + " ";
 
 });
 
+
 userSentence =
 normalizeText(
 userSentence
 );
 
+
 correctSentence =
 normalizeText(
 correctSentence
 );
+
 
 answerBox.classList.remove(
 "shake"
@@ -1836,20 +2372,25 @@ userSentence===correctSentence
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
 
+
 result.className =
 "result-text success-text";
 
+
 answerBox.style.borderColor =
 "#8fd19e";
+
 
 answerBox.style.background =
 "#eefdf3";
@@ -1862,6 +2403,7 @@ answerBox.classList.add(
 "shake"
 );
 
+
 setTimeout(function(){
 
 answerBox.classList.remove(
@@ -1870,15 +2412,19 @@ answerBox.classList.remove(
 
 },300);
 
+
 answerBox.style.borderColor =
 "#ffb8b8";
+
 
 answerBox.style.background =
 "#fff2f2";
 
+
 result.innerHTML =
 
 "😅❌ ترتيب الكلمات غير صحيح.";
+
 
 result.className =
 "result-text error-text";
@@ -1888,10 +2434,9 @@ result.className =
 }
 
 
-
-// ==========================
+// =========================================================
 // خلط الكلمات
-// ==========================
+// =========================================================
 
 function shuffleWords(
 containerId
@@ -1902,12 +2447,15 @@ document.getElementById(
 containerId
 );
 
+
 if(
-!container){
+!container
+){
 
 return;
 
 }
+
 
 let buttons =
 Array.from(
@@ -1916,11 +2464,14 @@ container.querySelectorAll(
 )
 );
 
+
 buttons.sort(
 ()=>Math.random()-0.5
 );
 
+
 container.innerHTML="";
+
 
 buttons.forEach(button=>{
 
@@ -1933,44 +2484,96 @@ button
 }
 
 
+// =========================================================
+// عرض وإخفاء الجمل
+// =========================================================
 
 function toggleExamples(){
 
-let box=document.getElementById("examplesBox");
+let box =
+document.getElementById(
+"examplesBox"
+);
 
-let btn=box.previousElementSibling;
 
-if(box.style.display==="none"){
+let btn =
+box.previousElementSibling;
 
-box.style.display="block";
 
-btn.innerHTML="📕 إخفاء الجمل";
+if(
+box.style.display==="none"
+){
 
-}else{
+box.style.display =
+"block";
 
-box.style.display="none";
 
-btn.innerHTML="📖 عرض الجمل";
+btn.innerHTML =
+"📕 إخفاء الجمل";
+
+}
+
+else{
+
+box.style.display =
+"none";
+
+
+btn.innerHTML =
+"📖 عرض الجمل";
 
 }
 
 }
 
 
-   
-   
- // ==========================
+// =========================================================
+// إنهاء الدرس والانتقال
+// =========================================================
+
+function finishJobsLesson(){
+
+if(
+typeof window.finishLesson === "function"
+){
+
+window.finishLesson(
+
+UNIT_ID,
+
+LESSON_ID,
+
+LESSON_TITLE,
+
+LESSON_REWARD,
+
+NEXT_LESSON_PAGE
+
+);
+
+}
+
+else{
+
+window.location.href =
+NEXT_LESSON_PAGE;
+
+}
+
+}
+
+
+// =========================================================
 // خلط كلمات الترتيب
-// ==========================
+// =========================================================
 
 shuffleWords("words1");
+
 shuffleWords("words2");
 
 </script>
 
+
 </body>
 
-</html>  
-   
-  
-
+</html>
