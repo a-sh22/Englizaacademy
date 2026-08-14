@@ -10,9 +10,7 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
-
 A & An | الجزء الثاني | Engliza Academy
-
 </title>
 
 <style>
@@ -124,7 +122,7 @@ background:white;
 padding:40px;
 border-radius:35px;
 box-shadow:0 15px 40px rgba(0,0,0,.08);
-margin-bottom:30px;
+margin-bottom:40px;
 transition:.35s;
 animation:fadeUp .6s ease;
 
@@ -212,204 +210,76 @@ margin:0;
 
 
 /* ==========================
-   بطاقة تدرب الآن
+   بطاقة التدريب
 ========================== */
 
 .practice-card{
 
-display:flex;
-align-items:center;
-gap:20px;
+background:linear-gradient(
+135deg,
+#f8f5ff,
+#eef4ff
+);
 
-background:white;
-
-padding:24px 30px;
-
-border-radius:30px;
-
-border:2px solid #ddd4ff;
-
-box-shadow:0 12px 30px rgba(111,67,255,.08);
-
-margin-bottom:35px;
-
-position:relative;
-
-overflow:hidden;
+border:3px solid #d9d0ff;
+text-align:center;
 
 }
 
-.practice-card::before{
+.practice-card h2{
 
-content:"";
+font-size:34px;
+color:#6f43ff;
+margin-bottom:18px;
 
-position:absolute;
+}
 
-width:120px;
+.practice-card p{
 
-height:120px;
-
-border-radius:50%;
-
-background:rgba(111,67,255,.05);
-
-left:-45px;
-
-top:-65px;
+font-size:21px;
+line-height:2;
+font-weight:600;
+color:#444;
+margin-bottom:25px;
 
 }
 
 .practice-icon{
 
-width:62px;
-
-height:62px;
-
-border-radius:20px;
-
-background:#f5f1ff;
-
-border:2px solid #ddd4ff;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:30px;
-
-flex-shrink:0;
-
-position:relative;
-
-z-index:1;
+font-size:48px;
+margin-bottom:15px;
 
 }
 
-.practice-content{
+.practice-btn{
 
-position:relative;
-
-z-index:1;
-
-}
-
-.practice-content h2{
-
-font-size:30px;
-
-color:#1f3c88;
-
-margin-bottom:5px;
-
-}
-
-.practice-content p{
-
-font-size:18px;
-
-line-height:1.8;
-
-color:#666;
-
-font-weight:600;
-
-}
-
-
-/* ==========================
-   بطاقات الأسئلة
-========================== */
-
-.question-card{
-
-background:white;
-
-padding:40px;
-
-border-radius:35px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-margin-bottom:30px;
-
-transition:.35s;
-
-animation:fadeUp .6s ease;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.question-card::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-right:0;
-
-left:0;
-
-height:7px;
-
+display:block;
+width:100%;
+padding:20px;
+border:none;
+border-radius:22px;
 background:linear-gradient(
 90deg,
-#ffd45a,
-#e7ae25
-);
+#3768ff,
+#6f43ff
+) !important;
+color:white !important;
+font-size:21px !important;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 12px 30px rgba(55,104,255,.20) !important;
 
 }
 
-.question-card:hover{
+.practice-btn:hover{
 
 transform:translateY(-4px);
 
-box-shadow:0 22px 50px rgba(0,0,0,.12);
-
 }
 
 
 /* ==========================
-   رقم السؤال
-========================== */
-
-.question-number{
-
-width:56px;
-
-height:56px;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:#fffaf0;
-
-border:2px solid #ffe082;
-
-color:#c28b16;
-
-font-size:21px;
-
-font-weight:bold;
-
-margin-bottom:22px;
-
-}
-
-
-/* ==========================
-   عنوان السؤال
+   صندوق السؤال
 ========================== */
 
 .question-title{
@@ -525,7 +395,7 @@ opacity:.95;
    الأزرار
 ========================== */
 
-.question-card button{
+.card button{
 
 background:#f5f7ff;
 color:#1f3c88;
@@ -540,7 +410,7 @@ box-shadow:0 10px 25px rgba(0,0,0,.10);
 
 }
 
-.question-card button:hover{
+.card button:hover{
 
 transform:translateY(-4px);
 
@@ -548,7 +418,7 @@ box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
 
-.question-card button:active{
+.card button:active{
 
 transform:scale(.97);
 
@@ -896,7 +766,7 @@ font-size:18px;
 
 }
 
-.question-card{
+.card{
 
 padding:28px;
 
@@ -959,7 +829,6 @@ font-size:17px;
 .word-btn{
 
 font-size:16px;
-
 padding:14px 18px;
 
 }
@@ -967,7 +836,6 @@ padding:14px 18px;
 .selected-word{
 
 font-size:16px;
-
 padding:14px 18px;
 
 }
@@ -975,6 +843,24 @@ padding:14px 18px;
 .answer-box{
 
 min-height:90px;
+
+}
+
+.practice-card h2{
+
+font-size:28px;
+
+}
+
+.practice-card p{
+
+font-size:17px;
+
+}
+
+.practice-btn{
+
+font-size:18px !important;
 
 }
 
@@ -1002,36 +888,6 @@ transform:scale(.97);
 
 }
 
-.practice-card{
-
-padding:19px 20px;
-
-gap:15px;
-
-}
-
-.practice-icon{
-
-width:55px;
-
-height:55px;
-
-font-size:27px;
-
-}
-
-.practice-content h2{
-
-font-size:25px;
-
-}
-
-.practice-content p{
-
-font-size:16px;
-
-}
-
 }
 
 </style>
@@ -1040,7 +896,6 @@ font-size:16px;
 
 
 <body>
-
 
 <div class="container">
 
@@ -1052,7 +907,7 @@ font-size:16px;
 <div class="top-bar">
 
 <a
-href="unit3.html"
+href="unit2-pre.html"
 class="back-btn">
 
 ⬅️ رجوع
@@ -1078,10 +933,9 @@ class="back-btn">
 
 </h1>
 
-
 <p class="subtitle">
 
-تعرّف على استخدام The، وتعلّم متى نستخدمها ومتى لا نستخدمها في الجمل.
+تعرّف على استخدام <b>The</b>، وتعلّم متى نستخدمها ومتى لا نستخدمها في الجمل.
 
 </p>
 
@@ -1140,47 +994,13 @@ type="video/quicktime">
 
 
 <!-- ==========================
-      بطاقة تدرب الآن
+      التمارين
 ========================== -->
 
-<div class="practice-card">
 
-<div class="practice-icon">
+<!-- السؤال الأول -->
 
-📝
-
-</div>
-
-<div class="practice-content">
-
-<h2>
-
-🎯 تدرب الآن
-
-</h2>
-
-<p>
-
-اختبر فهمك من خلال الأسئلة التالية.
-
-</p>
-
-</div>
-
-</div>
-
-
-<!-- ==========================
-      السؤال الأول
-========================== -->
-
-<div class="question-card">
-
-<div class="question-number">
-
-1
-
-</div>
+<div class="card">
 
 <div class="question-box">
 
@@ -1196,7 +1016,9 @@ type="video/quicktime">
 
 </p>
 
-<p class="help-text" dir="ltr">
+<p
+class="help-text"
+dir="ltr">
 
 I ate ___ apple.
 
@@ -1233,17 +1055,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال الثاني
-========================== -->
+<!-- السؤال الثاني -->
 
-<div class="question-card">
-
-<div class="question-number">
-
-2
-
-</div>
+<div class="card">
 
 <div class="question-box">
 
@@ -1259,7 +1073,9 @@ class="result-text">
 
 </p>
 
-<p class="help-text" dir="ltr">
+<p
+class="help-text"
+dir="ltr">
 
 She has ___ cat.
 
@@ -1296,17 +1112,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال الثالث
-========================== -->
+<!-- السؤال الثالث -->
 
-<div class="question-card">
-
-<div class="question-number">
-
-3
-
-</div>
+<div class="card">
 
 <div class="question-box">
 
@@ -1322,7 +1130,9 @@ class="result-text">
 
 </p>
 
-<p class="help-text" dir="ltr">
+<p
+class="help-text"
+dir="ltr">
 
 We watched ___ movie yesterday.
 
@@ -1357,17 +1167,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال الرابع
-========================== -->
+<!-- السؤال الرابع -->
 
-<div class="question-card">
-
-<div class="question-number">
-
-4
-
-</div>
+<div class="card">
 
 <div class="question-box">
 
@@ -1383,7 +1185,9 @@ class="answer-result">
 
 </p>
 
-<p class="help-text" dir="ltr">
+<p
+class="help-text"
+dir="ltr">
 
 Please close ___ door.
 
@@ -1418,17 +1222,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال الخامس
-========================== -->
+<!-- السؤال الخامس -->
 
-<div class="question-card">
-
-<div class="question-number">
-
-5
-
-</div>
+<div class="card">
 
 <div class="question-box">
 
@@ -1504,17 +1300,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال السادس
-========================== -->
+<!-- السؤال السادس -->
 
-<div class="question-card">
-
-<div class="question-number">
-
-6
-
-</div>
+<div class="card">
 
 <div class="question-box">
 
@@ -1565,17 +1353,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال السابع
-========================== -->
+<!-- السؤال السابع -->
 
-<div class="question-card">
-
-<div class="question-number">
-
-7
-
-</div>
+<div class="card">
 
 <div class="question-box">
 
@@ -1591,7 +1371,9 @@ class="answer-result">
 
 </p>
 
-<p class="help-text" dir="ltr">
+<p
+class="help-text"
+dir="ltr">
 
 ❌ I have the dog.
 
@@ -1627,10 +1409,53 @@ class="answer-result">
 
 
 <!-- ==========================
+      بطاقة التدريب
+========================== -->
+
+<div class="card practice-card">
+
+<div class="practice-icon">
+
+🎯
+
+</div>
+
+<h2>
+
+تدرّب الآن!
+
+</h2>
+
+<p>
+
+بعد أن تعلّمت الفرق بين
+<b>A</b> و <b>An</b> و <b>The</b>،
+حان وقت تطبيق ما تعلّمته في تدريب إضافي.
+
+<br><br>
+
+جرّب استخدام القاعدة بنفسك، وراجع أخطاءك لتثبت المعلومة.
+
+</p>
+
+<a
+href="how-many.html"
+class="practice-btn">
+
+🚀 ابدأ التدريب الآن
+
+</a>
+
+</div>
+
+
+<!-- ==========================
       بطاقة النهاية
 ========================== -->
 
-<div class="card final-card">
+<div
+class="card final-card"
+id="lesson-complete">
 
 <h2>
 
@@ -1661,29 +1486,81 @@ onclick="goToNextLesson()">
 
 </div>
 
-
-<!-- =========================================================
-     نظام الدروس والمكافآت
-========================================================= -->
-
-<script type="module">
-
-import {
-
-finishLesson
-
-}
-
-from "./js/reward.js";
-
-
-window.finishLesson =
-finishLesson;
-
-</script>
+<!-- نهاية container -->
 
 
 <script>
+
+
+// ==========================
+// هوية الدرس
+// ==========================
+
+const LESSON_ID =
+"pre-unit2-a-an-part2";
+
+const NEXT_LESSON =
+"how-many.html";
+
+
+// ==========================
+// الانتقال للدرس التالي
+// ==========================
+
+function goToNextLesson(){
+
+/*
+   إذا كان نظام التقدم الموجود
+   في المشروع يحتوي على دالة
+   تسجيل إكمال الدرس، يتم تشغيلها.
+*/
+
+try{
+
+if(
+typeof window.markLessonComplete === "function"
+){
+
+window.markLessonComplete(
+LESSON_ID
+);
+
+}
+
+else if(
+typeof window.completeLesson === "function"
+){
+
+window.completeLesson(
+LESSON_ID
+);
+
+}
+
+else if(
+typeof window.saveLessonProgress === "function"
+){
+
+window.saveLessonProgress(
+LESSON_ID
+);
+
+}
+
+}
+catch(error){
+
+console.log(
+"Progress system:",
+error
+);
+
+}
+
+window.location.href =
+NEXT_LESSON;
+
+}
 
 
 // ==========================
@@ -1758,27 +1635,21 @@ document.getElementById(inputId);
 let result =
 document.getElementById(resultId);
 
-
 let userAnswer =
 normalizeText(
 input.value
 );
 
-
 let answers =
 correctAnswers.map(answer=>
-
 normalizeText(answer)
-
 );
-
 
 input.classList.remove(
 "correct-input",
 "wrong-input",
 "shake"
 );
-
 
 if(
 answers.includes(userAnswer)
@@ -1787,7 +1658,6 @@ answers.includes(userAnswer)
 input.classList.add(
 "correct-input"
 );
-
 
 result.innerHTML =
 
@@ -1801,12 +1671,10 @@ result.innerHTML =
 
 '✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
 
-
 result.className =
 "answer-result success-text";
 
 }
-
 
 else{
 
@@ -1814,7 +1682,6 @@ input.classList.add(
 "wrong-input",
 "shake"
 );
-
 
 setTimeout(function(){
 
@@ -1824,15 +1691,12 @@ input.classList.remove(
 
 },300);
 
-
 result.innerHTML =
 
-"😅❌ إجابتك غير صحيحة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br><b>"
-+
-correctAnswers[0]
-+
+"😅❌ إجابتك غير صحيحة.<br><br>"+
+"✅ إحدى الإجابات الصحيحة هي:<br><br><b>"+
+correctAnswers[0]+
 "</b>";
-
 
 result.className =
 "answer-result error-text";
@@ -1882,7 +1746,6 @@ button.classList.add(
 button.innerHTML +=
 " ✔️";
 
-
 result.innerHTML =
 
 '<div class="confetti">'+
@@ -1894,7 +1757,6 @@ result.innerHTML =
 '</div>'+
 
 '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
-
 
 result.className =
 "result-text success-text";
@@ -1908,7 +1770,6 @@ button.classList.add(
 "shake"
 );
 
-
 setTimeout(function(){
 
 button.classList.remove(
@@ -1917,15 +1778,12 @@ button.classList.remove(
 
 },300);
 
-
 button.innerHTML +=
 " ✖️";
-
 
 result.innerHTML =
 
 "😅❌ لقد اخترت الإجابة الخاطئة.";
-
 
 result.className =
 "result-text error-text";
@@ -1943,7 +1801,6 @@ btn.getAttribute("onclick")
 btn.classList.add(
 "correct"
 );
-
 
 if(
 !btn.innerHTML.includes("✔️")
@@ -1980,31 +1837,25 @@ return;
 
 }
 
-
 let answerBox =
 document.getElementById(
 answerBoxId
 );
-
 
 let newWord =
 document.createElement(
 "div"
 );
 
-
 newWord.className =
 "selected-word";
-
 
 newWord.innerText =
 button.innerText;
 
-
 answerBox.appendChild(
 newWord
 );
-
 
 button.style.display =
 "none";
@@ -2026,7 +1877,6 @@ document.getElementById(
 wordsId
 );
 
-
 container
 .querySelectorAll(
 ".word-btn"
@@ -2037,7 +1887,6 @@ button.style.display =
 "inline-block";
 
 });
-
 
 document
 .getElementById(
@@ -2063,21 +1912,17 @@ document.getElementById(
 answerBoxId
 );
 
-
 let result =
 document.getElementById(
 resultId
 );
-
 
 let words =
 answerBox.querySelectorAll(
 ".selected-word"
 );
 
-
 let userSentence = "";
-
 
 words.forEach(word=>{
 
@@ -2086,26 +1931,22 @@ word.innerText + " ";
 
 });
 
-
 userSentence =
 normalizeText(
 userSentence
 );
-
 
 correctSentence =
 normalizeText(
 correctSentence
 );
 
-
 answerBox.classList.remove(
 "shake"
 );
 
-
 if(
-userSentence===correctSentence
+userSentence === correctSentence
 ){
 
 result.innerHTML =
@@ -2120,14 +1961,11 @@ result.innerHTML =
 
 '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
 
-
 result.className =
 "result-text success-text";
 
-
 answerBox.style.borderColor =
 "#8fd19e";
-
 
 answerBox.style.background =
 "#eefdf3";
@@ -2140,7 +1978,6 @@ answerBox.classList.add(
 "shake"
 );
 
-
 setTimeout(function(){
 
 answerBox.classList.remove(
@@ -2149,19 +1986,15 @@ answerBox.classList.remove(
 
 },300);
 
-
 answerBox.style.borderColor =
 "#ffb8b8";
-
 
 answerBox.style.background =
 "#fff2f2";
 
-
 result.innerHTML =
 
 "😅❌ ترتيب الكلمات غير صحيح.";
-
 
 result.className =
 "result-text error-text";
@@ -2184,15 +2017,11 @@ document.getElementById(
 containerId
 );
 
-
-if(
-!container
-){
+if(!container){
 
 return;
 
 }
-
 
 let buttons =
 Array.from(
@@ -2201,14 +2030,11 @@ container.querySelectorAll(
 )
 );
 
-
 buttons.sort(
 ()=>Math.random()-0.5
 );
 
-
 container.innerHTML="";
-
 
 buttons.forEach(button=>{
 
@@ -2226,38 +2052,6 @@ button
 // ==========================
 
 shuffleWords("words1");
-
-
-// ==========================
-// الانتقال إلى الدرس التالي
-// ==========================
-
-function goToNextLesson(){
-
-if(
-typeof window.finishLesson === "function"
-){
-
-window.finishLesson(
-
-"unit3-a-an-part2",
-
-"A & An | الجزء الثاني",
-
-"adjectives-part2.html"
-
-);
-
-}
-
-else{
-
-window.location.href =
-"adjectives-part2.html";
-
-}
-
-}
 
 </script>
 
