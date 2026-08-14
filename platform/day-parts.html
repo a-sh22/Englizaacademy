@@ -8,7 +8,7 @@
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1.0">
-  
+
 <title>
 Day Parts | الجزء الأول | Engliza Academy
 </title>
@@ -122,7 +122,7 @@ background:white;
 padding:40px;
 border-radius:35px;
 box-shadow:0 15px 40px rgba(0,0,0,.08);
-margin-bottom:40px;
+margin-bottom:30px;
 transition:.35s;
 animation:fadeUp .6s ease;
 
@@ -142,23 +142,25 @@ box-shadow:0 22px 50px rgba(0,0,0,.12);
 ========================== */
 
 .video-box{
+
 background:white;
 padding:0;
 border-radius:35px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
 margin-bottom:35px;
 overflow:hidden;
+
 }
 
-
 .video-box video{
+
 width:100%;
 display:block;
 aspect-ratio:16/9;
 object-fit:cover;
 border-radius:0;
-}  
 
+}
 
 
 /* ==========================
@@ -208,9 +210,192 @@ margin:0;
 
 
 /* ==========================
-   صندوق السؤال
+   بطاقة تدرب الآن
 ========================== */
 
+.practice-card{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+background:white;
+
+padding:24px 30px;
+
+border-radius:30px;
+
+border:2px solid #ddd4ff;
+
+box-shadow:0 12px 30px rgba(111,67,255,.08);
+
+margin-bottom:35px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.practice-card::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+height:120px;
+
+border-radius:50%;
+
+background:rgba(111,67,255,.05);
+
+left:-45px;
+top:-65px;
+
+}
+
+.practice-icon{
+
+width:62px;
+height:62px;
+
+border-radius:20px;
+
+background:#f5f1ff;
+
+border:2px solid #ddd4ff;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:30px;
+
+flex-shrink:0;
+
+position:relative;
+z-index:1;
+
+}
+
+.practice-content{
+
+position:relative;
+z-index:1;
+
+}
+
+.practice-content h2{
+
+font-size:30px;
+
+color:#1f3c88;
+
+margin-bottom:5px;
+
+}
+
+.practice-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#666;
+
+font-weight:600;
+
+}
+
+
+/* ==========================
+   بطاقات الأسئلة
+========================== */
+
+.question-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+transition:.35s;
+
+animation:fadeUp .6s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+right:0;
+left:0;
+
+height:7px;
+
+background:linear-gradient(
+90deg,
+#ffd45a,
+#e7ae25
+);
+
+}
+
+.question-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 22px 50px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================
+   رقم السؤال
+========================== */
+
+.question-number{
+
+width:56px;
+height:56px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#fffaf0;
+
+border:2px solid #ffe082;
+
+color:#c28b16;
+
+font-size:21px;
+font-weight:bold;
+
+margin-bottom:22px;
+
+}
+
+
+/* ==========================
+   صندوق السؤال
+========================== */
 
 .question-title{
 
@@ -232,8 +417,9 @@ text-align:center;
 margin:35px 0;
 
 }
-   
- /* ==========================
+
+
+/* ==========================
    مربع الكتابة
 ========================== */
 
@@ -292,14 +478,22 @@ margin:30px 0 20px;
 
 flex:1;
 padding:24px;
+
 background:white;
+
 border:2px solid #dce4ff;
+
 border-radius:22px;
+
 font-size:20px;
 font-weight:bold;
+
 color:#1f3c88;
+
 cursor:pointer;
+
 transition:.3s;
+
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 }
@@ -324,22 +518,31 @@ opacity:.95;
    الأزرار
 ========================== */
 
-.card button{
+.question-card button{
 
 background:#f5f7ff;
+
 color:#1f3c88;
+
 border:2px solid #dce4ff;
+
 padding:18px 28px;
+
 border-radius:22px;
+
 font-size:18px;
+
 font-weight:bold;
+
 cursor:pointer;
+
 transition:.3s;
+
 box-shadow:0 10px 25px rgba(0,0,0,.10);
 
 }
 
-.card button:hover{
+.question-card button:hover{
 
 transform:translateY(-4px);
 
@@ -347,7 +550,7 @@ box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
 
-.card button:active{
+.question-card button:active{
 
 transform:scale(.97);
 
@@ -402,7 +605,8 @@ color:#c62828;
 
 }
 
-  /* ==========================
+
+/* ==========================
    ترتيب الكلمات
 ========================== */
 
@@ -564,16 +768,20 @@ animation:shake .3s;
 @keyframes shake{
 
 0%{transform:translateX(0);}
+
 25%{transform:translateX(-6px);}
+
 50%{transform:translateX(6px);}
+
 75%{transform:translateX(-6px);}
+
 100%{transform:translateX(0);}
 
 }
 
 
 /* ==========================
-   بطاقة النهاية
+   بطاقة نهاية الوحدة
 ========================== */
 
 .final-card{
@@ -586,12 +794,16 @@ background:linear-gradient(
 #8f6dff
 );
 
+padding:45px 40px;
+
 }
 
 .final-card h2{
 
-font-size:40px;
+font-size:42px;
+
 color:#ffe082;
+
 margin-bottom:20px;
 
 }
@@ -599,21 +811,49 @@ margin-bottom:20px;
 .final-card p{
 
 font-size:22px;
+
 line-height:2;
+
 font-weight:600;
+
 color:white;
+
 margin-bottom:30px;
+
+}
+
+.final-card .review-note{
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.25);
+
+border-radius:22px;
+
+padding:20px;
+
+margin-bottom:30px;
+
+font-size:20px;
+
+line-height:1.9;
 
 }
 
 .next-lesson-btn{
 
 width:100%;
+
 padding:22px;
+
 border:none;
+
 border-radius:24px;
+
 font-size:22px;
+
 font-weight:bold;
+
 cursor:pointer;
 
 background:white;
@@ -644,6 +884,7 @@ box-shadow:0 20px 45px rgba(0,0,0,.22);
 from{
 
 opacity:0;
+
 transform:translateY(20px);
 
 }
@@ -651,6 +892,7 @@ transform:translateY(20px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -662,6 +904,7 @@ transform:translateY(0);
 from{
 
 opacity:0;
+
 transform:translateY(10px);
 
 }
@@ -669,6 +912,7 @@ transform:translateY(10px);
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -694,7 +938,7 @@ font-size:18px;
 
 }
 
-.card{
+.question-card{
 
 padding:28px;
 
@@ -741,12 +985,12 @@ font-size:20px;
 
 }
 
-   .help-text{
+.help-text{
 
 font-size:24px;
 
 }
-   
+
 .answer-result,
 .result-text{
 
@@ -788,33 +1032,66 @@ font-size:18px;
 
 }
 
+.final-card .review-note{
+
+font-size:17px;
+
+}
+
 .next-lesson-btn{
 
 width:100%;
 
 }
+
 .next-lesson-btn:active{
 
 transform:scale(.97);
 
 }
 
-   .help-text{
+.practice-card{
 
-font-size:24px;
+padding:19px 20px;
+
+gap:15px;
 
 }
-   
+
+.practice-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:27px;
+
 }
 
-  
+.practice-content h2{
+
+font-size:25px;
+
+}
+
+.practice-content p{
+
+font-size:16px;
+
+}
+
+}
+
 </style>
 
 </head>
-  
-  <body>
+
+
+<body>
+
 
 <div class="container">
+
 
 <!-- ==========================
         الأعلى
@@ -843,20 +1120,19 @@ class="back-btn">
       عنوان الدرس
 ========================== -->
 
+<h1 class="title">
 
-  <h1 class="title">
-    
 📖 Day Parts | الجزء الأول
-    
+
 </h1>
 
-  <p class="subtitle">
+
+<p class="subtitle">
 
 تعرّف على أجزاء اليوم، وتعلّم كيف تستخدمها في الجمل والتحيات اليومية.
 
 </p>
-  
-  
+
 
 <!-- ==========================
       فيديو الدرس
@@ -876,8 +1152,6 @@ type="video/quicktime">
 متصفحك لا يدعم تشغيل الفيديو.
 
 </video>
-
-</div>
 
 </div>
 
@@ -907,16 +1181,54 @@ type="video/quicktime">
 • كرر التحيات بصوت مرتفع، فهذا يساعدك على حفظها بسرعة.
 
 </p>
-  
 
 </div>
 
 </div>
 
-  
-<!-- السؤال الأول -->
 
-<div class="card">
+<!-- ==========================
+      بطاقة تدرب الآن
+========================== -->
+
+<div class="practice-card">
+
+<div class="practice-icon">
+
+📝
+
+</div>
+
+<div class="practice-content">
+
+<h2>
+
+🎯 تدرب الآن
+
+</h2>
+
+<p>
+
+اختبر فهمك من خلال الأسئلة التالية.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الأول
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+1
+
+</div>
 
 <div class="question-box">
 
@@ -940,14 +1252,16 @@ Good ___
 
 <div class="choice-container">
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'choice1')">
 
 morning
 
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
 
 night
@@ -956,13 +1270,28 @@ night
 
 </div>
 
-<p id="choice1" class="result-text"></p>
+<p
+id="choice1"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
-  <div class="card">
+
+<!-- ==========================
+      السؤال الثاني
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+2
+
+</div>
 
 <div class="question-box">
 
@@ -986,14 +1315,16 @@ Good ___
 
 <div class="choice-container">
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,false,'choice2')">
 
 morning
 
 </button>
 
-<button class="choice-btn"
+<button
+class="choice-btn"
 onclick="checkAnswer(this,true,'choice2')">
 
 night
@@ -1002,14 +1333,28 @@ night
 
 </div>
 
-<p id="choice2" class="result-text"></p>
+<p
+id="choice2"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
-  
-  <div class="card">
+
+<!-- ==========================
+      السؤال الثالث
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+3
+
+</div>
 
 <div class="question-box">
 
@@ -1055,13 +1400,28 @@ onclick="checkWriting(
 
 </button>
 
-<p id="result1" class="answer-result"></p>
+<p
+id="result1"
+class="answer-result">
+
+</p>
 
 </div>
 
 </div>
 
- <div class="card">
+
+<!-- ==========================
+      السؤال الرابع
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+4
+
+</div>
 
 <div class="question-box">
 
@@ -1115,13 +1475,28 @@ onclick="checkWriting(
 
 </button>
 
-<p id="result2" class="answer-result"></p>
+<p
+id="result2"
+class="answer-result">
+
+</p>
 
 </div>
 
 </div>
 
- <div class="card">
+
+<!-- ==========================
+      السؤال الخامس
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+5
+
+</div>
 
 <div class="question-box">
 
@@ -1131,23 +1506,28 @@ onclick="checkWriting(
 
 </p>
 
-<div class="word-container" id="words1">
+<div
+class="word-container"
+id="words1">
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
 Good
 
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
 morning
 
 </button>
 
-<button class="word-btn"
+<button
+class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
 !
@@ -1156,7 +1536,11 @@ onclick="addWord(this,'answerBox1')">
 
 </div>
 
-<div class="answer-box" id="answerBox1"></div>
+<div
+class="answer-box"
+id="answerBox1">
+
+</div>
 
 <button
 onclick="checkSentence(
@@ -1169,13 +1553,28 @@ onclick="checkSentence(
 
 </button>
 
-<p id="resultSort1" class="result-text"></p>
+<p
+id="resultSort1"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
-  <div class="card">
+
+<!-- ==========================
+      السؤال السادس
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+6
+
+</div>
 
 <div class="question-box">
 
@@ -1187,7 +1586,7 @@ onclick="checkSentence(
 
 <p class="help-text">
 
-مساء الخير 
+مساء الخير
 
 </p>
 
@@ -1209,13 +1608,28 @@ onclick="checkWriting(
 
 </button>
 
-<p id="result3" class="answer-result"></p>
+<p
+id="result3"
+class="answer-result">
+
+</p>
 
 </div>
 
 </div>
 
-  <div class="card">
+
+<!-- ==========================
+      السؤال السابع
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+7
+
+</div>
 
 <div class="question-box">
 
@@ -1255,13 +1669,28 @@ onclick="checkWriting(
 
 </button>
 
-<p id="result4" class="answer-result"></p>
+<p
+id="result4"
+class="answer-result">
+
+</p>
 
 </div>
 
 </div>
 
-  <div class="card">
+
+<!-- ==========================
+      السؤال الثامن
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+8
+
+</div>
 
 <div class="question-box">
 
@@ -1309,16 +1738,19 @@ night
 
 </div>
 
-<p id="choice3" class="result-text"></p>
+<p
+id="choice3"
+class="result-text">
+
+</p>
 
 </div>
 
 </div>
 
-  
-  
+
 <!-- ==========================
-      بطاقة النهاية
+      نهاية الوحدة الثالثة
 ========================== -->
 
 <div class="card final-card">
@@ -1331,33 +1763,82 @@ night
 
 <p>
 
-لقد أنهيت الوحدة الثالثة بنجاح.
+لقد أنهيت آخر درس في الوحدة الثالثة بنجاح!
 
 <br><br>
 
-استمر بنفس الحماس، فأنت الآن جاهز لبدء الوحدة الرابعة.
+وبهذا تكون قد أتممت <b>الوحدة الثالثة كاملة</b>. 🏆
 
 </p>
 
-<button
-class="next-lesson-btn"
-onclick="window.location.href='unit4.html'">
+<div class="review-note">
 
-🚀 الانتقال إلى الوحدة الرابعة
+📚 <b>خطوتك التالية:</b>
 
-</button>
+<br>
 
-</div>  
+قبل الانتقال إلى الوحدة الرابعة، اذهب إلى <b>مراجعة الوحدة الثالثة</b> وثبّت ما تعلمته في الوحدة.
 
 </div>
 
-<!-- نهاية container -->
+<button
+class="next-lesson-btn"
+onclick="finishUnit3()">
 
- <script>
+📚 الانتقال إلى مراجعة الوحدة الثالثة
 
-// ==========================
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================================================
+     نظام المكافآت
+========================================================= -->
+
+<script type="module">
+
+import {
+
+finishLesson
+
+}
+
+from "./js/reward.js";
+
+
+window.finishLesson =
+finishLesson;
+
+</script>
+
+
+<script>
+
+
+// =========================================================
+// إعدادات هذا الدرس
+// =========================================================
+
+const UNIT_ID = "unit3";
+
+const LESSON_ID = "day-parts-part1";
+
+const LESSON_TITLE =
+"Day Parts | الجزء الأول";
+
+const UNIT_REWARD = 15;
+
+const UNIT3_REVIEW_PAGE =
+"unit3-review.html";
+
+
+// =========================================================
 // تنظيف النص
-// ==========================
+// =========================================================
 
 function normalizeText(text){
 
@@ -1411,10 +1892,9 @@ return text
 }
 
 
-
-// ==========================
+// =========================================================
 // التحقق من الأسئلة الكتابية
-// ==========================
+// =========================================================
 
 function checkWriting(
 inputId,
@@ -1462,11 +1942,13 @@ input.classList.add(
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
@@ -1498,8 +1980,10 @@ input.classList.remove(
 result.innerHTML =
 
 "😅❌ إجابتك غير صحيحة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br><b>"
+
 +
 correctAnswers[0]
+
 +
 "</b>";
 
@@ -1511,9 +1995,10 @@ result.className =
 
 }
 
- // ==========================
+
+// =========================================================
 // أسئلة الاختيار
-// ==========================
+// =========================================================
 
 function checkAnswer(
 button,
@@ -1525,6 +2010,7 @@ let result =
 document.getElementById(
 resultId
 );
+
 
 let allButtons =
 button.parentElement
@@ -1555,11 +2041,13 @@ button.innerHTML +=
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
@@ -1577,6 +2065,7 @@ button.classList.add(
 "shake"
 );
 
+
 setTimeout(function(){
 
 button.classList.remove(
@@ -1584,6 +2073,7 @@ button.classList.remove(
 );
 
 },300);
+
 
 button.innerHTML +=
 " ✖️";
@@ -1611,6 +2101,7 @@ btn.classList.add(
 "correct"
 );
 
+
 if(
 !btn.innerHTML.includes("✔️")
 ){
@@ -1628,9 +2119,10 @@ btn.innerHTML +=
 
 }
 
-   // ==========================
+
+// =========================================================
 // إضافة كلمة
-// ==========================
+// =========================================================
 
 function addWord(
 button,
@@ -1645,25 +2137,31 @@ return;
 
 }
 
+
 let answerBox =
 document.getElementById(
 answerBoxId
 );
+
 
 let newWord =
 document.createElement(
 "div"
 );
 
+
 newWord.className =
 "selected-word";
+
 
 newWord.innerText =
 button.innerText;
 
+
 answerBox.appendChild(
 newWord
 );
+
 
 button.style.display =
 "none";
@@ -1671,10 +2169,9 @@ button.style.display =
 }
 
 
-
-// ==========================
+// =========================================================
 // إعادة الترتيب
-// ==========================
+// =========================================================
 
 function resetSentence(
 wordsId,
@@ -1685,6 +2182,7 @@ let container =
 document.getElementById(
 wordsId
 );
+
 
 container
 .querySelectorAll(
@@ -1697,6 +2195,7 @@ button.style.display =
 
 });
 
+
 document
 .getElementById(
 answerBoxId
@@ -1706,10 +2205,9 @@ answerBoxId
 }
 
 
-
-// ==========================
+// =========================================================
 // التحقق من ترتيب الكلمات
-// ==========================
+// =========================================================
 
 function checkSentence(
 answerBoxId,
@@ -1722,17 +2220,21 @@ document.getElementById(
 answerBoxId
 );
 
+
 let result =
 document.getElementById(
 resultId
 );
+
 
 let words =
 answerBox.querySelectorAll(
 ".selected-word"
 );
 
+
 let userSentence = "";
+
 
 words.forEach(word=>{
 
@@ -1741,15 +2243,18 @@ word.innerText + " ";
 
 });
 
+
 userSentence =
 normalizeText(
 userSentence
 );
 
+
 correctSentence =
 normalizeText(
 correctSentence
 );
+
 
 answerBox.classList.remove(
 "shake"
@@ -1763,20 +2268,25 @@ userSentence===correctSentence
 result.innerHTML =
 
 '<div class="confetti">'+
+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
+
 '</div>'+
 
 '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
 
+
 result.className =
 "result-text success-text";
 
+
 answerBox.style.borderColor =
 "#8fd19e";
+
 
 answerBox.style.background =
 "#eefdf3";
@@ -1789,6 +2299,7 @@ answerBox.classList.add(
 "shake"
 );
 
+
 setTimeout(function(){
 
 answerBox.classList.remove(
@@ -1797,15 +2308,19 @@ answerBox.classList.remove(
 
 },300);
 
+
 answerBox.style.borderColor =
 "#ffb8b8";
+
 
 answerBox.style.background =
 "#fff2f2";
 
+
 result.innerHTML =
 
 "😅❌ ترتيب الكلمات غير صحيح.";
+
 
 result.className =
 "result-text error-text";
@@ -1815,10 +2330,9 @@ result.className =
 }
 
 
-
-// ==========================
+// =========================================================
 // خلط الكلمات
-// ==========================
+// =========================================================
 
 function shuffleWords(
 containerId
@@ -1829,12 +2343,15 @@ document.getElementById(
 containerId
 );
 
+
 if(
-!container){
+!container
+){
 
 return;
 
 }
+
 
 let buttons =
 Array.from(
@@ -1843,11 +2360,14 @@ container.querySelectorAll(
 )
 );
 
+
 buttons.sort(
 ()=>Math.random()-0.5
 );
 
+
 container.innerHTML="";
+
 
 buttons.forEach(button=>{
 
@@ -1859,17 +2379,65 @@ button
 
 }
 
- // ==========================
-// خلط كلمات الترتيب
-// ==========================
 
 shuffleWords("words1");
 
+
+// =========================================================
+// إنهاء الوحدة الثالثة
+// =========================================================
+
+function finishUnit3(){
+
+/*
+   هذا آخر درس في الوحدة الثالثة.
+
+   لذلك لا نستخدم مكافأة الدرس العادية
+   (+5 Coins).
+
+   مكافأة إنهاء الوحدة:
++15 Coins.
+
+*/
+
+
+if(
+typeof window.finishLesson === "function"
+){
+
+window.finishLesson(
+
+UNIT_ID,
+
+LESSON_ID,
+
+LESSON_TITLE,
+
+UNIT_REWARD,
+
+UNIT3_REVIEW_PAGE
+
+);
+
+}
+
+else{
+
+/*
+   في حال لم يتم تحميل reward.js،
+   ننتقل مباشرة إلى المراجعة.
+*/
+
+window.location.href =
+UNIT3_REVIEW_PAGE;
+
+}
+
+}
+
 </script>
+
 
 </body>
 
-</html>  
-   
-  
-
+</html>
