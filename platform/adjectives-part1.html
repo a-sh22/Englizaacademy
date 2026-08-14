@@ -643,6 +643,104 @@ line-height:1.7;
 
 
 /* ==========================================================
+   بطاقة زر التدريب
+========================================================== */
+
+.practice-card{
+
+background:
+linear-gradient(
+135deg,
+#f8f6ff,
+#eef4ff
+);
+
+border:2px solid #e3ddff;
+
+text-align:center;
+
+padding:35px;
+
+border-radius:30px;
+
+box-shadow:
+0 12px 30px rgba(111,67,255,.08);
+
+margin-bottom:35px;
+
+}
+
+
+.practice-card h2{
+
+font-size:32px;
+
+color:#6f43ff;
+
+margin-bottom:15px;
+
+}
+
+
+.practice-card p{
+
+font-size:19px;
+
+line-height:2;
+
+font-weight:600;
+
+color:#555;
+
+margin-bottom:25px;
+
+}
+
+
+.practice-btn{
+
+display:block;
+
+width:100%;
+
+padding:21px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+font-size:21px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+box-shadow:
+0 12px 30px rgba(55,104,255,.20);
+
+transition:.3s;
+
+}
+
+
+.practice-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 18px 40px rgba(55,104,255,.25);
+
+}
+
+
+/* ==========================================================
    بطاقات الأسئلة
 ========================================================== */
 
@@ -826,8 +924,6 @@ box-shadow .25s ease;
 box-shadow:
 0 6px 18px rgba(31,60,136,.05);
 
-/* مهم جدًا للجوال */
-
 -webkit-appearance:none;
 
 appearance:none;
@@ -854,12 +950,6 @@ transform:scale(.98);
 }
 
 
-/*
-   مهم:
-   المتصفح يجعل الزر disabled رماديًا تلقائيًا.
-   هذا يمنع ذلك.
-*/
-
 .choice-btn:disabled{
 
 opacity:1 !important;
@@ -870,8 +960,6 @@ cursor:default;
 
 }
 
-
-/* الصحيح */
 
 .choice-btn.correct{
 
@@ -886,8 +974,6 @@ box-shadow:
 
 }
 
-
-/* الخطأ */
 
 .choice-btn.wrong{
 
@@ -1752,6 +1838,40 @@ border-radius:17px;
 }
 
 
+/* بطاقة التدريب */
+
+.practice-card{
+
+padding:28px 20px;
+
+}
+
+
+.practice-card h2{
+
+font-size:27px;
+
+}
+
+
+.practice-card p{
+
+font-size:17px;
+
+line-height:2;
+
+}
+
+
+.practice-btn{
+
+font-size:18px;
+
+padding:18px;
+
+}
+
+
 /* الأسئلة */
 
 .question-card{
@@ -1923,7 +2043,7 @@ padding:20px;
 <div class="top-bar">
 
 <a
-href="unit2.html"
+href="unit2-pre.html"
 class="back-btn">
 
 ⬅️ رجوع
@@ -2816,6 +2936,36 @@ class="result-text">
 
 
 <!-- ==========================================================
+     بطاقة تدرب الآن
+========================================================== -->
+
+<div class="card practice-card">
+
+<h2>
+
+🎯 تدرّب الآن
+
+</h2>
+
+<p>
+
+أنهيت تمارين الدرس؟ ممتاز! الآن طبّق ما تعلمته في التدريب التالي وثبّت معلوماتك أكثر.
+
+</p>
+
+<a
+href="demonstratives-part1.html"
+class="practice-btn">
+
+🚀 ابدأ التدريب الآن
+
+</a>
+
+</div>
+
+
+
+<!-- ==========================================================
      بطاقة النهاية
 ========================================================== -->
 
@@ -2847,7 +2997,7 @@ class="result-text">
 <button
 class="next-lesson-btn"
 onclick="finishLesson(
-'unit2-lesson1-adjectives',
+'unit2-pre-adjectives-part1',
 'الصفات | الجزء الأول',
 'demonstratives-part1.html'
 )">
@@ -2979,8 +3129,6 @@ input.classList.add(
 );
 
 
-// إعادة تشغيل الاهتزاز كل مرة
-
 void input.offsetWidth;
 
 input.classList.add(
@@ -3054,8 +3202,6 @@ btn.disabled=true;
 });
 
 
-// إزالة أي اهتزاز سابق
-
 allButtons.forEach(function(btn){
 
 btn.classList.remove("shake");
@@ -3118,8 +3264,6 @@ button.innerHTML +=
 " ✖️";
 
 
-// اهتزاز الزر
-
 void button.offsetWidth;
 
 button.classList.add(
@@ -3162,8 +3306,14 @@ btn.classList.add(
 "correct"
 );
 
+if(
+!btn.innerHTML.includes("✔️")
+){
+
 btn.innerHTML +=
 " ✔️";
+
+}
 
 }
 
@@ -3406,8 +3556,6 @@ result.style.color =
 "#c62828";
 
 
-// اهتزاز صندوق الإجابة
-
 const answerBox =
 document.getElementById(
 answerId
@@ -3418,8 +3566,6 @@ answerBox.classList.remove(
 "shake"
 );
 
-
-// إجبار المتصفح على إعادة تشغيل الأنيميشن
 
 void answerBox.offsetWidth;
 
