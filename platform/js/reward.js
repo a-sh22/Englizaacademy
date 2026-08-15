@@ -612,7 +612,6 @@ overlay.style.display="none";
 }
 
 
-
 // ==========================================================
 // إنهاء الدرس وإضافة المكافأة
 // ==========================================================
@@ -633,11 +632,11 @@ return false;
 
 rewardRunning=true;
 
+try{
+
 if(!navigator.onLine){
 
 alert("⚠️ لا يوجد اتصال بالإنترنت.");
-
-rewardRunning=false;
 
 return false;
 
@@ -646,8 +645,6 @@ return false;
 const user=auth.currentUser;
 
 if(!user){
-
-rewardRunning=false;
 
 return false;
 
@@ -663,15 +660,11 @@ const snap=await getDoc(userRef);
 
 if(!snap.exists()){
 
-rewardRunning=false;
-
 return false;
 
 }
 
 const data=snap.data();
-
-// سبق أخذ المكافأة
 
 if(
 
@@ -680,21 +673,20 @@ data.completedLessons.includes(lessonId)
 
 ){
 
-rewardRunning=false;
-
 return false;
 
 }
 
 const oldCoins=data.coins || 0;
 
-const rewardData = REWARDS.lesson;
+const rewardData=REWARDS.lesson;
 
-const reward = rewardData.coins;
+const reward=rewardData.coins;
 
 const newCoins=oldCoins+reward;
 
-// حفظ البيانات
+
+// حفظ المكافأة مباشرة
 
 await updateDoc(userRef,{
 
@@ -706,9 +698,10 @@ lastLesson:lessonId
 
 });
 
-// إضافة سجل المكافأة
 
-await addRewardHistory({
+// سجل المكافأة بدون تعطيل الانتقال
+
+addRewardHistory({
 
 title:lessonTitle,
 
@@ -716,12 +709,19 @@ coins:reward,
 
 type:rewardData.historyType
 
+}).catch(error=>{
+
+console.error(
+"Reward history error:",
+error
+);
+
 });
- 
 
-// عرض المكافأة
 
-await showRewardPopup(
+// عرض نافذة المكافأة
+
+showRewardPopup(
 
 oldCoins,
 
@@ -733,9 +733,27 @@ rewardData
 
 );
 
-rewardRunning=false;
 
 return true;
+
+}
+
+catch(error){
+
+console.error(
+"Complete lesson error:",
+error
+);
+
+return false;
+
+}
+
+finally{
+
+rewardRunning=false;
+
+}
 
 }
 
@@ -1233,13 +1251,23 @@ nextPage
 
 ){
 
+if(rewardRunning){
 
-unlockCoinSound(); 
- 
+return;
 
-const success=
+}
 
-await completeLesson(
+
+// قفل العملية فورًا من أول ضغطة
+
+rewardRunning=true;
+
+unlockCoinSound();
+
+
+try{
+
+const success=await completeLesson(
 
 lessonId,
 
@@ -1248,45 +1276,67 @@ lessonTitle
 );
 
 
-// سواء حصل على المكافأة أو كان أخذها سابقاً
-// ننتظر إغلاق البطاقة ثم ننتقل
+// إذا حصل على المكافأة
 
 if(success){
 
 const btn=
+document.getElementById("rewardBtn");
 
-document.getElementById(
+if(!btn){
 
-"rewardBtn"
+window.location.href=nextPage;
 
-);
+return;
+
+}
+
+
+// الزر جاهز مباشرة بعد ظهور المكافأة
+
+btn.disabled=false;
 
 btn.onclick=function(){
 
 document
-.getElementById(
-"rewardOverlay"
-)
+.getElementById("rewardOverlay")
 .style.display="none";
 
-window.location.href=
-
-nextPage;
+window.location.href=nextPage;
 
 };
 
 }
 
+
+// إذا سبق أخذ المكافأة
+
 else{
 
-window.location.href=
-
-nextPage;
+window.location.href=nextPage;
 
 }
 
 }
 
+catch(error){
+
+console.error(
+"Finish lesson error:",
+error
+);
+
+window.location.href=nextPage;
+
+}
+
+finally{
+
+rewardRunning=false;
+
+}
+
+}
 
 
 // ==========================================================
