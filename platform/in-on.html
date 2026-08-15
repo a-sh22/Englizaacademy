@@ -10,7 +10,7 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
-In • On • At | Part 1 | Engliza Academy
+How many & How much | Engliza Academy
 </title>
 
 
@@ -669,6 +669,10 @@ color:#1f3c88;
 
 transition:.25s;
 
+direction:ltr;
+
+text-align:left;
+
 }
 
 
@@ -769,6 +773,156 @@ box-shadow:
 .check-answer-btn:active{
 
 transform:scale(.98);
+
+}
+
+
+/* ==========================================================
+   ترتيب الكلمات
+========================================================== */
+
+.word-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-top:25px;
+
+direction:ltr;
+
+}
+
+
+.word-btn{
+
+padding:16px 20px;
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+0 6px 18px rgba(31,60,136,.05);
+
+}
+
+
+.word-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 10px 25px rgba(31,60,136,.10);
+
+}
+
+
+.answer-box{
+
+min-height:95px;
+
+margin-top:20px;
+
+padding:18px;
+
+border:2px dashed #b9c8ff;
+
+border-radius:22px;
+
+background:#fafbff;
+
+display:flex;
+
+flex-wrap:wrap;
+
+align-items:center;
+
+gap:12px;
+
+direction:ltr;
+
+}
+
+
+.selected-word{
+
+padding:14px 18px;
+
+background:
+linear-gradient(
+135deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+border-radius:16px;
+
+font-size:17px;
+
+font-weight:bold;
+
+box-shadow:
+0 8px 20px rgba(31,60,136,.12);
+
+}
+
+
+.word-actions{
+
+display:flex;
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+
+.secondary-btn{
+
+flex:1;
+
+padding:16px 20px;
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:18px;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+
+.secondary-btn:hover{
+
+transform:translateY(-3px);
 
 }
 
@@ -1301,6 +1455,26 @@ font-size:17px;
 }
 
 
+/* الكلمات */
+
+.word-btn{
+
+font-size:16px;
+
+padding:14px 16px;
+
+}
+
+
+.selected-word{
+
+font-size:16px;
+
+padding:13px 16px;
+
+}
+
+
 /* النتائج */
 
 .result-text,
@@ -1382,7 +1556,9 @@ class="back-btn">
 
 <div class="owl-circle">
 
-<img src="../okay.owl.PNG" alt="Owl">
+<img
+src="../okay.owl.PNG"
+alt="Owl">
 
 </div>
 
@@ -1396,14 +1572,18 @@ class="back-btn">
 
 <h1 class="title">
 
-In • On • At | Part 1
+How many & How much
 
 </h1>
 
 
 <p class="subtitle">
 
-تعلّم المعنى الأساسي لكلمات in و on و at، واستخدمها في جمل بسيطة من خلال أمثلة وتمارين عملية.
+تعلّم متى تستخدم
+<b>How many</b>
+ومتى تستخدم
+<b>How much</b>
+من خلال شرح بسيط وتمارين متنوعة.
 
 </p>
 
@@ -1421,7 +1601,7 @@ preload="metadata"
 controlsList="nodownload">
 
 <source
-src="https://videos.englizaacademy.com/Pre-Intermediate/Lesson%2015.mp4.MOV"
+src="https://videos.englizaacademy.com/Pre-Intermediate/Lesson%2019.mp4.MOV"
 type="video/quicktime">
 
 متصفحك لا يدعم تشغيل الفيديو.
@@ -1438,23 +1618,25 @@ type="video/quicktime">
 
 <div class="card message-card">
 
-<img src="../success.owl.PNG" alt="Owl">
+<img
+src="../success.owl.PNG"
+alt="Owl">
 
 <div class="message-content">
 
 <h2>
 
-💡 سر صغير!
+💡 نصيحة
 
 </h2>
 
 <p>
 
-لا تحاول حفظ الكلمات وحدها.
+إذا أخطأت في سؤال، لا تكتفِ بمعرفة الإجابة الصحيحة.
 
 <br><br>
 
-اربط كل كلمة بصورة أو موقف، وستتذكرها بسهولة أكبر.
+حاول أن تفهم سبب الخطأ، لأن هذا هو أسرع طريق للتطور.
 
 </p>
 
@@ -1516,13 +1698,10 @@ type="video/quicktime">
 
 <p class="question-title">
 
-The book is _____ the table.
-
-</p>
-
-<p class="question-translation">
-
-الكتاب على الطاولة.
+<span dir="ltr">
+<span class="blank-line"></span>
+apples do you have?
+</span>
 
 </p>
 
@@ -1530,32 +1709,32 @@ The book is _____ the table.
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'q1')">
+onclick="checkAnswer(
+this,
+true,
+'hmq1'
+)">
 
-in
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'q1')">
-
-on
+How many
 
 </button>
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'q1')">
+onclick="checkAnswer(
+this,
+false,
+'hmq1'
+)">
 
-at
+How much
 
 </button>
 
 </div>
 
 <div
-id="q1"
+id="hmq1"
 class="result-text">
 
 </div>
@@ -1578,52 +1757,50 @@ class="result-text">
 
 <div class="question-type">
 
-🎯 اختر الإجابة الصحيحة
+✍️ اكتب الكلمة المناسبة
 
 </div>
 
 <p class="question-title">
 
-The cat is _____ the box.
+<span dir="ltr">
+<span class="blank-line"></span>
+milk do you drink every day?
+</span>
 
 </p>
 
 <p class="question-translation">
 
-القطة داخل الصندوق.
+كمية الحليب التي تشربها كل يوم.
 
 </p>
 
-<div class="choice-container">
+<input
+id="hmwrite1"
+class="write-box"
+type="text"
+placeholder="Write your answer..."
+autocomplete="off">
+
 
 <button
-class="choice-btn"
-onclick="checkAnswer(this,true,'q2')">
+class="check-answer-btn"
+onclick="checkWriting(
+'hmwrite1',
+'hmresult1',
+[
+'How much'
+]
+)">
 
-in
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q2')">
-
-on
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q2')">
-
-at
-
-</button>
-
-</div>
 
 <div
-id="q2"
+id="hmresult1"
 class="result-text">
 
 </div>
@@ -1652,13 +1829,10 @@ class="result-text">
 
 <p class="question-title">
 
-I am _____ the door.
-
-</p>
-
-<p class="question-translation">
-
-أنا عند الباب.
+<span dir="ltr">
+<span class="blank-line"></span>
+water is in the bottle?
+</span>
 
 </p>
 
@@ -1666,32 +1840,32 @@ I am _____ the door.
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'q3')">
+onclick="checkAnswer(
+this,
+false,
+'hmq2'
+)">
 
-in
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q3')">
-
-on
+How many
 
 </button>
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'q3')">
+onclick="checkAnswer(
+this,
+true,
+'hmq2'
+)">
 
-at
+How much
 
 </button>
 
 </div>
 
 <div
-id="q3"
+id="hmq2"
 class="result-text">
 
 </div>
@@ -1714,52 +1888,52 @@ class="result-text">
 
 <div class="question-type">
 
-🎯 اختر الإجابة الصحيحة
+🔎 اكتشف الخطأ وصححه
 
 </div>
 
 <p class="question-title">
 
-The picture is _____ the wall.
+<span dir="ltr">
+
+❌ How much books do you have?
+
+</span>
 
 </p>
 
 <p class="question-translation">
 
-الصورة على الحائط.
+صحّح الجملة كاملة باللغة الإنجليزية.
 
 </p>
 
-<div class="choice-container">
+<input
+id="hmwrite2"
+class="write-box"
+type="text"
+placeholder="Correct the sentence..."
+autocomplete="off">
+
 
 <button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q4')">
+class="check-answer-btn"
+onclick="checkWriting(
+'hmwrite2',
+'hmresult2',
+[
+'How many books do you have?',
+'How many books do you have'
+]
+)">
 
-in
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'q4')">
-
-on
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q4')">
-
-at
-
-</button>
-
-</div>
 
 <div
-id="q4"
+id="hmresult2"
 class="result-text">
 
 </div>
@@ -1782,52 +1956,51 @@ class="result-text">
 
 <div class="question-type">
 
-🎯 اختر الإجابة الصحيحة
+✍️ اكتب الكلمة المناسبة
 
 </div>
 
 <p class="question-title">
 
-The toys are _____ the bag.
+<span dir="ltr">
+
+I have _____ friends.
+
+</span>
 
 </p>
 
 <p class="question-translation">
 
-الألعاب داخل الحقيبة.
+لدي الكثير من الأصدقاء.
 
 </p>
 
-<div class="choice-container">
+<input
+id="hmwrite3"
+class="write-box"
+type="text"
+placeholder="Write your answer..."
+autocomplete="off">
+
 
 <button
-class="choice-btn"
-onclick="checkAnswer(this,true,'q5')">
+class="check-answer-btn"
+onclick="checkWriting(
+'hmwrite3',
+'hmresult3',
+[
+'many'
+]
+)">
 
-in
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q5')">
-
-on
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q5')">
-
-at
-
-</button>
-
-</div>
 
 <div
-id="q5"
+id="hmresult3"
 class="result-text">
 
 </div>
@@ -1850,52 +2023,121 @@ class="result-text">
 
 <div class="question-type">
 
-🎯 اختر الإجابة الصحيحة
-
-</div>
-
-<p class="question-title">
-
-She is waiting _____ the bus stop.
-
-</p>
-
-<p class="question-translation">
-
-إنها تنتظر عند موقف الحافلة.
-
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q6')">
-
-in
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'q6')">
-
-on
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'q6')">
-
-at
-
-</button>
+🧩 رتّب الكلمات لتكوين سؤال صحيح
 
 </div>
 
 <div
-id="q6"
+class="word-container"
+id="words1">
+
+<button
+class="word-btn"
+onclick="addWord(
+this,
+'answerBox1'
+)">
+
+How
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(
+this,
+'answerBox1'
+)">
+
+many
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(
+this,
+'answerBox1'
+)">
+
+books
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(
+this,
+'answerBox1'
+)">
+
+do
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(
+this,
+'answerBox1'
+)">
+
+you
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(
+this,
+'answerBox1'
+)">
+
+have
+
+</button>
+
+</div>
+
+
+<div
+class="answer-box"
+id="answerBox1">
+
+</div>
+
+
+<div class="word-actions">
+
+<button
+class="check-answer-btn"
+onclick="checkSentence(
+'answerBox1',
+'How many books do you have',
+'hmresult4'
+)">
+
+✨ أريد التحقق من إجابتي
+
+</button>
+
+<button
+class="secondary-btn"
+onclick="resetSentence(
+'words1',
+'answerBox1',
+'hmresult4'
+)">
+
+↩️ إعادة المحاولة
+
+</button>
+
+</div>
+
+
+<div
+id="hmresult4"
 class="result-text">
 
 </div>
@@ -1918,46 +2160,50 @@ class="result-text">
 
 <div class="question-type">
 
-✍️ أكمل الفراغ بالكلمة المناسبة
+🎯 اختر الإجابة الصحيحة
 
 </div>
 
 <p class="question-title">
 
-The phone is _____ the table.
+<span dir="ltr">
+
+_____ sugar do we need?
+
+</span>
 
 </p>
 
-<p class="question-translation">
-
-الهاتف على الطاولة.
-
-</p>
-
-<input
-id="writing1"
-class="write-box"
-placeholder="اكتب إجابتك هنا..."
-autocomplete="off">
-
+<div class="choice-container">
 
 <button
-class="check-answer-btn"
-onclick="checkWriting(
-'writing1',
-'result7',
-[
-'on'
-]
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'hmq3'
 )">
 
-✨ أريد التحقق من إجابتي
+How many
 
 </button>
 
+<button
+class="choice-btn"
+onclick="checkAnswer(
+this,
+true,
+'hmq3'
+)">
+
+How much
+
+</button>
+
+</div>
 
 <div
-id="result7"
+id="hmq3"
 class="result-text">
 
 </div>
@@ -1980,36 +2226,42 @@ class="result-text">
 
 <div class="question-type">
 
-✍️ أكمل الفراغ بالكلمة المناسبة
+✍️ صحّح الخطأ
 
 </div>
 
 <p class="question-title">
 
-The dog is _____ the car.
+<span dir="ltr">
+
+❌ How much apples do you have?
+
+</span>
 
 </p>
 
 <p class="question-translation">
 
-الكلب داخل السيارة.
+صحّح الجملة كاملة باللغة الإنجليزية.
 
 </p>
 
 <input
-id="writing2"
+id="hmwrite4"
 class="write-box"
-placeholder="اكتب إجابتك هنا..."
+type="text"
+placeholder="Write the correct sentence..."
 autocomplete="off">
 
 
 <button
 class="check-answer-btn"
 onclick="checkWriting(
-'writing2',
-'result8',
+'hmwrite4',
+'hmresult5',
 [
-'in'
+'How many apples do you have?',
+'How many apples do you have'
 ]
 )">
 
@@ -2019,7 +2271,7 @@ onclick="checkWriting(
 
 
 <div
-id="result8"
+id="hmresult5"
 class="result-text">
 
 </div>
@@ -2042,36 +2294,32 @@ class="result-text">
 
 <div class="question-type">
 
-✍️ أكمل الفراغ بالكلمة المناسبة
+🌍 ترجم إلى الإنجليزية
 
 </div>
 
 <p class="question-title">
 
-We are _____ the door.
-
-</p>
-
-<p class="question-translation">
-
-نحن عند الباب.
+كم كمية الماء التي تشربها؟
 
 </p>
 
 <input
-id="writing3"
+id="hmwrite5"
 class="write-box"
-placeholder="اكتب إجابتك هنا..."
+type="text"
+placeholder="Write your answer..."
 autocomplete="off">
 
 
 <button
 class="check-answer-btn"
 onclick="checkWriting(
-'writing3',
-'result9',
+'hmwrite5',
+'hmresult6',
 [
-'at'
+'How much water do you drink?',
+'How much water do you drink'
 ]
 )">
 
@@ -2081,7 +2329,7 @@ onclick="checkWriting(
 
 
 <div
-id="result9"
+id="hmresult6"
 class="result-text">
 
 </div>
@@ -2104,170 +2352,50 @@ class="result-text">
 
 <div class="question-type">
 
-✍️ أكمل الفراغ بالكلمة المناسبة
+🎯 اختر الإجابة الصحيحة
 
 </div>
 
 <p class="question-title">
 
-The ball is _____ the box.
+<span dir="ltr">
+
+_____ books are on the table?
+
+</span>
 
 </p>
 
-<p class="question-translation">
-
-الكرة داخل الصندوق.
-
-</p>
-
-<input
-id="writing4"
-class="write-box"
-placeholder="اكتب إجابتك هنا..."
-autocomplete="off">
-
+<div class="choice-container">
 
 <button
-class="check-answer-btn"
-onclick="checkWriting(
-'writing4',
-'result10',
-[
-'in'
-]
+class="choice-btn"
+onclick="checkAnswer(
+this,
+true,
+'hmq4'
 )">
 
-✨ أريد التحقق من إجابتي
+How many
 
 </button>
 
-
-<div
-id="result10"
-class="result-text">
-
-</div>
-
-</div>
-
-
-
-<!-- ==========================================================
-     السؤال 11
-========================================================== -->
-
-<div class="card question-card">
-
-<div class="question-number">
-
-11
-
-</div>
-
-<div class="question-type">
-
-✍️ أكمل الفراغ بالكلمة المناسبة
-
-</div>
-
-<p class="question-title">
-
-The clock is _____ the wall.
-
-</p>
-
-<p class="question-translation">
-
-الساعة على الحائط.
-
-</p>
-
-<input
-id="writing5"
-class="write-box"
-placeholder="اكتب إجابتك هنا..."
-autocomplete="off">
-
-
 <button
-class="check-answer-btn"
-onclick="checkWriting(
-'writing5',
-'result11',
-[
-'on'
-]
+class="choice-btn"
+onclick="checkAnswer(
+this,
+false,
+'hmq4'
 )">
 
-✨ أريد التحقق من إجابتي
+How much
 
 </button>
 
+</div>
 
 <div
-id="result11"
-class="result-text">
-
-</div>
-
-</div>
-
-
-
-<!-- ==========================================================
-     السؤال 12
-========================================================== -->
-
-<div class="card question-card">
-
-<div class="question-number">
-
-12
-
-</div>
-
-<div class="question-type">
-
-✍️ أكمل الفراغ بالكلمة المناسبة
-
-</div>
-
-<p class="question-title">
-
-He is _____ the window.
-
-</p>
-
-<p class="question-translation">
-
-إنه عند النافذة.
-
-</p>
-
-<input
-id="writing6"
-class="write-box"
-placeholder="اكتب إجابتك هنا..."
-autocomplete="off">
-
-
-<button
-class="check-answer-btn"
-onclick="checkWriting(
-'writing6',
-'result12',
-[
-'at'
-]
-)">
-
-✨ أريد التحقق من إجابتي
-
-</button>
-
-
-<div
-id="result12"
+id="hmq4"
 class="result-text">
 
 </div>
@@ -2295,7 +2423,7 @@ class="result-text">
 
 <br><br>
 
-في الدرس القادم ستتعلم استخدام <b>in</b> و <b>on</b> و <b>at</b> في مواقف أكثر.
+استمر بهذا الحماس، فالدرس القادم بانتظارك! 🚀
 
 </p>
 
@@ -2333,8 +2461,6 @@ return text
 .toLowerCase()
 
 .trim()
-
-.replace(/\s+/g," ")
 
 .replace(/’/g,"'")
 
@@ -2559,19 +2685,6 @@ btn.disabled = true;
 
 
 // ==========================================================
-// إزالة الاهتزاز السابق
-// ==========================================================
-
-allButtons.forEach(function(btn){
-
-btn.classList.remove(
-"shake"
-);
-
-});
-
-
-// ==========================================================
 // الإجابة الصحيحة
 // ==========================================================
 
@@ -2582,8 +2695,14 @@ button.classList.add(
 );
 
 
+if(
+!button.innerHTML.includes("✔️")
+){
+
 button.innerHTML +=
 " ✔️";
+
+}
 
 
 result.innerHTML =
@@ -2622,8 +2741,14 @@ button.classList.add(
 );
 
 
+if(
+!button.innerHTML.includes("✖️")
+){
+
 button.innerHTML +=
 " ✖️";
+
+}
 
 
 void button.offsetWidth;
@@ -2644,6 +2769,7 @@ button.classList.remove(
 
 
 result.innerHTML =
+
 "❌ لقد اخترت الإجابة الخاطئة.";
 
 
@@ -2690,6 +2816,325 @@ btn.innerHTML +=
 
 }
 
+
+
+// ==========================================================
+// إضافة كلمة
+// ==========================================================
+
+function addWord(
+button,
+answerBoxId
+){
+
+if(
+button.style.display === "none"
+){
+
+return;
+
+}
+
+
+const answerBox =
+document.getElementById(
+answerBoxId
+);
+
+
+const newWord =
+document.createElement(
+"div"
+);
+
+
+newWord.className =
+"selected-word";
+
+
+newWord.innerText =
+button.innerText.trim();
+
+
+answerBox.appendChild(
+newWord
+);
+
+
+button.style.display =
+"none";
+
+}
+
+
+
+// ==========================================================
+// إعادة ترتيب الكلمات
+// ==========================================================
+
+function resetSentence(
+wordsId,
+answerBoxId,
+resultId
+){
+
+const container =
+document.getElementById(
+wordsId
+);
+
+
+if(!container){
+
+return;
+
+}
+
+
+container
+.querySelectorAll(
+".word-btn"
+)
+.forEach(function(button){
+
+button.style.display =
+"inline-block";
+
+});
+
+
+const answerBox =
+document.getElementById(
+answerBoxId
+);
+
+
+if(answerBox){
+
+answerBox.innerHTML =
+"";
+
+answerBox.style.borderColor =
+"#b9c8ff";
+
+answerBox.style.background =
+"#fafbff";
+
+}
+
+
+const result =
+document.getElementById(
+resultId
+);
+
+
+if(result){
+
+result.innerHTML =
+"";
+
+result.className =
+"result-text";
+
+}
+
+}
+
+
+
+// ==========================================================
+// التحقق من ترتيب الكلمات
+// ==========================================================
+
+function checkSentence(
+answerBoxId,
+correctSentence,
+resultId
+){
+
+const answerBox =
+document.getElementById(
+answerBoxId
+);
+
+
+const result =
+document.getElementById(
+resultId
+);
+
+
+const words =
+answerBox.querySelectorAll(
+".selected-word"
+);
+
+
+let userSentence =
+"";
+
+
+words.forEach(function(word){
+
+userSentence +=
+word.innerText + " ";
+
+});
+
+
+userSentence =
+normalizeText(
+userSentence
+);
+
+
+const normalizedCorrect =
+normalizeText(
+correctSentence
+);
+
+
+answerBox.classList.remove(
+"shake"
+);
+
+
+if(
+userSentence ===
+normalizedCorrect
+){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+
+'<span class="star">⭐</span>'+
+
+'<span class="star">🌟</span>'+
+
+'<span class="star">✨</span>'+
+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+'✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
+
+
+result.className =
+"result-text success-text";
+
+
+answerBox.style.borderColor =
+"#9cddb3";
+
+answerBox.style.background =
+"#e8fff0";
+
+}
+
+
+else{
+
+void answerBox.offsetWidth;
+
+
+answerBox.classList.add(
+"shake"
+);
+
+
+setTimeout(function(){
+
+answerBox.classList.remove(
+"shake"
+);
+
+},400);
+
+
+answerBox.style.borderColor =
+"#ffb8b8";
+
+answerBox.style.background =
+"#ffe8e8";
+
+
+result.innerHTML =
+
+"❌ ترتيب الكلمات غير صحيح."+
+
+"<br><br>"+
+
+"💡 حاول مرة أخرى.";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+
+// ==========================================================
+// خلط الكلمات
+// ==========================================================
+
+function shuffleWords(
+containerId
+){
+
+const container =
+document.getElementById(
+containerId
+);
+
+
+if(!container){
+
+return;
+
+}
+
+
+const buttons =
+Array.from(
+container.querySelectorAll(
+".word-btn"
+)
+);
+
+
+buttons.sort(
+function(){
+
+return Math.random() - 0.5;
+
+}
+);
+
+
+container.innerHTML =
+"";
+
+
+buttons.forEach(function(button){
+
+container.appendChild(
+button
+);
+
+});
+
+}
+
+
+shuffleWords("words1");
+
 </script>
 
 
@@ -2710,11 +3155,11 @@ window.finishLessonPage = function(){
 
 finishLesson(
 
-"pre-intermediate-unit2-lesson3",
+"pre-intermediate-unit2-lesson19",
 
-"In • On • At | Part 1",
+"How many & How much",
 
-"in-on2.html"
+"some-afew.html"
 
 );
 
