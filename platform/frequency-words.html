@@ -2263,30 +2263,18 @@ class="result-text">
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson(
-'present-simple-frequency-adverbs',
-'Frequency Adverbs | Present Simple',
-'present-continuous.html'
-)">
+onclick="finishLessonPage()">
 
 🚀 الانتقال إلى الدرس التالي
 
 </button>
+   
 
 </div>
 
 
 </div>
 
-
-<!-- ==========================================================
-     نظام الإنجاز والمكافآت
-========================================================== -->
-
-<script src="./js/reward.js"></script>
-
-
-<script>
 
 /* ==========================================================
    تنظيف النص
@@ -2863,7 +2851,22 @@ shuffleWords("words1");
 
 </script>
 
+<script type="module">
 
+import { finishLesson } from "./js/reward.js";
+
+window.finishLessonPage = function(){
+
+finishLesson(
+"pre-intermediate-unit1-lesson8",
+"كلمات التكرار مع المضارع البسيط | Frequency words",
+"present-continuous.html"
+);
+
+};
+
+</script>
+   
 </body>
 
 </html>
