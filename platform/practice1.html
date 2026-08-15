@@ -2316,16 +2316,12 @@ onclick="checkWriting(
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson(
-'present-simple-reading-practice',
-'Practice Reading | Present Simple',
-'present-qw.html'
-)">
+onclick="finishLessonPage()">
 
 ✨ الانتقال إلى مراجعة الوحدة
 
 </button>
-
+   
 </div>
 
 
@@ -3903,7 +3899,27 @@ activeWord=null;
     
 </script>
 
-<script src="../lesson-system.js"></script>
+<script type="module">
+
+import {
+finishLesson
+} from "./js/reward.js";
+
+window.finishLessonPage = function(){
+
+finishLesson(
+
+"pre-intermediate-unit1-reading",
+
+"📖 قراءة | Present simple",
+
+"present-qw.html"
+
+);
+
+};
+
+</script>
      
 </body>
 
