@@ -2304,11 +2304,7 @@ class="result-text">
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson(
-'present-simple-wh-questions',
-'WH Questions | المضارع البسيط',
-'lesson-next.html'
-)">
+onclick="finishLessonPage()">
 
 🚀 الانتقال إلى الدرس التالي
 
@@ -2931,12 +2927,21 @@ shuffleWords("words1");
 </script>
 
 
-<!-- ==========================================================
-     نظام الإنجاز والمكافآت
-========================================================== -->
+<script type="module">
 
-<script src="./js/reward.js"></script>
+import { finishLesson } from "./js/reward.js";
 
+window.finishLessonPage = function(){
+
+finishLesson(
+"pre-intermediate-unit1-lesson7",
+"WQ مع المضارع البسيط",
+"frequency-words.html"
+);
+
+};
+
+</script>
 
 </body>
 
