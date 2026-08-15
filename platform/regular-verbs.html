@@ -1730,14 +1730,7 @@ class="result-text">
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson(
-'pre-intermediate',
-'unit1',
-'lesson2',
-'الأفعال العادية | Regular Verbs',
-'regular-verbs',
-'Irregular-verbs.html'
-)">
+onclick="finishLessonPage()">
 
 🚀 الانتقال إلى الدرس التالي
 
@@ -1946,58 +1939,27 @@ btn.innerHTML +=
 }
 
 
-<!-- =========================================================
-     نظام المكافآت
-========================================================= -->
+
+</script>
+
 
 <script type="module">
 
 import { finishLesson } from "./js/reward.js";
 
-window.finishLesson = finishLesson;
+window.finishLessonPage = function(){
 
-</script>
-
-
-<script>
-
-// =========================================================
-// بيانات الدرس
-// =========================================================
-
-const LESSON_ID =
-"pre-intermediate-unit1-lesson2";
-
-const LESSON_TITLE =
-"regular Verbs";
-
-const NEXT_LESSON_PAGE =
-"Irregular-verbs.html";
-
-
-// =========================================================
-// إنهاء الدرس والانتقال للدرس التالي
-// =========================================================
-
-function finishLessonPage(){
-
-window.finishLesson(
-
-LESSON_ID,
-
-LESSON_TITLE,
-
-NEXT_LESSON_PAGE
-
+finishLesson(
+"pre-intermediate-unit1-lesson2",
+"Regular Verbs",
+"Irregular-verbs.html"
 );
 
-}
+};
 
 </script>
+
    
-
-</script>
-
 </body>
 
 </html>
