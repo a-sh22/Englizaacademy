@@ -1800,27 +1800,46 @@ btn.innerHTML +=
 }
 
 
+<!-- =========================================================
+     نظام المكافآت
+========================================================= -->
+
+<script type="module">
+
+import { finishLesson } from "./js/reward.js";
+
+window.finishLesson = finishLesson;
+
+</script>
+
+
+<script>
+
 // =========================================================
-// إنهاء الدرس
+// بيانات الدرس
+// =========================================================
+
+const LESSON_ID =
+"pre-intermediate-unit1-lesson1";
+
+const LESSON_TITLE =
+"Regular & Irregular Verbs | المقدمة";
+
+const NEXT_LESSON_PAGE =
+"regular-verbs.html";
+
+
+// =========================================================
+// إنهاء الدرس والانتقال للدرس التالي
 // =========================================================
 
 function finishLessonPage(){
 
-if(
-typeof window.finishLesson === "function"
-){
-
 window.finishLesson(
-
-LEVEL_ID,
-
-UNIT_ID,
 
 LESSON_ID,
 
 LESSON_TITLE,
-
-LESSON_REWARD,
 
 NEXT_LESSON_PAGE
 
@@ -1828,15 +1847,9 @@ NEXT_LESSON_PAGE
 
 }
 
-else{
+</script>
 
-window.location.href =
-NEXT_LESSON_PAGE;
-
-}
-
-}
-
+   
 </script>
 
 
