@@ -591,6 +591,8 @@ animation:shake .3s;
 }
 
 
+
+
 /* ==========================
    بطاقة النهاية
 ========================== */
@@ -599,28 +601,42 @@ animation:shake .3s;
 
 text-align:center;
 
-background:linear-gradient(
+background:
+linear-gradient(
 135deg,
-#6f43ff,
-#8f6dff
+#ffe58a,
+#f8cf55
 );
+
+border:3px solid #dcae18;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(214,169,30,.20);
 
 }
 
 .final-card h2{
 
 font-size:40px;
-color:#ffe082;
-margin-bottom:20px;
+
+color:#6b4b00;
+
+margin-bottom:22px;
 
 }
 
 .final-card p{
 
 font-size:22px;
+
 line-height:2;
+
 font-weight:600;
-color:white;
+
+color:#5f4a18;
+
 margin-bottom:30px;
 
 }
@@ -628,18 +644,25 @@ margin-bottom:30px;
 .next-lesson-btn{
 
 width:100%;
+
 padding:22px;
-border:none;
+
+border:2px solid #dce4ff;
+
 border-radius:24px;
+
 font-size:22px;
+
 font-weight:bold;
+
 cursor:pointer;
 
-background:white;
+background:#f8f9ff;
 
-color:#6f43ff;
+color:#1f3c88;
 
-box-shadow:0 14px 35px rgba(0,0,0,.18);
+box-shadow:
+0 12px 30px rgba(0,0,0,.10);
 
 transition:.3s;
 
@@ -649,10 +672,19 @@ transition:.3s;
 
 transform:translateY(-5px);
 
-box-shadow:0 20px 45px rgba(0,0,0,.22);
+box-shadow:
+0 18px 40px rgba(0,0,0,.16);
 
 }
 
+.next-lesson-btn:active{
+
+transform:scale(.97);
+
+}
+
+
+   
 
 /* ==========================
    الحركات
@@ -801,6 +833,14 @@ font-size:30px;
 
 }
 
+
+
+.final-card h2{
+
+font-size:30px;
+
+}
+
 .final-card p{
 
 font-size:18px;
@@ -811,12 +851,13 @@ font-size:18px;
 
 width:100%;
 
-}
-.next-lesson-btn:active{
+font-size:19px;
 
-transform:scale(.97);
+padding:20px;
 
 }
+
+   
 
    .help-text{
 
@@ -1761,36 +1802,32 @@ onclick="checkWriting(
 
 
 <!-- ==========================
-      بطاقة النهاية
+     بطاقة نهاية الوحدة
 ========================== -->
 
 <div class="card final-card">
 
 <h2>
 
- !مبروك 🎉
+🏅 أحسنت!
 
 </h2>
 
 <p>
 
-لقد أنهيت تدريبات القراءة الخاصة بزمن
-<b>Present continuous </b>
-بنجاح.
+أكملت هذا الدرس بنجاح، ووصلت إلى نهاية الوحدة الأولى. 🌟
 
 <br><br>
 
-أصبحت الآن تستطيع قراءة نصوص قصيرة، وفهم الأفكار الرئيسية، والإجابة عن الأسئلة، واستخدام زمن
-<b>Present Simple</b>
-في الكتابة.
+استمر بهذا التقدم، والآن حان وقت مراجعة ما تعلمته قبل الانتقال إلى المرحلة التالية.
 
 </p>
 
 <button
 class="next-lesson-btn"
-onclick="window.location.href='lesson-next.html'">
+onclick="finishLessonPage()">
 
-🚀 الانتقال إلى الدرس التالي
+✨ الانتقال إلى مراجعة الوحدة
 
 </button>
 
@@ -3170,6 +3207,30 @@ activeWord=null;
     
 </script>
 
+
+<script type="module">
+
+import {
+finishLesson
+} from "./js/reward.js";
+
+window.finishLessonPage = function(){
+
+finishLesson(
+
+"pre-intermediate-unit1-reading",
+
+"📖 قراءة | Present Continuous",
+
+"unit1-pre-review.html"
+
+);
+
+};
+
+</script>
+
+     
 </body>
 
 </html>  
