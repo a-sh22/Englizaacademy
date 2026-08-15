@@ -1807,11 +1807,7 @@ class="result-text">
 
 <button
 class="next-lesson-btn"
-onclick="finishLesson(
-'pre-intermediate-unit1-lesson3',
-'قائمة الأفعال غير العادية | Irregular Verbs',
-'lesson4.html'
-)">
+onclick="finishLessonPage()">
 
 🚀 الانتقال إلى الدرس التالي
 
@@ -2029,6 +2025,22 @@ btn.innerHTML +=
 
 </script>
 
+<script type="module">
+
+import { finishLesson } from "./js/reward.js";
+
+window.finishLessonPage = function(){
+
+finishLesson(
+"pre-intermediate-unit1-lesson3",
+"قائمة الأفعال غير العادية | Irregular Verbs",
+"present-simple1.html"
+);
+
+};
+
+</script>
+   
 </body>
 
 </html>
