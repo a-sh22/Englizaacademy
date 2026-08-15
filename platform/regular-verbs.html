@@ -1749,22 +1749,6 @@ onclick="finishLesson(
 </div>
 
 
-<!-- ==========================================================
-     نظام المكافآت والتقدم
-========================================================== -->
-
-<script type="module">
-
-import {
-finishLesson
-}
-from "./js/reward.js";
-
-
-window.finishLesson = finishLesson;
-
-
-</script>
 
 
 <!-- ==========================================================
@@ -1961,6 +1945,56 @@ btn.innerHTML +=
 
 }
 
+
+<!-- =========================================================
+     نظام المكافآت
+========================================================= -->
+
+<script type="module">
+
+import { finishLesson } from "./js/reward.js";
+
+window.finishLesson = finishLesson;
+
+</script>
+
+
+<script>
+
+// =========================================================
+// بيانات الدرس
+// =========================================================
+
+const LESSON_ID =
+"pre-intermediate-unit1-lesson2";
+
+const LESSON_TITLE =
+"regular Verbs";
+
+const NEXT_LESSON_PAGE =
+"Irregular-verbs.html";
+
+
+// =========================================================
+// إنهاء الدرس والانتقال للدرس التالي
+// =========================================================
+
+function finishLessonPage(){
+
+window.finishLesson(
+
+LESSON_ID,
+
+LESSON_TITLE,
+
+NEXT_LESSON_PAGE
+
+);
+
+}
+
+</script>
+   
 
 </script>
 
