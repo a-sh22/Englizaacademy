@@ -36,6 +36,16 @@ font-family:Arial,sans-serif;
 body{
 
 background:
+radial-gradient(
+circle at 50% 0%,
+rgba(111,67,255,.10),
+transparent 28%
+),
+radial-gradient(
+circle at 10% 20%,
+rgba(55,104,255,.07),
+transparent 25%
+),
 linear-gradient(
 135deg,
 #eef4ff 0%,
@@ -81,7 +91,7 @@ display:inline-flex;
 align-items:center;
 justify-content:center;
 
-background:white;
+background:rgba(255,255,255,.95);
 
 padding:14px 25px;
 
@@ -97,6 +107,8 @@ font-weight:bold;
 box-shadow:
 0 10px 25px rgba(0,0,0,.08);
 
+border:1px solid rgba(255,255,255,.9);
+
 transition:.3s;
 
 }
@@ -107,6 +119,42 @@ transform:translateY(-3px);
 
 box-shadow:
 0 15px 30px rgba(0,0,0,.11);
+
+}
+
+.owl-circle{
+
+position:relative;
+
+}
+
+.owl-circle::before{
+
+content:"";
+
+position:absolute;
+
+width:95px;
+height:95px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+rgba(55,104,255,.15),
+rgba(111,67,255,.15)
+);
+
+filter:blur(22px);
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+z-index:0;
 
 }
 
@@ -122,12 +170,60 @@ object-fit:cover;
 box-shadow:
 0 8px 20px rgba(0,0,0,.08);
 
+position:relative;
+
+z-index:1;
+
 }
 
 
 /* =========================================================
-   MAIN TITLE
+   HERO
 ========================================================= */
+
+.hero{
+
+position:relative;
+
+text-align:center;
+
+padding:
+10px
+15px
+32px;
+
+margin-bottom:5px;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:360px;
+height:180px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+rgba(55,104,255,.09),
+rgba(111,67,255,.10)
+);
+
+filter:blur(50px);
+
+top:-30px;
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:-1;
+
+}
 
 .title{
 
@@ -140,6 +236,25 @@ color:#1f3c88;
 margin-bottom:15px;
 
 line-height:1.3;
+
+font-weight:800;
+
+}
+
+.title-highlight{
+
+background:
+linear-gradient(
+90deg,
+#1f3c88,
+#6f43ff
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+background-clip:text;
 
 }
 
@@ -155,7 +270,68 @@ color:#666;
 
 line-height:2;
 
-margin-bottom:50px;
+max-width:780px;
+
+margin:0 auto;
+
+}
+
+
+/* =========================================================
+   HERO DIVIDER
+========================================================= */
+
+.hero-divider{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+margin:
+0 auto
+38px;
+
+}
+
+.hero-divider span{
+
+height:2px;
+
+width:60px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#cbd7ff
+);
+
+}
+
+.hero-divider span:last-child{
+
+background:
+linear-gradient(
+90deg,
+#cbd7ff,
+transparent
+);
+
+}
+
+.hero-divider i{
+
+font-style:normal;
+
+font-size:14px;
+
+color:#6f43ff;
 
 }
 
@@ -166,7 +342,7 @@ margin-bottom:50px;
 
 .card{
 
-background:white;
+background:rgba(255,255,255,.96);
 
 padding:40px;
 
@@ -176,6 +352,8 @@ box-shadow:
 0 15px 35px rgba(0,0,0,.07);
 
 margin-bottom:35px;
+
+border:1px solid rgba(255,255,255,.9);
 
 }
 
@@ -204,18 +382,13 @@ color:#666;
 
 }
 
-
-/* =========================================================
-   STUDY PLAN ITEMS
-========================================================= */
-
 .study-list{
 
 display:flex;
 
 flex-direction:column;
 
-gap:18px;
+gap:16px;
 
 }
 
@@ -233,12 +406,22 @@ line-height:1.8;
 
 color:#555;
 
+padding:4px 0;
+
+transition:.25s;
+
+}
+
+.study-item:hover{
+
+transform:translateX(-3px);
+
 }
 
 .study-icon{
 
-width:34px;
-height:34px;
+width:36px;
+height:36px;
 
 flex-shrink:0;
 
@@ -255,6 +438,9 @@ border-radius:12px;
 
 font-size:17px;
 
+box-shadow:
+0 5px 12px rgba(55,104,255,.05);
+
 }
 
 
@@ -266,6 +452,33 @@ font-size:17px;
 
 overflow:hidden;
 
+position:relative;
+
+}
+
+.tip-card::after{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+right:-80px;
+bottom:-100px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(111,67,255,.08),
+transparent 70%
+);
+
+pointer-events:none;
+
 }
 
 .tip-box{
@@ -275,6 +488,48 @@ display:flex;
 align-items:center;
 
 gap:35px;
+
+position:relative;
+
+z-index:1;
+
+}
+
+.tip-owl{
+
+position:relative;
+
+flex-shrink:0;
+
+}
+
+.tip-owl::before{
+
+content:"";
+
+position:absolute;
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+rgba(55,104,255,.10),
+rgba(111,67,255,.10)
+);
+
+filter:blur(25px);
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+z-index:-1;
 
 }
 
@@ -394,9 +649,6 @@ border-color .3s ease;
 
 }
 
-
-/* الخط الجانبي */
-
 .unit::before{
 
 content:"";
@@ -420,9 +672,6 @@ opacity:.9;
 
 }
 
-
-/* تأثير خلفي خفيف */
-
 .unit::after{
 
 content:"";
@@ -445,7 +694,6 @@ transparent 70%
 pointer-events:none;
 
 }
-
 
 .unit:hover{
 
@@ -700,6 +948,13 @@ transform:translateY(0);
 
 }
 
+.hero{
+
+animation:
+fadeUp .55s ease both;
+
+}
+
 .card,
 .unit{
 
@@ -748,6 +1003,15 @@ height:68px;
 
 /* العنوان */
 
+.hero{
+
+padding:
+5px
+8px
+25px;
+
+}
+
 .title{
 
 font-size:38px;
@@ -760,7 +1024,17 @@ font-size:18px;
 
 line-height:1.9;
 
-margin-bottom:38px;
+}
+
+.hero-divider{
+
+margin-bottom:28px;
+
+}
+
+.hero-divider span{
+
+width:42px;
 
 }
 
@@ -789,6 +1063,12 @@ font-size:17px;
 
 
 /* خطة الدراسة */
+
+.study-list{
+
+gap:14px;
+
+}
 
 .study-item{
 
@@ -1010,12 +1290,17 @@ alt="Engliza Academy">
 
 
 <!-- =========================================================
-     LEVEL TITLE
+     HERO
 ========================================================= -->
+
+<div class="hero">
 
 <h1 class="title">
 
-✨ أهلاً بك في المستوى المبتدئ
+✨ أهلاً بك في
+<span class="title-highlight">
+المستوى المبتدئ
+</span>
 
 </h1>
 
@@ -1025,6 +1310,19 @@ alt="Engliza Academy">
 فكل شخص متقن للإنجليزية اليوم بدأ من هذه النقطة.
 
 </p>
+
+</div>
+
+
+<div class="hero-divider">
+
+<span></span>
+
+<i>✦</i>
+
+<span></span>
+
+</div>
 
 
 
@@ -1138,9 +1436,13 @@ alt="Engliza Academy">
 <div class="tip-box">
 
 
+<div class="tip-owl">
+
 <img
 src="../owl.heart.PNG"
 alt="نصيحة من Engliza">
+
+</div>
 
 
 <div class="tip-text">
@@ -1240,7 +1542,7 @@ alt="نصيحة من Engliza">
 
 </div>
 
-11 دروس
+10 دروس
 
 </div>
 
@@ -1305,7 +1607,7 @@ onclick="window.location.href='unit1.html'">
 
 </div>
 
-13 درسًا
+12 درسًا
 
 </div>
 
@@ -1454,6 +1756,7 @@ onclick="window.location.href='unit4.html'">
 
 </div>
 
+   
 
 
 <!-- =========================================================
