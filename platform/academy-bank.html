@@ -566,333 +566,334 @@ onclick="location.href='reward-history.html'">
 </div>
 
 
-
 <script type="module">
 
-import {
-
-initializeApp
-
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-
+/* =========================================================
+   🔥 Firebase
+========================================================= */
 
 import {
 
-getAuth,
-onAuthStateChanged
+    auth
 
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+} from "./js/firebase.js";
 
 
-import {
 
-getFirestore,
-doc,
-getDoc
-
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-
+/* =========================================================
+   🏦 نظام البنك
+========================================================= */
 
 import {
 
-initializeBank,
-refreshBankBalance
+    initializeBank,
+    refreshBankBalance
 
 } from "./js/bank.js";
 
 
+
+/* =========================================================
+   🪙 نظام العملات
+========================================================= */
+
 import {
 
-playCoinSound
+    getCoins,
+    refreshCoinBadge,
+    playPurchaseSound
 
 } from "./js/reward.js";
 
 
 
 /* =========================================================
-   FIREBASE
-========================================================= */
-
-const firebaseConfig = {
-
-apiKey:
-"AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
-
-authDomain:
-"engliza-academy.firebaseapp.com",
-
-projectId:
-"engliza-academy",
-
-storageBucket:
-"engliza-academy.firebasestorage.app",
-
-messagingSenderId:
-"389916153039",
-
-appId:
-"1:389916153039:web:95b8a3056b1718cfd353ba",
-
-measurementId:
-"G-7S608ZTN0W"
-
-};
-
-
-
-const app =
-initializeApp(firebaseConfig);
-
-
-const auth =
-getAuth(app);
-
-
-const db =
-getFirestore(app);
-
-
-
-/* =========================================================
-   عناصر الصفحة
+   🪙 عنصر رصيد العملات
 ========================================================= */
 
 const coinBalance =
-document.getElementById(
-"coinBalance"
-);
+
+    document.getElementById(
+        "coinBalance"
+    );
 
 
 
 /* =========================================================
-   قراءة العملات من Firebase
+   💰 تحميل رصيد العملات
 ========================================================= */
 
-async function loadCoins(){
+async function loadCoinBalance(){
 
-const user =
-auth.currentUser;
+    try{
 
+        const coins =
 
-if(!user){
-
-return;
-
-}
+            await getCoins();
 
 
-try{
 
-const userDocument =
-await getDoc(
+        coinBalance.textContent =
 
-doc(
-db,
-"users",
-user.uid
-)
-
-);
+            coins;
 
 
-if(!userDocument.exists()){
 
-console.warn(
-"لم يتم العثور على بيانات المستخدم."
-);
+        /*
+         * تحديث عداد العملات العام
+         * إذا كان موجودًا في الصفحة
+         */
 
-return;
-
-}
-
-
-const userData =
-userDocument.data();
+        refreshCoinBadge(
+            coins
+        );
 
 
-const coins =
-Number(
-userData.coins ?? 0
-);
+    }
 
+    catch(error){
 
-coinBalance.textContent =
-coins;
+        console.error(
+            "خطأ في تحميل رصيد العملات:",
+            error
+        );
 
-
-}
-
-catch(error){
-
-console.error(
-"خطأ في تحميل العملات:",
-error
-);
-
-}
+    }
 
 }
 
 
 
 /* =========================================================
-   تسجيل الدخول
+   🔐 التحقق من تسجيل الدخول
 ========================================================= */
 
-onAuthStateChanged(
+auth.onAuthStateChanged(
 
-auth,
+    async function(user){
 
-async function(user){
+        /*
+         * إذا لم يكن المستخدم مسجل الدخول
+         */
 
-if(!user){
+        if(!user){
 
-window.location.href =
-"login.html";
+            window.location.href =
+                "login.html";
 
-return;
+            return;
 
-}
+        }
 
 
-try{
 
-await initializeBank();
+        /*
+         * المستخدم مسجل الدخول
+         * نبدأ تحميل بيانات البنك والعملات
+         */
 
-await refreshBankBalance();
+        try{
 
-await loadCoins();
+            await initializeBank();
 
-}
+            await refreshBankBalance();
 
-catch(error){
+            await loadCoinBalance();
 
-console.error(
-"خطأ في تحميل بيانات البنك:",
-error
+        }
+
+        catch(error){
+
+            console.error(
+                "Bank initialization error:",
+                error
+            );
+
+        }
+
+    }
+
 );
-
-}
-
-});
 
 
 
 /* =========================================================
-   الخزائن
+   🏦 خزائن البنك
 ========================================================= */
 
 const vaults =
-document.querySelectorAll(
-".vault"
-);
 
+    document.querySelectorAll(
+        ".vault"
+    );
+
+
+
+/*
+ * يمنع فتح أكثر من خزنة
+ * في نفس الوقت
+ */
 
 let vaultBusy = false;
 
 
 
 /* =========================================================
-   فتح الخزنة
+   ✨ فتح الخزنة
 ========================================================= */
 
 async function openVault(
-vault,
-page
+
+    vault,
+    page
+
 ){
 
-if(vaultBusy){
+    if(vaultBusy){
 
-return;
+        return;
 
-}
-
-
-vaultBusy = true;
+    }
 
 
-playCoinSound();
+    vaultBusy = true;
 
 
-vault.style.transition =
-".35s";
+
+    /*
+     * تشغيل صوت فتح الخزنة
+     */
+
+    playPurchaseSound();
 
 
-vault.style.transform =
-"scale(.95)";
+
+    /*
+     * حركة الخزنة
+     */
+
+    vault.style.transition =
+        ".35s";
 
 
-await new Promise(
-resolve =>
-setTimeout(
-resolve,
-170
-)
-);
+    vault.style.transform =
+        "scale(.95)";
 
 
-vault.style.transform =
-"scale(1.05)";
+
+    await new Promise(
+
+        resolve =>
+
+            setTimeout(
+                resolve,
+                170
+            )
+
+    );
 
 
-await new Promise(
-resolve =>
-setTimeout(
-resolve,
-170
-)
-);
+
+    vault.style.transform =
+        "scale(1.05)";
 
 
-window.location.href =
-page;
+
+    await new Promise(
+
+        resolve =>
+
+            setTimeout(
+                resolve,
+                170
+            )
+
+    );
+
+
+
+    /*
+     * الانتقال إلى الصفحة
+     */
+
+    window.location.href =
+        page;
 
 }
 
 
 
 /* =========================================================
-   ربط الخزائن
+   🔗 ربط الخزائن بالصفحات
 ========================================================= */
 
-vaults[0].onclick = () => {
 
-openVault(
-vaults[0],
-"phrase-bank.html"
-);
+/* بنك العبارات */
 
-};
+if(vaults[0]){
 
+    vaults[0].onclick = () => {
 
-vaults[1].onclick = () => {
+        openVault(
+            vaults[0],
+            "phrase-bank.html"
+        );
 
-openVault(
-vaults[1],
-"word-bank.html"
-);
+    };
 
-};
+}
 
 
-vaults[2].onclick = () => {
 
-openVault(
-vaults[2],
-"bag.html"
-);
+/* بنك الكلمات */
 
-};
+if(vaults[1]){
+
+    vaults[1].onclick = () => {
+
+        openVault(
+            vaults[1],
+            "word-bank.html"
+        );
+
+    };
+
+}
 
 
-vaults[3].onclick = () => {
 
-openVault(
-vaults[3],
-"reward-history.html"
-);
+/* حقيبتي */
 
-};
+if(vaults[2]){
+
+    vaults[2].onclick = () => {
+
+        openVault(
+            vaults[2],
+            "bag.html"
+        );
+
+    };
+
+}
+
+
+
+/* سجل المكافآت */
+
+if(vaults[3]){
+
+    vaults[3].onclick = () => {
+
+        openVault(
+            vaults[3],
+            "reward-history.html"
+        );
+
+    };
+
+}
+
 
 </script>
 
@@ -901,4 +902,3 @@ vaults[3],
 </body>
 
 </html>
-    
