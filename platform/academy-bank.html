@@ -566,7 +566,32 @@ onclick="location.href='reward-history.html'">
 </div>
 
 
+
 <script type="module">
+
+import {
+
+initializeApp
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+
+import {
+
+getAuth,
+onAuthStateChanged
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+import {
+
+getFirestore,
+doc,
+getDoc
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
 
 import{
 
@@ -574,7 +599,6 @@ initializeBank,
 refreshBankBalance
 
 }from "./js/bank.js";
-
 
 
 import{
@@ -585,12 +609,286 @@ playCoinSound
 
 
 
+/* =========================================================
+   FIREBASE
+========================================================= */
+
+const firebaseConfig={
+
+apiKey:"AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+
+authDomain:"engliza-academy.firebaseapp.com",
+
+projectId:"engliza-academy",
+
+storageBucket:"engliza-academy.firebasestorage.app",
+
+messagingSenderId:"389916153039",
+
+appId:"1:389916153039:web:95b8a3056b1718cfd353ba",
+
+measurementId:"G-7S608ZTN0W"
+
+};
+
+
+const app=
+
+initializeApp(
+firebaseConfig
+);
+
+
+const auth=
+
+getAuth(app);
+
+
+const db=
+
+getFirestore(app);
+
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const coinBalance=
+
+document.getElementById(
+"coinBalance"
+);
+
+
+
+/* =========================================================
+   FIREBASE COINS
+========================================================= */
+
+async function loadCoins(){
+
+const user=
+
+auth.currentUser;
+
+
+if(!user){
+
+return;
+
+}
+
+
+try{
+
+
+const userDocument=
+
+await getDoc(
+
+doc(
+
+db,
+
+"users",
+
+user.uid
+
+)
+
+);
+
+
+
+if(!userDocument.exists()){
+
+console.warn(
+"لم يتم العثور على بيانات المستخدم."
+);
+
+return;
+
+}
+
+
+
+const userData=
+
+userDocument.data();
+
+
+
+const coins=
+
+Number(
+userData.coins ?? 0
+);
+
+
+
+coinBalance.textContent=
+
+coins;
+
+
+
+}
+
+catch(error){
+
+console.error(
+"خطأ في تحميل العملات:",
+error
+);
+
+}
+
+}
+
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+onAuthStateChanged(
+
+auth,
+
+async function(user){
+
+
+if(!user){
+
+window.location.href=
+"login.html";
+
+return;
+
+}
+
+
 await initializeBank();
-
-
 
 await refreshBankBalance();
 
+await loadCoins();
+
+});
+
+
+
+/* =========================================================
+   الخزائن
+========================================================= */
+
+const vaults=
+
+document.querySelectorAll(
+".vault"
+);
+
+
+let vaultBusy=false;
+
+
+
+async function openVault(
+vault,
+page
+){
+
+if(vaultBusy){
+
+return;
+
+}
+
+
+vaultBusy=true;
+
+
+playCoinSound();
+
+
+vault.style.transition=
+".35s";
+
+
+vault.style.transform=
+"scale(.95)";
+
+
+await new Promise(
+resolve=>
+setTimeout(resolve,170)
+);
+
+
+vault.style.transform=
+"scale(1.05)";
+
+
+await new Promise(
+resolve=>
+setTimeout(resolve,170)
+);
+
+
+window.location.href=
+page;
+
+}
+
+
+
+/* =========================================================
+   ربط الخزائن
+========================================================= */
+
+vaults[0].onclick=()=>{
+
+openVault(
+vaults[0],
+"phrase-bank.html"
+);
+
+};
+
+
+vaults[1].onclick=()=>{
+
+openVault(
+vaults[1],
+"word-bank.html"
+);
+
+};
+
+
+vaults[2].onclick=()=>{
+
+openVault(
+vaults[2],
+"bag.html"
+);
+
+};
+
+
+vaults[3].onclick=()=>{
+
+openVault(
+vaults[3],
+"reward-history.html"
+);
+
+};
+
+</script>
+
+  
 
 
 // ==========================================
