@@ -593,19 +593,19 @@ getDoc
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
-import{
+import {
 
 initializeBank,
 refreshBankBalance
 
-}from "./js/bank.js";
+} from "./js/bank.js";
 
 
-import{
+import {
 
 playCoinSound
 
-}from "./js/reward.js";
+} from "./js/reward.js";
 
 
 
@@ -613,49 +613,51 @@ playCoinSound
    FIREBASE
 ========================================================= */
 
-const firebaseConfig={
+const firebaseConfig = {
 
-apiKey:"AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+apiKey:
+"AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
 
-authDomain:"engliza-academy.firebaseapp.com",
+authDomain:
+"engliza-academy.firebaseapp.com",
 
-projectId:"engliza-academy",
+projectId:
+"engliza-academy",
 
-storageBucket:"engliza-academy.firebasestorage.app",
+storageBucket:
+"engliza-academy.firebasestorage.app",
 
-messagingSenderId:"389916153039",
+messagingSenderId:
+"389916153039",
 
-appId:"1:389916153039:web:95b8a3056b1718cfd353ba",
+appId:
+"1:389916153039:web:95b8a3056b1718cfd353ba",
 
-measurementId:"G-7S608ZTN0W"
+measurementId:
+"G-7S608ZTN0W"
 
 };
 
 
-const app=
 
-initializeApp(
-firebaseConfig
-);
+const app =
+initializeApp(firebaseConfig);
 
 
-const auth=
-
+const auth =
 getAuth(app);
 
 
-const db=
-
+const db =
 getFirestore(app);
 
 
 
 /* =========================================================
-   ELEMENTS
+   عناصر الصفحة
 ========================================================= */
 
-const coinBalance=
-
+const coinBalance =
 document.getElementById(
 "coinBalance"
 );
@@ -663,13 +665,12 @@ document.getElementById(
 
 
 /* =========================================================
-   FIREBASE COINS
+   قراءة العملات من Firebase
 ========================================================= */
 
 async function loadCoins(){
 
-const user=
-
+const user =
 auth.currentUser;
 
 
@@ -682,23 +683,16 @@ return;
 
 try{
 
-
-const userDocument=
-
+const userDocument =
 await getDoc(
 
 doc(
-
 db,
-
 "users",
-
 user.uid
-
 )
 
 );
-
 
 
 if(!userDocument.exists()){
@@ -712,25 +706,18 @@ return;
 }
 
 
-
-const userData=
-
+const userData =
 userDocument.data();
 
 
-
-const coins=
-
+const coins =
 Number(
 userData.coins ?? 0
 );
 
 
-
-coinBalance.textContent=
-
+coinBalance.textContent =
 coins;
-
 
 
 }
@@ -749,7 +736,7 @@ error
 
 
 /* =========================================================
-   AUTH
+   تسجيل الدخول
 ========================================================= */
 
 onAuthStateChanged(
@@ -758,10 +745,9 @@ auth,
 
 async function(user){
 
-
 if(!user){
 
-window.location.href=
+window.location.href =
 "login.html";
 
 return;
@@ -769,11 +755,24 @@ return;
 }
 
 
+try{
+
 await initializeBank();
 
 await refreshBankBalance();
 
 await loadCoins();
+
+}
+
+catch(error){
+
+console.error(
+"خطأ في تحميل بيانات البنك:",
+error
+);
+
+}
 
 });
 
@@ -783,16 +782,19 @@ await loadCoins();
    الخزائن
 ========================================================= */
 
-const vaults=
-
+const vaults =
 document.querySelectorAll(
 ".vault"
 );
 
 
-let vaultBusy=false;
+let vaultBusy = false;
 
 
+
+/* =========================================================
+   فتح الخزنة
+========================================================= */
 
 async function openVault(
 vault,
@@ -806,37 +808,43 @@ return;
 }
 
 
-vaultBusy=true;
+vaultBusy = true;
 
 
 playCoinSound();
 
 
-vault.style.transition=
+vault.style.transition =
 ".35s";
 
 
-vault.style.transform=
+vault.style.transform =
 "scale(.95)";
 
 
 await new Promise(
-resolve=>
-setTimeout(resolve,170)
+resolve =>
+setTimeout(
+resolve,
+170
+)
 );
 
 
-vault.style.transform=
+vault.style.transform =
 "scale(1.05)";
 
 
 await new Promise(
-resolve=>
-setTimeout(resolve,170)
+resolve =>
+setTimeout(
+resolve,
+170
+)
 );
 
 
-window.location.href=
+window.location.href =
 page;
 
 }
@@ -847,7 +855,7 @@ page;
    ربط الخزائن
 ========================================================= */
 
-vaults[0].onclick=()=>{
+vaults[0].onclick = () => {
 
 openVault(
 vaults[0],
@@ -857,7 +865,7 @@ vaults[0],
 };
 
 
-vaults[1].onclick=()=>{
+vaults[1].onclick = () => {
 
 openVault(
 vaults[1],
@@ -867,7 +875,7 @@ vaults[1],
 };
 
 
-vaults[2].onclick=()=>{
+vaults[2].onclick = () => {
 
 openVault(
 vaults[2],
@@ -877,157 +885,11 @@ vaults[2],
 };
 
 
-vaults[3].onclick=()=>{
+vaults[3].onclick = () => {
 
 openVault(
 vaults[3],
 "reward-history.html"
-);
-
-};
-
-</script>
-
-  
-
-
-// ==========================================
-// عناصر الصفحة
-// ==========================================
-
-const vaults=
-
-document.querySelectorAll(
-
-".vault"
-
-);
-
-
-
-let vaultBusy=false;
-
-
-
-// ==========================================
-// فتح الخزنة
-// ==========================================
-
-async function openVault(
-
-vault,
-page
-
-){
-
-if(vaultBusy){
-
-return;
-
-}
-
-vaultBusy=true;
-
-
-
-playCoinSound();
-
-
-
-vault.style.transition=
-
-".35s";
-
-
-
-vault.style.transform=
-
-"scale(.95)";
-
-
-
-await new Promise(resolve=>
-
-setTimeout(
-
-resolve,
-
-170
-
-)
-
-);
-
-
-
-vault.style.transform=
-
-"scale(1.05)";
-
-
-
-await new Promise(resolve=>
-
-setTimeout(
-
-resolve,
-
-170
-
-)
-
-);
-
-
-
-window.location.href=
-
-page;
-
-}
-
-
-
-// ==========================================
-// ربط الخزائن
-// ==========================================
-
-vaults[0].onclick=()=>{
-
-openVault(
-
-vaults[0],
-
-"phrase-bank.html"
-
-);
-
-};
-
-
-
-vaults[1].onclick=()=>{
-
-openVault(
-
-vaults[1],
-
-"word-bank.html"
-
-);
-
-};
-
-
-
-vaults[2].onclick=()=>{
-
-openVault(
-
-vaults[2],
-
-"bag.html"
-
 );
 
 };
@@ -1039,5 +901,4 @@ vaults[2],
 </body>
 
 </html>
-
     
