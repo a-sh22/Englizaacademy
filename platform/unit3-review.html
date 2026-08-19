@@ -1013,19 +1013,12 @@ margin-top:20px;
 }
 
 
-/* ==========================================================
+
+/* ==========================
    بطاقة النهاية
-========================================================== */
+========================== */
 
 .final-card{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:35px;
 
 background:
 linear-gradient(
@@ -1034,26 +1027,62 @@ linear-gradient(
 #8f6dff
 );
 
+text-align:center;
+
+padding:55px 45px;
+
+border-radius:35px;
+
+box-shadow:
+0 18px 45px rgba(0,0,0,.12);
+
 }
 
+
+/* المحتوى في المنتصف */
 
 .final-content{
 
-flex:1;
+width:100%;
+
+max-width:850px;
+
+margin:0 auto;
 
 }
 
+
+/* الكأس */
+
+.final-trophy{
+
+font-size:72px;
+
+display:block;
+
+margin-bottom:10px;
+
+}
+
+
+/* عنوان ممتاز */
 
 .final-content h2{
 
 color:#ffe082;
 
-font-size:42px;
+font-size:48px;
 
-margin-bottom:20px;
+font-weight:bold;
+
+margin-bottom:22px;
+
+text-align:center;
 
 }
 
+
+/* الرسالة */
 
 .final-content p{
 
@@ -1061,20 +1090,70 @@ color:white;
 
 font-size:23px;
 
-line-height:2.2;
+line-height:2.1;
+
+font-weight:600;
+
+text-align:center;
+
+margin:0 auto 30px;
 
 }
 
 
+/* خط زخرفي */
+
+.final-divider{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
+
+margin:20px auto 28px;
+
+max-width:500px;
+
+}
+
+.final-divider::before,
+.final-divider::after{
+
+content:"";
+
+height:2px;
+
+background:#ffe082;
+
+flex:1;
+
+opacity:.8;
+
+}
+
+.final-divider span{
+
+color:#ffe082;
+
+font-size:25px;
+
+}
+
+
+/* زر الوحدة الرابعة */
+
 .next-unit-btn{
 
-margin-top:35px;
+display:block;
 
 width:100%;
 
 padding:22px;
 
-border:none !important;
+border:none;
 
 border-radius:24px;
 
@@ -1084,40 +1163,96 @@ font-weight:bold;
 
 cursor:pointer;
 
-background:
-white !important;
+background:white;
 
-color:#1f3c88 !important;
+color:#1f3c88;
 
 box-shadow:
 0 14px 35px rgba(0,0,0,.18);
 
 transition:.3s;
 
-}
+margin-top:10px;
 
+}
 
 .next-unit-btn:hover{
 
-transform:
-translateY(-5px);
+transform:translateY(-5px);
 
 box-shadow:
-0 20px 45px rgba(0,0,0,.22);
+0 20px 45px rgba(0,0,0,.25);
+
+}
+
+.next-unit-btn:active{
+
+transform:scale(.98);
 
 }
 
 
-.next-unit-btn:disabled{
+/* ==========================
+   بطاقة النهاية - الجوال
+========================== */
 
-opacity:.7;
+@media(max-width:768px){
 
-cursor:default;
+.final-card{
 
-transform:none;
+padding:40px 22px;
 
 }
 
+.final-trophy{
+
+font-size:60px;
+
+margin-bottom:5px;
+
+}
+
+.final-content h2{
+
+font-size:38px;
+
+margin-bottom:18px;
+
+}
+
+.final-content p{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+.final-divider{
+
+gap:10px;
+
+margin:18px auto 25px;
+
+}
+
+.final-divider span{
+
+font-size:21px;
+
+}
+
+.next-unit-btn{
+
+font-size:19px;
+
+padding:19px 15px;
+
+}
+
+}
+
+   
 
 /* ==========================================================
    الحركات
@@ -3019,52 +3154,82 @@ class="result-text">
 
 
 
-<!-- ==========================================================
+<!-- ==========================
      بطاقة النهاية
-========================================================== -->
+========================== -->
 
-<div
-class="card final-card">
-
+<div class="card final-card">
 
 <div class="final-content">
 
+
+<!-- الكأس -->
+
+<div class="final-trophy">
+
+🏆
+
+</div>
+
+
+<!-- التهنئة -->
+
 <h2>
 
-🏆 ممتاز!
+ممتاز!
 
 </h2>
 
 
+<!-- الرسالة -->
+
 <p>
 
-لقد أنهيت مراجعة الوحدة الثالثة.
-
-<br><br>
-
-🎉 راجعت Have و Has و Had،
-والنفي والأسئلة، وأيام الأسبوع،
-و So و Very و To،
-والصفات وأجزاء اليوم.
-
-<br><br>
-
-✨ أنت الآن جاهز للانتقال إلى الوحدة الرابعة.
+لقد أنهيت مراجعة الوحدة الثالثة بنجاح. 🎉
 
 </p>
 
 
-<button
-id="finishReviewBtn"
-class="next-unit-btn">
+<!-- الفاصل -->
 
-🚀 إنهاء المراجعة والانتقال إلى الوحدة الرابعة
+<div class="final-divider">
+
+<span>★</span>
+
+</div>
+
+
+<p>
+
+أنت تبذل جهدًا رائعًا،  
+فاستمر بنفس الحماس وتقدم خطوة أخرى
+نحو إتقان اللغة الإنجليزية. ✨
+
+</p>
+
+
+<p>
+
+🌟 الوحدة الرابعة بانتظارك!
+
+</p>
+
+
+<!-- زر الانتقال -->
+
+<button
+class="next-unit-btn"
+onclick="window.location.href='unit4.html'">
+
+🚀 الانتقال إلى الوحدة الرابعة
 
 </button>
 
+
 </div>
 
 </div>
+
 
 
 </div>
