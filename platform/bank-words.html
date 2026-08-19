@@ -7,16 +7,17 @@
 
 <meta
 name="viewport"
-content="width=device-width,initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <title>
 📖 بنك الكلمات
 </title>
 
+
 <style>
 
 /* ==========================================================
-   الأساس
+   RESET
 ========================================================== */
 
 *{
@@ -27,6 +28,11 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 
 }
+
+
+/* ==========================================================
+   BODY
+========================================================== */
 
 body{
 
@@ -41,19 +47,28 @@ padding:35px 18px 60px;
 
 min-height:100vh;
 
-}
-
-.container{
-
-max-width:1100px;
-
-margin:auto;
+color:#222;
 
 }
 
 
 /* ==========================================================
-   الأعلى
+   CONTAINER
+========================================================== */
+
+.container{
+
+width:100%;
+
+max-width:1100px;
+
+margin:0 auto;
+
+}
+
+
+/* ==========================================================
+   HEADER
 ========================================================== */
 
 .header{
@@ -66,7 +81,14 @@ align-items:center;
 
 margin-bottom:35px;
 
+width:100%;
+
 }
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
 
 .logo{
 
@@ -78,7 +100,14 @@ border-radius:50%;
 
 object-fit:cover;
 
+display:block;
+
 }
+
+
+/* ==========================================================
+   BACK BUTTON
+========================================================== */
 
 .backBtn{
 
@@ -102,7 +131,9 @@ box-shadow:
 0 10px 25px
 rgba(0,0,0,.08);
 
-transition:.25s;
+transition:
+transform .25s ease,
+box-shadow .25s ease;
 
 }
 
@@ -111,11 +142,15 @@ transition:.25s;
 transform:
 translateY(-2px);
 
+box-shadow:
+0 14px 30px
+rgba(0,0,0,.11);
+
 }
 
 
 /* ==========================================================
-   البطاقة الرئيسية
+   HERO
 ========================================================== */
 
 .hero{
@@ -132,9 +167,12 @@ rgba(0,0,0,.08);
 
 text-align:center;
 
-margin-bottom:35px;
+margin-bottom:40px;
+
+width:100%;
 
 }
+
 
 .hero h1{
 
@@ -144,7 +182,10 @@ color:#1f3c88;
 
 margin-bottom:18px;
 
+line-height:1.4;
+
 }
+
 
 .hero p{
 
@@ -160,7 +201,7 @@ margin-bottom:25px;
 
 
 /* ==========================================================
-   رصيد العملات
+   COIN BALANCE
 ========================================================== */
 
 .balance{
@@ -168,6 +209,8 @@ margin-bottom:25px;
 display:inline-flex;
 
 align-items:center;
+
+justify-content:center;
 
 gap:10px;
 
@@ -189,6 +232,7 @@ border:
 
 }
 
+
 .balance span{
 
 color:#1f3c88;
@@ -197,7 +241,7 @@ color:#1f3c88;
 
 
 /* ==========================================================
-   عنوان القسم
+   SECTION TITLE
 ========================================================== */
 
 .section-title{
@@ -208,11 +252,13 @@ color:#1f3c88;
 
 margin-bottom:28px;
 
+line-height:1.4;
+
 }
 
 
 /* ==========================================================
-   شبكة الكلمات
+   WORD GRID
 ========================================================== */
 
 .word-grid{
@@ -221,17 +267,19 @@ display:grid;
 
 grid-template-columns:
 repeat(
-auto-fit,
-minmax(300px,1fr)
+2,
+minmax(0,1fr)
 );
 
 gap:26px;
+
+width:100%;
 
 }
 
 
 /* ==========================================================
-   بطاقات الكلمات
+   WORD CARD
 ========================================================== */
 
 .word-card{
@@ -250,19 +298,30 @@ position:relative;
 
 overflow:hidden;
 
-transition:.28s;
+transition:
+transform .28s ease,
+box-shadow .28s ease;
+
+width:100%;
 
 }
+
 
 .word-card:hover{
 
 transform:
 translateY(-5px);
 
+box-shadow:
+0 20px 45px
+rgba(31,60,136,.11);
+
 }
 
 
-/* الخط الذهبي أعلى البطاقة */
+/* ==========================================================
+   GOLD TOP LINE
+========================================================== */
 
 .word-card::before{
 
@@ -289,7 +348,7 @@ linear-gradient(
 
 
 /* ==========================================================
-   رأس البطاقة
+   WORD HEADER
 ========================================================== */
 
 .word-header{
@@ -303,6 +362,7 @@ gap:18px;
 margin-bottom:22px;
 
 }
+
 
 .word-icon{
 
@@ -328,11 +388,15 @@ flex-shrink:0;
 
 }
 
+
 .word-title{
 
 flex:1;
 
+min-width:0;
+
 }
+
 
 .word-title h3{
 
@@ -342,7 +406,10 @@ color:#1f3c88;
 
 margin-bottom:7px;
 
+line-height:1.4;
+
 }
+
 
 .word-title p{
 
@@ -354,40 +421,7 @@ color:#888;
 
 
 /* ==========================================================
-   منطقة الفيديو
-========================================================== */
-
-.word-video{
-
-width:100%;
-
-aspect-ratio:16/9;
-
-border-radius:20px;
-
-overflow:hidden;
-
-background:#f5f7ff;
-
-margin-bottom:22px;
-
-}
-
-.word-video video{
-
-width:100%;
-
-height:100%;
-
-display:block;
-
-object-fit:cover;
-
-}
-
-
-/* ==========================================================
-   البطاقة المغلقة
+   LOCKED CONTENT
 ========================================================== */
 
 .locked-content{
@@ -404,6 +438,7 @@ text-align:center;
 
 }
 
+
 .lock-icon{
 
 font-size:48px;
@@ -411,6 +446,7 @@ font-size:48px;
 margin-bottom:12px;
 
 }
+
 
 .locked-content h4{
 
@@ -420,7 +456,10 @@ color:#1f3c88;
 
 margin-bottom:10px;
 
+line-height:1.5;
+
 }
+
 
 .locked-content p{
 
@@ -436,7 +475,7 @@ margin-bottom:20px;
 
 
 /* ==========================================================
-   سعر الكلمة
+   WORD PRICE
 ========================================================== */
 
 .word-price{
@@ -469,7 +508,7 @@ margin-bottom:18px;
 
 
 /* ==========================================================
-   زر فتح الكلمة
+   UNLOCK BUTTON
 ========================================================== */
 
 .unlock-btn{
@@ -497,7 +536,10 @@ font-weight:bold;
 
 cursor:pointer;
 
-transition:.25s;
+transition:
+transform .25s ease,
+box-shadow .25s ease,
+opacity .25s ease;
 
 box-shadow:
 0 10px 25px
@@ -505,12 +547,18 @@ rgba(55,104,255,.25);
 
 }
 
+
 .unlock-btn:hover{
 
 transform:
 translateY(-3px);
 
+box-shadow:
+0 14px 30px
+rgba(55,104,255,.30);
+
 }
+
 
 .unlock-btn:disabled{
 
@@ -524,7 +572,7 @@ transform:none;
 
 
 /* ==========================================================
-   الكلمة المفتوحة
+   UNLOCKED CONTENT
 ========================================================== */
 
 .unlocked-content{
@@ -534,7 +582,9 @@ display:none;
 }
 
 
-/* حالة الفتح */
+/* ==========================================================
+   UNLOCKED STATE
+========================================================== */
 
 .word-card.unlocked
 .unlocked-content{
@@ -543,8 +593,6 @@ display:block;
 
 }
 
-
-/* إخفاء القفل بعد الفتح */
 
 .word-card.unlocked
 .locked-content{
@@ -555,7 +603,7 @@ display:none;
 
 
 /* ==========================================================
-   شارة الكلمة المفتوحة
+   UNLOCKED BADGE
 ========================================================== */
 
 .unlocked-badge{
@@ -586,53 +634,44 @@ margin-bottom:18px;
 
 
 /* ==========================================================
-   الفيديو المفتوح
+   VIDEO
 ========================================================== */
 
-.unlocked-content .word-video{
+.word-video{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+border-radius:20px;
+
+overflow:hidden;
+
+background:#f5f7ff;
 
 margin-bottom:15px;
 
 }
 
 
+.word-video video{
+
+width:100%;
+
+height:100%;
+
+display:block;
+
+object-fit:cover;
+
+}
+
+
 /* ==========================================================
-   الجوال
+   TABLET
 ========================================================== */
 
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:30px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-.backBtn{
-
-font-size:18px;
-
-padding:12px 18px;
-
-}
-
-.balance{
-
-font-size:23px;
-
-}
-
-.section-title{
-
-font-size:28px;
-
-}
+@media(max-width:850px){
 
 .word-grid{
 
@@ -641,17 +680,111 @@ grid-template-columns:
 
 }
 
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:
+25px 15px 50px;
+
+}
+
+
+.header{
+
+margin-bottom:28px;
+
+}
+
+
+.logo{
+
+width:68px;
+
+height:68px;
+
+}
+
+
+.backBtn{
+
+font-size:18px;
+
+padding:
+12px 18px;
+
+}
+
+
+.hero{
+
+padding:
+28px 20px;
+
+border-radius:24px;
+
+margin-bottom:32px;
+
+}
+
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+
+.hero p{
+
+font-size:18px;
+
+line-height:1.9;
+
+}
+
+
+.balance{
+
+font-size:23px;
+
+padding:
+13px 20px;
+
+}
+
+
+.section-title{
+
+font-size:28px;
+
+margin-bottom:22px;
+
+}
+
+
 .word-card{
 
 padding:25px;
 
+border-radius:24px;
+
 }
+
 
 .word-header{
 
 gap:14px;
 
 }
+
 
 .word-icon{
 
@@ -663,11 +796,13 @@ font-size:30px;
 
 }
 
+
 .word-title h3{
 
 font-size:21px;
 
 }
+
 
 .word-title p{
 
@@ -675,11 +810,14 @@ font-size:15px;
 
 }
 
+
 .locked-content{
 
-padding:22px 18px;
+padding:
+22px 18px;
 
 }
+
 
 .locked-content h4{
 
@@ -687,17 +825,80 @@ font-size:20px;
 
 }
 
+
+.locked-content p{
+
+font-size:16px;
+
+}
+
+
 .word-price{
 
 font-size:18px;
 
 }
 
+
 .unlock-btn{
 
 font-size:18px;
 
 padding:15px;
+
+}
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media(max-width:400px){
+
+.hero h1{
+
+font-size:27px;
+
+}
+
+
+.hero p{
+
+font-size:17px;
+
+}
+
+
+.balance{
+
+font-size:21px;
+
+}
+
+
+.word-card{
+
+padding:20px;
+
+}
+
+
+.word-title h3{
+
+font-size:19px;
+
+}
+
+
+.word-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:27px;
 
 }
 
@@ -710,48 +911,50 @@ padding:15px;
 
 <body>
 
+
 <div class="container">
 
 
 <!-- ========================================================
-     الأعلى
+     HEADER
 ========================================================= -->
 
 <div class="header">
 
-<img
-src="../owl.PNG"
-class="logo">
-
-<div class="header">
 
 <img
 src="../owl.PNG"
-class="logo">
+class="logo"
+alt="Engliza Academy">
+
 
 <button
 class="backBtn"
+type="button"
 onclick="window.location.href='academy-bank.html'">
 
 ⬅️ رجوع
 
 </button>
 
+
 </div>
 
 
 
 <!-- ========================================================
-     المقدمة
+     HERO
 ========================================================= -->
 
 <div class="hero">
+
 
 <h1>
 
 📖 بنك الكلمات
 
 </h1>
+
 
 <p>
 
@@ -780,12 +983,13 @@ onclick="window.location.href='academy-bank.html'">
 
 </div>
 
+
 </div>
 
 
 
 <!-- ========================================================
-     الكلمات
+     WORDS TITLE
 ========================================================= -->
 
 <h2 class="section-title">
@@ -794,6 +998,11 @@ onclick="window.location.href='academy-bank.html'">
 
 </h2>
 
+
+
+<!-- ========================================================
+     WORD GRID
+========================================================= -->
 
 <div
 class="word-grid"
@@ -808,16 +1017,17 @@ id="wordGrid">
 
 <script type="module">
 
+
 // ==========================================================
 // 📖 بيانات بنك الكلمات
 // ==========================================================
 //
-// ملاحظة:
-// يمكنك لاحقًا إضافة كلمات جديدة هنا فقط.
-// لا تحتاجين إلى تعديل نظام الشراء.
+// لإضافة كلمات مستقبلًا:
+// أضيفي عنصرًا جديدًا داخل هذه القائمة فقط.
 // ==========================================================
 
 const words = [
+
 
 {
 
@@ -827,9 +1037,11 @@ title:"الكلمة الأولى",
 
 price:10,
 
-video:"https://videos.englizaacademy.com/Pre-Intermediate/%20word1.MP4"
+video:
+"https://videos.englizaacademy.com/Pre-Intermediate/%20word1.MP4"
 
 },
+
 
 {
 
@@ -839,9 +1051,11 @@ title:"الكلمة الثانية",
 
 price:15,
 
-video:"https://videos.englizaacademy.com/Pre-Intermediate/word2.MP4"
+video:
+"https://videos.englizaacademy.com/Pre-Intermediate/word2.MP4"
 
 },
+
 
 {
 
@@ -851,9 +1065,11 @@ title:"الكلمة الثالثة",
 
 price:20,
 
-video:"https://videos.englizaacademy.com/Pre-Intermediate/word3.MP4"
+video:
+"https://videos.englizaacademy.com/Pre-Intermediate/word3.MP4"
 
 },
+
 
 {
 
@@ -863,9 +1079,11 @@ title:"الكلمة الرابعة",
 
 price:10,
 
-video:"https://videos.englizaacademy.com/Pre-Intermediate/word4.MP4"
+video:
+"https://videos.englizaacademy.com/Pre-Intermediate/word4.MP4"
 
 },
+
 
 {
 
@@ -875,9 +1093,11 @@ title:"الكلمة الخامسة",
 
 price:15,
 
-video:"https://videos.englizaacademy.com/Pre-Intermediate/word5.MP4"
+video:
+"https://videos.englizaacademy.com/Pre-Intermediate/word5.MP4"
 
 },
+
 
 {
 
@@ -887,9 +1107,11 @@ title:"الكلمة السادسة",
 
 price:20,
 
-video:"https://videos.englizaacademy.com/Pre-Intermediate/word6.MP4"
+video:
+"https://videos.englizaacademy.com/Pre-Intermediate/word6.MP4"
 
 },
+
 
 {
 
@@ -899,7 +1121,8 @@ title:"الكلمة السابعة",
 
 price:10,
 
-video:"https://videos.englizaacademy.com/Pre-Intermediate/word7.MP4"
+video:
+"https://videos.englizaacademy.com/Pre-Intermediate/word7.MP4"
 
 }
 
@@ -921,6 +1144,7 @@ document.getElementById(
 
 function createWordCard(word){
 
+
 const card =
 
 document.createElement(
@@ -940,11 +1164,8 @@ word.id;
 card.innerHTML = `
 
 
-<!-- ==========================================
-     رأس البطاقة
-========================================== -->
-
 <div class="word-header">
+
 
 <div class="word-icon">
 
@@ -954,6 +1175,7 @@ card.innerHTML = `
 
 
 <div class="word-title">
+
 
 <h3>
 
@@ -968,17 +1190,20 @@ ${word.title}
 
 </p>
 
-</div>
 
 </div>
 
 
+</div>
 
-<!-- ==========================================
+
+
+<!-- ======================================================
      المحتوى المغلق
-========================================== -->
+====================================================== -->
 
 <div class="locked-content">
+
 
 <div class="lock-icon">
 
@@ -1021,15 +1246,17 @@ type="button">
 
 </button>
 
+
 </div>
 
 
 
-<!-- ==========================================
+<!-- ======================================================
      المحتوى المفتوح
-========================================== -->
+====================================================== -->
 
 <div class="unlocked-content">
+
 
 <div class="unlocked-badge">
 
@@ -1040,22 +1267,29 @@ type="button">
 
 <div class="word-video">
 
+
 <video
 controls
 preload="metadata"
 controlsList="nodownload">
 
+
 <source
 src="${word.video}"
 type="video/mp4">
 
+
 متصفحك لا يدعم تشغيل الفيديو.
+
 
 </video>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 `;
 
@@ -1067,22 +1301,25 @@ return card;
 
 
 // ==========================================================
-// عرض جميع الكلمات
+// عرض الكلمات
 // ==========================================================
 
 words.forEach(word=>{
 
+
 const card =
 createWordCard(word);
 
+
 wordGrid.appendChild(card);
+
 
 });
 
 
 
 // ==========================================================
-// 🏦 نظام شراء الكلمات
+// 🔥 Firebase
 // ==========================================================
 
 import {
@@ -1102,7 +1339,8 @@ updateDoc,
 arrayUnion,
 increment
 
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+} from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
 
@@ -1110,7 +1348,8 @@ import {
 
 onAuthStateChanged
 
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+} from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 
 
@@ -1125,16 +1364,20 @@ refreshCoinBadge
 
 
 // ==========================================================
-// التحقق من المستخدم والكلمات المملوكة
+// 🔓 تحميل الكلمات المملوكة
 // ==========================================================
 
 async function loadWordOwnership(user){
+
 
 if(!user){
 
 return;
 
 }
+
+
+try{
 
 
 const userRef =
@@ -1148,7 +1391,9 @@ user.uid
 
 const snap =
 
-await getDoc(userRef);
+await getDoc(
+userRef
+);
 
 
 if(!snap.exists()){
@@ -1163,11 +1408,14 @@ snap.data();
 
 
 const ownedWords =
-data.ownedWords || [];
+Array.isArray(data.ownedWords)
+? data.ownedWords
+: [];
 
 
 
 words.forEach(word=>{
+
 
 const card =
 
@@ -1195,14 +1443,27 @@ card.classList.add(
 
 }
 
+
 });
+
+
+}
+
+catch(error){
+
+console.error(
+"Error loading owned words:",
+error
+);
+
+}
 
 }
 
 
 
 // ==========================================================
-// شراء الكلمة
+// 🪙 شراء كلمة
 // ==========================================================
 
 async function unlockWord(
@@ -1211,6 +1472,7 @@ word,
 button
 
 ){
+
 
 const user =
 auth.currentUser;
@@ -1225,7 +1487,6 @@ alert(
 return;
 
 }
-
 
 
 button.disabled =
@@ -1250,22 +1511,26 @@ user.uid
 
 const snap =
 
-await getDoc(userRef);
+await getDoc(
+userRef
+);
 
 
 if(!snap.exists()){
+
 
 alert(
 "⚠️ لم يتم العثور على حسابك."
 );
 
+
 button.disabled =
 false;
+
 
 return;
 
 }
-
 
 
 const data =
@@ -1277,17 +1542,20 @@ Number(data.coins || 0);
 
 
 const ownedWords =
-data.ownedWords || [];
+Array.isArray(data.ownedWords)
+? data.ownedWords
+: [];
 
 
 
-// ==========================================================
+// ========================================================
 // الكلمة مملوكة مسبقًا
-// ==========================================================
+// ========================================================
 
 if(
 ownedWords.includes(word.id)
 ){
+
 
 const card =
 
@@ -1306,8 +1574,10 @@ card.classList.add(
 
 }
 
+
 button.disabled =
 false;
+
 
 return;
 
@@ -1315,22 +1585,29 @@ return;
 
 
 
-// ==========================================================
-// التحقق من الرصيد
-// ==========================================================
+// ========================================================
+// الرصيد غير كافٍ
+// ========================================================
 
 if(
 coins < word.price
 ){
 
+
 alert(
 
-`🪙 رصيدك غير كافٍ.\n\nرصيدك الحالي: ${coins} كوينز\nسعر الكلمة: ${word.price} كوينز`
+`🪙 رصيدك غير كافٍ.
+
+رصيدك الحالي: ${coins} كوينز
+
+سعر الكلمة: ${word.price} كوينز`
 
 );
 
+
 button.disabled =
 false;
+
 
 return;
 
@@ -1338,9 +1615,9 @@ return;
 
 
 
-// ==========================================================
+// ========================================================
 // تأكيد الشراء
-// ==========================================================
+// ========================================================
 
 const confirmed =
 
@@ -1362,9 +1639,9 @@ return;
 
 
 
-// ==========================================================
-// خصم العملات وحفظ الكلمة
-// ==========================================================
+// ========================================================
+// خصم العملات + حفظ الكلمة
+// ========================================================
 
 await updateDoc(
 
@@ -1388,17 +1665,17 @@ word.id
 
 
 
-// ==========================================================
-// 🔊 صوت نجاح الشراء
-// ==========================================================
+// ========================================================
+// صوت نجاح الشراء
+// ========================================================
 
 playPurchaseSound();
 
 
 
-// ==========================================================
-// فتح البطاقة مباشرة
-// ==========================================================
+// ========================================================
+// فتح البطاقة
+// ========================================================
 
 const card =
 
@@ -1419,9 +1696,9 @@ card.classList.add(
 
 
 
-// ==========================================================
-// تحديث الرصيد أعلى الصفحة
-// ==========================================================
+// ========================================================
+// تحديث الرصيد
+// ========================================================
 
 const newBalance =
 coins - word.price;
@@ -1451,6 +1728,7 @@ newBalance
 
 catch(error){
 
+
 console.error(
 "Word purchase error:",
 error
@@ -1463,6 +1741,7 @@ alert(
 
 );
 
+
 }
 
 
@@ -1474,7 +1753,7 @@ false;
 
 
 // ==========================================================
-// ربط أزرار فتح الكلمات
+// 🔘 ربط أزرار فتح الكلمات
 // ==========================================================
 
 document
@@ -1503,7 +1782,10 @@ card.querySelector(
 );
 
 
-if(!word || !button){
+if(
+!word ||
+!button
+){
 
 return;
 
@@ -1514,7 +1796,7 @@ button.addEventListener(
 
 "click",
 
-()=>{
+function(){
 
 unlockWord(
 word,
@@ -1530,14 +1812,15 @@ button
 
 
 // ==========================================================
-// تشغيل النظام بعد التأكد من تسجيل الدخول
+// 🔐 التحقق من تسجيل الدخول
 // ==========================================================
 
 onAuthStateChanged(
 
 auth,
 
-async(user)=>{
+async function(user){
+
 
 if(!user){
 
@@ -1548,6 +1831,9 @@ return;
 
 }
 
+
+
+try{
 
 
 const userRef =
@@ -1561,10 +1847,16 @@ user.uid
 
 const snap =
 
-await getDoc(userRef);
+await getDoc(
+userRef
+);
 
 
 if(!snap.exists()){
+
+console.warn(
+"User document does not exist."
+);
 
 return;
 
@@ -1579,6 +1871,10 @@ const coins =
 Number(data.coins || 0);
 
 
+
+/* -----------------------------------------------
+   عرض الرصيد
+------------------------------------------------ */
 
 const balance =
 
@@ -1595,18 +1891,37 @@ coins;
 }
 
 
+/* -----------------------------------------------
+   تحديث العداد العام
+------------------------------------------------ */
+
 refreshCoinBadge(
 coins
 );
 
 
+/* -----------------------------------------------
+   تحميل الكلمات المملوكة
+------------------------------------------------ */
+
 await loadWordOwnership(
 user
 );
 
+
 }
 
+catch(error){
+
+console.error(
+"Word bank initialization error:",
+error
 );
+
+}
+
+});
+
 
 </script>
 
