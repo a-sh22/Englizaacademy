@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>
+📖 بنك الكلمات
+</title>
+
+<style>
+
+/* ==========================================================
+   الأساس
+========================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f3efff
+);
+
+padding:35px 18px 60px;
+
+min-height:100vh;
+
+}
+
+.container{
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+
+/* ==========================================================
+   الأعلى
+========================================================== */
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.logo{
+
+width:82px;
+
+height:82px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+.backBtn{
+
+background:white;
+
+border:none;
+
+padding:14px 22px;
+
+border-radius:18px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px
+rgba(0,0,0,.08);
+
+transition:.25s;
+
+}
+
+.backBtn:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   البطاقة الرئيسية
+========================================================== */
+
+.hero{
+
+background:white;
+
+border-radius:28px;
+
+padding:35px;
+
+box-shadow:
+0 18px 45px
+rgba(0,0,0,.08);
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+}
+
+.hero p{
+
+font-size:21px;
+
+color:#555;
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+
+/* ==========================================================
+   رصيد العملات
+========================================================== */
+
+.balance{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:
+15px 26px;
+
+border-radius:999px;
+
+background:#fff8e6;
+
+font-size:27px;
+
+font-weight:bold;
+
+color:#e09a00;
+
+border:
+2px solid #ffe08a;
+
+}
+
+.balance span{
+
+color:#1f3c88;
+
+}
+
+
+/* ==========================================================
+   عنوان القسم
+========================================================== */
+
+.section-title{
+
+font-size:34px;
+
+color:#1f3c88;
+
+margin-bottom:28px;
+
+}
+
+
+/* ==========================================================
+   شبكة الكلمات
+========================================================== */
+
+.word-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(300px,1fr)
+);
+
+gap:26px;
+
+}
+
+
+/* ==========================================================
+   بطاقات الكلمات
+========================================================== */
+
+.word-card{
+
+background:white;
+
+border-radius:28px;
+
+padding:30px;
+
+box-shadow:
+0 16px 40px
+rgba(0,0,0,.08);
+
+position:relative;
+
+overflow:hidden;
+
+transition:.28s;
+
+}
+
+.word-card:hover{
+
+transform:
+translateY(-5px);
+
+}
+
+
+/* الخط الذهبي أعلى البطاقة */
+
+.word-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:8px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* ==========================================================
+   رأس البطاقة
+========================================================== */
+
+.word-header{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:22px;
+
+}
+
+.word-icon{
+
+width:68px;
+
+height:68px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+font-size:34px;
+
+flex-shrink:0;
+
+}
+
+.word-title{
+
+flex:1;
+
+}
+
+.word-title h3{
+
+font-size:25px;
+
+color:#1f3c88;
+
+margin-bottom:7px;
+
+}
+
+.word-title p{
+
+font-size:17px;
+
+color:#888;
+
+}
+
+
+/* ==========================================================
+   منطقة الفيديو
+========================================================== */
+
+.word-video{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+border-radius:20px;
+
+overflow:hidden;
+
+background:#f5f7ff;
+
+margin-bottom:22px;
+
+}
+
+.word-video video{
+
+width:100%;
+
+height:100%;
+
+display:block;
+
+object-fit:cover;
+
+}
+
+
+/* ==========================================================
+   البطاقة المغلقة
+========================================================== */
+
+.locked-content{
+
+background:#f8f9ff;
+
+border:2px solid #e4e8ff;
+
+border-radius:20px;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+.lock-icon{
+
+font-size:48px;
+
+margin-bottom:12px;
+
+}
+
+.locked-content h4{
+
+font-size:22px;
+
+color:#1f3c88;
+
+margin-bottom:10px;
+
+}
+
+.locked-content p{
+
+font-size:17px;
+
+color:#777;
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+}
+
+
+/* ==========================================================
+   سعر الكلمة
+========================================================== */
+
+.word-price{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:7px;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:20px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   زر فتح الكلمة
+========================================================== */
+
+.unlock-btn{
+
+width:100%;
+
+border:none;
+
+padding:16px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+font-size:19px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+0 10px 25px
+rgba(55,104,255,.25);
+
+}
+
+.unlock-btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+.unlock-btn:disabled{
+
+opacity:.6;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+
+/* ==========================================================
+   الكلمة المفتوحة
+========================================================== */
+
+.unlocked-content{
+
+display:none;
+
+}
+
+
+/* حالة الفتح */
+
+.word-card.unlocked
+.unlocked-content{
+
+display:block;
+
+}
+
+
+/* إخفاء القفل بعد الفتح */
+
+.word-card.unlocked
+.locked-content{
+
+display:none;
+
+}
+
+
+/* ==========================================================
+   شارة الكلمة المفتوحة
+========================================================== */
+
+.unlocked-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:7px;
+
+padding:9px 15px;
+
+border-radius:999px;
+
+background:#eef4ff;
+
+border:2px solid #dce5ff;
+
+color:#1f3c88;
+
+font-size:16px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   الفيديو المفتوح
+========================================================== */
+
+.unlocked-content .word-video{
+
+margin-bottom:15px;
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.backBtn{
+
+font-size:18px;
+
+padding:12px 18px;
+
+}
+
+.balance{
+
+font-size:23px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.word-grid{
+
+grid-template-columns:
+1fr;
+
+}
+
+.word-card{
+
+padding:25px;
+
+}
+
+.word-header{
+
+gap:14px;
+
+}
+
+.word-icon{
+
+width:60px;
+
+height:60px;
+
+font-size:30px;
+
+}
+
+.word-title h3{
+
+font-size:21px;
+
+}
+
+.word-title p{
+
+font-size:15px;
+
+}
+
+.locked-content{
+
+padding:22px 18px;
+
+}
+
+.locked-content h4{
+
+font-size:20px;
+
+}
+
+.word-price{
+
+font-size:18px;
+
+}
+
+.unlock-btn{
+
+font-size:18px;
+
+padding:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- ========================================================
+     الأعلى
+========================================================= -->
+
+<div class="header">
+
+<img
+src="../owl.PNG"
+class="logo">
+
+<button
+class="backBtn"
+onclick="window.location.href='academy-bank.html'"
+
+⬅️ رجوع
+
+</button>
+
+</div>
+
+
+
+<!-- ========================================================
+     المقدمة
+========================================================= -->
+
+<div class="hero">
+
+<h1>
+
+📖 بنك الكلمات
+
+</h1>
+
+<p>
+
+اكتشف كلمات جديدة تساعدك على تطوير
+مفرداتك الإنجليزية بطريقة ممتعة وعملية.
+
+<br>
+
+كل كلمة تحتوي على شرح فيديو قصير،
+وبمجرد فتحها تصبح محفوظة في حقيبتك.
+
+</p>
+
+
+<div class="balance">
+
+🪙
+
+رصيدك الحالي:
+
+<span id="coinBalance">
+
+0
+
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================================================
+     الكلمات
+========================================================= -->
+
+<h2 class="section-title">
+
+📖 الكلمات المتاحة
+
+</h2>
+
+
+<div
+class="word-grid"
+id="wordGrid">
+
+</div>
+
+
+</div>
+
+
+
+<script type="module">
+
+// ==========================================================
+// 📖 بيانات بنك الكلمات
+// ==========================================================
+//
+// ملاحظة:
+// يمكنك لاحقًا إضافة كلمات جديدة هنا فقط.
+// لا تحتاجين إلى تعديل نظام الشراء.
+// ==========================================================
+
+const words = [
+
+{
+
+id:"word-01",
+
+title:"الكلمة الأولى",
+
+price:10,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/%20word1.MP4"
+
+},
+
+{
+
+id:"word-02",
+
+title:"الكلمة الثانية",
+
+price:15,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/word2.MP4"
+
+},
+
+{
+
+id:"word-03",
+
+title:"الكلمة الثالثة",
+
+price:20,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/word3.MP4"
+
+},
+
+{
+
+id:"word-04",
+
+title:"الكلمة الرابعة",
+
+price:10,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/word4.MP4"
+
+},
+
+{
+
+id:"word-05",
+
+title:"الكلمة الخامسة",
+
+price:15,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/word5.MP4"
+
+},
+
+{
+
+id:"word-06",
+
+title:"الكلمة السادسة",
+
+price:20,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/word6.MP4"
+
+},
+
+{
+
+id:"word-07",
+
+title:"الكلمة السابعة",
+
+price:10,
+
+video:"https://videos.englizaacademy.com/Pre-Intermediate/word7.MP4"
+
+}
+
+];
+
+
+
+// ==========================================================
+// 🗂️ إنشاء بطاقات الكلمات
+// ==========================================================
+
+const wordGrid =
+
+document.getElementById(
+"wordGrid"
+);
+
+
+
+function createWordCard(word){
+
+const card =
+
+document.createElement(
+"div"
+);
+
+
+card.className =
+"word-card";
+
+
+card.dataset.id =
+word.id;
+
+
+
+card.innerHTML = `
+
+
+<!-- ==========================================
+     رأس البطاقة
+========================================== -->
+
+<div class="word-header">
+
+<div class="word-icon">
+
+📖
+
+</div>
+
+
+<div class="word-title">
+
+<h3>
+
+${word.title}
+
+</h3>
+
+
+<p>
+
+شرح فيديو قصير
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================
+     المحتوى المغلق
+========================================== -->
+
+<div class="locked-content">
+
+<div class="lock-icon">
+
+🔒
+
+</div>
+
+
+<h4>
+
+هذه الكلمة مغلقة
+
+</h4>
+
+
+<p>
+
+افتح الكلمة وشاهد شرحها
+في فيديو قصير.
+
+</p>
+
+
+<div class="word-price">
+
+🪙
+
+${word.price}
+
+كوينز
+
+</div>
+
+
+<button
+class="unlock-btn"
+type="button">
+
+🔓 فتح الكلمة
+
+</button>
+
+</div>
+
+
+
+<!-- ==========================================
+     المحتوى المفتوح
+========================================== -->
+
+<div class="unlocked-content">
+
+<div class="unlocked-badge">
+
+✅ الكلمة مفتوحة
+
+</div>
+
+
+<div class="word-video">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="${word.video}"
+type="video/mp4">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
+
+</div>
+
+`;
+
+
+return card;
+
+}
+
+
+
+// ==========================================================
+// عرض جميع الكلمات
+// ==========================================================
+
+words.forEach(word=>{
+
+const card =
+createWordCard(word);
+
+wordGrid.appendChild(card);
+
+});
+
+
+
+// ==========================================================
+// 🏦 نظام شراء الكلمات
+// ==========================================================
+
+import {
+
+auth,
+db
+
+} from "./js/firebase.js";
+
+
+
+import {
+
+doc,
+getDoc,
+updateDoc,
+arrayUnion,
+increment
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+
+import {
+
+onAuthStateChanged
+
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+
+import {
+
+playPurchaseSound,
+unlockCoinSound,
+refreshCoinBadge
+
+} from "./js/reward.js";
+
+
+
+// ==========================================================
+// التحقق من المستخدم والكلمات المملوكة
+// ==========================================================
+
+async function loadWordOwnership(user){
+
+if(!user){
+
+return;
+
+}
+
+
+const userRef =
+
+doc(
+db,
+"users",
+user.uid
+);
+
+
+const snap =
+
+await getDoc(userRef);
+
+
+if(!snap.exists()){
+
+return;
+
+}
+
+
+const data =
+snap.data();
+
+
+const ownedWords =
+data.ownedWords || [];
+
+
+
+words.forEach(word=>{
+
+const card =
+
+document.querySelector(
+
+`.word-card[data-id="${word.id}"]`
+
+);
+
+
+if(!card){
+
+return;
+
+}
+
+
+if(
+ownedWords.includes(word.id)
+){
+
+card.classList.add(
+"unlocked"
+);
+
+}
+
+});
+
+}
+
+
+
+// ==========================================================
+// شراء الكلمة
+// ==========================================================
+
+async function unlockWord(
+
+word,
+button
+
+){
+
+const user =
+auth.currentUser;
+
+
+if(!user){
+
+alert(
+"⚠️ يجب تسجيل الدخول أولًا."
+);
+
+return;
+
+}
+
+
+
+button.disabled =
+true;
+
+
+unlockCoinSound();
+
+
+
+try{
+
+
+const userRef =
+
+doc(
+db,
+"users",
+user.uid
+);
+
+
+const snap =
+
+await getDoc(userRef);
+
+
+if(!snap.exists()){
+
+alert(
+"⚠️ لم يتم العثور على حسابك."
+);
+
+button.disabled =
+false;
+
+return;
+
+}
+
+
+
+const data =
+snap.data();
+
+
+const coins =
+Number(data.coins || 0);
+
+
+const ownedWords =
+data.ownedWords || [];
+
+
+
+// ==========================================================
+// الكلمة مملوكة مسبقًا
+// ==========================================================
+
+if(
+ownedWords.includes(word.id)
+){
+
+const card =
+
+document.querySelector(
+
+`.word-card[data-id="${word.id}"]`
+
+);
+
+
+if(card){
+
+card.classList.add(
+"unlocked"
+);
+
+}
+
+button.disabled =
+false;
+
+return;
+
+}
+
+
+
+// ==========================================================
+// التحقق من الرصيد
+// ==========================================================
+
+if(
+coins < word.price
+){
+
+alert(
+
+`🪙 رصيدك غير كافٍ.\n\nرصيدك الحالي: ${coins} كوينز\nسعر الكلمة: ${word.price} كوينز`
+
+);
+
+button.disabled =
+false;
+
+return;
+
+}
+
+
+
+// ==========================================================
+// تأكيد الشراء
+// ==========================================================
+
+const confirmed =
+
+confirm(
+
+`هل تريد فتح هذه الكلمة مقابل ${word.price} كوينز؟`
+
+);
+
+
+if(!confirmed){
+
+button.disabled =
+false;
+
+return;
+
+}
+
+
+
+// ==========================================================
+// خصم العملات وحفظ الكلمة
+// ==========================================================
+
+await updateDoc(
+
+userRef,
+
+{
+
+coins:
+increment(
+-word.price
+),
+
+ownedWords:
+arrayUnion(
+word.id
+)
+
+}
+
+);
+
+
+
+// ==========================================================
+// 🔊 صوت نجاح الشراء
+// ==========================================================
+
+playPurchaseSound();
+
+
+
+// ==========================================================
+// فتح البطاقة مباشرة
+// ==========================================================
+
+const card =
+
+document.querySelector(
+
+`.word-card[data-id="${word.id}"]`
+
+);
+
+
+if(card){
+
+card.classList.add(
+"unlocked"
+);
+
+}
+
+
+
+// ==========================================================
+// تحديث الرصيد أعلى الصفحة
+// ==========================================================
+
+const newBalance =
+coins - word.price;
+
+
+const balance =
+
+document.getElementById(
+"coinBalance"
+);
+
+
+if(balance){
+
+balance.textContent =
+newBalance;
+
+}
+
+
+refreshCoinBadge(
+newBalance
+);
+
+
+}
+
+catch(error){
+
+console.error(
+"Word purchase error:",
+error
+);
+
+
+alert(
+
+"⚠️ حدث خطأ أثناء فتح الكلمة. حاول مرة أخرى."
+
+);
+
+}
+
+
+button.disabled =
+false;
+
+}
+
+
+
+// ==========================================================
+// ربط أزرار فتح الكلمات
+// ==========================================================
+
+document
+.querySelectorAll(".word-card")
+.forEach(card=>{
+
+
+const wordId =
+card.dataset.id;
+
+
+const word =
+
+words.find(
+
+item =>
+item.id === wordId
+
+);
+
+
+const button =
+
+card.querySelector(
+".unlock-btn"
+);
+
+
+if(!word || !button){
+
+return;
+
+}
+
+
+button.addEventListener(
+
+"click",
+
+()=>{
+
+unlockWord(
+word,
+button
+);
+
+}
+
+);
+
+});
+
+
+
+// ==========================================================
+// تشغيل النظام بعد التأكد من تسجيل الدخول
+// ==========================================================
+
+onAuthStateChanged(
+
+auth,
+
+async(user)=>{
+
+if(!user){
+
+window.location.href =
+"login.html";
+
+return;
+
+}
+
+
+
+const userRef =
+
+doc(
+db,
+"users",
+user.uid
+);
+
+
+const snap =
+
+await getDoc(userRef);
+
+
+if(!snap.exists()){
+
+return;
+
+}
+
+
+const data =
+snap.data();
+
+
+const coins =
+Number(data.coins || 0);
+
+
+
+const balance =
+
+document.getElementById(
+"coinBalance"
+);
+
+
+if(balance){
+
+balance.textContent =
+coins;
+
+}
+
+
+refreshCoinBadge(
+coins
+);
+
+
+await loadWordOwnership(
+user
+);
+
+}
+
+);
+
+</script>
+
+
+</body>
+
+</html>
