@@ -1,0 +1,2727 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Months | Engliza Academy
+</title>
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+color:#222;
+
+}
+
+.container{
+
+max-width:1050px;
+margin:auto;
+
+}
+
+
+/* ==========================
+   الأعلى
+========================== */
+
+.top-bar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+.back-btn{
+
+background:white;
+
+padding:14px 25px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:#1f3c88;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.owl-circle img{
+
+width:80px;
+height:80px;
+
+border-radius:50%;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================
+   العنوان
+========================== */
+
+.title{
+
+text-align:center;
+
+font-size:52px;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+line-height:1.4;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:600;
+
+line-height:2;
+
+color:#555;
+
+margin-bottom:55px;
+
+}
+
+
+/* ==========================
+   البطاقات العامة
+========================== */
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+transition:.35s;
+
+animation:
+fadeUp .6s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 22px 50px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================
+   الفيديو
+========================== */
+
+.video-box{
+
+background:white;
+
+padding:0;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+overflow:hidden;
+
+}
+
+.video-box video{
+
+width:100%;
+
+display:block;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+background:#111;
+
+}
+
+
+/* ==========================
+   بطاقة البومة
+========================== */
+
+.message-card{
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#f8f6ff
+);
+
+border:2px solid #e5e0ff;
+
+}
+
+.message-card::before{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+background:
+rgba(111,67,255,.07);
+
+left:-70px;
+top:-80px;
+
+}
+
+.message-card img{
+
+width:130px;
+
+flex-shrink:0;
+
+display:block;
+
+position:relative;
+
+z-index:1;
+
+}
+
+.message-content{
+
+flex:1;
+
+position:relative;
+
+z-index:1;
+
+}
+
+.message-content h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+.message-content p{
+
+font-size:21px;
+
+line-height:1.9;
+
+font-weight:600;
+
+color:#444;
+
+margin:0;
+
+}
+
+
+/* ==========================
+   عنوان قسم الأشهر
+========================== */
+
+.section-heading{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.section-heading h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin-bottom:10px;
+
+}
+
+.section-heading p{
+
+font-size:18px;
+
+color:#666;
+
+font-weight:600;
+
+}
+
+
+/* ==========================
+   بطاقة الأشهر
+========================== */
+
+.months-card{
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#f8f9ff
+);
+
+border:2px solid #dce4ff;
+
+}
+
+.months-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:18px;
+
+}
+
+.month{
+
+position:relative;
+
+padding:22px 20px;
+
+border-radius:24px;
+
+background:white;
+
+border:2px solid #e3e8ff;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.05);
+
+transition:.3s;
+
+overflow:hidden;
+
+}
+
+.month:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 15px 30px rgba(55,104,255,.12);
+
+}
+
+.month::before{
+
+content:"";
+
+position:absolute;
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+
+background:
+rgba(111,67,255,.06);
+
+left:-25px;
+bottom:-25px;
+
+}
+
+.month-number{
+
+font-size:15px;
+
+font-weight:bold;
+
+color:#6f43ff;
+
+margin-bottom:8px;
+
+position:relative;
+
+}
+
+.month-name{
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+direction:ltr;
+
+text-align:left;
+
+position:relative;
+
+}
+
+.month-arabic{
+
+font-size:16px;
+
+font-weight:600;
+
+color:#777;
+
+margin-top:7px;
+
+position:relative;
+
+}
+
+
+/* ==========================
+   بطاقة نصيحة الحفظ
+========================== */
+
+.memory-tip{
+
+background:
+linear-gradient(
+135deg,
+#fffaf0,
+#fff6fb
+);
+
+border:2px solid #ffe2a8;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.memory-tip::before{
+
+content:"💡";
+
+position:absolute;
+
+font-size:80px;
+
+left:25px;
+
+bottom:-15px;
+
+opacity:.08;
+
+}
+
+.memory-tip h2{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+}
+
+.memory-tip p{
+
+font-size:20px;
+
+line-height:2;
+
+font-weight:600;
+
+color:#444;
+
+}
+
+.highlight{
+
+color:#6f43ff;
+
+font-weight:bold;
+
+}
+
+
+/* ==========================
+   بطاقة السؤال
+========================== */
+
+.question-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:32px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.07);
+
+margin-bottom:25px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+right:0;
+left:0;
+
+height:6px;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+}
+
+.question-number{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#f3f5ff;
+
+border:2px solid #dce4ff;
+
+color:#1f3c88;
+
+font-size:20px;
+
+font-weight:bold;
+
+margin-bottom:20px;
+
+}
+
+.question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+line-height:1.8;
+
+margin-bottom:22px;
+
+}
+
+.question-text{
+
+font-size:28px;
+
+font-weight:bold;
+
+text-align:center;
+
+direction:ltr;
+
+margin:30px 0;
+
+color:#222;
+
+}
+
+
+/* ==========================
+   الاختيارات
+========================== */
+
+.choice-container{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.choice-btn{
+
+background:white;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+padding:20px;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.06);
+
+}
+
+.choice-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 15px 30px rgba(0,0,0,.12);
+
+}
+
+.choice-btn:disabled{
+
+cursor:default;
+
+opacity:.95;
+
+}
+
+.correct{
+
+background:#e8fff0 !important;
+
+border-color:#b8ebc8 !important;
+
+color:#0f8b4c !important;
+
+}
+
+.wrong{
+
+background:#ffe8e8 !important;
+
+border-color:#ffb8b8 !important;
+
+color:#c62828 !important;
+
+}
+
+
+/* ==========================
+   ترتيب الأشهر
+========================== */
+
+.word-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:12px;
+
+margin:25px 0;
+
+}
+
+.word-btn{
+
+background:#f4f7ff;
+
+border:2px solid #dce4ff;
+
+border-radius:18px;
+
+padding:15px 20px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.word-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.answer-box{
+
+min-height:90px;
+
+background:#fafbff;
+
+border:2px dashed #b9c8ff;
+
+border-radius:22px;
+
+padding:18px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+direction:ltr;
+
+margin-bottom:20px;
+
+}
+
+.selected-word{
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+padding:13px 18px;
+
+border-radius:16px;
+
+font-size:17px;
+
+font-weight:bold;
+
+box-shadow:
+0 8px 18px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================
+   الكتابة
+========================== */
+
+.write-box{
+
+width:100%;
+
+padding:19px;
+
+border-radius:20px;
+
+border:2px solid #dce4ff;
+
+font-size:20px;
+
+outline:none;
+
+margin-bottom:20px;
+
+transition:.3s;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+.write-box:focus{
+
+border-color:#6f43ff;
+
+box-shadow:
+0 0 0 5px rgba(111,67,255,.10);
+
+}
+
+.check-btn{
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+border:none;
+
+padding:16px 25px;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.12);
+
+}
+
+.check-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.correct-input{
+
+background:#e8fff0;
+
+border-color:#b8ebc8;
+
+color:#0f8b4c;
+
+}
+
+.wrong-input{
+
+background:#ffe8e8;
+
+border-color:#ffb8b8;
+
+color:#c62828;
+
+}
+
+
+/* ==========================
+   النتائج
+========================== */
+
+.result-text{
+
+margin-top:20px;
+
+font-size:19px;
+
+font-weight:bold;
+
+line-height:1.9;
+
+}
+
+.success-text{
+
+color:#0f8b4c;
+
+}
+
+.error-text{
+
+color:#c62828;
+
+}
+
+
+/* ==========================
+   النجوم
+========================== */
+
+.confetti{
+
+position:relative;
+
+height:0;
+
+}
+
+.star{
+
+position:absolute;
+
+font-size:22px;
+
+opacity:0;
+
+animation:
+flyStars 1.3s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+
+left:10%;
+
+}
+
+.star:nth-child(2){
+
+left:30%;
+
+animation-delay:.1s;
+
+}
+
+.star:nth-child(3){
+
+left:50%;
+
+animation-delay:.2s;
+
+}
+
+.star:nth-child(4){
+
+left:70%;
+
+animation-delay:.15s;
+
+}
+
+.star:nth-child(5){
+
+left:90%;
+
+animation-delay:.05s;
+
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(20px)
+scale(.4);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-65px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+
+
+/* ==========================
+   الاهتزاز
+========================== */
+
+.shake{
+
+animation:
+shake .3s;
+
+}
+
+@keyframes shake{
+
+0%{
+transform:translateX(0);
+}
+
+25%{
+transform:translateX(-6px);
+}
+
+50%{
+transform:translateX(6px);
+}
+
+75%{
+transform:translateX(-6px);
+}
+
+100%{
+transform:translateX(0);
+}
+
+}
+
+
+/* ==========================
+   بطاقة النهاية
+========================== */
+
+.final-card{
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+}
+
+.final-card h2{
+
+font-size:40px;
+
+color:#ffe082;
+
+margin-bottom:20px;
+
+}
+
+.final-card p{
+
+font-size:22px;
+
+line-height:2;
+
+font-weight:600;
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+.next-lesson-btn{
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+border-radius:24px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:#6f43ff;
+
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+/* ==========================
+   الحركات
+========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   الجوال
+========================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:22px 15px;
+
+}
+
+.title{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+.card{
+
+padding:28px;
+
+}
+
+.message-card{
+
+gap:15px;
+
+}
+
+.message-card img{
+
+width:95px;
+
+}
+
+.message-content h2{
+
+font-size:24px;
+
+}
+
+.message-content p{
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+.months-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:13px;
+
+}
+
+.month{
+
+padding:18px 15px;
+
+}
+
+.month-name{
+
+font-size:20px;
+
+}
+
+.month-arabic{
+
+font-size:14px;
+
+}
+
+.memory-tip h2{
+
+font-size:24px;
+
+}
+
+.memory-tip p{
+
+font-size:17px;
+
+}
+
+.question-card{
+
+padding:28px;
+
+}
+
+.question-title{
+
+font-size:20px;
+
+}
+
+.question-text{
+
+font-size:23px;
+
+}
+
+.choice-container{
+
+grid-template-columns:1fr;
+
+}
+
+.choice-btn{
+
+font-size:18px;
+
+}
+
+.write-box{
+
+font-size:18px;
+
+}
+
+.final-card h2{
+
+font-size:31px;
+
+}
+
+.final-card p{
+
+font-size:18px;
+
+}
+
+.next-lesson-btn{
+
+font-size:19px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- ==========================
+        الأعلى
+========================== -->
+
+<div class="top-bar">
+
+<a
+href="unit4-pre.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+<div class="owl-circle">
+
+<img
+src="../okay.owl.PNG"
+alt="Engliza Academy">
+
+</div>
+
+</div>
+
+
+<!-- ==========================
+      عنوان الدرس
+========================== -->
+
+<h1 class="title">
+
+📅 Months | أسماء الأشهر
+
+</h1>
+
+<p class="subtitle">
+
+تعلّم أسماء الأشهر باللغة الإنجليزية وتدرّب على استخدامها وتذكرها بسهولة.
+
+</p>
+
+
+<!-- ==========================
+      فيديو الدرس
+========================== -->
+
+<div class="video-box">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<!-- أضيفي رابط الفيديو هنا -->
+
+<source
+src="https://videos.englizaacademy.com/Pre-Intermediate/Months.MP4"
+type="video/mp4">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
+
+
+<!-- ==========================
+      بطاقة البومة
+========================== -->
+
+<div class="card message-card">
+
+<img
+src="../success.owl.PNG"
+alt="Engliza Academy Owl">
+
+<div class="message-content">
+
+<h2>
+
+🦉 سر صغير يساعدك!
+
+</h2>
+
+<p>
+
+لا تحاول حفظ أسماء الأشهر كلها دفعة واحدة. 💡
+
+<br><br>
+
+قسّمها إلى مجموعات صغيرة، وكررها بصوت عالٍ، ثم حاول أن تسترجعها من ذاكرتك بدون أن تنظر إليها.
+
+<br><br>
+
+<strong>
+أفضل طريقة للحفظ ليست أن تقرأ الكلمة عشر مرات، بل أن تحاول تذكرها بنفسك. ✨
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ==========================
+      أسماء الأشهر
+========================== -->
+
+<div class="card months-card">
+
+<div class="section-heading">
+
+<h2>
+
+🗓️ أشهر السنة
+
+</h2>
+
+<p>
+
+تعرّف على الأشهر بالترتيب من January إلى December.
+
+</p>
+
+</div>
+
+
+<div class="months-grid">
+
+
+<div class="month">
+
+<div class="month-number">
+01
+</div>
+
+<div class="month-name">
+January
+</div>
+
+<div class="month-arabic">
+يناير
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+02
+</div>
+
+<div class="month-name">
+February
+</div>
+
+<div class="month-arabic">
+فبراير
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+03
+</div>
+
+<div class="month-name">
+March
+</div>
+
+<div class="month-arabic">
+مارس
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+04
+</div>
+
+<div class="month-name">
+April
+</div>
+
+<div class="month-arabic">
+أبريل
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+05
+</div>
+
+<div class="month-name">
+May
+</div>
+
+<div class="month-arabic">
+مايو
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+06
+</div>
+
+<div class="month-name">
+June
+</div>
+
+<div class="month-arabic">
+يونيو
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+07
+</div>
+
+<div class="month-name">
+July
+</div>
+
+<div class="month-arabic">
+يوليو
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+08
+</div>
+
+<div class="month-name">
+August
+</div>
+
+<div class="month-arabic">
+أغسطس
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+09
+</div>
+
+<div class="month-name">
+September
+</div>
+
+<div class="month-arabic">
+سبتمبر
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+10
+</div>
+
+<div class="month-name">
+October
+</div>
+
+<div class="month-arabic">
+أكتوبر
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+11
+</div>
+
+<div class="month-name">
+November
+</div>
+
+<div class="month-arabic">
+نوفمبر
+</div>
+
+</div>
+
+
+<div class="month">
+
+<div class="month-number">
+12
+</div>
+
+<div class="month-name">
+December
+</div>
+
+<div class="month-arabic">
+ديسمبر
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الأول
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+1
+
+</div>
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+
+<p class="question-text">
+
+Which month comes after March?
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result1')">
+
+February
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result1')">
+
+April
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result1')">
+
+May
+
+</button>
+
+</div>
+
+<p
+id="result1"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الثاني
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+2
+
+</div>
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+
+<p class="question-text">
+
+Which month comes before December?
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result2')">
+
+October
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result2')">
+
+November
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result2')">
+
+January
+
+</button>
+
+</div>
+
+<p
+id="result2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الثالث
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+3
+
+</div>
+
+<p class="question-title">
+
+🧩 رتّب الأشهر التالية من البداية إلى النهاية.
+
+</p>
+
+<p class="question-text">
+
+January → February → March
+
+</p>
+
+<p style="
+text-align:center;
+font-size:18px;
+font-weight:600;
+color:#666;
+margin-bottom:20px;
+">
+
+اضغط على الأشهر بالترتيب الصحيح:
+
+</p>
+
+
+<div
+class="word-container"
+id="monthWords">
+
+<button
+class="word-btn"
+onclick="addMonthWord(this)">
+
+March
+
+</button>
+
+<button
+class="word-btn"
+onclick="addMonthWord(this)">
+
+January
+
+</button>
+
+<button
+class="word-btn"
+onclick="addMonthWord(this)">
+
+February
+
+</button>
+
+</div>
+
+
+<div
+class="answer-box"
+id="monthAnswer">
+
+</div>
+
+
+<button
+class="check-btn"
+onclick="checkMonthOrder()">
+
+✨ تحقق من الترتيب
+
+</button>
+
+
+<button
+class="check-btn"
+onclick="resetMonthOrder()"
+style="
+margin-right:10px;
+background:#f4f7ff;
+color:#1f3c88;
+border:2px solid #dce4ff;
+">
+
+↩️ إعادة المحاولة
+
+</button>
+
+
+<p
+id="monthResult"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الرابع
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+4
+
+</div>
+
+<p class="question-title">
+
+✍️ اكتب اسم الشهر المناسب.
+
+</p>
+
+<p class="question-text">
+
+The month after June is ______.
+
+</p>
+
+<input
+id="monthInput"
+class="write-box"
+type="text"
+placeholder="Write the month in English...">
+
+<button
+class="check-btn"
+onclick="checkMonthWriting()">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="monthWritingResult"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال الخامس
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+5
+
+</div>
+
+<p class="question-title">
+
+🎯 اختر الشهر الصحيح.
+
+</p>
+
+<p class="question-text">
+
+Which month is number 10?
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result5')">
+
+September
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result5')">
+
+October
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result5')">
+
+November
+
+</button>
+
+</div>
+
+<p
+id="result5"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال السادس
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+6
+
+</div>
+
+<p class="question-title">
+
+✍️ اكتب اسم الشهر باللغة الإنجليزية.
+
+</p>
+
+<p class="question-text">
+
+أغسطس = ?
+
+</p>
+
+<input
+id="monthInput2"
+class="write-box"
+type="text"
+placeholder="Write the month in English...">
+
+<button
+class="check-btn"
+onclick="checkMonthWriting2()">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="monthWritingResult2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      السؤال السابع
+========================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+7
+
+</div>
+
+<p class="question-title">
+
+🧠 تحدي الذاكرة
+
+</p>
+
+<p style="
+font-size:20px;
+font-weight:600;
+line-height:1.9;
+color:#555;
+margin-bottom:20px;
+">
+
+حاول كتابة الأشهر الثلاثة التي تأتي بعد
+<strong>September</strong>
+بالترتيب.
+
+</p>
+
+<input
+id="memoryInput"
+class="write-box"
+type="text"
+placeholder="Example: October, November, December">
+
+<button
+class="check-btn"
+onclick="checkMemoryAnswer()">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="memoryResult"
+class="result-text">
+
+</p>
+
+</div>
+
+
+<!-- ==========================
+      بطاقة النهاية
+========================== -->
+
+<div class="card final-card">
+
+<h2>
+
+🏆 أحسنت!
+
+</h2>
+
+<p>
+
+لقد أنهيت درس
+<strong>Months</strong>
+بنجاح. 🎉
+
+<br><br>
+
+الآن أصبحت تعرف أسماء الأشهر باللغة الإنجليزية،
+ويمكنك الانتقال للخطوة التالية والتدرب على قراءة الأيام في التواريخ.
+
+</p>
+
+<button
+class="next-lesson-btn"
+onclick="finishLessonPage()">
+
+🚀 الانتقال إلى الدرس التالي
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+// ==========================
+// تنظيف النص
+// ==========================
+
+function normalizeText(text){
+
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/’/g,"'")
+
+.replace(/[.,!?؟]/g,"")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+
+
+// ==========================
+// أسئلة الاختيار
+// ==========================
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+const result =
+document.getElementById(resultId);
+
+const container =
+button.parentElement;
+
+const buttons =
+container.querySelectorAll(".choice-btn");
+
+
+// منع التكرار
+
+buttons.forEach(btn=>{
+
+btn.disabled=true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add("correct");
+
+button.innerHTML += " ✔️";
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+"✅ أحسنت! إجابتك صحيحة.";
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+button.classList.add(
+"wrong",
+"shake"
+);
+
+setTimeout(()=>{
+
+button.classList.remove("shake");
+
+},300);
+
+button.innerHTML += " ✖️";
+
+result.innerHTML =
+"😅❌ ليست الإجابة الصحيحة.";
+
+result.className =
+"result-text error-text";
+
+
+// إظهار الإجابة الصحيحة
+
+buttons.forEach(btn=>{
+
+const code =
+btn.getAttribute("onclick");
+
+if(
+code &&
+code.includes("true")
+){
+
+btn.classList.add("correct");
+
+if(
+!btn.innerHTML.includes("✔️")
+){
+
+btn.innerHTML += " ✔️";
+
+}
+
+}
+
+});
+
+}
+
+}
+
+
+// ==========================
+// ترتيب الأشهر
+// ==========================
+
+function addMonthWord(button){
+
+if(
+button.style.display==="none"
+){
+
+return;
+
+}
+
+const answer =
+document.getElementById("monthAnswer");
+
+const word =
+document.createElement("div");
+
+word.className="selected-word";
+
+word.textContent =
+button.textContent.trim();
+
+answer.appendChild(word);
+
+button.style.display="none";
+
+}
+
+
+// ==========================
+// التحقق من ترتيب الأشهر
+// ==========================
+
+function checkMonthOrder(){
+
+const answer =
+document.getElementById("monthAnswer");
+
+const result =
+document.getElementById("monthResult");
+
+const words =
+answer.querySelectorAll(".selected-word");
+
+const userAnswer =
+Array.from(words)
+.map(word=>
+word.textContent.trim()
+)
+.join(" | ");
+
+const correctAnswer =
+"January | February | March";
+
+
+if(
+normalizeText(userAnswer) ===
+normalizeText(correctAnswer)
+){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+"✅ ممتاز! رتبت الأشهر بالترتيب الصحيح.";
+
+result.className =
+"result-text success-text";
+
+answer.style.borderColor =
+"#8fd19e";
+
+answer.style.background =
+"#eefdf3";
+
+}
+
+else{
+
+answer.classList.add("shake");
+
+setTimeout(()=>{
+
+answer.classList.remove("shake");
+
+},300);
+
+result.innerHTML =
+"😅❌ الترتيب غير صحيح. حاول مرة أخرى.";
+
+result.className =
+"result-text error-text";
+
+answer.style.borderColor =
+"#ffb8b8";
+
+answer.style.background =
+"#fff2f2";
+
+}
+
+}
+
+
+// ==========================
+// إعادة ترتيب الأشهر
+// ==========================
+
+function resetMonthOrder(){
+
+const container =
+document.getElementById("monthWords");
+
+const answer =
+document.getElementById("monthAnswer");
+
+const result =
+document.getElementById("monthResult");
+
+
+container
+.querySelectorAll(".word-btn")
+.forEach(button=>{
+
+button.style.display="inline-block";
+
+});
+
+
+answer.innerHTML="";
+
+answer.style.borderColor =
+"#b9c8ff";
+
+answer.style.background =
+"#fafbff";
+
+result.innerHTML="";
+
+}
+
+
+// ==========================
+// سؤال الكتابة الأول
+// ==========================
+
+function checkMonthWriting(){
+
+const input =
+document.getElementById("monthInput");
+
+const result =
+document.getElementById(
+"monthWritingResult"
+);
+
+const answer =
+normalizeText(input.value);
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+if(
+answer === "july"
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+"✅ أحسنت! الشهر الذي يأتي بعد June هو July.";
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+setTimeout(()=>{
+
+input.classList.remove("shake");
+
+},300);
+
+result.innerHTML =
+"❌ حاول مرة أخرى.<br><br>💡 تذكّر: June → <strong>July</strong>";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+// ==========================
+// سؤال أغسطس
+// ==========================
+
+function checkMonthWriting2(){
+
+const input =
+document.getElementById(
+"monthInput2"
+);
+
+const result =
+document.getElementById(
+"monthWritingResult2"
+);
+
+const answer =
+normalizeText(input.value);
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+if(
+answer === "august"
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+"✅ رائع! August هو أغسطس.";
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+setTimeout(()=>{
+
+input.classList.remove("shake");
+
+},300);
+
+result.innerHTML =
+"❌ ليست الإجابة الصحيحة.<br><br>💡 الإجابة هي: <strong>August</strong>";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+// ==========================
+// تحدي الذاكرة
+// ==========================
+
+function checkMemoryAnswer(){
+
+const input =
+document.getElementById(
+"memoryInput"
+);
+
+const result =
+document.getElementById(
+"memoryResult"
+);
+
+const answer =
+normalizeText(input.value);
+
+const correct =
+normalizeText(
+"October, November, December"
+);
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+if(
+answer === correct
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+"🎉 ممتاز! ذاكرتك تعمل بشكل رائع.";
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+setTimeout(()=>{
+
+input.classList.remove("shake");
+
+},300);
+
+result.innerHTML =
+"❌ حاول مرة أخرى.<br><br>💡 September → October → November → December";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+// ==========================
+// دعم Enter
+// ==========================
+
+document
+.querySelectorAll(".write-box")
+.forEach(input=>{
+
+input.addEventListener(
+"keydown",
+function(event){
+
+if(event.key==="Enter"){
+
+event.preventDefault();
+
+const button =
+this.nextElementSibling;
+
+if(button){
+
+button.click();
+
+}
+
+}
+
+});
+
+});
+
+
+// ==========================
+// الانتقال للدرس التالي
+// ==========================
+
+function finishLessonPage(){
+
+if(
+typeof window.finishLesson ===
+"function"
+){
+
+window.finishLesson(
+
+"unit4-months",
+
+"📅 Months | أسماء الأشهر",
+
+"read-days1.html"
+
+);
+
+}
+
+else{
+
+window.location.href =
+"read-days1.html";
+
+}
+
+}
+
+</script>
+
+
+<!-- ==========================
+     نظام المكافآت
+========================== -->
+
+<script type="module">
+
+import {
+
+finishLesson
+
+}
+
+from "./js/reward.js";
+
+
+window.finishLesson =
+finishLesson;
+
+</script>
+
+
+</body>
+
+</html>
