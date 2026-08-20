@@ -10,12 +10,14 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
-
 Should • Have to • Must | Engliza Academy
-
 </title>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
 
@@ -26,12 +28,18 @@ font-family:Arial,sans-serif;
 
 }
 
+
+/* =========================================================
+   BODY
+========================================================= */
+
 body{
 
-background:linear-gradient(
+background:
+linear-gradient(
 135deg,
-#eef4ff,
-#f7f3ff
+#eef4ff 0%,
+#f7f3ff 100%
 );
 
 padding:30px 20px;
@@ -48,9 +56,9 @@ margin:auto;
 }
 
 
-/* ==========================
-   الأعلى
-========================== */
+/* =========================================================
+   TOP BAR
+========================================================= */
 
 .top-bar{
 
@@ -64,7 +72,7 @@ margin-bottom:40px;
 
 .back-btn{
 
-background:white;
+background:#fff;
 
 padding:14px 25px;
 
@@ -104,9 +112,9 @@ box-shadow:
 }
 
 
-/* ==========================
-   عنوان الدرس
-========================== */
+/* =========================================================
+   TITLE
+========================================================= */
 
 .title{
 
@@ -139,13 +147,13 @@ margin-bottom:55px;
 }
 
 
-/* ==========================
-   البطاقات العامة
-========================== */
+/* =========================================================
+   GENERAL CARD
+========================================================= */
 
 .card{
 
-background:white;
+background:#fff;
 
 padding:40px;
 
@@ -165,21 +173,21 @@ fadeUp .6s ease;
 
 .card:hover{
 
-transform:translateY(-4px);
+transform:translateY(-3px);
 
 box-shadow:
-0 22px 50px rgba(0,0,0,.12);
+0 22px 50px rgba(0,0,0,.11);
 
 }
 
 
-/* ==========================
-   الفيديو
-========================== */
+/* =========================================================
+   VIDEO
+========================================================= */
 
 .video-box{
 
-background:white;
+background:#fff;
 
 padding:0;
 
@@ -210,7 +218,7 @@ background:#111;
 
 
 /* =========================================================
-   بطاقة النفي والسؤال
+   NEGATIVE + QUESTION CARD
 ========================================================= */
 
 .grammar-card{
@@ -221,12 +229,7 @@ overflow:hidden;
 
 padding:38px;
 
-background:
-linear-gradient(
-135deg,
-#ffffff 0%,
-#f8f7ff 100%
-);
+background:#fff;
 
 border:1px solid #e3e6f7;
 
@@ -244,10 +247,12 @@ height:220px;
 border-radius:50%;
 
 background:
-rgba(111,67,255,.08);
+rgba(111,67,255,.06);
 
 left:-100px;
 top:-120px;
+
+pointer-events:none;
 
 }
 
@@ -263,10 +268,12 @@ height:180px;
 border-radius:50%;
 
 background:
-rgba(55,104,255,.07);
+rgba(55,104,255,.05);
 
 right:-90px;
 bottom:-100px;
+
+pointer-events:none;
 
 }
 
@@ -305,9 +312,9 @@ line-height:1.8;
 }
 
 
-/* ==========================
-   صناديق القاعدة
-========================== */
+/* =========================================================
+   GRAMMAR GRID
+========================================================= */
 
 .grammar-grid{
 
@@ -345,7 +352,9 @@ transform:translateY(-4px);
 }
 
 
-/* النفي */
+/* =========================================================
+   NEGATIVE
+========================================================= */
 
 .negative-box{
 
@@ -353,7 +362,7 @@ background:
 linear-gradient(
 135deg,
 #fff8f4,
-#fffafa
+#fffdfc
 );
 
 border:2px solid #ffd8c7;
@@ -361,15 +370,17 @@ border:2px solid #ffd8c7;
 }
 
 
-/* السؤال */
+/* =========================================================
+   QUESTION
+========================================================= */
 
 .question-box{
 
 background:
 linear-gradient(
 135deg,
-#f3f6ff,
-#faf8ff
+#f4f7ff,
+#fbfaff
 );
 
 border:2px solid #d7ddff;
@@ -436,9 +447,14 @@ margin-bottom:18px;
 
 }
 
+
+/* =========================================================
+   EXAMPLES
+========================================================= */
+
 .example{
 
-background:white;
+background:#fff;
 
 border-radius:18px;
 
@@ -446,7 +462,7 @@ padding:17px 19px;
 
 margin-top:12px;
 
-border:1px solid rgba(0,0,0,.06);
+border:1px solid rgba(0,0,0,.07);
 
 box-shadow:
 0 6px 18px rgba(0,0,0,.05);
@@ -486,9 +502,9 @@ line-height:1.7;
 }
 
 
-/* ==========================
-   الاختصارات
-========================== */
+/* =========================================================
+   CONTRACTIONS
+========================================================= */
 
 .contractions{
 
@@ -533,7 +549,7 @@ gap:10px;
 
 .contraction{
 
-background:white;
+background:#fff;
 
 border:1px solid #e0e4f5;
 
@@ -550,9 +566,9 @@ direction:ltr;
 }
 
 
-/* ==========================
-   ملاحظة مهمة
-========================== */
+/* =========================================================
+   MINI NOTE
+========================================================= */
 
 .mini-note{
 
@@ -592,9 +608,341 @@ color:#6f43ff;
 }
 
 
-/* ==========================
-   بطاقة البومة
-========================== */
+/* =========================================================
+   DAILY SENTENCES - COLLAPSED
+========================================================= */
+
+.daily-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#ffffff 0%,
+#f8fbff 100%
+);
+
+border:2px solid #dce5ff;
+
+padding:0;
+
+}
+
+.daily-toggle{
+
+width:100%;
+
+border:none;
+
+background:transparent;
+
+padding:28px 32px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+cursor:pointer;
+
+text-align:right;
+
+}
+
+.daily-toggle:hover{
+
+background:#fafcff;
+
+}
+
+.daily-heading{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.daily-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f3efff
+);
+
+border:1px solid #dce3ff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+flex-shrink:0;
+
+}
+
+.daily-heading h2{
+
+font-size:27px;
+
+color:#1f3c88;
+
+margin-bottom:5px;
+
+}
+
+.daily-heading p{
+
+font-size:17px;
+
+font-weight:600;
+
+color:#777;
+
+line-height:1.6;
+
+}
+
+.daily-arrow{
+
+width:42px;
+
+height:42px;
+
+border-radius:14px;
+
+background:#f2f5ff;
+
+color:#6f43ff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:22px;
+
+flex-shrink:0;
+
+transition:.3s;
+
+}
+
+.daily-card.open .daily-arrow{
+
+transform:rotate(180deg);
+
+}
+
+.daily-content{
+
+display:none;
+
+padding:0 30px 30px;
+
+}
+
+.daily-card.open .daily-content{
+
+display:block;
+
+animation:
+fadeResult .35s ease;
+
+}
+
+.daily-intro{
+
+background:
+linear-gradient(
+90deg,
+#eef4ff,
+#f8f2ff
+);
+
+border-radius:20px;
+
+padding:18px 20px;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#555;
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+border:1px solid #dce3ff;
+
+}
+
+
+/* =========================================================
+   DAILY SENTENCE GRID
+========================================================= */
+
+.daily-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+gap:16px;
+
+}
+
+.daily-example{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:20px;
+
+border:1px solid #e1e6f4;
+
+box-shadow:
+0 7px 20px rgba(31,60,136,.06);
+
+}
+
+.daily-label{
+
+display:inline-block;
+
+font-size:13px;
+
+font-weight:bold;
+
+padding:7px 12px;
+
+border-radius:999px;
+
+margin-bottom:12px;
+
+}
+
+.affirmative-label{
+
+background:#eaf8ef;
+
+color:#17864c;
+
+}
+
+.negative-label{
+
+background:#fff0eb;
+
+color:#c65c32;
+
+}
+
+.question-label{
+
+background:#eef1ff;
+
+color:#465dc5;
+
+}
+
+.daily-english{
+
+direction:ltr;
+
+text-align:left;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+line-height:1.6;
+
+margin-bottom:8px;
+
+}
+
+.daily-arabic{
+
+font-size:16px;
+
+font-weight:600;
+
+color:#777;
+
+line-height:1.7;
+
+}
+
+.hide-daily{
+
+width:100%;
+
+margin-top:22px;
+
+padding:16px;
+
+border:none;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:#fff;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(55,104,255,.16);
+
+transition:.3s;
+
+}
+
+.hide-daily:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+/* =========================================================
+   OWL MESSAGE
+========================================================= */
 
 .message-card{
 
@@ -649,9 +997,9 @@ margin:0;
 }
 
 
-/* ==========================
-   بطاقة تدرب الآن
-========================== */
+/* =========================================================
+   PRACTICE CARD
+========================================================= */
 
 .practice-card{
 
@@ -661,7 +1009,7 @@ align-items:center;
 
 gap:20px;
 
-background:white;
+background:#fff;
 
 padding:24px 30px;
 
@@ -760,13 +1108,13 @@ font-weight:600;
 }
 
 
-/* ==========================
-   بطاقات الأسئلة
-========================== */
+/* =========================================================
+   QUESTION CARDS
+========================================================= */
 
 .question-card{
 
-background:white;
+background:#fff !important;
 
 padding:40px;
 
@@ -819,9 +1167,9 @@ box-shadow:
 }
 
 
-/* ==========================
-   رقم السؤال
-========================== */
+/* =========================================================
+   QUESTION NUMBER
+========================================================= */
 
 .question-number{
 
@@ -852,9 +1200,9 @@ margin-bottom:22px;
 }
 
 
-/* ==========================
-   عنوان السؤال
-========================== */
+/* =========================================================
+   QUESTION TITLE
+========================================================= */
 
 .question-title{
 
@@ -887,9 +1235,9 @@ margin:35px 0;
 }
 
 
-/* ==========================
-   مربع الكتابة
-========================== */
+/* =========================================================
+   INPUT
+========================================================= */
 
 .write-box{
 
@@ -909,7 +1257,7 @@ transition:.3s;
 
 margin-bottom:28px;
 
-background:white;
+background:#fff;
 
 }
 
@@ -923,9 +1271,9 @@ box-shadow:
 }
 
 
-/* ==========================
-   النتائج
-========================== */
+/* =========================================================
+   RESULTS
+========================================================= */
 
 .answer-result,
 .result-text{
@@ -944,9 +1292,9 @@ fadeResult .4s ease;
 }
 
 
-/* ==========================
-   الاختيارات
-========================== */
+/* =========================================================
+   CHOICES
+========================================================= */
 
 .choice-container{
 
@@ -964,7 +1312,7 @@ flex:1;
 
 padding:24px;
 
-background:white;
+background:#fff;
 
 border:2px solid #dce4ff;
 
@@ -1000,14 +1348,16 @@ cursor:default;
 
 opacity:.95;
 
+transform:none;
+
 }
 
 
-/* ==========================
-   أزرار التحقق
-========================== */
+/* =========================================================
+   QUESTION ACTION BUTTON
+========================================================= */
 
-.question-card button{
+.check-btn{
 
 background:#f5f7ff;
 
@@ -1032,7 +1382,7 @@ box-shadow:
 
 }
 
-.question-card button:hover{
+.check-btn:hover{
 
 transform:translateY(-4px);
 
@@ -1041,34 +1391,34 @@ box-shadow:
 
 }
 
-.question-card button:active{
+.check-btn:active{
 
 transform:scale(.97);
 
 }
 
 
-/* ==========================
-   ألوان التصحيح
-========================== */
+/* =========================================================
+   FEEDBACK COLORS
+========================================================= */
 
 .correct-input{
 
-background:#e8fff0;
+background:#e8fff0 !important;
 
-border:2px solid #b8ebc8;
+border:2px solid #b8ebc8 !important;
 
-color:#0f8b4c;
+color:#0f8b4c !important;
 
 }
 
 .wrong-input{
 
-background:#ffe8e8;
+background:#ffe8e8 !important;
 
-border:2px solid #ffb8b8;
+border:2px solid #ffb8b8 !important;
 
-color:#c62828;
+color:#c62828 !important;
 
 }
 
@@ -1105,9 +1455,9 @@ color:#c62828;
 }
 
 
-/* ==========================
-   ترتيب الكلمات
-========================== */
+/* =========================================================
+   WORD ORDER
+========================================================= */
 
 .word-container{
 
@@ -1139,11 +1489,23 @@ cursor:pointer;
 
 transition:.3s;
 
+color:#1f3c88;
+
 }
 
 .word-btn:hover{
 
 transform:translateY(-4px);
+
+}
+
+.word-btn:disabled{
+
+opacity:.45;
+
+cursor:default;
+
+transform:none;
 
 }
 
@@ -1200,9 +1562,9 @@ user-select:none;
 }
 
 
-/* ==========================
-   النجوم
-========================== */
+/* =========================================================
+   CONFETTI
+========================================================= */
 
 .confetti{
 
@@ -1297,9 +1659,9 @@ scale(1.3);
 }
 
 
-/* ==========================
-   الاهتزاز
-========================== */
+/* =========================================================
+   SHAKE
+========================================================= */
 
 .shake{
 
@@ -1333,9 +1695,9 @@ transform:translateX(0);
 }
 
 
-/* ==========================
-   بطاقة النهاية
-========================== */
+/* =========================================================
+   FINAL CARD
+========================================================= */
 
 .final-card{
 
@@ -1368,7 +1730,7 @@ line-height:2;
 
 font-weight:600;
 
-color:white;
+color:#fff;
 
 margin-bottom:30px;
 
@@ -1390,7 +1752,7 @@ font-weight:bold;
 
 cursor:pointer;
 
-background:white;
+background:#fff;
 
 color:#6f43ff;
 
@@ -1411,9 +1773,9 @@ box-shadow:
 }
 
 
-/* ==========================
-   الحركات
-========================== */
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 @keyframes fadeUp{
 
@@ -1456,9 +1818,9 @@ transform:translateY(0);
 }
 
 
-/* ==========================
-   الجوال
-========================== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:768px){
 
@@ -1546,6 +1908,64 @@ font-size:16px;
 
 }
 
+.daily-toggle{
+
+padding:22px;
+
+}
+
+.daily-heading{
+
+gap:12px;
+
+}
+
+.daily-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:24px;
+
+}
+
+.daily-heading h2{
+
+font-size:22px;
+
+}
+
+.daily-heading p{
+
+font-size:15px;
+
+}
+
+.daily-content{
+
+padding:0 20px 22px;
+
+}
+
+.daily-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.daily-english{
+
+font-size:18px;
+
+}
+
+.daily-arabic{
+
+font-size:15px;
+
+}
+
 .message-card{
 
 display:flex;
@@ -1578,17 +1998,41 @@ line-height:1.8;
 
 }
 
-.choice-container{
+.practice-card{
 
-flex-direction:column;
+padding:19px 20px;
 
-gap:14px;
+gap:15px;
+
+}
+
+.practice-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:27px;
+
+}
+
+.practice-content h2{
+
+font-size:25px;
+
+}
+
+.practice-content p{
+
+font-size:16px;
 
 }
 
 .question-card{
 
 padding:28px;
+
+background:#fff !important;
 
 }
 
@@ -1601,6 +2045,20 @@ font-size:20px;
 .help-text{
 
 font-size:24px;
+
+}
+
+.choice-container{
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.choice-btn{
+
+width:100%;
 
 }
 
@@ -1651,33 +2109,59 @@ width:100%;
 
 }
 
-.practice-card{
+}
 
-padding:19px 20px;
 
-gap:15px;
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:430px){
+
+.top-bar{
+
+margin-bottom:30px;
 
 }
 
-.practice-icon{
+.back-btn{
 
-width:55px;
-
-height:55px;
-
-font-size:27px;
-
-}
-
-.practice-content h2{
-
-font-size:25px;
-
-}
-
-.practice-content p{
+padding:12px 18px;
 
 font-size:16px;
+
+}
+
+.owl-circle img{
+
+width:68px;
+height:68px;
+
+}
+
+.title{
+
+font-size:34px;
+
+}
+
+.daily-heading h2{
+
+font-size:20px;
+
+}
+
+.daily-heading p{
+
+font-size:14px;
+
+}
+
+.daily-arrow{
+
+width:38px;
+
+height:38px;
 
 }
 
@@ -1693,9 +2177,9 @@ font-size:16px;
 <div class="container">
 
 
-<!-- ==========================
-        الأعلى
-========================== -->
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
 
 <div class="top-bar">
 
@@ -1718,9 +2202,9 @@ alt="Engliza Academy">
 </div>
 
 
-<!-- ==========================
-      عنوان الدرس
-========================== -->
+<!-- =========================================================
+     TITLE
+========================================================= -->
 
 <h1 class="title">
 
@@ -1735,9 +2219,9 @@ alt="Engliza Academy">
 </p>
 
 
-<!-- ==========================
-      فيديو الدرس
-========================== -->
+<!-- =========================================================
+     VIDEO
+========================================================= -->
 
 <div class="video-box">
 
@@ -1745,8 +2229,6 @@ alt="Engliza Academy">
 controls
 preload="metadata"
 controlsList="nodownload">
-
-<!-- أضيفي رابط الفيديو هنا -->
 
 <source
 src="https://videos.englizaacademy.com/Pre-Intermediate/Should-must-have%20to.MOV"
@@ -1760,7 +2242,7 @@ type="video/quicktime">
 
 
 <!-- =========================================================
-     بطاقة النفي والسؤال
+     NEGATIVE + QUESTION
 ========================================================= -->
 
 <div class="card grammar-card">
@@ -1775,9 +2257,9 @@ type="video/quicktime">
 
 <p>
 
-بعد أن تتعلم استخدام
-<b>should</b> و <b>have to</b> و <b>must</b>،
-إليك طريقة تحويلها إلى النفي والسؤال.
+بعد مشاهدة الدرس، تعرّف بسرعة على طريقة تكوين
+النفي والأسئلة مع
+<b>should</b> و <b>have to</b> و <b>must</b>.
 
 </p>
 
@@ -1787,9 +2269,9 @@ type="video/quicktime">
 <div class="grammar-grid">
 
 
-<!-- ==========================
-     النفي
-========================== -->
+<!-- =====================================================
+     NEGATIVE
+===================================================== -->
 
 <div class="grammar-box negative-box">
 
@@ -1809,7 +2291,15 @@ type="video/quicktime">
 
 للنفي نضيف
 <b>not</b>
-بعد الكلمة.
+بعد
+<b>should</b>
+أو
+<b>must</b>.
+
+أما مع
+<b>have to</b>
+فنستخدم
+<b>do / does + not</b>.
 
 </p>
 
@@ -1835,13 +2325,13 @@ You should not be late.
 
 <div class="english">
 
-You don't have to come.
+You must not touch it.
 
 </div>
 
 <div class="arabic">
 
-ليس عليك أن تأتي.
+يجب ألا تلمسه.
 
 </div>
 
@@ -1852,13 +2342,13 @@ You don't have to come.
 
 <div class="english">
 
-You must not touch it.
+You don't have to come.
 
 </div>
 
 <div class="arabic">
 
-يجب ألا تلمسه.
+ليس عليك أن تأتي.
 
 </div>
 
@@ -1883,6 +2373,12 @@ should not → shouldn't
 
 <div class="contraction">
 
+must not → mustn't
+
+</div>
+
+<div class="contraction">
+
 do not have to → don't have to
 
 </div>
@@ -1900,9 +2396,9 @@ does not have to → doesn't have to
 </div>
 
 
-<!-- ==========================
-     السؤال
-========================== -->
+<!-- =====================================================
+     QUESTION
+===================================================== -->
 
 <div class="grammar-box question-box">
 
@@ -1920,8 +2416,17 @@ does not have to → doesn't have to
 
 <p class="rule">
 
-في السؤال نضع الكلمة المساعدة
-في بداية الجملة.
+مع
+<b>should</b>
+و
+<b>must</b>
+نضع الكلمة في بداية السؤال.
+
+أما مع
+<b>have to</b>
+فنستخدم
+<b>Do / Does</b>
+في البداية.
 
 </p>
 
@@ -1937,6 +2442,23 @@ Should I call him?
 <div class="arabic">
 
 هل ينبغي أن أتصل به؟
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="english">
+
+Must I finish this today?
+
+</div>
+
+<div class="arabic">
+
+هل يجب أن أنهي هذا اليوم؟
 
 </div>
 
@@ -1964,11 +2486,330 @@ Do I have to come?
 
 <div class="english">
 
-Must I finish this today?
+Does she have to work today?
 
 </div>
 
 <div class="arabic">
+
+هل يجب عليها أن تعمل اليوم؟
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="mini-note">
+
+⭐ <strong>تذكّر:</strong>
+
+مع
+<b>should</b>
+و
+<b>must</b>
+لا نستخدم
+<b>do / does</b>
+لبناء السؤال.
+
+أما
+<b>have to</b>
+فتحتاج إلى
+<b>do / does</b>.
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     DAILY LIFE SENTENCES
+========================================================= -->
+
+<div
+class="card daily-card"
+id="dailyCard">
+
+
+<button
+type="button"
+class="daily-toggle"
+onclick="toggleDailySentences()">
+
+<div class="daily-heading">
+
+<div class="daily-icon">
+
+💬
+
+</div>
+
+<div>
+
+<h2>
+
+جمل من الحياة اليومية
+
+</h2>
+
+<p>
+
+شاهد أمثلة حقيقية تساعدك على فهم الاستخدام قبل التدريب.
+
+</p>
+
+</div>
+
+</div>
+
+<div
+class="daily-arrow"
+id="dailyArrow">
+
+⌄
+
+</div>
+
+</button>
+
+
+<div
+class="daily-content"
+id="dailyContent">
+
+<div class="daily-intro">
+
+🌟 هذه الجمل تجمع بين
+<b>should</b> و <b>have to</b> و <b>must</b>
+في مواقف يومية مختلفة.
+اقرأ الجملة الإنجليزية أولًا، ثم اقرأ معناها بالعربي.
+
+</div>
+
+
+<div class="daily-grid">
+
+
+<!-- 1 -->
+
+<div class="daily-example">
+
+<span class="daily-label affirmative-label">
+
+إثبات
+
+</span>
+
+<div class="daily-english">
+
+I have to wake up early tomorrow.
+
+</div>
+
+<div class="daily-arabic">
+
+يجب عليّ أن أستيقظ مبكرًا غدًا.
+
+</div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="daily-example">
+
+<span class="daily-label affirmative-label">
+
+نصيحة
+
+</span>
+
+<div class="daily-english">
+
+You should get some rest.
+
+</div>
+
+<div class="daily-arabic">
+
+ينبغي أن تحصل على بعض الراحة.
+
+</div>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="daily-example">
+
+<span class="daily-label affirmative-label">
+
+إلزام
+
+</span>
+
+<div class="daily-english">
+
+You must wear a seat belt.
+
+</div>
+
+<div class="daily-arabic">
+
+يجب أن ترتدي حزام الأمان.
+
+</div>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="daily-example">
+
+<span class="daily-label negative-label">
+
+نفي
+
+</span>
+
+<div class="daily-english">
+
+You don't have to wait for me.
+
+</div>
+
+<div class="daily-arabic">
+
+ليس عليك أن تنتظرني.
+
+</div>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="daily-example">
+
+<span class="daily-label negative-label">
+
+نفي
+
+</span>
+
+<div class="daily-english">
+
+You shouldn't eat too much sugar.
+
+</div>
+
+<div class="daily-arabic">
+
+لا ينبغي أن تأكل الكثير من السكر.
+
+</div>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="daily-example">
+
+<span class="daily-label negative-label">
+
+نفي
+
+</span>
+
+<div class="daily-english">
+
+You mustn't park here.
+
+</div>
+
+<div class="daily-arabic">
+
+يجب ألا تركن السيارة هنا.
+
+</div>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="daily-example">
+
+<span class="daily-label question-label">
+
+سؤال
+
+</span>
+
+<div class="daily-english">
+
+Should I bring my laptop?
+
+</div>
+
+<div class="daily-arabic">
+
+هل ينبغي أن أحضر حاسوبي المحمول؟
+
+</div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="daily-example">
+
+<span class="daily-label question-label">
+
+سؤال
+
+</span>
+
+<div class="daily-english">
+
+Do we have to pay now?
+
+</div>
+
+<div class="daily-arabic">
+
+هل يجب علينا أن ندفع الآن؟
+
+</div>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="daily-example">
+
+<span class="daily-label question-label">
+
+سؤال
+
+</span>
+
+<div class="daily-english">
+
+Must I finish this today?
+
+</div>
+
+<div class="daily-arabic">
 
 هل يجب أن أنهي هذا اليوم؟
 
@@ -1977,17 +2818,75 @@ Must I finish this today?
 </div>
 
 
-<div class="mini-note">
+<!-- 10 -->
 
-<strong>💡 تذكّر:</strong>
+<div class="daily-example">
 
-مع
-<b>have to</b>
-نستخدم
-<b>Do / Does</b>
-لبناء السؤال، لأن
-<b>have</b>
-ليست فعلًا مساعدًا.
+<span class="daily-label affirmative-label">
+
+إثبات
+
+</span>
+
+<div class="daily-english">
+
+She has to study tonight.
+
+</div>
+
+<div class="daily-arabic">
+
+يجب عليها أن تدرس الليلة.
+
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="daily-example">
+
+<span class="daily-label negative-label">
+
+نفي
+
+</span>
+
+<div class="daily-english">
+
+She doesn't have to cook today.
+
+</div>
+
+<div class="daily-arabic">
+
+ليس عليها أن تطبخ اليوم.
+
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="daily-example">
+
+<span class="daily-label question-label">
+
+سؤال
+
+</span>
+
+<div class="daily-english">
+
+Does he have to work tomorrow?
+
+</div>
+
+<div class="daily-arabic">
+
+هل يجب عليه أن يعمل غدًا؟
 
 </div>
 
@@ -1996,22 +2895,23 @@ Must I finish this today?
 </div>
 
 
-<div class="mini-note">
+<button
+type="button"
+class="hide-daily"
+onclick="toggleDailySentences()">
 
-⭐ <strong>فكرة سريعة:</strong>
-إذا أردت أن تنفي، ابحث عن مكان
-<b>not</b>.
-وإذا أردت أن تكوّن سؤالًا، اسأل نفسك:
-<strong>ما الكلمة التي يجب أن تأتي في بداية السؤال؟</strong>
+↩️ إخفاء الجمل
+
+</button>
 
 </div>
 
 </div>
 
 
-<!-- ==========================
-      بطاقة البومة
-========================== -->
+<!-- =========================================================
+     OWL TIP
+========================================================= -->
 
 <div class="card message-card">
 
@@ -2029,12 +2929,14 @@ alt="نصيحة من Engliza Academy">
 
 <p>
 
-عندما تتعلم كلمة جديدة، لا تحفظ معناها فقط؛
-حاول أن تستخدمها في جملة من حياتك أنت. ✨
+لا تحفظ
+<b>should</b> و <b>have to</b> و <b>must</b>
+كقواعد منفصلة فقط؛ عندما ترى موقفًا في حياتك، حاول أن تفكر:
+«هل هذا شيء أنصح به؟ أم شيء يجب عليّ فعله؟»
 
 <br><br>
 
-اكتب جملة عن شيء تفعله يوميًا، وجملة عن شيء يجب عليك فعله، وجملة تعطي فيها نصيحة لشخص آخر. 📝
+ربط القاعدة بمواقفك اليومية سيجعل تذكّرها أسهل بكثير. 🌟
 
 </p>
 
@@ -2043,9 +2945,9 @@ alt="نصيحة من Engliza Academy">
 </div>
 
 
-<!-- ==========================
-      بطاقة تدرب الآن
-========================== -->
+<!-- =========================================================
+     PRACTICE
+========================================================= -->
 
 <div class="practice-card">
 
@@ -2074,9 +2976,9 @@ alt="نصيحة من Engliza Academy">
 </div>
 
 
-<!-- ==========================
-      السؤال الأول
-========================== -->
+<!-- =========================================================
+     QUESTION 1
+========================================================= -->
 
 <div class="question-card">
 
@@ -2098,13 +3000,14 @@ alt="نصيحة من Engliza Academy">
 class="help-text"
 dir="ltr">
 
-You ___ drink more water.
+You have a headache. You ___ get some rest.
 
 </p>
 
 <div class="choice-container">
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,true,'choice1')">
 
@@ -2113,6 +3016,7 @@ should
 </button>
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
 
@@ -2121,6 +3025,7 @@ must
 </button>
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
 
@@ -2141,9 +3046,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال الثاني
-========================== -->
+<!-- =========================================================
+     QUESTION 2
+========================================================= -->
 
 <div class="question-card">
 
@@ -2172,6 +3077,7 @@ Students ___ wear a uniform at this school.
 <div class="choice-container">
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice2')">
 
@@ -2180,6 +3086,7 @@ should
 </button>
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,true,'choice2')">
 
@@ -2188,10 +3095,11 @@ have to
 </button>
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice2')">
 
-mustn't
+shouldn't
 
 </button>
 
@@ -2208,9 +3116,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال الثالث
-========================== -->
+<!-- =========================================================
+     QUESTION 3
+========================================================= -->
 
 <div class="question-card">
 
@@ -2239,15 +3147,16 @@ You ___ see a doctor if you feel sick.
 <input
 id="input1"
 class="write-box"
-placeholder="اكتب الإجابة">
+placeholder="اكتب الإجابة"
+autocomplete="off">
 
 <button
+type="button"
+class="check-btn"
 onclick="checkWriting(
 'input1',
 'result1',
-[
-'should'
-]
+['should']
 )">
 
 ✨ أريد التحقق من إجابتي
@@ -2265,9 +3174,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال الرابع
-========================== -->
+<!-- =========================================================
+     QUESTION 4
+========================================================= -->
 
 <div class="question-card">
 
@@ -2290,6 +3199,7 @@ class="word-container"
 id="words1">
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
@@ -2298,6 +3208,7 @@ have to
 </button>
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
@@ -2306,6 +3217,7 @@ I
 </button>
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
@@ -2314,6 +3226,7 @@ work
 </button>
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
@@ -2330,6 +3243,8 @@ id="answerBox1">
 </div>
 
 <button
+type="button"
+class="check-btn"
 onclick="checkSentence(
 'answerBox1',
 'I have to work tomorrow',
@@ -2351,9 +3266,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال الخامس
-========================== -->
+<!-- =========================================================
+     QUESTION 5
+========================================================= -->
 
 <div class="question-card">
 
@@ -2382,9 +3297,12 @@ dir="ltr">
 <input
 id="input2"
 class="write-box"
-placeholder="صحح الجملة">
+placeholder="صحح الجملة"
+autocomplete="off">
 
 <button
+type="button"
+class="check-btn"
 onclick="checkWriting(
 'input2',
 'result2',
@@ -2408,9 +3326,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال السادس
-========================== -->
+<!-- =========================================================
+     QUESTION 6
+========================================================= -->
 
 <div class="question-card">
 
@@ -2437,15 +3355,18 @@ class="answer-result">
 <input
 id="input3"
 class="write-box"
-placeholder="اكتب الترجمة">
+placeholder="اكتب الترجمة"
+autocomplete="off">
 
 <button
+type="button"
+class="check-btn"
 onclick="checkWriting(
 'input3',
 'result3',
 [
 'You do not have to come tomorrow',
-"You don't have to come tomorrow"
+&quot;You don't have to come tomorrow&quot;
 ]
 )">
 
@@ -2464,9 +3385,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال السابع
-========================== -->
+<!-- =========================================================
+     QUESTION 7
+========================================================= -->
 
 <div class="question-card">
 
@@ -2485,16 +3406,16 @@ class="answer-result">
 </p>
 
 <p
-class="help-text"
-dir="ltr">
+class="help-text">
 
-"هل يجب عليّ أن أذهب الآن؟"
+هل يجب عليّ أن أذهب الآن؟
 
 </p>
 
 <div class="choice-container">
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,true,'choice3')">
 
@@ -2503,6 +3424,7 @@ Do I have to go now?
 </button>
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice3')">
 
@@ -2511,6 +3433,7 @@ Have I to go now?
 </button>
 
 <button
+type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice3')">
 
@@ -2531,9 +3454,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال الثامن
-========================== -->
+<!-- =========================================================
+     QUESTION 8
+========================================================= -->
 
 <div class="question-card">
 
@@ -2562,15 +3485,18 @@ You / must / not / touch / this.
 <input
 id="input4"
 class="write-box"
-placeholder="اكتب الجملة كاملة">
+placeholder="اكتب الجملة كاملة"
+autocomplete="off">
 
 <button
+type="button"
+class="check-btn"
 onclick="checkWriting(
 'input4',
 'result4',
 [
 'You must not touch this',
-"You mustn't touch this"
+&quot;You mustn't touch this&quot;
 ]
 )">
 
@@ -2589,9 +3515,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال التاسع
-========================== -->
+<!-- =========================================================
+     QUESTION 9
+========================================================= -->
 
 <div class="question-card">
 
@@ -2614,6 +3540,7 @@ class="word-container"
 id="words2">
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
@@ -2622,6 +3549,7 @@ should
 </button>
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
@@ -2630,6 +3558,7 @@ I
 </button>
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
@@ -2638,6 +3567,7 @@ call
 </button>
 
 <button
+type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
@@ -2654,6 +3584,8 @@ id="answerBox2">
 </div>
 
 <button
+type="button"
+class="check-btn"
 onclick="checkSentence(
 'answerBox2',
 'Should I call her',
@@ -2675,9 +3607,9 @@ class="result-text">
 </div>
 
 
-<!-- ==========================
-      السؤال العاشر
-========================== -->
+<!-- =========================================================
+     QUESTION 10
+========================================================= -->
 
 <div class="question-card">
 
@@ -2706,9 +3638,12 @@ dir="ltr">
 <input
 id="input5"
 class="write-box"
-placeholder="صحح الجملة">
+placeholder="صحح الجملة"
+autocomplete="off">
 
 <button
+type="button"
+class="check-btn"
 onclick="checkWriting(
 'input5',
 'result5',
@@ -2732,9 +3667,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      السؤال الحادي عشر
-========================== -->
+<!-- =========================================================
+     QUESTION 11
+========================================================= -->
 
 <div class="question-card">
 
@@ -2761,9 +3696,12 @@ class="answer-result">
 <input
 id="input6"
 class="write-box"
-placeholder="اكتب الترجمة">
+placeholder="اكتب الترجمة"
+autocomplete="off">
 
 <button
+type="button"
+class="check-btn"
 onclick="checkWriting(
 'input6',
 'result6',
@@ -2787,9 +3725,9 @@ class="answer-result">
 </div>
 
 
-<!-- ==========================
-      بطاقة النهاية
-========================== -->
+<!-- =========================================================
+     FINAL CARD
+========================================================= -->
 
 <div class="card final-card">
 
@@ -2812,6 +3750,7 @@ Should • Have to • Must
 </p>
 
 <button
+type="button"
 class="next-lesson-btn"
 onclick="finishLessonPage()">
 
@@ -2827,10 +3766,9 @@ onclick="finishLessonPage()">
 
 <script>
 
-
-// ==========================
-// تنظيف النص
-// ==========================
+/* =========================================================
+   NORMALIZE TEXT
+========================================================= */
 
 function normalizeText(text){
 
@@ -2842,40 +3780,23 @@ return text
 
 .replace(/’/g,"'")
 
-
-// ==========================
-// معالجة الاختصارات
-// ==========================
-
-.replace(/\bi'm\b/g,"i am")
-.replace(/\bi've\b/g,"i have")
-.replace(/\bi'd\b/g,"i would")
-.replace(/\bi'll\b/g,"i will")
-
-.replace(/\bhe's\b/g,"he is")
-.replace(/\bshe's\b/g,"she is")
-.replace(/\bit's\b/g,"it is")
-
-.replace(/\byou're\b/g,"you are")
-.replace(/\bwe're\b/g,"we are")
-.replace(/\bthey're\b/g,"they are")
+/* الاختصارات */
 
 .replace(/\bshouldn't\b/g,"should not")
 
 .replace(/\bmustn't\b/g,"must not")
 
 .replace(/\bdon't\b/g,"do not")
+
 .replace(/\bdoesn't\b/g,"does not")
 
 .replace(/\bdidn't\b/g,"did not")
 
 .replace(/\bcan't\b/g,"cannot")
+
 .replace(/\bwon't\b/g,"will not")
 
-
-// ==========================
-// حذف علامات الترقيم
-// ==========================
+/* حذف علامات الترقيم */
 
 .replace(/[.,!?؟]/g,"")
 
@@ -2890,9 +3811,9 @@ return text
 }
 
 
-// ==========================
-// التحقق من الأسئلة الكتابية
-// ==========================
+/* =========================================================
+   WRITING CHECK
+========================================================= */
 
 function checkWriting(
 inputId,
@@ -2900,22 +3821,21 @@ resultId,
 correctAnswers
 ){
 
-let input =
+const input =
 document.getElementById(inputId);
 
-let result =
+const result =
 document.getElementById(resultId);
 
-let userAnswer =
-normalizeText(
-input.value
-);
+const userAnswer =
+normalizeText(input.value);
 
-let answers =
-correctAnswers.map(
-answer =>
-normalizeText(answer)
-);
+const answers =
+correctAnswers.map(function(answer){
+
+return normalizeText(answer);
+
+});
 
 input.classList.remove(
 "correct-input",
@@ -2941,7 +3861,6 @@ result.innerHTML =
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '</div>'+
-
 '✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
 
 result.className =
@@ -2958,16 +3877,16 @@ input.classList.add(
 
 setTimeout(function(){
 
-input.classList.remove(
-"shake"
-);
+input.classList.remove("shake");
 
 },300);
 
 result.innerHTML =
 
-"😅❌ إجابتك غير صحيحة.<br><br>"+
-"✅ إحدى الإجابات الصحيحة هي:<br><br>"+
+"😅❌ إجابتك غير صحيحة."+
+"<br><br>"+
+"✅ إحدى الإجابات الصحيحة هي:"+
+"<br><br>"+
 "<b>"+
 correctAnswers[0]+
 "</b>";
@@ -2980,9 +3899,9 @@ result.className =
 }
 
 
-// ==========================
-// أسئلة الاختيار
-// ==========================
+/* =========================================================
+   MULTIPLE CHOICE
+========================================================= */
 
 function checkAnswer(
 button,
@@ -2990,36 +3909,36 @@ isCorrect,
 resultId
 ){
 
-let result =
-document.getElementById(
-resultId
-);
+const result =
+document.getElementById(resultId);
 
-let allButtons =
-button.parentElement.querySelectorAll(
-".choice-btn"
-);
+const container =
+button.parentElement;
+
+const allButtons =
+container.querySelectorAll(".choice-btn");
 
 
-// منع الضغط مرة أخرى
+/* منع إعادة الإجابة */
 
-allButtons.forEach(
-btn => {
+allButtons.forEach(function(btn){
 
 btn.disabled = true;
 
-}
-);
+});
 
 
 if(isCorrect){
 
-button.classList.add(
-"correct"
-);
+button.classList.add("correct");
 
-button.innerHTML +=
-" ✔️";
+if(
+!button.innerHTML.includes("✔️")
+){
+
+button.innerHTML += " ✔️";
+
+}
 
 result.innerHTML =
 
@@ -3030,7 +3949,6 @@ result.innerHTML =
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '</div>'+
-
 '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
 
 result.className =
@@ -3047,43 +3965,44 @@ button.classList.add(
 
 setTimeout(function(){
 
-button.classList.remove(
-"shake"
-);
+button.classList.remove("shake");
 
 },300);
 
-button.innerHTML +=
-" ✖️";
+if(
+!button.innerHTML.includes("✖️")
+){
+
+button.innerHTML += " ✖️";
+
+}
 
 result.innerHTML =
-
 "😅❌ لقد اخترت الإجابة الخاطئة.";
 
 result.className =
 "result-text error-text";
 
 
-// إظهار الإجابة الصحيحة
+/* إظهار الإجابة الصحيحة */
 
-allButtons.forEach(
-btn => {
+allButtons.forEach(function(btn){
+
+const code =
+btn.getAttribute("onclick");
 
 if(
-btn.getAttribute("onclick")
-.includes("true")
+code &&
+code.includes(",true,")
 ){
 
-btn.classList.add(
-"correct"
-);
+btn.classList.add("correct");
 
 if(
 !btn.innerHTML.includes("✔️")
 ){
 
-btn.innerHTML +=
-" ✔️";
+btn.innerHTML += " ✔️";
 
 }
 
@@ -3096,9 +4015,9 @@ btn.innerHTML +=
 }
 
 
-// ==========================
-// إضافة كلمة
-// ==========================
+/* =========================================================
+   ADD WORD
+========================================================= */
 
 function addWord(
 button,
@@ -3106,22 +4025,18 @@ answerBoxId
 ){
 
 if(
-button.style.display === "none"
+button.disabled
 ){
 
 return;
 
 }
 
-let answerBox =
-document.getElementById(
-answerBoxId
-);
+const answerBox =
+document.getElementById(answerBoxId);
 
-let newWord =
-document.createElement(
-"div"
-);
+const newWord =
+document.createElement("div");
 
 newWord.className =
 "selected-word";
@@ -3129,19 +4044,16 @@ newWord.className =
 newWord.innerText =
 button.innerText;
 
-answerBox.appendChild(
-newWord
-);
+answerBox.appendChild(newWord);
 
-button.style.display =
-"none";
+button.disabled = true;
 
 }
 
 
-// ==========================
-// التحقق من ترتيب الكلمات
-// ==========================
+/* =========================================================
+   CHECK SENTENCE
+========================================================= */
 
 function checkSentence(
 answerBoxId,
@@ -3149,25 +4061,18 @@ correctSentence,
 resultId
 ){
 
-let answerBox =
-document.getElementById(
-answerBoxId
-);
+const answerBox =
+document.getElementById(answerBoxId);
 
-let result =
-document.getElementById(
-resultId
-);
+const result =
+document.getElementById(resultId);
 
-let words =
-answerBox.querySelectorAll(
-".selected-word"
-);
+const words =
+answerBox.querySelectorAll(".selected-word");
 
 let userSentence = "";
 
-words.forEach(
-word => {
+words.forEach(function(word){
 
 userSentence +=
 word.innerText + " ";
@@ -3175,22 +4080,16 @@ word.innerText + " ";
 });
 
 userSentence =
-normalizeText(
-userSentence
-);
+normalizeText(userSentence);
 
-correctSentence =
-normalizeText(
-correctSentence
-);
+const normalizedCorrect =
+normalizeText(correctSentence);
 
-answerBox.classList.remove(
-"shake"
-);
+answerBox.classList.remove("shake");
 
 
 if(
-userSentence === correctSentence
+userSentence === normalizedCorrect
 ){
 
 result.innerHTML =
@@ -3202,7 +4101,6 @@ result.innerHTML =
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '</div>'+
-
 '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
 
 result.className =
@@ -3218,15 +4116,11 @@ answerBox.style.background =
 
 else{
 
-answerBox.classList.add(
-"shake"
-);
+answerBox.classList.add("shake");
 
 setTimeout(function(){
 
-answerBox.classList.remove(
-"shake"
-);
+answerBox.classList.remove("shake");
 
 },300);
 
@@ -3237,7 +4131,6 @@ answerBox.style.background =
 "#fff2f2";
 
 result.innerHTML =
-
 "😅❌ ترتيب الكلمات غير صحيح.";
 
 result.className =
@@ -3248,18 +4141,14 @@ result.className =
 }
 
 
-// ==========================
-// خلط الكلمات
-// ==========================
+/* =========================================================
+   SHUFFLE WORDS
+========================================================= */
 
-function shuffleWords(
-containerId
-){
+function shuffleWords(containerId){
 
-let container =
-document.getElementById(
-containerId
-);
+const container =
+document.getElementById(containerId);
 
 if(!container){
 
@@ -3267,45 +4156,69 @@ return;
 
 }
 
-let buttons =
+const buttons =
 Array.from(
-container.querySelectorAll(
-".word-btn"
-)
+container.querySelectorAll(".word-btn")
 );
 
-buttons.sort(
-() => Math.random() - 0.5
+for(
+let i = buttons.length - 1;
+i > 0;
+i--
+){
+
+const randomIndex =
+Math.floor(
+Math.random() * (i + 1)
 );
 
-container.innerHTML = "";
+const temp =
+buttons[i];
 
-buttons.forEach(
-button => {
+buttons[i] =
+buttons[randomIndex];
 
-container.appendChild(
-button
-);
+buttons[randomIndex] =
+temp;
+
+}
+
+buttons.forEach(function(button){
+
+container.appendChild(button);
 
 });
 
 }
 
-shuffleWords("words1");
 
-shuffleWords("words2");
+/* =========================================================
+   DAILY SENTENCES TOGGLE
+========================================================= */
+
+function toggleDailySentences(){
+
+const card =
+document.getElementById("dailyCard");
+
+if(!card){
+
+return;
+
+}
+
+card.classList.toggle("open");
+
+}
 
 
-// ==========================
-// دعم زر Enter
-// ==========================
+/* =========================================================
+   ENTER KEY
+========================================================= */
 
 document
-.querySelectorAll(
-".write-box"
-)
-.forEach(
-input => {
+.querySelectorAll(".write-box")
+.forEach(function(input){
 
 input.addEventListener(
 "keydown",
@@ -3317,7 +4230,14 @@ event.key === "Enter"
 
 event.preventDefault();
 
-this.nextElementSibling.click();
+const button =
+this.nextElementSibling;
+
+if(button){
+
+button.click();
+
+}
 
 }
 
@@ -3326,9 +4246,18 @@ this.nextElementSibling.click();
 });
 
 
-// ==========================
-// الانتقال للدرس التالي
-// ==========================
+/* =========================================================
+   SHUFFLE
+========================================================= */
+
+shuffleWords("words1");
+
+shuffleWords("words2");
+
+
+/* =========================================================
+   NEXT LESSON
+========================================================= */
 
 function finishLessonPage(){
 
@@ -3342,7 +4271,7 @@ window.finishLesson(
 
 "Should • Have to • Must",
 
-"adverbs.html"
+"good-well.html"
 
 );
 
@@ -3361,7 +4290,7 @@ window.location.href =
 
 
 <!-- =========================================================
-     نظام الدروس والمكافآت
+     REWARD SYSTEM
 ========================================================= -->
 
 <script type="module">
