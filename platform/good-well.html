@@ -10,9 +10,7 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
-
 Good • Well | Engliza Academy
-
 </title>
 
 <style>
@@ -37,7 +35,13 @@ font-family:Arial,sans-serif;
 
 body{
 
-background:linear-gradient(
+background:
+radial-gradient(
+circle at 50% 0%,
+rgba(111,67,255,.08),
+transparent 30%
+),
+linear-gradient(
 135deg,
 #eef4ff,
 #f7f3ff
@@ -48,11 +52,6 @@ padding:30px 20px;
 color:#222;
 
 }
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
 
 .container{
 
@@ -157,6 +156,40 @@ margin-bottom:55px;
 
 
 /* =========================================================
+   GENERAL CARD
+========================================================= */
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+transition:.35s;
+
+animation:
+fadeUp .6s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 22px 50px rgba(0,0,0,.12);
+
+}
+
+
+/* =========================================================
    VIDEO
 ========================================================= */
 
@@ -198,48 +231,11 @@ background:#111;
 
 .message-card{
 
-background:white;
-
-padding:35px 40px;
-
-border-radius:35px;
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.08);
-
-margin-bottom:35px;
-
 display:flex;
 
 align-items:center;
 
 gap:25px;
-
-position:relative;
-
-overflow:hidden;
-
-animation:
-fadeUp .6s ease;
-
-}
-
-.message-card::before{
-
-content:"";
-
-position:absolute;
-
-width:180px;
-height:180px;
-
-border-radius:50%;
-
-background:
-rgba(111,67,255,.07);
-
-left:-90px;
-bottom:-100px;
 
 }
 
@@ -251,19 +247,11 @@ flex-shrink:0;
 
 display:block;
 
-position:relative;
-
-z-index:1;
-
 }
 
 .message-content{
 
 flex:1;
-
-position:relative;
-
-z-index:1;
 
 }
 
@@ -279,7 +267,7 @@ margin-bottom:12px;
 
 .message-content p{
 
-font-size:21px;
+font-size:22px;
 
 line-height:1.9;
 
@@ -287,7 +275,826 @@ font-weight:600;
 
 color:#444;
 
-margin:0;
+}
+
+
+/* =========================================================
+   GOOD / WELL EXPLANATION CARD
+========================================================= */
+
+.explanation-card{
+
+position:relative;
+
+overflow:hidden;
+
+padding:40px;
+
+background:
+linear-gradient(
+135deg,
+#ffffff 0%,
+#f8faff 55%,
+#faf7ff 100%
+);
+
+border:1px solid #e0e6f7;
+
+}
+
+.explanation-card::before{
+
+content:"";
+
+position:absolute;
+
+width:240px;
+height:240px;
+
+border-radius:50%;
+
+background:
+rgba(55,104,255,.07);
+
+left:-120px;
+top:-130px;
+
+}
+
+.explanation-card::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+background:
+rgba(111,67,255,.07);
+
+right:-120px;
+bottom:-130px;
+
+}
+
+.explanation-content{
+
+position:relative;
+
+z-index:1;
+
+}
+
+
+/* =========================================================
+   EXPLANATION HEADER
+========================================================= */
+
+.explanation-header{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.explanation-header h2{
+
+font-size:34px;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+.explanation-header p{
+
+font-size:19px;
+
+font-weight:600;
+
+line-height:1.9;
+
+color:#666;
+
+}
+
+
+/* =========================================================
+   GOOD / WELL MAIN BOXES
+========================================================= */
+
+.rule-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+gap:22px;
+
+margin-bottom:25px;
+
+}
+
+.rule-box{
+
+padding:28px;
+
+border-radius:27px;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.3s;
+
+}
+
+.rule-box:hover{
+
+transform:translateY(-4px);
+
+}
+
+.well-rule{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f7f9ff
+);
+
+border:2px solid #d4defb;
+
+}
+
+.good-rule{
+
+background:
+linear-gradient(
+135deg,
+#f5f0ff,
+#fbf9ff
+);
+
+border:2px solid #ded4ff;
+
+}
+
+.rule-top{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+margin-bottom:18px;
+
+}
+
+.rule-icon{
+
+width:55px;
+height:55px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:17px;
+
+font-size:27px;
+
+flex-shrink:0;
+
+}
+
+.well-rule .rule-icon{
+
+background:#e4ecff;
+
+border:1px solid #c9d7ff;
+
+}
+
+.good-rule .rule-icon{
+
+background:#eee6ff;
+
+border:1px solid #d8c9ff;
+
+}
+
+.rule-top h3{
+
+font-size:28px;
+
+color:#1f3c88;
+
+direction:ltr;
+
+}
+
+.rule-text{
+
+font-size:20px;
+
+font-weight:600;
+
+line-height:1.9;
+
+color:#444;
+
+margin-bottom:20px;
+
+}
+
+
+/* =========================================================
+   MINI EXAMPLES
+========================================================= */
+
+.mini-example{
+
+background:white;
+
+border-radius:19px;
+
+padding:17px 19px;
+
+margin-top:12px;
+
+border:1px solid #e0e5f3;
+
+box-shadow:
+0 6px 18px rgba(0,0,0,.05);
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+.mini-example .english{
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:7px;
+
+}
+
+.mini-example .arabic{
+
+font-size:16px;
+
+font-weight:600;
+
+color:#777;
+
+direction:rtl;
+
+text-align:right;
+
+line-height:1.7;
+
+}
+
+
+/* =========================================================
+   IMPORTANT QUESTION
+========================================================= */
+
+.think-box{
+
+background:
+linear-gradient(
+90deg,
+#fff9e9,
+#fffdf7
+);
+
+border:2px solid #ffe2a1;
+
+border-radius:25px;
+
+padding:25px;
+
+margin-top:25px;
+
+position:relative;
+
+}
+
+.think-title{
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#b27b12;
+
+margin-bottom:14px;
+
+}
+
+.think-text{
+
+font-size:19px;
+
+font-weight:600;
+
+line-height:1.9;
+
+color:#555;
+
+}
+
+.think-question{
+
+margin-top:18px;
+
+display:grid;
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+gap:15px;
+
+}
+
+.think-option{
+
+background:white;
+
+border-radius:18px;
+
+padding:17px;
+
+border:1px solid #f0dfb8;
+
+font-size:18px;
+
+font-weight:bold;
+
+text-align:center;
+
+}
+
+.think-option.well-option{
+
+color:#3768ff;
+
+}
+
+.think-option.good-option{
+
+color:#6f43ff;
+
+}
+
+
+/* =========================================================
+   FIVE VERBS NOTE
+========================================================= */
+
+.special-verbs{
+
+margin-top:25px;
+
+padding:25px;
+
+border-radius:25px;
+
+background:
+linear-gradient(
+135deg,
+#f4f8ff,
+#faf8ff
+);
+
+border:1px solid #dce3f7;
+
+}
+
+.special-verbs-title{
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+.special-verbs p{
+
+font-size:18px;
+
+font-weight:600;
+
+line-height:1.9;
+
+color:#666;
+
+margin-bottom:18px;
+
+}
+
+.verb-pills{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+justify-content:center;
+
+}
+
+.verb-pill{
+
+background:white;
+
+border:1px solid #dce3ff;
+
+padding:10px 17px;
+
+border-radius:999px;
+
+font-size:17px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+direction:ltr;
+
+}
+
+
+/* =========================================================
+   EXAMPLES TOGGLE CARD
+========================================================= */
+
+.examples-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#f7faff,
+#fbf8ff
+);
+
+border:2px solid #dce3ff;
+
+padding:30px;
+
+border-radius:30px;
+
+box-shadow:
+0 12px 30px rgba(55,104,255,.07);
+
+margin-bottom:35px;
+
+}
+
+.examples-card::before{
+
+content:"";
+
+position:absolute;
+
+width:150px;
+height:150px;
+
+border-radius:50%;
+
+background:
+rgba(111,67,255,.06);
+
+left:-65px;
+top:-70px;
+
+}
+
+.examples-closed{
+
+position:relative;
+
+z-index:1;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+}
+
+.examples-heading{
+
+display:flex;
+
+align-items:center;
+
+gap:17px;
+
+}
+
+.examples-icon{
+
+width:60px;
+height:60px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:19px;
+
+background:#ffffff;
+
+border:2px solid #dce3ff;
+
+font-size:29px;
+
+box-shadow:
+0 7px 18px rgba(0,0,0,.05);
+
+flex-shrink:0;
+
+}
+
+.examples-heading h2{
+
+font-size:27px;
+
+color:#1f3c88;
+
+margin-bottom:5px;
+
+}
+
+.examples-heading p{
+
+font-size:17px;
+
+font-weight:600;
+
+color:#777;
+
+line-height:1.7;
+
+}
+
+.toggle-btn{
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+border:none;
+
+padding:16px 24px;
+
+border-radius:18px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(55,104,255,.18);
+
+transition:.3s;
+
+white-space:nowrap;
+
+}
+
+.toggle-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 16px 32px rgba(55,104,255,.24);
+
+}
+
+
+/* =========================================================
+   EXAMPLES CONTENT
+========================================================= */
+
+.examples-content{
+
+display:none;
+
+position:relative;
+
+z-index:1;
+
+margin-top:28px;
+
+animation:fadeResult .35s ease;
+
+}
+
+.examples-content.show{
+
+display:block;
+
+}
+
+.example-section{
+
+margin-bottom:25px;
+
+}
+
+.example-section:last-child{
+
+margin-bottom:0;
+
+}
+
+.example-section-title{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:14px;
+
+}
+
+.daily-example{
+
+display:flex;
+
+align-items:stretch;
+
+gap:0;
+
+margin-bottom:12px;
+
+border-radius:19px;
+
+overflow:hidden;
+
+background:white;
+
+border:1px solid #dfe5f4;
+
+box-shadow:
+0 6px 18px rgba(31,60,136,.05);
+
+direction:ltr;
+
+}
+
+.daily-example:last-child{
+
+margin-bottom:0;
+
+}
+
+.example-color-bar{
+
+width:7px;
+
+flex-shrink:0;
+
+background:
+linear-gradient(
+180deg,
+#3768ff,
+#6f43ff
+);
+
+}
+
+.example-main{
+
+padding:17px 20px;
+
+flex:1;
+
+}
+
+.example-english{
+
+font-size:19px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:7px;
+
+}
+
+.example-arabic{
+
+font-size:16px;
+
+font-weight:600;
+
+color:#777;
+
+direction:rtl;
+
+text-align:right;
+
+line-height:1.7;
+
+}
+
+.example-reason{
+
+margin-top:9px;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#6f43ff;
+
+direction:rtl;
+
+text-align:right;
+
+}
+
+.hide-examples{
+
+margin-top:25px;
+
+width:100%;
+
+padding:15px;
+
+border-radius:18px;
+
+background:white;
+
+border:2px solid #dce4ff;
+
+color:#1f3c88;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.hide-examples:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
 
 }
 
@@ -320,9 +1127,6 @@ margin-bottom:35px;
 position:relative;
 
 overflow:hidden;
-
-animation:
-fadeUp .6s ease;
 
 }
 
@@ -366,7 +1170,6 @@ font-size:30px;
 flex-shrink:0;
 
 position:relative;
-
 z-index:1;
 
 }
@@ -374,7 +1177,6 @@ z-index:1;
 .practice-content{
 
 position:relative;
-
 z-index:1;
 
 }
@@ -403,12 +1205,12 @@ font-weight:600;
 
 
 /* =========================================================
-   QUESTION CARD
+   QUESTION CARDS
 ========================================================= */
 
 .question-card{
 
-background:white;
+background:#ffffff;
 
 padding:40px;
 
@@ -528,7 +1330,7 @@ margin:35px 0;
 
 
 /* =========================================================
-   INPUT
+   WRITE BOX
 ========================================================= */
 
 .write-box{
@@ -564,7 +1366,7 @@ box-shadow:
 
 
 /* =========================================================
-   RESULTS
+   RESULT
 ========================================================= */
 
 .answer-result,
@@ -604,7 +1406,7 @@ flex:1;
 
 padding:24px;
 
-background:white;
+background:#ffffff;
 
 border:2px solid #dce4ff;
 
@@ -647,7 +1449,7 @@ opacity:.95;
    QUESTION BUTTONS
 ========================================================= */
 
-.question-card button{
+.question-card button:not(.choice-btn){
 
 background:#f5f7ff;
 
@@ -672,7 +1474,7 @@ box-shadow:
 
 }
 
-.question-card button:hover{
+.question-card button:not(.choice-btn):hover{
 
 transform:translateY(-4px);
 
@@ -681,7 +1483,7 @@ box-shadow:
 
 }
 
-.question-card button:active{
+.question-card button:not(.choice-btn):active{
 
 transform:scale(.97);
 
@@ -784,9 +1586,6 @@ transition:.3s;
 .word-btn:hover{
 
 transform:translateY(-4px);
-
-box-shadow:
-0 10px 20px rgba(0,0,0,.08);
 
 }
 
@@ -991,15 +1790,6 @@ linear-gradient(
 #8f6dff
 );
 
-padding:40px;
-
-border-radius:35px;
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.08);
-
-margin-bottom:30px;
-
 }
 
 .final-card h2{
@@ -1132,9 +1922,17 @@ font-size:18px;
 
 }
 
-.message-card{
+.card{
 
 padding:28px;
+
+}
+
+.message-card{
+
+display:flex;
+
+align-items:center;
 
 gap:16px;
 
@@ -1160,17 +1958,184 @@ line-height:1.8;
 
 }
 
-.question-card{
+.rule-grid{
 
-padding:28px;
+grid-template-columns:1fr;
 
 }
 
-.choice-container{
+.explanation-card{
+
+padding:25px;
+
+}
+
+.explanation-header h2{
+
+font-size:27px;
+
+}
+
+.explanation-header p{
+
+font-size:17px;
+
+}
+
+.rule-box{
+
+padding:23px;
+
+}
+
+.rule-top h3{
+
+font-size:25px;
+
+}
+
+.rule-text{
+
+font-size:17px;
+
+}
+
+.mini-example .english{
+
+font-size:18px;
+
+}
+
+.mini-example .arabic{
+
+font-size:15px;
+
+}
+
+.think-text{
+
+font-size:17px;
+
+}
+
+.think-question{
+
+grid-template-columns:1fr;
+
+}
+
+.special-verbs p{
+
+font-size:16px;
+
+}
+
+.verb-pill{
+
+font-size:15px;
+
+}
+
+.examples-card{
+
+padding:22px;
+
+}
+
+.examples-closed{
+
+align-items:stretch;
 
 flex-direction:column;
 
-gap:14px;
+}
+
+.examples-heading{
+
+align-items:flex-start;
+
+}
+
+.examples-heading h2{
+
+font-size:24px;
+
+}
+
+.examples-heading p{
+
+font-size:15px;
+
+}
+
+.toggle-btn{
+
+width:100%;
+
+}
+
+.daily-example{
+
+border-radius:17px;
+
+}
+
+.example-main{
+
+padding:15px;
+
+}
+
+.example-english{
+
+font-size:17px;
+
+}
+
+.example-arabic{
+
+font-size:14px;
+
+}
+
+.example-reason{
+
+font-size:14px;
+
+}
+
+.practice-card{
+
+padding:19px 20px;
+
+gap:15px;
+
+}
+
+.practice-icon{
+
+width:55px;
+height:55px;
+
+font-size:27px;
+
+}
+
+.practice-content h2{
+
+font-size:25px;
+
+}
+
+.practice-content p{
+
+font-size:16px;
+
+}
+
+.question-card{
+
+padding:28px;
 
 }
 
@@ -1183,6 +2148,14 @@ font-size:20px;
 .help-text{
 
 font-size:24px;
+
+}
+
+.choice-container{
+
+flex-direction:column;
+
+gap:14px;
 
 }
 
@@ -1215,12 +2188,6 @@ min-height:90px;
 
 }
 
-.final-card{
-
-padding:30px 25px;
-
-}
-
 .final-card h2{
 
 font-size:30px;
@@ -1239,33 +2206,48 @@ width:100%;
 
 }
 
-.practice-card{
+}
 
-padding:19px 20px;
 
-gap:15px;
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:430px){
+
+.message-card{
+
+align-items:center;
 
 }
 
-.practice-icon{
+.message-card img{
 
-width:55px;
-
-height:55px;
-
-font-size:27px;
+width:88px;
 
 }
 
-.practice-content h2{
+.message-content h2{
 
-font-size:25px;
+font-size:22px;
 
 }
 
-.practice-content p{
+.message-content p{
 
-font-size:16px;
+font-size:15px;
+
+}
+
+.title{
+
+font-size:34px;
+
+}
+
+.help-text{
+
+font-size:21px;
 
 }
 
@@ -1318,7 +2300,7 @@ alt="Engliza Academy">
 
 <p class="subtitle">
 
-تعلّم الفرق بين <b>Good</b> و <b>Well</b> واستخدم كل كلمة في مكانها الصحيح.
+تعلّم الفرق بين <b>good</b> و <b>well</b> واستخدم كل واحدة منهما في المكان الصحيح.
 
 </p>
 
@@ -1332,12 +2314,13 @@ alt="Engliza Academy">
 <video
 controls
 preload="metadata"
-controlsList="nodownload"
-playsinline>
+controlsList="nodownload">
+
+<!-- ضعي رابط الفيديو هنا -->
 
 <source
 src="https://videos.englizaacademy.com/Pre-Intermediate/good-well.MOV"
-type="video/quicktime">
+type="video/mp4">
 
 متصفحك لا يدعم تشغيل الفيديو.
 
@@ -1347,10 +2330,10 @@ type="video/quicktime">
 
 
 <!-- =========================================================
-     OWL MESSAGE
+     OWL TIP
 ========================================================= -->
 
-<div class="message-card">
+<div class="card message-card">
 
 <img
 src="../success.owl.PNG"
@@ -1360,20 +2343,670 @@ alt="نصيحة من Engliza Academy">
 
 <h2>
 
-💡 سر صغير لك
+💡 نصيحة لك
 
 </h2>
 
 <p>
 
-لا تحاول حفظ <b>Good</b> و <b>Well</b> ككلمتين منفصلتين فقط؛
-عندما تتعلم كلمة جديدة، حاول أن تضعها داخل جملة كاملة. ✨
-
-<br><br>
-
-كلما تدربت على الكلمة داخل سياق حقيقي، أصبح اختيارها أسهل وأسرع مع الوقت. 🧠💙
+لا تحاول حفظ كل جملة وحدها. عندما تحتار بين كلمتين، توقف لحظة واسأل نفسك: <b>ماذا أصف في هذه الجملة؟</b> هذا السؤال سيساعدك على اختيار الكلمة الصحيحة بثقة أكبر. ✨
 
 </p>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN EXPLANATION
+========================================================= -->
+
+<div class="card explanation-card">
+
+<div class="explanation-content">
+
+
+<div class="explanation-header">
+
+<h2>
+
+💡 قبل أن تبدأ التمارين
+
+</h2>
+
+<p>
+
+الفكرة ليست أن ترى فعلًا في الجملة فتختار
+<b>well</b>
+مباشرة.
+الأهم أن تعرف: <b>ماذا تصف؟</b>
+
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     WELL / GOOD
+===================================================== -->
+
+<div class="rule-grid">
+
+
+<!-- WELL -->
+
+<div class="rule-box well-rule">
+
+<div class="rule-top">
+
+<div class="rule-icon">
+
+🟦
+
+</div>
+
+<h3>
+
+WELL
+
+</h3>
+
+</div>
+
+<p class="rule-text">
+
+<b>Well</b>
+غالبًا يصف <b>كيف يحدث الفعل.</b>
+
+<br>
+
+يعني نسأل:
+
+<strong>كيف قام الشخص بالفعل؟</strong>
+
+</p>
+
+
+<div class="mini-example">
+
+<div class="english">
+
+She sings well.
+
+</div>
+
+<div class="arabic">
+
+هي تغني بشكل جيد.
+
+<br>
+
+← نصف <b>كيف تغني.</b>
+
+</div>
+
+</div>
+
+
+<div class="mini-example">
+
+<div class="english">
+
+He drives well.
+
+</div>
+
+<div class="arabic">
+
+هو يقود السيارة بشكل جيد.
+
+<br>
+
+← نصف <b>كيف يقود.</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GOOD -->
+
+<div class="rule-box good-rule">
+
+<div class="rule-top">
+
+<div class="rule-icon">
+
+🟣
+
+</div>
+
+<h3>
+
+GOOD
+
+</h3>
+
+</div>
+
+<p class="rule-text">
+
+<b>Good</b>
+يصف <b>الشخص أو الشيء أو حالته/صفته.</b>
+
+<br>
+
+يعني نسأل:
+
+<strong>ماذا أصف؟</strong>
+
+</p>
+
+
+<div class="mini-example">
+
+<div class="english">
+
+The cake tastes good.
+
+</div>
+
+<div class="arabic">
+
+طعم الكعكة جيد.
+
+<br>
+
+← نصف <b>الكعكة وطعمها.</b>
+
+</div>
+
+</div>
+
+
+<div class="mini-example">
+
+<div class="english">
+
+You look good.
+
+</div>
+
+<div class="arabic">
+
+تبدو بمظهر جيد.
+
+<br>
+
+← نصف <b>مظهرك.</b>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     THINK BOX
+===================================================== -->
+
+<div class="think-box">
+
+<div class="think-title">
+
+🧠 انتبه لهذه النقطة!
+
+</div>
+
+<p class="think-text">
+
+لا تنظر إلى وجود الفعل فقط وتقول:
+<b>هناك فعل = Well</b> ❌
+
+<br>
+
+اسأل نفسك أولًا:
+
+</p>
+
+
+<div class="think-question">
+
+<div class="think-option well-option">
+
+🟦 هل أصف <b>كيف يحدث الفعل؟</b>
+
+<br>
+
+→ غالبًا <b>WELL</b>
+
+</div>
+
+<div class="think-option good-option">
+
+🟣 أم أصف <b>الشخص أو الشيء أو حالته؟</b>
+
+<br>
+
+→ غالبًا <b>GOOD</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     SPECIAL VERBS
+===================================================== -->
+
+<div class="special-verbs">
+
+<div class="special-verbs-title">
+
+✨ انتبه مع هذه الأفعال
+
+</div>
+
+<p>
+
+بعض الأفعال مثل
+<b>taste</b> و <b>smell</b> و <b>look</b> و <b>sound</b> و <b>feel</b>
+قد يأتي بعدها <b>good</b> عندما نريد وصف الشيء أو الحالة.
+
+</p>
+
+
+<div class="verb-pills">
+
+<div class="verb-pill">
+taste
+</div>
+
+<div class="verb-pill">
+smell
+</div>
+
+<div class="verb-pill">
+look
+</div>
+
+<div class="verb-pill">
+sound
+</div>
+
+<div class="verb-pill">
+feel
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     MORE EXAMPLES TOGGLE
+========================================================= -->
+
+<div class="examples-card">
+
+
+<div class="examples-closed">
+
+<div class="examples-heading">
+
+<div class="examples-icon">
+
+👀
+
+</div>
+
+<div>
+
+<h2>
+
+شاهد أمثلة أكثر
+
+</h2>
+
+<p>
+
+أمثلة من الحياة اليومية تساعدك على تثبيت الفرق.
+
+</p>
+
+</div>
+
+</div>
+
+
+<button
+class="toggle-btn"
+id="showExamplesBtn"
+onclick="toggleExamples()">
+
+✨ عرض الجمل
+
+</button>
+
+</div>
+
+
+<!-- =====================================================
+     HIDDEN EXAMPLES
+===================================================== -->
+
+<div
+class="examples-content"
+id="examplesContent">
+
+
+<!-- WELL -->
+
+<div class="example-section">
+
+<div class="example-section-title">
+
+🟦 أمثلة على WELL
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+She speaks English well.
+
+</div>
+
+<div class="example-arabic">
+
+هي تتحدث الإنجليزية بشكل جيد.
+
+</div>
+
+<div class="example-reason">
+
+← نصف كيف تتحدث.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+He drives very well.
+
+</div>
+
+<div class="example-arabic">
+
+هو يقود بشكل جيد جدًا.
+
+</div>
+
+<div class="example-reason">
+
+← نصف كيف يقود.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+Can you sing well?
+
+</div>
+
+<div class="example-arabic">
+
+هل تستطيع الغناء بشكل جيد؟
+
+</div>
+
+<div class="example-reason">
+
+← السؤال عن طريقة الغناء.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+She doesn't dance well.
+
+</div>
+
+<div class="example-arabic">
+
+هي لا ترقص بشكل جيد.
+
+</div>
+
+<div class="example-reason">
+
+← نصف كيف ترقص.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- GOOD -->
+
+<div class="example-section">
+
+<div class="example-section-title">
+
+🟣 أمثلة على GOOD
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+This cake tastes good.
+
+</div>
+
+<div class="example-arabic">
+
+طعم هذه الكعكة جيد.
+
+</div>
+
+<div class="example-reason">
+
+← نصف طعم الكعكة.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+The flowers smell good.
+
+</div>
+
+<div class="example-arabic">
+
+رائحة الزهور جميلة.
+
+</div>
+
+<div class="example-reason">
+
+← نصف رائحة الزهور.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+You look good today.
+
+</div>
+
+<div class="example-arabic">
+
+تبدو بمظهر جيد اليوم.
+
+</div>
+
+<div class="example-reason">
+
+← نصف مظهرك.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+Does this music sound good?
+
+</div>
+
+<div class="example-arabic">
+
+هل تبدو هذه الموسيقى جميلة؟
+
+</div>
+
+<div class="example-reason">
+
+← نصف الموسيقى وصوتها.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="daily-example">
+
+<div class="example-color-bar"></div>
+
+<div class="example-main">
+
+<div class="example-english">
+
+I don't feel good today.
+
+</div>
+
+<div class="example-arabic">
+
+لا أشعر أنني بخير اليوم.
+
+</div>
+
+<div class="example-reason">
+
+← نصف حالتي.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<button
+class="hide-examples"
+onclick="toggleExamples()">
+
+🙈 إخفاء الجمل
+
+</button>
 
 </div>
 
@@ -1435,7 +3068,7 @@ alt="نصيحة من Engliza Academy">
 class="help-text"
 dir="ltr">
 
-She is a ___ student.
+She sings ___.
 
 </p>
 
@@ -1445,7 +3078,7 @@ She is a ___ student.
 class="choice-btn"
 onclick="checkAnswer(this,true,'choice1')">
 
-good
+well
 
 </button>
 
@@ -1453,7 +3086,7 @@ good
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
 
-well
+good
 
 </button>
 
@@ -1462,7 +3095,6 @@ well
 <p
 id="choice1"
 class="result-text">
-
 </p>
 
 </div>
@@ -1494,7 +3126,7 @@ class="result-text">
 class="help-text"
 dir="ltr">
 
-He speaks English very ___.
+This cake tastes ___.
 
 </p>
 
@@ -1502,7 +3134,7 @@ He speaks English very ___.
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'choice2')">
+onclick="checkAnswer(this,true,'choice2')">
 
 good
 
@@ -1510,7 +3142,7 @@ good
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'choice2')">
+onclick="checkAnswer(this,false,'choice2')">
 
 well
 
@@ -1521,7 +3153,6 @@ well
 <p
 id="choice2"
 class="result-text">
-
 </p>
 
 </div>
@@ -1553,7 +3184,7 @@ class="result-text">
 class="help-text"
 dir="ltr">
 
-This cake tastes ___.
+He drives very ___.
 
 </p>
 
@@ -1567,7 +3198,7 @@ onclick="checkWriting(
 'input1',
 'result1',
 [
-'good'
+'well'
 ]
 )">
 
@@ -1578,7 +3209,6 @@ onclick="checkWriting(
 <p
 id="result1"
 class="answer-result">
-
 </p>
 
 </div>
@@ -1622,7 +3252,7 @@ well
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
-She
+speaks
 
 </button>
 
@@ -1630,7 +3260,15 @@ She
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
-sings
+English
+
+</button>
+
+<button
+class="word-btn"
+onclick="addWord(this,'answerBox1')">
+
+She
 
 </button>
 
@@ -1639,13 +3277,12 @@ sings
 <div
 class="answer-box"
 id="answerBox1">
-
 </div>
 
 <button
 onclick="checkSentence(
 'answerBox1',
-'She sings well',
+'She speaks English well',
 'resultSort1'
 )">
 
@@ -1656,7 +3293,6 @@ onclick="checkSentence(
 <p
 id="resultSort1"
 class="result-text">
-
 </p>
 
 </div>
@@ -1688,47 +3324,31 @@ class="result-text">
 class="help-text"
 dir="ltr">
 
-❌ He did a good job.
+❌ The flowers smell well.
 
 </p>
 
-<p
-style="
-text-align:center;
-font-size:18px;
-font-weight:600;
-color:#777;
-line-height:1.8;
-">
-
-هل الجملة صحيحة أم تحتاج إلى تصحيح؟
-
-</p>
-
-<div class="choice-container">
+<input
+id="input2"
+class="write-box"
+placeholder="صحح الجملة">
 
 <button
-class="choice-btn"
-onclick="checkAnswer(this,true,'choice3')">
+onclick="checkWriting(
+'input2',
+'result2',
+[
+'The flowers smell good'
+]
+)">
 
-الجملة صحيحة ✔️
+✨ أريد التحقق من إجابتي
 
 </button>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'choice3')">
-
-الجملة خاطئة ❌
-
-</button>
-
-</div>
-
 <p
-id="choice3"
-class="result-text">
-
+id="result2"
+class="answer-result">
 </p>
 
 </div>
@@ -1763,14 +3383,14 @@ class="result-text">
 </p>
 
 <input
-id="input2"
+id="input3"
 class="write-box"
 placeholder="اكتب الترجمة">
 
 <button
 onclick="checkWriting(
-'input2',
-'result2',
+'input3',
+'result3',
 [
 'She speaks English well'
 ]
@@ -1781,9 +3401,8 @@ onclick="checkWriting(
 </button>
 
 <p
-id="result2"
+id="result3"
 class="answer-result">
-
 </p>
 
 </div>
@@ -1815,7 +3434,7 @@ class="answer-result">
 class="help-text"
 dir="ltr">
 
-The food smells ___.
+You look ___ today.
 
 </p>
 
@@ -1823,7 +3442,7 @@ The food smells ___.
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,true,'choice4')">
+onclick="checkAnswer(this,true,'choice3')">
 
 good
 
@@ -1831,7 +3450,7 @@ good
 
 <button
 class="choice-btn"
-onclick="checkAnswer(this,false,'choice4')">
+onclick="checkAnswer(this,false,'choice3')">
 
 well
 
@@ -1840,9 +3459,8 @@ well
 </div>
 
 <p
-id="choice4"
+id="choice3"
 class="result-text">
-
 </p>
 
 </div>
@@ -1866,7 +3484,7 @@ class="result-text">
 
 <p class="question-title">
 
-✍️ اكتب الكلمة المناسبة
+✍️ اكتب الجملة كاملة
 
 </p>
 
@@ -1874,21 +3492,21 @@ class="result-text">
 class="help-text"
 dir="ltr">
 
-My brother plays football very ___.
+The music / sound / good.
 
 </p>
 
 <input
-id="input3"
+id="input4"
 class="write-box"
-placeholder="اكتب الإجابة">
+placeholder="اكتب الجملة كاملة">
 
 <button
 onclick="checkWriting(
-'input3',
-'result3',
+'input4',
+'result4',
 [
-'well'
+'The music sounds good'
 ]
 )">
 
@@ -1897,9 +3515,8 @@ onclick="checkWriting(
 </button>
 
 <p
-id="result3"
+id="result4"
 class="answer-result">
-
 </p>
 
 </div>
@@ -1935,7 +3552,7 @@ id="words2">
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-a good
+good
 
 </button>
 
@@ -1943,7 +3560,7 @@ a good
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-She
+feel
 
 </button>
 
@@ -1951,7 +3568,7 @@ She
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-is
+I
 
 </button>
 
@@ -1959,7 +3576,7 @@ is
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-teacher
+today
 
 </button>
 
@@ -1968,13 +3585,12 @@ teacher
 <div
 class="answer-box"
 id="answerBox2">
-
 </div>
 
 <button
 onclick="checkSentence(
 'answerBox2',
-'She is a good teacher',
+'I feel good today',
 'resultSort2'
 )">
 
@@ -1985,7 +3601,6 @@ onclick="checkSentence(
 <p
 id="resultSort2"
 class="result-text">
-
 </p>
 
 </div>
@@ -2017,21 +3632,22 @@ class="result-text">
 class="help-text"
 dir="ltr">
 
-❌ She sings good.
+❌ He doesn't speak English good.
 
 </p>
 
 <input
-id="input4"
+id="input5"
 class="write-box"
 placeholder="صحح الجملة">
 
 <button
 onclick="checkWriting(
-'input4',
-'result4',
+'input5',
+'result5',
 [
-'She sings well'
+'He does not speak English well',
+"He doesn't speak English well"
 ]
 )">
 
@@ -2040,9 +3656,8 @@ onclick="checkWriting(
 </button>
 
 <p
-id="result4"
+id="result5"
 class="answer-result">
-
 </p>
 
 </div>
@@ -2066,38 +3681,41 @@ class="answer-result">
 
 <p class="question-title">
 
-🌍 ترجم الجملة إلى الإنجليزية
+❓ اختر الإجابة الصحيحة
 
 </p>
 
-<p class="help-text">
+<p
+class="help-text"
+dir="ltr">
 
-إنها طالبة جيدة.
+Does this food taste ___?
 
 </p>
 
-<input
-id="input5"
-class="write-box"
-placeholder="اكتب الترجمة">
+<div class="choice-container">
 
 <button
-onclick="checkWriting(
-'input5',
-'result5',
-[
-'She is a good student'
-]
-)">
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
 
-✨ أريد التحقق من إجابتي
+good
 
 </button>
 
-<p
-id="result5"
-class="answer-result">
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
 
+well
+
+</button>
+
+</div>
+
+<p
+id="choice4"
+class="result-text">
 </p>
 
 </div>
@@ -2109,7 +3727,7 @@ class="answer-result">
      FINAL CARD
 ========================================================= -->
 
-<div class="final-card">
+<div class="card final-card">
 
 <h2>
 
@@ -2120,7 +3738,7 @@ class="answer-result">
 <p>
 
 لقد أنهيت درس
-Good • Well
+<b>Good • Well</b>
 بنجاح. 💙
 
 <br><br>
@@ -2143,12 +3761,16 @@ onclick="finishLessonPage()">
 </div>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
 
 
-/* =========================================================
-   NORMALIZE TEXT
-========================================================= */
+// =========================================================
+// NORMALIZE TEXT
+// =========================================================
 
 function normalizeText(text){
 
@@ -2159,6 +3781,31 @@ return text
 .trim()
 
 .replace(/’/g,"'")
+
+
+// الاختصارات
+
+.replace(/\bi'm\b/g,"i am")
+.replace(/\bi've\b/g,"i have")
+.replace(/\bi'd\b/g,"i would")
+.replace(/\bi'll\b/g,"i will")
+
+.replace(/\bhe's\b/g,"he is")
+.replace(/\bshe's\b/g,"she is")
+.replace(/\bit's\b/g,"it is")
+
+.replace(/\byou're\b/g,"you are")
+.replace(/\bwe're\b/g,"we are")
+.replace(/\bthey're\b/g,"they are")
+
+.replace(/\bdoesn't\b/g,"does not")
+.replace(/\bdon't\b/g,"do not")
+
+.replace(/\bcan't\b/g,"cannot")
+.replace(/\bwon't\b/g,"will not")
+
+
+// علامات الترقيم
 
 .replace(/[.,!?؟]/g,"")
 
@@ -2173,9 +3820,57 @@ return text
 }
 
 
-/* =========================================================
-   WRITING QUESTIONS
-========================================================= */
+// =========================================================
+// TOGGLE EXAMPLES
+// =========================================================
+
+function toggleExamples(){
+
+const content =
+document.getElementById(
+"examplesContent"
+);
+
+const button =
+document.getElementById(
+"showExamplesBtn"
+);
+
+const isVisible =
+content.classList.contains("show");
+
+
+if(isVisible){
+
+content.classList.remove("show");
+
+button.innerText =
+"✨ عرض الجمل";
+
+}
+
+else{
+
+content.classList.add("show");
+
+button.innerText =
+"🙈 إخفاء الجمل";
+
+content.scrollIntoView({
+
+behavior:"smooth",
+block:"nearest"
+
+});
+
+}
+
+}
+
+
+// =========================================================
+// WRITING QUESTIONS
+// =========================================================
 
 function checkWriting(
 inputId,
@@ -2194,14 +3889,17 @@ normalizeText(input.value);
 
 const answers =
 correctAnswers.map(
-answer => normalizeText(answer)
+answer =>
+normalizeText(answer)
 );
+
 
 input.classList.remove(
 "correct-input",
 "wrong-input",
 "shake"
 );
+
 
 if(
 answers.includes(userAnswer)
@@ -2214,15 +3912,12 @@ input.classList.add(
 result.innerHTML =
 
 '<div class="confetti">'+
-
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
-
 '</div>'+
-
 '✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
 
 result.className =
@@ -2251,17 +3946,11 @@ input.classList.remove(
 result.innerHTML =
 
 "😅❌ إجابتك غير صحيحة."+
-
 "<br><br>"+
-
 "✅ إحدى الإجابات الصحيحة هي:"+
-
 "<br><br>"+
-
 "<b>"+
-
 correctAnswers[0]+
-
 "</b>";
 
 result.className =
@@ -2272,9 +3961,9 @@ result.className =
 }
 
 
-/* =========================================================
-   MULTIPLE CHOICE
-========================================================= */
+// =========================================================
+// MULTIPLE CHOICE
+// =========================================================
 
 function checkAnswer(
 button,
@@ -2283,12 +3972,15 @@ resultId
 ){
 
 const result =
-document.getElementById(resultId);
+document.getElementById(
+resultId
+);
 
 const allButtons =
 button.parentElement.querySelectorAll(
 ".choice-btn"
 );
+
 
 allButtons.forEach(
 btn => {
@@ -2297,6 +3989,7 @@ btn.disabled = true;
 
 }
 );
+
 
 if(isCorrect){
 
@@ -2316,15 +4009,12 @@ button.innerHTML +=
 result.innerHTML =
 
 '<div class="confetti">'+
-
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
-
 '</div>'+
-
 '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
 
 result.className =
@@ -2360,16 +4050,21 @@ button.innerHTML +=
 }
 
 result.innerHTML =
-"😅❌ إجابتك غير صحيحة.";
+"😅❌ لقد اخترت الإجابة الخاطئة.";
 
 result.className =
 "result-text error-text";
 
+
 allButtons.forEach(
 btn => {
 
+const clickCode =
+btn.getAttribute("onclick");
+
 if(
-btn.dataset.correct === "true"
+clickCode &&
+clickCode.includes(",true,")
 ){
 
 btn.classList.add(
@@ -2394,9 +4089,9 @@ btn.innerHTML +=
 }
 
 
-/* =========================================================
-   ADD WORD
-========================================================= */
+// =========================================================
+// ADD WORD
+// =========================================================
 
 function addWord(
 button,
@@ -2412,19 +4107,23 @@ return;
 }
 
 const answerBox =
-document.getElementById(answerBoxId);
+document.getElementById(
+answerBoxId
+);
 
-const selectedWord =
-document.createElement("div");
+const newWord =
+document.createElement(
+"div"
+);
 
-selectedWord.className =
+newWord.className =
 "selected-word";
 
-selectedWord.innerText =
+newWord.innerText =
 button.innerText;
 
 answerBox.appendChild(
-selectedWord
+newWord
 );
 
 button.style.display =
@@ -2433,9 +4132,9 @@ button.style.display =
 }
 
 
-/* =========================================================
-   CHECK SENTENCE
-========================================================= */
+// =========================================================
+// CHECK SENTENCE
+// =========================================================
 
 function checkSentence(
 answerBoxId,
@@ -2444,10 +4143,14 @@ resultId
 ){
 
 const answerBox =
-document.getElementById(answerBoxId);
+document.getElementById(
+answerBoxId
+);
 
 const result =
-document.getElementById(resultId);
+document.getElementById(
+resultId
+);
 
 const words =
 answerBox.querySelectorAll(
@@ -2462,18 +4165,23 @@ word => {
 userSentence +=
 word.innerText + " ";
 
-}
-);
+});
+
 
 userSentence =
-normalizeText(userSentence);
+normalizeText(
+userSentence
+);
 
 const normalizedCorrect =
-normalizeText(correctSentence);
+normalizeText(
+correctSentence
+);
 
 answerBox.classList.remove(
 "shake"
 );
+
 
 if(
 userSentence === normalizedCorrect
@@ -2482,15 +4190,12 @@ userSentence === normalizedCorrect
 result.innerHTML =
 
 '<div class="confetti">'+
-
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
 '<span class="star">🌟</span>'+
 '<span class="star">✨</span>'+
 '<span class="star">⭐</span>'+
-
 '</div>'+
-
 '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
 
 result.className =
@@ -2538,14 +4243,18 @@ result.className =
 }
 
 
-/* =========================================================
-   SHUFFLE WORDS
-========================================================= */
+// =========================================================
+// SHUFFLE WORDS
+// =========================================================
 
-function shuffleWords(containerId){
+function shuffleWords(
+containerId
+){
 
 const container =
-document.getElementById(containerId);
+document.getElementById(
+containerId
+);
 
 if(!container){
 
@@ -2555,39 +4264,45 @@ return;
 
 const buttons =
 Array.from(
-container.querySelectorAll(".word-btn")
+container.querySelectorAll(
+".word-btn"
+)
 );
 
 buttons.sort(
-() => Math.random() - 0.5
+() =>
+Math.random() - 0.5
 );
 
 buttons.forEach(
 button => {
 
-container.appendChild(button);
-
-}
+container.appendChild(
+button
 );
 
+});
+
 }
 
 
-/* =========================================================
-   SHUFFLE
-========================================================= */
+// =========================================================
+// SHUFFLE
+// =========================================================
 
 shuffleWords("words1");
 
 shuffleWords("words2");
 
 
-/* =========================================================
-   ENTER KEY
-========================================================= */
+// =========================================================
+// ENTER KEY
+// =========================================================
 
 document
-.querySelectorAll(".write-box")
+.querySelectorAll(
+".write-box"
+)
 .forEach(
 input => {
 
@@ -2601,27 +4316,25 @@ event.key === "Enter"
 
 event.preventDefault();
 
-const button =
+const checkButton =
 this.nextElementSibling;
 
-if(button){
+if(checkButton){
 
-button.click();
-
-}
+checkButton.click();
 
 }
 
 }
-);
 
-}
-);
+});
+
+});
 
 
-/* =========================================================
-   NEXT LESSON
-========================================================= */
+// =========================================================
+// NEXT LESSON
+// =========================================================
 
 function finishLessonPage(){
 
@@ -2666,6 +4379,7 @@ finishLesson
 }
 
 from "./js/reward.js";
+
 
 window.finishLesson =
 finishLesson;
