@@ -10,7 +10,9 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
+
 Should • Have to • Must | Engliza Academy
+
 </title>
 
 <style>
@@ -48,6 +50,11 @@ color:#222;
 
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container{
 
 max-width:1050px;
@@ -63,7 +70,9 @@ margin:auto;
 .top-bar{
 
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
 margin-bottom:40px;
@@ -72,7 +81,13 @@ margin-bottom:40px;
 
 .back-btn{
 
-background:#fff;
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:white;
 
 padding:14px 25px;
 
@@ -97,14 +112,20 @@ transition:.3s;
 
 transform:translateY(-4px);
 
+box-shadow:
+0 15px 30px rgba(0,0,0,.11);
+
 }
 
 .owl-circle img{
 
 width:80px;
+
 height:80px;
 
 border-radius:50%;
+
+object-fit:cover;
 
 box-shadow:
 0 8px 20px rgba(0,0,0,.08);
@@ -148,46 +169,12 @@ margin-bottom:55px;
 
 
 /* =========================================================
-   GENERAL CARD
-========================================================= */
-
-.card{
-
-background:#fff;
-
-padding:40px;
-
-border-radius:35px;
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.08);
-
-margin-bottom:30px;
-
-transition:.35s;
-
-animation:
-fadeUp .6s ease;
-
-}
-
-.card:hover{
-
-transform:translateY(-3px);
-
-box-shadow:
-0 22px 50px rgba(0,0,0,.11);
-
-}
-
-
-/* =========================================================
    VIDEO
 ========================================================= */
 
 .video-box{
 
-background:#fff;
+background:white;
 
 padding:0;
 
@@ -210,7 +197,7 @@ display:block;
 
 aspect-ratio:16/9;
 
-object-fit:cover;
+object-fit:contain;
 
 background:#111;
 
@@ -218,66 +205,74 @@ background:#111;
 
 
 /* =========================================================
-   NEGATIVE + QUESTION CARD
+   MAIN EXPLANATION CARD
 ========================================================= */
 
-.grammar-card{
+.explanation-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:35px;
 
 position:relative;
 
 overflow:hidden;
 
-padding:38px;
-
-background:#fff;
-
-border:1px solid #e3e6f7;
+animation:
+fadeUp .6s ease;
 
 }
 
-.grammar-card::before{
+.explanation-card::before{
 
 content:"";
 
 position:absolute;
 
 width:220px;
+
 height:220px;
 
 border-radius:50%;
 
 background:
-rgba(111,67,255,.06);
+rgba(55,104,255,.06);
 
-left:-100px;
 top:-120px;
 
-pointer-events:none;
+right:-80px;
 
 }
 
-.grammar-card::after{
+.explanation-card::after{
 
 content:"";
 
 position:absolute;
 
 width:180px;
+
 height:180px;
 
 border-radius:50%;
 
 background:
-rgba(55,104,255,.05);
+rgba(111,67,255,.06);
 
-right:-90px;
-bottom:-100px;
+bottom:-110px;
 
-pointer-events:none;
+left:-80px;
 
 }
 
-.grammar-header{
+.explanation-header{
 
 position:relative;
 
@@ -289,7 +284,7 @@ margin-bottom:30px;
 
 }
 
-.grammar-header h2{
+.explanation-header h2{
 
 font-size:32px;
 
@@ -299,24 +294,24 @@ margin-bottom:10px;
 
 }
 
-.grammar-header p{
+.explanation-header p{
 
 font-size:19px;
 
-color:#666;
+line-height:1.9;
 
 font-weight:600;
 
-line-height:1.8;
+color:#666;
 
 }
 
 
 /* =========================================================
-   GRAMMAR GRID
+   THREE MEANINGS
 ========================================================= */
 
-.grammar-grid{
+.meaning-grid{
 
 position:relative;
 
@@ -325,73 +320,116 @@ z-index:1;
 display:grid;
 
 grid-template-columns:
-repeat(2,minmax(0,1fr));
+repeat(3,minmax(0,1fr));
 
-gap:22px;
+gap:20px;
 
 }
 
-.grammar-box{
-
-border-radius:26px;
+.meaning-box{
 
 padding:28px;
+
+border-radius:27px;
+
+background:white;
+
+transition:.3s;
 
 position:relative;
 
 overflow:hidden;
 
-transition:.3s;
+}
+
+.meaning-box:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 15px 30px rgba(0,0,0,.09);
 
 }
 
-.grammar-box:hover{
 
-transform:translateY(-4px);
+/* SHOULD */
 
-}
+.should-box{
 
-
-/* =========================================================
-   NEGATIVE
-========================================================= */
-
-.negative-box{
+border:2px solid #d9e3ff;
 
 background:
 linear-gradient(
 135deg,
-#fff8f4,
-#fffdfc
+#f8faff,
+#ffffff
 );
 
-border:2px solid #ffd8c7;
+}
+
+.should-box .meaning-icon{
+
+background:#eef3ff;
+
+border:1px solid #d4dfff;
 
 }
 
 
-/* =========================================================
-   QUESTION
-========================================================= */
+/* HAVE TO */
 
-.question-box{
+.have-box{
+
+border:2px solid #d9e9dc;
 
 background:
 linear-gradient(
 135deg,
-#f4f7ff,
-#fbfaff
+#f8fff9,
+#ffffff
 );
-
-border:2px solid #d7ddff;
 
 }
 
-.grammar-icon{
+.have-box .meaning-icon{
 
-width:54px;
+background:#effaf1;
 
-height:54px;
+border:1px solid #d4ead8;
+
+}
+
+
+/* MUST */
+
+.must-box{
+
+border:2px solid #f2dfb5;
+
+background:
+linear-gradient(
+135deg,
+#fffdf6,
+#ffffff
+);
+
+}
+
+.must-box .meaning-icon{
+
+background:#fff8e8;
+
+border:1px solid #f1dfb3;
+
+}
+
+.meaning-icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:19px;
 
 display:flex;
 
@@ -399,178 +437,80 @@ align-items:center;
 
 justify-content:center;
 
-border-radius:17px;
-
-font-size:27px;
+font-size:29px;
 
 margin-bottom:18px;
 
 }
 
-.negative-box .grammar-icon{
+.meaning-box h3{
 
-background:#fff0e9;
-
-border:1px solid #ffd1bd;
-
-}
-
-.question-box .grammar-icon{
-
-background:#eef1ff;
-
-border:1px solid #d1d9ff;
-
-}
-
-.grammar-box h3{
-
-font-size:25px;
+font-size:26px;
 
 color:#1f3c88;
 
-margin-bottom:12px;
+margin-bottom:8px;
 
 }
 
-.grammar-box .rule{
+.meaning-label{
 
-font-size:19px;
+display:inline-block;
+
+font-size:15px;
 
 font-weight:bold;
 
-line-height:1.9;
+padding:7px 13px;
 
-color:#444;
+border-radius:999px;
 
-margin-bottom:18px;
-
-}
-
-
-/* =========================================================
-   EXAMPLES
-========================================================= */
-
-.example{
-
-background:#fff;
-
-border-radius:18px;
-
-padding:17px 19px;
-
-margin-top:12px;
-
-border:1px solid rgba(0,0,0,.07);
-
-box-shadow:
-0 6px 18px rgba(0,0,0,.05);
-
-direction:ltr;
-
-text-align:left;
+margin-bottom:16px;
 
 }
 
-.example .english{
+.should-box .meaning-label{
 
-font-size:20px;
+color:#3768ff;
 
-font-weight:bold;
-
-color:#1f3c88;
-
-margin-bottom:7px;
+background:#eef3ff;
 
 }
 
-.example .arabic{
+.have-box .meaning-label{
 
-font-size:16px;
+color:#32834d;
+
+background:#edf9ef;
+
+}
+
+.must-box .meaning-label{
+
+color:#b17a13;
+
+background:#fff7df;
+
+}
+
+.meaning-box p{
+
+font-size:18px;
 
 font-weight:600;
 
-color:#777;
+line-height:1.9;
 
-direction:rtl;
-
-text-align:right;
-
-line-height:1.7;
+color:#555;
 
 }
 
 
 /* =========================================================
-   CONTRACTIONS
+   SIMPLE FORMULA
 ========================================================= */
 
-.contractions{
-
-margin-top:24px;
-
-background:
-linear-gradient(
-90deg,
-#f5f1ff,
-#f7f9ff
-);
-
-border:1px solid #ddd7ff;
-
-border-radius:22px;
-
-padding:20px;
-
-}
-
-.contractions-title{
-
-font-size:19px;
-
-font-weight:bold;
-
-color:#6f43ff;
-
-margin-bottom:14px;
-
-}
-
-.contraction-list{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:10px;
-
-}
-
-.contraction{
-
-background:#fff;
-
-border:1px solid #e0e4f5;
-
-border-radius:14px;
-
-padding:10px 15px;
-
-font-weight:bold;
-
-color:#1f3c88;
-
-direction:ltr;
-
-}
-
-
-/* =========================================================
-   MINI NOTE
-========================================================= */
-
-.mini-note{
+.formula{
 
 position:relative;
 
@@ -578,302 +518,20 @@ z-index:1;
 
 margin-top:25px;
 
-padding:18px 22px;
+padding:20px 24px;
 
-border-radius:20px;
+border-radius:22px;
 
 background:
 linear-gradient(
 90deg,
-#eef4ff,
-#f5efff
+#f1f5ff,
+#f8f3ff
 );
 
 border:1px solid #dce3ff;
 
-font-size:18px;
-
-font-weight:600;
-
-line-height:1.9;
-
-color:#555;
-
-}
-
-.mini-note strong{
-
-color:#6f43ff;
-
-}
-
-
-/* =========================================================
-   DAILY SENTENCES - COLLAPSED
-========================================================= */
-
-.daily-card{
-
-position:relative;
-
-overflow:hidden;
-
-background:
-linear-gradient(
-135deg,
-#ffffff 0%,
-#f8fbff 100%
-);
-
-border:2px solid #dce5ff;
-
-padding:0;
-
-}
-
-.daily-toggle{
-
-width:100%;
-
-border:none;
-
-background:transparent;
-
-padding:28px 32px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:20px;
-
-cursor:pointer;
-
-text-align:right;
-
-}
-
-.daily-toggle:hover{
-
-background:#fafcff;
-
-}
-
-.daily-heading{
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
-}
-
-.daily-icon{
-
-width:58px;
-
-height:58px;
-
-border-radius:18px;
-
-background:
-linear-gradient(
-135deg,
-#eef4ff,
-#f3efff
-);
-
-border:1px solid #dce3ff;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:28px;
-
-flex-shrink:0;
-
-}
-
-.daily-heading h2{
-
-font-size:27px;
-
-color:#1f3c88;
-
-margin-bottom:5px;
-
-}
-
-.daily-heading p{
-
-font-size:17px;
-
-font-weight:600;
-
-color:#777;
-
-line-height:1.6;
-
-}
-
-.daily-arrow{
-
-width:42px;
-
-height:42px;
-
-border-radius:14px;
-
-background:#f2f5ff;
-
-color:#6f43ff;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:22px;
-
-flex-shrink:0;
-
-transition:.3s;
-
-}
-
-.daily-card.open .daily-arrow{
-
-transform:rotate(180deg);
-
-}
-
-.daily-content{
-
-display:none;
-
-padding:0 30px 30px;
-
-}
-
-.daily-card.open .daily-content{
-
-display:block;
-
-animation:
-fadeResult .35s ease;
-
-}
-
-.daily-intro{
-
-background:
-linear-gradient(
-90deg,
-#eef4ff,
-#f8f2ff
-);
-
-border-radius:20px;
-
-padding:18px 20px;
-
-font-size:18px;
-
-font-weight:600;
-
-color:#555;
-
-line-height:1.8;
-
-margin-bottom:20px;
-
-border:1px solid #dce3ff;
-
-}
-
-
-/* =========================================================
-   DAILY SENTENCE GRID
-========================================================= */
-
-.daily-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(2,minmax(0,1fr));
-
-gap:16px;
-
-}
-
-.daily-example{
-
-background:#fff;
-
-border-radius:20px;
-
-padding:20px;
-
-border:1px solid #e1e6f4;
-
-box-shadow:
-0 7px 20px rgba(31,60,136,.06);
-
-}
-
-.daily-label{
-
-display:inline-block;
-
-font-size:13px;
-
-font-weight:bold;
-
-padding:7px 12px;
-
-border-radius:999px;
-
-margin-bottom:12px;
-
-}
-
-.affirmative-label{
-
-background:#eaf8ef;
-
-color:#17864c;
-
-}
-
-.negative-label{
-
-background:#fff0eb;
-
-color:#c65c32;
-
-}
-
-.question-label{
-
-background:#eef1ff;
-
-color:#465dc5;
-
-}
-
-.daily-english{
-
-direction:ltr;
-
-text-align:left;
+text-align:center;
 
 font-size:20px;
 
@@ -881,67 +539,17 @@ font-weight:bold;
 
 color:#1f3c88;
 
-line-height:1.6;
-
-margin-bottom:8px;
-
 }
 
-.daily-arabic{
+.formula span{
 
-font-size:16px;
-
-font-weight:600;
-
-color:#777;
-
-line-height:1.7;
-
-}
-
-.hide-daily{
-
-width:100%;
-
-margin-top:22px;
-
-padding:16px;
-
-border:none;
-
-border-radius:18px;
-
-background:
-linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-
-color:#fff;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-box-shadow:
-0 10px 25px rgba(55,104,255,.16);
-
-transition:.3s;
-
-}
-
-.hide-daily:hover{
-
-transform:translateY(-3px);
+color:#6f43ff;
 
 }
 
 
 /* =========================================================
-   OWL MESSAGE
+   OWL TIP
 ========================================================= */
 
 .message-card{
@@ -950,9 +558,21 @@ display:flex;
 
 align-items:center;
 
-justify-content:flex-start;
-
 gap:25px;
+
+background:white;
+
+padding:35px 40px;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+animation:
+fadeUp .6s ease;
 
 }
 
@@ -984,15 +604,13 @@ margin-bottom:12px;
 
 .message-content p{
 
-font-size:22px;
+font-size:21px;
 
-line-height:1.9;
+line-height:2;
 
 font-weight:600;
 
 color:#444;
-
-margin:0;
 
 }
 
@@ -1009,7 +627,7 @@ align-items:center;
 
 gap:20px;
 
-background:#fff;
+background:white;
 
 padding:24px 30px;
 
@@ -1109,12 +727,12 @@ font-weight:600;
 
 
 /* =========================================================
-   QUESTION CARDS
+   QUESTION CARD
 ========================================================= */
 
 .question-card{
 
-background:#fff !important;
+background:white;
 
 padding:40px;
 
@@ -1143,7 +761,9 @@ content:"";
 position:absolute;
 
 top:0;
+
 right:0;
+
 left:0;
 
 height:7px;
@@ -1220,7 +840,7 @@ margin-bottom:25px;
 
 .help-text{
 
-font-size:30px;
+font-size:29px;
 
 font-weight:700;
 
@@ -1236,7 +856,7 @@ margin:35px 0;
 
 
 /* =========================================================
-   INPUT
+   WRITE BOX
 ========================================================= */
 
 .write-box{
@@ -1257,7 +877,7 @@ transition:.3s;
 
 margin-bottom:28px;
 
-background:#fff;
+background:white;
 
 }
 
@@ -1267,27 +887,6 @@ border-color:#6f43ff;
 
 box-shadow:
 0 0 0 6px rgba(111,67,255,.12);
-
-}
-
-
-/* =========================================================
-   RESULTS
-========================================================= */
-
-.answer-result,
-.result-text{
-
-margin-top:25px;
-
-font-size:20px;
-
-font-weight:bold;
-
-line-height:2;
-
-animation:
-fadeResult .4s ease;
 
 }
 
@@ -1312,7 +911,7 @@ flex:1;
 
 padding:24px;
 
-background:#fff;
+background:white;
 
 border:2px solid #dce4ff;
 
@@ -1348,16 +947,14 @@ cursor:default;
 
 opacity:.95;
 
-transform:none;
-
 }
 
 
 /* =========================================================
-   QUESTION ACTION BUTTON
+   QUESTION BUTTONS
 ========================================================= */
 
-.check-btn{
+.question-card .check-btn{
 
 background:#f5f7ff;
 
@@ -1382,7 +979,7 @@ box-shadow:
 
 }
 
-.check-btn:hover{
+.question-card .check-btn:hover{
 
 transform:translateY(-4px);
 
@@ -1391,7 +988,7 @@ box-shadow:
 
 }
 
-.check-btn:active{
+.question-card .check-btn:active{
 
 transform:scale(.97);
 
@@ -1399,28 +996,66 @@ transform:scale(.97);
 
 
 /* =========================================================
-   FEEDBACK COLORS
+   RESULT
+========================================================= */
+
+.answer-result,
+.result-text{
+
+margin-top:25px;
+
+font-size:20px;
+
+font-weight:bold;
+
+line-height:2;
+
+animation:
+fadeResult .4s ease;
+
+}
+
+.success-text{
+
+color:#0f8b4c;
+
+}
+
+.error-text{
+
+color:#c62828;
+
+}
+
+
+/* =========================================================
+   INPUT COLORS
 ========================================================= */
 
 .correct-input{
 
-background:#e8fff0 !important;
+background:#e8fff0;
 
-border:2px solid #b8ebc8 !important;
+border:2px solid #b8ebc8;
 
-color:#0f8b4c !important;
+color:#0f8b4c;
 
 }
 
 .wrong-input{
 
-background:#ffe8e8 !important;
+background:#ffe8e8;
 
-border:2px solid #ffb8b8 !important;
+border:2px solid #ffb8b8;
 
-color:#c62828 !important;
+color:#c62828;
 
 }
+
+
+/* =========================================================
+   BUTTON COLORS
+========================================================= */
 
 .correct{
 
@@ -1439,18 +1074,6 @@ background:#ffe8e8 !important;
 border:2px solid #ffb8b8 !important;
 
 color:#c62828 !important;
-
-}
-
-.success-text{
-
-color:#0f8b4c;
-
-}
-
-.error-text{
-
-color:#c62828;
 
 }
 
@@ -1497,15 +1120,8 @@ color:#1f3c88;
 
 transform:translateY(-4px);
 
-}
-
-.word-btn:disabled{
-
-opacity:.45;
-
-cursor:default;
-
-transform:none;
+box-shadow:
+0 10px 20px rgba(0,0,0,.08);
 
 }
 
@@ -1710,6 +1326,15 @@ linear-gradient(
 #8f6dff
 );
 
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.10);
+
+margin-bottom:30px;
+
 }
 
 .final-card h2{
@@ -1730,7 +1355,7 @@ line-height:2;
 
 font-weight:600;
 
-color:#fff;
+color:white;
 
 margin-bottom:30px;
 
@@ -1752,7 +1377,7 @@ font-weight:bold;
 
 cursor:pointer;
 
-background:#fff;
+background:white;
 
 color:#6f43ff;
 
@@ -1840,129 +1465,67 @@ font-size:38px;
 
 font-size:18px;
 
-}
-
-.card{
-
-padding:28px;
+margin-bottom:35px;
 
 }
 
-.grammar-card{
+.video-box{
 
-padding:25px;
-
-}
-
-.grammar-grid{
-
-grid-template-columns:1fr;
+border-radius:25px;
 
 }
 
-.grammar-header h2{
+.explanation-card{
+
+padding:27px;
+
+border-radius:28px;
+
+}
+
+.explanation-header h2{
 
 font-size:27px;
 
 }
 
-.grammar-header p{
+.explanation-header p{
 
 font-size:17px;
 
 }
 
-.grammar-box{
+.meaning-grid{
+
+grid-template-columns:1fr;
+
+gap:16px;
+
+}
+
+.meaning-box{
 
 padding:23px;
 
 }
 
-.grammar-box h3{
+.meaning-box h3{
 
 font-size:23px;
 
 }
 
-.grammar-box .rule{
+.meaning-box p{
 
 font-size:17px;
 
 }
 
-.example .english{
+.formula{
 
-font-size:18px;
+font-size:17px;
 
-}
-
-.example .arabic{
-
-font-size:15px;
-
-}
-
-.mini-note{
-
-font-size:16px;
-
-}
-
-.daily-toggle{
-
-padding:22px;
-
-}
-
-.daily-heading{
-
-gap:12px;
-
-}
-
-.daily-icon{
-
-width:50px;
-
-height:50px;
-
-font-size:24px;
-
-}
-
-.daily-heading h2{
-
-font-size:22px;
-
-}
-
-.daily-heading p{
-
-font-size:15px;
-
-}
-
-.daily-content{
-
-padding:0 20px 22px;
-
-}
-
-.daily-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.daily-english{
-
-font-size:18px;
-
-}
-
-.daily-arabic{
-
-font-size:15px;
+line-height:1.8;
 
 }
 
@@ -1972,9 +1535,9 @@ display:flex;
 
 align-items:center;
 
-justify-content:flex-start;
-
 gap:16px;
+
+padding:28px;
 
 }
 
@@ -1994,7 +1557,7 @@ font-size:24px;
 
 font-size:17px;
 
-line-height:1.8;
+line-height:1.9;
 
 }
 
@@ -2032,7 +1595,7 @@ font-size:16px;
 
 padding:28px;
 
-background:#fff !important;
+border-radius:28px;
 
 }
 
@@ -2044,7 +1607,7 @@ font-size:20px;
 
 .help-text{
 
-font-size:24px;
+font-size:23px;
 
 }
 
@@ -2091,6 +1654,12 @@ min-height:90px;
 
 }
 
+.final-card{
+
+padding:30px 25px;
+
+}
+
 .final-card h2{
 
 font-size:30px;
@@ -2105,7 +1674,7 @@ font-size:18px;
 
 .next-lesson-btn{
 
-width:100%;
+font-size:19px;
 
 }
 
@@ -2118,9 +1687,11 @@ width:100%;
 
 @media(max-width:430px){
 
-.top-bar{
+.owl-circle img{
 
-margin-bottom:30px;
+width:68px;
+
+height:68px;
 
 }
 
@@ -2132,36 +1703,46 @@ font-size:16px;
 
 }
 
-.owl-circle img{
-
-width:68px;
-height:68px;
-
-}
-
 .title{
 
 font-size:34px;
 
 }
 
-.daily-heading h2{
+.message-card{
 
-font-size:20px;
-
-}
-
-.daily-heading p{
-
-font-size:14px;
+align-items:flex-start;
 
 }
 
-.daily-arrow{
+.message-card img{
 
-width:38px;
+width:85px;
 
-height:38px;
+}
+
+.help-text{
+
+font-size:21px;
+
+}
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation-duration:0.01ms !important;
+
+animation-iteration-count:1 !important;
+
+transition-duration:0.01ms !important;
 
 }
 
@@ -2214,7 +1795,8 @@ alt="Engliza Academy">
 
 <p class="subtitle">
 
-تعلّم كيف تستخدم كلمات النصيحة والضرورة والإلزام بطريقة صحيحة في اللغة الإنجليزية.
+تعلّم كيف تفرّق بين النصيحة والضرورة والإلزام،
+وتختار الكلمة المناسبة لكل موقف.
 
 </p>
 
@@ -2228,6 +1810,7 @@ alt="Engliza Academy">
 <video
 controls
 preload="metadata"
+playsinline
 controlsList="nodownload">
 
 <source
@@ -2242,651 +1825,75 @@ type="video/quicktime">
 
 
 <!-- =========================================================
-     NEGATIVE + QUESTION
+     EXPLANATION
 ========================================================= -->
 
-<div class="card grammar-card">
+<div class="explanation-card">
 
-<div class="grammar-header">
+<div class="explanation-header">
 
 <h2>
 
-✨ ملاحظة مهمة
+✨ افهم الفرق ببساطة
 
 </h2>
 
 <p>
 
-بعد مشاهدة الدرس، تعرّف بسرعة على طريقة تكوين
-النفي والأسئلة مع
-<b>should</b> و <b>have to</b> و <b>must</b>.
+لا تحتاج إلى حفظ ثلاث كلمات منفصلة فقط،
+فكر أولًا في <strong>المعنى الذي تريد التعبير عنه</strong>.
 
 </p>
 
 </div>
 
 
-<div class="grammar-grid">
+<div class="meaning-grid">
 
 
-<!-- =====================================================
-     NEGATIVE
-===================================================== -->
+<!-- SHOULD -->
 
-<div class="grammar-box negative-box">
+<div class="meaning-box should-box">
 
-<div class="grammar-icon">
+<div class="meaning-icon">
 
-🚫
+💡
 
 </div>
 
 <h3>
 
-النفي
+Should
 
 </h3>
 
-<p class="rule">
-
-للنفي نضيف
-<b>not</b>
-بعد
-<b>should</b>
-أو
-<b>must</b>.
-
-أما مع
-<b>have to</b>
-فنستخدم
-<b>do / does + not</b>.
-
-</p>
-
-
-<div class="example">
-
-<div class="english">
-
-You should not be late.
-
-</div>
-
-<div class="arabic">
-
-لا ينبغي أن تتأخر.
-
-</div>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-
-You must not touch it.
-
-</div>
-
-<div class="arabic">
-
-يجب ألا تلمسه.
-
-</div>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-
-You don't have to come.
-
-</div>
-
-<div class="arabic">
-
-ليس عليك أن تأتي.
-
-</div>
-
-</div>
-
-
-<div class="contractions">
-
-<div class="contractions-title">
-
-💡 الاختصارات الشائعة
-
-</div>
-
-<div class="contraction-list">
-
-<div class="contraction">
-
-should not → shouldn't
-
-</div>
-
-<div class="contraction">
-
-must not → mustn't
-
-</div>
-
-<div class="contraction">
-
-do not have to → don't have to
-
-</div>
-
-<div class="contraction">
-
-does not have to → doesn't have to
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     QUESTION
-===================================================== -->
-
-<div class="grammar-box question-box">
-
-<div class="grammar-icon">
-
-❓
-
-</div>
-
-<h3>
-
-السؤال
-
-</h3>
-
-<p class="rule">
-
-مع
-<b>should</b>
-و
-<b>must</b>
-نضع الكلمة في بداية السؤال.
-
-أما مع
-<b>have to</b>
-فنستخدم
-<b>Do / Does</b>
-في البداية.
-
-</p>
-
-
-<div class="example">
-
-<div class="english">
-
-Should I call him?
-
-</div>
-
-<div class="arabic">
-
-هل ينبغي أن أتصل به؟
-
-</div>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-
-Must I finish this today?
-
-</div>
-
-<div class="arabic">
-
-هل يجب أن أنهي هذا اليوم؟
-
-</div>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-
-Do I have to come?
-
-</div>
-
-<div class="arabic">
-
-هل يجب عليّ أن آتي؟
-
-</div>
-
-</div>
-
-
-<div class="example">
-
-<div class="english">
-
-Does she have to work today?
-
-</div>
-
-<div class="arabic">
-
-هل يجب عليها أن تعمل اليوم؟
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="mini-note">
-
-⭐ <strong>تذكّر:</strong>
-
-مع
-<b>should</b>
-و
-<b>must</b>
-لا نستخدم
-<b>do / does</b>
-لبناء السؤال.
-
-أما
-<b>have to</b>
-فتحتاج إلى
-<b>do / does</b>.
-
-</div>
-
-</div>
-
-
-<!-- =========================================================
-     DAILY LIFE SENTENCES
-========================================================= -->
-
-<div
-class="card daily-card"
-id="dailyCard">
-
-
-<button
-type="button"
-class="daily-toggle"
-onclick="toggleDailySentences()">
-
-<div class="daily-heading">
-
-<div class="daily-icon">
-
-💬
-
-</div>
-
-<div>
-
-<h2>
-
-جمل من الحياة اليومية
-
-</h2>
-
-<p>
-
-شاهد أمثلة حقيقية تساعدك على فهم الاستخدام قبل التدريب.
-
-</p>
-
-</div>
-
-</div>
-
-<div
-class="daily-arrow"
-id="dailyArrow">
-
-⌄
-
-</div>
-
-</button>
-
-
-<div
-class="daily-content"
-id="dailyContent">
-
-<div class="daily-intro">
-
-🌟 هذه الجمل تجمع بين
-<b>should</b> و <b>have to</b> و <b>must</b>
-في مواقف يومية مختلفة.
-اقرأ الجملة الإنجليزية أولًا، ثم اقرأ معناها بالعربي.
-
-</div>
-
-
-<div class="daily-grid">
-
-
-<!-- 1 -->
-
-<div class="daily-example">
-
-<span class="daily-label affirmative-label">
-
-إثبات
-
-</span>
-
-<div class="daily-english">
-
-I have to wake up early tomorrow.
-
-</div>
-
-<div class="daily-arabic">
-
-يجب عليّ أن أستيقظ مبكرًا غدًا.
-
-</div>
-
-</div>
-
-
-<!-- 2 -->
-
-<div class="daily-example">
-
-<span class="daily-label affirmative-label">
+<div class="meaning-label">
 
 نصيحة
 
-</span>
+</div>
 
-<div class="daily-english">
+<p>
 
-You should get some rest.
+نستخدمها عندما نقول لشخص:
+<strong>الأفضل أن تفعل هذا.</strong>
+
+ليست قاعدة أو إجبارًا،
+بل نصيحة لما نعتقد أنه جيد أو مناسب.
+
+</p>
+
+<div class="example">
+
+<div class="english">
+
+You should sleep early.
 
 </div>
 
-<div class="daily-arabic">
+<div class="arabic">
 
-ينبغي أن تحصل على بعض الراحة.
-
-</div>
-
-</div>
-
-
-<!-- 3 -->
-
-<div class="daily-example">
-
-<span class="daily-label affirmative-label">
-
-إلزام
-
-</span>
-
-<div class="daily-english">
-
-You must wear a seat belt.
-
-</div>
-
-<div class="daily-arabic">
-
-يجب أن ترتدي حزام الأمان.
-
-</div>
-
-</div>
-
-
-<!-- 4 -->
-
-<div class="daily-example">
-
-<span class="daily-label negative-label">
-
-نفي
-
-</span>
-
-<div class="daily-english">
-
-You don't have to wait for me.
-
-</div>
-
-<div class="daily-arabic">
-
-ليس عليك أن تنتظرني.
-
-</div>
-
-</div>
-
-
-<!-- 5 -->
-
-<div class="daily-example">
-
-<span class="daily-label negative-label">
-
-نفي
-
-</span>
-
-<div class="daily-english">
-
-You shouldn't eat too much sugar.
-
-</div>
-
-<div class="daily-arabic">
-
-لا ينبغي أن تأكل الكثير من السكر.
-
-</div>
-
-</div>
-
-
-<!-- 6 -->
-
-<div class="daily-example">
-
-<span class="daily-label negative-label">
-
-نفي
-
-</span>
-
-<div class="daily-english">
-
-You mustn't park here.
-
-</div>
-
-<div class="daily-arabic">
-
-يجب ألا تركن السيارة هنا.
-
-</div>
-
-</div>
-
-
-<!-- 7 -->
-
-<div class="daily-example">
-
-<span class="daily-label question-label">
-
-سؤال
-
-</span>
-
-<div class="daily-english">
-
-Should I bring my laptop?
-
-</div>
-
-<div class="daily-arabic">
-
-هل ينبغي أن أحضر حاسوبي المحمول؟
-
-</div>
-
-</div>
-
-
-<!-- 8 -->
-
-<div class="daily-example">
-
-<span class="daily-label question-label">
-
-سؤال
-
-</span>
-
-<div class="daily-english">
-
-Do we have to pay now?
-
-</div>
-
-<div class="daily-arabic">
-
-هل يجب علينا أن ندفع الآن؟
-
-</div>
-
-</div>
-
-
-<!-- 9 -->
-
-<div class="daily-example">
-
-<span class="daily-label question-label">
-
-سؤال
-
-</span>
-
-<div class="daily-english">
-
-Must I finish this today?
-
-</div>
-
-<div class="daily-arabic">
-
-هل يجب أن أنهي هذا اليوم؟
-
-</div>
-
-</div>
-
-
-<!-- 10 -->
-
-<div class="daily-example">
-
-<span class="daily-label affirmative-label">
-
-إثبات
-
-</span>
-
-<div class="daily-english">
-
-She has to study tonight.
-
-</div>
-
-<div class="daily-arabic">
-
-يجب عليها أن تدرس الليلة.
-
-</div>
-
-</div>
-
-
-<!-- 11 -->
-
-<div class="daily-example">
-
-<span class="daily-label negative-label">
-
-نفي
-
-</span>
-
-<div class="daily-english">
-
-She doesn't have to cook today.
-
-</div>
-
-<div class="daily-arabic">
-
-ليس عليها أن تطبخ اليوم.
-
-</div>
-
-</div>
-
-
-<!-- 12 -->
-
-<div class="daily-example">
-
-<span class="daily-label question-label">
-
-سؤال
-
-</span>
-
-<div class="daily-english">
-
-Does he have to work tomorrow?
-
-</div>
-
-<div class="daily-arabic">
-
-هل يجب عليه أن يعمل غدًا؟
+من الأفضل أن تنام مبكرًا.
 
 </div>
 
@@ -2895,14 +1902,112 @@ Does he have to work tomorrow?
 </div>
 
 
-<button
-type="button"
-class="hide-daily"
-onclick="toggleDailySentences()">
+<!-- HAVE TO -->
 
-↩️ إخفاء الجمل
+<div class="meaning-box have-box">
 
-</button>
+<div class="meaning-icon">
+
+📋
+
+</div>
+
+<h3>
+
+Have to
+
+</h3>
+
+<div class="meaning-label">
+
+ضرورة / شيء مطلوب
+
+</div>
+
+<p>
+
+نستخدمها عندما يكون هناك شيء
+<strong>يجب عليك فعله لأن هناك سببًا أو نظامًا أو ظرفًا يطلب ذلك.</strong>
+
+</p>
+
+<div class="example">
+
+<div class="english">
+
+I have to wear a uniform.
+
+</div>
+
+<div class="arabic">
+
+يجب عليّ ارتداء زي موحّد.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MUST -->
+
+<div class="meaning-box must-box">
+
+<div class="meaning-icon">
+
+🚨
+
+</div>
+
+<h3>
+
+Must
+
+</h3>
+
+<div class="meaning-label">
+
+ضرورة قوية
+
+</div>
+
+<p>
+
+نستخدمها عندما نريد التعبير عن
+<strong>ضرورة قوية جدًا أو إلزام مهم من المتحدث.</strong>
+
+</p>
+
+<div class="example">
+
+<div class="english">
+
+You must be careful.
+
+</div>
+
+<div class="arabic">
+
+يجب أن تكون حذرًا.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="formula">
+
+💭 اسأل نفسك:
+<span>هل أعطي نصيحة؟</span>
+أم
+<span>هناك شيء مطلوب مني؟</span>
+أم
+<span>هناك ضرورة قوية؟</span>
 
 </div>
 
@@ -2913,7 +2018,7 @@ onclick="toggleDailySentences()">
      OWL TIP
 ========================================================= -->
 
-<div class="card message-card">
+<div class="message-card">
 
 <img
 src="../success.owl.PNG"
@@ -2923,20 +2028,26 @@ alt="نصيحة من Engliza Academy">
 
 <h2>
 
-💡 نصيحة لك
+🌟 سر صغير يساعدك
 
 </h2>
 
 <p>
 
-لا تحفظ
-<b>should</b> و <b>have to</b> و <b>must</b>
-كقواعد منفصلة فقط؛ عندما ترى موقفًا في حياتك، حاول أن تفكر:
-«هل هذا شيء أنصح به؟ أم شيء يجب عليّ فعله؟»
+لا تحاول حفظ الفرق كتعريف طويل.
+عندما ترى جملة جديدة، تخيّل الموقف أولًا.
 
 <br><br>
 
-ربط القاعدة بمواقفك اليومية سيجعل تذكّرها أسهل بكثير. 🌟
+إذا كنت تقول لشخص: «الأفضل أن تفعل هذا» → <strong>should</strong> 💡
+
+<br>
+
+إذا كان هناك شيء مطلوب منك بسبب نظام أو ظرف → <strong>have to</strong> 📋
+
+<br>
+
+إذا كنت تريد التأكيد على ضرورة قوية → <strong>must</strong> 🚨
 
 </p>
 
@@ -2967,7 +2078,7 @@ alt="نصيحة من Engliza Academy">
 
 <p>
 
-اختبر فهمك من خلال مجموعة متنوعة من الأسئلة.
+اقرأ الموقف جيدًا، ثم اختر الكلمة التي تناسب المعنى.
 
 </p>
 
@@ -2988,19 +2099,15 @@ alt="نصيحة من Engliza Academy">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 🎯 اختر الإجابة الصحيحة
 
 </p>
 
-<p
-class="help-text"
-dir="ltr">
+<p class="help-text" dir="ltr">
 
-You have a headache. You ___ get some rest.
+You look tired. You ___ get some rest.
 
 </p>
 
@@ -3020,7 +2127,7 @@ type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
 
-must
+have to
 
 </button>
 
@@ -3029,7 +2136,7 @@ type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice1')">
 
-have to
+must
 
 </button>
 
@@ -3040,8 +2147,6 @@ id="choice1"
 class="result-text">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3058,19 +2163,15 @@ class="result-text">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 🎯 اختر الإجابة الصحيحة
 
 </p>
 
-<p
-class="help-text"
-dir="ltr">
+<p class="help-text" dir="ltr">
 
-Students ___ wear a uniform at this school.
+Students ___ wear their school uniform.
 
 </p>
 
@@ -3099,7 +2200,7 @@ type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice2')">
 
-shouldn't
+must
 
 </button>
 
@@ -3110,8 +2211,6 @@ id="choice2"
 class="result-text">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3128,26 +2227,22 @@ class="result-text">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 ✍️ اكتب الكلمة المناسبة
 
 </p>
 
-<p
-class="help-text"
-dir="ltr">
+<p class="help-text" dir="ltr">
 
-You ___ see a doctor if you feel sick.
+You ___ be careful when you cross the road.
 
 </p>
 
 <input
 id="input1"
 class="write-box"
-placeholder="اكتب الإجابة"
+placeholder="اكتب should أو have to أو must"
 autocomplete="off">
 
 <button
@@ -3156,7 +2251,7 @@ class="check-btn"
 onclick="checkWriting(
 'input1',
 'result1',
-['should']
+['must']
 )">
 
 ✨ أريد التحقق من إجابتي
@@ -3168,8 +2263,6 @@ id="result1"
 class="answer-result">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3186,8 +2279,6 @@ class="answer-result">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 🧩 رتب الكلمات لتكوين جملة صحيحة
@@ -3203,7 +2294,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
-have to
+should
 
 </button>
 
@@ -3212,7 +2303,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
-I
+You
 
 </button>
 
@@ -3221,7 +2312,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
-work
+drink
 
 </button>
 
@@ -3230,7 +2321,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox1')">
 
-tomorrow
+more water
 
 </button>
 
@@ -3247,7 +2338,7 @@ type="button"
 class="check-btn"
 onclick="checkSentence(
 'answerBox1',
-'I have to work tomorrow',
+'You should drink more water',
 'resultSort1'
 )">
 
@@ -3260,8 +2351,6 @@ id="resultSort1"
 class="result-text">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3278,19 +2367,15 @@ class="result-text">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 🔎 اكتشف الخطأ وصححه
 
 </p>
 
-<p
-class="help-text"
-dir="ltr">
+<p class="help-text" dir="ltr">
 
-❌ You should to study more.
+❌ You should to drink more water.
 
 </p>
 
@@ -3307,7 +2392,7 @@ onclick="checkWriting(
 'input2',
 'result2',
 [
-'You should study more'
+'You should drink more water'
 ]
 )">
 
@@ -3320,8 +2405,6 @@ id="result2"
 class="answer-result">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3338,8 +2421,6 @@ class="answer-result">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 🌍 ترجم الجملة إلى الإنجليزية
@@ -3348,7 +2429,7 @@ class="answer-result">
 
 <p class="help-text">
 
-ليس عليك أن تأتي غدًا.
+لديّ موعد مع الطبيب، لذلك يجب عليّ الذهاب غدًا.
 
 </p>
 
@@ -3365,8 +2446,9 @@ onclick="checkWriting(
 'input3',
 'result3',
 [
-'You do not have to come tomorrow',
-&quot;You don't have to come tomorrow&quot;
+'I have to go tomorrow because I have a doctor appointment',
+'I have to go tomorrow because I have a doctor’s appointment',
+'I have to go tomorrow because I have a doctors appointment'
 ]
 )">
 
@@ -3379,8 +2461,6 @@ id="result3"
 class="answer-result">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3397,18 +2477,15 @@ class="answer-result">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
-❓ اختر السؤال الصحيح
+🎯 اختر الإجابة الصحيحة
 
 </p>
 
-<p
-class="help-text">
+<p class="help-text" dir="ltr">
 
-هل يجب عليّ أن أذهب الآن؟
+You want to improve your English. You ___ practice every day.
 
 </p>
 
@@ -3419,7 +2496,7 @@ type="button"
 class="choice-btn"
 onclick="checkAnswer(this,true,'choice3')">
 
-Do I have to go now?
+should
 
 </button>
 
@@ -3428,7 +2505,7 @@ type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice3')">
 
-Have I to go now?
+have to
 
 </button>
 
@@ -3437,7 +2514,7 @@ type="button"
 class="choice-btn"
 onclick="checkAnswer(this,false,'choice3')">
 
-Do I should go now?
+must
 
 </button>
 
@@ -3448,8 +2525,6 @@ id="choice3"
 class="result-text">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3466,19 +2541,15 @@ class="result-text">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 ✍️ اكتب الجملة كاملة
 
 </p>
 
-<p
-class="help-text"
-dir="ltr">
+<p class="help-text" dir="ltr">
 
-You / must / not / touch / this.
+I / have to / wake up / early / for work.
 
 </p>
 
@@ -3495,8 +2566,7 @@ onclick="checkWriting(
 'input4',
 'result4',
 [
-'You must not touch this',
-&quot;You mustn't touch this&quot;
+'I have to wake up early for work'
 ]
 )">
 
@@ -3509,8 +2579,6 @@ id="result4"
 class="answer-result">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3527,11 +2595,9 @@ class="answer-result">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
-🧩 رتب الكلمات لتكوين سؤال صحيح
+🧩 رتب الكلمات لتكوين جملة صحيحة
 
 </p>
 
@@ -3544,7 +2610,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-should
+must
 
 </button>
 
@@ -3553,7 +2619,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-I
+We
 
 </button>
 
@@ -3562,7 +2628,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-call
+follow
 
 </button>
 
@@ -3571,7 +2637,7 @@ type="button"
 class="word-btn"
 onclick="addWord(this,'answerBox2')">
 
-her
+the rules
 
 </button>
 
@@ -3588,7 +2654,7 @@ type="button"
 class="check-btn"
 onclick="checkSentence(
 'answerBox2',
-'Should I call her',
+'We must follow the rules',
 'resultSort2'
 )">
 
@@ -3601,8 +2667,6 @@ id="resultSort2"
 class="result-text">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3619,50 +2683,54 @@ class="result-text">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
-🔎 اكتشف الخطأ وصححه
+🔎 اختر الكلمة التي تناسب الموقف
 
 </p>
 
-<p
-class="help-text"
-dir="ltr">
+<p class="help-text" dir="ltr">
 
-❌ She musts finish her homework.
+My sister has an exam tomorrow. She ___ study tonight.
 
 </p>
 
-<input
-id="input5"
-class="write-box"
-placeholder="صحح الجملة"
-autocomplete="off">
+<div class="choice-container">
 
 <button
 type="button"
-class="check-btn"
-onclick="checkWriting(
-'input5',
-'result5',
-[
-'She must finish her homework'
-]
-)">
+class="choice-btn"
+onclick="checkAnswer(this,true,'choice4')">
 
-✨ أريد التحقق من إجابتي
+should
 
 </button>
 
-<p
-id="result5"
-class="answer-result">
+<button
+type="button"
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
 
-</p>
+have to
+
+</button>
+
+<button
+type="button"
+class="choice-btn"
+onclick="checkAnswer(this,false,'choice4')">
+
+must
+
+</button>
 
 </div>
+
+<p
+id="choice4"
+class="result-text">
+
+</p>
 
 </div>
 
@@ -3679,8 +2747,6 @@ class="answer-result">
 
 </div>
 
-<div class="question-box">
-
 <p class="question-title">
 
 🌍 ترجم الجملة إلى الإنجليزية
@@ -3689,12 +2755,12 @@ class="answer-result">
 
 <p class="help-text">
 
-هل يجب عليها أن تعمل اليوم؟
+يجب علينا ارتداء أحزمة الأمان في السيارة.
 
 </p>
 
 <input
-id="input6"
+id="input5"
 class="write-box"
 placeholder="اكتب الترجمة"
 autocomplete="off">
@@ -3703,10 +2769,11 @@ autocomplete="off">
 type="button"
 class="check-btn"
 onclick="checkWriting(
-'input6',
-'result6',
+'input5',
+'result5',
 [
-'Does she have to work today'
+'We have to wear seat belts in the car',
+'We have to wear seatbelts in the car'
 ]
 )">
 
@@ -3715,12 +2782,10 @@ onclick="checkWriting(
 </button>
 
 <p
-id="result6"
+id="result5"
 class="answer-result">
 
 </p>
-
-</div>
 
 </div>
 
@@ -3729,7 +2794,7 @@ class="answer-result">
      FINAL CARD
 ========================================================= -->
 
-<div class="card final-card">
+<div class="final-card">
 
 <h2>
 
@@ -3745,7 +2810,8 @@ Should • Have to • Must
 
 <br><br>
 
-أنت الآن جاهز للانتقال إلى الدرس التالي.
+أصبحت الآن قادرًا على التمييز بين
+النصيحة والضرورة والإلزام.
 
 </p>
 
@@ -3780,8 +2846,6 @@ return text
 
 .replace(/’/g,"'")
 
-/* الاختصارات */
-
 .replace(/\bshouldn't\b/g,"should not")
 
 .replace(/\bmustn't\b/g,"must not")
@@ -3792,11 +2856,25 @@ return text
 
 .replace(/\bdidn't\b/g,"did not")
 
-.replace(/\bcan't\b/g,"cannot")
+.replace(/\bi'm\b/g,"i am")
 
-.replace(/\bwon't\b/g,"will not")
+.replace(/\bi've\b/g,"i have")
 
-/* حذف علامات الترقيم */
+.replace(/\bi'd\b/g,"i would")
+
+.replace(/\bi'll\b/g,"i will")
+
+.replace(/\bhe's\b/g,"he is")
+
+.replace(/\bshe's\b/g,"she is")
+
+.replace(/\bit's\b/g,"it is")
+
+.replace(/\byou're\b/g,"you are")
+
+.replace(/\bwe're\b/g,"we are")
+
+.replace(/\bthey're\b/g,"they are")
 
 .replace(/[.,!?؟]/g,"")
 
@@ -3812,7 +2890,31 @@ return text
 
 
 /* =========================================================
-   WRITING CHECK
+   SUCCESS EFFECT
+========================================================= */
+
+function showSuccess(result,message){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+message;
+
+result.className =
+"result-text success-text";
+
+}
+
+
+/* =========================================================
+   WRITING QUESTIONS
 ========================================================= */
 
 function checkWriting(
@@ -3831,11 +2933,10 @@ const userAnswer =
 normalizeText(input.value);
 
 const answers =
-correctAnswers.map(function(answer){
-
-return normalizeText(answer);
-
-});
+correctAnswers.map(
+answer =>
+normalizeText(answer)
+);
 
 input.classList.remove(
 "correct-input",
@@ -3843,28 +2944,33 @@ input.classList.remove(
 "shake"
 );
 
+if(!userAnswer){
 
-if(
-answers.includes(userAnswer)
-){
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+result.innerHTML =
+"⚠️ اكتب إجابتك أولًا.";
+
+result.className =
+"answer-result error-text";
+
+return;
+
+}
+
+if(answers.includes(userAnswer)){
 
 input.classList.add(
 "correct-input"
 );
 
-result.innerHTML =
-
-'<div class="confetti">'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'<span class="star">🌟</span>'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'</div>'+
-'✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
-
-result.className =
-"answer-result success-text";
+showSuccess(
+result,
+"✅ أحسنت! إجابتك صحيحة."
+);
 
 }
 
@@ -3885,7 +2991,7 @@ result.innerHTML =
 
 "😅❌ إجابتك غير صحيحة."+
 "<br><br>"+
-"✅ إحدى الإجابات الصحيحة هي:"+
+"💡 الإجابة الصحيحة:"+
 "<br><br>"+
 "<b>"+
 correctAnswers[0]+
@@ -3918,41 +3024,26 @@ button.parentElement;
 const allButtons =
 container.querySelectorAll(".choice-btn");
 
-
-/* منع إعادة الإجابة */
-
 allButtons.forEach(function(btn){
 
 btn.disabled = true;
 
 });
 
-
 if(isCorrect){
 
 button.classList.add("correct");
 
-if(
-!button.innerHTML.includes("✔️")
-){
+if(!button.innerHTML.includes("✔️")){
 
 button.innerHTML += " ✔️";
 
 }
 
-result.innerHTML =
-
-'<div class="confetti">'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'<span class="star">🌟</span>'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'</div>'+
-'✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
-
-result.className =
-"result-text success-text";
+showSuccess(
+result,
+"✅ أحسنت! اختيارك صحيح."
+);
 
 }
 
@@ -3969,38 +3060,29 @@ button.classList.remove("shake");
 
 },300);
 
-if(
-!button.innerHTML.includes("✖️")
-){
+if(!button.innerHTML.includes("✖️")){
 
 button.innerHTML += " ✖️";
 
 }
 
 result.innerHTML =
-"😅❌ لقد اخترت الإجابة الخاطئة.";
+"😅❌ هذا الاختيار غير مناسب للموقف.";
 
 result.className =
 "result-text error-text";
 
 
-/* إظهار الإجابة الصحيحة */
-
 allButtons.forEach(function(btn){
 
-const code =
-btn.getAttribute("onclick");
+const handler =
+btn.getAttribute("onclick") || "";
 
-if(
-code &&
-code.includes(",true,")
-){
+if(handler.includes(",true,")){
 
 btn.classList.add("correct");
 
-if(
-!btn.innerHTML.includes("✔️")
-){
+if(!btn.innerHTML.includes("✔️")){
 
 btn.innerHTML += " ✔️";
 
@@ -4025,7 +3107,7 @@ answerBoxId
 ){
 
 if(
-button.disabled
+button.style.display === "none"
 ){
 
 return;
@@ -4035,18 +3117,25 @@ return;
 const answerBox =
 document.getElementById(answerBoxId);
 
-const newWord =
+if(!answerBox){
+
+return;
+
+}
+
+const selected =
 document.createElement("div");
 
-newWord.className =
+selected.className =
 "selected-word";
 
-newWord.innerText =
-button.innerText;
+selected.innerText =
+button.innerText.trim();
 
-answerBox.appendChild(newWord);
+answerBox.appendChild(selected);
 
-button.disabled = true;
+button.style.display =
+"none";
 
 }
 
@@ -4067,12 +3156,14 @@ document.getElementById(answerBoxId);
 const result =
 document.getElementById(resultId);
 
-const words =
-answerBox.querySelectorAll(".selected-word");
+const selectedWords =
+answerBox.querySelectorAll(
+".selected-word"
+);
 
 let userSentence = "";
 
-words.forEach(function(word){
+selectedWords.forEach(function(word){
 
 userSentence +=
 word.innerText + " ";
@@ -4087,30 +3178,20 @@ normalizeText(correctSentence);
 
 answerBox.classList.remove("shake");
 
-
 if(
 userSentence === normalizedCorrect
 ){
-
-result.innerHTML =
-
-'<div class="confetti">'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'<span class="star">🌟</span>'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'</div>'+
-'✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
-
-result.className =
-"result-text success-text";
 
 answerBox.style.borderColor =
 "#8fd19e";
 
 answerBox.style.background =
 "#eefdf3";
+
+showSuccess(
+result,
+"✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة."
+);
 
 }
 
@@ -4131,7 +3212,9 @@ answerBox.style.background =
 "#fff2f2";
 
 result.innerHTML =
-"😅❌ ترتيب الكلمات غير صحيح.";
+"😅❌ ترتيب الكلمات غير صحيح."+
+"<br><br>"+
+"💡 حاول التفكير في معنى الجملة أولًا.";
 
 result.className =
 "result-text error-text";
@@ -4172,14 +3255,14 @@ Math.floor(
 Math.random() * (i + 1)
 );
 
-const temp =
-buttons[i];
-
-buttons[i] =
-buttons[randomIndex];
-
-buttons[randomIndex] =
-temp;
+[
+buttons[i],
+buttons[randomIndex]
+] =
+[
+buttons[randomIndex],
+buttons[i]
+];
 
 }
 
@@ -4193,23 +3276,12 @@ container.appendChild(button);
 
 
 /* =========================================================
-   DAILY SENTENCES TOGGLE
+   SHUFFLE
 ========================================================= */
 
-function toggleDailySentences(){
+shuffleWords("words1");
 
-const card =
-document.getElementById("dailyCard");
-
-if(!card){
-
-return;
-
-}
-
-card.classList.toggle("open");
-
-}
+shuffleWords("words2");
 
 
 /* =========================================================
@@ -4224,9 +3296,7 @@ input.addEventListener(
 "keydown",
 function(event){
 
-if(
-event.key === "Enter"
-){
+if(event.key === "Enter"){
 
 event.preventDefault();
 
@@ -4247,22 +3317,14 @@ button.click();
 
 
 /* =========================================================
-   SHUFFLE
-========================================================= */
-
-shuffleWords("words1");
-
-shuffleWords("words2");
-
-
-/* =========================================================
    NEXT LESSON
 ========================================================= */
 
 function finishLessonPage(){
 
 if(
-typeof window.finishLesson === "function"
+typeof window.finishLesson ===
+"function"
 ){
 
 window.finishLesson(
@@ -4271,7 +3333,7 @@ window.finishLesson(
 
 "Should • Have to • Must",
 
-"good-well.html"
+"should-part2.html"
 
 );
 
@@ -4280,7 +3342,7 @@ window.finishLesson(
 else{
 
 window.location.href =
-"good-well.html";
+"should-part2.html";
 
 }
 
@@ -4302,7 +3364,6 @@ finishLesson
 }
 
 from "./js/reward.js";
-
 
 window.finishLesson =
 finishLesson;
