@@ -1523,6 +1523,399 @@ body{
 
 }
 
+
+
+    
+/* =========================================================
+   LESSON SUMMARY CARD
+========================================================= */
+
+.summary-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f7ff 0%,
+            #f8f3ff 55%,
+            #eef4ff 100%
+        );
+
+    border:
+        2px solid #dce3ff;
+
+    box-shadow:
+        0 15px 40px rgba(55,104,255,.08);
+
+}
+
+
+.summary-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:210px;
+
+    height:210px;
+
+    border-radius:50%;
+
+    background:
+        rgba(111,67,255,.08);
+
+    left:-90px;
+
+    top:-100px;
+
+}
+
+
+.summary-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(55,104,255,.07);
+
+    right:-80px;
+
+    bottom:-100px;
+
+}
+
+
+.summary-header{
+
+    position:relative;
+
+    z-index:1;
+
+    text-align:center;
+
+    margin-bottom:28px;
+
+}
+
+
+.summary-header h2{
+
+    font-size:31px;
+
+    color:#1f3c88;
+
+    margin-bottom:10px;
+
+}
+
+
+.summary-header p{
+
+    font-size:17px;
+
+    color:#666;
+
+    font-weight:600;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================
+   Summary Items
+========================== */
+
+.summary-grid{
+
+    position:relative;
+
+    z-index:1;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:18px;
+
+}
+
+
+.summary-item{
+
+    position:relative;
+
+    padding:23px;
+
+    border-radius:24px;
+
+    background:white;
+
+    border:
+        2px solid #e4e8ff;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+
+.summary-item:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.08);
+
+}
+
+
+.summary-word{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 16px;
+
+    border-radius:14px;
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    color:#6f43ff;
+
+    background:#f1edff;
+
+    border:
+        1px solid #ddd4ff;
+
+    direction:ltr;
+
+    margin-bottom:12px;
+
+}
+
+
+.summary-item p{
+
+    font-size:17px;
+
+    line-height:1.85;
+
+    color:#555;
+
+    font-weight:600;
+
+}
+
+
+.summary-item strong{
+
+    color:#1f3c88;
+
+}
+
+
+/* ==========================
+   Example
+========================== */
+
+.summary-example{
+
+    margin-top:15px;
+
+    padding:13px 15px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f7f9ff,
+            #faf7ff
+        );
+
+    border:
+        1px solid #e5e8f7;
+
+    direction:ltr;
+
+    text-align:left;
+
+}
+
+
+.summary-example .english{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#1f3c88;
+
+    margin-bottom:5px;
+
+}
+
+
+.summary-example .arabic{
+
+    font-size:15px;
+
+    color:#777;
+
+    direction:rtl;
+
+    text-align:right;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================
+   Quick Reminder
+========================== */
+
+.summary-reminder{
+
+    position:relative;
+
+    z-index:1;
+
+    margin-top:20px;
+
+    padding:18px 21px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff8df,
+            #fffaf0
+        );
+
+    border:
+        2px solid #ffe29a;
+
+    color:#5d512e;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    line-height:1.9;
+
+}
+
+
+.summary-reminder strong{
+
+    color:#b27a00;
+
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:768px){
+
+    .summary-card{
+
+        padding:25px;
+
+    }
+
+
+    .summary-header h2{
+
+        font-size:26px;
+
+    }
+
+
+    .summary-header p{
+
+        font-size:16px;
+
+    }
+
+
+    .summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .summary-item{
+
+        padding:20px;
+
+    }
+
+
+    .summary-word{
+
+        font-size:19px;
+
+    }
+
+
+    .summary-item p{
+
+        font-size:16px;
+
+    }
+
+
+    .summary-example .english{
+
+        font-size:17px;
+
+    }
+
+
+    .summary-example .arabic{
+
+        font-size:14px;
+
+    }
+
+
+    .summary-reminder{
+
+        font-size:15px;
+
+    }
+
+}
+
+
 </style>
 
 </head>
@@ -1657,6 +2050,215 @@ body{
 
 
 
+<!-- =========================================================
+        LESSON SUMMARY
+========================================================= -->
+
+<div class="card summary-card">
+
+
+    <div class="summary-header">
+
+        <h2>
+            🧠 ملخص سريع للدرس
+        </h2>
+
+        <p>
+            إذا احتجت تراجع الفكرة بسرعة قبل التمارين،
+            ارجع إلى هذا الملخص ✨
+        </p>
+
+    </div>
+
+
+    <div class="summary-grid">
+
+
+        <!-- ==========================
+             WHICH
+        ========================== -->
+
+        <div class="summary-item">
+
+            <div class="summary-word">
+
+                which
+
+            </div>
+
+            <p>
+
+                نستخدم <strong>which</strong>
+                عندما نختار أو نسأل عن شيء محدد
+                من بين خيارات.
+
+            </p>
+
+            <div class="summary-example">
+
+                <div class="english">
+
+                    Which color do you like?
+
+                </div>
+
+                <div class="arabic">
+
+                    أي لون تحب؟
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================
+             ANY
+        ========================== -->
+
+        <div class="summary-item">
+
+            <div class="summary-word">
+
+                any
+
+            </div>
+
+            <p>
+
+                نستخدم <strong>any</strong>
+                غالبًا في النفي والأسئلة
+                عندما نقصد «أي / أيّ شيء».
+
+            </p>
+
+            <div class="summary-example">
+
+                <div class="english">
+
+                    I don't have any money.
+
+                </div>
+
+                <div class="arabic">
+
+                    ليس لدي أي مال.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================
+             ELSE
+        ========================== -->
+
+        <div class="summary-item">
+
+            <div class="summary-word">
+
+                else
+
+            </div>
+
+            <p>
+
+                نستخدم <strong>else</strong>
+                عندما نقصد «آخر / أيضًا / غير ذلك»
+                بعد كلمات مثل
+                <strong>anything</strong>
+                أو <strong>someone</strong>.
+
+            </p>
+
+            <div class="summary-example">
+
+                <div class="english">
+
+                    Do you need anything else?
+
+                </div>
+
+                <div class="arabic">
+
+                    هل تحتاج إلى أي شيء آخر؟
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================
+             ANOTHER
+        ========================== -->
+
+        <div class="summary-item">
+
+            <div class="summary-word">
+
+                another
+
+            </div>
+
+            <p>
+
+                نستخدم <strong>another</strong>
+                عندما نريد شيئًا آخر
+                من نفس النوع.
+
+            </p>
+
+            <div class="summary-example">
+
+                <div class="english">
+
+                    I want another cup.
+
+                </div>
+
+                <div class="arabic">
+
+                    أريد كوبًا آخر.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==========================
+         REMINDER
+    ========================== -->
+
+    <div class="summary-reminder">
+
+        💡 <strong>تذكّر:</strong>
+        لا تحفظ الكلمات الأربع كترجمة فقط.
+        انظر إلى معنى الجملة والموقف أولًا،
+        ثم اسأل نفسك:
+        <strong>ماذا أريد أن أقول هنا؟</strong>
+
+    </div>
+
+
+</div>
+
+
+
+    
 <!-- =========================================================
         PRACTICE INTRO
 ========================================================= -->
