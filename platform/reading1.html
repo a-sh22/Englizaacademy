@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Reading Practice 1 | Engliza Academy
+</title>
+
+<style>
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+
+
+/* ==========================
+   BODY
+========================== */
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+color:#222;
+
+}
+
+
+.container{
+
+max-width:1050px;
+margin:auto;
+
+}
+
+
+/* ==========================
+   TOP BAR
+========================== */
+
+.top-bar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+
+.back-btn{
+
+background:white;
+
+padding:14px 25px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:#1f3c88;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+
+.owl-circle img{
+
+width:80px;
+height:80px;
+
+border-radius:50%;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================
+   TITLE
+========================== */
+
+.title{
+
+text-align:center;
+
+font-size:50px;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+line-height:1.4;
+
+}
+
+
+.subtitle{
+
+text-align:center;
+
+font-size:21px;
+
+font-weight:600;
+
+line-height:2;
+
+color:#555;
+
+margin-bottom:50px;
+
+}
+
+
+/* ==========================
+   VIDEO
+========================== */
+
+.video-box{
+
+background:#111;
+
+border-radius:35px;
+
+overflow:hidden;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.13);
+
+margin-bottom:40px;
+
+}
+
+
+.video-box video{
+
+width:100%;
+
+display:block;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+background:#111;
+
+}
+
+
+/* ==========================
+   READING TIP CARD
+========================== */
+
+.reading-tip{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#ffffff 0%,
+#f4f1ff 100%
+);
+
+border:2px solid #e4ddff;
+
+padding:42px;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:40px;
+
+animation:fadeUp .6s ease;
+
+}
+
+
+/* decorative circles */
+
+.reading-tip::before{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+background:
+rgba(111,67,255,.07);
+
+top:-80px;
+left:-60px;
+
+}
+
+
+.reading-tip::after{
+
+content:"";
+
+position:absolute;
+
+width:150px;
+height:150px;
+
+border-radius:50%;
+
+background:
+rgba(55,104,255,.06);
+
+bottom:-80px;
+right:-50px;
+
+}
+
+
+/* ==========================
+   TIP HEADER
+========================== */
+
+.tip-header{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:25px;
+
+position:relative;
+
+z-index:1;
+
+}
+
+
+.tip-icon{
+
+width:65px;
+height:65px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#3768ff,
+#6f43ff
+);
+
+font-size:32px;
+
+box-shadow:
+0 10px 25px rgba(111,67,255,.22);
+
+flex-shrink:0;
+
+}
+
+
+.tip-header h2{
+
+font-size:31px;
+
+color:#1f3c88;
+
+}
+
+
+/* ==========================
+   TIP CONTENT
+========================== */
+
+.tip-content{
+
+position:relative;
+
+z-index:1;
+
+}
+
+
+.tip-content p{
+
+font-size:21px;
+
+font-weight:600;
+
+line-height:2;
+
+color:#444;
+
+margin-bottom:25px;
+
+}
+
+
+.tip-highlight{
+
+background:white;
+
+border-radius:22px;
+
+padding:24px 25px;
+
+border-right:5px solid #6f43ff;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.06);
+
+font-size:20px;
+
+font-weight:bold;
+
+line-height:1.9;
+
+color:#333;
+
+}
+
+
+/* ==========================
+   SMALL NOTE
+========================== */
+
+.note-box{
+
+margin-top:20px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+background:#eef4ff;
+
+border:2px solid #dce7ff;
+
+padding:18px 20px;
+
+border-radius:20px;
+
+font-size:18px;
+
+font-weight:600;
+
+line-height:1.8;
+
+color:#1f3c88;
+
+}
+
+
+/* ==========================
+   FINAL CARD
+========================== */
+
+.final-card{
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+padding:45px;
+
+border-radius:35px;
+
+box-shadow:
+0 18px 45px rgba(111,67,255,.20);
+
+margin-bottom:30px;
+
+animation:fadeUp .6s ease;
+
+}
+
+
+.final-card h2{
+
+font-size:40px;
+
+color:#ffe082;
+
+margin-bottom:22px;
+
+}
+
+
+.final-card p{
+
+font-size:22px;
+
+line-height:2;
+
+font-weight:600;
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+
+.next-lesson-btn{
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+border-radius:24px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:#6f43ff;
+
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+.next-lesson-btn:active{
+
+transform:scale(.97);
+
+}
+
+
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:22px 15px;
+
+}
+
+
+.title{
+
+font-size:36px;
+
+}
+
+
+.subtitle{
+
+font-size:18px;
+
+margin-bottom:35px;
+
+}
+
+
+.reading-tip{
+
+padding:28px;
+
+}
+
+
+.tip-header{
+
+gap:14px;
+
+}
+
+
+.tip-icon{
+
+width:55px;
+height:55px;
+
+font-size:27px;
+
+border-radius:17px;
+
+}
+
+
+.tip-header h2{
+
+font-size:24px;
+
+}
+
+
+.tip-content p{
+
+font-size:18px;
+
+line-height:1.9;
+
+}
+
+
+.tip-highlight{
+
+font-size:17px;
+
+padding:20px;
+
+}
+
+
+.note-box{
+
+font-size:16px;
+
+}
+
+
+.final-card{
+
+padding:32px 25px;
+
+}
+
+
+.final-card h2{
+
+font-size:31px;
+
+}
+
+
+.final-card p{
+
+font-size:18px;
+
+}
+
+
+.next-lesson-btn{
+
+font-size:19px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ==========================
+        TOP BAR
+========================== -->
+
+<div class="top-bar">
+
+
+<a
+href="unit4-pre.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+
+<div class="owl-circle">
+
+<img
+src="../okay.owl.PNG"
+alt="Engliza Academy">
+
+</div>
+
+
+</div>
+
+
+
+<!-- ==========================
+        TITLE
+========================== -->
+
+<h1 class="title">
+
+📖 Reading Practice 1
+
+</h1>
+
+
+<p class="subtitle">
+
+اقرأ واستمع، وتعلّم من خلال القصة.
+
+</p>
+
+
+
+<!-- ==========================
+        VIDEO
+========================== -->
+
+<div class="video-box">
+
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+
+<!-- ==========================
+     ضعي رابط الفيديو هنا
+========================== -->
+
+<source
+src="https://videos.englizaacademy.com/Pre-Intermediate/Reading%20.MOV"
+type="video/mp4">
+
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+
+</video>
+
+
+</div>
+
+
+
+<!-- ==========================
+        READING TIP
+========================== -->
+
+<div class="reading-tip">
+
+
+<div class="tip-header">
+
+
+<div class="tip-icon">
+
+📚
+
+</div>
+
+
+<h2>
+
+✨ لا تتوقف عند الفيديو
+
+</h2>
+
+
+</div>
+
+
+
+<div class="tip-content">
+
+
+<p>
+
+القراءة لا تتطور فقط من خلال الدروس التي تشاهدها هنا، بل من خلال الكلمات التي تكتشفها بنفسك أثناء القراءة.
+
+</p>
+
+
+<div class="tip-highlight">
+
+كلما مرّت عليك كلمة جديدة أثناء القراءة، 📝 <b>دوّنها، تعلّم معناها، وحاول استخدامها في جملة.</b>
+
+<br>
+
+مع الوقت ستبني حصيلة لغوية أكبر، وستلاحظ أن فهمك للقراءة يصبح أسهل وأسرع.
+
+</div>
+
+
+<div class="note-box">
+
+💡
+
+<span>
+
+لا تحتاج إلى حفظ عشرات الكلمات في يوم واحد. خذ كلمات قليلة، لكن حاول أن تتذكرها وتستخدمها باستمرار.
+
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ==========================
+        FINAL CARD
+========================== -->
+
+<div class="final-card">
+
+
+<h2>
+
+🌟 استمر، أنت تتقدم!
+
+</h2>
+
+
+<p>
+
+كل صفحة تقرؤها، وكل كلمة جديدة تتعلمها، تقرّبك خطوة من المستوى الذي تطمح إليه.
+
+<br><br>
+
+لا تقلق إذا لم تفهم كل شيء من أول مرة؛ الاستمرار هو الذي يصنع الفرق. 
+
+</p>
+
+
+<button
+class="next-lesson-btn"
+onclick="finishLessonPage()">
+
+🚀 الانتقال إلى الدرس التالي
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ==========================
+        REWARD SYSTEM
+========================== -->
+
+<script type="module">
+
+import {
+
+finishLesson
+
+}
+
+from "./js/reward.js";
+
+
+window.finishLessonPage = function(){
+
+
+finishLesson(
+
+"unit4-reading-practice-1",
+
+"📖 Reading Practice 1",
+
+"reading2.html"
+
+);
+
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
