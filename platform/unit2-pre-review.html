@@ -1,0 +1,3325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+مراجعة الوحدة الثانية | Engliza Academy
+</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+background:linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+}
+
+.container{
+
+max-width:1050px;
+margin:auto;
+
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+
+}
+
+.back-btn{
+
+background:white;
+padding:14px 25px;
+border-radius:18px;
+text-decoration:none;
+color:#1f3c88;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.owl-circle img{
+
+width:80px;
+height:80px;
+border-radius:50%;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.title{
+
+text-align:center;
+font-size:52px;
+color:#1f3c88;
+margin-bottom:18px;
+
+}
+
+.subtitle{
+
+text-align:center;
+font-size:22px;
+line-height:2.2;
+font-weight:600;
+color:#555;
+margin-bottom:55px;
+
+}
+
+
+/* =========================================================
+   GENERAL CARDS
+========================================================= */
+
+.card{
+
+background:white;
+padding:40px;
+border-radius:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+margin-bottom:40px;
+transition:.35s;
+animation:fadeUp .6s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 22px 50px rgba(0,0,0,.12);
+
+}
+
+.card h2{
+
+font-size:34px;
+color:#1f3c88;
+margin-bottom:28px;
+
+}
+
+.card p{
+
+font-size:22px;
+line-height:2.2;
+font-weight:600;
+color:#4d4d4d;
+
+}
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.intro-card{
+
+display:flex;
+align-items:center;
+gap:35px;
+
+}
+
+.intro-icon{
+
+font-size:90px;
+flex-shrink:0;
+
+}
+
+.intro-content{
+
+flex:1;
+
+}
+
+.intro-content h2{
+
+margin-bottom:18px;
+
+}
+
+.intro-content p{
+
+font-size:21px;
+line-height:2.2;
+
+}
+
+
+/* =========================================================
+   STAGE CARDS
+========================================================= */
+
+.stage-card{
+
+padding:25px 35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-radius:25px;
+margin-bottom:35px;
+
+}
+
+.stage-title{
+
+font-size:30px;
+font-weight:bold;
+color:white;
+
+}
+
+.stage-subtitle{
+
+font-size:18px;
+margin-top:8px;
+color:white;
+opacity:.95;
+
+}
+
+
+/* =========================================================
+   STAGE COLORS
+========================================================= */
+
+.stage-green{
+
+background:linear-gradient(
+90deg,
+#34c759,
+#5dd97d
+);
+
+}
+
+.stage-blue{
+
+background:linear-gradient(
+90deg,
+#2d7ff9,
+#5ba5ff
+);
+
+}
+
+.stage-purple{
+
+background:linear-gradient(
+90deg,
+#7b4dff,
+#a57bff
+);
+
+}
+
+.stage-orange{
+
+background:linear-gradient(
+90deg,
+#ff9800,
+#ffb74d
+);
+
+}
+
+.stage-gold{
+
+background:linear-gradient(
+90deg,
+#d4a017,
+#f2c94c
+);
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-box{
+
+margin-top:18px;
+
+}
+
+.progress-text{
+
+font-size:16px;
+font-weight:bold;
+color:white;
+margin-bottom:12px;
+
+}
+
+.progress-bar{
+
+width:280px;
+max-width:100%;
+height:10px;
+background:rgba(255,255,255,.25);
+border-radius:30px;
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+height:100%;
+background:white;
+border-radius:30px;
+
+}
+
+
+/* =========================================================
+   STAGE BORDERS
+========================================================= */
+
+.stage-border-green{
+
+border:4px solid #34c759;
+
+}
+
+.stage-border-blue{
+
+border:4px solid #2d7ff9;
+
+}
+
+.stage-border-purple{
+
+border:4px solid #7b4dff;
+
+}
+
+.stage-border-orange{
+
+border:4px solid #ff9800;
+
+}
+
+.stage-border-gold{
+
+border:4px solid #d4a017;
+
+}
+
+
+/* =========================================================
+   MESSAGE CARDS
+========================================================= */
+
+.message-card{
+
+display:flex;
+align-items:center;
+gap:25px;
+
+}
+
+.message-icon{
+
+font-size:70px;
+flex-shrink:0;
+
+}
+
+.message-content{
+
+flex:1;
+
+}
+
+.message-content h2{
+
+font-size:30px;
+color:#1f3c88;
+margin-bottom:12px;
+
+}
+
+.message-content p{
+
+font-size:20px;
+line-height:1.9;
+font-weight:600;
+color:#444;
+
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.question-box{
+
+margin:45px 0;
+
+}
+
+.question-title{
+
+font-size:24px;
+font-weight:bold;
+line-height:2;
+color:#444;
+margin-bottom:25px;
+
+}
+
+.help-text{
+
+font-size:20px;
+line-height:2;
+color:#666;
+margin-bottom:25px;
+
+}
+
+.question-divider{
+
+margin:50px 0;
+border:none;
+height:1px;
+background:#ececec;
+
+}
+
+
+/* =========================================================
+   CHOICE BUTTONS
+========================================================= */
+
+.choice-container{
+
+display:flex;
+gap:18px;
+margin:30px 0 20px;
+
+}
+
+.choice-btn{
+
+flex:1;
+padding:22px;
+background:white;
+border:2px solid #dce4ff;
+border-radius:22px;
+font-size:18px;
+font-weight:bold;
+color:#1f3c88;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.choice-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.14);
+
+}
+
+.choice-btn:disabled{
+
+cursor:default;
+opacity:.95;
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.write-box{
+
+width:100%;
+padding:20px;
+border-radius:22px;
+border:2px solid #dce4ff;
+font-size:20px;
+outline:none;
+transition:.3s;
+margin-bottom:28px;
+background:white;
+
+}
+
+.write-box:focus{
+
+border-color:#6f43ff;
+
+box-shadow:
+0 0 0 6px rgba(111,67,255,.12);
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.card button{
+
+background:#f5f7ff;
+color:#1f3c88;
+border:2px solid #dce4ff;
+padding:18px 28px;
+border-radius:22px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.card button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.card button:active{
+
+transform:scale(.97);
+
+}
+
+
+/* =========================================================
+   ANSWER COLORS
+========================================================= */
+
+.correct-input{
+
+background:#e8fff0;
+border:2px solid #b8ebc8;
+color:#0f8b4c;
+
+}
+
+.wrong-input{
+
+background:#ffe8e8;
+border:2px solid #ffb8b8;
+color:#c62828;
+
+}
+
+.correct{
+
+background:#e8fff0 !important;
+border:2px solid #b8ebc8 !important;
+color:#0f8b4c !important;
+
+}
+
+.wrong{
+
+background:#ffe8e8 !important;
+border:2px solid #ffb8b8 !important;
+color:#c62828 !important;
+
+}
+
+.success-text{
+
+color:#0f8b4c;
+
+}
+
+.error-text{
+
+color:#c62828;
+
+}
+
+.answer-result,
+.result-text{
+
+margin-top:25px;
+font-size:20px;
+font-weight:bold;
+line-height:2;
+animation:fadeResult .4s ease;
+
+}
+
+
+/* =========================================================
+   WORD ORDER
+========================================================= */
+
+.word-container{
+
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin:30px 0;
+
+}
+
+.word-btn{
+
+background:#f4f7ff !important;
+border:2px solid #dce4ff !important;
+border-radius:18px !important;
+padding:16px 24px !important;
+font-size:18px !important;
+font-weight:bold !important;
+cursor:pointer;
+transition:.3s;
+box-shadow:none !important;
+
+}
+
+.word-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.answer-box{
+
+min-height:100px;
+background:#fafbff;
+border:2px dashed #b9c8ff;
+border-radius:25px;
+padding:20px;
+margin-bottom:25px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+direction:ltr;
+align-items:center;
+
+}
+
+.selected-word{
+
+background:linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+padding:16px 22px;
+border-radius:18px;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+user-select:none;
+
+}
+
+.sort-buttons{
+
+display:flex;
+gap:18px;
+margin-top:20px;
+
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti{
+
+position:relative;
+height:0;
+
+}
+
+.star{
+
+position:absolute;
+font-size:22px;
+opacity:0;
+animation:flyStars 1.4s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.star:nth-child(2){
+left:30%;
+animation-delay:.1s;
+}
+
+.star:nth-child(3){
+left:50%;
+animation-delay:.2s;
+}
+
+.star:nth-child(4){
+left:70%;
+animation-delay:.15s;
+}
+
+.star:nth-child(5){
+left:90%;
+animation-delay:.05s;
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+transform:translateY(20px) scale(.4);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+transform:
+translateY(-70px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+
+
+/* =========================================================
+   SHAKE
+========================================================= */
+
+.shake{
+
+animation:shake .3s;
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
+
+}
+
+
+/* =========================================================
+   FINAL CARD
+========================================================= */
+
+.final-card{
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+text-align:center;
+padding:55px 45px;
+border-radius:35px;
+box-shadow:
+0 18px 45px rgba(0,0,0,.12);
+
+}
+
+.final-content{
+
+width:100%;
+max-width:850px;
+margin:0 auto;
+
+}
+
+.final-trophy{
+
+font-size:72px;
+display:block;
+margin-bottom:10px;
+
+}
+
+.final-content h2{
+
+color:#ffe082;
+font-size:48px;
+font-weight:bold;
+margin-bottom:22px;
+text-align:center;
+
+}
+
+.final-content p{
+
+color:white;
+font-size:23px;
+line-height:2.1;
+font-weight:600;
+text-align:center;
+margin:0 auto 30px;
+
+}
+
+.final-divider{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+margin:20px auto 28px;
+max-width:500px;
+
+}
+
+.final-divider::before,
+.final-divider::after{
+
+content:"";
+height:2px;
+background:#ffe082;
+flex:1;
+opacity:.8;
+
+}
+
+.final-divider span{
+
+color:#ffe082;
+font-size:25px;
+
+}
+
+.next-unit-btn{
+
+display:block;
+width:100%;
+padding:22px;
+border:none !important;
+border-radius:24px;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+background:white !important;
+color:#1f3c88 !important;
+box-shadow:
+0 14px 35px rgba(0,0,0,.18) !important;
+transition:.3s;
+margin-top:10px;
+
+}
+
+.next-unit-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.25) !important;
+
+}
+
+.next-unit-btn:active{
+
+transform:scale(.98);
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+.title{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+.card{
+
+padding:28px;
+
+}
+
+.intro-card,
+.message-card{
+
+display:flex;
+align-items:center;
+gap:16px;
+
+}
+
+.intro-icon{
+
+font-size:60px;
+
+}
+
+.message-icon{
+
+font-size:50px;
+
+}
+
+.message-content h2{
+
+font-size:24px;
+margin-bottom:8px;
+
+}
+
+.message-content p{
+
+font-size:17px;
+line-height:1.8;
+
+}
+
+.intro-content p{
+
+font-size:18px;
+line-height:1.9;
+
+}
+
+.stage-card{
+
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:20px;
+
+}
+
+.progress-bar{
+
+width:100%;
+
+}
+
+.choice-container{
+
+flex-direction:column;
+
+}
+
+.sort-buttons{
+
+flex-direction:column;
+
+}
+
+.answer-box{
+
+min-height:90px;
+
+}
+
+.selected-word{
+
+font-size:16px;
+padding:14px 18px;
+
+}
+
+.question-title{
+
+font-size:20px;
+
+}
+
+.card p{
+
+font-size:18px;
+
+}
+
+.answer-result,
+.result-text{
+
+font-size:17px;
+
+}
+
+.final-card{
+
+padding:40px 22px;
+
+}
+
+.final-trophy{
+
+font-size:60px;
+
+}
+
+.final-content h2{
+
+font-size:38px;
+
+}
+
+.final-content p{
+
+font-size:18px;
+line-height:2;
+
+}
+
+.next-unit-btn{
+
+font-size:19px;
+padding:19px 15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- =========================================================
+     TOP
+========================================================= -->
+
+<div class="top-bar">
+
+<a
+href="unit2-pre.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+<div class="owl-circle">
+
+<img src="../okay.owl.PNG">
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     TITLE
+========================================================= -->
+
+<h1 class="title">
+
+🏆 مراجعة الوحدة الثانية
+
+</h1>
+
+<p class="subtitle">
+
+راجع الكمية، الأدوات، حروف الجر، والكلمات المتشابهة، ثم اختبر مدى إتقانك لما تعلمته.
+
+</p>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<div class="card intro-card">
+
+<div class="intro-icon">
+
+🧠
+
+</div>
+
+<div class="intro-content">
+
+<h2>
+
+🤓 هل أنت مستعد؟
+
+</h2>
+
+<p>
+
+لقد تعلمت في هذه الوحدة مجموعة مهمة من القواعد والكلمات.
+
+<br><br>
+
+الآن حان وقت اختبار نفسك.
+
+حاول الإجابة بنفسك أولًا، ولا تقلق إذا أخطأت؛ فالخطأ جزء من التعلم. 💙
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+     STAGE 1
+========================================================= -->
+
+<div class="stage-card stage-green">
+
+<div>
+
+<div class="stage-title">
+
+🟢 المرحلة الأولى
+
+</div>
+
+<div class="stage-subtitle">
+
+Countable & Uncountable
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 1 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:20%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-green">
+
+
+<!-- Q1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة:
+
+<br><br>
+
+أي كلمة من الآتي تُستخدم مع شيء غير معدود؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s1q1')">
+
+Water
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s1q1')">
+
+Apple
+
+</button>
+
+</div>
+
+<p
+id="s1q1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الجمع الصحيح:
+
+<br><br>
+
+<b>box → ?</b>
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s1q2')">
+
+Boxs
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s1q2')">
+
+Boxes
+
+</button>
+
+</div>
+
+<p
+id="s1q2"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✏️ اكتب الكلمة الصحيحة:
+
+<br><br>
+
+There are three ______.
+
+<br><br>
+
+<b>(dish / dishes)</b>
+
+</p>
+
+<input
+id="s1input1"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'s1input1',
+'s1result1',
+[
+'dishes'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="s1result1"
+class="answer-result">
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- MESSAGE -->
+
+<div class="card message-card">
+
+<div class="message-icon">
+
+⭐
+
+</div>
+
+<div class="message-content">
+
+<h2>
+
+رائع!
+
+</h2>
+
+<p>
+
+أنت الآن تراجع أساسيات مهمة جدًا في التعامل مع الأسماء.
+
+استمر، فالمرحلة القادمة ستختبر اختيارك بين الأدوات بطريقة أكثر دقة.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+     STAGE 2
+========================================================= -->
+
+<div class="stage-card stage-blue">
+
+<div>
+
+<div class="stage-title">
+
+🔵 المرحلة الثانية
+
+</div>
+
+<div class="stage-subtitle">
+
+A • An • The
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 2 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:40%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-blue">
+
+
+<!-- Q1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة:
+
+<br><br>
+
+I have ___ apple.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s2q1')">
+
+an
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s2q1')">
+
+a
+
+</button>
+
+</div>
+
+<p
+id="s2q1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة:
+
+<br><br>
+
+She is ___ teacher.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s2q2')">
+
+a
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s2q2')">
+
+an
+
+</button>
+
+</div>
+
+<p
+id="s2q2"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✏️ أكمل الجملة:
+
+<br><br>
+
+The sun is ___ star.
+
+</p>
+
+<input
+id="s2input1"
+class="write-box"
+placeholder="اكتب الكلمة المناسبة">
+
+<button
+onclick="checkWriting(
+'s2input1',
+'s2result1',
+[
+'a'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="s2result1"
+class="answer-result">
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     STAGE 3
+========================================================= -->
+
+<div class="stage-card stage-purple">
+
+<div>
+
+<div class="stage-title">
+
+🟣 المرحلة الثالثة
+
+</div>
+
+<div class="stage-subtitle">
+
+How Much • How Many • Quantifiers
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 3 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:60%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-purple">
+
+
+<!-- Q1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة:
+
+<br><br>
+
+How ___ apples do you have?
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s3q1')">
+
+many
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s3q1')">
+
+much
+
+</button>
+
+</div>
+
+<p
+id="s3q1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة:
+
+<br><br>
+
+How ___ water do you drink?
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s3q2')">
+
+many
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s3q2')">
+
+much
+
+</button>
+
+</div>
+
+<p
+id="s3q2"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الكلمة المناسبة:
+
+<br><br>
+
+I have ___ friends.
+
+<br><br>
+
+المعنى: لدي عدد قليل من الأصدقاء.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s3q3')">
+
+a few
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s3q3')">
+
+a little
+
+</button>
+
+</div>
+
+<p
+id="s3q3"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q4 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الكلمة المناسبة:
+
+<br><br>
+
+I have ___ money.
+
+<br><br>
+
+المعنى: لدي القليل من المال.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s3q4')">
+
+a few
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s3q4')">
+
+a little
+
+</button>
+
+</div>
+
+<p
+id="s3q4"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q5 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✏️ أكمل:
+
+<br><br>
+
+There are ___ books on the table.
+
+<br><br>
+
+المعنى: يوجد الكثير من الكتب على الطاولة.
+
+</p>
+
+<input
+id="s3input1"
+class="write-box"
+placeholder="اكتب إجابتك هنا">
+
+<button
+onclick="checkWriting(
+'s3input1',
+'s3result1',
+[
+'a lot of'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="s3result1"
+class="answer-result">
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- MESSAGE -->
+
+<div class="card message-card">
+
+<div class="message-icon">
+
+🚀
+
+</div>
+
+<div class="message-content">
+
+<h2>
+
+ممتاز!
+
+</h2>
+
+<p>
+
+لقد تجاوزت الجزء الأكبر من المراجعة.
+
+بقي الآن جزء مهم جدًا: حروف الجر، ثم مجموعة من الكلمات التي قد تبدو متشابهة لكنها تحمل معاني مختلفة.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+     STAGE 4
+========================================================= -->
+
+<div class="stage-card stage-orange">
+
+<div>
+
+<div class="stage-title">
+
+🟠 المرحلة الرابعة
+
+</div>
+
+<div class="stage-subtitle">
+
+In • On • At
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 4 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:80%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-orange">
+
+
+<!-- Q1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر حرف الجر الصحيح:
+
+<br><br>
+
+I live ___ Oman.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s4q1')">
+
+in
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q1')">
+
+on
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q1')">
+
+at
+
+</button>
+
+</div>
+
+<p
+id="s4q1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر حرف الجر الصحيح:
+
+<br><br>
+
+The book is ___ the table.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q2')">
+
+in
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s4q2')">
+
+on
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q2')">
+
+at
+
+</button>
+
+</div>
+
+<p
+id="s4q2"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر حرف الجر الصحيح:
+
+<br><br>
+
+The class starts ___ 8:00.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q3')">
+
+in
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q3')">
+
+on
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s4q3')">
+
+at
+
+</button>
+
+</div>
+
+<p
+id="s4q3"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q4 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر حرف الجر الصحيح:
+
+<br><br>
+
+I was born ___ Monday.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q4')">
+
+in
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s4q4')">
+
+on
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s4q4')">
+
+at
+
+</button>
+
+</div>
+
+<p
+id="s4q4"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- Q5 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✏️ ترجم:
+
+<br><br>
+
+أنا أدرس في الصباح.
+
+</p>
+
+<input
+id="s4input1"
+class="write-box"
+placeholder="اكتب الجملة بالإنجليزية">
+
+<button
+onclick="checkWriting(
+'s4input1',
+'s4result1',
+[
+'I study in the morning.'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="s4result1"
+class="answer-result">
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     MESSAGE BEFORE FINAL
+========================================================= -->
+
+<div class="card message-card">
+
+<div class="message-icon">
+
+🏆
+
+</div>
+
+<div class="message-content">
+
+<h2>
+
+وصلت إلى التحدي الأخير!
+
+</h2>
+
+<p>
+
+بقي أن تثبت أنك تستطيع التمييز بين الكلمات التي تبدو متشابهة في الكتابة أو النطق.
+
+خذ وقتك وفكّر في المعنى قبل أن تختار.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+     STAGE 5
+========================================================= -->
+
+<div class="stage-card stage-gold">
+
+<div>
+
+<div class="stage-title">
+
+🏆 المرحلة الأخيرة
+
+</div>
+
+<div class="stage-subtitle">
+
+Word Challenge
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 5 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:100%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-gold">
+
+
+<!-- =====================================================
+     TALL / LONG
+===================================================== -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الكلمة الصحيحة:
+
+<br><br>
+
+My brother is very ___.
+
+<br><br>
+
+المعنى: أخي طويل القامة جدًا.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s5q1')">
+
+tall
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s5q1')">
+
+long
+
+</button>
+
+</div>
+
+<p
+id="s5q1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- =====================================================
+     WEAK / WEEK
+===================================================== -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الكلمة الصحيحة:
+
+<br><br>
+
+I go to the gym every ___.
+
+<br><br>
+
+المعنى: أذهب إلى النادي كل أسبوع.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s5q2')">
+
+weak
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s5q2')">
+
+week
+
+</button>
+
+</div>
+
+<p
+id="s5q2"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- =====================================================
+     POOR / POUR
+===================================================== -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الكلمة الصحيحة:
+
+<br><br>
+
+Please ___ the water into the glass.
+
+<br><br>
+
+المعنى: من فضلك اسكب الماء في الكأس.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s5q3')">
+
+poor
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s5q3')">
+
+pour
+
+</button>
+
+</div>
+
+<p
+id="s5q3"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- =====================================================
+     BUY / BY
+===================================================== -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الكلمة الصحيحة:
+
+<br><br>
+
+I want to ___ a new book.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s5q4')">
+
+buy
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s5q4')">
+
+by
+
+</button>
+
+</div>
+
+<p
+id="s5q4"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- =====================================================
+     BOOK AS VERB
+===================================================== -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 ماذا تعني كلمة <b>book</b> في الجملة؟
+
+<br><br>
+
+I want to book a hotel.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s5q5')">
+
+يحجز
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s5q5')">
+
+كتاب
+
+</button>
+
+</div>
+
+<p
+id="s5q5"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- =====================================================
+     BOOK AS NOUN
+===================================================== -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 ماذا تعني كلمة <b>book</b> هنا؟
+
+<br><br>
+
+This book is interesting.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'s5q6')">
+
+يحجز
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'s5q6')">
+
+كتاب
+
+</button>
+
+</div>
+
+<p
+id="s5q6"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- =====================================================
+     FINAL TRANSLATION
+===================================================== -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🏆 التحدي النهائي:
+
+<br><br>
+
+ترجم الجملة:
+
+<br><br>
+
+<b>
+أنا أحجز فندقًا كل صيف.
+</b>
+
+</p>
+
+<input
+id="finalInput"
+class="write-box"
+placeholder="اكتب ترجمتك هنا">
+
+<button
+onclick="checkFinalChallenge()">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="finalResult"
+class="answer-result">
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     FINAL CARD
+========================================================= -->
+
+<div class="card final-card">
+
+<div class="final-content">
+
+<div class="final-trophy">
+
+🏆
+
+</div>
+
+<h2>
+
+أحسنت! لقد أنهيت المراجعة 🎉
+
+</h2>
+
+<div class="final-divider">
+
+<span>★</span>
+
+</div>
+
+<p>
+
+لقد راجعت أهم المهارات التي تعلمتها في الوحدة الثانية، من الأسماء والكميات والأدوات، إلى حروف الجر والكلمات المتشابهة.
+
+</p>
+
+<p>
+
+كل مراجعة تنهيها تقرّبك خطوة جديدة من إتقان الإنجليزية. ✨
+
+</p>
+
+<p>
+
+🌟 استمر بهذا الحماس، والوحدة الثالثة بانتظارك!
+
+</p>
+
+<button
+id="finish-review-btn"
+class="next-unit-btn">
+
+🚀 الانتقال إلى الوحدة الثالثة
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   NORMALIZE TEXT
+========================================================= */
+
+function normalizeText(text){
+
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/’/g,"'")
+
+.replace(/\s+/g," ")
+
+.replace(/[.,!?؟]/g,"")
+
+.replace(/'/g,"")
+
+.replace(/-/g," ")
+
+.replace(/\bim\b/g,"i am")
+.replace(/\bive\b/g,"i have")
+.replace(/\bid\b/g,"i would")
+.replace(/\bill\b/g,"i will")
+
+.replace(/\bhes\b/g,"he is")
+.replace(/\bshes\b/g,"she is")
+.replace(/\bits\b/g,"it is")
+
+.replace(/\byoure\b/g,"you are")
+.replace(/\bwere\b/g,"we are")
+.replace(/\btheyre\b/g,"they are")
+
+.replace(/\bisnt\b/g,"is not")
+.replace(/\barent\b/g,"are not")
+.replace(/\bwasnt\b/g,"was not")
+.replace(/\bwerent\b/g,"were not")
+
+.replace(/\bdont\b/g,"do not")
+.replace(/\bdoesnt\b/g,"does not")
+.replace(/\bdidnt\b/g,"did not")
+
+.replace(/\bcant\b/g,"cannot")
+.replace(/\bwont\b/g,"will not")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+
+
+/* =========================================================
+   WRITING QUESTIONS
+========================================================= */
+
+function checkWriting(
+inputId,
+resultId,
+correctAnswers
+){
+
+const input =
+document.getElementById(inputId);
+
+const result =
+document.getElementById(resultId);
+
+const userAnswer =
+normalizeText(input.value);
+
+const answers =
+correctAnswers.map(
+answer => normalizeText(answer)
+);
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+'✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
+
+result.className =
+"answer-result success-text";
+
+}
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+setTimeout(
+function(){
+
+input.classList.remove(
+"shake"
+);
+
+},
+300
+);
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة."+
+"<br><br>"+
+"💡 الإجابة الصحيحة هي:"+
+"<br><br>"+
+"<b>"+
+correctAnswers[0]+
+"</b>";
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+
+/* =========================================================
+   MULTIPLE CHOICE
+========================================================= */
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+const result =
+document.getElementById(resultId);
+
+const allButtons =
+button.parentElement
+.querySelectorAll(".choice-btn");
+
+allButtons.forEach(
+btn => {
+
+btn.disabled = true;
+
+}
+);
+
+if(isCorrect){
+
+button.classList.add("correct");
+
+if(
+!button.innerHTML.includes("✔️")
+){
+
+button.innerHTML +=
+" ✔️";
+
+}
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+'✅ أحسنت! إجابة صحيحة.';
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+button.classList.add(
+"wrong",
+"shake"
+);
+
+setTimeout(
+function(){
+
+button.classList.remove(
+"shake"
+);
+
+},
+300
+);
+
+if(
+!button.innerHTML.includes("✖️")
+){
+
+button.innerHTML +=
+" ✖️";
+
+}
+
+result.innerHTML =
+"😅❌ إجابة غير صحيحة.";
+
+result.className =
+"result-text error-text";
+
+
+allButtons.forEach(
+btn => {
+
+const onclick =
+btn.getAttribute("onclick") || "";
+
+if(
+onclick.includes("true")
+){
+
+btn.classList.add("correct");
+
+if(
+!btn.innerHTML.includes("✔️")
+){
+
+btn.innerHTML +=
+" ✔️";
+
+}
+
+}
+
+}
+);
+
+}
+
+}
+
+
+/* =========================================================
+   WORD ORDER
+========================================================= */
+
+function addWord(
+button,
+answerBoxId
+){
+
+if(
+button.style.display === "none"
+){
+
+return;
+
+}
+
+const answerBox =
+document.getElementById(answerBoxId);
+
+const newWord =
+document.createElement("div");
+
+newWord.className =
+"selected-word";
+
+newWord.innerText =
+button.innerText;
+
+answerBox.appendChild(newWord);
+
+button.style.display =
+"none";
+
+}
+
+
+function resetSentence(
+wordsId,
+answerBoxId,
+resultId
+){
+
+const container =
+document.getElementById(wordsId);
+
+container
+.querySelectorAll(".word-btn")
+.forEach(
+button => {
+
+button.style.display =
+"inline-block";
+
+}
+);
+
+document
+.getElementById(answerBoxId)
+.innerHTML = "";
+
+if(resultId){
+
+document
+.getElementById(resultId)
+.innerHTML = "";
+
+}
+
+}
+
+
+function checkSentence(
+answerBoxId,
+correctSentence,
+resultId
+){
+
+const answerBox =
+document.getElementById(answerBoxId);
+
+const result =
+document.getElementById(resultId);
+
+const words =
+answerBox.querySelectorAll(
+".selected-word"
+);
+
+let userSentence = "";
+
+words.forEach(
+word => {
+
+userSentence +=
+word.innerText + " ";
+
+}
+);
+
+userSentence =
+normalizeText(userSentence);
+
+const correct =
+normalizeText(correctSentence);
+
+answerBox.classList.remove("shake");
+
+if(
+userSentence === correct
+){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+'✅ أحسنت! ترتيب الكلمات صحيح.';
+
+result.className =
+"result-text success-text";
+
+answerBox.style.borderColor =
+"#8fd19e";
+
+answerBox.style.background =
+"#eefdf3";
+
+}
+
+else{
+
+answerBox.classList.add("shake");
+
+setTimeout(
+function(){
+
+answerBox.classList.remove("shake");
+
+},
+300
+);
+
+answerBox.style.borderColor =
+"#ffb8b8";
+
+answerBox.style.background =
+"#fff2f2";
+
+result.innerHTML =
+"😅❌ ترتيب الكلمات غير صحيح.";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+/* =========================================================
+   SHUFFLE
+========================================================= */
+
+function shuffleWords(containerId){
+
+const container =
+document.getElementById(containerId);
+
+if(!container){
+
+return;
+
+}
+
+const buttons =
+Array.from(
+container.querySelectorAll(".word-btn")
+);
+
+buttons.sort(
+() => Math.random() - 0.5
+);
+
+container.innerHTML = "";
+
+buttons.forEach(
+button => {
+
+container.appendChild(button);
+
+}
+);
+
+}
+
+
+/* =========================================================
+   FINAL CHALLENGE
+========================================================= */
+
+function checkFinalChallenge(){
+
+const input =
+document.getElementById("finalInput");
+
+const result =
+document.getElementById("finalResult");
+
+const userAnswer =
+normalizeText(input.value);
+
+const correctAnswers = [
+
+"I book a hotel every summer.",
+"I book a hotel every summer"
+
+];
+
+const answers =
+correctAnswers.map(
+answer => normalizeText(answer)
+);
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+'🏆 أحسنت! لقد وصلت إلى الإجابة الصحيحة.';
+
+result.className =
+"answer-result success-text";
+
+document
+.getElementById("finish-review-btn")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+setTimeout(
+function(){
+
+input.classList.remove(
+"shake"
+);
+
+},
+300
+);
+
+result.innerHTML =
+
+"😅❌ ليست الإجابة الصحيحة."+
+"<br><br>"+
+"💡 حاول استخدام كلمة <b>book</b> بمعنى يحجز.";
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+
+/* =========================================================
+   FINISH REVIEW
+========================================================= */
+
+document
+.getElementById("finish-review-btn")
+.addEventListener(
+"click",
+function(){
+
+finishUnitReview();
+
+}
+);
+
+
+/* =========================================================
+   REWARD SYSTEM
+========================================================= */
+
+async function finishUnitReview(){
+
+try{
+
+const module =
+await import("./js/reward.js");
+
+if(
+typeof module.finishLesson === "function"
+){
+
+module.finishLesson(
+
+"pre-intermediate-unit2-review",
+
+"🏆 مراجعة الوحدة الثانية",
+
+"unit3-pre.html"
+
+);
+
+return;
+
+}
+
+window.location.href =
+"unit3-pre.html";
+
+}
+
+catch(error){
+
+console.error(
+"Reward system error:",
+error
+);
+
+window.location.href =
+"unit3-pre.html";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
