@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Sequencing Words | Practice | Engliza Academy
+</title>
+
+
+<style>
+
+/* ==========================================================
+   الأساسيات
+========================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+font-family:Arial,sans-serif;
+
+}
+
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+}
+
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+
+/* ==========================================================
+   الأعلى
+========================================================== */
+
+.top-bar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+
+.back-btn{
+
+background:white;
+
+padding:14px 25px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:#1f3c88;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+
+.owl-circle img{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   عنوان الدرس
+========================================================== */
+
+.title{
+
+text-align:center;
+
+font-size:52px;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+}
+
+
+.subtitle{
+
+text-align:center;
+
+font-size:23px;
+
+line-height:2.3;
+
+font-weight:600;
+
+color:#4b4b4b;
+
+margin-bottom:40px;
+
+}
+
+
+/* ==========================================================
+   الفيديو
+========================================================== */
+
+.video-box{
+
+background:white;
+
+padding:0;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+overflow:hidden;
+
+}
+
+
+.video-box video{
+
+width:100%;
+
+display:block;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+border-radius:35px;
+
+}
+
+
+/* ==========================================================
+   البطاقات العامة
+========================================================== */
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+border:2px solid #dfe8ff;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+}
+
+
+/* ==========================================================
+   بطاقة البومة
+========================================================== */
+
+.message-card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:flex-start;
+
+gap:25px;
+
+}
+
+
+.message-card img{
+
+width:130px;
+
+flex-shrink:0;
+
+display:block;
+
+}
+
+
+.message-content{
+
+flex:1;
+
+}
+
+
+.message-content h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+
+.message-content p{
+
+font-size:22px;
+
+line-height:1.9;
+
+font-weight:600;
+
+color:#444;
+
+margin:0;
+
+}
+
+
+/* ==========================================================
+   بطاقة التمهيد للقراءة
+========================================================== */
+
+.reading-header{
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#f8f6ff
+);
+
+border-radius:30px;
+
+padding:25px 30px;
+
+margin:45px 0 30px;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.07);
+
+border:1px solid #eee9ff;
+
+}
+
+
+.reading-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+background:#eee9ff;
+
+box-shadow:
+0 8px 20px rgba(111,67,255,.12);
+
+flex-shrink:0;
+
+}
+
+
+.reading-header h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin:0 0 5px;
+
+}
+
+
+.reading-header p{
+
+font-size:18px;
+
+color:#777;
+
+margin:0;
+
+line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   بطاقات القراءة
+========================================================== */
+
+.reading-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:30px;
+
+border:2px solid #edf1ff;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
+animation:fadeUp .6s ease;
+
+}
+
+
+.reading-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+/* ==========================================================
+   عنوان الفقرة
+========================================================== */
+
+.reading-title{
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:22px;
+
+line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   نص القراءة
+========================================================== */
+
+.reading-text{
+
+direction:ltr;
+
+unicode-bidi:embed;
+
+text-align:left;
+
+font-size:22px;
+
+font-weight:500;
+
+line-height:2;
+
+color:#333;
+
+margin:0;
+
+}
+
+
+/* ==========================================================
+   إبراز كلمات التسلسل
+========================================================== */
+
+.sequence-word{
+
+font-weight:800;
+
+color:#6f43ff;
+
+}
+
+
+/* ==========================================================
+   ترجمة الفقرة
+========================================================== */
+
+.reading-translation{
+
+margin-top:25px;
+
+padding-top:20px;
+
+border-top:1px solid #eee;
+
+font-size:18px;
+
+line-height:2;
+
+font-weight:600;
+
+color:#777;
+
+text-align:right;
+
+}
+
+
+/* ==========================================================
+   بطاقة النهاية
+========================================================== */
+
+.final-card{
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#3768ff,
+#6f43ff
+);
+
+border:none;
+
+}
+
+
+.final-card h2{
+
+font-size:40px;
+
+color:#ffe082;
+
+margin-bottom:20px;
+
+}
+
+
+.final-card p{
+
+font-size:22px;
+
+line-height:2;
+
+font-weight:600;
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+
+.next-lesson-btn{
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+border-radius:24px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:#6f43ff;
+
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+.next-lesson-btn:active{
+
+transform:scale(.97);
+
+}
+
+
+/* ==========================================================
+   الحركات
+========================================================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:20px 14px;
+
+}
+
+
+.title{
+
+font-size:38px;
+
+}
+
+
+.subtitle{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+
+.card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+
+/* البومة */
+
+.message-card{
+
+align-items:flex-start;
+
+gap:14px;
+
+}
+
+
+.message-card img{
+
+width:95px;
+
+}
+
+
+.message-content h2{
+
+font-size:24px;
+
+}
+
+
+.message-content p{
+
+font-size:17px;
+
+line-height:1.9;
+
+}
+
+
+/* تمهيد القراءة */
+
+.reading-header{
+
+padding:22px 20px;
+
+gap:15px;
+
+margin:35px 0 25px;
+
+border-radius:25px;
+
+}
+
+
+.reading-header h2{
+
+font-size:26px;
+
+}
+
+
+.reading-header p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+
+.reading-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:26px;
+
+border-radius:17px;
+
+}
+
+
+/* بطاقات القراءة */
+
+.reading-card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+border-radius:25px;
+
+}
+
+
+.reading-title{
+
+font-size:23px;
+
+line-height:1.7;
+
+margin-bottom:18px;
+
+}
+
+
+.reading-text{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+
+.reading-translation{
+
+font-size:16px;
+
+line-height:2;
+
+}
+
+
+/* النهاية */
+
+.final-card h2{
+
+font-size:30px;
+
+}
+
+
+.final-card p{
+
+font-size:18px;
+
+}
+
+
+.next-lesson-btn{
+
+font-size:19px;
+
+padding:20px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ==========================================================
+     الأعلى
+========================================================== -->
+
+<div class="top-bar">
+
+<a
+href="intermediate-unit1.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+<div class="owl-circle">
+
+<img
+src="../okay.owl.PNG"
+alt="Owl">
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     عنوان الدرس
+========================================================== -->
+
+<h1 class="title">
+
+🔢 Sequencing Words | Practice
+
+</h1>
+
+
+<p class="subtitle">
+
+تدرّب على استخدام كلمات التسلسل داخل نصوص حقيقية، وطوّر قدرتك على القراءة وفهم ترتيب الأحداث والأفكار.
+
+</p>
+
+
+
+<!-- ==========================================================
+     فيديو الـ Practice
+========================================================== -->
+
+<div class="video-box">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="https://videos.englizaacademy.com/Intermediate/Sequencing%20practice.MOV"
+type="video/mp4">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة البومة
+========================================================== -->
+
+<div class="card message-card">
+
+<img
+src="../success.owl.PNG"
+alt="Owl">
+
+<div class="message-content">
+
+<h2>
+
+💡 نصيحة للقراءة!
+
+</h2>
+
+<p>
+
+عندما تقرأ فقرة باللغة الإنجليزية، لا تحاول ترجمة كل كلمة على حدة. حاول أولًا أن تفهم الفكرة العامة، وانتبه إلى الكلمات التي تربط الأحداث ببعضها. كلمات مثل <b>first</b> و<b>then</b> و<b>after</b> و<b>finally</b> تساعدك على معرفة ترتيب الأفكار وفهم النص بشكل أسرع. 📖✨
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     تمهيد القراءة
+========================================================== -->
+
+<div class="reading-header">
+
+<div class="reading-icon">
+
+📖
+
+</div>
+
+<div>
+
+<h2>
+
+حان وقت القراءة!
+
+</h2>
+
+<p>
+
+اقرأ الفقرات التالية بهدوء، وانتبه إلى كلمات التسلسل وكيف تساعدك على متابعة الأحداث والأفكار.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     الفقرة الأولى
+========================================================== -->
+
+<div class="reading-card">
+
+<h2 class="reading-title">
+
+🌅 A Busy Morning
+
+</h2>
+
+
+<p class="reading-text">
+
+<span class="sequence-word">First</span>, I wake up early and open the windows to let some fresh air into my room. I make my bed and get ready for the day. <span class="sequence-word">Next</span>, I go to the kitchen and prepare a simple breakfast. I usually have some eggs, bread, and fruit before I leave home. <span class="sequence-word">Then</span>, I check my bag to make sure I have everything I need for school. I take my notebook, my books, and a bottle of water. <span class="sequence-word">Finally</span>, I put on my shoes and leave the house. Starting my morning in this order helps me feel calm and ready for the day.
+
+</p>
+
+
+<div class="reading-translation">
+
+💬 الفكرة بالعربي: يصف الكاتب روتينه الصباحي، ويستخدم كلمات التسلسل لتوضيح ترتيب الخطوات من الاستيقاظ حتى مغادرة المنزل.
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     الفقرة الثانية
+========================================================== -->
+
+<div class="reading-card">
+
+<h2 class="reading-title">
+
+🍳 Making Breakfast
+
+</h2>
+
+
+<p class="reading-text">
+
+<span class="sequence-word">Firstly</span>, I collect everything I need to make breakfast and place the ingredients on the kitchen table. <span class="sequence-word">Secondly</span>, I prepare the vegetables and cut them into small pieces. <span class="sequence-word">Thirdly</span>, I heat the pan and cook the vegetables with the eggs. <span class="sequence-word">After that</span>, I put the food on a plate and add some bread and fruit. I usually make a cup of tea while I wait for the food to cool down. <span class="sequence-word">Finally</span>, I sit at the table and enjoy my breakfast before starting my work.
+
+</p>
+
+
+<div class="reading-translation">
+
+💬 الفكرة بالعربي: يشرح الكاتب طريقة إعداد وجبة فطور، ويستخدم كلمات التسلسل لعرض الخطوات بالترتيب.
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     الفقرة الثالثة
+========================================================== -->
+
+<div class="reading-card">
+
+<h2 class="reading-title">
+
+🌳 A Walk in the Park
+
+</h2>
+
+
+<p class="reading-text">
+
+<span class="sequence-word">Before</span> I went to the park, I finished my homework and prepared a bottle of water. <span class="sequence-word">While</span> I was walking, I listened to music and enjoyed the fresh air. I stopped for a few minutes when I saw some beautiful flowers near the lake. <span class="sequence-word">After</span> I walked around the park, I sat on a bench and watched the people around me. <span class="sequence-word">Then</span>, I called my friend and told her about my day. <span class="sequence-word">Lastly</span>, I went back home because it was getting late. It was a simple walk, but it helped me relax and forget about the stress of the day.
+
+</p>
+
+
+<div class="reading-translation">
+
+💬 الفكرة بالعربي: يحكي الكاتب عن نزهة في الحديقة، ويستخدم كلمات التسلسل لربط الأحداث وتوضيح ما حدث قبل وأثناء وبعد النزهة.
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة نهاية الدرس
+========================================================== -->
+
+<div class="card final-card">
+
+<h2>
+
+🏆 أحسنت! أنهيت الدرس
+
+</h2>
+
+<p>
+
+ممتاز! 🎉
+
+<br><br>
+
+لقد تدربت الآن على قراءة نصوص حقيقية واكتشفت كيف تساعدك كلمات التسلسل على فهم ترتيب الأحداث والأفكار. استمر في القراءة، فكل فقرة تقرؤها تقرّبك خطوة من الطلاقة. ✨
+
+</p>
+
+
+<button
+class="next-lesson-btn"
+onclick="finishLessonPage()">
+
+🚀 الانتقال إلى الدرس التالي
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ==========================================================
+     نظام المكافآت والانتقال
+========================================================== -->
+
+<script type="module">
+
+import {
+finishLesson
+}
+from "./js/reward.js";
+
+
+window.finishLessonPage = function(){
+
+finishLesson(
+
+"intermediate-unit1-lesson3",
+
+"Sequencing Words | Practice",
+
+"sequencing-practice.html"
+
+);
+
+};
+
+</script>
+
+
+</body>
+
+</html>
