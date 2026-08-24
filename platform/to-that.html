@@ -1,0 +1,2897 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+To & That | Engliza Academy
+</title>
+
+<style>
+
+/* ==========================================================
+   الأساسيات
+========================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+}
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+
+/* ==========================================================
+   الأعلى
+========================================================== */
+
+.top-bar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+.back-btn{
+
+background:white;
+
+padding:14px 25px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:#1f3c88;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.owl-circle img{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   العنوان
+========================================================== */
+
+.title{
+
+text-align:center;
+
+font-size:52px;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+font-size:23px;
+
+line-height:2.3;
+
+font-weight:600;
+
+color:#4b4b4b;
+
+margin-bottom:40px;
+
+}
+
+
+/* ==========================================================
+   الفيديو
+========================================================== */
+
+.video-box{
+
+background:white;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+overflow:hidden;
+
+}
+
+.video-box video{
+
+width:100%;
+
+display:block;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+}
+
+
+/* ==========================================================
+   البطاقات العامة
+========================================================== */
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+border:2px solid #dfe8ff;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+}
+
+
+/* ==========================================================
+   بطاقة البومة
+========================================================== */
+
+.message-card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:flex-start;
+
+gap:25px;
+
+}
+
+.message-card img{
+
+width:130px;
+
+flex-shrink:0;
+
+display:block;
+
+}
+
+.message-content{
+
+flex:1;
+
+}
+
+.message-content h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+.message-content p{
+
+font-size:22px;
+
+line-height:1.9;
+
+font-weight:600;
+
+color:#444;
+
+margin:0;
+
+}
+
+
+/* ==========================================================
+   بطاقة الأمثلة
+========================================================== */
+
+.examples-card{
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#f8f6ff
+);
+
+border:1px solid #e5e0ff;
+
+border-radius:30px;
+
+padding:28px;
+
+margin-bottom:35px;
+
+box-shadow:
+0 12px 30px rgba(111,67,255,.08);
+
+}
+
+.examples-header{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:22px;
+
+}
+
+.examples-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:19px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:29px;
+
+background:#eee9ff;
+
+flex-shrink:0;
+
+box-shadow:
+0 8px 20px rgba(111,67,255,.10);
+
+}
+
+.examples-header h2{
+
+font-size:28px;
+
+color:#1f3c88;
+
+margin-bottom:5px;
+
+}
+
+.examples-header p{
+
+font-size:17px;
+
+color:#777;
+
+line-height:1.7;
+
+font-weight:600;
+
+}
+
+.examples-toggle-btn{
+
+display:block;
+
+width:100%;
+
+padding:17px 20px;
+
+border:none;
+
+border-radius:19px;
+
+background:
+linear-gradient(
+135deg,
+#f5f7ff,
+#eee9ff
+);
+
+border:2px solid #dce4ff;
+
+color:#1f3c88;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.examples-toggle-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 12px 25px rgba(31,60,136,.10);
+
+}
+
+.examples-content{
+
+display:none;
+
+margin-top:25px;
+
+}
+
+.examples-content.show{
+
+display:block;
+
+animation:fadeUp .4s ease;
+
+}
+
+
+/* ==========================================================
+   مجموعات الأمثلة
+========================================================== */
+
+.example-group{
+
+background:white;
+
+border:2px solid #edf1ff;
+
+border-radius:24px;
+
+padding:22px;
+
+margin-bottom:20px;
+
+}
+
+.example-group-title{
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:18px;
+
+}
+
+.example-item{
+
+background:#f8f9ff;
+
+border-radius:18px;
+
+padding:17px 19px;
+
+margin-bottom:12px;
+
+border-right:5px solid #6f43ff;
+
+}
+
+.example-item:last-child{
+
+margin-bottom:0;
+
+}
+
+.example-english{
+
+direction:ltr;
+
+text-align:left;
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#222;
+
+line-height:1.7;
+
+margin-bottom:7px;
+
+}
+
+.example-arabic{
+
+font-size:17px;
+
+font-weight:600;
+
+color:#666;
+
+line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   زر إخفاء الأمثلة
+========================================================== */
+
+.hide-examples-btn{
+
+display:block;
+
+width:100%;
+
+margin-top:22px;
+
+padding:15px;
+
+background:white;
+
+border:2px solid #e0e5f5;
+
+border-radius:18px;
+
+color:#666;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   بطاقة التدريب
+========================================================== */
+
+.practice-header{
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#f8f6ff
+);
+
+border-radius:30px;
+
+padding:25px 30px;
+
+margin:45px 0 30px;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.07);
+
+border:1px solid #eee9ff;
+
+}
+
+.practice-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+background:#eee9ff;
+
+box-shadow:
+0 8px 20px rgba(111,67,255,.12);
+
+flex-shrink:0;
+
+}
+
+.practice-header h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin:0 0 5px;
+
+}
+
+.practice-header p{
+
+font-size:18px;
+
+color:#777;
+
+margin:0;
+
+line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   بطاقات الأسئلة
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+border:2px solid #edf1ff;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#6f43ff,
+#8f6dff
+);
+
+}
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#f0ecff;
+
+border:2px solid #d8ccff;
+
+color:#6f43ff;
+
+font-size:17px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+.question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+line-height:1.8;
+
+margin-bottom:15px;
+
+}
+
+.question-english{
+
+direction:ltr;
+
+text-align:center;
+
+font-size:27px;
+
+font-weight:700;
+
+line-height:1.9;
+
+color:#222;
+
+margin:25px 0;
+
+}
+
+.question-translation{
+
+font-size:19px;
+
+font-weight:bold;
+
+color:#666;
+
+text-align:center;
+
+line-height:1.8;
+
+margin-bottom:22px;
+
+}
+
+
+/* ==========================================================
+   الاختيارات
+========================================================== */
+
+.choice-container{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+margin-top:20px;
+
+}
+
+.choice-btn{
+
+display:block;
+
+width:100%;
+
+padding:19px 20px;
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+font-size:19px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:
+0 8px 22px rgba(31,60,136,.06);
+
+}
+
+.choice-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.choice-btn:disabled{
+
+cursor:default;
+
+opacity:1;
+
+}
+
+.choice-btn.correct{
+
+background:#e8fff0 !important;
+
+border-color:#9cddb3 !important;
+
+color:#0f8b4c !important;
+
+}
+
+.choice-btn.wrong{
+
+background:#ffe8e8 !important;
+
+border-color:#ffb8b8 !important;
+
+color:#c62828 !important;
+
+}
+
+
+/* ==========================================================
+   الكتابة
+========================================================== */
+
+.writing-input{
+
+display:block;
+
+width:100%;
+
+padding:19px 20px;
+
+border-radius:20px;
+
+border:2px solid #dce4ff;
+
+font-size:20px;
+
+outline:none;
+
+transition:.3s;
+
+margin-top:18px;
+
+margin-bottom:18px;
+
+background:#fafbff;
+
+color:#1f3c88;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+.writing-input:focus{
+
+border-color:#6f43ff;
+
+background:white;
+
+box-shadow:
+0 0 0 5px rgba(111,67,255,.09);
+
+}
+
+.writing-input.correct-input{
+
+background:#e8fff0;
+
+border-color:#9cddb3;
+
+color:#0f8b4c;
+
+}
+
+.writing-input.wrong-input{
+
+background:#ffe8e8;
+
+border-color:#ffb8b8;
+
+color:#c62828;
+
+}
+
+
+/* ==========================================================
+   زر التحقق
+========================================================== */
+
+.check-answer-btn{
+
+display:block;
+
+width:100%;
+
+padding:17px 20px;
+
+margin-top:10px;
+
+background:
+linear-gradient(
+135deg,
+#f5f7ff,
+#eee9ff
+);
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.check-answer-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   النتائج
+========================================================== */
+
+.answer-result,
+.result-text{
+
+margin-top:20px;
+
+font-size:19px;
+
+font-weight:bold;
+
+line-height:1.9;
+
+animation:fadeResult .4s ease;
+
+}
+
+.success-text{
+
+color:#0f8b4c;
+
+}
+
+.error-text{
+
+color:#c62828;
+
+}
+
+
+/* ==========================================================
+   النجوم
+========================================================== */
+
+.confetti{
+
+position:relative;
+
+width:100%;
+
+height:55px;
+
+pointer-events:none;
+
+}
+
+.star{
+
+position:absolute;
+
+bottom:0;
+
+font-size:27px;
+
+opacity:0;
+
+animation:flyStars 1.35s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+
+left:10%;
+
+}
+
+.star:nth-child(2){
+
+left:30%;
+
+animation-delay:.1s;
+
+}
+
+.star:nth-child(3){
+
+left:50%;
+
+animation-delay:.2s;
+
+}
+
+.star:nth-child(4){
+
+left:70%;
+
+animation-delay:.15s;
+
+}
+
+.star:nth-child(5){
+
+left:90%;
+
+animation-delay:.05s;
+
+}
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(20px)
+scale(.3)
+rotate(0deg);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-70px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+
+
+/* ==========================================================
+   الاهتزاز
+========================================================== */
+
+.shake{
+
+animation:answerShake .35s ease;
+
+}
+
+@keyframes answerShake{
+
+0%{transform:translateX(0);}
+
+20%{transform:translateX(-8px);}
+
+40%{transform:translateX(8px);}
+
+60%{transform:translateX(-7px);}
+
+80%{transform:translateX(7px);}
+
+100%{transform:translateX(0);}
+
+}
+
+
+/* ==========================================================
+   بطاقة النهاية
+========================================================== */
+
+.final-card{
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+border:none;
+
+}
+
+.final-card h2{
+
+font-size:40px;
+
+color:#ffe082;
+
+margin-bottom:20px;
+
+}
+
+.final-card p{
+
+font-size:22px;
+
+line-height:2;
+
+font-weight:600;
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+.next-lesson-btn{
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+border-radius:24px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:#6f43ff;
+
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:20px 14px;
+
+}
+
+.title{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+.card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+.message-card{
+
+align-items:flex-start;
+
+gap:14px;
+
+}
+
+.message-card img{
+
+width:95px;
+
+}
+
+.message-content h2{
+
+font-size:24px;
+
+}
+
+.message-content p{
+
+font-size:17px;
+
+line-height:1.9;
+
+}
+
+.examples-card{
+
+padding:22px 18px;
+
+}
+
+.examples-header{
+
+align-items:flex-start;
+
+gap:13px;
+
+}
+
+.examples-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:25px;
+
+}
+
+.examples-header h2{
+
+font-size:23px;
+
+}
+
+.examples-header p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+.example-group{
+
+padding:18px 15px;
+
+}
+
+.example-group-title{
+
+font-size:19px;
+
+}
+
+.example-english{
+
+font-size:18px;
+
+}
+
+.example-arabic{
+
+font-size:16px;
+
+}
+
+.practice-header{
+
+padding:22px 20px;
+
+gap:15px;
+
+margin:35px 0 25px;
+
+}
+
+.practice-header h2{
+
+font-size:26px;
+
+}
+
+.practice-header p{
+
+font-size:15px;
+
+}
+
+.practice-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:26px;
+
+}
+
+.question-card{
+
+padding:25px 20px;
+
+}
+
+.question-title{
+
+font-size:20px;
+
+}
+
+.question-english{
+
+font-size:22px;
+
+}
+
+.question-translation{
+
+font-size:17px;
+
+}
+
+.choice-btn{
+
+font-size:17px;
+
+padding:17px 15px;
+
+}
+
+.writing-input{
+
+font-size:18px;
+
+padding:17px;
+
+}
+
+.answer-result,
+.result-text{
+
+font-size:17px;
+
+}
+
+.final-card h2{
+
+font-size:30px;
+
+}
+
+.final-card p{
+
+font-size:18px;
+
+}
+
+.next-lesson-btn{
+
+font-size:19px;
+
+padding:20px;
+
+}
+
+}
+
+
+/* ==========================================================
+   الحركات
+========================================================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ==========================================================
+     الأعلى
+========================================================== -->
+
+<div class="top-bar">
+
+<a
+href="intermediate-unit2.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+<div class="owl-circle">
+
+<img
+src="../okay.owl.PNG"
+alt="Owl">
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     عنوان الدرس
+========================================================== -->
+
+<h1 class="title">
+
+🔗 To & That
+
+</h1>
+
+
+<p class="subtitle">
+
+تعلّم كيف تستخدم
+<strong>To</strong>
+و
+<strong>That</strong>
+داخل الجمل، وتعرّف على المعنى الذي تعطيه كل واحدة منهما حسب السياق.
+
+</p>
+
+
+
+<!-- ==========================================================
+     الفيديو
+========================================================== -->
+
+<div class="video-box">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="https://videos.englizaacademy.com/Intermediate/To%20and%20That.MOV"
+type="video/mp4">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة البومة
+========================================================== -->
+
+<div class="card message-card">
+
+<img
+src="../success.owl.PNG"
+alt="Owl">
+
+<div class="message-content">
+
+<h2>
+
+💡 نصيحة لرحلتك!
+
+</h2>
+
+<p>
+
+لا تحاول أن تفهم الكلمة الإنجليزية من ترجمة واحدة فقط. أحيانًا تتغير وظيفة الكلمة أو معناها حسب الجملة التي جاءت فيها. تعوّد على قراءة الكلمة داخل سياقها، ومع الوقت ستبدأ بفهم معناها بشكل أسرع دون الحاجة إلى ترجمتها كلمة بكلمة. 🌱
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة الأمثلة
+========================================================== -->
+
+<div class="examples-card">
+
+
+<div class="examples-header">
+
+<div class="examples-icon">
+
+💡
+
+</div>
+
+<div>
+
+<h2>
+
+شاهد أمثلة أكثر!
+
+</h2>
+
+<p>
+
+كلما شاهدت جملًا أكثر، بدأت تلاحظ استخدام To وThat بشكل طبيعي. لا تحاول حفظها كلها؛ فقط اقرأها وانتبه للسياق. 🌱
+
+</p>
+
+</div>
+
+</div>
+
+
+<button
+class="examples-toggle-btn"
+id="examplesToggle"
+onclick="toggleExamples()">
+
+📖 عرض الجمل
+
+</button>
+
+
+<div
+class="examples-content"
+id="examplesContent">
+
+
+<!-- ==========================================================
+     TO = أن
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🟢 To = أن
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+I want to improve my English before I start university.
+
+</p>
+
+<p class="example-arabic">
+
+أريد أن أُحسّن لغتي الإنجليزية قبل أن أبدأ الجامعة.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+She decided to take a short break after finishing the project.
+
+</p>
+
+<p class="example-arabic">
+
+قررت أن تأخذ استراحة قصيرة بعد إنهاء المشروع.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+We need to practice regularly if we want to become more confident.
+
+</p>
+
+<p class="example-arabic">
+
+نحتاج أن نتدرب بانتظام إذا أردنا أن نصبح أكثر ثقة.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+He is trying to understand how the new system works.
+
+</p>
+
+<p class="example-arabic">
+
+هو يحاول أن يفهم كيف يعمل النظام الجديد.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     TO = إلى
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🔵 To = إلى
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+I usually walk to work when the weather is nice.
+
+</p>
+
+<p class="example-arabic">
+
+عادةً أمشي إلى العمل عندما يكون الطقس جميلًا.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+We traveled to another city to attend an important meeting.
+
+</p>
+
+<p class="example-arabic">
+
+سافرنا إلى مدينة أخرى لحضور اجتماع مهم.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+She moved to a quieter area because she wanted a more peaceful life.
+
+</p>
+
+<p class="example-arabic">
+
+انتقلت إلى منطقة أكثر هدوءًا لأنها أرادت حياة أكثر راحة.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+Could you send this email to my manager?
+
+</p>
+
+<p class="example-arabic">
+
+هل يمكنك إرسال هذا البريد الإلكتروني إلى مديري؟
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     TO = لي / لشخص
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🟣 To = لي / لشخص
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+Can you give this message to Sarah when you see her?
+
+</p>
+
+<p class="example-arabic">
+
+هل يمكنك إعطاء هذه الرسالة لسارة عندما تراها؟
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+He gave the documents to me before the meeting started.
+
+</p>
+
+<p class="example-arabic">
+
+أعطاني المستندات قبل أن يبدأ الاجتماع.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+I sent the information to my friend so she could understand the situation.
+
+</p>
+
+<p class="example-arabic">
+
+أرسلت المعلومات لصديقتي حتى تتمكن من فهم الموقف.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+Please explain the problem to me one more time.
+
+</p>
+
+<p class="example-arabic">
+
+من فضلك اشرح المشكلة لي مرة أخرى.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     THAT = أن
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🟠 That = أن
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+I think that this is a good opportunity for you.
+
+</p>
+
+<p class="example-arabic">
+
+أعتقد أن هذه فرصة جيدة لك.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+She told me that she would arrive later.
+
+</p>
+
+<p class="example-arabic">
+
+أخبرتني أنها ستصل لاحقًا.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+We know that learning a language takes time.
+
+</p>
+
+<p class="example-arabic">
+
+نحن نعرف أن تعلم اللغة يحتاج إلى وقت.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+He believes that practicing every day will help him improve.
+
+</p>
+
+<p class="example-arabic">
+
+هو يعتقد أن التدريب كل يوم سيساعده على التحسن.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     أمثلة متنوعة
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🌟 لاحظ الفرق في السياق
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+I want to tell you that your English is improving.
+
+</p>
+
+<p class="example-arabic">
+
+أريد أن أخبرك أن لغتك الإنجليزية تتحسن.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+She went to the library to study because she knew that the exam was important.
+
+</p>
+
+<p class="example-arabic">
+
+ذهبت إلى المكتبة لتدرس لأنها كانت تعرف أن الاختبار مهم.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+He gave the book to his brother and told him that it was very useful.
+
+</p>
+
+<p class="example-arabic">
+
+أعطى الكتاب لأخيه وأخبره أنه كان مفيدًا جدًا.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     زر الإخفاء
+========================================================== -->
+
+<button
+class="hide-examples-btn"
+onclick="hideExamples()">
+
+🙈 إخفاء الجمل
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة التدريب
+========================================================== -->
+
+<div class="practice-header">
+
+<div class="practice-icon">
+
+📝
+
+</div>
+
+<div>
+
+<h2>
+
+تدرب الآن
+
+</h2>
+
+<p>
+
+اختر أو اكتب الإجابة المناسبة، وحاول التفكير في معنى
+<strong>To</strong>
+أو
+<strong>That</strong>
+من خلال السياق.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 1
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+1
+
+</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+ما الكلمة المناسبة؟
+
+</p>
+
+<p class="question-english">
+
+I want ___ learn more about English.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result1')">
+
+to
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result1')">
+
+that
+
+</button>
+
+</div>
+
+<p
+id="result1"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 2
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+2
+
+</div>
+
+<div class="question-type">
+
+🎯 اختر الإجابة الصحيحة
+
+</div>
+
+<p class="question-title">
+
+اختر الكلمة المناسبة:
+
+</p>
+
+<p class="question-english">
+
+I think ___ this idea could work.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result2')">
+
+to
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result2')">
+
+that
+
+</button>
+
+</div>
+
+<p
+id="result2"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 3
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+3
+
+</div>
+
+<div class="question-type">
+
+🌍 اختر المعنى الصحيح
+
+</div>
+
+<p class="question-english">
+
+She went to the university.
+
+</p>
+
+<p class="question-translation">
+
+ما معنى To في هذه الجملة؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result3')">
+
+إلى
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result3')">
+
+أن
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result3')">
+
+أن / معلومة
+
+</button>
+
+</div>
+
+<p
+id="result3"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 4
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+4
+
+</div>
+
+<div class="question-type">
+
+🌍 اختر المعنى الصحيح
+
+</div>
+
+<p class="question-english">
+
+I need to finish my work.
+
+</p>
+
+<p class="question-translation">
+
+ما معنى To هنا؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result4')">
+
+إلى
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result4')">
+
+أن
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result4')">
+
+لشخص
+
+</button>
+
+</div>
+
+<p
+id="result4"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 5
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+5
+
+</div>
+
+<div class="question-type">
+
+✍️ أكمل الجملة
+
+</div>
+
+<p class="question-english">
+
+She told me _____ she was busy.
+
+</p>
+
+<p class="question-translation">
+
+أخبرتني أنها كانت مشغولة.
+
+</p>
+
+<input
+type="text"
+id="writing1"
+class="writing-input"
+placeholder="اكتب الكلمة المناسبة"
+autocomplete="off">
+
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'writing1',
+'result5',
+[
+'that'
+]
+)">
+
+✨ تحقق من الإجابة
+
+</button>
+
+<p
+id="result5"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 6
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+6
+
+</div>
+
+<div class="question-type">
+
+🌍 اختر المعنى الصحيح
+
+</div>
+
+<p class="question-english">
+
+Please give this book to Ahmed.
+
+</p>
+
+<p class="question-translation">
+
+ما معنى To في هذه الجملة؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result6')">
+
+أن
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result6')">
+
+إلى مكان
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result6')">
+
+لـ / إلى شخص
+
+</button>
+
+</div>
+
+<p
+id="result6"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 7
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+7
+
+</div>
+
+<div class="question-type">
+
+🧠 تحدي صغير
+
+</div>
+
+<p class="question-english">
+
+I went to the store to buy something that I needed.
+
+</p>
+
+<p class="question-translation">
+
+ذهبت إلى المتجر لأشتري شيئًا كنت أحتاجه.
+
+</p>
+
+<p class="question-title">
+
+كم استخدامًا لـ To وThat تلاحظ في الجملة؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result7')">
+
+استخدام واحد فقط
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result7')">
+
+استخدامان لـ To واستخدام واحد لـ That
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result7')">
+
+استخدامان لـ That واستخدام واحد لـ To
+
+</button>
+
+</div>
+
+<p
+id="result7"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 8
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+8
+
+</div>
+
+<div class="question-type">
+
+✍️ أكمل الجملة
+
+</div>
+
+<p class="question-english">
+
+He decided _____ study abroad because he believes _____ it will help his future.
+
+</p>
+
+<p class="question-translation">
+
+قرر أن يدرس في الخارج لأنه يعتقد أن ذلك سيساعد مستقبله.
+
+</p>
+
+<input
+type="text"
+id="writing2"
+class="writing-input"
+placeholder="اكتب: to, that"
+autocomplete="off">
+
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'writing2',
+'result8',
+[
+'to that',
+'to, that'
+]
+)">
+
+✨ تحقق من الإجابة
+
+</button>
+
+<p
+id="result8"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة النهاية
+========================================================== -->
+
+<div class="card final-card">
+
+<h2>
+
+🎉 أحسنت!
+
+</h2>
+
+<p>
+
+أنهيت درس
+<strong>To & That</strong>
+بنجاح. 💙
+
+<br><br>
+
+استمر بهذا التقدم، والآن حان وقت الانتقال إلى درس جديد وتعلّم تركيب آخر يساعدك على استخدام الإنجليزية بشكل طبيعي أكثر.
+
+</p>
+
+<button
+class="next-lesson-btn"
+onclick="finishLessonPage()">
+
+🚀 الانتقال إلى الدرس التالي
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+/* ==========================================================
+   تنظيف النص
+========================================================== */
+
+function normalizeText(text){
+
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/’/g,"'")
+
+.replace(/[.,!?؟]/g,"")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+
+
+/* ==========================================================
+   بطاقة الأمثلة
+========================================================== */
+
+function toggleExamples(){
+
+const content =
+document.getElementById(
+"examplesContent"
+);
+
+const button =
+document.getElementById(
+"examplesToggle"
+);
+
+if(
+content.classList.contains("show")
+){
+
+content.classList.remove("show");
+
+button.innerHTML =
+"📖 عرض الجمل";
+
+}
+
+else{
+
+content.classList.add("show");
+
+button.innerHTML =
+"📕 إخفاء الجمل";
+
+}
+
+}
+
+
+function hideExamples(){
+
+const content =
+document.getElementById(
+"examplesContent"
+);
+
+const button =
+document.getElementById(
+"examplesToggle"
+);
+
+content.classList.remove("show");
+
+button.innerHTML =
+"📖 عرض الجمل";
+
+}
+
+
+/* ==========================================================
+   أسئلة الاختيار
+========================================================== */
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+const result =
+document.getElementById(
+resultId
+);
+
+const allButtons =
+button.parentElement.querySelectorAll(
+".choice-btn"
+);
+
+allButtons.forEach(function(btn){
+
+btn.disabled=true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add("correct");
+
+button.innerHTML +=
+" ✔️";
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+"✅ أحسنت! إجابتك صحيحة.";
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+button.classList.add("wrong");
+
+button.innerHTML +=
+" ✖️";
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة. راجع الجملة وحاول ملاحظة معنى الكلمة من السياق.";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+/* ==========================================================
+   الأسئلة الكتابية
+========================================================== */
+
+function checkWriting(
+inputId,
+resultId,
+correctAnswers
+){
+
+const input =
+document.getElementById(inputId);
+
+const result =
+document.getElementById(resultId);
+
+const userAnswer =
+normalizeText(
+input.value
+);
+
+const answers =
+correctAnswers.map(function(answer){
+
+return normalizeText(answer);
+
+});
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+"✅ ممتاز! إجابتك صحيحة.";
+
+result.className =
+"answer-result success-text";
+
+}
+
+else{
+
+input.classList.add(
+"wrong-input"
+);
+
+void input.offsetWidth;
+
+input.classList.add(
+"shake"
+);
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},400);
+
+result.innerHTML =
+
+"😅❌ ليست الإجابة الصحيحة. حاول مرة أخرى وانتبه إلى معنى الكلمة في الجملة.";
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+</script>
+
+
+
+<!-- ==========================================================
+     نظام المكافآت
+========================================================== -->
+
+<script type="module">
+
+import {
+finishLesson
+}
+from "./js/reward.js";
+
+
+window.finishLessonPage = function(){
+
+finishLesson(
+
+"intermediate-unit2-lesson3",
+
+"To & That",
+
+"wait.html"
+
+);
+
+};
+
+</script>
+
+
+</body>
+
+</html>
