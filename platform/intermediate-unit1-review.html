@@ -1,0 +1,3377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+مراجعة الوحدة الأولى | Engliza Academy
+</title>
+
+<style>
+
+/* ==========================================================
+   الأساسيات
+========================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+}
+
+.container{
+
+max-width:1050px;
+margin:auto;
+
+}
+
+
+/* ==========================================================
+   الأعلى
+========================================================== */
+
+.top-bar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+
+}
+
+.back-btn{
+
+background:white;
+padding:14px 25px;
+border-radius:18px;
+text-decoration:none;
+color:#1f3c88;
+font-size:18px;
+font-weight:bold;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.owl-circle img{
+
+width:80px;
+height:80px;
+border-radius:50%;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   العنوان
+========================================================== */
+
+.title{
+
+text-align:center;
+font-size:52px;
+color:#1f3c88;
+margin-bottom:18px;
+
+}
+
+.subtitle{
+
+text-align:center;
+font-size:22px;
+line-height:2.2;
+font-weight:600;
+color:#555;
+margin-bottom:55px;
+
+}
+
+
+/* ==========================================================
+   البطاقات العامة
+========================================================== */
+
+.card{
+
+background:white;
+padding:40px;
+border-radius:35px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+margin-bottom:40px;
+
+animation:fadeUp .6s ease;
+
+}
+
+
+/* ==========================================================
+   بطاقة البداية
+========================================================== */
+
+.intro-card{
+
+display:flex;
+align-items:center;
+gap:35px;
+
+}
+
+.intro-image{
+
+flex:0 0 150px;
+text-align:center;
+
+}
+
+.intro-image img{
+
+width:150px;
+
+}
+
+.intro-content{
+
+flex:1;
+
+}
+
+.intro-content h2{
+
+font-size:34px;
+color:#1f3c88;
+margin-bottom:18px;
+
+}
+
+.intro-content p{
+
+font-size:21px;
+line-height:2.2;
+font-weight:600;
+color:#4d4d4d;
+
+}
+
+
+/* ==========================================================
+   مراحل المراجعة
+========================================================== */
+
+.stage-card{
+
+padding:25px 35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+border-radius:25px;
+
+margin-bottom:35px;
+
+}
+
+.stage-title{
+
+font-size:30px;
+font-weight:bold;
+color:white;
+
+}
+
+.stage-subtitle{
+
+font-size:18px;
+margin-top:8px;
+color:white;
+opacity:.95;
+
+}
+
+
+/* ==========================================================
+   ألوان المراحل
+========================================================== */
+
+.stage-blue{
+
+background:
+linear-gradient(
+90deg,
+#2d7ff9,
+#5ba5ff
+);
+
+}
+
+.stage-purple{
+
+background:
+linear-gradient(
+90deg,
+#7b4dff,
+#a57bff
+);
+
+}
+
+.stage-orange{
+
+background:
+linear-gradient(
+90deg,
+#ff9800,
+#ffb74d
+);
+
+}
+
+.stage-green{
+
+background:
+linear-gradient(
+90deg,
+#34a853,
+#65c982
+);
+
+}
+
+.stage-gold{
+
+background:
+linear-gradient(
+90deg,
+#d4a017,
+#f2c94c
+);
+
+}
+
+
+/* ==========================================================
+   حدود المراحل
+========================================================== */
+
+.stage-border-blue{
+
+border:4px solid #2d7ff9;
+
+}
+
+.stage-border-purple{
+
+border:4px solid #7b4dff;
+
+}
+
+.stage-border-orange{
+
+border:4px solid #ff9800;
+
+}
+
+.stage-border-green{
+
+border:4px solid #34a853;
+
+}
+
+.stage-border-gold{
+
+border:4px solid #d4a017;
+
+}
+
+
+/* ==========================================================
+   التقدم
+========================================================== */
+
+.progress-box{
+
+margin-top:18px;
+
+}
+
+.progress-text{
+
+font-size:16px;
+font-weight:bold;
+color:white;
+margin-bottom:12px;
+
+}
+
+.progress-bar{
+
+width:280px;
+max-width:100%;
+height:10px;
+
+background:
+rgba(255,255,255,.25);
+
+border-radius:30px;
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+height:100%;
+background:white;
+border-radius:30px;
+
+}
+
+
+/* ==========================================================
+   البطاقات الانتقالية
+========================================================== */
+
+.message-card{
+
+display:flex;
+align-items:center;
+gap:25px;
+
+}
+
+.message-card img{
+
+width:125px;
+flex-shrink:0;
+
+}
+
+.message-content{
+
+flex:1;
+
+}
+
+.message-content h2{
+
+font-size:30px;
+color:#1f3c88;
+margin-bottom:10px;
+
+}
+
+.message-content p{
+
+font-size:21px;
+line-height:1.9;
+font-weight:600;
+color:#444;
+
+}
+
+
+/* ==========================================================
+   صندوق السؤال
+========================================================== */
+
+.question-box{
+
+margin:25px 0;
+
+}
+
+.question-title{
+
+font-size:24px;
+font-weight:bold;
+line-height:2;
+color:#444;
+margin-bottom:22px;
+
+}
+
+.question-english{
+
+direction:ltr;
+unicode-bidi:embed;
+
+text-align:center;
+
+font-size:30px;
+font-weight:700;
+line-height:1.9;
+
+color:#222;
+
+margin:25px 0;
+
+}
+
+.question-translation{
+
+font-size:19px;
+font-weight:600;
+color:#666;
+text-align:center;
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+.help-text{
+
+font-size:19px;
+line-height:2;
+color:#666;
+margin-bottom:20px;
+
+}
+
+.question-divider{
+
+border:none;
+height:1px;
+background:#ececec;
+margin:45px 0;
+
+}
+
+
+/* ==========================================================
+   الكتابة
+========================================================== */
+
+.write-box{
+
+width:100%;
+
+padding:19px 20px;
+
+border-radius:20px;
+
+border:2px solid #dce4ff;
+
+font-size:20px;
+
+outline:none;
+
+transition:.3s;
+
+margin-bottom:20px;
+
+background:#fafbff;
+
+direction:ltr;
+text-align:left;
+
+color:#1f3c88;
+
+}
+
+.write-box:focus{
+
+border-color:#6f43ff;
+
+background:white;
+
+box-shadow:
+0 0 0 6px rgba(111,67,255,.10);
+
+}
+
+
+/* ==========================================================
+   أزرار الاختيار
+========================================================== */
+
+.choice-container{
+
+display:flex;
+flex-direction:column;
+gap:14px;
+
+margin:25px 0 20px;
+
+}
+
+.choice-btn{
+
+width:100%;
+
+padding:20px;
+
+background:#f5f7ff;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+font-size:19px;
+font-weight:bold;
+
+color:#1f3c88;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 8px 22px rgba(31,60,136,.06);
+
+}
+
+.choice-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 15px 30px rgba(31,60,136,.10);
+
+}
+
+.choice-btn:disabled{
+
+cursor:default;
+opacity:1;
+
+}
+
+
+/* ==========================================================
+   زر التحقق
+========================================================== */
+
+.check-btn{
+
+width:100%;
+
+padding:17px 20px;
+
+background:
+linear-gradient(
+135deg,
+#f5f7ff,
+#eee9ff
+);
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+font-size:18px;
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.check-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 13px 30px rgba(31,60,136,.12);
+
+}
+
+
+/* ==========================================================
+   التصحيح
+========================================================== */
+
+.correct{
+
+background:#e8fff0 !important;
+border:2px solid #9cddb3 !important;
+color:#0f8b4c !important;
+
+}
+
+.wrong{
+
+background:#ffe8e8 !important;
+border:2px solid #ffb8b8 !important;
+color:#c62828 !important;
+
+}
+
+.correct-input{
+
+background:#e8fff0 !important;
+border:2px solid #9cddb3 !important;
+color:#0f8b4c !important;
+
+}
+
+.wrong-input{
+
+background:#ffe8e8 !important;
+border:2px solid #ffb8b8 !important;
+color:#c62828 !important;
+
+}
+
+.success-text{
+
+color:#0f8b4c;
+
+}
+
+.error-text{
+
+color:#c62828;
+
+}
+
+.answer-result,
+.result-text{
+
+margin-top:20px;
+
+font-size:19px;
+font-weight:bold;
+line-height:1.9;
+
+animation:
+fadeResult .4s ease;
+
+}
+
+
+/* ==========================================================
+   النجوم
+========================================================== */
+
+.confetti{
+
+position:relative;
+height:55px;
+pointer-events:none;
+
+}
+
+.star{
+
+position:absolute;
+font-size:25px;
+opacity:0;
+
+animation:
+flyStars 1.35s ease-out forwards;
+
+}
+
+.star:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.star:nth-child(2){
+left:30%;
+animation-delay:.1s;
+}
+
+.star:nth-child(3){
+left:50%;
+animation-delay:.2s;
+}
+
+.star:nth-child(4){
+left:70%;
+animation-delay:.15s;
+}
+
+.star:nth-child(5){
+left:90%;
+animation-delay:.05s;
+}
+
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(20px)
+scale(.3)
+rotate(0deg);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+55%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-70px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+
+
+/* ==========================================================
+   الاهتزاز
+========================================================== */
+
+.shake{
+
+animation:
+answerShake .35s ease;
+
+}
+
+@keyframes answerShake{
+
+0%{transform:translateX(0);}
+20%{transform:translateX(-8px);}
+40%{transform:translateX(8px);}
+60%{transform:translateX(-7px);}
+80%{transform:translateX(7px);}
+100%{transform:translateX(0);}
+
+}
+
+
+/* ==========================================================
+   ترتيب الكلمات
+========================================================== */
+
+.word-container{
+
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+
+margin:25px 0;
+
+direction:ltr;
+
+}
+
+.word-btn{
+
+background:#f4f7ff;
+
+border:2px solid #dce4ff;
+
+border-radius:18px;
+
+padding:15px 21px;
+
+font-size:18px;
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.word-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.answer-box{
+
+min-height:90px;
+
+background:#fafbff;
+
+border:2px dashed #b9c8ff;
+
+border-radius:23px;
+
+padding:18px;
+
+margin-bottom:20px;
+
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+
+direction:ltr;
+
+align-items:center;
+
+}
+
+.selected-word{
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+padding:14px 19px;
+
+border-radius:17px;
+
+font-size:17px;
+font-weight:bold;
+
+user-select:none;
+
+}
+
+.sort-buttons{
+
+display:flex;
+gap:15px;
+
+}
+
+
+/* ==========================================================
+   بطاقة النهاية
+========================================================== */
+
+.final-card{
+
+background:
+linear-gradient(
+135deg,
+#3768ff,
+#6f43ff
+);
+
+text-align:center;
+
+padding:55px 45px;
+
+border-radius:35px;
+
+box-shadow:
+0 18px 45px rgba(0,0,0,.12);
+
+}
+
+.final-trophy{
+
+font-size:72px;
+margin-bottom:10px;
+
+}
+
+.final-card h2{
+
+font-size:46px;
+color:#ffe082;
+margin-bottom:20px;
+
+}
+
+.final-card p{
+
+font-size:22px;
+line-height:2.1;
+font-weight:600;
+color:white;
+
+}
+
+.final-divider{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+margin:25px auto;
+
+max-width:500px;
+
+}
+
+.final-divider::before,
+.final-divider::after{
+
+content:"";
+
+height:2px;
+
+background:#ffe082;
+
+flex:1;
+
+opacity:.8;
+
+}
+
+.final-divider span{
+
+color:#ffe082;
+font-size:24px;
+
+}
+
+.next-unit-btn{
+
+display:block;
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+border-radius:24px;
+
+font-size:22px;
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:#1f3c88;
+
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+margin-top:30px;
+
+}
+
+.next-unit-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.25);
+
+}
+
+
+/* ==========================================================
+   الحركات
+========================================================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:20px 14px;
+
+}
+
+.title{
+
+font-size:37px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+line-height:2;
+
+margin-bottom:35px;
+
+}
+
+.card{
+
+padding:27px 20px;
+margin-bottom:25px;
+
+}
+
+.intro-card,
+.message-card{
+
+display:flex;
+align-items:flex-start;
+gap:14px;
+
+}
+
+.intro-image{
+
+flex:0 0 105px;
+
+}
+
+.intro-image img{
+
+width:105px;
+
+}
+
+.message-card img{
+
+width:95px;
+
+}
+
+.intro-content h2{
+
+font-size:26px;
+
+}
+
+.intro-content p,
+.message-content p{
+
+font-size:17px;
+line-height:1.9;
+
+}
+
+.message-content h2{
+
+font-size:25px;
+
+}
+
+.stage-card{
+
+flex-direction:column;
+text-align:center;
+gap:18px;
+
+padding:23px 20px;
+
+}
+
+.stage-title{
+
+font-size:26px;
+
+}
+
+.stage-subtitle{
+
+font-size:16px;
+
+}
+
+.progress-bar{
+
+width:100%;
+
+}
+
+.question-title{
+
+font-size:20px;
+line-height:1.8;
+
+}
+
+.question-english{
+
+font-size:23px;
+line-height:1.9;
+
+}
+
+.question-translation{
+
+font-size:17px;
+
+}
+
+.choice-btn{
+
+font-size:17px;
+padding:17px 15px;
+
+}
+
+.write-box{
+
+font-size:18px;
+padding:17px;
+
+}
+
+.check-btn{
+
+font-size:16px;
+padding:16px;
+
+}
+
+.answer-result,
+.result-text{
+
+font-size:17px;
+
+}
+
+.sort-buttons{
+
+flex-direction:column;
+
+}
+
+.final-card{
+
+padding:40px 22px;
+
+}
+
+.final-trophy{
+
+font-size:60px;
+
+}
+
+.final-card h2{
+
+font-size:35px;
+
+}
+
+.final-card p{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+.next-unit-btn{
+
+font-size:19px;
+padding:19px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ==========================================================
+     الأعلى
+========================================================== -->
+
+<div class="top-bar">
+
+<a
+href="intermediate-unit1.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+<div class="owl-circle">
+
+<img
+src="../okay.owl.PNG"
+alt="Owl">
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     العنوان
+========================================================== -->
+
+<h1 class="title">
+
+🏆 مراجعة الوحدة الأولى
+
+</h1>
+
+
+<p class="subtitle">
+
+Intermediate Level • Unit 1
+
+<br>
+
+راجع أهم المهارات التي تعلمتها في الوحدة، ثم اختبر نفسك قبل الانتقال إلى الوحدة الثانية.
+
+</p>
+
+
+
+<!-- ==========================================================
+     بطاقة البداية
+========================================================== -->
+
+<div class="card intro-card">
+
+<div class="intro-image">
+
+<img
+src="../success.owl.PNG"
+alt="Owl">
+
+</div>
+
+
+<div class="intro-content">
+
+<h2>
+
+🤓 حان وقت المراجعة!
+
+</h2>
+
+<p>
+
+لقد تعلمت في هذه الوحدة مجموعة من القواعد والمهارات الجديدة.
+
+<br><br>
+
+الآن سنراجعها معًا من خلال عدة مراحل. حاول أن تعتمد على نفسك أولًا، ولا تقلق من الخطأ؛ فكل محاولة تساعدك على تثبيت ما تعلمته. 🌱
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     المرحلة الأولى — Sequencing Words
+========================================================== -->
+
+<div class="stage-card stage-blue">
+
+<div>
+
+<div class="stage-title">
+
+🔢 المرحلة الأولى
+
+</div>
+
+<div class="stage-subtitle">
+
+Sequencing Words
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 1 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:20%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-blue">
+
+
+<!-- السؤال 1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الكلمة المناسبة:
+
+</p>
+
+<p class="question-english">
+
+First, I wake up. _____, I have breakfast.
+
+</p>
+
+<p class="question-translation">
+
+أولًا أستيقظ. بعد ذلك أتناول الإفطار.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'seq1')">
+
+Finally
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'seq1')">
+
+Then
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'seq1')">
+
+Before
+
+</button>
+
+</div>
+
+<p
+id="seq1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ أكمل الجملة بالكلمة المناسبة:
+
+</p>
+
+<p class="question-english">
+
+_____ , wash your hands before eating.
+
+</p>
+
+<p class="question-translation">
+
+أولًا، اغسل يديك قبل الأكل.
+
+</p>
+
+<input
+id="seq2"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkWriting(
+'seq2',
+'seq2Result',
+[
+'first',
+'firstly'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="seq2Result"
+class="answer-result">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🧠 ما الكلمة التي نستخدمها غالبًا للخطوة الأخيرة؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'seq3')">
+
+Next
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'seq3')">
+
+Before
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'seq3')">
+
+Finally
+
+</button>
+
+</div>
+
+<p
+id="seq3"
+class="result-text">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- رسالة -->
+
+<div class="card message-card">
+
+<img
+src="../success.owl.PNG"
+alt="Owl">
+
+<div class="message-content">
+
+<h2>
+
+⭐ رائع!
+
+</h2>
+
+<p>
+
+تذكّر أن كلمات التسلسل لا تجعل كلامك أكثر ترتيبًا فقط، بل تساعد المستمع والقارئ على متابعة أفكارك بسهولة.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     المرحلة الثانية — ING → Noun
+========================================================== -->
+
+<div class="stage-card stage-purple">
+
+<div>
+
+<div class="stage-title">
+
+🧩 المرحلة الثانية
+
+</div>
+
+<div class="stage-subtitle">
+
+Verb + ING → Noun
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 2 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:40%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-purple">
+
+
+<!-- السؤال 1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 عندما نضيف <b>-ing</b> إلى بعض الأفعال، يمكن أن نستخدمها كاسم. اختر الكلمة المناسبة:
+
+</p>
+
+<p class="question-english">
+
+_____ is good for your health.
+
+</p>
+
+<p class="question-translation">
+
+الجري مفيد لصحتك.
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'ing1')">
+
+Running
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'ing1')">
+
+Run
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'ing1')">
+
+Runs
+
+</button>
+
+</div>
+
+<p
+id="ing1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ أكمل:
+
+</p>
+
+<p class="question-english">
+
+_____ English is fun.
+
+</p>
+
+<p class="question-translation">
+
+تعلم الإنجليزية ممتع.
+
+</p>
+
+<input
+id="ing2"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkWriting(
+'ing2',
+'ing2Result',
+[
+'Learning'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="ing2Result"
+class="answer-result">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🔎 اختر الجملة التي تستخدم كلمة <b>-ing</b> كاسم:
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'ing3')">
+
+I am reading a book.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'ing3')">
+
+Reading is useful.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'ing3')">
+
+She is reading now.
+
+</button>
+
+</div>
+
+<p
+id="ing3"
+class="result-text">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- رسالة -->
+
+<div class="card message-card">
+
+<img
+src="../success.owl.PNG"
+alt="Owl">
+
+<div class="message-content">
+
+<h2>
+
+🚀 ممتاز!
+
+</h2>
+
+<p>
+
+لاحظ كيف يمكن للكلمة التي تنتهي بـ <b>-ing</b> أن تكون جزءًا من الفعل في بعض الجمل، وأن تعمل كاسم في جمل أخرى. انتبه إلى معناها ومكانها في الجملة.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     المرحلة الثالثة — Future Simple
+========================================================== -->
+
+<div class="stage-card stage-orange">
+
+<div>
+
+<div class="stage-title">
+
+🔮 المرحلة الثالثة
+
+</div>
+
+<div class="stage-subtitle">
+
+Future Simple
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 3 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:60%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-orange">
+
+
+<!-- السؤال 1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الجملة الصحيحة للتحدث عن المستقبل باستخدام <b>will</b>:
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'future1')">
+
+I will goes tomorrow.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'future1')">
+
+I will go tomorrow.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'future1')">
+
+I will going tomorrow.
+
+</button>
+
+</div>
+
+<p
+id="future1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ ترجم إلى الإنجليزية:
+
+<br><br>
+
+سأدرس غدًا.
+
+</p>
+
+<input
+id="future2"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkWriting(
+'future2',
+'future2Result',
+[
+'I will study tomorrow'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="future2Result"
+class="answer-result">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🧠 اختر الجملة الصحيحة:
+
+<br><br>
+
+«لن أتأخر.»
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'future3')">
+
+I will not be late.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'future3')">
+
+I will not to be late.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'future3')">
+
+I don't will be late.
+
+</button>
+
+</div>
+
+<p
+id="future3"
+class="result-text">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     المرحلة الرابعة — Will vs Going to
+========================================================== -->
+
+<div class="stage-card stage-green">
+
+<div>
+
+<div class="stage-title">
+
+🎯 المرحلة الرابعة
+
+</div>
+
+<div class="stage-subtitle">
+
+Will vs Going to
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 4 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:80%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-green">
+
+
+<!-- السؤال 1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 شخص قرر الآن أن يساعد صديقه. أي جملة أنسب؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'going1')">
+
+I will help you.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'going1')">
+
+I am going to helped you.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'going1')">
+
+I going to help you.
+
+</button>
+
+</div>
+
+<p
+id="going1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🧠 انظر إلى الدليل الموجود الآن:
+
+</p>
+
+<p class="question-english">
+
+Look at those dark clouds!
+
+</p>
+
+<p class="question-translation">
+
+انظر إلى تلك الغيوم الداكنة!
+
+</p>
+
+<p class="question-title">
+
+ما الجملة الأنسب؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'going2')">
+
+It is going to rain.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'going2')">
+
+It will raining.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'going2')">
+
+It going to rain.
+
+</button>
+
+</div>
+
+<p
+id="going2"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ أكمل الجملة:
+
+</p>
+
+<p class="question-english">
+
+We have bought the tickets. We _____ travel tomorrow.
+
+</p>
+
+<p class="question-translation">
+
+لقد اشترينا التذاكر. نحن سنسافر غدًا.
+
+</p>
+
+<input
+id="going3"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkWriting(
+'going3',
+'going3Result',
+[
+'are going to'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="going3Result"
+class="answer-result">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- رسالة -->
+
+<div class="card message-card">
+
+<img
+src="../success.owl.PNG"
+alt="Owl">
+
+<div class="message-content">
+
+<h2>
+
+⭐ أحسنت!
+
+</h2>
+
+<p>
+
+أصبحت الآن قادرًا على التمييز بين المستقبل باستخدام <b>will</b> والمستقبل باستخدام <b>going to</b>. لا تحفظهما ككلمتين فقط؛ حاول أن تفهم لماذا اختار المتحدث كل واحدة منهما.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     المرحلة الخامسة — CAN / COULD
+========================================================== -->
+
+<div class="stage-card stage-gold">
+
+<div>
+
+<div class="stage-title">
+
+💬 المرحلة الخامسة
+
+</div>
+
+<div class="stage-subtitle">
+
+Can • Can't • Can? • Could • Couldn't • Could?
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+المرحلة 5 من 5
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:100%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-gold">
+
+
+<!-- السؤال 1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🎯 اختر الجملة الصحيحة:
+
+<br><br>
+
+«أنا أستطيع السباحة.»
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'can1')">
+
+I can swim.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can1')">
+
+I can swimming.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can1')">
+
+I do can swim.
+
+</button>
+
+</div>
+
+<p
+id="can1"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ أكمل:
+
+</p>
+
+<p class="question-english">
+
+_____ you speak English?
+
+</p>
+
+<p class="question-translation">
+
+هل تستطيع التحدث بالإنجليزية؟
+
+</p>
+
+<input
+id="can2"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkWriting(
+'can2',
+'can2Result',
+[
+'Can'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="can2Result"
+class="answer-result">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🚫 اختر النفي الصحيح:
+
+<br><br>
+
+«لا أستطيع القيادة.»
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can3')">
+
+I don't can drive.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'can3')">
+
+I can't drive.
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can3')">
+
+I can't driving.
+
+</button>
+
+</div>
+
+<p
+id="can3"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 4 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🕰️ في الماضي، ما الكلمة التي نستخدمها بدل <b>can</b>؟
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can4')">
+
+will
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'can4')">
+
+could
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can4')">
+
+would
+
+</button>
+
+</div>
+
+<p
+id="can4"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 5 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🧠 اختر السؤال الصحيح عن القدرة في الماضي:
+
+<br><br>
+
+«هل كنت تستطيع السباحة عندما كنت صغيرًا؟»
+
+</p>
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can5')">
+
+Did you could swim when you were young?
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'can5')">
+
+Could you swim when you were young?
+
+</button>
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'can5')">
+
+Could you swam when you were young?
+
+</button>
+
+</div>
+
+<p
+id="can5"
+class="result-text">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- السؤال 6 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+✍️ أكمل النفي في الماضي:
+
+</p>
+
+<p class="question-english">
+
+I _____ swim when I was five.
+
+</p>
+
+<p class="question-translation">
+
+لم أكن أستطيع السباحة عندما كان عمري خمس سنوات.
+
+</p>
+
+<input
+id="can6"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkWriting(
+'can6',
+'can6Result',
+[
+'could not',
+"couldn't"
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="can6Result"
+class="answer-result">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     التحدي النهائي
+========================================================== -->
+
+<div class="stage-card stage-blue">
+
+<div>
+
+<div class="stage-title">
+
+🏆 التحدي النهائي
+
+</div>
+
+<div class="stage-subtitle">
+
+هل تستطيع جمع ما تعلمته؟
+
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+
+Final Challenge
+
+</div>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:100%;">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card stage-border-blue">
+
+
+<!-- التحدي 1 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🏆 ترجم إلى الإنجليزية:
+
+<br><br>
+
+أولًا سأدرس، ثم سأذهب إلى المكتبة.
+
+</p>
+
+<input
+id="final1"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkFinalChallenge(
+'final1',
+'final1Result',
+[
+'First, I will study, then I will go to the library',
+'First I will study then I will go to the library'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="final1Result"
+class="answer-result">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- التحدي 2 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🏆 أكمل الجملة:
+
+<br><br>
+
+Look at those clouds! It _____ rain.
+
+</p>
+
+<p class="question-translation">
+
+انظر إلى تلك الغيوم! ستمطر.
+
+</p>
+
+<input
+id="final2"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkFinalChallenge(
+'final2',
+'final2Result',
+[
+'is going to'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="final2Result"
+class="answer-result">
+</p>
+
+</div>
+
+
+<hr class="question-divider">
+
+
+<!-- التحدي 3 -->
+
+<div class="question-box">
+
+<p class="question-title">
+
+🏆 ترجم:
+
+<br><br>
+
+هل كنت تستطيع القراءة عندما كنت في الخامسة؟
+
+</p>
+
+<input
+id="final3"
+class="write-box"
+placeholder="اكتب إجابتك هنا..."
+autocomplete="off">
+
+<button
+class="check-btn"
+onclick="checkFinalChallenge(
+'final3',
+'final3Result',
+[
+'Could you read when you were five',
+'Could you read when you were five years old'
+]
+)">
+
+✨ تحقق من إجابتي
+
+</button>
+
+<p
+id="final3Result"
+class="answer-result">
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     النهاية
+========================================================== -->
+
+<div class="card final-card">
+
+<div class="final-trophy">
+
+🏆
+
+</div>
+
+<h2>
+
+🎉 أنهيت مراجعة الوحدة الأولى!
+
+</h2>
+
+<p>
+
+ممتاز جدًا! لقد وصلت إلى نهاية الوحدة الأولى في المستوى المتوسط، وراجعت مجموعة مهمة من المهارات والقواعد.
+
+</p>
+
+<div class="final-divider">
+
+<span>★</span>
+
+</div>
+
+<p>
+
+خذ لحظة لتفتخر بما أنجزته، ثم واصل رحلتك بثقة. الوحدة الثانية بانتظارك، وفيها مهارات جديدة وتحديات جديدة. ✨
+
+</p>
+
+<button
+class="next-unit-btn"
+onclick="finishReviewPage()">
+
+🚀 الانتقال إلى الوحدة الثانية
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+/* ==========================================================
+   تنظيف النص
+========================================================== */
+
+function normalizeText(text){
+
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/’/g,"'")
+
+/* الاختصارات */
+
+.replace(/\bi'm\b/g,"i am")
+.replace(/\bi've\b/g,"i have")
+.replace(/\bi'd\b/g,"i would")
+.replace(/\bi'll\b/g,"i will")
+
+.replace(/\bhe's\b/g,"he is")
+.replace(/\bshe's\b/g,"she is")
+.replace(/\bit's\b/g,"it is")
+
+.replace(/\byou're\b/g,"you are")
+.replace(/\bwe're\b/g,"we are")
+.replace(/\bthey're\b/g,"they are")
+
+.replace(/\bisn't\b/g,"is not")
+.replace(/\baren't\b/g,"are not")
+.replace(/\bwasn't\b/g,"was not")
+.replace(/\bweren't\b/g,"were not")
+
+.replace(/\bdon't\b/g,"do not")
+.replace(/\bdoesn't\b/g,"does not")
+.replace(/\bdidn't\b/g,"did not")
+
+.replace(/\bcan't\b/g,"cannot")
+.replace(/\bcouldn't\b/g,"could not")
+.replace(/\bwon't\b/g,"will not")
+
+/* علامات الترقيم */
+
+.replace(/[.,!?؟]/g,"")
+
+.replace(/'/g,"")
+
+.replace(/-/g," ")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+
+
+/* ==========================================================
+   الأسئلة الكتابية
+========================================================== */
+
+function checkWriting(
+inputId,
+resultId,
+correctAnswers
+){
+
+const input =
+document.getElementById(inputId);
+
+const result =
+document.getElementById(resultId);
+
+const userAnswer =
+normalizeText(input.value);
+
+const answers =
+correctAnswers.map(function(answer){
+
+return normalizeText(answer);
+
+});
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+/* ==========================
+   صحيح
+========================== */
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+'✅ أحسنت! إجابتك صحيحة.';
+
+result.className =
+"answer-result success-text";
+
+}
+
+
+/* ==========================
+   خطأ
+========================== */
+
+else{
+
+input.classList.add(
+"wrong-input"
+);
+
+void input.offsetWidth;
+
+input.classList.add(
+"shake"
+);
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},400);
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة."+
+
+"<br><br>"+
+
+"بعد التحقق، الإجابة الصحيحة هي:"+
+
+"<br><br>"+
+
+"<b>"+
+
+correctAnswers[0]+
+
+"</b>";
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+
+/* ==========================================================
+   أسئلة الاختيار
+========================================================== */
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+const result =
+document.getElementById(
+resultId
+);
+
+const container =
+button.parentElement;
+
+const allButtons =
+container.querySelectorAll(
+".choice-btn"
+);
+
+
+/* منع التكرار */
+
+allButtons.forEach(function(btn){
+
+btn.disabled = true;
+
+});
+
+
+/* ==========================
+   صحيح
+========================== */
+
+if(isCorrect){
+
+button.classList.add(
+"correct"
+);
+
+button.innerHTML +=
+" ✔️";
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+'✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
+
+result.className =
+"result-text success-text";
+
+}
+
+
+/* ==========================
+   خطأ
+========================== */
+
+else{
+
+button.classList.add(
+"wrong"
+);
+
+button.innerHTML +=
+" ✖️";
+
+void button.offsetWidth;
+
+button.classList.add(
+"shake"
+);
+
+setTimeout(function(){
+
+button.classList.remove(
+"shake"
+);
+
+},400);
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة.";
+
+
+result.className =
+"result-text error-text";
+
+
+/* إظهار الصحيح بعد المحاولة */
+
+allButtons.forEach(function(btn){
+
+const onclick =
+btn.getAttribute(
+"onclick"
+);
+
+if(
+onclick &&
+onclick.includes("true")
+){
+
+btn.classList.add(
+"correct"
+);
+
+if(
+!btn.innerHTML.includes("✔️")
+){
+
+btn.innerHTML +=
+" ✔️";
+
+}
+
+}
+
+});
+
+}
+
+}
+
+
+/* ==========================================================
+   التحدي النهائي
+========================================================== */
+
+let finalScore = 0;
+
+function checkFinalChallenge(
+inputId,
+resultId,
+correctAnswers
+){
+
+const input =
+document.getElementById(inputId);
+
+const result =
+document.getElementById(resultId);
+
+const userAnswer =
+normalizeText(input.value);
+
+const answers =
+correctAnswers.map(function(answer){
+
+return normalizeText(answer);
+
+});
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+/* ==========================
+   صحيح
+========================== */
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+'🎉 ممتاز! إجابة صحيحة.';
+
+result.className =
+"answer-result success-text";
+
+
+if(
+!input.dataset.completed
+){
+
+input.dataset.completed =
+"true";
+
+finalScore++;
+
+}
+
+}
+
+
+/* ==========================
+   خطأ
+========================== */
+
+else{
+
+input.classList.add(
+"wrong-input"
+);
+
+void input.offsetWidth;
+
+input.classList.add(
+"shake"
+);
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},400);
+
+result.innerHTML =
+
+"😅❌ ليست الإجابة الصحيحة."+
+
+"<br><br>"+
+
+"بعد التحقق، الإجابة الصحيحة هي:"+
+
+"<br><br>"+
+
+"<b>"+
+
+correctAnswers[0]+
+
+"</b>";
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+
+/* ==========================================================
+   الانتقال بعد إنهاء المراجعة
+========================================================== */
+
+async function finishReviewPage(){
+
+/*
+   نظام المكافآت المستخدم في بقية الدروس.
+   إذا كان ملف reward.js متاحًا، يتم تسجيل إكمال المراجعة
+   ثم الانتقال إلى الوحدة الثانية.
+*/
+
+try{
+
+const module =
+await import("./js/reward.js");
+
+if(
+module &&
+typeof module.finishLesson === "function"
+){
+
+module.finishLesson(
+
+"intermediate-unit1-review",
+
+"مراجعة الوحدة الأولى",
+
+"intermediate-unit2.html"
+
+);
+
+return;
+
+}
+
+}
+
+catch(error){
+
+console.log(
+"Reward system fallback:",
+error
+);
+
+}
+
+
+/* الانتقال الاحتياطي */
+
+window.location.href =
+"intermediate-unit2.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
