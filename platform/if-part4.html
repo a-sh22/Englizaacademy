@@ -1,0 +1,3112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+If | Part 4 | Engliza Academy
+</title>
+
+
+<style>
+
+/* ==========================================================
+   الأساسيات
+========================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+font-family:Arial,sans-serif;
+
+}
+
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f7f3ff
+);
+
+padding:30px 20px;
+
+}
+
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+
+/* ==========================================================
+   الأعلى
+========================================================== */
+
+.top-bar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+
+.back-btn{
+
+background:white;
+
+padding:14px 25px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:#1f3c88;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+.back-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+
+.owl-circle img{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   عنوان الدرس
+========================================================== */
+
+.title{
+
+text-align:center;
+
+font-size:52px;
+
+color:#1f3c88;
+
+margin-bottom:15px;
+
+}
+
+
+.subtitle{
+
+text-align:center;
+
+font-size:23px;
+
+line-height:2.3;
+
+font-weight:600;
+
+color:#4b4b4b;
+
+margin-bottom:40px;
+
+}
+
+
+/* ==========================================================
+   الفيديو
+========================================================== */
+
+.video-box{
+
+background:white;
+
+padding:0;
+
+border-radius:35px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+overflow:hidden;
+
+}
+
+
+.video-box video{
+
+width:100%;
+
+display:block;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+border-radius:35px;
+
+}
+
+
+/* ==========================================================
+   البطاقات العامة
+========================================================== */
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+border:2px solid #dfe8ff;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:35px;
+
+}
+
+
+/* ==========================================================
+   بطاقة البومة
+========================================================== */
+
+.message-card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:flex-start;
+
+gap:25px;
+
+}
+
+
+.message-card img{
+
+width:130px;
+
+flex-shrink:0;
+
+display:block;
+
+}
+
+
+.message-content{
+
+flex:1;
+
+}
+
+
+.message-content h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin-bottom:12px;
+
+}
+
+
+.message-content p{
+
+font-size:22px;
+
+line-height:1.9;
+
+font-weight:600;
+
+color:#444;
+
+margin:0;
+
+}
+
+
+/* ==========================================================
+   بطاقة الأمثلة
+========================================================== */
+
+.examples-card{
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#faf9ff
+);
+
+border:2px solid #e6e0ff;
+
+}
+
+
+.examples-header{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+margin-bottom:25px;
+
+}
+
+
+.examples-icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+background:#eee9ff;
+
+box-shadow:
+0 8px 20px rgba(111,67,255,.10);
+
+flex-shrink:0;
+
+}
+
+
+.examples-header h2{
+
+font-size:30px;
+
+color:#1f3c88;
+
+margin-bottom:6px;
+
+}
+
+
+.examples-header p{
+
+font-size:18px;
+
+line-height:1.8;
+
+font-weight:600;
+
+color:#777;
+
+}
+
+
+.examples-toggle-btn{
+
+display:block;
+
+width:100%;
+
+padding:18px;
+
+background:
+linear-gradient(
+90deg,
+#3768ff,
+#6f43ff
+);
+
+color:white;
+
+border:none;
+
+border-radius:20px;
+
+font-size:19px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(31,60,136,.14);
+
+transition:.3s;
+
+}
+
+
+.examples-toggle-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+.examples-content{
+
+display:none;
+
+margin-top:30px;
+
+}
+
+
+.examples-content.show{
+
+display:block;
+
+animation:fadeUp .4s ease;
+
+}
+
+
+.example-group{
+
+margin-bottom:30px;
+
+padding:25px;
+
+border-radius:25px;
+
+background:#fafbff;
+
+border:2px solid #edf1ff;
+
+}
+
+
+.example-group:last-child{
+
+margin-bottom:0;
+
+}
+
+
+.example-group-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+margin-bottom:20px;
+
+}
+
+
+.example-item{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+border:1px solid #e7ebf8;
+
+margin-bottom:14px;
+
+box-shadow:
+0 7px 18px rgba(0,0,0,.04);
+
+}
+
+
+.example-item:last-child{
+
+margin-bottom:0;
+
+}
+
+
+.example-english{
+
+direction:ltr;
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#222;
+
+line-height:1.8;
+
+margin-bottom:8px;
+
+}
+
+
+.example-arabic{
+
+text-align:center;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+
+.hide-examples-btn{
+
+display:block;
+
+width:100%;
+
+padding:17px;
+
+margin-top:25px;
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.hide-examples-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   تدرب الآن
+========================================================== */
+
+.practice-header{
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#f8f6ff
+);
+
+border-radius:30px;
+
+padding:25px 30px;
+
+margin:45px 0 30px;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.07);
+
+border:1px solid #eee9ff;
+
+}
+
+
+.practice-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+background:#eee9ff;
+
+box-shadow:
+0 8px 20px rgba(111,67,255,.12);
+
+flex-shrink:0;
+
+}
+
+
+.practice-header h2{
+
+font-size:32px;
+
+color:#1f3c88;
+
+margin:0 0 5px;
+
+}
+
+
+.practice-header p{
+
+font-size:18px;
+
+color:#777;
+
+margin:0;
+
+line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   بطاقات الأسئلة
+========================================================== */
+
+.question-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:30px;
+
+border:2px solid #edf1ff;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+margin-bottom:28px;
+
+position:relative;
+
+overflow:hidden;
+
+animation:fadeUp .6s ease;
+
+}
+
+
+.question-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+right:0;
+
+height:7px;
+
+background:
+linear-gradient(
+90deg,
+#ffd86b,
+#ffb300
+);
+
+}
+
+
+.question-number{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:48px;
+
+height:48px;
+
+padding:0 14px;
+
+border-radius:50px;
+
+background:#fff8e6;
+
+border:2px solid #ffe08a;
+
+color:#e09a00;
+
+font-size:17px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+.question-type{
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#888;
+
+margin-bottom:12px;
+
+}
+
+
+.question-title{
+
+font-size:23px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+line-height:1.8;
+
+margin-bottom:15px;
+
+}
+
+
+.question-english{
+
+direction:ltr;
+
+unicode-bidi:embed;
+
+text-align:center;
+
+font-size:29px;
+
+font-weight:700;
+
+line-height:1.8;
+
+color:#222;
+
+margin:25px 0;
+
+}
+
+
+.question-translation{
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#666;
+
+text-align:center;
+
+line-height:1.8;
+
+margin-top:15px;
+
+margin-bottom:22px;
+
+}
+
+
+/* ==========================================================
+   الاختيارات
+========================================================== */
+
+.choice-container{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+margin-top:20px;
+
+}
+
+
+.choice-btn{
+
+display:block;
+
+width:100%;
+
+padding:19px 20px;
+
+background:#f5f7ff;
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+font-size:19px;
+
+font-weight:bold;
+
+font-family:Arial,sans-serif;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 8px 22px rgba(31,60,136,.06);
+
+}
+
+
+.choice-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 14px 30px rgba(31,60,136,.11);
+
+}
+
+
+.choice-btn:active{
+
+transform:scale(.98);
+
+}
+
+
+.choice-btn:disabled{
+
+cursor:default;
+
+opacity:1 !important;
+
+}
+
+
+.choice-btn.correct{
+
+background:#e8fff0 !important;
+
+border:2px solid #9cddb3 !important;
+
+color:#0f8b4c !important;
+
+}
+
+
+.choice-btn.wrong{
+
+background:#ffe8e8 !important;
+
+border:2px solid #ffb8b8 !important;
+
+color:#c62828 !important;
+
+}
+
+
+/* ==========================================================
+   مربع الكتابة
+========================================================== */
+
+.writing-input{
+
+display:block;
+
+width:100%;
+
+padding:19px 20px;
+
+border-radius:20px;
+
+border:2px solid #dce4ff;
+
+font-size:20px;
+
+font-family:Arial,sans-serif;
+
+outline:none;
+
+transition:.3s;
+
+margin-top:18px;
+
+margin-bottom:18px;
+
+background:#fafbff;
+
+color:#1f3c88;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+
+.writing-input:focus{
+
+border-color:#6f43ff;
+
+background:white;
+
+box-shadow:
+0 0 0 5px rgba(111,67,255,.09);
+
+}
+
+
+.writing-input.correct-input{
+
+background:#e8fff0;
+
+border:2px solid #9cddb3;
+
+color:#0f8b4c;
+
+}
+
+
+.writing-input.wrong-input{
+
+background:#ffe8e8;
+
+border:2px solid #ffb8b8;
+
+color:#c62828;
+
+}
+
+
+/* ==========================================================
+   زر التحقق
+========================================================== */
+
+.check-answer-btn{
+
+display:block;
+
+width:100%;
+
+padding:17px 20px;
+
+margin-top:10px;
+
+background:
+linear-gradient(
+135deg,
+#f5f7ff,
+#eee9ff
+);
+
+color:#1f3c88;
+
+border:2px solid #dce4ff;
+
+border-radius:20px;
+
+font-size:18px;
+
+font-weight:bold;
+
+font-family:Arial,sans-serif;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 8px 22px rgba(31,60,136,.06);
+
+}
+
+
+.check-answer-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 13px 30px rgba(31,60,136,.12);
+
+}
+
+
+.check-answer-btn:active{
+
+transform:scale(.98);
+
+}
+
+
+/* ==========================================================
+   النتائج
+========================================================== */
+
+.answer-result,
+.result-text{
+
+margin-top:20px;
+
+font-size:19px;
+
+font-weight:bold;
+
+line-height:1.9;
+
+animation:fadeResult .4s ease;
+
+}
+
+
+.success-text{
+
+color:#0f8b4c;
+
+}
+
+
+.error-text{
+
+color:#c62828;
+
+}
+
+
+/* ==========================================================
+   النجوم
+========================================================== */
+
+.confetti{
+
+position:relative;
+
+width:100%;
+
+height:60px;
+
+pointer-events:none;
+
+overflow:visible;
+
+}
+
+
+.star{
+
+position:absolute;
+
+bottom:0;
+
+font-size:27px;
+
+opacity:0;
+
+animation:
+flyStars 1.35s ease-out forwards;
+
+}
+
+
+.star:nth-child(1){
+
+left:10%;
+
+animation-delay:0s;
+
+}
+
+
+.star:nth-child(2){
+
+left:30%;
+
+animation-delay:.1s;
+
+}
+
+
+.star:nth-child(3){
+
+left:50%;
+
+animation-delay:.2s;
+
+}
+
+
+.star:nth-child(4){
+
+left:70%;
+
+animation-delay:.15s;
+
+}
+
+
+.star:nth-child(5){
+
+left:90%;
+
+animation-delay:.05s;
+
+}
+
+
+@keyframes flyStars{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(20px)
+scale(.3)
+rotate(0deg);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+55%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-70px)
+rotate(360deg)
+scale(1.3);
+
+}
+
+}
+
+
+/* ==========================================================
+   الاهتزاز
+========================================================== */
+
+.shake{
+
+animation:
+answerShake .35s ease;
+
+}
+
+
+@keyframes answerShake{
+
+0%{transform:translateX(0);}
+
+20%{transform:translateX(-8px);}
+
+40%{transform:translateX(8px);}
+
+60%{transform:translateX(-7px);}
+
+80%{transform:translateX(7px);}
+
+100%{transform:translateX(0);}
+
+}
+
+
+/* ==========================================================
+   بطاقة النهاية
+========================================================== */
+
+.final-card{
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#6f43ff,
+#8f6dff
+);
+
+border:none;
+
+}
+
+
+.final-card h2{
+
+font-size:40px;
+
+color:#ffe082;
+
+margin-bottom:20px;
+
+}
+
+
+.final-card p{
+
+font-size:22px;
+
+line-height:2;
+
+font-weight:600;
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+
+.next-lesson-btn{
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+border-radius:24px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:#6f43ff;
+
+box-shadow:
+0 14px 35px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+
+.next-lesson-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.22);
+
+}
+
+
+.next-lesson-btn:active{
+
+transform:scale(.97);
+
+}
+
+
+/* ==========================================================
+   الحركات
+========================================================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+@keyframes fadeResult{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ==========================================================
+   الجوال
+========================================================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:20px 14px;
+
+}
+
+
+.title{
+
+font-size:38px;
+
+}
+
+
+.subtitle{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+
+.card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+
+.message-card{
+
+align-items:flex-start;
+
+gap:14px;
+
+}
+
+
+.message-card img{
+
+width:95px;
+
+}
+
+
+.message-content h2{
+
+font-size:24px;
+
+}
+
+
+.message-content p{
+
+font-size:17px;
+
+line-height:1.9;
+
+}
+
+
+/* الأمثلة */
+
+.examples-header{
+
+align-items:flex-start;
+
+gap:14px;
+
+}
+
+
+.examples-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:25px;
+
+border-radius:17px;
+
+}
+
+
+.examples-header h2{
+
+font-size:24px;
+
+}
+
+
+.examples-header p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+
+.example-group{
+
+padding:20px 15px;
+
+}
+
+
+.example-group-title{
+
+font-size:20px;
+
+}
+
+
+.example-english{
+
+font-size:19px;
+
+line-height:1.8;
+
+}
+
+
+.example-arabic{
+
+font-size:16px;
+
+}
+
+
+/* التدرب */
+
+.practice-header{
+
+padding:22px 20px;
+
+gap:15px;
+
+margin:35px 0 25px;
+
+border-radius:25px;
+
+}
+
+
+.practice-header h2{
+
+font-size:26px;
+
+}
+
+
+.practice-header p{
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+
+.practice-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:26px;
+
+border-radius:17px;
+
+}
+
+
+/* الأسئلة */
+
+.question-card{
+
+padding:25px 20px;
+
+margin-bottom:22px;
+
+}
+
+
+.question-number{
+
+min-width:44px;
+
+height:44px;
+
+font-size:16px;
+
+}
+
+
+.question-title{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+
+.question-english{
+
+font-size:23px;
+
+line-height:1.9;
+
+}
+
+
+.question-translation{
+
+font-size:17px;
+
+}
+
+
+.choice-btn{
+
+font-size:17px;
+
+padding:17px 15px;
+
+border-radius:18px;
+
+}
+
+
+.writing-input{
+
+font-size:18px;
+
+padding:17px;
+
+}
+
+
+.check-answer-btn{
+
+font-size:16px;
+
+padding:16px 12px;
+
+}
+
+
+.answer-result,
+.result-text{
+
+font-size:17px;
+
+}
+
+
+/* النهاية */
+
+.final-card h2{
+
+font-size:30px;
+
+}
+
+
+.final-card p{
+
+font-size:18px;
+
+}
+
+
+.next-lesson-btn{
+
+font-size:19px;
+
+padding:20px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ==========================================================
+     الأعلى
+========================================================== -->
+
+<div class="top-bar">
+
+<a
+href="intermediate-unit4.html"
+class="back-btn">
+
+⬅️ رجوع
+
+</a>
+
+
+<div class="owl-circle">
+
+<img
+src="../okay.owl.PNG"
+alt="Owl">
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     عنوان الدرس
+========================================================== -->
+
+<h1 class="title">
+
+🔀 If | Part 4
+
+</h1>
+
+
+<p class="subtitle">
+
+تعلّم كيف تكوّن أسئلة عن المواقف الافتراضية باستخدام
+<b>What would you do if...?</b>
+وتحدث عن الأشياء التي قد تفعلها في مواقف مختلفة.
+
+</p>
+
+
+
+<!-- ==========================================================
+     الفيديو
+========================================================== -->
+
+<div class="video-box">
+
+<video
+controls
+preload="metadata"
+controlsList="nodownload">
+
+<source
+src="https://videos.englizaacademy.com/Intermediate/If-%20part4.MP4"
+type="video/mp4">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة البومة
+========================================================== -->
+
+<div class="card message-card">
+
+<img
+src="../success.owl.PNG"
+alt="Owl">
+
+
+<div class="message-content">
+
+<h2>
+
+💭 فكّر قبل أن تجيب!
+
+</h2>
+
+
+<p>
+
+عندما ترى سؤالًا يبدأ بـ
+<b>What would you do if...?</b>
+حاول أن تتخيل الموقف أولًا، ثم فكّر في إجابتك باللغة الإنجليزية. بهذه الطريقة لا تتعلم السؤال فقط، بل تبدأ باستخدامه في محادثات حقيقية أيضًا. 💙
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة الأمثلة
+========================================================== -->
+
+<div class="card examples-card">
+
+<div class="examples-header">
+
+<div class="examples-icon">
+
+📚
+
+</div>
+
+
+<div>
+
+<h2>
+
+شاهد أمثلة أكثر!
+
+</h2>
+
+
+<p>
+
+كلما شاهدت أسئلة أكثر، أصبحت طريقة
+<b>What would you do if...?</b>
+مألوفة لديك وأسهل في الاستخدام. 🌱
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<button
+class="examples-toggle-btn"
+onclick="toggleExamples()"
+id="examplesToggle">
+
+📖 عرض الجمل
+
+</button>
+
+
+
+<div
+class="examples-content"
+id="examplesContent">
+
+
+
+<!-- ==========================================================
+     أمثلة What would you do
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🔵 What would you do if...?
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would you do if you were rich?
+
+</p>
+
+<p class="example-arabic">
+
+ماذا ستفعل لو كنت غنيًا؟
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would you do if you had superpowers?
+
+</p>
+
+<p class="example-arabic">
+
+ماذا ستفعل لو كانت لديك قوى خارقة؟
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would you do if you could travel anywhere in the world?
+
+</p>
+
+<p class="example-arabic">
+
+ماذا ستفعل لو استطعت السفر إلى أي مكان في العالم؟
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would you do if you found a bag full of money?
+
+</p>
+
+<p class="example-arabic">
+
+ماذا ستفعل لو وجدت حقيبة مليئة بالمال؟
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     أسئلة متنوعة
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🟣 مواقف افتراضية مختلفة
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would you do if you lost your phone?
+
+</p>
+
+<p class="example-arabic">
+
+ماذا ستفعل لو فقدت هاتفك؟
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+Where would you live if you could choose any country?
+
+</p>
+
+<p class="example-arabic">
+
+أين ستعيش لو استطعت اختيار أي دولة؟
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+Who would you invite if you could have dinner with anyone?
+
+</p>
+
+<p class="example-arabic">
+
+من ستدعو لو استطعت تناول العشاء مع أي شخص؟
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would Sarah buy if she won the lottery?
+
+</p>
+
+<p class="example-arabic">
+
+ماذا ستشتري سارة لو فازت باليانصيب؟
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     أمثلة بالنفي
+========================================================== -->
+
+<div class="example-group">
+
+<div class="example-group-title">
+
+🌟 أسئلة مع إجابات منفية
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would you do if you were rich?
+
+<br>
+
+I wouldn't buy an expensive car.
+
+</p>
+
+<p class="example-arabic">
+
+ماذا ستفعل لو كنت غنيًا؟
+
+لن أشتري سيارة باهظة الثمن.
+
+</p>
+
+</div>
+
+
+<div class="example-item">
+
+<p class="example-english">
+
+What would Ahmed do if he had more free time?
+
+<br>
+
+He wouldn't stay at home all day.
+
+</p>
+
+<p class="example-arabic">
+
+ماذا سيفعل أحمد لو كان لديه وقت فراغ أكثر؟
+
+لن يبقى في المنزل طوال اليوم.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     زر الإخفاء
+========================================================== -->
+
+<button
+class="hide-examples-btn"
+onclick="hideExamples()">
+
+🙈 إخفاء الجمل
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     تدرب الآن
+========================================================== -->
+
+<div class="practice-header">
+
+<div class="practice-icon">
+
+📝
+
+</div>
+
+
+<div>
+
+<h2>
+
+تدرب الآن
+
+</h2>
+
+
+<p>
+
+اختبر فهمك لطريقة تكوين الأسئلة في المواقف الافتراضية.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 1
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+1
+
+</div>
+
+
+<div class="question-type">
+
+📝 اختر الإجابة الصحيحة
+
+</div>
+
+
+<p class="question-title">
+
+اختر الكلمة المناسبة:
+
+</p>
+
+
+<p class="question-english">
+
+What _____ you do if you were rich?
+
+</p>
+
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result1')">
+
+will
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result1')">
+
+would
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result1')">
+
+did
+
+</button>
+
+</div>
+
+
+<p
+id="result1"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 2
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+2
+
+</div>
+
+
+<div class="question-type">
+
+✍️ أكمل السؤال
+
+</div>
+
+
+<p class="question-english">
+
+What _____ you do if you had superpowers?
+
+</p>
+
+
+<p class="question-translation">
+
+ماذا ستفعل لو كانت لديك قوى خارقة؟
+
+</p>
+
+
+<input
+type="text"
+id="writing1"
+class="writing-input"
+placeholder="اكتب الكلمة المناسبة..."
+autocomplete="off">
+
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'writing1',
+'result2',
+[
+'would'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+
+
+<p
+id="result2"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 3
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+3
+
+</div>
+
+
+<div class="question-type">
+
+📝 اختر السؤال الصحيح
+
+</div>
+
+
+<p class="question-title">
+
+أي سؤال صحيح؟
+
+</p>
+
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result3')">
+
+What will you do if you were rich?
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result3')">
+
+What would you do if you were rich?
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result3')">
+
+What would you did if you were rich?
+
+</button>
+
+</div>
+
+
+<p
+id="result3"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 4
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+4
+
+</div>
+
+
+<div class="question-type">
+
+✍️ أكمل السؤال
+
+</div>
+
+
+<p class="question-english">
+
+Where _____ you live if you could choose any country?
+
+</p>
+
+
+<p class="question-translation">
+
+أين ستعيش لو استطعت اختيار أي دولة؟
+
+</p>
+
+
+<input
+type="text"
+id="writing2"
+class="writing-input"
+placeholder="اكتب الكلمة المناسبة..."
+autocomplete="off">
+
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'writing2',
+'result4',
+[
+'would'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+
+
+<p
+id="result4"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 5
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+5
+
+</div>
+
+
+<div class="question-type">
+
+📝 اختر الإجابة الصحيحة
+
+</div>
+
+
+<p class="question-english">
+
+What would Sarah do if she _____ a million dollars?
+
+</p>
+
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result5')">
+
+has
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result5')">
+
+had
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result5')">
+
+will have
+
+</button>
+
+</div>
+
+
+<p
+id="result5"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 6
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+6
+
+</div>
+
+
+<div class="question-type">
+
+✍️ رتّب السؤال
+
+</div>
+
+
+<p class="question-title">
+
+رتّب الكلمات لتكوين سؤال صحيح:
+
+</p>
+
+
+<p class="question-english">
+
+would / do / you / What / if / you / were / famous?
+
+</p>
+
+
+<input
+type="text"
+id="writing3"
+class="writing-input"
+placeholder="اكتب السؤال بالترتيب الصحيح..."
+autocomplete="off">
+
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'writing3',
+'result6',
+[
+'What would you do if you were famous'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+
+
+<p
+id="result6"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 7
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+7
+
+</div>
+
+
+<div class="question-type">
+
+🧠 اختر الإجابة الصحيحة
+
+</div>
+
+
+<p class="question-title">
+
+أكمل السؤال:
+
+</p>
+
+
+<p class="question-english">
+
+What would you do if you _____ your phone?
+
+</p>
+
+
+<div class="choice-container">
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result7')">
+
+lose
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,true,'result7')">
+
+lost
+
+</button>
+
+
+<button
+class="choice-btn"
+onclick="checkAnswer(this,false,'result7')">
+
+would lose
+
+</button>
+
+</div>
+
+
+<p
+id="result7"
+class="result-text">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 8
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+8
+
+</div>
+
+
+<div class="question-type">
+
+✍️ أكمل السؤال
+
+</div>
+
+
+<p class="question-english">
+
+Who _____ you invite if you could meet anyone?
+
+</p>
+
+
+<p class="question-translation">
+
+من ستدعو لو استطعت مقابلة أي شخص؟
+
+</p>
+
+
+<input
+type="text"
+id="writing4"
+class="writing-input"
+placeholder="اكتب الكلمة المناسبة..."
+autocomplete="off">
+
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'writing4',
+'result8',
+[
+'would'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+
+
+<p
+id="result8"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     السؤال 9
+========================================================== -->
+
+<div class="question-card">
+
+<div class="question-number">
+
+9
+
+</div>
+
+
+<div class="question-type">
+
+🏆 تحدي
+
+</div>
+
+
+<p class="question-title">
+
+اكتب السؤال بالإنجليزية:
+
+<br><br>
+
+ماذا ستفعل لو كان لديك مليون دولار؟
+
+</p>
+
+
+<input
+type="text"
+id="writing5"
+class="writing-input"
+placeholder="اكتب السؤال كاملًا..."
+autocomplete="off">
+
+
+<button
+class="check-answer-btn"
+onclick="checkWriting(
+'writing5',
+'result9',
+[
+'What would you do if you had a million dollars'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+
+
+<p
+id="result9"
+class="answer-result">
+
+</p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     بطاقة النهاية
+========================================================== -->
+
+<div class="card final-card">
+
+<h2>
+
+🌟 أحسنت!
+
+</h2>
+
+
+<p>
+
+أنهيت الجزء الرابع من درس
+<b>If</b>.
+خطوة جديدة اكتملت، والآن حان وقت الانتقال إلى الدرس التالي. 💙
+
+</p>
+
+
+<button
+class="next-lesson-btn"
+onclick="finishLessonPage()">
+
+🚀 الانتقال إلى الدرس التالي
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ==========================================================
+     JavaScript
+========================================================== -->
+
+<script>
+
+
+// ==========================================================
+// تنظيف النص
+// ==========================================================
+
+function normalizeText(text){
+
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/’/g,"'")
+
+.replace(/[.,!?؟]/g,"")
+
+.replace(/'/g,"")
+
+.replace(/-/g," ")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+
+
+
+// ==========================================================
+// عرض الأمثلة
+// ==========================================================
+
+function toggleExamples(){
+
+const content =
+document.getElementById(
+"examplesContent"
+);
+
+const button =
+document.getElementById(
+"examplesToggle"
+);
+
+
+if(
+content.classList.contains("show")
+){
+
+content.classList.remove("show");
+
+button.innerHTML =
+"📖 عرض الجمل";
+
+}
+
+else{
+
+content.classList.add("show");
+
+button.innerHTML =
+"🙈 إخفاء الجمل";
+
+}
+
+}
+
+
+
+// ==========================================================
+// إخفاء الأمثلة
+// ==========================================================
+
+function hideExamples(){
+
+const content =
+document.getElementById(
+"examplesContent"
+);
+
+const button =
+document.getElementById(
+"examplesToggle"
+);
+
+content.classList.remove("show");
+
+button.innerHTML =
+"📖 عرض الجمل";
+
+}
+
+
+
+// ==========================================================
+// الأسئلة الكتابية
+// ==========================================================
+
+function checkWriting(
+inputId,
+resultId,
+correctAnswers
+){
+
+const input =
+document.getElementById(inputId);
+
+const result =
+document.getElementById(resultId);
+
+
+const userAnswer =
+normalizeText(
+input.value
+);
+
+
+const answers =
+correctAnswers.map(function(answer){
+
+return normalizeText(answer);
+
+});
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+
+'<span class="star">⭐</span>'+
+
+'<span class="star">🌟</span>'+
+
+'<span class="star">✨</span>'+
+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+'✅ أحسنت! إجابتك صحيحة.';
+
+
+result.className =
+"answer-result success-text";
+
+}
+
+else{
+
+input.classList.add(
+"wrong-input"
+);
+
+
+void input.offsetWidth;
+
+input.classList.add(
+"shake"
+);
+
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},400);
+
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة.<br><br>تذكّر: في هذا النوع من الأسئلة نستخدم <b>would</b> في السؤال، وبعد <b>if</b> نستخدم الماضي البسيط.";
+
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+
+
+// ==========================================================
+// أسئلة الاختيار
+// ==========================================================
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+const result =
+document.getElementById(
+resultId
+);
+
+
+const container =
+button.parentElement;
+
+
+const allButtons =
+container.querySelectorAll(
+".choice-btn"
+);
+
+
+allButtons.forEach(function(btn){
+
+btn.disabled = true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add(
+"correct"
+);
+
+
+button.innerHTML +=
+" ✔️";
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+
+'<span class="star">✨</span>'+
+
+'<span class="star">⭐</span>'+
+
+'<span class="star">🌟</span>'+
+
+'<span class="star">✨</span>'+
+
+'<span class="star">⭐</span>'+
+
+'</div>'+
+
+'✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
+
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+button.classList.add(
+"wrong"
+);
+
+
+button.innerHTML +=
+" ✖️";
+
+
+void button.offsetWidth;
+
+button.classList.add(
+"shake"
+);
+
+
+setTimeout(function(){
+
+button.classList.remove(
+"shake"
+);
+
+},400);
+
+
+result.innerHTML =
+
+"😅❌ لقد اخترت الإجابة الخاطئة.";
+
+result.className =
+"result-text error-text";
+
+
+allButtons.forEach(function(btn){
+
+const onclick =
+btn.getAttribute(
+"onclick"
+);
+
+
+if(
+onclick &&
+onclick.includes("true")
+){
+
+btn.classList.add(
+"correct"
+);
+
+
+if(
+!btn.innerHTML.includes("✔️")
+){
+
+btn.innerHTML +=
+" ✔️";
+
+}
+
+}
+
+});
+
+}
+
+}
+
+</script>
+
+
+
+<!-- ==========================================================
+     نظام المكافآت والانتقال
+========================================================== -->
+
+<script type="module">
+
+import {
+finishLesson
+}
+from "./js/reward.js";
+
+
+window.finishLessonPage = function(){
+
+finishLesson(
+
+"intermediate-unit4-lesson4",
+
+"If | Part 4",
+
+"present-perfect-continuous1.html"
+
+);
+
+};
+
+</script>
+
+
+</body>
+
+</html>
