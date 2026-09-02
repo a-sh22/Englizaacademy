@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>English Space | Engliza Academy</title>
+
+  <style>
+    :root{
+      --navy:#1f3c88;
+      --purple:#6f43ff;
+      --gold:#ffd86b;
+      --gold-dark:#ffb300;
+      --white:#ffffff;
+      --text:#18264a;
+      --muted:#7180a3;
+      --bg:#f5f7ff;
+      --border:#e4e8f5;
+      --success:#22a06b;
+      --danger:#e05252;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(111,67,255,.10),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at top right,
+          rgba(31,60,136,.10),
+          transparent 30%
+        ),
+        var(--bg);
+
+      color:var(--text);
+      min-height:100vh;
+    }
+
+    button,
+    textarea{
+      font:inherit;
+    }
+
+    button{
+      border:0;
+      cursor:pointer;
+    }
+
+    .page{
+      width:min(100%, 900px);
+      margin:auto;
+      padding:18px 14px 50px;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .top-bar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .back-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:var(--white);
+      color:var(--navy);
+      box-shadow:0 5px 20px rgba(31,60,136,.08);
+      font-size:21px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      flex:1;
+    }
+
+    .brand-icon{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:linear-gradient(
+        135deg,
+        var(--navy),
+        var(--purple)
+      );
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:21px;
+      box-shadow:0 7px 20px rgba(111,67,255,.20);
+    }
+
+    .brand-text h1{
+      font-size:18px;
+      line-height:1.1;
+      color:var(--navy);
+    }
+
+    .brand-text p{
+      font-size:11px;
+      color:var(--muted);
+      margin-top:3px;
+    }
+
+    /* =========================
+       PROFILE CARD
+    ========================= */
+
+    .profile-card{
+      background:var(--white);
+      border:1px solid rgba(228,232,245,.9);
+      border-radius:24px;
+      padding:17px;
+      display:flex;
+      align-items:center;
+      gap:13px;
+      box-shadow:0 9px 30px rgba(31,60,136,.08);
+      margin-bottom:16px;
+    }
+
+    .avatar{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      background:
+        linear-gradient(
+          145deg,
+          #eef1ff,
+          #f8f5ff
+        );
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:29px;
+      flex-shrink:0;
+    }
+
+    .profile-info{
+      flex:1;
+      min-width:0;
+    }
+
+    .profile-name{
+      font-size:17px;
+      font-weight:800;
+      color:var(--navy);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .profile-points{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-top:5px;
+      padding:4px 9px;
+      border-radius:999px;
+      background:#fff8dd;
+      color:#8a6500;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          var(--purple)
+        );
+      color:white;
+      border-radius:26px;
+      padding:23px 20px;
+      margin-bottom:16px;
+      box-shadow:0 12px 32px rgba(31,60,136,.20);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
+      right:-55px;
+      top:-65px;
+    }
+
+    .hero h2{
+      position:relative;
+      z-index:1;
+      font-size:24px;
+      margin-bottom:8px;
+    }
+
+    .hero p{
+      position:relative;
+      z-index:1;
+      font-size:14px;
+      line-height:1.6;
+      color:rgba(255,255,255,.88);
+      max-width:620px;
+    }
+
+    /* =========================
+       COMPOSER
+    ========================= */
+
+    .composer{
+      background:var(--white);
+      border-radius:24px;
+      padding:17px;
+      box-shadow:0 8px 28px rgba(31,60,136,.07);
+      border:1px solid var(--border);
+      margin-bottom:18px;
+    }
+
+    .composer-title{
+      font-size:14px;
+      font-weight:800;
+      color:var(--navy);
+      margin-bottom:12px;
+    }
+
+    .post-text{
+      width:100%;
+      min-height:105px;
+      resize:vertical;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:14px;
+      outline:none;
+      color:var(--text);
+      background:#fafbff;
+      line-height:1.55;
+      transition:.2s;
+    }
+
+    .post-text:focus{
+      border-color:var(--purple);
+      background:white;
+      box-shadow:0 0 0 3px rgba(111,67,255,.08);
+    }
+
+    .composer-actions{
+      display:flex;
+      gap:9px;
+      margin-top:11px;
+      flex-wrap:wrap;
+    }
+
+    .action-btn{
+      min-height:42px;
+      padding:0 14px;
+      border-radius:13px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:7px;
+      font-size:13px;
+      font-weight:750;
+    }
+
+    .primary-btn{
+      background:var(--navy);
+      color:white;
+    }
+
+    .voice-btn{
+      background:#f0edff;
+      color:var(--purple);
+    }
+
+    .action-btn:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+    }
+
+    /* =========================
+       VOICE PANEL
+    ========================= */
+
+    .voice-panel{
+      display:none;
+      margin-top:12px;
+      padding:14px;
+      border-radius:18px;
+      background:#f8f6ff;
+      border:1px solid #e9e3ff;
+    }
+
+    .voice-panel.show{
+      display:block;
+    }
+
+    .voice-status{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .recording-indicator{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      color:var(--danger);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .recording-dot{
+      width:9px;
+      height:9px;
+      background:var(--danger);
+      border-radius:50%;
+      animation:pulse 1s infinite;
+    }
+
+    @keyframes pulse{
+      50%{
+        opacity:.35;
+        transform:scale(.75);
+      }
+    }
+
+    .timer{
+      font-variant-numeric:tabular-nums;
+      font-size:14px;
+      font-weight:800;
+      color:var(--navy);
+    }
+
+    .voice-preview{
+      width:100%;
+      margin-top:10px;
+      display:none;
+    }
+
+    .voice-controls{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .small-btn{
+      padding:9px 12px;
+      border-radius:11px;
+      font-size:12px;
+      font-weight:750;
+      background:white;
+      color:var(--navy);
+      border:1px solid var(--border);
+    }
+
+    .small-btn.record{
+      background:var(--danger);
+      color:white;
+      border-color:var(--danger);
+    }
+
+    /* =========================
+       FEED
+    ========================= */
+
+    .feed-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:6px 3px 12px;
+    }
+
+    .feed-title h3{
+      font-size:17px;
+      color:var(--navy);
+    }
+
+    .feed-title span{
+      font-size:11px;
+      color:var(--muted);
+    }
+
+    .empty{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:23px;
+      padding:35px 20px;
+      text-align:center;
+      box-shadow:0 7px 24px rgba(31,60,136,.05);
+    }
+
+    .empty-icon{
+      font-size:38px;
+      margin-bottom:10px;
+    }
+
+    .empty h3{
+      color:var(--navy);
+      font-size:17px;
+      margin-bottom:7px;
+    }
+
+    .empty p{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    /* =========================
+       POST CARD
+    ========================= */
+
+    .post-card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:23px;
+      padding:17px;
+      margin-bottom:14px;
+      box-shadow:0 7px 25px rgba(31,60,136,.055);
+    }
+
+    .post-header{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .post-avatar{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:#f0f2ff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:21px;
+      flex-shrink:0;
+    }
+
+    .post-user{
+      flex:1;
+      min-width:0;
+    }
+
+    .post-user strong{
+      display:block;
+      color:var(--navy);
+      font-size:14px;
+    }
+
+    .post-user span{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      margin-top:3px;
+    }
+
+    .post-content{
+      margin:14px 0;
+      font-size:14px;
+      line-height:1.7;
+      color:#263557;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
+
+    .post-audio{
+      width:100%;
+      margin:9px 0 14px;
+    }
+
+    .post-actions{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      border-top:1px solid #eef0f7;
+      padding-top:11px;
+      flex-wrap:wrap;
+    }
+
+    .reaction-btn{
+      background:#f7f8fd;
+      color:#506084;
+      border-radius:11px;
+      padding:7px 10px;
+      font-size:13px;
+      transition:.15s;
+    }
+
+    .reaction-btn:hover{
+      transform:translateY(-1px);
+      background:#f0edff;
+    }
+
+    .comments-btn{
+      margin-left:auto;
+      background:#f0edff;
+      color:var(--purple);
+      border-radius:11px;
+      padding:7px 11px;
+      font-size:12px;
+      font-weight:750;
+    }
+
+    /* =========================
+       POINTS ANIMATION
+    ========================= */
+
+    .points-pop{
+      position:fixed;
+      left:50%;
+      top:74px;
+      transform:translateX(-50%);
+      z-index:9999;
+      pointer-events:none;
+      opacity:0;
+      padding:9px 15px;
+      border-radius:999px;
+      background:white;
+      color:#8a6500;
+      border:1px solid #ffe7a0;
+      box-shadow:0 9px 28px rgba(0,0,0,.12);
+      font-size:14px;
+      font-weight:900;
+    }
+
+    .points-pop.animate{
+      animation:pointsPop 1.25s ease forwards;
+    }
+
+    @keyframes pointsPop{
+      0%{
+        opacity:0;
+        transform:translate(-50%,12px) scale(.85);
+      }
+      20%{
+        opacity:1;
+        transform:translate(-50%,0) scale(1);
+      }
+      75%{
+        opacity:1;
+        transform:translate(-50%,-6px) scale(1);
+      }
+      100%{
+        opacity:0;
+        transform:translate(-50%,-28px) scale(.96);
+      }
+    }
+
+    /* =========================
+       LOADING
+    ========================= */
+
+    .loading{
+      text-align:center;
+      padding:25px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .hidden{
+      display:none !important;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:600px){
+
+      .page{
+        padding:12px 11px 35px;
+      }
+
+      .hero{
+        padding:20px 17px;
+      }
+
+      .hero h2{
+        font-size:22px;
+      }
+
+      .composer{
+        padding:14px;
+      }
+
+      .action-btn{
+        flex:1;
+      }
+
+      .profile-card{
+        padding:14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+
+      <button
+        class="back-btn"
+        id="backBtn"
+        aria-label="Back"
+      >
+        ←
+      </button>
+
+      <div class="brand">
+
+        <div class="brand-icon">
+          💬
+        </div>
+
+        <div class="brand-text">
+          <h1>English Space</h1>
+          <p>Practice English together</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROFILE -->
+    <section class="profile-card">
+
+      <div class="avatar">
+        🦉
+      </div>
+
+      <div class="profile-info">
+
+        <div
+          class="profile-name"
+          id="profileName"
+        >
+          Loading...
+        </div>
+
+        <div
+          class="profile-points"
+          id="profilePoints"
+        >
+          ⭐ <span id="pointsValue">0</span> points
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <h2>Welcome to English Space! 👋</h2>
+
+      <p>
+        Write, speak, ask, answer, and help other students
+        practice English. Mistakes are welcome — practice is
+        how we improve.
+      </p>
+
+    </section>
+
+
+    <!-- COMPOSER -->
+    <section class="composer">
+
+      <div class="composer-title">
+        Share something in English
+      </div>
+
+      <textarea
+        id="postText"
+        class="post-text"
+        maxlength="2000"
+        placeholder="Write something in English..."
+      ></textarea>
+
+
+      <!-- VOICE PANEL -->
+      <div
+        class="voice-panel"
+        id="voicePanel"
+      >
+
+        <div class="voice-status">
+
+          <div
+            class="recording-indicator"
+            id="recordingIndicator"
+          >
+            <span class="recording-dot"></span>
+            Recording
+          </div>
+
+          <div
+            class="timer"
+            id="voiceTimer"
+          >
+            00:00 / 01:00
+          </div>
+
+        </div>
+
+
+        <div class="voice-controls">
+
+          <button
+            class="small-btn record"
+            id="recordBtn"
+          >
+            🎙 Start recording
+          </button>
+
+          <button
+            class="small-btn hidden"
+            id="stopBtn"
+          >
+            ⏹ Stop
+          </button>
+
+          <button
+            class="small-btn hidden"
+            id="clearVoiceBtn"
+          >
+            🗑 Remove
+          </button>
+
+        </div>
+
+
+        <audio
+          class="voice-preview"
+          id="voicePreview"
+          controls
+        ></audio>
+
+      </div>
+
+
+      <div class="composer-actions">
+
+        <button
+          class="action-btn voice-btn"
+          id="voiceModeBtn"
+        >
+          🎙 Voice post
+        </button>
+
+        <button
+          class="action-btn primary-btn"
+          id="publishBtn"
+        >
+          Publish
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEED -->
+    <div class="feed-title">
+
+      <h3>Community</h3>
+
+      <span id="postCount">
+        0 posts
+      </span>
+
+    </div>
+
+
+    <div id="loadingState" class="loading">
+      Loading posts...
+    </div>
+
+    <div
+      id="emptyState"
+      class="empty hidden"
+    >
+
+      <div class="empty-icon">
+        🌱
+      </div>
+
+      <h3>No posts yet</h3>
+
+      <p>
+        Be the first student to start the conversation.
+        Share something in English!
+      </p>
+
+    </div>
+
+
+    <div
+      id="postsContainer"
+    ></div>
+
+  </div>
+
+
+  <!-- POINTS FEEDBACK -->
+  <div
+    id="pointsPop"
+    class="points-pop"
+  >
+    +3 ⭐
+  </div>
+
+
+  <!-- =========================
+       FIREBASE
+  ========================= -->
+
+  <script type="module">
+
+    import {
+      auth,
+      db
+    } from "./js/firebase.js";
+
+    import {
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+    import {
+      doc,
+      getDoc
+    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+    const profileName =
+      document.getElementById("profileName");
+
+    const pointsValue =
+      document.getElementById("pointsValue");
+
+    const loadingState =
+      document.getElementById("loadingState");
+
+    const emptyState =
+      document.getElementById("emptyState");
+
+
+    /* =========================
+       AUTH
+    ========================= */
+
+    onAuthStateChanged(auth, async (user) => {
+
+      if(!user){
+
+        window.location.href = "login.html";
+
+        return;
+      }
+
+
+      try{
+
+        const userRef =
+          doc(db, "users", user.uid);
+
+        const snap =
+          await getDoc(userRef);
+
+
+        if(snap.exists()){
+
+          const data = snap.data();
+
+
+          profileName.textContent =
+            data.name ||
+            data.displayName ||
+            user.displayName ||
+            "Engliza Student";
+
+
+          /*
+           * English Space points are intentionally
+           * separate from academy Coins.
+           */
+          pointsValue.textContent =
+            Number(data.englishSpacePoints || 0);
+
+        }else{
+
+          profileName.textContent =
+            user.displayName ||
+            "Engliza Student";
+
+        }
+
+
+      }catch(error){
+
+        console.error(
+          "Could not load student profile:",
+          error
+        );
+
+        profileName.textContent =
+          user.displayName ||
+          "Engliza Student";
+
+      }
+
+
+      loadingState.classList.add("hidden");
+
+      /*
+       * Posts will be connected in the next
+       * integration step.
+       *
+       * The page currently shows the correct
+       * empty-state design.
+       */
+      emptyState.classList.remove("hidden");
+
+    });
+
+
+    /* =========================
+       BACK BUTTON
+    ========================= */
+
+    document
+      .getElementById("backBtn")
+      .addEventListener("click", () => {
+
+        window.location.href = "home.html";
+
+      });
+
+
+    /* =========================
+       VOICE RECORDING
+       ========================= */
+
+    const voiceModeBtn =
+      document.getElementById("voiceModeBtn");
+
+    const voicePanel =
+      document.getElementById("voicePanel");
+
+    const recordBtn =
+      document.getElementById("recordBtn");
+
+    const stopBtn =
+      document.getElementById("stopBtn");
+
+    const clearVoiceBtn =
+      document.getElementById("clearVoiceBtn");
+
+    const voicePreview =
+      document.getElementById("voicePreview");
+
+    const voiceTimer =
+      document.getElementById("voiceTimer");
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioBlob = null;
+    let audioUrl = null;
+    let recordingStartedAt = null;
+    let timerInterval = null;
+
+
+    voiceModeBtn.addEventListener(
+      "click",
+      () => {
+
+        voicePanel.classList.toggle("show");
+
+      }
+    );
+
+
+    function formatTime(seconds){
+
+      const safe =
+        Math.max(
+          0,
+          Math.floor(seconds)
+        );
+
+      const minutes =
+        String(
+          Math.floor(safe / 60)
+        ).padStart(2,"0");
+
+      const secs =
+        String(
+          safe % 60
+        ).padStart(2,"0");
+
+      return `${minutes}:${secs}`;
+
+    }
+
+
+    function updateTimer(){
+
+      if(!recordingStartedAt){
+        return;
+      }
+
+      const elapsed =
+        (Date.now() -
+         recordingStartedAt) / 1000;
+
+
+      voiceTimer.textContent =
+        `${formatTime(elapsed)} / 01:00`;
+
+
+      if(elapsed >= 60){
+
+        stopRecording();
+
+      }
+
+    }
+
+
+    async function startRecording(){
+
+      try{
+
+        if(!navigator.mediaDevices ||
+           !navigator.mediaDevices.getUserMedia){
+
+          alert(
+            "Voice recording is not supported by this browser."
+          );
+
+          return;
+        }
+
+
+        const stream =
+          await navigator.mediaDevices.getUserMedia({
+            audio:true
+          });
+
+
+        audioChunks = [];
+
+        audioBlob = null;
+
+
+        let mimeType =
+          "audio/webm";
+
+
+        if(
+          !MediaRecorder.isTypeSupported(
+            "audio/webm"
+          )
+        ){
+
+          mimeType = "";
+
+        }
+
+
+        mediaRecorder =
+          new MediaRecorder(
+            stream,
+            mimeType
+              ? { mimeType }
+              : undefined
+          );
+
+
+        mediaRecorder.ondataavailable =
+          (event) => {
+
+            if(event.data.size > 0){
+
+              audioChunks.push(
+                event.data
+              );
+
+            }
+
+          };
+
+
+        mediaRecorder.onstop =
+          () => {
+
+            stream
+              .getTracks()
+              .forEach(
+                track => track.stop()
+              );
+
+
+            const finalType =
+              mediaRecorder.mimeType ||
+              "audio/webm";
+
+
+            audioBlob =
+              new Blob(
+                audioChunks,
+                {
+                  type:finalType
+                }
+              );
+
+
+            if(audioUrl){
+
+              URL.revokeObjectURL(
+                audioUrl
+              );
+
+            }
+
+
+            audioUrl =
+              URL.createObjectURL(
+                audioBlob
+              );
+
+
+            voicePreview.src =
+              audioUrl;
+
+            voicePreview.style.display =
+              "block";
+
+
+            recordBtn.classList.remove(
+              "hidden"
+            );
+
+            recordBtn.textContent =
+              "🎙 Record again";
+
+
+            stopBtn.classList.add(
+              "hidden"
+            );
+
+            clearVoiceBtn.classList.remove(
+              "hidden"
+            );
+
+
+            if(timerInterval){
+
+              clearInterval(
+                timerInterval
+              );
+
+            }
+
+          };
+
+
+        mediaRecorder.start();
+
+        recordingStartedAt =
+          Date.now();
+
+
+        recordBtn.classList.add(
+          "hidden"
+        );
+
+        stopBtn.classList.remove(
+          "hidden"
+        );
+
+        clearVoiceBtn.classList.add(
+          "hidden"
+        );
+
+
+        timerInterval =
+          setInterval(
+            updateTimer,
+            250
+          );
+
+
+        updateTimer();
+
+      }catch(error){
+
+        console.error(error);
+
+        alert(
+          "Please allow microphone access to record your voice."
+        );
+
+      }
+
+    }
+
+
+    function stopRecording(){
+
+      if(
+        mediaRecorder &&
+        mediaRecorder.state !== "inactive"
+      ){
+
+        mediaRecorder.stop();
+
+      }
+
+    }
+
+
+    function clearVoice(){
+
+      audioBlob = null;
+      audioChunks = [];
+
+      if(audioUrl){
+
+        URL.revokeObjectURL(
+          audioUrl
+        );
+
+        audioUrl = null;
+
+      }
+
+
+      voicePreview.removeAttribute(
+        "src"
+      );
+
+      voicePreview.style.display =
+        "none";
+
+
+      voiceTimer.textContent =
+        "00:00 / 01:00";
+
+
+      clearVoiceBtn.classList.add(
+        "hidden"
+      );
+
+      recordBtn.classList.remove(
+        "hidden"
+      );
+
+      recordBtn.textContent =
+        "🎙 Start recording";
+
+    }
+
+
+    recordBtn.addEventListener(
+      "click",
+      startRecording
+    );
+
+
+    stopBtn.addEventListener(
+      "click",
+      stopRecording
+    );
+
+
+    clearVoiceBtn.addEventListener(
+      "click",
+      clearVoice
+    );
+
+
+    /* =========================
+       PUBLISH BUTTON
+    ========================= */
+
+    document
+      .getElementById("publishBtn")
+      .addEventListener(
+        "click",
+        () => {
+
+          /*
+           * Publishing will be connected after
+           * the secure Firestore + R2 layer is
+           * installed.
+           */
+
+          alert(
+            "Your English Space is ready. We are connecting the secure publishing system now."
+          );
+
+        }
+      );
+
+
+  </script>
+
+</body>
+</html>
