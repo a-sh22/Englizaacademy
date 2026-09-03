@@ -16,58 +16,40 @@
   <title>Engliza Academy | English Space</title>
 
   <style>
-
     :root{
       --navy:#1f3c88;
       --navy-2:#17306e;
-
       --purple:#6f43ff;
       --purple-2:#8a68ff;
-
       --gold:#ffd86b;
       --gold-2:#ffb300;
-
       --ink:#17213d;
       --muted:#6d7690;
-
       --line:#e9ecf4;
-
       --soft:#f7f8fc;
       --blue-soft:#eef5ff;
       --purple-soft:#f3efff;
       --gold-soft:#fff8dc;
-
       --white:#fff;
-
       --danger:#e45858;
       --success:#20a66a;
-
-      --shadow:
-        0 16px 45px rgba(31,60,136,.10);
-
-      --shadow-sm:
-        0 8px 24px rgba(31,60,136,.08);
-
+      --shadow:0 16px 45px rgba(31,60,136,.10);
+      --shadow-sm:0 8px 24px rgba(31,60,136,.08);
       --radius:24px;
     }
-
 
     *{
       box-sizing:border-box;
     }
 
-
     html{
       scroll-behavior:smooth;
     }
 
-
     body{
       margin:0;
       min-height:100vh;
-
       color:var(--ink);
-
       font-family:
         Inter,
         ui-sans-serif,
@@ -97,36 +79,30 @@
         );
     }
 
-
     button,
     input,
     textarea{
       font:inherit;
     }
 
-
     button{
       cursor:pointer;
       -webkit-tap-highlight-color:transparent;
     }
-
 
     button:disabled{
       cursor:not-allowed;
       opacity:.52;
     }
 
-
     a{
       color:inherit;
       text-decoration:none;
     }
 
-
     .hidden{
       display:none !important;
     }
-
 
     .app{
       width:min(100%,1120px);
@@ -134,134 +110,89 @@
       padding:18px 16px 80px;
     }
 
-
-    /* =========================================================
-       TOP BAR
-    ========================================================= */
+    /* TOP BAR */
 
     .topbar{
       position:sticky;
       top:0;
       z-index:50;
-
       margin:-18px -16px 20px;
-
       padding:14px 16px 12px;
-
-      background:rgba(255,255,255,.84);
-
+      background:rgba(255,255,255,.88);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
-
-      border-bottom:
-        1px solid rgba(233,236,244,.8);
+      border-bottom:1px solid rgba(233,236,244,.8);
     }
-
 
     .topbar-inner{
       width:min(100%,1120px);
       margin:auto;
-
       display:flex;
       align-items:center;
       justify-content:space-between;
-
       gap:12px;
     }
-
 
     .brand{
       display:flex;
       align-items:center;
-
       gap:10px;
-
       min-width:0;
     }
-
 
     .brand img{
       width:46px;
       height:46px;
-
       object-fit:contain;
-
       flex:none;
     }
-
 
     .brand-copy{
       min-width:0;
     }
 
-
     .brand-name{
       font-size:16px;
       font-weight:900;
-
       letter-spacing:.7px;
-
       color:var(--navy);
-
       line-height:1.1;
     }
 
-
     .brand-sub{
       margin-top:3px;
-
       color:var(--muted);
-
       font-size:11px;
       font-weight:700;
-
       letter-spacing:.5px;
     }
-
 
     .top-actions{
       display:flex;
       gap:8px;
     }
 
-
     .icon-btn{
       width:42px;
       height:42px;
-
-      border:
-        1px solid var(--line);
-
+      border:1px solid var(--line);
       border-radius:15px;
-
       background:#fff;
-
       color:var(--navy);
-
-      box-shadow:
-        0 5px 18px rgba(31,60,136,.06);
-
+      box-shadow:0 5px 18px rgba(31,60,136,.06);
       display:grid;
       place-items:center;
-
       font-size:19px;
     }
 
-
-    /* =========================================================
-       HERO
-    ========================================================= */
+    /* HERO */
 
     .hero{
       position:relative;
       overflow:hidden;
-
       padding:26px;
-
       border-radius:30px;
-
       color:#fff;
-
       background:
         radial-gradient(
           circle at 86% 20%,
@@ -279,498 +210,300 @@
           #3454ad 48%,
           var(--purple)
         );
-
       box-shadow:var(--shadow);
     }
 
-
     .hero::after{
       content:"";
-
       position:absolute;
-
       width:190px;
       height:190px;
-
       right:-70px;
       bottom:-90px;
-
-      border:
-        2px solid rgba(255,255,255,.13);
-
+      border:2px solid rgba(255,255,255,.13);
       border-radius:50%;
-
       box-shadow:
         0 0 0 20px rgba(255,255,255,.04),
         0 0 0 42px rgba(255,255,255,.025);
     }
 
-
     .profile{
       position:relative;
       z-index:1;
-
       display:flex;
       align-items:center;
-
       gap:14px;
     }
 
-
     .avatar-wrap{
-      position:relative;
-
       width:72px;
       height:72px;
-
       flex:none;
-
       padding:4px;
-
       border-radius:24px;
-
-      background:
-        rgba(255,255,255,.20);
-
-      border:
-        1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.20);
+      border:1px solid rgba(255,255,255,.25);
     }
-
 
     .avatar{
       width:100%;
       height:100%;
-
       object-fit:cover;
-
       border-radius:20px;
-
       background:#fff;
     }
-
 
     .profile-copy{
       min-width:0;
     }
 
-
     .welcome-small{
       font-size:12px;
-
       opacity:.78;
-
       font-weight:700;
-
       margin-bottom:3px;
     }
 
-
     .student-name{
       font-size:22px;
-
       font-weight:900;
-
       white-space:nowrap;
-
       overflow:hidden;
-
       text-overflow:ellipsis;
-
       max-width:min(65vw,500px);
     }
-
 
     .points-pill{
       display:inline-flex;
       align-items:center;
-
       gap:6px;
-
       margin-top:7px;
-
       padding:6px 11px;
-
       border-radius:999px;
-
-      background:
-        rgba(255,216,107,.18);
-
-      border:
-        1px solid rgba(255,216,107,.34);
-
+      background:rgba(255,216,107,.18);
+      border:1px solid rgba(255,216,107,.34);
       color:#fff;
-
       font-weight:900;
-
       font-size:13px;
     }
-
 
     .points-number{
       color:var(--gold);
     }
 
-
     .hero-copy{
       position:relative;
       z-index:1;
-
       margin-top:24px;
-
       max-width:720px;
     }
 
-
     .hero-title{
       margin:0;
-
-      font-size:
-        clamp(25px,5vw,38px);
-
+      font-size:clamp(25px,5vw,38px);
       line-height:1.12;
-
       font-weight:950;
-
       letter-spacing:-.7px;
     }
 
-
     .hero-text{
       margin:10px 0 0;
-
-      color:
-        rgba(255,255,255,.82);
-
+      color:rgba(255,255,255,.82);
       line-height:1.65;
-
       font-size:14px;
-
       max-width:650px;
     }
 
-
-    /* =========================================================
-       NAV
-    ========================================================= */
+    /* NAV */
 
     .space-nav{
       display:flex;
-
       gap:8px;
-
       overflow:auto;
-
       padding:14px 1px 4px;
-
       scrollbar-width:none;
     }
-
 
     .space-nav::-webkit-scrollbar{
       display:none;
     }
 
-
     .nav-chip{
       flex:none;
-
-      border:
-        1px solid var(--line);
-
+      border:1px solid var(--line);
       background:#fff;
-
       color:var(--muted);
-
       padding:9px 13px;
-
       border-radius:999px;
-
       font-size:12px;
-
       font-weight:800;
     }
 
-
     .nav-chip.active{
       color:var(--navy);
-
       background:var(--blue-soft);
-
       border-color:#d8e5ff;
     }
 
-
-    /* =========================================================
-       HEADINGS
-    ========================================================= */
+    /* HEADINGS */
 
     .section-heading{
       display:flex;
-
       justify-content:space-between;
       align-items:end;
-
       gap:12px;
-
       margin:22px 2px 11px;
     }
 
-
     .section-heading h2{
       margin:0;
-
       font-size:19px;
-
       font-weight:950;
-
       color:var(--navy);
     }
-
 
     .section-heading p{
       margin:3px 0 0;
-
       color:var(--muted);
-
       font-size:12px;
-
       line-height:1.4;
     }
 
-
-    /* =========================================================
-       COMPOSER
-    ========================================================= */
+    /* COMPOSER */
 
     .composer{
       background:#fff;
-
-      border:
-        1px solid rgba(222,227,240,.9);
-
+      border:1px solid rgba(222,227,240,.9);
       border-radius:var(--radius);
-
       box-shadow:var(--shadow-sm);
-
       overflow:hidden;
     }
 
-
     .composer-tabs{
       display:grid;
-
       grid-template-columns:1fr 1fr;
-
-      border-bottom:
-        1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
-
 
     .composer-tab{
       border:0;
-
       background:#fff;
-
       padding:14px;
-
       color:var(--muted);
-
       font-weight:900;
-
       font-size:13px;
     }
 
-
     .composer-tab.active{
       color:var(--navy);
-
-      background:
-        linear-gradient(
-          180deg,
-          #fff,
-          #f8faff
-        );
-
-      box-shadow:
-        inset 0 -3px 0 var(--purple);
+      background:linear-gradient(180deg,#fff,#f8faff);
+      box-shadow:inset 0 -3px 0 var(--purple);
     }
-
 
     .composer-body{
       padding:17px;
     }
 
-
     .composer-panel{
       display:none;
     }
-
 
     .composer-panel.active{
       display:block;
     }
 
-
     textarea{
       width:100%;
-
       min-height:125px;
-
       resize:vertical;
-
-      border:
-        1px solid #e1e6f0;
-
+      border:1px solid #e1e6f0;
       border-radius:18px;
-
       padding:15px;
-
       outline:none;
-
       color:var(--ink);
-
       background:#fbfcff;
-
       line-height:1.7;
-
       transition:.18s ease;
     }
 
-
     textarea:focus{
       border-color:#a997ff;
-
-      box-shadow:
-        0 0 0 4px rgba(111,67,255,.09);
-
+      box-shadow:0 0 0 4px rgba(111,67,255,.09);
       background:#fff;
     }
-
 
     textarea::placeholder{
       color:#9aa2b5;
     }
 
-
     .composer-meta{
       display:flex;
-
       justify-content:space-between;
-
       gap:10px;
-
       align-items:center;
-
       margin-top:9px;
-
       min-height:20px;
     }
 
-
     .validation{
       color:var(--danger);
-
       font-size:11px;
-
       font-weight:800;
     }
-
 
     .validation.ok{
       color:var(--success);
     }
 
-
     .counter{
       color:var(--muted);
-
       font-size:11px;
-
       font-weight:800;
-
       white-space:nowrap;
     }
 
-
     .composer-actions{
       display:flex;
-
       justify-content:flex-end;
-
       margin-top:14px;
     }
 
-
     .primary-btn{
       border:0;
-
       border-radius:15px;
-
       padding:11px 18px;
-
       color:#fff;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--navy),
-          var(--purple)
-        );
-
-      box-shadow:
-        0 9px 22px rgba(70,65,190,.20);
-
+      background:linear-gradient(135deg,var(--navy),var(--purple));
+      box-shadow:0 9px 22px rgba(70,65,190,.20);
       font-weight:900;
-
       font-size:13px;
     }
 
-
     .secondary-btn{
-      border:
-        1px solid #dce2ef;
-
+      border:1px solid #dce2ef;
       border-radius:13px;
-
       padding:10px 14px;
-
       background:#fff;
-
       color:var(--navy);
-
       font-weight:900;
-
       font-size:12px;
     }
 
-
     .danger-btn{
       border-color:#f2caca;
-
       color:#bd4242;
-
       background:#fff7f7;
     }
 
-
-    /* =========================================================
-       VOICE
-    ========================================================= */
+    /* VOICE */
 
     .voice-box{
       display:grid;
-
       place-items:center;
-
       min-height:205px;
-
       padding:12px;
-
-      border:
-        1px dashed #ccd5e8;
-
+      border:1px dashed #ccd5e8;
       border-radius:20px;
-
       background:
         radial-gradient(
           circle at 50% 0%,
@@ -778,1006 +511,569 @@
           transparent 12rem
         ),
         #fbfcff;
-
       text-align:center;
     }
 
-
     .record-status{
       display:flex;
-
       flex-direction:column;
-
       align-items:center;
-
       gap:5px;
     }
-
 
     .record-icon{
       width:66px;
       height:66px;
-
       border-radius:22px;
-
       display:grid;
       place-items:center;
-
       background:var(--purple-soft);
-
       color:var(--purple);
-
       font-size:26px;
-
       margin-bottom:4px;
     }
 
-
     .record-icon.recording{
       background:#fff0f0;
-
       color:var(--danger);
-
-      animation:
-        pulseRecord 1.2s infinite;
+      animation:pulseRecord 1.2s infinite;
     }
-
 
     @keyframes pulseRecord{
       50%{
         transform:scale(1.05);
-
-        box-shadow:
-          0 0 0 9px rgba(228,88,88,.08);
+        box-shadow:0 0 0 9px rgba(228,88,88,.08);
       }
     }
 
-
     .timer{
       font-variant-numeric:tabular-nums;
-
       font-size:27px;
-
       font-weight:950;
-
       color:var(--navy);
-
       letter-spacing:1px;
     }
 
-
     .record-hint{
       color:var(--muted);
-
       font-size:11px;
-
       max-width:310px;
-
       line-height:1.55;
     }
 
-
     .voice-controls{
       display:flex;
-
       flex-wrap:wrap;
-
       justify-content:center;
-
       gap:8px;
-
       margin-top:14px;
     }
 
-
     .audio-preview{
       width:min(100%,420px);
-
       margin:13px auto 0;
     }
-
 
     .audio-preview audio{
       width:100%;
       height:40px;
     }
 
-
-    /* =========================================================
-       FEED
-    ========================================================= */
+    /* FEED */
 
     .feed-status{
       display:flex;
-
       align-items:center;
-
       justify-content:center;
-
       min-height:50px;
-
       color:var(--muted);
-
       font-size:13px;
+      text-align:center;
     }
-
 
     .feed{
       display:grid;
-
       gap:13px;
     }
 
-
     .post{
       position:relative;
-
       background:#fff;
-
-      border:
-        1px solid rgba(222,227,240,.9);
-
+      border:1px solid rgba(222,227,240,.9);
       border-radius:var(--radius);
-
       box-shadow:var(--shadow-sm);
-
       overflow:visible;
     }
 
-
     .post-head{
       display:flex;
-
       align-items:center;
-
       gap:11px;
-
       padding:16px 16px 10px;
     }
-
 
     .post-avatar{
       width:43px;
       height:43px;
-
       border-radius:15px;
-
       object-fit:cover;
-
       flex:none;
-
-      border:
-        1px solid #e7eaf2;
-
+      border:1px solid #e7eaf2;
       background:#fff;
     }
-
 
     .post-author{
       min-width:0;
-
       flex:1;
     }
 
-
     .post-name-line{
       display:flex;
-
       flex-wrap:wrap;
-
       align-items:center;
-
       gap:6px;
     }
 
-
     .post-name{
       font-size:13px;
-
       font-weight:950;
-
       color:var(--ink);
     }
 
-
     .post-points{
       color:#a87500;
-
       background:var(--gold-soft);
-
-      border:
-        1px solid #f5e4a9;
-
+      border:1px solid #f5e4a9;
       padding:3px 7px;
-
       border-radius:999px;
-
       font-size:10px;
-
       font-weight:950;
     }
 
-
     .post-time{
       margin-top:3px;
-
       color:var(--muted);
-
       font-size:10px;
     }
 
+    .post-tools{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      flex:none;
+    }
 
     .post-type{
-      flex:none;
-
       font-size:17px;
-
       opacity:.85;
     }
 
-
-    .post-menu-wrap{
-      position:relative;
-
-      flex:none;
-    }
-
-
-    .post-menu-btn{
-      width:34px;
-      height:34px;
-
+    .more-btn{
+      width:38px;
+      height:38px;
       border:0;
-
-      border-radius:11px;
-
+      border-radius:13px;
       background:#f6f7fb;
-
       color:var(--muted);
-
-      font-size:18px;
-
+      font-size:20px;
       line-height:1;
     }
 
-
     .post-menu{
       position:absolute;
-
-      right:0;
-      top:39px;
-
-      z-index:40;
-
-      width:150px;
-
+      top:62px;
+      right:12px;
+      z-index:30;
+      min-width:150px;
       padding:6px;
-
-      background:#fff;
-
-      border:
-        1px solid var(--line);
-
+      border:1px solid var(--line);
       border-radius:15px;
-
-      box-shadow:
-        0 18px 45px rgba(23,33,61,.16);
+      background:#fff;
+      box-shadow:0 15px 40px rgba(23,33,61,.16);
     }
-
 
     .post-menu button{
       width:100%;
-
       border:0;
-
       background:#fff;
-
-      border-radius:10px;
-
       padding:10px 11px;
-
+      border-radius:10px;
       text-align:left;
-
-      color:var(--muted);
-
+      color:#b83d3d;
+      font-weight:850;
       font-size:12px;
-
-      font-weight:800;
     }
-
 
     .post-menu button:hover{
-      background:#f7f8fb;
+      background:#fff4f4;
     }
-
-
-    .post-menu .delete-action{
-      color:#bd4242;
-
-      background:#fff7f7;
-    }
-
 
     .post-body{
       padding:4px 16px 14px;
     }
 
-
     .post-text{
       margin:0;
-
       white-space:pre-wrap;
-
       overflow-wrap:anywhere;
-
       line-height:1.78;
-
       font-size:14px;
-
       color:#27324e;
     }
 
-
     .post-audio{
       display:flex;
-
       align-items:center;
-
       gap:11px;
-
       padding:13px;
-
       border-radius:18px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #f5f2ff,
-          #f3f7ff
-        );
-
-      border:
-        1px solid #e6e1ff;
+      background:linear-gradient(135deg,#f5f2ff,#f3f7ff);
+      border:1px solid #e6e1ff;
     }
-
 
     .audio-play{
       width:45px;
       height:45px;
-
       flex:none;
-
       border:0;
-
       border-radius:15px;
-
       color:#fff;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--purple),
-          var(--navy)
-        );
-
+      background:linear-gradient(135deg,var(--purple),var(--navy));
       font-size:17px;
     }
 
-
     .audio-info{
       min-width:0;
-
       flex:1;
     }
 
-
     .audio-title{
       font-weight:900;
-
       font-size:12px;
-
       color:var(--navy);
     }
-
 
     .audio-duration{
       font-size:10px;
-
       color:var(--muted);
-
       margin-top:3px;
     }
 
-
     .post-footer{
       display:flex;
-
       align-items:center;
-
       gap:7px;
-
       padding:9px 12px 12px;
-
-      border-top:
-        1px solid #f0f2f7;
+      border-top:1px solid #f0f2f7;
     }
-
 
     .reaction-btn,
     .comment-toggle{
-      border:
-        1px solid transparent;
-
+      border:1px solid transparent;
       background:#f7f8fb;
-
       border-radius:12px;
-
       min-height:36px;
-
       padding:7px 10px;
-
       color:var(--muted);
-
       font-weight:800;
-
       font-size:12px;
     }
 
-
     .reaction-btn.active{
       color:#8e3f88;
-
       background:#fff3fb;
-
       border-color:#f5d7ea;
     }
 
-
     .comment-toggle{
       margin-left:auto;
-
       color:var(--navy);
     }
 
-
-    /* =========================================================
-       REACTIONS
-    ========================================================= */
+    /* REACTIONS */
 
     .reaction-picker{
       display:none;
-
       position:absolute;
-
       left:12px;
       bottom:52px;
-
       z-index:20;
-
       padding:8px;
-
       gap:3px;
-
-      grid-template-columns:
-        repeat(9,1fr);
-
+      grid-template-columns:repeat(9,1fr);
       width:min(94%,370px);
-
       background:#fff;
-
-      border:
-        1px solid var(--line);
-
+      border:1px solid var(--line);
       border-radius:17px;
-
-      box-shadow:
-        0 16px 40px rgba(23,33,61,.16);
+      box-shadow:0 16px 40px rgba(23,33,61,.16);
     }
-
 
     .reaction-picker.open{
       display:grid;
     }
 
-
     .emoji-btn{
       border:0;
-
       background:#fff;
-
       border-radius:10px;
-
       min-width:31px;
-
       min-height:34px;
-
       font-size:18px;
     }
-
 
     .emoji-btn:hover{
       background:#f5f6fb;
     }
 
-
     .reactions-row{
       display:flex;
-
       flex-wrap:wrap;
-
       gap:5px;
-
       margin-top:10px;
     }
 
-
     .reaction-count{
-      border:
-        1px solid #edf0f5;
-
+      border:1px solid #edf0f5;
       background:#fbfcff;
-
       border-radius:999px;
-
       padding:4px 7px;
-
       font-size:11px;
-
       color:var(--muted);
     }
 
-
-    /* =========================================================
-       COMMENTS
-    ========================================================= */
+    /* COMMENTS */
 
     .comments{
       display:none;
-
       padding:0 12px 14px;
-
-      border-top:
-        1px solid #f0f2f7;
+      border-top:1px solid #f0f2f7;
     }
-
 
     .comments.open{
       display:block;
     }
 
-
     .comment-compose{
       display:flex;
-
       gap:8px;
-
       align-items:flex-end;
-
       padding:12px 2px;
     }
 
-
     .comment-input{
       min-height:43px;
-
       height:43px;
-
       resize:none;
-
       padding:10px 12px;
-
       border-radius:14px;
-
       font-size:12px;
-
       flex:1;
     }
-
 
     .send-comment{
       width:43px;
       height:43px;
-
       padding:0;
-
       border:0;
-
       border-radius:14px;
-
       color:#fff;
-
       background:var(--navy);
-
       font-size:16px;
     }
-
 
     .comment-voice{
       width:43px;
       height:43px;
-
-      border:
-        1px solid #dce2ef;
-
+      border:1px solid #dce2ef;
       border-radius:14px;
-
       background:#fff;
-
       color:var(--purple);
-
       font-size:17px;
     }
 
-
     .comment-list{
       display:grid;
-
       gap:8px;
     }
-
 
     .comment{
       position:relative;
-
       display:flex;
-
       gap:8px;
-
       align-items:flex-start;
     }
-
 
     .comment.depth-1{
       margin-left:26px;
     }
 
-
     .comment.depth-2{
       margin-left:52px;
     }
 
-
     .comment-avatar{
       width:31px;
       height:31px;
-
       border-radius:11px;
-
       object-fit:cover;
-
       flex:none;
-
-      border:
-        1px solid #e8ebf2;
+      border:1px solid #e8ebf2;
     }
-
 
     .comment-card{
       min-width:0;
-
       flex:1;
-
       padding:9px 11px;
-
       border-radius:14px;
-
       background:#f7f8fb;
     }
 
-
-    .comment-top{
-      display:flex;
-
-      align-items:flex-start;
-
-      gap:5px;
-    }
-
-
     .comment-author{
       display:flex;
-
       flex-wrap:wrap;
-
       align-items:center;
-
       gap:5px;
-
-      flex:1;
     }
-
 
     .comment-author strong{
       font-size:11px;
     }
 
-
     .comment-author span{
       color:#a87500;
-
       font-size:9px;
-
       font-weight:900;
     }
 
-
-    .comment-menu-wrap{
-      position:relative;
-
-      flex:none;
-    }
-
-
-    .comment-menu-btn{
-      border:0;
-
-      background:transparent;
-
-      color:#9aa2b5;
-
-      font-size:15px;
-
-      padding:0 3px;
-    }
-
-
-    .comment-menu{
-      position:absolute;
-
-      right:0;
-      top:23px;
-
-      z-index:30;
-
-      width:125px;
-
-      padding:5px;
-
-      background:#fff;
-
-      border:
-        1px solid var(--line);
-
-      border-radius:13px;
-
-      box-shadow:
-        0 14px 35px rgba(23,33,61,.15);
-    }
-
-
-    .comment-menu button{
-      width:100%;
-
-      border:0;
-
-      background:#fff;
-
-      border-radius:9px;
-
-      padding:8px;
-
-      text-align:left;
-
-      font-size:10px;
-
-      font-weight:800;
-    }
-
-
-    .comment-menu .delete-action{
-      color:#bd4242;
-
-      background:#fff7f7;
-    }
-
-
     .comment-text{
       margin:4px 0 0;
-
       white-space:pre-wrap;
-
       overflow-wrap:anywhere;
-
       line-height:1.6;
-
       font-size:12px;
     }
 
-
     .comment-time{
       margin-top:4px;
-
       color:#9aa2b5;
-
       font-size:9px;
     }
 
-
     .comment-actions{
       display:flex;
-
       gap:4px;
-
       margin-top:5px;
     }
-
 
     .mini-btn{
       border:0;
-
       background:transparent;
-
       color:var(--muted);
-
       font-size:10px;
-
       padding:2px 4px;
-
       font-weight:800;
     }
 
-
     .comment-audio{
       display:flex;
-
       align-items:center;
-
       gap:8px;
-
       margin-top:5px;
     }
-
 
     .comment-audio button{
       width:33px;
       height:33px;
-
       border:0;
-
       border-radius:10px;
-
       color:#fff;
-
       background:var(--purple);
     }
 
-
     .comment-audio small{
       color:var(--muted);
-
       font-size:9px;
     }
 
-
     .reply-box{
       display:none;
-
       margin:6px 0 0 39px;
-
       gap:5px;
-
       align-items:center;
     }
-
 
     .reply-box.open{
       display:flex;
     }
 
-
     .reply-box textarea{
       min-height:38px;
-
       height:38px;
-
       padding:8px 10px;
-
       border-radius:12px;
-
       font-size:11px;
     }
-
 
     .reply-send{
       width:38px;
       height:38px;
-
       border:0;
-
       border-radius:12px;
-
       background:var(--navy);
-
       color:#fff;
     }
 
-
-    /* =========================================================
-       EMPTY
-    ========================================================= */
+    /* EMPTY */
 
     .empty{
       text-align:center;
-
       padding:42px 22px;
-
       background:#fff;
-
-      border:
-        1px dashed #d6ddeb;
-
+      border:1px dashed #d6ddeb;
       border-radius:26px;
-
       box-shadow:var(--shadow-sm);
     }
-
 
     .empty-owl{
       width:85px;
       height:85px;
-
       object-fit:contain;
-
       margin-bottom:8px;
     }
 
-
     .empty h3{
       margin:0;
-
       color:var(--navy);
-
       font-size:21px;
     }
 
-
     .empty p{
       margin:8px auto 17px;
-
       color:var(--muted);
-
       font-size:13px;
-
       line-height:1.6;
-
       max-width:390px;
     }
 
-
     .loading{
       display:flex;
-
       align-items:center;
-
       justify-content:center;
-
       gap:9px;
-
       color:var(--muted);
-
       padding:30px;
-
       font-size:12px;
-
       font-weight:800;
     }
-
 
     .spinner{
       width:17px;
       height:17px;
-
       border-radius:50%;
-
-      border:
-        2px solid #dce2ef;
-
+      border:2px solid #dce2ef;
       border-top-color:var(--purple);
-
-      animation:
-        spin .8s linear infinite;
+      animation:spin .8s linear infinite;
     }
-
 
     @keyframes spin{
       to{
@@ -1785,477 +1081,281 @@
       }
     }
 
-
-    /* =========================================================
-       TOAST
-    ========================================================= */
+    /* TOAST */
 
     .toast{
       position:fixed;
-
       left:50%;
       bottom:23px;
-
-      transform:
-        translate(-50%,20px);
-
+      transform:translate(-50%,20px);
       z-index:100;
-
       opacity:0;
-
       pointer-events:none;
-
       display:flex;
-
       align-items:center;
-
       gap:8px;
-
-      max-width:
-        calc(100vw - 28px);
-
+      max-width:calc(100vw - 28px);
       padding:11px 15px;
-
       border-radius:15px;
-
       background:#17213d;
-
       color:#fff;
-
-      box-shadow:
-        0 18px 45px rgba(23,33,61,.22);
-
+      box-shadow:0 18px 45px rgba(23,33,61,.22);
       font-size:12px;
-
       font-weight:800;
-
       transition:.25s ease;
-
       text-align:center;
     }
 
-
     .toast.show{
       opacity:1;
-
-      transform:
-        translate(-50%,0);
+      transform:translate(-50%,0);
     }
-
 
     .toast.error{
       background:#9e3d3d;
     }
 
-
-    /* =========================================================
-       REWARD
-    ========================================================= */
+    /* REWARD */
 
     .reward-float{
       position:fixed;
-
       z-index:110;
-
       pointer-events:none;
-
       left:50%;
       top:37%;
-
-      transform:
-        translate(-50%,15px)
-        scale(.86);
-
+      transform:translate(-50%,15px) scale(.86);
       opacity:0;
-
       font-weight:950;
-
       font-size:22px;
-
       color:#b77a00;
-
       text-shadow:
         0 2px 0 #fff,
         0 5px 18px rgba(183,122,0,.15);
     }
 
-
     .reward-float.show{
-      animation:
-        rewardPop 1.35s ease-out forwards;
+      animation:rewardPop 1.35s ease-out forwards;
     }
 
-
     @keyframes rewardPop{
-
       0%{
         opacity:0;
-
-        transform:
-          translate(-50%,15px)
-          scale(.86);
+        transform:translate(-50%,15px) scale(.86);
       }
-
 
       16%{
         opacity:1;
-
-        transform:
-          translate(-50%,0)
-          scale(1);
+        transform:translate(-50%,0) scale(1);
       }
-
 
       72%{
         opacity:1;
-
-        transform:
-          translate(-50%,-30px)
-          scale(1.02);
+        transform:translate(-50%,-30px) scale(1.02);
       }
-
 
       100%{
         opacity:0;
-
-        transform:
-          translate(-50%,-55px)
-          scale(.96);
+        transform:translate(-50%,-55px) scale(.96);
       }
-
     }
-
 
     .spark{
       position:fixed;
-
       z-index:109;
-
       pointer-events:none;
-
       left:50%;
       top:39%;
-
       width:5px;
       height:5px;
-
       border-radius:50%;
-
       background:var(--gold);
-
       opacity:0;
     }
 
-
     .spark.show{
-      animation:
-        spark 1s ease-out forwards;
+      animation:spark 1s ease-out forwards;
     }
 
-
     @keyframes spark{
-
       0%{
         opacity:0;
-
-        transform:
-          translate(0,0)
-          scale(.5);
+        transform:translate(0,0) scale(.5);
       }
-
 
       15%{
         opacity:1;
       }
 
-
       100%{
         opacity:0;
-
-        transform:
-          translate(var(--x),var(--y))
-          scale(0);
+        transform:translate(var(--x),var(--y)) scale(0);
       }
-
     }
 
-
-    /* =========================================================
-       MODAL
-    ========================================================= */
+    /* MODAL */
 
     .modal{
       display:none;
-
       position:fixed;
-
       inset:0;
-
       z-index:200;
-
-      background:
-        rgba(12,20,44,.48);
-
+      background:rgba(12,20,44,.48);
       backdrop-filter:blur(7px);
       -webkit-backdrop-filter:blur(7px);
-
       padding:18px;
-
       align-items:flex-end;
-
       justify-content:center;
     }
-
 
     .modal.open{
       display:flex;
     }
 
-
     .modal-card{
       width:min(100%,520px);
-
       max-height:90vh;
-
       overflow:auto;
-
       background:#fff;
-
       border-radius:28px;
-
-      box-shadow:
-        0 30px 80px rgba(10,20,50,.28);
-
+      box-shadow:0 30px 80px rgba(10,20,50,.28);
       padding:19px;
     }
 
-
     .modal-head{
       display:flex;
-
       align-items:center;
-
       justify-content:space-between;
-
       gap:10px;
     }
 
-
     .modal-head h3{
       margin:0;
-
       color:var(--navy);
-
       font-size:18px;
     }
-
 
     .close-modal{
       width:38px;
       height:38px;
-
       border:0;
-
       border-radius:13px;
-
       background:#f5f6fa;
-
       color:var(--navy);
     }
 
-
     .reply-record-box{
       margin-top:14px;
-
       padding:16px;
-
       border-radius:19px;
-
       background:#f8f8ff;
-
       text-align:center;
     }
 
-
-    /* =========================================================
-       CONFIRM DELETE MODAL
-    ========================================================= */
-
-    .confirm-text{
-      margin:15px 0;
-
-      color:var(--muted);
-
-      font-size:13px;
-
-      line-height:1.65;
-    }
-
-
-    .confirm-actions{
-      display:flex;
-
-      justify-content:flex-end;
-
-      gap:8px;
-
-      margin-top:17px;
-    }
-
-
-    /* =========================================================
-       LOGIN
-    ========================================================= */
+    /* LOGIN */
 
     .login-state{
       display:none;
-
       min-height:60vh;
-
       align-items:center;
-
       justify-content:center;
-
       text-align:center;
-
       padding:20px;
     }
-
 
     .login-state.show{
       display:flex;
     }
 
-
     .login-card{
       width:min(100%,450px);
-
       background:#fff;
-
       border-radius:28px;
-
       padding:30px 22px;
-
       box-shadow:var(--shadow);
     }
-
 
     .login-card img{
       width:80px;
       height:80px;
-
       object-fit:contain;
     }
 
-
     .login-card h2{
       color:var(--navy);
-
       margin:10px 0 6px;
     }
 
-
     .login-card p{
       color:var(--muted);
-
       font-size:13px;
-
       line-height:1.6;
     }
 
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
     @media (min-width:720px){
-
       .app{
         padding-left:24px;
         padding-right:24px;
       }
 
-
       .topbar{
         margin-left:-24px;
         margin-right:-24px;
-
         padding-left:24px;
         padding-right:24px;
       }
-
 
       .hero{
         padding:34px;
       }
 
-
       .composer-body{
         padding:20px;
       }
-
     }
 
-
     @media (max-width:520px){
-
       .hero{
         padding:22px 19px;
       }
 
-
       .avatar-wrap{
         width:62px;
         height:62px;
-
         border-radius:20px;
       }
-
 
       .avatar{
         border-radius:16px;
       }
 
-
       .student-name{
         font-size:19px;
-
         max-width:58vw;
       }
-
 
       .hero-title{
         font-size:25px;
       }
 
-
-      .post-footer{
-        overflow:visible;
-      }
-
-
       .reaction-picker{
         bottom:55px;
       }
 
+      .post-tools{
+        gap:2px;
+      }
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =========================================================
-       LOGIN
-  ========================================================= -->
+  <!-- LOGIN -->
 
   <div
     id="loginState"
     class="login-state"
   >
-
     <div class="login-card">
 
       <img
@@ -2268,8 +1368,7 @@
       </h2>
 
       <p>
-        Please sign in with your academy account
-        to practice with other learners.
+        Please sign in with your academy account to practice with other learners.
       </p>
 
       <button
@@ -2281,23 +1380,17 @@
       </button>
 
     </div>
-
   </div>
 
 
-  <!-- =========================================================
-       APP
-  ========================================================= -->
+  <!-- APP -->
 
   <div
     id="app"
     class="app hidden"
   >
 
-
-    <!-- =======================================================
-         TOP BAR
-    ======================================================= -->
+    <!-- TOP BAR -->
 
     <header class="topbar">
 
@@ -2328,7 +1421,6 @@
 
         </a>
 
-
         <div class="top-actions">
 
           <button
@@ -2340,7 +1432,6 @@
           >
             ⌂
           </button>
-
 
           <button
             class="icon-btn"
@@ -2361,16 +1452,11 @@
 
     <main>
 
-
-      <!-- =====================================================
-           HERO
-      ===================================================== -->
+      <!-- HERO -->
 
       <section class="hero">
 
-
         <div class="profile">
-
 
           <div class="avatar-wrap">
 
@@ -2383,13 +1469,11 @@
 
           </div>
 
-
           <div class="profile-copy">
 
             <div class="welcome-small">
               Your English Space profile
             </div>
-
 
             <div
               id="studentName"
@@ -2397,7 +1481,6 @@
             >
               Loading…
             </div>
-
 
             <div class="points-pill">
 
@@ -2418,30 +1501,24 @@
 
         </div>
 
-
         <div class="hero-copy">
 
           <h1 class="hero-title">
             Welcome to English Space! 🌱
           </h1>
 
-
           <p class="hero-text">
-            This is your place to practice English,
-            share your thoughts, and connect with other learners.
-            Read, write, listen, speak, reply,
-            and help each other grow.
+            This is your place to practice English, share your thoughts,
+            and connect with other learners.
+            Read, write, listen, speak, reply, and help each other grow.
           </p>
 
         </div>
 
-
       </section>
 
 
-      <!-- =====================================================
-           COMMUNITY NAV
-      ===================================================== -->
+      <!-- NAV -->
 
       <nav
         class="space-nav"
@@ -2455,7 +1532,6 @@
           📝 English Space
         </button>
 
-
         <button
           class="nav-chip"
           type="button"
@@ -2464,7 +1540,6 @@
           🎧 Listening
         </button>
 
-
         <button
           class="nav-chip"
           type="button"
@@ -2472,7 +1547,6 @@
         >
           📖 Reading
         </button>
-
 
         <button
           class="nav-chip"
@@ -2485,12 +1559,9 @@
       </nav>
 
 
-      <!-- =====================================================
-           COMPOSER
-      ===================================================== -->
+      <!-- COMPOSER -->
 
       <section id="composerSection">
-
 
         <div class="section-heading">
 
@@ -2511,9 +1582,7 @@
 
         <div class="composer">
 
-
           <div class="composer-tabs">
-
 
             <button
               class="composer-tab active"
@@ -2523,7 +1592,6 @@
               📝 Write a post
             </button>
 
-
             <button
               class="composer-tab"
               data-tab="voice"
@@ -2532,22 +1600,17 @@
               🎙️ Voice post
             </button>
 
-
           </div>
 
 
           <div class="composer-body">
 
-
-            <!-- =================================================
-                 TEXT
-            ================================================= -->
+            <!-- TEXT -->
 
             <div
               id="textPanel"
               class="composer-panel active"
             >
-
 
               <textarea
                 id="postText"
@@ -2555,17 +1618,14 @@
                 placeholder="Share your day, an experience, something you learned, or your opinion…"
               ></textarea>
 
-
               <div class="composer-meta">
-
 
                 <div
                   id="textValidation"
                   class="validation"
                 >
-                  Please write a little more before posting.
+                  ✏️ Please write a little more before posting.
                 </div>
-
 
                 <div
                   id="textCounter"
@@ -2574,12 +1634,9 @@
                   0 words
                 </div>
 
-
               </div>
 
-
               <div class="composer-actions">
-
 
                 <button
                   id="publishTextBtn"
@@ -2590,28 +1647,21 @@
                   Publish +3 ⭐
                 </button>
 
-
               </div>
-
 
             </div>
 
 
-            <!-- =================================================
-                 VOICE POST
-            ================================================= -->
+            <!-- VOICE -->
 
             <div
               id="voicePanel"
               class="composer-panel"
             >
 
-
               <div class="voice-box">
 
-
                 <div class="record-status">
-
 
                   <div
                     id="recordIcon"
@@ -2620,14 +1670,12 @@
                     🎙️
                   </div>
 
-
                   <div
                     id="voiceTimer"
                     class="timer"
                   >
                     00:00 / 01:00
                   </div>
-
 
                   <div
                     id="voiceHint"
@@ -2637,12 +1685,9 @@
                     Maximum 60 seconds.
                   </div>
 
-
                 </div>
 
-
                 <div class="voice-controls">
-
 
                   <button
                     id="startRecordBtn"
@@ -2652,7 +1697,6 @@
                     Start recording
                   </button>
 
-
                   <button
                     id="stopRecordBtn"
                     class="secondary-btn danger-btn hidden"
@@ -2660,7 +1704,6 @@
                   >
                     Stop
                   </button>
-
 
                   <button
                     id="resetRecordBtn"
@@ -2670,9 +1713,7 @@
                     Record again
                   </button>
 
-
                 </div>
-
 
                 <div
                   id="postAudioPreview"
@@ -2687,9 +1728,7 @@
 
                 </div>
 
-
                 <div class="composer-actions">
-
 
                   <button
                     id="publishVoiceBtn"
@@ -2700,31 +1739,22 @@
                     Publish voice +3/5 ⭐
                   </button>
 
-
                 </div>
-
 
               </div>
 
-
             </div>
-
 
           </div>
 
-
         </div>
-
 
       </section>
 
 
-      <!-- =====================================================
-           FEED
-      ===================================================== -->
+      <!-- FEED -->
 
       <section id="feedSection">
-
 
         <div class="section-heading">
 
@@ -2742,30 +1772,23 @@
 
         </div>
 
-
         <div
           id="feedStatus"
           class="loading"
         >
-
           <span class="spinner"></span>
-
           Loading posts…
-
         </div>
-
 
         <div
           id="feed"
           class="feed"
         ></div>
 
-
         <div
           id="emptyState"
           class="empty hidden"
         >
-
 
           <img
             class="empty-owl"
@@ -2773,17 +1796,14 @@
             alt="Engliza Academy owl"
           >
 
-
           <h3>
             🌱 No posts yet!
           </h3>
 
-
           <p>
-            Be the first learner to share something
-            in English and start the conversation.
+            Be the first learner to share something in English
+            and start the conversation.
           </p>
-
 
           <button
             class="primary-btn"
@@ -2793,22 +1813,16 @@
             ✨ Create your first post
           </button>
 
-
         </div>
-
 
       </section>
 
-
     </main>
-
 
   </div>
 
 
-  <!-- =========================================================
-       TOAST
-  ========================================================= -->
+  <!-- TOAST -->
 
   <div
     id="toast"
@@ -2816,9 +1830,7 @@
   ></div>
 
 
-  <!-- =========================================================
-       REWARD
-  ========================================================= -->
+  <!-- REWARD -->
 
   <div
     id="rewardFloat"
@@ -2827,36 +1839,14 @@
     ✨ +3 ⭐
   </div>
 
-
-  <div
-    id="spark1"
-    class="spark"
-  ></div>
-
-  <div
-    id="spark2"
-    class="spark"
-  ></div>
-
-  <div
-    id="spark3"
-    class="spark"
-  ></div>
-
-  <div
-    id="spark4"
-    class="spark"
-  ></div>
-
-  <div
-    id="spark5"
-    class="spark"
-  ></div>
+  <div id="spark1" class="spark"></div>
+  <div id="spark2" class="spark"></div>
+  <div id="spark3" class="spark"></div>
+  <div id="spark4" class="spark"></div>
+  <div id="spark5" class="spark"></div>
 
 
-  <!-- =========================================================
-       VOICE REPLY MODAL
-  ========================================================= -->
+  <!-- VOICE REPLY MODAL -->
 
   <div
     id="voiceReplyModal"
@@ -2864,17 +1854,13 @@
     aria-hidden="true"
   >
 
-
     <div class="modal-card">
 
-
       <div class="modal-head">
-
 
         <h3>
           🎙️ Voice reply
         </h3>
-
 
         <button
           class="close-modal"
@@ -2885,12 +1871,9 @@
           ✕
         </button>
 
-
       </div>
 
-
       <div class="reply-record-box">
-
 
         <div
           id="replyRecordIcon"
@@ -2899,7 +1882,6 @@
           🎙️
         </div>
 
-
         <div
           id="replyTimer"
           class="timer"
@@ -2907,14 +1889,11 @@
           00:00 / 01:00
         </div>
 
-
         <div class="record-hint">
           Minimum 10 seconds · Maximum 60 seconds
         </div>
 
-
         <div class="voice-controls">
-
 
           <button
             id="replyStartBtn"
@@ -2924,7 +1903,6 @@
             Start recording
           </button>
 
-
           <button
             id="replyStopBtn"
             class="secondary-btn danger-btn hidden"
@@ -2932,7 +1910,6 @@
           >
             Stop
           </button>
-
 
           <button
             id="replyAgainBtn"
@@ -2942,9 +1919,7 @@
             Record again
           </button>
 
-
         </div>
-
 
         <div
           id="replyAudioPreview"
@@ -2959,9 +1934,7 @@
 
         </div>
 
-
         <div class="composer-actions">
-
 
           <button
             id="publishReplyVoiceBtn"
@@ -2972,113 +1945,27 @@
             Publish voice reply +1/3 ⭐
           </button>
 
-
         </div>
 
-
       </div>
 
-
     </div>
-
 
   </div>
 
 
-  <!-- =========================================================
-       DELETE CONFIRMATION MODAL
-  ========================================================= -->
-
-  <div
-    id="deleteModal"
-    class="modal"
-    aria-hidden="true"
-  >
-
-
-    <div class="modal-card">
-
-
-      <div class="modal-head">
-
-
-        <h3>
-          Delete content
-        </h3>
-
-
-        <button
-          class="close-modal"
-          id="closeDeleteModal"
-          type="button"
-          aria-label="Close"
-        >
-          ✕
-        </button>
-
-
-      </div>
-
-
-      <p
-        id="deleteConfirmText"
-        class="confirm-text"
-      >
-        Are you sure you want to delete this?
-      </p>
-
-
-      <div class="confirm-actions">
-
-
-        <button
-          id="cancelDeleteBtn"
-          class="secondary-btn"
-          type="button"
-        >
-          Cancel
-        </button>
-
-
-        <button
-          id="confirmDeleteBtn"
-          class="secondary-btn danger-btn"
-          type="button"
-        >
-          Delete
-        </button>
-
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-  <!-- =========================================================
-       JAVASCRIPT
-  ========================================================= -->
+  <!-- JAVASCRIPT -->
 
   <script type="module">
-
-
-    /* =========================================================
-       IMPORTS
-    ========================================================= */
 
     import {
       auth,
       db
     } from "./js/firebase.js";
 
-
     import {
       onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
 
     import {
       collection,
@@ -3090,7 +1977,9 @@
       orderBy,
       limit,
       serverTimestamp,
-      runTransaction
+      runTransaction,
+      updateDoc,
+      deleteDoc
     } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
@@ -3101,40 +1990,27 @@
     const WORKER_URL =
       "https://engliza-english-space-api.englizaacademy.workers.dev";
 
-
     const POSTS_COLLECTION =
       "englishSpacePosts";
-
 
     const MIN_POST_WORDS =
       10;
 
-
     const SHORT_COMMENT_MIN_WORDS =
       4;
-
 
     const LONG_COMMENT_MIN_WORDS =
       10;
 
-
     const DAILY_CAPS = {
-
       writtenPost:3,
-
       voicePost:3,
-
       shortComment:8,
-
       longComment:5,
-
       voiceReply:6
-
     };
 
-
     const REACTIONS = [
-
       "❤️",
       "😂",
       "🌟",
@@ -3144,7 +2020,6 @@
       "😮",
       "😢",
       "😡"
-
     ];
 
 
@@ -3166,48 +2041,24 @@
 
       pointsLedger:{},
 
-
-      /* POST RECORDER */
-
       postRecorder:null,
-
       postChunks:[],
-
       postStream:null,
-
       postStartedAt:0,
-
       postDuration:0,
-
       postBlob:null,
-
       postAudioUrl:null,
 
-
-      /* REPLY RECORDER */
-
       replyRecorder:null,
-
       replyChunks:[],
-
       replyStream:null,
-
       replyStartedAt:0,
-
       replyDuration:0,
-
       replyBlob:null,
-
       replyAudioUrl:null,
-
       replyTarget:null,
 
-
-      /* DELETE */
-
-      deleteTarget:null,
-
-      deleting:false
+      activeAudios:new Set()
 
     };
 
@@ -3219,106 +2070,57 @@
     const $ =
       id => document.getElementById(id);
 
-
     const el = {
 
       app:$("app"),
-
       loginState:$("loginState"),
-
       goLogin:$("goLogin"),
 
       homeBtn:$("homeBtn"),
-
       refreshBtn:$("refreshBtn"),
 
-
       profileAvatar:$("profileAvatar"),
-
       studentName:$("studentName"),
-
       pointsNumber:$("pointsNumber"),
 
-
       composerSection:$("composerSection"),
-
       textPanel:$("textPanel"),
-
       voicePanel:$("voicePanel"),
 
       postText:$("postText"),
-
       textValidation:$("textValidation"),
-
       textCounter:$("textCounter"),
-
       publishTextBtn:$("publishTextBtn"),
 
-
       recordIcon:$("recordIcon"),
-
       voiceTimer:$("voiceTimer"),
-
       voiceHint:$("voiceHint"),
-
       startRecordBtn:$("startRecordBtn"),
-
       stopRecordBtn:$("stopRecordBtn"),
-
       resetRecordBtn:$("resetRecordBtn"),
-
       postAudioPreview:$("postAudioPreview"),
-
       postAudio:$("postAudio"),
-
       publishVoiceBtn:$("publishVoiceBtn"),
 
-
       feedStatus:$("feedStatus"),
-
       feed:$("feed"),
-
       emptyState:$("emptyState"),
-
       firstPostBtn:$("firstPostBtn"),
-
 
       toast:$("toast"),
 
-
       rewardFloat:$("rewardFloat"),
 
-
       voiceReplyModal:$("voiceReplyModal"),
-
       closeVoiceReply:$("closeVoiceReply"),
-
       replyRecordIcon:$("replyRecordIcon"),
-
       replyTimer:$("replyTimer"),
-
       replyStartBtn:$("replyStartBtn"),
-
       replyStopBtn:$("replyStopBtn"),
-
       replyAgainBtn:$("replyAgainBtn"),
-
       replyAudioPreview:$("replyAudioPreview"),
-
       replyAudio:$("replyAudio"),
-
-      publishReplyVoiceBtn:$("publishReplyVoiceBtn"),
-
-
-      deleteModal:$("deleteModal"),
-
-      deleteConfirmText:$("deleteConfirmText"),
-
-      closeDeleteModal:$("closeDeleteModal"),
-
-      cancelDeleteBtn:$("cancelDeleteBtn"),
-
-      confirmDeleteBtn:$("confirmDeleteBtn")
+      publishReplyVoiceBtn:$("publishReplyVoiceBtn")
 
     };
 
@@ -3327,252 +2129,181 @@
        GENERAL HELPERS
     ========================================================= */
 
-    function normalizeName(
-      data,
-      user
-    ){
+    function normalizeName(data,user){
 
       return String(
-
         data?.name ||
-
         data?.displayName ||
-
         user?.displayName ||
-
         "Engliza Student"
-
       ).trim();
 
     }
 
 
-    function getAvatar(
-      data
-    ){
+    function getAvatar(data){
 
       return String(
-
         data?.photoURL ||
-
         data?.photoUrl ||
-
         data?.avatarUrl ||
-
         ""
-
       ).trim() || "../owl.PNG";
 
     }
 
 
-    function countWords(
-      text
-    ){
+    function countWords(text){
 
       return String(text || "")
-
         .trim()
-
         .split(/\s+/)
-
         .filter(Boolean)
-
         .length;
 
     }
 
 
-    function cleanText(
-      text
-    ){
+    function cleanText(text){
 
       return String(text || "")
-
         .replace(/\r/g,"")
-
         .trim();
 
     }
 
 
-    function formatDuration(
-      seconds
-    ){
+    function formatDuration(seconds){
 
       const s =
         Math.max(
           0,
           Math.min(
             60,
-            Math.floor(
-              Number(seconds) || 0
-            )
+            Math.floor(Number(seconds) || 0)
           )
         );
-
 
       return `00:${String(s).padStart(2,"0")}`;
 
     }
 
 
-    function formatPostTime(
-      timestamp
-    ){
+    function timestampToDate(timestamp){
 
       if(!timestamp){
-
-        return "just now";
-
+        return null;
       }
-
-
-      let date;
-
 
       try{
 
-        date =
-          timestamp.toDate
+        if(
+          typeof timestamp.toDate ===
+          "function"
+        ){
 
-            ? timestamp.toDate()
+          return timestamp.toDate();
 
-            : new Date(timestamp);
+        }
 
-      }catch{
+        if(
+          typeof timestamp.toMillis ===
+          "function"
+        ){
 
+          return new Date(
+            timestamp.toMillis()
+          );
+
+        }
+
+        const date =
+          new Date(timestamp);
+
+        if(
+          !Number.isNaN(
+            date.getTime()
+          )
+        ){
+
+          return date;
+
+        }
+
+      }catch{}
+
+      return null;
+
+    }
+
+
+    function formatPostTime(timestamp){
+
+      const date =
+        timestampToDate(timestamp);
+
+      if(!date){
         return "just now";
-
       }
-
-
-      if(
-
-        !date ||
-
-        Number.isNaN(
-          date.getTime()
-        )
-
-      ){
-
-        return "just now";
-
-      }
-
 
       const diff =
         Math.max(
           0,
-          Date.now() -
-          date.getTime()
+          Date.now() - date.getTime()
         );
-
 
       const sec =
-        Math.floor(
-          diff / 1000
-        );
-
+        Math.floor(diff / 1000);
 
       if(sec < 60){
-
         return "just now";
-
       }
-
 
       const min =
-        Math.floor(
-          sec / 60
-        );
-
+        Math.floor(sec / 60);
 
       if(min < 60){
-
         return `${min}m ago`;
-
       }
-
 
       const hour =
-        Math.floor(
-          min / 60
-        );
-
+        Math.floor(min / 60);
 
       if(hour < 24){
-
         return `${hour}h ago`;
-
       }
-
 
       const day =
-        Math.floor(
-          hour / 24
-        );
-
+        Math.floor(hour / 24);
 
       if(day < 7){
-
         return `${day}d ago`;
-
       }
 
-
       return date.toLocaleDateString(
-
         undefined,
-
         {
           month:"short",
           day:"numeric"
         }
-
       );
 
     }
 
 
-    function escapeHTML(
-      value
-    ){
+    function escapeHTML(value){
 
       return String(value ?? "")
-
-        .replaceAll(
-          "&",
-          "&amp;"
-        )
-
-        .replaceAll(
-          "<",
-          "&lt;"
-        )
-
-        .replaceAll(
-          ">",
-          "&gt;"
-        )
-
-        .replaceAll(
-          '"',
-          "&quot;"
-        )
-
-        .replaceAll(
-          "'",
-          "&#039;"
-        );
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
 
     }
 
 
-    function safeKey(
-      value
-    ){
+    function safeKey(value){
 
       return encodeURIComponent(
         String(value || "")
@@ -3587,33 +2318,22 @@
     ){
 
       el.toast.textContent =
-        String(
-          message || ""
-        );
-
+        String(message || "");
 
       el.toast.className =
-        `toast show${
-          isError
-            ? " error"
-            : ""
-        }`;
-
+        `toast show${isError ? " error" : ""}`;
 
       clearTimeout(
         showToast.timer
       );
 
-
       showToast.timer =
         setTimeout(
           () => {
-
             el.toast.className =
               "toast";
-
           },
-          3000
+          3200
         );
 
     }
@@ -3631,103 +2351,63 @@
       const amount =
         Number(points || 0);
 
-
       if(amount <= 0){
-
         return;
-
       }
 
-
       el.rewardFloat.textContent =
+        `${label ? label + " " : "✨ "}+${amount} ⭐`;
 
-        `${
+      el.rewardFloat.classList.remove(
+        "show"
+      );
 
-          label
+      void el.rewardFloat.offsetWidth;
 
-            ? label + " "
-
-            : "✨ "
-
-        }+${amount} ⭐`;
-
-
-      el.rewardFloat
-        .classList
-        .remove("show");
-
-
-      void
-        el.rewardFloat
-          .offsetWidth;
-
-
-      el.rewardFloat
-        .classList
-        .add("show");
-
+      el.rewardFloat.classList.add(
+        "show"
+      );
 
       [1,2,3,4,5].forEach(
-
         (n,i) => {
 
           const spark =
             $(`spark${n}`);
 
-
           const angle =
-            (
-              Math.PI *
-              2 *
-              i /
-              5
-            ) -
-            Math.PI / 2;
-
+            (Math.PI * 2 * i / 5)
+            - Math.PI / 2;
 
           const distance =
-            34 +
-            (i % 2) * 18;
-
+            34 + (i % 2) * 18;
 
           spark.style.setProperty(
-
             "--x",
-
             `${Math.cos(angle) * distance}px`
-
           );
-
 
           spark.style.setProperty(
-
             "--y",
-
             `${Math.sin(angle) * distance}px`
-
           );
 
-
-          spark.classList
-            .remove("show");
-
+          spark.classList.remove(
+            "show"
+          );
 
           void spark.offsetWidth;
 
-
-          spark.classList
-            .add("show");
+          spark.classList.add(
+            "show"
+          );
 
         }
-
       );
 
     }
 
 
-    function setPoints(
-      value
-    ){
+    function setPoints(value){
 
       const points =
         Math.max(
@@ -3735,10 +2415,8 @@
           Number(value || 0)
         );
 
-
       state.points =
         points;
-
 
       el.pointsNumber.textContent =
         points;
@@ -3750,24 +2428,18 @@
        LOCAL DAILY LEDGER
     ========================================================= */
 
-    function getRiyadhDateKey(){
+    function getDateKey(){
 
       try{
 
         return new Intl.DateTimeFormat(
-
           "en-CA",
-
           {
             timeZone:"Asia/Riyadh",
-
             year:"numeric",
-
             month:"2-digit",
-
             day:"2-digit"
           }
-
         ).format(
           new Date()
         );
@@ -3786,20 +2458,14 @@
     function getLedgerKey(){
 
       if(!state.user){
-
         return "";
-
       }
 
-
       return (
-
-        `englizaEnglishSpaceLedger_` +
-
-        `${state.user.uid}_` +
-
-        `${getRiyadhDateKey()}`
-
+        "englizaEnglishSpaceLedger_" +
+        state.user.uid +
+        "_" +
+        getDateKey()
       );
 
     }
@@ -3812,21 +2478,26 @@
         const key =
           getLedgerKey();
 
-
         if(!key){
-
           return {};
-
         }
 
+        const raw =
+          localStorage.getItem(key);
 
-        return JSON.parse(
+        if(!raw){
+          return {};
+        }
 
-          localStorage.getItem(
-            key
-          ) || "{}"
+        const parsed =
+          JSON.parse(raw);
 
-        );
+        return (
+          parsed &&
+          typeof parsed === "object"
+        )
+          ? parsed
+          : {};
 
       }catch{
 
@@ -3844,22 +2515,15 @@
         const key =
           getLedgerKey();
 
-
         if(!key){
-
           return;
-
         }
 
-
         localStorage.setItem(
-
           key,
-
           JSON.stringify(
             state.pointsLedger
           )
-
         );
 
       }catch{}
@@ -3873,17 +2537,13 @@
 
       const used =
         Number(
-          state.pointsLedger[source] ||
-          0
+          state.pointsLedger[source] || 0
         );
-
 
       const cap =
         Number(
-          DAILY_CAPS[source] ||
-          999999
+          DAILY_CAPS[source] || 999999
         );
-
 
       return used < cap;
 
@@ -3895,12 +2555,9 @@
     ){
 
       state.pointsLedger[source] =
-
         Number(
-          state.pointsLedger[source] ||
-          0
+          state.pointsLedger[source] || 0
         ) + 1;
-
 
       writeLocalDailyLedger();
 
@@ -3908,7 +2565,7 @@
 
 
     /* =========================================================
-       POINTS
+       LOAD POINTS
     ========================================================= */
 
     async function loadPoints(){
@@ -3921,34 +2578,25 @@
 
       }
 
-
       try{
 
         const snap =
           await getDoc(
-
             doc(
-
               db,
-
               "englishSpacePoints",
-
               state.user.uid
-
             )
-
           );
 
-
-        if(snap.exists()){
+        if(
+          snap.exists()
+        ){
 
           setPoints(
-
             Number(
-              snap.data()?.points ||
-              0
+              snap.data()?.points || 0
             )
-
           );
 
           return;
@@ -3958,38 +2606,25 @@
       }catch(error){
 
         console.warn(
-
           "Could not load English Space points:",
-
           error
-
         );
 
       }
 
-
       /*
-        English Space points are separate
-        from academy Coins.
+        IMPORTANT:
+        Never use academy Coins here.
+        English Space points are separate.
       */
 
-      setPoints(
-
-        Number(
-
-          state.userData
-            ?.englishSpacePoints ||
-          0
-
-        )
-
-      );
+      setPoints(0);
 
     }
 
 
     /* =========================================================
-       TRUSTED REWARD REQUEST
+       TRUSTED REWARD
     ========================================================= */
 
     async function requestTrustedReward(
@@ -4004,43 +2639,32 @@
 
       }
 
-
       const token =
-        await state.user
-          .getIdToken(true);
-
+        await state.user.getIdToken(
+          true
+        );
 
       const response =
         await fetch(
-
           `${WORKER_URL}/reward`,
-
           {
-
             method:"POST",
 
             headers:{
-
               "Authorization":
                 `Bearer ${token}`,
 
               "Content-Type":
                 "application/json"
-
             },
 
             body:
-              JSON.stringify(
-                payload
-              )
-
+              JSON.stringify(payload)
           }
-
         );
 
 
       let data = {};
-
 
       try{
 
@@ -4053,26 +2677,21 @@
       if(!response.ok){
 
         throw new Error(
-
           data?.error ||
-
           `Reward request failed (${response.status}).`
-
         );
 
       }
 
 
       /*
-        IMPORTANT:
-        data.points = points earned
-        in this event.
+        THIS IS THE IMPORTANT FIX.
 
-        data.totalPoints = user's
-        total English Space points.
+        data.points = points for this event.
 
-        We MUST use totalPoints
-        for the profile counter.
+        data.totalPoints = student's total.
+
+        We must use totalPoints for the profile.
       */
 
       if(
@@ -4096,21 +2715,9 @@
     }
 
 
-    /* =========================================================
-       AWARD POINTS
-    ========================================================= */
-
     async function awardPoints(
       payload
     ){
-
-      /*
-        The local cap is only a UI
-        convenience.
-
-        The Worker remains the
-        trusted authority.
-      */
 
       if(
         !canUseRewardSource(
@@ -4119,11 +2726,11 @@
       ){
 
         return {
-
+          ok:true,
+          awarded:false,
+          capped:true,
           pointsAwarded:0,
-
-          capped:true
-
+          totalPoints:state.points
         };
 
       }
@@ -4136,20 +2743,11 @@
             payload
           );
 
-
         const gained =
           Number(
-            result?.pointsAwarded ??
-            result?.points ??
-            0
+            result?.pointsAwarded || 0
           );
 
-
-        /*
-          Only count the local ledger
-          when the Worker actually
-          awarded points.
-        */
 
         if(gained > 0){
 
@@ -4157,15 +2755,11 @@
             payload.source
           );
 
-
           showReward(
-
             gained,
-
             payload.voice
               ? "🎙️"
               : "✨"
-
           );
 
         }
@@ -4176,34 +2770,25 @@
       }catch(error){
 
         console.error(
-
           "Trusted reward failed:",
-
           error
-
         );
 
-
         /*
-          IMPORTANT:
-          Content stays published.
-
-          We do not fake the reward.
+          DO NOT fake the reward.
+          The content itself remains published.
         */
 
         return {
-
+          ok:false,
+          awarded:false,
           pointsAwarded:0,
-
           rewardUnavailable:true,
-
           error:String(
-
             error?.message ||
             error
-
-          )
-
+          ),
+          totalPoints:state.points
         };
 
       }
@@ -4218,18 +2803,14 @@
     function pickAudioMimeType(){
 
       if(
-
         !window.MediaRecorder ||
-
         typeof MediaRecorder.isTypeSupported !==
         "function"
-
       ){
 
         return "";
 
       }
-
 
       const candidates = [
 
@@ -4276,41 +2857,27 @@
       stream
     ){
 
-      const mimeType =
+      const mime =
         pickAudioMimeType();
-
 
       try{
 
-        if(mimeType){
+        if(mime){
 
           return new MediaRecorder(
-
             stream,
-
             {
-              mimeType
+              mimeType:mime
             }
-
           );
 
         }
-
 
         return new MediaRecorder(
           stream
         );
 
-      }catch(error){
-
-        console.warn(
-
-          "Preferred MediaRecorder MIME failed.",
-
-          error
-
-        );
-
+      }catch{
 
         return new MediaRecorder(
           stream
@@ -4325,24 +2892,11 @@
       recorder
     ){
 
-      const recorderMime =
-        String(
-          recorder?.mimeType ||
-          ""
-        ).trim();
-
-
-      if(recorderMime){
-
-        return recorderMime;
-
-      }
-
-
-      return (
+      return String(
+        recorder?.mimeType ||
         pickAudioMimeType() ||
         "audio/webm"
-      );
+      ).trim();
 
     }
 
@@ -4368,7 +2922,6 @@
 
       }
 
-
       if(!state.user){
 
         throw new Error(
@@ -4377,23 +2930,15 @@
 
       }
 
-
       const seconds =
         Math.max(
-
           0,
-
           Math.min(
-
             60,
-
             Math.floor(
-              Number(duration) ||
-              0
+              Number(duration) || 0
             )
-
           )
-
         );
 
 
@@ -4407,9 +2952,9 @@
 
 
       const token =
-        await state.user
-          .getIdToken(true);
-
+        await state.user.getIdToken(
+          true
+        );
 
       const mime =
         blob.type ||
@@ -4418,17 +2963,11 @@
 
       const response =
         await fetch(
-
-          `${WORKER_URL}/upload?kind=${
-            encodeURIComponent(kind)
-          }`,
-
+          `${WORKER_URL}/upload?kind=${encodeURIComponent(kind)}`,
           {
-
             method:"POST",
 
             headers:{
-
               "Authorization":
                 `Bearer ${token}`,
 
@@ -4437,18 +2976,14 @@
 
               "X-Audio-Duration":
                 String(seconds)
-
             },
 
             body:blob
-
           }
-
         );
 
 
       let data = {};
-
 
       try{
 
@@ -4461,11 +2996,8 @@
       if(!response.ok){
 
         throw new Error(
-
           data?.error ||
-
           `Audio upload failed (${response.status}).`
-
         );
 
       }
@@ -4532,28 +3064,22 @@
 
 
       const token =
-        await state.user
-          .getIdToken(true);
+        await state.user.getIdToken(
+          true
+        );
 
 
       const response =
         await fetch(
-
           `${WORKER_URL}/audio/${cleanKey}`,
-
           {
-
             method:"GET",
 
             headers:{
-
               "Authorization":
                 `Bearer ${token}`
-
             }
-
           }
-
         );
 
 
@@ -4562,19 +3088,16 @@
         let message =
           "Unable to load audio.";
 
-
         try{
 
           const data =
             await response.json();
-
 
           message =
             data?.error ||
             message;
 
         }catch{}
-
 
         throw new Error(
           message
@@ -4610,41 +3133,39 @@
     async function loadUser(){
 
       if(!state.user){
-
         return;
-
       }
 
 
       const snap =
         await getDoc(
-
           doc(
-
             db,
-
             "users",
-
             state.user.uid
-
           )
-
         );
 
 
+      if(
+        !snap.exists()
+      ){
+
+        throw new Error(
+          "Academy account not found."
+        );
+
+      }
+
+
       state.userData =
-        snap.exists()
-          ? snap.data()
-          : {};
+        snap.data() || {};
 
 
       el.studentName.textContent =
         normalizeName(
-
           state.userData,
-
           state.user
-
         );
 
 
@@ -4679,37 +3200,27 @@
           el.postText.value
         );
 
-
       const words =
         countWords(text);
 
 
       el.textCounter.textContent =
-
-        `${words} word${
-          words === 1
-            ? ""
-            : "s"
-        }`;
+        `${words} word${words === 1 ? "" : "s"}`;
 
 
       if(
-        words <
-        MIN_POST_WORDS
+        words < MIN_POST_WORDS
       ){
 
         el.textValidation.textContent =
           "✏️ Please write a little more before posting.";
 
-
-        el.textValidation
-          .classList
-          .remove("ok");
-
+        el.textValidation.classList.remove(
+          "ok"
+        );
 
         el.publishTextBtn.disabled =
           true;
-
 
         return false;
 
@@ -4719,15 +3230,12 @@
       el.textValidation.textContent =
         "✓ Ready to practice.";
 
-
-      el.textValidation
-        .classList
-        .add("ok");
-
+      el.textValidation.classList.add(
+        "ok"
+      );
 
       el.publishTextBtn.disabled =
         false;
-
 
       return true;
 
@@ -4758,38 +3266,25 @@
       el.publishTextBtn.disabled =
         true;
 
-
       el.publishTextBtn.textContent =
         "Publishing…";
-
-
-      let postCreated =
-        false;
 
 
       try{
 
         const name =
           normalizeName(
-
             state.userData,
-
             state.user
-
           );
 
 
         const postRef =
           await addDoc(
-
             collection(
-
               db,
-
               POSTS_COLLECTION
-
             ),
-
             {
 
               uid:
@@ -4802,6 +3297,9 @@
                 getAvatar(
                   state.userData
                 ),
+
+              authorPoints:
+                state.points,
 
               type:
                 "text",
@@ -4833,62 +3331,92 @@
                 true
 
             }
-
           );
 
 
-        postCreated =
-          true;
-
-
         const reward =
-          await awardPoints({
+          await awardPoints(
+            {
 
-            source:
-              "writtenPost",
+              source:
+                "writtenPost",
 
-            kind:
-              "post",
+              kind:
+                "post",
 
-            postId:
-              postRef.id,
+              postId:
+                postRef.id,
 
-            type:
-              "text",
+              type:
+                "text",
 
-            text
+              text
 
-          });
+            }
+          );
+
+
+        /*
+          Update this post's displayed
+          author points after the trusted
+          reward has completed.
+        */
+
+        if(
+          Number(
+            reward?.totalPoints
+          ) >= 0
+        ){
+
+          try{
+
+            await updateDoc(
+              postRef,
+              {
+                authorPoints:
+                  Number(
+                    reward.totalPoints
+                  )
+              }
+            );
+
+          }catch(error){
+
+            console.warn(
+              "Could not update authorPoints on post:",
+              error
+            );
+
+          }
+
+        }
 
 
         el.postText.value =
           "";
 
-
         validateTextPost();
-
 
         await loadPosts();
 
 
         if(
-          Number(
-            reward?.pointsAwarded ||
-            0
-          ) > 0
-        ){
-
-          showToast(
-            `Posted! +${reward.pointsAwarded} ⭐`
-          );
-
-        }else if(
           reward?.rewardUnavailable
         ){
 
           showToast(
             "Posted successfully. Points could not be awarded this time.",
             true
+          );
+
+        }else if(
+          Number(
+            reward?.pointsAwarded || 0
+          ) > 0
+        ){
+
+          showToast(
+            `Posted! +${reward.pointsAwarded} ⭐`
           );
 
         }else if(
@@ -4915,25 +3443,16 @@
           error
         );
 
-
         showToast(
-
           error?.message ||
-          (
-            postCreated
-              ? "Post was created."
-              : "Could not publish the post."
-          ),
-
-          !postCreated
-
+          "Could not publish the post.",
+          true
         );
 
       }finally{
 
         el.publishTextBtn.textContent =
           "Publish +3 ⭐";
-
 
         validateTextPost();
 
@@ -4960,18 +3479,13 @@
 
       const elapsed =
         Math.min(
-
           60,
-
           Math.floor(
-
             (
               Date.now() -
               state.postStartedAt
             ) / 1000
-
           )
-
         );
 
 
@@ -4980,11 +3494,12 @@
 
 
       el.voiceTimer.textContent =
-
         `${formatDuration(elapsed)} / 01:00`;
 
 
-      if(elapsed >= 60){
+      if(
+        elapsed >= 60
+      ){
 
         stopPostRecording(true);
 
@@ -5014,19 +3529,13 @@
     async function startPostRecording(){
 
       if(
-
         !navigator.mediaDevices?.getUserMedia ||
-
         !window.MediaRecorder
-
       ){
 
         showToast(
-
           "Voice recording is not supported in this browser.",
-
           true
-
         );
 
         return;
@@ -5042,20 +3551,15 @@
       try{
 
         state.postStream =
-          await navigator.mediaDevices
-            .getUserMedia({
-
+          await navigator.mediaDevices.getUserMedia(
+            {
               audio:{
-
                 echoCancellation:true,
-
                 noiseSuppression:true,
-
                 autoGainControl:true
-
               }
-
-            });
+            }
+          );
 
 
         state.postRecorder =
@@ -5067,14 +3571,11 @@
         state.postChunks =
           [];
 
-
         state.postStartedAt =
           Date.now();
 
-
         state.postDuration =
           0;
-
 
         state.postBlob =
           null;
@@ -5088,11 +3589,8 @@
           event => {
 
             if(
-
               event.data &&
-
               event.data.size > 0
-
             ){
 
               state.postChunks.push(
@@ -5109,18 +3607,13 @@
 
             const duration =
               Math.min(
-
                 60,
-
                 Math.floor(
-
                   (
                     Date.now() -
                     state.postStartedAt
                   ) / 1000
-
                 )
-
               );
 
 
@@ -5140,13 +3633,10 @@
 
             state.postBlob =
               new Blob(
-
                 chunks,
-
                 {
                   type:mime
                 }
-
               );
 
 
@@ -5161,29 +3651,31 @@
             state.postStream =
               null;
 
-
             state.postRecorder =
               null;
-
 
             state.postStartedAt =
               0;
 
 
             if(
-              state.postBlob.size > 0
+              state.postAudioUrl
             ){
 
-              if(
+              URL.revokeObjectURL(
                 state.postAudioUrl
-              ){
+              );
 
-                URL.revokeObjectURL(
-                  state.postAudioUrl
-                );
+            }
 
-              }
 
+            state.postAudioUrl =
+              null;
+
+
+            if(
+              state.postBlob.size > 0
+            ){
 
               state.postAudioUrl =
                 URL.createObjectURL(
@@ -5206,16 +3698,13 @@
               .classList
               .add("hidden");
 
-
             el.stopRecordBtn
               .classList
               .add("hidden");
 
-
             el.resetRecordBtn
               .classList
               .remove("hidden");
-
 
             el.publishVoiceBtn
               .classList
@@ -5223,9 +3712,7 @@
 
 
             el.publishVoiceBtn.disabled =
-
               duration < 30 ||
-
               !state.postBlob?.size;
 
 
@@ -5239,16 +3726,14 @@
             ){
 
               el.voiceHint.textContent =
-
-                `You recorded ${duration}s. ` +
-                `You need at least 30 seconds.`;
+                `You recorded ${duration}s. You need at least 30 seconds.`;
 
             }else if(
               duration === 60
             ){
 
               el.voiceHint.textContent =
-                "Perfect — a full minute earns the highest voice reward.";
+                "Perfect — a full minute earns +5 ⭐.";
 
             }else{
 
@@ -5268,7 +3753,6 @@
               event
             );
 
-
             state.postStream
               ?.getTracks()
               .forEach(
@@ -5276,54 +3760,41 @@
                   track.stop()
               );
 
-
             state.postStream =
               null;
-
 
             state.postRecorder =
               null;
 
-
             state.postChunks =
               [];
 
-
             state.postStartedAt =
               0;
-
 
             el.recordIcon
               .classList
               .remove("recording");
 
-
             el.startRecordBtn
               .classList
               .remove("hidden");
-
 
             el.stopRecordBtn
               .classList
               .add("hidden");
 
-
             el.resetRecordBtn
               .classList
               .add("hidden");
-
 
             el.publishVoiceBtn
               .classList
               .add("hidden");
 
-
             showToast(
-
               "Recording failed. Please try again.",
-
               true
-
             );
 
           };
@@ -5344,36 +3815,30 @@
           .classList
           .add("hidden");
 
-
         el.stopRecordBtn
           .classList
           .remove("hidden");
-
 
         el.resetRecordBtn
           .classList
           .add("hidden");
 
-
         el.publishVoiceBtn
           .classList
           .add("hidden");
-
 
         el.recordIcon
           .classList
           .add("recording");
 
-
         el.voiceHint.textContent =
           "Keep speaking. Recording stops automatically at 60 seconds.";
-
 
         el.voiceTimer.textContent =
           "00:00 / 01:00";
 
-
         updatePostTimer();
+
 
       }catch(error){
 
@@ -5382,7 +3847,6 @@
           error
         );
 
-
         state.postStream
           ?.getTracks()
           .forEach(
@@ -5390,18 +3854,14 @@
               track.stop()
           );
 
-
         state.postStream =
           null;
-
 
         state.postRecorder =
           null;
 
-
         state.postChunks =
           [];
-
 
         state.postStartedAt =
           0;
@@ -5413,11 +3873,8 @@
         ){
 
           showToast(
-
-            "Microphone permission was denied. Please allow microphone access in Safari Settings.",
-
+            "Microphone permission was denied. Please allow microphone access.",
             true
-
           );
 
         }else if(
@@ -5426,21 +3883,15 @@
         ){
 
           showToast(
-
             "No microphone was found on this device.",
-
             true
-
           );
 
         }else{
 
           showToast(
-
             "Could not start the microphone. Please try again.",
-
             true
-
           );
 
         }
@@ -5451,7 +3902,7 @@
 
 
     /* =========================================================
-       STOP POST RECORDING
+       STOP POST
     ========================================================= */
 
     function stopPostRecording(
@@ -5463,12 +3914,9 @@
 
 
       if(
-
         recorder &&
-
         recorder.state ===
         "recording"
-
       ){
 
         try{
@@ -5478,15 +3926,11 @@
         }catch(error){
 
           console.error(
-
             "Could not stop recorder:",
-
             error
-
           );
 
         }
-
 
         if(auto){
 
@@ -5502,7 +3946,7 @@
 
 
     /* =========================================================
-       RESET POST RECORDING
+       RESET POST
     ========================================================= */
 
     async function resetPostRecording(
@@ -5514,34 +3958,26 @@
 
 
       if(
-
         recorder &&
-
         recorder.state ===
         "recording"
-
       ){
 
         await new Promise(
           resolve => {
 
-            let finished =
+            let doneCalled =
               false;
-
 
             const done =
               () => {
 
-                if(finished){
-
+                if(doneCalled){
                   return;
-
                 }
 
-
-                finished =
+                doneCalled =
                   true;
-
 
                 resolve();
 
@@ -5549,15 +3985,11 @@
 
 
             recorder.addEventListener(
-
               "stop",
-
               done,
-
               {
                 once:true
               }
-
             );
 
 
@@ -5588,22 +4020,17 @@
       state.postStream =
         null;
 
-
       state.postRecorder =
         null;
-
 
       state.postChunks =
         [];
 
-
       state.postStartedAt =
         0;
 
-
       state.postDuration =
         0;
-
 
       state.postBlob =
         null;
@@ -5617,50 +4044,40 @@
           state.postAudioUrl
         );
 
-
         state.postAudioUrl =
           null;
 
       }
 
 
-      el.postAudio
-        .removeAttribute(
-          "src"
-        );
-
+      el.postAudio.removeAttribute(
+        "src"
+      );
 
       el.postAudio.load();
-
 
       el.postAudioPreview
         .classList
         .add("hidden");
 
-
       el.voiceTimer.textContent =
         "00:00 / 01:00";
-
 
       el.recordIcon
         .classList
         .remove("recording");
 
-
       el.stopRecordBtn
         .classList
         .add("hidden");
-
 
       el.resetRecordBtn
         .classList
         .add("hidden");
 
-
       el.publishVoiceBtn
         .classList
         .add("hidden");
-
 
       el.publishVoiceBtn.disabled =
         true;
@@ -5694,13 +4111,9 @@
     async function publishVoicePost(){
 
       if(
-
         !state.postBlob ||
-
         !state.postBlob.size ||
-
         state.postDuration < 30
-
       ){
 
         return;
@@ -5711,50 +4124,33 @@
       el.publishVoiceBtn.disabled =
         true;
 
-
       el.publishVoiceBtn.textContent =
         "Uploading…";
-
-
-      let postCreated =
-        false;
 
 
       try{
 
         const uploaded =
           await uploadAudio(
-
             state.postBlob,
-
             "post",
-
             state.postDuration
-
           );
 
 
         const name =
           normalizeName(
-
             state.userData,
-
             state.user
-
           );
 
 
         const postRef =
           await addDoc(
-
             collection(
-
               db,
-
               POSTS_COLLECTION
-
             ),
-
             {
 
               uid:
@@ -5767,6 +4163,9 @@
                 getAvatar(
                   state.userData
                 ),
+
+              authorPoints:
+                state.points,
 
               type:
                 "voice",
@@ -5802,68 +4201,88 @@
                 true
 
             }
-
           );
 
 
-        postCreated =
-          true;
-
-
         const reward =
-          await awardPoints({
+          await awardPoints(
+            {
 
-            source:
-              "voicePost",
+              source:
+                "voicePost",
 
-            kind:
-              "post",
+              kind:
+                "post",
 
-            postId:
-              postRef.id,
+              postId:
+                postRef.id,
 
-            type:
-              "voice",
+              type:
+                "voice",
 
-            audioDuration:
-              uploaded.audioDuration,
+              audioDuration:
+                uploaded.audioDuration,
 
-            voice:true
+              voice:true
 
-          });
+            }
+          );
+
+
+        if(
+          Number(
+            reward?.totalPoints
+          ) >= 0
+        ){
+
+          try{
+
+            await updateDoc(
+              postRef,
+              {
+                authorPoints:
+                  Number(
+                    reward.totalPoints
+                  )
+              }
+            );
+
+          }catch(error){
+
+            console.warn(
+              "Could not update voice post authorPoints:",
+              error
+            );
+
+          }
+
+        }
 
 
         await resetPostRecording(
           true
         );
 
-
         await loadPosts();
 
 
         if(
-          Number(
-            reward?.pointsAwarded ||
-            0
-          ) > 0
-        ){
-
-          showToast(
-
-            `Voice post published! +${reward.pointsAwarded} ⭐`
-
-          );
-
-        }else if(
           reward?.rewardUnavailable
         ){
 
           showToast(
-
             "Voice post published. Points could not be awarded this time.",
-
             true
+          );
 
+        }else if(
+          Number(
+            reward?.pointsAwarded || 0
+          ) > 0
+        ){
+
+          showToast(
+            `Voice post published! +${reward.pointsAwarded} ⭐`
           );
 
         }else if(
@@ -5871,9 +4290,7 @@
         ){
 
           showToast(
-
             "Voice post published. Today's reward limit has been reached."
-
           );
 
         }else{
@@ -5884,40 +4301,22 @@
 
         }
 
+
       }catch(error){
 
         console.error(
-
           "Voice post error:",
-
           error
-
         );
-
 
         showToast(
-
           error?.message ||
-
-          (
-
-            postCreated
-
-              ? "Voice post was created."
-
-              : "Could not publish the voice post."
-
-          ),
-
-          !postCreated
-
+          "Could not publish the voice post.",
+          true
         );
 
-
         el.publishVoiceBtn.disabled =
-
           !state.postBlob ||
-
           state.postDuration < 30;
 
       }finally{
@@ -5931,7 +4330,7 @@
 
 
     /* =========================================================
-       COMPOSER TAB
+       COMPOSER TABS
     ========================================================= */
 
     function switchComposerTab(
@@ -5946,12 +4345,8 @@
           button => {
 
             button.classList.toggle(
-
               "active",
-
-              button.dataset.tab ===
-              tab
-
+              button.dataset.tab === tab
             );
 
           }
@@ -5961,22 +4356,15 @@
       el.textPanel
         .classList
         .toggle(
-
           "active",
-
           tab === "text"
-
         );
-
 
       el.voicePanel
         .classList
         .toggle(
-
           "active",
-
           tab === "voice"
-
         );
 
     }
@@ -5991,12 +4379,8 @@
     ){
 
       if(
-
         !counts ||
-
-        typeof counts !==
-        "object"
-
+        typeof counts !== "object"
       ){
 
         return "";
@@ -6005,89 +4389,21 @@
 
 
       return Object
-
         .entries(counts)
-
         .filter(
-
           ([,count]) =>
             Number(count) > 0
-
         )
-
         .map(
-
-          ([emoji,count]) => `
-
-            <span class="reaction-count">
-
-              ${escapeHTML(emoji)}
-
-              ${Number(count)}
-
-            </span>
-
-          `
-
+          ([emoji,count]) =>
+            `
+              <span class="reaction-count">
+                ${escapeHTML(emoji)}
+                ${Number(count)}
+              </span>
+            `
         )
-
         .join("");
-
-    }
-
-
-    /* =========================================================
-       POST MENU
-    ========================================================= */
-
-    function postOwnerMenuHTML(
-      post
-    ){
-
-      if(
-        post.uid !==
-        state.user?.uid
-      ){
-
-        return "";
-
-      }
-
-
-      return `
-
-        <div class="post-menu-wrap">
-
-          <button
-            class="post-menu-btn"
-            data-action="toggle-post-menu"
-            data-post-id="${escapeHTML(post.id)}"
-            type="button"
-            aria-label="Post options"
-            title="Options"
-          >
-            ⋯
-          </button>
-
-          <div
-            class="post-menu hidden"
-            id="post-menu-${escapeHTML(post.id)}"
-          >
-
-            <button
-              class="delete-action"
-              data-action="request-delete-post"
-              data-post-id="${escapeHTML(post.id)}"
-              type="button"
-            >
-              🗑️ Delete post
-            </button>
-
-          </div>
-
-        </div>
-
-      `;
 
     }
 
@@ -6106,28 +4422,16 @@
         ] || "";
 
 
-      const myReactionClass =
-        selected
-          ? "active"
-          : "";
-
-
-      const audioKey =
-        post.audioKey || "";
-
-
       const body =
-
         post.type === "voice"
 
           ? `
-
               <div class="post-audio">
 
                 <button
                   class="audio-play"
                   data-action="play-audio"
-                  data-key="${safeKey(audioKey)}"
+                  data-key="${safeKey(post.audioKey || "")}"
                   type="button"
                   aria-label="Play voice post"
                 >
@@ -6141,32 +4445,25 @@
                   </div>
 
                   <div class="audio-duration">
-
-                    ${formatDuration(
-                      post.audioDuration
-                    )}
-
+                    ${formatDuration(post.audioDuration)}
                     / 01:00
-
                   </div>
 
                 </div>
 
               </div>
-
             `
 
           : `
-
               <p class="post-text">
-
-                ${escapeHTML(
-                  post.text
-                )}
-
+                ${escapeHTML(post.text || "")}
               </p>
-
             `;
+
+
+      const isOwner =
+        state.user &&
+        post.uid === state.user.uid;
 
 
       return `
@@ -6176,9 +4473,7 @@
           data-post-id="${escapeHTML(post.id)}"
         >
 
-
           <div class="post-head">
-
 
             <img
               class="post-avatar"
@@ -6190,62 +4485,77 @@
               alt=""
             >
 
-
             <div class="post-author">
-
 
               <div class="post-name-line">
 
                 <span class="post-name">
-
                   ${escapeHTML(
                     post.authorName ||
                     "Engliza Student"
                   )}
-
                 </span>
-
 
                 <span class="post-points">
-
                   ⭐
-
                   ${Number(
-                    post.authorPoints ||
-                    0
+                    post.authorPoints || 0
                   )}
-
                 </span>
-
 
               </div>
 
-
               <div class="post-time">
-
                 ${formatPostTime(
                   post.createdAt
                 )}
-
               </div>
-
 
             </div>
 
+            <div class="post-tools">
 
-            <div class="post-type">
+              <div class="post-type">
+                ${
+                  post.type === "voice"
+                    ? "🎙️"
+                    : "📝"
+                }
+              </div>
 
               ${
-                post.type === "voice"
-                  ? "🎙️"
-                  : "📝"
+                isOwner
+                  ? `
+                    <button
+                      class="more-btn"
+                      data-action="post-menu"
+                      data-post-id="${escapeHTML(post.id)}"
+                      type="button"
+                      aria-label="Post options"
+                    >
+                      ⋯
+                    </button>
+
+                    <div
+                      class="post-menu hidden"
+                      id="menu-${escapeHTML(post.id)}"
+                    >
+
+                      <button
+                        data-action="delete-post"
+                        data-post-id="${escapeHTML(post.id)}"
+                        type="button"
+                      >
+                        🗑️ Delete post
+                      </button>
+
+                    </div>
+                  `
+                  : ""
+
               }
 
             </div>
-
-
-            ${postOwnerMenuHTML(post)}
-
 
           </div>
 
@@ -6254,38 +4564,29 @@
 
             ${body}
 
-
             <div
               class="reactions-row"
-              data-reactions="${escapeHTML(post.id)}"
             >
-
               ${reactionCountsHTML(
                 post.reactionCounts
               )}
-
             </div>
-
 
           </div>
 
 
           <div class="post-footer">
 
-
             <button
-              class="reaction-btn ${myReactionClass}"
+              class="reaction-btn ${
+                selected ? "active" : ""
+              }"
               data-action="reactions"
               data-post-id="${escapeHTML(post.id)}"
               type="button"
             >
-
-              ${selected || "😊"}
-
-              React
-
+              ${selected || "😊"} React
             </button>
-
 
             <button
               class="comment-toggle"
@@ -6295,7 +4596,6 @@
             >
               💬 Comments
             </button>
-
 
           </div>
 
@@ -6307,21 +4607,18 @@
 
             ${REACTIONS
               .map(
-
-                emoji => `
-
-                  <button
-                    class="emoji-btn"
-                    data-action="react"
-                    data-post-id="${escapeHTML(post.id)}"
-                    data-emoji="${escapeHTML(emoji)}"
-                    type="button"
-                  >
-                    ${emoji}
-                  </button>
-
-                `
-
+                emoji =>
+                  `
+                    <button
+                      class="emoji-btn"
+                      data-action="react"
+                      data-post-id="${escapeHTML(post.id)}"
+                      data-emoji="${escapeHTML(emoji)}"
+                      type="button"
+                    >
+                      ${emoji}
+                    </button>
+                  `
               )
               .join("")}
 
@@ -6333,9 +4630,7 @@
             id="comments-${escapeHTML(post.id)}"
           >
 
-
             <div class="comment-compose">
-
 
               <textarea
                 class="comment-input"
@@ -6343,7 +4638,6 @@
                 maxlength="2000"
                 placeholder="Write a thoughtful comment or question…"
               ></textarea>
-
 
               <button
                 class="comment-voice"
@@ -6356,7 +4650,6 @@
                 🎙️
               </button>
 
-
               <button
                 class="send-comment"
                 data-action="comment"
@@ -6366,7 +4659,6 @@
                 ➤
               </button>
 
-
             </div>
 
 
@@ -6374,16 +4666,12 @@
               class="comment-list"
               id="comment-list-${escapeHTML(post.id)}"
             >
-
               <div class="feed-status">
                 Loading comments…
               </div>
-
             </div>
 
-
           </div>
-
 
         </article>
 
@@ -6398,49 +4686,37 @@
 
     async function loadPosts(){
 
-      el.feedStatus
-        .classList
-        .remove("hidden");
+      el.feedStatus.classList.remove(
+        "hidden"
+      );
 
-
-      el.feedStatus.innerHTML = `
-
-        <span class="spinner"></span>
-
-        Loading posts…
-
-      `;
-
+      el.feedStatus.innerHTML =
+        `
+          <span class="spinner"></span>
+          Loading posts…
+        `;
 
       el.feed.innerHTML =
         "";
-
 
       el.emptyState
         .classList
         .add("hidden");
 
 
-      state.commentsByPost.clear();
-
-
       try{
 
         const q =
           query(
-
             collection(
               db,
               POSTS_COLLECTION
             ),
-
             orderBy(
               "createdAt",
               "desc"
             ),
-
             limit(50)
-
           );
 
 
@@ -6450,76 +4726,24 @@
 
         state.posts =
           snap.docs.map(
-
             document => ({
-
-              id:
-                document.id,
-
+              id:document.id,
               ...document.data()
-
             })
-
           );
 
 
         /*
-          Load English Space points
-          for authors.
+          IMPORTANT:
+          We do NOT read every student's
+          englishSpacePoints document.
 
-          This does NOT use academy Coins.
+          Firestore rules intentionally allow
+          a student to read only their own points.
+
+          Instead, authorPoints is stored on
+          the post/comment itself.
         */
-
-        await Promise.all(
-
-          state.posts.map(
-
-            async post => {
-
-              try{
-
-                const pointsSnap =
-                  await getDoc(
-
-                    doc(
-
-                      db,
-
-                      "englishSpacePoints",
-
-                      post.uid
-
-                    )
-
-                  );
-
-
-                post.authorPoints =
-
-                  pointsSnap.exists()
-
-                    ? Number(
-
-                        pointsSnap.data()
-                          ?.points ||
-                        0
-
-                      )
-
-                    : 0;
-
-              }catch{
-
-                post.authorPoints =
-                  0;
-
-              }
-
-            }
-
-          )
-
-        );
 
 
         el.feedStatus
@@ -6545,6 +4769,7 @@
             .map(postHTML)
             .join("");
 
+
       }catch(error){
 
         console.error(
@@ -6553,23 +4778,19 @@
         );
 
 
-        el.feedStatus.innerHTML = `
-
-          Could not load posts.
-
-          ${escapeHTML(
-            error?.message || ""
-          )}
-
-        `;
+        el.feedStatus.innerHTML =
+          `
+            Could not load posts.
+            <br>
+            ${escapeHTML(
+              error?.message || ""
+            )}
+          `;
 
 
         showToast(
-
           "Could not load English Space posts.",
-
           true
-
         );
 
       }
@@ -6588,22 +4809,16 @@
 
       const postRef =
         doc(
-
           db,
-
           POSTS_COLLECTION,
-
           postId
-
         );
 
 
       try{
 
         await runTransaction(
-
           db,
-
           async transaction => {
 
             const snap =
@@ -6626,16 +4841,12 @@
 
 
             const counts = {
-
               ...(data.reactionCounts || {})
-
             };
 
 
             const users = {
-
               ...(data.reactionUsers || {})
-
             };
 
 
@@ -6645,20 +4856,17 @@
               ] || "";
 
 
-            if(old === emoji){
+            if(
+              old === emoji
+            ){
 
               counts[emoji] =
-
                 Math.max(
-
                   0,
-
                   Number(
                     counts[emoji] || 0
                   ) - 1
-
                 );
-
 
               delete users[
                 state.user.uid
@@ -6669,26 +4877,19 @@
               if(old){
 
                 counts[old] =
-
                   Math.max(
-
                     0,
-
                     Number(
                       counts[old] || 0
                     ) - 1
-
                   );
 
               }
 
-
               counts[emoji] =
-
                 Number(
                   counts[emoji] || 0
                 ) + 1;
-
 
               users[
                 state.user.uid
@@ -6699,32 +4900,24 @@
 
 
             transaction.update(
-
               postRef,
-
               {
-
                 reactionCounts:
                   counts,
 
                 reactionUsers:
                   users
-
               }
-
             );
 
           }
-
         );
 
 
         const post =
           state.posts.find(
-
             item =>
               item.id === postId
-
           );
 
 
@@ -6735,15 +4928,11 @@
               postRef
             );
 
-
           if(snap.exists()){
 
             Object.assign(
-
               post,
-
               snap.data()
-
             );
 
           }
@@ -6763,13 +4952,9 @@
           error
         );
 
-
         showToast(
-
           "Could not update the reaction.",
-
           true
-
         );
 
       }
@@ -6787,18 +4972,14 @@
 
       const post =
         state.posts.find(
-
           item =>
             item.id === postId
-
         );
 
 
       const old =
         el.feed.querySelector(
-
           `[data-post-id="${CSS.escape(postId)}"]`
-
         );
 
 
@@ -6852,13 +5033,10 @@
       ){
 
         renderComments(
-
           postId,
-
           state.commentsByPost.get(
             postId
           )
-
         );
 
         return;
@@ -6870,148 +5048,60 @@
 
         const snap =
           await getDocs(
-
             collection(
-
               db,
-
               POSTS_COLLECTION,
-
               postId,
-
               "comments"
-
             )
-
           );
 
 
         const comments =
           snap.docs.map(
-
             document => ({
-
-              id:
-                document.id,
-
+              id:document.id,
               ...document.data()
-
             })
-
           );
 
 
         comments.sort(
-
           (a,b) => {
 
             const ta =
-
-              a.createdAt?.toMillis
-
-                ? a.createdAt.toMillis()
-
-                : 0;
-
+              timestampToDate(
+                a.createdAt
+              )?.getTime() || 0;
 
             const tb =
-
-              b.createdAt?.toMillis
-
-                ? b.createdAt.toMillis()
-
-                : 0;
-
+              timestampToDate(
+                b.createdAt
+              )?.getTime() || 0;
 
             return ta - tb;
 
           }
-
-        );
-
-
-        /*
-          Load points for comment authors.
-        */
-
-        await Promise.all(
-
-          comments.map(
-
-            async comment => {
-
-              try{
-
-                const pointsSnap =
-                  await getDoc(
-
-                    doc(
-
-                      db,
-
-                      "englishSpacePoints",
-
-                      comment.uid
-
-                    )
-
-                  );
-
-
-                comment.authorPoints =
-
-                  pointsSnap.exists()
-
-                    ? Number(
-
-                        pointsSnap.data()
-                          ?.points ||
-                        0
-
-                      )
-
-                    : 0;
-
-              }catch{
-
-                comment.authorPoints =
-                  0;
-
-              }
-
-            }
-
-          )
-
         );
 
 
         state.commentsByPost.set(
-
           postId,
-
           comments
-
         );
 
 
         renderComments(
-
           postId,
-
           comments
-
         );
 
 
       }catch(error){
 
         console.error(
-
           "Load comments error:",
-
           error
-
         );
 
 
@@ -7023,15 +5113,12 @@
 
         if(list){
 
-          list.innerHTML = `
-
-            <div class="feed-status">
-
-              Comments could not be loaded.
-
-            </div>
-
-          `;
+          list.innerHTML =
+            `
+              <div class="feed-status">
+                Comments could not be loaded.
+              </div>
+            `;
 
         }
 
@@ -7052,24 +5139,18 @@
       let depth =
         0;
 
-
       let parentId =
         comment.parentId ||
         "";
-
 
       const seen =
         new Set();
 
 
       while(
-
         parentId &&
-
         depth < 10 &&
-
         !seen.has(parentId)
-
       ){
 
         seen.add(
@@ -7079,22 +5160,17 @@
 
         const parent =
           all.find(
-
             item =>
               item.id === parentId
-
           );
 
 
         if(!parent){
-
           break;
-
         }
 
 
         depth += 1;
-
 
         parentId =
           parent.parentId ||
@@ -7107,62 +5183,6 @@
         depth,
         2
       );
-
-    }
-
-
-    /* =========================================================
-       COMMENT MENU
-    ========================================================= */
-
-    function commentOwnerMenuHTML(
-      comment
-    ){
-
-      if(
-        comment.uid !==
-        state.user?.uid
-      ){
-
-        return "";
-
-      }
-
-
-      return `
-
-        <div class="comment-menu-wrap">
-
-          <button
-            class="comment-menu-btn"
-            data-action="toggle-comment-menu"
-            data-comment-id="${escapeHTML(comment.id)}"
-            type="button"
-            aria-label="Comment options"
-          >
-            ⋯
-          </button>
-
-          <div
-            class="comment-menu hidden"
-            id="comment-menu-${escapeHTML(comment.id)}"
-          >
-
-            <button
-              class="delete-action"
-              data-action="request-delete-comment"
-              data-post-id="${escapeHTML(comment.postId)}"
-              data-comment-id="${escapeHTML(comment.id)}"
-              type="button"
-            >
-              🗑️ Delete
-            </button>
-
-          </div>
-
-        </div>
-
-      `;
 
     }
 
@@ -7184,11 +5204,9 @@
 
 
       const body =
-
         comment.type === "voice"
 
           ? `
-
               <div class="comment-audio">
 
                 <button
@@ -7203,31 +5221,22 @@
                 </button>
 
                 <small>
-
                   🎙️
-
                   ${formatDuration(
                     comment.audioDuration
                   )}
-
                   / 01:00
-
                 </small>
 
               </div>
-
             `
 
           : `
-
               <div class="comment-text">
-
                 ${escapeHTML(
                   comment.text || ""
                 )}
-
               </div>
-
             `;
 
 
@@ -7237,7 +5246,6 @@
           class="comment depth-${depth}"
           data-comment-id="${escapeHTML(comment.id)}"
         >
-
 
           <img
             class="comment-avatar"
@@ -7249,59 +5257,35 @@
             alt=""
           >
 
-
           <div class="comment-card">
 
+            <div class="comment-author">
 
-            <div class="comment-top">
+              <strong>
+                ${escapeHTML(
+                  comment.authorName ||
+                  "Engliza Student"
+                )}
+              </strong>
 
-
-              <div class="comment-author">
-
-                <strong>
-
-                  ${escapeHTML(
-                    comment.authorName ||
-                    "Engliza Student"
-                  )}
-
-                </strong>
-
-
-                <span>
-
-                  ⭐
-
-                  ${Number(
-                    comment.authorPoints ||
-                    0
-                  )}
-
-                </span>
-
-              </div>
-
-
-              ${commentOwnerMenuHTML(comment)}
-
+              <span>
+                ⭐
+                ${Number(
+                  comment.authorPoints || 0
+                )}
+              </span>
 
             </div>
-
 
             ${body}
 
-
             <div class="comment-time">
-
               ${formatPostTime(
                 comment.createdAt
               )}
-
             </div>
 
-
             <div class="comment-actions">
-
 
               <button
                 class="mini-btn"
@@ -7317,7 +5301,6 @@
                 Reply
               </button>
 
-
               <button
                 class="mini-btn"
                 data-action="voice-reply"
@@ -7332,22 +5315,17 @@
                 🎙️ Voice reply
               </button>
 
-
             </div>
-
 
             <div
               class="reply-box"
               id="reply-box-${escapeHTML(comment.id)}"
             >
 
-
               <textarea
                 id="reply-input-${escapeHTML(comment.id)}"
                 placeholder="Write a reply…"
-                maxlength="2000"
               ></textarea>
-
 
               <button
                 class="reply-send"
@@ -7363,12 +5341,9 @@
                 ➤
               </button>
 
-
             </div>
 
-
           </div>
-
 
         </div>
 
@@ -7393,9 +5368,7 @@
 
 
       if(!list){
-
         return;
-
       }
 
 
@@ -7403,15 +5376,12 @@
         !comments.length
       ){
 
-        list.innerHTML = `
-
-          <div class="feed-status">
-
-            Be the first to start the conversation.
-
-          </div>
-
-        `;
+        list.innerHTML =
+          `
+            <div class="feed-status">
+              Be the first to start the conversation.
+            </div>
+          `;
 
         return;
 
@@ -7421,19 +5391,16 @@
       const ordered =
         [];
 
-
       const byParent =
         new Map();
 
 
       comments.forEach(
-
         comment => {
 
           const key =
             comment.parentId ||
             "";
-
 
           if(
             !byParent.has(key)
@@ -7446,13 +5413,11 @@
 
           }
 
-
           byParent
             .get(key)
             .push(comment);
 
         }
-
       );
 
 
@@ -7461,26 +5426,20 @@
       ){
 
         (
-
-          byParent.get(
-            parentId
-          ) || []
-
+          byParent.get(parentId) ||
+          []
         ).forEach(
-
           comment => {
 
             ordered.push(
               comment
             );
 
-
             walk(
               comment.id
             );
 
           }
-
         );
 
       }
@@ -7490,26 +5449,19 @@
 
 
       if(
-
         ordered.length !==
         comments.length
-
       ){
 
         comments.forEach(
-
           comment => {
 
             if(
-
               !ordered.some(
-
                 item =>
                   item.id ===
                   comment.id
-
               )
-
             ){
 
               ordered.push(
@@ -7519,26 +5471,20 @@
             }
 
           }
-
         );
 
       }
 
 
       list.innerHTML =
-
         ordered
-
           .map(
-
             comment =>
               commentHTML(
                 comment,
                 comments
               )
-
           )
-
           .join("");
 
     }
@@ -7563,16 +5509,12 @@
 
 
       if(
-        words <
-        SHORT_COMMENT_MIN_WORDS
+        words < SHORT_COMMENT_MIN_WORDS
       ){
 
         showToast(
-
           "Please write a little more before posting your comment.",
-
           true
-
         );
 
         return false;
@@ -7581,32 +5523,23 @@
 
 
       const source =
-
-        words >=
-        LONG_COMMENT_MIN_WORDS
-
+        words >= LONG_COMMENT_MIN_WORDS
           ? "longComment"
-
           : "shortComment";
 
 
       const post =
         state.posts.find(
-
           item =>
             item.id === postId
-
         );
 
 
       if(!post){
 
         showToast(
-
           "This post could not be found.",
-
           true
-
         );
 
         return false;
@@ -7618,19 +5551,12 @@
 
         const ref =
           await addDoc(
-
             collection(
-
               db,
-
               POSTS_COLLECTION,
-
               postId,
-
               "comments"
-
             ),
-
             {
 
               postId,
@@ -7643,11 +5569,8 @@
 
               authorName:
                 normalizeName(
-
                   state.userData,
-
                   state.user
-
                 ),
 
               authorPhoto:
@@ -7682,7 +5605,6 @@
                 true
 
             }
-
           );
 
 
@@ -7697,53 +5619,95 @@
 
 
         const reward =
-          await awardPoints({
+          await awardPoints(
+            {
 
-            source,
+              source,
 
-            kind:
-              "comment",
+              kind:
+                "comment",
 
-            postId,
+              postId,
 
-            commentId:
-              ref.id,
+              commentId:
+                ref.id,
 
-            parentId:
-              parentId || "",
+              parentId:
+                parentId || "",
 
-            type:
-              "text",
+              type:
+                "text",
 
-            wordCount:
-              words
+              wordCount:
+                words
 
-          });
+            }
+          );
 
+
+        /*
+          Store the updated total on the
+          comment so other students can
+          display it without reading the
+          author's private points document.
+        */
 
         if(
           Number(
-            reward?.pointsAwarded ||
-            0
-          ) > 0
+            reward?.totalPoints
+          ) >= 0
         ){
 
-          showToast(
+          try{
 
-            `Comment posted! +${reward.pointsAwarded} ⭐`
+            await updateDoc(
+              ref,
+              {
+                authorPoints:
+                  Number(
+                    reward.totalPoints
+                  )
+              }
+            );
 
-          );
+          }catch(error){
 
-        }else if(
+            console.warn(
+              "Could not update comment authorPoints:",
+              error
+            );
+
+          }
+
+        }
+
+
+        state.commentsByPost.delete(
+          postId
+        );
+
+        await ensureCommentsLoaded(
+          postId
+        );
+
+
+        if(
           reward?.rewardUnavailable
         ){
 
           showToast(
-
             "Comment posted. Points could not be awarded this time.",
-
             true
+          );
 
+        }else if(
+          Number(
+            reward?.pointsAwarded || 0
+          ) > 0
+        ){
+
+          showToast(
+            `Comment posted! +${reward.pointsAwarded} ⭐`
           );
 
         }else if(
@@ -7751,9 +5715,7 @@
         ){
 
           showToast(
-
             "Comment posted. Today's reward limit has been reached."
-
           );
 
         }else{
@@ -7767,6 +5729,7 @@
 
         return true;
 
+
       }catch(error){
 
         console.error(
@@ -7774,16 +5737,11 @@
           error
         );
 
-
         showToast(
-
           error?.message ||
           "Could not post the comment.",
-
           true
-
         );
-
 
         return false;
 
@@ -7807,9 +5765,7 @@
 
 
       if(!box){
-
         return;
-
       }
 
 
@@ -7861,7 +5817,6 @@
         .classList
         .add("open");
 
-
       el.voiceReplyModal
         .setAttribute(
           "aria-hidden",
@@ -7886,7 +5841,6 @@
         .classList
         .remove("open");
 
-
       el.voiceReplyModal
         .setAttribute(
           "aria-hidden",
@@ -7907,11 +5861,8 @@
     function updateReplyTimer(){
 
       if(
-
         !state.replyStartedAt ||
-
         !state.replyRecorder
-
       ){
 
         return;
@@ -7921,18 +5872,13 @@
 
       const elapsed =
         Math.min(
-
           60,
-
           Math.floor(
-
             (
               Date.now() -
               state.replyStartedAt
             ) / 1000
-
           )
-
         );
 
 
@@ -7941,11 +5887,12 @@
 
 
       el.replyTimer.textContent =
-
         `${formatDuration(elapsed)} / 01:00`;
 
 
-      if(elapsed >= 60){
+      if(
+        elapsed >= 60
+      ){
 
         stopReplyRecording(
           true
@@ -7977,19 +5924,13 @@
     async function startReplyRecording(){
 
       if(
-
         !navigator.mediaDevices?.getUserMedia ||
-
         !window.MediaRecorder
-
       ){
 
         showToast(
-
           "Voice recording is not supported in this browser.",
-
           true
-
         );
 
         return;
@@ -8005,20 +5946,15 @@
       try{
 
         state.replyStream =
-          await navigator.mediaDevices
-            .getUserMedia({
-
+          await navigator.mediaDevices.getUserMedia(
+            {
               audio:{
-
                 echoCancellation:true,
-
                 noiseSuppression:true,
-
                 autoGainControl:true
-
               }
-
-            });
+            }
+          );
 
 
         state.replyRecorder =
@@ -8030,14 +5966,11 @@
         state.replyChunks =
           [];
 
-
         state.replyStartedAt =
           Date.now();
 
-
         state.replyDuration =
           0;
-
 
         state.replyBlob =
           null;
@@ -8051,11 +5984,8 @@
           event => {
 
             if(
-
               event.data &&
-
               event.data.size > 0
-
             ){
 
               state.replyChunks.push(
@@ -8072,18 +6002,13 @@
 
             const duration =
               Math.min(
-
                 60,
-
                 Math.floor(
-
                   (
                     Date.now() -
                     state.replyStartedAt
                   ) / 1000
-
                 )
-
               );
 
 
@@ -8103,33 +6028,26 @@
 
             state.replyBlob =
               new Blob(
-
                 chunks,
-
                 {
                   type:mime
                 }
-
               );
 
 
             state.replyStream
               ?.getTracks()
               .forEach(
-
                 track =>
                   track.stop()
-
               );
 
 
             state.replyStream =
               null;
 
-
             state.replyRecorder =
               null;
-
 
             state.replyStartedAt =
               0;
@@ -8143,11 +6061,11 @@
                 state.replyAudioUrl
               );
 
-
-              state.replyAudioUrl =
-                null;
-
             }
+
+
+            state.replyAudioUrl =
+              null;
 
 
             if(
@@ -8159,10 +6077,8 @@
                   state.replyBlob
                 );
 
-
               el.replyAudio.src =
                 state.replyAudioUrl;
-
 
               el.replyAudioPreview
                 .classList
@@ -8175,16 +6091,13 @@
               .classList
               .add("hidden");
 
-
             el.replyStopBtn
               .classList
               .add("hidden");
 
-
             el.replyAgainBtn
               .classList
               .remove("hidden");
-
 
             el.publishReplyVoiceBtn
               .classList
@@ -8192,9 +6105,7 @@
 
 
             el.publishReplyVoiceBtn.disabled =
-
               duration < 10 ||
-
               !state.replyBlob?.size;
 
 
@@ -8208,11 +6119,8 @@
             ){
 
               showToast(
-
                 "Voice reply must be at least 10 seconds.",
-
                 true
-
               );
 
             }
@@ -8224,71 +6132,52 @@
           event => {
 
             console.error(
-
               "Reply recorder error:",
-
               event
-
             );
-
 
             state.replyStream
               ?.getTracks()
               .forEach(
-
                 track =>
                   track.stop()
-
               );
-
 
             state.replyStream =
               null;
 
-
             state.replyRecorder =
               null;
-
 
             state.replyChunks =
               [];
 
-
             state.replyStartedAt =
               0;
-
 
             el.replyRecordIcon
               .classList
               .remove("recording");
 
-
             el.replyStartBtn
               .classList
               .remove("hidden");
-
 
             el.replyStopBtn
               .classList
               .add("hidden");
 
-
             el.replyAgainBtn
               .classList
               .add("hidden");
-
 
             el.publishReplyVoiceBtn
               .classList
               .add("hidden");
 
-
             showToast(
-
               "Recording failed. Please try again.",
-
               true
-
             );
 
           };
@@ -8309,65 +6198,50 @@
           .classList
           .add("hidden");
 
-
         el.replyStopBtn
           .classList
           .remove("hidden");
-
 
         el.replyAgainBtn
           .classList
           .add("hidden");
 
-
         el.publishReplyVoiceBtn
           .classList
           .add("hidden");
-
 
         el.replyRecordIcon
           .classList
           .add("recording");
 
-
         el.replyTimer.textContent =
           "00:00 / 01:00";
 
-
         updateReplyTimer();
+
 
       }catch(error){
 
         console.error(
-
           "Could not start reply recording:",
-
           error
-
         );
-
 
         state.replyStream
           ?.getTracks()
           .forEach(
-
             track =>
               track.stop()
-
           );
-
 
         state.replyStream =
           null;
 
-
         state.replyRecorder =
           null;
 
-
         state.replyChunks =
           [];
-
 
         state.replyStartedAt =
           0;
@@ -8379,11 +6253,8 @@
         ){
 
           showToast(
-
-            "Microphone permission was denied. Please allow microphone access in Safari Settings.",
-
+            "Microphone permission was denied. Please allow microphone access.",
             true
-
           );
 
         }else if(
@@ -8392,21 +6263,15 @@
         ){
 
           showToast(
-
             "No microphone was found on this device.",
-
             true
-
           );
 
         }else{
 
           showToast(
-
             "Could not start the microphone. Please try again.",
-
             true
-
           );
 
         }
@@ -8417,7 +6282,7 @@
 
 
     /* =========================================================
-       STOP REPLY RECORDING
+       STOP REPLY
     ========================================================= */
 
     function stopReplyRecording(
@@ -8429,12 +6294,9 @@
 
 
       if(
-
         recorder &&
-
         recorder.state ===
         "recording"
-
       ){
 
         try{
@@ -8444,11 +6306,8 @@
         }catch(error){
 
           console.error(
-
             "Could not stop reply recorder:",
-
             error
-
           );
 
         }
@@ -8468,7 +6327,7 @@
 
 
     /* =========================================================
-       RESET REPLY RECORDING
+       RESET REPLY
     ========================================================= */
 
     async function resetReplyRecording(
@@ -8480,12 +6339,9 @@
 
 
       if(
-
         recorder &&
-
         recorder.state ===
         "recording"
-
       ){
 
         await new Promise(
@@ -8494,20 +6350,15 @@
             let finished =
               false;
 
-
             const done =
               () => {
 
                 if(finished){
-
                   return;
-
                 }
-
 
                 finished =
                   true;
-
 
                 resolve();
 
@@ -8515,15 +6366,11 @@
 
 
             recorder.addEventListener(
-
               "stop",
-
               done,
-
               {
                 once:true
               }
-
             );
 
 
@@ -8546,32 +6393,25 @@
       state.replyStream
         ?.getTracks()
         .forEach(
-
           track =>
             track.stop()
-
         );
 
 
       state.replyStream =
         null;
 
-
       state.replyRecorder =
         null;
-
 
       state.replyChunks =
         [];
 
-
       state.replyStartedAt =
         0;
 
-
       state.replyDuration =
         0;
-
 
       state.replyBlob =
         null;
@@ -8585,40 +6425,32 @@
           state.replyAudioUrl
         );
 
-
         state.replyAudioUrl =
           null;
 
       }
 
 
-      el.replyAudio
-        .removeAttribute(
-          "src"
-        );
-
+      el.replyAudio.removeAttribute(
+        "src"
+      );
 
       el.replyAudio.load();
-
 
       el.replyAudioPreview
         .classList
         .add("hidden");
 
-
       el.replyTimer.textContent =
         "00:00 / 01:00";
-
 
       el.replyRecordIcon
         .classList
         .remove("recording");
 
-
       el.replyStopBtn
         .classList
         .add("hidden");
-
 
       el.replyAgainBtn
         .classList
@@ -8644,7 +6476,6 @@
         .classList
         .add("hidden");
 
-
       el.publishReplyVoiceBtn.disabled =
         true;
 
@@ -8658,15 +6489,10 @@
     async function publishVoiceReply(){
 
       if(
-
         !state.replyBlob ||
-
         !state.replyBlob.size ||
-
         state.replyDuration < 10 ||
-
         !state.replyTarget
-
       ){
 
         return;
@@ -8677,13 +6503,8 @@
       el.publishReplyVoiceBtn.disabled =
         true;
 
-
       el.publishReplyVoiceBtn.textContent =
         "Uploading…";
-
-
-      let commentCreated =
-        false;
 
 
       try{
@@ -8702,31 +6523,20 @@
 
         const uploaded =
           await uploadAudio(
-
             state.replyBlob,
-
             "comment",
-
             state.replyDuration
-
           );
 
 
         const ref =
           await addDoc(
-
             collection(
-
               db,
-
               POSTS_COLLECTION,
-
               target.postId,
-
               "comments"
-
             ),
-
             {
 
               postId:
@@ -8740,11 +6550,8 @@
 
               authorName:
                 normalizeName(
-
                   state.userData,
-
                   state.user
-
                 ),
 
               authorPhoto:
@@ -8783,83 +6590,110 @@
                 true
 
             }
-
           );
 
 
-        commentCreated =
-          true;
-
-
         state.commentsByPost.delete(
-
           target.postId
-
         );
 
 
         await ensureCommentsLoaded(
-
           target.postId
-
         );
 
 
         const reward =
-          await awardPoints({
+          await awardPoints(
+            {
 
-            source:
-              "voiceReply",
+              source:
+                "voiceReply",
 
-            kind:
-              "comment",
+              kind:
+                "comment",
 
-            postId:
-              target.postId,
+              postId:
+                target.postId,
 
-            commentId:
-              ref.id,
+              commentId:
+                ref.id,
 
-            parentId:
-              target.parentId,
+              parentId:
+                target.parentId,
 
-            type:
-              "voice",
+              type:
+                "voice",
 
-            audioDuration:
-              uploaded.audioDuration,
+              audioDuration:
+                uploaded.audioDuration,
 
-            voice:true
+              voice:true
 
-          });
+            }
+          );
+
+
+        if(
+          Number(
+            reward?.totalPoints
+          ) >= 0
+        ){
+
+          try{
+
+            await updateDoc(
+              ref,
+              {
+                authorPoints:
+                  Number(
+                    reward.totalPoints
+                  )
+              }
+            );
+
+          }catch(error){
+
+            console.warn(
+              "Could not update voice comment authorPoints:",
+              error
+            );
+
+          }
+
+        }
+
+
+        state.commentsByPost.delete(
+          target.postId
+        );
+
+
+        await ensureCommentsLoaded(
+          target.postId
+        );
 
 
         await closeVoiceReply();
 
 
         if(
-          Number(
-            reward?.pointsAwarded ||
-            0
-          ) > 0
-        ){
-
-          showToast(
-
-            `Voice reply posted! +${reward.pointsAwarded} ⭐`
-
-          );
-
-        }else if(
           reward?.rewardUnavailable
         ){
 
           showToast(
-
             "Voice reply posted. Points could not be awarded this time.",
-
             true
+          );
 
+        }else if(
+          Number(
+            reward?.pointsAwarded || 0
+          ) > 0
+        ){
+
+          showToast(
+            `Voice reply posted! +${reward.pointsAwarded} ⭐`
           );
 
         }else if(
@@ -8867,9 +6701,7 @@
         ){
 
           showToast(
-
             "Voice reply posted. Today's reward limit has been reached."
-
           );
 
         }else{
@@ -8884,30 +6716,14 @@
       }catch(error){
 
         console.error(
-
           "Voice reply error:",
-
           error
-
         );
 
-
         showToast(
-
           error?.message ||
-
-          (
-
-            commentCreated
-
-              ? "Voice reply was created."
-
-              : "Could not publish the voice reply."
-
-          ),
-
-          !commentCreated
-
+          "Could not publish the voice reply.",
+          true
         );
 
       }finally{
@@ -8932,11 +6748,8 @@
       if(!encodedKey){
 
         showToast(
-
           "This recording is unavailable.",
-
           true
-
         );
 
         return;
@@ -8944,8 +6757,7 @@
       }
 
 
-      let audioKey =
-        "";
+      let audioKey = "";
 
 
       try{
@@ -8964,9 +6776,7 @@
 
 
       if(!audioKey){
-
         return;
-
       }
 
 
@@ -8974,7 +6784,6 @@
 
         button.disabled =
           true;
-
 
         button.textContent =
           "…";
@@ -8993,14 +6802,17 @@
         audio.preload =
           "auto";
 
-
         audio.src =
           url;
 
 
+        state.activeAudios.add(
+          audio
+        );
+
+
         button.disabled =
           false;
-
 
         button.textContent =
           "⏸";
@@ -9012,9 +6824,12 @@
             button.textContent =
               "▶";
 
-
             URL.revokeObjectURL(
               url
+            );
+
+            state.activeAudios.delete(
+              audio
             );
 
           };
@@ -9026,22 +6841,20 @@
             button.disabled =
               false;
 
-
             button.textContent =
               "▶";
-
 
             URL.revokeObjectURL(
               url
             );
 
+            state.activeAudios.delete(
+              audio
+            );
 
             showToast(
-
               "Could not play this recording.",
-
               true
-
             );
 
           };
@@ -9049,33 +6862,25 @@
 
         await audio.play();
 
+
       }catch(error){
 
         console.error(
-
           "Protected audio error:",
-
           error
-
         );
-
 
         button.disabled =
           false;
-
 
         button.textContent =
           "▶";
 
 
         showToast(
-
           error?.message ||
-
           "Could not play this recording.",
-
           true
-
         );
 
       }
@@ -9084,361 +6889,157 @@
 
 
     /* =========================================================
-       DELETE MODAL
+       DELETE POST
     ========================================================= */
 
-    function openDeleteModal(
-      target
+    async function deletePost(
+      postId
     ){
 
-      state.deleteTarget =
-        target;
-
-
-      const isPost =
-        target.kind ===
-        "post";
-
-
-      el.deleteConfirmText.textContent =
-
-        isPost
-
-          ? "Are you sure you want to delete this post? Your points earned from this post will be removed once."
-
-          : "Are you sure you want to delete this comment? Your points earned from this comment will be removed once.";
-
-
-      el.confirmDeleteBtn.disabled =
-        false;
-
-
-      el.confirmDeleteBtn.textContent =
-        "Delete";
-
-
-      el.deleteModal
-        .classList
-        .add("open");
-
-
-      el.deleteModal
-        .setAttribute(
-          "aria-hidden",
-          "false"
+      const post =
+        state.posts.find(
+          item =>
+            item.id === postId
         );
 
-    }
 
+      if(!post){
 
-    function closeDeleteModal(){
-
-      if(state.deleting){
+        showToast(
+          "This post could not be found.",
+          true
+        );
 
         return;
 
       }
 
 
-      state.deleteTarget =
-        null;
-
-
-      el.deleteModal
-        .classList
-        .remove("open");
-
-
-      el.deleteModal
-        .setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-    }
-
-
-    /* =========================================================
-       DELETE CONTENT THROUGH WORKER
-    ========================================================= */
-
-    async function deleteContent(
-      target
-    ){
-
       if(
-        !state.user
+        post.uid !==
+        state.user?.uid
       ){
 
-        throw new Error(
-          "You must be signed in."
+        showToast(
+          "You can only delete your own posts.",
+          true
         );
-
-      }
-
-
-      if(!target?.kind){
-
-        throw new Error(
-          "Delete target is missing."
-        );
-
-      }
-
-
-      const token =
-        await state.user
-          .getIdToken(true);
-
-
-      const response =
-        await fetch(
-
-          `${WORKER_URL}/delete-content`,
-
-          {
-
-            method:"POST",
-
-            headers:{
-
-              "Authorization":
-                `Bearer ${token}`,
-
-              "Content-Type":
-                "application/json"
-
-            },
-
-            body:JSON.stringify({
-
-              kind:
-                target.kind,
-
-              postId:
-                target.postId || "",
-
-              commentId:
-                target.commentId || ""
-
-            })
-
-          }
-
-        );
-
-
-      let data = {};
-
-
-      try{
-
-        data =
-          await response.json();
-
-      }catch{}
-
-
-      if(!response.ok){
-
-        throw new Error(
-
-          data?.error ||
-
-          `Delete failed (${response.status}).`
-
-        );
-
-      }
-
-
-      /*
-        Worker returns the user's
-        updated English Space total.
-      */
-
-      if(
-        typeof data.totalPoints ===
-        "number"
-      ){
-
-        setPoints(
-          data.totalPoints
-        );
-
-      }else{
-
-        await loadPoints();
-
-      }
-
-
-      return data;
-
-    }
-
-
-    async function confirmDelete(){
-
-      if(
-        state.deleting ||
-        !state.deleteTarget
-      ){
 
         return;
 
       }
 
 
-      state.deleting =
-        true;
+      const confirmed =
+        window.confirm(
+          "Delete this post? This action cannot be undone."
+        );
 
 
-      el.confirmDeleteBtn.disabled =
-        true;
-
-
-      el.cancelDeleteBtn.disabled =
-        true;
-
-
-      el.closeDeleteModal.disabled =
-        true;
-
-
-      el.confirmDeleteBtn.textContent =
-        "Deleting…";
-
-
-      const target = {
-        ...state.deleteTarget
-      };
+      if(!confirmed){
+        return;
+      }
 
 
       try{
 
-        const result =
-          await deleteContent(
-            target
+        const token =
+          await state.user.getIdToken(
+            true
           );
 
 
-        closeDeleteModal();
+        const response =
+          await fetch(
+            `${WORKER_URL}/delete-content`,
+            {
+              method:"POST",
 
+              headers:{
+                "Authorization":
+                  `Bearer ${token}`,
 
-        /*
-          Remove the deleted post
-          from local state.
-        */
+                "Content-Type":
+                  "application/json"
+              },
 
-        if(
-          target.kind ===
-          "post"
-        ){
-
-          state.posts =
-            state.posts.filter(
-
-              post =>
-                post.id !==
-                target.postId
-
-            );
-
-
-          state.commentsByPost.delete(
-            target.postId
+              body:
+                JSON.stringify({
+                  kind:"post",
+                  postId
+                })
+            }
           );
 
 
-          await loadPosts();
+        let data = {};
+
+        try{
+
+          data =
+            await response.json();
+
+        }catch{}
 
 
-          showToast(
+        if(!response.ok){
 
-            Number(
-              result?.pointsRemoved ||
-              0
-            ) > 0
-
-              ? `Post deleted. -${result.pointsRemoved} ⭐`
-
-              : "Post deleted."
-
-          );
-
-        }else{
-
-          state.commentsByPost.delete(
-
-            target.postId
-
-          );
-
-
-          await ensureCommentsLoaded(
-
-            target.postId
-
-          );
-
-
-          showToast(
-
-            Number(
-              result?.pointsRemoved ||
-              0
-            ) > 0
-
-              ? `Comment deleted. -${result.pointsRemoved} ⭐`
-
-              : "Comment deleted."
-
+          throw new Error(
+            data?.error ||
+            `Delete failed (${response.status}).`
           );
 
         }
 
 
-      }catch(error){
+        state.posts =
+          state.posts.filter(
+            item =>
+              item.id !== postId
+          );
 
-        console.error(
 
-          "Delete content error:",
-
-          error
-
+        state.commentsByPost.delete(
+          postId
         );
+
+
+        if(
+          typeof data.totalPoints ===
+          "number"
+        ){
+
+          setPoints(
+            data.totalPoints
+          );
+
+        }else{
+
+          await loadPoints();
+
+        }
+
+
+        await loadPosts();
 
 
         showToast(
-
-          error?.message ||
-          "Could not delete this content.",
-
-          true
-
+          "Post deleted successfully."
         );
 
-      }finally{
 
-        state.deleting =
-          false;
+      }catch(error){
 
+        console.error(
+          "Delete post error:",
+          error
+        );
 
-        el.confirmDeleteBtn.disabled =
-          false;
-
-
-        el.cancelDeleteBtn.disabled =
-          false;
-
-
-        el.closeDeleteModal.disabled =
-          false;
-
-
-        el.confirmDeleteBtn.textContent =
-          "Delete";
+        showToast(
+          error?.message ||
+          "Could not delete the post.",
+          true
+        );
 
       }
 
@@ -9446,15 +7047,12 @@
 
 
     /* =========================================================
-       GLOBAL ACTION HANDLER
+       GLOBAL CLICK HANDLER
     ========================================================= */
 
     document.addEventListener(
-
       "click",
-
       async event => {
-
 
         const button =
           event.target.closest(
@@ -9463,9 +7061,7 @@
 
 
         if(!button){
-
           return;
-
         }
 
 
@@ -9477,18 +7073,16 @@
           button.dataset.postId;
 
 
-        /* =====================================================
-           POST MENU
-        ===================================================== */
+        /* POST MENU */
 
         if(
           action ===
-          "toggle-post-menu"
+          "post-menu"
         ){
 
           const menu =
             $(
-              `post-menu-${postId}`
+              `menu-${postId}`
             );
 
 
@@ -9497,7 +7091,6 @@
               ".post-menu"
             )
             .forEach(
-
               item => {
 
                 if(item !== menu){
@@ -9509,7 +7102,6 @@
                 }
 
               }
-
             );
 
 
@@ -9523,113 +7115,22 @@
         }
 
 
-        /* =====================================================
-           REQUEST DELETE POST
-        ===================================================== */
+        /* DELETE */
 
         if(
           action ===
-          "request-delete-post"
+          "delete-post"
         ){
 
-          document
-            .querySelectorAll(
-              ".post-menu"
-            )
-            .forEach(
-
-              item =>
-                item.classList.add(
-                  "hidden"
-                )
-
-            );
+          $(
+            `menu-${postId}`
+          )?.classList.add(
+            "hidden"
+          );
 
 
-          const post =
-            state.posts.find(
-
-              item =>
-                item.id === postId
-
-            );
-
-
-          if(
-            !post ||
-            post.uid !==
-            state.user.uid
-          ){
-
-            showToast(
-
-              "You can only delete your own posts.",
-
-              true
-
-            );
-
-            return;
-
-          }
-
-
-          openDeleteModal({
-
-            kind:"post",
-
+          await deletePost(
             postId
-
-          });
-
-
-          return;
-
-        }
-
-
-        /* =====================================================
-           COMMENT MENU
-        ===================================================== */
-
-        if(
-          action ===
-          "toggle-comment-menu"
-        ){
-
-          const commentId =
-            button.dataset.commentId;
-
-
-          const menu =
-            $(
-              `comment-menu-${commentId}`
-            );
-
-
-          document
-            .querySelectorAll(
-              ".comment-menu"
-            )
-            .forEach(
-
-              item => {
-
-                if(item !== menu){
-
-                  item.classList.add(
-                    "hidden"
-                  );
-
-                }
-
-              }
-
-            );
-
-
-          menu?.classList.toggle(
-            "hidden"
           );
 
 
@@ -9638,87 +7139,7 @@
         }
 
 
-        /* =====================================================
-           REQUEST DELETE COMMENT
-        ===================================================== */
-
-        if(
-          action ===
-          "request-delete-comment"
-        ){
-
-          const commentId =
-            button.dataset.commentId;
-
-
-          const comments =
-            state.commentsByPost.get(
-              postId
-            ) || [];
-
-
-          const comment =
-            comments.find(
-
-              item =>
-                item.id ===
-                commentId
-
-            );
-
-
-          if(
-            !comment ||
-            comment.uid !==
-            state.user.uid
-          ){
-
-            showToast(
-
-              "You can only delete your own comments.",
-
-              true
-
-            );
-
-            return;
-
-          }
-
-
-          document
-            .querySelectorAll(
-              ".comment-menu"
-            )
-            .forEach(
-
-              item =>
-                item.classList.add(
-                  "hidden"
-                )
-
-            );
-
-
-          openDeleteModal({
-
-            kind:"comment",
-
-            postId,
-
-            commentId
-
-          });
-
-
-          return;
-
-        }
-
-
-        /* =====================================================
-           REACTION PICKER
-        ===================================================== */
+        /* REACTIONS */
 
         if(
           action ===
@@ -9736,7 +7157,6 @@
               ".reaction-picker.open"
             )
             .forEach(
-
               item => {
 
                 if(
@@ -9750,7 +7170,6 @@
                 }
 
               }
-
             );
 
 
@@ -9764,9 +7183,7 @@
         }
 
 
-        /* =====================================================
-           REACT
-        ===================================================== */
+        /* REACT */
 
         if(
           action ===
@@ -9785,11 +7202,8 @@
 
 
           await updateReaction(
-
             postId,
-
             emoji
-
           );
 
 
@@ -9798,9 +7212,7 @@
         }
 
 
-        /* =====================================================
-           COMMENTS
-        ===================================================== */
+        /* COMMENTS */
 
         if(
           action ===
@@ -9833,9 +7245,7 @@
         }
 
 
-        /* =====================================================
-           NEW COMMENT
-        ===================================================== */
+        /* NEW COMMENT */
 
         if(
           action ===
@@ -9850,13 +7260,9 @@
 
           const success =
             await publishComment(
-
               postId,
-
               "",
-
               input?.value || ""
-
             );
 
 
@@ -9876,9 +7282,7 @@
         }
 
 
-        /* =====================================================
-           REPLY BOX
-        ===================================================== */
+        /* REPLY BOX */
 
         if(
           action ===
@@ -9886,20 +7290,15 @@
         ){
 
           openReplyBox(
-
             button.dataset.commentId
-
           );
-
 
           return;
 
         }
 
 
-        /* =====================================================
-           WRITTEN REPLY
-        ===================================================== */
+        /* WRITTEN REPLY */
 
         if(
           action ===
@@ -9918,13 +7317,9 @@
 
           const success =
             await publishComment(
-
               postId,
-
               commentId,
-
               input?.value || ""
-
             );
 
 
@@ -9944,9 +7339,7 @@
         }
 
 
-        /* =====================================================
-           VOICE REPLY
-        ===================================================== */
+        /* VOICE REPLY */
 
         if(
           action ===
@@ -9954,65 +7347,48 @@
         ){
 
           await openVoiceReply(
-
             postId,
-
-            button.dataset.parentId ||
-            ""
-
+            button.dataset.parentId || ""
           );
-
 
           return;
 
         }
 
 
-        /* =====================================================
-           PLAY AUDIO
-        ===================================================== */
+        /* AUDIO */
 
         if(
-
           action ===
             "play-audio" ||
-
           action ===
             "play-comment-audio"
-
         ){
 
           await playProtectedAudio(
-
             button.dataset.key,
-
             button
-
           );
-
 
           return;
 
         }
 
       }
-
     );
 
 
     /* =========================================================
-       CLOSE MENUS WHEN CLICKING OUTSIDE
+       CLOSE MENUS / PICKERS
     ========================================================= */
 
     document.addEventListener(
-
       "click",
-
       event => {
 
         if(
           !event.target.closest(
-            ".post-menu-wrap"
+            ".post-tools"
           )
         ){
 
@@ -10021,49 +7397,22 @@
               ".post-menu"
             )
             .forEach(
-
               menu =>
                 menu.classList.add(
                   "hidden"
                 )
-
             );
 
         }
 
 
         if(
-          !event.target.closest(
-            ".comment-menu-wrap"
-          )
-        ){
-
-          document
-            .querySelectorAll(
-              ".comment-menu"
-            )
-            .forEach(
-
-              menu =>
-                menu.classList.add(
-                  "hidden"
-                )
-
-            );
-
-        }
-
-
-        if(
-
           !event.target.closest(
             ".post-footer"
           ) &&
-
           !event.target.closest(
             ".reaction-picker"
           )
-
         ){
 
           document
@@ -10071,18 +7420,15 @@
               ".reaction-picker.open"
             )
             .forEach(
-
               picker =>
                 picker.classList.remove(
                   "open"
                 )
-
             );
 
         }
 
       }
-
     );
 
 
@@ -10095,13 +7441,10 @@
         ".composer-tab"
       )
       .forEach(
-
         button => {
 
           button.addEventListener(
-
             "click",
-
             () => {
 
               switchComposerTab(
@@ -10109,11 +7452,9 @@
               );
 
             }
-
           );
 
         }
-
       );
 
 
@@ -10126,27 +7467,20 @@
         "[data-coming-soon]"
       )
       .forEach(
-
         button => {
 
           button.addEventListener(
-
             "click",
-
             () => {
 
               showToast(
-
                 `${button.dataset.comingSoon} is part of the community plan and will be connected here next.`
-
               );
 
             }
-
           );
 
         }
-
       );
 
 
@@ -10155,20 +7489,14 @@
     ========================================================= */
 
     el.postText.addEventListener(
-
       "input",
-
       validateTextPost
-
     );
 
 
     el.publishTextBtn.addEventListener(
-
       "click",
-
       publishTextPost
-
     );
 
 
@@ -10177,31 +7505,25 @@
     ========================================================= */
 
     el.startRecordBtn.addEventListener(
-
       "click",
-
       startPostRecording
-
     );
 
 
     el.stopRecordBtn.addEventListener(
-
       "click",
-
       () => {
 
-        stopPostRecording(false);
+        stopPostRecording(
+          false
+        );
 
       }
-
     );
 
 
     el.resetRecordBtn.addEventListener(
-
       "click",
-
       async () => {
 
         await resetPostRecording(
@@ -10209,16 +7531,12 @@
         );
 
       }
-
     );
 
 
     el.publishVoiceBtn.addEventListener(
-
       "click",
-
       publishVoicePost
-
     );
 
 
@@ -10227,19 +7545,15 @@
     ========================================================= */
 
     el.firstPostBtn.addEventListener(
-
       "click",
-
       () => {
 
-        el.composerSection
-          .scrollIntoView({
-
+        el.composerSection.scrollIntoView(
+          {
             behavior:"smooth",
-
             block:"start"
-
-          });
+          }
+        );
 
 
         switchComposerTab(
@@ -10248,19 +7562,13 @@
 
 
         setTimeout(
-
           () => {
-
             el.postText.focus();
-
           },
-
           350
-
         );
 
       }
-
     );
 
 
@@ -10269,45 +7577,36 @@
     ========================================================= */
 
     el.homeBtn.addEventListener(
-
       "click",
-
       () => {
 
         location.href =
           "home.html";
 
       }
-
     );
 
 
     el.refreshBtn.addEventListener(
-
       "click",
-
       async () => {
 
-        await loadUser();
+        await loadPoints();
 
         await loadPosts();
 
       }
-
     );
 
 
     el.goLogin.addEventListener(
-
       "click",
-
       () => {
 
         location.href =
           "login.html";
 
       }
-
     );
 
 
@@ -10316,18 +7615,13 @@
     ========================================================= */
 
     el.closeVoiceReply.addEventListener(
-
       "click",
-
       closeVoiceReply
-
     );
 
 
     el.voiceReplyModal.addEventListener(
-
       "click",
-
       event => {
 
         if(
@@ -10340,23 +7634,17 @@
         }
 
       }
-
     );
 
 
     el.replyStartBtn.addEventListener(
-
       "click",
-
       startReplyRecording
-
     );
 
 
     el.replyStopBtn.addEventListener(
-
       "click",
-
       () => {
 
         stopReplyRecording(
@@ -10364,14 +7652,11 @@
         );
 
       }
-
     );
 
 
     el.replyAgainBtn.addEventListener(
-
       "click",
-
       async () => {
 
         await resetReplyRecording(
@@ -10379,131 +7664,21 @@
         );
 
       }
-
     );
 
 
     el.publishReplyVoiceBtn.addEventListener(
-
       "click",
-
       publishVoiceReply
-
     );
 
 
     /* =========================================================
-       DELETE MODAL
-    ========================================================= */
-
-    el.closeDeleteModal.addEventListener(
-
-      "click",
-
-      closeDeleteModal
-
-    );
-
-
-    el.cancelDeleteBtn.addEventListener(
-
-      "click",
-
-      closeDeleteModal
-
-    );
-
-
-    el.confirmDeleteBtn.addEventListener(
-
-      "click",
-
-      confirmDelete
-
-    );
-
-
-    el.deleteModal.addEventListener(
-
-      "click",
-
-      event => {
-
-        if(
-          event.target ===
-          el.deleteModal &&
-          !state.deleting
-        ){
-
-          closeDeleteModal();
-
-        }
-
-      }
-
-    );
-
-
-    /* =========================================================
-       ESCAPE KEY
-    ========================================================= */
-
-    document.addEventListener(
-
-      "keydown",
-
-      event => {
-
-        if(
-          event.key !==
-          "Escape"
-        ){
-
-          return;
-
-        }
-
-
-        if(
-          el.deleteModal
-            .classList
-            .contains("open")
-        ){
-
-          if(!state.deleting){
-
-            closeDeleteModal();
-
-          }
-
-          return;
-
-        }
-
-
-        if(
-          el.voiceReplyModal
-            .classList
-            .contains("open")
-        ){
-
-          closeVoiceReply();
-
-        }
-
-      }
-
-    );
-
-
-    /* =========================================================
-       CLEANUP
+       PAGE CLEANUP
     ========================================================= */
 
     window.addEventListener(
-
       "pagehide",
-
       () => {
 
         try{
@@ -10511,20 +7686,27 @@
           state.postStream
             ?.getTracks()
             .forEach(
-
               track =>
                 track.stop()
-
             );
-
 
           state.replyStream
             ?.getTracks()
             .forEach(
-
               track =>
                 track.stop()
+            );
 
+
+          state.activeAudios
+            .forEach(
+              audio => {
+
+                try{
+                  audio.pause();
+                }catch{}
+
+              }
             );
 
 
@@ -10552,7 +7734,6 @@
         }catch{}
 
       }
-
     );
 
 
@@ -10561,42 +7742,27 @@
     ========================================================= */
 
     onAuthStateChanged(
-
       auth,
-
       async user => {
-
 
         if(!user){
 
           state.user =
             null;
 
-
           state.userData =
             null;
 
-
-          state.points =
-            0;
-
-
-          state.posts =
-            [];
-
-
-          state.commentsByPost.clear();
+          setPoints(0);
 
 
           el.app
             .classList
             .add("hidden");
 
-
           el.loginState
             .classList
             .add("show");
-
 
           return;
 
@@ -10611,7 +7777,6 @@
           .classList
           .remove("show");
 
-
         el.app
           .classList
           .remove("hidden");
@@ -10625,35 +7790,28 @@
 
           await loadUser();
 
-
           await loadPosts();
 
-
           validateTextPost();
+
 
         }catch(error){
 
           console.error(
-
             "English Space initialization error:",
-
             error
-
           );
 
 
           showToast(
-
+            error?.message ||
             "Could not load your English Space profile.",
-
             true
-
           );
 
         }
 
       }
-
     );
 
   </script>
