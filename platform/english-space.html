@@ -1978,8 +1978,7 @@
       limit,
       serverTimestamp,
       runTransaction,
-      updateDoc,
-      deleteDoc
+      updateDoc
     } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
@@ -2613,9 +2612,8 @@
       }
 
       /*
-        IMPORTANT:
-        Never use academy Coins here.
-        English Space points are separate.
+        English Space points are separate
+        from academy Coins.
       */
 
       setPoints(0);
@@ -2685,13 +2683,8 @@
 
 
       /*
-        THIS IS THE IMPORTANT FIX.
-
-        data.points = points for this event.
-
-        data.totalPoints = student's total.
-
-        We must use totalPoints for the profile.
+        pointsAwarded = points earned
+        totalPoints  = student's total
       */
 
       if(
@@ -2775,8 +2768,9 @@
         );
 
         /*
-          DO NOT fake the reward.
-          The content itself remains published.
+          Never fake a reward.
+          Content stays published,
+          but no points are shown as earned.
         */
 
         return {
@@ -3334,6 +3328,14 @@
           );
 
 
+        /*
+          IMPORTANT:
+          contentId is the canonical ID used
+          by the trusted Worker.
+
+          postId is also kept for compatibility.
+        */
+
         const reward =
           await awardPoints(
             {
@@ -3343,6 +3345,9 @@
 
               kind:
                 "post",
+
+              contentId:
+                postRef.id,
 
               postId:
                 postRef.id,
@@ -3355,12 +3360,6 @@
             }
           );
 
-
-        /*
-          Update this post's displayed
-          author points after the trusted
-          reward has completed.
-        */
 
         if(
           Number(
@@ -4204,6 +4203,17 @@
           );
 
 
+        /*
+          Worker-compatible reward payload.
+
+          contentId = canonical content ID
+          duration  = canonical audio duration
+
+          The legacy aliases are also included
+          so this remains compatible with the
+          existing Worker implementation.
+        */
+
         const reward =
           await awardPoints(
             {
@@ -4214,11 +4224,17 @@
               kind:
                 "post",
 
+              contentId:
+                postRef.id,
+
               postId:
                 postRef.id,
 
               type:
                 "voice",
+
+              duration:
+                uploaded.audioDuration,
 
               audioDuration:
                 uploaded.audioDuration,
@@ -4731,19 +4747,6 @@
               ...document.data()
             })
           );
-
-
-        /*
-          IMPORTANT:
-          We do NOT read every student's
-          englishSpacePoints document.
-
-          Firestore rules intentionally allow
-          a student to read only their own points.
-
-          Instead, authorPoints is stored on
-          the post/comment itself.
-        */
 
 
         el.feedStatus
@@ -5618,6 +5621,13 @@
         );
 
 
+        /*
+          Worker-compatible payload.
+
+          contentId = comment document ID
+          commentId = kept as compatibility alias
+        */
+
         const reward =
           await awardPoints(
             {
@@ -5626,6 +5636,9 @@
 
               kind:
                 "comment",
+
+              contentId:
+                ref.id,
 
               postId,
 
@@ -5644,13 +5657,6 @@
             }
           );
 
-
-        /*
-          Store the updated total on the
-          comment so other students can
-          display it without reading the
-          author's private points document.
-        */
 
         if(
           Number(
@@ -6603,6 +6609,13 @@
         );
 
 
+        /*
+          Worker-compatible payload.
+
+          contentId = voice comment ID
+          duration  = voice duration
+        */
+
         const reward =
           await awardPoints(
             {
@@ -6612,6 +6625,9 @@
 
               kind:
                 "comment",
+
+              contentId:
+                ref.id,
 
               postId:
                 target.postId,
@@ -6624,6 +6640,9 @@
 
               type:
                 "voice",
+
+              duration:
+                uploaded.audioDuration,
 
               audioDuration:
                 uploaded.audioDuration,
@@ -6949,6 +6968,15 @@
           );
 
 
+        /*
+          Send all compatible ID aliases.
+
+          The Worker can use:
+          id
+          contentId
+          postId
+        */
+
         const response =
           await fetch(
             `${WORKER_URL}/delete-content`,
@@ -6966,6 +6994,8 @@
               body:
                 JSON.stringify({
                   kind:"post",
+                  id:postId,
+                  contentId:postId,
                   postId
                 })
             }
