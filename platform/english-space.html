@@ -1644,7 +1644,7 @@
                   type="button"
                   disabled
                 >
-                  Publish +3 ⭐
+                  Publish +5 ⭐
                 </button>
 
               </div>
@@ -1724,6 +1724,7 @@
                     id="postAudio"
                     controls
                     preload="metadata"
+                    playsinline
                   ></audio>
 
                 </div>
@@ -1736,7 +1737,7 @@
                     type="button"
                     disabled
                   >
-                    Publish voice +3/5 ⭐
+                    Publish voice +10 ⭐
                   </button>
 
                 </div>
@@ -1836,7 +1837,7 @@
     id="rewardFloat"
     class="reward-float"
   >
-    ✨ +3 ⭐
+    ✨ +5 ⭐
   </div>
 
   <div id="spark1" class="spark"></div>
@@ -1930,6 +1931,7 @@
             id="replyAudio"
             controls
             preload="metadata"
+            playsinline
           ></audio>
 
         </div>
@@ -1942,7 +1944,7 @@
             type="button"
             disabled
           >
-            Publish voice reply +1/3 ⭐
+            Publish voice reply +5 ⭐
           </button>
 
         </div>
@@ -2123,6 +2125,7 @@
       return String(
         data?.name ||
         data?.displayName ||
+        data?.fullName ||
         user?.displayName ||
         "Engliza Student"
       ).trim();
@@ -2136,6 +2139,7 @@
         data?.photoURL ||
         data?.photoUrl ||
         data?.avatarUrl ||
+        data?.profileImage ||
         user?.photoURL ||
         ""
       ).trim() || "../owl.PNG";
@@ -2170,7 +2174,9 @@
           0,
           Math.min(
             60,
-            Math.floor(Number(seconds) || 0)
+            Math.floor(
+              Number(seconds) || 0
+            )
           )
         );
 
@@ -2320,8 +2326,10 @@
       showToast.timer =
         setTimeout(
           () => {
+
             el.toast.className =
               "toast";
+
           },
           3200
         );
@@ -2459,6 +2467,7 @@
         "show"
       );
 
+
       [1,2,3,4,5].forEach(
         (n,i) => {
 
@@ -2517,9 +2526,6 @@
 
     /* =========================================================
        LOAD POINTS
-       IMPORTANT:
-       Worker stores totalPoints.
-       Legacy "points" is kept only as fallback.
     ========================================================= */
 
     async function loadPoints(){
@@ -2589,7 +2595,10 @@
 
     /* =========================================================
        TRUSTED REWARD
-       Server is the ONLY authority for daily caps.
+       IMPORTANT:
+       Worker returns:
+       points
+       totalPoints
     ========================================================= */
 
     async function requestTrustedReward(
@@ -2645,7 +2654,7 @@
 
         const gained =
           Number(
-            result?.pointsAwarded || 0
+            result?.points || 0
           );
 
 
@@ -2671,18 +2680,13 @@
         );
 
 
-        /*
-          The post/comment remains published.
-          We NEVER fake points on the client.
-        */
-
         return {
 
           ok:false,
 
           awarded:false,
 
-          pointsAwarded:0,
+          points:0,
 
           rewardUnavailable:true,
 
@@ -2703,93 +2707,111 @@
 
 
     /* =========================================================
-       AUDIO MIME
+       AUDIO RECORDING
+       IMPORTANT FIX:
+       We do NOT force audio/mp4 first.
+
+       The browser is allowed to choose its native
+       recording format when possible.
+
+       We then use recorder.mimeType as the
+       actual Blob type.
     ========================================================= */
-
-    function pickAudioMimeType(){
-
-      if(
-        !window.MediaRecorder ||
-        typeof MediaRecorder.isTypeSupported !==
-        "function"
-      ){
-
-        return "";
-
-      }
-
-      const candidates = [
-
-        "audio/mp4",
-
-        "audio/webm;codecs=opus",
-
-        "audio/webm",
-
-        "audio/ogg;codecs=opus",
-
-        "audio/ogg"
-
-      ];
-
-
-      for(
-        const type of candidates
-      ){
-
-        try{
-
-          if(
-            MediaRecorder.isTypeSupported(
-              type
-            )
-          ){
-
-            return type;
-
-          }
-
-        }catch{}
-
-      }
-
-
-      return "";
-
-    }
-
 
     function createRecorder(
       stream
     ){
 
-      const mime =
-        pickAudioMimeType();
+      if(
+        !window.MediaRecorder
+      ){
 
-      try{
-
-        if(mime){
-
-          return new MediaRecorder(
-            stream,
-            {
-              mimeType:mime
-            }
-          );
-
-        }
-
-        return new MediaRecorder(
-          stream
-        );
-
-      }catch{
-
-        return new MediaRecorder(
-          stream
+        throw new Error(
+          "Voice recording is not supported in this browser."
         );
 
       }
+
+
+      /*
+        First try the browser's own default.
+
+        This avoids forcing Safari/iPadOS into a
+        container that may technically be supported
+        but may not behave reliably for this exact
+        recording path.
+      */
+
+      try{
+
+        const recorder =
+          new MediaRecorder(
+            stream
+          );
+
+        return recorder;
+
+      }catch(error){
+
+        console.warn(
+          "Default MediaRecorder failed. Trying supported formats.",
+          error
+        );
+
+      }
+
+
+      if(
+        typeof MediaRecorder.isTypeSupported ===
+        "function"
+      ){
+
+        const candidates = [
+
+          "audio/webm;codecs=opus",
+
+          "audio/webm",
+
+          "audio/mp4",
+
+          "audio/ogg;codecs=opus",
+
+          "audio/ogg"
+
+        ];
+
+
+        for(
+          const type of candidates
+        ){
+
+          try{
+
+            if(
+              MediaRecorder.isTypeSupported(
+                type
+              )
+            ){
+
+              return new MediaRecorder(
+                stream,
+                {
+                  mimeType:type
+                }
+              );
+
+            }
+
+          }catch{}
+
+        }
+
+      }
+
+
+      throw new Error(
+        "This browser could not create an audio recorder."
+      );
 
     }
 
@@ -2800,9 +2822,34 @@
 
       return String(
         recorder?.mimeType ||
-        pickAudioMimeType() ||
-        "audio/webm"
+        ""
       ).trim();
+
+    }
+
+
+    function getSafeAudioMime(
+      recorder,
+      blob
+    ){
+
+      const recorderMime =
+        getRecorderMime(
+          recorder
+        );
+
+
+      const blobMime =
+        String(
+          blob?.type || ""
+        ).trim();
+
+
+      return (
+        recorderMime ||
+        blobMime ||
+        "audio/webm"
+      );
 
     }
 
@@ -2814,7 +2861,8 @@
     async function uploadAudio(
       blob,
       kind,
-      duration
+      duration,
+      recorderMime=""
     ){
 
       if(
@@ -2857,8 +2905,11 @@
 
 
       const mime =
-        blob.type ||
-        "audio/webm";
+        String(
+          recorderMime ||
+          blob.type ||
+          "audio/webm"
+        ).trim();
 
 
       let response;
@@ -2870,9 +2921,11 @@
           await fetch(
             `${WORKER_URL}/upload?kind=${encodeURIComponent(kind)}`,
             {
+
               method:"POST",
 
               headers:{
+
                 "Authorization":
                   `Bearer ${token}`,
 
@@ -2881,13 +2934,20 @@
 
                 "X-Audio-Duration":
                   String(seconds)
+
               },
 
               body:blob
+
             }
           );
 
-      }catch{
+      }catch(error){
+
+        console.error(
+          "Audio upload network error:",
+          error
+        );
 
         throw new Error(
           "Could not connect to the English Space audio server."
@@ -2897,6 +2957,7 @@
 
 
       let data = {};
+
 
       try{
 
@@ -2917,8 +2978,8 @@
 
 
       const audioKey =
-        data?.key ||
         data?.audioKey ||
+        data?.key ||
         data?.objectKey;
 
 
@@ -2936,9 +2997,15 @@
         audioKey,
 
         audioDuration:
-          seconds,
+          Number(
+            data?.audioDuration ??
+            data?.duration ??
+            seconds
+          ),
 
         mimeType:
+          data?.mimeType ||
+          data?.audioMimeType ||
           mime
 
       };
@@ -2993,16 +3060,23 @@
           await fetch(
             `${WORKER_URL}/audio/${cleanKey}`,
             {
+
               method:"GET",
 
               headers:{
                 "Authorization":
                   `Bearer ${token}`
               }
+
             }
           );
 
-      }catch{
+      }catch(error){
+
+        console.error(
+          "Audio server network error:",
+          error
+        );
 
         throw new Error(
           "Could not connect to the audio server."
@@ -3016,6 +3090,7 @@
         let message =
           "Unable to load audio.";
 
+
         try{
 
           const data =
@@ -3026,6 +3101,7 @@
             message;
 
         }catch{}
+
 
         throw new Error(
           message
@@ -3056,16 +3132,6 @@
 
     /* =========================================================
        USER / PROFILE
-
-       IMPORTANT:
-       The existence of users/{uid} is no longer required
-       to enter English Space.
-
-       Worker /me checks:
-       1. users/{uid}
-       2. users where uid == auth.uid
-       3. users where email == auth.email
-       4. Firebase Auth fallback
     ========================================================= */
 
     async function loadUser(){
@@ -3073,11 +3139,6 @@
       if(!state.user){
         return;
       }
-
-
-      let workerProfile = {};
-
-      let authProfile = {};
 
 
       try{
@@ -3091,38 +3152,51 @@
           );
 
 
-        workerProfile =
-          data?.profile || {};
+        /*
+          The Worker returns:
+          data.user
 
-        authProfile =
-          data?.authProfile || {};
+          Previous HTML incorrectly expected
+          data.profile / data.authProfile.
+        */
+
+        state.userData =
+          data?.user ||
+          {};
 
 
       }catch(error){
-
-        /*
-          Do NOT block the whole page because
-          the profile endpoint is temporarily unavailable.
-
-          Firebase Auth itself already tells us who
-          the signed-in user is.
-        */
 
         console.warn(
           "English Space /me failed; using Firebase Auth fallback:",
           error
         );
 
+
+        state.userData = {
+
+          name:
+            state.user.displayName ||
+            "Engliza Student",
+
+          displayName:
+            state.user.displayName ||
+            "",
+
+          photoURL:
+            state.user.photoURL ||
+            "",
+
+          email:
+            state.user.email ||
+            "",
+
+          uid:
+            state.user.uid
+
+        };
+
       }
-
-
-      state.userData = {
-
-        ...authProfile,
-
-        ...workerProfile
-
-      };
 
 
       el.studentName.textContent =
@@ -3208,9 +3282,7 @@
 
     /* =========================================================
        PUBLISH TEXT POST
-
-       IMPORTANT FIX:
-       wordCount is now explicitly sent.
+       Worker source = writtenPost
     ========================================================= */
 
     async function publishTextPost(){
@@ -3383,28 +3455,12 @@
 
         }else if(
           Number(
-            reward?.pointsAwarded || 0
+            reward?.points || 0
           ) > 0
         ){
 
           showToast(
-            `Posted! +${reward.pointsAwarded} ⭐`
-          );
-
-        }else if(
-          reward?.capped
-        ){
-
-          showToast(
-            "Posted successfully. Today's reward limit has been reached."
-          );
-
-        }else if(
-          reward?.qualified === false
-        ){
-
-          showToast(
-            "Posted successfully."
+            `Posted! +${reward.points} ⭐`
           );
 
         }else{
@@ -3432,7 +3488,7 @@
       }finally{
 
         el.publishTextBtn.textContent =
-          "Publish +3 ⭐";
+          "Publish +5 ⭐";
 
         validateTextPost();
 
@@ -3509,7 +3565,8 @@
     async function startPostRecording(){
 
       if(
-        !navigator.mediaDevices?.getUserMedia ||
+        !navigator.mediaDevices ||
+        !navigator.mediaDevices.getUserMedia ||
         !window.MediaRecorder
       ){
 
@@ -3540,6 +3597,31 @@
               }
             }
           );
+
+
+        const tracks =
+          state.postStream.getAudioTracks();
+
+
+        if(
+          !tracks.length
+        ){
+
+          throw new Error(
+            "No microphone audio track was created."
+          );
+
+        }
+
+
+        tracks.forEach(
+          track => {
+
+            track.enabled =
+              true;
+
+          }
+        );
 
 
         state.postRecorder =
@@ -3597,7 +3679,7 @@
               );
 
 
-            const mime =
+            const recorderMime =
               getRecorderMime(
                 recorder
               );
@@ -3615,7 +3697,9 @@
               new Blob(
                 chunks,
                 {
-                  type:mime
+                  type:
+                    recorderMime ||
+                    undefined
                 }
               );
 
@@ -3671,6 +3755,15 @@
                 .classList
                 .remove("hidden");
 
+
+              /*
+                Load the local recording explicitly.
+                This is the actual Blob recorded by
+                MediaRecorder — no Worker involved.
+              */
+
+              el.postAudio.load();
+
             }
 
 
@@ -3713,12 +3806,12 @@
             ){
 
               el.voiceHint.textContent =
-                "Perfect — a full minute earns +5 ⭐.";
+                "Perfect — a full minute earns +10 ⭐.";
 
             }else{
 
               el.voiceHint.textContent =
-                "Ready to publish. 30–59 seconds earns +3 ⭐.";
+                "Ready to publish. Your recording is ready.";
 
             }
 
@@ -3733,12 +3826,14 @@
               event
             );
 
+
             state.postStream
               ?.getTracks()
               .forEach(
                 track =>
                   track.stop()
               );
+
 
             state.postStream =
               null;
@@ -3751,6 +3846,7 @@
 
             state.postStartedAt =
               0;
+
 
             el.recordIcon
               .classList
@@ -3771,6 +3867,7 @@
             el.publishVoiceBtn
               .classList
               .add("hidden");
+
 
             showToast(
               "Recording failed. Please try again.",
@@ -3817,6 +3914,7 @@
         el.voiceTimer.textContent =
           "00:00 / 01:00";
 
+
         updatePostTimer();
 
 
@@ -3827,12 +3925,14 @@
           error
         );
 
+
         state.postStream
           ?.getTracks()
           .forEach(
             track =>
               track.stop()
           );
+
 
         state.postStream =
           null;
@@ -3870,6 +3970,7 @@
         }else{
 
           showToast(
+            error?.message ||
             "Could not start the microphone. Please try again.",
             true
           );
@@ -3912,6 +4013,7 @@
 
         }
 
+
         if(auto){
 
           showToast(
@@ -3946,17 +4048,18 @@
         await new Promise(
           resolve => {
 
-            let doneCalled =
+            let finished =
               false;
+
 
             const done =
               () => {
 
-                if(doneCalled){
+                if(finished){
                   return;
                 }
 
-                doneCalled =
+                finished =
                   true;
 
                 resolve();
@@ -4086,6 +4189,7 @@
 
     /* =========================================================
        PUBLISH VOICE POST
+       Worker source = voicePost
     ========================================================= */
 
     async function publishVoicePost(){
@@ -4114,7 +4218,8 @@
           await uploadAudio(
             state.postBlob,
             "post",
-            state.postDuration
+            state.postDuration,
+            state.postBlob.type
           );
 
 
@@ -4247,6 +4352,7 @@
           true
         );
 
+
         await loadPosts();
 
 
@@ -4261,20 +4367,12 @@
 
         }else if(
           Number(
-            reward?.pointsAwarded || 0
+            reward?.points || 0
           ) > 0
         ){
 
           showToast(
-            `Voice post published! +${reward.pointsAwarded} ⭐`
-          );
-
-        }else if(
-          reward?.capped
-        ){
-
-          showToast(
-            "Voice post published. Today's reward limit has been reached."
+            `Voice post published! +${reward.points} ⭐`
           );
 
         }else{
@@ -4293,11 +4391,13 @@
           error
         );
 
+
         showToast(
           error?.message ||
           "Could not publish the voice post.",
           true
         );
+
 
         el.publishVoiceBtn.disabled =
           !state.postBlob ||
@@ -4306,7 +4406,7 @@
       }finally{
 
         el.publishVoiceBtn.textContent =
-          "Publish voice +3/5 ⭐";
+          "Publish voice +10 ⭐";
 
       }
 
@@ -5463,6 +5563,8 @@
 
     /* =========================================================
        PUBLISH WRITTEN COMMENT
+       Worker source:
+       writtenComment / longComment is not sent.
     ========================================================= */
 
     async function publishComment(
@@ -5493,10 +5595,15 @@
       }
 
 
+      /*
+        The Worker understands:
+        writtenComment
+
+        The Worker itself controls the reward amount.
+      */
+
       const source =
-        words >= LONG_COMMENT_MIN_WORDS
-          ? "longComment"
-          : "shortComment";
+        "writtenComment";
 
 
       const post =
@@ -5656,6 +5763,7 @@
           postId
         );
 
+
         await ensureCommentsLoaded(
           postId
         );
@@ -5672,20 +5780,12 @@
 
         }else if(
           Number(
-            reward?.pointsAwarded || 0
+            reward?.points || 0
           ) > 0
         ){
 
           showToast(
-            `Comment posted! +${reward.pointsAwarded} ⭐`
-          );
-
-        }else if(
-          reward?.capped
-        ){
-
-          showToast(
-            "Comment posted. Today's reward limit has been reached."
+            `Comment posted! +${reward.points} ⭐`
           );
 
         }else{
@@ -5894,7 +5994,8 @@
     async function startReplyRecording(){
 
       if(
-        !navigator.mediaDevices?.getUserMedia ||
+        !navigator.mediaDevices ||
+        !navigator.mediaDevices.getUserMedia ||
         !window.MediaRecorder
       ){
 
@@ -5925,6 +6026,31 @@
               }
             }
           );
+
+
+        const tracks =
+          state.replyStream.getAudioTracks();
+
+
+        if(
+          !tracks.length
+        ){
+
+          throw new Error(
+            "No microphone audio track was created."
+          );
+
+        }
+
+
+        tracks.forEach(
+          track => {
+
+            track.enabled =
+              true;
+
+          }
+        );
 
 
         state.replyRecorder =
@@ -5982,7 +6108,7 @@
               );
 
 
-            const mime =
+            const recorderMime =
               getRecorderMime(
                 recorder
               );
@@ -6000,7 +6126,9 @@
               new Blob(
                 chunks,
                 {
-                  type:mime
+                  type:
+                    recorderMime ||
+                    undefined
                 }
               );
 
@@ -6047,12 +6175,17 @@
                   state.replyBlob
                 );
 
+
               el.replyAudio.src =
                 state.replyAudioUrl;
+
 
               el.replyAudioPreview
                 .classList
                 .remove("hidden");
+
+
+              el.replyAudio.load();
 
             }
 
@@ -6106,12 +6239,14 @@
               event
             );
 
+
             state.replyStream
               ?.getTracks()
               .forEach(
                 track =>
                   track.stop()
               );
+
 
             state.replyStream =
               null;
@@ -6124,6 +6259,7 @@
 
             state.replyStartedAt =
               0;
+
 
             el.replyRecordIcon
               .classList
@@ -6144,6 +6280,7 @@
             el.publishReplyVoiceBtn
               .classList
               .add("hidden");
+
 
             showToast(
               "Recording failed. Please try again.",
@@ -6187,6 +6324,7 @@
         el.replyTimer.textContent =
           "00:00 / 01:00";
 
+
         updateReplyTimer();
 
 
@@ -6197,12 +6335,14 @@
           error
         );
 
+
         state.replyStream
           ?.getTracks()
           .forEach(
             track =>
               track.stop()
           );
+
 
         state.replyStream =
           null;
@@ -6240,6 +6380,7 @@
         }else{
 
           showToast(
+            error?.message ||
             "Could not start the microphone. Please try again.",
             true
           );
@@ -6319,6 +6460,7 @@
 
             let finished =
               false;
+
 
             const done =
               () => {
@@ -6454,6 +6596,7 @@
 
     /* =========================================================
        PUBLISH VOICE REPLY
+       Worker source = voiceComment
     ========================================================= */
 
     async function publishVoiceReply(){
@@ -6495,7 +6638,8 @@
           await uploadAudio(
             state.replyBlob,
             "comment",
-            state.replyDuration
+            state.replyDuration,
+            state.replyBlob.type
           );
 
 
@@ -6579,7 +6723,7 @@
             {
 
               source:
-                "voiceReply",
+                "voiceComment",
 
               kind:
                 "comment",
@@ -6662,20 +6806,12 @@
 
         }else if(
           Number(
-            reward?.pointsAwarded || 0
+            reward?.points || 0
           ) > 0
         ){
 
           showToast(
-            `Voice reply posted! +${reward.pointsAwarded} ⭐`
-          );
-
-        }else if(
-          reward?.capped
-        ){
-
-          showToast(
-            "Voice reply posted. Today's reward limit has been reached."
+            `Voice reply posted! +${reward.points} ⭐`
           );
 
         }else{
@@ -6694,6 +6830,7 @@
           error
         );
 
+
         showToast(
           error?.message ||
           "Could not publish the voice reply.",
@@ -6703,7 +6840,7 @@
       }finally{
 
         el.publishReplyVoiceBtn.textContent =
-          "Publish voice reply +1/3 ⭐";
+          "Publish voice reply +5 ⭐";
 
       }
 
@@ -6844,6 +6981,7 @@
           error
         );
 
+
         button.disabled =
           false;
 
@@ -6864,6 +7002,8 @@
 
     /* =========================================================
        DELETE POST
+       IMPORTANT FIX:
+       Worker expects contentType + contentId.
     ========================================================= */
 
     async function deletePost(
@@ -6927,11 +7067,8 @@
               body:
                 JSON.stringify({
 
-                  kind:
+                  contentType:
                     "post",
-
-                  id:
-                    postId,
 
                   contentId:
                     postId,
@@ -6986,6 +7123,7 @@
           "Delete post error:",
           error
         );
+
 
         showToast(
           error?.message ||
@@ -7245,6 +7383,7 @@
             button.dataset.commentId
           );
 
+
           return;
 
         }
@@ -7303,6 +7442,7 @@
             button.dataset.parentId || ""
           );
 
+
           return;
 
         }
@@ -7321,6 +7461,7 @@
             button.dataset.key,
             button
           );
+
 
           return;
 
@@ -7515,7 +7656,9 @@
 
         setTimeout(
           () => {
+
             el.postText.focus();
+
           },
           350
         );
@@ -7641,6 +7784,7 @@
               track =>
                 track.stop()
             );
+
 
           state.replyStream
             ?.getTracks()
