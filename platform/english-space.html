@@ -2001,14 +2001,6 @@
     const LONG_COMMENT_MIN_WORDS =
       10;
 
-    const DAILY_CAPS = {
-      writtenPost:3,
-      voicePost:3,
-      shortComment:8,
-      longComment:5,
-      voiceReply:6
-    };
-
     const REACTIONS = [
       "❤️",
       "😂",
@@ -2037,8 +2029,6 @@
       posts:[],
 
       commentsByPost:new Map(),
-
-      pointsLedger:{},
 
       postRecorder:null,
       postChunks:[],
@@ -2140,12 +2130,13 @@
     }
 
 
-    function getAvatar(data){
+    function getAvatar(data,user){
 
       return String(
         data?.photoURL ||
         data?.photoUrl ||
         data?.avatarUrl ||
+        user?.photoURL ||
         ""
       ).trim() || "../owl.PNG";
 
@@ -2339,6 +2330,107 @@
 
 
     /* =========================================================
+       WORKER REQUEST
+    ========================================================= */
+
+    async function workerRequest(
+      path,
+      options={}
+    ){
+
+      if(!state.user){
+
+        throw new Error(
+          "You must be signed in."
+        );
+
+      }
+
+
+      const token =
+        await state.user.getIdToken(
+          true
+        );
+
+
+      const headers = {
+        ...(options.headers || {}),
+
+        "Authorization":
+          `Bearer ${token}`
+      };
+
+
+      if(
+        options.body &&
+        !headers["Content-Type"]
+      ){
+
+        headers["Content-Type"] =
+          "application/json";
+
+      }
+
+
+      let response;
+
+
+      try{
+
+        response =
+          await fetch(
+            `${WORKER_URL}${path}`,
+            {
+              ...options,
+              headers
+            }
+          );
+
+      }catch(error){
+
+        console.error(
+          "Worker network error:",
+          error
+        );
+
+        throw new Error(
+          "Could not connect to the English Space server. Please check your connection and try again."
+        );
+
+      }
+
+
+      let data = {};
+
+
+      try{
+
+        data =
+          await response.json();
+
+      }catch{
+
+        data = {};
+
+      }
+
+
+      if(!response.ok){
+
+        throw new Error(
+          data?.error ||
+          `Server request failed (${response.status}).`
+        );
+
+      }
+
+
+      return data;
+
+    }
+
+
+    /* =========================================================
        REWARD ANIMATION
     ========================================================= */
 
@@ -2424,147 +2516,10 @@
 
 
     /* =========================================================
-       LOCAL DAILY LEDGER
-    ========================================================= */
-
-    function getDateKey(){
-
-      try{
-
-        return new Intl.DateTimeFormat(
-          "en-CA",
-          {
-            timeZone:"Asia/Riyadh",
-            year:"numeric",
-            month:"2-digit",
-            day:"2-digit"
-          }
-        ).format(
-          new Date()
-        );
-
-      }catch{
-
-        return new Date()
-          .toISOString()
-          .slice(0,10);
-
-      }
-
-    }
-
-
-    function getLedgerKey(){
-
-      if(!state.user){
-        return "";
-      }
-
-      return (
-        "englizaEnglishSpaceLedger_" +
-        state.user.uid +
-        "_" +
-        getDateKey()
-      );
-
-    }
-
-
-    function readLocalDailyLedger(){
-
-      try{
-
-        const key =
-          getLedgerKey();
-
-        if(!key){
-          return {};
-        }
-
-        const raw =
-          localStorage.getItem(key);
-
-        if(!raw){
-          return {};
-        }
-
-        const parsed =
-          JSON.parse(raw);
-
-        return (
-          parsed &&
-          typeof parsed === "object"
-        )
-          ? parsed
-          : {};
-
-      }catch{
-
-        return {};
-
-      }
-
-    }
-
-
-    function writeLocalDailyLedger(){
-
-      try{
-
-        const key =
-          getLedgerKey();
-
-        if(!key){
-          return;
-        }
-
-        localStorage.setItem(
-          key,
-          JSON.stringify(
-            state.pointsLedger
-          )
-        );
-
-      }catch{}
-
-    }
-
-
-    function canUseRewardSource(
-      source
-    ){
-
-      const used =
-        Number(
-          state.pointsLedger[source] || 0
-        );
-
-      const cap =
-        Number(
-          DAILY_CAPS[source] || 999999
-        );
-
-      return used < cap;
-
-    }
-
-
-    function consumeRewardSource(
-      source
-    ){
-
-      state.pointsLedger[source] =
-        Number(
-          state.pointsLedger[source] || 0
-        ) + 1;
-
-      writeLocalDailyLedger();
-
-    }
-
-
-    /* =========================================================
        LOAD POINTS
+       IMPORTANT:
+       Worker stores totalPoints.
+       Legacy "points" is kept only as fallback.
     ========================================================= */
 
     async function loadPoints(){
@@ -2577,6 +2532,7 @@
 
       }
 
+
       try{
 
         const snap =
@@ -2588,15 +2544,29 @@
             )
           );
 
+
         if(
           snap.exists()
         ){
 
-          setPoints(
+          const data =
+            snap.data() || {};
+
+
+          const total =
             Number(
-              snap.data()?.points || 0
-            )
+              data.totalPoints ??
+              data.points ??
+              0
+            );
+
+
+          setPoints(
+            Number.isFinite(total)
+              ? total
+              : 0
           );
+
 
           return;
 
@@ -2611,10 +2581,6 @@
 
       }
 
-      /*
-        English Space points are separate
-        from academy Coins.
-      */
 
       setPoints(0);
 
@@ -2623,69 +2589,26 @@
 
     /* =========================================================
        TRUSTED REWARD
+       Server is the ONLY authority for daily caps.
     ========================================================= */
 
     async function requestTrustedReward(
       payload
     ){
 
-      if(!state.user){
-
-        throw new Error(
-          "You must be signed in."
-        );
-
-      }
-
-      const token =
-        await state.user.getIdToken(
-          true
-        );
-
-      const response =
-        await fetch(
-          `${WORKER_URL}/reward`,
+      const data =
+        await workerRequest(
+          "/reward",
           {
             method:"POST",
 
-            headers:{
-              "Authorization":
-                `Bearer ${token}`,
-
-              "Content-Type":
-                "application/json"
-            },
-
             body:
-              JSON.stringify(payload)
+              JSON.stringify(
+                payload
+              )
           }
         );
 
-
-      let data = {};
-
-      try{
-
-        data =
-          await response.json();
-
-      }catch{}
-
-
-      if(!response.ok){
-
-        throw new Error(
-          data?.error ||
-          `Reward request failed (${response.status}).`
-        );
-
-      }
-
-
-      /*
-        pointsAwarded = points earned
-        totalPoints  = student's total
-      */
 
       if(
         typeof data.totalPoints ===
@@ -2712,29 +2635,13 @@
       payload
     ){
 
-      if(
-        !canUseRewardSource(
-          payload.source
-        )
-      ){
-
-        return {
-          ok:true,
-          awarded:false,
-          capped:true,
-          pointsAwarded:0,
-          totalPoints:state.points
-        };
-
-      }
-
-
       try{
 
         const result =
           await requestTrustedReward(
             payload
           );
+
 
         const gained =
           Number(
@@ -2743,10 +2650,6 @@
 
 
         if(gained > 0){
-
-          consumeRewardSource(
-            payload.source
-          );
 
           showReward(
             gained,
@@ -2767,22 +2670,31 @@
           error
         );
 
+
         /*
-          Never fake a reward.
-          Content stays published,
-          but no points are shown as earned.
+          The post/comment remains published.
+          We NEVER fake points on the client.
         */
 
         return {
+
           ok:false,
+
           awarded:false,
+
           pointsAwarded:0,
+
           rewardUnavailable:true,
-          error:String(
-            error?.message ||
-            error
-          ),
-          totalPoints:state.points
+
+          error:
+            String(
+              error?.message ||
+              error
+            ),
+
+          totalPoints:
+            state.points
+
         };
 
       }
@@ -2916,13 +2828,6 @@
 
       }
 
-      if(!state.user){
-
-        throw new Error(
-          "You must be signed in."
-        );
-
-      }
 
       const seconds =
         Math.max(
@@ -2950,31 +2855,45 @@
           true
         );
 
+
       const mime =
         blob.type ||
         "audio/webm";
 
 
-      const response =
-        await fetch(
-          `${WORKER_URL}/upload?kind=${encodeURIComponent(kind)}`,
-          {
-            method:"POST",
+      let response;
 
-            headers:{
-              "Authorization":
-                `Bearer ${token}`,
 
-              "Content-Type":
-                mime,
+      try{
 
-              "X-Audio-Duration":
-                String(seconds)
-            },
+        response =
+          await fetch(
+            `${WORKER_URL}/upload?kind=${encodeURIComponent(kind)}`,
+            {
+              method:"POST",
 
-            body:blob
-          }
+              headers:{
+                "Authorization":
+                  `Bearer ${token}`,
+
+                "Content-Type":
+                  mime,
+
+                "X-Audio-Duration":
+                  String(seconds)
+              },
+
+              body:blob
+            }
+          );
+
+      }catch{
+
+        throw new Error(
+          "Could not connect to the English Space audio server."
         );
+
+      }
 
 
       let data = {};
@@ -3016,9 +2935,11 @@
 
         audioKey,
 
-        audioDuration:seconds,
+        audioDuration:
+          seconds,
 
-        mimeType:mime
+        mimeType:
+          mime
 
       };
 
@@ -3063,18 +2984,31 @@
         );
 
 
-      const response =
-        await fetch(
-          `${WORKER_URL}/audio/${cleanKey}`,
-          {
-            method:"GET",
+      let response;
 
-            headers:{
-              "Authorization":
-                `Bearer ${token}`
+
+      try{
+
+        response =
+          await fetch(
+            `${WORKER_URL}/audio/${cleanKey}`,
+            {
+              method:"GET",
+
+              headers:{
+                "Authorization":
+                  `Bearer ${token}`
+              }
             }
-          }
+          );
+
+      }catch{
+
+        throw new Error(
+          "Could not connect to the audio server."
         );
+
+      }
 
 
       if(!response.ok){
@@ -3121,7 +3055,17 @@
 
 
     /* =========================================================
-       USER
+       USER / PROFILE
+
+       IMPORTANT:
+       The existence of users/{uid} is no longer required
+       to enter English Space.
+
+       Worker /me checks:
+       1. users/{uid}
+       2. users where uid == auth.uid
+       3. users where email == auth.email
+       4. Firebase Auth fallback
     ========================================================= */
 
     async function loadUser(){
@@ -3131,29 +3075,54 @@
       }
 
 
-      const snap =
-        await getDoc(
-          doc(
-            db,
-            "users",
-            state.user.uid
-          )
-        );
+      let workerProfile = {};
+
+      let authProfile = {};
 
 
-      if(
-        !snap.exists()
-      ){
+      try{
 
-        throw new Error(
-          "Academy account not found."
+        const data =
+          await workerRequest(
+            "/me",
+            {
+              method:"GET"
+            }
+          );
+
+
+        workerProfile =
+          data?.profile || {};
+
+        authProfile =
+          data?.authProfile || {};
+
+
+      }catch(error){
+
+        /*
+          Do NOT block the whole page because
+          the profile endpoint is temporarily unavailable.
+
+          Firebase Auth itself already tells us who
+          the signed-in user is.
+        */
+
+        console.warn(
+          "English Space /me failed; using Firebase Auth fallback:",
+          error
         );
 
       }
 
 
-      state.userData =
-        snap.data() || {};
+      state.userData = {
+
+        ...authProfile,
+
+        ...workerProfile
+
+      };
 
 
       el.studentName.textContent =
@@ -3165,7 +3134,8 @@
 
       el.profileAvatar.src =
         getAvatar(
-          state.userData
+          state.userData,
+          state.user
         );
 
 
@@ -3238,6 +3208,9 @@
 
     /* =========================================================
        PUBLISH TEXT POST
+
+       IMPORTANT FIX:
+       wordCount is now explicitly sent.
     ========================================================= */
 
     async function publishTextPost(){
@@ -3254,6 +3227,12 @@
       const text =
         cleanText(
           el.postText.value
+        );
+
+
+      const wordCount =
+        countWords(
+          text
         );
 
 
@@ -3289,7 +3268,8 @@
 
               authorPhoto:
                 getAvatar(
-                  state.userData
+                  state.userData,
+                  state.user
                 ),
 
               authorPoints:
@@ -3299,6 +3279,8 @@
                 "text",
 
               text,
+
+              wordCount,
 
               audioKey:
                 "",
@@ -3328,14 +3310,6 @@
           );
 
 
-        /*
-          IMPORTANT:
-          contentId is the canonical ID used
-          by the trusted Worker.
-
-          postId is also kept for compatibility.
-        */
-
         const reward =
           await awardPoints(
             {
@@ -3355,16 +3329,17 @@
               type:
                 "text",
 
-              text
+              text,
+
+              wordCount
 
             }
           );
 
 
         if(
-          Number(
-            reward?.totalPoints
-          ) >= 0
+          typeof reward?.totalPoints ===
+          "number"
         ){
 
           try{
@@ -3373,16 +3348,14 @@
               postRef,
               {
                 authorPoints:
-                  Number(
-                    reward.totalPoints
-                  )
+                  reward.totalPoints
               }
             );
 
           }catch(error){
 
             console.warn(
-              "Could not update authorPoints on post:",
+              "Could not update post authorPoints:",
               error
             );
 
@@ -3424,6 +3397,14 @@
 
           showToast(
             "Posted successfully. Today's reward limit has been reached."
+          );
+
+        }else if(
+          reward?.qualified === false
+        ){
+
+          showToast(
+            "Posted successfully."
           );
 
         }else{
@@ -4160,7 +4141,8 @@
 
               authorPhoto:
                 getAvatar(
-                  state.userData
+                  state.userData,
+                  state.user
                 ),
 
               authorPoints:
@@ -4203,17 +4185,6 @@
           );
 
 
-        /*
-          Worker-compatible reward payload.
-
-          contentId = canonical content ID
-          duration  = canonical audio duration
-
-          The legacy aliases are also included
-          so this remains compatible with the
-          existing Worker implementation.
-        */
-
         const reward =
           await awardPoints(
             {
@@ -4246,9 +4217,8 @@
 
 
         if(
-          Number(
-            reward?.totalPoints
-          ) >= 0
+          typeof reward?.totalPoints ===
+          "number"
         ){
 
           try{
@@ -4257,9 +4227,7 @@
               postRef,
               {
                 authorPoints:
-                  Number(
-                    reward.totalPoints
-                  )
+                  reward.totalPoints
               }
             );
 
@@ -5578,7 +5546,8 @@
 
               authorPhoto:
                 getAvatar(
-                  state.userData
+                  state.userData,
+                  state.user
                 ),
 
               authorPoints:
@@ -5588,6 +5557,9 @@
                 "text",
 
               text,
+
+              wordCount:
+                words,
 
               audioKey:
                 "",
@@ -5621,13 +5593,6 @@
         );
 
 
-        /*
-          Worker-compatible payload.
-
-          contentId = comment document ID
-          commentId = kept as compatibility alias
-        */
-
         const reward =
           await awardPoints(
             {
@@ -5651,6 +5616,8 @@
               type:
                 "text",
 
+              text,
+
               wordCount:
                 words
 
@@ -5659,9 +5626,8 @@
 
 
         if(
-          Number(
-            reward?.totalPoints
-          ) >= 0
+          typeof reward?.totalPoints ===
+          "number"
         ){
 
           try{
@@ -5670,9 +5636,7 @@
               ref,
               {
                 authorPoints:
-                  Number(
-                    reward.totalPoints
-                  )
+                  reward.totalPoints
               }
             );
 
@@ -6562,7 +6526,8 @@
 
               authorPhoto:
                 getAvatar(
-                  state.userData
+                  state.userData,
+                  state.user
                 ),
 
               authorPoints:
@@ -6609,13 +6574,6 @@
         );
 
 
-        /*
-          Worker-compatible payload.
-
-          contentId = voice comment ID
-          duration  = voice duration
-        */
-
         const reward =
           await awardPoints(
             {
@@ -6654,9 +6612,8 @@
 
 
         if(
-          Number(
-            reward?.totalPoints
-          ) >= 0
+          typeof reward?.totalPoints ===
+          "number"
         ){
 
           try{
@@ -6665,9 +6622,7 @@
               ref,
               {
                 authorPoints:
-                  Number(
-                    reward.totalPoints
-                  )
+                  reward.totalPoints
               }
             );
 
@@ -6962,64 +6917,31 @@
 
       try{
 
-        const token =
-          await state.user.getIdToken(
-            true
-          );
-
-
-        /*
-          Send all compatible ID aliases.
-
-          The Worker can use:
-          id
-          contentId
-          postId
-        */
-
-        const response =
-          await fetch(
-            `${WORKER_URL}/delete-content`,
+        const data =
+          await workerRequest(
+            "/delete-content",
             {
+
               method:"POST",
-
-              headers:{
-                "Authorization":
-                  `Bearer ${token}`,
-
-                "Content-Type":
-                  "application/json"
-              },
 
               body:
                 JSON.stringify({
-                  kind:"post",
-                  id:postId,
-                  contentId:postId,
+
+                  kind:
+                    "post",
+
+                  id:
+                    postId,
+
+                  contentId:
+                    postId,
+
                   postId
+
                 })
+
             }
           );
-
-
-        let data = {};
-
-        try{
-
-          data =
-            await response.json();
-
-        }catch{}
-
-
-        if(!response.ok){
-
-          throw new Error(
-            data?.error ||
-            `Delete failed (${response.status}).`
-          );
-
-        }
 
 
         state.posts =
@@ -7035,7 +6957,7 @@
 
 
         if(
-          typeof data.totalPoints ===
+          typeof data?.totalPoints ===
           "number"
         ){
 
@@ -7810,10 +7732,6 @@
         el.app
           .classList
           .remove("hidden");
-
-
-        state.pointsLedger =
-          readLocalDailyLedger();
 
 
         try{
