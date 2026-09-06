@@ -1,54 +1,47 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Engliza Academy | الاستماع</title>
+<title>Listening | Engliza Academy</title>
 
 <style>
 
 /* =========================================================
-   ENGLIZA ACADEMY
-   LISTENING — BEGINNER
-========================================================= */
+   ENGLIZA LISTENING
+   Beginner Listening Page
+   ========================================================= */
 
 :root{
+    --blue:#3157D5;
+    --blue-dark:#233E9B;
+    --purple:#7654D9;
+    --purple-light:#EEEAFE;
+    --gold:#D9A441;
+    --gold-light:#FFF6DF;
 
-    --blue:#3157d5;
-    --blue-dark:#2445b8;
+    --text:#17213C;
+    --muted:#6E7891;
+    --white:#FFFFFF;
+    --bg:#F7F8FC;
+    --border:#E8EAF2;
 
-    --purple:#7452d4;
-    --purple-dark:#5c3db8;
+    --success:#2E9B68;
+    --danger:#D95D67;
 
-    --gold:#e4b94f;
+    --shadow:0 12px 35px rgba(36,48,94,.08);
+    --shadow-hover:0 18px 45px rgba(36,48,94,.13);
 
-    --white:#ffffff;
-    --background:#f6f7fc;
-
-    --text:#252a3d;
-    --text-soft:#697087;
-
-    --border:#e7e9f2;
-
-    --shadow:
-        0 10px 30px rgba(36,57,130,.08);
-
-    --shadow-hover:
-        0 16px 38px rgba(36,57,130,.13);
-
-    --radius-large:24px;
-    --radius-medium:18px;
-
+    --radius-xl:28px;
+    --radius-lg:22px;
+    --radius-md:17px;
 }
 
 
-/* =========================================================
+/* =========================
    RESET
-========================================================= */
+   ========================= */
 
 *{
     box-sizing:border-box;
@@ -59,11 +52,8 @@ html{
 }
 
 body{
-
     margin:0;
-
-    background:var(--background);
-
+    background:var(--bg);
     color:var(--text);
 
     font-family:
@@ -73,283 +63,241 @@ body{
         Tahoma,
         Arial,
         sans-serif;
+}
 
-    line-height:1.7;
+button,
+a{
+    font:inherit;
+}
 
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
 }
 
 
-/* =========================================================
+/* =========================
    PAGE
-========================================================= */
+   ========================= */
 
 .page{
-
-    width:min(1120px, calc(100% - 30px));
-
+    width:min(1180px, calc(100% - 32px));
     margin:0 auto;
-
-    padding:24px 0 60px;
-
+    padding:28px 0 70px;
 }
 
 
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+   ========================= */
 
 .hero{
-
     position:relative;
-
     overflow:hidden;
 
     background:
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(255,255,255,.18),
+            transparent 28%
+        ),
         linear-gradient(
             135deg,
-            var(--blue-dark),
-            var(--blue) 55%,
-            var(--purple)
+            #3157D5 0%,
+            #7654D9 100%
         );
 
     color:white;
+    border-radius:32px;
 
-    border-radius:30px;
+    padding:38px 34px;
+    margin-bottom:28px;
 
-    padding:34px 32px;
-
-    box-shadow:var(--shadow);
-
-    margin-bottom:25px;
-
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:240px;
-    height:240px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.07);
-
-    top:-130px;
-    left:-70px;
-
+    box-shadow:
+        0 18px 45px rgba(49,87,213,.20);
 }
 
 .hero::after{
-
     content:"";
 
     position:absolute;
 
-    width:210px;
-    height:210px;
+    width:180px;
+    height:180px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 
     border-radius:50%;
 
-    background:rgba(228,185,79,.08);
-
-    bottom:-120px;
-    right:-70px;
-
+    left:-55px;
+    bottom:-80px;
 }
 
 .hero-content{
-
     position:relative;
-
     z-index:2;
 
+    max-width:760px;
 }
 
-.hero-badge{
-
+.brand-small{
     display:inline-flex;
-
     align-items:center;
 
-    gap:7px;
+    gap:8px;
 
-    background:rgba(255,255,255,.13);
+    font-size:13px;
+    font-weight:700;
 
-    border:1px solid rgba(255,255,255,.17);
+    opacity:.9;
+
+    margin-bottom:14px;
+}
+
+.brand-dot{
+    width:8px;
+    height:8px;
+
+    background:#F3C86B;
+
+    border-radius:50%;
+}
+
+.hero h1{
+    margin:0 0 12px;
+
+    font-size:
+        clamp(30px,5vw,48px);
+
+    line-height:1.1;
+
+    letter-spacing:-1px;
+}
+
+.hero p{
+    margin:0;
+
+    font-size:16px;
+    line-height:1.9;
+
+    opacity:.93;
+
+    max-width:680px;
+}
+
+
+/* =========================
+   PATH INFO
+   ========================= */
+
+.path-info{
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:var(--radius-lg);
+
+    padding:20px 22px;
+
+    margin-bottom:42px;
+
+    box-shadow:var(--shadow);
+}
+
+.path-top{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:13px;
+}
+
+.path-title{
+    font-weight:800;
+    font-size:16px;
+}
+
+.path-level{
+    color:var(--blue);
+
+    background:#EEF2FF;
 
     border-radius:999px;
 
     padding:7px 13px;
 
-    font-size:13px;
-
-    margin-bottom:12px;
-
-}
-
-.hero h1{
-
-    margin:0;
-
-    font-size:clamp(30px,5vw,44px);
-
-    line-height:1.2;
-
-    letter-spacing:-.5px;
-
-}
-
-.hero-description{
-
-    margin:12px 0 0;
-
-    max-width:720px;
-
-    color:rgba(255,255,255,.87);
-
-    font-size:15px;
-
-}
-
-
-/* =========================================================
-   PROGRESS
-========================================================= */
-
-.progress-box{
-
-    margin-top:24px;
-
-    padding:15px 16px;
-
-    background:rgba(255,255,255,.10);
-
-    border:1px solid rgba(255,255,255,.14);
-
-    border-radius:18px;
-
-}
-
-.progress-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    margin-bottom:9px;
-
-    font-size:13px;
-
+    font-size:12px;
+    font-weight:800;
 }
 
 .progress-track{
+    height:9px;
 
-    height:8px;
-
-    background:rgba(255,255,255,.16);
+    background:#ECEEF5;
 
     border-radius:999px;
 
     overflow:hidden;
-
 }
 
-.progress-fill{
-
-    width:100%;
-
+.progress-bar{
     height:100%;
 
-    background:linear-gradient(
-        90deg,
-        #f2d36d,
-        #fff
-    );
+    width:8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--purple)
+        );
 
     border-radius:999px;
-
 }
 
 
 /* =========================================================
-   INTRO BOX
-========================================================= */
-
-.intro-box{
-
-    background:var(--white);
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius-large);
-
-    padding:20px 21px;
-
-    box-shadow:var(--shadow);
-
-    margin-bottom:38px;
-
-}
-
-.intro-box p{
-
-    margin:0;
-
-    color:var(--text-soft);
-
-    font-size:14px;
-
-}
-
-.intro-box strong{
-
-    color:var(--blue-dark);
-
-}
-
-
-/* =========================================================
-   STAGE WRAPPER
-========================================================= */
+   STAGES
+   ========================================================= */
 
 .stage{
-
-    margin-bottom:55px;
-
+    margin-bottom:64px;
 }
 
 
-/* =========================================================
+/* =========================
    STAGE HEADER CARD
-========================================================= */
+   ========================= */
 
 .stage-header-card{
 
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
-
     background:white;
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
-    border-radius:22px;
+    border-radius:var(--radius-xl);
 
-    padding:18px 20px;
+    padding:22px 24px;
 
-    margin-bottom:18px;
+    margin-bottom:22px;
 
     box-shadow:var(--shadow);
 
+    position:relative;
+
+    overflow:hidden;
 }
 
 .stage-header-card::before{
@@ -358,15 +306,11 @@ body{
 
     position:absolute;
 
+    top:0;
     right:0;
 
-    top:14px;
-
-    bottom:14px;
-
-    width:4px;
-
-    border-radius:10px 0 0 10px;
+    width:7px;
+    height:100%;
 
     background:
         linear-gradient(
@@ -374,98 +318,128 @@ body{
             var(--blue),
             var(--purple)
         );
-
 }
 
-.stage-number{
+.stage-header-inner{
 
-    flex:0 0 auto;
+    display:flex;
 
-    width:48px;
-    height:48px;
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.stage-number-box{
+
+    flex-shrink:0;
+
+    width:58px;
+    height:58px;
 
     display:grid;
-
     place-items:center;
 
-    border-radius:15px;
+    border-radius:17px;
 
     background:
         linear-gradient(
             135deg,
-            var(--blue),
-            var(--purple)
+            #EEF2FF,
+            #EEEAFE
         );
 
-    color:white;
+    color:var(--purple);
 
-    font-size:17px;
+    font-size:15px;
+    font-weight:900;
+}
+
+.stage-number-box span{
+
+    display:block;
+
+    font-size:10px;
+
+    color:var(--muted);
+
+    margin-bottom:2px;
+}
+
+.stage-text{
+
+    flex:1;
+}
+
+.stage-number{
+
+    color:var(--gold);
+
+    font-size:11px;
 
     font-weight:900;
 
-    box-shadow:
-        0 7px 18px rgba(49,87,213,.18);
+    letter-spacing:.8px;
 
+    margin-bottom:5px;
 }
 
-.stage-info{
-
-    min-width:0;
-
-}
-
-.stage-info h2{
+.stage-title{
 
     margin:0;
 
-    font-size:20px;
+    font-size:23px;
 
-    line-height:1.35;
+    font-weight:850;
 
-    color:var(--text);
-
+    line-height:1.4;
 }
 
-.stage-info p{
+.stage-description{
 
-    margin:3px 0 0;
+    margin:6px 0 0;
 
-    color:var(--text-soft);
+    color:var(--muted);
+
+    line-height:1.8;
 
     font-size:13px;
 
+    max-width:780px;
 }
 
 
-/* =========================================================
-   LESSONS GRID
-========================================================= */
+/* =========================
+   LESSON GRID
+   ========================= */
 
-.lessons-grid{
+.lesson-grid{
 
     display:grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(3,minmax(0,1fr));
 
-    gap:15px;
-
+    gap:18px;
 }
 
 
-/* =========================================================
+/* =========================
    LESSON CARD
-========================================================= */
+   ========================= */
 
 .lesson-card{
 
     background:white;
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
-    border-radius:20px;
+    border-radius:var(--radius-xl);
 
-    padding:19px;
+    padding:22px;
 
     box-shadow:var(--shadow);
 
@@ -474,54 +448,85 @@ body{
         box-shadow .2s ease,
         border-color .2s ease;
 
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:285px;
 }
 
 .lesson-card:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
     box-shadow:var(--shadow-hover);
 
-    border-color:#d9ddef;
-
+    border-color:#D9DDF0;
 }
 
 .lesson-number{
 
-    display:inline-flex;
+    display:flex;
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:space-between;
 
-    padding:5px 10px;
+    margin-bottom:17px;
+}
 
-    min-width:39px;
+.lesson-index{
 
-    border-radius:999px;
+    width:38px;
+    height:38px;
 
-    background:#eef2ff;
+    display:grid;
+    place-items:center;
 
-    color:var(--blue-dark);
+    border-radius:12px;
+
+    background:var(--purple-light);
+
+    color:var(--purple);
+
+    font-size:13px;
+
+    font-weight:900;
+}
+
+.lesson-level{
 
     font-size:11px;
 
-    font-weight:900;
+    font-weight:800;
 
-    margin-bottom:10px;
+    color:var(--muted);
 
+    background:#F4F5F9;
+
+    border-radius:999px;
+
+    padding:6px 10px;
 }
 
 .lesson-card h3{
 
-    margin:0;
+    margin:0 0 9px;
 
-    font-size:17px;
+    font-size:19px;
 
-    line-height:1.5;
+    line-height:1.45;
+}
 
-    color:var(--text);
+.lesson-topic{
 
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin:0 0 18px;
 }
 
 .lesson-meta{
@@ -532,62 +537,35 @@ body{
 
     gap:7px;
 
-    margin:11px 0 15px;
+    margin-top:auto;
 
+    margin-bottom:17px;
 }
 
-.meta{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    padding:5px 9px;
-
-    border-radius:999px;
-
-    background:#f7f8fc;
-
-    border:1px solid #ebedf4;
-
-    color:#737a90;
+.meta-chip{
 
     font-size:11px;
 
+    color:#5B6480;
+
+    background:#F6F7FA;
+
+    border-radius:999px;
+
+    padding:6px 9px;
 }
 
-.meta.source{
-
-    background:#fff8e7;
-
-    border-color:#f1dfaa;
-
-    color:#896b20;
-
-}
-
-
-/* =========================================================
-   START BUTTON
-========================================================= */
-
-.start-button{
+.start-btn{
 
     width:100%;
 
     border:0;
 
-    cursor:pointer;
+    border-radius:14px;
 
-    padding:11px 15px;
-
-    border-radius:13px;
+    padding:12px 15px;
 
     color:white;
-
-    font-size:13px;
-
-    font-weight:800;
 
     background:
         linear-gradient(
@@ -596,239 +574,194 @@ body{
             var(--purple)
         );
 
-    box-shadow:
-        0 7px 16px rgba(49,87,213,.16);
+    font-weight:800;
 
-    transition:.18s ease;
-
+    transition:
+        transform .15s ease,
+        opacity .15s ease;
 }
 
-.start-button:hover{
+.start-btn:hover{
 
-    opacity:.94;
-
+    transform:translateY(-1px);
 }
 
-.start-button:active{
+.start-btn:active{
 
-    transform:scale(.98);
-
+    transform:translateY(0);
 }
 
 
-/* =========================================================
+/* =========================
    LESSON VIEW
-========================================================= */
+   ========================= */
 
 .lesson-view{
 
     display:none;
 
-    margin-bottom:42px;
+    background:white;
 
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    margin-top:10px;
 }
 
 .lesson-view.active{
 
     display:block;
 
+    animation:
+        lessonIn .25s ease;
 }
 
-.lesson-panel{
+@keyframes lessonIn{
 
-    overflow:hidden;
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
 
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:27px;
-
-    box-shadow:
-        0 15px 40px rgba(36,57,130,.10);
-
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 
-/* =========================================================
+/* =========================
    LESSON HEADER
-========================================================= */
+   ========================= */
 
-.lesson-header{
-
-    padding:25px;
+.lesson-view-header{
 
     background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255,255,255,.16),
+            transparent 27%
+        ),
         linear-gradient(
             135deg,
-            #f0f3ff,
-            #f8f4ff
+            #3157D5,
+            #7654D9
         );
 
-    border-bottom:1px solid var(--border);
+    color:white;
 
+    padding:30px;
 }
 
-.lesson-header-top{
+.lesson-view-header-top{
 
     display:flex;
 
-    align-items:flex-start;
-
     justify-content:space-between;
 
+    align-items:flex-start;
+
     gap:20px;
-
 }
 
-.lesson-header h2{
+.back-btn{
 
-    margin:0;
+    border:
+        1px solid
+        rgba(255,255,255,.28);
 
-    font-size:27px;
+    background:
+        rgba(255,255,255,.10);
 
-    line-height:1.4;
-
-}
-
-.lesson-header-description{
-
-    margin:7px 0 0;
-
-    color:var(--text-soft);
-
-    font-size:13px;
-
-}
-
-.close-button{
-
-    flex:0 0 auto;
-
-    border:1px solid #dfe2ee;
-
-    background:white;
-
-    color:#5e657b;
+    color:white;
 
     border-radius:12px;
 
     padding:9px 13px;
 
+    font-weight:700;
+}
+
+.back-btn:hover{
+
+    background:
+        rgba(255,255,255,.16);
+}
+
+.lesson-view-number{
+
+    font-size:12px;
+
     font-weight:800;
 
-    cursor:pointer;
+    opacity:.82;
 
+    margin-bottom:7px;
+}
+
+.lesson-view h2{
+
+    margin:0;
+
+    font-size:
+        clamp(25px,4vw,36px);
+
+    line-height:1.3;
+}
+
+.lesson-view-subtitle{
+
+    margin:10px 0 0;
+
+    opacity:.9;
+
+    line-height:1.8;
+
+    font-size:14px;
 }
 
 
-/* =========================================================
+/* =========================
    LESSON BODY
-========================================================= */
+   ========================= */
 
 .lesson-body{
 
-    padding:25px;
-
+    padding:28px;
 }
 
 
-/* =========================================================
-   SOURCE
-========================================================= */
-
-.source-box{
-
-    background:#fffaf0;
-
-    border:1px solid #efdfae;
-
-    border-radius:20px;
-
-    padding:17px;
-
-    margin-bottom:18px;
-
-}
-
-.source-label{
-
-    color:#8d7027;
-
-    font-size:12px;
-
-    font-weight:900;
-
-}
-
-.source-title{
-
-    margin-top:2px;
-
-    color:#3f3b2e;
-
-    font-weight:900;
-
-}
-
-.source-note{
-
-    margin-top:3px;
-
-    color:#77715f;
-
-    font-size:12px;
-
-}
-
-.source-button{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:7px;
-
-    margin-top:12px;
-
-    padding:10px 14px;
-
-    background:white;
-
-    border:1px solid #e7d394;
-
-    border-radius:12px;
-
-    color:#735c1b;
-
-    font-size:13px;
-
-    font-weight:900;
-
-}
-
-
-/* =========================================================
+/* =========================
    CONTENT SECTIONS
-========================================================= */
+   ========================= */
 
 .content-section{
 
-    padding:19px;
+    padding:24px 0;
 
-    margin-bottom:14px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:19px;
-
+    border-bottom:
+        1px solid
+        var(--border);
 }
 
-.section-heading{
+.content-section:first-child{
+
+    padding-top:0;
+}
+
+.content-section:last-child{
+
+    border-bottom:0;
+}
+
+.section-label{
 
     display:flex;
 
@@ -836,14 +769,13 @@ body{
 
     gap:9px;
 
-    margin-bottom:9px;
-
+    margin-bottom:14px;
 }
 
 .section-icon{
 
-    width:34px;
-    height:34px;
+    width:35px;
+    height:35px;
 
     display:grid;
 
@@ -851,34 +783,114 @@ body{
 
     border-radius:11px;
 
-    background:#eef2ff;
+    background:var(--purple-light);
 
-    font-size:15px;
-
+    font-size:17px;
 }
 
-.section-heading h3{
+.section-label h3{
 
     margin:0;
 
-    font-size:16px;
-
+    font-size:18px;
 }
 
-.content-section p{
+.instruction{
 
-    margin:0;
+    background:#F7F8FC;
 
-    color:#596178;
+    border-right:
+        4px solid
+        var(--blue);
+
+    border-radius:13px;
+
+    padding:14px 16px;
+
+    line-height:1.9;
 
     font-size:14px;
 
+    color:#46506B;
+
+    margin-bottom:17px;
 }
 
 
-/* =========================================================
+/* =========================
+   SOURCE CARD
+   ========================= */
+
+.source-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F7F8FF,
+            #F2EEFF
+        );
+
+    border:
+        1px solid
+        #E4E0F8;
+
+    border-radius:20px;
+
+    padding:18px;
+}
+
+.source-info{
+
+    min-width:0;
+}
+
+.source-name{
+
+    font-weight:900;
+
+    margin-bottom:4px;
+}
+
+.source-description{
+
+    font-size:12px;
+
+    color:var(--muted);
+
+    line-height:1.6;
+}
+
+.source-btn{
+
+    flex-shrink:0;
+
+    background:white;
+
+    color:var(--blue);
+
+    border:
+        1px solid
+        #DCE1F4;
+
+    border-radius:12px;
+
+    padding:10px 14px;
+
+    font-weight:800;
+}
+
+
+/* =========================
    WORDS
-========================================================= */
+   ========================= */
 
 .words-grid{
 
@@ -888,333 +900,380 @@ body{
         repeat(2,minmax(0,1fr));
 
     gap:10px;
-
-    margin-top:11px;
-
 }
 
 .word-card{
 
-    padding:11px 12px;
+    border:
+        1px solid
+        var(--border);
 
-    border-radius:14px;
+    border-radius:15px;
 
-    background:#f8f9fd;
+    padding:13px 15px;
 
-    border:1px solid #e9ebf4;
-
+    background:white;
 }
 
 .word{
 
-    display:block;
+    font-weight:900;
 
     direction:ltr;
 
     text-align:left;
 
-    color:var(--blue-dark);
-
-    font-size:14px;
-
-    font-weight:900;
-
+    margin-bottom:5px;
 }
 
 .word-note{
 
-    display:block;
-
-    margin-top:2px;
-
-    color:#72798e;
+    color:var(--muted);
 
     font-size:12px;
 
+    line-height:1.7;
 }
 
 
-/* =========================================================
+/* =========================
    PRACTICE
-========================================================= */
+   ========================= */
 
-.practice-section{
+.practice-box{
 
-    background:
-        linear-gradient(
-            135deg,
-            #f8f5ff,
-            #f4f7ff
-        );
+    background:#FBFAFF;
 
-    border-color:#e4def5;
+    border:
+        1px solid
+        #E7E1FA;
 
+    border-radius:20px;
+
+    padding:20px;
+}
+
+.practice-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:900;
+
+    margin-bottom:14px;
 }
 
 .practice-text{
 
-    margin-top:11px;
-
-    padding:15px;
-
     background:white;
 
-    border:1px solid #e6e5ef;
-
     border-radius:15px;
+
+    padding:18px;
 
     direction:ltr;
 
     text-align:left;
 
-    color:#30364b;
+    line-height:2;
 
     font-size:15px;
 
-    line-height:1.9;
+    border:
+        1px solid
+        #ECEAF5;
 
+    white-space:pre-line;
 }
 
 .practice-note{
 
-    margin-top:9px !important;
+    margin-top:12px;
 
-    color:#7a8095 !important;
+    color:var(--muted);
 
-    font-size:12px !important;
+    font-size:12px;
 
+    line-height:1.8;
 }
 
 
-/* =========================================================
-   CHALLENGE
-========================================================= */
+/* =========================
+   TIP
+   ========================= */
 
-.challenge-section{
+.tip-box{
+
+    background:var(--gold-light);
+
+    border:
+        1px solid
+        #F1DFB2;
+
+    border-radius:17px;
+
+    padding:16px;
+
+    color:#695526;
+
+    line-height:1.9;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   FINAL TASK
+   ========================= */
+
+.final-task{
 
     background:
         linear-gradient(
             135deg,
-            #f4fff9,
-            #f9fffc
+            #F0F4FF,
+            #F6F1FF
         );
 
-    border-color:#d7edde;
+    border:
+        1px solid
+        #DEE4FA;
 
+    border-radius:20px;
+
+    padding:20px;
 }
 
-.challenge-section p{
+.final-task h4{
 
-    color:#426552;
+    margin:0 0 8px;
 
+    font-size:16px;
+}
+
+.final-task p{
+
+    margin:0;
+
+    line-height:1.9;
+
+    color:#4B5570;
+
+    font-size:14px;
 }
 
 
-/* =========================================================
+/* =========================
    NAVIGATION
-========================================================= */
+   ========================= */
 
 .lesson-navigation{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:
-        1fr 1fr 1fr;
+    justify-content:space-between;
 
-    gap:10px;
+    gap:12px;
+
+    padding-top:22px;
 
     margin-top:20px;
 
+    border-top:
+        1px solid
+        var(--border);
 }
 
-.nav-button{
+.nav-lesson-btn{
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     background:white;
 
-    color:#5d647a;
+    color:var(--text);
 
     border-radius:13px;
 
-    padding:11px;
+    padding:11px 14px;
 
     font-weight:800;
-
-    cursor:pointer;
-
 }
 
-.nav-button.primary{
+.nav-lesson-btn.primary{
 
-    border:0;
+    background:var(--blue);
 
     color:white;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        );
+    border-color:var(--blue);
+}
 
+.nav-lesson-btn:disabled{
+
+    opacity:.4;
+
+    cursor:not-allowed;
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+   ========================= */
 
-.footer{
-
-    margin-top:10px;
+.footer-note{
 
     text-align:center;
 
-    color:#9298aa;
+    color:var(--muted);
 
-    font-size:11px;
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-top:35px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:900px){
+
+    .lesson-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
 
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:760px){
+@media(max-width:650px){
 
     .page{
 
         width:
-            calc(100% - 18px);
+            min(
+                100% - 20px,
+                1180px
+            );
 
-        padding-top:10px;
-
+        padding-top:12px;
     }
 
     .hero{
 
-        padding:27px 20px;
+        padding:27px 22px;
 
-        border-radius:24px;
-
+        border-radius:25px;
     }
 
     .hero h1{
 
         font-size:31px;
-
     }
 
-    .hero-description{
+    .path-info{
 
-        font-size:13px;
-
-    }
-
-    .intro-box{
-
-        margin-bottom:30px;
-
+        margin-bottom:32px;
     }
 
     .stage{
 
         margin-bottom:48px;
-
     }
 
     .stage-header-card{
 
-        padding:16px;
+        padding:19px 20px;
 
-        margin-bottom:14px;
+        margin-bottom:17px;
 
-        border-radius:19px;
-
+        border-radius:22px;
     }
 
-    .stage-number{
+    .stage-header-inner{
 
-        width:43px;
-        height:43px;
-
-        border-radius:13px;
-
+        align-items:flex-start;
     }
 
-    .stage-info h2{
+    .stage-number-box{
 
-        font-size:18px;
+        width:50px;
+        height:50px;
 
+        border-radius:14px;
     }
 
-    .stage-info p{
+    .stage-title{
+
+        font-size:20px;
+    }
+
+    .stage-description{
 
         font-size:12px;
 
+        line-height:1.8;
     }
 
-    .lessons-grid{
+    .lesson-grid{
 
         grid-template-columns:1fr;
-
     }
 
-    .lesson-header-top{
+    .lesson-view-header{
 
-        flex-direction:column;
-
+        padding:23px 19px;
     }
 
-    .lesson-header h2{
+    .lesson-view-header-top{
 
-        font-size:23px;
-
+        flex-direction:column-reverse;
     }
 
     .lesson-body{
 
-        padding:18px;
-
+        padding:20px;
     }
 
-    .lesson-header{
+    .source-card{
 
-        padding:20px;
+        align-items:flex-start;
 
+        flex-direction:column;
+    }
+
+    .source-btn{
+
+        width:100%;
+
+        text-align:center;
     }
 
     .words-grid{
 
         grid-template-columns:1fr;
-
     }
 
     .lesson-navigation{
 
-        grid-template-columns:1fr;
-
+        flex-direction:column;
     }
 
-}
+    .nav-lesson-btn{
 
-
-/* =========================================================
-   DISABLED BUTTON
-========================================================= */
-
-button:disabled{
-
-    opacity:.4;
-
-    cursor:not-allowed;
-
+        width:100%;
+    }
 }
 
 </style>
-
 </head>
 
 
@@ -1226,2316 +1285,2376 @@ button:disabled{
 
 <!-- =====================================================
      HERO
-====================================================== -->
+     ===================================================== -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <div class="hero-badge">
-            🎧 Engliza Academy
+        <div class="brand-small">
+
+            <span class="brand-dot"></span>
+
+            ENGLIZA ACADEMY
+
         </div>
 
-        <h1>
-            الاستماع
-        </h1>
+        <h1>🎧 الاستماع</h1>
 
-        <p class="hero-description">
-            طوّر قدرتك على فهم الإنجليزية من خلال مواقف ومحادثات
-            تبدأ من الأساسيات وتتدرج بك خطوة بخطوة.
+        <p>
+            درّب أذنك على الإنجليزية خطوة بخطوة.
+            ابدأ من المقاطع البسيطة، ثم انتقل تدريجيًا
+            إلى استماع أطول وأكثر طبيعية.
         </p>
-
-
-        <div class="progress-box">
-
-            <div class="progress-header">
-
-                <span>
-                    المستوى المبتدئ
-                </span>
-
-                <span>
-                    30 درس
-                </span>
-
-            </div>
-
-            <div class="progress-track">
-
-                <div class="progress-fill"></div>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
 
-
 <!-- =====================================================
-     INTRO
-====================================================== -->
+     PATH INFO
+     ===================================================== -->
 
-<div class="intro-box">
+<section class="path-info">
 
-    <p>
+    <div class="path-top">
 
-        <strong>طريقة استخدام الدروس:</strong>
+        <div class="path-title">
+            المستوى المبتدئ
+        </div>
 
-        اختر الدرس، اقرأ التعليمات أولًا، ثم افتح التسجيل الأصلي
-        واستمع إليه. في المرة الأولى ركز على الفكرة العامة،
-        وفي المرة الثانية حاول التقاط التفاصيل والكلمات المهمة.
+        <div class="path-level">
+            Beginner
+        </div>
 
-        <strong>
-            زر «فتح الدرس الأصلي» يفتح الدرس المقصود مباشرة.
-        </strong>
+    </div>
 
-    </p>
+    <div class="progress-track">
 
-</div>
+        <div class="progress-bar"></div>
 
+    </div>
 
-
-<!-- =====================================================
-     LESSON VIEW
-====================================================== -->
-
-<section
-    id="lessonView"
-    class="lesson-view">
 </section>
-
 
 
 <!-- =====================================================
      LESSONS
-====================================================== -->
+     ===================================================== -->
 
 <main id="lessonsContainer"></main>
 
 
+<!-- =====================================================
+     LESSON VIEW
+     ===================================================== -->
 
-<div class="footer">
+<section
+    id="lessonView"
+    class="lesson-view"
+    aria-live="polite">
+</section>
 
-    Engliza Academy · Beginner Listening
+
+<div class="footer-note">
+
+    الاستماع مهارة تحتاج إلى ممارسة مستمرة.
+    لا تحاول فهم كل كلمة من أول مرة؛
+    دع أذنك تتعود على اللغة تدريجيًا.
 
 </div>
 
 
 </div>
-
 
 
 <script>
 
 
 /* =========================================================
-   LESSON DATA
-========================================================= */
+   ENGLIZA LISTENING DATA
+   ========================================================= */
 
 const lessons = [
 
-/* =========================================================
-   1
-========================================================= */
+/* =====================================================
+   STAGE 1
+   ===================================================== */
 
 {
     id:1,
     stage:1,
     stageTitle:"البداية والتعارف",
-    stageDescription:"ابدأ بفهم أبسط المحادثات والتعابير المستخدمة عند التعارف.",
+    stageDescription:
+        "نبدأ بمقاطع قصيرة وواضحة تساعدك على التعود على الاستماع دون الحاجة إلى فهم كل كلمة.",
+
     title:"تعارف لأول مرة",
-    source:"VOA",
-    difficulty:"A1",
+    source:"VOA Learning English",
+    difficulty:"سهل",
     duration:"قصير",
-    topic:"التعارف",
+    topic:"التحية والتعارف والاسم",
 
     sourceUrl:
         "https://learningenglish.voanews.com/a/lets-learn-english-lesson-one/3111026.html",
 
     beforeListening:
-        "قبل الاستماع، ركز على عبارات التعارف الأساسية. لا تحاول فهم كل كلمة من أول مرة.",
+        "قبل أن تستمع، راجع الكلمات التالية. لا تحاول حفظها كلها؛ يكفي أن تعرف معناها عندما تسمعها.",
 
     words:[
         {word:"Anna",note:"اسم شخص"},
         {word:"Pete",note:"اسم شخص"},
-        {word:"meet",note:"يقابل / يتعرف على"},
-        {word:"spell",note:"يُهجّي"},
-        {word:"welcome",note:"مرحبًا / أهلًا بك"}
+        {word:"Hi",note:"مرحبًا"},
+        {word:"Nice to meet you",note:"سعيد بلقائك"},
+        {word:"apartment",note:"شقة"},
+        {word:"spell",note:"يتهجّى الكلمة حرفًا حرفًا"}
     ],
 
     listenFirst:
-        "استمع مرة كاملة بدون إيقاف التسجيل. ركز على من يتحدث وما الذي يحدث في الموقف.",
+        "استمع إلى المقطع مرة كاملة. لا تحاول فهم كل كلمة. ركّز فقط على الصوت وطريقة نطق الجمل وحاول تكوين فكرة عامة عن الموقف.",
 
     listenAgain:
-        "استمع مرة ثانية. انتبه لعبارات التعارف والاسم وتهجئة الاسم.",
+        "استمع مرة ثانية. هذه المرة حاول ملاحظة الكلمات التي تعرفها من القائمة السابقة، وانتبه إلى طريقة نطق الأسماء والتحية.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — التعارف",
 
     practiceText:
-        "Hello! My name is Sara. Nice to meet you. I am new here. My name is S-A-R-A.",
+`A: Hi! Are you Sara?
+
+B: Yes! Hi there! Are you Pete?
+
+A: I am Pete.
+
+B: Nice to meet you.
+
+A: Nice to meet you, too.
+
+B: Welcome!
+
+A: Thank you!`,
 
     practiceNote:
-        "هذا نص أصلي من Engliza للتدريب، وليس نص المصدر.",
+        "هذا النص التدريبي أصلي من Engliza، وليس نسخة من نص المصدر.",
 
     finalTask:
-        "بعد الاستماع، حاول أن تقول بصوتك ثلاث عبارات يمكن استخدامها عندما تقابل شخصًا لأول مرة.",
+        "استمع إلى المقطع مرة أخيرة، ثم قل بصوت عالٍ: Hi! I'm _____. Nice to meet you.",
 
     sourceNote:
-        "المصدر الخارجي هو الدرس نفسه في VOA."
+        "المقطع الأصلي موجود على موقع VOA Learning English."
 },
 
-
-/* =========================================================
-   2
-========================================================= */
 
 {
     id:2,
     stage:1,
     stageTitle:"البداية والتعارف",
-    stageDescription:"ابدأ بفهم أبسط المحادثات والتعابير المستخدمة عند التعارف.",
+    stageDescription:
+        "ننتقل إلى محادثات قصيرة جدًا، مع زيادة بسيطة في المعلومات التي تسمعها.",
+
     title:"ما اسمك؟",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"الأسماء",
+    difficulty:"سهل",
+    duration:"قصير",
+    topic:"الاسم والتعارف",
 
     sourceUrl:
         "https://elllo.org/video/A1BEG/A1-002-SYUZAN-NAME.htm",
 
     beforeListening:
-        "ركز على طريقة السؤال عن الاسم وطريقة الإجابة.",
+        "قبل الاستماع، راجع الكلمات التالية. قد تسمع بعضها في المقطع.",
 
     words:[
         {word:"name",note:"اسم"},
-        {word:"question",note:"سؤال"},
-        {word:"call",note:"يسمّي / يُدعى"},
-        {word:"today",note:"اليوم"},
-        {word:"hello",note:"مرحبًا"}
+        {word:"first name",note:"الاسم الأول"},
+        {word:"last name",note:"اسم العائلة"},
+        {word:"call",note:"يسمي / ينادي"},
+        {word:"nice",note:"لطيف / جميل، وتأتي في عبارات مثل Nice to meet you"}
     ],
 
     listenFirst:
-        "استمع أول مرة لفهم الفكرة العامة فقط.",
+        "استمع مرة كاملة دون قراءة النص. ركّز على الكلمات التي تعرفها وعلى السؤال الرئيسي في المحادثة.",
 
     listenAgain:
-        "في المرة الثانية، التقط الكلمات التي تتكرر وطريقة السؤال عن الاسم.",
+        "استمع مرة أخرى. حاول التقاط طريقة السؤال عن الاسم وطريقة الإجابة.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — التعارف",
 
     practiceText:
-        "Hi! What is your name? My name is Lina. Nice to meet you.",
+`A: Hi! What's your name?
+
+B: My name is Lina.
+
+A: Nice to meet you, Lina.
+
+B: Nice to meet you, too.
+
+A: Do you spell your name L-I-N-A?
+
+B: Yes, that's right.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza مبني على مهارة السؤال عن الاسم.",
 
     finalTask:
-        "استمع مرة أخرى وحاول التقاط السؤال الأساسي قبل أن تنظر إلى النص التدريبي.",
+        "استمع مرة أخيرة، ثم حاول أن تقول اسمك وتهجئته بالإنجليزية بصوت عالٍ.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
-
-/* =========================================================
-   3
-========================================================= */
 
 {
     id:3,
     stage:1,
     stageTitle:"البداية والتعارف",
-    stageDescription:"ابدأ بفهم أبسط المحادثات والتعابير المستخدمة عند التعارف.",
+    stageDescription:
+        "نبدأ بإضافة معلومات شخصية جديدة مع بقاء المحادثة قصيرة وواضحة.",
+
     title:"من أين أنت؟",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"البلد",
+    difficulty:"سهل +",
+    duration:"قصير",
+    topic:"البلد ومعلومات شخصية",
 
     sourceUrl:
         "https://elllo.org/video/A1BEG/A1-003-BILLIE-WHERE-FROM.htm",
 
     beforeListening:
-        "فكر في السؤال الذي نستخدمه عندما نريد معرفة بلد الشخص.",
+        "تعرّف على بعض الكلمات التي قد تسمعها.",
 
     words:[
         {word:"from",note:"من"},
         {word:"country",note:"دولة / بلد"},
-        {word:"live",note:"يعيش"},
+        {word:"live",note:"يعيش / يسكن"},
         {word:"city",note:"مدينة"},
-        {word:"people",note:"أشخاص / ناس"}
+        {word:"English",note:"اللغة الإنجليزية"}
     ],
 
     listenFirst:
-        "استمع بدون ترجمة وحاول معرفة موضوع الحديث.",
+        "استمع إلى المقطع كاملًا دون قراءة. ركّز على فهم الموضوع العام.",
 
     listenAgain:
-        "استمع مرة ثانية والتقط اسم البلد والمدينة إن أمكن.",
+        "استمع مرة ثانية، وحاول ملاحظة كيف يتحدث الأشخاص عن بلدهم ومكان إقامتهم.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — من أين أنت؟",
 
     practiceText:
-        "Where are you from? I am from Oman. I live in Muscat.",
+`A: Where are you from?
+
+B: I'm from Oman.
+
+A: Oh, nice! Do you live in Muscat?
+
+B: Yes, I do.
+
+A: Do you speak English?
+
+B: Yes, a little.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "النص هنا تدريب أصلي من Engliza، وليس نص المصدر.",
 
     finalTask:
-        "حاول أن تلتقط جملة السؤال كاملة أثناء الاستماع.",
+        "بعد الاستماع، حاول أن تقول: I'm from _____. I live in _____.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
-
-/* =========================================================
-   4
-========================================================= */
 
 {
     id:4,
     stage:1,
     stageTitle:"البداية والتعارف",
-    stageDescription:"ابدأ بفهم أبسط المحادثات والتعابير المستخدمة عند التعارف.",
+    stageDescription:
+        "تبدأ المفردات بالتوسع قليلًا، مع بقاء الموضوع مألوفًا.",
+
     title:"ما جنسيتك؟",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"الجنسية",
+    difficulty:"سهل +",
+    duration:"قصير",
+    topic:"الدول والجنسيات",
 
     sourceUrl:
         "https://elllo.org/video/A1BEG/A1-004-DANDARA-NATIONALITY.htm",
 
     beforeListening:
-        "انتبه إلى الكلمات التي تساعدك على معرفة جنسية الشخص.",
+        "بعض الكلمات في هذا المقطع قد تكون جديدة عليك. لا تحتاج إلى حفظها كلها من البداية.",
 
     words:[
         {word:"nationality",note:"الجنسية"},
-        {word:"American",note:"أمريكي"},
-        {word:"Brazilian",note:"برازيلي"},
-        {word:"country",note:"بلد"},
-        {word:"born",note:"وُلد"}
+        {word:"Brazilian",note:"برازيلي / برازيلية"},
+        {word:"Portuguese",note:"اللغة البرتغالية"},
+        {word:"South America",note:"أمريكا الجنوبية"},
+        {word:"country",note:"بلد / دولة"}
     ],
 
     listenFirst:
-        "استمع مرة لفهم الموضوع.",
+        "استمع دون محاولة ترجمة كل كلمة. حاول فقط معرفة موضوع الحديث.",
 
     listenAgain:
-        "في المرة الثانية، ركز على الجنسية والبلد.",
+        "استمع مرة أخرى، وانتبه إلى أسماء البلدان والجنسيات والكلمات التي تعرفها.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — البلد والجنسية",
 
     practiceText:
-        "What is your nationality? I am Omani. I am from Oman.",
+`A: Where are you from?
+
+B: I'm from Brazil.
+
+A: Are you Brazilian?
+
+B: Yes, I am.
+
+A: What language do you speak?
+
+B: I speak Portuguese and a little English.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "هذا تدريب أصلي من Engliza لتثبيت مفردات البلد والجنسية واللغة.",
 
     finalTask:
-        "حاول ملاحظة الفرق بين اسم البلد واسم الجنسية عندما تسمعهما.",
+        "استمع للمقطع مرة أخيرة وحاول التقاط أسماء البلدان والجنسيات التي تسمعها.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
 
-/* =========================================================
-   5
-========================================================= */
+/* =====================================================
+   STAGE 2
+   ===================================================== */
 
 {
     id:5,
     stage:2,
     stageTitle:"العائلة والأشخاص",
-    stageDescription:"انتقل إلى وصف الأشخاص والتحدث عن العائلة والأصدقاء.",
+    stageDescription:
+        "نبدأ بالانتقال من معلومات شخصية قصيرة إلى الحديث عن العائلة والأصدقاء وصفات الأشخاص.",
+
     title:"تحدث عن أحد أفراد عائلتك",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"العائلة",
+    difficulty:"متوسط للمبتدئ",
+    duration:"قصير",
+    topic:"العائلة ووصف الأشخاص",
 
     sourceUrl:
-        "https://elllo.org/video/A1BEG/A1-006-NERRY-DESCRIBE-FAMILY.htm",
+        "https://www.elllo.org/video/A1BEG/A1-006-NERRY-DESCRIBE-FAMILY.htm",
 
     beforeListening:
-        "قبل الاستماع، توقع أنك ستسمع أوصافًا بسيطة لشخص من العائلة.",
+        "راجع الكلمات التالية، وبعضها قد يكون جديدًا عليك.",
 
     words:[
+        {word:"family",note:"العائلة"},
+        {word:"brother",note:"أخ"},
         {word:"sister",note:"أخت"},
-        {word:"little",note:"صغير / أصغر"},
-        {word:"smile",note:"ابتسامة"},
-        {word:"hair",note:"شعر"},
-        {word:"dance",note:"يرقص"}
+        {word:"friendly",note:"ودود"},
+        {word:"funny",note:"مرح / مضحك"},
+        {word:"kind",note:"لطيف"}
     ],
 
     listenFirst:
-        "استمع لمعرفة من هو الشخص الذي تتحدث عنه المتحدثة.",
+        "استمع للمقطع كاملًا. ركّز على الشخص الذي يتحدث عنه المتكلم وعلى الصفات التي يستخدمها.",
 
     listenAgain:
-        "في المرة الثانية، ركز على الصفات والمعلومات التي تصف الشخص.",
+        "استمع مرة ثانية وحاول ملاحظة الكلمات التي تصف الشخص.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — أحد أفراد العائلة",
 
     practiceText:
-        "My sister is young. She has long hair and a beautiful smile. She likes to dance.",
+`My sister is very friendly.
+
+She is also funny and kind.
+
+She lives with our family.
+
+She likes music, and she listens to music every day.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "النص أصلي من Engliza للتدريب على وصف أحد أفراد العائلة.",
 
     finalTask:
-        "أثناء الاستماع، حاول ترتيب المعلومات في ذهنك: من الشخص؟ كيف يبدو؟ ماذا يحب؟",
+        "بعد الاستماع، اختر شخصًا من عائلتك وحاول وصفه بجملتين أو ثلاث.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
-
-/* =========================================================
-   6
-========================================================= */
 
 {
     id:6,
     stage:2,
     stageTitle:"العائلة والأشخاص",
-    stageDescription:"انتقل إلى وصف الأشخاص والتحدث عن العائلة والأصدقاء.",
+    stageDescription:
+        "نزيد طول الجمل قليلًا ونبدأ بالتقاط أكثر من معلومة في الاستماع الواحد.",
+
     title:"من أصدقاؤك؟",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"الأصدقاء",
+    difficulty:"متوسط للمبتدئ",
+    duration:"قصير",
+    topic:"الأصدقاء والوصف",
 
     sourceUrl:
         "https://elllo.org/video/A1BEG/A1-005-DESIREE-FRIENDS.htm",
 
     beforeListening:
-        "استمع مع التركيز على الأشخاص والأوصاف.",
+        "تعرّف على بعض الكلمات التي قد تساعدك أثناء الاستماع.",
 
     words:[
-        {word:"friend",note:"صديق"},
-        {word:"friends",note:"أصدقاء"},
-        {word:"fun",note:"ممتع"},
-        {word:"school",note:"مدرسة"},
-        {word:"together",note:"معًا"}
+        {word:"friend",note:"صديق / صديقة"},
+        {word:"tall",note:"طويل القامة"},
+        {word:"short",note:"قصير القامة"},
+        {word:"blonde",note:"أشقر / شقراء"},
+        {word:"hair",note:"شعر"},
+        {word:"close friend",note:"صديق مقرّب"}
     ],
 
     listenFirst:
-        "استمع مرة واحدة بدون محاولة ترجمة كل كلمة.",
+        "استمع للمقطع مرة كاملة دون قراءة. حاول أن تلتقط موضوع الحديث بشكل عام.",
 
     listenAgain:
-        "في المرة الثانية، انتبه لمن هم الأصدقاء وما الذي يجمعهم.",
+        "استمع مرة أخرى، وركّز على الصفات والكلمات التي تصف الأشخاص.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — صديق مقرّب",
 
     practiceText:
-        "My friends are very nice. We study together. We talk and laugh a lot.",
+`My best friend is Noor.
+
+She is tall and friendly.
+
+She has long brown hair.
+
+We like talking together after class.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "حاول التقاط الكلمات التي تصف الأشخاص أو العلاقة بينهم.",
+        "حاول وصف أحد أصدقائك بثلاث جمل بسيطة.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
 
-/* =========================================================
-   7
-========================================================= */
+/* =====================================================
+   STAGE 3
+   ===================================================== */
 
 {
     id:7,
     stage:3,
-    stageTitle:"البيت والحياة اليومية",
-    stageDescription:"انتقل إلى البيت والأشياء الموجودة فيه والأنشطة اليومية.",
+    stageTitle:"البيت والأشياء",
+    stageDescription:
+        "ننتقل إلى وصف الأماكن والأشياء، مع زيادة تدريجية في المفردات.",
+
     title:"ماذا يوجد في بيتك؟",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"البيت",
+    difficulty:"متوسط",
+    duration:"قصير",
+    topic:"البيت والأشياء اليومية",
 
     sourceUrl:
         "https://elllo.org/video/A1BEG/A1-008-SARAH-HOUSE.htm",
 
     beforeListening:
-        "قبل الاستماع، ركز على أسماء الأشياء والأماكن داخل البيت.",
+        "راجع أسماء بعض الأماكن والأشياء التي قد تسمعها.",
 
     words:[
-        {word:"house",note:"بيت"},
+        {word:"house",note:"منزل"},
         {word:"room",note:"غرفة"},
         {word:"kitchen",note:"مطبخ"},
-        {word:"table",note:"طاولة"},
-        {word:"chair",note:"كرسي"}
+        {word:"bathroom",note:"حمّام"},
+        {word:"window",note:"نافذة"},
+        {word:"door",note:"باب"}
     ],
 
     listenFirst:
-        "استمع لمعرفة الفكرة العامة عن البيت.",
+        "استمع إلى المقطع كاملًا وحاول تكوين صورة عن المكان الذي يتحدث عنه الشخص.",
 
     listenAgain:
-        "استمع مرة ثانية وحاول تذكر الأشياء التي يتم ذكرها.",
+        "استمع مرة ثانية، وحاول التقاط أسماء الغرف والأشياء.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — بيتي",
 
     practiceText:
-        "There is a small table in my room. I have a chair near the window. My kitchen is next to the living room.",
+`My house is small, but I like it.
+
+There are two bedrooms and one bathroom.
+
+The kitchen is next to the living room.
+
+There is a big window in the living room.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza للتدريب على مفردات البيت.",
 
     finalTask:
-        "لا تحاول حفظ كل شيء. حاول فقط التقاط أسماء الأشياء عندما تسمعها.",
+        "استمع مرة أخيرة وحاول أن تلاحظ أسماء الأماكن والأشياء التي تعرفها.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
-
-/* =========================================================
-   8
-========================================================= */
 
 {
     id:8,
     stage:3,
-    stageTitle:"البيت والحياة اليومية",
-    stageDescription:"انتقل إلى البيت والأشياء الموجودة فيه والأنشطة اليومية.",
+    stageTitle:"البيت والأشياء",
+    stageDescription:
+        "نبدأ بسماع وصف أطول قليلًا، مع مفردات مرتبطة بالطقس والحياة اليومية.",
+
     title:"هل بيتك بارد في الشتاء؟",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"البيت والطقس",
+    difficulty:"متوسط +",
+    duration:"قصير",
+    topic:"البيت والطقس والحياة اليومية",
 
     sourceUrl:
         "https://elllo.org/video/A1BEG/A1-007-JULIE-HOUSE-COLD-WINTER.htm",
 
     beforeListening:
-        "انتبه إلى الكلمات المرتبطة بالبيت والبرد والشتاء.",
+        "بعض الكلمات هنا جديدة قليلًا. لا تقلق إذا لم تفهمها كلها.",
 
     words:[
-        {word:"cold",note:"بارد"},
         {word:"winter",note:"الشتاء"},
+        {word:"cold",note:"بارد"},
         {word:"warm",note:"دافئ"},
-        {word:"weather",note:"الطقس"},
-        {word:"home",note:"المنزل"}
+        {word:"jacket",note:"سترة"},
+        {word:"heater",note:"مدفأة"}
     ],
 
     listenFirst:
-        "استمع مرة لفهم العلاقة بين البيت والشتاء.",
+        "استمع دون قراءة وحاول فهم العلاقة بين البيت والجو.",
 
     listenAgain:
-        "ركز على الكلمات التي تصف درجة الحرارة.",
+        "استمع مرة أخرى، وانتبه للكلمات التي تصف الحرارة والطقس.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — الجو في البيت",
 
     practiceText:
-        "My house is warm in winter. I like staying at home when the weather is cold.",
+`Our house is warm in winter.
+
+We have a small heater in the living room.
+
+At night, I usually sit with my family there.
+
+It is a nice place to relax.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول معرفة هل المتحدث يصف بيتًا باردًا أم دافئًا.",
+        "حاول وصف بيتك في الجو الحار أو البارد بجملتين أو ثلاث.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
-
-/* =========================================================
-   9
-========================================================= */
 
 {
     id:9,
     stage:3,
     stageTitle:"البيت والحياة اليومية",
-    stageDescription:"انتقل إلى البيت والأشياء الموجودة فيه والأنشطة اليومية.",
+    stageDescription:
+        "هنا يبدأ الاستماع يأخذ طابعًا أكثر طبيعية، وتظهر أفعال يومية بشكل طبيعي.",
+
     title:"ماذا تفعل في الصباح؟",
     source:"ELLLO",
-    difficulty:"A1",
-    duration:"حوالي دقيقة",
-    topic:"الصباح",
+    difficulty:"متوسط +",
+    duration:"قصير",
+    topic:"الصباح والأنشطة اليومية",
 
     sourceUrl:
         "https://elllo.org/video/A1BEG/A1-009-NERRY-WHAT-DO-MORNING.htm",
 
     beforeListening:
-        "قد تسمع أفعالًا يومية بسيطة. لا تقلق إذا ظهرت أفعال لم تدرسها رسميًا بعد.",
+        "قد تسمع أفعالًا لم تدرسها بالتفصيل. لا تحاول دراسة القاعدة؛ ركّز على فهم الكلام.",
 
     words:[
         {word:"morning",note:"الصباح"},
-        {word:"wake up",note:"يستيقظ"},
-        {word:"breakfast",note:"الفطور"},
-        {word:"go",note:"يذهب"},
-        {word:"start",note:"يبدأ"}
+        {word:"exercise",note:"يتمرن"},
+        {word:"walk",note:"يمشي"},
+        {word:"breakfast",note:"وجبة الإفطار"},
+        {word:"usually",note:"عادةً"}
     ],
 
     listenFirst:
-        "استمع لمعرفة تسلسل الصباح بشكل عام.",
+        "استمع مرة كاملة. لا توقف المقطع عند كل كلمة جديدة.",
 
     listenAgain:
-        "حاول التقاط بعض الأفعال بالترتيب الذي تسمعه.",
+        "استمع مرة أخرى، وحاول التقاط الأنشطة التي يقوم بها الشخص في الصباح.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — صباحي",
 
     practiceText:
-        "In the morning, I wake up early. I have breakfast and drink coffee. Then I go to work.",
+`In the morning, I get up early.
+
+I drink water and have breakfast.
+
+I listen to music while I get ready.
+
+Then I go to class.`,
 
     practiceNote:
-        "وجود المضارع البسيط هنا للتعرض الطبيعي للغة، وليس درسًا في الزمن.",
+        "النص أصلي من Engliza. وجود المضارع البسيط هنا طبيعي في الاستماع ولا يعني أننا نشرحه كدرس Grammar.",
 
     finalTask:
-        "حاول تذكر فعلين أو ثلاثة فقط من الروتين الذي تسمعه.",
+        "استمع مرة أخيرة وحاول أن تلتقط ثلاثة أفعال يومية فقط.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
 
-/* =========================================================
-   10
-========================================================= */
+/* =====================================================
+   STAGE 4
+   ===================================================== */
 
 {
     id:10,
     stage:4,
-    stageTitle:"الأماكن والاتجاهات",
-    stageDescription:"ابدأ بفهم المحادثات التي تحدث في أماكن حقيقية.",
+    stageTitle:"الأماكن والمواقف اليومية",
+    stageDescription:
+        "نبدأ ننتقل من الحديث عن الأشخاص والأشياء إلى مواقف تحدث في الحياة اليومية.",
+
     title:"أين المكتبة؟",
     source:"British Council",
-    difficulty:"A1",
-    duration:"محادثة",
-    topic:"الاتجاهات",
+    difficulty:"متوسط +",
+    duration:"قصير",
+    topic:"الأماكن والسؤال عن الاتجاهات",
 
     sourceUrl:
         "https://learnenglish.britishcouncil.org/free-resources/listening/a1/finding-library",
 
     beforeListening:
-        "ركز على أسماء الأماكن والكلمات التي تساعد الشخص على معرفة الاتجاه.",
+        "راجع كلمات الأماكن والاتجاهات التي قد تسمعها.",
 
     words:[
         {word:"library",note:"مكتبة"},
-        {word:"office",note:"مكتب"},
+        {word:"near",note:"قريب من"},
         {word:"next to",note:"بجانب"},
-        {word:"building",note:"مبنى"},
-        {word:"borrow",note:"يستعير"}
+        {word:"left",note:"اليسار"},
+        {word:"right",note:"اليمين"},
+        {word:"straight",note:"مباشرة / إلى الأمام"}
     ],
 
     listenFirst:
-        "استمع أول مرة لفهم المكان الذي يبحث عنه الشخص.",
+        "استمع للموقف كاملًا وحاول فهم المكان الذي يبحث عنه الشخص.",
 
     listenAgain:
-        "ركز على الكلمات التي توضح مكان المكتبة بالنسبة للأماكن الأخرى.",
+        "استمع مرة ثانية وانتبه للكلمات التي تساعد في وصف المكان والاتجاه.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — سؤال عن مكان",
 
     practiceText:
-        "Excuse me. Where is the library? It is next to the office. Thank you!",
+`A: Excuse me. Where is the library?
+
+B: It's near the school.
+
+A: Is it far?
+
+B: No. Go straight, then turn right.
+
+A: Thank you!
+
+B: You're welcome.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "أثناء الاستماع، حاول رسم خريطة صغيرة في ذهنك للأماكن التي تسمعها.",
+        "استمع مرة أخيرة وحاول التقاط كلمات الاتجاهات دون النظر إلى النص.",
 
     sourceNote:
-        "زر المصدر يفتح صفحة Finding the library نفسها مباشرة."
+        "المصدر الخارجي هو British Council."
 },
 
-
-/* =========================================================
-   11
-========================================================= */
 
 {
     id:11,
     stage:4,
-    stageTitle:"الأماكن والاتجاهات",
-    stageDescription:"ابدأ بفهم المحادثات التي تحدث في أماكن حقيقية.",
+    stageTitle:"الأماكن والمواقف اليومية",
+    stageDescription:
+        "نبدأ في الاستماع إلى موقف أطول فيه أكثر من مكان ومعلومة.",
+
     title:"تعال إلى شقتي",
-    source:"VOA",
-    difficulty:"A1",
-    duration:"5 دقائق",
-    topic:"البيت والاتجاهات",
+    source:"VOA Learning English",
+    difficulty:"متوسط +",
+    duration:"أطول قليلًا",
+    topic:"البيت والأماكن والاتجاهات",
 
     sourceUrl:
         "https://learningenglish.voanews.com/a/lets-learn-english-lesson-10/3285228.html",
 
     beforeListening:
-        "هذه المرة سيكون الاستماع أطول. لا تحاول فهم كل كلمة.",
+        "راجع الكلمات التالية، ثم استمع للمقطع الأصلي.",
 
     words:[
         {word:"apartment",note:"شقة"},
-        {word:"metro",note:"مترو"},
-        {word:"turn right",note:"انعطف يمينًا"},
-        {word:"straight ahead",note:"إلى الأمام مباشرة"},
-        {word:"across from",note:"مقابل"}
+        {word:"street",note:"شارع"},
+        {word:"coffee shop",note:"مقهى"},
+        {word:"near",note:"قريب من"},
+        {word:"come over",note:"تعال / تعال لزيارتي"}
     ],
 
     listenFirst:
-        "شاهد/استمع للمقطع كاملًا مرة واحدة لفهم الموقف.",
+        "استمع إلى المقطع كاملًا دون محاولة فهم كل التفاصيل. ركّز على الموقف العام.",
 
     listenAgain:
-        "في المرة الثانية، انتبه إلى تسلسل الاتجاهات والأماكن.",
+        "استمع مرة ثانية. هذه المرة حاول ملاحظة أسماء الأماكن والكلمات التي تساعدك على معرفة المكان.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — زيارة صديق",
 
     practiceText:
-        "My apartment is near the metro. Turn right, then walk straight. My building is across from a big store.",
+`A: Do you want to come over this evening?
+
+B: Sure. Where do you live?
+
+A: I live near a coffee shop.
+
+B: Is your apartment on the main street?
+
+A: Yes. It's next to a small store.
+
+B: Great. I can find it.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza للتدريب على مفردات المكان.",
 
     finalTask:
-        "حاول إعادة ترتيب الاتجاهات التي تسمعها بدون النظر إلى أي نص.",
+        "استمع مرة أخيرة وحاول تكوين صورة ذهنية عن المكان الذي يتحدثون عنه.",
 
     sourceNote:
-        "زر المصدر يفتح Lesson 10 نفسها في VOA مباشرة."
+        "المصدر الخارجي هو VOA Learning English."
 },
 
 
-/* =========================================================
-   12
-========================================================= */
+/* =====================================================
+   STAGE 5
+   ===================================================== */
 
 {
     id:12,
     stage:5,
     stageTitle:"المواقف اليومية",
-    stageDescription:"استمع إلى الإنجليزية في المقاهي والمتاجر والمواقف الاجتماعية.",
+    stageDescription:
+        "نبدأ بمواقف أكثر واقعية، ويصبح الكلام أطول وأكثر اتصالًا.",
+
     title:"الطلب في المقهى",
     source:"British Council",
-    difficulty:"A1",
-    duration:"محادثة",
-    topic:"المقهى",
+    difficulty:"متوسط",
+    duration:"قصير",
+    topic:"المقهى وطلب الطعام والشراب",
 
     sourceUrl:
         "https://learnenglish.britishcouncil.org/free-resources/listening/a1/ordering-cafe",
 
     beforeListening:
-        "ركز على أسماء المشروبات والطعام والعبارات المستخدمة عند الطلب.",
+        "تعرّف على بعض الكلمات الأساسية قبل الاستماع.",
 
     words:[
-        {word:"juice",note:"عصير"},
-        {word:"large",note:"كبير"},
-        {word:"ice",note:"ثلج"},
+        {word:"menu",note:"قائمة الطعام"},
+        {word:"coffee",note:"قهوة"},
         {word:"tea",note:"شاي"},
-        {word:"cookie",note:"بسكويت / كوكيز"}
+        {word:"water",note:"ماء"},
+        {word:"please",note:"من فضلك"},
+        {word:"anything else",note:"أي شيء آخر؟"}
     ],
 
     listenFirst:
-        "استمع لفهم ما الذي يطلبه الأشخاص.",
+        "استمع إلى الموقف كاملًا. حاول معرفة ماذا يريد الشخص أن يطلب.",
 
     listenAgain:
-        "ركز على الطريقة التي يغير بها الشخص طلبه أو يضيف شيئًا.",
+        "استمع مرة أخرى، وركز على العبارات المستخدمة عند الطلب.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — في المقهى",
 
     practiceText:
-        "Can I have an orange juice, please? A large one, please. And can I have a cookie too?",
+`A: Hi. Can I have a coffee, please?
+
+B: Sure. Would you like milk?
+
+A: Yes, please.
+
+B: Anything else?
+
+A: Yes. A bottle of water, please.
+
+B: Of course.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "حاول التقاط الطلبات المختلفة دون التركيز على كل التفاصيل.",
+        "استمع مرة أخيرة وحاول التقاط العبارات التي يمكنك استخدامها عند طلب شيء.",
 
     sourceNote:
-        "زر المصدر يفتح صفحة Ordering in a café نفسها مباشرة."
+        "المصدر الخارجي هو British Council."
 },
 
-
-/* =========================================================
-   13
-========================================================= */
 
 {
     id:13,
     stage:5,
     stageTitle:"المواقف اليومية",
-    stageDescription:"استمع إلى الإنجليزية في المقاهي والمتاجر والمواقف الاجتماعية.",
+    stageDescription:
+        "نزيد المفردات ونخلي الطالب يتعامل مع موقف حقيقي أكثر.",
+
     title:"التسوق لشراء الملابس",
     source:"British Council",
-    difficulty:"A1",
-    duration:"محادثة",
-    topic:"التسوق",
+    difficulty:"متوسط",
+    duration:"قصير",
+    topic:"التسوق والملابس",
 
     sourceUrl:
         "https://learnenglish.britishcouncil.org/free-resources/listening/a1/shopping-clothes",
 
     beforeListening:
-        "ركز على الملابس والمقاسات والألوان والأسعار.",
+        "راجع بعض الكلمات الأساسية المتعلقة بالملابس.",
 
     words:[
-        {word:"clothes",note:"ملابس"},
+        {word:"shirt",note:"قميص"},
+        {word:"dress",note:"فستان"},
         {word:"size",note:"مقاس"},
-        {word:"black",note:"أسود"},
-        {word:"price",note:"سعر"},
-        {word:"bag",note:"حقيبة"}
+        {word:"small",note:"صغير"},
+        {word:"large",note:"كبير"},
+        {word:"try on",note:"يجرّب الملابس"}
     ],
 
     listenFirst:
-        "استمع لمعرفة ماذا يريد الزبون.",
+        "استمع للمحادثة كاملة وحاول معرفة ما الذي يبحث عنه الشخص.",
 
     listenAgain:
-        "التقط المعلومات الخاصة باللون والمقاس والسعر.",
+        "استمع مرة ثانية وانتبه للكلمات التي تتعلق بالمقاس والملابس.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — في متجر الملابس",
 
     practiceText:
-        "Do you have this shirt in black? Yes. What size do you need? Small, please.",
+`A: Excuse me. Do you have this shirt in a small size?
+
+B: Let me check.
+
+A: Thank you.
+
+B: Yes, we have one.
+
+A: Great. Can I try it on?
+
+B: Of course.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "استمع مرة ثانية وحاول معرفة المعلومات الثلاث الأساسية: اللون، المقاس، والسعر.",
+        "استمع مرة أخيرة وحاول التقاط الكلمات التي يستخدمها الشخص عند التسوق.",
 
     sourceNote:
-        "زر المصدر يفتح صفحة Shopping for clothes نفسها مباشرة."
+        "المصدر الخارجي هو British Council."
 },
 
-
-/* =========================================================
-   14
-========================================================= */
 
 {
     id:14,
     stage:5,
     stageTitle:"المواقف اليومية",
-    stageDescription:"استمع إلى الإنجليزية في المقاهي والمتاجر والمواقف الاجتماعية.",
+    stageDescription:
+        "مواقف أطول قليلًا تساعدك على متابعة الحوار بدل التركيز على جملة واحدة.",
+
     title:"التعرف على أشخاص جدد",
     source:"British Council",
-    difficulty:"A1",
-    duration:"محادثة",
-    topic:"التعارف",
+    difficulty:"متوسط +",
+    duration:"قصير",
+    topic:"التعارف والمناسبات",
 
     sourceUrl:
         "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-people-dinner",
 
     beforeListening:
-        "ركز على عبارات التعارف عندما يلتقي الأشخاص لأول مرة.",
+        "اقرأ الكلمات التالية قبل الاستماع. بعض الكلمات قد تكون جديدة عليك، وهذا طبيعي.",
 
     words:[
-        {word:"nice to meet you",note:"سعيد بلقائك"},
-        {word:"remember",note:"يتذكر"},
-        {word:"again",note:"مرة أخرى"},
-        {word:"drink",note:"مشروب"},
-        {word:"sorry",note:"آسف / عذرًا"}
+        {word:"dinner",note:"عشاء"},
+        {word:"guest",note:"ضيف"},
+        {word:"meet",note:"يقابل / يتعرف على"},
+        {word:"family",note:"عائلة"},
+        {word:"friend",note:"صديق"}
     ],
 
     listenFirst:
-        "استمع لمعرفة من يعرف من في المحادثة.",
+        "استمع للمحادثة دون قراءة وحاول معرفة الموقف العام.",
 
     listenAgain:
-        "ركز على الأسماء وعبارات الترحيب والاعتذار.",
+        "استمع مرة ثانية وحاول متابعة انتقال الحديث من معلومة إلى أخرى.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — لقاء جديد",
 
     practiceText:
-        "Hello. Nice to meet you. I'm Noor. Nice to meet you too. Would you like a drink?",
+`A: Hi, I'm Sara. Nice to meet you.
+
+B: Nice to meet you, too. I'm Adam.
+
+A: Are you a friend of the family?
+
+B: Yes, I am.
+
+A: That's nice. Is this your first time here?
+
+B: Yes. It is.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول ملاحظة كيف يتغير الحوار عندما لا يتذكر شخص اسم الآخر.",
+        "استمع للمقطع مرة أخيرة وحاول متابعة المحادثة من البداية إلى النهاية دون ترجمة كل كلمة.",
 
     sourceNote:
-        "زر المصدر يفتح صفحة Meeting people at a dinner نفسها مباشرة."
+        "المصدر الخارجي هو British Council."
 },
 
 
-/* =========================================================
-   15
-========================================================= */
+/* =====================================================
+   STAGE 6
+   ===================================================== */
 
 {
     id:15,
     stage:6,
-    stageTitle:"الحياة اليومية",
-    stageDescription:"نزيد طول الاستماع والمعلومات مع بقاء الموضوع مألوفًا.",
-    title:"ماذا تفعل عادةً؟",
+    stageTitle:"الحياة اليومية والاستماع الأطول",
+    stageDescription:
+        "هنا يبدأ الاستماع يأخذ شكلًا أكثر طبيعية، مع معلومات أكثر ومفردات جديدة.",
+
+    title:"هل تطبخ كثيرًا؟",
     source:"ELLLO",
-    difficulty:"A2",
-    duration:"حوالي دقيقة ونصف",
-    topic:"الروتين الأسبوعي",
+    difficulty:"متوسط للمبتدئ +",
+    duration:"أطول",
+    topic:"الطبخ والطعام والحياة اليومية",
 
     sourceUrl:
-        "https://elllo.org/video/A2BEG/A2-048-ELISE-DAYS-OF-WEEK.htm",
+        "https://elllo.org/video/A2BEG/A2-011-BILLIE-DO-YOU-COOK-MUCH.htm",
 
     beforeListening:
-        "الاستماع هنا أطول قليلًا. ركز على ترتيب الأيام والأحداث.",
+        "راجع الكلمات التالية. لا تحتاج إلى حفظها؛ يكفي أن تعرف معناها عند سماعها.",
 
     words:[
-        {word:"weekly routine",note:"الروتين الأسبوعي"},
-        {word:"Monday",note:"الاثنين"},
-        {word:"Tuesday",note:"الثلاثاء"},
-        {word:"groceries",note:"مشتريات الطعام"},
-        {word:"usually",note:"عادةً"}
+        {word:"cook",note:"يطبخ"},
+        {word:"cuisine",note:"مطبخ / نوع من الطعام"},
+        {word:"different",note:"مختلف"},
+        {word:"busy schedule",note:"جدول مشغول"},
+        {word:"rice",note:"أرز"}
     ],
 
     listenFirst:
-        "استمع لفهم شكل الأسبوع بشكل عام.",
+        "استمع للمقطع كاملًا دون إيقافه. حاول فهم الموضوع العام أولًا.",
 
     listenAgain:
-        "حاول التقاط نشاط واحد على الأقل لكل جزء من الأسبوع.",
+        "استمع مرة ثانية وحاول التقاط أسماء الأطعمة والأنشطة التي يذكرها المتحدث.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — الطبخ",
 
     practiceText:
-        "On Monday, I go shopping. On Tuesday, I study. At the weekend, I usually meet my friends.",
+`I enjoy cooking when I have free time.
+
+I like making simple food at home.
+
+Sometimes I make rice or pasta.
+
+When I am busy, I usually make something quick.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول ترتيب الأحداث في ذهنك بحسب الأيام.",
+        "استمع مرة أخيرة وحاول تلخيص موضوع المقطع في جملة واحدة.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
-
-/* =========================================================
-   16
-========================================================= */
 
 {
     id:16,
     stage:6,
-    stageTitle:"الحياة اليومية",
-    stageDescription:"نزيد طول الاستماع والمعلومات مع بقاء الموضوع مألوفًا.",
-    title:"متى يبدأ يومك وينتهي؟",
+    stageTitle:"الحياة اليومية والاستماع الأطول",
+    stageDescription:
+        "ننتقل إلى وصف مكان مألوف مع أكثر من معلومة في المقطع.",
+
+    title:"هل مدينتك جميلة؟",
     source:"ELLLO",
-    difficulty:"A2",
-    duration:"حوالي دقيقة",
-    topic:"اليوم والروتين",
+    difficulty:"متوسط للمبتدئ +",
+    duration:"أطول",
+    topic:"المدينة والأماكن العامة",
 
     sourceUrl:
-        "https://elllo.org/video/A2BEG/A2-036-NERISSA-WHEN-START-AND-FINISH-DAY.htm",
+        "https://elllo.org/video/A2BEG/A2-012-ELISABETH-IS-YOUR-TOWN-NICE.htm",
 
     beforeListening:
-        "استمع إلى وصف يوم كامل. لا تحاول ترجمة كل جملة.",
+        "قد تسمع أسماء أماكن جديدة. حاول ربط الكلمات بالمكان الذي يتحدث عنه الشخص.",
 
     words:[
-        {word:"start",note:"يبدأ"},
-        {word:"finish",note:"ينتهي"},
-        {word:"prepare",note:"يستعد"},
-        {word:"free time",note:"وقت الفراغ"},
-        {word:"routine",note:"روتين"}
+        {word:"town",note:"بلدة / مدينة صغيرة"},
+        {word:"busy",note:"مزدحم"},
+        {word:"coffee shop",note:"مقهى"},
+        {word:"university",note:"جامعة"},
+        {word:"park",note:"حديقة"},
+        {word:"move",note:"ينتقل للسكن في مكان آخر"}
     ],
 
     listenFirst:
-        "استمع لمعرفة الصورة العامة لليوم.",
+        "استمع للمقطع كاملًا وحاول تكوين صورة عن المدينة التي يصفها المتحدث.",
 
     listenAgain:
-        "ركز على أوقات بداية اليوم ونهايته والأنشطة الموجودة بينهما.",
+        "استمع مرة أخرى وحاول التقاط الأماكن والصفات التي يستخدمها.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — مدينتي",
 
     practiceText:
-        "My day starts early. I have coffee and prepare for work. In the evening, I relax and get ready for bed.",
+`My town is small and quiet.
+
+There are some nice parks and coffee shops.
+
+There is also a university near my house.
+
+I like living there.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول استخراج ثلاث معلومات فقط من الاستماع: البداية، النشاط الرئيسي، والنهاية.",
+        "استمع مرة أخيرة وحاول تذكر ثلاثة أماكن أو صفات سمعتها.",
 
     sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
 
-/* =========================================================
-   17
-========================================================= */
-
 {
     id:17,
-    stage:7,
-    stageTitle:"الخطط والاهتمامات",
-    stageDescription:"ننتقل إلى استماع أطول يحتوي على معلومات مترابطة.",
-    title:"خططك لليوم",
+    stage:6,
+    stageTitle:"الحياة اليومية والاستماع الأطول",
+    stageDescription:
+        "نبدأ في التعامل مع كلام أطول، وفيه أكثر من نشاط ومعلومة متتابعة.",
+
+    title:"خططك لليلة",
     source:"ELLLO",
-    difficulty:"A2",
-    duration:"حوالي دقيقة",
-    topic:"الخطط",
+    difficulty:"متوسط +",
+    duration:"أطول",
+    topic:"الخطط والأنشطة",
 
     sourceUrl:
-        "https://elllo.org/video/A2BEG/A2-010-TODD-GOING-TO-PLANS.htm",
+        "https://www.elllo.org/video/A2BEG/A2-010-TODD-GOING-TO-PLANS.htm",
 
     beforeListening:
-        "استمع إلى حديث عن عدة خطط في يوم واحد. المهم أن تفهم التسلسل العام.",
+        "قبل الاستماع، راجع بعض الكلمات التي قد تساعدك على فهم تسلسل الأحداث.",
 
     words:[
         {word:"plans",note:"خطط"},
         {word:"exercise",note:"تمرين / رياضة"},
         {word:"photos",note:"صور"},
         {word:"dinner",note:"عشاء"},
+        {word:"relax",note:"يسترخي"},
         {word:"tomorrow",note:"غدًا"}
     ],
 
     listenFirst:
-        "استمع مرة كاملة لفهم الصورة العامة.",
+        "استمع إلى المقطع كاملًا دون محاولة حفظ التفاصيل. ركّز على تسلسل الأحداث.",
 
     listenAgain:
-        "حاول ترتيب ما سيحدث أولًا ثم بعد ذلك ثم في النهاية.",
+        "استمع مرة أخرى وحاول معرفة ماذا سيفعل المتحدث أولًا، ثم ماذا سيفعل بعد ذلك.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — خطط المساء",
 
     practiceText:
-        "Tonight, I am going to exercise. Then I am going home for dinner. Tomorrow, I am going to visit my family.",
+`Tonight, I have a few plans.
+
+First, I want to finish my work.
+
+Then I want to have dinner with my family.
+
+After that, I may watch a movie and relax.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "أثناء الاستماع، ركز على كلمات ترتيب الأحداث مثل then و after that.",
+        "استمع للمقطع مرة أخيرة وحاول ترتيب الأحداث التي تسمعها في ذهنك.",
 
     sourceNote:
-        "زر المصدر يفتح What are your plans for tonight? نفسها مباشرة."
+        "المصدر الخارجي هو ELLLO."
 },
 
-
-/* =========================================================
-   18
-========================================================= */
 
 {
     id:18,
-    stage:7,
-    stageTitle:"الخطط والاهتمامات",
-    stageDescription:"ننتقل إلى استماع أطول يحتوي على معلومات مترابطة.",
-    title:"من ستقابل الليلة أو غدًا؟",
-    source:"ELLLO",
-    difficulty:"A2",
-    duration:"حوالي دقيقة",
-    topic:"الخطط والأشخاص",
-
-    sourceUrl:
-        "https://elllo.org/video/A2BEG/A2-047-ELISABETH-WHO-SEE-TONIGHT.htm",
-
-    beforeListening:
-        "هذه المرة ستحتاج إلى متابعة أكثر من معلومة في الوقت نفسه.",
-
-    words:[
-        {word:"tonight",note:"الليلة"},
-        {word:"family",note:"العائلة"},
-        {word:"restaurant",note:"مطعم"},
-        {word:"birthday",note:"عيد ميلاد"},
-        {word:"together",note:"معًا"}
-    ],
-
-    listenFirst:
-        "استمع لتحديد الأشخاص والأحداث الرئيسية.",
-
-    listenAgain:
-        "حاول ربط الأشخاص بالأماكن والأنشطة.",
-
-    practiceTitle:
-        "اقرأ وتدرّب",
-
-    practiceText:
-        "Tonight, I am going to see my family. We are going to eat at a restaurant. Tomorrow, I may go shopping with my grandmother.",
-
-    practiceNote:
-        "نص تدريبي أصلي من Engliza.",
-
-    finalTask:
-        "حاول معرفة من سيقابل المتحدث، وماذا سيفعلون الليلة، وماذا سيحدث غدًا.",
-
-    sourceNote:
-        "المصدر الخارجي هو صفحة الدرس نفسها في ELLLO."
-},
-
-
-/* =========================================================
-   19
-========================================================= */
-
-{
-    id:19,
     stage:6,
-    stageTitle:"الحياة اليومية",
-    stageDescription:"نزيد طول الاستماع والمعلومات مع بقاء الموضوع مألوفًا.",
-    title:"ماذا تفعل في عطلة نهاية الأسبوع؟",
+    stageTitle:"الحياة اليومية والاستماع الأطول",
+    stageDescription:
+        "محادثة قصيرة ولكنها تحمل تفاصيل أكثر، لتعويدك على الاستماع المتصل.",
+
+    title:"شراء العشاء",
     source:"ELLLO",
-    difficulty:"A2",
-    duration:"حوالي دقيقة",
-    topic:"عطلة نهاية الأسبوع",
-
-    sourceUrl:
-        "https://elllo.org/video/A2BEG/A2-008-NERRY-WHAT-DO-WEEKEND.htm",
-
-    beforeListening:
-        "ركز على الأنشطة التي يقوم بها المتحدث خلال عطلة نهاية الأسبوع.",
-
-    words:[
-        {word:"weekend",note:"عطلة نهاية الأسبوع"},
-        {word:"rest",note:"يرتاح"},
-        {word:"clean",note:"ينظف"},
-        {word:"laundry",note:"غسيل الملابس"},
-        {word:"relax",note:"يسترخي"}
-    ],
-
-    listenFirst:
-        "استمع لفهم صورة عامة عن عطلة نهاية الأسبوع.",
-
-    listenAgain:
-        "حاول التقاط الأنشطة المختلفة وترتيبها.",
-
-    practiceTitle:
-        "اقرأ وتدرّب",
-
-    practiceText:
-        "On the weekend, I like to rest and clean my house. I also meet friends and prepare for the new week.",
-
-    practiceNote:
-        "نص تدريبي أصلي من Engliza.",
-
-    finalTask:
-        "حاول تذكر الأنشطة التي جاءت في بداية الحديث ووسطه ونهايته.",
-
-    sourceNote:
-        "زر المصدر يفتح What do you do on the weekend? نفسها مباشرة."
-},
-
-
-/* =========================================================
-   20
-========================================================= */
-
-{
-    id:20,
-    stage:6,
-    stageTitle:"الحياة اليومية",
-    stageDescription:"نزيد طول الاستماع والمعلومات مع بقاء الموضوع مألوفًا.",
-    title:"هل تشتري عشاءك من السوبرماركت؟",
-    source:"ELLLO",
-    difficulty:"A2",
-    duration:"حوالي دقيقة",
+    difficulty:"متوسط +",
+    duration:"أطول",
     topic:"الطعام والتسوق",
 
     sourceUrl:
         "https://www.elllo.org/video/A2BEG/A2-009-ROCiO-BUY-DINNER-AT-THE-SUPERMARKET.htm",
 
     beforeListening:
-        "ركز على الطعام والتسوق وما يفعله الشخص قبل العشاء.",
+        "راجع الكلمات التالية ثم استمع. لا تحتاج إلى معرفة كل كلمة حتى تفهم الفكرة.",
 
     words:[
         {word:"supermarket",note:"سوبرماركت"},
         {word:"dinner",note:"عشاء"},
-        {word:"buy",note:"يشتري"},
-        {word:"food",note:"طعام"},
-        {word:"cook",note:"يطبخ"}
+        {word:"frozen",note:"مجمّد"},
+        {word:"vegetables",note:"خضروات"},
+        {word:"options",note:"خيارات"}
     ],
 
     listenFirst:
-        "استمع لمعرفة هل الشخص يشتري العشاء من السوبرماركت أم لا.",
+        "استمع للمقطع كاملًا وحاول فهم علاقة المتحدث بالسوبرماركت والطعام.",
 
     listenAgain:
-        "ركز على ما يشتريه وكيف يتعامل مع العشاء.",
+        "استمع مرة ثانية وحاول التقاط أنواع الطعام والكلمات المتعلقة بالشراء.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — شراء الطعام",
 
     practiceText:
-        "I often go to the supermarket after work. I buy food for dinner and then I go home and cook.",
+`I usually buy food from the supermarket.
+
+I like fresh vegetables and fruit.
+
+Sometimes I buy something easy for dinner.
+
+It depends on how much time I have.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول فهم العلاقة بين التسوق والعشاء في الحديث.",
+        "استمع مرة أخيرة وحاول التقاط أكبر عدد ممكن من الكلمات التي تعرفها دون إيقاف المقطع.",
 
     sourceNote:
-        "زر المصدر يفتح الدرس نفسه مباشرة في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
 
-/* =========================================================
-   21
-========================================================= */
+/* =====================================================
+   STAGE 7
+   ===================================================== */
 
 {
-    id:21,
-    stage:6,
-    stageTitle:"الحياة اليومية",
-    stageDescription:"نزيد طول الاستماع والمعلومات مع بقاء الموضوع مألوفًا.",
+    id:19,
+    stage:7,
+    stageTitle:"الهوايات والاهتمامات",
+    stageDescription:
+        "نبدأ في التعامل مع اهتمامات الأشخاص وهواياتهم، مع استمرار زيادة طول الاستماع.",
+
+    title:"ماذا تفعل في عطلة نهاية الأسبوع؟",
+    source:"ELLLO",
+    difficulty:"متوسط +",
+    duration:"أطول",
+    topic:"عطلة نهاية الأسبوع والأنشطة",
+
+    sourceUrl:
+        "https://www.elllo.org/video/A2BEG/A2-008-NERRY-WHAT-DO-WEEKEND.htm",
+
+    beforeListening:
+        "راجع الكلمات التالية قبل الاستماع.",
+
+    words:[
+        {word:"weekend",note:"عطلة نهاية الأسبوع"},
+        {word:"free time",note:"وقت الفراغ"},
+        {word:"visit",note:"يزور"},
+        {word:"go out",note:"يخرج"},
+        {word:"relax",note:"يسترخي"}
+    ],
+
+    listenFirst:
+        "استمع للمقطع كاملًا وحاول فهم كيف يقضي الشخص عطلة نهاية الأسبوع.",
+
+    listenAgain:
+        "استمع مرة ثانية وحاول التقاط الأنشطة والأماكن التي يذكرها المتحدث.",
+
+    practiceTitle:
+        "Read & Practice — عطلة نهاية الأسبوع",
+
+    practiceText:
+`On the weekend, I usually spend time with my family.
+
+Sometimes we go out for lunch.
+
+I also like walking in the evening.
+
+On Sunday, I usually stay home and relax.`,
+
+    practiceNote:
+        "تدريب أصلي من Engliza.",
+
+    finalTask:
+        "استمع مرة أخيرة وحاول تلخيص طريقة قضاء المتحدث لعطلة نهاية الأسبوع.",
+
+    sourceNote:
+        "المصدر الخارجي هو ELLLO."
+},
+
+
+{
+    id:20,
+    stage:7,
+    stageTitle:"الهوايات والاهتمامات",
+    stageDescription:
+        "نستمر في الاستماع إلى موضوع مألوف، لكن مع مفردات وتفاصيل أكثر.",
+
     title:"هل لديك حيوان أليف؟",
     source:"ELLLO",
-    difficulty:"A2",
-    duration:"حوالي دقيقة",
-    topic:"الحيوانات",
+    difficulty:"متوسط +",
+    duration:"أطول",
+    topic:"الحيوانات الأليفة والحياة اليومية",
 
     sourceUrl:
         "https://www.elllo.org/video/A2BEG/A2-007-NERISSA-INDOOR-PETS-LIKE-BIRDS-OR-FISH.htm",
 
     beforeListening:
-        "استمع إلى أسماء الحيوانات والكلمات التي تصفها.",
+        "راجع أسماء الحيوانات وبعض الكلمات المرتبطة بها.",
 
     words:[
         {word:"pet",note:"حيوان أليف"},
         {word:"bird",note:"طائر"},
         {word:"fish",note:"سمك / سمكة"},
-        {word:"indoor",note:"داخل المنزل"},
+        {word:"indoors",note:"داخل المنزل"},
         {word:"feed",note:"يطعم"}
     ],
 
     listenFirst:
-        "استمع لمعرفة نوع الحيوانات التي يتحدثون عنها.",
+        "استمع مرة كاملة وحاول معرفة رأي المتحدث في الحيوانات الأليفة.",
 
     listenAgain:
-        "ركز على سبب تفضيل نوع معين من الحيوانات.",
+        "استمع مرة ثانية وحاول التقاط أنواع الحيوانات والأسباب التي يذكرها المتحدث.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — حيوان أليف",
 
     practiceText:
-        "I like pets, but I do not have a dog. I think birds are nice because they are small and easy to care for.",
+`I like animals, but I don't have a pet now.
+
+I think birds are beautiful.
+
+Some people like fish because they are easy to take care of.
+
+Maybe I will have a pet one day.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول تحديد الحيوان الذي يفضله المتحدث ولماذا.",
+        "استمع مرة أخيرة وحاول التقاط الكلمات المتعلقة بالحيوانات والعناية بها.",
 
     sourceNote:
-        "زر المصدر يفتح الدرس نفسه مباشرة في ELLLO."
+        "المصدر الخارجي هو ELLLO."
 },
 
 
-/* =========================================================
-   22
-========================================================= */
-
 {
-    id:22,
+    id:21,
     stage:7,
     stageTitle:"الهوايات والاهتمامات",
-    stageDescription:"استمع إلى الحديث عن الأشياء التي يحبها الناس أو لا يحبونها.",
+    stageDescription:
+        "نبدأ بالاستماع إلى الحديث عن الأشياء التي يحبها الناس أو لا يحبونها.",
 
-    title:"أحب / لا أحب",
-
+    title:"ماذا تحب أن تفعل؟",
     source:"ELLLO",
-
-    difficulty:"A2",
-
-    duration:"محادثة قصيرة",
-
-    topic:"الإعجاب وعدم الإعجاب",
+    difficulty:"متوسط +",
+    duration:"أطول",
+    topic:"الهوايات والأشياء المفضلة",
 
     sourceUrl:
-        "https://elllo.org/english/1501/1504-MegTodd-FreeTime-Gerunds.htm",
+        "https://www.elllo.org/english/1501/1504-MegTodd-FreeTime-Gerunds.htm",
 
     beforeListening:
-        "ركز على الأشياء التي يحبها الأشخاص والأشياء التي لا يحبونها.",
+        "قد تسمع أكثر من هواية في المقطع. ركّز على معرفة ما يحبه الشخص وما لا يحبه.",
 
     words:[
-        {word:"love",note:"يحب جدًا"},
-        {word:"hate",note:"لا يحب إطلاقًا"},
-        {word:"free time",note:"وقت الفراغ"},
-        {word:"activity",note:"نشاط"},
-        {word:"enjoy",note:"يستمتع"}
+        {word:"cooking",note:"الطبخ"},
+        {word:"baking",note:"الخبز والحلويات"},
+        {word:"cleaning",note:"التنظيف"},
+        {word:"exercising",note:"ممارسة الرياضة"},
+        {word:"reading",note:"القراءة"}
     ],
 
     listenFirst:
-        "استمع لفهم الاتجاه العام: ماذا يحبون وماذا لا يحبون.",
+        "استمع للمقطع كاملًا وحاول معرفة الهوايات التي يتحدث عنها الأشخاص.",
 
     listenAgain:
-        "حاول ربط كل نشاط بالشخص الذي يحبه أو لا يحبه.",
+        "استمع مرة أخرى، وحاول التمييز بين الأشياء التي يحبها كل شخص والأشياء التي لا يحبها.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — الهوايات",
 
     practiceText:
-        "I love reading in my free time. I also enjoy walking. I don't like very noisy places.",
+`A: What do you like to do in your free time?
+
+B: I like reading and listening to music.
+
+A: Do you like cooking?
+
+B: Not really. I prefer going for a walk.
+
+A: That's interesting. I like cooking.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "بدل حفظ الكلمات، حاول التقاط نبرة المتحدث عندما يتحدث عن شيء يحبه أو لا يحبه.",
+        "استمع مرة أخيرة وحاول تذكر هوايتين أو نشاطين ذكرهما المتحدثون.",
 
     sourceNote:
-        "زر المصدر يفتح Love it / Hate it نفسها مباشرة."
+        "المصدر الخارجي هو ELLLO."
 },
 
 
-/* =========================================================
-   23
-========================================================= */
+/* =====================================================
+   STAGE 8
+   ===================================================== */
 
 {
-    id:23,
-    stage:7,
-    stageTitle:"الهوايات والاهتمامات",
-    stageDescription:"استمع إلى الحديث عن الأشياء التي يحبها الناس أو لا يحبونها.",
+    id:22,
+    stage:8,
+    stageTitle:"الهوايات والرياضة",
+    stageDescription:
+        "ننتقل إلى موضوعات أكثر تنوعًا، مع الحفاظ على مستوى مفهوم للمبتدئ المتقدم.",
 
     title:"رياضتي المفضلة",
-
     source:"Cambridge English",
-
-    difficulty:"A1-A2",
-
+    difficulty:"متوسط +",
     duration:"5–10 دقائق",
-
-    topic:"الرياضة",
+    topic:"الرياضة والاهتمامات",
 
     sourceUrl:
         "https://www.cambridgeenglish.org/learning-english/activities-for-learners/a1l055-i-love-sports",
 
     beforeListening:
-        "ركز على أسماء الرياضات والكلمات المرتبطة بالوقت والمكان.",
+        "راجع بعض الكلمات المتعلقة بالرياضة قبل الاستماع.",
 
     words:[
         {word:"sport",note:"رياضة"},
-        {word:"football",note:"كرة القدم"},
         {word:"team",note:"فريق"},
-        {word:"play",note:"يلعب"},
-        {word:"favorite",note:"المفضل"}
+        {word:"player",note:"لاعب"},
+        {word:"football",note:"كرة القدم"},
+        {word:"practice",note:"تدريب / يتدرب"}
     ],
 
     listenFirst:
-        "استمع لفهم الرياضة أو الرياضات التي يتحدث عنها التسجيل.",
+        "استمع للمقطع كاملًا وحاول معرفة الرياضة أو الرياضات التي يتحدث عنها الشخص.",
 
     listenAgain:
-        "ركز على الكلمات التي تربط الرياضة بالوقت والمكان.",
+        "استمع مرة أخرى وانتبه إلى الكلمات التي تصف الرياضة والاهتمامات.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — الرياضة",
 
     practiceText:
-        "My favorite sport is football. I play with my friends on the weekend. We usually play in the park.",
+`I enjoy sports.
+
+My favorite sport is football.
+
+I like watching games with my friends.
+
+Sometimes we play together in the evening.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول استخراج اسم الرياضة ومتى وأين تمارس.",
+        "استمع مرة أخيرة وحاول التقاط الكلمات التي تتعلق بالرياضة دون قراءة النص.",
 
     sourceNote:
-        "زر المصدر يفتح نشاط I love sports نفسه مباشرة في Cambridge."
+        "المصدر الخارجي هو Cambridge English."
 },
 
 
-/* =========================================================
-   24
-========================================================= */
-
 {
-    id:24,
-    stage:7,
-    stageTitle:"الهوايات والاهتمامات",
-    stageDescription:"استمع إلى الحديث عن الأشياء التي يحبها الناس أو لا يحبونها.",
+    id:23,
+    stage:8,
+    stageTitle:"الهوايات والرياضة",
+    stageDescription:
+        "استماع عن هواية مختلفة يساعدك على فهم مفردات جديدة من السياق.",
 
     title:"هواية غير عادية",
-
     source:"Cambridge English",
-
-    difficulty:"A1-A2",
-
+    difficulty:"متوسط +",
     duration:"5–10 دقائق",
-
-    topic:"الهوايات",
+    topic:"الهوايات والاهتمامات",
 
     sourceUrl:
         "https://www.cambridgeenglish.org/learning-english/activities-for-learners/a2l001-an-unusual-hobby",
 
     beforeListening:
-        "قد تسمع هواية جديدة بالنسبة لك. لا تحتاج معرفة كل كلمة لفهم الفكرة.",
+        "قد تظهر كلمات جديدة في هذا المقطع. لا تحاول ترجمتها كلها؛ حاول فهمها من السياق.",
 
     words:[
         {word:"hobby",note:"هواية"},
-        {word:"unusual",note:"غير عادية"},
-        {word:"grow",note:"يزرع / ينمّي"},
-        {word:"tree",note:"شجرة"},
-        {word:"small",note:"صغير"}
+        {word:"unusual",note:"غير معتاد"},
+        {word:"collect",note:"يجمع"},
+        {word:"interesting",note:"ممتع / مثير للاهتمام"},
+        {word:"free time",note:"وقت الفراغ"}
     ],
 
     listenFirst:
-        "استمع لمعرفة ما هي الهواية ولماذا يحبها الشخص.",
+        "استمع للمقطع كاملًا وحاول معرفة ما هي الهواية ولماذا يحبها الشخص.",
 
     listenAgain:
-        "ركز على التفاصيل التي تجعل الهواية مختلفة أو مميزة.",
+        "استمع مرة ثانية وحاول التقاط الكلمات التي تساعدك على فهم الهواية.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — هواية جديدة",
 
     practiceText:
-        "My hobby is growing small plants. I enjoy taking care of them and watching them grow.",
+`My hobby is a little unusual.
+
+I collect small things when I travel.
+
+I keep them in a box at home.
+
+I enjoy looking at them and remembering the places I visit.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "حاول وصف الهواية في ذهنك باستخدام كلمتين أو ثلاث فقط بعد الاستماع.",
+        "استمع مرة أخيرة وحاول شرح فكرة الهواية لنفسك بكلمات بسيطة.",
 
     sourceNote:
-        "زر المصدر يفتح An unusual hobby نفسه مباشرة في Cambridge."
+        "المصدر الخارجي هو Cambridge English."
 },
 
 
-/* =========================================================
-   25
-========================================================= */
-
 {
-    id:25,
+    id:24,
     stage:8,
     stageTitle:"الأماكن والتجارب",
-    stageDescription:"ننتقل إلى استماعات أكثر تنوعًا عن السفر والأماكن والتجارب.",
+    stageDescription:
+        "ننتقل إلى الاستماع عن السفر والأماكن، مع معلومات أكثر داخل المقطع.",
 
     title:"برنامج سفر",
-
     source:"Cambridge English",
-
-    difficulty:"A1-A2",
-
+    difficulty:"متوسط +",
     duration:"5–10 دقائق",
-
-    topic:"السفر",
+    topic:"السفر والأماكن",
 
     sourceUrl:
         "https://www.cambridgeenglish.org/learning-english/activities-for-learners/a2l057-travel-programme",
 
     beforeListening:
-        "ركز على أسماء الأماكن والأنشطة التي يمكن فعلها أثناء السفر.",
+        "راجع بعض كلمات السفر والأماكن.",
 
     words:[
         {word:"travel",note:"يسافر / سفر"},
-        {word:"programme",note:"برنامج"},
+        {word:"trip",note:"رحلة"},
         {word:"visit",note:"يزور"},
-        {word:"place",note:"مكان"},
-        {word:"beautiful",note:"جميل"}
+        {word:"hotel",note:"فندق"},
+        {word:"city",note:"مدينة"}
     ],
 
     listenFirst:
-        "استمع لمعرفة المكان والموضوع العام للبرنامج.",
+        "استمع للمقطع كاملًا وحاول معرفة المكان أو الرحلة التي يتحدث عنها.",
 
     listenAgain:
-        "التقط بعض الأماكن أو الأنشطة التي تسمعها.",
+        "استمع مرة أخرى وحاول التقاط أسماء الأماكن والتفاصيل التي تتكرر.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — رحلة",
 
     practiceText:
-        "Today we are visiting a beautiful city. There are many places to see, and you can walk around the old town.",
+`Last summer, I wanted to visit a new city.
+
+I planned a short trip with my family.
+
+We stayed in a small hotel near the city center.
+
+Every day, we walked around and visited different places.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول بناء صورة ذهنية للمكان من الكلمات التي تسمعها.",
+        "استمع مرة أخيرة وحاول التقاط أكبر عدد ممكن من معلومات الرحلة.",
 
     sourceNote:
-        "زر المصدر يفتح Travel programme نفسه مباشرة في Cambridge."
+        "المصدر الخارجي هو Cambridge English."
 },
 
 
-/* =========================================================
-   26
-========================================================= */
-
 {
-    id:26,
+    id:25,
     stage:8,
     stageTitle:"الأماكن والتجارب",
-    stageDescription:"ننتقل إلى استماعات أكثر تنوعًا عن السفر والأماكن والتجارب.",
+    stageDescription:
+        "موقف مألوف آخر، لكن مع انتقالات أكثر في الحوار.",
 
     title:"الذهاب إلى السينما",
-
     source:"Cambridge English",
-
-    difficulty:"A1-A2",
-
+    difficulty:"متوسط +",
     duration:"5–10 دقائق",
-
-    topic:"السينما",
+    topic:"السينما والخروج",
 
     sourceUrl:
         "https://www.cambridgeenglish.org/learning-english/activities-for-learners/a1l002-going-to-the-movies",
 
     beforeListening:
-        "ركز على الحديث بين شخصين يخططان للخروج.",
+        "راجع بعض الكلمات المتعلقة بالسينما والخروج.",
 
     words:[
         {word:"movie",note:"فيلم"},
         {word:"cinema",note:"سينما"},
-        {word:"film",note:"فيلم"},
+        {word:"ticket",note:"تذكرة"},
         {word:"tonight",note:"الليلة"},
-        {word:"ticket",note:"تذكرة"}
+        {word:"favorite",note:"مفضل"}
     ],
 
     listenFirst:
-        "استمع لمعرفة ما الخطة العامة.",
+        "استمع للمحادثة كاملة وحاول معرفة الخطة التي يتحدث عنها الأشخاص.",
 
     listenAgain:
-        "ركز على الوقت والمكان وما الذي يقرران فعله.",
+        "استمع مرة أخرى وحاول التقاط الوقت والفيلم والخطة.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — إلى السينما",
 
     practiceText:
-        "Would you like to go to the movies tonight? Sure. What time does the film start?",
+`A: Do you want to go to the cinema tonight?
+
+B: Sure. What movie do you want to see?
+
+A: There's a new movie at seven.
+
+B: Great. Let's get the tickets.
+
+A: Okay. See you there.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "حاول معرفة ما الذي يخططان له دون ترجمة كل كلمة.",
+        "استمع مرة أخيرة وحاول متابعة الخطة من أول الحديث إلى آخره.",
 
     sourceNote:
-        "زر المصدر يفتح Going to the movies نفسه مباشرة في Cambridge."
+        "المصدر الخارجي هو Cambridge English."
 },
 
 
-/* =========================================================
-   27
-========================================================= */
-
 {
-    id:27,
+    id:26,
     stage:8,
     stageTitle:"الأماكن والتجارب",
-    stageDescription:"ننتقل إلى استماعات أكثر تنوعًا عن السفر والأماكن والتجارب.",
+    stageDescription:
+        "استماع يركز على وصف الأشخاص، مع مفردات وصفية أكثر.",
 
     title:"ماذا يشبه شكلهم؟",
-
     source:"Cambridge English",
-
-    difficulty:"A1-A2",
-
-    duration:"10+ دقائق",
-
-    topic:"وصف الأشخاص",
+    difficulty:"متوسط +",
+    duration:"10 دقائق أو أكثر",
+    topic:"وصف الأشخاص والمظهر",
 
     sourceUrl:
         "https://www.cambridgeenglish.org/learning-english/activities-for-learners/a2p054-what-do-they-look-like",
 
     beforeListening:
-        "هنا نركز أكثر على الوصف. استمع للصفات والكلمات التي تصف الأشخاص.",
+        "راجع بعض الكلمات المتعلقة بوصف الأشخاص.",
 
     words:[
-        {word:"look like",note:"يشبه في الشكل"},
-        {word:"tall",note:"طويل"},
-        {word:"short",note:"قصير"},
+        {word:"look like",note:"يبدو شكله مثل"},
+        {word:"tall",note:"طويل القامة"},
+        {word:"short",note:"قصير القامة"},
         {word:"hair",note:"شعر"},
-        {word:"picture",note:"صورة"}
+        {word:"glasses",note:"نظارات"}
     ],
 
     listenFirst:
-        "استمع لفهم الشخص الذي يتم وصفه.",
+        "استمع للمقطع وحاول تكوين صورة ذهنية عن الأشخاص الذين يتم وصفهم.",
 
     listenAgain:
-        "ركز على الصفات التي تساعدك على تخيل الشخص.",
+        "استمع مرة أخرى وانتبه إلى الصفات التي تساعدك على معرفة شكل الشخص.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — وصف شخص",
 
     practiceText:
-        "She is tall and has long dark hair. She is wearing a blue jacket.",
+`My friend is tall and has short brown hair.
+
+He usually wears glasses.
+
+He is easy to recognize because he always carries a blue bag.
+
+He is very friendly.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "حاول تكوين صورة ذهنية للشخص اعتمادًا على ما تسمعه فقط.",
+        "استمع مرة أخيرة وحاول تذكر الصفات التي سمعتها لوصف الأشخاص.",
 
     sourceNote:
-        "زر المصدر يفتح What do they look like? نفسه مباشرة في Cambridge."
+        "المصدر الخارجي هو Cambridge English."
 },
 
 
-/* =========================================================
-   28
-========================================================= */
+/* =====================================================
+   STAGE 9
+   ===================================================== */
 
 {
-    id:28,
+    id:27,
     stage:9,
-    stageTitle:"الرسائل والمواقف الواقعية",
-    stageDescription:"نصل إلى استماعات تشبه ما قد تسمعه في الحياة اليومية.",
+    stageTitle:"رسائل ومواقف واقعية",
+    stageDescription:
+        "نقترب من الاستماع الواقعي: رسائل ومعلومات تُقال مرة واحدة ويجب التقاط أهمها.",
 
     title:"لديك رسالة صوتية",
-
     source:"Cambridge English",
-
-    difficulty:"A1-A2",
-
-    duration:"10+ دقائق",
-
-    topic:"الرسائل",
+    difficulty:"متوسط +",
+    duration:"10 دقائق أو أكثر",
+    topic:"الرسائل والمعلومات اليومية",
 
     sourceUrl:
         "https://www.cambridgeenglish.org/learning-english/activities-for-learners/a2l04-you-have-one-voicemail-message",
 
     beforeListening:
-        "الرسائل الصوتية تحتاج إلى التقاط المعلومات المهمة، وليس فهم كل كلمة.",
+        "في الرسائل الصوتية قد تسمع معلومات كثيرة. ركّز على أهم الكلمات مثل الوقت والمكان وما المطلوب منك.",
 
     words:[
         {word:"voicemail",note:"رسالة صوتية"},
         {word:"message",note:"رسالة"},
-        {word:"call",note:"يتصل"},
-        {word:"phone",note:"هاتف"},
-        {word:"later",note:"لاحقًا"}
+        {word:"call",note:"يتصل / مكالمة"},
+        {word:"later",note:"لاحقًا"},
+        {word:"available",note:"متاح"}
     ],
 
     listenFirst:
-        "استمع مرة لمعرفة سبب الاتصال بشكل عام.",
+        "استمع للرسالة كاملة دون إيقافها. حاول معرفة سبب الاتصال بشكل عام.",
 
     listenAgain:
-        "في المرة الثانية، ركز على المعلومات المهمة التي يجب تذكرها.",
+        "استمع مرة ثانية وحاول التقاط أهم المعلومات التي تحتاج إلى تذكرها.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — رسالة صوتية",
 
     practiceText:
-        "Hi, this is Sara. Please call me when you get this message. I need to talk to you about tomorrow.",
+`Hi, this is Sam.
+
+I'm calling about our meeting tomorrow.
+
+Please call me when you have time.
+
+I'll be available after six.
+
+Thanks. Bye.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "بعد الاستماع، حاول تحديد المعلومات التي تحتاج إلى الاحتفاظ بها لو كنت أنت من استقبل الرسالة.",
+        "استمع مرة أخيرة وحاول تحديد: من اتصل؟ لماذا؟ ومتى يمكن التواصل معه؟",
 
     sourceNote:
-        "زر المصدر يفتح You have one voicemail message نفسه مباشرة في Cambridge."
+        "المصدر الخارجي هو Cambridge English."
 },
 
 
-/* =========================================================
-   29
-========================================================= */
-
 {
-    id:29,
+    id:28,
     stage:9,
-    stageTitle:"الرسائل والمواقف الواقعية",
-    stageDescription:"نصل إلى استماعات تشبه ما قد تسمعه في الحياة اليومية.",
+    stageTitle:"رسائل ومواقف واقعية",
+    stageDescription:
+        "نبدأ في التعامل مع ترك رسالة لشخص آخر، وهي مهارة مهمة في الحياة اليومية.",
 
     title:"ترك رسالة",
-
     source:"British Council",
-
-    difficulty:"A2",
-
-    duration:"محادثة",
-
-    topic:"الهاتف",
+    difficulty:"متوسط +",
+    duration:"أطول",
+    topic:"الهاتف وترك الرسائل",
 
     sourceUrl:
         "https://learnenglish.britishcouncil.org/free-resources/listening/a2/leaving-message",
 
     beforeListening:
-        "ركز على سبب الاتصال والمعلومات التي يريد الشخص إيصالها.",
+        "قبل الاستماع، راجع الكلمات المرتبطة بالاتصال وترك الرسائل.",
 
     words:[
-        {word:"leave a message",note:"يترك رسالة"},
-        {word:"available",note:"متاح"},
+        {word:"message",note:"رسالة"},
         {word:"call back",note:"يتصل مرة أخرى"},
-        {word:"appointment",note:"موعد"},
-        {word:"tomorrow",note:"غدًا"}
+        {word:"available",note:"متاح"},
+        {word:"tomorrow",note:"غدًا"},
+        {word:"appointment",note:"موعد"}
     ],
 
     listenFirst:
-        "استمع مرة لفهم سبب الاتصال.",
+        "استمع للرسالة كاملة وحاول معرفة سبب الاتصال.",
 
     listenAgain:
-        "ركز على الأسماء والأوقات والمعلومات المطلوبة.",
+        "استمع مرة أخرى وحاول التقاط المعلومات المهمة مثل الوقت وما المطلوب فعله.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — ترك رسالة",
 
     practiceText:
-        "Hi, this is Lina. I'm calling about tomorrow's appointment. Please call me back when you are available.",
+`Hi, this is Omar.
+
+I'm sorry I missed your call.
+
+Please call me back when you're free.
+
+I'll be available this afternoon.
+
+Thanks.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "نص أصلي من Engliza.",
 
     finalTask:
-        "تعامل مع الاستماع كأنه موقف حقيقي: ما المعلومة التي تحتاج إلى الاحتفاظ بها؟",
+        "استمع مرة أخيرة وحاول التقاط أهم معلومتين في الرسالة دون كتابة.",
 
     sourceNote:
-        "زر المصدر يفتح Leaving a message نفسه مباشرة في British Council."
+        "المصدر الخارجي هو British Council."
 },
 
 
-/* =========================================================
-   30
-========================================================= */
-
 {
-    id:30,
+    id:29,
     stage:9,
-    stageTitle:"الرسائل والمواقف الواقعية",
-    stageDescription:"نصل إلى استماعات تشبه ما قد تسمعه في الحياة اليومية.",
+    stageTitle:"رسائل ومواقف واقعية",
+    stageDescription:
+        "في هذا المستوى تتعامل مع معلومات تُقال بسرعة أكبر وبشكل أقرب للمواقف الحقيقية.",
 
-    title:"إعلان عن المواصلات",
-
+    title:"إعلانات المواصلات",
     source:"British Council",
-
-    difficulty:"A2",
-
-    duration:"موقف واقعي",
-
-    topic:"المواصلات",
+    difficulty:"متوسط +",
+    duration:"أطول",
+    topic:"المواصلات والإعلانات",
 
     sourceUrl:
         "https://learnenglish.britishcouncil.org/free-resources/listening/a2/transport-announcements",
 
     beforeListening:
-        "الإعلانات تحتاج إلى التقاط الكلمات المهمة بسرعة. لا تحاول فهم كل شيء.",
+        "راجع بعض الكلمات المتعلقة بالمواصلات. لا تحتاج إلى معرفة كل التفاصيل قبل الاستماع.",
 
     words:[
-        {word:"transport",note:"مواصلات"},
         {word:"station",note:"محطة"},
-        {word:"platform",note:"رصيف / منصة"},
+        {word:"platform",note:"رصيف / منصة القطار"},
+        {word:"train",note:"قطار"},
         {word:"delay",note:"تأخير"},
-        {word:"passengers",note:"ركاب"}
+        {word:"arrive",note:"يصل"},
+        {word:"departure",note:"مغادرة"}
     ],
 
     listenFirst:
-        "استمع مرة كاملة لمعرفة نوع الإعلان والمعلومة الأساسية.",
+        "استمع للإعلانات كاملة. ركّز على فهم نوع المعلومات التي يتم الإعلان عنها.",
 
     listenAgain:
-        "في المرة الثانية، ركز على المكان والوقت وأي تغيير أو تنبيه.",
+        "استمع مرة أخرى وحاول التقاط الأرقام والأوقات والأماكن والكلمات المهمة.",
 
     practiceTitle:
-        "اقرأ وتدرّب",
+        "Read & Practice — إعلان في محطة",
 
     practiceText:
-        "Attention, passengers. The train to the city center is delayed. Please wait on platform three.",
+`Attention, please.
+
+The train to the city center will leave from platform four.
+
+The train is delayed for ten minutes.
+
+Please wait near the platform.
+
+Thank you.`,
 
     practiceNote:
-        "نص تدريبي أصلي من Engliza.",
+        "تدريب أصلي من Engliza.",
 
     finalTask:
-        "هذا هو التحدي الأخير: استمع وحاول التقاط المعلومات المهمة بسرعة، كما لو كنت فعلًا في محطة.",
+        "استمع مرة أخيرة وحاول التقاط أهم المعلومات في الإعلان دون محاولة ترجمة كل كلمة.",
 
     sourceNote:
-        "زر المصدر يفتح Transport announcements نفسه مباشرة في British Council."
+        "المصدر الخارجي هو British Council."
+},
+
+
+{
+    id:30,
+    stage:9,
+    stageTitle:"رسائل ومواقف واقعية",
+    stageDescription:
+        "آخر درس في هذا المسار يختبر قدرتك على التقاط المعلومات الأساسية من استماع واقعي.",
+
+    title:"موقف استماع واقعي",
+    source:"British Council",
+    difficulty:"متوسط +",
+    duration:"أطول",
+    topic:"مواقف الحياة اليومية",
+
+    sourceUrl:
+        "https://learnenglish.britishcouncil.org/free-resources/listening/a2/transport-announcements",
+
+    beforeListening:
+        "أنت الآن لا تحتاج إلى معرفة كل كلمة. ركّز على المعلومات المهمة، واترك الكلمات غير المعروفة للسياق.",
+
+    words:[
+        {word:"announcement",note:"إعلان"},
+        {word:"information",note:"معلومة"},
+        {word:"change",note:"تغيير"},
+        {word:"passenger",note:"مسافر"},
+        {word:"please",note:"من فضلك"}
+    ],
+
+    listenFirst:
+        "استمع للمقطع كاملًا دون إيقافه. حاول فهم نوع الموقف والمعلومة الرئيسية.",
+
+    listenAgain:
+        "استمع مرة أخرى. ركّز على التفاصيل التي يحتاج الشخص إلى تذكرها، مثل المكان أو الوقت أو التغيير.",
+
+    practiceTitle:
+        "Read & Practice — موقف واقعي",
+
+    practiceText:
+`Attention, please.
+
+There is a small change to today's schedule.
+
+Please check the information before you leave.
+
+If you need help, speak to a member of staff.
+
+Thank you.`,
+
+    practiceNote:
+        "نص أصلي من Engliza للتدريب على التقاط المعلومات المهمة.",
+
+    finalTask:
+        "استمع مرة أخيرة دون قراءة. حاول أن تقول لنفسك: ما أهم معلومة سمعتها؟",
+
+    sourceNote:
+        "المصدر الخارجي هو British Council."
 }
 
 ];
 
 
 /* =========================================================
-   RENDER LESSONS
-========================================================= */
+   RENDER LESSON CARDS
+   ========================================================= */
 
-function renderLessonCards(){
+const lessonsContainer =
+    document.getElementById("lessonsContainer");
 
-    const container =
-        document.getElementById("lessonsContainer");
+const lessonView =
+    document.getElementById("lessonView");
 
-    const stages = {};
+
+function groupLessonsByStage(){
+
+    const groups = {};
 
     lessons.forEach(lesson => {
 
-        if(!stages[lesson.stage]){
+        if(!groups[lesson.stage]){
 
-            stages[lesson.stage] = {
+            groups[lesson.stage] = {
 
                 title:lesson.stageTitle,
 
-                description:lesson.stageDescription,
+                description:
+                    lesson.stageDescription,
 
                 lessons:[]
-
             };
-
         }
 
-        stages[lesson.stage].lessons.push(lesson);
+        groups[lesson.stage].lessons.push(lesson);
 
     });
 
-
-    let html = "";
-
-
-    Object.keys(stages).forEach(stageNumber => {
-
-        const stage = stages[stageNumber];
+    return groups;
+}
 
 
-        html += `
+/* =========================================================
+   RENDER
+   ========================================================= */
 
-        <section class="stage">
+function renderLessonCards(){
 
+    const groups =
+        groupLessonsByStage();
+
+    lessonsContainer.innerHTML = "";
+
+    Object.keys(groups).forEach(stageNumber => {
+
+        const group =
+            groups[stageNumber];
+
+        const section =
+            document.createElement("section");
+
+        section.className = "stage";
+
+        section.innerHTML = `
 
             <div class="stage-header-card">
 
+                <div class="stage-header-inner">
 
-                <div class="stage-number">
+                    <div class="stage-number-box">
 
-                    ${stageNumber}
+                        ${String(stageNumber).padStart(2,"0")}
+
+                    </div>
+
+
+                    <div class="stage-text">
+
+                        <div class="stage-number">
+                            المرحلة ${stageNumber}
+                        </div>
+
+                        <h2 class="stage-title">
+                            ${escapeHTML(group.title)}
+                        </h2>
+
+                        <p class="stage-description">
+                            ${escapeHTML(group.description)}
+                        </p>
+
+                    </div>
 
                 </div>
-
-
-                <div class="stage-info">
-
-                    <h2>
-
-                        المرحلة ${stageNumber}:
-                        ${escapeHTML(stage.title)}
-
-                    </h2>
-
-                    <p>
-
-                        ${escapeHTML(stage.description)}
-
-                    </p>
-
-                </div>
-
 
             </div>
 
 
-            <div class="lessons-grid">
+            <div class="lesson-grid">
+
+                ${group.lessons.map(lesson => {
+
+                    return `
+
+                        <article class="lesson-card">
+
+                            <div class="lesson-number">
+
+                                <div class="lesson-index">
+                                    ${String(lesson.id).padStart(2,"0")}
+                                </div>
+
+                                <div class="lesson-level">
+                                    ${escapeHTML(lesson.difficulty)}
+                                </div>
+
+                            </div>
 
 
-                ${stage.lessons.map(lesson => `
-
-                    <article class="lesson-card">
-
-
-                        <div class="lesson-number">
-
-                            الدرس ${lesson.id}
-
-                        </div>
+                            <h3>
+                                ${escapeHTML(lesson.title)}
+                            </h3>
 
 
-                        <h3>
-
-                            ${escapeHTML(lesson.title)}
-
-                        </h3>
+                            <p class="lesson-topic">
+                                ${escapeHTML(lesson.topic)}
+                            </p>
 
 
-                        <div class="lesson-meta">
+                            <div class="lesson-meta">
+
+                                <span class="meta-chip">
+                                    🎧 ${escapeHTML(lesson.source)}
+                                </span>
+
+                                <span class="meta-chip">
+                                    ⏱ ${escapeHTML(lesson.duration)}
+                                </span>
+
+                            </div>
 
 
-                            <span class="meta">
+                            <button
+                                class="start-btn"
+                                onclick="openLesson(${lesson.id})">
 
-                                ${escapeHTML(lesson.difficulty)}
+                                ابدأ الدرس
 
-                            </span>
+                            </button>
 
+                        </article>
 
-                            <span class="meta">
+                    `;
 
-                                ${escapeHTML(lesson.duration)}
-
-                            </span>
-
-
-                            <span class="meta source">
-
-                                ${escapeHTML(lesson.source)}
-
-                            </span>
-
-
-                        </div>
-
-
-                        <button
-
-                            class="start-button"
-
-                            onclick="openLesson(${lesson.id})"
-
-                        >
-
-                            ابدأ الدرس
-
-                        </button>
-
-
-                    </article>
-
-                `).join("")}
-
+                }).join("")}
 
             </div>
-
-
-        </section>
-
         `;
 
+        lessonsContainer.appendChild(section);
+
     });
-
-
-    container.innerHTML = html;
 
 }
 
 
 /* =========================================================
    OPEN LESSON
-========================================================= */
+   ========================================================= */
 
 function openLesson(id){
 
     const lesson =
         lessons.find(item => item.id === id);
 
-
-    if(!lesson){
-
-        return;
-
-    }
+    if(!lesson) return;
 
 
-    const view =
-        document.getElementById("lessonView");
+    const currentIndex =
+        lessons.findIndex(item => item.id === id);
 
 
-    view.innerHTML = `
+    const previousLesson =
+        lessons[currentIndex - 1];
 
 
-        <div class="lesson-panel">
+    const nextLesson =
+        lessons[currentIndex + 1];
 
 
-            <div class="lesson-header">
+    lessonView.innerHTML = `
 
+        <div class="lesson-view-header">
 
-                <div class="lesson-header-top">
+            <div class="lesson-view-header-top">
 
+                <div>
 
-                    <div>
-
-
-                        <div class="lesson-number">
-
-                            الدرس ${lesson.id}
-
-                        </div>
-
-
-                        <h2>
-
-                            ${escapeHTML(lesson.title)}
-
-                        </h2>
-
-
-                        <p class="lesson-header-description">
-
-                            ${escapeHTML(lesson.topic)}
-
-                            ·
-
-                            ${escapeHTML(lesson.source)}
-
-                            ·
-
-                            ${escapeHTML(lesson.difficulty)}
-
-                        </p>
-
-
+                    <div class="lesson-view-number">
+                        الدرس ${String(lesson.id).padStart(2,"0")}
                     </div>
 
+                    <h2>
+                        ${escapeHTML(lesson.title)}
+                    </h2>
 
-                    <button
-
-                        class="close-button"
-
-                        onclick="closeLesson()"
-
-                    >
-
-                        إغلاق الدرس
-
-                    </button>
-
+                    <p class="lesson-view-subtitle">
+                        ${escapeHTML(lesson.topic)}
+                    </p>
 
                 </div>
 
 
+                <button
+                    class="back-btn"
+                    onclick="closeLesson()">
+
+                    ← العودة إلى الدروس
+
+                </button>
+
             </div>
 
+        </div>
 
 
-            <div class="lesson-body">
+        <div class="lesson-body">
 
 
-                <!-- SOURCE -->
+            <!-- =========================
+                 BEFORE LISTENING
+                 ========================= -->
 
-                <div class="source-box">
+            <section class="content-section">
 
+                <div class="section-label">
 
-                    <div class="source-label">
-
-                        🎧 الاستماع الأصلي
-
+                    <div class="section-icon">
+                        👀
                     </div>
 
+                    <h3>
+                        قبل أن تستمع
+                    </h3>
 
-                    <div class="source-title">
+                </div>
 
-                        افتح الدرس الأصلي مباشرة
 
+                <div class="instruction">
+                    ${escapeHTML(lesson.beforeListening)}
+                </div>
+
+
+                <div class="words-grid">
+
+                    ${lesson.words.map(item => `
+
+                        <div class="word-card">
+
+                            <div class="word">
+                                ${escapeHTML(item.word)}
+                            </div>
+
+                            <div class="word-note">
+                                ${escapeHTML(item.note)}
+                            </div>
+
+                        </div>
+
+                    `).join("")}
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 FIRST LISTENING
+                 ========================= -->
+
+            <section class="content-section">
+
+                <div class="section-label">
+
+                    <div class="section-icon">
+                        🎧
                     </div>
 
+                    <h3>
+                        الاستماع الأول
+                    </h3>
 
-                    <div class="source-note">
+                </div>
 
-                        سيفتح هذا الزر صفحة هذا الدرس تحديدًا
-                        في المصدر الخارجي، وليس صفحة قائمة الدروس.
+
+                <div class="instruction">
+                    ${escapeHTML(lesson.listenFirst)}
+                </div>
+
+
+                <div class="source-card">
+
+                    <div class="source-info">
+
+                        <div class="source-name">
+                            ${escapeHTML(lesson.source)}
+                        </div>
+
+                        <div class="source-description">
+                            ${escapeHTML(lesson.sourceNote)}
+                        </div>
 
                     </div>
 
 
                     <a
-
-                        class="source-button"
-
+                        class="source-btn"
                         href="${lesson.sourceUrl}"
-
                         target="_blank"
+                        rel="noopener noreferrer">
 
-                        rel="noopener noreferrer"
-
-                    >
-
-                        🔗 فتح الدرس الأصلي
+                        🎧 فتح المقطع الأصلي
 
                     </a>
 
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 SECOND LISTENING
+                 ========================= -->
+
+            <section class="content-section">
+
+                <div class="section-label">
+
+                    <div class="section-icon">
+                        🔁
+                    </div>
+
+                    <h3>
+                        استمع مرة أخرى
+                    </h3>
 
                 </div>
 
 
+                <div class="instruction">
+                    ${escapeHTML(lesson.listenAgain)}
+                </div>
 
-                <!-- BEFORE -->
-
-                <section class="content-section">
-
-
-                    <div class="section-heading">
+            </section>
 
 
-                        <div class="section-icon">
+            <!-- =========================
+                 READ & PRACTICE
+                 ========================= -->
 
-                            👀
+            <section class="content-section">
 
-                        </div>
+                <div class="section-label">
 
-
-                        <h3>
-
-                            قبل الاستماع
-
-                        </h3>
-
-
+                    <div class="section-icon">
+                        📖
                     </div>
 
+                    <h3>
+                        اقرأ وتدرّب
+                    </h3>
 
-                    <p>
+                </div>
 
-                        ${escapeHTML(lesson.beforeListening)}
 
-                    </p>
+                <div class="practice-box">
 
-
-                </section>
-
-
-
-                <!-- FIRST -->
-
-                <section class="content-section">
-
-
-                    <div class="section-heading">
-
-
-                        <div class="section-icon">
-
-                            🎧
-
-                        </div>
-
-
-                        <h3>
-
-                            الاستماع الأول
-
-                        </h3>
-
-
-                    </div>
-
-
-                    <p>
-
-                        ${escapeHTML(lesson.listenFirst)}
-
-                    </p>
-
-
-                </section>
-
-
-
-                <!-- SECOND -->
-
-                <section class="content-section">
-
-
-                    <div class="section-heading">
-
-
-                        <div class="section-icon">
-
-                            🔎
-
-                        </div>
-
-
-                        <h3>
-
-                            الاستماع الثاني
-
-                        </h3>
-
-
-                    </div>
-
-
-                    <p>
-
-                        ${escapeHTML(lesson.listenAgain)}
-
-                    </p>
-
-
-                </section>
-
-
-
-                <!-- WORDS -->
-
-                <section class="content-section">
-
-
-                    <div class="section-heading">
-
-
-                        <div class="section-icon">
-
-                            📝
-
-                        </div>
-
-
-                        <h3>
-
-                            كلمات مهمة
-
-                        </h3>
-
-
-                    </div>
-
-
-                    <div class="words-grid">
-
-
-                        ${lesson.words.map(item => `
-
-                            <div class="word-card">
-
-
-                                <span class="word">
-
-                                    ${escapeHTML(item.word)}
-
-                                </span>
-
-
-                                <span class="word-note">
-
-                                    ${escapeHTML(item.note)}
-
-                                </span>
-
-
-                            </div>
-
-                        `).join("")}
-
-
-                    </div>
-
-
-                </section>
-
-
-
-                <!-- PRACTICE -->
-
-                <section class="content-section practice-section">
-
-
-                    <div class="section-heading">
-
-
-                        <div class="section-icon">
-
-                            📖
-
-                        </div>
-
-
-                        <h3>
-
-                            ${escapeHTML(lesson.practiceTitle)}
-
-                        </h3>
-
-
+                    <div class="practice-title">
+                        📚 ${escapeHTML(lesson.practiceTitle)}
                     </div>
 
 
                     <div class="practice-text">
-
                         ${escapeHTML(lesson.practiceText)}
-
                     </div>
 
 
-                    <p class="practice-note">
-
+                    <div class="practice-note">
                         ${escapeHTML(lesson.practiceNote)}
-
-                    </p>
-
-
-                </section>
-
-
-
-                <!-- CHALLENGE -->
-
-                <section class="content-section challenge-section">
-
-
-                    <div class="section-heading">
-
-
-                        <div class="section-icon">
-
-                            🎯
-
-                        </div>
-
-
-                        <h3>
-
-                            التحدي الأخير
-
-                        </h3>
-
-
                     </div>
-
-
-                    <p>
-
-                        ${escapeHTML(lesson.finalTask)}
-
-                    </p>
-
-
-                </section>
-
-
-
-                <!-- NAVIGATION -->
-
-                <div class="lesson-navigation">
-
-
-                    <button
-
-                        class="nav-button"
-
-                        onclick="previousLesson(${lesson.id})"
-
-                        ${lesson.id === 1 ? "disabled" : ""}
-
-                    >
-
-                        ← الدرس السابق
-
-                    </button>
-
-
-                    <button
-
-                        class="nav-button primary"
-
-                        onclick="closeLesson()"
-
-                    >
-
-                        قائمة الدروس
-
-                    </button>
-
-
-                    <button
-
-                        class="nav-button"
-
-                        onclick="nextLesson(${lesson.id})"
-
-                        ${lesson.id === lessons.length ? "disabled" : ""}
-
-                    >
-
-                        الدرس التالي →
-
-                    </button>
-
 
                 </div>
+
+            </section>
+
+
+            <!-- =========================
+                 TIP
+                 ========================= -->
+
+            <section class="content-section">
+
+                <div class="section-label">
+
+                    <div class="section-icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        تذكّر
+                    </h3>
+
+                </div>
+
+
+                <div class="tip-box">
+
+                    لا تحاول ترجمة كل كلمة تسمعها.
+                    في الاستماع، من الطبيعي أن تفهم بعض الكلمات
+                    وتفوتك كلمات أخرى.
+                    ركّز على المعنى العام، ومع تكرار الاستماع
+                    ستبدأ أذنك بالتقاط تفاصيل أكثر.
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 FINAL TASK
+                 ========================= -->
+
+            <section class="content-section">
+
+                <div class="section-label">
+
+                    <div class="section-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        التحدي الأخير
+                    </h3>
+
+                </div>
+
+
+                <div class="final-task">
+
+                    <h4>
+                        جرّب مرة أخيرة
+                    </h4>
+
+                    <p>
+                        ${escapeHTML(lesson.finalTask)}
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 NAVIGATION
+                 ========================= -->
+
+            <div class="lesson-navigation">
+
+
+                <button
+                    class="nav-lesson-btn"
+                    ${previousLesson ? "" : "disabled"}
+                    onclick="${
+                        previousLesson
+                        ? `openLesson(${previousLesson.id})`
+                        : ""
+                    }">
+
+                    ← الدرس السابق
+
+                </button>
+
+
+                <button
+                    class="nav-lesson-btn"
+                    onclick="closeLesson()">
+
+                    قائمة الدروس
+
+                </button>
+
+
+                <button
+                    class="nav-lesson-btn primary"
+                    ${nextLesson ? "" : "disabled"}
+                    onclick="${
+                        nextLesson
+                        ? `openLesson(${nextLesson.id})`
+                        : ""
+                    }">
+
+                    الدرس التالي →
+
+                </button>
 
 
             </div>
@@ -3545,38 +3664,34 @@ function openLesson(id){
     `;
 
 
-    view.classList.add("active");
+    lessonView.classList.add("active");
 
 
-    setTimeout(() => {
+    lessonView.scrollIntoView({
 
-        view.scrollIntoView({
+        behavior:"smooth",
 
-            behavior:"smooth",
+        block:"start"
 
-            block:"start"
-
-        });
-
-    },50);
+    });
 
 }
 
 
 /* =========================================================
-   CLOSE
-========================================================= */
+   CLOSE LESSON
+   ========================================================= */
 
 function closeLesson(){
 
-    const view =
-        document.getElementById("lessonView");
+    lessonView.classList.remove("active");
 
 
-    view.classList.remove("active");
+    setTimeout(() => {
 
+        lessonView.innerHTML = "";
 
-    view.innerHTML = "";
+    },200);
 
 
     window.scrollTo({
@@ -3591,54 +3706,8 @@ function closeLesson(){
 
 
 /* =========================================================
-   PREVIOUS
-========================================================= */
-
-function previousLesson(currentId){
-
-    const index =
-        lessons.findIndex(
-            lesson => lesson.id === currentId
-        );
-
-
-    if(index > 0){
-
-        openLesson(
-            lessons[index - 1].id
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   NEXT
-========================================================= */
-
-function nextLesson(currentId){
-
-    const index =
-        lessons.findIndex(
-            lesson => lesson.id === currentId
-        );
-
-
-    if(index < lessons.length - 1){
-
-        openLesson(
-            lessons[index + 1].id
-        );
-
-    }
-
-}
-
-
-/* =========================================================
    ESCAPE HTML
-========================================================= */
+   ========================================================= */
 
 function escapeHTML(value){
 
@@ -3653,19 +3722,16 @@ function escapeHTML(value){
         .replace(/"/g,"&quot;")
 
         .replace(/'/g,"&#039;");
-
 }
 
 
 /* =========================================================
-   START
-========================================================= */
+   INITIALIZE
+   ========================================================= */
 
 renderLessonCards();
 
 </script>
 
-
 </body>
-
-</html>   
+</html>
