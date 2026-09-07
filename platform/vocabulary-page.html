@@ -1,0 +1,4259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Engliza Academy | Vocabulary</title>
+
+<style>
+
+/* =========================================================
+   ENGLIZA ACADEMY — VOCABULARY
+   الهوية البصرية الأساسية
+========================================================= */
+
+:root{
+  --blue:#3157D5;
+  --blue-dark:#233E9B;
+  --purple:#7654D9;
+  --purple-light:#EEEAFE;
+
+  --gold:#D9A441;
+  --gold-light:#FFF6DF;
+
+  --text:#17213C;
+  --muted:#6E7891;
+
+  --white:#FFFFFF;
+  --bg:#F7F8FC;
+  --border:#E8EAF2;
+
+  --shadow:0 12px 35px rgba(36,48,94,.08);
+  --shadow-hover:0 18px 45px rgba(36,48,94,.13);
+
+  --radius-xl:32px;
+  --radius-lg:28px;
+  --radius-md:22px;
+  --radius-sm:17px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+img{
+  max-width:100%;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+  width:min(1180px, calc(100% - 32px));
+  margin:0 auto;
+  padding:28px 0 60px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(255,255,255,.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  color:white;
+
+  border-radius:var(--radius-xl);
+
+  padding:38px 34px;
+
+  box-shadow:
+    0 18px 50px rgba(49,87,213,.18);
+
+  margin-bottom:24px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.07);
+
+  left:-70px;
+  bottom:-100px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.academy-label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  font-size:12px;
+  font-weight:800;
+
+  letter-spacing:1.5px;
+
+  margin-bottom:8px;
+
+  opacity:.95;
+}
+
+.academy-dot{
+  width:8px;
+  height:8px;
+
+  background:var(--gold);
+
+  border-radius:50%;
+
+  display:inline-block;
+}
+
+.hero h1{
+  margin:0 0 8px;
+
+  font-size:clamp(30px,5vw,46px);
+
+  line-height:1.25;
+
+  font-weight:900;
+}
+
+.hero p{
+  margin:0;
+
+  max-width:780px;
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,.9);
+}
+
+/* =========================================================
+   PATH INFO
+========================================================= */
+
+.path-card{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius-md);
+
+  padding:22px 24px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:30px;
+}
+
+.path-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+
+  margin-bottom:14px;
+}
+
+.path-title{
+  font-size:18px;
+  font-weight:900;
+}
+
+.path-count{
+  color:var(--purple);
+  font-weight:900;
+  font-size:14px;
+}
+
+.progress-track{
+  height:9px;
+
+  background:#EEF0F7;
+
+  border-radius:999px;
+
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0%;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  border-radius:999px;
+
+  transition:.35s ease;
+}
+
+/* =========================================================
+   TOPIC LIST
+========================================================= */
+
+#topicsView{
+  display:block;
+}
+
+.topic-stage{
+  margin-bottom:54px;
+}
+
+.stage-header{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius-md);
+
+  padding:20px 22px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:20px;
+}
+
+.stage-header-inner{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.stage-number{
+  flex:0 0 auto;
+
+  width:54px;
+  height:54px;
+
+  border-radius:17px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--purple-light);
+
+  color:var(--purple);
+
+  font-size:17px;
+  font-weight:900;
+}
+
+.stage-info h2{
+  margin:0 0 3px;
+
+  font-size:21px;
+
+  font-weight:900;
+}
+
+.stage-info p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+/* =========================================================
+   TOPIC GRID
+========================================================= */
+
+.topic-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0,1fr));
+
+  gap:18px;
+}
+
+.topic-card{
+  position:relative;
+
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius-lg);
+
+  padding:23px;
+
+  box-shadow:var(--shadow);
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+
+  cursor:pointer;
+
+  min-height:210px;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.topic-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:var(--shadow-hover);
+
+  border-color:#DADDF0;
+}
+
+.topic-icon{
+  width:58px;
+  height:58px;
+
+  border-radius:18px;
+
+  background:var(--purple-light);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:30px;
+
+  margin-bottom:17px;
+}
+
+.topic-card h3{
+  margin:0 0 7px;
+
+  font-size:19px;
+
+  font-weight:900;
+}
+
+.topic-card p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.8;
+
+  flex:1;
+}
+
+.topic-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:10px;
+
+  margin-top:18px;
+}
+
+.topic-count{
+  color:var(--muted);
+
+  font-size:13px;
+
+  font-weight:700;
+}
+
+.topic-open{
+  color:var(--blue);
+
+  font-weight:900;
+
+  font-size:13px;
+}
+
+/* =========================================================
+   TOPIC VIEW
+========================================================= */
+
+#topicView{
+  display:none;
+}
+
+.topic-view-card{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:30px;
+
+  box-shadow:var(--shadow);
+
+  overflow:hidden;
+}
+
+.topic-view-header{
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(255,255,255,.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  color:white;
+
+  padding:28px 28px 30px;
+}
+
+.topic-view-header-top{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:18px;
+
+  margin-bottom:22px;
+}
+
+.back-button{
+  border:1px solid rgba(255,255,255,.25);
+
+  background:rgba(255,255,255,.12);
+
+  color:white;
+
+  padding:10px 16px;
+
+  border-radius:14px;
+
+  font-weight:800;
+
+  transition:.2s ease;
+}
+
+.back-button:hover{
+  background:rgba(255,255,255,.2);
+}
+
+.topic-number{
+  font-size:13px;
+
+  font-weight:800;
+
+  opacity:.9;
+}
+
+.topic-view-header h2{
+  margin:0 0 7px;
+
+  font-size:clamp(26px,4vw,36px);
+
+  font-weight:900;
+}
+
+.topic-view-header p{
+  margin:0;
+
+  color:rgba(255,255,255,.88);
+
+  font-size:15px;
+}
+
+/* =========================================================
+   VOCABULARY GRID
+========================================================= */
+
+.words-container{
+  padding:28px;
+}
+
+.words-intro{
+  background:var(--purple-light);
+
+  border-radius:18px;
+
+  padding:15px 18px;
+
+  margin-bottom:24px;
+
+  color:#51438C;
+
+  font-size:14px;
+
+  line-height:1.8;
+}
+
+.words-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0,1fr));
+
+  gap:18px;
+}
+
+/* =========================================================
+   WORD CARD
+========================================================= */
+
+.word-card{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:24px;
+
+  padding:20px;
+
+  box-shadow:
+    0 8px 24px rgba(36,48,94,.055);
+
+  transition:
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+.word-card:hover{
+  box-shadow:
+    0 14px 32px rgba(36,48,94,.09);
+
+  transform:translateY(-2px);
+}
+
+.word-top{
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:15px;
+
+  margin-bottom:17px;
+}
+
+.word-image{
+  width:76px;
+  height:76px;
+
+  flex:0 0 76px;
+
+  border-radius:20px;
+
+  background:#F4F5FA;
+
+  border:1px solid var(--border);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+}
+
+.word-image img{
+  width:58px;
+  height:58px;
+
+  object-fit:contain;
+}
+
+.word-image-fallback{
+  font-size:40px;
+  line-height:1;
+}
+
+.word-main{
+  min-width:0;
+
+  flex:1;
+}
+
+.word-english{
+  font-size:25px;
+
+  line-height:1.2;
+
+  font-weight:900;
+
+  direction:ltr;
+
+  text-align:left;
+
+  color:var(--text);
+
+  word-break:break-word;
+}
+
+.word-meaning{
+  margin-top:6px;
+
+  color:var(--purple);
+
+  font-weight:900;
+
+  font-size:16px;
+}
+
+.word-meaning-note{
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  line-height:1.7;
+}
+
+.pronounce-button{
+  margin-top:11px;
+
+  border:0;
+
+  background:var(--blue);
+
+  color:white;
+
+  border-radius:13px;
+
+  padding:8px 12px;
+
+  font-size:12px;
+
+  font-weight:800;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  transition:.2s ease;
+}
+
+.pronounce-button:hover{
+  background:var(--blue-dark);
+}
+
+.pronounce-button.speaking{
+  background:var(--purple);
+}
+
+/* =========================================================
+   EXAMPLES
+========================================================= */
+
+.examples{
+  border-top:1px solid var(--border);
+
+  padding-top:17px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:13px;
+}
+
+.example{
+  padding:13px 14px;
+
+  background:#FAFAFD;
+
+  border-radius:15px;
+
+  border:1px solid #EFF0F6;
+}
+
+.example-en{
+  direction:ltr;
+
+  text-align:left;
+
+  font-size:15px;
+
+  font-weight:800;
+
+  color:var(--text);
+
+  margin-bottom:3px;
+}
+
+.example-ar{
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.7;
+}
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.topic-navigation{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:22px 28px 28px;
+
+  border-top:1px solid var(--border);
+}
+
+.nav-button{
+  border:1px solid var(--border);
+
+  background:var(--white);
+
+  color:var(--text);
+
+  padding:11px 16px;
+
+  border-radius:14px;
+
+  font-weight:800;
+
+  transition:.2s ease;
+}
+
+.nav-button:hover{
+  border-color:#D7DAEA;
+
+  box-shadow:0 8px 18px rgba(36,48,94,.06);
+}
+
+.nav-button.primary{
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  border-color:transparent;
+
+  color:white;
+}
+
+.nav-button:disabled{
+  opacity:.4;
+
+  cursor:not-allowed;
+
+  box-shadow:none;
+}
+
+/* =========================================================
+   EMPTY / SEARCH
+========================================================= */
+
+.search-card{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  box-shadow:var(--shadow);
+
+  padding:18px;
+
+  margin-bottom:28px;
+}
+
+.search-input{
+  width:100%;
+
+  border:1px solid var(--border);
+
+  background:#FAFAFD;
+
+  border-radius:15px;
+
+  padding:13px 15px;
+
+  outline:none;
+
+  color:var(--text);
+
+  transition:.2s ease;
+}
+
+.search-input:focus{
+  border-color:var(--blue);
+
+  background:white;
+
+  box-shadow:
+    0 0 0 4px rgba(49,87,213,.08);
+}
+
+.no-results{
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:30px;
+
+  text-align:center;
+
+  color:var(--muted);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  margin-top:30px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:980px){
+
+  .topic-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:720px){
+
+  .page{
+    width:min(100% - 20px,1180px);
+
+    padding-top:12px;
+  }
+
+  .hero{
+    padding:30px 22px;
+
+    border-radius:28px;
+  }
+
+  .path-card{
+    padding:18px;
+  }
+
+  .stage-header{
+    padding:18px;
+  }
+
+  .stage-header-inner{
+    align-items:flex-start;
+  }
+
+  .stage-number{
+    width:48px;
+    height:48px;
+
+    border-radius:15px;
+  }
+
+  .stage-info h2{
+    font-size:18px;
+  }
+
+  .topic-grid{
+    grid-template-columns:1fr;
+
+    gap:14px;
+  }
+
+  .topic-card{
+    min-height:185px;
+
+    padding:20px;
+  }
+
+  .words-container{
+    padding:20px;
+  }
+
+  .words-grid{
+    grid-template-columns:1fr;
+
+    gap:15px;
+  }
+
+  .topic-view-header{
+    padding:22px 20px 24px;
+  }
+
+  .topic-view-header-top{
+    align-items:flex-start;
+  }
+
+  .topic-navigation{
+    padding:18px 20px 22px;
+
+    flex-wrap:wrap;
+  }
+
+  .nav-button{
+    flex:1;
+    min-width:110px;
+  }
+
+}
+
+@media(max-width:430px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .word-top{
+    gap:11px;
+  }
+
+  .word-image{
+    width:65px;
+    height:65px;
+
+    flex-basis:65px;
+  }
+
+  .word-image img{
+    width:50px;
+    height:50px;
+  }
+
+  .word-english{
+    font-size:22px;
+  }
+
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+input:focus-visible{
+  outline:3px solid rgba(49,87,213,.2);
+
+  outline-offset:2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="academy-label">
+        <span class="academy-dot"></span>
+        ENGLIZA ACADEMY
+      </div>
+
+      <h1>📚 المفردات</h1>
+
+      <p>
+        وسّع حصيلتك من الكلمات الإنجليزية،
+        واستمع إلى نطقها وتعلّم استخدامها داخل جمل بسيطة.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PATH
+  ====================================================== -->
+
+  <section class="path-card">
+
+    <div class="path-top">
+
+      <div class="path-title">
+        🧠 مسار المفردات — المستوى المبتدئ
+      </div>
+
+      <div class="path-count" id="progressText">
+        30 وحدة
+      </div>
+
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TOPICS VIEW
+  ====================================================== -->
+
+  <main id="topicsView">
+
+    <div class="search-card">
+
+      <input
+        id="searchInput"
+        class="search-input"
+        type="search"
+        placeholder="ابحث عن كلمة أو موضوع..."
+        autocomplete="off"
+      >
+
+    </div>
+
+    <div id="topicsContainer"></div>
+
+  </main>
+
+
+  <!-- =====================================================
+       SINGLE TOPIC VIEW
+  ====================================================== -->
+
+  <main id="topicView">
+
+    <div class="topic-view-card">
+
+      <div class="topic-view-header">
+
+        <div class="topic-view-header-top">
+
+          <button
+            class="back-button"
+            type="button"
+            onclick="closeTopic()"
+          >
+            ← العودة إلى المفردات
+          </button>
+
+          <div
+            class="topic-number"
+            id="topicNumber"
+          ></div>
+
+        </div>
+
+        <h2 id="topicTitle"></h2>
+
+        <p id="topicDescription"></p>
+
+      </div>
+
+
+      <div class="words-container">
+
+        <div class="words-intro">
+          💡 ركّز على الكلمة الجديدة، استمع إلى نطقها،
+          ثم اقرأ الأمثلة وحاول ملاحظة كيف تُستخدم داخل الجملة.
+        </div>
+
+        <div
+          class="words-grid"
+          id="wordsGrid"
+        ></div>
+
+      </div>
+
+
+      <div class="topic-navigation">
+
+        <button
+          id="previousButton"
+          class="nav-button"
+          type="button"
+          onclick="openPreviousTopic()"
+        >
+          → السابق
+        </button>
+
+        <button
+          class="nav-button primary"
+          type="button"
+          onclick="closeTopic()"
+        >
+          📚 كل الوحدات
+        </button>
+
+        <button
+          id="nextButton"
+          class="nav-button"
+          type="button"
+          onclick="openNextTopic()"
+        >
+          التالي ←
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <div class="footer">
+    Engliza Academy · Beginner Vocabulary
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   ENGLIZA VOCABULARY DATA
+========================================================= */
+
+const topics = [
+
+  /* =======================================================
+     STAGE 1
+  ======================================================= */
+
+  {
+    stage: 1,
+    stageTitle: "الإنسان 👤",
+    stageDescription: "كلمات أساسية مرتبطة بالإنسان والجسم والأشخاص من حولك.",
+
+    title: "أجزاء الجسم",
+    icon: "🧍",
+    description: "تعلّم أهم أسماء أجزاء الجسم التي تحتاجها في الحياة اليومية.",
+
+    words: [
+
+      word(
+        "head",
+        "الرأس",
+        "🧠",
+        [
+          ["My head is big.", "رأسي كبير."],
+          ["My head is not small.", "رأسي ليس صغيرًا."],
+          ["Is your head okay?", "هل رأسك بخير؟"]
+        ]
+      ),
+
+      word(
+        "face",
+        "الوجه",
+        "🙂",
+        [
+          ["My face is clean.", "وجهي نظيف."],
+          ["His face is nice.", "وجهه جميل."],
+          ["Is your face okay?", "هل وجهك بخير؟"]
+        ]
+      ),
+
+      word(
+        "eye",
+        "العين",
+        "👁️",
+        [
+          ["My eye is okay.", "عيني بخير."],
+          ["His eye is big.", "عينه كبيرة."],
+          ["Is your eye okay?", "هل عينك بخير؟"]
+        ]
+      ),
+
+      word(
+        "ear",
+        "الأذن",
+        "👂",
+        [
+          ["My ear is small.", "أذني صغيرة."],
+          ["His ear is okay.", "أذنه بخير."],
+          ["Is your ear okay?", "هل أذنك بخير؟"]
+        ]
+      ),
+
+      word(
+        "nose",
+        "الأنف",
+        "👃",
+        [
+          ["My nose is small.", "أنفي صغير."],
+          ["His nose is big.", "أنفه كبير."],
+          ["Is your nose okay?", "هل أنفك بخير؟"]
+        ]
+      ),
+
+      word(
+        "mouth",
+        "الفم",
+        "👄",
+        [
+          ["My mouth is small.", "فمي صغير."],
+          ["His mouth is okay.", "فمه بخير."],
+          ["Is your mouth okay?", "هل فمك بخير؟"]
+        ]
+      ),
+
+      word(
+        "tooth",
+        "سن",
+        "🦷",
+        "المفرد: tooth — والجمع: teeth",
+        [
+          ["My tooth is white.", "سني أبيض."],
+          ["This tooth is small.", "هذا السن صغير."],
+          ["Is your tooth okay?", "هل سنك بخير؟"]
+        ]
+      ),
+
+      word(
+        "teeth",
+        "الأسنان",
+        "😁",
+        "جمع tooth",
+        [
+          ["My teeth are white.", "أسناني بيضاء."],
+          ["His teeth are nice.", "أسنانه جميلة."],
+          ["Are your teeth okay?", "هل أسنانك بخير؟"]
+        ]
+      ),
+
+      word(
+        "hair",
+        "الشعر",
+        "💇",
+        [
+          ["My hair is black.", "شعري أسود."],
+          ["Her hair is long.", "شعرها طويل."],
+          ["Is your hair long?", "هل شعرك طويل؟"]
+        ]
+      ),
+
+      word(
+        "neck",
+        "الرقبة",
+        "🧍",
+        [
+          ["My neck is okay.", "رقبتي بخير."],
+          ["His neck is not big.", "رقبته ليست كبيرة."],
+          ["Is your neck okay?", "هل رقبتك بخير؟"]
+        ]
+      ),
+
+      word(
+        "shoulder",
+        "الكتف",
+        "🧍",
+        [
+          ["My shoulder is okay.", "كتفي بخير."],
+          ["His shoulder is big.", "كتفه كبير."],
+          ["Is your shoulder okay?", "هل كتفك بخير؟"]
+        ]
+      ),
+
+      word(
+        "arm",
+        "الذراع",
+        "💪",
+        [
+          ["My arm is strong.", "ذراعي قوي."],
+          ["His arm is big.", "ذراعه كبيرة."],
+          ["Is your arm okay?", "هل ذراعك بخير؟"]
+        ]
+      ),
+
+      word(
+        "hand",
+        "اليد",
+        "✋",
+        [
+          ["My hand is clean.", "يدي نظيفة."],
+          ["His hand is big.", "يده كبيرة."],
+          ["Is your hand clean?", "هل يدك نظيفة؟"]
+        ]
+      ),
+
+      word(
+        "finger",
+        "إصبع",
+        "☝️",
+        [
+          ["My finger is small.", "إصبعي صغير."],
+          ["His finger is okay.", "إصبعه بخير."],
+          ["Is your finger okay?", "هل إصبعك بخير؟"]
+        ]
+      ),
+
+      word(
+        "leg",
+        "الساق",
+        "🦵",
+        [
+          ["My leg is strong.", "ساقي قوية."],
+          ["His leg is big.", "ساقه كبيرة."],
+          ["Is your leg okay?", "هل ساقك بخير؟"]
+        ]
+      ),
+
+      word(
+        "knee",
+        "الركبة",
+        "🦵",
+        [
+          ["My knee is okay.", "ركبتي بخير."],
+          ["His knee is not big.", "ركبته ليست كبيرة."],
+          ["Is your knee okay?", "هل ركبتك بخير؟"]
+        ]
+      ),
+
+      word(
+        "foot",
+        "القدم",
+        "🦶",
+        "الجمع: feet",
+        [
+          ["My foot is small.", "قدمي صغيرة."],
+          ["His foot is okay.", "قدمه بخير."],
+          ["Is your foot okay?", "هل قدمك بخير؟"]
+        ]
+      ),
+
+      word(
+        "feet",
+        "القدمان / الأقدام",
+        "🦶",
+        "جمع foot",
+        [
+          ["My feet are clean.", "قدماي نظيفتان."],
+          ["His feet are okay.", "قدماه بخير."],
+          ["Are your feet clean?", "هل قدماك نظيفتان؟"]
+        ]
+      ),
+
+      word(
+        "toe",
+        "إصبع القدم",
+        "🦶",
+        [
+          ["My toe is small.", "إصبع قدمي صغير."],
+          ["His toe is okay.", "إصبع قدمه بخير."],
+          ["Is your toe okay?", "هل إصبع قدمك بخير؟"]
+        ]
+      ),
+
+      word(
+        "back",
+        "الظهر",
+        "🧍",
+        [
+          ["My back is okay.", "ظهري بخير."],
+          ["His back is strong.", "ظهره قوي."],
+          ["Is your back okay?", "هل ظهرك بخير؟"]
+        ]
+      ),
+
+      word(
+        "stomach",
+        "المعدة / البطن",
+        "🫃",
+        [
+          ["My stomach is okay.", "معدتي بخير."],
+          ["His stomach is not big.", "بطنه ليس كبيرًا."],
+          ["Is your stomach okay?", "هل معدتك بخير؟"]
+        ]
+      )
+
+    ]
+  },
+
+
+  {
+    stage: 1,
+    stageTitle: "الإنسان 👤",
+    stageDescription: "كلمات أساسية مرتبطة بالإنسان والجسم والأشخاص من حولك.",
+
+    title: "الوجه والمظهر",
+    icon: "🙂",
+    description: "كلمات بسيطة تساعدك على وصف شكل الشخص ومظهره.",
+
+    words: [
+
+      word("long","طويل / طويل في الطول","📏",[
+        ["Her hair is long.","شعرها طويل."],
+        ["This is a long road.","هذا طريق طويل."],
+        ["Is your hair long?","هل شعرك طويل؟"]
+      ]),
+
+      word("short","قصير","📐",[
+        ["His hair is short.","شعره قصير."],
+        ["This is a short road.","هذا طريق قصير."],
+        ["Is the road short?","هل الطريق قصير؟"]
+      ]),
+
+      word("young","صغير في السن / شاب","👦",[
+        ["He is young.","هو صغير في السن."],
+        ["My brother is young.","أخي صغير في السن."],
+        ["Is he young?","هل هو صغير في السن؟"]
+      ]),
+
+      word("old","كبير في السن / قديم","👴",[
+        ["He is old.","هو كبير في السن."],
+        ["My house is old.","بيتي قديم."],
+        ["Is your house old?","هل بيتك قديم؟"]
+      ]),
+
+      word("beautiful","جميل","✨",[
+        ["She is beautiful.","هي جميلة."],
+        ["The house is beautiful.","البيت جميل."],
+        ["Is the place beautiful?","هل المكان جميل؟"]
+      ]),
+
+      word("handsome","وسيم","🧑",[
+        ["He is handsome.","هو وسيم."],
+        ["My brother is handsome.","أخي وسيم."],
+        ["Is he handsome?","هل هو وسيم؟"]
+      ]),
+
+      word("pretty","جميل / لطيف المظهر","🌸",[
+        ["She is pretty.","هي جميلة."],
+        ["The room is pretty.","الغرفة جميلة."],
+        ["Is it pretty?","هل هو/هي جميل؟"]
+      ]),
+
+      word("glasses","نظارات","👓",[
+        ["My glasses are new.","نظارتي جديدة."],
+        ["His glasses are black.","نظارته سوداء."],
+        ["Are your glasses new?","هل نظارتك جديدة؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 1,
+    stageTitle: "الإنسان 👤",
+    stageDescription: "كلمات أساسية مرتبطة بالإنسان والجسم والأشخاص من حولك.",
+
+    title: "العائلة والعلاقات",
+    icon: "👨‍👩‍👧‍👦",
+    description: "كلمات توسّع مفردات العائلة والعلاقات التي تعرف أساسها من الدروس.",
+
+    words: [
+
+      word("nephew","ابن الأخ / ابن الأخت","👦",[
+        ["He is my nephew.","هو ابن أخي / أختي."],
+        ["My nephew is young.","ابن أخي / أختي صغير في السن."],
+        ["Is he your nephew?","هل هو ابن أخيك / أختك؟"]
+      ]),
+
+      word("niece","ابنة الأخ / ابنة الأخت","👧",[
+        ["She is my niece.","هي ابنة أخي / أختي."],
+        ["My niece is young.","ابنة أخي / أختي صغيرة في السن."],
+        ["Is she your niece?","هل هي ابنة أخيك / أختك؟"]
+      ]),
+
+      word("husband","زوج","👨",[
+        ["He is my husband.","هو زوجي."],
+        ["My husband is nice.","زوجي لطيف."],
+        ["Is he your husband?","هل هو زوجك؟"]
+      ]),
+
+      word("wife","زوجة","👩",[
+        ["She is my wife.","هي زوجتي."],
+        ["My wife is nice.","زوجتي لطيفة."],
+        ["Is she your wife?","هل هي زوجتك؟"]
+      ]),
+
+      word("married","متزوج","💍",[
+        ["He is married.","هو متزوج."],
+        ["She is married.","هي متزوجة."],
+        ["Are they married?","هل هما متزوجان؟"]
+      ]),
+
+      word("single","أعزب / غير متزوج","🙂",[
+        ["He is single.","هو أعزب."],
+        ["She is single.","هي غير متزوجة."],
+        ["Is he single?","هل هو أعزب؟"]
+      ]),
+
+      word("relative","قريب / أحد الأقارب","👪",[
+        ["He is my relative.","هو أحد أقاربي."],
+        ["My relative is nice.","قريبي لطيف."],
+        ["Is she your relative?","هل هي قريبتك؟"]
+      ]),
+
+      word("neighbor","جار / جارة","🏠",[
+        ["My neighbor is nice.","جاري لطيف."],
+        ["My neighbor is not old.","جاري ليس كبيرًا في السن."],
+        ["Is your neighbor nice?","هل جارك لطيف؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 1,
+    stageTitle: "الإنسان 👤",
+    stageDescription: "كلمات أساسية مرتبطة بالإنسان والجسم والأشخاص من حولك.",
+
+    title: "الأشخاص من حولك",
+    icon: "👥",
+    description: "كلمات بسيطة لوصف الأشخاص والأدوار الاجتماعية من حولك.",
+
+    words: [
+
+      word("person","شخص","🧍",[
+        ["He is a nice person.","هو شخص لطيف."],
+        ["This person is young.","هذا الشخص صغير في السن."],
+        ["Is this person your friend?","هل هذا الشخص صديقك؟"]
+      ]),
+
+      word("people","الناس / الأشخاص","👥",[
+        ["The people are nice.","الناس لطفاء."],
+        ["These people are young.","هؤلاء الأشخاص صغار في السن."],
+        ["Are these people your friends?","هل هؤلاء الأشخاص أصدقاؤك؟"]
+      ]),
+
+      word("man","رجل","👨",[
+        ["He is a man.","هو رجل."],
+        ["The man is tall.","الرجل طويل."],
+        ["Is the man your neighbor?","هل الرجل جارك؟"]
+      ]),
+
+      word("woman","امرأة","👩",[
+        ["She is a woman.","هي امرأة."],
+        ["The woman is nice.","المرأة لطيفة."],
+        ["Is the woman your teacher?","هل المرأة معلمتك؟"]
+      ]),
+
+      word("child","طفل","🧒",[
+        ["He is a child.","هو طفل."],
+        ["The child is young.","الطفل صغير."],
+        ["Is the child okay?","هل الطفل بخير؟"]
+      ]),
+
+      word("student","طالب / طالبة","🎓",[
+        ["I am a student.","أنا طالب."],
+        ["He is a student.","هو طالب."],
+        ["Are you a student?","هل أنت طالب؟"]
+      ]),
+
+      word("teacher","معلم / معلمة","👩‍🏫",[
+        ["She is a teacher.","هي معلمة."],
+        ["My teacher is nice.","معلمي/معلمتي لطيف/لطيفة."],
+        ["Is he your teacher?","هل هو معلمك؟"]
+      ]),
+
+      word("guest","ضيف","🙋",[
+        ["He is a guest.","هو ضيف."],
+        ["The guest is nice.","الضيف لطيف."],
+        ["Is he a guest?","هل هو ضيف؟"]
+      ])
+
+    ]
+  },
+
+
+  /* =======================================================
+     STAGE 2
+  ======================================================= */
+
+  {
+    stage: 2,
+    stageTitle: "الأشياء من حولك 🏠",
+    stageDescription: "مفردات توسّع ما يعرفه الطالب عن المنزل والأشياء اليومية.",
+
+    title: "الأثاث",
+    icon: "🛋️",
+    description: "أسماء أساسية للأثاث والأشياء الكبيرة داخل المنزل.",
+
+    words: [
+
+      word("sofa","أريكة / كنبة","🛋️",[
+        ["The sofa is big.","الأريكة كبيرة."],
+        ["My sofa is new.","أريكتي جديدة."],
+        ["Is the sofa comfortable?","هل الأريكة مريحة؟"]
+      ]),
+
+      word("chair","كرسي","🪑",[
+        ["This is a chair.","هذا كرسي."],
+        ["The chair is small.","الكرسي صغير."],
+        ["Is the chair new?","هل الكرسي جديد؟"]
+      ]),
+
+      word("table","طاولة","🪑",[
+        ["This is a table.","هذه طاولة."],
+        ["The table is big.","الطاولة كبيرة."],
+        ["Is the table clean?","هل الطاولة نظيفة؟"]
+      ]),
+
+      word("shelf","رف","📚",[
+        ["The shelf is small.","الرف صغير."],
+        ["This shelf is new.","هذا الرف جديد."],
+        ["Is the shelf clean?","هل الرف نظيف؟"]
+      ]),
+
+      word("mirror","مرآة","🪞",[
+        ["This is a mirror.","هذه مرآة."],
+        ["The mirror is big.","المرآة كبيرة."],
+        ["Is the mirror clean?","هل المرآة نظيفة؟"]
+      ]),
+
+      word("lamp","مصباح","💡",[
+        ["This is a lamp.","هذا مصباح."],
+        ["The lamp is small.","المصباح صغير."],
+        ["Is the lamp new?","هل المصباح جديد؟"]
+      ]),
+
+      word("carpet","سجادة","🧶",[
+        ["The carpet is clean.","السجادة نظيفة."],
+        ["My carpet is new.","سجادتي جديدة."],
+        ["Is the carpet big?","هل السجادة كبيرة؟"]
+      ]),
+
+      word("curtain","ستارة","🪟",[
+        ["The curtain is blue.","الستارة زرقاء."],
+        ["My curtain is new.","ستارتي جديدة."],
+        ["Is the curtain clean?","هل الستارة نظيفة؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 2,
+    stageTitle: "الأشياء من حولك 🏠",
+    stageDescription: "مفردات توسّع ما يعرفه الطالب عن المنزل والأشياء اليومية.",
+
+    title: "أشياء في الغرفة والحمام",
+    icon: "🛏️",
+    description: "أشياء يومية إضافية مرتبطة بالغرف والحمام.",
+
+    words: [
+
+      word("bed","سرير","🛏️",[
+        ["This is my bed.","هذا سريري."],
+        ["My bed is big.","سريري كبير."],
+        ["Is your bed new?","هل سريرك جديد؟"]
+      ]),
+
+      word("pillow","وسادة","🛏️",[
+        ["This is a pillow.","هذه وسادة."],
+        ["My pillow is soft.","وسادتي ناعمة."],
+        ["Is the pillow new?","هل الوسادة جديدة؟"]
+      ]),
+
+      word("blanket","بطانية","🛌",[
+        ["This is a blanket.","هذه بطانية."],
+        ["My blanket is warm.","بطانيتي دافئة."],
+        ["Is the blanket clean?","هل البطانية نظيفة؟"]
+      ]),
+
+      word("towel","منشفة","🧻",[
+        ["This is a towel.","هذه منشفة."],
+        ["My towel is clean.","منشفتي نظيفة."],
+        ["Is the towel new?","هل المنشفة جديدة؟"]
+      ]),
+
+      word("soap","صابون","🧼",[
+        ["This is soap.","هذا صابون."],
+        ["The soap is new.","الصابون جديد."],
+        ["Is the soap here?","هل الصابون هنا؟"]
+      ]),
+
+      word("shampoo","شامبو","🧴",[
+        ["This is shampoo.","هذا شامبو."],
+        ["The shampoo is new.","الشامبو جديد."],
+        ["Is the shampoo here?","هل الشامبو هنا؟"]
+      ]),
+
+      word("toilet","مرحاض / دورة مياه","🚽",[
+        ["The toilet is clean.","المرحاض نظيف."],
+        ["This is the toilet.","هذا هو المرحاض."],
+        ["Is the toilet clean?","هل المرحاض نظيف؟"]
+      ]),
+
+      word("shower","دُش / استحمام","🚿",[
+        ["This is a shower.","هذا دُش."],
+        ["The shower is clean.","الدش نظيف."],
+        ["Is the shower new?","هل الدش جديد؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 2,
+    stageTitle: "الأشياء من حولك 🏠",
+    stageDescription: "مفردات توسّع ما يعرفه الطالب عن المنزل والأشياء اليومية.",
+
+    title: "أشياء في المطبخ",
+    icon: "🍽️",
+    description: "أسماء الأشياء الأساسية التي تراها في المطبخ.",
+
+    words: [
+
+      word("plate","صحن / طبق","🍽️",[
+        ["This is a plate.","هذا صحن."],
+        ["The plate is clean.","الصحن نظيف."],
+        ["Is the plate new?","هل الصحن جديد؟"]
+      ]),
+
+      word("cup","كوب","☕",[
+        ["This is a cup.","هذا كوب."],
+        ["My cup is small.","كوبي صغير."],
+        ["Is the cup clean?","هل الكوب نظيف؟"]
+      ]),
+
+      word("glass","كأس / كوب زجاجي","🥛",[
+        ["This is a glass.","هذا كأس."],
+        ["The glass is clean.","الكأس نظيف."],
+        ["Is the glass new?","هل الكأس جديد؟"]
+      ]),
+
+      word("bottle","زجاجة / قارورة","🍼",[
+        ["This is a bottle.","هذه زجاجة."],
+        ["The bottle is small.","الزجاجة صغيرة."],
+        ["Is the bottle clean?","هل الزجاجة نظيفة؟"]
+      ]),
+
+      word("spoon","ملعقة","🥄",[
+        ["This is a spoon.","هذه ملعقة."],
+        ["The spoon is clean.","الملعقة نظيفة."],
+        ["Is the spoon new?","هل الملعقة جديدة؟"]
+      ]),
+
+      word("fork","شوكة","🍴",[
+        ["This is a fork.","هذه شوكة."],
+        ["The fork is clean.","الشوكة نظيفة."],
+        ["Is the fork new?","هل الشوكة جديدة؟"]
+      ]),
+
+      word("knife","سكين","🔪",[
+        ["This is a knife.","هذا سكين."],
+        ["The knife is new.","السكين جديد."],
+        ["Is the knife clean?","هل السكين نظيف؟"]
+      ]),
+
+      word("fridge","ثلاجة","🧊",[
+        ["This is the fridge.","هذه الثلاجة."],
+        ["The fridge is big.","الثلاجة كبيرة."],
+        ["Is the fridge new?","هل الثلاجة جديدة؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 2,
+    stageTitle: "الأشياء من حولك 🏠",
+    stageDescription: "مفردات توسّع ما يعرفه الطالب عن المنزل والأشياء اليومية.",
+
+    title: "وصف المنزل",
+    icon: "🏠",
+    description: "صفات وكلمات تساعدك على وصف المكان الذي تعيش فيه.",
+
+    words: [
+
+      word("comfortable","مريح","🛋️",[
+        ["My room is comfortable.","غرفتي مريحة."],
+        ["The sofa is comfortable.","الأريكة مريحة."],
+        ["Is your room comfortable?","هل غرفتك مريحة؟"]
+      ]),
+
+      word("quiet","هادئ","🤫",[
+        ["My room is quiet.","غرفتي هادئة."],
+        ["The house is quiet.","البيت هادئ."],
+        ["Is the place quiet?","هل المكان هادئ؟"]
+      ]),
+
+      word("clean","نظيف","✨",[
+        ["My room is clean.","غرفتي نظيفة."],
+        ["The house is clean.","البيت نظيف."],
+        ["Is your room clean?","هل غرفتك نظيفة؟"]
+      ]),
+
+      word("dirty","متسخ","🧹",[
+        ["The room is dirty.","الغرفة متسخة."],
+        ["The floor is dirty.","الأرضية متسخة."],
+        ["Is the room dirty?","هل الغرفة متسخة؟"]
+      ]),
+
+      word("bright","مضيء","☀️",[
+        ["The room is bright.","الغرفة مضيئة."],
+        ["My room is bright.","غرفتي مضيئة."],
+        ["Is the room bright?","هل الغرفة مضيئة؟"]
+      ]),
+
+      word("dark","مظلم / داكن","🌙",[
+        ["The room is dark.","الغرفة مظلمة."],
+        ["The color is dark.","اللون داكن."],
+        ["Is the room dark?","هل الغرفة مظلمة؟"]
+      ]),
+
+      word("full","ممتلئ","📦",[
+        ["The room is full.","الغرفة ممتلئة."],
+        ["The bag is full.","الحقيبة ممتلئة."],
+        ["Is the bag full?","هل الحقيبة ممتلئة؟"]
+      ]),
+
+      word("empty","فارغ","🫙",[
+        ["The room is empty.","الغرفة فارغة."],
+        ["The bag is empty.","الحقيبة فارغة."],
+        ["Is the room empty?","هل الغرفة فارغة؟"]
+      ])
+
+    ]
+  },
+
+
+  /* =======================================================
+     STAGE 3
+  ======================================================= */
+
+  {
+    stage: 3,
+    stageTitle: "العالم من حولك 🌍",
+    stageDescription: "كلمات يومية عن الحيوانات والطبيعة والطقس والوصف.",
+
+    title: "الحيوانات",
+    icon: "🐾",
+    description: "أسماء الحيوانات المعروفة التي قد تراها أو تسمع عنها في حياتك اليومية.",
+
+    words: [
+
+      word("cat","قطة","🐱",[
+        ["This is a cat.","هذه قطة."],
+        ["The cat is small.","القطة صغيرة."],
+        ["Is the cat black?","هل القطة سوداء؟"]
+      ]),
+
+      word("dog","كلب","🐶",[
+        ["This is a dog.","هذا كلب."],
+        ["The dog is big.","الكلب كبير."],
+        ["Is the dog nice?","هل الكلب لطيف؟"]
+      ]),
+
+      word("bird","طائر / عصفور","🐦",[
+        ["This is a bird.","هذا طائر."],
+        ["The bird is small.","الطائر صغير."],
+        ["Is the bird blue?","هل الطائر أزرق؟"]
+      ]),
+
+      word("fish","سمكة / سمك","🐟",[
+        ["This is a fish.","هذه سمكة."],
+        ["The fish is small.","السمكة صغيرة."],
+        ["Is the fish blue?","هل السمكة زرقاء؟"]
+      ]),
+
+      word("horse","حصان","🐴",[
+        ["This is a horse.","هذا حصان."],
+        ["The horse is big.","الحصان كبير."],
+        ["Is the horse brown?","هل الحصان بني؟"]
+      ]),
+
+      word("cow","بقرة","🐄",[
+        ["This is a cow.","هذه بقرة."],
+        ["The cow is big.","البقرة كبيرة."],
+        ["Is the cow black?","هل البقرة سوداء؟"]
+      ]),
+
+      word("sheep","خروف / غنم","🐑",[
+        ["This is a sheep.","هذا خروف."],
+        ["The sheep is white.","الخروف أبيض."],
+        ["Is the sheep small?","هل الخروف صغير؟"]
+      ]),
+
+      word("goat","ماعز","🐐",[
+        ["This is a goat.","هذا ماعز."],
+        ["The goat is small.","الماعز صغير."],
+        ["Is the goat white?","هل الماعز أبيض؟"]
+      ]),
+
+      word("chicken","دجاجة / دجاج","🐔",[
+        ["This is a chicken.","هذه دجاجة."],
+        ["The chicken is small.","الدجاجة صغيرة."],
+        ["Is the chicken white?","هل الدجاجة بيضاء؟"]
+      ]),
+
+      word("duck","بطة","🦆",[
+        ["This is a duck.","هذه بطة."],
+        ["The duck is small.","البطة صغيرة."],
+        ["Is the duck yellow?","هل البطة صفراء؟"]
+      ]),
+
+      word("rabbit","أرنب","🐰",[
+        ["This is a rabbit.","هذا أرنب."],
+        ["The rabbit is small.","الأرنب صغير."],
+        ["Is the rabbit white?","هل الأرنب أبيض؟"]
+      ]),
+
+      word("mouse","فأر","🐭",[
+        ["This is a mouse.","هذا فأر."],
+        ["The mouse is small.","الفأر صغير."],
+        ["Is the mouse black?","هل الفأر أسود؟"]
+      ]),
+
+      word("lion","أسد","🦁",[
+        ["This is a lion.","هذا أسد."],
+        ["The lion is big.","الأسد كبير."],
+        ["Is the lion strong?","هل الأسد قوي؟"]
+      ]),
+
+      word("tiger","نمر","🐯",[
+        ["This is a tiger.","هذا نمر."],
+        ["The tiger is big.","النمر كبير."],
+        ["Is the tiger strong?","هل النمر قوي؟"]
+      ]),
+
+      word("elephant","فيل","🐘",[
+        ["This is an elephant.","هذا فيل."],
+        ["The elephant is big.","الفيل كبير."],
+        ["Is the elephant big?","هل الفيل كبير؟"]
+      ]),
+
+      word("monkey","قرد","🐒",[
+        ["This is a monkey.","هذا قرد."],
+        ["The monkey is small.","القرد صغير."],
+        ["Is the monkey brown?","هل القرد بني؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 3,
+    stageTitle: "العالم من حولك 🌍",
+    stageDescription: "كلمات يومية عن الحيوانات والطبيعة والطقس والوصف.",
+
+    title: "الطبيعة",
+    icon: "🌳",
+    description: "كلمات أساسية للأشياء الطبيعية التي تراها حولك.",
+
+    words: [
+
+      word("tree","شجرة","🌳",[
+        ["This is a tree.","هذه شجرة."],
+        ["The tree is big.","الشجرة كبيرة."],
+        ["Is the tree green?","هل الشجرة خضراء؟"]
+      ]),
+
+      word("flower","زهرة","🌸",[
+        ["This is a flower.","هذه زهرة."],
+        ["The flower is beautiful.","الزهرة جميلة."],
+        ["Is the flower red?","هل الزهرة حمراء؟"]
+      ]),
+
+      word("grass","عشب","🌱",[
+        ["The grass is green.","العشب أخضر."],
+        ["The grass is clean.","العشب نظيف."],
+        ["Is the grass green?","هل العشب أخضر؟"]
+      ]),
+
+      word("river","نهر","🏞️",[
+        ["This is a river.","هذا نهر."],
+        ["The river is long.","النهر طويل."],
+        ["Is the river near?","هل النهر قريب؟"]
+      ]),
+
+      word("sea","بحر","🌊",[
+        ["This is the sea.","هذا البحر."],
+        ["The sea is blue.","البحر أزرق."],
+        ["Is the sea near?","هل البحر قريب؟"]
+      ]),
+
+      word("mountain","جبل","⛰️",[
+        ["This is a mountain.","هذا جبل."],
+        ["The mountain is big.","الجبل كبير."],
+        ["Is the mountain near?","هل الجبل قريب؟"]
+      ]),
+
+      word("sky","سماء","🌌",[
+        ["The sky is blue.","السماء زرقاء."],
+        ["The sky is beautiful.","السماء جميلة."],
+        ["Is the sky blue?","هل السماء زرقاء؟"]
+      ]),
+
+      word("sun","شمس","☀️",[
+        ["The sun is big.","الشمس كبيرة."],
+        ["The sun is bright.","الشمس ساطعة."],
+        ["Is the sun bright?","هل الشمس ساطعة؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 3,
+    stageTitle: "العالم من حولك 🌍",
+    stageDescription: "كلمات يومية عن الحيوانات والطبيعة والطقس والوصف.",
+
+    title: "الطقس",
+    icon: "🌤️",
+    description: "كلمات أساسية تصف الطقس والجو.",
+
+    words: [
+
+      word("hot","حار","🔥",[
+        ["The weather is hot.","الطقس حار."],
+        ["The room is hot.","الغرفة حارة."],
+        ["Is the weather hot?","هل الطقس حار؟"]
+      ]),
+
+      word("cold","بارد","🥶",[
+        ["The weather is cold.","الطقس بارد."],
+        ["The room is cold.","الغرفة باردة."],
+        ["Is the weather cold?","هل الطقس بارد؟"]
+      ]),
+
+      word("warm","دافئ","☀️",[
+        ["The room is warm.","الغرفة دافئة."],
+        ["The weather is warm.","الطقس دافئ."],
+        ["Is the room warm?","هل الغرفة دافئة؟"]
+      ]),
+
+      word("cool","معتدل / بارد قليلًا","🍃",[
+        ["The weather is cool.","الطقس معتدل."],
+        ["The room is cool.","الغرفة باردة قليلًا."],
+        ["Is the weather cool?","هل الطقس معتدل؟"]
+      ]),
+
+      word("rainy","ممطر","🌧️",[
+        ["The weather is rainy.","الطقس ممطر."],
+        ["Today is rainy.","اليوم ممطر."],
+        ["Is it rainy?","هل الجو ممطر؟"]
+      ]),
+
+      word("sunny","مشمس","☀️",[
+        ["The weather is sunny.","الطقس مشمس."],
+        ["Today is sunny.","اليوم مشمس."],
+        ["Is it sunny?","هل الجو مشمس؟"]
+      ]),
+
+      word("cloudy","غائم","☁️",[
+        ["The sky is cloudy.","السماء غائمة."],
+        ["The weather is cloudy.","الطقس غائم."],
+        ["Is it cloudy?","هل الجو غائم؟"]
+      ]),
+
+      word("windy","عاصف / كثير الرياح","💨",[
+        ["The weather is windy.","الطقس عاصف."],
+        ["Today is windy.","اليوم عاصف."],
+        ["Is it windy?","هل الجو عاصف؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 3,
+    stageTitle: "العالم من حولك 🌍",
+    stageDescription: "كلمات يومية عن الحيوانات والطبيعة والطقس والوصف.",
+
+    title: "الألوان والأشكال",
+    icon: "🎨",
+    description: "توسّع في كلمات الألوان والأشكال التي تستخدمها في الوصف.",
+
+    words: [
+
+      word("purple","بنفسجي","🟣",[
+        ["My bag is purple.","حقيبتي بنفسجية."],
+        ["The room is purple.","الغرفة بنفسجية."],
+        ["Is the color purple?","هل اللون بنفسجي؟"]
+      ]),
+
+      word("orange","برتقالي","🟠",[
+        ["My bag is orange.","حقيبتي برتقالية."],
+        ["The color is orange.","اللون برتقالي."],
+        ["Is it orange?","هل هو برتقالي؟"]
+      ]),
+
+      word("pink","وردي","🩷",[
+        ["The bag is pink.","الحقيبة وردية."],
+        ["My room is pink.","غرفتي وردية."],
+        ["Is the color pink?","هل اللون وردي؟"]
+      ]),
+
+      word("brown","بني","🟤",[
+        ["The chair is brown.","الكرسي بني."],
+        ["The dog is brown.","الكلب بني."],
+        ["Is the color brown?","هل اللون بني؟"]
+      ]),
+
+      word("circle","دائرة","⭕",[
+        ["This is a circle.","هذه دائرة."],
+        ["The circle is big.","الدائرة كبيرة."],
+        ["Is it a circle?","هل هي دائرة؟"]
+      ]),
+
+      word("square","مربع","⬜",[
+        ["This is a square.","هذا مربع."],
+        ["The square is small.","المربع صغير."],
+        ["Is it a square?","هل هو مربع؟"]
+      ]),
+
+      word("line","خط","➖",[
+        ["This is a line.","هذا خط."],
+        ["The line is long.","الخط طويل."],
+        ["Is the line short?","هل الخط قصير؟"]
+      ]),
+
+      word("shape","شكل","🔷",[
+        ["This is a shape.","هذا شكل."],
+        ["The shape is big.","الشكل كبير."],
+        ["Is the shape new?","هل الشكل جديد؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 3,
+    stageTitle: "العالم من حولك 🌍",
+    stageDescription: "كلمات يومية عن الحيوانات والطبيعة والطقس والوصف.",
+
+    title: "الحجم والكمية والوصف",
+    icon: "📏",
+    description: "كلمات وصفية مهمة تساعدك على تكوين جمل بسيطة.",
+
+    words: [
+
+      word("large","كبير / واسع","📦",[
+        ["The room is large.","الغرفة كبيرة."],
+        ["The house is large.","البيت كبير."],
+        ["Is the room large?","هل الغرفة كبيرة؟"]
+      ]),
+
+      word("tiny","صغير جدًا","🔹",[
+        ["The room is tiny.","الغرفة صغيرة جدًا."],
+        ["The bag is tiny.","الحقيبة صغيرة جدًا."],
+        ["Is it tiny?","هل هو صغير جدًا؟"]
+      ]),
+
+      word("heavy","ثقيل","🏋️",[
+        ["The bag is heavy.","الحقيبة ثقيلة."],
+        ["The box is heavy.","الصندوق ثقيل."],
+        ["Is the bag heavy?","هل الحقيبة ثقيلة؟"]
+      ]),
+
+      word("light","خفيف / ضوء","💡",[
+        ["The bag is light.","الحقيبة خفيفة."],
+        ["The room has light.","الغرفة فيها ضوء."],
+        ["Is the bag light?","هل الحقيبة خفيفة؟"]
+      ]),
+
+      word("easy","سهل","😊",[
+        ["This is easy.","هذا سهل."],
+        ["The lesson is easy.","الدرس سهل."],
+        ["Is it easy?","هل هو سهل؟"]
+      ]),
+
+      word("difficult","صعب","😣",[
+        ["This is difficult.","هذا صعب."],
+        ["The lesson is difficult.","الدرس صعب."],
+        ["Is it difficult?","هل هو صعب؟"]
+      ]),
+
+      word("same","نفسه / متشابه","🔁",[
+        ["They are the same.","هما متشابهان."],
+        ["The colors are the same.","الألوان متشابهة."],
+        ["Are they the same?","هل هما متشابهان؟"]
+      ]),
+
+      word("different","مختلف","↔️",[
+        ["They are different.","هما مختلفان."],
+        ["The colors are different.","الألوان مختلفة."],
+        ["Are they different?","هل هما مختلفان؟"]
+      ])
+
+    ]
+  },
+
+
+  /* =======================================================
+     STAGE 4
+  ======================================================= */
+
+  {
+    stage: 4,
+    stageTitle: "الأماكن والمدينة 🏙️",
+    stageDescription: "كلمات ستقابلها في الشارع والأماكن العامة والتنقل.",
+
+    title: "الشارع",
+    icon: "🛣️",
+    description: "كلمات عملية للأشياء التي تراها في الشوارع من حولك.",
+
+    words: [
+
+      word("road","طريق","🛣️",[
+        ["This is a road.","هذا طريق."],
+        ["The road is long.","الطريق طويل."],
+        ["Is the road near?","هل الطريق قريب؟"]
+      ]),
+
+      word("street","شارع","🏙️",[
+        ["This is a street.","هذا شارع."],
+        ["The street is busy.","الشارع مزدحم."],
+        ["Is the street long?","هل الشارع طويل؟"]
+      ]),
+
+      word("bridge","جسر","🌉",[
+        ["This is a bridge.","هذا جسر."],
+        ["The bridge is big.","الجسر كبير."],
+        ["Is the bridge near?","هل الجسر قريب؟"]
+      ]),
+
+      word("corner","زاوية / ناصية","↪️",[
+        ["The corner is near.","الزاوية قريبة."],
+        ["This is the corner.","هذه هي الزاوية."],
+        ["Is the corner here?","هل الزاوية هنا؟"]
+      ]),
+
+      word("traffic","حركة المرور / الزحام المروري","🚦",[
+        ["The traffic is bad.","حركة المرور سيئة."],
+        ["The traffic is heavy.","حركة المرور مزدحمة."],
+        ["Is the traffic bad?","هل حركة المرور سيئة؟"]
+      ]),
+
+      word("sidewalk","رصيف المشاة","🚶",[
+        ["This is the sidewalk.","هذا رصيف المشاة."],
+        ["The sidewalk is clean.","الرصيف نظيف."],
+        ["Is the sidewalk near?","هل الرصيف قريب؟"]
+      ]),
+
+      word("crosswalk","ممر المشاة","🚸",[
+        ["This is a crosswalk.","هذا ممر للمشاة."],
+        ["The crosswalk is here.","ممر المشاة هنا."],
+        ["Is the crosswalk near?","هل ممر المشاة قريب؟"]
+      ]),
+
+      word("traffic light","إشارة المرور","🚦",[
+        ["The traffic light is red.","إشارة المرور حمراء."],
+        ["The traffic light is here.","إشارة المرور هنا."],
+        ["Is the traffic light near?","هل إشارة المرور قريبة؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 4,
+    stageTitle: "الأماكن والمدينة 🏙️",
+    stageDescription: "كلمات ستقابلها في الشارع والأماكن العامة والتنقل.",
+
+    title: "الأماكن العامة",
+    icon: "🏪",
+    description: "أسماء أماكن أساسية يحتاجها الطالب في حياته اليومية.",
+
+    words: [
+
+      word("store","متجر / محل","🏪",[
+        ["This is a store.","هذا متجر."],
+        ["The store is big.","المتجر كبير."],
+        ["Is the store near?","هل المتجر قريب؟"]
+      ]),
+
+      word("market","سوق","🛒",[
+        ["This is a market.","هذا سوق."],
+        ["The market is big.","السوق كبير."],
+        ["Is the market near?","هل السوق قريب؟"]
+      ]),
+
+      word("bank","بنك","🏦",[
+        ["This is a bank.","هذا بنك."],
+        ["The bank is near.","البنك قريب."],
+        ["Is the bank here?","هل البنك هنا؟"]
+      ]),
+
+      word("park","حديقة","🌳",[
+        ["This is a park.","هذه حديقة."],
+        ["The park is beautiful.","الحديقة جميلة."],
+        ["Is the park near?","هل الحديقة قريبة؟"]
+      ]),
+
+      word("restaurant","مطعم","🍽️",[
+        ["This is a restaurant.","هذا مطعم."],
+        ["The restaurant is nice.","المطعم لطيف."],
+        ["Is the restaurant near?","هل المطعم قريب؟"]
+      ]),
+
+      word("café","مقهى","☕",[
+        ["This is a café.","هذا مقهى."],
+        ["The café is small.","المقهى صغير."],
+        ["Is the café near?","هل المقهى قريب؟"]
+      ]),
+
+      word("library","مكتبة","📚",[
+        ["This is a library.","هذه مكتبة."],
+        ["The library is big.","المكتبة كبيرة."],
+        ["Is the library near?","هل المكتبة قريبة؟"]
+      ]),
+
+      word("hospital","مستشفى","🏥",[
+        ["This is a hospital.","هذا مستشفى."],
+        ["The hospital is big.","المستشفى كبير."],
+        ["Is the hospital near?","هل المستشفى قريب؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 4,
+    stageTitle: "الأماكن والمدينة 🏙️",
+    stageDescription: "كلمات ستقابلها في الشارع والأماكن العامة والتنقل.",
+
+    title: "المواصلات",
+    icon: "🚌",
+    description: "مفردات أساسية لوسائل التنقل التي تراها وتستخدمها.",
+
+    words: [
+
+      word("bus","حافلة / باص","🚌",[
+        ["This is a bus.","هذه حافلة."],
+        ["The bus is big.","الحافلة كبيرة."],
+        ["Is the bus here?","هل الحافلة هنا؟"]
+      ]),
+
+      word("taxi","سيارة أجرة","🚕",[
+        ["This is a taxi.","هذه سيارة أجرة."],
+        ["The taxi is yellow.","سيارة الأجرة صفراء."],
+        ["Is the taxi here?","هل سيارة الأجرة هنا؟"]
+      ]),
+
+      word("train","قطار","🚆",[
+        ["This is a train.","هذا قطار."],
+        ["The train is long.","القطار طويل."],
+        ["Is the train here?","هل القطار هنا؟"]
+      ]),
+
+      word("station","محطة","🚉",[
+        ["This is a station.","هذه محطة."],
+        ["The station is big.","المحطة كبيرة."],
+        ["Is the station near?","هل المحطة قريبة؟"]
+      ]),
+
+      word("airport","مطار","✈️",[
+        ["This is an airport.","هذا مطار."],
+        ["The airport is big.","المطار كبير."],
+        ["Is the airport near?","هل المطار قريب؟"]
+      ]),
+
+      word("ticket","تذكرة","🎫",[
+        ["This is a ticket.","هذه تذكرة."],
+        ["My ticket is here.","تذكرتي هنا."],
+        ["Is your ticket new?","هل تذكرتك جديدة؟"]
+      ]),
+
+      word("car","سيارة","🚗",[
+        ["This is a car.","هذه سيارة."],
+        ["The car is new.","السيارة جديدة."],
+        ["Is the car blue?","هل السيارة زرقاء؟"]
+      ]),
+
+      word("bicycle","دراجة","🚲",[
+        ["This is a bicycle.","هذه دراجة."],
+        ["The bicycle is new.","الدراجة جديدة."],
+        ["Is the bicycle red?","هل الدراجة حمراء؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 4,
+    stageTitle: "الأماكن والمدينة 🏙️",
+    stageDescription: "كلمات ستقابلها في الشارع والأماكن العامة والتنقل.",
+
+    title: "المباني والأماكن",
+    icon: "🏢",
+    description: "كلمات تصف المباني والأجزاء المهمة من الأماكن العامة.",
+
+    words: [
+
+      word("building","مبنى","🏢",[
+        ["This is a building.","هذا مبنى."],
+        ["The building is tall.","المبنى طويل."],
+        ["Is the building new?","هل المبنى جديد؟"]
+      ]),
+
+      word("entrance","مدخل","🚪",[
+        ["This is the entrance.","هذا المدخل."],
+        ["The entrance is here.","المدخل هنا."],
+        ["Is the entrance near?","هل المدخل قريب؟"]
+      ]),
+
+      word("exit","مخرج","🚪",[
+        ["This is the exit.","هذا المخرج."],
+        ["The exit is here.","المخرج هنا."],
+        ["Is the exit near?","هل المخرج قريب؟"]
+      ]),
+
+      word("floor","طابق / أرضية","🏢",[
+        ["This is the first floor.","هذا الطابق الأول."],
+        ["The floor is clean.","الأرضية نظيفة."],
+        ["Is the floor clean?","هل الأرضية نظيفة؟"]
+      ]),
+
+      word("room","غرفة","🚪",[
+        ["This is a room.","هذه غرفة."],
+        ["The room is big.","الغرفة كبيرة."],
+        ["Is the room clean?","هل الغرفة نظيفة؟"]
+      ]),
+
+      word("door","باب","🚪",[
+        ["This is a door.","هذا باب."],
+        ["The door is white.","الباب أبيض."],
+        ["Is the door open?","هل الباب مفتوح؟"]
+      ]),
+
+      word("window","نافذة","🪟",[
+        ["This is a window.","هذه نافذة."],
+        ["The window is big.","النافذة كبيرة."],
+        ["Is the window clean?","هل النافذة نظيفة؟"]
+      ]),
+
+      word("entrance hall","صالة المدخل","🏛️",[
+        ["The entrance hall is big.","صالة المدخل كبيرة."],
+        ["The entrance hall is clean.","صالة المدخل نظيفة."],
+        ["Is the entrance hall here?","هل صالة المدخل هنا؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 4,
+    stageTitle: "الأماكن والمدينة 🏙️",
+    stageDescription: "كلمات ستقابلها في الشارع والأماكن العامة والتنقل.",
+
+    title: "المكان والاتجاه",
+    icon: "📍",
+    description: "كلمات بسيطة تساعدك على فهم مكان الأشياء والأشخاص.",
+
+    words: [
+
+      word("near","قريب","📍",[
+        ["The school is near.","المدرسة قريبة."],
+        ["My house is near.","بيتي قريب."],
+        ["Is the store near?","هل المتجر قريب؟"]
+      ]),
+
+      word("far","بعيد","📍",[
+        ["The school is far.","المدرسة بعيدة."],
+        ["My house is far.","بيتي بعيد."],
+        ["Is the hospital far?","هل المستشفى بعيد؟"]
+      ]),
+
+      word("here","هنا","📍",[
+        ["My bag is here.","حقيبتي هنا."],
+        ["The book is here.","الكتاب هنا."],
+        ["Is the school here?","هل المدرسة هنا؟"]
+      ]),
+
+      word("there","هناك","👉",[
+        ["My bag is there.","حقيبتي هناك."],
+        ["The book is there.","الكتاب هناك."],
+        ["Is the school there?","هل المدرسة هناك؟"]
+      ]),
+
+      word("inside","في الداخل","🏠",[
+        ["The bag is inside.","الحقيبة في الداخل."],
+        ["The book is inside.","الكتاب في الداخل."],
+        ["Is he inside?","هل هو في الداخل؟"]
+      ]),
+
+      word("outside","في الخارج","🌳",[
+        ["The car is outside.","السيارة في الخارج."],
+        ["The dog is outside.","الكلب في الخارج."],
+        ["Is he outside?","هل هو في الخارج؟"]
+      ]),
+
+      word("left","اليسار","⬅️",[
+        ["The store is on the left.","المتجر على اليسار."],
+        ["The school is on the left.","المدرسة على اليسار."],
+        ["Is it on the left?","هل هو على اليسار؟"]
+      ]),
+
+      word("right","اليمين / صحيح","➡️",[
+        ["The store is on the right.","المتجر على اليمين."],
+        ["The school is on the right.","المدرسة على اليمين."],
+        ["Is it on the right?","هل هو على اليمين؟"]
+      ])
+
+    ]
+  },
+
+
+  /* =======================================================
+     STAGE 5
+  ======================================================= */
+
+  {
+    stage: 5,
+    stageTitle: "الحياة اليومية 🍎",
+    stageDescription: "مفردات عملية للطعام والشراب والملابس والدراسة والتقنية.",
+
+    title: "الطعام",
+    icon: "🍎",
+    description: "كلمات أساسية للأطعمة التي تتعرض لها في الحياة اليومية.",
+
+    words: [
+
+      word("apple","تفاحة","🍎",[
+        ["This is an apple.","هذه تفاحة."],
+        ["The apple is red.","التفاحة حمراء."],
+        ["Is the apple red?","هل التفاحة حمراء؟"]
+      ]),
+
+      word("banana","موزة","🍌",[
+        ["This is a banana.","هذه موزة."],
+        ["The banana is yellow.","الموزة صفراء."],
+        ["Is the banana yellow?","هل الموزة صفراء؟"]
+      ]),
+
+      word("orange","برتقالة / برتقال","🍊",[
+        ["This is an orange.","هذه برتقالة."],
+        ["The orange is big.","البرتقالة كبيرة."],
+        ["Is the orange big?","هل البرتقالة كبيرة؟"]
+      ]),
+
+      word("bread","خبز","🍞",[
+        ["This is bread.","هذا خبز."],
+        ["The bread is fresh.","الخبز طازج."],
+        ["Is the bread fresh?","هل الخبز طازج؟"]
+      ]),
+
+      word("rice","أرز","🍚",[
+        ["This is rice.","هذا أرز."],
+        ["The rice is hot.","الأرز ساخن."],
+        ["Is the rice hot?","هل الأرز ساخن؟"]
+      ]),
+
+      word("egg","بيضة","🥚",[
+        ["This is an egg.","هذه بيضة."],
+        ["The egg is white.","البيضة بيضاء."],
+        ["Is the egg white?","هل البيضة بيضاء؟"]
+      ]),
+
+      word("cheese","جبن","🧀",[
+        ["This is cheese.","هذا جبن."],
+        ["The cheese is good.","الجبن جيد."],
+        ["Is the cheese good?","هل الجبن جيد؟"]
+      ]),
+
+      word("chicken","دجاج / دجاجة","🍗",[
+        ["This is chicken.","هذا دجاج."],
+        ["The chicken is hot.","الدجاج ساخن."],
+        ["Is the chicken good?","هل الدجاج جيد؟"]
+      ]),
+
+      word("soup","شوربة / حساء","🍲",[
+        ["This is soup.","هذه شوربة."],
+        ["The soup is hot.","الشوربة ساخنة."],
+        ["Is the soup hot?","هل الشوربة ساخنة؟"]
+      ]),
+
+      word("salad","سلطة","🥗",[
+        ["This is a salad.","هذه سلطة."],
+        ["The salad is good.","السلطة جيدة."],
+        ["Is the salad fresh?","هل السلطة طازجة؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 5,
+    stageTitle: "الحياة اليومية 🍎",
+    stageDescription: "مفردات عملية للطعام والشراب والملابس والدراسة والتقنية.",
+
+    title: "المشروبات",
+    icon: "🥤",
+    description: "كلمات بسيطة مرتبطة بالمشروبات والأشياء التي تراها معها.",
+
+    words: [
+
+      word("water","ماء","💧",[
+        ["This is water.","هذا ماء."],
+        ["The water is cold.","الماء بارد."],
+        ["Is the water cold?","هل الماء بارد؟"]
+      ]),
+
+      word("milk","حليب","🥛",[
+        ["This is milk.","هذا حليب."],
+        ["The milk is cold.","الحليب بارد."],
+        ["Is the milk cold?","هل الحليب بارد؟"]
+      ]),
+
+      word("coffee","قهوة","☕",[
+        ["This is coffee.","هذه قهوة."],
+        ["The coffee is hot.","القهوة ساخنة."],
+        ["Is the coffee hot?","هل القهوة ساخنة؟"]
+      ]),
+
+      word("tea","شاي","🍵",[
+        ["This is tea.","هذا شاي."],
+        ["The tea is hot.","الشاي ساخن."],
+        ["Is the tea hot?","هل الشاي ساخن؟"]
+      ]),
+
+      word("juice","عصير","🧃",[
+        ["This is juice.","هذا عصير."],
+        ["The juice is cold.","العصير بارد."],
+        ["Is the juice cold?","هل العصير بارد؟"]
+      ]),
+
+      word("bottle","زجاجة","🍼",[
+        ["This is a bottle.","هذه زجاجة."],
+        ["The bottle is full.","الزجاجة ممتلئة."],
+        ["Is the bottle empty?","هل الزجاجة فارغة؟"]
+      ]),
+
+      word("ice","ثلج","🧊",[
+        ["This is ice.","هذا ثلج."],
+        ["The ice is cold.","الثلج بارد."],
+        ["Is the ice cold?","هل الثلج بارد؟"]
+      ]),
+
+      word("sugar","سكر","🧂",[
+        ["This is sugar.","هذا سكر."],
+        ["The sugar is white.","السكر أبيض."],
+        ["Is the sugar white?","هل السكر أبيض؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 5,
+    stageTitle: "الحياة اليومية 🍎",
+    stageDescription: "مفردات عملية للطعام والشراب والملابس والدراسة والتقنية.",
+
+    title: "الملابس",
+    icon: "👕",
+    description: "أسماء الملابس الأساسية التي تستخدمها في حياتك اليومية.",
+
+    words: [
+
+      word("shirt","قميص","👕",[
+        ["This is my shirt.","هذا قميصي."],
+        ["My shirt is blue.","قميصي أزرق."],
+        ["Is your shirt new?","هل قميصك جديد؟"]
+      ]),
+
+      word("T-shirt","تيشيرت","👕",[
+        ["This is my T-shirt.","هذا تيشيرتي."],
+        ["My T-shirt is white.","تيشيرتي أبيض."],
+        ["Is your T-shirt new?","هل تيشيرتك جديدة؟"]
+      ]),
+
+      word("pants","بنطال","👖",[
+        ["These are my pants.","هذا بنطالي."],
+        ["My pants are black.","بنطالي أسود."],
+        ["Are your pants new?","هل بنطالك جديد؟"]
+      ]),
+
+      word("dress","فستان","👗",[
+        ["This is my dress.","هذا فستاني."],
+        ["My dress is beautiful.","فستاني جميل."],
+        ["Is your dress new?","هل فستانك جديد؟"]
+      ]),
+
+      word("shoes","أحذية","👟",[
+        ["These are my shoes.","هذه أحذيتي."],
+        ["My shoes are new.","أحذيتي جديدة."],
+        ["Are your shoes black?","هل أحذيتك سوداء؟"]
+      ]),
+
+      word("jacket","سترة / جاكيت","🧥",[
+        ["This is my jacket.","هذه سترتي."],
+        ["My jacket is black.","سترَتي سوداء."],
+        ["Is your jacket new?","هل سترتك جديدة؟"]
+      ]),
+
+      word("hat","قبعة","🧢",[
+        ["This is my hat.","هذه قبعتي."],
+        ["My hat is blue.","قبعتي زرقاء."],
+        ["Is your hat new?","هل قبعتك جديدة؟"]
+      ]),
+
+      word("sock","جورب","🧦",[
+        ["This is my sock.","هذا جوْربي."],
+        ["My sock is white.","جوْربي أبيض."],
+        ["Is your sock clean?","هل جوربك نظيف؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 5,
+    stageTitle: "الحياة اليومية 🍎",
+    stageDescription: "مفردات عملية للطعام والشراب والملابس والدراسة والتقنية.",
+
+    title: "التسوق",
+    icon: "🛍️",
+    description: "كلمات عملية ستقابلها في المتاجر والتسوق.",
+
+    words: [
+
+      word("price","سعر","🏷️",[
+        ["The price is high.","السعر مرتفع."],
+        ["The price is low.","السعر منخفض."],
+        ["Is the price good?","هل السعر جيد؟"]
+      ]),
+
+      word("cheap","رخيص","💰",[
+        ["The bag is cheap.","الحقيبة رخيصة."],
+        ["The shirt is cheap.","القميص رخيص."],
+        ["Is it cheap?","هل هو رخيص؟"]
+      ]),
+
+      word("expensive","غالي","💎",[
+        ["The bag is expensive.","الحقيبة غالية."],
+        ["The shirt is expensive.","القميص غالي."],
+        ["Is it expensive?","هل هو غالي؟"]
+      ]),
+
+      word("size","مقاس / حجم","📏",[
+        ["The size is small.","المقاس صغير."],
+        ["My size is large.","مقاسي كبير."],
+        ["Is this the right size?","هل هذا هو المقاس الصحيح؟"]
+      ]),
+
+      word("color","لون","🎨",[
+        ["The color is blue.","اللون أزرق."],
+        ["My favorite color is blue.","لوني المفضل أزرق."],
+        ["Is this your color?","هل هذا لونك؟"]
+      ]),
+
+      word("bag","حقيبة","👜",[
+        ["This is my bag.","هذه حقيبتي."],
+        ["My bag is new.","حقيبتي جديدة."],
+        ["Is your bag big?","هل حقيبتك كبيرة؟"]
+      ]),
+
+      word("gift","هدية","🎁",[
+        ["This is a gift.","هذه هدية."],
+        ["The gift is beautiful.","الهدية جميلة."],
+        ["Is this your gift?","هل هذه هديتك؟"]
+      ]),
+
+      word("box","صندوق","📦",[
+        ["This is a box.","هذا صندوق."],
+        ["The box is big.","الصندوق كبير."],
+        ["Is the box empty?","هل الصندوق فارغ؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 5,
+    stageTitle: "الحياة اليومية 🍎",
+    stageDescription: "مفردات عملية للطعام والشراب والملابس والدراسة والتقنية.",
+
+    title: "الدراسة",
+    icon: "📚",
+    description: "مفردات إضافية مرتبطة بالدراسة والتعلم.",
+
+    words: [
+
+      word("lesson","درس","📖",[
+        ["This is a lesson.","هذا درس."],
+        ["The lesson is easy.","الدرس سهل."],
+        ["Is the lesson difficult?","هل الدرس صعب؟"]
+      ]),
+
+      word("class","صف / حصة","🏫",[
+        ["This is my class.","هذه حصتي."],
+        ["The class is big.","الصف كبير."],
+        ["Is the class here?","هل الحصة هنا؟"]
+      ]),
+
+      word("page","صفحة","📄",[
+        ["This is a page.","هذه صفحة."],
+        ["The page is white.","الصفحة بيضاء."],
+        ["Is the page new?","هل الصفحة جديدة؟"]
+      ]),
+
+      word("question","سؤال","❓",[
+        ["This is a question.","هذا سؤال."],
+        ["The question is easy.","السؤال سهل."],
+        ["Is the question difficult?","هل السؤال صعب؟"]
+      ]),
+
+      word("answer","إجابة","✅",[
+        ["This is an answer.","هذه إجابة."],
+        ["The answer is right.","الإجابة صحيحة."],
+        ["Is the answer right?","هل الإجابة صحيحة؟"]
+      ]),
+
+      word("test","اختبار","📝",[
+        ["This is a test.","هذا اختبار."],
+        ["The test is difficult.","الاختبار صعب."],
+        ["Is the test easy?","هل الاختبار سهل؟"]
+      ]),
+
+      word("classroom","فصل دراسي","🏫",[
+        ["This is a classroom.","هذا فصل دراسي."],
+        ["The classroom is big.","الفصل الدراسي كبير."],
+        ["Is the classroom clean?","هل الفصل الدراسي نظيف؟"]
+      ]),
+
+      word("notebook","دفتر","📓",[
+        ["This is my notebook.","هذا دفتري."],
+        ["My notebook is new.","دفتري جديد."],
+        ["Is your notebook blue?","هل دفترك أزرق؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 5,
+    stageTitle: "الحياة اليومية 🍎",
+    stageDescription: "مفردات عملية للطعام والشراب والملابس والدراسة والتقنية.",
+
+    title: "التقنية والأجهزة",
+    icon: "📱",
+    description: "كلمات أساسية للأجهزة والأشياء التقنية التي يستخدمها الطالب.",
+
+    words: [
+
+      word("computer","حاسوب / كمبيوتر","💻",[
+        ["This is my computer.","هذا كمبيوتري."],
+        ["My computer is new.","كمبيوتري جديد."],
+        ["Is your computer new?","هل كمبيوترك جديد؟"]
+      ]),
+
+      word("phone","هاتف","📱",[
+        ["This is my phone.","هذا هاتفي."],
+        ["My phone is new.","هاتفي جديد."],
+        ["Is your phone black?","هل هاتفك أسود؟"]
+      ]),
+
+      word("screen","شاشة","🖥️",[
+        ["This is a screen.","هذه شاشة."],
+        ["The screen is big.","الشاشة كبيرة."],
+        ["Is the screen clean?","هل الشاشة نظيفة؟"]
+      ]),
+
+      word("keyboard","لوحة مفاتيح","⌨️",[
+        ["This is a keyboard.","هذه لوحة مفاتيح."],
+        ["The keyboard is black.","لوحة المفاتيح سوداء."],
+        ["Is the keyboard new?","هل لوحة المفاتيح جديدة؟"]
+      ]),
+
+      word("camera","كاميرا","📷",[
+        ["This is a camera.","هذه كاميرا."],
+        ["The camera is small.","الكاميرا صغيرة."],
+        ["Is the camera new?","هل الكاميرا جديدة؟"]
+      ]),
+
+      word("headphones","سماعات رأس","🎧",[
+        ["These are my headphones.","هذه سماعاتي."],
+        ["My headphones are new.","سماعاتي جديدة."],
+        ["Are your headphones black?","هل سماعاتك سوداء؟"]
+      ]),
+
+      word("charger","شاحن","🔌",[
+        ["This is my charger.","هذا شاحني."],
+        ["My charger is new.","شاحني جديد."],
+        ["Is your charger here?","هل شاحنك هنا؟"]
+      ]),
+
+      word("internet","الإنترنت","🌐",[
+        ["The internet is good.","الإنترنت جيد."],
+        ["The internet is slow.","الإنترنت بطيء."],
+        ["Is the internet good?","هل الإنترنت جيد؟"]
+      ])
+
+    ]
+  },
+
+
+  /* =======================================================
+     STAGE 6
+  ======================================================= */
+
+  {
+    stage: 6,
+    stageTitle: "الوقت والحياة الاجتماعية 🕐",
+    stageDescription: "كلمات توسّع ما يعرفه الطالب عن الوقت والمناسبات والمشاعر.",
+
+    title: "الوقت والتاريخ",
+    icon: "🕐",
+    description: "مفردات إضافية مرتبطة بالوقت والتاريخ والمواعيد.",
+
+    words: [
+
+      word("morning","الصباح","🌅",[
+        ["The morning is beautiful.","الصباح جميل."],
+        ["My morning is good.","صباحي جيد."],
+        ["Is it morning?","هل الوقت صباح؟"]
+      ]),
+
+      word("afternoon","بعد الظهر","☀️",[
+        ["The afternoon is hot.","بعد الظهر حار."],
+        ["My afternoon is good.","وقت بعد الظهر لدي جيد."],
+        ["Is it afternoon?","هل الوقت بعد الظهر؟"]
+      ]),
+
+      word("evening","المساء","🌇",[
+        ["The evening is nice.","المساء جميل."],
+        ["My evening is quiet.","مسائي هادئ."],
+        ["Is it evening?","هل الوقت مساء؟"]
+      ]),
+
+      word("night","الليل","🌙",[
+        ["The night is quiet.","الليل هادئ."],
+        ["The night is dark.","الليل مظلم."],
+        ["Is it night?","هل الوقت ليل؟"]
+      ]),
+
+      word("weekend","عطلة نهاية الأسبوع","🏖️",[
+        ["The weekend is nice.","عطلة نهاية الأسبوع جميلة."],
+        ["My weekend is quiet.","عطلة نهاية الأسبوع لدي هادئة."],
+        ["Is the weekend long?","هل عطلة نهاية الأسبوع طويلة؟"]
+      ]),
+
+      word("birthday","عيد ميلاد","🎂",[
+        ["Today is my birthday.","اليوم عيد ميلادي."],
+        ["My birthday is special.","عيد ميلادي مميز."],
+        ["Is today your birthday?","هل اليوم عيد ميلادك؟"]
+      ]),
+
+      word("date","تاريخ / موعد","📅",[
+        ["The date is today.","التاريخ هو اليوم."],
+        ["This date is important.","هذا التاريخ مهم."],
+        ["Is the date today?","هل التاريخ اليوم؟"]
+      ]),
+
+      word("calendar","تقويم","📅",[
+        ["This is a calendar.","هذا تقويم."],
+        ["My calendar is new.","تقويمي جديد."],
+        ["Is the calendar here?","هل التقويم هنا؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 6,
+    stageTitle: "الوقت والحياة الاجتماعية 🕐",
+    stageDescription: "كلمات توسّع ما يعرفه الطالب عن الوقت والمناسبات والمشاعر.",
+
+    title: "المناسبات",
+    icon: "🎉",
+    description: "كلمات بسيطة للمناسبات والأوقات الاجتماعية.",
+
+    words: [
+
+      word("party","حفلة","🎉",[
+        ["This is a party.","هذه حفلة."],
+        ["The party is nice.","الحفلة جميلة."],
+        ["Is the party today?","هل الحفلة اليوم؟"]
+      ]),
+
+      word("holiday","عطلة / إجازة","🏖️",[
+        ["The holiday is nice.","الإجازة جميلة."],
+        ["My holiday is long.","إجازتي طويلة."],
+        ["Is it a holiday?","هل هي إجازة؟"]
+      ]),
+
+      word("gift","هدية","🎁",[
+        ["This is a gift.","هذه هدية."],
+        ["The gift is beautiful.","الهدية جميلة."],
+        ["Is this your gift?","هل هذه هديتك؟"]
+      ]),
+
+      word("card","بطاقة","💌",[
+        ["This is a card.","هذه بطاقة."],
+        ["The card is beautiful.","البطاقة جميلة."],
+        ["Is the card new?","هل البطاقة جديدة؟"]
+      ]),
+
+      word("cake","كعكة","🎂",[
+        ["This is a cake.","هذه كعكة."],
+        ["The cake is big.","الكعكة كبيرة."],
+        ["Is the cake good?","هل الكعكة جيدة؟"]
+      ]),
+
+      word("family","عائلة","👨‍👩‍👧‍👦",[
+        ["This is my family.","هذه عائلتي."],
+        ["My family is big.","عائلتي كبيرة."],
+        ["Is your family big?","هل عائلتك كبيرة؟"]
+      ]),
+
+      word("friend","صديق / صديقة","🧑‍🤝‍🧑",[
+        ["He is my friend.","هو صديقي."],
+        ["My friend is nice.","صديقي لطيف."],
+        ["Is she your friend?","هل هي صديقتك؟"]
+      ]),
+
+      word("welcome","مرحبًا / أهلًا وسهلًا","👋",[
+        ["Welcome to my house.","مرحبًا بك في بيتي."],
+        ["You are welcome here.","أنت مرحب بك هنا."],
+        ["Is he welcome here?","هل هو مرحب به هنا؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 6,
+    stageTitle: "الوقت والحياة الاجتماعية 🕐",
+    stageDescription: "كلمات توسّع ما يعرفه الطالب عن الوقت والمناسبات والمشاعر.",
+
+    title: "المشاعر والحالات",
+    icon: "🙂",
+    description: "مفردات وصفية بسيطة للتعبير عن الحالة والمشاعر.",
+
+    words: [
+
+      word("happy","سعيد","😊",[
+        ["I am happy.","أنا سعيد."],
+        ["She is happy.","هي سعيدة."],
+        ["Are you happy?","هل أنت سعيد؟"]
+      ]),
+
+      word("sad","حزين","😢",[
+        ["I am sad.","أنا حزين."],
+        ["He is sad.","هو حزين."],
+        ["Is he sad?","هل هو حزين؟"]
+      ]),
+
+      word("tired","متعب","😴",[
+        ["I am tired.","أنا متعب."],
+        ["He is tired.","هو متعب."],
+        ["Are you tired?","هل أنت متعب؟"]
+      ]),
+
+      word("busy","مشغول","🗓️",[
+        ["I am busy.","أنا مشغول."],
+        ["She is busy.","هي مشغولة."],
+        ["Are you busy?","هل أنت مشغول؟"]
+      ]),
+
+      word("free","متفرغ / غير مشغول","🕊️",[
+        ["I am free.","أنا متفرغ."],
+        ["He is free.","هو متفرغ."],
+        ["Are you free?","هل أنت متفرغ؟"]
+      ]),
+
+      word("sick","مريض","🤒",[
+        ["I am sick.","أنا مريض."],
+        ["He is sick.","هو مريض."],
+        ["Is he sick?","هل هو مريض؟"]
+      ]),
+
+      word("okay","بخير / حسنًا","👌",[
+        ["I am okay.","أنا بخير."],
+        ["She is okay.","هي بخير."],
+        ["Are you okay?","هل أنت بخير؟"]
+      ]),
+
+      word("fine","بخير / جيد","🙂",[
+        ["I am fine.","أنا بخير."],
+        ["He is fine.","هو بخير."],
+        ["Are you fine?","هل أنت بخير؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 6,
+    stageTitle: "الوقت والحياة الاجتماعية 🕐",
+    stageDescription: "كلمات توسّع ما يعرفه الطالب عن الوقت والمناسبات والمشاعر.",
+
+    title: "صفات الأشخاص والعلاقات",
+    icon: "🤝",
+    description: "كلمات وصفية تساعدك على الحديث عن الأشخاص من حولك.",
+
+    words: [
+
+      word("kind","لطيف / طيب","❤️",[
+        ["She is kind.","هي لطيفة."],
+        ["My teacher is kind.","معلمي/معلمتي لطيف/لطيفة."],
+        ["Is he kind?","هل هو لطيف؟"]
+      ]),
+
+      word("friendly","ودود","😊",[
+        ["He is friendly.","هو ودود."],
+        ["My neighbor is friendly.","جاري ودود."],
+        ["Is she friendly?","هل هي ودودة؟"]
+      ]),
+
+      word("funny","مضحك","😂",[
+        ["He is funny.","هو مضحك."],
+        ["My friend is funny.","صديقي مضحك."],
+        ["Is he funny?","هل هو مضحك؟"]
+      ]),
+
+      word("serious","جاد","🧐",[
+        ["He is serious.","هو جاد."],
+        ["My teacher is serious.","معلمي/معلمتي جاد/جادة."],
+        ["Is he serious?","هل هو جاد؟"]
+      ]),
+
+      word("nice","لطيف / جميل","😊",[
+        ["She is nice.","هي لطيفة."],
+        ["The place is nice.","المكان جميل."],
+        ["Is your neighbor nice?","هل جارك لطيف؟"]
+      ]),
+
+      word("special","مميز / خاص","⭐",[
+        ["Today is special.","اليوم مميز."],
+        ["My family is special.","عائلتي مميزة."],
+        ["Is this special?","هل هذا مميز؟"]
+      ]),
+
+      word("important","مهم","⭐",[
+        ["This is important.","هذا مهم."],
+        ["The lesson is important.","الدرس مهم."],
+        ["Is it important?","هل هو مهم؟"]
+      ]),
+
+      word("favorite","المفضل","❤️",[
+        ["Blue is my favorite color.","الأزرق هو لوني المفضل."],
+        ["This is my favorite book.","هذا كتابي المفضل."],
+        ["Is this your favorite color?","هل هذا لونك المفضل؟"]
+      ])
+
+    ]
+  },
+
+
+  /* =======================================================
+     STAGE 7
+  ======================================================= */
+
+  {
+    stage: 7,
+    stageTitle: "توسيع الحصيلة 🧠",
+    stageDescription: "كلمات متقابلة ووصفية ومفيدة لبناء قاعدة لغوية أوسع.",
+
+    title: "الكلمات المتضادة",
+    icon: "↔️",
+    description: "تعلّم الكلمات مع مقابلها حتى تتوسع قدرتك على الوصف.",
+
+    words: [
+
+      word("big","كبير","🔵",[
+        ["The house is big.","البيت كبير."],
+        ["My bag is big.","حقيبتي كبيرة."],
+        ["Is the room big?","هل الغرفة كبيرة؟"]
+      ]),
+
+      word("small","صغير","🔵",[
+        ["The house is small.","البيت صغير."],
+        ["My bag is small.","حقيبتي صغيرة."],
+        ["Is the room small?","هل الغرفة صغيرة؟"]
+      ]),
+
+      word("new","جديد","✨",[
+        ["My phone is new.","هاتفي جديد."],
+        ["This is a new book.","هذا كتاب جديد."],
+        ["Is your bag new?","هل حقيبتك جديدة؟"]
+      ]),
+
+      word("old","قديم / كبير في السن","🕰️",[
+        ["My phone is old.","هاتفي قديم."],
+        ["The house is old.","البيت قديم."],
+        ["Is your house old?","هل بيتك قديم؟"]
+      ]),
+
+      word("open","مفتوح","🚪",[
+        ["The door is open.","الباب مفتوح."],
+        ["The window is open.","النافذة مفتوحة."],
+        ["Is the door open?","هل الباب مفتوح؟"]
+      ]),
+
+      word("closed","مغلق","🚪",[
+        ["The door is closed.","الباب مغلق."],
+        ["The store is closed.","المتجر مغلق."],
+        ["Is the door closed?","هل الباب مغلق؟"]
+      ]),
+
+      word("good","جيد","👍",[
+        ["The food is good.","الطعام جيد."],
+        ["The lesson is good.","الدرس جيد."],
+        ["Is it good?","هل هو جيد؟"]
+      ]),
+
+      word("bad","سيئ","👎",[
+        ["The food is bad.","الطعام سيئ."],
+        ["The weather is bad.","الطقس سيئ."],
+        ["Is it bad?","هل هو سيئ؟"]
+      ]),
+
+      word("fast","سريع","⚡",[
+        ["The car is fast.","السيارة سريعة."],
+        ["The train is fast.","القطار سريع."],
+        ["Is the car fast?","هل السيارة سريعة؟"]
+      ]),
+
+      word("slow","بطيء","🐢",[
+        ["The car is slow.","السيارة بطيئة."],
+        ["The internet is slow.","الإنترنت بطيء."],
+        ["Is the internet slow?","هل الإنترنت بطيء؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 7,
+    stageTitle: "توسيع الحصيلة 🧠",
+    stageDescription: "كلمات متقابلة ووصفية ومفيدة لبناء قاعدة لغوية أوسع.",
+
+    title: "كلمات الوصف اليومية",
+    icon: "🧩",
+    description: "صفات شائعة جدًا تساعدك على تكوين جمل أكثر تنوعًا.",
+
+    words: [
+
+      word("beautiful","جميل","🌸",[
+        ["The flower is beautiful.","الزهرة جميلة."],
+        ["The place is beautiful.","المكان جميل."],
+        ["Is the house beautiful?","هل البيت جميل؟"]
+      ]),
+
+      word("ugly","قبيح","😕",[
+        ["The color is ugly.","اللون قبيح."],
+        ["The building is ugly.","المبنى قبيح."],
+        ["Is it ugly?","هل هو قبيح؟"]
+      ]),
+
+      word("strong","قوي","💪",[
+        ["He is strong.","هو قوي."],
+        ["The horse is strong.","الحصان قوي."],
+        ["Is he strong?","هل هو قوي؟"]
+      ]),
+
+      word("weak","ضعيف","🫤",[
+        ["He is weak.","هو ضعيف."],
+        ["The dog is weak.","الكلب ضعيف."],
+        ["Is he weak?","هل هو ضعيف؟"]
+      ]),
+
+      word("safe","آمن","🛡️",[
+        ["The place is safe.","المكان آمن."],
+        ["The house is safe.","البيت آمن."],
+        ["Is this place safe?","هل هذا المكان آمن؟"]
+      ]),
+
+      word("dangerous","خطير","⚠️",[
+        ["The road is dangerous.","الطريق خطير."],
+        ["The place is dangerous.","المكان خطير."],
+        ["Is the road dangerous?","هل الطريق خطير؟"]
+      ]),
+
+      word("ready","جاهز","✅",[
+        ["I am ready.","أنا جاهز."],
+        ["He is ready.","هو جاهز."],
+        ["Are you ready?","هل أنت جاهز؟"]
+      ]),
+
+      word("late","متأخر","⏰",[
+        ["I am late.","أنا متأخر."],
+        ["He is late.","هو متأخر."],
+        ["Is he late?","هل هو متأخر؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 7,
+    stageTitle: "توسيع الحصيلة 🧠",
+    stageDescription: "كلمات متقابلة ووصفية ومفيدة لبناء قاعدة لغوية أوسع.",
+
+    title: "المكان والمساحة",
+    icon: "📍",
+    description: "مفردات إضافية ستساعدك على فهم ووصف مكان الأشياء.",
+
+    words: [
+
+      word("top","أعلى / الجزء العلوي","⬆️",[
+        ["The book is on top.","الكتاب في الأعلى."],
+        ["The top is clean.","الجزء العلوي نظيف."],
+        ["Is it on top?","هل هو في الأعلى؟"]
+      ]),
+
+      word("bottom","أسفل / الجزء السفلي","⬇️",[
+        ["The book is at the bottom.","الكتاب في الأسفل."],
+        ["The bottom is clean.","الجزء السفلي نظيف."],
+        ["Is it at the bottom?","هل هو في الأسفل؟"]
+      ]),
+
+      word("middle","الوسط","↔️",[
+        ["The table is in the middle.","الطاولة في الوسط."],
+        ["The room is in the middle.","الغرفة في الوسط."],
+        ["Is it in the middle?","هل هو في الوسط؟"]
+      ]),
+
+      word("front","الأمام","⬆️",[
+        ["The car is in front.","السيارة في الأمام."],
+        ["The school is in front.","المدرسة في الأمام."],
+        ["Is it in front?","هل هو في الأمام؟"]
+      ]),
+
+      word("back","الخلف / الظهر","↩️",[
+        ["The car is in the back.","السيارة في الخلف."],
+        ["The room is in the back.","الغرفة في الخلف."],
+        ["Is it in the back?","هل هو في الخلف؟"]
+      ]),
+
+      word("center","المركز / المنتصف","🎯",[
+        ["The store is in the center.","المتجر في المنتصف."],
+        ["The park is in the center.","الحديقة في المنتصف."],
+        ["Is it in the center?","هل هو في المنتصف؟"]
+      ]),
+
+      word("side","جانب","↔️",[
+        ["The bag is on the side.","الحقيبة على الجانب."],
+        ["The store is on this side.","المتجر في هذا الجانب."],
+        ["Is it on this side?","هل هو في هذا الجانب؟"]
+      ]),
+
+      word("place","مكان","📍",[
+        ["This is a nice place.","هذا مكان جميل."],
+        ["The place is quiet.","المكان هادئ."],
+        ["Is this place near?","هل هذا المكان قريب؟"]
+      ])
+
+    ]
+  },
+
+
+  {
+    stage: 7,
+    stageTitle: "توسيع الحصيلة 🧠",
+    stageDescription: "كلمات متقابلة ووصفية ومفيدة لبناء قاعدة لغوية أوسع.",
+
+    title: "كلمات يومية إضافية",
+    icon: "🧠",
+    description: "مجموعة أخيرة من الكلمات العملية التي ستقابلك كثيرًا.",
+
+    words: [
+
+      word("name","اسم","🏷️",[
+        ["My name is Ali.","اسمي علي."],
+        ["Her name is Sara.","اسمها سارة."],
+        ["Is your name here?","هل اسمك هنا؟"]
+      ]),
+
+      word("number","رقم","🔢",[
+        ["This is a number.","هذا رقم."],
+        ["The number is big.","الرقم كبير."],
+        ["Is this your number?","هل هذا رقمك؟"]
+      ]),
+
+      word("address","عنوان","📍",[
+        ["This is my address.","هذا عنواني."],
+        ["My address is here.","عنواني هنا."],
+        ["Is this your address?","هل هذا عنوانك؟"]
+      ]),
+
+      word("picture","صورة","🖼️",[
+        ["This is a picture.","هذه صورة."],
+        ["The picture is beautiful.","الصورة جميلة."],
+        ["Is this your picture?","هل هذه صورتك؟"]
+      ]),
+
+      word("photo","صورة فوتوغرافية","📷",[
+        ["This is a photo.","هذه صورة."],
+        ["The photo is beautiful.","الصورة جميلة."],
+        ["Is this your photo?","هل هذه صورتك؟"]
+      ]),
+
+      word("problem","مشكلة","⚠️",[
+        ["This is a problem.","هذه مشكلة."],
+        ["The problem is difficult.","المشكلة صعبة."],
+        ["Is this a problem?","هل هذه مشكلة؟"]
+      ]),
+
+      word("idea","فكرة","💡",[
+        ["This is an idea.","هذه فكرة."],
+        ["The idea is good.","الفكرة جيدة."],
+        ["Is this a good idea?","هل هذه فكرة جيدة؟"]
+      ]),
+
+      word("thing","شيء","📦",[
+        ["This is a thing.","هذا شيء."],
+        ["The thing is new.","الشيء جديد."],
+        ["Is this your thing?","هل هذا الشيء لك؟"]
+      ]),
+
+      word("place","مكان","📍",[
+        ["This is a nice place.","هذا مكان جميل."],
+        ["The place is quiet.","المكان هادئ."],
+        ["Is this place near?","هل هذا المكان قريب؟"]
+      ]),
+
+      word("world","العالم","🌍",[
+        ["The world is big.","العالم كبير."],
+        ["This is our world.","هذا عالمنا."],
+        ["Is the world big?","هل العالم كبير؟"]
+      ])
+
+    ]
+  }
+
+];
+
+
+/* =========================================================
+   WORD HELPER
+========================================================= */
+
+function word(
+  english,
+  meaning,
+  emoji,
+  noteOrExamples,
+  maybeExamples
+){
+
+  let note = "";
+  let examples = [];
+
+  if(Array.isArray(noteOrExamples)){
+    examples = noteOrExamples;
+  }else{
+    note = noteOrExamples || "";
+    examples = maybeExamples || [];
+  }
+
+  return {
+    english,
+    meaning,
+    emoji,
+    note,
+    examples
+  };
+}
+
+
+/* =========================================================
+   DOM
+========================================================= */
+
+const topicsView = document.getElementById("topicsView");
+const topicView = document.getElementById("topicView");
+
+const topicsContainer =
+  document.getElementById("topicsContainer");
+
+const wordsGrid =
+  document.getElementById("wordsGrid");
+
+const topicTitle =
+  document.getElementById("topicTitle");
+
+const topicDescription =
+  document.getElementById("topicDescription");
+
+const topicNumber =
+  document.getElementById("topicNumber");
+
+const previousButton =
+  document.getElementById("previousButton");
+
+const nextButton =
+  document.getElementById("nextButton");
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const progressText =
+  document.getElementById("progressText");
+
+
+let currentTopicIndex = -1;
+
+
+/* =========================================================
+   TWEMOJI IMAGE
+========================================================= */
+
+function emojiCodePoint(emoji){
+
+  return Array
+    .from(emoji)
+    .map(char => {
+
+      const code = char.codePointAt(0)
+        .toString(16);
+
+      return code;
+
+    })
+    .join("-");
+
+}
+
+
+function getEmojiImageURL(emoji){
+
+  const code =
+    emojiCodePoint(
+      emoji
+        .replace(/\uFE0F/g,"")
+    );
+
+  return
+    "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/"
+    + code
+    + ".svg";
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================================================
+   RENDER TOPICS
+========================================================= */
+
+function renderTopics(){
+
+  const query =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+  const grouped = {};
+
+  topics.forEach((topic,index)=>{
+
+    const searchableText = [
+
+      topic.title,
+      topic.description,
+
+      ...topic.words.map(item =>
+        item.english + " " +
+        item.meaning
+      )
+
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    if(
+      query &&
+      !searchableText.includes(query)
+    ){
+      return;
+    }
+
+    if(!grouped[topic.stage]){
+      grouped[topic.stage] = [];
+    }
+
+    grouped[topic.stage].push({
+      topic,
+      index
+    });
+
+  });
+
+
+  let html = "";
+
+
+  Object.keys(grouped)
+    .sort((a,b)=>Number(a)-Number(b))
+    .forEach(stageNumber=>{
+
+      const firstTopic =
+        grouped[stageNumber][0].topic;
+
+      html += `
+
+        <section class="topic-stage">
+
+          <div class="stage-header">
+
+            <div class="stage-header-inner">
+
+              <div class="stage-number">
+                ${escapeHTML(stageNumber)}
+              </div>
+
+              <div class="stage-info">
+
+                <h2>
+                  ${escapeHTML(firstTopic.stageTitle)}
+                </h2>
+
+                <p>
+                  ${escapeHTML(firstTopic.stageDescription)}
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="topic-grid">
+      `;
+
+
+      grouped[stageNumber]
+        .forEach(({topic,index})=>{
+
+          html += `
+
+            <article
+              class="topic-card"
+              onclick="openTopic(${index})"
+              tabindex="0"
+              onkeydown="handleTopicKey(event,${index})"
+            >
+
+              <div class="topic-icon">
+                ${escapeHTML(topic.icon)}
+              </div>
+
+              <h3>
+                ${escapeHTML(topic.title)}
+              </h3>
+
+              <p>
+                ${escapeHTML(topic.description)}
+              </p>
+
+              <div class="topic-footer">
+
+                <span class="topic-count">
+                  ${topic.words.length} كلمات
+                </span>
+
+                <span class="topic-open">
+                  ابدأ →
+                </span>
+
+              </div>
+
+            </article>
+
+          `;
+
+        });
+
+
+      html += `
+          </div>
+        </section>
+      `;
+
+    });
+
+
+  if(!html){
+
+    html = `
+
+      <div class="no-results">
+        لم نجد نتيجة مطابقة للبحث.
+      </div>
+
+    `;
+
+  }
+
+
+  topicsContainer.innerHTML = html;
+
+}
+
+
+/* =========================================================
+   OPEN TOPIC
+========================================================= */
+
+function openTopic(index){
+
+  if(
+    index < 0 ||
+    index >= topics.length
+  ){
+    return;
+  }
+
+  currentTopicIndex = index;
+
+  const topic = topics[index];
+
+  topicTitle.textContent =
+    topic.title;
+
+  topicDescription.textContent =
+    topic.description;
+
+  topicNumber.textContent =
+    `الوحدة ${index + 1} من ${topics.length}`;
+
+
+  wordsGrid.innerHTML =
+    topic.words
+      .map((item,wordIndex)=>
+        renderWordCard(item,wordIndex)
+      )
+      .join("");
+
+
+  previousButton.disabled =
+    index === 0;
+
+  nextButton.disabled =
+    index === topics.length - 1;
+
+
+  topicsView.style.display = "none";
+
+  topicView.style.display = "block";
+
+
+  updateProgress(index);
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   CLOSE TOPIC
+========================================================= */
+
+function closeTopic(){
+
+  stopSpeaking();
+
+  topicView.style.display = "none";
+
+  topicsView.style.display = "block";
+
+  currentTopicIndex = -1;
+
+  updateProgress(-1);
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   RENDER WORD CARD
+========================================================= */
+
+function renderWordCard(item,index){
+
+  const imageURL =
+    getEmojiImageURL(item.emoji);
+
+
+  const examplesHTML =
+    item.examples
+      .map(example=>`
+
+        <div class="example">
+
+          <div class="example-en">
+            ${escapeHTML(example[0])}
+          </div>
+
+          <div class="example-ar">
+            ${escapeHTML(example[1])}
+          </div>
+
+        </div>
+
+      `)
+      .join("");
+
+
+  const noteHTML =
+    item.note
+      ? `
+        <div class="word-meaning-note">
+          ${escapeHTML(item.note)}
+        </div>
+      `
+      : "";
+
+
+  return `
+
+    <article class="word-card">
+
+      <div class="word-top">
+
+        <div class="word-image">
+
+          <img
+            src="${imageURL}"
+            alt="${escapeHTML(item.meaning)}"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;word-image-fallback&quot;>${escapeHTML(item.emoji)}</span>';"
+          >
+
+        </div>
+
+
+        <div class="word-main">
+
+          <div class="word-english">
+            ${escapeHTML(item.english)}
+          </div>
+
+          <div class="word-meaning">
+            ${escapeHTML(item.meaning)}
+          </div>
+
+          ${noteHTML}
+
+          <button
+            class="pronounce-button"
+            type="button"
+            onclick="speakWord(${index})"
+          >
+            🔊 استمع للنطق
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="examples">
+
+        ${examplesHTML}
+
+      </div>
+
+    </article>
+
+  `;
+
+}
+
+
+/* =========================================================
+   SPEECH SYNTHESIS
+========================================================= */
+
+let activeSpeechButton = null;
+
+
+function findEnglishVoice(){
+
+  const voices =
+    window.speechSynthesis
+      ? window.speechSynthesis.getVoices()
+      : [];
+
+  return (
+
+    voices.find(
+      voice =>
+        voice.lang &&
+        voice.lang.toLowerCase() === "en-us"
+    )
+
+    ||
+
+    voices.find(
+      voice =>
+        voice.lang &&
+        voice.lang.toLowerCase().startsWith("en")
+    )
+
+    ||
+
+    null
+
+  );
+
+}
+
+
+function speakWord(wordIndex){
+
+  if(
+    currentTopicIndex < 0 ||
+    !topics[currentTopicIndex]
+  ){
+    return;
+  }
+
+  const topic =
+    topics[currentTopicIndex];
+
+  const item =
+    topic.words[wordIndex];
+
+  if(!item){
+    return;
+  }
+
+
+  stopSpeaking();
+
+
+  if(!("speechSynthesis" in window)){
+    alert(
+      "ميزة النطق غير متاحة على هذا الجهاز."
+    );
+    return;
+  }
+
+
+  const utterance =
+    new SpeechSynthesisUtterance(
+      item.english
+    );
+
+  utterance.lang = "en-US";
+
+  utterance.rate = 0.82;
+
+  utterance.pitch = 1;
+
+
+  const voice =
+    findEnglishVoice();
+
+  if(voice){
+    utterance.voice = voice;
+  }
+
+
+  const buttons =
+    wordsGrid.querySelectorAll(
+      ".pronounce-button"
+    );
+
+  activeSpeechButton =
+    buttons[wordIndex] || null;
+
+
+  if(activeSpeechButton){
+
+    activeSpeechButton.classList.add(
+      "speaking"
+    );
+
+    activeSpeechButton.innerHTML =
+      "🔊 يستمع...";
+
+  }
+
+
+  utterance.onend = ()=>{
+    resetSpeechButton();
+  };
+
+  utterance.onerror = ()=>{
+    resetSpeechButton();
+  };
+
+
+  window.speechSynthesis.speak(
+    utterance
+  );
+
+}
+
+
+function resetSpeechButton(){
+
+  if(activeSpeechButton){
+
+    activeSpeechButton.classList.remove(
+      "speaking"
+    );
+
+    activeSpeechButton.innerHTML =
+      "🔊 استمع للنطق";
+
+    activeSpeechButton = null;
+
+  }
+
+}
+
+
+function stopSpeaking(){
+
+  if(
+    "speechSynthesis" in window
+  ){
+
+    window.speechSynthesis.cancel();
+
+  }
+
+  resetSpeechButton();
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function openPreviousTopic(){
+
+  if(
+    currentTopicIndex > 0
+  ){
+
+    openTopic(
+      currentTopicIndex - 1
+    );
+
+  }
+
+}
+
+
+function openNextTopic(){
+
+  if(
+    currentTopicIndex <
+    topics.length - 1
+  ){
+
+    openTopic(
+      currentTopicIndex + 1
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+function updateProgress(index){
+
+  if(index < 0){
+
+    progressFill.style.width = "0%";
+
+    progressText.textContent =
+      `${topics.length} وحدة`;
+
+    return;
+
+  }
+
+
+  const percent =
+    ((index + 1) / topics.length) * 100;
+
+  progressFill.style.width =
+    `${percent}%`;
+
+  progressText.textContent =
+    `${index + 1} / ${topics.length}`;
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+searchInput.addEventListener(
+  "input",
+  renderTopics
+);
+
+
+/* =========================================================
+   KEYBOARD
+========================================================= */
+
+function handleTopicKey(event,index){
+
+  if(
+    event.key === "Enter" ||
+    event.key === " "
+  ){
+
+    event.preventDefault();
+
+    openTopic(index);
+
+  }
+
+}
+
+
+/* =========================================================
+   LOAD VOICES
+========================================================= */
+
+if(
+  "speechSynthesis" in window
+){
+
+  window.speechSynthesis.onvoiceschanged =
+    function(){};
+
+}
+
+
+/* =========================================================
+   INITIAL RENDER
+========================================================= */
+
+renderTopics();
+
+updateProgress(-1);
+
+</script>
+
+</body>
+</html>
