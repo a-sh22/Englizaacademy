@@ -7,80 +7,44 @@
 <title>Engliza Academy — Pre-intermediate Vocabulary</title>
 
 <style>
-
-/* =========================================================
-   ENGLIZA ACADEMY
-   PRE-INTERMEDIATE VOCABULARY
-========================================================= */
-
 :root{
   --blue:#3157D5;
   --blue-dark:#233E9B;
   --purple:#7654D9;
   --purple-light:#EEEAFE;
-
   --gold:#D9A441;
   --gold-light:#FFF6DF;
-
   --text:#17213C;
   --muted:#6E7891;
-
   --white:#FFFFFF;
   --bg:#F7F8FC;
   --border:#E8EAF2;
-
   --shadow:0 12px 35px rgba(36,48,94,.08);
   --shadow-hover:0 18px 45px rgba(36,48,94,.13);
-
   --radius-xl:32px;
   --radius-lg:28px;
   --radius-md:22px;
   --radius-sm:17px;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Tahoma,
-    Arial,
-    sans-serif;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;
 }
 
-button,
-input{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-/* =========================================================
-   CONTAINER
-========================================================= */
+button,input{font:inherit}
+button{cursor:pointer}
 
 .container{
-  width:min(1120px, calc(100% - 28px));
+  width:min(1120px,calc(100% - 28px));
   margin:auto;
 }
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
 
 .back-row{
   padding:22px 0 8px;
@@ -90,16 +54,10 @@ button{
   border:1px solid var(--border);
   background:var(--white);
   color:var(--blue-dark);
-
   padding:11px 17px;
-
   border-radius:14px;
-
   font-weight:800;
-
-  box-shadow:
-    0 6px 18px rgba(36,48,94,.05);
-
+  box-shadow:0 6px 18px rgba(36,48,94,.05);
   transition:.18s ease;
 }
 
@@ -107,174 +65,98 @@ button{
   transform:translateY(-1px);
 }
 
-/* =========================================================
-   HERO
-========================================================= */
-
 .hero{
   margin:8px 0 26px;
-
   padding:34px 28px;
-
   border-radius:var(--radius-xl);
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue) 0%,
-      var(--purple) 100%
-    );
-
+  background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 100%);
   color:#fff;
-
   box-shadow:var(--shadow);
-
   position:relative;
-
   overflow:hidden;
 }
 
 .hero::after{
   content:"";
-
   position:absolute;
-
   width:250px;
   height:250px;
-
   border-radius:50%;
-
   right:-95px;
   top:-125px;
-
   background:rgba(255,255,255,.10);
 }
 
 .eyebrow{
   font-size:12px;
-
   font-weight:900;
-
   letter-spacing:1.7px;
-
   opacity:.86;
 }
 
 .hero h1{
   margin:8px 0 9px;
-
-  font-size:
-    clamp(30px,5vw,48px);
-
+  font-size:clamp(30px,5vw,48px);
   line-height:1.1;
 }
 
 .hero p{
   margin:0;
-
   max-width:780px;
-
   line-height:1.9;
-
   font-size:16px;
-
   color:rgba(255,255,255,.92);
 }
 
 .stats{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:10px;
-
   margin-top:20px;
 }
 
 .stat{
   background:rgba(255,255,255,.14);
-
-  border:
-    1px solid
-    rgba(255,255,255,.18);
-
+  border:1px solid rgba(255,255,255,.18);
   padding:9px 13px;
-
   border-radius:999px;
-
   font-weight:800;
-
   font-size:13px;
 }
 
-/* =========================================================
-   NOTICE
-========================================================= */
-
 .notice{
   background:var(--gold-light);
-
-  border:
-    1px solid
-    #F0DCA8;
-
+  border:1px solid #F0DCA8;
   border-radius:20px;
-
   padding:15px 17px;
-
   line-height:1.85;
-
   margin-bottom:26px;
 }
 
-/* =========================================================
-   SEARCH
-========================================================= */
-
 .search-wrap{
   position:sticky;
-
   top:10px;
-
   z-index:20;
-
   margin-bottom:28px;
 }
 
 .search{
   width:100%;
-
-  border:
-    1px solid
-    var(--border);
-
+  border:1px solid var(--border);
   background:var(--white);
-
   border-radius:18px;
-
   padding:15px 17px;
-
   outline:none;
-
   box-shadow:var(--shadow);
-
   color:var(--text);
 }
 
-.search::placeholder{
-  color:#929AB0;
-}
+.search::placeholder{color:#929AB0}
 
 .search:focus{
   border-color:#B8C2F3;
-
-  box-shadow:
-    0 0 0 4px rgba(49,87,213,.08);
+  box-shadow:0 0 0 4px rgba(49,87,213,.08);
 }
-
-/* =========================================================
-   STAGES
-========================================================= */
 
 .stage{
   margin-bottom:52px;
@@ -282,114 +164,64 @@ button{
 
 .stage-title{
   background:var(--white);
-
-  border:
-    1px solid
-    var(--border);
-
+  border:1px solid var(--border);
   border-radius:var(--radius-md);
-
   padding:20px 22px;
-
   margin-bottom:18px;
-
   box-shadow:var(--shadow);
-
   display:flex;
-
   align-items:center;
-
   gap:14px;
 }
 
 .stage-icon{
   width:48px;
   height:48px;
-
   display:grid;
-
   place-items:center;
-
   border-radius:15px;
-
   background:var(--purple-light);
-
   font-size:24px;
-
   flex:0 0 48px;
 }
 
 .stage-title h2{
   margin:0;
-
   font-size:21px;
 }
 
 .stage-title p{
   margin:3px 0 0;
-
   color:var(--muted);
-
   font-size:13px;
 }
 
-/* =========================================================
-   CARD GRID
-========================================================= */
-
 .grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(
-      2,
-      minmax(0,1fr)
-    );
-
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:15px;
 }
 
-/* =========================================================
-   VOCAB CARD
-========================================================= */
-
 .card{
   background:var(--white);
-
-  border:
-    1px solid
-    var(--border);
-
+  border:1px solid var(--border);
   border-radius:var(--radius-md);
-
   overflow:hidden;
-
   box-shadow:var(--shadow);
-
   transition:.18s ease;
 }
 
 .card:hover{
   transform:translateY(-2px);
-
   box-shadow:var(--shadow-hover);
 }
 
 .card-image{
   width:100%;
-
   height:180px;
-
   object-fit:cover;
-
   display:block;
-
-  background:
-    linear-gradient(
-      135deg,
-      #EEF1FF,
-      #F8F5FF
-    );
+  background:linear-gradient(135deg,#EEF1FF,#F8F5FF);
 }
 
 .card-body{
@@ -398,70 +230,42 @@ button{
 
 .card-top{
   display:flex;
-
   justify-content:space-between;
-
   align-items:flex-start;
-
   gap:12px;
 }
 
 .word{
   font-size:23px;
-
   font-weight:950;
-
   color:var(--blue-dark);
-
   word-break:break-word;
-
   direction:ltr;
-
   text-align:left;
 }
 
 .meaning{
   margin-top:4px;
-
   color:var(--muted);
-
   font-weight:700;
-
   line-height:1.7;
 }
 
-/* =========================================================
-   AUDIO
-========================================================= */
-
 .audio-btn{
   border:0;
-
   background:var(--blue);
-
   color:#fff;
-
   width:43px;
   height:43px;
-
   border-radius:14px;
-
-  flex:
-    0 0
-    43px;
-
+  flex:0 0 43px;
   font-size:18px;
-
-  box-shadow:
-    0 7px 16px
-    rgba(49,87,213,.18);
-
+  box-shadow:0 7px 16px rgba(49,87,213,.18);
   transition:.15s ease;
 }
 
 .audio-btn:hover{
   background:var(--blue-dark);
-
   transform:translateY(-1px);
 }
 
@@ -469,109 +273,71 @@ button{
   transform:scale(.96);
 }
 
-/* =========================================================
-   EXAMPLES
-========================================================= */
-
 .examples{
   margin-top:15px;
-
   padding-top:14px;
-
-  border-top:
-    1px solid
-    var(--border);
+  border-top:1px solid var(--border);
 }
 
 .example{
-  display:flex;
-
-  gap:9px;
-
-  line-height:1.7;
-
-  margin:7px 0;
-
-  color:#35415D;
-
+  margin:12px 0;
   direction:ltr;
-
   text-align:left;
 }
 
-.example b{
-  color:var(--gold);
+.example-en{
+  display:flex;
+  gap:9px;
+  line-height:1.7;
+  color:#35415D;
+}
 
+.example-en b{
+  color:var(--gold);
   min-width:18px;
 }
 
-/* =========================================================
-   EXPLANATION
-========================================================= */
+.example-ar{
+  margin-top:3px;
+  padding-left:27px;
+  direction:rtl;
+  text-align:right;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
 
 .explain{
   margin-top:13px;
-
   padding:12px 13px;
-
   background:#F8F7FF;
-
-  border:
-    1px solid
-    #E7E2FA;
-
+  border:1px solid #E7E2FA;
   border-radius:14px;
-
   line-height:1.75;
-
   color:#4A4770;
-
   font-size:13px;
 }
 
-/* =========================================================
-   IMAGE CREDIT
-========================================================= */
-
 .source-credit{
   font-size:11px;
-
   color:var(--muted);
-
   margin-top:10px;
-
   line-height:1.5;
 }
 
 .source-credit a{
   color:var(--blue);
-
   text-decoration:none;
 }
 
-/* =========================================================
-   EMPTY SEARCH
-========================================================= */
-
 .empty{
   background:var(--white);
-
-  border:
-    1px dashed
-    #CCD2E5;
-
+  border:1px dashed #CCD2E5;
   border-radius:20px;
-
   padding:30px;
-
   text-align:center;
-
   color:var(--muted);
 }
-
-/* =========================================================
-   UNIT LESSON VIEW
-========================================================= */
 
 .lesson{
   display:none;
@@ -582,126 +348,72 @@ button{
 }
 
 .lesson-head{
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue),
-      var(--purple)
-    );
-
+  background:linear-gradient(135deg,var(--blue),var(--purple));
   color:#fff;
-
   border-radius:var(--radius-lg);
-
   padding:25px 23px;
-
   margin-bottom:20px;
-
   box-shadow:var(--shadow);
 }
 
 .lesson-head .mini{
   opacity:.8;
-
   font-size:12px;
-
   font-weight:900;
-
   letter-spacing:1px;
 }
 
 .lesson-head h2{
   margin:7px 0 3px;
-
   font-size:28px;
 }
 
 .lesson-head p{
   margin:0;
-
   opacity:.9;
 }
 
 .lesson-image{
   width:100%;
-
   height:250px;
-
   object-fit:cover;
-
   border-radius:24px;
-
   margin:0 0 10px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #EEF1FF,
-      #F8F5FF
-    );
+  background:linear-gradient(135deg,#EEF1FF,#F8F5FF);
 }
-
-/* =========================================================
-   ACTIONS
-========================================================= */
 
 .lesson-actions{
   display:flex;
-
   gap:10px;
-
   flex-wrap:wrap;
-
   margin:20px 0;
 }
 
 .action{
-  border:
-    1px solid
-    var(--border);
-
+  border:1px solid var(--border);
   background:var(--white);
-
   padding:11px 14px;
-
   border-radius:14px;
-
   font-weight:800;
-
   color:var(--blue-dark);
-
   transition:.18s ease;
 }
 
 .action:hover{
   transform:translateY(-1px);
-
-  box-shadow:
-    0 8px 20px
-    rgba(36,48,94,.07);
+  box-shadow:0 8px 20px rgba(36,48,94,.07);
 }
-
-/* =========================================================
-   DETAIL WORD CARDS
-========================================================= */
 
 .word-list{
   display:grid;
-
   gap:16px;
 }
 
 .detail-card{
   background:var(--white);
-
-  border:
-    1px solid
-    var(--border);
-
+  border:1px solid var(--border);
   border-radius:24px;
-
   padding:20px;
-
   box-shadow:var(--shadow);
 }
 
@@ -709,48 +421,25 @@ button{
   font-size:27px;
 }
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
 .lesson-nav{
   display:flex;
-
   justify-content:space-between;
-
   gap:10px;
-
   margin:26px 0 50px;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
-
 .footer-note{
   text-align:center;
-
   color:var(--muted);
-
   font-size:12px;
-
   padding:10px 0 35px;
-
   line-height:1.7;
 }
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media(max-width:720px){
 
   .container{
-    width:
-      min(
-        100% - 20px,
-        1120px
-      );
+    width:min(100% - 20px,1120px);
   }
 
   .grid{
@@ -776,9 +465,7 @@ button{
   .stage-title{
     padding:18px;
   }
-
 }
-
 </style>
 </head>
 
@@ -786,130 +473,65 @@ button{
 
 <main class="container">
 
-  <!-- =====================================================
-       BACK BUTTON
-  ====================================================== -->
+<div class="back-row">
+<button class="back-btn" onclick="goBack()">← رجوع</button>
+</div>
 
-  <div class="back-row">
+<section class="hero">
 
-    <button
-      class="back-btn"
-      onclick="goBack()"
-    >
-      ← رجوع
-    </button>
+<div class="eyebrow">ENGLIZA ACADEMY</div>
 
-  </div>
+<h1>المفردات 📚</h1>
 
+<p>
+وسّع حصيلتك اللغوية في المستوى فوق المبتدئ،
+واستمع إلى النطق، وشاهد الكلمات داخل أمثلة طبيعية
+تساعدك على فهمها واستخدامها.
+</p>
 
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
+<div class="stats">
+<span class="stat">30 وحدة</span>
+<span class="stat">300 كلمة وتعبير</span>
+<span class="stat">3 أمثلة لكل عنصر</span>
+<span class="stat">🔊 نطق مباشر</span>
+</div>
 
-  <section class="hero">
+</section>
 
-    <div class="eyebrow">
-      ENGLIZA ACADEMY
-    </div>
+<div class="notice">
 
-    <h1>
-      المفردات 📚
-    </h1>
+💡
+<strong>فكرة هذا القسم:</strong>
 
-    <p>
-      وسّع حصيلتك اللغوية في المستوى فوق المبتدئ،
-      واستمع إلى النطق، وشاهد الكلمات داخل أمثلة طبيعية
-      تساعدك على فهمها واستخدامها.
-    </p>
+لا تحفظ الكلمة وحدها.
 
-    <div class="stats">
+اقرأ أمثلتها، اسمع نطقها، وانتبه لكيفية استخدامها
+داخل الجملة.
 
-      <span class="stat">
-        30 وحدة
-      </span>
+بعض الكلمات لها ملاحظة قصيرة عندما يكون فيها معنى
+أو فرق مهم يستحق التوضيح.
 
-      <span class="stat">
-        300 كلمة وتعبير
-      </span>
+</div>
 
-      <span class="stat">
-        3 أمثلة لكل عنصر
-      </span>
+<div id="listTools" class="search-wrap">
 
-      <span class="stat">
-        🔊 نطق مباشر
-      </span>
+<input
+id="searchInput"
+class="search"
+type="search"
+placeholder="ابحث عن كلمة أو معنى أو جملة…"
+>
 
-    </div>
+</div>
 
-  </section>
+<section id="listView"></section>
 
+<section id="lessonView" class="lesson"></section>
 
-  <!-- =====================================================
-       NOTICE
-  ====================================================== -->
-
-  <div class="notice">
-
-    💡
-
-    <strong>
-      فكرة هذا القسم:
-    </strong>
-
-    لا تحفظ الكلمة وحدها.
-
-    اقرأ أمثلتها، اسمع نطقها، وانتبه لكيفية استخدامها
-    داخل الجملة.
-
-    بعض الكلمات لها ملاحظة قصيرة عندما يكون فيها معنى
-    أو فرق مهم يستحق التوضيح.
-
-  </div>
-
-
-  <!-- =====================================================
-       SEARCH
-  ====================================================== -->
-
-  <div
-    id="listTools"
-    class="search-wrap"
-  >
-
-    <input
-      id="searchInput"
-      class="search"
-      type="search"
-      placeholder="ابحث عن كلمة أو معنى أو جملة…"
-    >
-
-  </div>
-
-
-  <!-- =====================================================
-       LIST
-  ====================================================== -->
-
-  <section id="listView"></section>
-
-
-  <!-- =====================================================
-       UNIT VIEW
-  ====================================================== -->
-
-  <section
-    id="lessonView"
-    class="lesson"
-  ></section>
-
-
-  <div class="footer-note">
-
-    الصور التعليمية يتم استدعاؤها عند الحاجة من Openverse.
-    يظهر مصدر الصورة ورابطها عند توفر البيانات.
-
-  </div>
+<div class="footer-note">
+الصور التعليمية يتم استدعاؤها عند الحاجة من Openverse.
+يظهر مصدر الصورة ورابطها عند توفر البيانات.
+</div>
 
 </main>
 
@@ -917,14 +539,13 @@ button{
 <script>
 
 /* =========================================================
-   VOCABULARY DATA
+   DATA
+   كل مثال أصبح يحتوي على:
+   text = الجملة الإنجليزية
+   ar   = معناها بالعربي
 ========================================================= */
 
 const DATA = [
-
-/* =========================================================
-   UNIT 1
-========================================================= */
 
 {
 id:1,
@@ -938,9 +559,9 @@ items:[
 word:"introduce",
 meaning:"يعرّف / يقدّم شخصًا",
 examples:[
-"I want to introduce my friend.",
-"Let me introduce myself.",
-"She introduced me to her teacher."
+["I want to introduce my friend.","أريد أن أعرّفك بصديقي."],
+["Let me introduce myself.","اسمح لي أن أعرّف بنفسي."],
+["She introduced me to her teacher.","هي قدّمتني إلى معلمها."]
 ]
 },
 
@@ -948,9 +569,9 @@ examples:[
 word:"conversation",
 meaning:"محادثة",
 examples:[
-"We had a short conversation.",
-"Their conversation was interesting.",
-"I started a conversation with my classmate."
+["We had a short conversation.","أجرينا محادثة قصيرة."],
+["Their conversation was interesting.","كانت محادثتهما ممتعة."],
+["I started a conversation with my classmate.","بدأت محادثة مع زميلي في الدراسة."]
 ]
 },
 
@@ -958,9 +579,9 @@ examples:[
 word:"discuss",
 meaning:"يناقش",
 examples:[
-"We need to discuss the plan.",
-"They discussed the problem.",
-"Let's discuss it tomorrow."
+["We need to discuss the plan.","نحتاج إلى مناقشة الخطة."],
+["They discussed the problem.","ناقشوا المشكلة."],
+["Let's discuss it tomorrow.","دعنا نناقش الأمر غدًا."]
 ]
 },
 
@@ -968,21 +589,20 @@ examples:[
 word:"explain",
 meaning:"يشرح",
 examples:[
-"Can you explain this word?",
-"He explained the problem.",
-"Please explain it again."
+["Can you explain this word?","هل يمكنك شرح هذه الكلمة؟"],
+["He explained the problem.","هو شرح المشكلة."],
+["Please explain it again.","من فضلك اشرحها مرة أخرى."]
 ]
 },
 
 {
 word:"mean",
 meaning:"يعني / يقصد",
-explanation:
-"كلمة شائعة جدًا. قد تعني «يعني»، وقد تأتي في عبارة I mean بمعنى «أقصد».",
+explanation:"قد تعني «يعني»، وقد تأتي في عبارة I mean بمعنى «أقصد».",
 examples:[
-"What does this word mean?",
-"I mean the first question.",
-"What do you mean?"
+["What does this word mean?","ماذا تعني هذه الكلمة؟"],
+["I mean the first question.","أقصد السؤال الأول."],
+["What do you mean?","ماذا تقصد؟"]
 ]
 },
 
@@ -990,9 +610,9 @@ examples:[
 word:"mention",
 meaning:"يذكر",
 examples:[
-"She mentioned your name.",
-"He mentioned the meeting.",
-"I forgot to mention one thing."
+["She mentioned your name.","هي ذكرت اسمك."],
+["He mentioned the meeting.","هو ذكر الاجتماع."],
+["I forgot to mention one thing.","نسيت أن أذكر شيئًا واحدًا."]
 ]
 },
 
@@ -1000,9 +620,9 @@ examples:[
 word:"agree",
 meaning:"يوافق",
 examples:[
-"I agree with you.",
-"They agree about the plan.",
-"I completely agree."
+["I agree with you.","أنا أوافقك الرأي."],
+["They agree about the plan.","هم متفقون بشأن الخطة."],
+["I completely agree.","أنا أوافق تمامًا."]
 ]
 },
 
@@ -1010,9 +630,9 @@ examples:[
 word:"disagree",
 meaning:"لا يوافق",
 examples:[
-"I disagree with that idea.",
-"We sometimes disagree.",
-"He disagreed with me."
+["I disagree with that idea.","أنا لا أوافق على تلك الفكرة."],
+["We sometimes disagree.","نحن لا نتفق أحيانًا."],
+["He disagreed with me.","هو لم يوافقني الرأي."]
 ]
 },
 
@@ -1020,18 +640,14 @@ examples:[
 word:"opinion",
 meaning:"رأي",
 examples:[
-"What's your opinion?",
-"In my opinion, it's useful.",
-"Everyone has an opinion."
+["What's your opinion?","ما رأيك؟"],
+["In my opinion, it's useful.","في رأيي، إنه مفيد."],
+["Everyone has an opinion.","لكل شخص رأي."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 2
-========================================================= */
 
 {
 id:2,
@@ -1045,9 +661,9 @@ items:[
 word:"colleague",
 meaning:"زميل عمل",
 examples:[
-"My colleague is very helpful.",
-"I had lunch with a colleague.",
-"She works with her colleagues every day."
+["My colleague is very helpful.","زميلي في العمل متعاون جدًا."],
+["I had lunch with a colleague.","تناولت الغداء مع زميل في العمل."],
+["She works with her colleagues every day.","هي تعمل مع زملائها كل يوم."]
 ]
 },
 
@@ -1055,9 +671,9 @@ examples:[
 word:"classmate",
 meaning:"زميل دراسة",
 examples:[
-"My classmate sits next to me.",
-"I asked my classmate a question.",
-"She is a new classmate."
+["My classmate sits next to me.","زميلي في الدراسة يجلس بجانبي."],
+["I asked my classmate a question.","سألت زميلي في الدراسة سؤالًا."],
+["She is a new classmate.","هي زميلة دراسة جديدة."]
 ]
 },
 
@@ -1065,9 +681,9 @@ examples:[
 word:"neighbor",
 meaning:"جار",
 examples:[
-"Our neighbor is very friendly.",
-"I met my new neighbor yesterday.",
-"My neighbor lives upstairs."
+["Our neighbor is very friendly.","جارنا ودود جدًا."],
+["I met my new neighbor yesterday.","قابلت جاري الجديد أمس."],
+["My neighbor lives upstairs.","جاري يسكن في الطابق العلوي."]
 ]
 },
 
@@ -1075,9 +691,9 @@ examples:[
 word:"guest",
 meaning:"ضيف",
 examples:[
-"We have a guest tonight.",
-"The guests arrived early.",
-"Our guest is from Oman."
+["We have a guest tonight.","لدينا ضيف الليلة."],
+["The guests arrived early.","وصل الضيوف مبكرًا."],
+["Our guest is from Oman.","ضيفنا من عُمان."]
 ]
 },
 
@@ -1085,9 +701,9 @@ examples:[
 word:"host",
 meaning:"مضيف",
 examples:[
-"The host welcomed everyone.",
-"Our host was very friendly.",
-"The host prepared dinner."
+["The host welcomed everyone.","رحّب المضيف بالجميع."],
+["Our host was very friendly.","كان مضيفنا ودودًا جدًا."],
+["The host prepared dinner.","أعدّ المضيف العشاء."]
 ]
 },
 
@@ -1095,9 +711,9 @@ examples:[
 word:"stranger",
 meaning:"شخص غريب",
 examples:[
-"Don't talk to strangers online.",
-"A stranger helped me find the station.",
-"I didn't know him; he was a stranger."
+["Don't talk to strangers online.","لا تتحدث مع الغرباء عبر الإنترنت."],
+["A stranger helped me find the station.","ساعدني شخص غريب في العثور على المحطة."],
+["I didn't know him; he was a stranger.","لم أكن أعرفه؛ كان شخصًا غريبًا."]
 ]
 },
 
@@ -1105,9 +721,9 @@ examples:[
 word:"couple",
 meaning:"زوجان / ثنائي",
 examples:[
-"The couple lives nearby.",
-"I saw a young couple at the restaurant.",
-"The couple is planning a trip."
+["The couple lives nearby.","يعيش الزوجان بالقرب من هنا."],
+["I saw a young couple at the restaurant.","رأيت زوجين شابين في المطعم."],
+["The couple is planning a trip.","الزوجان يخططان لرحلة."]
 ]
 },
 
@@ -1115,9 +731,9 @@ examples:[
 word:"relationship",
 meaning:"علاقة",
 examples:[
-"They have a good relationship.",
-"Our relationship is important to me.",
-"They talked about their relationship."
+["They have a good relationship.","لديهما علاقة جيدة."],
+["Our relationship is important to me.","علاقتنا مهمة بالنسبة لي."],
+["They talked about their relationship.","تحدثا عن علاقتهما."]
 ]
 },
 
@@ -1125,9 +741,9 @@ examples:[
 word:"married",
 meaning:"متزوج",
 examples:[
-"My sister is married.",
-"They have been married for five years.",
-"Is your brother married?"
+["My sister is married.","أختي متزوجة."],
+["They have been married for five years.","هما متزوجان منذ خمس سنوات."],
+["Is your brother married?","هل أخوك متزوج؟"]
 ]
 },
 
@@ -1135,18 +751,14 @@ examples:[
 word:"single",
 meaning:"أعزب / غير متزوج",
 examples:[
-"He is single.",
-"She is single and lives alone.",
-"My friend is still single."
+["He is single.","هو أعزب."],
+["She is single and lives alone.","هي غير متزوجة وتعيش وحدها."],
+["My friend is still single.","صديقي ما زال أعزب."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 3
-========================================================= */
 
 {
 id:3,
@@ -1160,9 +772,9 @@ items:[
 word:"friendly",
 meaning:"ودود",
 examples:[
-"Our new teacher is friendly.",
-"He has a friendly smile.",
-"My neighbors are very friendly."
+["Our new teacher is friendly.","معلمنا الجديد ودود."],
+["He has a friendly smile.","لديه ابتسامة ودودة."],
+["My neighbors are very friendly.","جيراني ودودون جدًا."]
 ]
 },
 
@@ -1170,9 +782,9 @@ examples:[
 word:"quiet",
 meaning:"هادئ",
 examples:[
-"The room is quiet.",
-"She is usually quiet in class.",
-"We live in a quiet area."
+["The room is quiet.","الغرفة هادئة."],
+["She is usually quiet in class.","هي عادةً هادئة في الصف."],
+["We live in a quiet area.","نعيش في منطقة هادئة."]
 ]
 },
 
@@ -1180,9 +792,9 @@ examples:[
 word:"polite",
 meaning:"مؤدب",
 examples:[
-"He is very polite.",
-"Please be polite to guests.",
-"She gave a polite answer."
+["He is very polite.","هو مؤدب جدًا."],
+["Please be polite to guests.","من فضلك كن مؤدبًا مع الضيوف."],
+["She gave a polite answer.","قدمت إجابة مؤدبة."]
 ]
 },
 
@@ -1190,9 +802,9 @@ examples:[
 word:"honest",
 meaning:"صادق",
 examples:[
-"He is an honest person.",
-"Please be honest with me.",
-"She is always honest."
+["He is an honest person.","هو شخص صادق."],
+["Please be honest with me.","من فضلك كن صادقًا معي."],
+["She is always honest.","هي صادقة دائمًا."]
 ]
 },
 
@@ -1200,9 +812,9 @@ examples:[
 word:"helpful",
 meaning:"متعاون",
 examples:[
-"The staff were helpful.",
-"My colleague is very helpful.",
-"Thank you for being helpful."
+["The staff were helpful.","كان الموظفون متعاونين."],
+["My colleague is very helpful.","زميلي في العمل متعاون جدًا."],
+["Thank you for being helpful.","شكرًا لك على تعاونك."]
 ]
 },
 
@@ -1210,9 +822,9 @@ examples:[
 word:"careful",
 meaning:"حذر",
 examples:[
-"Be careful with that glass.",
-"He is careful when he drives.",
-"She is very careful."
+["Be careful with that glass.","كن حذرًا مع ذلك الكوب."],
+["He is careful when he drives.","هو حذر عندما يقود."],
+["She is very careful.","هي حذرة جدًا."]
 ]
 },
 
@@ -1220,9 +832,9 @@ examples:[
 word:"serious",
 meaning:"جاد",
 examples:[
-"He is serious about his work.",
-"The problem is serious.",
-"She looks serious today."
+["He is serious about his work.","هو جاد بشأن عمله."],
+["The problem is serious.","المشكلة خطيرة."],
+["She looks serious today.","تبدو جادة اليوم."]
 ]
 },
 
@@ -1230,9 +842,9 @@ examples:[
 word:"funny",
 meaning:"مضحك",
 examples:[
-"That story is funny.",
-"My brother is very funny.",
-"He told a funny joke."
+["That story is funny.","تلك القصة مضحكة."],
+["My brother is very funny.","أخي مضحك جدًا."],
+["He told a funny joke.","قال نكتة مضحكة."]
 ]
 },
 
@@ -1240,9 +852,9 @@ examples:[
 word:"nervous",
 meaning:"متوتر",
 examples:[
-"I feel nervous before exams.",
-"She was nervous about the meeting.",
-"Don't be nervous."
+["I feel nervous before exams.","أشعر بالتوتر قبل الاختبارات."],
+["She was nervous about the meeting.","كانت متوترة بشأن الاجتماع."],
+["Don't be nervous.","لا تكن متوترًا."]
 ]
 },
 
@@ -1250,18 +862,14 @@ examples:[
 word:"confident",
 meaning:"واثق",
 examples:[
-"He feels confident now.",
-"She is confident in English.",
-"I want to become more confident."
+["He feels confident now.","هو يشعر بالثقة الآن."],
+["She is confident in English.","هي واثقة من مستواها في الإنجليزية."],
+["I want to become more confident.","أريد أن أصبح أكثر ثقة."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 4
-========================================================= */
 
 {
 id:4,
@@ -1275,9 +883,9 @@ items:[
 word:"excited",
 meaning:"متحمس",
 examples:[
-"I'm excited about the trip.",
-"She is excited to start.",
-"The children are excited."
+["I'm excited about the trip.","أنا متحمس للرحلة."],
+["She is excited to start.","هي متحمسة للبدء."],
+["The children are excited.","الأطفال متحمسون."]
 ]
 },
 
@@ -1285,9 +893,9 @@ examples:[
 word:"worried",
 meaning:"قلق",
 examples:[
-"I'm worried about my exam.",
-"She looks worried.",
-"Don't be worried about it."
+["I'm worried about my exam.","أنا قلق بشأن اختباري."],
+["She looks worried.","تبدو قلقة."],
+["Don't be worried about it.","لا تقلق بشأن ذلك."]
 ]
 },
 
@@ -1295,9 +903,9 @@ examples:[
 word:"surprised",
 meaning:"متفاجئ",
 examples:[
-"I was surprised by the news.",
-"She looked surprised.",
-"He was surprised to see me."
+["I was surprised by the news.","تفاجأت من الخبر."],
+["She looked surprised.","بدت متفاجئة."],
+["He was surprised to see me.","تفاجأ عندما رآني."]
 ]
 },
 
@@ -1305,9 +913,9 @@ examples:[
 word:"tired",
 meaning:"متعب",
 examples:[
-"I'm tired today.",
-"She looks tired.",
-"They were tired after the trip."
+["I'm tired today.","أنا متعب اليوم."],
+["She looks tired.","تبدو متعبة."],
+["They were tired after the trip.","كانوا متعبين بعد الرحلة."]
 ]
 },
 
@@ -1315,9 +923,9 @@ examples:[
 word:"bored",
 meaning:"يشعر بالملل",
 examples:[
-"I'm bored at home.",
-"He gets bored easily.",
-"The children are bored."
+["I'm bored at home.","أشعر بالملل في المنزل."],
+["He gets bored easily.","يشعر بالملل بسهولة."],
+["The children are bored.","الأطفال يشعرون بالملل."]
 ]
 },
 
@@ -1325,9 +933,9 @@ examples:[
 word:"interested",
 meaning:"مهتم",
 examples:[
-"I'm interested in English.",
-"She is interested in art.",
-"Are you interested in this course?"
+["I'm interested in English.","أنا مهتم باللغة الإنجليزية."],
+["She is interested in art.","هي مهتمة بالفن."],
+["Are you interested in this course?","هل أنت مهتم بهذه الدورة؟"]
 ]
 },
 
@@ -1335,9 +943,9 @@ examples:[
 word:"afraid",
 meaning:"خائف",
 examples:[
-"I'm afraid of dogs.",
-"She is afraid to ask.",
-"Don't be afraid."
+["I'm afraid of dogs.","أنا أخاف من الكلاب."],
+["She is afraid to ask.","هي تخاف من السؤال."],
+["Don't be afraid.","لا تخف."]
 ]
 },
 
@@ -1345,9 +953,9 @@ examples:[
 word:"comfortable",
 meaning:"مرتاح",
 examples:[
-"This chair is comfortable.",
-"I feel comfortable here.",
-"The room is comfortable."
+["This chair is comfortable.","هذا الكرسي مريح."],
+["I feel comfortable here.","أشعر بالراحة هنا."],
+["The room is comfortable.","الغرفة مريحة."]
 ]
 },
 
@@ -1355,9 +963,9 @@ examples:[
 word:"uncomfortable",
 meaning:"غير مرتاح",
 examples:[
-"These shoes are uncomfortable.",
-"I feel uncomfortable here.",
-"The chair is uncomfortable."
+["These shoes are uncomfortable.","هذه الأحذية غير مريحة."],
+["I feel uncomfortable here.","أشعر بعدم الارتياح هنا."],
+["The chair is uncomfortable.","الكرسي غير مريح."]
 ]
 },
 
@@ -1365,18 +973,14 @@ examples:[
 word:"ready",
 meaning:"مستعد",
 examples:[
-"Are you ready?",
-"I'm ready for the lesson.",
-"We are ready to leave."
+["Are you ready?","هل أنت مستعد؟"],
+["I'm ready for the lesson.","أنا مستعد للدرس."],
+["We are ready to leave.","نحن مستعدون للمغادرة."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 5
-========================================================= */
 
 {
 id:5,
@@ -1390,9 +994,9 @@ items:[
 word:"What do you mean?",
 meaning:"ماذا تقصد؟",
 examples:[
-"What do you mean by that?",
-"Sorry, what do you mean?",
-"What do you mean exactly?"
+["What do you mean by that?","ماذا تقصد بذلك؟"],
+["Sorry, what do you mean?","عذرًا، ماذا تقصد؟"],
+["What do you mean exactly?","ماذا تقصد بالضبط؟"]
 ]
 },
 
@@ -1400,9 +1004,9 @@ examples:[
 word:"I mean…",
 meaning:"أقصد…",
 examples:[
-"I mean, we can try again.",
-"I mean the second one.",
-"I mean, it's not difficult."
+["I mean, we can try again.","أقصد، يمكننا المحاولة مرة أخرى."],
+["I mean the second one.","أقصد الثاني."],
+["I mean, it's not difficult.","أقصد، إنه ليس صعبًا."]
 ]
 },
 
@@ -1410,9 +1014,9 @@ examples:[
 word:"I agree.",
 meaning:"أنا أوافق.",
 examples:[
-"I agree with you.",
-"I agree; that's a good idea.",
-"Yes, I agree."
+["I agree with you.","أنا أوافقك الرأي."],
+["I agree; that's a good idea.","أوافق؛ هذه فكرة جيدة."],
+["Yes, I agree.","نعم، أوافق."]
 ]
 },
 
@@ -1420,9 +1024,9 @@ examples:[
 word:"I don't agree.",
 meaning:"أنا لا أوافق.",
 examples:[
-"I don't agree with that.",
-"Sorry, I don't agree.",
-"I don't agree with this idea."
+["I don't agree with that.","أنا لا أوافق على ذلك."],
+["Sorry, I don't agree.","عذرًا، أنا لا أوافق."],
+["I don't agree with this idea.","أنا لا أوافق على هذه الفكرة."]
 ]
 },
 
@@ -1430,9 +1034,9 @@ examples:[
 word:"You're right.",
 meaning:"أنت محق.",
 examples:[
-"You're right about that.",
-"Yes, you're right.",
-"I think you're right."
+["You're right about that.","أنت محق بشأن ذلك."],
+["Yes, you're right.","نعم، أنت محق."],
+["I think you're right.","أعتقد أنك محق."]
 ]
 },
 
@@ -1440,9 +1044,9 @@ examples:[
 word:"I'm not sure.",
 meaning:"لست متأكدًا.",
 examples:[
-"I'm not sure about that.",
-"I'm not sure yet.",
-"I'm not sure what it means."
+["I'm not sure about that.","لست متأكدًا من ذلك."],
+["I'm not sure yet.","لست متأكدًا حتى الآن."],
+["I'm not sure what it means.","لست متأكدًا مما تعنيه."]
 ]
 },
 
@@ -1450,9 +1054,9 @@ examples:[
 word:"That's true.",
 meaning:"هذا صحيح.",
 examples:[
-"That's true; I forgot.",
-"Yes, that's true.",
-"That's true, but we can try."
+["That's true; I forgot.","هذا صحيح؛ لقد نسيت."],
+["Yes, that's true.","نعم، هذا صحيح."],
+["That's true, but we can try.","هذا صحيح، لكن يمكننا المحاولة."]
 ]
 },
 
@@ -1460,9 +1064,9 @@ examples:[
 word:"Really?",
 meaning:"حقًا؟",
 examples:[
-"Really? That's great!",
-"Really? I didn't know that.",
-"Really? What happened?"
+["Really? That's great!","حقًا؟ هذا رائع!"],
+["Really? I didn't know that.","حقًا؟ لم أكن أعرف ذلك."],
+["Really? What happened?","حقًا؟ ماذا حدث؟"]
 ]
 },
 
@@ -1470,9 +1074,9 @@ examples:[
 word:"Of course.",
 meaning:"بالطبع.",
 examples:[
-"Of course, you can.",
-"Of course I'll help.",
-"Of course, no problem."
+["Of course, you can.","بالطبع، يمكنك ذلك."],
+["Of course I'll help.","بالطبع سأساعد."],
+["Of course, no problem.","بالطبع، لا مشكلة."]
 ]
 },
 
@@ -1480,18 +1084,14 @@ examples:[
 word:"It depends.",
 meaning:"هذا يعتمد.",
 examples:[
-"It depends on the time.",
-"It depends on the price.",
-"It depends on the situation."
+["It depends on the time.","هذا يعتمد على الوقت."],
+["It depends on the price.","هذا يعتمد على السعر."],
+["It depends on the situation.","هذا يعتمد على الموقف."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 6
-========================================================= */
 
 {
 id:6,
@@ -1505,9 +1105,9 @@ items:[
 word:"subject",
 meaning:"مادة دراسية",
 examples:[
-"English is my favorite subject.",
-"This subject is interesting.",
-"What subject do you study?"
+["English is my favorite subject.","اللغة الإنجليزية مادتي المفضلة."],
+["This subject is interesting.","هذه المادة ممتعة."],
+["What subject do you study?","ما المادة التي تدرسها؟"]
 ]
 },
 
@@ -1515,9 +1115,9 @@ examples:[
 word:"course",
 meaning:"دورة / مقرر",
 examples:[
-"I'm taking an English course.",
-"The course starts next week.",
-"This course is useful."
+["I'm taking an English course.","أنا أدرس دورة في اللغة الإنجليزية."],
+["The course starts next week.","تبدأ الدورة الأسبوع القادم."],
+["This course is useful.","هذه الدورة مفيدة."]
 ]
 },
 
@@ -1525,9 +1125,9 @@ examples:[
 word:"lesson",
 meaning:"درس",
 examples:[
-"Today's lesson is easy.",
-"I reviewed the lesson.",
-"The lesson was interesting."
+["Today's lesson is easy.","درس اليوم سهل."],
+["I reviewed the lesson.","راجعت الدرس."],
+["The lesson was interesting.","كان الدرس ممتعًا."]
 ]
 },
 
@@ -1535,9 +1135,9 @@ examples:[
 word:"project",
 meaning:"مشروع",
 examples:[
-"We have a school project.",
-"I'm working on a project.",
-"The project is almost finished."
+["We have a school project.","لدينا مشروع مدرسي."],
+["I'm working on a project.","أعمل على مشروع."],
+["The project is almost finished.","المشروع أوشك على الانتهاء."]
 ]
 },
 
@@ -1545,9 +1145,9 @@ examples:[
 word:"exam",
 meaning:"اختبار",
 examples:[
-"I have an exam tomorrow.",
-"The exam was difficult.",
-"She is studying for her exam."
+["I have an exam tomorrow.","لدي اختبار غدًا."],
+["The exam was difficult.","كان الاختبار صعبًا."],
+["She is studying for her exam.","هي تدرس من أجل اختبارها."]
 ]
 },
 
@@ -1555,9 +1155,9 @@ examples:[
 word:"grade",
 meaning:"درجة",
 examples:[
-"I got a good grade.",
-"My grade was higher this time.",
-"He wants a better grade."
+["I got a good grade.","حصلت على درجة جيدة."],
+["My grade was higher this time.","كانت درجتي أعلى هذه المرة."],
+["He wants a better grade.","هو يريد درجة أفضل."]
 ]
 },
 
@@ -1565,9 +1165,9 @@ examples:[
 word:"homework",
 meaning:"واجب منزلي",
 examples:[
-"I have a lot of homework.",
-"I finished my homework.",
-"Don't forget your homework."
+["I have a lot of homework.","لدي الكثير من الواجبات المنزلية."],
+["I finished my homework.","أنهيت واجبي المنزلي."],
+["Don't forget your homework.","لا تنس واجبك المنزلي."]
 ]
 },
 
@@ -1575,9 +1175,9 @@ examples:[
 word:"meeting",
 meaning:"اجتماع",
 examples:[
-"I have a meeting at ten.",
-"The meeting was short.",
-"We discussed it in the meeting."
+["I have a meeting at ten.","لدي اجتماع الساعة العاشرة."],
+["The meeting was short.","كان الاجتماع قصيرًا."],
+["We discussed it in the meeting.","ناقشنا ذلك في الاجتماع."]
 ]
 },
 
@@ -1585,9 +1185,9 @@ examples:[
 word:"company",
 meaning:"شركة",
 examples:[
-"She works for a big company.",
-"The company has many employees.",
-"I want to start a company."
+["She works for a big company.","هي تعمل لدى شركة كبيرة."],
+["The company has many employees.","لدى الشركة العديد من الموظفين."],
+["I want to start a company.","أريد أن أؤسس شركة."]
 ]
 },
 
@@ -1595,18 +1195,14 @@ examples:[
 word:"employee",
 meaning:"موظف",
 examples:[
-"He is a new employee.",
-"The company has many employees.",
-"Every employee has an ID."
+["He is a new employee.","هو موظف جديد."],
+["The company has many employees.","لدى الشركة العديد من الموظفين."],
+["Every employee has an ID.","لكل موظف بطاقة تعريف."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 7
-========================================================= */
 
 {
 id:7,
@@ -1620,9 +1216,9 @@ items:[
 word:"job",
 meaning:"وظيفة",
 examples:[
-"I have a new job.",
-"She likes her job.",
-"He is looking for a job."
+["I have a new job.","لدي وظيفة جديدة."],
+["She likes her job.","هي تحب وظيفتها."],
+["He is looking for a job.","هو يبحث عن وظيفة."]
 ]
 },
 
@@ -1630,9 +1226,9 @@ examples:[
 word:"career",
 meaning:"مسار مهني",
 examples:[
-"She wants a career in medicine.",
-"He is thinking about his career.",
-"English can help your career."
+["She wants a career in medicine.","هي تريد مسارًا مهنيًا في مجال الطب."],
+["He is thinking about his career.","هو يفكر في مساره المهني."],
+["English can help your career.","يمكن للإنجليزية أن تساعد مسارك المهني."]
 ]
 },
 
@@ -1640,9 +1236,9 @@ examples:[
 word:"manager",
 meaning:"مدير",
 examples:[
-"My manager is helpful.",
-"I spoke to my manager.",
-"The manager called a meeting."
+["My manager is helpful.","مديري متعاون."],
+["I spoke to my manager.","تحدثت إلى مديري."],
+["The manager called a meeting.","دعا المدير إلى اجتماع."]
 ]
 },
 
@@ -1650,9 +1246,9 @@ examples:[
 word:"customer",
 meaning:"عميل",
 examples:[
-"The customer asked a question.",
-"We have many customers.",
-"The customer was happy."
+["The customer asked a question.","طرح العميل سؤالًا."],
+["We have many customers.","لدينا الكثير من العملاء."],
+["The customer was happy.","كان العميل سعيدًا."]
 ]
 },
 
@@ -1660,9 +1256,9 @@ examples:[
 word:"office",
 meaning:"مكتب",
 examples:[
-"I work in an office.",
-"The office is near the station.",
-"Our office is very quiet."
+["I work in an office.","أعمل في مكتب."],
+["The office is near the station.","المكتب قريب من المحطة."],
+["Our office is very quiet.","مكتبنا هادئ جدًا."]
 ]
 },
 
@@ -1670,9 +1266,9 @@ examples:[
 word:"schedule",
 meaning:"جدول / مواعيد",
 examples:[
-"Check your schedule.",
-"My schedule is busy today.",
-"The meeting is on my schedule."
+["Check your schedule.","تحقق من جدولك."],
+["My schedule is busy today.","جدولي مزدحم اليوم."],
+["The meeting is on my schedule.","الاجتماع موجود في جدولي."]
 ]
 },
 
@@ -1680,9 +1276,9 @@ examples:[
 word:"break",
 meaning:"استراحة",
 examples:[
-"I need a short break.",
-"We have a lunch break.",
-"Let's take a break."
+["I need a short break.","أحتاج إلى استراحة قصيرة."],
+["We have a lunch break.","لدينا استراحة غداء."],
+["Let's take a break.","لنأخذ استراحة."]
 ]
 },
 
@@ -1690,9 +1286,9 @@ examples:[
 word:"busy",
 meaning:"مشغول",
 examples:[
-"I'm busy this morning.",
-"She is busy at work.",
-"The restaurant is busy today."
+["I'm busy this morning.","أنا مشغول هذا الصباح."],
+["She is busy at work.","هي مشغولة في العمل."],
+["The restaurant is busy today.","المطعم مزدحم اليوم."]
 ]
 },
 
@@ -1700,9 +1296,9 @@ examples:[
 word:"free",
 meaning:"متفرغ",
 examples:[
-"Are you free tonight?",
-"I'm free after six.",
-"Is Friday free for you?"
+["Are you free tonight?","هل أنت متفرغ الليلة؟"],
+["I'm free after six.","أنا متفرغ بعد السادسة."],
+["Is Friday free for you?","هل أنت متفرغ يوم الجمعة؟"]
 ]
 },
 
@@ -1710,18 +1306,14 @@ examples:[
 word:"full-time",
 meaning:"دوام كامل",
 examples:[
-"He has a full-time job.",
-"She works full-time.",
-"I'm looking for full-time work."
+["He has a full-time job.","لديه وظيفة بدوام كامل."],
+["She works full-time.","هي تعمل بدوام كامل."],
+["I'm looking for full-time work.","أبحث عن عمل بدوام كامل."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 8
-========================================================= */
 
 {
 id:8,
@@ -1735,9 +1327,9 @@ items:[
 word:"size",
 meaning:"مقاس",
 examples:[
-"What size do you need?",
-"This size is too small.",
-"Do you have my size?"
+["What size do you need?","ما المقاس الذي تحتاجه؟"],
+["This size is too small.","هذا المقاس صغير جدًا."],
+["Do you have my size?","هل لديكم مقاسي؟"]
 ]
 },
 
@@ -1745,9 +1337,9 @@ examples:[
 word:"price",
 meaning:"سعر",
 examples:[
-"What's the price?",
-"The price is high.",
-"I checked the price online."
+["What's the price?","ما السعر؟"],
+["The price is high.","السعر مرتفع."],
+["I checked the price online.","تحققت من السعر عبر الإنترنت."]
 ]
 },
 
@@ -1755,9 +1347,9 @@ examples:[
 word:"discount",
 meaning:"خصم",
 examples:[
-"Is there a discount?",
-"They offered me a discount.",
-"This shop has good discounts."
+["Is there a discount?","هل يوجد خصم؟"],
+["They offered me a discount.","قدموا لي خصمًا."],
+["This shop has good discounts.","هذا المتجر لديه خصومات جيدة."]
 ]
 },
 
@@ -1765,9 +1357,9 @@ examples:[
 word:"receipt",
 meaning:"إيصال",
 examples:[
-"Can I have the receipt?",
-"I lost my receipt.",
-"Keep the receipt."
+["Can I have the receipt?","هل يمكنني الحصول على الإيصال؟"],
+["I lost my receipt.","أضعت إيصال الشراء."],
+["Keep the receipt.","احتفظ بالإيصال."]
 ]
 },
 
@@ -1775,9 +1367,9 @@ examples:[
 word:"cashier",
 meaning:"أمين الصندوق",
 examples:[
-"The cashier gave me my change.",
-"Ask the cashier.",
-"The cashier was helpful."
+["The cashier gave me my change.","أعطاني أمين الصندوق الباقي."],
+["Ask the cashier.","اسأل أمين الصندوق."],
+["The cashier was helpful.","كان أمين الصندوق متعاونًا."]
 ]
 },
 
@@ -1785,21 +1377,20 @@ examples:[
 word:"try on",
 meaning:"يجرّب الملابس",
 examples:[
-"Can I try on this shirt?",
-"She tried on the dress.",
-"Where can I try it on?"
+["Can I try on this shirt?","هل يمكنني تجربة هذا القميص؟"],
+["She tried on the dress.","جربت الفستان."],
+["Where can I try it on?","أين يمكنني تجربته؟"]
 ]
 },
 
 {
 word:"fit",
 meaning:"يناسب المقاس",
-explanation:
-"نستخدمها كثيرًا مع الملابس والأحذية للسؤال هل المقاس مناسب أم لا.",
+explanation:"نستخدمها كثيرًا مع الملابس والأحذية للسؤال هل المقاس مناسب أم لا.",
 examples:[
-"These shoes fit me well.",
-"The shirt doesn't fit me.",
-"Does this jacket fit you?"
+["These shoes fit me well.","هذه الأحذية تناسب مقاسي جيدًا."],
+["The shirt doesn't fit me.","القميص لا يناسب مقاسي."],
+["Does this jacket fit you?","هل هذه السترة تناسب مقاسك؟"]
 ]
 },
 
@@ -1807,9 +1398,9 @@ examples:[
 word:"expensive",
 meaning:"غالي",
 examples:[
-"This bag is expensive.",
-"The hotel was expensive.",
-"It's too expensive for me."
+["This bag is expensive.","هذه الحقيبة غالية."],
+["The hotel was expensive.","كان الفندق غاليًا."],
+["It's too expensive for me.","إنه غالٍ جدًا بالنسبة لي."]
 ]
 },
 
@@ -1817,18 +1408,14 @@ examples:[
 word:"cheap",
 meaning:"رخيص",
 examples:[
-"This shirt is cheap.",
-"The tickets were cheap.",
-"I found a cheap hotel."
+["This shirt is cheap.","هذا القميص رخيص."],
+["The tickets were cheap.","كانت التذاكر رخيصة."],
+["I found a cheap hotel.","وجدت فندقًا رخيصًا."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 9
-========================================================= */
 
 {
 id:9,
@@ -1842,9 +1429,9 @@ items:[
 word:"menu",
 meaning:"قائمة الطعام",
 examples:[
-"Can I see the menu?",
-"The menu is on the table.",
-"I chose something from the menu."
+["Can I see the menu?","هل يمكنني رؤية قائمة الطعام؟"],
+["The menu is on the table.","قائمة الطعام على الطاولة."],
+["I chose something from the menu.","اخترت شيئًا من قائمة الطعام."]
 ]
 },
 
@@ -1852,9 +1439,9 @@ examples:[
 word:"meal",
 meaning:"وجبة",
 examples:[
-"Breakfast is my favorite meal.",
-"We had a good meal.",
-"The meal was delicious."
+["Breakfast is my favorite meal.","الفطور وجبتي المفضلة."],
+["We had a good meal.","تناولنا وجبة جيدة."],
+["The meal was delicious.","كانت الوجبة لذيذة."]
 ]
 },
 
@@ -1862,9 +1449,9 @@ examples:[
 word:"dish",
 meaning:"طبق",
 examples:[
-"This is my favorite dish.",
-"The restaurant has many dishes.",
-"Which dish do you recommend?"
+["This is my favorite dish.","هذا طبقي المفضل."],
+["The restaurant has many dishes.","المطعم لديه أطباق كثيرة."],
+["Which dish do you recommend?","أي طبق تنصح به؟"]
 ]
 },
 
@@ -1872,9 +1459,9 @@ examples:[
 word:"order",
 meaning:"طلب / يطلب",
 examples:[
-"I'd like to order a drink.",
-"Our order is ready.",
-"Can I order now?"
+["I'd like to order a drink.","أود أن أطلب مشروبًا."],
+["Our order is ready.","طلبنا جاهز."],
+["Can I order now?","هل يمكنني الطلب الآن؟"]
 ]
 },
 
@@ -1882,9 +1469,9 @@ examples:[
 word:"bill",
 meaning:"فاتورة",
 examples:[
-"Can we have the bill?",
-"The bill was expensive.",
-"I'll pay the bill."
+["Can we have the bill?","هل يمكننا الحصول على الفاتورة؟"],
+["The bill was expensive.","كانت الفاتورة مرتفعة."],
+["I'll pay the bill.","سأدفع الفاتورة."]
 ]
 },
 
@@ -1892,9 +1479,9 @@ examples:[
 word:"waiter",
 meaning:"نادل",
 examples:[
-"The waiter brought the menu.",
-"We asked the waiter.",
-"The waiter was polite."
+["The waiter brought the menu.","أحضر النادل قائمة الطعام."],
+["We asked the waiter.","سألنا النادل."],
+["The waiter was polite.","كان النادل مؤدبًا."]
 ]
 },
 
@@ -1902,9 +1489,9 @@ examples:[
 word:"hungry",
 meaning:"جائع",
 examples:[
-"I'm hungry.",
-"Are you hungry?",
-"We were hungry after the trip."
+["I'm hungry.","أنا جائع."],
+["Are you hungry?","هل أنت جائع؟"],
+["We were hungry after the trip.","كنا جائعين بعد الرحلة."]
 ]
 },
 
@@ -1912,9 +1499,9 @@ examples:[
 word:"delicious",
 meaning:"لذيذ",
 examples:[
-"The food is delicious.",
-"This soup is delicious.",
-"We had a delicious meal."
+["The food is delicious.","الطعام لذيذ."],
+["This soup is delicious.","هذا الحساء لذيذ."],
+["We had a delicious meal.","تناولنا وجبة لذيذة."]
 ]
 },
 
@@ -1922,18 +1509,14 @@ examples:[
 word:"spicy",
 meaning:"حار",
 examples:[
-"Is this food spicy?",
-"I don't like very spicy food.",
-"The curry is spicy."
+["Is this food spicy?","هل هذا الطعام حار؟"],
+["I don't like very spicy food.","لا أحب الطعام الحار جدًا."],
+["The curry is spicy.","الكاري حار."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 10
-========================================================= */
 
 {
 id:10,
@@ -1947,9 +1530,9 @@ items:[
 word:"entrance",
 meaning:"مدخل",
 examples:[
-"The entrance is over there.",
-"Meet me at the entrance.",
-"The main entrance is closed."
+["The entrance is over there.","المدخل هناك."],
+["Meet me at the entrance.","قابلني عند المدخل."],
+["The main entrance is closed.","المدخل الرئيسي مغلق."]
 ]
 },
 
@@ -1957,9 +1540,9 @@ examples:[
 word:"exit",
 meaning:"مخرج",
 examples:[
-"Where is the exit?",
-"The exit is on the left.",
-"We found the emergency exit."
+["Where is the exit?","أين المخرج؟"],
+["The exit is on the left.","المخرج على اليسار."],
+["We found the emergency exit.","وجدنا مخرج الطوارئ."]
 ]
 },
 
@@ -1967,9 +1550,9 @@ examples:[
 word:"corner",
 meaning:"زاوية / ناصية",
 examples:[
-"The shop is on the corner.",
-"Turn at the corner.",
-"There is a café around the corner."
+["The shop is on the corner.","المتجر عند الناصية."],
+["Turn at the corner.","انعطف عند الناصية."],
+["There is a café around the corner.","يوجد مقهى قريبًا عند الناصية."]
 ]
 },
 
@@ -1977,9 +1560,9 @@ examples:[
 word:"center",
 meaning:"مركز / وسط",
 examples:[
-"The hotel is in the city center.",
-"Let's meet in the center.",
-"The shopping center is nearby."
+["The hotel is in the city center.","الفندق في وسط المدينة."],
+["Let's meet in the center.","لنلتقِ في المركز."],
+["The shopping center is nearby.","مركز التسوق قريب."]
 ]
 },
 
@@ -1987,9 +1570,9 @@ examples:[
 word:"neighborhood",
 meaning:"حي",
 examples:[
-"I live in a quiet neighborhood.",
-"This neighborhood is safe.",
-"We moved to a new neighborhood."
+["I live in a quiet neighborhood.","أعيش في حي هادئ."],
+["This neighborhood is safe.","هذا الحي آمن."],
+["We moved to a new neighborhood.","انتقلنا إلى حي جديد."]
 ]
 },
 
@@ -1997,9 +1580,9 @@ examples:[
 word:"building",
 meaning:"مبنى",
 examples:[
-"That building is very old.",
-"Our office is in this building.",
-"I live in a tall building."
+["That building is very old.","ذلك المبنى قديم جدًا."],
+["Our office is in this building.","مكتبنا في هذا المبنى."],
+["I live in a tall building.","أعيش في مبنى مرتفع."]
 ]
 },
 
@@ -2007,9 +1590,9 @@ examples:[
 word:"station",
 meaning:"محطة",
 examples:[
-"The bus station is nearby.",
-"Meet me at the station.",
-"Which station do I need?"
+["The bus station is nearby.","محطة الحافلات قريبة."],
+["Meet me at the station.","قابلني عند المحطة."],
+["Which station do I need?","أي محطة أحتاج؟"]
 ]
 },
 
@@ -2017,9 +1600,9 @@ examples:[
 word:"pharmacy",
 meaning:"صيدلية",
 examples:[
-"There is a pharmacy near the hotel.",
-"I went to the pharmacy.",
-"The pharmacy closes at nine."
+["There is a pharmacy near the hotel.","توجد صيدلية بالقرب من الفندق."],
+["I went to the pharmacy.","ذهبت إلى الصيدلية."],
+["The pharmacy closes at nine.","تغلق الصيدلية الساعة التاسعة."]
 ]
 },
 
@@ -2027,9 +1610,9 @@ examples:[
 word:"bank",
 meaning:"بنك",
 examples:[
-"The bank is next to the post office.",
-"I need to go to the bank.",
-"The bank opens at eight."
+["The bank is next to the post office.","البنك بجانب مكتب البريد."],
+["I need to go to the bank.","أحتاج إلى الذهاب إلى البنك."],
+["The bank opens at eight.","يفتح البنك الساعة الثامنة."]
 ]
 },
 
@@ -2037,18 +1620,14 @@ examples:[
 word:"post office",
 meaning:"مكتب بريد",
 examples:[
-"Where is the post office?",
-"I went to the post office.",
-"The post office is near the bank."
+["Where is the post office?","أين مكتب البريد؟"],
+["I went to the post office.","ذهبت إلى مكتب البريد."],
+["The post office is near the bank.","مكتب البريد قريب من البنك."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 11
-========================================================= */
 
 {
 id:11,
@@ -2062,21 +1641,20 @@ items:[
 word:"trip",
 meaning:"رحلة",
 examples:[
-"We are planning a trip.",
-"The trip was great.",
-"How was your trip?"
+["We are planning a trip.","نحن نخطط لرحلة."],
+["The trip was great.","كانت الرحلة رائعة."],
+["How was your trip?","كيف كانت رحلتك؟"]
 ]
 },
 
 {
 word:"journey",
 meaning:"رحلة / سفر",
-explanation:
-"تركّز على عملية السفر أو الطريق من مكان إلى آخر، بينما trip غالبًا تعني الرحلة نفسها.",
+explanation:"تركّز على عملية السفر أو الطريق من مكان إلى آخر، بينما trip غالبًا تعني الرحلة نفسها.",
 examples:[
-"The journey was long.",
-"We had a comfortable journey.",
-"The journey took three hours."
+["The journey was long.","كانت الرحلة طويلة."],
+["We had a comfortable journey.","كانت رحلتنا مريحة."],
+["The journey took three hours.","استغرقت الرحلة ثلاث ساعات."]
 ]
 },
 
@@ -2084,9 +1662,9 @@ examples:[
 word:"ticket",
 meaning:"تذكرة",
 examples:[
-"I bought a train ticket.",
-"Where is my ticket?",
-"Do you have your ticket?"
+["I bought a train ticket.","اشتريت تذكرة قطار."],
+["Where is my ticket?","أين تذكرتي؟"],
+["Do you have your ticket?","هل لديك تذكرتك؟"]
 ]
 },
 
@@ -2094,9 +1672,9 @@ examples:[
 word:"passport",
 meaning:"جواز سفر",
 examples:[
-"I need my passport.",
-"Keep your passport safe.",
-"Did you bring your passport?"
+["I need my passport.","أحتاج إلى جواز سفري."],
+["Keep your passport safe.","احتفظ بجواز سفرك في مكان آمن."],
+["Did you bring your passport?","هل أحضرت جواز سفرك؟"]
 ]
 },
 
@@ -2104,9 +1682,9 @@ examples:[
 word:"luggage",
 meaning:"أمتعة",
 examples:[
-"My luggage is heavy.",
-"Where can I leave my luggage?",
-"I have two bags of luggage."
+["My luggage is heavy.","أمتعتي ثقيلة."],
+["Where can I leave my luggage?","أين يمكنني ترك أمتعتي؟"],
+["I have two bags of luggage.","لدي حقيبتان من الأمتعة."]
 ]
 },
 
@@ -2114,9 +1692,9 @@ examples:[
 word:"suitcase",
 meaning:"حقيبة سفر",
 examples:[
-"My suitcase is black.",
-"I packed my suitcase.",
-"This suitcase is too heavy."
+["My suitcase is black.","حقيبة سفري سوداء."],
+["I packed my suitcase.","جهزت حقيبة سفري."],
+["This suitcase is too heavy.","حقيبة السفر هذه ثقيلة جدًا."]
 ]
 },
 
@@ -2124,9 +1702,9 @@ examples:[
 word:"airport",
 meaning:"مطار",
 examples:[
-"We arrived at the airport early.",
-"The airport is busy.",
-"I'll meet you at the airport."
+["We arrived at the airport early.","وصلنا إلى المطار مبكرًا."],
+["The airport is busy.","المطار مزدحم."],
+["I'll meet you at the airport.","سأقابلك في المطار."]
 ]
 },
 
@@ -2134,9 +1712,9 @@ examples:[
 word:"flight",
 meaning:"رحلة جوية",
 examples:[
-"Our flight is at six.",
-"The flight was late.",
-"I booked a flight to Dubai."
+["Our flight is at six.","رحلتنا الجوية الساعة السادسة."],
+["The flight was late.","تأخرت الرحلة الجوية."],
+["I booked a flight to Dubai.","حجزت رحلة جوية إلى دبي."]
 ]
 },
 
@@ -2144,9 +1722,9 @@ examples:[
 word:"hotel",
 meaning:"فندق",
 examples:[
-"We stayed at a small hotel.",
-"The hotel was comfortable.",
-"I booked a hotel."
+["We stayed at a small hotel.","أقمنا في فندق صغير."],
+["The hotel was comfortable.","كان الفندق مريحًا."],
+["I booked a hotel.","حجزت فندقًا."]
 ]
 },
 
@@ -2154,18 +1732,14 @@ examples:[
 word:"reservation",
 meaning:"حجز",
 examples:[
-"I have a hotel reservation.",
-"Can I make a reservation?",
-"Your reservation is confirmed."
+["I have a hotel reservation.","لدي حجز فندقي."],
+["Can I make a reservation?","هل يمكنني إجراء حجز؟"],
+["Your reservation is confirmed.","تم تأكيد حجزك."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 12
-========================================================= */
 
 {
 id:12,
@@ -2179,9 +1753,9 @@ items:[
 word:"bus stop",
 meaning:"موقف الحافلات",
 examples:[
-"The bus stop is nearby.",
-"I'll wait at the bus stop.",
-"Is this the right bus stop?"
+["The bus stop is nearby.","موقف الحافلات قريب."],
+["I'll wait at the bus stop.","سأنتظر عند موقف الحافلات."],
+["Is this the right bus stop?","هل هذا هو موقف الحافلات الصحيح؟"]
 ]
 },
 
@@ -2189,9 +1763,9 @@ examples:[
 word:"train station",
 meaning:"محطة قطار",
 examples:[
-"The train station is far.",
-"We arrived at the train station.",
-"Meet me outside the train station."
+["The train station is far.","محطة القطار بعيدة."],
+["We arrived at the train station.","وصلنا إلى محطة القطار."],
+["Meet me outside the train station.","قابلني خارج محطة القطار."]
 ]
 },
 
@@ -2199,9 +1773,9 @@ examples:[
 word:"traffic",
 meaning:"ازدحام / حركة المرور",
 examples:[
-"There is a lot of traffic.",
-"Traffic is bad this morning.",
-"We were late because of traffic."
+["There is a lot of traffic.","هناك ازدحام شديد."],
+["Traffic is bad this morning.","الازدحام شديد هذا الصباح."],
+["We were late because of traffic.","تأخرنا بسبب الازدحام."]
 ]
 },
 
@@ -2209,9 +1783,9 @@ examples:[
 word:"road",
 meaning:"طريق",
 examples:[
-"This road is busy.",
-"The road is closed.",
-"Which road should we take?"
+["This road is busy.","هذا الطريق مزدحم."],
+["The road is closed.","الطريق مغلق."],
+["Which road should we take?","أي طريق يجب أن نسلك؟"]
 ]
 },
 
@@ -2219,9 +1793,9 @@ examples:[
 word:"street",
 meaning:"شارع",
 examples:[
-"I live on this street.",
-"The street is quiet.",
-"Turn left at the next street."
+["I live on this street.","أعيش في هذا الشارع."],
+["The street is quiet.","الشارع هادئ."],
+["Turn left at the next street.","انعطف يسارًا عند الشارع التالي."]
 ]
 },
 
@@ -2229,9 +1803,9 @@ examples:[
 word:"bridge",
 meaning:"جسر",
 examples:[
-"The bridge is beautiful.",
-"We crossed the bridge.",
-"The hotel is near the bridge."
+["The bridge is beautiful.","الجسر جميل."],
+["We crossed the bridge.","عبرنا الجسر."],
+["The hotel is near the bridge.","الفندق قريب من الجسر."]
 ]
 },
 
@@ -2239,9 +1813,9 @@ examples:[
 word:"direction",
 meaning:"اتجاه",
 examples:[
-"Can you give me directions?",
-"I need directions to the station.",
-"Which direction is the city center?"
+["Can you give me directions?","هل يمكنك إعطائي الاتجاهات؟"],
+["I need directions to the station.","أحتاج إلى الاتجاهات إلى المحطة."],
+["Which direction is the city center?","في أي اتجاه يقع وسط المدينة؟"]
 ]
 },
 
@@ -2249,9 +1823,9 @@ examples:[
 word:"turn",
 meaning:"منعطف / ينعطف",
 examples:[
-"Turn left here.",
-"Take the next turn.",
-"Turn right at the corner."
+["Turn left here.","انعطف يسارًا هنا."],
+["Take the next turn.","خذ المنعطف التالي."],
+["Turn right at the corner.","انعطف يمينًا عند الناصية."]
 ]
 },
 
@@ -2259,30 +1833,25 @@ examples:[
 word:"straight",
 meaning:"مباشرة",
 examples:[
-"Go straight ahead.",
-"Walk straight for five minutes.",
-"The road goes straight to the center."
+["Go straight ahead.","اذهب مباشرة إلى الأمام."],
+["Walk straight for five minutes.","امشِ مباشرة لمدة خمس دقائق."],
+["The road goes straight to the center.","الطريق يمتد مباشرة إلى المركز."]
 ]
 },
 
 {
 word:"opposite",
 meaning:"مقابل",
-explanation:
-"في الأماكن، تعني أن شيئًا يقع في الجهة المقابلة لشيء آخر.",
+explanation:"في الأماكن، تعني أن شيئًا يقع في الجهة المقابلة لشيء آخر.",
 examples:[
-"The bank is opposite the hotel.",
-"The pharmacy is opposite the station.",
-"Our house is opposite the school."
+["The bank is opposite the hotel.","البنك مقابل الفندق."],
+["The pharmacy is opposite the station.","الصيدلية مقابل المحطة."],
+["Our house is opposite the school.","منزلنا مقابل المدرسة."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 13
-========================================================= */
 
 {
 id:13,
@@ -2296,9 +1865,9 @@ items:[
 word:"How do I get to…?",
 meaning:"كيف أصل إلى…؟",
 examples:[
-"How do I get to the airport?",
-"How do I get to the library?",
-"Excuse me, how do I get to the station?"
+["How do I get to the airport?","كيف أصل إلى المطار؟"],
+["How do I get to the library?","كيف أصل إلى المكتبة؟"],
+["Excuse me, how do I get to the station?","عذرًا، كيف أصل إلى المحطة؟"]
 ]
 },
 
@@ -2306,9 +1875,9 @@ examples:[
 word:"Where is…?",
 meaning:"أين يوجد…؟",
 examples:[
-"Where is the bank?",
-"Where is the nearest pharmacy?",
-"Excuse me, where is the hotel?"
+["Where is the bank?","أين البنك؟"],
+["Where is the nearest pharmacy?","أين أقرب صيدلية؟"],
+["Excuse me, where is the hotel?","عذرًا، أين الفندق؟"]
 ]
 },
 
@@ -2316,9 +1885,9 @@ examples:[
 word:"Is it far?",
 meaning:"هل هو بعيد؟",
 examples:[
-"Is it far from here?",
-"Is the station far?",
-"Is it far to the airport?"
+["Is it far from here?","هل هو بعيد من هنا؟"],
+["Is the station far?","هل المحطة بعيدة؟"],
+["Is it far to the airport?","هل المطار بعيد؟"]
 ]
 },
 
@@ -2326,9 +1895,9 @@ examples:[
 word:"It's nearby.",
 meaning:"إنه قريب.",
 examples:[
-"Don't worry; it's nearby.",
-"The pharmacy is nearby.",
-"The hotel is nearby."
+["Don't worry; it's nearby.","لا تقلق؛ إنه قريب."],
+["The pharmacy is nearby.","الصيدلية قريبة."],
+["The hotel is nearby.","الفندق قريب."]
 ]
 },
 
@@ -2336,9 +1905,9 @@ examples:[
 word:"on the left",
 meaning:"على اليسار",
 examples:[
-"The bank is on the left.",
-"It's on the left side.",
-"You'll see it on the left."
+["The bank is on the left.","البنك على اليسار."],
+["It's on the left side.","إنه على الجهة اليسرى."],
+["You'll see it on the left.","ستراه على اليسار."]
 ]
 },
 
@@ -2346,9 +1915,9 @@ examples:[
 word:"on the right",
 meaning:"على اليمين",
 examples:[
-"The café is on the right.",
-"Turn on the right.",
-"You'll see the hotel on the right."
+["The café is on the right.","المقهى على اليمين."],
+["Turn on the right.","انعطف إلى اليمين."],
+["You'll see the hotel on the right.","سترى الفندق على اليمين."]
 ]
 },
 
@@ -2356,9 +1925,9 @@ examples:[
 word:"across from",
 meaning:"مقابل",
 examples:[
-"The bank is across from the hotel.",
-"The café is across from the station.",
-"The school is across from my house."
+["The bank is across from the hotel.","البنك مقابل الفندق."],
+["The café is across from the station.","المقهى مقابل المحطة."],
+["The school is across from my house.","المدرسة مقابل منزلي."]
 ]
 },
 
@@ -2366,9 +1935,9 @@ examples:[
 word:"next to",
 meaning:"بجانب",
 examples:[
-"The pharmacy is next to the bank.",
-"Sit next to me.",
-"The hotel is next to the station."
+["The pharmacy is next to the bank.","الصيدلية بجانب البنك."],
+["Sit next to me.","اجلس بجانبي."],
+["The hotel is next to the station.","الفندق بجانب المحطة."]
 ]
 },
 
@@ -2376,9 +1945,9 @@ examples:[
 word:"between",
 meaning:"بين",
 examples:[
-"The bank is between two shops.",
-"The hotel is between the station and the café.",
-"She sat between her friends."
+["The bank is between two shops.","البنك بين متجرين."],
+["The hotel is between the station and the café.","الفندق بين المحطة والمقهى."],
+["She sat between her friends.","جلست بين صديقاتها."]
 ]
 },
 
@@ -2386,18 +1955,14 @@ examples:[
 word:"at the end of the street",
 meaning:"في نهاية الشارع",
 examples:[
-"The hotel is at the end of the street.",
-"Turn left at the end of the street.",
-"The pharmacy is at the end of the street."
+["The hotel is at the end of the street.","الفندق في نهاية الشارع."],
+["Turn left at the end of the street.","انعطف يسارًا في نهاية الشارع."],
+["The pharmacy is at the end of the street.","الصيدلية في نهاية الشارع."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 14
-========================================================= */
 
 {
 id:14,
@@ -2411,9 +1976,9 @@ items:[
 word:"problem",
 meaning:"مشكلة",
 examples:[
-"We have a problem.",
-"What's the problem?",
-"I need help with a problem."
+["We have a problem.","لدينا مشكلة."],
+["What's the problem?","ما المشكلة؟"],
+["I need help with a problem.","أحتاج إلى مساعدة في حل مشكلة."]
 ]
 },
 
@@ -2421,9 +1986,9 @@ examples:[
 word:"mistake",
 meaning:"خطأ",
 examples:[
-"I made a mistake.",
-"Everyone makes mistakes.",
-"There is a mistake in the email."
+["I made a mistake.","ارتكبت خطأ."],
+["Everyone makes mistakes.","الجميع يرتكب الأخطاء."],
+["There is a mistake in the email.","هناك خطأ في البريد الإلكتروني."]
 ]
 },
 
@@ -2431,9 +1996,9 @@ examples:[
 word:"accident",
 meaning:"حادث",
 examples:[
-"There was an accident.",
-"He had a small accident.",
-"The road was closed after the accident."
+["There was an accident.","وقع حادث."],
+["He had a small accident.","تعرض لحادث بسيط."],
+["The road was closed after the accident.","أُغلق الطريق بعد الحادث."]
 ]
 },
 
@@ -2441,9 +2006,9 @@ examples:[
 word:"broken",
 meaning:"مكسور / معطل",
 examples:[
-"My phone is broken.",
-"The door is broken.",
-"The machine is broken."
+["My phone is broken.","هاتفي معطل."],
+["The door is broken.","الباب مكسور."],
+["The machine is broken.","الآلة معطلة."]
 ]
 },
 
@@ -2451,9 +2016,9 @@ examples:[
 word:"lost",
 meaning:"تائه / مفقود",
 examples:[
-"I think I'm lost.",
-"My keys are lost.",
-"We got lost in the city."
+["I think I'm lost.","أعتقد أنني تائه."],
+["My keys are lost.","مفاتيحي مفقودة."],
+["We got lost in the city.","تهنا في المدينة."]
 ]
 },
 
@@ -2461,9 +2026,9 @@ examples:[
 word:"late",
 meaning:"متأخر",
 examples:[
-"I'm sorry I'm late.",
-"The bus is late.",
-"We arrived late."
+["I'm sorry I'm late.","آسف لأنني تأخرت."],
+["The bus is late.","الحافلة متأخرة."],
+["We arrived late.","وصلنا متأخرين."]
 ]
 },
 
@@ -2471,9 +2036,9 @@ examples:[
 word:"wrong",
 meaning:"خاطئ",
 examples:[
-"I have the wrong address.",
-"This is the wrong bus.",
-"Something is wrong."
+["I have the wrong address.","لدي العنوان الخطأ."],
+["This is the wrong bus.","هذه الحافلة الخطأ."],
+["Something is wrong.","هناك شيء غير صحيح."]
 ]
 },
 
@@ -2481,9 +2046,9 @@ examples:[
 word:"missing",
 meaning:"مفقود / ناقص",
 examples:[
-"One page is missing.",
-"My bag is missing.",
-"Something is missing from the box."
+["One page is missing.","صفحة واحدة مفقودة."],
+["My bag is missing.","حقيبتي مفقودة."],
+["Something is missing from the box.","هناك شيء ناقص من الصندوق."]
 ]
 },
 
@@ -2491,9 +2056,9 @@ examples:[
 word:"difficult",
 meaning:"صعب",
 examples:[
-"This question is difficult.",
-"The exam was difficult.",
-"It is difficult to decide."
+["This question is difficult.","هذا السؤال صعب."],
+["The exam was difficult.","كان الاختبار صعبًا."],
+["It is difficult to decide.","من الصعب اتخاذ قرار."]
 ]
 },
 
@@ -2501,18 +2066,14 @@ examples:[
 word:"possible",
 meaning:"ممكن",
 examples:[
-"Is it possible?",
-"Is it possible to change the time?",
-"Anything is possible."
+["Is it possible?","هل هذا ممكن؟"],
+["Is it possible to change the time?","هل من الممكن تغيير الوقت؟"],
+["Anything is possible.","كل شيء ممكن."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 15
-========================================================= */
 
 {
 id:15,
@@ -2526,9 +2087,9 @@ items:[
 word:"Can you help me?",
 meaning:"هل يمكنك مساعدتي؟",
 examples:[
-"Can you help me with this?",
-"Excuse me, can you help me?",
-"Can you help me find the station?"
+["Can you help me with this?","هل يمكنك مساعدتي في هذا؟"],
+["Excuse me, can you help me?","عذرًا، هل يمكنك مساعدتي؟"],
+["Can you help me find the station?","هل يمكنك مساعدتي في العثور على المحطة؟"]
 ]
 },
 
@@ -2536,9 +2097,9 @@ examples:[
 word:"Could you…?",
 meaning:"هل يمكنك…؟",
 examples:[
-"Could you open the door?",
-"Could you help me?",
-"Could you explain this?"
+["Could you open the door?","هل يمكنك فتح الباب؟"],
+["Could you help me?","هل يمكنك مساعدتي؟"],
+["Could you explain this?","هل يمكنك شرح هذا؟"]
 ]
 },
 
@@ -2546,9 +2107,9 @@ examples:[
 word:"Would you…?",
 meaning:"هل يمكنك / هل تود…؟",
 examples:[
-"Would you help me?",
-"Would you open the window?",
-"Would you wait here?"
+["Would you help me?","هل يمكنك مساعدتي؟"],
+["Would you open the window?","هل يمكنك فتح النافذة؟"],
+["Would you wait here?","هل يمكنك الانتظار هنا؟"]
 ]
 },
 
@@ -2556,9 +2117,9 @@ examples:[
 word:"I need help.",
 meaning:"أحتاج إلى مساعدة.",
 examples:[
-"I need help with my bag.",
-"Sorry, I need help.",
-"I need help finding the hotel."
+["I need help with my bag.","أحتاج إلى مساعدة في حقيبتي."],
+["Sorry, I need help.","عذرًا، أحتاج إلى مساعدة."],
+["I need help finding the hotel.","أحتاج إلى مساعدة في العثور على الفندق."]
 ]
 },
 
@@ -2566,9 +2127,9 @@ examples:[
 word:"I'm looking for…",
 meaning:"أبحث عن…",
 examples:[
-"I'm looking for the bank.",
-"I'm looking for a pharmacy.",
-"I'm looking for my friend."
+["I'm looking for the bank.","أبحث عن البنك."],
+["I'm looking for a pharmacy.","أبحث عن صيدلية."],
+["I'm looking for my friend.","أبحث عن صديقي."]
 ]
 },
 
@@ -2576,9 +2137,9 @@ examples:[
 word:"Can I ask you something?",
 meaning:"هل يمكنني أن أسألك شيئًا؟",
 examples:[
-"Can I ask you something?",
-"Excuse me, can I ask you something?",
-"Can I ask you something about the course?"
+["Can I ask you something?","هل يمكنني أن أسألك شيئًا؟"],
+["Excuse me, can I ask you something?","عذرًا، هل يمكنني أن أسألك شيئًا؟"],
+["Can I ask you something about the course?","هل يمكنني أن أسألك شيئًا عن الدورة؟"]
 ]
 },
 
@@ -2586,9 +2147,9 @@ examples:[
 word:"Excuse me.",
 meaning:"عذرًا / لو سمحت.",
 examples:[
-"Excuse me, where is the station?",
-"Excuse me, can I ask a question?",
-"Excuse me, is this seat free?"
+["Excuse me, where is the station?","عذرًا، أين المحطة؟"],
+["Excuse me, can I ask a question?","عذرًا، هل يمكنني طرح سؤال؟"],
+["Excuse me, is this seat free?","عذرًا، هل هذا المقعد شاغر؟"]
 ]
 },
 
@@ -2596,9 +2157,9 @@ examples:[
 word:"Sorry to bother you.",
 meaning:"آسف لإزعاجك.",
 examples:[
-"Sorry to bother you, but can you help me?",
-"Sorry to bother you; I have a question.",
-"Sorry to bother you for a minute."
+["Sorry to bother you, but can you help me?","آسف لإزعاجك، لكن هل يمكنك مساعدتي؟"],
+["Sorry to bother you; I have a question.","آسف لإزعاجك؛ لدي سؤال."],
+["Sorry to bother you for a minute.","آسف لإزعاجك لدقيقة."]
 ]
 },
 
@@ -2606,18 +2167,14 @@ examples:[
 word:"Thank you for your help.",
 meaning:"شكرًا لمساعدتك.",
 examples:[
-"Thank you for your help.",
-"Thank you for your help today.",
-"Thank you for your help; I really appreciate it."
+["Thank you for your help.","شكرًا لمساعدتك."],
+["Thank you for your help today.","شكرًا لمساعدتك اليوم."],
+["Thank you for your help; I really appreciate it.","شكرًا لمساعدتك؛ أنا أقدّر ذلك حقًا."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 16
-========================================================= */
 
 {
 id:16,
@@ -2631,9 +2188,9 @@ items:[
 word:"recently",
 meaning:"مؤخرًا",
 examples:[
-"I started the course recently.",
-"Have you seen him recently?",
-"I moved here recently."
+["I started the course recently.","بدأت الدورة مؤخرًا."],
+["Have you seen him recently?","هل رأيته مؤخرًا؟"],
+["I moved here recently.","انتقلت إلى هنا مؤخرًا."]
 ]
 },
 
@@ -2641,33 +2198,31 @@ examples:[
 word:"already",
 meaning:"بالفعل",
 examples:[
-"I have already finished.",
-"She is already here.",
-"We already know the answer."
+["I have already finished.","لقد انتهيت بالفعل."],
+["She is already here.","هي هنا بالفعل."],
+["We already know the answer.","نحن نعرف الإجابة بالفعل."]
 ]
 },
 
 {
 word:"still",
 meaning:"ما زال / لا يزال",
-explanation:
-"تعني أن الشيء مستمر حتى هذه اللحظة.",
+explanation:"تعني أن الشيء مستمر حتى هذه اللحظة.",
 examples:[
-"I still need help.",
-"She is still at work.",
-"Do you still live there?"
+["I still need help.","ما زلت أحتاج إلى المساعدة."],
+["She is still at work.","هي ما زالت في العمل."],
+["Do you still live there?","هل ما زلت تعيش هناك؟"]
 ]
 },
 
 {
 word:"yet",
 meaning:"حتى الآن",
-explanation:
-"غالبًا تأتي في النفي أو السؤال بمعنى «حتى الآن».",
+explanation:"غالبًا تأتي في النفي أو السؤال بمعنى «حتى الآن».",
 examples:[
-"I haven't finished yet.",
-"Is the bus here yet?",
-"She hasn't called yet."
+["I haven't finished yet.","لم أنتهِ حتى الآن."],
+["Is the bus here yet?","هل وصلت الحافلة حتى الآن؟"],
+["She hasn't called yet.","هي لم تتصل حتى الآن."]
 ]
 },
 
@@ -2675,9 +2230,9 @@ examples:[
 word:"soon",
 meaning:"قريبًا",
 examples:[
-"I'll see you soon.",
-"The lesson will start soon.",
-"We need to leave soon."
+["I'll see you soon.","سأراك قريبًا."],
+["The lesson will start soon.","سيبدأ الدرس قريبًا."],
+["We need to leave soon.","نحتاج إلى المغادرة قريبًا."]
 ]
 },
 
@@ -2685,9 +2240,9 @@ examples:[
 word:"early",
 meaning:"مبكر",
 examples:[
-"I arrived early.",
-"She usually gets up early.",
-"We came early for the meeting."
+["I arrived early.","وصلت مبكرًا."],
+["She usually gets up early.","هي عادةً تستيقظ مبكرًا."],
+["We came early for the meeting.","أتينا مبكرًا للاجتماع."]
 ]
 },
 
@@ -2695,9 +2250,9 @@ examples:[
 word:"late",
 meaning:"متأخر",
 examples:[
-"I went to bed late.",
-"Don't be late.",
-"The train was late."
+["I went to bed late.","ذهبت إلى النوم متأخرًا."],
+["Don't be late.","لا تتأخر."],
+["The train was late.","كان القطار متأخرًا."]
 ]
 },
 
@@ -2705,9 +2260,9 @@ examples:[
 word:"during",
 meaning:"أثناء",
 examples:[
-"I studied during the weekend.",
-"Don't talk during the exam.",
-"It rained during the trip."
+["I studied during the weekend.","درست أثناء عطلة نهاية الأسبوع."],
+["Don't talk during the exam.","لا تتحدث أثناء الاختبار."],
+["It rained during the trip.","هطلت الأمطار أثناء الرحلة."]
 ]
 },
 
@@ -2715,9 +2270,9 @@ examples:[
 word:"before",
 meaning:"قبل",
 examples:[
-"Call me before you leave.",
-"I had breakfast before class.",
-"Wash your hands before dinner."
+["Call me before you leave.","اتصل بي قبل أن تغادر."],
+["I had breakfast before class.","تناولت الفطور قبل الحصة."],
+["Wash your hands before dinner.","اغسل يديك قبل العشاء."]
 ]
 },
 
@@ -2725,18 +2280,14 @@ examples:[
 word:"after",
 meaning:"بعد",
 examples:[
-"I'll call you after work.",
-"We went out after dinner.",
-"See you after the lesson."
+["I'll call you after work.","سأتصل بك بعد العمل."],
+["We went out after dinner.","خرجنا بعد العشاء."],
+["See you after the lesson.","أراك بعد الدرس."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 17
-========================================================= */
 
 {
 id:17,
@@ -2750,57 +2301,53 @@ items:[
 word:"enough",
 meaning:"كافٍ",
 examples:[
-"We have enough time.",
-"Is the room big enough?",
-"I don't have enough money."
+["We have enough time.","لدينا وقت كافٍ."],
+["Is the room big enough?","هل الغرفة كبيرة بما يكفي؟"],
+["I don't have enough money.","ليس لدي مال كافٍ."]
 ]
 },
 
 {
 word:"too much",
 meaning:"أكثر من اللازم",
-explanation:
-"نستخدمها مع الأشياء غير المعدودة عندما تكون الكمية أكبر من اللازم.",
+explanation:"نستخدمها مع الأشياء غير المعدودة عندما تكون الكمية أكبر من اللازم.",
 examples:[
-"There is too much sugar.",
-"I spent too much money.",
-"Don't add too much salt."
+["There is too much sugar.","هناك سكر أكثر من اللازم."],
+["I spent too much money.","أنفقت مالًا أكثر من اللازم."],
+["Don't add too much salt.","لا تضف الكثير من الملح."]
 ]
 },
 
 {
 word:"too many",
 meaning:"أكثر من اللازم",
-explanation:
-"نستخدمها مع الأشياء المعدودة عندما يكون العدد أكبر من اللازم.",
+explanation:"نستخدمها مع الأشياء المعدودة عندما يكون العدد أكبر من اللازم.",
 examples:[
-"There are too many people.",
-"I have too many bags.",
-"There are too many questions."
+["There are too many people.","هناك عدد كبير جدًا من الناس."],
+["I have too many bags.","لدي حقائب كثيرة جدًا."],
+["There are too many questions.","هناك أسئلة كثيرة جدًا."]
 ]
 },
 
 {
 word:"a little",
 meaning:"قليل",
-explanation:
-"كمية قليلة من شيء غير معدود.",
+explanation:"كمية قليلة من شيء غير معدود.",
 examples:[
-"I need a little water.",
-"I speak a little French.",
-"Wait a little."
+["I need a little water.","أحتاج إلى قليل من الماء."],
+["I speak a little French.","أتحدث قليلًا من الفرنسية."],
+["Wait a little.","انتظر قليلًا."]
 ]
 },
 
 {
 word:"a few",
 meaning:"بضعة / عدد قليل",
-explanation:
-"عدد قليل من الأشياء المعدودة.",
+explanation:"عدد قليل من الأشياء المعدودة.",
 examples:[
-"I have a few questions.",
-"We stayed for a few days.",
-"I need a few minutes."
+["I have a few questions.","لدي بضعة أسئلة."],
+["We stayed for a few days.","أقمنا لبضعة أيام."],
+["I need a few minutes.","أحتاج إلى بضع دقائق."]
 ]
 },
 
@@ -2808,9 +2355,9 @@ examples:[
 word:"plenty of",
 meaning:"الكثير من / كمية كافية وكبيرة",
 examples:[
-"We have plenty of time.",
-"There is plenty of food.",
-"She has plenty of experience."
+["We have plenty of time.","لدينا وقت كافٍ ووفير."],
+["There is plenty of food.","يوجد الكثير من الطعام."],
+["She has plenty of experience.","لديها خبرة كبيرة."]
 ]
 },
 
@@ -2818,9 +2365,9 @@ examples:[
 word:"almost",
 meaning:"تقريبًا",
 examples:[
-"I'm almost ready.",
-"It's almost eight.",
-"We are almost there."
+["I'm almost ready.","أنا مستعد تقريبًا."],
+["It's almost eight.","الساعة تقترب من الثامنة."],
+["We are almost there.","لقد وصلنا تقريبًا."]
 ]
 },
 
@@ -2828,9 +2375,9 @@ examples:[
 word:"exactly",
 meaning:"بالضبط",
 examples:[
-"That's exactly what I mean.",
-"The train leaves at exactly six.",
-"That's exactly right."
+["That's exactly what I mean.","هذا بالضبط ما أقصده."],
+["The train leaves at exactly six.","يغادر القطار في السادسة بالضبط."],
+["That's exactly right.","هذا صحيح تمامًا."]
 ]
 },
 
@@ -2838,9 +2385,9 @@ examples:[
 word:"especially",
 meaning:"خصوصًا",
 examples:[
-"I like fruit, especially oranges.",
-"This is useful, especially for beginners.",
-"I enjoy weekends, especially Fridays."
+["I like fruit, especially oranges.","أحب الفواكه، خصوصًا البرتقال."],
+["This is useful, especially for beginners.","هذا مفيد، خصوصًا للمبتدئين."],
+["I enjoy weekends, especially Fridays.","أستمتع بعطلات نهاية الأسبوع، خصوصًا أيام الجمعة."]
 ]
 },
 
@@ -2848,18 +2395,14 @@ examples:[
 word:"usually",
 meaning:"عادةً",
 examples:[
-"I usually wake up early.",
-"She usually takes the bus.",
-"We usually eat at home."
+["I usually wake up early.","عادةً ما أستيقظ مبكرًا."],
+["She usually takes the bus.","هي عادةً تستقل الحافلة."],
+["We usually eat at home.","نحن عادةً نأكل في المنزل."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 18
-========================================================= */
 
 {
 id:18,
@@ -2873,9 +2416,9 @@ items:[
 word:"similar",
 meaning:"مشابه",
 examples:[
-"Our bags are similar.",
-"The two houses look similar.",
-"This word is similar to another word."
+["Our bags are similar.","حقائبنا متشابهة."],
+["The two houses look similar.","المنزلان يبدوان متشابهين."],
+["This word is similar to another word.","هذه الكلمة مشابهة لكلمة أخرى."]
 ]
 },
 
@@ -2883,9 +2426,9 @@ examples:[
 word:"different",
 meaning:"مختلف",
 examples:[
-"They are very different.",
-"My answer is different.",
-"This one is different from that one."
+["They are very different.","هما مختلفان جدًا."],
+["My answer is different.","إجابتي مختلفة."],
+["This one is different from that one.","هذا مختلف عن ذلك."]
 ]
 },
 
@@ -2893,9 +2436,9 @@ examples:[
 word:"same",
 meaning:"نفس الشيء",
 examples:[
-"We have the same teacher.",
-"They are the same size.",
-"I chose the same color."
+["We have the same teacher.","لدينا نفس المعلم."],
+["They are the same size.","هما بنفس المقاس."],
+["I chose the same color.","اخترت نفس اللون."]
 ]
 },
 
@@ -2903,9 +2446,9 @@ examples:[
 word:"better",
 meaning:"أفضل",
 examples:[
-"This book is better.",
-"I feel better today.",
-"The second answer is better."
+["This book is better.","هذا الكتاب أفضل."],
+["I feel better today.","أشعر بتحسن اليوم."],
+["The second answer is better.","الإجابة الثانية أفضل."]
 ]
 },
 
@@ -2913,9 +2456,9 @@ examples:[
 word:"worse",
 meaning:"أسوأ",
 examples:[
-"The weather is worse today.",
-"My headache is worse.",
-"Traffic is worse in the morning."
+["The weather is worse today.","الطقس أسوأ اليوم."],
+["My headache is worse.","صداعي أسوأ."],
+["Traffic is worse in the morning.","الازدحام أسوأ في الصباح."]
 ]
 },
 
@@ -2923,9 +2466,9 @@ examples:[
 word:"easier",
 meaning:"أسهل",
 examples:[
-"This exercise is easier.",
-"English is getting easier.",
-"The second question is easier."
+["This exercise is easier.","هذا التمرين أسهل."],
+["English is getting easier.","الإنجليزية أصبحت أسهل."],
+["The second question is easier.","السؤال الثاني أسهل."]
 ]
 },
 
@@ -2933,9 +2476,9 @@ examples:[
 word:"harder",
 meaning:"أصعب",
 examples:[
-"This lesson is harder.",
-"The exam was harder than I expected.",
-"Try a little harder."
+["This lesson is harder.","هذا الدرس أصعب."],
+["The exam was harder than I expected.","كان الاختبار أصعب مما توقعت."],
+["Try a little harder.","حاول بجدية أكبر قليلًا."]
 ]
 },
 
@@ -2943,9 +2486,9 @@ examples:[
 word:"larger",
 meaning:"أكبر",
 examples:[
-"This room is larger.",
-"We need a larger table.",
-"The larger bag is mine."
+["This room is larger.","هذه الغرفة أكبر."],
+["We need a larger table.","نحتاج إلى طاولة أكبر."],
+["The larger bag is mine.","الحقيبة الأكبر لي."]
 ]
 },
 
@@ -2953,9 +2496,9 @@ examples:[
 word:"smaller",
 meaning:"أصغر",
 examples:[
-"I need a smaller size.",
-"This apartment is smaller.",
-"The smaller box is lighter."
+["I need a smaller size.","أحتاج إلى مقاس أصغر."],
+["This apartment is smaller.","هذه الشقة أصغر."],
+["The smaller box is lighter.","الصندوق الأصغر أخف."]
 ]
 },
 
@@ -2963,18 +2506,14 @@ examples:[
 word:"important",
 meaning:"مهم",
 examples:[
-"English is important for my work.",
-"This is an important question.",
-"Sleep is important."
+["English is important for my work.","الإنجليزية مهمة لعملي."],
+["This is an important question.","هذا سؤال مهم."],
+["Sleep is important.","النوم مهم."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 19
-========================================================= */
 
 {
 id:19,
@@ -2988,9 +2527,9 @@ items:[
 word:"arrive",
 meaning:"يصل",
 examples:[
-"We arrived at the hotel.",
-"What time did you arrive?",
-"I usually arrive early."
+["We arrived at the hotel.","وصلنا إلى الفندق."],
+["What time did you arrive?","في أي وقت وصلت؟"],
+["I usually arrive early.","عادةً ما أصل مبكرًا."]
 ]
 },
 
@@ -2998,9 +2537,9 @@ examples:[
 word:"leave",
 meaning:"يغادر / يترك",
 examples:[
-"I leave home at seven.",
-"What time do you leave?",
-"We left the hotel early."
+["I leave home at seven.","أغادر المنزل الساعة السابعة."],
+["What time do you leave?","في أي وقت تغادر؟"],
+["We left the hotel early.","غادرنا الفندق مبكرًا."]
 ]
 },
 
@@ -3008,9 +2547,9 @@ examples:[
 word:"choose",
 meaning:"يختار",
 examples:[
-"Choose one answer.",
-"I chose the blue shirt.",
-"You can choose any seat."
+["Choose one answer.","اختر إجابة واحدة."],
+["I chose the blue shirt.","اخترت القميص الأزرق."],
+["You can choose any seat.","يمكنك اختيار أي مقعد."]
 ]
 },
 
@@ -3018,9 +2557,9 @@ examples:[
 word:"decide",
 meaning:"يقرر",
 examples:[
-"We need to decide today.",
-"She decided to stay.",
-"I can't decide."
+["We need to decide today.","نحتاج إلى أن نقرر اليوم."],
+["She decided to stay.","قررت أن تبقى."],
+["I can't decide.","لا أستطيع أن أقرر."]
 ]
 },
 
@@ -3028,9 +2567,9 @@ examples:[
 word:"remember",
 meaning:"يتذكر",
 examples:[
-"Remember your passport.",
-"I remember that day.",
-"Please remember to call me."
+["Remember your passport.","تذكر جواز سفرك."],
+["I remember that day.","أتذكر ذلك اليوم."],
+["Please remember to call me.","من فضلك تذكر أن تتصل بي."]
 ]
 },
 
@@ -3038,33 +2577,31 @@ examples:[
 word:"forget",
 meaning:"ينسى",
 examples:[
-"Don't forget your keys.",
-"I forgot his name.",
-"I often forget small things."
+["Don't forget your keys.","لا تنس مفاتيحك."],
+["I forgot his name.","نسيت اسمه."],
+["I often forget small things.","غالبًا ما أنسى الأشياء الصغيرة."]
 ]
 },
 
 {
 word:"borrow",
 meaning:"يستعير",
-explanation:
-"تستعير شيئًا من شخص آخر وتعيده إليه لاحقًا.",
+explanation:"تستعير شيئًا من شخص آخر وتعيده إليه لاحقًا.",
 examples:[
-"Can I borrow your pen?",
-"I borrowed a book from the library.",
-"She borrowed my charger."
+["Can I borrow your pen?","هل يمكنني استعارة قلمك؟"],
+["I borrowed a book from the library.","استعرت كتابًا من المكتبة."],
+["She borrowed my charger.","هي استعارت شاحني."]
 ]
 },
 
 {
 word:"lend",
 meaning:"يُعير",
-explanation:
-"تعطي شخصًا شيئًا ليستعمله ثم يعيده إليك.",
+explanation:"تعطي شخصًا شيئًا ليستعمله ثم يعيده إليك.",
 examples:[
-"Can you lend me your pen?",
-"He lent me his book.",
-"I can lend you some money."
+["Can you lend me your pen?","هل يمكنك إعارتي قلمك؟"],
+["He lent me his book.","أعارني كتابه."],
+["I can lend you some money.","يمكنني إقراضك بعض المال."]
 ]
 },
 
@@ -3072,9 +2609,9 @@ examples:[
 word:"bring",
 meaning:"يحضر / يجلب",
 examples:[
-"Please bring your passport.",
-"Can you bring some water?",
-"She brought a gift."
+["Please bring your passport.","من فضلك أحضر جواز سفرك."],
+["Can you bring some water?","هل يمكنك إحضار بعض الماء؟"],
+["She brought a gift.","أحضرت هدية."]
 ]
 },
 
@@ -3082,18 +2619,14 @@ examples:[
 word:"carry",
 meaning:"يحمل",
 examples:[
-"I can't carry this bag.",
-"She carries a small bag.",
-"He carried the boxes upstairs."
+["I can't carry this bag.","لا أستطيع حمل هذه الحقيبة."],
+["She carries a small bag.","هي تحمل حقيبة صغيرة."],
+["He carried the boxes upstairs.","حمل الصناديق إلى الطابق العلوي."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 20
-========================================================= */
 
 {
 id:20,
@@ -3107,9 +2640,9 @@ items:[
 word:"ask",
 meaning:"يسأل",
 examples:[
-"I want to ask a question.",
-"She asked me for help.",
-"Can I ask you something?"
+["I want to ask a question.","أريد أن أطرح سؤالًا."],
+["She asked me for help.","طلبت مني المساعدة."],
+["Can I ask you something?","هل يمكنني أن أسألك شيئًا؟"]
 ]
 },
 
@@ -3117,9 +2650,9 @@ examples:[
 word:"answer",
 meaning:"يجيب",
 examples:[
-"Please answer the question.",
-"He answered quickly.",
-"I don't know how to answer."
+["Please answer the question.","من فضلك أجب عن السؤال."],
+["He answered quickly.","أجاب بسرعة."],
+["I don't know how to answer.","لا أعرف كيف أجيب."]
 ]
 },
 
@@ -3127,9 +2660,9 @@ examples:[
 word:"tell",
 meaning:"يخبر",
 examples:[
-"Tell me the truth.",
-"She told me the news.",
-"Can you tell me your name?"
+["Tell me the truth.","أخبرني بالحقيقة."],
+["She told me the news.","أخبرتني بالخبر."],
+["Can you tell me your name?","هل يمكنك أن تخبرني باسمك؟"]
 ]
 },
 
@@ -3137,9 +2670,9 @@ examples:[
 word:"talk",
 meaning:"يتحدث",
 examples:[
-"We talked for an hour.",
-"I need to talk to you.",
-"They talked about the trip."
+["We talked for an hour.","تحدثنا لمدة ساعة."],
+["I need to talk to you.","أحتاج إلى التحدث معك."],
+["They talked about the trip.","تحدثوا عن الرحلة."]
 ]
 },
 
@@ -3147,9 +2680,9 @@ examples:[
 word:"speak",
 meaning:"يتحدث / يتكلم",
 examples:[
-"Do you speak English?",
-"She speaks very clearly.",
-"I spoke to my teacher."
+["Do you speak English?","هل تتحدث الإنجليزية؟"],
+["She speaks very clearly.","هي تتحدث بوضوح شديد."],
+["I spoke to my teacher.","تحدثت إلى معلمي."]
 ]
 },
 
@@ -3157,9 +2690,9 @@ examples:[
 word:"say",
 meaning:"يقول",
 examples:[
-"What did he say?",
-"She said hello.",
-"I don't know what to say."
+["What did he say?","ماذا قال؟"],
+["She said hello.","قالت مرحبًا."],
+["I don't know what to say.","لا أعرف ماذا أقول."]
 ]
 },
 
@@ -3167,9 +2700,9 @@ examples:[
 word:"think",
 meaning:"يفكر / يعتقد",
 examples:[
-"I think you're right.",
-"Let me think about it.",
-"What do you think?"
+["I think you're right.","أعتقد أنك محق."],
+["Let me think about it.","دعني أفكر في الأمر."],
+["What do you think?","ما رأيك؟"]
 ]
 },
 
@@ -3177,9 +2710,9 @@ examples:[
 word:"know",
 meaning:"يعرف",
 examples:[
-"I know the answer.",
-"Do you know him?",
-"I don't know yet."
+["I know the answer.","أعرف الإجابة."],
+["Do you know him?","هل تعرفه؟"],
+["I don't know yet.","لا أعرف حتى الآن."]
 ]
 },
 
@@ -3187,9 +2720,9 @@ examples:[
 word:"understand",
 meaning:"يفهم",
 examples:[
-"I understand the question.",
-"I don't understand.",
-"Do you understand me?"
+["I understand the question.","أفهم السؤال."],
+["I don't understand.","أنا لا أفهم."],
+["Do you understand me?","هل تفهمني؟"]
 ]
 },
 
@@ -3197,18 +2730,14 @@ examples:[
 word:"remember",
 meaning:"يتذكر",
 examples:[
-"I remember his name.",
-"Do you remember this place?",
-"I can't remember."
+["I remember his name.","أتذكر اسمه."],
+["Do you remember this place?","هل تتذكر هذا المكان؟"],
+["I can't remember.","لا أستطيع التذكر."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 21
-========================================================= */
 
 {
 id:21,
@@ -3222,9 +2751,9 @@ items:[
 word:"comfortable",
 meaning:"مريح",
 examples:[
-"Our sofa is comfortable.",
-"I feel comfortable at home.",
-"This room is comfortable."
+["Our sofa is comfortable.","أريكتنا مريحة."],
+["I feel comfortable at home.","أشعر بالراحة في المنزل."],
+["This room is comfortable.","هذه الغرفة مريحة."]
 ]
 },
 
@@ -3232,9 +2761,9 @@ examples:[
 word:"clean",
 meaning:"نظيف",
 examples:[
-"The kitchen is clean.",
-"Keep your room clean.",
-"The house is clean."
+["The kitchen is clean.","المطبخ نظيف."],
+["Keep your room clean.","حافظ على نظافة غرفتك."],
+["The house is clean.","المنزل نظيف."]
 ]
 },
 
@@ -3242,9 +2771,9 @@ examples:[
 word:"messy",
 meaning:"فوضوي / غير مرتب",
 examples:[
-"My room is messy.",
-"The kitchen looks messy.",
-"His desk is always messy."
+["My room is messy.","غرفتي فوضوية."],
+["The kitchen looks messy.","يبدو المطبخ فوضويًا."],
+["His desk is always messy.","مكتبه دائمًا غير مرتب."]
 ]
 },
 
@@ -3252,9 +2781,9 @@ examples:[
 word:"quiet",
 meaning:"هادئ",
 examples:[
-"Our neighborhood is quiet.",
-"The house is quiet today.",
-"I like quiet places."
+["Our neighborhood is quiet.","حيّنا هادئ."],
+["The house is quiet today.","المنزل هادئ اليوم."],
+["I like quiet places.","أحب الأماكن الهادئة."]
 ]
 },
 
@@ -3262,9 +2791,9 @@ examples:[
 word:"noisy",
 meaning:"صاخب",
 examples:[
-"The street is noisy.",
-"The room was noisy.",
-"Our neighbors are sometimes noisy."
+["The street is noisy.","الشارع صاخب."],
+["The room was noisy.","كانت الغرفة صاخبة."],
+["Our neighbors are sometimes noisy.","جيرانا أحيانًا مزعجون وصاخبون."]
 ]
 },
 
@@ -3272,9 +2801,9 @@ examples:[
 word:"upstairs",
 meaning:"في الطابق العلوي",
 examples:[
-"My room is upstairs.",
-"The bathroom is upstairs.",
-"He's waiting upstairs."
+["My room is upstairs.","غرفتي في الطابق العلوي."],
+["The bathroom is upstairs.","الحمام في الطابق العلوي."],
+["He's waiting upstairs.","هو ينتظر في الطابق العلوي."]
 ]
 },
 
@@ -3282,9 +2811,9 @@ examples:[
 word:"downstairs",
 meaning:"في الطابق السفلي",
 examples:[
-"Come downstairs.",
-"The kitchen is downstairs.",
-"She is downstairs."
+["Come downstairs.","تعال إلى الطابق السفلي."],
+["The kitchen is downstairs.","المطبخ في الطابق السفلي."],
+["She is downstairs.","هي في الطابق السفلي."]
 ]
 },
 
@@ -3292,9 +2821,9 @@ examples:[
 word:"balcony",
 meaning:"شرفة",
 examples:[
-"We have a small balcony.",
-"I sit on the balcony.",
-"The apartment has a balcony."
+["We have a small balcony.","لدينا شرفة صغيرة."],
+["I sit on the balcony.","أجلس في الشرفة."],
+["The apartment has a balcony.","الشقة فيها شرفة."]
 ]
 },
 
@@ -3302,9 +2831,9 @@ examples:[
 word:"garden",
 meaning:"حديقة",
 examples:[
-"There is a garden behind the house.",
-"The children are in the garden.",
-"I like our garden."
+["There is a garden behind the house.","توجد حديقة خلف المنزل."],
+["The children are in the garden.","الأطفال في الحديقة."],
+["I like our garden.","أحب حديقتنا."]
 ]
 },
 
@@ -3312,18 +2841,14 @@ examples:[
 word:"neighborhood",
 meaning:"حي",
 examples:[
-"I like my neighborhood.",
-"This neighborhood is quiet.",
-"We live in a friendly neighborhood."
+["I like my neighborhood.","أحب حيي."],
+["This neighborhood is quiet.","هذا الحي هادئ."],
+["We live in a friendly neighborhood.","نعيش في حي ودود."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 22
-========================================================= */
 
 {
 id:22,
@@ -3337,9 +2862,9 @@ items:[
 word:"head",
 meaning:"رأس",
 examples:[
-"My head hurts.",
-"He hit his head.",
-"Put the hat on your head."
+["My head hurts.","رأسي يؤلمني."],
+["He hit his head.","ضرب رأسه."],
+["Put the hat on your head.","ضع القبعة على رأسك."]
 ]
 },
 
@@ -3347,9 +2872,9 @@ examples:[
 word:"neck",
 meaning:"رقبة",
 examples:[
-"My neck hurts.",
-"She has a sore neck.",
-"Turn your neck slowly."
+["My neck hurts.","رقبتي تؤلمني."],
+["She has a sore neck.","رقبتها تؤلمها."],
+["Turn your neck slowly.","حرّك رقبتك ببطء."]
 ]
 },
 
@@ -3357,9 +2882,9 @@ examples:[
 word:"shoulder",
 meaning:"كتف",
 examples:[
-"My shoulder hurts.",
-"He carried the bag on his shoulder.",
-"She touched my shoulder."
+["My shoulder hurts.","كتفي يؤلمني."],
+["He carried the bag on his shoulder.","حمل الحقيبة على كتفه."],
+["She touched my shoulder.","لمست كتفي."]
 ]
 },
 
@@ -3367,9 +2892,9 @@ examples:[
 word:"arm",
 meaning:"ذراع",
 examples:[
-"My arm hurts.",
-"He broke his arm.",
-"Raise your arm."
+["My arm hurts.","ذراعي تؤلمني."],
+["He broke his arm.","كسر ذراعه."],
+["Raise your arm.","ارفع ذراعك."]
 ]
 },
 
@@ -3377,9 +2902,9 @@ examples:[
 word:"hand",
 meaning:"يد",
 examples:[
-"Wash your hands.",
-"My hand is cold.",
-"She held my hand."
+["Wash your hands.","اغسل يديك."],
+["My hand is cold.","يدي باردة."],
+["She held my hand.","أمسكت بيدي."]
 ]
 },
 
@@ -3387,9 +2912,9 @@ examples:[
 word:"finger",
 meaning:"إصبع",
 examples:[
-"I hurt my finger.",
-"Raise one finger.",
-"My finger is bleeding."
+["I hurt my finger.","أصبت إصبعي."],
+["Raise one finger.","ارفع إصبعًا واحدًا."],
+["My finger is bleeding.","إصبعي ينزف."]
 ]
 },
 
@@ -3397,9 +2922,9 @@ examples:[
 word:"back",
 meaning:"ظهر",
 examples:[
-"My back hurts.",
-"He has a bad back.",
-"I need to rest my back."
+["My back hurts.","ظهري يؤلمني."],
+["He has a bad back.","يعاني من ألم في ظهره."],
+["I need to rest my back.","أحتاج إلى إراحة ظهري."]
 ]
 },
 
@@ -3407,9 +2932,9 @@ examples:[
 word:"stomach",
 meaning:"معدة / بطن",
 examples:[
-"My stomach hurts.",
-"I have a stomach ache.",
-"My stomach feels better now."
+["My stomach hurts.","بطني يؤلمني."],
+["I have a stomach ache.","أعاني من ألم في بطني."],
+["My stomach feels better now.","أشعر أن بطني أفضل الآن."]
 ]
 },
 
@@ -3417,9 +2942,9 @@ examples:[
 word:"leg",
 meaning:"ساق / رجل",
 examples:[
-"My leg hurts.",
-"He injured his leg.",
-"She crossed her legs."
+["My leg hurts.","ساقي تؤلمني."],
+["He injured his leg.","أصاب ساقه."],
+["She crossed her legs.","وضعت ساقًا فوق الأخرى."]
 ]
 },
 
@@ -3427,18 +2952,14 @@ examples:[
 word:"foot",
 meaning:"قدم",
 examples:[
-"My foot hurts.",
-"Take off your shoes and wash your feet.",
-"I hurt my foot."
+["My foot hurts.","قدمي تؤلمني."],
+["Take off your shoes and wash your feet.","اخلع حذاءك واغسل قدميك."],
+["I hurt my foot.","أصبت قدمي."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 23
-========================================================= */
 
 {
 id:23,
@@ -3452,9 +2973,9 @@ items:[
 word:"sunny",
 meaning:"مشمس",
 examples:[
-"It's sunny today.",
-"We had a sunny morning.",
-"I love sunny weather."
+["It's sunny today.","الجو مشمس اليوم."],
+["We had a sunny morning.","كان صباحنا مشمسًا."],
+["I love sunny weather.","أحب الطقس المشمس."]
 ]
 },
 
@@ -3462,9 +2983,9 @@ examples:[
 word:"cloudy",
 meaning:"غائم",
 examples:[
-"It's cloudy today.",
-"The sky is cloudy.",
-"It was cloudy in the morning."
+["It's cloudy today.","الجو غائم اليوم."],
+["The sky is cloudy.","السماء غائمة."],
+["It was cloudy in the morning.","كان الجو غائمًا في الصباح."]
 ]
 },
 
@@ -3472,9 +2993,9 @@ examples:[
 word:"rainy",
 meaning:"ممطر",
 examples:[
-"It's rainy today.",
-"We had a rainy weekend.",
-"I don't like rainy weather."
+["It's rainy today.","الجو ممطر اليوم."],
+["We had a rainy weekend.","كانت عطلة نهاية الأسبوع ممطرة."],
+["I don't like rainy weather.","لا أحب الطقس الممطر."]
 ]
 },
 
@@ -3482,9 +3003,9 @@ examples:[
 word:"windy",
 meaning:"عاصف",
 examples:[
-"It's very windy outside.",
-"The beach is windy today.",
-"It was a windy afternoon."
+["It's very windy outside.","الجو عاصف جدًا في الخارج."],
+["The beach is windy today.","الشاطئ عاصف اليوم."],
+["It was a windy afternoon.","كان بعد الظهر عاصفًا."]
 ]
 },
 
@@ -3492,9 +3013,9 @@ examples:[
 word:"hot",
 meaning:"حار",
 examples:[
-"It's very hot today.",
-"The weather is hot.",
-"I don't like hot weather."
+["It's very hot today.","الجو حار جدًا اليوم."],
+["The weather is hot.","الطقس حار."],
+["I don't like hot weather.","لا أحب الطقس الحار."]
 ]
 },
 
@@ -3502,9 +3023,9 @@ examples:[
 word:"cold",
 meaning:"بارد",
 examples:[
-"It's cold outside.",
-"The water is cold.",
-"I need a jacket because it's cold."
+["It's cold outside.","الجو بارد في الخارج."],
+["The water is cold.","الماء بارد."],
+["I need a jacket because it's cold.","أحتاج إلى سترة لأن الجو بارد."]
 ]
 },
 
@@ -3512,9 +3033,9 @@ examples:[
 word:"warm",
 meaning:"دافئ",
 examples:[
-"The room is warm.",
-"It's warm today.",
-"I like warm weather."
+["The room is warm.","الغرفة دافئة."],
+["It's warm today.","الجو دافئ اليوم."],
+["I like warm weather.","أحب الطقس الدافئ."]
 ]
 },
 
@@ -3522,9 +3043,9 @@ examples:[
 word:"cool",
 meaning:"بارد بشكل لطيف",
 examples:[
-"The evening is cool.",
-"The room is cool.",
-"It's cool outside."
+["The evening is cool.","المساء بارد ولطيف."],
+["The room is cool.","الغرفة باردة بشكل لطيف."],
+["It's cool outside.","الجو بارد ولطيف في الخارج."]
 ]
 },
 
@@ -3532,9 +3053,9 @@ examples:[
 word:"temperature",
 meaning:"درجة الحرارة",
 examples:[
-"What's the temperature?",
-"The temperature is high today.",
-"The temperature dropped last night."
+["What's the temperature?","كم درجة الحرارة؟"],
+["The temperature is high today.","درجة الحرارة مرتفعة اليوم."],
+["The temperature dropped last night.","انخفضت درجة الحرارة الليلة الماضية."]
 ]
 },
 
@@ -3542,18 +3063,14 @@ examples:[
 word:"weather forecast",
 meaning:"نشرة الطقس",
 examples:[
-"I checked the weather forecast.",
-"The weather forecast says rain.",
-"What's the weather forecast for tomorrow?"
+["I checked the weather forecast.","تحققت من نشرة الطقس."],
+["The weather forecast says rain.","تقول نشرة الطقس إن هناك أمطارًا."],
+["What's the weather forecast for tomorrow?","ماذا تقول نشرة الطقس عن الغد؟"]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 24
-========================================================= */
 
 {
 id:24,
@@ -3567,9 +3084,9 @@ items:[
 word:"dog",
 meaning:"كلب",
 examples:[
-"The dog is friendly.",
-"I have a dog.",
-"The dog is in the garden."
+["The dog is friendly.","الكلب ودود."],
+["I have a dog.","لدي كلب."],
+["The dog is in the garden.","الكلب في الحديقة."]
 ]
 },
 
@@ -3577,9 +3094,9 @@ examples:[
 word:"cat",
 meaning:"قطة",
 examples:[
-"The cat is sleeping.",
-"She has a cat.",
-"The cat is very small."
+["The cat is sleeping.","القطة نائمة."],
+["She has a cat.","لديها قطة."],
+["The cat is very small.","القطة صغيرة جدًا."]
 ]
 },
 
@@ -3587,9 +3104,9 @@ examples:[
 word:"horse",
 meaning:"حصان",
 examples:[
-"The horse is beautiful.",
-"He rides a horse.",
-"We saw horses on the farm."
+["The horse is beautiful.","الحصان جميل."],
+["He rides a horse.","هو يركب حصانًا."],
+["We saw horses on the farm.","رأينا خيولًا في المزرعة."]
 ]
 },
 
@@ -3597,9 +3114,9 @@ examples:[
 word:"bird",
 meaning:"طائر",
 examples:[
-"A bird is on the tree.",
-"I saw a beautiful bird.",
-"The bird can fly."
+["A bird is on the tree.","يوجد طائر على الشجرة."],
+["I saw a beautiful bird.","رأيت طائرًا جميلًا."],
+["The bird can fly.","الطائر يستطيع الطيران."]
 ]
 },
 
@@ -3607,9 +3124,9 @@ examples:[
 word:"fish",
 meaning:"سمكة / سمك",
 examples:[
-"I have a small fish.",
-"The fish are in the water.",
-"We ate fish for dinner."
+["I have a small fish.","لدي سمكة صغيرة."],
+["The fish are in the water.","الأسماك في الماء."],
+["We ate fish for dinner.","أكلنا السمك على العشاء."]
 ]
 },
 
@@ -3617,9 +3134,9 @@ examples:[
 word:"rabbit",
 meaning:"أرنب",
 examples:[
-"The rabbit is white.",
-"I saw a rabbit in the garden.",
-"The rabbit is very small."
+["The rabbit is white.","الأرنب أبيض."],
+["I saw a rabbit in the garden.","رأيت أرنبًا في الحديقة."],
+["The rabbit is very small.","الأرنب صغير جدًا."]
 ]
 },
 
@@ -3627,9 +3144,9 @@ examples:[
 word:"sheep",
 meaning:"خروف / غنم",
 examples:[
-"We saw sheep on the farm.",
-"The sheep are in the field.",
-"There are many sheep here."
+["We saw sheep on the farm.","رأينا أغنامًا في المزرعة."],
+["The sheep are in the field.","الأغنام في الحقل."],
+["There are many sheep here.","هناك الكثير من الأغنام هنا."]
 ]
 },
 
@@ -3637,9 +3154,9 @@ examples:[
 word:"cow",
 meaning:"بقرة",
 examples:[
-"The cow is in the field.",
-"We saw cows on the farm.",
-"The cow is eating grass."
+["The cow is in the field.","البقرة في الحقل."],
+["We saw cows on the farm.","رأينا أبقارًا في المزرعة."],
+["The cow is eating grass.","البقرة تأكل العشب."]
 ]
 },
 
@@ -3647,9 +3164,9 @@ examples:[
 word:"tree",
 meaning:"شجرة",
 examples:[
-"There is a tree near the house.",
-"The tree is very tall.",
-"Birds are in the tree."
+["There is a tree near the house.","توجد شجرة قرب المنزل."],
+["The tree is very tall.","الشجرة طويلة جدًا."],
+["Birds are in the tree.","الطيور في الشجرة."]
 ]
 },
 
@@ -3657,18 +3174,14 @@ examples:[
 word:"mountain",
 meaning:"جبل",
 examples:[
-"We can see the mountain.",
-"The mountain is beautiful.",
-"They live near the mountains."
+["We can see the mountain.","يمكننا رؤية الجبل."],
+["The mountain is beautiful.","الجبل جميل."],
+["They live near the mountains.","هم يعيشون بالقرب من الجبال."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 25
-========================================================= */
 
 {
 id:25,
@@ -3682,9 +3195,9 @@ items:[
 word:"money",
 meaning:"مال",
 examples:[
-"I need some money.",
-"I don't have enough money.",
-"She saved her money."
+["I need some money.","أحتاج إلى بعض المال."],
+["I don't have enough money.","ليس لدي مال كافٍ."],
+["She saved her money.","ادخرت مالها."]
 ]
 },
 
@@ -3692,9 +3205,9 @@ examples:[
 word:"cash",
 meaning:"نقدًا",
 examples:[
-"Do you have cash?",
-"I paid in cash.",
-"The shop only accepts cash."
+["Do you have cash?","هل لديك نقود نقدية؟"],
+["I paid in cash.","دفعت نقدًا."],
+["The shop only accepts cash.","المتجر يقبل الدفع نقدًا فقط."]
 ]
 },
 
@@ -3702,9 +3215,9 @@ examples:[
 word:"card",
 meaning:"بطاقة",
 examples:[
-"Can I pay by card?",
-"I used my card.",
-"My card is in my bag."
+["Can I pay by card?","هل يمكنني الدفع بالبطاقة؟"],
+["I used my card.","استخدمت بطاقتي."],
+["My card is in my bag.","بطاقتي في حقيبتي."]
 ]
 },
 
@@ -3712,9 +3225,9 @@ examples:[
 word:"cost",
 meaning:"تكلفة / يكلف",
 examples:[
-"How much does it cost?",
-"The trip costs a lot.",
-"It doesn't cost much."
+["How much does it cost?","كم تكلف؟"],
+["The trip costs a lot.","الرحلة تكلف الكثير."],
+["It doesn't cost much.","لا تكلف الكثير."]
 ]
 },
 
@@ -3722,9 +3235,9 @@ examples:[
 word:"price",
 meaning:"سعر",
 examples:[
-"The price is reasonable.",
-"What's the price?",
-"The price went up."
+["The price is reasonable.","السعر معقول."],
+["What's the price?","ما السعر؟"],
+["The price went up.","ارتفع السعر."]
 ]
 },
 
@@ -3732,9 +3245,9 @@ examples:[
 word:"change",
 meaning:"الباقي من المال",
 examples:[
-"Here's your change.",
-"I need some change.",
-"The cashier gave me the change."
+["Here's your change.","هذا هو الباقي من نقودك."],
+["I need some change.","أحتاج إلى بعض العملات الصغيرة."],
+["The cashier gave me the change.","أعطاني أمين الصندوق الباقي."]
 ]
 },
 
@@ -3742,9 +3255,9 @@ examples:[
 word:"pay",
 meaning:"يدفع",
 examples:[
-"I need to pay the bill.",
-"Can I pay by card?",
-"She paid for dinner."
+["I need to pay the bill.","أحتاج إلى دفع الفاتورة."],
+["Can I pay by card?","هل يمكنني الدفع بالبطاقة؟"],
+["She paid for dinner.","دفعت ثمن العشاء."]
 ]
 },
 
@@ -3752,9 +3265,9 @@ examples:[
 word:"spend",
 meaning:"ينفق",
 examples:[
-"I don't want to spend much.",
-"We spent too much money.",
-"How much did you spend?"
+["I don't want to spend much.","لا أريد أن أنفق الكثير."],
+["We spent too much money.","أنفقنا مالًا أكثر من اللازم."],
+["How much did you spend?","كم أنفقت؟"]
 ]
 },
 
@@ -3762,30 +3275,25 @@ examples:[
 word:"save",
 meaning:"يدخر / يوفر",
 examples:[
-"I want to save money.",
-"She saves money every month.",
-"I'm saving for a trip."
+["I want to save money.","أريد أن أوفر المال."],
+["She saves money every month.","هي تدخر المال كل شهر."],
+["I'm saving for a trip.","أنا أدخر المال من أجل رحلة."]
 ]
 },
 
 {
 word:"afford",
 meaning:"يستطيع تحمّل تكلفة شيء",
-explanation:
-"تعني أن لديك قدرة مالية كافية لشراء شيء أو تحمّل تكلفته.",
+explanation:"تعني أن لديك قدرة مالية كافية لشراء شيء أو تحمّل تكلفته.",
 examples:[
-"I can't afford this bag.",
-"Can you afford the hotel?",
-"We can't afford to eat there every day."
+["I can't afford this bag.","لا أستطيع تحمل تكلفة هذه الحقيبة."],
+["Can you afford the hotel?","هل تستطيع تحمل تكلفة الفندق؟"],
+["We can't afford to eat there every day.","لا نستطيع تحمل تكلفة الأكل هناك كل يوم."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 26
-========================================================= */
 
 {
 id:26,
@@ -3799,9 +3307,9 @@ items:[
 word:"website",
 meaning:"موقع إلكتروني",
 examples:[
-"I found it on the website.",
-"The website is easy to use.",
-"Visit our website for more information."
+["I found it on the website.","وجدته على الموقع الإلكتروني."],
+["The website is easy to use.","الموقع الإلكتروني سهل الاستخدام."],
+["Visit our website for more information.","زر موقعنا الإلكتروني لمزيد من المعلومات."]
 ]
 },
 
@@ -3809,9 +3317,9 @@ examples:[
 word:"account",
 meaning:"حساب",
 examples:[
-"I created an account.",
-"I can't access my account.",
-"Do you have an account?"
+["I created an account.","أنشأت حسابًا."],
+["I can't access my account.","لا أستطيع الدخول إلى حسابي."],
+["Do you have an account?","هل لديك حساب؟"]
 ]
 },
 
@@ -3819,9 +3327,9 @@ examples:[
 word:"password",
 meaning:"كلمة مرور",
 examples:[
-"I forgot my password.",
-"Don't share your password.",
-"My password is difficult to remember."
+["I forgot my password.","نسيت كلمة المرور."],
+["Don't share your password.","لا تشارك كلمة المرور الخاصة بك."],
+["My password is difficult to remember.","كلمة المرور الخاصة بي صعبة التذكر."]
 ]
 },
 
@@ -3829,9 +3337,9 @@ examples:[
 word:"message",
 meaning:"رسالة",
 examples:[
-"I sent you a message.",
-"Did you get my message?",
-"She left a message."
+["I sent you a message.","أرسلت لك رسالة."],
+["Did you get my message?","هل وصلتك رسالتي؟"],
+["She left a message.","تركت رسالة."]
 ]
 },
 
@@ -3839,9 +3347,9 @@ examples:[
 word:"email",
 meaning:"بريد إلكتروني",
 examples:[
-"I sent an email.",
-"Check your email.",
-"Please reply to my email."
+["I sent an email.","أرسلت بريدًا إلكترونيًا."],
+["Check your email.","تحقق من بريدك الإلكتروني."],
+["Please reply to my email.","من فضلك رد على بريدي الإلكتروني."]
 ]
 },
 
@@ -3849,9 +3357,9 @@ examples:[
 word:"screen",
 meaning:"شاشة",
 examples:[
-"The screen is too bright.",
-"My phone screen is broken.",
-"Look at the screen."
+["The screen is too bright.","الشاشة ساطعة جدًا."],
+["My phone screen is broken.","شاشة هاتفي مكسورة."],
+["Look at the screen.","انظر إلى الشاشة."]
 ]
 },
 
@@ -3859,9 +3367,9 @@ examples:[
 word:"charger",
 meaning:"شاحن",
 examples:[
-"I need my phone charger.",
-"Where is the charger?",
-"I forgot my charger."
+["I need my phone charger.","أحتاج إلى شاحن هاتفي."],
+["Where is the charger?","أين الشاحن؟"],
+["I forgot my charger.","نسيت الشاحن."]
 ]
 },
 
@@ -3869,9 +3377,9 @@ examples:[
 word:"battery",
 meaning:"بطارية",
 examples:[
-"My battery is low.",
-"The battery is full.",
-"My phone battery died."
+["My battery is low.","بطاريتي منخفضة."],
+["The battery is full.","البطارية ممتلئة."],
+["My phone battery died.","نفدت بطارية هاتفي."]
 ]
 },
 
@@ -3879,9 +3387,9 @@ examples:[
 word:"online",
 meaning:"على الإنترنت",
 examples:[
-"I bought it online.",
-"The course is online.",
-"Are you online now?"
+["I bought it online.","اشتريته عبر الإنترنت."],
+["The course is online.","الدورة عبر الإنترنت."],
+["Are you online now?","هل أنت متصل بالإنترنت الآن؟"]
 ]
 },
 
@@ -3889,18 +3397,14 @@ examples:[
 word:"download",
 meaning:"ينزّل / تحميل",
 examples:[
-"I need to download the file.",
-"Download the app.",
-"The video is easy to download."
+["I need to download the file.","أحتاج إلى تنزيل الملف."],
+["Download the app.","نزّل التطبيق."],
+["The video is easy to download.","الفيديو سهل التنزيل."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 27
-========================================================= */
 
 {
 id:27,
@@ -3914,9 +3418,9 @@ items:[
 word:"invite",
 meaning:"يدعو",
 examples:[
-"I want to invite you.",
-"She invited me to dinner.",
-"They invited their friends."
+["I want to invite you.","أريد أن أدعوك."],
+["She invited me to dinner.","دعتني إلى العشاء."],
+["They invited their friends.","دعوا أصدقاءهم."]
 ]
 },
 
@@ -3924,9 +3428,9 @@ examples:[
 word:"invitation",
 meaning:"دعوة",
 examples:[
-"I received an invitation.",
-"Thanks for the invitation.",
-"The invitation is for Saturday."
+["I received an invitation.","تلقيت دعوة."],
+["Thanks for the invitation.","شكرًا على الدعوة."],
+["The invitation is for Saturday.","الدعوة ليوم السبت."]
 ]
 },
 
@@ -3934,9 +3438,9 @@ examples:[
 word:"plan",
 meaning:"خطة / يخطط",
 examples:[
-"What's the plan?",
-"We made a plan.",
-"I have plans tonight."
+["What's the plan?","ما الخطة؟"],
+["We made a plan.","وضعنا خطة."],
+["I have plans tonight.","لدي خطط الليلة."]
 ]
 },
 
@@ -3944,9 +3448,9 @@ examples:[
 word:"party",
 meaning:"حفلة",
 examples:[
-"Are you going to the party?",
-"The party starts at eight.",
-"We had a great party."
+["Are you going to the party?","هل ستذهب إلى الحفلة؟"],
+["The party starts at eight.","تبدأ الحفلة الساعة الثامنة."],
+["We had a great party.","أقمنا حفلة رائعة."]
 ]
 },
 
@@ -3954,9 +3458,9 @@ examples:[
 word:"event",
 meaning:"فعالية / حدث",
 examples:[
-"The event is tomorrow.",
-"It's a popular event.",
-"I went to a school event."
+["The event is tomorrow.","الفعالية غدًا."],
+["It's a popular event.","إنها فعالية مشهورة."],
+["I went to a school event.","ذهبت إلى فعالية مدرسية."]
 ]
 },
 
@@ -3964,9 +3468,9 @@ examples:[
 word:"appointment",
 meaning:"موعد",
 examples:[
-"I have a doctor's appointment.",
-"Can I make an appointment?",
-"My appointment is at three."
+["I have a doctor's appointment.","لدي موعد مع الطبيب."],
+["Can I make an appointment?","هل يمكنني حجز موعد؟"],
+["My appointment is at three.","موعدي الساعة الثالثة."]
 ]
 },
 
@@ -3974,9 +3478,9 @@ examples:[
 word:"cancel",
 meaning:"يلغي",
 examples:[
-"I need to cancel the meeting.",
-"They canceled the event.",
-"Can we cancel the reservation?"
+["I need to cancel the meeting.","أحتاج إلى إلغاء الاجتماع."],
+["They canceled the event.","ألغوا الفعالية."],
+["Can we cancel the reservation?","هل يمكننا إلغاء الحجز؟"]
 ]
 },
 
@@ -3984,9 +3488,9 @@ examples:[
 word:"change",
 meaning:"يغيّر",
 examples:[
-"Can we change the time?",
-"I changed my plan.",
-"They changed the meeting time."
+["Can we change the time?","هل يمكننا تغيير الوقت؟"],
+["I changed my plan.","غيّرت خطتي."],
+["They changed the meeting time.","غيّروا وقت الاجتماع."]
 ]
 },
 
@@ -3994,9 +3498,9 @@ examples:[
 word:"join",
 meaning:"ينضم",
 examples:[
-"Can I join you?",
-"She joined the group.",
-"Would you like to join us?"
+["Can I join you?","هل يمكنني الانضمام إليكم؟"],
+["She joined the group.","انضمت إلى المجموعة."],
+["Would you like to join us?","هل تود الانضمام إلينا؟"]
 ]
 },
 
@@ -4004,18 +3508,14 @@ examples:[
 word:"meet",
 meaning:"يلتقي",
 examples:[
-"Let's meet at six.",
-"I met my friend yesterday.",
-"Where should we meet?"
+["Let's meet at six.","لِنلتقِ الساعة السادسة."],
+["I met my friend yesterday.","قابلت صديقي أمس."],
+["Where should we meet?","أين يجب أن نلتقي؟"]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 28
-========================================================= */
 
 {
 id:28,
@@ -4029,9 +3529,9 @@ items:[
 word:"start",
 meaning:"يبدأ",
 examples:[
-"The lesson starts at eight.",
-"I started a new course.",
-"When does the meeting start?"
+["The lesson starts at eight.","يبدأ الدرس الساعة الثامنة."],
+["I started a new course.","بدأت دورة جديدة."],
+["When does the meeting start?","متى يبدأ الاجتماع؟"]
 ]
 },
 
@@ -4039,9 +3539,9 @@ examples:[
 word:"finish",
 meaning:"ينهي / ينتهي",
 examples:[
-"I finished my homework.",
-"The class finishes at five.",
-"Please finish the task."
+["I finished my homework.","أنهيت واجبي المنزلي."],
+["The class finishes at five.","تنتهي الحصة الساعة الخامسة."],
+["Please finish the task.","من فضلك أنهِ المهمة."]
 ]
 },
 
@@ -4049,9 +3549,9 @@ examples:[
 word:"continue",
 meaning:"يستمر / يواصل",
 examples:[
-"Please continue reading.",
-"The rain continued all night.",
-"She continued her work."
+["Please continue reading.","من فضلك واصل القراءة."],
+["The rain continued all night.","استمر المطر طوال الليل."],
+["She continued her work.","واصلت عملها."]
 ]
 },
 
@@ -4059,9 +3559,9 @@ examples:[
 word:"stop",
 meaning:"يتوقف / يوقف",
 examples:[
-"The bus stopped here.",
-"Please stop talking.",
-"The rain stopped."
+["The bus stopped here.","توقفت الحافلة هنا."],
+["Please stop talking.","من فضلك توقف عن الكلام."],
+["The rain stopped.","توقف المطر."]
 ]
 },
 
@@ -4069,9 +3569,9 @@ examples:[
 word:"happen",
 meaning:"يحدث",
 examples:[
-"What happened?",
-"What happened yesterday?",
-"Accidents can happen."
+["What happened?","ماذا حدث؟"],
+["What happened yesterday?","ماذا حدث أمس؟"],
+["Accidents can happen.","يمكن أن تحدث الحوادث."]
 ]
 },
 
@@ -4079,9 +3579,9 @@ examples:[
 word:"become",
 meaning:"يصبح",
 examples:[
-"He wants to become a doctor.",
-"It became difficult.",
-"She became more confident."
+["He wants to become a doctor.","يريد أن يصبح طبيبًا."],
+["It became difficult.","أصبح الأمر صعبًا."],
+["She became more confident.","أصبحت أكثر ثقة."]
 ]
 },
 
@@ -4089,9 +3589,9 @@ examples:[
 word:"seem",
 meaning:"يبدو",
 examples:[
-"You seem tired.",
-"It seems easy.",
-"He seems happy today."
+["You seem tired.","تبدو متعبًا."],
+["It seems easy.","يبدو الأمر سهلًا."],
+["He seems happy today.","يبدو سعيدًا اليوم."]
 ]
 },
 
@@ -4099,9 +3599,9 @@ examples:[
 word:"look",
 meaning:"يبدو / ينظر",
 examples:[
-"You look tired.",
-"Look at this picture.",
-"She looks happy."
+["You look tired.","تبدو متعبًا."],
+["Look at this picture.","انظر إلى هذه الصورة."],
+["She looks happy.","تبدو سعيدة."]
 ]
 },
 
@@ -4109,9 +3609,9 @@ examples:[
 word:"feel",
 meaning:"يشعر",
 examples:[
-"I feel tired.",
-"How do you feel?",
-"I feel better today."
+["I feel tired.","أشعر بالتعب."],
+["How do you feel?","كيف تشعر؟"],
+["I feel better today.","أشعر بتحسن اليوم."]
 ]
 },
 
@@ -4119,18 +3619,14 @@ examples:[
 word:"sound",
 meaning:"يبدو / يبدو صوته",
 examples:[
-"That sounds good.",
-"It sounds difficult.",
-"Your idea sounds interesting."
+["That sounds good.","هذا يبدو جيدًا."],
+["It sounds difficult.","يبدو صعبًا."],
+["Your idea sounds interesting.","فكرتك تبدو ممتعة."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 29
-========================================================= */
 
 {
 id:29,
@@ -4144,9 +3640,9 @@ items:[
 word:"Of course.",
 meaning:"بالطبع.",
 examples:[
-"Of course, you can.",
-"Of course I'll help.",
-"Of course, no problem."
+["Of course, you can.","بالطبع، يمكنك ذلك."],
+["Of course I'll help.","بالطبع سأساعد."],
+["Of course, no problem.","بالطبع، لا مشكلة."]
 ]
 },
 
@@ -4154,9 +3650,9 @@ examples:[
 word:"Not really.",
 meaning:"ليس تمامًا / ليس حقًا.",
 examples:[
-"Do you like it? Not really.",
-"Are you busy? Not really.",
-"Is it difficult? Not really."
+["Do you like it? Not really.","هل يعجبك؟ ليس حقًا."],
+["Are you busy? Not really.","هل أنت مشغول؟ ليس تمامًا."],
+["Is it difficult? Not really.","هل هو صعب؟ ليس حقًا."]
 ]
 },
 
@@ -4164,9 +3660,9 @@ examples:[
 word:"That's why…",
 meaning:"لهذا السبب…",
 examples:[
-"That's why I'm late.",
-"That's why I called you.",
-"That's why we changed the plan."
+["That's why I'm late.","لهذا السبب أنا متأخر."],
+["That's why I called you.","لهذا السبب اتصلت بك."],
+["That's why we changed the plan.","لهذا السبب غيّرنا الخطة."]
 ]
 },
 
@@ -4174,9 +3670,9 @@ examples:[
 word:"I think so.",
 meaning:"أعتقد ذلك.",
 examples:[
-"Is he coming? I think so.",
-"Is this the right way? I think so.",
-"Will it work? I think so."
+["Is he coming? I think so.","هل سيأتي؟ أعتقد ذلك."],
+["Is this the right way? I think so.","هل هذا هو الطريق الصحيح؟ أعتقد ذلك."],
+["Will it work? I think so.","هل سينجح الأمر؟ أعتقد ذلك."]
 ]
 },
 
@@ -4184,9 +3680,9 @@ examples:[
 word:"I don't think so.",
 meaning:"لا أعتقد ذلك.",
 examples:[
-"Is it expensive? I don't think so.",
-"Is he ready? I don't think so.",
-"Will they come? I don't think so."
+["Is it expensive? I don't think so.","هل هو غالٍ؟ لا أعتقد ذلك."],
+["Is he ready? I don't think so.","هل هو مستعد؟ لا أعتقد ذلك."],
+["Will they come? I don't think so.","هل سيأتون؟ لا أعتقد ذلك."]
 ]
 },
 
@@ -4194,9 +3690,9 @@ examples:[
 word:"Maybe.",
 meaning:"ربما.",
 examples:[
-"Maybe tomorrow.",
-"Maybe you're right.",
-"Maybe we can go later."
+["Maybe tomorrow.","ربما غدًا."],
+["Maybe you're right.","ربما أنت محق."],
+["Maybe we can go later.","ربما يمكننا الذهاب لاحقًا."]
 ]
 },
 
@@ -4204,9 +3700,9 @@ examples:[
 word:"It depends.",
 meaning:"هذا يعتمد.",
 examples:[
-"It depends on the price.",
-"It depends on the weather.",
-"It depends on the time."
+["It depends on the price.","هذا يعتمد على السعر."],
+["It depends on the weather.","هذا يعتمد على الطقس."],
+["It depends on the time.","هذا يعتمد على الوقت."]
 ]
 },
 
@@ -4214,9 +3710,9 @@ examples:[
 word:"No problem.",
 meaning:"لا مشكلة.",
 examples:[
-"No problem, I can help.",
-"No problem; take your time.",
-"No problem at all."
+["No problem, I can help.","لا مشكلة، يمكنني المساعدة."],
+["No problem; take your time.","لا مشكلة؛ خذ وقتك."],
+["No problem at all.","لا مشكلة إطلاقًا."]
 ]
 },
 
@@ -4224,9 +3720,9 @@ examples:[
 word:"That's okay.",
 meaning:"لا بأس.",
 examples:[
-"That's okay; don't worry.",
-"That's okay, we can try again.",
-"That's okay with me."
+["That's okay; don't worry.","لا بأس؛ لا تقلق."],
+["That's okay, we can try again.","لا بأس، يمكننا المحاولة مرة أخرى."],
+["That's okay with me.","هذا مناسب لي."]
 ]
 },
 
@@ -4234,18 +3730,14 @@ examples:[
 word:"Sounds good.",
 meaning:"يبدو جيدًا / مناسب.",
 examples:[
-"Sounds good to me.",
-"Friday? Sounds good.",
-"Your plan sounds good."
+["Sounds good to me.","يبدو جيدًا بالنسبة لي."],
+["Friday? Sounds good.","الجمعة؟ يبدو مناسبًا."],
+["Your plan sounds good.","خطتك تبدو جيدة."]
 ]
 }
 
 ]
 },
-
-/* =========================================================
-   UNIT 30
-========================================================= */
 
 {
 id:30,
@@ -4259,9 +3751,9 @@ items:[
 word:"because",
 meaning:"لأن",
 examples:[
-"I'm tired because I didn't sleep well.",
-"I stayed home because it was raining.",
-"She is happy because she passed the exam."
+["I'm tired because I didn't sleep well.","أنا متعب لأنني لم أنم جيدًا."],
+["I stayed home because it was raining.","بقيت في المنزل لأن الجو كان ممطرًا."],
+["She is happy because she passed the exam.","هي سعيدة لأنها نجحت في الاختبار."]
 ]
 },
 
@@ -4269,9 +3761,9 @@ examples:[
 word:"so",
 meaning:"لذلك / لذا",
 examples:[
-"I was tired, so I went home.",
-"It was late, so we left.",
-"The bus was full, so I walked."
+["I was tired, so I went home.","كنت متعبًا، لذلك ذهبت إلى المنزل."],
+["It was late, so we left.","كان الوقت متأخرًا، لذلك غادرنا."],
+["The bus was full, so I walked.","كانت الحافلة ممتلئة، لذلك مشيت."]
 ]
 },
 
@@ -4279,21 +3771,20 @@ examples:[
 word:"but",
 meaning:"لكن",
 examples:[
-"I like it, but it's expensive.",
-"He is tired but happy.",
-"I called, but no one answered."
+["I like it, but it's expensive.","أعجبني، لكنه غالٍ."],
+["He is tired but happy.","هو متعب لكنه سعيد."],
+["I called, but no one answered.","اتصلت، لكن لم يجب أحد."]
 ]
 },
 
 {
 word:"although",
 meaning:"رغم أن / مع أن",
-explanation:
-"تربط فكرتين فيهما تعارض، مثل: رغم أن الجو كان سيئًا، ذهبنا.",
+explanation:"تربط فكرتين فيهما تعارض، مثل: رغم أن الجو كان سيئًا، ذهبنا.",
 examples:[
-"Although it was late, we continued.",
-"Although it was difficult, I tried.",
-"Although she was tired, she studied."
+["Although it was late, we continued.","رغم أن الوقت كان متأخرًا، واصلنا."],
+["Although it was difficult, I tried.","رغم أنه كان صعبًا، حاولت."],
+["Although she was tired, she studied.","رغم أنها كانت متعبة، درست."]
 ]
 },
 
@@ -4301,9 +3792,9 @@ examples:[
 word:"also",
 meaning:"أيضًا",
 examples:[
-"I also like English.",
-"She is also my classmate.",
-"We also need some water."
+["I also like English.","أنا أيضًا أحب الإنجليزية."],
+["She is also my classmate.","هي أيضًا زميلتي في الدراسة."],
+["We also need some water.","نحتاج أيضًا إلى بعض الماء."]
 ]
 },
 
@@ -4311,21 +3802,20 @@ examples:[
 word:"then",
 meaning:"ثم",
 examples:[
-"We had dinner and then went home.",
-"First read it, then answer.",
-"I finished work and then called her."
+["We had dinner and then went home.","تناولنا العشاء ثم ذهبنا إلى المنزل."],
+["First read it, then answer.","اقرأه أولًا، ثم أجب."],
+["I finished work and then called her.","أنهيت العمل ثم اتصلت بها."]
 ]
 },
 
 {
 word:"however",
 meaning:"ومع ذلك",
-explanation:
-"تربط فكرتين فيهما نوع من التناقض، مثل «لكن/ومع ذلك».",
+explanation:"تربط فكرتين فيهما نوع من التناقض، مثل «لكن/ومع ذلك».",
 examples:[
-"It was expensive; however, I bought it.",
-"He was tired; however, he continued.",
-"The task was difficult; however, we finished."
+["It was expensive; however, I bought it.","كان غاليًا؛ ومع ذلك، اشتريته."],
+["He was tired; however, he continued.","كان متعبًا؛ ومع ذلك، واصل."],
+["The task was difficult; however, we finished.","كانت المهمة صعبة؛ ومع ذلك، أنهيناها."]
 ]
 },
 
@@ -4333,9 +3823,9 @@ examples:[
 word:"first",
 meaning:"أولًا",
 examples:[
-"First, read the question.",
-"First, we need to make a plan.",
-"First, wash your hands."
+["First, read the question.","أولًا، اقرأ السؤال."],
+["First, we need to make a plan.","أولًا، نحتاج إلى وضع خطة."],
+["First, wash your hands.","أولًا، اغسل يديك."]
 ]
 },
 
@@ -4343,21 +3833,20 @@ examples:[
 word:"finally",
 meaning:"أخيرًا",
 examples:[
-"Finally, we finished the project.",
-"Finally, the bus arrived.",
-"Finally, I found my keys."
+["Finally, we finished the project.","أخيرًا، أنهينا المشروع."],
+["Finally, the bus arrived.","أخيرًا، وصلت الحافلة."],
+["Finally, I found my keys.","أخيرًا، وجدت مفاتيحي."]
 ]
 },
 
 {
 word:"actually",
 meaning:"في الحقيقة / في الواقع",
-explanation:
-"تُستخدم لتصحيح فكرة أو إضافة الحقيقة الفعلية، وغالبًا لا تعني «حاليًا».",
+explanation:"تُستخدم لتصحيح فكرة أو إضافة الحقيقة الفعلية، وغالبًا لا تعني «حاليًا».",
 examples:[
-"Actually, I don't know.",
-"I thought it was difficult, but actually it was easy.",
-"Actually, I live nearby."
+["Actually, I don't know.","في الحقيقة، لا أعرف."],
+["I thought it was difficult, but actually it was easy.","اعتقدت أنه صعب، لكنه في الحقيقة كان سهلًا."],
+["Actually, I live nearby.","في الحقيقة، أنا أعيش بالقرب من هنا."]
 ]
 }
 
@@ -4371,8 +3860,7 @@ examples:[
    OPENVERSE IMAGE SYSTEM
 ========================================================= */
 
-const imageCache = new Map();
-
+const imageCache=new Map();
 
 async function getOpenverseImage(query){
 
@@ -4382,24 +3870,24 @@ async function getOpenverseImage(query){
 
   try{
 
-    const url =
+    const url=
       "https://api.openverse.org/v1/images/" +
       "?q=" +
       encodeURIComponent(query) +
       "&page_size=5";
 
-    const response =
+    const response=
       await fetch(url);
 
     if(!response.ok){
       throw new Error("Image request failed");
     }
 
-    const data =
+    const data=
       await response.json();
 
-    const results =
-      (data.results || [])
+    const results=
+      (data.results||[])
       .filter(item =>
         item.thumbnail ||
         item.url
@@ -4409,10 +3897,9 @@ async function getOpenverseImage(query){
       throw new Error("No image found");
     }
 
-    const selected =
-      results[0];
+    const selected=results[0];
 
-    const result = {
+    const result={
 
       src:
         selected.thumbnail ||
@@ -4436,19 +3923,13 @@ async function getOpenverseImage(query){
 
     };
 
-    imageCache.set(
-      query,
-      result
-    );
+    imageCache.set(query,result);
 
     return result;
 
   }catch(error){
 
-    imageCache.set(
-      query,
-      null
-    );
+    imageCache.set(query,null);
 
     return null;
 
@@ -4462,20 +3943,15 @@ async function getOpenverseImage(query){
 ========================================================= */
 
 function imgFallback(image){
-
   image.style.display="none";
-
 }
-
 
 function applyImages(root=document){
 
   root
-    .querySelectorAll(
-      "img[data-query]"
-    )
+    .querySelectorAll("img[data-query]")
     .forEach(
-      async image => {
+      async image=>{
 
         if(image.dataset.loaded){
           return;
@@ -4483,38 +3959,36 @@ function applyImages(root=document){
 
         image.dataset.loaded="1";
 
-        const query =
+        const query=
           image.dataset.query;
 
-        const info =
-          await getOpenverseImage(
-            query
-          );
+        const info=
+          await getOpenverseImage(query);
 
         if(info){
 
-          image.src =
-            info.src;
+          image.src=info.src;
 
-          image.alt =
+          image.alt=
             image.dataset.alt ||
             query;
 
-          const credit =
+          const credit=
             image
-            .closest(".card")
-            ?.querySelector(
-              ".source-credit"
-            ) ||
+              .closest(".card")
+              ?.querySelector(
+                ".source-credit"
+              )
+            ||
             image
-            .closest(".lesson")
-            ?.querySelector(
-              ".source-credit"
-            );
+              .closest(".lesson")
+              ?.querySelector(
+                ".source-credit"
+              );
 
           if(credit){
 
-            credit.innerHTML =
+            credit.innerHTML=
               `
               الصورة من
               <a
@@ -4526,19 +4000,19 @@ function applyImages(root=document){
               </a>
               ${
                 info.creator
-                ? " · " +
-                  escapeHtml(
-                    info.creator
-                  )
-                : ""
+                ?
+                " · "+
+                escapeHtml(info.creator)
+                :
+                ""
               }
               ${
                 info.license
-                ? " · " +
-                  escapeHtml(
-                    info.license
-                  )
-                : ""
+                ?
+                " · "+
+                escapeHtml(info.license)
+                :
+                ""
               }
               `;
 
@@ -4557,7 +4031,7 @@ function applyImages(root=document){
 
 
 /* =========================================================
-   HTML ESCAPE
+   ESCAPE HTML
 ========================================================= */
 
 function escapeHtml(text){
@@ -4565,12 +4039,14 @@ function escapeHtml(text){
   return String(text)
     .replace(
       /[&<>"']/g,
-      character => ({
+      character=>({
+
         "&":"&amp;",
         "<":"&lt;",
         ">":"&gt;",
         '"':"&quot;",
         "'":"&#039;"
+
       }[character])
     );
 
@@ -4583,12 +4059,7 @@ function escapeHtml(text){
 
 function speak(text){
 
-  if(
-    !(
-      "speechSynthesis"
-      in window
-    )
-  ){
+  if(!("speechSynthesis" in window)){
 
     alert(
       "ميزة النطق غير متاحة في هذا المتصفح."
@@ -4600,19 +4071,16 @@ function speak(text){
 
   speechSynthesis.cancel();
 
-  const utterance =
+  const utterance=
     new SpeechSynthesisUtterance(
       text
     );
 
-  utterance.lang =
-    "en-US";
+  utterance.lang="en-US";
 
-  utterance.rate =
-    0.82;
+  utterance.rate=.82;
 
-  utterance.pitch =
-    1;
+  utterance.pitch=1;
 
   speechSynthesis.speak(
     utterance
@@ -4625,32 +4093,29 @@ function speak(text){
    ELEMENTS
 ========================================================= */
 
-const listView =
+const listView=
   document.getElementById(
     "listView"
   );
 
-const lessonView =
+const lessonView=
   document.getElementById(
     "lessonView"
   );
 
-const searchInput =
+const searchInput=
   document.getElementById(
     "searchInput"
   );
 
 
 /* =========================================================
-   CARD HTML
+   CARD
 ========================================================= */
 
-function cardHtml(
-  unit,
-  item
-){
+function cardHtml(unit,item){
 
-  const query =
+  const query=
     item.word
       .split(" ")
       .slice(0,3)
@@ -4661,19 +4126,12 @@ function cardHtml(
   <article class="card">
 
     <img
-
       class="card-image"
-
       loading="lazy"
-
       data-query="${escapeHtml(query)}"
-
       data-alt="${escapeHtml(item.word)}"
-
       onerror="imgFallback(this)"
-
       src=""
-
     >
 
     <div class="card-body">
@@ -4693,15 +4151,10 @@ function cardHtml(
         </div>
 
         <button
-
           class="audio-btn"
-
           title="استمع للنطق"
-
           aria-label="استمع للنطق"
-
           onclick='speak(${JSON.stringify(item.word)})'
-
         >
           🔊
         </button>
@@ -4714,17 +4167,25 @@ function cardHtml(
         ${
           item.examples
             .map(
-              (example,index) => `
+              (example,index)=>`
 
               <div class="example">
 
-                <b>
-                  ${index + 1}
-                </b>
+                <div class="example-en">
 
-                <span>
-                  ${escapeHtml(example)}
-                </span>
+                  <b>
+                    ${index+1}
+                  </b>
+
+                  <span>
+                    ${escapeHtml(example[0])}
+                  </span>
+
+                </div>
+
+                <div class="example-ar">
+                  ${escapeHtml(example[1])}
+                </div>
 
               </div>
 
@@ -4739,7 +4200,6 @@ function cardHtml(
       ${
         item.explanation
         ?
-
         `
         <div class="explain">
 
@@ -4753,9 +4213,7 @@ function cardHtml(
 
         </div>
         `
-
         :
-
         ""
       }
 
@@ -4775,11 +4233,9 @@ function cardHtml(
    RENDER LIST
 ========================================================= */
 
-function renderList(
-  filter=""
-){
+function renderList(filter=""){
 
-  const search =
+  const search=
     filter
       .trim()
       .toLowerCase();
@@ -4788,17 +4244,17 @@ function renderList(
 
 
   DATA.forEach(
-    unit => {
+    unit=>{
 
-      const matchedItems =
+      const matchedItems=
         unit.items.filter(
-          item => {
+          item=>{
 
             if(!search){
               return true;
             }
 
-            return (
+            return(
 
               item.word
                 .toLowerCase()
@@ -4813,8 +4269,17 @@ function renderList(
               ||
 
               item.examples.some(
-                example =>
-                  example
+                example=>
+                  example[0]
+                    .toLowerCase()
+                    .includes(search)
+              )
+
+              ||
+
+              item.examples.some(
+                example=>
+                  example[1]
                     .toLowerCase()
                     .includes(search)
               )
@@ -4827,15 +4292,13 @@ function renderList(
 
       if(
         search &&
-        matchedItems.length === 0
+        matchedItems.length===0
       ){
-
         return;
-
       }
 
 
-      html += `
+      html+=`
 
       <section class="stage">
 
@@ -4869,7 +4332,7 @@ function renderList(
           ${
             matchedItems
               .map(
-                item =>
+                item=>
                   cardHtml(
                     unit,
                     item
@@ -4888,7 +4351,7 @@ function renderList(
   );
 
 
-  listView.innerHTML =
+  listView.innerHTML=
     html ||
 
     `
@@ -4915,9 +4378,7 @@ function renderList(
    DETAIL CARD
 ========================================================= */
 
-function detailHtml(
-  item
-){
+function detailHtml(item){
 
   return `
 
@@ -4939,15 +4400,10 @@ function detailHtml(
 
 
       <button
-
         class="audio-btn"
-
         title="استمع للنطق"
-
         aria-label="استمع للنطق"
-
         onclick='speak(${JSON.stringify(item.word)})'
-
       >
         🔊
       </button>
@@ -4960,17 +4416,25 @@ function detailHtml(
       ${
         item.examples
           .map(
-            (example,index) => `
+            (example,index)=>`
 
             <div class="example">
 
-              <b>
-                ${index + 1}
-              </b>
+              <div class="example-en">
 
-              <span>
-                ${escapeHtml(example)}
-              </span>
+                <b>
+                  ${index+1}
+                </b>
+
+                <span>
+                  ${escapeHtml(example[0])}
+                </span>
+
+              </div>
+
+              <div class="example-ar">
+                ${escapeHtml(example[1])}
+              </div>
 
             </div>
 
@@ -4985,7 +4449,6 @@ function detailHtml(
     ${
       item.explanation
       ?
-
       `
       <div class="explain">
 
@@ -4999,9 +4462,7 @@ function detailHtml(
 
       </div>
       `
-
       :
-
       ""
     }
 
@@ -5016,14 +4477,12 @@ function detailHtml(
    OPEN UNIT
 ========================================================= */
 
-function openUnit(
-  id
-){
+function openUnit(id){
 
-  const unit =
+  const unit=
     DATA.find(
-      item =>
-        item.id === id
+      item=>
+        item.id===id
     );
 
 
@@ -5032,16 +4491,14 @@ function openUnit(
   }
 
 
-  listView.style.display =
-    "none";
+  listView.style.display="none";
 
 
   document
     .getElementById(
       "listTools"
     )
-    .style.display =
-      "none";
+    .style.display="none";
 
 
   lessonView
@@ -5049,7 +4506,7 @@ function openUnit(
     .add("active");
 
 
-  lessonView.innerHTML = `
+  lessonView.innerHTML=`
 
     <div class="lesson-head">
 
@@ -5107,22 +4564,16 @@ function openUnit(
     <div class="lesson-actions">
 
       <button
-
         class="action"
-
         onclick="closeUnit()"
-
       >
         ← رجوع إلى الوحدات
       </button>
 
 
       <button
-
         class="action"
-
-        onclick='speak(${JSON.stringify(unit.items.map(item => item.word).join(", "))})'
-
+        onclick='speak(${JSON.stringify(unit.items.map(item=>item.word).join(", "))})'
       >
         🔊 استمع للكلمات
       </button>
@@ -5135,7 +4586,7 @@ function openUnit(
       ${
         unit.items
           .map(
-            item =>
+            item=>
               detailHtml(item)
           )
           .join("")
@@ -5147,22 +4598,16 @@ function openUnit(
     <div class="lesson-nav">
 
       <button
-
         class="action"
-
         onclick="prevUnit(${unit.id})"
-
       >
         ← الوحدة السابقة
       </button>
 
 
       <button
-
         class="action"
-
         onclick="nextUnit(${unit.id})"
-
       >
         الوحدة التالية →
       </button>
@@ -5196,20 +4641,17 @@ function closeUnit(){
     .remove("active");
 
 
-  lessonView.innerHTML =
-    "";
+  lessonView.innerHTML="";
 
 
-  listView.style.display =
-    "";
+  listView.style.display="";
 
 
   document
     .getElementById(
       "listTools"
     )
-    .style.display =
-      "";
+    .style.display="";
 
 
   window.scrollTo({
@@ -5224,21 +4666,19 @@ function closeUnit(){
    PREVIOUS / NEXT
 ========================================================= */
 
-function prevUnit(
-  id
-){
+function prevUnit(id){
 
-  const index =
+  const index=
     DATA.findIndex(
-      unit =>
-        unit.id === id
+      unit=>
+        unit.id===id
     );
 
 
-  if(index > 0){
+  if(index>0){
 
     openUnit(
-      DATA[index - 1].id
+      DATA[index-1].id
     );
 
   }
@@ -5246,24 +4686,22 @@ function prevUnit(
 }
 
 
-function nextUnit(
-  id
-){
+function nextUnit(id){
 
-  const index =
+  const index=
     DATA.findIndex(
-      unit =>
-        unit.id === id
+      unit=>
+        unit.id===id
     );
 
 
   if(
-    index <
-    DATA.length - 1
+    index<
+    DATA.length-1
   ){
 
     openUnit(
-      DATA[index + 1].id
+      DATA[index+1].id
     );
 
   }
@@ -5277,23 +4715,15 @@ function nextUnit(
 
 function goBack(){
 
-  /*
-    حاليًا يرجع للصفحة السابقة.
-
-    لاحقًا، عندما نبني الصفحة الرئيسية
-    التي تجمع Listening / Vocabulary / Reading،
-    نقدر نستبدل هذا السطر باسم الصفحة مباشرة.
-  */
-
   if(
-    history.length > 1
+    history.length>1
   ){
 
     history.back();
 
   }else{
 
-    window.location.href =
+    window.location.href=
       "skills-practice.html";
 
   }
@@ -5307,12 +4737,10 @@ function goBack(){
 
 searchInput.addEventListener(
   "input",
-  event => {
-
+  event=>{
     renderList(
       event.target.value
     );
-
   }
 );
 
