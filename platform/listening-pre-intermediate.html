@@ -59,10 +59,6 @@ input{
   font:inherit;
 }
 
-/* =========================
-   PAGE
-========================= */
-
 .page{
   width:min(1120px, calc(100% - 32px));
   margin:0 auto;
@@ -186,7 +182,7 @@ input{
 }
 
 /* =========================
-   PATH CARD
+   PATH
 ========================= */
 
 .path-card{
@@ -259,6 +255,7 @@ input{
   border-radius:13px;
 
   background:#fff;
+
   display:flex;
   align-items:center;
   justify-content:center;
@@ -366,10 +363,7 @@ input{
 
 .cards{
   display:grid;
-
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
-
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:17px;
 }
 
@@ -463,12 +457,15 @@ input{
 
   padding:13px 16px;
 
+  border:0;
   border-radius:15px;
 
   background:var(--blue);
   color:white;
 
   font-weight:800;
+
+  cursor:pointer;
 
   transition:.25s ease;
 }
@@ -485,6 +482,369 @@ input{
 
   color:var(--muted);
   font-size:11px;
+}
+
+/* =========================
+   LESSON VIEW
+========================= */
+
+.lesson-view{
+  display:none;
+  margin-top:32px;
+}
+
+.lesson-view.active{
+  display:block;
+}
+
+.lesson-header{
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue-dark),
+      var(--purple)
+    );
+
+  color:#fff;
+
+  border-radius:var(--radius-xl);
+
+  padding:32px;
+
+  box-shadow:
+    0 18px 45px rgba(49,87,213,.16);
+}
+
+.lesson-header-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+
+.lesson-header-number{
+  font-size:13px;
+  font-weight:800;
+  opacity:.8;
+  margin-bottom:5px;
+}
+
+.lesson-header h2{
+  font-size:clamp(27px,4vw,38px);
+  line-height:1.3;
+}
+
+.lesson-header .lesson-topic{
+  margin-top:8px;
+  opacity:.9;
+  font-size:14px;
+}
+
+.close-lesson{
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.1);
+  color:#fff;
+
+  border-radius:14px;
+
+  padding:10px 15px;
+
+  cursor:pointer;
+
+  font-weight:800;
+
+  white-space:nowrap;
+}
+
+.lesson-section{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius-lg);
+
+  padding:26px;
+
+  margin-top:18px;
+
+  box-shadow:var(--shadow);
+}
+
+.lesson-section h3{
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+.section-intro{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.original-box{
+  background:
+    linear-gradient(
+      135deg,
+      #F4F6FF,
+      #FBFAFF
+    );
+
+  border:1px solid #E3E6F8;
+
+  border-radius:20px;
+
+  padding:22px;
+}
+
+.original-box p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:17px;
+}
+
+.original-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  background:var(--blue);
+  color:#fff;
+
+  padding:13px 20px;
+
+  border-radius:15px;
+
+  font-weight:800;
+}
+
+.original-btn:hover{
+  background:var(--blue-dark);
+}
+
+/* =========================
+   LANGUAGE ITEMS
+========================= */
+
+.language-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+
+.language-item{
+  border:1px solid var(--border);
+
+  border-radius:19px;
+
+  padding:19px;
+
+  background:#fff;
+
+  transition:.2s ease;
+}
+
+.language-item:hover{
+  border-color:#DADDF0;
+  box-shadow:0 8px 24px rgba(36,48,94,.05);
+}
+
+.language-type{
+  color:var(--purple);
+
+  font-size:11px;
+  font-weight:850;
+
+  margin-bottom:4px;
+}
+
+.language-expression{
+  direction:ltr;
+  text-align:left;
+
+  font-size:19px;
+  font-weight:850;
+
+  color:var(--text);
+
+  margin-bottom:4px;
+}
+
+.language-meaning{
+  font-weight:750;
+  margin-bottom:8px;
+}
+
+.language-note{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.75;
+}
+
+.example{
+  direction:ltr;
+  text-align:left;
+
+  background:#F8F9FD;
+
+  border-radius:13px;
+
+  padding:11px 13px;
+
+  margin-top:10px;
+
+  font-size:13px;
+}
+
+/* =========================
+   GRAMMAR NOTE
+========================= */
+
+.grammar-note{
+  background:var(--gold-light);
+
+  border:1px solid #F0DCA9;
+
+  border-radius:19px;
+
+  padding:19px 20px;
+}
+
+.grammar-note strong{
+  display:block;
+  color:#6D541A;
+
+  margin-bottom:6px;
+}
+
+.grammar-note p{
+  color:#756128;
+  font-size:14px;
+}
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.question{
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:18px;
+
+  margin-top:13px;
+}
+
+.question:first-child{
+  margin-top:0;
+}
+
+.question-text{
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.options{
+  display:grid;
+  gap:8px;
+}
+
+.option{
+  width:100%;
+
+  text-align:right;
+
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  padding:11px 13px;
+
+  border-radius:13px;
+
+  cursor:pointer;
+
+  color:var(--text);
+
+  transition:.2s ease;
+}
+
+.option:hover{
+  border-color:#C9CEF0;
+  background:#FAFAFE;
+}
+
+.option.correct{
+  background:#EAF8EF;
+  border-color:#9AD0A8;
+}
+
+.option.wrong{
+  background:#FFF0F0;
+  border-color:#E5A2A2;
+}
+
+.feedback{
+  display:none;
+
+  margin-top:10px;
+
+  font-size:13px;
+  font-weight:750;
+}
+
+.feedback.show{
+  display:block;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.lesson-navigation{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin-top:20px;
+}
+
+.nav-btn{
+  flex:1;
+
+  border:1px solid var(--border);
+
+  background:var(--white);
+
+  color:var(--text);
+
+  border-radius:17px;
+
+  padding:13px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+}
+
+.nav-btn:hover{
+  box-shadow:var(--shadow);
+  transform:translateY(-1px);
+}
+
+.nav-btn.primary{
+  background:var(--blue);
+  color:#fff;
+  border-color:var(--blue);
+}
+
+.nav-btn.primary:hover{
+  background:var(--blue-dark);
 }
 
 /* =========================
@@ -528,7 +888,7 @@ input{
 }
 
 /* =========================
-   EMPTY SEARCH
+   EMPTY
 ========================= */
 
 .empty{
@@ -603,11 +963,30 @@ input{
     padding:20px;
   }
 
-}
+  .lesson-header{
+    padding:24px 20px;
+  }
 
-/* =========================
-   SEARCH HIGHLIGHT
-========================= */
+  .lesson-header-top{
+    flex-direction:column;
+  }
+
+  .close-lesson{
+    width:100%;
+  }
+
+  .lesson-section{
+    padding:20px;
+  }
+
+  .language-grid{
+    grid-template-columns:1fr;
+  }
+
+  .lesson-navigation{
+    flex-direction:column;
+  }
+}
 
 .hidden{
   display:none !important;
@@ -615,1593 +994,2574 @@ input{
 </style>
 </head>
 
-
 <body>
 
 <div class="page">
 
-  <!-- =========================
-       BACK
-  ========================== -->
-
-  <a class="back-home" href="skills-practice.html">
-    <span class="arrow">→</span>
-    <span>رجوع</span>
-  </a>
+<a class="back-home" href="skills-practice.html">
+  <span class="arrow">→</span>
+  <span>رجوع</span>
+</a>
 
 
-  <!-- =========================
-       HERO
-  ========================== -->
+<section class="hero">
 
-  <section class="hero">
+  <div class="hero-content">
 
-    <div class="hero-content">
-
-      <div class="brand">
-        ENGLIZA ACADEMY
-      </div>
-
-      <h1>
-        الاستماع 🎧
-      </h1>
-
-      <p>
-        طوّر قدرتك على فهم الإنجليزية من خلال مقاطع وحوارات
-        مناسبة للمستوى ما قبل المتوسط، واستمع إلى اللغة وهي
-        مستخدمة داخل مواقف حقيقية وطبيعية.
-      </p>
-
+    <div class="brand">
+      ENGLIZA ACADEMY
     </div>
 
-  </section>
-
-
-  <!-- =========================
-       PATH
-  ========================== -->
-
-  <div class="path-card">
-
-    <div>
-      <div class="path-label">
-        المسار
-      </div>
-
-      <div class="path-title">
-        مسار الاستماع — المستوى ما قبل المتوسط
-      </div>
-    </div>
-
-    <div class="path-count">
-      30 استماع · 4 مراحل
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       NOTICE
-  ========================== -->
-
-  <div class="notice">
-
-    <div class="notice-icon">
-      🎧
-    </div>
-
-    <div>
-      <strong>استمع أولًا، ثم ارجع للتدريب.</strong>
-
-      <span>
-        هذه المقاطع صممت لتساعدك على ممارسة اللغة التي درستها
-        وفهمها داخل مواقف وحوارات حقيقية.
-        حاول أن تفهم الفكرة العامة قبل أن تنشغل بكل كلمة.
-      </span>
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       SEARCH
-  ========================== -->
-
-  <div class="search-box">
-
-    <span class="search-icon">
-      🔎
-    </span>
-
-    <input
-      id="searchInput"
-      type="search"
-      placeholder="ابحث عن مقطع..."
-      autocomplete="off"
-    >
-
-  </div>
-
-
-  <!-- =========================
-       STAGE 1
-  ========================== -->
-
-  <section class="stage">
-
-    <div class="stage-header">
-
-      <div class="stage-number">
-        المرحلة الأولى
-      </div>
-
-      <h2>
-        الأفعال والمضارع
-      </h2>
-
-      <p>
-        Present Simple · Present Continuous · W-Questions · Frequency
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <!-- 01 -->
-
-      <article class="lesson-card"
-        data-search="present simple daily activities routine what do you do">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">🗣️</div>
-
-          <div class="lesson-number">
-            الاستماع 01
-          </div>
-
-        </div>
-
-        <h3>
-          Present Simple
-        </h3>
-
-        <div class="topic">
-          الأنشطة والحياة اليومية
-        </div>
-
-        <p>
-          حوارات قصيرة تساعدك على سماع المضارع البسيط
-          مع الأسئلة والنفي والإجابات الطبيعية.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-01-Present-Simple.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            ELLLO · A2
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 02 -->
-
-      <article class="lesson-card"
-        data-search="third person singular he she does does not present simple">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">👤</div>
-
-          <div class="lesson-number">
-            الاستماع 02
-          </div>
-
-        </div>
-
-        <h3>
-          Third Person Singular
-        </h3>
-
-        <div class="topic">
-          He / She + Present Simple
-        </div>
-
-        <p>
-          استمع إلى الحديث عن أشخاص آخرين مع
-          does وdoesn't وأفعال المفرد.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-02-Present-Simple-3rd-Person.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            ELLLO · A2
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 03 -->
-
-      <article class="lesson-card"
-        data-search="weekly routine days frequency present simple monday sunday often sometimes">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">📅</div>
-
-          <div class="lesson-number">
-            الاستماع 03
-          </div>
-
-        </div>
-
-        <h3>
-          My Weekly Routine
-        </h3>
-
-        <div class="topic">
-          الروتين الأسبوعي
-        </div>
-
-        <p>
-          حديث عن أيام الأسبوع والروتين مع استخدام
-          كلمات التكرار داخل سياق متصل.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://www.elllo.org/video/A2BEG/A2-048-ELISE-DAYS-OF-WEEK.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            ELLLO · A2
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 04 -->
-
-      <article class="lesson-card"
-        data-search="start finish day time routine morning evening frequency">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">⏰</div>
-
-          <div class="lesson-number">
-            الاستماع 04
-          </div>
-
-        </div>
-
-        <h3>
-          When Do You Start and Finish Your Day?
-        </h3>
-
-        <div class="topic">
-          الوقت والروتين
-        </div>
-
-        <p>
-          استماع عن بداية اليوم ونهايته مع أوقات متعددة
-          وأسئلة بالمضارع البسيط.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://www.elllo.org/video/A2BEG/A2-036-NERISSA-WHEN-START-AND-FINISH-DAY.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            ELLLO · A2
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 05 -->
-
-      <article class="lesson-card"
-        data-search="present continuous what are you doing now affirmative negative questions">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">🔄</div>
-
-          <div class="lesson-number">
-            الاستماع 05
-          </div>
-
-        </div>
-
-        <h3>
-          Present Continuous
-        </h3>
-
-        <div class="topic">
-          ماذا يحدث الآن؟
-        </div>
-
-        <p>
-          حوارات تستخدم المضارع المستمر في الجمل العادية
-          والنفي والأسئلة.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-03-Present-Continuous.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            ELLLO · A2
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 06 -->
-
-      <article class="lesson-card"
-        data-search="what are you doing now present continuous farm actions">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">🌤️</div>
-
-          <div class="lesson-number">
-            الاستماع 06
-          </div>
-
-        </div>
-
-        <h3>
-          What Are You Doing Now?
-        </h3>
-
-        <div class="topic">
-          أفعال تحدث في اللحظة الحالية
-        </div>
-
-        <p>
-          وصف لما يحدث الآن باستخدام المضارع المستمر
-          داخل موقف واضح وطبيعي.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://www.elllo.org/video/A2BEG/A2-026-TODD-PRESENT-CONTINUOUS-FARM.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            ELLLO · A2
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 07 -->
-
-      <article class="lesson-card"
-        data-search="office who is who present simple third person work">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">🏢</div>
-
-          <div class="lesson-number">
-            الاستماع 07
-          </div>
-
-        </div>
-
-        <h3>
-          Who's Who in the Office?
-        </h3>
-
-        <div class="topic">
-          الأشخاص والعمل
-        </div>
-
-        <p>
-          تعرّف على أشخاص داخل بيئة العمل واستمع إلى
-          المضارع البسيط ووصف الأدوار والمسؤوليات.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/whos-who-office"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            British Council · A2
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 08 -->
-
-      <article class="lesson-card"
-        data-search="morning briefing time instructions schedule present simple">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">📋</div>
-
-          <div class="lesson-number">
-            الاستماع 08
-          </div>
-
-        </div>
-
-        <h3>
-          A Morning Briefing
-        </h3>
-
-        <div class="topic">
-          اجتماع صباحي ومعلومات متتابعة
-        </div>
-
-        <p>
-          مقطع أكثر كثافة قليلًا لإنهاء المرحلة الأولى
-          وسماع اللغة في موقف عملي.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/morning-briefing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            British Council · A2
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       STAGE 2
-  ========================== -->
-
-  <section class="stage">
-
-    <div class="stage-header">
-
-      <div class="stage-number">
-        المرحلة الثانية
-      </div>
-
-      <h2>
-        الكميات والأدوات وحروف الجر
-      </h2>
-
-      <p>
-        Countable · Uncountable · Quantities · Articles · In / On / At
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <!-- 09 -->
-
-      <article class="lesson-card"
-        data-search="determiners plural nouns a an the some articles">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🛒</div>
-          <div class="lesson-number">الاستماع 09</div>
-        </div>
-
-        <h3>Determiners and Plural Nouns</h3>
-
-        <div class="topic">
-          a / an / the / some
-        </div>
-
-        <p>
-          استماع يركز على الأدوات والأسماء المعدودة
-          والجمع داخل حوارات قصيرة.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-22-Determiner-Nouns.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 10 -->
-
-      <article class="lesson-card"
-        data-search="much many how much how many countable uncountable a lot">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🥛</div>
-          <div class="lesson-number">الاستماع 10</div>
-        </div>
-
-        <h3>Much / Many</h3>
-
-        <div class="topic">
-          How much / How many
-        </div>
-
-        <p>
-          ممارسة الاستماع إلى أسئلة الكمية مع المعدود
-          وغير المعدود وعبارات الكمية.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-23-Much-Many.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 11 -->
-
-      <article class="lesson-card"
-        data-search="few little enough too much too many quantities food">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🍎</div>
-          <div class="lesson-number">الاستماع 11</div>
-        </div>
-
-        <h3>Too / A Few / A Little / Enough</h3>
-
-        <div class="topic">
-          التعبير عن الكميات
-        </div>
-
-        <p>
-          استمع إلى استخدام a few وa little وtoo
-          وenough داخل مواقف مرتبطة بالطعام والكميات.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://www.elllo.org/book/A2/A2-24-Too-Few-Not-Much.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 12 -->
-
-      <article class="lesson-card"
-        data-search="much a lot not at all quantity adverbs">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">📦</div>
-          <div class="lesson-number">الاستماع 12</div>
-        </div>
-
-        <h3>Much / A Lot / Not at All</h3>
-
-        <div class="topic">
-          كميات داخل الحديث الطبيعي
-        </div>
-
-        <p>
-          مقطع يساعد الطالب على سماع تعبيرات الكمية
-          كما تظهر في الكلام اليومي.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-18-Adverbs-of-Quantity.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 13 -->
-
-      <article class="lesson-card"
-        data-search="can requests shopping ordering some anything else restaurant">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🍽️</div>
-          <div class="lesson-number">الاستماع 13</div>
-        </div>
-
-        <h3>Can / Requests</h3>
-
-        <div class="topic">
-          الطلبات والمواقف اليومية
-        </div>
-
-        <p>
-          حوار عملي يضع بعض أدوات الكمية والطلبات
-          داخل موقف حقيقي بدل دراسة الكلمات منفردة.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-20-Can-Requests.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 14 -->
-
-      <article class="lesson-card"
-        data-search="adverbs time at one starts soon time expressions">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">⏱️</div>
-          <div class="lesson-number">الاستماع 14</div>
-        </div>
-
-        <h3>What Time Is the Meeting?</h3>
-
-        <div class="topic">
-          الوقت وعباراته
-        </div>
-
-        <p>
-          استماع يساعد على التقاط أوقات ومعلومات زمنية
-          داخل حوار طبيعي.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-16-Adverbs-of-Time.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 15 -->
-
-      <article class="lesson-card"
-        data-search="changing meeting time tuesday 11 1 pm 9 oclock in on at">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">📅</div>
-          <div class="lesson-number">الاستماع 15</div>
-        </div>
-
-        <h3>Changing a Meeting Time</h3>
-
-        <div class="topic">
-          الأيام والساعات والمواعيد
-        </div>
-
-        <p>
-          حوار عملي عن تغيير موعد اجتماع مع أوقات وأيام
-          وأسئلة ومعلومات تحتاج إلى التقاطها من الاستماع.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-meeting-time"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">British Council · A2</div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       STAGE 3
-  ========================== -->
-
-  <section class="stage">
-
-    <div class="stage-header">
-
-      <div class="stage-number">
-        المرحلة الثالثة
-      </div>
-
-      <h2>
-        الماضي
-      </h2>
-
-      <p>
-        Past Simple · Past Continuous · Regular & Irregular Verbs
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <!-- 16 -->
-
-      <article class="lesson-card"
-        data-search="past tense regular ed verbs yesterday weekend">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🕐</div>
-          <div class="lesson-number">الاستماع 16</div>
-        </div>
-
-        <h3>Past Tense — Regular</h3>
-
-        <div class="topic">
-          الأفعال المنتظمة في الماضي
-        </div>
-
-        <p>
-          استماع يركز على الماضي مع الأفعال المنتظمة
-          والأسئلة والإجابات.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-06-Past-Tense-Ed.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 17 -->
-
-      <article class="lesson-card"
-        data-search="past tense irregular verbs went saw ate bought met">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🔤</div>
-          <div class="lesson-number">الاستماع 17</div>
-        </div>
-
-        <h3>Past Tense — Irregular</h3>
-
-        <div class="topic">
-          الأفعال غير المنتظمة
-        </div>
-
-        <p>
-          ممارسة الاستماع إلى الأفعال غير المنتظمة
-          داخل حوارات وأسئلة بالماضي.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/book/A2/A2-07-Past-Tense-Irregular.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 18 -->
-
-      <article class="lesson-card"
-        data-search="what did you do last night past simple irregular verbs">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🌙</div>
-          <div class="lesson-number">الاستماع 18</div>
-        </div>
-
-        <h3>What Did You Do Last Night?</h3>
-
-        <div class="topic">
-          أحداث الليلة الماضية
-        </div>
-
-        <p>
-          قصة قصيرة في الماضي تساعد الطالب على متابعة
-          مجموعة من الأفعال داخل حديث متصل.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://www.elllo.org/video/A2BEG/A2-023-JILL-LAST-NIGHT.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 19 -->
-
-      <article class="lesson-card"
-        data-search="how was your day past simple woke read took drove went">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">☀️</div>
-          <div class="lesson-number">الاستماع 19</div>
-        </div>
-
-        <h3>How Was Your Day?</h3>
-
-        <div class="topic">
-          الحديث عن يوم سابق
-        </div>
-
-        <p>
-          استماع متصل عن يوم كامل مع أفعال ماضية
-          وأسئلة تساعد على فهم التفاصيل.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://www.elllo.org/video/A2BEG/A2-014-TODD-PAST-TENSE.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 20 -->
-
-      <article class="lesson-card"
-        data-search="weekend australia past tense trip holiday">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🏖️</div>
-          <div class="lesson-number">الاستماع 20</div>
-        </div>
-
-        <h3>What Did You Do Over the Weekend?</h3>
-
-        <div class="topic">
-          عطلة نهاية الأسبوع
-        </div>
-
-        <p>
-          حديث أطول قليلًا عن عطلة نهاية الأسبوع
-          يجمع أفعالًا منتظمة وغير منتظمة.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/video/A2BEG/A2-049-JILL-AUSTRALIA-WEEKEND.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 21 -->
-
-      <article class="lesson-card"
-        data-search="four conversations past continuous was were interview picture">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">💬</div>
-          <div class="lesson-number">الاستماع 21</div>
-        </div>
-
-        <h3>Four Conversations</h3>
-
-        <div class="topic">
-          مواقف وحوارات متنوعة
-        </div>
-
-        <p>
-          مجموعة حوارات تساعد على الانتقال من الماضي
-          البسيط إلى وصف ما كان يحدث.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/four-conversations"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">British Council · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 22 -->
-
-      <article class="lesson-card"
-        data-search="changing plans forgot said past simple plans">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🔄</div>
-          <div class="lesson-number">الاستماع 22</div>
-        </div>
-
-        <h3>Changing Plans</h3>
-
-        <div class="topic">
-          تغيير الخطط
-        </div>
-
-        <p>
-          حوار طبيعي يحتوي على أحداث سابقة وخطط
-          ومعلومات تحتاج إلى فهمها من السياق.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-plans"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">British Council · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 23 -->
-
-      <article class="lesson-card"
-        data-search="missing class past simple questions reason">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🏫</div>
-          <div class="lesson-number">الاستماع 23</div>
-        </div>
-
-        <h3>Missing a Class</h3>
-
-        <div class="topic">
-          موقف سابق وأسئلة
-        </div>
-
-        <p>
-          موقف يومي يساعد على فهم سبب حدث سابق
-          والتقاط التفاصيل من الحوار.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/missing-class"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">British Council · A2</div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       STAGE 4
-  ========================== -->
-
-  <section class="stage">
-
-    <div class="stage-header">
-
-      <div class="stage-number">
-        المرحلة الرابعة
-      </div>
-
-      <h2>
-        الوقت والتواريخ والمواقف اليومية
-      </h2>
-
-      <p>
-        Time · Days · Months · Dates · Numbers · Everyday Listening
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <!-- 24 -->
-
-      <article class="lesson-card"
-        data-search="what time wake up every day time frequency routine">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">⏰</div>
-          <div class="lesson-number">الاستماع 24</div>
-        </div>
-
-        <h3>What Time Do You Wake Up Every Day?</h3>
-
-        <div class="topic">
-          الوقت والروتين
-        </div>
-
-        <p>
-          استماع عن أوقات الاستيقاظ والروتين مع
-          استخدام المضارع البسيط وكلمات التكرار.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/video/A2BEG/A2-030-LESYA-WHAT-TIME-WAKE-UP-EVERY-DAY.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 25 -->
-
-      <article class="lesson-card"
-        data-search="months january february march december monthly events">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🗓️</div>
-          <div class="lesson-number">الاستماع 25</div>
-        </div>
-
-        <h3>Monthly Events</h3>
-
-        <div class="topic">
-          الأشهر والأحداث
-        </div>
-
-        <p>
-          حديث يمر على أشهر السنة داخل سياق حقيقي
-          بدل حفظ أسماء الأشهر منفردة.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://elllo.org/video/A2BEG/A2-043-ELISE-MONTHS.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 26 -->
-
-      <article class="lesson-card"
-        data-search="schedule today time day activities">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">📆</div>
-          <div class="lesson-number">الاستماع 26</div>
-        </div>
-
-        <h3>What's on Your Schedule Today?</h3>
-
-        <div class="topic">
-          جدول اليوم والمواعيد
-        </div>
-
-        <p>
-          استماع يجمع الجدول والوقت واليوم والمواعيد
-          داخل حديث طبيعي.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://www.elllo.org/video/A2BEG/A2-050-NERRY-WHAT-IS-ON-YOUR-SCHEDULE-TODAY.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">ELLLO · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 27 -->
-
-      <article class="lesson-card"
-        data-search="facts figures numbers years dates distances">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🔢</div>
-          <div class="lesson-number">الاستماع 27</div>
-        </div>
-
-        <h3>Facts and Figures</h3>
-
-        <div class="topic">
-          الأرقام والسنوات والبيانات
-        </div>
-
-        <p>
-          استماع يرفع مستوى التركيز على الأرقام
-          والسنوات والمسافات والمدد الزمنية.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/facts-figures"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">British Council · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 28 -->
-
-      <article class="lesson-card"
-        data-search="transport announcements platform gate time numbers train">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">🚆</div>
-          <div class="lesson-number">الاستماع 28</div>
-        </div>
-
-        <h3>Transport Announcements</h3>
-
-        <div class="topic">
-          الإعلانات والأوقات والأرقام
-        </div>
-
-        <p>
-          استماع عملي يحتاج إلى التقاط أرقام وأوقات
-          وأماكن ومعلومات متتابعة بسرعة مناسبة لـA2.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/transport-announcements"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">British Council · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 29 -->
-
-      <article class="lesson-card"
-        data-search="finding library directions anything else numbers place">
-
-        <div class="lesson-top">
-          <div class="lesson-icon">📚</div>
-          <div class="lesson-number">الاستماع 29</div>
-        </div>
-
-        <h3>Finding the Library</h3>
-
-        <div class="topic">
-          المكان والأسئلة والمعلومات
-        </div>
-
-        <p>
-          موقف يومي يجمع الأسئلة والمعلومات المكانية
-          وبعض العبارات مثل anything else.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/finding-library"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">British Council · A2</div>
-
-        </div>
-
-      </article>
-
-
-      <!-- 30 -->
-
-      <article class="lesson-card"
-        data-search="invitation party directions time friday few numbers transport final challenge">
-
-        <div class="lesson-top">
-
-          <div class="lesson-icon">
-            🏆
-          </div>
-
-          <div class="lesson-number">
-            الاستماع 30
-          </div>
-
-        </div>
-
-        <h3>
-          An Invitation to a Party
-        </h3>
-
-        <div class="topic">
-          🔥 تحدي نهاية المستوى
-        </div>
-
-        <p>
-          رسائل صوتية تتطلب فهم الوقت واليوم والكميات
-          والأرقام والمكان والاتجاهات ومعلومات متعددة
-          داخل موقف واحد.
-        </p>
-
-        <div class="lesson-bottom">
-
-          <a
-            class="listen-btn"
-            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/invitation-party?page=0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🎧 ابدأ الاستماع
-          </a>
-
-          <div class="source">
-            British Council · A2
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FINAL CARD
-  ========================== -->
-
-  <section class="final-card">
-
-    <div class="icon">
-      🎧
-    </div>
-
-    <h2>
-      وصلت إلى نهاية مسار الاستماع
-    </h2>
+    <h1>
+      الاستماع 🎧
+    </h1>
 
     <p>
-      الآن أنت لا تتدرب على قاعدة واحدة فقط،
-      بل تختبر قدرتك على فهم الإنجليزية عندما تجتمع
-      القواعد والمفردات والمعلومات داخل مواقف حقيقية.
+      طوّر قدرتك على فهم الإنجليزية من خلال مقاطع وحوارات
+      مناسبة للمستوى ما قبل المتوسط، وتعلّم من الكلمات
+      والعبارات التي تسمعها داخل مواقف حقيقية.
     </p>
 
-  </section>
-
-
-  <div class="empty" id="emptyState">
-    لم نجد مقطعًا مطابقًا لبحثك.
   </div>
+
+</section>
+
+
+<div class="path-card">
+
+  <div>
+    <div class="path-label">
+      المسار
+    </div>
+
+    <div class="path-title">
+      مسار الاستماع — المستوى ما قبل المتوسط
+    </div>
+  </div>
+
+  <div class="path-count">
+    30 استماع · 4 مراحل
+  </div>
+
+</div>
+
+
+<div class="notice">
+
+  <div class="notice-icon">
+    🎧
+  </div>
+
+  <div>
+
+    <strong>
+      استمع، تعلّم، ثم اختبر فهمك.
+    </strong>
+
+    <span>
+      لا تكتفِ بفهم المقطع فقط؛ انتبه للكلمات والعبارات
+      الجديدة التي يمكن أن تضيفها إلى لغتك وتستخدمها لاحقًا.
+    </span>
+
+  </div>
+
+</div>
+
+
+<div class="search-box">
+
+  <span class="search-icon">
+    🔎
+  </span>
+
+  <input
+    id="searchInput"
+    type="search"
+    placeholder="ابحث عن مقطع..."
+    autocomplete="off"
+  >
+
+</div>
+
+
+<!-- =========================================================
+     LIST VIEW
+========================================================= -->
+
+<div id="listView">
+
+
+<!-- =========================================================
+     STAGE 1
+========================================================= -->
+
+<section class="stage">
+
+<div class="stage-header">
+
+  <div class="stage-number">
+    المرحلة الأولى
+  </div>
+
+  <h2>
+    الأفعال والمضارع
+  </h2>
+
+  <p>
+    Present Simple · Present Continuous · W-Questions · Frequency
+  </p>
+
+</div>
+
+
+<div class="cards" id="cardsContainer"></div>
+
+</section>
+
+
+<!-- =========================================================
+     STAGE 2
+========================================================= -->
+
+<section class="stage">
+
+<div class="stage-header">
+
+  <div class="stage-number">
+    المرحلة الثانية
+  </div>
+
+  <h2>
+    الكميات والأدوات وحروف الجر
+  </h2>
+
+  <p>
+    Countable · Uncountable · Quantities · Articles · In / On / At
+  </p>
+
+</div>
+
+<div class="cards" id="stage2"></div>
+
+</section>
+
+
+<!-- =========================================================
+     STAGE 3
+========================================================= -->
+
+<section class="stage">
+
+<div class="stage-header">
+
+  <div class="stage-number">
+    المرحلة الثالثة
+  </div>
+
+  <h2>
+    الماضي
+  </h2>
+
+  <p>
+    Past Simple · Past Continuous · Regular & Irregular Verbs
+  </p>
+
+</div>
+
+<div class="cards" id="stage3"></div>
+
+</section>
+
+
+<!-- =========================================================
+     STAGE 4
+========================================================= -->
+
+<section class="stage">
+
+<div class="stage-header">
+
+  <div class="stage-number">
+    المرحلة الرابعة
+  </div>
+
+  <h2>
+    الوقت والتواريخ والمواقف اليومية
+  </h2>
+
+  <p>
+    Time · Days · Months · Dates · Numbers · Everyday Listening
+  </p>
+
+</div>
+
+<div class="cards" id="stage4"></div>
+
+</section>
+
+
+<section class="final-card">
+
+  <div class="icon">
+    🎧
+  </div>
+
+  <h2>
+    وصلت إلى نهاية مسار الاستماع
+  </h2>
+
+  <p>
+    الآن أنت لا تتدرب على الاستماع فقط، بل تتعلم
+    كلمات وعبارات جديدة من اللغة التي تسمعها داخل السياق.
+  </p>
+
+</section>
+
+</div>
+
+
+<div class="empty" id="emptyState">
+  لم نجد مقطعًا مطابقًا لبحثك.
+</div>
+
+
+<!-- =========================================================
+     LESSON VIEW
+========================================================= -->
+
+<section class="lesson-view" id="lessonView">
+
+  <div class="lesson-header">
+
+    <div class="lesson-header-top">
+
+      <div>
+
+        <div class="lesson-header-number" id="detailNumber"></div>
+
+        <h2 id="detailTitle"></h2>
+
+        <div class="lesson-topic" id="detailTopic"></div>
+
+      </div>
+
+      <button
+        class="close-lesson"
+        onclick="closeLesson()"
+      >
+        ← العودة إلى الاستماعات
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ORIGINAL -->
+
+  <div class="lesson-section">
+
+    <h3>
+      🎧 استمع إلى المقطع
+    </h3>
+
+    <p class="section-intro">
+      افتح المقطع الأصلي واستمع إليه أولًا.
+      حاول أن تفهم الفكرة العامة قبل التركيز على التفاصيل.
+    </p>
+
+    <div class="original-box">
+
+      <p id="detailDescription"></p>
+
+      <a
+        id="originalLink"
+        class="original-btn"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🎧 فتح المقطع الأصلي
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- LANGUAGE -->
+
+  <div class="lesson-section">
+
+    <h3>
+      📚 تعلّم من الاستماع
+    </h3>
+
+    <p class="section-intro">
+      هذه الكلمات والعبارات تستحق أن تنتبه لها أثناء الاستماع؛
+      لأنها مفيدة ويمكن أن تستخدمها في مواقف أخرى.
+    </p>
+
+    <div
+      class="language-grid"
+      id="languageGrid"
+    ></div>
+
+  </div>
+
+
+  <!-- GRAMMAR -->
+
+  <div
+    class="lesson-section"
+    id="grammarSection"
+  >
+
+    <h3>
+      💡 ملاحظة من المقطع
+    </h3>
+
+    <div class="grammar-note">
+
+      <strong id="grammarTitle"></strong>
+
+      <p id="grammarText"></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- QUESTIONS -->
+
+  <div class="lesson-section">
+
+    <h3>
+      🧠 اختبر فهمك
+    </h3>
+
+    <p class="section-intro">
+      لا تبحث عن كل كلمة؛ ركّز على المعنى والمعلومات المهمة.
+    </p>
+
+    <div id="questionsContainer"></div>
+
+  </div>
+
+
+  <!-- NAV -->
+
+  <div class="lesson-navigation">
+
+    <button
+      class="nav-btn"
+      id="previousBtn"
+      onclick="previousLesson()"
+    >
+      → الاستماع السابق
+    </button>
+
+    <button
+      class="nav-btn primary"
+      id="nextBtn"
+      onclick="nextLesson()"
+    >
+      الاستماع التالي ←
+    </button>
+
+  </div>
+
+</section>
 
 </div>
 
 
 <script>
 
+/* =========================================================
+   DATA
+========================================================= */
+
+const lessons = [
+
 /* =========================
-   SEARCH
+   1
 ========================= */
+
+{
+ id:1,
+ stage:1,
+ icon:"🗣️",
+ title:"Present Simple",
+ topic:"الأنشطة والحياة اليومية",
+ description:"حوارات قصيرة تساعدك على سماع المضارع البسيط مع الأسئلة والنفي والإجابات الطبيعية.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-01-Present-Simple.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"It depends",
+   meaning:"يعتمد على الأمر / على حسب",
+   note:"نستخدمها عندما لا تكون الإجابة ثابتة، ويختلف الأمر حسب الموقف.",
+   example:"Do you go there every week? — It depends."
+  },
+  {
+   type:"عبارة",
+   expression:"take the bus",
+   meaning:"يأخذ الحافلة / يذهب بالحافلة",
+   note:"تأتي take هنا بمعنى استخدام وسيلة نقل.",
+   example:"I take the bus to work."
+  },
+  {
+   type:"عبارة",
+   expression:"work long hours",
+   meaning:"يعمل لساعات طويلة",
+   note:"عبارة شائعة للحديث عن عدد ساعات العمل.",
+   example:"My parents work long hours."
+  },
+  {
+   type:"كلمة",
+   expression:"downtown",
+   meaning:"وسط المدينة",
+   note:"تستخدم كثيرًا للحديث عن المنطقة المركزية في المدينة.",
+   example:"I live downtown."
+  }
+ ],
+
+ grammarTitle:"لاحظ إجابات Yes / No",
+ grammarText:"في الاستماع ستسمع إجابات قصيرة مثل Yes, I do و No, I don't بدل تكرار الفعل كاملًا. هذه طريقة طبيعية جدًا في المحادثة.",
+
+ questions:[
+  {
+   q:"What does the woman do at the tech company?",
+   options:["She designs software.","She teaches English.","She sells cars."],
+   answer:0
+  },
+  {
+   q:"How does one speaker get to work?",
+   options:["By car.","By bus.","On foot."],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   2
+========================= */
+
+{
+ id:2,
+ stage:1,
+ icon:"👤",
+ title:"Third Person Singular",
+ topic:"He / She + Present Simple",
+ description:"استمع إلى الحديث عن أشخاص آخرين مع does وdoesn't وأفعال المفرد.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-02-Present-Simple-3rd-Person.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"What does he do?",
+   meaning:"ماذا يعمل؟ / ماذا يفعل؟",
+   note:"من أكثر الأسئلة استخدامًا للسؤال عن عمل الشخص أو نشاطه.",
+   example:"What does your brother do?"
+  },
+  {
+   type:"عبارة",
+   expression:"work at a hospital",
+   meaning:"يعمل في مستشفى",
+   note:"work at تستخدم للحديث عن مكان العمل.",
+   example:"She works at a hospital."
+  },
+  {
+   type:"كلمة",
+   expression:"both",
+   meaning:"كلاهما",
+   note:"تستخدم عندما نتحدث عن شخصين أو شيئين معًا.",
+   example:"They both work here."
+  }
+ ],
+
+ grammarTitle:"لاحظ does",
+ grammarText:"بعد does أو doesn't يعود الفعل إلى شكله الأساسي: Does he work? وليس Does he works?",
+
+ questions:[
+  {
+   q:"Which form comes after does?",
+   options:["The base verb.","The verb with -s.","The past form."],
+   answer:0
+  },
+  {
+   q:"Which sentence is correct?",
+   options:["Does she works here?","Does she work here?","Does she working here?"],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   3
+========================= */
+
+{
+ id:3,
+ stage:1,
+ icon:"📅",
+ title:"My Weekly Routine",
+ topic:"الروتين الأسبوعي",
+ description:"حديث عن أيام الأسبوع والروتين مع استخدام كلمات التكرار داخل سياق متصل.",
+ source:"ELLLO · A2",
+ url:"https://www.elllo.org/video/A2BEG/A2-048-ELISE-DAYS-OF-WEEK.htm",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"every week",
+   meaning:"كل أسبوع",
+   note:"تستخدم للحديث عن شيء يتكرر أسبوعيًا.",
+   example:"I visit my family every week."
+  },
+  {
+   type:"كلمة",
+   expression:"sometimes",
+   meaning:"أحيانًا",
+   note:"من كلمات التكرار المهمة مع المضارع البسيط.",
+   example:"I sometimes eat out."
+  },
+  {
+   type:"كلمة",
+   expression:"usually",
+   meaning:"عادةً",
+   note:"تستخدم لشيء يحدث في معظم الأوقات.",
+   example:"I usually stay home on Friday."
+  }
+ ],
+
+ grammarTitle:"Frequency Adverbs",
+ grammarText:"انتبه إلى مكان كلمات مثل usually وsometimes مع الفعل الأساسي؛ سماعها داخل الجمل سيساعدك على تثبيت مكانها الطبيعي.",
+
+ questions:[
+  {
+   q:"What do frequency adverbs tell us?",
+   options:["How often something happens.","Where something happens.","Who does something."],
+   answer:0
+  },
+  {
+   q:"Which word means عادةً?",
+   options:["never","usually","yesterday"],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   4
+========================= */
+
+{
+ id:4,
+ stage:1,
+ icon:"⏰",
+ title:"When Do You Start and Finish Your Day?",
+ topic:"الوقت والروتين",
+ description:"استماع عن بداية اليوم ونهايته مع أوقات متعددة وأسئلة بالمضارع البسيط.",
+ source:"ELLLO · A2",
+ url:"https://www.elllo.org/video/A2BEG/A2-036-NERISSA-WHEN-START-AND-FINISH-DAY.htm",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"start my day",
+   meaning:"أبدأ يومي",
+   note:"عبارة طبيعية للحديث عن بداية اليوم.",
+   example:"I start my day at seven."
+  },
+  {
+   type:"عبارة",
+   expression:"finish my day",
+   meaning:"أنهي يومي",
+   note:"تستخدم للحديث عن الوقت أو النشاط الذي ينتهي به اليوم.",
+   example:"I finish my day at eleven."
+  },
+  {
+   type:"عبارة",
+   expression:"go to bed",
+   meaning:"يذهب إلى النوم",
+   note:"عبارة شائعة جدًا، ولا نترجمها حرفيًا إلى 'يذهب إلى السرير'.",
+   example:"I usually go to bed at ten."
+  }
+ ],
+
+ grammarTitle:"at + وقت محدد",
+ grammarText:"انتبه إلى استخدام at مع أوقات محددة مثل at seven o'clock وat nine.",
+
+ questions:[
+  {
+   q:"What kind of information is central to this listening?",
+   options:["Daily times and routines.","Shopping prices.","Past holidays."],
+   answer:0
+  },
+  {
+   q:"Which is correct?",
+   options:["at seven o'clock","on seven o'clock","in seven o'clock"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   5
+========================= */
+
+{
+ id:5,
+ stage:1,
+ icon:"🔄",
+ title:"Present Continuous",
+ topic:"ماذا يحدث الآن؟",
+ description:"حوارات تستخدم المضارع المستمر في الجمل العادية والنفي والأسئلة.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-03-Present-Continuous.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"What are you doing?",
+   meaning:"ماذا تفعل الآن؟",
+   note:"سؤال شائع جدًا عن الشيء الذي يحدث في اللحظة الحالية.",
+   example:"What are you doing right now?"
+  },
+  {
+   type:"عبارة",
+   expression:"I'm writing a letter",
+   meaning:"أنا أكتب رسالة",
+   note:"مثال طبيعي على am + verb-ing.",
+   example:"I'm writing a letter to my friend."
+  },
+  {
+   type:"كلمة",
+   expression:"right now",
+   meaning:"الآن / في هذه اللحظة",
+   note:"تستخدم لتأكيد أن الشيء يحدث في الوقت الحالي.",
+   example:"I'm busy right now."
+  }
+ ],
+
+ grammarTitle:"am / is / are + verb-ing",
+ grammarText:"عندما تسمع I'm writing أو Are you working? انتبه إلى am/is/are مع الفعل المنتهي بـ -ing.",
+
+ questions:[
+  {
+   q:"Which question asks about an action happening now?",
+   options:["What did you do?","What are you doing?","What do you do?"],
+   answer:1
+  },
+  {
+   q:"Complete: She ___ working now.",
+   options:["is","does","did"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   6
+========================= */
+
+{
+ id:6,
+ stage:1,
+ icon:"🌤️",
+ title:"What Are You Doing Now?",
+ topic:"أفعال تحدث في اللحظة الحالية",
+ description:"وصف لما يحدث الآن باستخدام المضارع المستمر داخل موقف واضح وطبيعي.",
+ source:"ELLLO · A2",
+ url:"https://www.elllo.org/video/A2BEG/A2-026-TODD-PRESENT-CONTINUOUS-FARM.htm",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"at the moment",
+   meaning:"في الوقت الحالي",
+   note:"عبارة شائعة جدًا للإشارة إلى الوقت الذي نتحدث فيه.",
+   example:"I'm studying at the moment."
+  },
+  {
+   type:"عبارة",
+   expression:"right now",
+   meaning:"الآن تمامًا",
+   note:"تستخدم لتأكيد أن الفعل يحدث الآن.",
+   example:"I'm talking to you right now."
+  },
+  {
+   type:"كلمة",
+   expression:"shining",
+   meaning:"يشرق / يسطع",
+   note:"من أمثلة الأفعال التي يمكن أن نراها أو نصفها وهي تحدث الآن.",
+   example:"The sun is shining."
+  }
+ ],
+
+ grammarTitle:"فرق بسيط مهم",
+ grammarText:"Present Continuous يصف ما يحدث الآن، بينما Present Simple يستخدم عادةً للعادات والروتين. حاول ملاحظة الفرق أثناء الاستماع.",
+
+ questions:[
+  {
+   q:"What does the speaker mainly describe?",
+   options:["What is happening now.","What happened last week.","A future holiday."],
+   answer:0
+  },
+  {
+   q:"Which sentence describes something happening now?",
+   options:["I work every day.","I am working now.","I worked yesterday."],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   7
+========================= */
+
+{
+ id:7,
+ stage:1,
+ icon:"🏢",
+ title:"Who's Who in the Office?",
+ topic:"الأشخاص والعمل",
+ description:"تعرّف على أشخاص داخل بيئة العمل واستمع إلى المضارع البسيط ووصف الأدوار والمسؤوليات.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/whos-who-office",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"show you around",
+   meaning:"يأخذك في جولة / يعرّفك على المكان",
+   note:"عبارة مفيدة عندما يعرّفك شخص على مكان جديد.",
+   example:"I'll show you around the office."
+  },
+  {
+   type:"عبارة",
+   expression:"work closely with",
+   meaning:"يعمل بشكل وثيق مع",
+   note:"تستخدم للحديث عن التعاون مع شخص أو فريق.",
+   example:"I work closely with the sales team."
+  },
+  {
+   type:"عبارة",
+   expression:"put some faces to names",
+   meaning:"يربط الأسماء بالأشخاص / يتعرف على أصحاب الأسماء",
+   note:"تعبير طبيعي عندما تبدأ بالتعرف على الأشخاص الذين سمعت أسماءهم.",
+   example:"It's nice to put some faces to names."
+  }
+ ],
+
+ grammarTitle:"Present Simple في بيئة العمل",
+ grammarText:"استمع إلى الأفعال التي تصف الوظائف والمسؤوليات، مثل work وdeal وhelp وغيرها. هذه استخدامات طبيعية للمضارع البسيط.",
+
+ questions:[
+  {
+   q:"Where does the conversation take place?",
+   options:["In an office.","At a supermarket.","At a hotel."],
+   answer:0
+  },
+  {
+   q:"What does show you around mean?",
+   options:["Teach you grammar.","Give you a tour of a place.","Call you later."],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   8
+========================= */
+
+{
+ id:8,
+ stage:1,
+ icon:"📋",
+ title:"A Morning Briefing",
+ topic:"اجتماع صباحي ومعلومات متتابعة",
+ description:"مقطع أكثر كثافة قليلًا لإنهاء المرحلة الأولى وسماع اللغة في موقف عملي.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/morning-briefing",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"morning briefing",
+   meaning:"اجتماع / إحاطة صباحية",
+   note:"اجتماع قصير في بداية اليوم لإعطاء معلومات أو تعليمات.",
+   example:"We have a morning briefing at nine."
+  },
+  {
+   type:"عبارة",
+   expression:"make sure",
+   meaning:"تأكد من",
+   note:"من العبارات المهمة جدًا في التعليمات.",
+   example:"Make sure you have your phone."
+  },
+  {
+   type:"عبارة",
+   expression:"by the end of the day",
+   meaning:"بحلول نهاية اليوم",
+   note:"تستخدم للحديث عن الموعد النهائي لإنجاز شيء.",
+   example:"Please finish it by the end of the day."
+  }
+ ],
+
+ grammarTitle:"استمع للمعلومة لا للكلمة فقط",
+ grammarText:"في المقاطع الأطول ستسمع عدة معلومات متتابعة. لا تحاول ترجمة كل كلمة؛ ركّز على من؟ ماذا؟ متى؟ وأين؟",
+
+ questions:[
+  {
+   q:"What is the main skill tested here?",
+   options:["Following several pieces of information.","Memorising irregular verbs.","Reading a long text."],
+   answer:0
+  },
+  {
+   q:"What should you focus on first?",
+   options:["Every single word.","The main information.","The spelling of every word."],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   9
+========================= */
+
+{
+ id:9,
+ stage:2,
+ icon:"🛒",
+ title:"Determiners and Plural Nouns",
+ topic:"a / an / the / some",
+ description:"استماع يركز على الأدوات والأسماء المعدودة والجمع داخل حوارات قصيرة.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-22-Determiner-Nouns.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"a few",
+   meaning:"بضعة / عدد قليل",
+   note:"تستخدم مع الأسماء المعدودة.",
+   example:"I bought a few apples."
+  },
+  {
+   type:"كلمة",
+   expression:"omelet",
+   meaning:"عجّة / أومليت",
+   note:"كلمة مرتبطة بالطعام وتظهر مع أمثلة على الأسماء المعدودة.",
+   example:"I made an omelet."
+  },
+  {
+   type:"كلمة",
+   expression:"pancakes",
+   meaning:"فطائر",
+   note:"اسم معدود بصيغة الجمع.",
+   example:"We made some pancakes."
+  }
+ ],
+
+ grammarTitle:"a / an مع المفرد المعدود",
+ grammarText:"انتبه إلى أن a وan يأتيان مع اسم مفرد معدود، بينما some يمكن أن تأتي مع الجمع أو غير المعدود حسب السياق.",
+
+ questions:[
+  {
+   q:"Which phrase is correct?",
+   options:["an omelet","a omelet","some omelet"],
+   answer:0
+  },
+  {
+   q:"Which is plural?",
+   options:["pancake","pancakes","a pancake"],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   10
+========================= */
+
+{
+ id:10,
+ stage:2,
+ icon:"🥛",
+ title:"Much / Many",
+ topic:"How much / How many",
+ description:"ممارسة الاستماع إلى أسئلة الكمية مع المعدود وغير المعدود وعبارات الكمية.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-23-Much-Many.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"How much?",
+   meaning:"كم؟ / كم مقدار؟",
+   note:"تستخدم مع الأشياء غير المعدودة.",
+   example:"How much water do you drink?"
+  },
+  {
+   type:"عبارة",
+   expression:"How many?",
+   meaning:"كم عدد؟",
+   note:"تستخدم مع الأسماء المعدودة.",
+   example:"How many books do you have?"
+  },
+  {
+   type:"عبارة",
+   expression:"a lot of",
+   meaning:"الكثير من",
+   note:"تستخدم مع المعدود وغير المعدود.",
+   example:"I drink a lot of water."
+  }
+ ],
+
+ grammarTitle:"Much أم Many؟",
+ grammarText:"إذا كنت تسأل عن العدد استخدم How many، وإذا كنت تسأل عن كمية شيء غير معدود استخدم How much.",
+
+ questions:[
+  {
+   q:"Which question is correct for bottles?",
+   options:["How much bottles?","How many bottles?","How many water?"],
+   answer:1
+  },
+  {
+   q:"Which phrase can be used with both countable and uncountable nouns?",
+   options:["a lot of","much only","many only"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   11
+========================= */
+
+{
+ id:11,
+ stage:2,
+ icon:"🍎",
+ title:"Too / A Few / A Little / Enough",
+ topic:"التعبير عن الكميات",
+ description:"استمع إلى استخدام a few وa little وtoo وenough داخل مواقف مرتبطة بالطعام والكميات.",
+ source:"ELLLO · A2",
+ url:"https://www.elllo.org/book/A2/A2-24-Too-Few-Not-Much.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"a few",
+   meaning:"بضعة / عدد قليل",
+   note:"مع الأشياء المعدودة.",
+   example:"We have a few apples."
+  },
+  {
+   type:"عبارة",
+   expression:"a little",
+   meaning:"قليل من",
+   note:"مع الأشياء غير المعدودة.",
+   example:"Add a little water."
+  },
+  {
+   type:"عبارة",
+   expression:"That's enough",
+   meaning:"هذا يكفي",
+   note:"عبارة شائعة عندما تكون الكمية كافية.",
+   example:"Thanks, that's enough."
+  }
+ ],
+
+ grammarTitle:"a few vs a little",
+ grammarText:"اسمع الفرق: a few مع المعدود، وa little مع غير المعدود.",
+
+ questions:[
+  {
+   q:"Which goes with apples?",
+   options:["a little","a few","much"],
+   answer:1
+  },
+  {
+   q:"Which goes with water?",
+   options:["a few","a little","many"],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   12
+========================= */
+
+{
+ id:12,
+ stage:2,
+ icon:"📦",
+ title:"Much / A Lot / Not at All",
+ topic:"كميات داخل الحديث الطبيعي",
+ description:"مقطع يساعد الطالب على سماع تعبيرات الكمية كما تظهر في الكلام اليومي.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-18-Adverbs-of-Quantity.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"a lot",
+   meaning:"كثيرًا",
+   note:"يمكن أن تأتي بعد الفعل لوصف كمية أو درجة كبيرة.",
+   example:"I travel a lot."
+  },
+  {
+   type:"عبارة",
+   expression:"not at all",
+   meaning:"أبدًا / إطلاقًا",
+   note:"تستخدم للنفي القوي أو للرد على الشكر.",
+   example:"I don't like it at all."
+  },
+  {
+   type:"كلمة",
+   expression:"quite",
+   meaning:"إلى حد ما / جدًا حسب السياق",
+   note:"المعنى الدقيق يعتمد على الجملة ونبرة المتحدث.",
+   example:"It's quite expensive."
+  }
+ ],
+
+ grammarTitle:"انتبه للكمية داخل السياق",
+ grammarText:"بعض كلمات الكمية لا تأتي دائمًا بنفس الشكل أو المكان. اسمع الجملة كاملة ولا تحفظ الكلمة منفصلة فقط.",
+
+ questions:[
+  {
+   q:"Which expression means إطلاقًا?",
+   options:["a lot","not at all","a few"],
+   answer:1
+  },
+  {
+   q:"Which expression describes a large amount or frequency?",
+   options:["a lot","not at all","a little"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   13
+========================= */
+
+{
+ id:13,
+ stage:2,
+ icon:"🍽️",
+ title:"Can / Requests",
+ topic:"الطلبات والمواقف اليومية",
+ description:"حوار عملي يضع بعض أدوات الكمية والطلبات داخل موقف حقيقي بدل دراسة الكلمات منفردة.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-20-Can-Requests.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"Can I get...?",
+   meaning:"هل يمكنني الحصول على...؟",
+   note:"طريقة شائعة جدًا لطلب شيء في موقف يومي.",
+   example:"Can I get a coffee?"
+  },
+  {
+   type:"عبارة",
+   expression:"anything else?",
+   meaning:"هل تريد شيئًا آخر؟",
+   note:"عبارة شائعة جدًا في المطاعم والمتاجر.",
+   example:"Would you like anything else?"
+  },
+  {
+   type:"عبارة",
+   expression:"Can I have...?",
+   meaning:"هل يمكنني الحصول على...؟",
+   note:"طريقة طبيعية ومهذبة للطلب.",
+   example:"Can I have some water?"
+  }
+ ],
+
+ grammarTitle:"تعلم العبارة كاملة",
+ grammarText:"بدل حفظ can وحدها، احفظ Can I get...? وCan I have...? كوحدات لغوية يمكنك استخدامها مباشرة.",
+
+ questions:[
+  {
+   q:"What does anything else? mean?",
+   options:["Do you want something more?","Where are you going?","What did you buy?"],
+   answer:0
+  },
+  {
+   q:"Which is a request?",
+   options:["Can I get a coffee?","I got a coffee yesterday.","I like coffee."],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   14
+========================= */
+
+{
+ id:14,
+ stage:2,
+ icon:"⏱️",
+ title:"What Time Is the Meeting?",
+ topic:"الوقت وعباراته",
+ description:"استماع يساعد على التقاط أوقات ومعلومات زمنية داخل حوار طبيعي.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-16-Adverbs-of-Time.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"at one",
+   meaning:"في الساعة الواحدة",
+   note:"مثال على at مع وقت محدد.",
+   example:"The meeting is at one."
+  },
+  {
+   type:"كلمة",
+   expression:"soon",
+   meaning:"قريبًا",
+   note:"تستخدم لشيء سيحدث بعد وقت قصير.",
+   example:"The meeting starts soon."
+  },
+  {
+   type:"كلمة",
+   expression:"already",
+   meaning:"بالفعل",
+   note:"تستخدم لشيء حدث قبل الوقت المتوقع أو المذكور.",
+   example:"I've already finished."
+  }
+ ],
+
+ grammarTitle:"at مع الساعة",
+ grammarText:"استمع إلى at عندما يأتي بعدها وقت محدد: at one, at nine, at five o'clock.",
+
+ questions:[
+  {
+   q:"Which sentence is correct?",
+   options:["It is at one.","It is on one.","It is in one."],
+   answer:0
+  },
+  {
+   q:"What does soon mean?",
+   options:["A long time ago.","In a short time.","Every day."],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   15
+========================= */
+
+{
+ id:15,
+ stage:2,
+ icon:"📅",
+ title:"Changing a Meeting Time",
+ topic:"الأيام والساعات والمواعيد",
+ description:"حوار عملي عن تغيير موعد اجتماع مع أوقات وأيام وأسئلة ومعلومات تحتاج إلى التقاطها من الاستماع.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-meeting-time",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"Would it be possible to...?",
+   meaning:"هل سيكون من الممكن أن...؟",
+   note:"طريقة مهذبة جدًا لطلب تغيير أو اقتراح شيء.",
+   example:"Would it be possible to move the meeting?"
+  },
+  {
+   type:"عبارة",
+   expression:"What would suit you?",
+   meaning:"ما الوقت / الخيار المناسب لك؟",
+   note:"تستخدم عند محاولة اختيار وقت أو خيار يناسب الشخص الآخر.",
+   example:"What time would suit you?"
+  },
+  {
+   type:"عبارة",
+   expression:"I'm looking forward to...",
+   meaning:"أتطلع إلى...",
+   note:"تعبير شائع للتحدث عن شيء تتوقعه بسعادة.",
+   example:"I'm looking forward to seeing you."
+  }
+ ],
+
+ grammarTitle:"in / on / at داخل موقف حقيقي",
+ grammarText:"هذا النوع من الحوارات يساعدك على سماع حروف الجر مع الأيام والأوقات بدل حفظها في جدول فقط.",
+
+ questions:[
+  {
+   q:"What is the conversation mainly about?",
+   options:["Changing a meeting time.","Buying a car.","Planning a holiday."],
+   answer:0
+  },
+  {
+   q:"Which expression is a polite request?",
+   options:["Would it be possible to...","I don't like it.","I went yesterday."],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   16
+========================= */
+
+{
+ id:16,
+ stage:3,
+ icon:"🕐",
+ title:"Past Tense — Regular",
+ topic:"الأفعال المنتظمة في الماضي",
+ description:"استماع يركز على الماضي مع الأفعال المنتظمة والأسئلة والإجابات.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-06-Past-Tense-Ed.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"washed the dishes",
+   meaning:"غسل الصحون",
+   note:"مثال على فعل منتظم في الماضي.",
+   example:"I washed the dishes yesterday."
+  },
+  {
+   type:"عبارة",
+   expression:"vacuumed the floors",
+   meaning:"نظّف الأرضيات بالمكنسة الكهربائية",
+   note:"فعل منتظم ينتهي بصوت -ed.",
+   example:"She vacuumed the floors."
+  },
+  {
+   type:"كلمة",
+   expression:"yesterday",
+   meaning:"أمس",
+   note:"كلمة زمنية شائعة جدًا مع الماضي البسيط.",
+   example:"I worked yesterday."
+  }
+ ],
+
+ grammarTitle:"استمع إلى نهاية -ed",
+ grammarText:"لا تحاول نطق كل -ed بالطريقة نفسها؛ استمع إلى شكل الفعل كاملًا في التسجيل.",
+
+ questions:[
+  {
+   q:"Which tense is the focus?",
+   options:["Past Simple.","Present Continuous.","Future."],
+   answer:0
+  },
+  {
+   q:"Which word often points to the past?",
+   options:["yesterday","tomorrow","now"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   17
+========================= */
+
+{
+ id:17,
+ stage:3,
+ icon:"🔤",
+ title:"Past Tense — Irregular",
+ topic:"الأفعال غير المنتظمة",
+ description:"ممارسة الاستماع إلى الأفعال غير المنتظمة داخل حوارات وأسئلة بالماضي.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/book/A2/A2-07-Past-Tense-Irregular.html",
+
+ language:[
+  {
+   type:"فعل",
+   expression:"went",
+   meaning:"ذهب",
+   note:"الماضي من go.",
+   example:"I went to the park."
+  },
+  {
+   type:"فعل",
+   expression:"met",
+   meaning:"قابل",
+   note:"الماضي من meet.",
+   example:"I met my friend."
+  },
+  {
+   type:"فعل",
+   expression:"bought",
+   meaning:"اشترى",
+   note:"الماضي من buy.",
+   example:"She bought a new phone."
+  }
+ ],
+
+ grammarTitle:"Irregular Verbs",
+ grammarText:"الأفعال غير المنتظمة لا تتبع قاعدة -ed، لذلك مهم أن تتعرف عليها عندما تسمعها داخل قصة أو حوار.",
+
+ questions:[
+  {
+   q:"What is the past of go?",
+   options:["goed","went","goes"],
+   answer:1
+  },
+  {
+   q:"What is the past of meet?",
+   options:["met","meeted","meets"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   18
+========================= */
+
+{
+ id:18,
+ stage:3,
+ icon:"🌙",
+ title:"What Did You Do Last Night?",
+ topic:"أحداث الليلة الماضية",
+ description:"قصة قصيرة في الماضي تساعد الطالب على متابعة مجموعة من الأفعال داخل حديث متصل.",
+ source:"ELLLO · A2",
+ url:"https://www.elllo.org/video/A2BEG/A2-023-JILL-LAST-NIGHT.htm",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"last night",
+   meaning:"الليلة الماضية",
+   note:"عبارة زمنية شائعة مع أحداث الماضي.",
+   example:"What did you do last night?"
+  },
+  {
+   type:"عبارة",
+   expression:"I went out",
+   meaning:"خرجت",
+   note:"go out تعني الخروج، والماضي منها went out.",
+   example:"I went out with my friends."
+  },
+  {
+   type:"عبارة",
+   expression:"I stayed home",
+   meaning:"بقيت في المنزل",
+   note:"طريقة طبيعية للحديث عن عدم الخروج.",
+   example:"I stayed home last night."
+  }
+ ],
+
+ grammarTitle:"Did + base verb",
+ grammarText:"عند السؤال في الماضي نستخدم Did ثم يعود الفعل إلى شكله الأساسي: What did you do? وليس What did you went?",
+
+ questions:[
+  {
+   q:"Which question is correct?",
+   options:["What did you do?","What did you went?","What do you did?"],
+   answer:0
+  },
+  {
+   q:"What does last night refer to?",
+   options:["The previous night.","Tomorrow night.","Every night."],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   19
+========================= */
+
+{
+ id:19,
+ stage:3,
+ icon:"☀️",
+ title:"How Was Your Day?",
+ topic:"الحديث عن يوم سابق",
+ description:"استماع متصل عن يوم كامل مع أفعال ماضية وأسئلة تساعد على فهم التفاصيل.",
+ source:"ELLLO · A2",
+ url:"https://www.elllo.org/video/A2BEG/A2-014-TODD-PAST-TENSE.htm",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"How was your day?",
+   meaning:"كيف كان يومك؟",
+   note:"سؤال شائع جدًا بعد انتهاء اليوم.",
+   example:"How was your day at work?"
+  },
+  {
+   type:"فعل",
+   expression:"woke up",
+   meaning:"استيقظ",
+   note:"الماضي من wake up.",
+   example:"I woke up at seven."
+  },
+  {
+   type:"فعل",
+   expression:"drove",
+   meaning:"قاد السيارة",
+   note:"الماضي من drive.",
+   example:"I drove to work."
+  },
+  {
+   type:"فعل",
+   expression:"felt",
+   meaning:"شعر",
+   note:"الماضي من feel.",
+   example:"I felt tired."
+  }
+ ],
+
+ grammarTitle:"القصة أهم من الفعل المنفرد",
+ grammarText:"حاول متابعة تسلسل الأحداث: ماذا حدث أولًا؟ وماذا حدث بعد ذلك؟ هذه الطريقة تقوي فهمك للماضي أكثر من حفظ الأفعال وحدها.",
+
+ questions:[
+  {
+   q:"What is the main topic?",
+   options:["A person's day.","A shopping list.","A future plan."],
+   answer:0
+  },
+  {
+   q:"What is the past of feel?",
+   options:["felt","feeled","feels"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   20
+========================= */
+
+{
+ id:20,
+ stage:3,
+ icon:"🏖️",
+ title:"What Did You Do Over the Weekend?",
+ topic:"عطلة نهاية الأسبوع",
+ description:"حديث أطول قليلًا عن عطلة نهاية الأسبوع يجمع أفعالًا منتظمة وغير منتظمة.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/video/A2BEG/A2-049-JILL-AUSTRALIA-WEEKEND.htm",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"over the weekend",
+   meaning:"خلال عطلة نهاية الأسبوع",
+   note:"عبارة شائعة للحديث عما حدث في نهاية الأسبوع.",
+   example:"What did you do over the weekend?"
+  },
+  {
+   type:"عبارة",
+   expression:"go on a trip",
+   meaning:"يذهب في رحلة",
+   note:"تعبير شائع للرحلات القصيرة أو السفر.",
+   example:"We went on a trip last weekend."
+  },
+  {
+   type:"كلمة",
+   expression:"relax",
+   meaning:"يسترخي",
+   note:"فعل شائع جدًا في الحديث عن العطلات.",
+   example:"I relaxed at home."
+  }
+ ],
+
+ grammarTitle:"Regular + Irregular Verbs",
+ grammarText:"هذا الاستماع فرصة لسماع النوعين معًا داخل قصة واحدة، فلا تحاول معرفة القاعدة فقط؛ حاول التعرف على الفعل من سياقه.",
+
+ questions:[
+  {
+   q:"What period does the speaker talk about?",
+   options:["The weekend.","Next month.","Every morning."],
+   answer:0
+  },
+  {
+   q:"Which expression means 'خلال عطلة نهاية الأسبوع'?",
+   options:["over the weekend","at the weekend house","on tomorrow"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   21
+========================= */
+
+{
+ id:21,
+ stage:3,
+ icon:"💬",
+ title:"Four Conversations",
+ topic:"مواقف وحوارات متنوعة",
+ description:"مجموعة حوارات تساعد على الانتقال من الماضي البسيط إلى وصف ما كان يحدث.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/four-conversations",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"What happened?",
+   meaning:"ماذا حدث؟",
+   note:"سؤال مهم جدًا عندما نريد معرفة حدث سابق.",
+   example:"What happened yesterday?"
+  },
+  {
+   type:"عبارة",
+   expression:"I was ...ing",
+   meaning:"كنت أفعل...",
+   note:"من أهم أنماط الماضي المستمر.",
+   example:"I was studying at eight."
+  },
+  {
+   type:"كلمة",
+   expression:"while",
+   meaning:"بينما",
+   note:"تستخدم كثيرًا لربط حدثين متزامنين أو لوصف حدث مستمر.",
+   example:"I was cooking while he was studying."
+  }
+ ],
+
+ grammarTitle:"Past Continuous",
+ grammarText:"عندما تسمع was/were + verb-ing، انتبه: المتحدث يصف شيئًا كان يحدث في وقت معين في الماضي.",
+
+ questions:[
+  {
+   q:"Which form is Past Continuous?",
+   options:["was working","worked","does work"],
+   answer:0
+  },
+  {
+   q:"What does What happened? ask about?",
+   options:["A past event.","A daily habit.","A future plan."],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   22
+========================= */
+
+{
+ id:22,
+ stage:3,
+ icon:"🔄",
+ title:"Changing Plans",
+ topic:"تغيير الخطط",
+ description:"حوار طبيعي يحتوي على أحداث سابقة وخطط ومعلومات تحتاج إلى فهمها من السياق.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-plans?page=1",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"What's up?",
+   meaning:"ما الأمر؟ / ماذا يحدث؟",
+   note:"تعبير محادثة غير رسمي للسؤال عن حال الشخص أو سبب وجود مشكلة.",
+   example:"Hey, what's up?"
+  },
+  {
+   type:"عبارة",
+   expression:"Something's come up",
+   meaning:"حدث أمر طارئ / ظهر شيء",
+   note:"تقال عندما يظهر أمر غير متوقع يمنعك من تنفيذ خطة.",
+   example:"Sorry, something's come up."
+  },
+  {
+   type:"عبارة",
+   expression:"How about next week?",
+   meaning:"ما رأيك بالأسبوع القادم؟",
+   note:"تستخدم لاقتراح وقت أو خيار بديل.",
+   example:"How about next week instead?"
+  },
+  {
+   type:"عبارة",
+   expression:"Just this one more time",
+   meaning:"هذه المرة فقط مرة أخرى",
+   note:"عبارة تستخدم لطلب السماح بتكرار شيء مرة إضافية.",
+   example:"Please, just this one more time."
+  }
+ ],
+
+ grammarTitle:"لاحظ الماضي والمستقبل في حوار واحد",
+ grammarText:"المحادثة تجمع بين أحداث سابقة مثل I forgot وI did this two weeks ago، وخطط لاحقة مثل next Friday. هذا النوع من الدمج هو ما ستسمعه في المحادثات الطبيعية.",
+
+ questions:[
+  {
+   q:"Why can't Francesco go to the theatre on Friday?",
+   options:["He has a concert.","He is sick.","He has a class."],
+   answer:0
+  },
+  {
+   q:"What does something's come up mean?",
+   options:["Something unexpected happened.","Everything is ready.","Someone arrived early."],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   23
+========================= */
+
+{
+ id:23,
+ stage:3,
+ icon:"🏫",
+ title:"Missing a Class",
+ topic:"موقف سابق وأسئلة",
+ description:"موقف يومي يساعد على فهم سبب حدث سابق والتقاط التفاصيل من الحوار.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/missing-class",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"I missed the class",
+   meaning:"فاتتني الحصة / لم أحضر الحصة",
+   note:"miss هنا تعني عدم اللحاق بشيء أو عدم الحضور إليه.",
+   example:"I missed the bus this morning."
+  },
+  {
+   type:"عبارة",
+   expression:"What happened?",
+   meaning:"ماذا حدث؟",
+   note:"سؤال طبيعي لمعرفة سبب المشكلة.",
+   example:"What happened this morning?"
+  },
+  {
+   type:"عبارة",
+   expression:"I'm sorry",
+   meaning:"أنا آسف",
+   note:"عبارة أساسية في الاعتذار.",
+   example:"I'm sorry I'm late."
+  }
+ ],
+
+ grammarTitle:"أسئلة الماضي داخل موقف حقيقي",
+ grammarText:"لاحظ كيف تستخدم أسئلة مثل What happened? وWhy did...? للحصول على تفاصيل عن حدث سابق.",
+
+ questions:[
+  {
+   q:"What does miss mean in I missed the class?",
+   options:["Not attend / not catch it.","Enjoy it.","Teach it."],
+   answer:0
+  },
+  {
+   q:"Which question asks for a reason?",
+   options:["Why did you...?","Where do you...?","What are you...?"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   24
+========================= */
+
+{
+ id:24,
+ stage:4,
+ icon:"⏰",
+ title:"What Time Do You Wake Up Every Day?",
+ topic:"الوقت والروتين",
+ description:"استماع عن أوقات الاستيقاظ والروتين مع استخدام المضارع البسيط وكلمات التكرار.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/video/A2BEG/A2-030-LESYA-WHAT-TIME-WAKE-UP-EVERY-DAY.htm",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"wake up",
+   meaning:"يستيقظ",
+   note:"من أهم العبارات المرتبطة بالروتين اليومي.",
+   example:"I wake up at six."
+  },
+  {
+   type:"عبارة",
+   expression:"every day",
+   meaning:"كل يوم",
+   note:"تستخدم للتعبير عن التكرار اليومي.",
+   example:"I wake up early every day."
+  },
+  {
+   type:"كلمة",
+   expression:"early",
+   meaning:"مبكرًا",
+   note:"يمكن استخدامها للحديث عن وقت مبكر.",
+   example:"I get up early."
+  }
+ ],
+
+ grammarTitle:"at + الوقت",
+ grammarText:"استمع إلى طريقة ذكر الساعة داخل الحديث الطبيعي، ثم انتبه إلى الفرق بينها وبين on للأيام وin للأشهر والسنوات.",
+
+ questions:[
+  {
+   q:"What does wake up mean?",
+   options:["Go to sleep.","Stop sleeping.","Start working."],
+   answer:1
+  },
+  {
+   q:"Which is correct?",
+   options:["at six","on six","in six"],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   25
+========================= */
+
+{
+ id:25,
+ stage:4,
+ icon:"🗓️",
+ title:"Monthly Events",
+ topic:"الأشهر والأحداث",
+ description:"حديث يمر على أشهر السنة داخل سياق حقيقي بدل حفظ أسماء الأشهر منفردة.",
+ source:"ELLLO · A2",
+ url:"https://elllo.org/video/A2BEG/A2-043-ELISE-MONTHS.htm",
+
+ language:[
+  {
+   type:"كلمة",
+   expression:"January",
+   meaning:"يناير",
+   note:"من أشهر السنة.",
+   example:"My birthday is in January."
+  },
+  {
+   type:"عبارة",
+   expression:"in summer",
+   meaning:"في الصيف",
+   note:"نستخدم in مع الفصول وكذلك الأشهر.",
+   example:"We travel in summer."
+  },
+  {
+   type:"عبارة",
+   expression:"this month",
+   meaning:"هذا الشهر",
+   note:"تستخدم للحديث عن الشهر الحالي.",
+   example:"We have an event this month."
+  }
+ ],
+
+ grammarTitle:"in + months",
+ grammarText:"استمع إلى استخدام in مع أسماء الأشهر: in January, in May, in December.",
+
+ questions:[
+  {
+   q:"Which preposition normally comes before a month?",
+   options:["in","on","at"],
+   answer:0
+  },
+  {
+   q:"Which one is a month?",
+   options:["Monday","March","Morning"],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   26
+========================= */
+
+{
+ id:26,
+ stage:4,
+ icon:"📆",
+ title:"What's on Your Schedule Today?",
+ topic:"جدول اليوم والمواعيد",
+ description:"استماع يجمع الجدول والوقت واليوم والمواعيد داخل حديث طبيعي.",
+ source:"ELLLO · A2",
+ url:"https://www.elllo.org/video/A2BEG/A2-050-NERRY-WHAT-IS-ON-YOUR-SCHEDULE-TODAY.htm",
+
+ language:[
+  {
+   type:"كلمة",
+   expression:"schedule",
+   meaning:"جدول / جدول مواعيد",
+   note:"تستخدم للحديث عن الأشياء المخطط لها في اليوم.",
+   example:"What's on your schedule today?"
+  },
+  {
+   type:"عبارة",
+   expression:"be on my schedule",
+   meaning:"يكون ضمن جدول مواعيدي",
+   note:"تعبير مفيد للحديث عن المواعيد والمهام.",
+   example:"The meeting is on my schedule."
+  },
+  {
+   type:"عبارة",
+   expression:"at noon",
+   meaning:"عند الظهر",
+   note:"noon تعني وقت الظهر.",
+   example:"The meeting is at noon."
+  }
+ ],
+
+ grammarTitle:"الوقت داخل جدول يومي",
+ grammarText:"هنا لا تتعلم قراءة الوقت فقط؛ بل تتعلم كيف تستخدمه عندما تتحدث عن مواعيدك وخططك اليومية.",
+
+ questions:[
+  {
+   q:"What is a schedule?",
+   options:["A list of planned times and activities.","A type of food.","A place to sleep."],
+   answer:0
+  },
+  {
+   q:"What does noon mean?",
+   options:["Midnight.","Around 12 in the daytime.","Early morning."],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   27
+========================= */
+
+{
+ id:27,
+ stage:4,
+ icon:"🔢",
+ title:"Facts and Figures",
+ topic:"الأرقام والسنوات والبيانات",
+ description:"استماع يرفع مستوى التركيز على الأرقام والسنوات والمسافات والمدد الزمنية.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/facts-figures",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"about",
+   meaning:"حوالي / تقريبًا",
+   note:"تستخدم عندما لا يكون الرقم دقيقًا تمامًا.",
+   example:"There are about 500 people."
+  },
+  {
+   type:"كلمة",
+   expression:"figure",
+   meaning:"رقم / قيمة رقمية",
+   note:"تستخدم في سياق البيانات والأرقام.",
+   example:"Let's check the figures."
+  },
+  {
+   type:"كلمة",
+   expression:"million",
+   meaning:"مليون",
+   note:"من الكلمات المهمة عند قراءة الأرقام الكبيرة.",
+   example:"The city has two million people."
+  }
+ ],
+
+ grammarTitle:"الأرقام تحتاج إلى تركيز",
+ grammarText:"في هذا النوع من الاستماع لا يكفي فهم الفكرة العامة؛ تحتاج إلى التقاط الرقم نفسه، لذلك ركّز على الأرقام والكلمات المحيطة بها.",
+
+ questions:[
+  {
+   q:"What does about mean before a number?",
+   options:["Exactly.","Approximately.","Never."],
+   answer:1
+  },
+  {
+   q:"What is a million?",
+   options:["1,000","100,000","1,000,000"],
+   answer:2
+  }
+ ]
+},
+
+
+/* =========================
+   28
+========================= */
+
+{
+ id:28,
+ stage:4,
+ icon:"🚆",
+ title:"Transport Announcements",
+ topic:"الإعلانات والأوقات والأرقام",
+ description:"استماع عملي يحتاج إلى التقاط أرقام وأوقات وأماكن ومعلومات متتابعة.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/transport-announcements",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"make your way to",
+   meaning:"توجّه إلى / اذهب إلى",
+   note:"عبارة شائعة في الإعلانات والتعليمات.",
+   example:"Please make your way to platform two."
+  },
+  {
+   type:"عبارة",
+   expression:"have your passport ready",
+   meaning:"اجعل جواز سفرك جاهزًا",
+   note:"تستخدم في تعليمات السفر.",
+   example:"Please have your passport ready."
+  },
+  {
+   type:"كلمة",
+   expression:"platform",
+   meaning:"رصيف / منصة القطار",
+   note:"كلمة مهمة في محطات القطارات.",
+   example:"The train leaves from platform nine."
+  }
+ ],
+
+ grammarTitle:"الاستماع إلى المعلومات المتتابعة",
+ grammarText:"الإعلانات لا تعطيك وقتًا طويلًا للتفكير. ركّز على الكلمات التي تحمل المعلومات الأساسية: الرقم، الوقت، المكان، والاتجاه.",
+
+ questions:[
+  {
+   q:"What is a platform?",
+   options:["A train station area where you wait for a train.","A ticket.","A road."],
+   answer:0
+  },
+  {
+   q:"What does make your way to mean?",
+   options:["Forget the place.","Go towards the place.","Wait at home."],
+   answer:1
+  }
+ ]
+},
+
+
+/* =========================
+   29
+========================= */
+
+{
+ id:29,
+ stage:4,
+ icon:"📚",
+ title:"Finding the Library",
+ topic:"المكان والأسئلة والمعلومات",
+ description:"موقف يومي يجمع الأسئلة والمعلومات المكانية وبعض العبارات مثل anything else.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/finding-library",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"anything else?",
+   meaning:"هل تريد شيئًا آخر؟",
+   note:"تستخدم عندما تريد معرفة إن كان هناك شيء إضافي.",
+   example:"Do you need anything else?"
+  },
+  {
+   type:"عبارة",
+   expression:"How do I get to...?",
+   meaning:"كيف أصل إلى...؟",
+   note:"من أهم الأسئلة عند طلب الاتجاهات.",
+   example:"How do I get to the library?"
+  },
+  {
+   type:"عبارة",
+   expression:"on the left",
+   meaning:"على اليسار",
+   note:"تستخدم لوصف موقع شيء أثناء إعطاء الاتجاهات.",
+   example:"The library is on the left."
+  }
+ ],
+
+ grammarTitle:"تعلم العبارة داخل الموقف",
+ grammarText:"بدل حفظ كلمات الاتجاهات منفصلة، انتبه إلى الجملة كاملة: How do I get to...? وIt's on the left.",
+
+ questions:[
+  {
+   q:"What does How do I get to the library? mean?",
+   options:["Where is the library and how can I reach it?","Who works there?","When does it close?"],
+   answer:0
+  },
+  {
+   q:"What does on the left describe?",
+   options:["A direction or position.","A time.","A quantity."],
+   answer:0
+  }
+ ]
+},
+
+
+/* =========================
+   30
+========================= */
+
+{
+ id:30,
+ stage:4,
+ icon:"🏆",
+ title:"An Invitation to a Party",
+ topic:"🔥 تحدي نهاية المستوى",
+ description:"رسائل صوتية تتطلب فهم الوقت واليوم والكميات والأرقام والمكان والاتجاهات ومعلومات متعددة داخل موقف واحد.",
+ source:"British Council · A2",
+ url:"https://learnenglish.britishcouncil.org/free-resources/listening/a2/invitation-party?page=0",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"How's it going?",
+   meaning:"كيف تسير الأمور؟ / كيف حالك؟",
+   note:"تحية غير رسمية شائعة جدًا في المحادثة.",
+   example:"Hey! How's it going?"
+  },
+  {
+   type:"عبارة",
+   expression:"That's so nice of you",
+   meaning:"هذا لطف كبير منك",
+   note:"تقال لشكر شخص على تصرف لطيف.",
+   example:"That's so nice of you. Thank you!"
+  },
+  {
+   type:"عبارة",
+   expression:"I'd love to see you there",
+   meaning:"سأكون سعيدًا جدًا برؤيتك هناك",
+   note:"طريقة طبيعية للتعبير عن الرغبة في حضور الشخص.",
+   example:"I'd love to see you there."
+  },
+  {
+   type:"عبارة",
+   expression:"I can't wait",
+   meaning:"لا أستطيع الانتظار / متحمس جدًا",
+   note:"تستخدم عندما تكون متحمسًا لشيء قادم.",
+   example:"I can't wait for the party!"
+  },
+  {
+   type:"عبارة",
+   expression:"drive straight on",
+   meaning:"واصل القيادة إلى الأمام مباشرة",
+   note:"عبارة مفيدة جدًا عند إعطاء الاتجاهات.",
+   example:"Drive straight on until you reach the road."
+  }
+ ],
+
+ grammarTitle:"🔥 اختبار حقيقي لكل ما تعلمته",
+ grammarText:"في هذا المقطع ستسمع أوقاتًا مثل 3:45 و5:15، يوم Friday، كميات مثل a few، أرقامًا مثل 13A و80، واتجاهات ومعلومات متعددة. لا تحاول ترجمة كل شيء؛ اجمع المعلومات المهمة من السياق.",
+
+ questions:[
+  {
+   q:"When is the party?",
+   options:["This Friday.","Next Monday.","Tomorrow morning."],
+   answer:0
+  },
+  {
+   q:"How many close friends are invited?",
+   options:["Only a few.","More than fifty.","Everyone in town."],
+   answer:0
+  },
+  {
+   q:"What bus can the person take?",
+   options:["Bus 13A.","Bus 80.","Bus 15."],
+   answer:1
+  },
+  {
+   q:"What does I can't wait mean?",
+   options:["I'm very excited.","I'm very tired.","I don't want to go."],
+   answer:0
+  }
+ ]
+}
+
+];
+
+
+/* =========================================================
+   STAGE HELPERS
+========================================================= */
+
+const stageContainers = {
+  1:document.getElementById("cardsContainer"),
+  2:document.getElementById("stage2"),
+  3:document.getElementById("stage3"),
+  4:document.getElementById("stage4")
+};
+
+
+/* =========================================================
+   RENDER CARDS
+========================================================= */
+
+function renderCards(){
+
+  lessons.forEach(lesson => {
+
+    const card = document.createElement("article");
+
+    card.className = "lesson-card";
+
+    card.dataset.search = (
+      lesson.title +
+      " " +
+      lesson.topic +
+      " " +
+      lesson.description +
+      " " +
+      lesson.language.map(x => x.expression).join(" ")
+    ).toLowerCase();
+
+    card.innerHTML = `
+
+      <div class="lesson-top">
+
+        <div class="lesson-icon">
+          ${lesson.icon}
+        </div>
+
+        <div class="lesson-number">
+          الاستماع ${String(lesson.id).padStart(2,"0")}
+        </div>
+
+      </div>
+
+      <h3>
+        ${lesson.title}
+      </h3>
+
+      <div class="topic">
+        ${lesson.topic}
+      </div>
+
+      <p>
+        ${lesson.description}
+      </p>
+
+      <div class="lesson-bottom">
+
+        <button
+          class="listen-btn"
+          onclick="openLesson(${lesson.id})"
+        >
+          🎧 ابدأ الاستماع
+        </button>
+
+        <div class="source">
+          ${lesson.source}
+        </div>
+
+      </div>
+    `;
+
+    stageContainers[lesson.stage].appendChild(card);
+
+  });
+
+}
+
+renderCards();
+
+
+/* =========================================================
+   LESSON VIEW
+========================================================= */
+
+let currentLessonId = 1;
+
+
+function openLesson(id){
+
+  const lesson =
+    lessons.find(item => item.id === id);
+
+  if(!lesson) return;
+
+  currentLessonId = id;
+
+  document.getElementById("listView")
+    .style.display = "none";
+
+  document.querySelector(".search-box")
+    .style.display = "none";
+
+  document.getElementById("lessonView")
+    .classList.add("active");
+
+  document.getElementById("detailNumber")
+    .textContent =
+      `الاستماع ${String(lesson.id).padStart(2,"0")}`;
+
+  document.getElementById("detailTitle")
+    .textContent = lesson.title;
+
+  document.getElementById("detailTopic")
+    .textContent =
+      `${lesson.topic} · ${lesson.source}`;
+
+  document.getElementById("detailDescription")
+    .textContent = lesson.description;
+
+  const originalLink =
+    document.getElementById("originalLink");
+
+  originalLink.href = lesson.url;
+
+
+  /* LANGUAGE */
+
+  const languageGrid =
+    document.getElementById("languageGrid");
+
+  languageGrid.innerHTML = "";
+
+  lesson.language.forEach(item => {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "language-item";
+
+    div.innerHTML = `
+
+      <div class="language-type">
+        ${item.type}
+      </div>
+
+      <div class="language-expression">
+        ${item.expression}
+      </div>
+
+      <div class="language-meaning">
+        ${item.meaning}
+      </div>
+
+      <div class="language-note">
+        ${item.note}
+      </div>
+
+      ${
+        item.example
+        ?
+        `
+        <div class="example">
+          ${item.example}
+        </div>
+        `
+        :
+        ""
+      }
+
+    `;
+
+    languageGrid.appendChild(div);
+
+  });
+
+
+  /* GRAMMAR */
+
+  document.getElementById("grammarTitle")
+    .textContent =
+      lesson.grammarTitle;
+
+  document.getElementById("grammarText")
+    .textContent =
+      lesson.grammarText;
+
+
+  /* QUESTIONS */
+
+  renderQuestions(lesson.questions);
+
+
+  updateNavigation();
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+function closeLesson(){
+
+  document.getElementById("lessonView")
+    .classList.remove("active");
+
+  document.getElementById("listView")
+    .style.display = "";
+
+  document.querySelector(".search-box")
+    .style.display = "";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   QUESTIONS
+========================================================= */
+
+function renderQuestions(questions){
+
+  const container =
+    document.getElementById("questionsContainer");
+
+  container.innerHTML = "";
+
+  questions.forEach((question,index) => {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "question";
+
+    div.innerHTML = `
+
+      <div class="question-text">
+        ${index + 1}. ${question.q}
+      </div>
+
+      <div class="options">
+
+        ${
+          question.options.map(
+            (option,optionIndex) => `
+              <button
+                class="option"
+                onclick="
+                  answerQuestion(
+                    this,
+                    ${optionIndex},
+                    ${question.answer}
+                  )
+                "
+              >
+                ${option}
+              </button>
+            `
+          ).join("")
+        }
+
+      </div>
+
+      <div class="feedback"></div>
+
+    `;
+
+    container.appendChild(div);
+
+  });
+
+}
+
+
+function answerQuestion(
+  button,
+  selected,
+  correct
+){
+
+  const question =
+    button.closest(".question");
+
+  const options =
+    question.querySelectorAll(".option");
+
+  const feedback =
+    question.querySelector(".feedback");
+
+  options.forEach(
+    option => option.disabled = true
+  );
+
+  if(selected === correct){
+
+    button.classList.add("correct");
+
+    feedback.textContent =
+      "✓ إجابة صحيحة";
+
+    feedback.style.color =
+      "#2D7A43";
+
+  }else{
+
+    button.classList.add("wrong");
+
+    options[correct]
+      .classList.add("correct");
+
+    feedback.textContent =
+      "✗ ليست الإجابة الصحيحة. حاول تذكر ما سمعته في المقطع.";
+
+    feedback.style.color =
+      "#B33A3A";
+  }
+
+  feedback.classList.add("show");
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function updateNavigation(){
+
+  const previous =
+    document.getElementById("previousBtn");
+
+  const next =
+    document.getElementById("nextBtn");
+
+  previous.disabled =
+    currentLessonId === 1;
+
+  next.disabled =
+    currentLessonId === lessons.length;
+
+  previous.style.opacity =
+    currentLessonId === 1
+      ? ".45"
+      : "1";
+
+  next.style.opacity =
+    currentLessonId === lessons.length
+      ? ".45"
+      : "1";
+}
+
+
+function previousLesson(){
+
+  if(currentLessonId <= 1) return;
+
+  openLesson(currentLessonId - 1);
+
+}
+
+
+function nextLesson(){
+
+  if(currentLessonId >= lessons.length) return;
+
+  openLesson(currentLessonId + 1);
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
 
 const searchInput =
   document.getElementById("searchInput");
-
-const cards =
-  Array.from(
-    document.querySelectorAll(".lesson-card")
-  );
-
-const stages =
-  Array.from(
-    document.querySelectorAll(".stage")
-  );
 
 const emptyState =
   document.getElementById("emptyState");
 
 
-searchInput.addEventListener("input", function(){
+searchInput.addEventListener(
+  "input",
+  function(){
 
-  const value =
-    this.value
-      .toLowerCase()
-      .trim();
+    const value =
+      this.value
+        .toLowerCase()
+        .trim();
 
-  let visibleCount = 0;
+    let visibleCount = 0;
 
-  cards.forEach(card => {
+    const cards =
+      document.querySelectorAll(".lesson-card");
 
-    const text =
-      (
-        card.innerText +
-        " " +
-        card.dataset.search
-      )
-      .toLowerCase();
+    cards.forEach(card => {
 
-    const match =
-      !value ||
-      text.includes(value);
+      const text =
+        card.dataset.search;
 
-    card.classList.toggle(
-      "hidden",
-      !match
-    );
+      const match =
+        !value ||
+        text.includes(value);
 
-    if(match){
-      visibleCount++;
-    }
-
-  });
-
-
-  stages.forEach(stage => {
-
-    const visibleCards =
-      stage.querySelectorAll(
-        ".lesson-card:not(.hidden)"
+      card.classList.toggle(
+        "hidden",
+        !match
       );
 
-    stage.classList.toggle(
-      "hidden",
-      visibleCards.length === 0
-    );
+      if(match){
+        visibleCount++;
+      }
 
-  });
+    });
 
 
-  emptyState.style.display =
-    visibleCount === 0
-      ? "block"
-      : "none";
+    document
+      .querySelectorAll(".stage")
+      .forEach(stage => {
 
-});
+        const visibleCards =
+          stage.querySelectorAll(
+            ".lesson-card:not(.hidden)"
+          );
+
+        stage.classList.toggle(
+          "hidden",
+          visibleCards.length === 0
+        );
+
+      });
+
+
+    emptyState.style.display =
+      visibleCount === 0
+        ? "block"
+        : "none";
+
+  }
+);
 
 </script>
 
