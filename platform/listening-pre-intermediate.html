@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الاستماع — المستوى ما قبل المتوسط | Engliza Academy</title>
+
+<style>
+:root{
+  --blue:#3157D5;
+  --blue-dark:#233E9B;
+  --purple:#7654D9;
+  --purple-light:#EEEAFE;
+  --gold:#D9A441;
+  --gold-light:#FFF6DF;
+  --text:#17213C;
+  --muted:#6E7891;
+  --white:#FFFFFF;
+  --bg:#F7F8FC;
+  --border:#E8EAF2;
+
+  --shadow:0 12px 35px rgba(36,48,94,.08);
+  --shadow-hover:0 18px 45px rgba(36,48,94,.13);
+
+  --radius-xl:32px;
+  --radius-lg:28px;
+  --radius-md:22px;
+  --radius-sm:17px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+  width:min(1120px, calc(100% - 32px));
+  margin:0 auto;
+  padding:24px 0 70px;
+}
+
+/* =========================
+   BACK
+========================= */
+
+.back-home{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  background:var(--white);
+  border:1px solid var(--border);
+
+  padding:11px 17px;
+  border-radius:15px;
+
+  color:var(--text);
+  font-weight:700;
+
+  box-shadow:0 6px 20px rgba(36,48,94,.05);
+
+  transition:.25s ease;
+}
+
+.back-home:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+}
+
+.back-home .arrow{
+  font-size:20px;
+  color:var(--blue);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  margin-top:22px;
+  padding:42px 38px;
+
+  border-radius:var(--radius-xl);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue-dark),
+      var(--purple)
+    );
+
+  color:white;
+
+  box-shadow:
+    0 20px 50px rgba(49,87,213,.18);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+
+  width:260px;
+  height:260px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.08);
+
+  top:-110px;
+  left:-80px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.06);
+
+  bottom:-120px;
+  right:-60px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:780px;
+}
+
+.brand{
+  font-size:13px;
+  letter-spacing:2px;
+  font-weight:800;
+  opacity:.82;
+  margin-bottom:8px;
+}
+
+.hero h1{
+  font-size:clamp(32px,5vw,48px);
+  line-height:1.2;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:17px;
+  line-height:1.9;
+  opacity:.94;
+  max-width:760px;
+}
+
+/* =========================
+   PATH CARD
+========================= */
+
+.path-card{
+  background:var(--white);
+  border:1px solid var(--border);
+
+  border-radius:var(--radius-lg);
+
+  padding:23px 25px;
+
+  margin-top:20px;
+
+  box-shadow:var(--shadow);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.path-label{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.path-title{
+  font-size:20px;
+  font-weight:850;
+}
+
+.path-count{
+  flex-shrink:0;
+
+  background:var(--purple-light);
+  color:var(--purple);
+
+  padding:9px 15px;
+  border-radius:14px;
+
+  font-weight:800;
+  font-size:14px;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+  margin-top:20px;
+
+  background:var(--gold-light);
+  border:1px solid #F0DCA9;
+
+  border-radius:22px;
+
+  padding:18px 20px;
+
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+
+  color:#69531D;
+}
+
+.notice-icon{
+  width:40px;
+  height:40px;
+
+  border-radius:13px;
+
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  font-size:20px;
+}
+
+.notice strong{
+  display:block;
+  margin-bottom:3px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+  position:relative;
+  margin-top:22px;
+}
+
+.search-box input{
+  width:100%;
+
+  border:1px solid var(--border);
+  background:var(--white);
+
+  padding:16px 48px 16px 18px;
+
+  border-radius:18px;
+
+  outline:none;
+
+  color:var(--text);
+
+  box-shadow:0 6px 20px rgba(36,48,94,.04);
+
+  transition:.2s ease;
+}
+
+.search-box input:focus{
+  border-color:rgba(49,87,213,.4);
+
+  box-shadow:
+    0 0 0 4px rgba(49,87,213,.08);
+}
+
+.search-icon{
+  position:absolute;
+
+  right:17px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  font-size:20px;
+  color:var(--muted);
+}
+
+/* =========================
+   STAGE
+========================= */
+
+.stage{
+  margin-top:50px;
+}
+
+.stage-header{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:21px 23px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:20px;
+}
+
+.stage-number{
+  color:var(--purple);
+  font-weight:850;
+  font-size:13px;
+
+  margin-bottom:3px;
+}
+
+.stage-header h2{
+  font-size:24px;
+  margin-bottom:4px;
+}
+
+.stage-header p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:17px;
+}
+
+.lesson-card{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:23px;
+
+  box-shadow:var(--shadow);
+
+  transition:.25s ease;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.lesson-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-hover);
+}
+
+.lesson-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.lesson-icon{
+  width:48px;
+  height:48px;
+
+  border-radius:16px;
+
+  background:var(--purple-light);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:23px;
+
+  flex-shrink:0;
+}
+
+.lesson-number{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+.lesson-card h3{
+  font-size:20px;
+  line-height:1.45;
+
+  margin-top:14px;
+  margin-bottom:7px;
+}
+
+.lesson-card .topic{
+  color:var(--purple);
+  font-weight:800;
+  font-size:13px;
+
+  margin-bottom:10px;
+}
+
+.lesson-card p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+
+  flex:1;
+}
+
+.lesson-bottom{
+  margin-top:20px;
+}
+
+.listen-btn{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+
+  padding:13px 16px;
+
+  border-radius:15px;
+
+  background:var(--blue);
+  color:white;
+
+  font-weight:800;
+
+  transition:.25s ease;
+}
+
+.listen-btn:hover{
+  background:var(--blue-dark);
+  transform:translateY(-1px);
+}
+
+.source{
+  text-align:center;
+
+  margin-top:9px;
+
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-card{
+  margin-top:50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold-light),
+      #fff
+    );
+
+  border:1px solid #F0DCA9;
+
+  border-radius:28px;
+
+  padding:28px;
+
+  box-shadow:var(--shadow);
+
+  text-align:center;
+}
+
+.final-card .icon{
+  font-size:35px;
+  margin-bottom:7px;
+}
+
+.final-card h2{
+  margin-bottom:7px;
+}
+
+.final-card p{
+  color:var(--muted);
+  max-width:650px;
+  margin:auto;
+}
+
+/* =========================
+   EMPTY SEARCH
+========================= */
+
+.empty{
+  display:none;
+
+  margin-top:20px;
+
+  background:white;
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:30px;
+
+  text-align:center;
+
+  color:var(--muted);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+  .page{
+    width:min(100% - 22px,1120px);
+    padding-top:15px;
+  }
+
+  .hero{
+    padding:32px 23px;
+    border-radius:26px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .path-card{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:20px;
+  }
+
+  .path-count{
+    width:100%;
+    text-align:center;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .stage{
+    margin-top:40px;
+  }
+
+  .stage-header{
+    padding:19px;
+  }
+
+  .stage-header h2{
+    font-size:21px;
+  }
+
+  .lesson-card{
+    padding:20px;
+  }
+
+}
+
+/* =========================
+   SEARCH HIGHLIGHT
+========================= */
+
+.hidden{
+  display:none !important;
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+  <!-- =========================
+       BACK
+  ========================== -->
+
+  <a class="back-home" href="skills-practice.html">
+    <span class="arrow">→</span>
+    <span>رجوع</span>
+  </a>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="brand">
+        ENGLIZA ACADEMY
+      </div>
+
+      <h1>
+        الاستماع 🎧
+      </h1>
+
+      <p>
+        طوّر قدرتك على فهم الإنجليزية من خلال مقاطع وحوارات
+        مناسبة للمستوى ما قبل المتوسط، واستمع إلى اللغة وهي
+        مستخدمة داخل مواقف حقيقية وطبيعية.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PATH
+  ========================== -->
+
+  <div class="path-card">
+
+    <div>
+      <div class="path-label">
+        المسار
+      </div>
+
+      <div class="path-title">
+        مسار الاستماع — المستوى ما قبل المتوسط
+      </div>
+    </div>
+
+    <div class="path-count">
+      30 استماع · 4 مراحل
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       NOTICE
+  ========================== -->
+
+  <div class="notice">
+
+    <div class="notice-icon">
+      🎧
+    </div>
+
+    <div>
+      <strong>استمع أولًا، ثم ارجع للتدريب.</strong>
+
+      <span>
+        هذه المقاطع صممت لتساعدك على ممارسة اللغة التي درستها
+        وفهمها داخل مواقف وحوارات حقيقية.
+        حاول أن تفهم الفكرة العامة قبل أن تنشغل بكل كلمة.
+      </span>
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       SEARCH
+  ========================== -->
+
+  <div class="search-box">
+
+    <span class="search-icon">
+      🔎
+    </span>
+
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="ابحث عن مقطع..."
+      autocomplete="off"
+    >
+
+  </div>
+
+
+  <!-- =========================
+       STAGE 1
+  ========================== -->
+
+  <section class="stage">
+
+    <div class="stage-header">
+
+      <div class="stage-number">
+        المرحلة الأولى
+      </div>
+
+      <h2>
+        الأفعال والمضارع
+      </h2>
+
+      <p>
+        Present Simple · Present Continuous · W-Questions · Frequency
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <!-- 01 -->
+
+      <article class="lesson-card"
+        data-search="present simple daily activities routine what do you do">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">🗣️</div>
+
+          <div class="lesson-number">
+            الاستماع 01
+          </div>
+
+        </div>
+
+        <h3>
+          Present Simple
+        </h3>
+
+        <div class="topic">
+          الأنشطة والحياة اليومية
+        </div>
+
+        <p>
+          حوارات قصيرة تساعدك على سماع المضارع البسيط
+          مع الأسئلة والنفي والإجابات الطبيعية.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-01-Present-Simple.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            ELLLO · A2
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 02 -->
+
+      <article class="lesson-card"
+        data-search="third person singular he she does does not present simple">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">👤</div>
+
+          <div class="lesson-number">
+            الاستماع 02
+          </div>
+
+        </div>
+
+        <h3>
+          Third Person Singular
+        </h3>
+
+        <div class="topic">
+          He / She + Present Simple
+        </div>
+
+        <p>
+          استمع إلى الحديث عن أشخاص آخرين مع
+          does وdoesn't وأفعال المفرد.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-02-Present-Simple-3rd-Person.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            ELLLO · A2
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+
+      <article class="lesson-card"
+        data-search="weekly routine days frequency present simple monday sunday often sometimes">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">📅</div>
+
+          <div class="lesson-number">
+            الاستماع 03
+          </div>
+
+        </div>
+
+        <h3>
+          My Weekly Routine
+        </h3>
+
+        <div class="topic">
+          الروتين الأسبوعي
+        </div>
+
+        <p>
+          حديث عن أيام الأسبوع والروتين مع استخدام
+          كلمات التكرار داخل سياق متصل.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://www.elllo.org/video/A2BEG/A2-048-ELISE-DAYS-OF-WEEK.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            ELLLO · A2
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 04 -->
+
+      <article class="lesson-card"
+        data-search="start finish day time routine morning evening frequency">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">⏰</div>
+
+          <div class="lesson-number">
+            الاستماع 04
+          </div>
+
+        </div>
+
+        <h3>
+          When Do You Start and Finish Your Day?
+        </h3>
+
+        <div class="topic">
+          الوقت والروتين
+        </div>
+
+        <p>
+          استماع عن بداية اليوم ونهايته مع أوقات متعددة
+          وأسئلة بالمضارع البسيط.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://www.elllo.org/video/A2BEG/A2-036-NERISSA-WHEN-START-AND-FINISH-DAY.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            ELLLO · A2
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 05 -->
+
+      <article class="lesson-card"
+        data-search="present continuous what are you doing now affirmative negative questions">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">🔄</div>
+
+          <div class="lesson-number">
+            الاستماع 05
+          </div>
+
+        </div>
+
+        <h3>
+          Present Continuous
+        </h3>
+
+        <div class="topic">
+          ماذا يحدث الآن؟
+        </div>
+
+        <p>
+          حوارات تستخدم المضارع المستمر في الجمل العادية
+          والنفي والأسئلة.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-03-Present-Continuous.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            ELLLO · A2
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 06 -->
+
+      <article class="lesson-card"
+        data-search="what are you doing now present continuous farm actions">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">🌤️</div>
+
+          <div class="lesson-number">
+            الاستماع 06
+          </div>
+
+        </div>
+
+        <h3>
+          What Are You Doing Now?
+        </h3>
+
+        <div class="topic">
+          أفعال تحدث في اللحظة الحالية
+        </div>
+
+        <p>
+          وصف لما يحدث الآن باستخدام المضارع المستمر
+          داخل موقف واضح وطبيعي.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://www.elllo.org/video/A2BEG/A2-026-TODD-PRESENT-CONTINUOUS-FARM.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            ELLLO · A2
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+
+      <article class="lesson-card"
+        data-search="office who is who present simple third person work">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">🏢</div>
+
+          <div class="lesson-number">
+            الاستماع 07
+          </div>
+
+        </div>
+
+        <h3>
+          Who's Who in the Office?
+        </h3>
+
+        <div class="topic">
+          الأشخاص والعمل
+        </div>
+
+        <p>
+          تعرّف على أشخاص داخل بيئة العمل واستمع إلى
+          المضارع البسيط ووصف الأدوار والمسؤوليات.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/whos-who-office"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            British Council · A2
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+
+      <article class="lesson-card"
+        data-search="morning briefing time instructions schedule present simple">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">📋</div>
+
+          <div class="lesson-number">
+            الاستماع 08
+          </div>
+
+        </div>
+
+        <h3>
+          A Morning Briefing
+        </h3>
+
+        <div class="topic">
+          اجتماع صباحي ومعلومات متتابعة
+        </div>
+
+        <p>
+          مقطع أكثر كثافة قليلًا لإنهاء المرحلة الأولى
+          وسماع اللغة في موقف عملي.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/morning-briefing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            British Council · A2
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STAGE 2
+  ========================== -->
+
+  <section class="stage">
+
+    <div class="stage-header">
+
+      <div class="stage-number">
+        المرحلة الثانية
+      </div>
+
+      <h2>
+        الكميات والأدوات وحروف الجر
+      </h2>
+
+      <p>
+        Countable · Uncountable · Quantities · Articles · In / On / At
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <!-- 09 -->
+
+      <article class="lesson-card"
+        data-search="determiners plural nouns a an the some articles">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🛒</div>
+          <div class="lesson-number">الاستماع 09</div>
+        </div>
+
+        <h3>Determiners and Plural Nouns</h3>
+
+        <div class="topic">
+          a / an / the / some
+        </div>
+
+        <p>
+          استماع يركز على الأدوات والأسماء المعدودة
+          والجمع داخل حوارات قصيرة.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-22-Determiner-Nouns.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 10 -->
+
+      <article class="lesson-card"
+        data-search="much many how much how many countable uncountable a lot">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🥛</div>
+          <div class="lesson-number">الاستماع 10</div>
+        </div>
+
+        <h3>Much / Many</h3>
+
+        <div class="topic">
+          How much / How many
+        </div>
+
+        <p>
+          ممارسة الاستماع إلى أسئلة الكمية مع المعدود
+          وغير المعدود وعبارات الكمية.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-23-Much-Many.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 11 -->
+
+      <article class="lesson-card"
+        data-search="few little enough too much too many quantities food">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🍎</div>
+          <div class="lesson-number">الاستماع 11</div>
+        </div>
+
+        <h3>Too / A Few / A Little / Enough</h3>
+
+        <div class="topic">
+          التعبير عن الكميات
+        </div>
+
+        <p>
+          استمع إلى استخدام a few وa little وtoo
+          وenough داخل مواقف مرتبطة بالطعام والكميات.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://www.elllo.org/book/A2/A2-24-Too-Few-Not-Much.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 12 -->
+
+      <article class="lesson-card"
+        data-search="much a lot not at all quantity adverbs">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">📦</div>
+          <div class="lesson-number">الاستماع 12</div>
+        </div>
+
+        <h3>Much / A Lot / Not at All</h3>
+
+        <div class="topic">
+          كميات داخل الحديث الطبيعي
+        </div>
+
+        <p>
+          مقطع يساعد الطالب على سماع تعبيرات الكمية
+          كما تظهر في الكلام اليومي.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-18-Adverbs-of-Quantity.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 13 -->
+
+      <article class="lesson-card"
+        data-search="can requests shopping ordering some anything else restaurant">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🍽️</div>
+          <div class="lesson-number">الاستماع 13</div>
+        </div>
+
+        <h3>Can / Requests</h3>
+
+        <div class="topic">
+          الطلبات والمواقف اليومية
+        </div>
+
+        <p>
+          حوار عملي يضع بعض أدوات الكمية والطلبات
+          داخل موقف حقيقي بدل دراسة الكلمات منفردة.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-20-Can-Requests.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 14 -->
+
+      <article class="lesson-card"
+        data-search="adverbs time at one starts soon time expressions">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">⏱️</div>
+          <div class="lesson-number">الاستماع 14</div>
+        </div>
+
+        <h3>What Time Is the Meeting?</h3>
+
+        <div class="topic">
+          الوقت وعباراته
+        </div>
+
+        <p>
+          استماع يساعد على التقاط أوقات ومعلومات زمنية
+          داخل حوار طبيعي.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-16-Adverbs-of-Time.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 15 -->
+
+      <article class="lesson-card"
+        data-search="changing meeting time tuesday 11 1 pm 9 oclock in on at">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">📅</div>
+          <div class="lesson-number">الاستماع 15</div>
+        </div>
+
+        <h3>Changing a Meeting Time</h3>
+
+        <div class="topic">
+          الأيام والساعات والمواعيد
+        </div>
+
+        <p>
+          حوار عملي عن تغيير موعد اجتماع مع أوقات وأيام
+          وأسئلة ومعلومات تحتاج إلى التقاطها من الاستماع.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-meeting-time"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">British Council · A2</div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STAGE 3
+  ========================== -->
+
+  <section class="stage">
+
+    <div class="stage-header">
+
+      <div class="stage-number">
+        المرحلة الثالثة
+      </div>
+
+      <h2>
+        الماضي
+      </h2>
+
+      <p>
+        Past Simple · Past Continuous · Regular & Irregular Verbs
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <!-- 16 -->
+
+      <article class="lesson-card"
+        data-search="past tense regular ed verbs yesterday weekend">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🕐</div>
+          <div class="lesson-number">الاستماع 16</div>
+        </div>
+
+        <h3>Past Tense — Regular</h3>
+
+        <div class="topic">
+          الأفعال المنتظمة في الماضي
+        </div>
+
+        <p>
+          استماع يركز على الماضي مع الأفعال المنتظمة
+          والأسئلة والإجابات.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-06-Past-Tense-Ed.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 17 -->
+
+      <article class="lesson-card"
+        data-search="past tense irregular verbs went saw ate bought met">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🔤</div>
+          <div class="lesson-number">الاستماع 17</div>
+        </div>
+
+        <h3>Past Tense — Irregular</h3>
+
+        <div class="topic">
+          الأفعال غير المنتظمة
+        </div>
+
+        <p>
+          ممارسة الاستماع إلى الأفعال غير المنتظمة
+          داخل حوارات وأسئلة بالماضي.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/book/A2/A2-07-Past-Tense-Irregular.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 18 -->
+
+      <article class="lesson-card"
+        data-search="what did you do last night past simple irregular verbs">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🌙</div>
+          <div class="lesson-number">الاستماع 18</div>
+        </div>
+
+        <h3>What Did You Do Last Night?</h3>
+
+        <div class="topic">
+          أحداث الليلة الماضية
+        </div>
+
+        <p>
+          قصة قصيرة في الماضي تساعد الطالب على متابعة
+          مجموعة من الأفعال داخل حديث متصل.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://www.elllo.org/video/A2BEG/A2-023-JILL-LAST-NIGHT.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 19 -->
+
+      <article class="lesson-card"
+        data-search="how was your day past simple woke read took drove went">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">☀️</div>
+          <div class="lesson-number">الاستماع 19</div>
+        </div>
+
+        <h3>How Was Your Day?</h3>
+
+        <div class="topic">
+          الحديث عن يوم سابق
+        </div>
+
+        <p>
+          استماع متصل عن يوم كامل مع أفعال ماضية
+          وأسئلة تساعد على فهم التفاصيل.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://www.elllo.org/video/A2BEG/A2-014-TODD-PAST-TENSE.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 20 -->
+
+      <article class="lesson-card"
+        data-search="weekend australia past tense trip holiday">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🏖️</div>
+          <div class="lesson-number">الاستماع 20</div>
+        </div>
+
+        <h3>What Did You Do Over the Weekend?</h3>
+
+        <div class="topic">
+          عطلة نهاية الأسبوع
+        </div>
+
+        <p>
+          حديث أطول قليلًا عن عطلة نهاية الأسبوع
+          يجمع أفعالًا منتظمة وغير منتظمة.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/video/A2BEG/A2-049-JILL-AUSTRALIA-WEEKEND.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 21 -->
+
+      <article class="lesson-card"
+        data-search="four conversations past continuous was were interview picture">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">💬</div>
+          <div class="lesson-number">الاستماع 21</div>
+        </div>
+
+        <h3>Four Conversations</h3>
+
+        <div class="topic">
+          مواقف وحوارات متنوعة
+        </div>
+
+        <p>
+          مجموعة حوارات تساعد على الانتقال من الماضي
+          البسيط إلى وصف ما كان يحدث.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/four-conversations"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">British Council · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 22 -->
+
+      <article class="lesson-card"
+        data-search="changing plans forgot said past simple plans">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🔄</div>
+          <div class="lesson-number">الاستماع 22</div>
+        </div>
+
+        <h3>Changing Plans</h3>
+
+        <div class="topic">
+          تغيير الخطط
+        </div>
+
+        <p>
+          حوار طبيعي يحتوي على أحداث سابقة وخطط
+          ومعلومات تحتاج إلى فهمها من السياق.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-plans"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">British Council · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 23 -->
+
+      <article class="lesson-card"
+        data-search="missing class past simple questions reason">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🏫</div>
+          <div class="lesson-number">الاستماع 23</div>
+        </div>
+
+        <h3>Missing a Class</h3>
+
+        <div class="topic">
+          موقف سابق وأسئلة
+        </div>
+
+        <p>
+          موقف يومي يساعد على فهم سبب حدث سابق
+          والتقاط التفاصيل من الحوار.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/missing-class"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">British Council · A2</div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STAGE 4
+  ========================== -->
+
+  <section class="stage">
+
+    <div class="stage-header">
+
+      <div class="stage-number">
+        المرحلة الرابعة
+      </div>
+
+      <h2>
+        الوقت والتواريخ والمواقف اليومية
+      </h2>
+
+      <p>
+        Time · Days · Months · Dates · Numbers · Everyday Listening
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <!-- 24 -->
+
+      <article class="lesson-card"
+        data-search="what time wake up every day time frequency routine">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">⏰</div>
+          <div class="lesson-number">الاستماع 24</div>
+        </div>
+
+        <h3>What Time Do You Wake Up Every Day?</h3>
+
+        <div class="topic">
+          الوقت والروتين
+        </div>
+
+        <p>
+          استماع عن أوقات الاستيقاظ والروتين مع
+          استخدام المضارع البسيط وكلمات التكرار.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/video/A2BEG/A2-030-LESYA-WHAT-TIME-WAKE-UP-EVERY-DAY.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 25 -->
+
+      <article class="lesson-card"
+        data-search="months january february march december monthly events">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🗓️</div>
+          <div class="lesson-number">الاستماع 25</div>
+        </div>
+
+        <h3>Monthly Events</h3>
+
+        <div class="topic">
+          الأشهر والأحداث
+        </div>
+
+        <p>
+          حديث يمر على أشهر السنة داخل سياق حقيقي
+          بدل حفظ أسماء الأشهر منفردة.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://elllo.org/video/A2BEG/A2-043-ELISE-MONTHS.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 26 -->
+
+      <article class="lesson-card"
+        data-search="schedule today time day activities">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">📆</div>
+          <div class="lesson-number">الاستماع 26</div>
+        </div>
+
+        <h3>What's on Your Schedule Today?</h3>
+
+        <div class="topic">
+          جدول اليوم والمواعيد
+        </div>
+
+        <p>
+          استماع يجمع الجدول والوقت واليوم والمواعيد
+          داخل حديث طبيعي.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://www.elllo.org/video/A2BEG/A2-050-NERRY-WHAT-IS-ON-YOUR-SCHEDULE-TODAY.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">ELLLO · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 27 -->
+
+      <article class="lesson-card"
+        data-search="facts figures numbers years dates distances">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🔢</div>
+          <div class="lesson-number">الاستماع 27</div>
+        </div>
+
+        <h3>Facts and Figures</h3>
+
+        <div class="topic">
+          الأرقام والسنوات والبيانات
+        </div>
+
+        <p>
+          استماع يرفع مستوى التركيز على الأرقام
+          والسنوات والمسافات والمدد الزمنية.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/facts-figures"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">British Council · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 28 -->
+
+      <article class="lesson-card"
+        data-search="transport announcements platform gate time numbers train">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">🚆</div>
+          <div class="lesson-number">الاستماع 28</div>
+        </div>
+
+        <h3>Transport Announcements</h3>
+
+        <div class="topic">
+          الإعلانات والأوقات والأرقام
+        </div>
+
+        <p>
+          استماع عملي يحتاج إلى التقاط أرقام وأوقات
+          وأماكن ومعلومات متتابعة بسرعة مناسبة لـA2.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/transport-announcements"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">British Council · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 29 -->
+
+      <article class="lesson-card"
+        data-search="finding library directions anything else numbers place">
+
+        <div class="lesson-top">
+          <div class="lesson-icon">📚</div>
+          <div class="lesson-number">الاستماع 29</div>
+        </div>
+
+        <h3>Finding the Library</h3>
+
+        <div class="topic">
+          المكان والأسئلة والمعلومات
+        </div>
+
+        <p>
+          موقف يومي يجمع الأسئلة والمعلومات المكانية
+          وبعض العبارات مثل anything else.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/finding-library"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">British Council · A2</div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 30 -->
+
+      <article class="lesson-card"
+        data-search="invitation party directions time friday few numbers transport final challenge">
+
+        <div class="lesson-top">
+
+          <div class="lesson-icon">
+            🏆
+          </div>
+
+          <div class="lesson-number">
+            الاستماع 30
+          </div>
+
+        </div>
+
+        <h3>
+          An Invitation to a Party
+        </h3>
+
+        <div class="topic">
+          🔥 تحدي نهاية المستوى
+        </div>
+
+        <p>
+          رسائل صوتية تتطلب فهم الوقت واليوم والكميات
+          والأرقام والمكان والاتجاهات ومعلومات متعددة
+          داخل موقف واحد.
+        </p>
+
+        <div class="lesson-bottom">
+
+          <a
+            class="listen-btn"
+            href="https://learnenglish.britishcouncil.org/free-resources/listening/a2/invitation-party?page=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🎧 ابدأ الاستماع
+          </a>
+
+          <div class="source">
+            British Council · A2
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FINAL CARD
+  ========================== -->
+
+  <section class="final-card">
+
+    <div class="icon">
+      🎧
+    </div>
+
+    <h2>
+      وصلت إلى نهاية مسار الاستماع
+    </h2>
+
+    <p>
+      الآن أنت لا تتدرب على قاعدة واحدة فقط،
+      بل تختبر قدرتك على فهم الإنجليزية عندما تجتمع
+      القواعد والمفردات والمعلومات داخل مواقف حقيقية.
+    </p>
+
+  </section>
+
+
+  <div class="empty" id="emptyState">
+    لم نجد مقطعًا مطابقًا لبحثك.
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SEARCH
+========================= */
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const cards =
+  Array.from(
+    document.querySelectorAll(".lesson-card")
+  );
+
+const stages =
+  Array.from(
+    document.querySelectorAll(".stage")
+  );
+
+const emptyState =
+  document.getElementById("emptyState");
+
+
+searchInput.addEventListener("input", function(){
+
+  const value =
+    this.value
+      .toLowerCase()
+      .trim();
+
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+
+    const text =
+      (
+        card.innerText +
+        " " +
+        card.dataset.search
+      )
+      .toLowerCase();
+
+    const match =
+      !value ||
+      text.includes(value);
+
+    card.classList.toggle(
+      "hidden",
+      !match
+    );
+
+    if(match){
+      visibleCount++;
+    }
+
+  });
+
+
+  stages.forEach(stage => {
+
+    const visibleCards =
+      stage.querySelectorAll(
+        ".lesson-card:not(.hidden)"
+      );
+
+    stage.classList.toggle(
+      "hidden",
+      visibleCards.length === 0
+    );
+
+  });
+
+
+  emptyState.style.display =
+    visibleCount === 0
+      ? "block"
+      : "none";
+
+});
+
+</script>
+
+</body>
+</html>
