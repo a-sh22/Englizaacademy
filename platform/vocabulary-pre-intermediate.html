@@ -216,14 +216,6 @@ button{cursor:pointer}
   box-shadow:var(--shadow-hover);
 }
 
-.card-image{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  display:block;
-  background:linear-gradient(135deg,#EEF1FF,#F8F5FF);
-}
-
 .card-body{
   padding:18px;
 }
@@ -318,18 +310,6 @@ button{cursor:pointer}
   font-size:13px;
 }
 
-.source-credit{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:10px;
-  line-height:1.5;
-}
-
-.source-credit a{
-  color:var(--blue);
-  text-decoration:none;
-}
-
 .empty{
   background:var(--white);
   border:1px dashed #CCD2E5;
@@ -371,15 +351,6 @@ button{cursor:pointer}
 .lesson-head p{
   margin:0;
   opacity:.9;
-}
-
-.lesson-image{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:24px;
-  margin:0 0 10px;
-  background:linear-gradient(135deg,#EEF1FF,#F8F5FF);
 }
 
 .lesson-actions{
@@ -446,16 +417,8 @@ button{cursor:pointer}
     grid-template-columns:1fr;
   }
 
-  .card-image{
-    height:190px;
-  }
-
   .hero{
     padding:28px 21px;
-  }
-
-  .lesson-image{
-    height:210px;
   }
 
   .lesson-head h2{
@@ -528,11 +491,6 @@ placeholder="ابحث عن كلمة أو معنى أو جملة…"
 
 <section id="lessonView" class="lesson"></section>
 
-<div class="footer-note">
-الصور التعليمية يتم استدعاؤها عند الحاجة من Openverse.
-يظهر مصدر الصورة ورابطها عند توفر البيانات.
-</div>
-
 </main>
 
 
@@ -540,7 +498,7 @@ placeholder="ابحث عن كلمة أو معنى أو جملة…"
 
 /* =========================================================
    DATA
-   كل مثال أصبح يحتوي على:
+   كل مثال يحتوي على:
    text = الجملة الإنجليزية
    ar   = معناها بالعربي
 ========================================================= */
@@ -3857,180 +3815,6 @@ examples:[
 
 
 /* =========================================================
-   OPENVERSE IMAGE SYSTEM
-========================================================= */
-
-const imageCache=new Map();
-
-async function getOpenverseImage(query){
-
-  if(imageCache.has(query)){
-    return imageCache.get(query);
-  }
-
-  try{
-
-    const url=
-      "https://api.openverse.org/v1/images/" +
-      "?q=" +
-      encodeURIComponent(query) +
-      "&page_size=5";
-
-    const response=
-      await fetch(url);
-
-    if(!response.ok){
-      throw new Error("Image request failed");
-    }
-
-    const data=
-      await response.json();
-
-    const results=
-      (data.results||[])
-      .filter(item =>
-        item.thumbnail ||
-        item.url
-      );
-
-    if(!results.length){
-      throw new Error("No image found");
-    }
-
-    const selected=results[0];
-
-    const result={
-
-      src:
-        selected.thumbnail ||
-        selected.url,
-
-      page:
-        selected.foreign_landing_url ||
-        selected.url,
-
-      creator:
-        selected.creator ||
-        "",
-
-      license:
-        selected.license ||
-        "",
-
-      title:
-        selected.title ||
-        "Openverse image"
-
-    };
-
-    imageCache.set(query,result);
-
-    return result;
-
-  }catch(error){
-
-    imageCache.set(query,null);
-
-    return null;
-
-  }
-
-}
-
-
-/* =========================================================
-   IMAGE LOADING
-========================================================= */
-
-function imgFallback(image){
-  image.style.display="none";
-}
-
-function applyImages(root=document){
-
-  root
-    .querySelectorAll("img[data-query]")
-    .forEach(
-      async image=>{
-
-        if(image.dataset.loaded){
-          return;
-        }
-
-        image.dataset.loaded="1";
-
-        const query=
-          image.dataset.query;
-
-        const info=
-          await getOpenverseImage(query);
-
-        if(info){
-
-          image.src=info.src;
-
-          image.alt=
-            image.dataset.alt ||
-            query;
-
-          const credit=
-            image
-              .closest(".card")
-              ?.querySelector(
-                ".source-credit"
-              )
-            ||
-            image
-              .closest(".lesson")
-              ?.querySelector(
-                ".source-credit"
-              );
-
-          if(credit){
-
-            credit.innerHTML=
-              `
-              الصورة من
-              <a
-                href="${escapeHtml(info.page)}"
-                target="_blank"
-                rel="noopener"
-              >
-                Openverse
-              </a>
-              ${
-                info.creator
-                ?
-                " · "+
-                escapeHtml(info.creator)
-                :
-                ""
-              }
-              ${
-                info.license
-                ?
-                " · "+
-                escapeHtml(info.license)
-                :
-                ""
-              }
-              `;
-
-          }
-
-        }else{
-
-          imgFallback(image);
-
-        }
-
-      }
-    );
-
-}
-
-
-/* =========================================================
    ESCAPE HTML
 ========================================================= */
 
@@ -4115,24 +3899,9 @@ const searchInput=
 
 function cardHtml(unit,item){
 
-  const query=
-    item.word
-      .split(" ")
-      .slice(0,3)
-      .join(" ");
-
   return `
 
   <article class="card">
-
-    <img
-      class="card-image"
-      loading="lazy"
-      data-query="${escapeHtml(query)}"
-      data-alt="${escapeHtml(item.word)}"
-      onerror="imgFallback(this)"
-      src=""
-    >
 
     <div class="card-body">
 
@@ -4216,9 +3985,6 @@ function cardHtml(unit,item){
         :
         ""
       }
-
-
-      <div class="source-credit"></div>
 
     </div>
 
@@ -4365,11 +4131,6 @@ function renderList(filter=""){
 
     </div>
     `;
-
-
-  applyImages(
-    listView
-  );
 
 }
 
@@ -4541,26 +4302,6 @@ function openUnit(id){
     </div>
 
 
-    <img
-
-      class="lesson-image"
-
-      loading="lazy"
-
-      data-query="${escapeHtml(unit.query)}"
-
-      data-alt="${escapeHtml(unit.ar)}"
-
-      onerror="imgFallback(this)"
-
-      src=""
-
-    >
-
-
-    <div class="source-credit"></div>
-
-
     <div class="lesson-actions">
 
       <button
@@ -4615,11 +4356,6 @@ function openUnit(id){
     </div>
 
   `;
-
-
-  applyImages(
-    lessonView
-  );
 
 
   window.scrollTo({
