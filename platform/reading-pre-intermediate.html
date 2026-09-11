@@ -25,8 +25,6 @@
   --shadow:0 12px 35px rgba(36,48,94,.08);
   --shadow-hover:0 18px 45px rgba(36,48,94,.13);
   --radius:28px;
-  --radius-md:22px;
-  --radius-sm:17px;
 }
 
 *{
@@ -78,7 +76,7 @@ button{
   border:1px solid rgba(255,255,255,.28);
   background:rgba(255,255,255,.13);
   color:white;
-  padding:10px 16px;
+  padding:10px 17px;
   border-radius:14px;
   text-decoration:none;
   font-size:14px;
@@ -87,7 +85,7 @@ button{
 }
 
 .back-btn:hover{
-  background:rgba(255,255,255,.2);
+  background:rgba(255,255,255,.22);
 }
 
 .hero-label{
@@ -137,7 +135,7 @@ button{
 }
 
 /* =========================
-   PATH CARD
+   PATH
 ========================= */
 
 .path-card{
@@ -198,7 +196,6 @@ button{
 ========================= */
 
 .search-wrap{
-  position:relative;
   margin-bottom:34px;
 }
 
@@ -245,7 +242,6 @@ button{
   font-size:12px;
   font-weight:800;
   letter-spacing:1px;
-  margin-bottom:2px;
 }
 
 .stage-header h2{
@@ -260,7 +256,7 @@ button{
 }
 
 /* =========================
-   READING CARDS
+   CARDS
 ========================= */
 
 .readings-grid{
@@ -277,8 +273,6 @@ button{
   box-shadow:var(--shadow);
   transition:.22s;
   cursor:pointer;
-  position:relative;
-  overflow:hidden;
 }
 
 .reading-card:hover{
@@ -329,15 +323,10 @@ button{
   padding:11px 15px;
   border-radius:14px;
   font-weight:700;
-  transition:.2s;
-}
-
-.start-btn:hover{
-  background:var(--blue-dark);
 }
 
 /* =========================
-   LESSON VIEW
+   LESSON
 ========================= */
 
 .lesson-view{
@@ -358,7 +347,7 @@ button{
   box-shadow:var(--shadow);
 }
 
-.lesson-top .lesson-number{
+.lesson-number{
   font-size:12px;
   opacity:.78;
   font-weight:800;
@@ -437,7 +426,7 @@ button{
 }
 
 /* =========================
-   READING TEXT
+   TEXT
 ========================= */
 
 .text-card{
@@ -471,7 +460,7 @@ button{
 }
 
 /* =========================
-   HELP WORDS
+   HELP
 ========================= */
 
 .help-card{
@@ -525,7 +514,8 @@ button{
   transition:.2s;
 }
 
-.speak-btn:hover{
+.speak-btn:hover,
+.speak-btn.speaking{
   background:var(--purple);
   color:white;
 }
@@ -620,7 +610,6 @@ button{
   padding:11px 13px;
   border-radius:13px;
   font-size:13px;
-  line-height:1.7;
 }
 
 .answer-feedback.correct{
@@ -654,16 +643,7 @@ button{
   padding:14px 18px;
   border-radius:16px;
   font-weight:800;
-  transition:.2s;
 }
-
-.check-btn:hover{
-  background:var(--blue-dark);
-}
-
-/* =========================
-   SCORE
-========================= */
 
 .score-card{
   display:none;
@@ -703,7 +683,7 @@ button{
 }
 
 /* =========================
-   SOURCE
+   NAVIGATION
 ========================= */
 
 .source-note{
@@ -716,10 +696,6 @@ button{
   font-size:12px;
   text-align:center;
 }
-
-/* =========================
-   NAVIGATION
-========================= */
 
 .lesson-navigation{
   display:flex;
@@ -750,10 +726,6 @@ button{
   cursor:not-allowed;
 }
 
-/* =========================
-   EMPTY
-========================= */
-
 .empty{
   display:none;
   text-align:center;
@@ -765,10 +737,6 @@ button{
   box-shadow:var(--shadow);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer{
   text-align:center;
   color:#9AA1B3;
@@ -776,18 +744,10 @@ footer{
   padding:15px 0 35px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media(max-width:700px){
 
   .container{
     width:min(100% - 22px,1050px);
-  }
-
-  .hero{
-    padding-top:22px;
   }
 
   .readings-grid{
@@ -830,15 +790,16 @@ footer{
 
 <body>
 
-<!-- =========================
-     HERO
-========================= -->
-
 <header class="hero">
 
   <div class="container">
 
-    <a class="back-btn" href="skills-practice.html">
+    <!-- الرجوع المباشر إلى صفحة المهارات -->
+    <a
+      class="back-btn"
+      href="skills-practice.html"
+      aria-label="العودة إلى صفحة المهارات"
+    >
       ← العودة إلى المهارات
     </a>
 
@@ -861,10 +822,6 @@ footer{
 
 <main class="container">
 
-  <!-- =========================
-       NOTICE
-  ========================= -->
-
   <div class="notice">
 
     <div class="notice-title">
@@ -878,10 +835,6 @@ footer{
 
   </div>
 
-
-  <!-- =========================
-       PATH
-  ========================= -->
 
   <div class="path-card">
 
@@ -912,10 +865,6 @@ footer{
   </div>
 
 
-  <!-- =========================
-       SEARCH
-  ========================= -->
-
   <div class="search-wrap">
 
     <input
@@ -929,21 +878,14 @@ footer{
   </div>
 
 
-  <!-- =========================
-       LESSON VIEW
-  ========================= -->
-
   <section
     id="lessonView"
     class="lesson-view"
   ></section>
 
 
-  <!-- =========================
-       LIST
-  ========================= -->
-
   <section id="readingList"></section>
+
 
   <div
     id="emptyState"
@@ -963,1290 +905,759 @@ footer{
 <script>
 
 /* =========================================================
-   READING DATA
+   DATA
 ========================================================= */
 
 const readings = [
 
-/* =========================================================
-   STAGE 1
-========================================================= */
-
 {
-  id:1,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"A Busy Morning",
-  topic:"روتين الصباح والعمل",
-  description:"A short story about a morning that does not go exactly as planned.",
-  before:"What can go wrong on a normal morning before work?",
-  image:"reading-01.webp",
-
-  text:`
-Daniel usually has a quiet morning before work. He gets up early, has breakfast, and leaves home at eight o’clock. But last Tuesday was different. He woke up late because his alarm did not ring. He quickly got dressed and went to the kitchen, but there was no bread or milk. Daniel checked the time and realized that he had only twenty minutes before his bus arrived. He took an apple and left the house. When he reached the bus stop, he saw the bus leaving. Luckily, another bus arrived ten minutes later. Daniel got on and called his manager to explain that he might be late. His manager was understanding, so Daniel felt less worried. He arrived at work twelve minutes late, but his busy morning was finally over.
-  `,
-
-  help:[
-    ["wake up late","يستيقظ متأخرًا","عكس wake up early."],
-    ["ring","يرنّ","تُستخدم هنا مع المنبّه."],
-    ["reach","يصل إلى","تأتي غالبًا قبل المكان."],
-    ["might be late","قد يتأخر","تعبير للاحتمال."]
-  ],
-
-  questions:[
-    {
-      text:"Why did Daniel wake up late?",
-      answers:["his alarm did not ring","because his alarm did not ring"]
-    },
-    {
-      text:"What did Daniel take from the kitchen?",
-      answers:["an apple","apple"]
-    },
-    {
-      text:"Why did Daniel call his manager?",
-      answers:[
-        "to explain that he might be late",
-        "because he might be late",
-        "to say he might be late",
-        "he might be late"
-      ]
-    },
-    {
-      text:"How did Daniel feel after speaking to his manager?",
-      answers:["less worried","he felt less worried"]
-    }
-  ]
+id:1,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"A Busy Morning",
+topic:"روتين الصباح والعمل",
+description:"A short story about a morning that does not go exactly as planned.",
+before:"What can go wrong on a normal morning before work?",
+image:"pi-reading-01.webp",
+text:`Daniel usually has a quiet morning before work. He gets up early, has breakfast, and leaves home at eight o’clock. But last Tuesday was different. He woke up late because his alarm did not ring. He quickly got dressed and went to the kitchen, but there was no bread or milk. Daniel checked the time and realized that he had only twenty minutes before his bus arrived. He took an apple and left the house. When he reached the bus stop, he saw the bus leaving. Luckily, another bus arrived ten minutes later. Daniel got on and called his manager to explain that he might be late. His manager was understanding, so Daniel felt less worried. He arrived at work twelve minutes late, but his busy morning was finally over.`,
+help:[
+["wake up late","يستيقظ متأخرًا","عكس wake up early."],
+["ring","يرنّ","تُستخدم هنا مع المنبّه."],
+["reach","يصل إلى","تأتي غالبًا قبل المكان."],
+["might be late","قد يتأخر","تعبير للاحتمال."]
+],
+questions:[
+{text:"Why did Daniel wake up late?",answers:["his alarm did not ring","because his alarm did not ring"]},
+{text:"What did Daniel take from the kitchen?",answers:["an apple","apple"]},
+{text:"Why did Daniel call his manager?",answers:["to explain that he might be late","because he might be late","to say he might be late","he might be late"]},
+{text:"How did Daniel feel after speaking to his manager?",answers:["less worried","he felt less worried"]}
+]
 },
 
 {
-  id:2,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"The New Class",
-  topic:"الدراسة والتعارف",
-  description:"A student starts a new course and meets someone who helps him feel comfortable.",
-  before:"How do you usually feel when you enter a new class?",
-  image:"reading-02.webp",
-
-  text:`
-Omar started a new English course last week. On the first day, he arrived early because he did not know the building very well. There were several students outside the classroom, but he did not know anyone. He looked at his schedule and checked the room number twice. A student named Adam came over and asked if he was in the same class. Omar smiled and said yes. They walked into the classroom together and sat near the window. The teacher welcomed everyone and asked the students to introduce themselves. Omar was nervous at first, but the class was friendly and relaxed. During the break, Adam showed him the library and the student café. By the end of the lesson, Omar felt much more comfortable. He was happy that his first day had gone better than he expected.
-  `,
-
-  help:[
-    ["come over","يأتي باتجاه شخص","تُستخدم عندما يقترب شخص من شخص آخر."],
-    ["introduce yourself","تعرّف بنفسك","عبارة شائعة عند بداية التعارف."],
-    ["at first","في البداية","توضح الحالة في أول الأمر."],
-    ["better than I expected","أفضل مما توقعت","تُستخدم عندما تكون النتيجة جيدة بشكل غير متوقع."]
-  ],
-
-  questions:[
-    {
-      text:"Why did Omar arrive early?",
-      answers:["he did not know the building very well","because he did not know the building very well"]
-    },
-    {
-      text:"Who did Omar meet outside the classroom?",
-      answers:["Adam","a student named Adam"]
-    },
-    {
-      text:"What did Adam show Omar during the break?",
-      answers:["the library and the student café","the library and student cafe","the library and the café"]
-    },
-    {
-      text:"Why was Omar happy at the end of the lesson?",
-      answers:["his first day had gone better than he expected","because his first day went better than expected"]
-    }
-  ]
+id:2,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"The New Class",
+topic:"الدراسة والتعارف",
+description:"A student starts a new course and meets someone who helps him feel comfortable.",
+before:"How do you usually feel when you enter a new class?",
+image:"pi-reading-02.webp",
+text:`Omar started a new English course last week. On the first day, he arrived early because he did not know the building very well. There were several students outside the classroom, but he did not know anyone. He looked at his schedule and checked the room number twice. A student named Adam came over and asked if he was in the same class. Omar smiled and said yes. They walked into the classroom together and sat near the window. The teacher welcomed everyone and asked the students to introduce themselves. Omar was nervous at first, but the class was friendly and relaxed. During the break, Adam showed him the library and the student café. By the end of the lesson, Omar felt much more comfortable. He was happy that his first day had gone better than he expected.`,
+help:[
+["come over","يأتي باتجاه شخص","تُستخدم عندما يقترب شخص من شخص آخر."],
+["introduce yourself","تعرّف بنفسك","عبارة شائعة عند بداية التعارف."],
+["at first","في البداية","توضح الحالة في أول الأمر."],
+["better than I expected","أفضل مما توقعت","تُستخدم عندما تكون النتيجة جيدة بشكل غير متوقع."]
+],
+questions:[
+{text:"Why did Omar arrive early?",answers:["he did not know the building very well","because he did not know the building very well"]},
+{text:"Who did Omar meet outside the classroom?",answers:["Adam","a student named Adam"]},
+{text:"What did Adam show Omar during the break?",answers:["the library and the student café","the library and student cafe","the library and the café"]},
+{text:"Why was Omar happy at the end of the lesson?",answers:["his first day had gone better than he expected","because his first day went better than expected"]}
+]
 },
 
 {
-  id:3,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"A Small Problem",
-  topic:"مشكلة يومية",
-  description:"A simple problem with a phone turns into a useful lesson.",
-  before:"What would you do if your phone stopped working suddenly?",
-  image:"reading-03.webp",
-
-  text:`
-Sara was getting ready to leave for college when she noticed a problem with her phone. The screen was black, and the phone did not respond when she pressed the button. She tried to charge it, but nothing happened. Sara needed her phone because her class schedule was on it. She looked around the room and remembered that she had written the important information in her notebook the night before. She checked the notebook and found the room number. Then she put the phone in her bag and left. After class, she took the phone to a small shop near the college. The employee checked it and said that the battery was completely empty. Sara was relieved because the problem was simple. She decided to keep important information in her notebook too.
-  `,
-
-  help:[
-    ["get ready","يستعد","تعبير شائع قبل الخروج أو القيام بشيء."],
-    ["respond","يستجيب","هنا بمعنى يستجيب عند الضغط على الزر."],
-    ["look around","ينظر حوله","تُستخدم عند النظر إلى المكان."],
-    ["relieved","شعر بالارتياح","تُستخدم عندما ينتهي القلق بسبب مشكلة."]
-  ],
-
-  questions:[
-    {
-      text:"What was wrong with Sara’s phone?",
-      answers:["the screen was black","the phone did not respond","the screen was black and the phone did not respond"]
-    },
-    {
-      text:"Why did Sara need her phone?",
-      answers:["her class schedule was on it","because her class schedule was on it"]
-    },
-    {
-      text:"How did she find the room number?",
-      answers:["in her notebook","she checked her notebook"]
-    },
-    {
-      text:"Why was Sara relieved?",
-      answers:["the problem was simple","because the problem was simple"]
-    }
-  ]
+id:3,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"A Small Problem",
+topic:"مشكلة يومية",
+description:"A simple problem with a phone turns into a useful lesson.",
+before:"What would you do if your phone stopped working suddenly?",
+image:"pi-reading-03.webp",
+text:`Sara was getting ready to leave for college when she noticed a problem with her phone. The screen was black, and the phone did not respond when she pressed the button. She tried to charge it, but nothing happened. Sara needed her phone because her class schedule was on it. She looked around the room and remembered that she had written the important information in her notebook the night before. She checked the notebook and found the room number. Then she put the phone in her bag and left. After class, she took the phone to a small shop near the college. The employee checked it and said that the battery was completely empty. Sara was relieved because the problem was simple. She decided to keep important information in her notebook too.`,
+help:[
+["get ready","يستعد","تعبير شائع قبل الخروج أو القيام بشيء."],
+["respond","يستجيب","هنا بمعنى يستجيب عند الضغط على الزر."],
+["look around","ينظر حوله","تُستخدم عند النظر إلى المكان."],
+["relieved","شعر بالارتياح","تُستخدم عندما ينتهي القلق بسبب مشكلة."]
+],
+questions:[
+{text:"What was wrong with Sara’s phone?",answers:["the screen was black","the phone did not respond","the screen was black and the phone did not respond"]},
+{text:"Why did Sara need her phone?",answers:["her class schedule was on it","because her class schedule was on it"]},
+{text:"How did she find the room number?",answers:["in her notebook","she checked her notebook"]},
+{text:"Why was Sara relieved?",answers:["the problem was simple","because the problem was simple"]}
+]
 },
 
 {
-  id:4,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"The Weekend Plan",
-  topic:"الخطط والوقت",
-  description:"A weekend plan changes when the weather becomes a problem.",
-  before:"What can make you change a weekend plan?",
-  image:"reading-04.webp",
-
-  text:`
-Faisal and his friends had a plan for Saturday. They wanted to spend the morning at the beach and have lunch at a restaurant near the water. Everyone agreed to meet at nine o’clock. On Friday evening, however, the weather forecast said that heavy rain was possible. Faisal sent a message to the group and suggested another plan. Instead of going to the beach, they could meet at a shopping center and watch a movie. At first, some of his friends wanted to keep the original plan, but the weather looked worse on Saturday morning. In the end, everyone agreed to change the plan. They met at the shopping center, had lunch together, and watched a comedy. The beach trip did not happen, but everyone still had a good time.
-  `,
-
-  help:[
-    ["weather forecast","توقعات الطقس","المعلومات التي تخبرك بما قد يحدث في الطقس."],
-    ["instead of","بدلًا من","تُستخدم عند اختيار شيء مكان شيء آخر."],
-    ["original plan","الخطة الأصلية","الخطة الأولى قبل التغيير."],
-    ["have a good time","يقضي وقتًا ممتعًا","تعبير شائع جدًا."]
-  ],
-
-  questions:[
-    {
-      text:"What was the original plan for Saturday?",
-      answers:["to go to the beach and have lunch at a restaurant","go to the beach and have lunch","spend the morning at the beach and have lunch at a restaurant"]
-    },
-    {
-      text:"Why did Faisal suggest another plan?",
-      answers:["heavy rain was possible","because heavy rain was possible","the weather forecast said heavy rain was possible"]
-    },
-    {
-      text:"Where did the friends finally meet?",
-      answers:["at a shopping center","the shopping center"]
-    },
-    {
-      text:"Did they enjoy the new plan?",
-      answers:["yes","yes they did","yes, they did"]
-    }
-  ]
+id:4,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"The Weekend Plan",
+topic:"الخطط والوقت",
+description:"A weekend plan changes when the weather becomes a problem.",
+before:"What can make you change a weekend plan?",
+image:"pi-reading-04.webp",
+text:`Faisal and his friends had a plan for Saturday. They wanted to spend the morning at the beach and have lunch at a restaurant near the water. Everyone agreed to meet at nine o’clock. On Friday evening, however, the weather forecast said that heavy rain was possible. Faisal sent a message to the group and suggested another plan. Instead of going to the beach, they could meet at a shopping center and watch a movie. At first, some of his friends wanted to keep the original plan, but the weather looked worse on Saturday morning. In the end, everyone agreed to change the plan. They met at the shopping center, had lunch together, and watched a comedy. The beach trip did not happen, but everyone still had a good time.`,
+help:[
+["weather forecast","توقعات الطقس","المعلومات التي تخبرك بما قد يحدث في الطقس."],
+["instead of","بدلًا من","تُستخدم عند اختيار شيء مكان شيء آخر."],
+["original plan","الخطة الأصلية","الخطة الأولى قبل التغيير."],
+["have a good time","يقضي وقتًا ممتعًا","تعبير شائع جدًا."]
+],
+questions:[
+{text:"What was the original plan for Saturday?",answers:["to go to the beach and have lunch at a restaurant","go to the beach and have lunch","spend the morning at the beach and have lunch at a restaurant"]},
+{text:"Why did Faisal suggest another plan?",answers:["heavy rain was possible","because heavy rain was possible","the weather forecast said heavy rain was possible"]},
+{text:"Where did the friends finally meet?",answers:["at a shopping center","the shopping center"]},
+{text:"Did they enjoy the new plan?",answers:["yes","yes they did","yes, they did"]}
+]
 },
 
 {
-  id:5,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"A Visit to the Library",
-  topic:"القراءة والدراسة",
-  description:"A student visits a library for a project and discovers a useful place to study.",
-  before:"What makes a library a good place to study?",
-  image:"reading-05.webp",
-
-  text:`
-Lina had an important project for her English course, but her apartment was noisy that afternoon. Her brother was watching a football match, and several people were talking in the living room. Lina decided to go to the public library near her home. She had not visited it for several months. When she arrived, she found a quiet table near a large window. She opened her notebook and started working on her project. After an hour, she needed information about travel, so she asked the librarian for help. The librarian showed her a section with books about different countries. Lina found exactly what she needed. She stayed at the library for two more hours and finished most of her project. Before leaving, she decided to come back the following week.
-  `,
-
-  help:[
-    ["public library","المكتبة العامة","مكتبة مفتوحة للناس."],
-    ["section","قسم","جزء محدد من مكان أو كتاب."],
-    ["exactly what I needed","بالضبط ما كنت أحتاجه","تعبير طبيعي للتعبير عن العثور على الشيء المناسب."],
-    ["following week","الأسبوع التالي","الأسبوع الذي يأتي بعد ذلك."]
-  ],
-
-  questions:[
-    {
-      text:"Why did Lina leave her apartment?",
-      answers:["it was noisy","because her apartment was noisy"]
-    },
-    {
-      text:"Where did she sit in the library?",
-      answers:["near a large window","at a quiet table near a large window","a quiet table near a large window"]
-    },
-    {
-      text:"Who helped her find information about travel?",
-      answers:["the librarian"]
-    },
-    {
-      text:"Why did Lina decide to return to the library?",
-      answers:["she found it useful for studying","because it was a good place to study","she liked studying there"]
-    }
-  ]
+id:5,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"A Visit to the Library",
+topic:"القراءة والدراسة",
+description:"A student visits a library for a project and discovers a useful place to study.",
+before:"What makes a library a good place to study?",
+image:"pi-reading-05.webp",
+text:`Lina had an important project for her English course, but her apartment was noisy that afternoon. Her brother was watching a football match, and several people were talking in the living room. Lina decided to go to the public library near her home. She had not visited it for several months. When she arrived, she found a quiet table near a large window. She opened her notebook and started working on her project. After an hour, she needed information about travel, so she asked the librarian for help. The librarian showed her a section with books about different countries. Lina found exactly what she needed. She stayed at the library for two more hours and finished most of her project. Before leaving, she decided to come back the following week.`,
+help:[
+["public library","المكتبة العامة","مكتبة مفتوحة للناس."],
+["section","قسم","جزء محدد من مكان أو كتاب."],
+["exactly what I needed","بالضبط ما كنت أحتاجه","تعبير طبيعي للتعبير عن العثور على الشيء المناسب."],
+["following week","الأسبوع التالي","الأسبوع الذي يأتي بعد ذلك."]
+],
+questions:[
+{text:"Why did Lina leave her apartment?",answers:["it was noisy","because her apartment was noisy"]},
+{text:"Where did she sit in the library?",answers:["near a large window","at a quiet table near a large window","a quiet table near a large window"]},
+{text:"Who helped her find information about travel?",answers:["the librarian"]},
+{text:"Why did Lina decide to return to the library?",answers:["she found it useful for studying","because it was a good place to study","she liked studying there"]}
+]
 },
 
 {
-  id:6,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"The Missing Notebook",
-  topic:"الدراسة والأشياء الشخصية",
-  description:"A student cannot find an important notebook before an exam.",
-  before:"Where do you usually look when you lose something?",
-  image:"reading-06.webp",
-
-  text:`
-Before an important exam, Ahmed could not find his grammar notebook. He was sure that it had been on his desk the previous evening. He looked under the desk, inside his school bag, and even on the bookshelf. The notebook was nowhere. Ahmed became nervous because he had all his notes in it. His sister asked him what was wrong, and he explained the situation. She suggested checking the car because he had studied there the day before. Ahmed went outside and looked at the back seat. The notebook was under a jacket. He felt much better when he found it. He thanked his sister and returned to his room. After that, he decided to keep his important notebooks in the same place every day.
-  `,
-
-  help:[
-    ["nowhere","في أي مكان","تُستخدم للتعبير عن عدم وجود الشيء في أي مكان."],
-    ["be sure","يكون متأكدًا","تعبير شائع."],
-    ["suggest","يقترح","يأتي بعدها غالبًا اسم أو فعل بصيغة مناسبة."],
-    ["under a jacket","تحت سترة","عبارة مكانية."]
-  ],
-
-  questions:[
-    {
-      text:"Why was Ahmed nervous?",
-      answers:["he could not find his grammar notebook","because he could not find his notebook","he had an important exam and could not find his notebook"]
-    },
-    {
-      text:"Where did he look first?",
-      answers:["under the desk","on his desk","under his desk"]
-    },
-    {
-      text:"Who suggested checking the car?",
-      answers:["his sister"]
-    },
-    {
-      text:"Where was the notebook?",
-      answers:["under a jacket","on the back seat under a jacket"]
-    }
-  ]
+id:6,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"The Missing Notebook",
+topic:"الدراسة والأشياء الشخصية",
+description:"A student cannot find an important notebook before an exam.",
+before:"Where do you usually look when you lose something?",
+image:"pi-reading-06.webp",
+text:`Before an important exam, Ahmed could not find his grammar notebook. He was sure that it had been on his desk the previous evening. He looked under the desk, inside his school bag, and even on the bookshelf. The notebook was nowhere. Ahmed became nervous because he had all his notes in it. His sister asked him what was wrong, and he explained the situation. She suggested checking the car because he had studied there the day before. Ahmed went outside and looked at the back seat. The notebook was under a jacket. He felt much better when he found it. He thanked his sister and returned to his room. After that, he decided to keep his important notebooks in the same place every day.`,
+help:[
+["nowhere","في أي مكان","تُستخدم للتعبير عن عدم وجود الشيء في أي مكان."],
+["be sure","يكون متأكدًا","تعبير شائع."],
+["suggest","يقترح","يأتي بعدها غالبًا اسم أو فعل بصيغة مناسبة."],
+["under a jacket","تحت سترة","عبارة مكانية."]
+],
+questions:[
+{text:"Why was Ahmed nervous?",answers:["he could not find his grammar notebook","because he could not find his notebook","he had an important exam and could not find his notebook"]},
+{text:"Where did he look first?",answers:["under the desk","on his desk","under his desk"]},
+{text:"Who suggested checking the car?",answers:["his sister"]},
+{text:"Where was the notebook?",answers:["under a jacket","on the back seat under a jacket"]}
+]
 },
 
 {
-  id:7,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"An Unexpected Guest",
-  topic:"الضيوف والعائلة",
-  description:"A quiet evening changes when a family member arrives unexpectedly.",
-  before:"How would you feel if someone visited you without telling you first?",
-  image:"reading-07.webp",
-
-  text:`
-It was Thursday evening, and Mariam was having dinner with her family. Everyone was tired after a long day, so they were planning a quiet evening at home. Suddenly, someone knocked on the door. Mariam opened it and was surprised to see her cousin, who was visiting the city for two days. He had not told anyone that he was coming because he wanted to surprise the family. Mariam invited him inside, and her mother quickly prepared another plate of food. They talked about his trip and looked at photos from his visit. Later, they made tea and sat together in the living room. The quiet evening became a lively family evening instead. Mariam was happy that her cousin had come, even though nobody had expected him.
-  `,
-
-  help:[
-    ["unexpected","غير متوقع","شيء يحدث دون أن تتوقعه."],
-    ["knock on the door","يطرق الباب","تعبير ثابت وشائع."],
-    ["prepare","يحضّر","تُستخدم مع الطعام وغيره."],
-    ["lively","حيوي / مليء بالحياة","تصف مكانًا أو وقتًا فيه نشاط."]
-  ],
-
-  questions:[
-    {
-      text:"Why was the family planning a quiet evening?",
-      answers:["everyone was tired after a long day","because everyone was tired"]
-    },
-    {
-      text:"Who came to the door?",
-      answers:["her cousin","mariam's cousin"]
-    },
-    {
-      text:"Why did the cousin not tell the family about his visit?",
-      answers:["he wanted to surprise the family","because he wanted to surprise the family"]
-    },
-    {
-      text:"How did the evening change?",
-      answers:["it became a lively family evening","the quiet evening became a lively family evening"]
-    }
-  ]
+id:7,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"An Unexpected Guest",
+topic:"الضيوف والعائلة",
+description:"A quiet evening changes when a family member arrives unexpectedly.",
+before:"How would you feel if someone visited you without telling you first?",
+image:"pi-reading-07.webp",
+text:`It was Thursday evening, and Mariam was having dinner with her family. Everyone was tired after a long day, so they were planning a quiet evening at home. Suddenly, someone knocked on the door. Mariam opened it and was surprised to see her cousin, who was visiting the city for two days. He had not told anyone that he was coming because he wanted to surprise the family. Mariam invited him inside, and her mother quickly prepared another plate of food. They talked about his trip and looked at photos from his visit. Later, they made tea and sat together in the living room. The quiet evening became a lively family evening instead. Mariam was happy that her cousin had come, even though nobody had expected him.`,
+help:[
+["unexpected","غير متوقع","شيء يحدث دون أن تتوقعه."],
+["knock on the door","يطرق الباب","تعبير ثابت وشائع."],
+["prepare","يحضّر","تُستخدم مع الطعام وغيره."],
+["lively","حيوي / مليء بالحياة","تصف مكانًا أو وقتًا فيه نشاط."]
+],
+questions:[
+{text:"Why was the family planning a quiet evening?",answers:["everyone was tired after a long day","because everyone was tired"]},
+{text:"Who came to the door?",answers:["her cousin","mariam's cousin"]},
+{text:"Why did the cousin not tell the family about his visit?",answers:["he wanted to surprise the family","because he wanted to surprise the family"]},
+{text:"How did the evening change?",answers:["it became a lively family evening","the quiet evening became a lively family evening"]}
+]
 },
 
 {
-  id:8,
-  stage:1,
-  stageTitle:"الخطوة الأولى في القراءة",
-  stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
-  title:"The Wrong Room",
-  topic:"المباني والمواعيد",
-  description:"A small mistake at a large building causes some confusion.",
-  before:"What would you do if you went to the wrong room for an appointment?",
-  image:"reading-08.webp",
-
-  text:`
-Yusuf had an appointment at a large medical center on Monday morning. He arrived ten minutes early and looked at the message on his phone. It said that his appointment was on the third floor, in room 316. Yusuf took the elevator and walked down the hallway. He found room 316 and waited outside. After a few minutes, a nurse opened the door and looked surprised. She asked Yusuf who he was looking for. He showed her the appointment message. The nurse smiled and explained that room 316 was in another building with the same name. Yusuf checked the address and realized his mistake. He thanked the nurse and quickly left. Fortunately, the second building was only a five-minute walk away, so he arrived at his appointment on time.
-  `,
-
-  help:[
-    ["appointment","موعد","موعد محدد مع شخص أو جهة."],
-    ["hallway","ممر","المكان الطويل الذي يصل بين الغرف."],
-    ["realize","يدرك","يستخدم عندما تفهم شيئًا أو تكتشفه."],
-    ["on time","في الوقت المحدد","عكس late."]
-  ],
-
-  questions:[
-    {
-      text:"Why did Yusuf go to the medical center?",
-      answers:["he had an appointment","for an appointment"]
-    },
-    {
-      text:"What mistake did he make?",
-      answers:["he went to the wrong building","he went to room 316 in the wrong building"]
-    },
-    {
-      text:"Who explained the problem to him?",
-      answers:["a nurse","the nurse"]
-    },
-    {
-      text:"Was Yusuf late for his appointment?",
-      answers:["no","no he was not","no, he was not"]
-    }
-  ]
-},
-
-/* =========================================================
-   STAGE 2
-========================================================= */
-
-{
-  id:9,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"The New Job",
-  topic:"العمل والبداية الجديدة",
-  description:"A young employee describes his first week at a new company.",
-  before:"What can be difficult during the first week at a new job?",
-  image:"reading-09.webp",
-
-  text:`
-Nasser started a new job at a small technology company two weeks ago. During his first few days, almost everything was new to him. He had to learn the names of many employees, understand his schedule, and find different offices in the building. His manager, Daniel, was helpful and introduced him to the team. Nasser also had a colleague named Sam who sat next to him. Sam explained how the company worked and answered many of his questions. By Friday, Nasser knew most of the important people and felt more confident. He still had a lot to learn, but he was no longer worried about making small mistakes. He realized that starting a new job was difficult at first, but good colleagues could make the experience much easier.
-  `,
-
-  help:[
-    ["employee","موظف","شخص يعمل لدى شركة أو جهة."],
-    ["introduce someone to","يعرّف شخصًا على","تُستخدم عند التعريف بشخص جديد."],
-    ["sit next to","يجلس بجانب","تعبير مكاني شائع."],
-    ["no longer","لم يعد","توضح أن حالة سابقة انتهت."]
-  ],
-
-  questions:[
-    {
-      text:"What was new to Nasser during his first few days?",
-      answers:["almost everything","almost everything was new to him"]
-    },
-    {
-      text:"Who helped him understand the company?",
-      answers:["sam","his colleague sam"]
-    },
-    {
-      text:"How did Nasser feel by Friday?",
-      answers:["more confident","he felt more confident"]
-    },
-    {
-      text:"What did Nasser learn about starting a new job?",
-      answers:["good colleagues could make it much easier","it was difficult at first but good colleagues could help","starting a new job was difficult at first"]
-    }
-  ]
+id:8,
+stage:1,
+stageTitle:"الخطوة الأولى في القراءة",
+stageDescription:"مواقف يومية وقصص قصيرة تساعدك على الانتقال إلى قراءة نصوص مترابطة.",
+title:"The Wrong Room",
+topic:"المباني والمواعيد",
+description:"A small mistake at a large building causes some confusion.",
+before:"What would you do if you went to the wrong room for an appointment?",
+image:"pi-reading-08.webp",
+text:`Yusuf had an appointment at a large medical center on Monday morning. He arrived ten minutes early and looked at the message on his phone. It said that his appointment was on the third floor, in room 316. Yusuf took the elevator and walked down the hallway. He found room 316 and waited outside. After a few minutes, a nurse opened the door and looked surprised. She asked Yusuf who he was looking for. He showed her the appointment message. The nurse smiled and explained that room 316 was in another building with the same name. Yusuf checked the address and realized his mistake. He thanked the nurse and quickly left. Fortunately, the second building was only a five-minute walk away, so he arrived at his appointment on time.`,
+help:[
+["appointment","موعد","موعد محدد مع شخص أو جهة."],
+["hallway","ممر","المكان الطويل الذي يصل بين الغرف."],
+["realize","يدرك","يستخدم عندما تفهم شيئًا أو تكتشفه."],
+["on time","في الوقت المحدد","عكس late."]
+],
+questions:[
+{text:"Why did Yusuf go to the medical center?",answers:["he had an appointment","for an appointment"]},
+{text:"What mistake did he make?",answers:["he went to the wrong building","he went to room 316 in the wrong building"]},
+{text:"Who explained the problem to him?",answers:["a nurse","the nurse"]},
+{text:"Was Yusuf late for his appointment?",answers:["no","no he was not","no, he was not"]}
+]
 },
 
 {
-  id:10,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"The Wrong Bus",
-  topic:"المواصلات والتنقل",
-  description:"A simple mistake turns a short journey into an unexpected trip.",
-  before:"Have you ever taken the wrong bus or train?",
-  image:"reading-10.webp",
-
-  text:`
-On Saturday morning, Khalid wanted to visit a friend who lived on the other side of town. He checked the bus number on his phone and went to the nearest bus stop. When the bus arrived, he got on without checking the destination carefully. After about fifteen minutes, Khalid looked out of the window and noticed that the streets were unfamiliar. He checked his phone again and realized that he was on the wrong bus. He got off at the next stop and looked for another bus. A woman at the stop noticed that he seemed confused, so she asked if he needed help. Khalid explained where he wanted to go. She showed him the correct bus number and told him where to wait. This time, Khalid checked the information twice before getting on.
-  `,
-
-  help:[
-    ["on the other side of town","في الجهة الأخرى من المدينة","تعبير عن مكان بعيد نسبيًا داخل المدينة."],
-    ["destination","الوجهة","المكان الذي تريد الوصول إليه."],
-    ["unfamiliar","غير مألوف","شيء لا تعرفه أو لم تره من قبل."],
-    ["seem confused","يبدو مرتبكًا","seem تعني يبدو."]
-  ],
-
-  questions:[
-    {
-      text:"Where did Khalid want to go?",
-      answers:["to visit a friend","to his friend's house","to see a friend"]
-    },
-    {
-      text:"How did he discover that he was on the wrong bus?",
-      answers:["the streets were unfamiliar","he noticed the streets were unfamiliar"]
-    },
-    {
-      text:"Who helped him?",
-      answers:["a woman at the bus stop","a woman"]
-    },
-    {
-      text:"What did Khalid do differently the second time?",
-      answers:["he checked the information twice","he checked the bus information twice"]
-    }
-  ]
+id:9,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"The New Job",
+topic:"العمل والبداية الجديدة",
+description:"A young employee describes his first week at a new company.",
+before:"What can be difficult during the first week at a new job?",
+image:"pi-reading-09.webp",
+text:`Nasser started a new job at a small technology company two weeks ago. During his first few days, almost everything was new to him. He had to learn the names of many employees, understand his schedule, and find different offices in the building. His manager, Daniel, was helpful and introduced him to the team. Nasser also had a colleague named Sam who sat next to him. Sam explained how the company worked and answered many of his questions. By Friday, Nasser knew most of the important people and felt more confident. He still had a lot to learn, but he was no longer worried about making small mistakes. He realized that starting a new job was difficult at first, but good colleagues could make the experience much easier.`,
+help:[
+["employee","موظف","شخص يعمل لدى شركة أو جهة."],
+["introduce someone to","يعرّف شخصًا على","تُستخدم عند التعريف بشخص جديد."],
+["sit next to","يجلس بجانب","تعبير مكاني شائع."],
+["no longer","لم يعد","توضح أن حالة سابقة انتهت."]
+],
+questions:[
+{text:"What was new to Nasser during his first few days?",answers:["almost everything","almost everything was new to him"]},
+{text:"Who helped him understand the company?",answers:["sam","his colleague sam"]},
+{text:"How did Nasser feel by Friday?",answers:["more confident","he felt more confident"]},
+{text:"What did Nasser learn about starting a new job?",answers:["good colleagues could make it much easier","it was difficult at first but good colleagues could help","starting a new job was difficult at first"]}
+]
 },
 
 {
-  id:11,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"A Family Dinner",
-  topic:"العائلة والطعام",
-  description:"A family dinner becomes an opportunity to share news and plans.",
-  before:"What do families usually talk about during dinner?",
-  image:"reading-11.webp",
-
-  text:`
-Every Friday evening, Huda's family has dinner together. They usually eat at home, but last Friday they decided to try a new restaurant in their neighborhood. The restaurant was small and busy, but the atmosphere was comfortable. Everyone looked at the menu and chose a different dish. Huda ordered chicken, while her brother chose pasta. Their parents shared a large salad. During dinner, they talked about work, school, and their plans for the next month. Huda's brother had an important exam coming soon, and their father had a business trip in another city. After the meal, they ordered tea and a small dessert. On the way home, everyone agreed that the restaurant was worth visiting again. Huda especially liked the quiet atmosphere and friendly service.
-  `,
-
-  help:[
-    ["atmosphere","الأجواء","الإحساس العام في المكان."],
-    ["dish","طبق","نوع محدد من الطعام."],
-    ["coming soon","قريبًا","شيء سيحدث بعد وقت قصير."],
-    ["worth visiting","يستحق الزيارة","تعبير يستخدم عندما يكون الشيء جيدًا ويستحق التجربة."]
-  ],
-
-  questions:[
-    {
-      text:"Where did Huda's family have dinner?",
-      answers:["at a new restaurant","in a new restaurant","a restaurant in their neighborhood"]
-    },
-    {
-      text:"What did Huda's brother order?",
-      answers:["pasta"]
-    },
-    {
-      text:"What was the brother preparing for?",
-      answers:["an important exam","his important exam"]
-    },
-    {
-      text:"What did the family think about the restaurant?",
-      answers:["it was worth visiting again","they wanted to visit it again"]
-    }
-  ]
+id:10,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"The Wrong Bus",
+topic:"المواصلات والتنقل",
+description:"A simple mistake turns a short journey into an unexpected trip.",
+before:"Have you ever taken the wrong bus or train?",
+image:"pi-reading-10.webp",
+text:`On Saturday morning, Khalid wanted to visit a friend who lived on the other side of town. He checked the bus number on his phone and went to the nearest bus stop. When the bus arrived, he got on without checking the destination carefully. After about fifteen minutes, Khalid looked out of the window and noticed that the streets were unfamiliar. He checked his phone again and realized that he was on the wrong bus. He got off at the next stop and looked for another bus. A woman at the stop noticed that he seemed confused, so she asked if he needed help. Khalid explained where he wanted to go. She showed him the correct bus number and told him where to wait. This time, Khalid checked the information twice before getting on.`,
+help:[
+["on the other side of town","في الجهة الأخرى من المدينة","تعبير عن مكان بعيد نسبيًا داخل المدينة."],
+["destination","الوجهة","المكان الذي تريد الوصول إليه."],
+["unfamiliar","غير مألوف","شيء لا تعرفه أو لم تره من قبل."],
+["seem confused","يبدو مرتبكًا","seem تعني يبدو."]
+],
+questions:[
+{text:"Where did Khalid want to go?",answers:["to visit a friend","to his friend's house","to see a friend"]},
+{text:"How did he discover that he was on the wrong bus?",answers:["the streets were unfamiliar","he noticed the streets were unfamiliar"]},
+{text:"Who helped him?",answers:["a woman at the bus stop","a woman"]},
+{text:"What did Khalid do differently the second time?",answers:["he checked the information twice","he checked the bus information twice"]}
+]
 },
 
 {
-  id:12,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"A Helpful Neighbor",
-  topic:"الجيران والمساعدة",
-  description:"A neighbor helps a family during a busy week.",
-  before:"What are some ways neighbors can help each other?",
-  image:"reading-12.webp",
-
-  text:`
-When Reem's family moved into a new apartment, they did not know many people in the building. Their neighbor, Mr. Sami, introduced himself on the first day and told them that they could ask him for help if they needed anything. A few weeks later, Reem's parents had to travel for three days. They were worried about their small cat because nobody would be at home during the day. They asked Mr. Sami if he could check on the cat. He was happy to help. Every morning, he gave the cat fresh water and food and opened the window for a few minutes. When Reem's parents returned, they thanked him and brought him a small gift. After that, the families became good neighbors and often talked in the hallway.
-  `,
-
-  help:[
-    ["move into","ينتقل للسكن في","تُستخدم عند الانتقال إلى منزل جديد."],
-    ["check on","يتفقد","تُستخدم عندما تذهب لترى أن شخصًا أو شيئًا بخير."],
-    ["fresh water","ماء جديد / عذب","ماء نظيف وجديد."],
-    ["return","يعود","فعل شائع بمعنى يعود إلى مكان."]
-  ],
-
-  questions:[
-    {
-      text:"What did Mr. Sami do when the family first moved in?",
-      answers:["he introduced himself","he offered to help","he introduced himself and offered to help"]
-    },
-    {
-      text:"Why were Reem's parents worried before their trip?",
-      answers:["because of their cat","they were worried about their cat","nobody would be at home to take care of their cat"]
-    },
-    {
-      text:"How did Mr. Sami help?",
-      answers:["he gave the cat water and food and opened the window","he checked on the cat","he took care of the cat"]
-    },
-    {
-      text:"How did the relationship between the families change?",
-      answers:["they became good neighbors","they became friends","the families became good neighbors"]
-    }
-  ]
+id:11,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"A Family Dinner",
+topic:"العائلة والطعام",
+description:"A family dinner becomes an opportunity to share news and plans.",
+before:"What do families usually talk about during dinner?",
+image:"pi-reading-11.webp",
+text:`Every Friday evening, Huda's family has dinner together. They usually eat at home, but last Friday they decided to try a new restaurant in their neighborhood. The restaurant was small and busy, but the atmosphere was comfortable. Everyone looked at the menu and chose a different dish. Huda ordered chicken, while her brother chose pasta. Their parents shared a large salad. During dinner, they talked about work, school, and their plans for the next month. Huda's brother had an important exam coming soon, and their father had a business trip in another city. After the meal, they ordered tea and a small dessert. On the way home, everyone agreed that the restaurant was worth visiting again. Huda especially liked the quiet atmosphere and friendly service.`,
+help:[
+["atmosphere","الأجواء","الإحساس العام في المكان."],
+["dish","طبق","نوع محدد من الطعام."],
+["coming soon","قريبًا","شيء سيحدث بعد وقت قصير."],
+["worth visiting","يستحق الزيارة","تعبير يستخدم عندما يكون الشيء جيدًا ويستحق التجربة."]
+],
+questions:[
+{text:"Where did Huda's family have dinner?",answers:["at a new restaurant","in a new restaurant","a restaurant in their neighborhood"]},
+{text:"What did Huda's brother order?",answers:["pasta"]},
+{text:"What was the brother preparing for?",answers:["an important exam","his important exam"]},
+{text:"What did the family think about the restaurant?",answers:["it was worth visiting again","they wanted to visit it again"]}
+]
 },
 
 {
-  id:13,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"The Small Café",
-  topic:"الأماكن والعادات",
-  description:"A student finds a quiet café that becomes his favorite place to study.",
-  before:"What makes a café a good place to sit and study?",
-  image:"reading-13.webp",
-
-  text:`
-There is a small café near Sami's college that he had never noticed before. One afternoon, he was looking for a quiet place to study because the college library was full. He walked into the café and found a table near the back. The place was not large, but it was comfortable and quiet. Sami ordered coffee and asked the waiter if he could stay for an hour. The waiter smiled and said that it was fine. Sami opened his notebook and studied for almost two hours. He liked the calm atmosphere and the soft music in the background. Before leaving, he noticed a small sign that said the café had free Wi-Fi. Sami decided to come back the next day. Soon, the café became his favorite place to study outside college.
-  `,
-
-  help:[
-    ["notice","يلاحظ","تُستخدم عندما ترى أو تنتبه إلى شيء."],
-    ["in the background","في الخلفية","لشيء موجود في الخلفية."],
-    ["soft music","موسيقى هادئة","soft هنا بمعنى هادئة أو خفيفة."],
-    ["free Wi-Fi","واي فاي مجاني","free تعني دون مقابل."]
-  ],
-
-  questions:[
-    {
-      text:"Why was Sami looking for another place to study?",
-      answers:["the college library was full","because the library was full"]
-    },
-    {
-      text:"Where did he sit in the café?",
-      answers:["at a table near the back","near the back","a table near the back"]
-    },
-    {
-      text:"What did he discover before leaving?",
-      answers:["the café had free wi-fi","it had free wi-fi"]
-    },
-    {
-      text:"Why did the café become his favorite place?",
-      answers:["it was comfortable and quiet","he liked the calm atmosphere","because it was quiet and comfortable"]
-    }
-  ]
+id:12,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"A Helpful Neighbor",
+topic:"الجيران والمساعدة",
+description:"A neighbor helps a family during a busy week.",
+before:"What are some ways neighbors can help each other?",
+image:"pi-reading-12.webp",
+text:`When Reem's family moved into a new apartment, they did not know many people in the building. Their neighbor, Mr. Sami, introduced himself on the first day and told them that they could ask him for help if they needed anything. A few weeks later, Reem's parents had to travel for three days. They were worried about their small cat because nobody would be at home during the day. They asked Mr. Sami if he could check on the cat. He was happy to help. Every morning, he gave the cat fresh water and food and opened the window for a few minutes. When Reem's parents returned, they thanked him and brought him a small gift. After that, the families became good neighbors and often talked in the hallway.`,
+help:[
+["move into","ينتقل للسكن في","تُستخدم عند الانتقال إلى منزل جديد."],
+["check on","يتفقد","تُستخدم عندما تذهب لترى أن شخصًا أو شيئًا بخير."],
+["fresh water","ماء جديد / عذب","ماء نظيف وجديد."],
+["return","يعود","فعل شائع بمعنى يعود إلى مكان."]
+],
+questions:[
+{text:"What did Mr. Sami do when the family first moved in?",answers:["he introduced himself","he offered to help","he introduced himself and offered to help"]},
+{text:"Why were Reem's parents worried before their trip?",answers:["because of their cat","they were worried about their cat","nobody would be at home to take care of their cat"]},
+{text:"How did Mr. Sami help?",answers:["he gave the cat water and food and opened the window","he checked on the cat","he took care of the cat"]},
+{text:"How did the relationship between the families change?",answers:["they became good neighbors","they became friends","the families became good neighbors"]}
+]
 },
 
 {
-  id:14,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"A Busy Day at Work",
-  topic:"العمل والمهام",
-  description:"An employee has a busy day with several meetings and unexpected tasks.",
-  before:"What can make a workday especially busy?",
-  image:"reading-14.webp",
-
-  text:`
-Monday was an unusually busy day for Aisha. She arrived at the office at eight and had her first meeting at eight-thirty. The meeting was supposed to last thirty minutes, but it continued for almost an hour. After that, Aisha had to answer several emails and prepare a short report for her manager. Before lunch, a customer called with a problem, so Aisha spent some time trying to understand the situation. She was finally ready for lunch when her colleague asked for help with a presentation. Aisha helped him for twenty minutes and then took her break. In the afternoon, things became quieter. She finished the report, answered the remaining emails, and checked her schedule for Tuesday. When she left the office, she was tired but satisfied because she had finished everything important.
-  `,
-
-  help:[
-    ["unusually","بشكل غير معتاد","تصف شيئًا مختلفًا عن المعتاد."],
-    ["be supposed to","من المفترض أن","تستخدم لما كان متوقعًا أن يحدث."],
-    ["remaining","المتبقية","الأشياء التي لم تنتهِ بعد."],
-    ["satisfied","راضٍ / يشعر بالرضا","تصف شعورًا جيدًا بعد إنجاز شيء."]
-  ],
-
-  questions:[
-    {
-      text:"Why was Monday unusually busy for Aisha?",
-      answers:["she had several meetings and tasks","she had a meeting, emails, a report, and a customer problem","she had many tasks"]
-    },
-    {
-      text:"What problem did the customer have?",
-      answers:["the text does not say","it does not say","the passage does not say"]
-    },
-    {
-      text:"Why did Aisha delay her lunch?",
-      answers:["her colleague asked for help with a presentation","she helped her colleague with a presentation"]
-    },
-    {
-      text:"How did she feel when she left the office?",
-      answers:["tired but satisfied","she was tired but satisfied"]
-    }
-  ]
+id:13,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"The Small Café",
+topic:"الأماكن والعادات",
+description:"A student finds a quiet café that becomes his favorite place to study.",
+before:"What makes a café a good place to sit and study?",
+image:"pi-reading-13.webp",
+text:`There is a small café near Sami's college that he had never noticed before. One afternoon, he was looking for a quiet place to study because the college library was full. He walked into the café and found a table near the back. The place was not large, but it was comfortable and quiet. Sami ordered coffee and asked the waiter if he could stay for an hour. The waiter smiled and said that it was fine. Sami opened his notebook and studied for almost two hours. He liked the calm atmosphere and the soft music in the background. Before leaving, he noticed a small sign that said the café had free Wi-Fi. Sami decided to come back the next day. Soon, the café became his favorite place to study outside college.`,
+help:[
+["notice","يلاحظ","تُستخدم عندما ترى أو تنتبه إلى شيء."],
+["in the background","في الخلفية","لشيء موجود في الخلفية."],
+["soft music","موسيقى هادئة","soft هنا بمعنى هادئة أو خفيفة."],
+["free Wi-Fi","واي فاي مجاني","free تعني دون مقابل."]
+],
+questions:[
+{text:"Why was Sami looking for another place to study?",answers:["the college library was full","because the library was full"]},
+{text:"Where did he sit in the café?",answers:["at a table near the back","near the back","a table near the back"]},
+{text:"What did he discover before leaving?",answers:["the café had free wi-fi","it had free wi-fi"]},
+{text:"Why did the café become his favorite place?",answers:["it was comfortable and quiet","he liked the calm atmosphere","because it was quiet and comfortable"]}
+]
 },
 
 {
-  id:15,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"The Lost Wallet",
-  topic:"مشكلة في المدينة",
-  description:"A lost wallet leads to an unexpected act of kindness.",
-  before:"What should you do if you lose your wallet in a public place?",
-  image:"reading-15.webp",
-
-  text:`
-While returning home from work, Majid stopped at a small grocery store to buy some water. When he reached the cashier, he opened his bag and realized that his wallet was missing. He checked every pocket, but it was not there. He remembered having it on the bus earlier that afternoon. Majid felt worried because his identification card and bank cards were inside the wallet. He called the bus company and explained what had happened. The employee asked him for the bus number and the time of his journey. About an hour later, the company called back. A passenger had found the wallet on one of the seats and had given it to the driver. Majid went to the bus station and collected it. Everything was still inside. He was extremely grateful to the passenger who had found it.
-  `,
-
-  help:[
-    ["cashier","أمين الصندوق","الشخص الذي يستقبل الدفع في المتجر."],
-    ["missing","مفقود","شيء كان موجودًا ثم لم يعد موجودًا."],
-    ["identification card","بطاقة إثبات الهوية","بطاقة تحتوي على معلومات الهوية."],
-    ["grateful","ممتن","شعور بالشكر تجاه شخص ساعدك."]
-  ],
-
-  questions:[
-    {
-      text:"Where did Majid realize that his wallet was missing?",
-      answers:["at a grocery store","at the cashier","in a small grocery store"]
-    },
-    {
-      text:"Why was he worried?",
-      answers:["his identification card and bank cards were inside","because his cards were inside","he had important cards in the wallet"]
-    },
-    {
-      text:"Who found the wallet?",
-      answers:["a passenger"]
-    },
-    {
-      text:"Was anything missing from the wallet?",
-      answers:["no","no, everything was still inside","nothing was missing"]
-    }
-  ]
+id:14,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"A Busy Day at Work",
+topic:"العمل والمهام",
+description:"An employee has a busy day with several meetings and unexpected tasks.",
+before:"What can make a workday especially busy?",
+image:"pi-reading-14.webp",
+text:`Monday was an unusually busy day for Aisha. She arrived at the office at eight and had her first meeting at eight-thirty. The meeting was supposed to last thirty minutes, but it continued for almost an hour. After that, Aisha had to answer several emails and prepare a short report for her manager. Before lunch, a customer called with a problem, so Aisha spent some time trying to understand the situation. She was finally ready for lunch when her colleague asked for help with a presentation. Aisha helped him for twenty minutes and then took her break. In the afternoon, things became quieter. She finished the report, answered the remaining emails, and checked her schedule for Tuesday. When she left the office, she was tired but satisfied because she had finished everything important.`,
+help:[
+["unusually","بشكل غير معتاد","تصف شيئًا مختلفًا عن المعتاد."],
+["be supposed to","من المفترض أن","تستخدم لما كان متوقعًا أن يحدث."],
+["remaining","المتبقية","الأشياء التي لم تنتهِ بعد."],
+["satisfied","راضٍ / يشعر بالرضا","تصف شعورًا جيدًا بعد إنجاز شيء."]
+],
+questions:[
+{text:"Why was Monday unusually busy for Aisha?",answers:["she had several meetings and tasks","she had a meeting, emails, a report, and a customer problem","she had many tasks"]},
+{text:"What problem did the customer have?",answers:["the text does not say","it does not say","the passage does not say"]},
+{text:"Why did Aisha delay her lunch?",answers:["her colleague asked for help with a presentation","she helped her colleague with a presentation"]},
+{text:"How did she feel when she left the office?",answers:["tired but satisfied","she was tired but satisfied"]}
+]
 },
 
 {
-  id:16,
-  stage:2,
-  stageTitle:"القصص والمواقف اليومية",
-  stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
-  title:"A Change of Plans",
-  topic:"الخطط والتواصل",
-  description:"Two friends change their plans after one of them receives unexpected news.",
-  before:"Why might someone suddenly need to change a plan?",
-  image:"reading-16.webp",
-
-  text:`
-Sara and Noor had planned to meet for lunch on Wednesday. They had not seen each other for several weeks, so both were looking forward to the meeting. On Tuesday evening, Noor sent Sara a message saying that something had come up at work. Her manager needed her to stay late the next day. Sara was disappointed, but she understood. She suggested meeting on Thursday instead. Noor checked her schedule and said that Thursday would be perfect. They agreed to meet at the same restaurant at one o'clock. On Thursday morning, Noor sent another message to confirm the plan. This time, everything was ready. They met at the restaurant, talked for almost two hours, and laughed about how difficult it had been to find a free day. In the end, the change of plans worked out well.
-  `,
-
-  help:[
-    ["look forward to","يتطلع إلى","تعبير شائع للتحدث عن شيء تنتظره بحماس."],
-    ["something has come up","طرأ شيء / حدث أمر مفاجئ","تعبير طبيعي جدًا في المحادثة."],
-    ["disappointed","محبط / خائب الأمل","عندما لا يحدث ما كنت تريده."],
-    ["work out","ينجح / تسير الأمور بشكل جيد","بحسب السياق."]
-  ],
-
-  questions:[
-    {
-      text:"Why did Noor need to change the plan?",
-      answers:["something had come up at work","her manager needed her to stay late","because her manager needed her to stay late"]
-    },
-    {
-      text:"How did Sara react?",
-      answers:["she was disappointed but understood","she was disappointed","she understood"]
-    },
-    {
-      text:"When did they finally meet?",
-      answers:["on Thursday at one o'clock","thursday at one","on thursday"]
-    },
-    {
-      text:"Why did the change of plans work out well?",
-      answers:["they were able to meet and enjoyed their time together","they met on thursday and had a good time","because they met and talked for almost two hours"]
-    }
-  ]
-},
-
-/* =========================================================
-   STAGE 3
-========================================================= */
-
-{
-  id:17,
-  stage:3,
-  stageTitle:"مواقف تحتاج إلى فهم أعمق",
-  stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
-  title:"The First Day at the Hotel",
-  topic:"السفر والعمل",
-  description:"A hotel employee describes a challenging first day.",
-  before:"What problems might a hotel employee have to deal with?",
-  image:"reading-17.webp",
-
-  text:`
-On his first day working at a hotel, Hamad arrived thirty minutes early. He wanted to be prepared, but the morning was already busy when he entered the building. Several guests were waiting at the reception desk, and one guest was asking about a missing suitcase. Hamad's manager introduced him to another employee who explained what to do. At first, Hamad was nervous because he had never worked in a hotel before. He listened carefully and tried to remember the information. Later, a family arrived and needed directions to a restaurant nearby. Hamad checked the map and helped them. Before the end of his shift, he had spoken to many guests and learned how the reception area worked. He was tired when he went home, but he felt proud. The first day had been difficult, but it had also been a useful experience.
-  `,
-
-  help:[
-    ["reception desk","مكتب الاستقبال","المكان الذي يستقبل فيه الفندق الضيوف."],
-    ["guest","ضيف","شخص يقيم في الفندق أو يزور مكانًا."],
-    ["shift","وردية / فترة عمل","فترة العمل المحددة."],
-    ["proud","فخور","شعور إيجابي بعد إنجاز شيء."]
-  ],
-
-  questions:[
-    {
-      text:"Why did Hamad arrive early?",
-      answers:["he wanted to be prepared","because he wanted to be prepared"]
-    },
-    {
-      text:"What problem did one guest have?",
-      answers:["a missing suitcase","the guest had a missing suitcase"]
-    },
-    {
-      text:"How did Hamad help the family?",
-      answers:["he gave them directions to a restaurant","he helped them find a restaurant","he checked the map and gave them directions"]
-    },
-    {
-      text:"Why did Hamad feel proud?",
-      answers:["he had learned a lot and helped guests","he had a difficult but useful first day","because he had spoken to many guests and learned how the reception worked"]
-    }
-  ]
+id:15,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"The Lost Wallet",
+topic:"مشكلة في المدينة",
+description:"A lost wallet leads to an unexpected act of kindness.",
+before:"What should you do if you lose your wallet in a public place?",
+image:"pi-reading-15.webp",
+text:`While returning home from work, Majid stopped at a small grocery store to buy some water. When he reached the cashier, he opened his bag and realized that his wallet was missing. He checked every pocket, but it was not there. He remembered having it on the bus earlier that afternoon. Majid felt worried because his identification card and bank cards were inside the wallet. He called the bus company and explained what had happened. The employee asked him for the bus number and the time of his journey. About an hour later, the company called back. A passenger had found the wallet on one of the seats and had given it to the driver. Majid went to the bus station and collected it. Everything was still inside. He was extremely grateful to the passenger who had found it.`,
+help:[
+["cashier","أمين الصندوق","الشخص الذي يستقبل الدفع في المتجر."],
+["missing","مفقود","شيء كان موجودًا ثم لم يعد موجودًا."],
+["identification card","بطاقة إثبات الهوية","بطاقة تحتوي على معلومات الهوية."],
+["grateful","ممتن","شعور بالشكر تجاه شخص ساعدك."]
+],
+questions:[
+{text:"Where did Majid realize that his wallet was missing?",answers:["at a grocery store","at the cashier","in a small grocery store"]},
+{text:"Why was he worried?",answers:["his identification card and bank cards were inside","because his cards were inside","he had important cards in the wallet"]},
+{text:"Who found the wallet?",answers:["a passenger"]},
+{text:"Was anything missing from the wallet?",answers:["no","no, everything was still inside","nothing was missing"]}
+]
 },
 
 {
-  id:18,
-  stage:3,
-  stageTitle:"مواقف تحتاج إلى فهم أعمق",
-  stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
-  title:"The Long Journey",
-  topic:"السفر والمواصلات",
-  description:"A long journey teaches a traveler the importance of preparation.",
-  before:"What should you prepare before a long journey?",
-  image:"reading-18.webp",
-
-  text:`
-Last summer, Yara traveled by train to visit her aunt in another city. The journey was supposed to take three hours, but it became much longer because the train stopped unexpectedly. At first, Yara was not worried. She had her phone, some water, and a book in her bag. After an hour, however, she started to feel tired and hungry. She looked at the small snacks she had brought and realized that she had not packed enough food. The train finally started moving again, but it stopped once more before reaching the next station. Yara called her aunt and explained that she would arrive late. Her aunt was understanding and told her not to worry. When Yara finally arrived, she was happy to see her aunt. She decided that next time she would take more food and check the journey information carefully before leaving.
-  `,
-
-  help:[
-    ["be supposed to","من المفترض أن","لما كان متوقعًا أن يحدث."],
-    ["unexpectedly","بشكل غير متوقع","عندما يحدث الشيء فجأة أو دون توقع."],
-    ["pack","يحزم / يجهز الأغراض","تُستخدم عند تجهيز الأمتعة."],
-    ["not enough","غير كافٍ","تعبير عن كمية أقل من المطلوب."]
-  ],
-
-  questions:[
-    {
-      text:"How long was the journey supposed to take?",
-      answers:["three hours","3 hours"]
-    },
-    {
-      text:"Why did Yara become hungry?",
-      answers:["she had not packed enough food","because she did not pack enough food"]
-    },
-    {
-      text:"Why did she call her aunt?",
-      answers:["to tell her she would arrive late","because she would arrive late","to explain that she would arrive late"]
-    },
-    {
-      text:"What did Yara decide to do differently next time?",
-      answers:["take more food and check the journey information","pack more food and check the journey information","take more food and check the information carefully"]
-    }
-  ]
+id:16,
+stage:2,
+stageTitle:"القصص والمواقف اليومية",
+stageDescription:"نصوص أطول قليلًا، مع أحداث أكثر وتفاصيل تحتاج إلى الانتباه.",
+title:"A Change of Plans",
+topic:"الخطط والتواصل",
+description:"Two friends change their plans after one of them receives unexpected news.",
+before:"Why might someone suddenly need to change a plan?",
+image:"pi-reading-16.webp",
+text:`Sara and Noor had planned to meet for lunch on Wednesday. They had not seen each other for several weeks, so both were looking forward to the meeting. On Tuesday evening, Noor sent Sara a message saying that something had come up at work. Her manager needed her to stay late the next day. Sara was disappointed, but she understood. She suggested meeting on Thursday instead. Noor checked her schedule and said that Thursday would be perfect. They agreed to meet at the same restaurant at one o'clock. On Thursday morning, Noor sent another message to confirm the plan. This time, everything was ready. They met at the restaurant, talked for almost two hours, and laughed about how difficult it had been to find a free day. In the end, the change of plans worked out well.`,
+help:[
+["look forward to","يتطلع إلى","تعبير شائع للتحدث عن شيء تنتظره بحماس."],
+["something has come up","طرأ شيء / حدث أمر مفاجئ","تعبير طبيعي جدًا في المحادثة."],
+["disappointed","محبط / خائب الأمل","عندما لا يحدث ما كنت تريده."],
+["work out","ينجح / تسير الأمور بشكل جيد","بحسب السياق."]
+],
+questions:[
+{text:"Why did Noor need to change the plan?",answers:["something had come up at work","her manager needed her to stay late","because her manager needed her to stay late"]},
+{text:"How did Sara react?",answers:["she was disappointed but understood","she was disappointed","she understood"]},
+{text:"When did they finally meet?",answers:["on Thursday at one o'clock","thursday at one","on thursday"]},
+{text:"Why did the change of plans work out well?",answers:["they were able to meet and enjoyed their time together","they met on thursday and had a good time","because they met and talked for almost two hours"]}
+]
 },
 
 {
-  id:19,
-  stage:3,
-  stageTitle:"مواقف تحتاج إلى فهم أعمق",
-  stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
-  title:"An Important Presentation",
-  topic:"الدراسة والعمل",
-  description:"A student prepares for an important presentation and learns to stay calm.",
-  before:"What can help you feel confident before a presentation?",
-  image:"reading-19.webp",
-
-  text:`
-Abdullah had to give an English presentation in front of his class. He had prepared for several days and knew his topic well, but he was still nervous. The night before the presentation, he practiced in front of his brother. His brother listened and told him that the information was clear, but he spoke too quickly in some parts. Abdullah practiced again and tried to speak more slowly. The next morning, he arrived early and looked at his notes one more time. When the teacher called his name, Abdullah took a deep breath and walked to the front of the room. The first minute was difficult, but then he became more comfortable. He remembered his main points and answered the questions at the end. After the class, his teacher told him that his presentation was clear and well organized. Abdullah felt relieved and proud of his work.
-  `,
-
-  help:[
-    ["give a presentation","يقدم عرضًا تقديميًا","عبارة شائعة في الدراسة والعمل."],
-    ["practice","يتدرّب","تُستخدم للتحضير لمهارة أو مهمة."],
-    ["take a deep breath","يأخذ نفسًا عميقًا","تعبير شائع للهدوء."],
-    ["well organized","منظم جيدًا","تصف شيئًا مرتبًا وواضحًا."]
-  ],
-
-  questions:[
-    {
-      text:"Why was Abdullah nervous even though he knew his topic?",
-      answers:["because he had to present in front of his class","he had to give a presentation in front of his class","he was presenting in front of the class"]
-    },
-    {
-      text:"What advice did his brother give him?",
-      answers:["to speak more slowly","he spoke too quickly and should speak more slowly","speak more slowly"]
-    },
-    {
-      text:"What did Abdullah do before starting?",
-      answers:["he took a deep breath","he looked at his notes","he took a deep breath and walked to the front"]
-    },
-    {
-      text:"How did the teacher describe his presentation?",
-      answers:["clear and well organized","it was clear and well organized"]
-    }
-  ]
+id:17,
+stage:3,
+stageTitle:"مواقف تحتاج إلى فهم أعمق",
+stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
+title:"The First Day at the Hotel",
+topic:"السفر والعمل",
+description:"A hotel employee describes a challenging first day.",
+before:"What problems might a hotel employee have to deal with?",
+image:"pi-reading-17.webp",
+text:`On his first day working at a hotel, Hamad arrived thirty minutes early. He wanted to be prepared, but the morning was already busy when he entered the building. Several guests were waiting at the reception desk, and one guest was asking about a missing suitcase. Hamad's manager introduced him to another employee who explained what to do. At first, Hamad was nervous because he had never worked in a hotel before. He listened carefully and tried to remember the information. Later, a family arrived and needed directions to a restaurant nearby. Hamad checked the map and helped them. Before the end of his shift, he had spoken to many guests and learned how the reception area worked. He was tired when he went home, but he felt proud. The first day had been difficult, but it had also been a useful experience.`,
+help:[
+["reception desk","مكتب الاستقبال","المكان الذي يستقبل فيه الفندق الضيوف."],
+["guest","ضيف","شخص يقيم في الفندق أو يزور مكانًا."],
+["shift","وردية / فترة عمل","فترة العمل المحددة."],
+["proud","فخور","شعور إيجابي بعد إنجاز شيء."]
+],
+questions:[
+{text:"Why did Hamad arrive early?",answers:["he wanted to be prepared","because he wanted to be prepared"]},
+{text:"What problem did one guest have?",answers:["a missing suitcase","the guest had a missing suitcase"]},
+{text:"How did Hamad help the family?",answers:["he gave them directions to a restaurant","he helped them find a restaurant","he checked the map and gave them directions"]},
+{text:"Why did Hamad feel proud?",answers:["he had learned a lot and helped guests","he had a difficult but useful first day","because he had spoken to many guests and learned how the reception worked"]}
+]
 },
 
 {
-  id:20,
-  stage:3,
-  stageTitle:"مواقف تحتاج إلى فهم أعمق",
-  stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
-  title:"A Problem at the Restaurant",
-  topic:"المطاعم والمشاكل اليومية",
-  description:"A small mistake with an order is solved through polite communication.",
-  before:"What should you do if a restaurant brings you the wrong order?",
-  image:"reading-20.webp",
-
-  text:`
-Last night, Farah went to a restaurant with two friends. The restaurant was busy, but they found a table near the window. They looked at the menu and ordered their meals. After about twenty minutes, the waiter brought the food. Farah immediately noticed that her dish was not what she had ordered. She had asked for grilled chicken, but the plate contained fish. Instead of becoming angry, she politely explained the mistake to the waiter. He apologized and said that he had brought the wrong dish to the table. He took it back and returned a few minutes later with the correct meal. Farah thanked him and continued dinner with her friends. The problem was small, but Farah thought that speaking calmly had made it much easier to solve.
-  `,
-
-  help:[
-    ["grilled","مشوي","طريقة لطهي الطعام."],
-    ["instead of","بدلًا من","لاختيار شيء مكان شيء آخر."],
-    ["apologize","يعتذر","يستخدم عند الاعتذار عن خطأ."],
-    ["solve","يحل","تُستخدم مع problem غالبًا."]
-  ],
-
-  questions:[
-    {
-      text:"What was wrong with Farah's meal?",
-      answers:["she ordered grilled chicken but received fish","she received fish instead of grilled chicken","the waiter brought fish"]
-    },
-    {
-      text:"How did Farah react?",
-      answers:["she politely explained the mistake","she stayed calm and explained the mistake","she politely told the waiter about the mistake"]
-    },
-    {
-      text:"What did the waiter do?",
-      answers:["he apologized and brought the correct meal","he took it back and brought the correct meal"]
-    },
-    {
-      text:"What did Farah learn from the situation?",
-      answers:["speaking calmly made the problem easier to solve","staying calm made it easier to solve","calm communication helped solve the problem"]
-    }
-  ]
+id:18,
+stage:3,
+stageTitle:"مواقف تحتاج إلى فهم أعمق",
+stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
+title:"The Long Journey",
+topic:"السفر والمواصلات",
+description:"A long journey teaches a traveler the importance of preparation.",
+before:"What should you prepare before a long journey?",
+image:"pi-reading-18.webp",
+text:`Last summer, Yara traveled by train to visit her aunt in another city. The journey was supposed to take three hours, but it became much longer because the train stopped unexpectedly. At first, Yara was not worried. She had her phone, some water, and a book in her bag. After an hour, however, she started to feel tired and hungry. She looked at the small snacks she had brought and realized that she had not packed enough food. The train finally started moving again, but it stopped once more before reaching the next station. Yara called her aunt and explained that she would arrive late. Her aunt was understanding and told her not to worry. When Yara finally arrived, she was happy to see her aunt. She decided that next time she would take more food and check the journey information carefully before leaving.`,
+help:[
+["be supposed to","من المفترض أن","لما كان متوقعًا أن يحدث."],
+["unexpectedly","بشكل غير متوقع","عندما يحدث الشيء فجأة أو دون توقع."],
+["pack","يحزم / يجهز الأغراض","تُستخدم عند تجهيز الأمتعة."],
+["not enough","غير كافٍ","تعبير عن كمية أقل من المطلوب."]
+],
+questions:[
+{text:"How long was the journey supposed to take?",answers:["three hours","3 hours"]},
+{text:"Why did Yara become hungry?",answers:["she had not packed enough food","because she did not pack enough food"]},
+{text:"Why did she call her aunt?",answers:["to tell her she would arrive late","because she would arrive late","to explain that she would arrive late"]},
+{text:"What did Yara decide to do differently next time?",answers:["take more food and check the journey information","pack more food and check the journey information","take more food and check the information carefully"]}
+]
 },
 
 {
-  id:21,
-  stage:3,
-  stageTitle:"مواقف تحتاج إلى فهم أعمق",
-  stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
-  title:"The Phone Call",
-  topic:"التواصل والمعلومات",
-  description:"An unexpected phone call brings important news.",
-  before:"What kind of phone call can change your plans?",
-  image:"reading-21.webp",
-
-  text:`
-Mariam was leaving the office when her phone rang. It was her brother, who was calling from the airport. He told her that his flight had been delayed for several hours because of a technical problem. He was worried because he had an important meeting the next morning. Mariam checked the flight information online and found a later update. The airline had changed the departure time again. She told her brother to stay at the airport and keep checking the information. She also offered to pick him up when he arrived. A few hours later, he called again. The flight was finally ready, and he was getting on the plane. Mariam went home and waited for his message. Near midnight, her brother sent a short message: “I arrived safely.” Mariam was relieved and went to bed.
-  `,
-
-  help:[
-    ["delay","تأخير","عندما لا يحدث الشيء في الوقت المتوقع."],
-    ["departure time","وقت المغادرة","الوقت الذي يغادر فيه السفر."],
-    ["pick someone up","يذهب لإحضار شخص","تعبير شائع في المواصلات."],
-    ["arrive safely","يصل بسلام","تعبير شائع بعد السفر."]
-  ],
-
-  questions:[
-    {
-      text:"Why was the flight delayed?",
-      answers:["because of a technical problem","a technical problem"]
-    },
-    {
-      text:"Why was Mariam's brother worried?",
-      answers:["he had an important meeting the next morning","because he had an important meeting"]
-    },
-    {
-      text:"What did Mariam offer to do?",
-      answers:["pick him up when he arrived","pick him up from the airport"]
-    },
-    {
-      text:"Why was Mariam relieved at the end?",
-      answers:["her brother arrived safely","because her brother arrived safely"]
-    }
-  ]
+id:19,
+stage:3,
+stageTitle:"مواقف تحتاج إلى فهم أعمق",
+stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
+title:"An Important Presentation",
+topic:"الدراسة والعمل",
+description:"A student prepares for an important presentation and learns to stay calm.",
+before:"What can help you feel confident before a presentation?",
+image:"pi-reading-19.webp",
+text:`Abdullah had to give an English presentation in front of his class. He had prepared for several days and knew his topic well, but he was still nervous. The night before the presentation, he practiced in front of his brother. His brother listened and told him that the information was clear, but he spoke too quickly in some parts. Abdullah practiced again and tried to speak more slowly. The next morning, he arrived early and looked at his notes one more time. When the teacher called his name, Abdullah took a deep breath and walked to the front of the room. The first minute was difficult, but then he became more comfortable. He remembered his main points and answered the questions at the end. After the class, his teacher told him that his presentation was clear and well organized. Abdullah felt relieved and proud of his work.`,
+help:[
+["give a presentation","يقدم عرضًا تقديميًا","عبارة شائعة في الدراسة والعمل."],
+["practice","يتدرّب","تُستخدم للتحضير لمهارة أو مهمة."],
+["take a deep breath","يأخذ نفسًا عميقًا","تعبير شائع للهدوء."],
+["well organized","منظم جيدًا","تصف شيئًا مرتبًا وواضحًا."]
+],
+questions:[
+{text:"Why was Abdullah nervous even though he knew his topic?",answers:["because he had to present in front of his class","he had to give a presentation in front of his class","he was presenting in front of the class"]},
+{text:"What advice did his brother give him?",answers:["to speak more slowly","he spoke too quickly and should speak more slowly","speak more slowly"]},
+{text:"What did Abdullah do before starting?",answers:["he took a deep breath","he looked at his notes","he took a deep breath and walked to the front"]},
+{text:"How did the teacher describe his presentation?",answers:["clear and well organized","it was clear and well organized"]}
+]
 },
 
 {
-  id:22,
-  stage:3,
-  stageTitle:"مواقف تحتاج إلى فهم أعمق",
-  stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
-  title:"The Weekend Trip",
-  topic:"رحلة قصيرة",
-  description:"Friends take a short trip and discover that simple plans can change.",
-  before:"What can make a short trip memorable?",
-  image:"reading-22.webp",
-
-  text:`
-Four friends decided to take a short trip to a town near the mountains. They left early on Saturday morning because they wanted to arrive before lunch. The road was busy, and the journey took longer than they expected. When they finally arrived, they found a small market in the town center. They walked around, looked at local products, and had lunch at a simple restaurant. In the afternoon, they planned to visit a viewpoint, but the weather became cloudy and windy. Instead, they visited a small museum and learned about the history of the town. Before returning home, they stopped at a café and talked about the day. The trip had not followed their original plan, but they all agreed that the unexpected changes had made it more interesting.
-  `,
-
-  help:[
-    ["viewpoint","نقطة مشاهدة / مكان يطل على منظر","مكان تذهب إليه لرؤية منظر واسع."],
-    ["local products","منتجات محلية","أشياء تُنتج في المنطقة."],
-    ["follow a plan","يتبع خطة","ينفذ الخطة كما تم تحديدها."],
-    ["unexpected changes","تغييرات غير متوقعة","تغييرات لم تكن في الخطة."]
-  ],
-
-  questions:[
-    {
-      text:"Where did the friends travel?",
-      answers:["to a town near the mountains","a town near the mountains"]
-    },
-    {
-      text:"Why did the journey take longer?",
-      answers:["the road was busy","because the road was busy"]
-    },
-    {
-      text:"Why did they visit the museum instead of the viewpoint?",
-      answers:["the weather became cloudy and windy","because the weather was cloudy and windy"]
-    },
-    {
-      text:"What did the friends think about the changes?",
-      answers:["they made the trip more interesting","the unexpected changes made it more interesting"]
-    }
-  ]
+id:20,
+stage:3,
+stageTitle:"مواقف تحتاج إلى فهم أعمق",
+stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
+title:"A Problem at the Restaurant",
+topic:"المطاعم والمشاكل اليومية",
+description:"A small mistake with an order is solved through polite communication.",
+before:"What should you do if a restaurant brings you the wrong order?",
+image:"pi-reading-20.webp",
+text:`Last night, Farah went to a restaurant with two friends. The restaurant was busy, but they found a table near the window. They looked at the menu and ordered their meals. After about twenty minutes, the waiter brought the food. Farah immediately noticed that her dish was not what she had ordered. She had asked for grilled chicken, but the plate contained fish. Instead of becoming angry, she politely explained the mistake to the waiter. He apologized and said that he had brought the wrong dish to the table. He took it back and returned a few minutes later with the correct meal. Farah thanked him and continued dinner with her friends. The problem was small, but Farah thought that speaking calmly had made it much easier to solve.`,
+help:[
+["grilled","مشوي","طريقة لطهي الطعام."],
+["instead of","بدلًا من","لاختيار شيء مكان شيء آخر."],
+["apologize","يعتذر","يستخدم عند الاعتذار عن خطأ."],
+["solve","يحل","تُستخدم مع problem غالبًا."]
+],
+questions:[
+{text:"What was wrong with Farah's meal?",answers:["she ordered grilled chicken but received fish","she received fish instead of grilled chicken","the waiter brought fish"]},
+{text:"How did Farah react?",answers:["she politely explained the mistake","she stayed calm and explained the mistake","she politely told the waiter about the mistake"]},
+{text:"What did the waiter do?",answers:["he apologized and brought the correct meal","he took it back and brought the correct meal"]},
+{text:"What did Farah learn from the situation?",answers:["speaking calmly made the problem easier to solve","staying calm made it easier to solve","calm communication helped solve the problem"]}
+]
 },
 
 {
-  id:23,
-  stage:3,
-  stageTitle:"مواقف تحتاج إلى فهم أعمق",
-  stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
-  title:"The New Apartment",
-  topic:"السكن والحياة اليومية",
-  description:"A family moves into a new apartment and slowly makes it feel like home.",
-  before:"What makes a new house feel like home?",
-  image:"reading-23.webp",
-
-  text:`
-When Salem's family moved into their new apartment, the rooms were almost empty. The furniture had arrived, but there were still many boxes on the floor. During the first week, everyone was busy. Salem's parents organized the kitchen and living room, while Salem and his sister arranged their bedrooms. They also wanted to decorate the walls, but they decided to wait until everything else was ready. On Friday evening, the family finally finished most of the work. They ordered dinner, sat together in the living room, and talked about their new home. Salem looked around and realized that the apartment already felt different. It was not perfect yet, but their things, photos, and small personal details made it feel comfortable. He understood that a home was more than just rooms and furniture.
-  `,
-
-  help:[
-    ["empty","فارغ","لا يحتوي على أشياء كثيرة."],
-    ["arrange","يرتب","يضع الأشياء بطريقة منظمة."],
-    ["decorate","يزين","يضيف أشياء جميلة للمكان."],
-    ["personal details","تفاصيل شخصية","أشياء صغيرة تعبر عن الشخص أو العائلة."]
-  ],
-
-  questions:[
-    {
-      text:"Why were the rooms almost empty?",
-      answers:["the family had just moved in","they had just moved into the apartment","because they had just moved"]
-    },
-    {
-      text:"What did Salem and his sister do?",
-      answers:["they arranged their bedrooms","they organized their bedrooms"]
-    },
-    {
-      text:"Why did the family wait before decorating the walls?",
-      answers:["they wanted to wait until everything else was ready","until everything else was ready"]
-    },
-    {
-      text:"What made the apartment feel comfortable?",
-      answers:["their things, photos, and personal details","their things and photos","personal details and their things"]
-    }
-  ]
-},
-
-/* =========================================================
-   STAGE 4
-========================================================= */
-
-{
-  id:24,
-  stage:4,
-  stageTitle:"تحدي القراءة — نهاية المستوى",
-  stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
-  title:"A Day I Will Remember",
-  topic:"يوم خاص وذكريات",
-  description:"A special day shows how several small moments can become a strong memory.",
-  before:"What makes an ordinary day become a special memory?",
-  image:"reading-24.webp",
-
-  text:`
-Last month, my family planned a small celebration for my grandmother's birthday. We wanted to surprise her, so nobody told her about the plan. In the morning, my brother went to the bakery while my parents prepared the house. I was responsible for the decorations. Everything was going well until the electricity suddenly went off. For a few minutes, everyone was worried because the cake was in the refrigerator. Luckily, the electricity returned before my grandmother arrived. When she opened the door, everyone shouted “Surprise!” She looked shocked for a moment and then started laughing. We ate together, looked at old family photos, and listened to stories about my grandmother's childhood. The celebration was simple, but it became one of my favorite family memories. Sometimes, the best days are not the most expensive or complicated ones; they are simply the days when people are together.
-  `,
-
-  help:[
-    ["celebration","احتفال","مناسبة للاحتفال بشيء مهم."],
-    ["be responsible for","يكون مسؤولًا عن","تعبير شائع للمسؤولية عن مهمة."],
-    ["electricity went off","انقطعت الكهرباء","تعبير شائع."],
-    ["childhood","الطفولة","الفترة التي يكون فيها الشخص طفلًا."]
-  ],
-
-  questions:[
-    {
-      text:"Why did the family want to surprise the grandmother?",
-      answers:["for her birthday","because it was her birthday"]
-    },
-    {
-      text:"What problem happened before she arrived?",
-      answers:["the electricity went off","the power went off"]
-    },
-    {
-      text:"What did the family do after eating?",
-      answers:["they looked at old family photos and listened to stories","they looked at photos and listened to stories"]
-    },
-    {
-      text:"What is the main idea of the final sentence?",
-      answers:["being together is more important than expensive or complicated things","the best days are when people are together","simple days with family can be the best"]
-    }
-  ]
+id:21,
+stage:3,
+stageTitle:"مواقف تحتاج إلى فهم أعمق",
+stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
+title:"The Phone Call",
+topic:"التواصل والمعلومات",
+description:"An unexpected phone call brings important news.",
+before:"What kind of phone call can change your plans?",
+image:"pi-reading-21.webp",
+text:`Mariam was leaving the office when her phone rang. It was her brother, who was calling from the airport. He told her that his flight had been delayed for several hours because of a technical problem. He was worried because he had an important meeting the next morning. Mariam checked the flight information online and found a later update. The airline had changed the departure time again. She told her brother to stay at the airport and keep checking the information. She also offered to pick him up when he arrived. A few hours later, he called again. The flight was finally ready, and he was getting on the plane. Mariam went home and waited for his message. Near midnight, her brother sent a short message: “I arrived safely.” Mariam was relieved and went to bed.`,
+help:[
+["delay","تأخير","عندما لا يحدث الشيء في الوقت المتوقع."],
+["departure time","وقت المغادرة","الوقت الذي يغادر فيه السفر."],
+["pick someone up","يذهب لإحضار شخص","تعبير شائع في المواصلات."],
+["arrive safely","يصل بسلام","تعبير شائع بعد السفر."]
+],
+questions:[
+{text:"Why was the flight delayed?",answers:["because of a technical problem","a technical problem"]},
+{text:"Why was Mariam's brother worried?",answers:["he had an important meeting the next morning","because he had an important meeting"]},
+{text:"What did Mariam offer to do?",answers:["pick him up when he arrived","pick him up from the airport"]},
+{text:"Why was Mariam relieved at the end?",answers:["her brother arrived safely","because her brother arrived safely"]}
+]
 },
 
 {
-  id:25,
-  stage:4,
-  stageTitle:"تحدي القراءة — نهاية المستوى",
-  stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
-  title:"The First Week in a New City",
-  topic:"الانتقال والحياة في مدينة جديدة",
-  description:"A person describes the challenges and small discoveries of moving to a new city.",
-  before:"What would be the hardest part of moving to a new city?",
-  image:"reading-25.webp",
-
-  text:`
-When Lina moved to a new city for work, she thought the first week would be easy. She had already found an apartment and knew where her office was. However, the city was much bigger than she expected, and getting around was sometimes difficult. On her first morning, she took the wrong train and arrived at work late. The next day, she checked the map carefully before leaving home. During the week, she also discovered a supermarket near her apartment, a quiet park, and a small café where she could have breakfast. By Friday, she knew the route to work and had started recognizing some people in her neighborhood. Lina realized that a new city could feel strange at first, but every small discovery made it more familiar. She was beginning to feel that the city could become her new home.
-  `,
-
-  help:[
-    ["get around","يتنقل","التنقل داخل مدينة أو مكان."],
-    ["route","الطريق / المسار","الطريق من مكان إلى آخر."],
-    ["recognize","يتعرف على / يميز","عندما تعرف شخصًا أو شيئًا لأنك رأيته من قبل."],
-    ["familiar","مألوف","شيء أصبح معروفًا لك."]
-  ],
-
-  questions:[
-    {
-      text:"Why did Lina move to the new city?",
-      answers:["for work","because of work"]
-    },
-    {
-      text:"What happened on her first morning?",
-      answers:["she took the wrong train and arrived late","she took the wrong train","she arrived at work late"]
-    },
-    {
-      text:"What places did she discover during the week?",
-      answers:["a supermarket, a quiet park, and a small café","a supermarket, park, and café"]
-    },
-    {
-      text:"How did her feelings about the city change?",
-      answers:["it became more familiar","she began to feel that it could become her new home","the city felt more familiar"]
-    }
-  ]
+id:22,
+stage:3,
+stageTitle:"مواقف تحتاج إلى فهم أعمق",
+stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
+title:"The Weekend Trip",
+topic:"رحلة قصيرة",
+description:"Friends take a short trip and discover that simple plans can change.",
+before:"What can make a short trip memorable?",
+image:"pi-reading-22.webp",
+text:`Four friends decided to take a short trip to a town near the mountains. They left early on Saturday morning because they wanted to arrive before lunch. The road was busy, and the journey took longer than they expected. When they finally arrived, they found a small market in the town center. They walked around, looked at local products, and had lunch at a simple restaurant. In the afternoon, they planned to visit a viewpoint, but the weather became cloudy and windy. Instead, they visited a small museum and learned about the history of the town. Before returning home, they stopped at a café and talked about the day. The trip had not followed their original plan, but they all agreed that the unexpected changes had made it more interesting.`,
+help:[
+["viewpoint","نقطة مشاهدة / مكان يطل على منظر","مكان تذهب إليه لرؤية منظر واسع."],
+["local products","منتجات محلية","أشياء تُنتج في المنطقة."],
+["follow a plan","يتبع خطة","ينفذ الخطة كما تم تحديدها."],
+["unexpected changes","تغييرات غير متوقعة","تغييرات لم تكن في الخطة."]
+],
+questions:[
+{text:"Where did the friends travel?",answers:["to a town near the mountains","a town near the mountains"]},
+{text:"Why did the journey take longer?",answers:["the road was busy","because the road was busy"]},
+{text:"Why did they visit the museum instead of the viewpoint?",answers:["the weather became cloudy and windy","because the weather was cloudy and windy"]},
+{text:"What did the friends think about the changes?",answers:["they made the trip more interesting","the unexpected changes made it more interesting"]}
+]
 },
 
 {
-  id:26,
-  stage:4,
-  stageTitle:"تحدي القراءة — نهاية المستوى",
-  stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
-  title:"The Lost Time",
-  topic:"التأخير وتنظيم الوقت",
-  description:"A busy morning teaches someone an important lesson about time.",
-  before:"Why do people sometimes lose more time than they expect?",
-  image:"reading-26.webp",
-
-  text:`
-Kareem had an important meeting at ten o'clock, so he planned to leave home at nine. He woke up on time, but he spent several minutes looking for his keys. Then he remembered that he had left them in the kitchen. After finding them, he went back to his room because he had forgotten his phone. By the time he was ready to leave, it was already nine twenty. Kareem drove to the office, but the traffic was heavier than usual. He arrived at nine fifty-five and quickly went upstairs. The meeting had not started yet, so he was relieved. During the meeting, however, he realized how easily small delays had taken almost an hour from his morning. After work, he put his keys and phone in the same place. He decided that being ready five minutes earlier could make a big difference.
-  `,
-
-  help:[
-    ["on time","في الوقت المحدد","ليس متأخرًا."],
-    ["by the time","بحلول الوقت الذي","تربط بين حدثين وتوضح أن شيئًا حدث قبل وقت معين."],
-    ["heavier than usual","أكثر ازدحامًا من المعتاد","تُستخدم هنا لوصف حركة المرور."],
-    ["make a big difference","يحدث فرقًا كبيرًا","تعبير شائع."]
-  ],
-
-  questions:[
-    {
-      text:"What time did Kareem plan to leave?",
-      answers:["nine o'clock","9 o'clock","9"]
-    },
-    {
-      text:"What caused the first delay?",
-      answers:["he could not find his keys","looking for his keys","he spent time looking for his keys"]
-    },
-    {
-      text:"Why did he arrive close to the meeting time?",
-      answers:["he forgot his phone and the traffic was heavy","because he forgot his phone and the traffic was heavy"]
-    },
-    {
-      text:"What did Kareem decide to change?",
-      answers:["to be ready five minutes earlier","he decided to be ready five minutes earlier"]
-    }
-  ]
+id:23,
+stage:3,
+stageTitle:"مواقف تحتاج إلى فهم أعمق",
+stageDescription:"تزداد التفاصيل والأحداث، وتبدأ الأسئلة في الاعتماد على الفهم والاستنتاج.",
+title:"The New Apartment",
+topic:"السكن والحياة اليومية",
+description:"A family moves into a new apartment and slowly makes it feel like home.",
+before:"What makes a new house feel like home?",
+image:"pi-reading-23.webp",
+text:`When Salem's family moved into their new apartment, the rooms were almost empty. The furniture had arrived, but there were still many boxes on the floor. During the first week, everyone was busy. Salem's parents organized the kitchen and living room, while Salem and his sister arranged their bedrooms. They also wanted to decorate the walls, but they decided to wait until everything else was ready. On Friday evening, the family finally finished most of the work. They ordered dinner, sat together in the living room, and talked about their new home. Salem looked around and realized that the apartment already felt different. It was not perfect yet, but their things, photos, and small personal details made it feel comfortable. He understood that a home was more than just rooms and furniture.`,
+help:[
+["empty","فارغ","لا يحتوي على أشياء كثيرة."],
+["arrange","يرتب","يضع الأشياء بطريقة منظمة."],
+["decorate","يزين","يضيف أشياء جميلة للمكان."],
+["personal details","تفاصيل شخصية","أشياء صغيرة تعبر عن الشخص أو العائلة."]
+],
+questions:[
+{text:"Why were the rooms almost empty?",answers:["the family had just moved in","they had just moved into the apartment","because they had just moved"]},
+{text:"What did Salem and his sister do?",answers:["they arranged their bedrooms","they organized their bedrooms"]},
+{text:"Why did the family wait before decorating the walls?",answers:["they wanted to wait until everything else was ready","until everything else was ready"]},
+{text:"What made the apartment feel comfortable?",answers:["their things, photos, and personal details","their things and photos","personal details and their things"]}
+]
 },
 
 {
-  id:27,
-  stage:4,
-  stageTitle:"تحدي القراءة — نهاية المستوى",
-  stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
-  title:"A Conversation That Helped",
-  topic:"المشاعر والتواصل",
-  description:"A conversation with a friend helps someone look at a problem differently.",
-  before:"Can talking to someone change the way you see a problem?",
-  image:"reading-27.webp",
-
-  text:`
-For several days, Dana had been worried about an important decision. She had received an opportunity to join a new course, but the schedule was difficult, and she was not sure if she had enough time. She talked about it with her friend Amal while they were having coffee. Dana explained all the reasons why she was worried. Amal listened carefully and then asked a simple question: “Which choice will help you in the future?” Dana had been thinking only about the problems, so the question made her look at the situation differently. She realized that the course could give her useful skills and help her reach an important goal. The schedule would still be difficult, but she could organize her time better. Dana thanked Amal for listening. She had not received a direct answer, but the conversation had helped her understand what she really wanted.
-  `,
-
-  help:[
-    ["opportunity","فرصة","شيء جيد يمكنك الاستفادة منه."],
-    ["reach a goal","يحقق هدفًا","تعبير شائع."],
-    ["look at something differently","ينظر إلى شيء بطريقة مختلفة","يعني تغيير طريقة التفكير في الموضوع."],
-    ["what I really want","ما أريده حقًا","really هنا للتأكيد."]
-  ],
-
-  questions:[
-    {
-      text:"Why was Dana worried?",
-      answers:["she was not sure if she had enough time for the course","the course schedule was difficult","because the schedule was difficult"]
-    },
-    {
-      text:"What question did Amal ask?",
-      answers:["which choice will help you in the future","which choice will help her in the future"]
-    },
-    {
-      text:"What did Dana realize?",
-      answers:["the course could give her useful skills and help her reach an important goal","the course could help her in the future","it could give her useful skills"]
-    },
-    {
-      text:"Why was the conversation helpful even though Amal did not give her a direct answer?",
-      answers:["it helped Dana understand what she really wanted","it made her look at the situation differently","it helped her think differently about the problem"]
-    }
-  ]
+id:24,
+stage:4,
+stageTitle:"تحدي القراءة — نهاية المستوى",
+stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
+title:"A Day I Will Remember",
+topic:"يوم خاص وذكريات",
+description:"A special day shows how several small moments can become a strong memory.",
+before:"What makes an ordinary day become a special memory?",
+image:"pi-reading-24.webp",
+text:`Last month, my family planned a small celebration for my grandmother's birthday. We wanted to surprise her, so nobody told her about the plan. In the morning, my brother went to the bakery while my parents prepared the house. I was responsible for the decorations. Everything was going well until the electricity suddenly went off. For a few minutes, everyone was worried because the cake was in the refrigerator. Luckily, the electricity returned before my grandmother arrived. When she opened the door, everyone shouted “Surprise!” She looked shocked for a moment and then started laughing. We ate together, looked at old family photos, and listened to stories about my grandmother's childhood. The celebration was simple, but it became one of my favorite family memories. Sometimes, the best days are not the most expensive or complicated ones; they are simply the days when people are together.`,
+help:[
+["celebration","احتفال","مناسبة للاحتفال بشيء مهم."],
+["be responsible for","يكون مسؤولًا عن","تعبير شائع للمسؤولية عن مهمة."],
+["electricity went off","انقطعت الكهرباء","تعبير شائع."],
+["childhood","الطفولة","الفترة التي يكون فيها الشخص طفلًا."]
+],
+questions:[
+{text:"Why did the family want to surprise the grandmother?",answers:["for her birthday","because it was her birthday"]},
+{text:"What problem happened before she arrived?",answers:["the electricity went off","the power went off"]},
+{text:"What did the family do after eating?",answers:["they looked at old family photos and listened to stories","they looked at photos and listened to stories"]},
+{text:"What is the main idea of the final sentence?",answers:["being together is more important than expensive or complicated things","the best days are when people are together","simple days with family can be the best"]}
+]
 },
 
 {
-  id:28,
-  stage:4,
-  stageTitle:"تحدي القراءة — نهاية المستوى",
-  stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
-  title:"The Day Everything Changed",
-  topic:"تجربة جديدة",
-  description:"A small decision leads to a new experience and a change in routine.",
-  before:"How can one small decision change your routine?",
-  image:"reading-28.webp",
-
-  text:`
-For a long time, Saif had wanted to join a weekend photography course, but he always found a reason to wait. One Saturday morning, he finally decided to register. He did not know anyone in the class, and at first he felt a little uncomfortable. The teacher asked everyone to take photos around the neighborhood and return after an hour. Saif walked through streets he had visited many times before, but he started noticing details that he had never paid attention to. He photographed an old building, a small shop, and a group of people in a park. When he returned to class, the students showed their photos to each other. Saif was surprised by how different everyone's pictures were. He enjoyed the experience so much that he decided to continue the course. A simple decision had added something new to his weekends.
-  `,
-
-  help:[
-    ["register","يسجل","التسجيل في دورة أو فعالية."],
-    ["pay attention to","ينتبه إلى","تعبير شائع."],
-    ["notice","يلاحظ","يصبح منتبهًا لشيء."],
-    ["add something new","يضيف شيئًا جديدًا","تعبير عن إضافة تجربة أو شيء جديد للحياة."]
-  ],
-
-  questions:[
-    {
-      text:"Why had Saif not joined the course before?",
-      answers:["he always found a reason to wait","he kept finding reasons to wait"]
-    },
-    {
-      text:"What did the teacher ask the students to do?",
-      answers:["take photos around the neighborhood and return after an hour","take photos around the neighborhood"]
-    },
-    {
-      text:"What did Saif notice during his walk?",
-      answers:["details he had never paid attention to","new details in the neighborhood","details he had never noticed before"]
-    },
-    {
-      text:"How did the course change his weekends?",
-      answers:["he added something new to his weekends","he decided to continue the course","he started spending his weekends taking photos"]
-    }
-  ]
+id:25,
+stage:4,
+stageTitle:"تحدي القراءة — نهاية المستوى",
+stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
+title:"The First Week in a New City",
+topic:"الانتقال والحياة في مدينة جديدة",
+description:"A person describes the challenges and small discoveries of moving to a new city.",
+before:"What would be the hardest part of moving to a new city?",
+image:"pi-reading-25.webp",
+text:`When Lina moved to a new city for work, she thought the first week would be easy. She had already found an apartment and knew where her office was. However, the city was much bigger than she expected, and getting around was sometimes difficult. On her first morning, she took the wrong train and arrived at work late. The next day, she checked the map carefully before leaving home. During the week, she also discovered a supermarket near her apartment, a quiet park, and a small café where she could have breakfast. By Friday, she knew the route to work and had started recognizing some people in her neighborhood. Lina realized that a new city could feel strange at first, but every small discovery made it more familiar. She was beginning to feel that the city could become her new home.`,
+help:[
+["get around","يتنقل","التنقل داخل مدينة أو مكان."],
+["route","الطريق / المسار","الطريق من مكان إلى آخر."],
+["recognize","يتعرف على / يميز","عندما تعرف شخصًا أو شيئًا لأنك رأيته من قبل."],
+["familiar","مألوف","شيء أصبح معروفًا لك."]
+],
+questions:[
+{text:"Why did Lina move to the new city?",answers:["for work","because of work"]},
+{text:"What happened on her first morning?",answers:["she took the wrong train and arrived late","she took the wrong train","she arrived at work late"]},
+{text:"What places did she discover during the week?",answers:["a supermarket, a quiet park, and a small café","a supermarket, park, and café"]},
+{text:"How did her feelings about the city change?",answers:["it became more familiar","she began to feel that it could become her new home","the city felt more familiar"]}
+]
 },
 
 {
-  id:29,
-  stage:4,
-  stageTitle:"تحدي القراءة — نهاية المستوى",
-  stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
-  title:"A Simple Act of Kindness",
-  topic:"المواقف الإنسانية",
-  description:"A small act of kindness makes a difficult day easier for a stranger.",
-  before:"What is a small kind thing someone can do for a stranger?",
-  image:"reading-29.webp",
-
-  text:`
-On a rainy afternoon, Faisal was waiting for a bus after work. Many people were standing at the bus stop, and everyone looked tired. An older man nearby was carrying several bags and trying to keep them dry. When the bus arrived, people moved quickly toward the door. Faisal noticed that one of the man's bags had fallen onto the wet ground. He picked it up and helped the man get onto the bus. The man thanked him and smiled. There were no empty seats, so Faisal stood near him and helped hold one of the bags. The journey was only fifteen minutes, but the man talked about his family and his day. Before getting off, he thanked Faisal again and said that his help had made a difficult afternoon easier. Faisal smiled. He had not done anything special, but the small act had made both of them feel better.
-  `,
-
-  help:[
-    ["act of kindness","تصرف لطيف / عمل من أعمال اللطف","مساعدة أو تصرف جيد تجاه شخص آخر."],
-    ["wet","مبلل","عكس dry."],
-    ["get onto the bus","يصعد إلى الحافلة","تعبير شائع."],
-    ["make something easier","يجعل شيئًا أسهل","تعبير مفيد جدًا."]
-  ],
-
-  questions:[
-    {
-      text:"Why was the older man having difficulty at the bus stop?",
-      answers:["he was carrying several bags and trying to keep them dry","he had several bags"]
-    },
-    {
-      text:"What did Faisal do?",
-      answers:["he picked up the bag and helped the man get onto the bus","he picked up his bag and helped him onto the bus"]
-    },
-    {
-      text:"What did the man talk about during the journey?",
-      answers:["his family and his day"]
-    },
-    {
-      text:"Why did the man say Faisal's help was important?",
-      answers:["it made a difficult afternoon easier","because it made his difficult afternoon easier"]
-    }
-  ]
+id:26,
+stage:4,
+stageTitle:"تحدي القراءة — نهاية المستوى",
+stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
+title:"The Lost Time",
+topic:"التأخير وتنظيم الوقت",
+description:"A busy morning teaches someone an important lesson about time.",
+before:"Why do people sometimes lose more time than they expect?",
+image:"pi-reading-26.webp",
+text:`Kareem had an important meeting at ten o'clock, so he planned to leave home at nine. He woke up on time, but he spent several minutes looking for his keys. Then he remembered that he had left them in the kitchen. After finding them, he went back to his room because he had forgotten his phone. By the time he was ready to leave, it was already nine twenty. Kareem drove to the office, but the traffic was heavier than usual. He arrived at nine fifty-five and quickly went upstairs. The meeting had not started yet, so he was relieved. During the meeting, however, he realized how easily small delays had taken almost an hour from his morning. After work, he put his keys and phone in the same place. He decided that being ready five minutes earlier could make a big difference.`,
+help:[
+["on time","في الوقت المحدد","ليس متأخرًا."],
+["by the time","بحلول الوقت الذي","تربط بين حدثين وتوضح أن شيئًا حدث قبل وقت معين."],
+["heavier than usual","أكثر ازدحامًا من المعتاد","تُستخدم هنا لوصف حركة المرور."],
+["make a big difference","يحدث فرقًا كبيرًا","تعبير شائع."]
+],
+questions:[
+{text:"What time did Kareem plan to leave?",answers:["nine o'clock","9 o'clock","9"]},
+{text:"What caused the first delay?",answers:["he could not find his keys","looking for his keys","he spent time looking for his keys"]},
+{text:"Why did he arrive close to the meeting time?",answers:["he forgot his phone and the traffic was heavy","because he forgot his phone and the traffic was heavy"]},
+{text:"What did Kareem decide to change?",answers:["to be ready five minutes earlier","he decided to be ready five minutes earlier"]}
+]
 },
 
 {
-  id:30,
-  stage:4,
-  stageTitle:"تحدي القراءة — نهاية المستوى",
-  stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
-  title:"A New Chapter",
-  topic:"بداية مرحلة جديدة",
-  description:"A reflective story about finishing one stage and beginning another.",
-  before:"What does starting a new chapter in life mean to you?",
-  image:"reading-30.webp",
+id:27,
+stage:4,
+stageTitle:"تحدي القراءة — نهاية المستوى",
+stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
+title:"A Conversation That Helped",
+topic:"المشاعر والتواصل",
+description:"A conversation with a friend helps someone look at a problem differently.",
+before:"Can talking to someone change the way you see a problem?",
+image:"pi-reading-27.webp",
+text:`For several days, Dana had been worried about an important decision. She had received an opportunity to join a new course, but the schedule was difficult, and she was not sure if she had enough time. She talked about it with her friend Amal while they were having coffee. Dana explained all the reasons why she was worried. Amal listened carefully and then asked a simple question: “Which choice will help you in the future?” Dana had been thinking only about the problems, so the question made her look at the situation differently. She realized that the course could give her useful skills and help her reach an important goal. The schedule would still be difficult, but she could organize her time better. Dana thanked Amal for listening. She had not received a direct answer, but the conversation had helped her understand what she really wanted.`,
+help:[
+["opportunity","فرصة","شيء جيد يمكنك الاستفادة منه."],
+["reach a goal","يحقق هدفًا","تعبير شائع."],
+["look at something differently","ينظر إلى شيء بطريقة مختلفة","يعني تغيير طريقة التفكير في الموضوع."],
+["what I really want","ما أريده حقًا","really هنا للتأكيد."]
+],
+questions:[
+{text:"Why was Dana worried?",answers:["she was not sure if she had enough time for the course","the course schedule was difficult","because the schedule was difficult"]},
+{text:"What question did Amal ask?",answers:["which choice will help you in the future","which choice will help her in the future"]},
+{text:"What did Dana realize?",answers:["the course could give her useful skills and help her reach an important goal","the course could help her in the future","it could give her useful skills"]},
+{text:"Why was the conversation helpful even though Amal did not give her a direct answer?",answers:["it helped Dana understand what she really wanted","it made her look at the situation differently","it helped her think differently about the problem"]}
+]
+},
 
-  text:`
-At the end of the year, Rawan looked through an old notebook and found a list of goals she had written twelve months earlier. Some goals were complete, some were still waiting, and a few were no longer important to her. At first, she felt disappointed because she had not done everything she had planned. Then she started reading the notes more carefully. She remembered difficult months, new experiences, and several small achievements that she had almost forgotten. Rawan realized that progress was not always easy to see. Sometimes, she had learned something without noticing it, and sometimes a change in her plans had taken her in a better direction. She closed the notebook and wrote a new list. This time, she did not want a perfect year. She wanted a year in which she could keep learning, make good decisions, and continue moving forward.
-  `,
+{
+id:28,
+stage:4,
+stageTitle:"تحدي القراءة — نهاية المستوى",
+stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
+title:"The Day Everything Changed",
+topic:"تجربة جديدة",
+description:"A small decision leads to a new experience and a change in routine.",
+before:"How can one small decision change your routine?",
+image:"pi-reading-28.webp",
+text:`For a long time, Saif had wanted to join a weekend photography course, but he always found a reason to wait. One Saturday morning, he finally decided to register. He did not know anyone in the class, and at first he felt a little uncomfortable. The teacher asked everyone to take photos around the neighborhood and return after an hour. Saif walked through streets he had visited many times before, but he started noticing details that he had never paid attention to. He photographed an old building, a small shop, and a group of people in a park. When he returned to class, the students showed their photos to each other. Saif was surprised by how different everyone's pictures were. He enjoyed the experience so much that he decided to continue the course. A simple decision had added something new to his weekends.`,
+help:[
+["register","يسجل","التسجيل في دورة أو فعالية."],
+["pay attention to","ينتبه إلى","تعبير شائع."],
+["notice","يلاحظ","يصبح منتبهًا لشيء."],
+["add something new","يضيف شيئًا جديدًا","تعبير عن إضافة تجربة أو شيء جديد للحياة."]
+],
+questions:[
+{text:"Why had Saif not joined the course before?",answers:["he always found a reason to wait","he kept finding reasons to wait"]},
+{text:"What did the teacher ask the students to do?",answers:["take photos around the neighborhood and return after an hour","take photos around the neighborhood"]},
+{text:"What did Saif notice during his walk?",answers:["details he had never paid attention to","new details in the neighborhood","details he had never noticed before"]},
+{text:"How did the course change his weekends?",answers:["he added something new to his weekends","he decided to continue the course","he started spending his weekends taking photos"]}
+]
+},
 
-  help:[
-    ["goal","هدف","شيء تريد تحقيقه."],
-    ["achievement","إنجاز","شيء نجحت في تحقيقه."],
-    ["progress","تقدم","التغير نحو مستوى أفضل."],
-    ["move forward","يتقدم إلى الأمام","تعبير يمكن استخدامه حرفيًا أو معنويًا."]
-  ],
+{
+id:29,
+stage:4,
+stageTitle:"تحدي القراءة — نهاية المستوى",
+stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
+title:"A Simple Act of Kindness",
+topic:"المواقف الإنسانية",
+description:"A small act of kindness makes a difficult day easier for a stranger.",
+before:"What is a small kind thing someone can do for a stranger?",
+image:"pi-reading-29.webp",
+text:`On a rainy afternoon, Faisal was waiting for a bus after work. Many people were standing at the bus stop, and everyone looked tired. An older man nearby was carrying several bags and trying to keep them dry. When the bus arrived, people moved quickly toward the door. Faisal noticed that one of the man's bags had fallen onto the wet ground. He picked it up and helped the man get onto the bus. The man thanked him and smiled. There were no empty seats, so Faisal stood near him and helped hold one of the bags. The journey was only fifteen minutes, but the man talked about his family and his day. Before getting off, he thanked Faisal again and said that his help had made a difficult afternoon easier. Faisal smiled. He had not done anything special, but the small act had made both of them feel better.`,
+help:[
+["act of kindness","تصرف لطيف / عمل من أعمال اللطف","مساعدة أو تصرف جيد تجاه شخص آخر."],
+["wet","مبلل","عكس dry."],
+["get onto the bus","يصعد إلى الحافلة","تعبير شائع."],
+["make something easier","يجعل شيئًا أسهل","تعبير مفيد جدًا."]
+],
+questions:[
+{text:"Why was the older man having difficulty at the bus stop?",answers:["he was carrying several bags and trying to keep them dry","he had several bags"]},
+{text:"What did Faisal do?",answers:["he picked up the bag and helped the man get onto the bus","he picked up his bag and helped him onto the bus"]},
+{text:"What did the man talk about during the journey?",answers:["his family and his day"]},
+{text:"Why did the man say Faisal's help was important?",answers:["it made a difficult afternoon easier","because it made his difficult afternoon easier"]}
+]
+},
 
-  questions:[
-    {
-      text:"What did Rawan find in her old notebook?",
-      answers:["a list of goals","a list of goals she had written twelve months earlier"]
-    },
-    {
-      text:"Why did she initially feel disappointed?",
-      answers:["she had not done everything she had planned","because she had not completed all her goals"]
-    },
-    {
-      text:"What did she realize after reading the notes?",
-      answers:["progress was not always easy to see","she had made progress even if she did not notice it"]
-    },
-    {
-      text:"What did she want from the new year?",
-      answers:["to keep learning, make good decisions, and continue moving forward","she wanted to keep learning and moving forward","to keep learning and make good decisions"]
-    }
-  ]
+{
+id:30,
+stage:4,
+stageTitle:"تحدي القراءة — نهاية المستوى",
+stageDescription:"نصوص أطول وأكثر ترابطًا. حاول فهم الفكرة العامة والتفاصيل والاستنتاجات.",
+title:"A New Chapter",
+topic:"بداية مرحلة جديدة",
+description:"A reflective story about finishing one stage and beginning another.",
+before:"What does starting a new chapter in life mean to you?",
+image:"pi-reading-30.webp",
+text:`At the end of the year, Rawan looked through an old notebook and found a list of goals she had written twelve months earlier. Some goals were complete, some were still waiting, and a few were no longer important to her. At first, she felt disappointed because she had not done everything she had planned. Then she started reading the notes more carefully. She remembered difficult months, new experiences, and several small achievements that she had almost forgotten. Rawan realized that progress was not always easy to see. Sometimes, she had learned something without noticing it, and sometimes a change in her plans had taken her in a better direction. She closed the notebook and wrote a new list. This time, she did not want a perfect year. She wanted a year in which she could keep learning, make good decisions, and continue moving forward.`,
+help:[
+["goal","هدف","شيء تريد تحقيقه."],
+["achievement","إنجاز","شيء نجحت في تحقيقه."],
+["progress","تقدم","التغير نحو مستوى أفضل."],
+["move forward","يتقدم إلى الأمام","تعبير يمكن استخدامه حرفيًا أو معنويًا."]
+],
+questions:[
+{text:"What did Rawan find in her old notebook?",answers:["a list of goals","a list of goals she had written twelve months earlier"]},
+{text:"Why did she initially feel disappointed?",answers:["she had not done everything she had planned","because she had not completed all her goals"]},
+{text:"What did she realize after reading the notes?",answers:["progress was not always easy to see","she had made progress even if she did not notice it"]},
+{text:"What did she want from the new year?",answers:["to keep learning, make good decisions, and continue moving forward","she wanted to keep learning and moving forward","to keep learning and make good decisions"]}
+]
 }
 
 ];
@@ -2256,31 +1667,28 @@ At the end of the year, Rawan looked through an old notebook and found a list of
    ELEMENTS
 ========================================================= */
 
-const listEl = document.getElementById("readingList");
-const lessonEl = document.getElementById("lessonView");
-const emptyEl = document.getElementById("emptyState");
-const searchInput = document.getElementById("searchInput");
+const listEl=document.getElementById("readingList");
+const lessonEl=document.getElementById("lessonView");
+const emptyEl=document.getElementById("emptyState");
+const searchInput=document.getElementById("searchInput");
 
 
 /* =========================================================
-   NORMALIZE ANSWER
+   NORMALIZE
 ========================================================= */
 
 function normalizeAnswer(text){
 
-  return String(text || "")
+  return String(text||"")
     .toLowerCase()
     .trim()
-
     .replace(/[’‘]/g,"'")
     .replace(/[“”]/g,'"')
-
     .replace(/[.,!?;:"'()[\]{}]/g," ")
-
     .replace(/\s+/g," ")
-
-    .replace(/\bthe\s+/g,"")
+    .replace(/^the\s+/,"")
     .trim();
+
 }
 
 
@@ -2288,158 +1696,17 @@ function normalizeAnswer(text){
    CHECK ANSWER
 ========================================================= */
 
-function isAnswerCorrect(userAnswer, acceptedAnswers){
+function isAnswerCorrect(userAnswer,acceptedAnswers){
 
-  const normalizedUser = normalizeAnswer(userAnswer);
+  const normalizedUser=normalizeAnswer(userAnswer);
 
   if(!normalizedUser){
     return false;
   }
 
-  return acceptedAnswers.some(answer => {
-
-    const normalizedAccepted = normalizeAnswer(answer);
-
-    return normalizedUser === normalizedAccepted;
-
+  return acceptedAnswers.some(answer=>{
+    return normalizeAnswer(answer)===normalizedUser;
   });
-
-}
-
-
-/* =========================================================
-   RENDER LIST
-========================================================= */
-
-function renderReadings(filter=""){
-
-  const query = filter.trim().toLowerCase();
-
-  const filtered = readings.filter(reading => {
-
-    const searchable = [
-      reading.title,
-      reading.topic,
-      reading.description,
-      reading.text,
-      reading.stageTitle
-    ].join(" ").toLowerCase();
-
-    return searchable.includes(query);
-
-  });
-
-  listEl.innerHTML="";
-
-  if(!filtered.length){
-
-    emptyEl.style.display="block";
-    return;
-
-  }
-
-  emptyEl.style.display="none";
-
-  const stages = [...new Set(filtered.map(r => r.stage))];
-
-  stages.forEach(stageNumber => {
-
-    const stageReadings = filtered.filter(
-      r => r.stage === stageNumber
-    );
-
-    const first = readings.find(
-      r => r.stage === stageNumber
-    );
-
-    const stage = document.createElement("section");
-
-    stage.className="stage";
-
-    stage.innerHTML=`
-
-      <div class="stage-header">
-
-        <div class="stage-number">
-          المرحلة ${toArabicNumber(stageNumber)}
-        </div>
-
-        <h2>
-          ${first.stageTitle}
-        </h2>
-
-        <p>
-          ${first.stageDescription}
-        </p>
-
-      </div>
-
-      <div class="readings-grid"></div>
-    `;
-
-    const grid=stage.querySelector(".readings-grid");
-
-    stageReadings.forEach(reading => {
-
-      const card=document.createElement("article");
-
-      card.className="reading-card";
-
-      card.innerHTML=`
-
-        <div class="reading-number">
-          ${toArabicNumber(reading.id)}
-        </div>
-
-        <div class="reading-topic">
-          ${reading.topic}
-        </div>
-
-        <h3>
-          ${reading.title}
-        </h3>
-
-        <p>
-          ${reading.description}
-        </p>
-
-        <button class="start-btn">
-          ابدأ القراءة →
-        </button>
-
-      `;
-
-      card.addEventListener(
-        "click",
-        ()=>openLesson(reading.id)
-      );
-
-      grid.appendChild(card);
-
-    });
-
-    listEl.appendChild(stage);
-
-  });
-
-}
-
-
-/* =========================================================
-   ARABIC NUMBERS
-========================================================= */
-
-function toArabicNumber(number){
-
-  const numbers=[
-    "٠","١","٢","٣","٤",
-    "٥","٦","٧","٨","٩"
-  ];
-
-  return String(number)
-    .split("")
-    .map(n=>numbers[n] ?? n)
-    .join("");
 
 }
 
@@ -2461,25 +1728,339 @@ function escapeHTML(text){
 
 
 /* =========================================================
-   SPEECH
+   ARABIC NUMBERS
 ========================================================= */
 
-function speakText(text){
+function toArabicNumber(number){
+
+  const numbers=[
+    "٠","١","٢","٣","٤",
+    "٥","٦","٧","٨","٩"
+  ];
+
+  return String(number)
+    .split("")
+    .map(n=>numbers[n]??n)
+    .join("");
+
+}
+
+
+/* =========================================================
+   SPEECH ENGINE
+   نسخة أكثر موثوقية
+========================================================= */
+
+let selectedEnglishVoice=null;
+let speakingButton=null;
+
+
+/* البحث عن أفضل صوت إنجليزي متاح */
+
+function loadEnglishVoice(){
 
   if(!("speechSynthesis" in window)){
     return;
   }
 
+  const voices=
+    window.speechSynthesis.getVoices();
+
+  if(!voices.length){
+    return;
+  }
+
+  selectedEnglishVoice=
+    voices.find(v=>/^en-US$/i.test(v.lang))
+    ||
+    voices.find(v=>/^en-GB$/i.test(v.lang))
+    ||
+    voices.find(v=>/^en/i.test(v.lang))
+    ||
+    null;
+
+}
+
+
+/* بعض أجهزة iOS تحمل الأصوات بعد الصفحة */
+
+if("speechSynthesis" in window){
+
+  loadEnglishVoice();
+
+  window.speechSynthesis.onvoiceschanged=
+    loadEnglishVoice;
+
+}
+
+
+/* =========================================================
+   SPEAK
+========================================================= */
+
+function speakText(text,button){
+
+  if(!("speechSynthesis" in window)){
+
+    alert(
+      "ميزة النطق غير متاحة على هذا الجهاز أو المتصفح."
+    );
+
+    return;
+  }
+
+
+  /*
+     إذا كان هناك نطق حالي:
+     نوقفه أولًا.
+  */
+
   window.speechSynthesis.cancel();
 
-  const utterance =
-    new SpeechSynthesisUtterance(text);
 
-  utterance.lang="en-US";
-  utterance.rate=0.82;
-  utterance.pitch=1;
+  if(speakingButton){
 
-  window.speechSynthesis.speak(utterance);
+    speakingButton.classList.remove("speaking");
+
+    speakingButton.textContent="🔊";
+
+  }
+
+
+  speakingButton=button;
+
+
+  if(button){
+
+    button.classList.add("speaking");
+
+    button.textContent="🔊";
+
+  }
+
+
+  /*
+     ننتظر لحظة صغيرة بعد cancel
+     خصوصًا على iOS.
+  */
+
+  setTimeout(()=>{
+
+    const utterance=
+      new SpeechSynthesisUtterance(
+        String(text)
+      );
+
+
+    utterance.lang="en-US";
+
+    utterance.rate=0.78;
+
+    utterance.pitch=1;
+
+
+    if(selectedEnglishVoice){
+
+      utterance.voice=
+        selectedEnglishVoice;
+
+    }
+
+
+    utterance.onend=()=>{
+
+      if(button){
+
+        button.classList.remove(
+          "speaking"
+        );
+
+        button.textContent="🔊";
+
+      }
+
+      speakingButton=null;
+
+    };
+
+
+    utterance.onerror=()=>{
+
+      if(button){
+
+        button.classList.remove(
+          "speaking"
+        );
+
+        button.textContent="🔊";
+
+      }
+
+      speakingButton=null;
+
+    };
+
+
+    window.speechSynthesis.speak(
+      utterance
+    );
+
+
+  },80);
+
+}
+
+
+/* =========================================================
+   RENDER LIST
+========================================================= */
+
+function renderReadings(filter=""){
+
+  const query=
+    filter.trim().toLowerCase();
+
+  const filtered=
+    readings.filter(reading=>{
+
+      const searchable=[
+        reading.title,
+        reading.topic,
+        reading.description,
+        reading.text,
+        reading.stageTitle
+      ]
+      .join(" ")
+      .toLowerCase();
+
+      return searchable.includes(query);
+
+    });
+
+
+  listEl.innerHTML="";
+
+
+  if(!filtered.length){
+
+    emptyEl.style.display="block";
+
+    return;
+
+  }
+
+
+  emptyEl.style.display="none";
+
+
+  const stages=[
+    ...new Set(
+      filtered.map(r=>r.stage)
+    )
+  ];
+
+
+  stages.forEach(stageNumber=>{
+
+    const stageReadings=
+      filtered.filter(
+        r=>r.stage===stageNumber
+      );
+
+
+    const first=
+      readings.find(
+        r=>r.stage===stageNumber
+      );
+
+
+    const stage=
+      document.createElement("section");
+
+
+    stage.className="stage";
+
+
+    stage.innerHTML=`
+
+      <div class="stage-header">
+
+        <div class="stage-number">
+          المرحلة ${toArabicNumber(stageNumber)}
+        </div>
+
+        <h2>
+          ${first.stageTitle}
+        </h2>
+
+        <p>
+          ${first.stageDescription}
+        </p>
+
+      </div>
+
+      <div class="readings-grid"></div>
+
+    `;
+
+
+    const grid=
+      stage.querySelector(
+        ".readings-grid"
+      );
+
+
+    stageReadings.forEach(reading=>{
+
+      const card=
+        document.createElement("article");
+
+
+      card.className="reading-card";
+
+
+      card.innerHTML=`
+
+        <div class="reading-number">
+          ${toArabicNumber(reading.id)}
+        </div>
+
+        <div class="reading-topic">
+          ${escapeHTML(reading.topic)}
+        </div>
+
+        <h3>
+          ${escapeHTML(reading.title)}
+        </h3>
+
+        <p>
+          ${escapeHTML(reading.description)}
+        </p>
+
+        <button
+          class="start-btn"
+          type="button"
+        >
+          ابدأ القراءة →
+        </button>
+
+      `;
+
+
+      card.addEventListener(
+        "click",
+        ()=>openLesson(reading.id)
+      );
+
+
+      grid.appendChild(card);
+
+    });
+
+
+    listEl.appendChild(stage);
+
+  });
 
 }
 
@@ -2490,13 +2071,25 @@ function speakText(text){
 
 function openLesson(id){
 
-  const reading =
-    readings.find(r=>r.id===id);
+  const reading=
+    readings.find(
+      r=>r.id===id
+    );
 
-  if(!reading) return;
+
+  if(!reading){
+    return;
+  }
 
 
-  const questionsHTML =
+  if("speechSynthesis" in window){
+
+    window.speechSynthesis.cancel();
+
+  }
+
+
+  const questionsHTML=
     reading.questions.map(
       (question,index)=>`
 
@@ -2531,7 +2124,7 @@ function openLesson(id){
     ).join("");
 
 
-  const helpHTML =
+  const helpHTML=
     reading.help.map(
       item=>`
 
@@ -2546,7 +2139,6 @@ function openLesson(id){
             <button
               class="speak-btn"
               type="button"
-              onclick="speakText(${JSON.stringify(item[0])})"
               aria-label="استمع للنطق"
               title="استمع للنطق"
             >
@@ -2575,8 +2167,8 @@ function openLesson(id){
 
       <button
         class="close-lesson"
-        onclick="closeLesson()"
         type="button"
+        onclick="closeLesson()"
       >
         ← العودة إلى القراءات
       </button>
@@ -2586,11 +2178,11 @@ function openLesson(id){
       </div>
 
       <h2>
-        ${reading.title}
+        ${escapeHTML(reading.title)}
       </h2>
 
       <p>
-        ${reading.topic}
+        ${escapeHTML(reading.topic)}
       </p>
 
     </div>
@@ -2613,7 +2205,7 @@ function openLesson(id){
 
       <img
         class="reading-image"
-        src="${reading.image}"
+        src="${escapeHTML(reading.image)}"
         alt="${escapeHTML(reading.title)}"
         loading="lazy"
       >
@@ -2685,7 +2277,9 @@ function openLesson(id){
       >
 
         <div class="score-number">
-          <span id="scoreNumber-${reading.id}">0</span>
+          <span id="scoreNumber-${reading.id}">
+            0
+          </span>
           / ${reading.questions.length}
         </div>
 
@@ -2716,18 +2310,18 @@ function openLesson(id){
 
       <button
         class="nav-btn"
-        onclick="previousLesson(${reading.id})"
-        ${reading.id===1 ? "disabled":""}
         type="button"
+        onclick="previousLesson(${reading.id})"
+        ${reading.id===1?"disabled":""}
       >
         → السابقة
       </button>
 
       <button
         class="nav-btn primary"
-        onclick="nextLesson(${reading.id})"
-        ${reading.id===readings.length ? "disabled":""}
         type="button"
+        onclick="nextLesson(${reading.id})"
+        ${reading.id===readings.length?"disabled":""}
       >
         التالية ←
       </button>
@@ -2737,11 +2331,43 @@ function openLesson(id){
   `;
 
 
+  /*
+     ربط أزرار النطق بعد إنشاء الصفحة.
+  */
+
+  const speakButtons=
+    lessonEl.querySelectorAll(
+      ".speak-btn"
+    );
+
+
+  speakButtons.forEach(
+    (button,index)=>{
+
+      button.addEventListener(
+        "click",
+        event=>{
+
+          event.stopPropagation();
+
+          speakText(
+            reading.help[index][0],
+            button
+          );
+
+        }
+      );
+
+    }
+  );
+
+
   lessonEl.classList.add("active");
 
   listEl.style.display="none";
 
   emptyEl.style.display="none";
+
 
   window.scrollTo({
     top:0,
@@ -2757,10 +2383,15 @@ function openLesson(id){
 
 function checkAnswers(id){
 
-  const reading =
-    readings.find(r=>r.id===id);
+  const reading=
+    readings.find(
+      r=>r.id===id
+    );
 
-  if(!reading) return;
+
+  if(!reading){
+    return;
+  }
 
 
   let score=0;
@@ -2769,21 +2400,24 @@ function checkAnswers(id){
   reading.questions.forEach(
     (question,index)=>{
 
-      const input =
+      const input=
         document.querySelector(
           `.answer-box[data-question="${index}"]`
         );
 
-      const feedback =
+
+      const feedback=
         document.getElementById(
           `feedback-${id}-${index}`
         );
 
 
-      if(!input || !feedback) return;
+      if(!input || !feedback){
+        return;
+      }
 
 
-      const userAnswer =
+      const userAnswer=
         input.value.trim();
 
 
@@ -2791,6 +2425,7 @@ function checkAnswers(id){
         "correct",
         "wrong"
       );
+
 
       feedback.className=
         "answer-feedback";
@@ -2803,10 +2438,14 @@ function checkAnswers(id){
         feedback.classList.add("wrong");
 
         feedback.innerHTML=`
+
           ❌ لم تكتب إجابة بعد.
+
           <div class="correct-answer">
-            الإجابة المقبولة: ${escapeHTML(question.answers[0])}
+            الإجابة المقبولة:
+            ${escapeHTML(question.answers[0])}
           </div>
+
         `;
 
         return;
@@ -2814,7 +2453,7 @@ function checkAnswers(id){
       }
 
 
-      const correct =
+      const correct=
         isAnswerCorrect(
           userAnswer,
           question.answers
@@ -2839,11 +2478,14 @@ function checkAnswers(id){
         feedback.classList.add("wrong");
 
         feedback.innerHTML=`
+
           ❌ ليست الإجابة المطلوبة.
 
           <div class="correct-answer">
-            الإجابة المقبولة: ${escapeHTML(question.answers[0])}
+            الإجابة المقبولة:
+            ${escapeHTML(question.answers[0])}
           </div>
+
         `;
 
       }
@@ -2852,27 +2494,28 @@ function checkAnswers(id){
   );
 
 
-  const scoreCard =
+  const scoreCard=
     document.getElementById(
       `score-${id}`
     );
 
-  const scoreNumber =
+
+  const scoreNumber=
     document.getElementById(
       `scoreNumber-${id}`
     );
 
-  const scoreMessage =
+
+  const scoreMessage=
     document.getElementById(
       `scoreMessage-${id}`
     );
 
 
-  scoreNumber.textContent =
-    score;
+  scoreNumber.textContent=score;
 
 
-  const total =
+  const total=
     reading.questions.length;
 
 
@@ -2911,26 +2554,32 @@ function checkAnswers(id){
 
 
 /* =========================================================
-   RESET ANSWERS
+   RESET
 ========================================================= */
 
 function resetAnswers(id){
 
-  const reading =
-    readings.find(r=>r.id===id);
+  const reading=
+    readings.find(
+      r=>r.id===id
+    );
 
-  if(!reading) return;
+
+  if(!reading){
+    return;
+  }
 
 
   reading.questions.forEach(
     (question,index)=>{
 
-      const input =
+      const input=
         document.querySelector(
           `.answer-box[data-question="${index}"]`
         );
 
-      const feedback =
+
+      const feedback=
         document.getElementById(
           `feedback-${id}-${index}`
         );
@@ -2961,7 +2610,7 @@ function resetAnswers(id){
   );
 
 
-  const scoreCard =
+  const scoreCard=
     document.getElementById(
       `score-${id}`
     );
@@ -2969,12 +2618,14 @@ function resetAnswers(id){
 
   if(scoreCard){
 
-    scoreCard.classList.remove("show");
+    scoreCard.classList.remove(
+      "show"
+    );
 
   }
 
 
-  const firstInput =
+  const firstInput=
     document.querySelector(
       `.answer-box[data-question="0"]`
     );
@@ -2990,7 +2641,7 @@ function resetAnswers(id){
 
 
 /* =========================================================
-   CLOSE LESSON
+   CLOSE
 ========================================================= */
 
 function closeLesson(){
@@ -3002,13 +2653,29 @@ function closeLesson(){
   }
 
 
+  if(speakingButton){
+
+    speakingButton.classList.remove(
+      "speaking"
+    );
+
+    speakingButton.textContent="🔊";
+
+    speakingButton=null;
+
+  }
+
+
   lessonEl.classList.remove("active");
 
   lessonEl.innerHTML="";
 
   listEl.style.display="block";
 
-  renderReadings(searchInput.value);
+  renderReadings(
+    searchInput.value
+  );
+
 
   window.scrollTo({
     top:0,
@@ -3024,7 +2691,7 @@ function closeLesson(){
 
 function previousLesson(id){
 
-  const index =
+  const index=
     readings.findIndex(
       reading=>reading.id===id
     );
@@ -3047,7 +2714,7 @@ function previousLesson(id){
 
 function nextLesson(id){
 
-  const index =
+  const index=
     readings.findIndex(
       reading=>reading.id===id
     );
@@ -3070,14 +2737,16 @@ function nextLesson(id){
 
 searchInput.addEventListener(
   "input",
-  e=>{
-    renderReadings(e.target.value);
+  event=>{
+    renderReadings(
+      event.target.value
+    );
   }
 );
 
 
 /* =========================================================
-   INITIAL RENDER
+   INITIAL
 ========================================================= */
 
 renderReadings();
