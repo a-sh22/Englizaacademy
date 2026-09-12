@@ -1,0 +1,8244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Intermediate Listening | Engliza Academy</title>
+
+<style>
+
+/* =========================================================
+   ENGLIZA ACADEMY — INTERMEDIATE LISTENING
+   ========================================================= */
+
+:root{
+  --blue:#3157D5;
+  --blue-dark:#233E9B;
+  --purple:#7654D9;
+  --purple-light:#EEEAFE;
+
+  --gold:#D9A441;
+  --gold-light:#FFF6DF;
+
+  --text:#17213C;
+  --muted:#6E7891;
+
+  --white:#FFFFFF;
+  --bg:#F7F8FC;
+  --border:#E8EAF2;
+
+  --blue-soft:#F2F5FF;
+  --purple-soft:#F6F3FF;
+  --gold-soft:#FFF9EC;
+
+  --shadow:0 12px 35px rgba(36,48,94,.08);
+  --shadow-hover:0 18px 45px rgba(36,48,94,.13);
+
+  --radius-xl:32px;
+  --radius-lg:28px;
+  --radius-md:22px;
+  --radius-sm:17px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  line-height:1.75;
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container{
+  width:min(1100px,calc(100% - 32px));
+  margin:auto;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.top-area{
+  padding:22px 0 0;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  color:var(--blue-dark);
+
+  padding:11px 17px;
+
+  border-radius:999px;
+
+  font-weight:800;
+  font-size:14px;
+
+  box-shadow:0 7px 22px rgba(36,48,94,.06);
+
+  transition:.2s ease;
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  margin-top:18px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255,255,255,.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  color:#fff;
+
+  border-radius:var(--radius-xl);
+
+  padding:42px 34px;
+
+  box-shadow:var(--shadow);
+
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::after{
+  content:"";
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.07);
+
+  left:-70px;
+  bottom:-110px;
+}
+
+.hero-label{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.8px;
+  opacity:.86;
+  margin-bottom:7px;
+}
+
+.hero h1{
+  margin:0;
+
+  font-size:clamp(30px,5vw,48px);
+
+  line-height:1.2;
+
+  font-weight:900;
+}
+
+.hero p{
+  margin:16px 0 0;
+
+  max-width:760px;
+
+  color:rgba(255,255,255,.91);
+
+  font-size:16px;
+}
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.notice{
+  margin-top:20px;
+
+  background:var(--gold-light);
+
+  border:1px solid rgba(217,164,65,.28);
+
+  border-radius:var(--radius-md);
+
+  padding:18px 20px;
+
+  color:#70531B;
+
+  box-shadow:
+    0 8px 25px rgba(217,164,65,.06);
+}
+
+.notice strong{
+  color:#5C4210;
+}
+
+/* =========================================================
+   PATH
+   ========================================================= */
+
+.path-card{
+  margin-top:22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #F4F6FF,
+      #F8F6FF
+    );
+
+  border:1px solid #DDE2FA;
+
+  border-radius:var(--radius-lg);
+
+  padding:24px;
+
+  box-shadow:var(--shadow);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:18px;
+}
+
+.path-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.path-icon{
+  width:58px;
+  height:58px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:linear-gradient(
+    135deg,
+    #E7ECFF,
+    #EEEAFE
+  );
+
+  font-size:27px;
+}
+
+.path-card h2{
+  margin:0 0 4px;
+
+  font-size:20px;
+}
+
+.path-card p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+.count{
+  background:#E9EDFF;
+
+  color:var(--blue-dark);
+
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  font-size:13px;
+
+  font-weight:900;
+
+  white-space:nowrap;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-box{
+  margin:22px 0 30px;
+}
+
+.search-box input{
+  width:100%;
+
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-radius:20px;
+
+  padding:16px 20px;
+
+  outline:none;
+
+  color:var(--text);
+
+  box-shadow:
+    0 8px 24px rgba(36,48,94,.05);
+
+  transition:.2s ease;
+}
+
+.search-box input:focus{
+  border-color:rgba(49,87,213,.45);
+
+  box-shadow:
+    0 10px 28px rgba(49,87,213,.10);
+}
+
+/* =========================================================
+   STAGES
+   ========================================================= */
+
+.stage{
+  margin-bottom:52px;
+}
+
+.stage-title{
+  border-radius:22px;
+
+  padding:21px 23px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:18px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* المرحلة الأولى */
+
+.stage:nth-child(1) .stage-title{
+  background:
+    linear-gradient(
+      135deg,
+      #F0F4FF,
+      #F7F8FF
+    );
+
+  border:1px solid #DCE4FF;
+}
+
+.stage:nth-child(1) .stage-title::before{
+  background:var(--blue);
+}
+
+/* المرحلة الثانية */
+
+.stage:nth-child(2) .stage-title{
+  background:
+    linear-gradient(
+      135deg,
+      #F5F1FF,
+      #FAF8FF
+    );
+
+  border:1px solid #E4DDF9;
+}
+
+.stage:nth-child(2) .stage-title::before{
+  background:var(--purple);
+}
+
+/* المرحلة الثالثة */
+
+.stage:nth-child(3) .stage-title{
+  background:
+    linear-gradient(
+      135deg,
+      #FFF9EA,
+      #FFFCF5
+    );
+
+  border:1px solid #F1E4C4;
+}
+
+.stage:nth-child(3) .stage-title::before{
+  background:var(--gold);
+}
+
+/* المرحلة الرابعة */
+
+.stage:nth-child(4) .stage-title{
+  background:
+    linear-gradient(
+      135deg,
+      #F1F4FF,
+      #F7F3FF
+    );
+
+  border:1px solid #DFE1F7;
+}
+
+.stage:nth-child(4) .stage-title::before{
+  background:
+    linear-gradient(
+      180deg,
+      var(--blue),
+      var(--purple)
+    );
+}
+
+.stage-title::before{
+  content:"";
+
+  position:absolute;
+
+  right:0;
+  top:0;
+  bottom:0;
+
+  width:5px;
+
+  border-radius:0 22px 22px 0;
+}
+
+.stage-title .small{
+  color:var(--purple);
+
+  font-size:12px;
+
+  font-weight:900;
+
+  margin-bottom:3px;
+}
+
+.stage-title h2{
+  margin:0;
+
+  font-size:21px;
+}
+
+.stage-title p{
+  margin:5px 0 0;
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+/* =========================================================
+   LESSON GRID
+   ========================================================= */
+
+.lessons-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:16px;
+}
+
+/* =========================================================
+   LESSON CARDS
+   ========================================================= */
+
+.lesson-card{
+  border-radius:var(--radius-md);
+
+  padding:22px;
+
+  box-shadow:var(--shadow);
+
+  transition:.22s ease;
+
+  cursor:pointer;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* ألوان البطاقات حسب المرحلة */
+
+.stage:nth-child(1) .lesson-card{
+  background:
+    linear-gradient(
+      135deg,
+      #F4F6FF,
+      #FFFFFF
+    );
+
+  border:1px solid #E0E5FA;
+}
+
+.stage:nth-child(2) .lesson-card{
+  background:
+    linear-gradient(
+      135deg,
+      #F7F4FF,
+      #FFFFFF
+    );
+
+  border:1px solid #E7E1F7;
+}
+
+.stage:nth-child(3) .lesson-card{
+  background:
+    linear-gradient(
+      135deg,
+      #FFFAEF,
+      #FFFFFF
+    );
+
+  border:1px solid #F0E5C9;
+}
+
+.stage:nth-child(4) .lesson-card{
+  background:
+    linear-gradient(
+      135deg,
+      #F4F5FF,
+      #FBF9FF
+    );
+
+  border:1px solid #E1E1F4;
+}
+
+.lesson-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:var(--shadow-hover);
+}
+
+.lesson-card::after{
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  border-radius:50%;
+
+  left:-55px;
+  bottom:-55px;
+
+  opacity:.35;
+
+  pointer-events:none;
+}
+
+.stage:nth-child(1) .lesson-card::after{
+  background:#DDE5FF;
+}
+
+.stage:nth-child(2) .lesson-card::after{
+  background:#E8DFFF;
+}
+
+.stage:nth-child(3) .lesson-card::after{
+  background:#F7E7B7;
+}
+
+.stage:nth-child(4) .lesson-card::after{
+  background:#DFE1FF;
+}
+
+.lesson-top{
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:12px;
+}
+
+.lesson-number{
+  min-width:40px;
+  height:40px;
+
+  border-radius:13px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:900;
+
+  flex:none;
+}
+
+.stage:nth-child(1) .lesson-number{
+  background:#E3E9FF;
+  color:var(--blue-dark);
+}
+
+.stage:nth-child(2) .lesson-number{
+  background:#EAE3FF;
+  color:var(--purple);
+}
+
+.stage:nth-child(3) .lesson-number{
+  background:#FFF0C9;
+  color:#8A681D;
+}
+
+.stage:nth-child(4) .lesson-number{
+  background:#E6E7FF;
+  color:var(--purple);
+}
+
+.lesson-card h3{
+  margin:0;
+
+  font-size:18px;
+
+  line-height:1.4;
+
+  flex:1;
+}
+
+.lesson-topic{
+  color:var(--blue);
+
+  font-size:12px;
+
+  font-weight:900;
+
+  margin-top:10px;
+}
+
+.lesson-description{
+  color:var(--muted);
+
+  font-size:14px;
+
+  margin:8px 0 0;
+}
+
+.open-label{
+  display:inline-flex;
+
+  margin-top:16px;
+
+  color:var(--blue-dark);
+
+  font-weight:900;
+
+  font-size:13px;
+}
+
+/* =========================================================
+   LESSON VIEW
+   ========================================================= */
+
+.lesson-view{
+  display:none;
+
+  margin-top:20px;
+}
+
+.lesson-view.active{
+  display:block;
+}
+
+.lesson-header{
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(255,255,255,.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  color:#fff;
+
+  border-radius:var(--radius-xl);
+
+  padding:30px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:20px;
+}
+
+.lesson-header-top{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  gap:15px;
+}
+
+.lesson-stage{
+  font-size:12px;
+
+  font-weight:900;
+
+  opacity:.8;
+}
+
+.lesson-header h1{
+  margin:5px 0 8px;
+
+  font-size:clamp(27px,5vw,39px);
+
+  line-height:1.25;
+}
+
+.lesson-header p{
+  margin:0;
+
+  color:rgba(255,255,255,.9);
+}
+
+.close-btn{
+  border:0;
+
+  background:rgba(255,255,255,.14);
+
+  color:#fff;
+
+  border-radius:999px;
+
+  padding:9px 14px;
+
+  font-weight:800;
+}
+
+.close-btn:hover{
+  background:rgba(255,255,255,.22);
+}
+
+/* =========================================================
+   SOURCE
+   ========================================================= */
+
+.source-card{
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius-lg);
+
+  padding:22px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:18px;
+}
+
+.source-card h2{
+  margin:0 0 7px;
+
+  font-size:20px;
+}
+
+.source-card p{
+  margin:0 0 16px;
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+.source-btn{
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  background:var(--blue);
+
+  color:#fff;
+
+  padding:13px 19px;
+
+  border-radius:15px;
+
+  font-weight:900;
+
+  transition:.2s ease;
+}
+
+.source-btn:hover{
+  background:var(--blue-dark);
+
+  transform:translateY(-2px);
+}
+
+/* =========================================================
+   CONTENT SECTION
+   ========================================================= */
+
+.content-section{
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius-lg);
+
+  padding:25px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:18px;
+}
+
+.section-heading{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:18px;
+}
+
+.section-heading .icon{
+  width:43px;
+  height:43px;
+
+  border-radius:14px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:var(--purple-light);
+
+  font-size:21px;
+}
+
+.section-heading h2{
+  margin:0;
+
+  font-size:21px;
+}
+
+.section-heading p{
+  margin:2px 0 0;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+/* =========================================================
+   LEARNING CARDS
+   ========================================================= */
+
+.learning-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:15px;
+}
+
+.learning-card{
+  background:
+    linear-gradient(
+      135deg,
+      #FBFBFF,
+      #F8F8FC
+    );
+
+  border:1px solid var(--border);
+
+  border-radius:20px;
+
+  padding:20px;
+}
+
+.learning-title-row{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+}
+
+.learning-title{
+  margin:0;
+
+  color:var(--text);
+
+  font-size:20px;
+
+  font-weight:900;
+
+  direction:ltr;
+
+  text-align:left;
+
+  flex:1;
+}
+
+.audio-btn{
+  width:40px;
+  height:40px;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:var(--blue);
+
+  color:#fff;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex:none;
+
+  transition:.2s ease;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+.audio-btn:hover{
+  background:var(--blue-dark);
+}
+
+.audio-btn:active{
+  transform:scale(.94);
+}
+
+.audio-btn.speaking{
+  background:var(--purple);
+
+  transform:scale(.96);
+}
+
+.learning-meaning{
+  color:var(--purple);
+
+  font-weight:800;
+
+  margin:8px 0;
+}
+
+.learning-note{
+  background:var(--gold-light);
+
+  border-right:4px solid var(--gold);
+
+  border-radius:12px;
+
+  padding:11px 13px;
+
+  color:#6B521E;
+
+  font-size:14px;
+
+  margin:12px 0;
+}
+
+.learning-note strong{
+  color:#533D0F;
+}
+
+.learning-example{
+  margin-top:12px;
+
+  padding-top:12px;
+
+  border-top:1px solid var(--border);
+}
+
+.example-en{
+  direction:ltr;
+
+  text-align:left;
+
+  color:var(--text);
+
+  font-size:16px;
+
+  font-weight:800;
+}
+
+.example-ar{
+  color:var(--muted);
+
+  font-size:13px;
+
+  margin-top:2px;
+}
+
+/* =========================================================
+   GRAMMAR NOTE
+   ========================================================= */
+
+.grammar-note{
+  background:
+    linear-gradient(
+      135deg,
+      #F7F4FF,
+      #FBFAFF
+    );
+
+  border:1px solid #E2DDF8;
+
+  border-radius:20px;
+
+  padding:20px;
+}
+
+.grammar-note h3{
+  margin:0 0 8px;
+
+  font-size:18px;
+}
+
+.grammar-note p{
+  margin:0;
+
+  color:#555F77;
+
+  font-size:14px;
+}
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.question-card{
+  border:1px solid var(--border);
+
+  background:#FBFBFE;
+
+  border-radius:18px;
+
+  padding:18px;
+
+  margin-bottom:13px;
+}
+
+.question-number{
+  color:var(--purple);
+
+  font-size:12px;
+
+  font-weight:900;
+}
+
+.question-text{
+  margin:5px 0 12px;
+
+  direction:ltr;
+
+  text-align:left;
+
+  font-size:16px;
+
+  font-weight:800;
+}
+
+.answer-input{
+  width:100%;
+
+  min-height:58px;
+
+  resize:vertical;
+
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-radius:14px;
+
+  padding:12px 14px;
+
+  outline:none;
+
+  direction:ltr;
+
+  text-align:left;
+
+  color:var(--text);
+}
+
+.answer-input:focus{
+  border-color:rgba(49,87,213,.45);
+}
+
+.question-feedback{
+  display:none;
+
+  margin-top:9px;
+
+  padding:9px 12px;
+
+  border-radius:11px;
+
+  font-size:13px;
+
+  font-weight:700;
+}
+
+.question-feedback.correct{
+  display:block;
+
+  background:#EAF8F0;
+
+  color:#176B3A;
+}
+
+.question-feedback.wrong{
+  display:block;
+
+  background:#FFF0F0;
+
+  color:#9B3131;
+}
+
+.check-btn{
+  border:0;
+
+  background:var(--blue);
+
+  color:#fff;
+
+  padding:13px 20px;
+
+  border-radius:15px;
+
+  font-weight:900;
+
+  margin-top:5px;
+}
+
+.check-btn:hover{
+  background:var(--blue-dark);
+}
+
+.score-box{
+  display:none;
+
+  margin-top:18px;
+
+  background:var(--gold-light);
+
+  border:1px solid rgba(217,164,65,.25);
+
+  border-radius:17px;
+
+  padding:17px;
+
+  text-align:center;
+
+  color:#604A17;
+
+  font-weight:900;
+}
+
+.retry-btn{
+  display:none;
+
+  margin:13px auto 0;
+
+  border:1px solid var(--border);
+
+  background:#fff;
+
+  color:var(--blue-dark);
+
+  padding:10px 16px;
+
+  border-radius:13px;
+
+  font-weight:900;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.lesson-navigation{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin:25px 0 50px;
+}
+
+.nav-btn{
+  flex:1;
+
+  border:1px solid var(--border);
+
+  background:#fff;
+
+  color:var(--blue-dark);
+
+  border-radius:17px;
+
+  padding:13px 16px;
+
+  font-weight:900;
+
+  box-shadow:
+    0 8px 22px rgba(36,48,94,.05);
+}
+
+.nav-btn:hover{
+  box-shadow:var(--shadow);
+}
+
+.nav-btn.primary{
+  background:var(--blue);
+
+  color:#fff;
+
+  border-color:var(--blue);
+}
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.empty{
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:30px;
+
+  text-align:center;
+
+  color:var(--muted);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:760px){
+
+  .container{
+    width:min(100% - 22px,1100px);
+  }
+
+  .hero{
+    padding:32px 22px;
+
+    border-radius:25px;
+  }
+
+  .path-card{
+    align-items:flex-start;
+
+    flex-direction:column;
+  }
+
+  .lessons-grid,
+  .learning-grid{
+    grid-template-columns:1fr;
+  }
+
+  .lesson-header{
+    padding:23px;
+
+    border-radius:25px;
+  }
+
+  .lesson-header-top{
+    flex-direction:column;
+  }
+
+  .close-btn{
+    align-self:flex-start;
+  }
+
+  .content-section,
+  .source-card{
+    padding:19px;
+
+    border-radius:22px;
+  }
+
+  .lesson-navigation{
+    flex-direction:column;
+  }
+
+  .nav-btn{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+  <!-- =====================================================
+       BACK BUTTON
+       ===================================================== -->
+
+  <div class="top-area">
+
+    <a
+      class="back-btn"
+      href="skills-practice.html"
+    >
+      ← العودة إلى المهارات
+    </a>
+
+  </div>
+
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="hero">
+
+    <div class="hero-label">
+      ENGLIZA ACADEMY
+    </div>
+
+    <h1>
+      الاستماع 🎧
+    </h1>
+
+    <p>
+      طوّر فهمك للإنجليزية من خلال استماعات حقيقية ومتنوعة،
+      وتعلّم منها كلمات وتعبيرات جديدة تساعدك على الانتقال
+      إلى مستوى أكثر طبيعية وثقة.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       NOTICE
+       ===================================================== -->
+
+  <div class="notice">
+
+    <strong>💡 قبل أن تبدأ:</strong>
+
+    هذا القسم ليس مجرد اختبار لفهم الاستماع.
+    استمع أولًا وحاول فهم الفكرة العامة والتفاصيل،
+    ثم تعلّم الكلمات والتعبيرات المهمة من المقطع،
+    وبعدها اختبر فهمك.
+
+  </div>
+
+
+  <!-- =====================================================
+       PATH CARD
+       ===================================================== -->
+
+  <div class="path-card">
+
+    <div class="path-left">
+
+      <div class="path-icon">
+        🎧
+      </div>
+
+      <div>
+
+        <h2>
+          مسار الاستماع — المستوى المتوسط
+        </h2>
+
+        <p>
+          30 استماعًا · 4 مراحل
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="count">
+      30 درس
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SEARCH
+       ===================================================== -->
+
+  <div class="search-box">
+
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="ابحث عن استماع أو موضوع..."
+      autocomplete="off"
+    >
+
+  </div>
+
+
+  <!-- =====================================================
+       LIST VIEW
+       ===================================================== -->
+
+  <div id="listView"></div>
+
+
+  <!-- =====================================================
+       LESSON VIEW
+       ===================================================== -->
+
+  <div
+    id="lessonView"
+    class="lesson-view"
+  ></div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   SPEECH ENGINE
+   مناسب أكثر لـ iPad / iOS Safari
+   ========================================================= */
+
+let englishVoice = null;
+let voicesLoaded = false;
+
+
+/*
+  البحث عن صوت إنجليزي مناسب.
+  نفضل en-US ثم أي صوت English.
+*/
+
+function loadEnglishVoices(){
+
+  if(!("speechSynthesis" in window)){
+    return;
+  }
+
+  const voices =
+    window.speechSynthesis.getVoices();
+
+  if(!voices || !voices.length){
+    return;
+  }
+
+  englishVoice =
+    voices.find(
+      voice =>
+        voice.lang &&
+        voice.lang.toLowerCase() === "en-us"
+    )
+    ||
+    voices.find(
+      voice =>
+        voice.lang &&
+        voice.lang.toLowerCase().startsWith("en")
+    )
+    ||
+    null;
+
+  voicesLoaded = true;
+}
+
+
+/*
+  تحميل الأصوات عند جاهزية المتصفح.
+*/
+
+if("speechSynthesis" in window){
+
+  loadEnglishVoices();
+
+  window.speechSynthesis.onvoiceschanged =
+    function(){
+
+      loadEnglishVoices();
+
+    };
+}
+
+
+/*
+  إيقاف أي نطق سابق.
+*/
+
+function stopSpeaking(){
+
+  if(!("speechSynthesis" in window)){
+    return;
+  }
+
+  try{
+    window.speechSynthesis.cancel();
+  }catch(error){}
+
+  document
+    .querySelectorAll(".audio-btn")
+    .forEach(button=>{
+
+      button.classList.remove("speaking");
+
+      button.textContent = "🔊";
+
+    });
+}
+
+
+/*
+  النطق.
+
+  مهم:
+  يتم استدعاء speak مباشرة من ضغطة الطالب
+  حتى يكون متوافقًا قدر الإمكان مع iOS Safari.
+*/
+
+function speakText(text, button){
+
+  if(!("speechSynthesis" in window)){
+
+    alert(
+      "المتصفح لا يدعم تشغيل النطق الصوتي."
+    );
+
+    return;
+  }
+
+
+  /*
+    نحاول تحميل الأصوات مرة أخرى إذا لم تكن جاهزة.
+  */
+
+  if(!voicesLoaded){
+
+    loadEnglishVoices();
+
+  }
+
+
+  /*
+    إيقاف أي صوت حالي.
+  */
+
+  stopSpeaking();
+
+
+  /*
+    إنشاء النطق مباشرة.
+  */
+
+  const utterance =
+    new SpeechSynthesisUtterance(text);
+
+
+  utterance.lang = "en-US";
+
+  utterance.rate = 0.78;
+
+  utterance.pitch = 1;
+
+
+  if(englishVoice){
+
+    utterance.voice =
+      englishVoice;
+
+  }
+
+
+  if(button){
+
+    button.classList.add("speaking");
+
+    button.textContent = "🔈";
+
+  }
+
+
+  utterance.onend =
+    function(){
+
+      if(button){
+
+        button.classList.remove(
+          "speaking"
+        );
+
+        button.textContent = "🔊";
+
+      }
+
+    };
+
+
+  utterance.onerror =
+    function(){
+
+      if(button){
+
+        button.classList.remove(
+          "speaking"
+        );
+
+        button.textContent = "🔊";
+
+      }
+
+    };
+
+
+  /*
+    مهم في iOS:
+    speak() يتم استدعاؤه مباشرة هنا
+    بدون setTimeout أو async.
+  */
+
+  try{
+
+    window.speechSynthesis.speak(
+      utterance
+    );
+
+  }catch(error){
+
+    if(button){
+
+      button.classList.remove(
+        "speaking"
+      );
+
+      button.textContent = "🔊";
+
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   DATA
+   ========================================================= */
+
+const lessons = [
+
+/* =========================================================
+   STAGE 1
+   ========================================================= */
+
+{
+  id:1,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"Making a Decision",
+
+  topic:"القرارات · المستقبل · لغة الاجتماعات",
+
+  description:
+    "اجتماع بين زملاء يحاولون الوصول إلى قرار، مع لغة طبيعية للاقتراح والرأي والتخطيط.",
+
+  source:"British Council",
+
+  url:"https://learnenglish.britishcouncil.org/free-resources/listening/b1/making-decision",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "لاحظ كيف يستخدم المتحدثون لغة المستقبل والاقتراحات داخل نقاش حقيقي، بدل استخدام will أو going to في جمل معزولة.",
+
+  learn:[
+
+    {
+      term:"make a decision",
+
+      meaning:"يتخذ قرارًا",
+
+      note:
+        "make تأتي مع decision في هذا التعبير. لا نقول عادةً do a decision.",
+
+      examples:[
+        [
+          "We need to make a decision today.",
+          "نحتاج إلى اتخاذ قرار اليوم."
+        ],
+        [
+          "It was difficult to make a decision.",
+          "كان من الصعب اتخاذ قرار."
+        ]
+      ]
+    },
+
+    {
+      term:"good point",
+
+      meaning:"نقطة جيدة / كلامك صحيح",
+
+      note:
+        "تُستخدم عندما ترى أن فكرة الشخص الآخر منطقية أو تستحق الانتباه.",
+
+      examples:[
+        [
+          "That's a good point.",
+          "هذه نقطة جيدة."
+        ],
+        [
+          "You have a good point.",
+          "لديك وجهة نظر جيدة."
+        ]
+      ]
+    },
+
+    {
+      term:"I think we should...",
+
+      meaning:"أعتقد أنه ينبغي لنا أن...",
+
+      note:
+        "طريقة طبيعية لاقتراح شيء دون أن يكون الكلام أمرًا مباشرًا.",
+
+      examples:[
+        [
+          "I think we should wait.",
+          "أعتقد أنه ينبغي لنا أن ننتظر."
+        ],
+        [
+          "I think we should talk about it first.",
+          "أعتقد أنه ينبغي لنا أن نتحدث عنه أولًا."
+        ]
+      ]
+    },
+
+    {
+      term:"What do you think?",
+
+      meaning:"ما رأيك؟",
+
+      note:
+        "من أكثر الطرق شيوعًا لطلب رأي شخص آخر.",
+
+      examples:[
+        [
+          "What do you think about the plan?",
+          "ما رأيك في الخطة؟"
+        ],
+        [
+          "What do you think we should do?",
+          "ما رأيك فيما ينبغي أن نفعل؟"
+        ]
+      ]
+    },
+
+    {
+      term:"It depends.",
+
+      meaning:"يعتمد الأمر.",
+
+      note:
+        "depend = يعتمد. وعندما نذكر الشيء الذي يعتمد عليه، نستخدم غالبًا depend on.",
+
+      examples:[
+        [
+          "It depends on the situation.",
+          "يعتمد الأمر على الموقف."
+        ],
+        [
+          "It depends on the cost.",
+          "يعتمد الأمر على التكلفة."
+        ]
+      ]
+    },
+
+    {
+      term:"depend on",
+
+      meaning:"يعتمد على",
+
+      note:
+        "depend = يعتمد، وon تأتي عندما نذكر الشيء الذي يعتمد عليه الأمر.",
+
+      examples:[
+        [
+          "The answer depends on the situation.",
+          "الإجابة تعتمد على الموقف."
+        ],
+        [
+          "You can depend on me.",
+          "يمكنك الاعتماد عليّ."
+        ]
+      ]
+    },
+
+    {
+      term:"work out",
+
+      meaning:"ينجح / يجد حلًا / يتضح",
+
+      note:
+        "work out لها أكثر من معنى حسب السياق. في المشكلات والخطط قد تعني أن الأمور تنجح أو تصل إلى نتيجة.",
+
+      examples:[
+        [
+          "I hope everything works out.",
+          "آمل أن تسير الأمور على ما يرام."
+        ],
+        [
+          "We need to work out a solution.",
+          "نحتاج إلى إيجاد حل."
+        ]
+      ]
+    },
+
+    {
+      term:"come to an agreement",
+
+      meaning:"يتوصل إلى اتفاق",
+
+      note:
+        "تعبير مهم في الاجتماعات والنقاشات.",
+
+      examples:[
+        [
+          "We finally came to an agreement.",
+          "توصلنا أخيرًا إلى اتفاق."
+        ],
+        [
+          "They couldn't come to an agreement.",
+          "لم يتمكنوا من التوصل إلى اتفاق."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What are the people trying to do?",
+      answers:[
+        "make a decision",
+        "reach a decision",
+        "come to a decision"
+      ]
+    },
+
+    {
+      q:"Why is it important to discuss the options first?",
+      answers:[
+        "to choose the best option",
+        "to make the right decision",
+        "because they need to compare the options"
+      ]
+    },
+
+    {
+      q:"Write one expression from the lesson that can be used to ask for someone's opinion.",
+      answers:[
+        "what do you think",
+        "what do you think?"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:2,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"A Team Meeting About Diversity",
+
+  topic:"الاجتماعات · going to · التعاون",
+
+  description:
+    "استماع عملي إلى اجتماع فريق يناقش موضوعًا ويقترح خطوات قادمة.",
+
+  source:"British Council",
+
+  url:"https://learnenglish.britishcouncil.org/free-resources/listening/b1/team-meeting-about-diversity",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "انتبه إلى الفرق بين الحديث عن خطة أو خطوة مقصودة وبين مجرد التنبؤ بما سيحدث.",
+
+  learn:[
+
+    {
+      term:"work closely with",
+      meaning:"يعمل بشكل وثيق مع",
+
+      note:
+        "closely هنا تعطي معنى التعاون المستمر والقريب.",
+
+      examples:[
+        [
+          "I work closely with my manager.",
+          "أعمل بشكل وثيق مع مديري."
+        ],
+        [
+          "We work closely with other teams.",
+          "نعمل بشكل وثيق مع الفرق الأخرى."
+        ]
+      ]
+    },
+
+    {
+      term:"make the most of",
+      meaning:"يستفيد أقصى استفادة من",
+
+      note:
+        "تعبير مهم جدًا، ومعناه أن تستخدم فرصة أو شيء بأفضل طريقة ممكنة.",
+
+      examples:[
+        [
+          "Let's make the most of our time.",
+          "دعنا نستفيد أقصى استفادة من وقتنا."
+        ],
+        [
+          "She wants to make the most of the opportunity.",
+          "تريد أن تستفيد أقصى استفادة من الفرصة."
+        ]
+      ]
+    },
+
+    {
+      term:"further",
+      meaning:"إضافي / أكثر",
+
+      note:
+        "تأتي كثيرًا قبل كلمات مثل research وinformation وdiscussion.",
+
+      examples:[
+        [
+          "We need further information.",
+          "نحتاج إلى معلومات إضافية."
+        ],
+        [
+          "Further research is needed.",
+          "هناك حاجة إلى مزيد من البحث."
+        ]
+      ]
+    },
+
+    {
+      term:"research",
+      meaning:"بحث / أبحاث",
+
+      note:
+        "research يمكن أن تكون اسمًا، وتستخدم كثيرًا في الدراسة والعمل.",
+
+      examples:[
+        [
+          "We need to do more research.",
+          "نحتاج إلى إجراء مزيد من البحث."
+        ],
+        [
+          "She is doing research on education.",
+          "تجري بحثًا عن التعليم."
+        ]
+      ]
+    },
+
+    {
+      term:"set up",
+      meaning:"يجهز / ينشئ / يرتب",
+
+      note:
+        "set up من الأفعال المركبة المهمة، ومعناها يتغير قليلًا حسب السياق.",
+
+      examples:[
+        [
+          "We need to set up a meeting.",
+          "نحتاج إلى ترتيب اجتماع."
+        ],
+        [
+          "They set up a new project.",
+          "أنشؤوا مشروعًا جديدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"take action",
+      meaning:"يتخذ إجراءً",
+
+      note:
+        "تعبير شائع في العمل وحل المشكلات.",
+
+      examples:[
+        [
+          "We need to take action now.",
+          "نحتاج إلى اتخاذ إجراء الآن."
+        ],
+        [
+          "The company decided to take action.",
+          "قررت الشركة اتخاذ إجراء."
+        ]
+      ]
+    },
+
+    {
+      term:"deal with",
+      meaning:"يتعامل مع",
+
+      note:
+        "deal with تستخدم للمشكلات والمواقف والأشخاص والموضوعات.",
+
+      examples:[
+        [
+          "We need to deal with this problem.",
+          "نحتاج إلى التعامل مع هذه المشكلة."
+        ],
+        [
+          "She deals with customers every day.",
+          "تتعامل مع العملاء كل يوم."
+        ]
+      ]
+    },
+
+    {
+      term:"going forward",
+      meaning:"من الآن فصاعدًا / في المرحلة القادمة",
+
+      note:
+        "تعبير شائع في الاجتماعات والعمل عند الحديث عما سيحدث لاحقًا.",
+
+      examples:[
+        [
+          "Going forward, we need a better plan.",
+          "من الآن فصاعدًا نحتاج إلى خطة أفضل."
+        ],
+        [
+          "Going forward, I'll check the details.",
+          "من الآن فصاعدًا سأراجع التفاصيل."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is the team discussing?",
+      answers:[
+        "diversity",
+        "diversity in the team"
+      ]
+    },
+
+    {
+      q:"Why do they need further research?",
+      answers:[
+        "to understand the issue",
+        "to learn more",
+        "to get more information"
+      ]
+    },
+
+    {
+      q:"Write one phrase that means 'يستفيد أقصى استفادة من'.",
+      answers:[
+        "make the most of"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:3,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"A Weather Forecast",
+
+  topic:"التوقعات · المستقبل · الطقس",
+
+  description:
+    "استماع واقعي إلى توقعات الطقس، مناسب لتدريب الأذن على فهم معلومات مستقبلية متتابعة.",
+
+  source:"British Council",
+
+  url:"https://learnenglish.britishcouncil.org/free-resources/listening/b1/weather-forecast",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "ستسمع will مع توقعات مستقبلية، وقد تظهر أيضًا تعبيرات زمنية تحدد متى أو أين ستحدث التغيرات.",
+
+  learn:[
+
+    {
+      term:"weather forecast",
+      meaning:"توقعات الطقس / النشرة الجوية",
+
+      note:
+        "forecast = توقع، وweather forecast تعبير ثابت للطقس المتوقع.",
+
+      examples:[
+        [
+          "I checked the weather forecast.",
+          "تحققت من توقعات الطقس."
+        ],
+        [
+          "The weather forecast says it will rain.",
+          "تقول توقعات الطقس إن المطر سيهطل."
+        ]
+      ]
+    },
+
+    {
+      term:"forecast",
+      meaning:"توقع / يتوقع",
+
+      note:
+        "يمكن أن تكون اسمًا أو فعلًا.",
+
+      examples:[
+        [
+          "The forecast is good for tomorrow.",
+          "التوقعات جيدة ليوم غد."
+        ],
+        [
+          "They forecast heavy rain.",
+          "يتوقعون هطول أمطار غزيرة."
+        ]
+      ]
+    },
+
+    {
+      term:"over the next few days",
+      meaning:"خلال الأيام القليلة القادمة",
+
+      note:
+        "تعبير زمني مفيد جدًا عند الحديث عن المستقبل.",
+
+      examples:[
+        [
+          "Temperatures will rise over the next few days.",
+          "سترتفع درجات الحرارة خلال الأيام القليلة القادمة."
+        ],
+        [
+          "Things may change over the next few days.",
+          "قد تتغير الأمور خلال الأيام القليلة القادمة."
+        ]
+      ]
+    },
+
+    {
+      term:"temperatures will rise",
+      meaning:"سترتفع درجات الحرارة",
+
+      note:
+        "rise = يرتفع. عكسها fall = ينخفض.",
+
+      examples:[
+        [
+          "Temperatures will rise tomorrow.",
+          "سترتفع درجات الحرارة غدًا."
+        ],
+        [
+          "Temperatures rose during the afternoon.",
+          "ارتفعت درجات الحرارة خلال فترة الظهيرة."
+        ]
+      ]
+    },
+
+    {
+      term:"heavy rain",
+      meaning:"أمطار غزيرة",
+
+      note:
+        "heavy لا تعني هنا 'ثقيل' حرفيًا؛ heavy rain تعبير طبيعي للأمطار الغزيرة.",
+
+      examples:[
+        [
+          "There was heavy rain last night.",
+          "كانت هناك أمطار غزيرة الليلة الماضية."
+        ],
+        [
+          "Heavy rain is expected tomorrow.",
+          "من المتوقع هطول أمطار غزيرة غدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"partly cloudy",
+      meaning:"غائم جزئيًا",
+
+      note:
+        "تعبير شائع جدًا في نشرات الطقس.",
+
+      examples:[
+        [
+          "It will be partly cloudy tomorrow.",
+          "سيكون الجو غائمًا جزئيًا غدًا."
+        ],
+        [
+          "The afternoon will be partly cloudy.",
+          "ستكون فترة الظهيرة غائمة جزئيًا."
+        ]
+      ]
+    },
+
+    {
+      term:"by the weekend",
+      meaning:"بحلول عطلة نهاية الأسبوع",
+
+      note:
+        "by هنا تعني 'بحلول' وليس 'بواسطة'.",
+
+      examples:[
+        [
+          "The weather will improve by the weekend.",
+          "سيتحسن الطقس بحلول عطلة نهاية الأسبوع."
+        ],
+        [
+          "I'll finish the work by Friday.",
+          "سأنهي العمل بحلول الجمعة."
+        ]
+      ]
+    },
+
+    {
+      term:"chance of rain",
+      meaning:"احتمال هطول المطر",
+
+      note:
+        "chance of + noun تستخدم للتعبير عن احتمال حدوث شيء.",
+
+      examples:[
+        [
+          "There's a chance of rain tonight.",
+          "هناك احتمال لهطول المطر الليلة."
+        ],
+        [
+          "There's a good chance of snow.",
+          "هناك احتمال كبير لتساقط الثلوج."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What kind of information does the speaker give?",
+      answers:[
+        "weather information",
+        "a weather forecast",
+        "weather"
+      ]
+    },
+
+    {
+      q:"What happens to the temperatures later?",
+      answers:[
+        "they rise",
+        "temperatures rise",
+        "they will rise"
+      ]
+    },
+
+    {
+      q:"What does 'by the weekend' mean?",
+      answers:[
+        "before the weekend",
+        "no later than the weekend"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:4,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"A Phone Call from a Customer",
+
+  topic:"المكالمات · المشاكل · الطلبات",
+
+  description:
+    "مكالمة عملية بين عميل وموظف حول مشكلة وطلب، مع لغة مفيدة جدًا للحياة والعمل.",
+
+  source:"British Council",
+
+  url:"https://learnenglish.britishcouncil.org/free-resources/listening/b1/phone-call-customer",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "لاحظ كيف تُستخدم الأسئلة والطلبات بطريقة مهذبة في مكالمة حقيقية، وكيف يشرح الشخص المشكلة قبل طلب الحل.",
+
+  learn:[
+
+    {
+      term:"I'm calling about...",
+      meaning:"أتصل بخصوص...",
+
+      note:
+        "تعبير جاهز ومفيد جدًا في المكالمات.",
+
+      examples:[
+        [
+          "I'm calling about my order.",
+          "أتصل بخصوص طلبي."
+        ],
+        [
+          "I'm calling about a problem with my account.",
+          "أتصل بخصوص مشكلة في حسابي."
+        ]
+      ]
+    },
+
+    {
+      term:"I'm afraid...",
+      meaning:"أخشى أن... / للأسف...",
+
+      note:
+        "في المحادثات المهذبة قد تستخدم لقول خبر غير سار، وليست دائمًا بمعنى الخوف.",
+
+      examples:[
+        [
+          "I'm afraid we can't help you today.",
+          "للأسف لا يمكننا مساعدتك اليوم."
+        ],
+        [
+          "I'm afraid there's a problem.",
+          "أخشى أن هناك مشكلة."
+        ]
+      ]
+    },
+
+    {
+      term:"Would it be possible to...?",
+      meaning:"هل سيكون من الممكن أن...؟",
+
+      note:
+        "صيغة مهذبة جدًا لطلب شيء.",
+
+      examples:[
+        [
+          "Would it be possible to change the date?",
+          "هل سيكون من الممكن تغيير التاريخ؟"
+        ],
+        [
+          "Would it be possible to speak to the manager?",
+          "هل سيكون من الممكن التحدث إلى المدير؟"
+        ]
+      ]
+    },
+
+    {
+      term:"payment",
+      meaning:"دفع / دفعة",
+
+      note:
+        "pay = يدفع، payment = عملية أو مبلغ الدفع.",
+
+      examples:[
+        [
+          "The payment is due today.",
+          "موعد الدفع اليوم."
+        ],
+        [
+          "We haven't received your payment.",
+          "لم نستلم دفعتك."
+        ]
+      ]
+    },
+
+    {
+      term:"extend",
+      meaning:"يمدد / يمدد المدة",
+
+      note:
+        "تستخدم كثيرًا مع time وdeadline وcontract وstay.",
+
+      examples:[
+        [
+          "Can we extend the deadline?",
+          "هل يمكننا تمديد الموعد النهائي؟"
+        ],
+        [
+          "They extended the contract.",
+          "مددوا العقد."
+        ]
+      ]
+    },
+
+    {
+      term:"sort out",
+      meaning:"يحل / يرتب المشكلة",
+
+      note:
+        "تعبير شائع جدًا، خصوصًا للمشكلات.",
+
+      examples:[
+        [
+          "I'll sort it out for you.",
+          "سأحل الأمر لك."
+        ],
+        [
+          "We need to sort out this problem.",
+          "نحتاج إلى حل هذه المشكلة."
+        ]
+      ]
+    },
+
+    {
+      term:"issue",
+      meaning:"مشكلة / مسألة",
+
+      note:
+        "في العمل والخدمات، issue كثيرًا ما تعني مشكلة بطريقة ألطف من problem.",
+
+      examples:[
+        [
+          "There's an issue with my account.",
+          "هناك مشكلة في حسابي."
+        ],
+        [
+          "We'll look into the issue.",
+          "سوف نبحث في المشكلة."
+        ]
+      ]
+    },
+
+    {
+      term:"look into",
+      meaning:"يبحث في / يتحقق من",
+
+      note:
+        "look into شيء مختلف عن look at؛ معناها التحقيق أو التحقق من الموضوع.",
+
+      examples:[
+        [
+          "I'll look into it.",
+          "سأتحقق من الأمر."
+        ],
+        [
+          "They are looking into the problem.",
+          "إنهم يبحثون في المشكلة."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"Why is the customer calling?",
+      answers:[
+        "because of a problem",
+        "to discuss a problem",
+        "about an issue"
+      ]
+    },
+
+    {
+      q:"What does the customer want to change?",
+      answers:[
+        "the payment",
+        "the payment date",
+        "the payment terms"
+      ]
+    },
+
+    {
+      q:"What does 'look into it' mean?",
+      answers:[
+        "investigate it",
+        "check it",
+        "examine it"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:5,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"What Can You Do?",
+
+  topic:"can · القدرة · المهارات",
+
+  description:
+    "محادثة عن الأشياء التي يستطيع الأشخاص فعلها والأشياء التي لا يستطيعون فعلها.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1351/T1367-AbidemiRory-07-Ability.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "لاحظ أن can لا تستخدم فقط للقدرة الجسدية؛ يمكن استخدامها للمهارات والإمكانات أيضًا.",
+
+  learn:[
+
+    {
+      term:"be able to",
+      meaning:"يستطيع / يكون قادرًا على",
+
+      note:
+        "be able to تعطي معنى القدرة، وهي مفيدة عندما لا نستطيع استخدام can في بعض التراكيب.",
+
+      examples:[
+        [
+          "I wasn't able to finish the work.",
+          "لم أتمكن من إنهاء العمل."
+        ],
+        [
+          "She will be able to help us.",
+          "ستتمكن من مساعدتنا."
+        ]
+      ]
+    },
+
+    {
+      term:"be good at",
+      meaning:"يكون جيدًا في",
+
+      note:
+        "بعد at يأتي اسم أو فعل بـ-ing.",
+
+      examples:[
+        [
+          "I'm good at solving problems.",
+          "أنا جيد في حل المشكلات."
+        ],
+        [
+          "She's good at explaining things.",
+          "هي جيدة في شرح الأشياء."
+        ]
+      ]
+    },
+
+    {
+      term:"not at all",
+      meaning:"إطلاقًا / أبدًا",
+
+      note:
+        "تستخدم كثيرًا لتقوية النفي.",
+
+      examples:[
+        [
+          "I can't swim at all.",
+          "لا أستطيع السباحة إطلاقًا."
+        ],
+        [
+          "I'm not tired at all.",
+          "لست متعبًا إطلاقًا."
+        ]
+      ]
+    },
+
+    {
+      term:"skill",
+      meaning:"مهارة",
+
+      note:
+        "skill كلمة أساسية للحديث عن الأشياء التي تتقنها.",
+
+      examples:[
+        [
+          "Communication is an important skill.",
+          "التواصل مهارة مهمة."
+        ],
+        [
+          "She has excellent computer skills.",
+          "لديها مهارات ممتازة في الكمبيوتر."
+        ]
+      ]
+    },
+
+    {
+      term:"figure out",
+      meaning:"يكتشف / يجد الحل",
+
+      note:
+        "تستخدم عندما تحاول فهم شيء أو معرفة طريقة لحله.",
+
+      examples:[
+        [
+          "I can't figure out how it works.",
+          "لا أستطيع معرفة كيف يعمل."
+        ],
+        [
+          "We'll figure it out.",
+          "سنجد الحل."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is the conversation mainly about?",
+      answers:[
+        "abilities",
+        "skills",
+        "what people can do"
+      ]
+    },
+
+    {
+      q:"Write one phrase from the lesson that means 'جيد في'.",
+      answers:[
+        "be good at",
+        "good at"
+      ]
+    },
+
+    {
+      q:"What does 'not at all' add to a negative sentence?",
+      answers:[
+        "emphasis",
+        "strong emphasis",
+        "it makes the negative stronger"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:6,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"Life on Mars",
+
+  topic:"can · could · will · used to · if",
+
+  description:
+    "نقاش ممتع حول الحياة على المريخ والاحتمالات المستقبلية.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1401/1431-JohnSarah-Mars.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "الموضوع يسمح للطالب بسماع الحديث عن الاحتمالات والمستقبل والقدرات في سياق طبيعي، لذلك لا تتعامل مع كل جملة كقاعدة منفصلة.",
+
+  learn:[
+
+    {
+      term:"life on Mars",
+      meaning:"الحياة على المريخ",
+
+      note:
+        "life on + place تستخدم للحديث عن الحياة في مكان معين.",
+
+      examples:[
+        [
+          "Could there be life on Mars?",
+          "هل يمكن أن تكون هناك حياة على المريخ؟"
+        ],
+        [
+          "Life on Mars would be very different.",
+          "ستكون الحياة على المريخ مختلفة جدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"in the future",
+      meaning:"في المستقبل",
+
+      note:
+        "تعبير أساسي للحديث عن أشياء متوقعة أو محتملة.",
+
+      examples:[
+        [
+          "People may live there in the future.",
+          "قد يعيش الناس هناك في المستقبل."
+        ],
+        [
+          "Technology will change in the future.",
+          "ستتغير التكنولوجيا في المستقبل."
+        ]
+      ]
+    },
+
+    {
+      term:"be willing to",
+      meaning:"يكون مستعدًا لـ",
+
+      note:
+        "willing تعني مستعد لفعل شيء، وليس بالضرورة سعيدًا به.",
+
+      examples:[
+        [
+          "Would you be willing to go?",
+          "هل ستكون مستعدًا للذهاب؟"
+        ],
+        [
+          "I'm willing to try.",
+          "أنا مستعد للمحاولة."
+        ]
+      ]
+    },
+
+    {
+      term:"spacecraft",
+      meaning:"مركبة فضائية",
+
+      note:
+        "craft هنا تشير إلى مركبة، ويمكن استخدامها لمركبات الفضاء.",
+
+      examples:[
+        [
+          "The spacecraft reached Mars.",
+          "وصلت المركبة الفضائية إلى المريخ."
+        ],
+        [
+          "The spacecraft sent information back to Earth.",
+          "أرسلت المركبة الفضائية معلومات إلى الأرض."
+        ]
+      ]
+    },
+
+    {
+      term:"satellite",
+      meaning:"قمر صناعي",
+
+      note:
+        "كلمة مهمة في موضوعات الفضاء والتكنولوجيا.",
+
+      examples:[
+        [
+          "The satellite sends information to Earth.",
+          "يرسل القمر الصناعي معلومات إلى الأرض."
+        ],
+        [
+          "They launched a new satellite.",
+          "أطلقوا قمرًا صناعيًا جديدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"used to",
+      meaning:"كان معتادًا على / كان يفعل في الماضي",
+
+      note:
+        "used to + base verb تتحدث عن عادة أو حالة كانت موجودة في الماضي ولم تعد كذلك.",
+
+      examples:[
+        [
+          "People used to think Mars was very different.",
+          "كان الناس يعتقدون في الماضي أن المريخ مختلف جدًا."
+        ],
+        [
+          "I used to watch science programs.",
+          "كنت أشاهد برامج علمية في الماضي."
+        ]
+      ]
+    },
+
+    {
+      term:"could",
+      meaning:"كان يستطيع / قد يكون ممكنًا",
+
+      note:
+        "could قد تشير إلى قدرة في الماضي أو احتمال، والسياق يحدد المعنى.",
+
+      examples:[
+        [
+          "People could live there one day.",
+          "قد يتمكن الناس من العيش هناك يومًا ما."
+        ],
+        [
+          "I could swim when I was six.",
+          "كنت أستطيع السباحة عندما كان عمري ست سنوات."
+        ]
+      ]
+    },
+
+    {
+      term:"one day",
+      meaning:"يومًا ما",
+
+      note:
+        "تستخدم للحديث عن وقت مستقبلي غير محدد.",
+
+      examples:[
+        [
+          "Maybe people will live on Mars one day.",
+          "ربما سيعيش الناس على المريخ يومًا ما."
+        ],
+        [
+          "I hope to visit Japan one day.",
+          "آمل أن أزور اليابان يومًا ما."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What future topic are the speakers discussing?",
+      answers:[
+        "living on Mars",
+        "life on Mars",
+        "people living on Mars"
+      ]
+    },
+
+    {
+      q:"Write two modal verbs you hear or study in this lesson.",
+      answers:[
+        "can and could",
+        "could and will",
+        "can could"
+      ]
+    },
+
+    {
+      q:"What does 'one day' mean in this context?",
+      answers:[
+        "sometime in the future",
+        "at some time in the future",
+        "in the future"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:7,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"Bucket List",
+
+  topic:"الأهداف · الرغبات · المستقبل",
+
+  description:
+    "حديث عن الأشياء التي يريد الأشخاص فعلها وتجربتها في حياتهم.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1351/T1375-AdamSarah-03-BucketList.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "استمع إلى الطريقة التي يتحدث بها الأشخاص عن أشياء لم يفعلوها بعد، وأشياء يتمنون تجربتها مستقبلًا.",
+
+  learn:[
+
+    {
+      term:"bucket list",
+      meaning:"قائمة الأشياء التي يريد الشخص فعلها في حياته",
+
+      note:
+        "تعبير ثقافي شائع، ويقصد به قائمة التجارب أو الأهداف التي يريد الشخص تحقيقها.",
+
+      examples:[
+        [
+          "Traveling around the world is on my bucket list.",
+          "السفر حول العالم ضمن قائمة الأشياء التي أريد فعلها في حياتي."
+        ],
+        [
+          "What's on your bucket list?",
+          "ما الأشياء التي تريد فعلها في حياتك؟"
+        ]
+      ]
+    },
+
+    {
+      term:"I'd love to...",
+      meaning:"أود جدًا أن...",
+
+      note:
+        "اختصار I'd = I would. تعبير طبيعي جدًا للتعبير عن رغبة قوية.",
+
+      examples:[
+        [
+          "I'd love to visit Italy.",
+          "أود جدًا زيارة إيطاليا."
+        ],
+        [
+          "I'd love to learn another language.",
+          "أود جدًا تعلم لغة أخرى."
+        ]
+      ]
+    },
+
+    {
+      term:"I've always wanted to...",
+      meaning:"لطالما أردت أن...",
+
+      note:
+        "تعبير ممتاز للحديث عن رغبة مستمرة منذ فترة طويلة.",
+
+      examples:[
+        [
+          "I've always wanted to travel alone.",
+          "لطالما أردت السفر وحدي."
+        ],
+        [
+          "I've always wanted to learn to play the piano.",
+          "لطالما أردت تعلم العزف على البيانو."
+        ]
+      ]
+    },
+
+    {
+      term:"experience",
+      meaning:"تجربة / يختبر",
+
+      note:
+        "experience قد تكون اسمًا أو فعلًا.",
+
+      examples:[
+        [
+          "It was an amazing experience.",
+          "كانت تجربة رائعة."
+        ],
+        [
+          "I want to experience something new.",
+          "أريد أن أختبر شيئًا جديدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"achieve",
+      meaning:"يحقق",
+
+      note:
+        "تستخدم مع goals وdreams وsuccess وغيرها.",
+
+      examples:[
+        [
+          "She achieved her goal.",
+          "حققت هدفها."
+        ],
+        [
+          "I want to achieve my dreams.",
+          "أريد تحقيق أحلامي."
+        ]
+      ]
+    },
+
+    {
+      term:"take a trip",
+      meaning:"يقوم برحلة",
+
+      note:
+        "take تأتي كثيرًا مع trip.",
+
+      examples:[
+        [
+          "I'd like to take a trip to Spain.",
+          "أود القيام برحلة إلى إسبانيا."
+        ],
+        [
+          "We took a trip last summer.",
+          "قمنا برحلة الصيف الماضي."
+        ]
+      ]
+    },
+
+    {
+      term:"at least once",
+      meaning:"مرة واحدة على الأقل",
+
+      note:
+        "at least تعني على الأقل، ويمكن استخدامها مع الأرقام والكميات.",
+
+      examples:[
+        [
+          "I'd like to visit Japan at least once.",
+          "أود زيارة اليابان مرة واحدة على الأقل."
+        ],
+        [
+          "Everyone should try it at least once.",
+          "ينبغي للجميع تجربته مرة واحدة على الأقل."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is a bucket list?",
+      answers:[
+        "a list of things someone wants to do",
+        "a list of goals and experiences",
+        "things someone wants to do in life"
+      ]
+    },
+
+    {
+      q:"Write one expression used to talk about a strong wish.",
+      answers:[
+        "i'd love to",
+        "i would love to",
+        "I've always wanted to"
+      ]
+    },
+
+    {
+      q:"What kind of things do people usually put on a bucket list?",
+      answers:[
+        "goals",
+        "experiences",
+        "things they want to do"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:8,
+  stage:1,
+  stageTitle:"المستقبل والقدرة والقرارات",
+
+  title:"What Are You Good At?",
+
+  topic:"المهارات · الشخصية · used to",
+
+  description:
+    "محادثة عن المهارات والأشياء التي يجيدها الأشخاص.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1351/T1368-AbidemiRory-08-GoodAt.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "ركز على التعبيرات التي يستخدمها الأشخاص عندما يصفون نقاط قوتهم والمهارات التي لديهم.",
+
+  learn:[
+
+    {
+      term:"be good at",
+      meaning:"يكون جيدًا في",
+
+      note:
+        "بعد at يأتي اسم أو فعل بـ-ing.",
+
+      examples:[
+        [
+          "I'm good at solving problems.",
+          "أنا جيد في حل المشكلات."
+        ],
+        [
+          "She's good at languages.",
+          "هي جيدة في اللغات."
+        ]
+      ]
+    },
+
+    {
+      term:"be terrible at",
+      meaning:"يكون سيئًا جدًا في",
+
+      note:
+        "terrible عكس good هنا وتستخدم للمبالغة في ضعف المهارة.",
+
+      examples:[
+        [
+          "I'm terrible at remembering names.",
+          "أنا سيئ جدًا في تذكر الأسماء."
+        ],
+        [
+          "He's terrible at cooking.",
+          "هو سيئ جدًا في الطبخ."
+        ]
+      ]
+    },
+
+    {
+      term:"brag",
+      meaning:"يتباهى",
+
+      note:
+        "brag تعني الحديث عن مهاراتك أو إنجازاتك بطريقة توحي بالتفاخر.",
+
+      examples:[
+        [
+          "He likes to brag about his skills.",
+          "يحب التباهي بمهاراته."
+        ],
+        [
+          "I'm not trying to brag.",
+          "أنا لا أحاول التباهي."
+        ]
+      ]
+    },
+
+    {
+      term:"get the hang of",
+      meaning:"يتقن الشيء تدريجيًا / يفهم طريقة عمله",
+
+      note:
+        "تعبير طبيعي عندما تبدأ في فهم كيفية فعل شيء بعد التدريب.",
+
+      examples:[
+        [
+          "I'm getting the hang of it.",
+          "بدأت أفهم طريقة فعل ذلك."
+        ],
+        [
+          "You'll get the hang of it soon.",
+          "ستتقن الأمر قريبًا."
+        ]
+      ]
+    },
+
+    {
+      term:"pick up",
+      meaning:"يتعلم أو يكتسب شيئًا تدريجيًا",
+
+      note:
+        "pick up لها معانٍ كثيرة. في تعلم المهارات قد تعني اكتسابها بصورة طبيعية.",
+
+      examples:[
+        [
+          "You can pick up new skills quickly.",
+          "يمكنك اكتساب مهارات جديدة بسرعة."
+        ],
+        [
+          "She picked up some Spanish while traveling.",
+          "اكتسبت بعض الإسبانية أثناء السفر."
+        ]
+      ]
+    },
+
+    {
+      term:"natural talent",
+      meaning:"موهبة طبيعية",
+
+      note:
+        "talent = موهبة، وnatural talent تعني موهبة موجودة بالفطرة.",
+
+      examples:[
+        [
+          "She has a natural talent for music.",
+          "لديها موهبة طبيعية في الموسيقى."
+        ],
+        [
+          "He has a natural talent for languages.",
+          "لديه موهبة طبيعية في اللغات."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What are the speakers discussing?",
+      answers:[
+        "things they are good at",
+        "their skills",
+        "their abilities"
+      ]
+    },
+
+    {
+      q:"What does 'get the hang of it' mean?",
+      answers:[
+        "learn how to do it",
+        "understand how to do it",
+        "become familiar with it"
+      ]
+    },
+
+    {
+      q:"Write one expression that means 'جيد في'.",
+      answers:[
+        "be good at",
+        "good at"
+      ]
+    }
+  ]
+},
+
+
+/* =========================================================
+   STAGE 2
+   ========================================================= */
+
+{
+  id:9,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"A Student Discussion",
+
+  topic:"المقارنة · Mars and Earth",
+
+  description:
+    "نقاش بين طالبين يقارنان بين المريخ والأرض.",
+
+  source:"British Council",
+
+  url:"https://learnenglish.britishcouncil.org/free-resources/listening/b1/student-discussion",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "استمع إلى المقارنات وهي تظهر داخل النقاش، وليس كجمل تدريبية منفصلة.",
+
+  learn:[
+
+    {
+      term:"compared with",
+      meaning:"بالمقارنة مع",
+
+      note:
+        "تستخدم للمقارنة بين شيئين.",
+
+      examples:[
+        [
+          "Compared with Earth, Mars is much colder.",
+          "بالمقارنة مع الأرض، المريخ أبرد بكثير."
+        ],
+        [
+          "This phone is cheaper compared with the old one.",
+          "هذا الهاتف أرخص مقارنة بالقديم."
+        ]
+      ]
+    },
+
+    {
+      term:"much colder",
+      meaning:"أبرد بكثير",
+
+      note:
+        "much يمكن أن تقوي المقارنة مع comparative adjective.",
+
+      examples:[
+        [
+          "Today is much colder.",
+          "اليوم أبرد بكثير."
+        ],
+        [
+          "Mars is much colder than Earth.",
+          "المريخ أبرد بكثير من الأرض."
+        ]
+      ]
+    },
+
+    {
+      term:"further away",
+      meaning:"أبعد",
+
+      note:
+        "far → further/farther. وتستخدم away للتأكيد على المسافة.",
+
+      examples:[
+        [
+          "The airport is further away than the station.",
+          "المطار أبعد من المحطة."
+        ],
+        [
+          "Mars is much further away.",
+          "المريخ أبعد بكثير."
+        ]
+      ]
+    },
+
+    {
+      term:"similar to",
+      meaning:"مشابه لـ",
+
+      note:
+        "similar تأتي معها to، وليس عادةً with.",
+
+      examples:[
+        [
+          "The two places are similar to each other.",
+          "المكانان متشابهان مع بعضهما."
+        ],
+        [
+          "This idea is similar to mine.",
+          "هذه الفكرة مشابهة لفكرتي."
+        ]
+      ]
+    },
+
+    {
+      term:"different from",
+      meaning:"مختلف عن",
+
+      note:
+        "تعبير أساسي للمقارنة.",
+
+      examples:[
+        [
+          "Life there would be different from life here.",
+          "ستكون الحياة هناك مختلفة عن الحياة هنا."
+        ],
+        [
+          "This book is different from the first one.",
+          "هذا الكتاب مختلف عن الأول."
+        ]
+      ]
+    },
+
+    {
+      term:"roughly",
+      meaning:"تقريبًا",
+
+      note:
+        "تستخدم عندما لا تكون بحاجة إلى رقم دقيق.",
+
+      examples:[
+        [
+          "The journey takes roughly two hours.",
+          "تستغرق الرحلة نحو ساعتين تقريبًا."
+        ],
+        [
+          "There are roughly one hundred people.",
+          "هناك نحو مئة شخص تقريبًا."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What two places are the students comparing?",
+      answers:[
+        "Mars and Earth",
+        "earth and mars"
+      ]
+    },
+
+    {
+      q:"Why is comparison useful in this discussion?",
+      answers:[
+        "to describe the differences",
+        "to compare the two planets"
+      ]
+    },
+
+    {
+      q:"What does 'similar to' mean?",
+      answers:[
+        "like",
+        "almost the same as",
+        "having things in common with"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:10,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"Life in Italy",
+
+  topic:"الحياة · الثقافة · المقارنة",
+
+  description:
+    "حديث عن الحياة في إيطاليا ومقارنة بعض جوانبها بالحياة في أماكن أخرى.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1451/1486-Shantel-Todd-LifeInItaly.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "انتبه إلى كيفية المقارنة بين عادات وأسلوب حياة في مكانين مختلفين.",
+
+  learn:[
+
+    {
+      term:"lifestyle",
+      meaning:"نمط الحياة",
+
+      note:
+        "تجمع life + style، وتستخدم للحديث عن طريقة عيش الشخص أو المجتمع.",
+
+      examples:[
+        [
+          "I like the Italian lifestyle.",
+          "أحب نمط الحياة الإيطالي."
+        ],
+        [
+          "My lifestyle has changed.",
+          "تغير نمط حياتي."
+        ]
+      ]
+    },
+
+    {
+      term:"way of life",
+      meaning:"أسلوب الحياة",
+
+      note:
+        "تعبير قريب من lifestyle، لكنه يركز أكثر على الطريقة التي يعيش بها الناس.",
+
+      examples:[
+        [
+          "The local way of life is very different.",
+          "أسلوب الحياة المحلي مختلف جدًا."
+        ],
+        [
+          "I enjoy their way of life.",
+          "أستمتع بأسلوب حياتهم."
+        ]
+      ]
+    },
+
+    {
+      term:"local",
+      meaning:"محلي",
+
+      note:
+        "local تعني مرتبطًا بالمكان نفسه أو سكانه.",
+
+      examples:[
+        [
+          "I like local food.",
+          "أحب الطعام المحلي."
+        ],
+        [
+          "We talked to some local people.",
+          "تحدثنا مع بعض السكان المحليين."
+        ]
+      ]
+    },
+
+    {
+      term:"get used to",
+      meaning:"يعتاد على",
+
+      note:
+        "مختلفة عن used to. get used to تعني عملية الاعتياد على شيء.",
+
+      examples:[
+        [
+          "It took me time to get used to the weather.",
+          "احتجت إلى وقت لأعتاد على الطقس."
+        ],
+        [
+          "You'll get used to it.",
+          "ستعتاد على الأمر."
+        ]
+      ]
+    },
+
+    {
+      term:"traditional",
+      meaning:"تقليدي",
+
+      note:
+        "تستخدم للأشياء والعادات التي ترتبط بالتقاليد.",
+
+      examples:[
+        [
+          "They serve traditional food.",
+          "يقدمون طعامًا تقليديًا."
+        ],
+        [
+          "It's a traditional celebration.",
+          "إنه احتفال تقليدي."
+        ]
+      ]
+    },
+
+    {
+      term:"compared to",
+      meaning:"مقارنةً بـ",
+
+      note:
+        "تعبير آخر للمقارنة، قريب من compared with.",
+
+      examples:[
+        [
+          "It's cheaper compared to my city.",
+          "إنه أرخص مقارنة بمدينتي."
+        ],
+        [
+          "Compared to last year, things are better.",
+          "مقارنة بالعام الماضي، الأمور أفضل."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is the speaker mainly talking about?",
+      answers:[
+        "life in Italy",
+        "Italian lifestyle",
+        "living in Italy"
+      ]
+    },
+
+    {
+      q:"What kind of differences are discussed?",
+      answers:[
+        "lifestyle differences",
+        "cultural differences",
+        "daily life"
+      ]
+    },
+
+    {
+      q:"What does 'get used to' mean?",
+      answers:[
+        "become accustomed to",
+        "become familiar with",
+        "adapt to"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:11,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"Price Range for Clothes",
+
+  topic:"الأسعار · المقارنة · spend",
+
+  description:
+    "محادثة تقارن مقدار ما ينفقه الأشخاص على الملابس.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1451/1477-JenTodd-ClothesPrice.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "ركز على كلمات السعر والمقارنة وعلى الطريقة التي نتحدث بها عن مقدار المال الذي ننفقه.",
+
+  learn:[
+
+    {
+      term:"price range",
+      meaning:"نطاق الأسعار",
+
+      note:
+        "range تعني نطاقًا أو مجالًا بين حدين.",
+
+      examples:[
+        [
+          "What's the price range?",
+          "ما نطاق الأسعار؟"
+        ],
+        [
+          "The store has a wide price range.",
+          "لدى المتجر نطاق واسع من الأسعار."
+        ]
+      ]
+    },
+
+    {
+      term:"spend money on",
+      meaning:"ينفق المال على",
+
+      note:
+        "spend + money + on + الشيء الذي تنفق عليه.",
+
+      examples:[
+        [
+          "I spend a lot of money on clothes.",
+          "أنفق الكثير من المال على الملابس."
+        ],
+        [
+          "She spends money on books.",
+          "تنفق المال على الكتب."
+        ]
+      ]
+    },
+
+    {
+      term:"afford",
+      meaning:"يستطيع تحمل تكلفة",
+
+      note:
+        "afford تعني أن المال المتاح يسمح لك بدفع ثمن شيء.",
+
+      examples:[
+        [
+          "I can't afford a new phone.",
+          "لا أستطيع تحمل تكلفة هاتف جديد."
+        ],
+        [
+          "Can you afford it?",
+          "هل تستطيع تحمل تكلفته؟"
+        ]
+      ]
+    },
+
+    {
+      term:"worth",
+      meaning:"يستحق / قيمته",
+
+      note:
+        "worth غالبًا تأتي مع السعر أو القيمة.",
+
+      examples:[
+        [
+          "It's worth the price.",
+          "إنه يستحق السعر."
+        ],
+        [
+          "The trip was worth it.",
+          "كانت الرحلة تستحق ذلك."
+        ]
+      ]
+    },
+
+    {
+      term:"cheap",
+      meaning:"رخيص",
+
+      note:
+        "cheap تعني قليل السعر، وقد تكون محايدة أو سلبية حسب السياق.",
+
+      examples:[
+        [
+          "This jacket is cheap.",
+          "هذه السترة رخيصة."
+        ],
+        [
+          "I found a cheap hotel.",
+          "وجدت فندقًا رخيصًا."
+        ]
+      ]
+    },
+
+    {
+      term:"expensive",
+      meaning:"غالي",
+
+      note:
+        "عكس cheap.",
+
+      examples:[
+        [
+          "That store is expensive.",
+          "ذلك المتجر غالي."
+        ],
+        [
+          "The tickets are too expensive.",
+          "التذاكر غالية جدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"reasonable price",
+      meaning:"سعر معقول",
+
+      note:
+        "reasonable هنا تعني مناسبًا أو مقبولًا، وليس 'عقلانيًا' حرفيًا.",
+
+      examples:[
+        [
+          "The hotel has a reasonable price.",
+          "الفندق سعره معقول."
+        ],
+        [
+          "I found it at a reasonable price.",
+          "وجدته بسعر معقول."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What are the speakers comparing?",
+      answers:[
+        "clothing prices",
+        "how much they spend on clothes",
+        "prices of clothes"
+      ]
+    },
+
+    {
+      q:"What does 'spend money on' mean?",
+      answers:[
+        "use money to buy",
+        "use money for",
+        "pay money for"
+      ]
+    },
+
+    {
+      q:"What does 'afford' mean?",
+      answers:[
+        "be able to pay for",
+        "have enough money for"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:12,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"Seasonal Clothing",
+
+  topic:"الماضي · الحاضر · used to · comparison",
+
+  description:
+    "محادثة طبيعية عن الملابس حسب الفصول والتغيرات في العادات.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1451/1476-JenTodd-ClothesSeason.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "هذا الاستماع غني بالملاحظة؛ ستجد مقارنة بين الماضي والحاضر، وعبارات عن العادات القديمة، وتعبيرات شرطية.",
+
+  learn:[
+
+    {
+      term:"used to",
+      meaning:"كان معتادًا على / كان يفعل في الماضي",
+
+      note:
+        "used to + base verb تتحدث عن عادة أو حالة ماضية لم تعد صحيحة الآن.",
+
+      examples:[
+        [
+          "I used to wear a uniform.",
+          "كنت أرتدي زيًا موحدًا في الماضي."
+        ],
+        [
+          "We used to live there.",
+          "كنا نعيش هناك في الماضي."
+        ]
+      ]
+    },
+
+    {
+      term:"these days",
+      meaning:"هذه الأيام / في الوقت الحالي",
+
+      note:
+        "تستخدم للمقارنة بين الحاضر والماضي.",
+
+      examples:[
+        [
+          "I don't watch TV much these days.",
+          "لا أشاهد التلفاز كثيرًا هذه الأيام."
+        ],
+        [
+          "People shop online more these days.",
+          "الناس يتسوقون عبر الإنترنت أكثر هذه الأيام."
+        ]
+      ]
+    },
+
+    {
+      term:"back then",
+      meaning:"في ذلك الوقت / آنذاك",
+
+      note:
+        "تستخدم للإشارة إلى فترة سابقة.",
+
+      examples:[
+        [
+          "Things were different back then.",
+          "كانت الأمور مختلفة آنذاك."
+        ],
+        [
+          "Back then, we didn't have smartphones.",
+          "آنذاك لم تكن لدينا هواتف ذكية."
+        ]
+      ]
+    },
+
+    {
+      term:"fashionable",
+      meaning:"على الموضة",
+
+      note:
+        "fashion = الموضة، fashionable = رائج أو على الموضة.",
+
+      examples:[
+        [
+          "That style is fashionable now.",
+          "ذلك الأسلوب على الموضة الآن."
+        ],
+        [
+          "It wasn't fashionable back then.",
+          "لم يكن على الموضة آنذاك."
+        ]
+      ]
+    },
+
+    {
+      term:"keep warm",
+      meaning:"يحافظ على الدفء",
+
+      note:
+        "keep + adjective يمكن أن تعطي معنى إبقاء الشيء على حالة معينة.",
+
+      examples:[
+        [
+          "This jacket keeps me warm.",
+          "هذه السترة تحافظ على دفئي."
+        ],
+        [
+          "Drink something hot to keep warm.",
+          "اشرب شيئًا ساخنًا لتحافظ على دفئك."
+        ]
+      ]
+    },
+
+    {
+      term:"dress for",
+      meaning:"يلبس بما يناسب",
+
+      note:
+        "نستخدمها عندما نختار الملابس المناسبة لموقف أو طقس.",
+
+      examples:[
+        [
+          "You need to dress for the weather.",
+          "تحتاج إلى ارتداء ملابس تناسب الطقس."
+        ],
+        [
+          "How should I dress for the interview?",
+          "كيف ينبغي أن أرتدي ملابسي للمقابلة؟"
+        ]
+      ]
+    },
+
+    {
+      term:"fit",
+      meaning:"يناسب المقاس",
+
+      note:
+        "fit كفعل تعني أن حجم الشيء مناسب.",
+
+      examples:[
+        [
+          "These shoes don't fit me.",
+          "هذه الأحذية لا تناسب مقاسي."
+        ],
+        [
+          "The jacket fits perfectly.",
+          "السترة تناسب المقاس تمامًا."
+        ]
+      ]
+    },
+
+    {
+      term:"regret",
+      meaning:"يندم على",
+
+      note:
+        "regret يمكن أن يأتي مع noun أو -ing.",
+
+      examples:[
+        [
+          "I regret buying it.",
+          "أندم على شرائه."
+        ],
+        [
+          "She regrets her decision.",
+          "هي تندم على قرارها."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is the main topic of the conversation?",
+      answers:[
+        "seasonal clothes",
+        "clothing and seasons",
+        "clothes"
+      ]
+    },
+
+    {
+      q:"What does 'back then' refer to?",
+      answers:[
+        "the past",
+        "an earlier time",
+        "a time in the past"
+      ]
+    },
+
+    {
+      q:"What does 'used to' show?",
+      answers:[
+        "a past habit",
+        "a past state",
+        "something that was true in the past"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:13,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"Lifestyle Change",
+
+  topic:"تغيير العادات · الصحة · الماضي والحاضر",
+
+  description:
+    "حديث عن تغيير نمط الحياة والعادات اليومية.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1401/1412-John-Sarah-Healthy-Life.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "لاحظ كيف يقارن المتحدث بين عاداته السابقة وحياته الحالية، وكيف يشرح أسباب التغيير.",
+
+  learn:[
+
+    {
+      term:"lifestyle change",
+      meaning:"تغيير في نمط الحياة",
+
+      note:
+        "يستخدم عندما يغير الشخص عاداته المتعلقة بالصحة أو العمل أو الحياة اليومية.",
+
+      examples:[
+        [
+          "I made a lifestyle change.",
+          "أجريت تغييرًا في نمط حياتي."
+        ],
+        [
+          "The lifestyle change helped me.",
+          "ساعدني تغيير نمط الحياة."
+        ]
+      ]
+    },
+
+    {
+      term:"cut down on",
+      meaning:"يقلل من",
+
+      note:
+        "تستخدم عندما تقلل كمية شيء ما.",
+
+      examples:[
+        [
+          "I'm trying to cut down on sugar.",
+          "أحاول تقليل السكر."
+        ],
+        [
+          "He cut down on coffee.",
+          "قلل من القهوة."
+        ]
+      ]
+    },
+
+    {
+      term:"give up",
+      meaning:"يقلع عن / يتوقف عن",
+
+      note:
+        "قد تعني التوقف عن عادة أو شيء.",
+
+      examples:[
+        [
+          "She gave up smoking.",
+          "أقلعت عن التدخين."
+        ],
+        [
+          "I don't want to give up coffee.",
+          "لا أريد التوقف عن شرب القهوة."
+        ]
+      ]
+    },
+
+    {
+      term:"get into the habit of",
+      meaning:"يعتاد على / يدخل في عادة",
+
+      note:
+        "بعدها يأتي اسم أو فعل بـ-ing.",
+
+      examples:[
+        [
+          "I'm getting into the habit of walking every day.",
+          "بدأت أعتاد المشي كل يوم."
+        ],
+        [
+          "He got into the habit of reading before bed.",
+          "اعتاد القراءة قبل النوم."
+        ]
+      ]
+    },
+
+    {
+      term:"stay healthy",
+      meaning:"يحافظ على صحته",
+
+      note:
+        "stay + adjective تعني الاستمرار على حالة معينة.",
+
+      examples:[
+        [
+          "I exercise to stay healthy.",
+          "أمارس الرياضة لأحافظ على صحتي."
+        ],
+        [
+          "It's important to stay healthy.",
+          "من المهم الحفاظ على الصحة."
+        ]
+      ]
+    },
+
+    {
+      term:"make a change",
+      meaning:"يجري تغييرًا",
+
+      note:
+        "تعبير شائع عند الحديث عن تحسين أو تغيير شيء.",
+
+      examples:[
+        [
+          "I decided to make a change.",
+          "قررت أن أجري تغييرًا."
+        ],
+        [
+          "Sometimes you need to make a change.",
+          "أحيانًا تحتاج إلى إجراء تغيير."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What kind of change is discussed?",
+      answers:[
+        "a lifestyle change",
+        "changes in lifestyle",
+        "healthy lifestyle changes"
+      ]
+    },
+
+    {
+      q:"What does 'cut down on' mean?",
+      answers:[
+        "reduce",
+        "reduce the amount of",
+        "use less of"
+      ]
+    },
+
+    {
+      q:"Write one expression connected with changing a habit.",
+      answers:[
+        "give up",
+        "get into the habit of",
+        "make a change"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:14,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"First Jobs",
+
+  topic:"العمل · التجارب · الماضي",
+
+  description:
+    "حديث عن أول وظيفة وتجارب العمل الأولى.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1351/T1385-AdamSarah-05-Job.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "الاستماع إلى شخص يتحدث عن تجربة سابقة يعطيك فرصة لسماع الماضي داخل قصة حقيقية.",
+
+  learn:[
+
+    {
+      term:"first job",
+      meaning:"أول وظيفة",
+
+      note:
+        "موضوع شائع جدًا عند الحديث عن بداية الحياة المهنية.",
+
+      examples:[
+        [
+          "What was your first job?",
+          "ما أول وظيفة لك؟"
+        ],
+        [
+          "My first job was at a small company.",
+          "كانت أول وظيفة لي في شركة صغيرة."
+        ]
+      ]
+    },
+
+    {
+      term:"work experience",
+      meaning:"خبرة عملية",
+
+      note:
+        "تستخدم كثيرًا في الدراسة والسيرة الذاتية والعمل.",
+
+      examples:[
+        [
+          "I have some work experience.",
+          "لدي بعض الخبرة العملية."
+        ],
+        [
+          "The job gave me valuable work experience.",
+          "منحتني الوظيفة خبرة عملية قيّمة."
+        ]
+      ]
+    },
+
+    {
+      term:"part-time",
+      meaning:"دوام جزئي",
+
+      note:
+        "عكس full-time.",
+
+      examples:[
+        [
+          "I had a part-time job.",
+          "كانت لدي وظيفة بدوام جزئي."
+        ],
+        [
+          "She works part-time.",
+          "هي تعمل بدوام جزئي."
+        ]
+      ]
+    },
+
+    {
+      term:"earn",
+      meaning:"يكسب المال",
+
+      note:
+        "earn تستخدم مع المال أو الراتب، بينما win تستخدم مثلًا مع المسابقات.",
+
+      examples:[
+        [
+          "I earned some money during the summer.",
+          "كسبت بعض المال خلال الصيف."
+        ],
+        [
+          "How much do you earn?",
+          "كم تكسب؟"
+        ]
+      ]
+    },
+
+    {
+      term:"responsibility",
+      meaning:"مسؤولية",
+
+      note:
+        "responsibility شيء يكون عليك القيام به أو الاهتمام به.",
+
+      examples:[
+        [
+          "It was a big responsibility.",
+          "كانت مسؤولية كبيرة."
+        ],
+        [
+          "One of my responsibilities was answering emails.",
+          "كانت إحدى مسؤولياتي الرد على الرسائل الإلكترونية."
+        ]
+      ]
+    },
+
+    {
+      term:"learn from experience",
+      meaning:"يتعلم من التجربة",
+
+      note:
+        "تعبير مهم عند الحديث عن الأخطاء والخبرات.",
+
+      examples:[
+        [
+          "You learn from experience.",
+          "أنت تتعلم من التجربة."
+        ],
+        [
+          "I learned a lot from that experience.",
+          "تعلمت الكثير من تلك التجربة."
+        ]
+      ]
+    },
+
+    {
+      term:"deal with customers",
+      meaning:"يتعامل مع العملاء",
+
+      note:
+        "deal with من التركيبات المهمة في بيئة العمل.",
+
+      examples:[
+        [
+          "I deal with customers every day.",
+          "أتعامل مع العملاء كل يوم."
+        ],
+        [
+          "She is good at dealing with customers.",
+          "هي جيدة في التعامل مع العملاء."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What are the speakers talking about?",
+      answers:[
+        "their first jobs",
+        "their first job experiences",
+        "first jobs"
+      ]
+    },
+
+    {
+      q:"What can a first job give a person?",
+      answers:[
+        "work experience",
+        "experience",
+        "valuable experience"
+      ]
+    },
+
+    {
+      q:"What does 'earn' mean?",
+      answers:[
+        "make money",
+        "receive money for work",
+        "get paid"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:15,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"Bangkok Transportation",
+
+  topic:"المواصلات · التنقل · المقارنة",
+
+  description:
+    "حديث عن طرق التنقل والمواصلات في مدينة كبيرة.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1501/1518-Jerri-Transportation.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "لاحظ كيف يقارن المتحدث بين وسائل النقل من حيث السرعة والسعر والراحة.",
+
+  learn:[
+
+    {
+      term:"get around",
+      meaning:"يتنقل / يتحرك في المكان",
+
+      note:
+        "get around تعبير مهم جدًا عند الحديث عن التنقل داخل مدينة أو منطقة.",
+
+      examples:[
+        [
+          "What's the best way to get around the city?",
+          "ما أفضل طريقة للتنقل في المدينة؟"
+        ],
+        [
+          "It's easy to get around by train.",
+          "من السهل التنقل بالقطار."
+        ]
+      ]
+    },
+
+    {
+      term:"public transportation",
+      meaning:"المواصلات العامة",
+
+      note:
+        "تشمل الحافلات والقطارات وغيرها من وسائل النقل العامة.",
+
+      examples:[
+        [
+          "I use public transportation every day.",
+          "أستخدم المواصلات العامة كل يوم."
+        ],
+        [
+          "Public transportation is cheaper.",
+          "المواصلات العامة أرخص."
+        ]
+      ]
+    },
+
+    {
+      term:"traffic jam",
+      meaning:"ازدحام مروري",
+
+      note:
+        "jam هنا لا تعني المربى؛ traffic jam تعبير كامل.",
+
+      examples:[
+        [
+          "We were stuck in a traffic jam.",
+          "علقنا في ازدحام مروري."
+        ],
+        [
+          "There was a huge traffic jam.",
+          "كان هناك ازدحام مروري كبير."
+        ]
+      ]
+    },
+
+    {
+      term:"be stuck in traffic",
+      meaning:"يعلق في الزحام",
+
+      note:
+        "stuck = عالق، وتستخدم كثيرًا مع traffic.",
+
+      examples:[
+        [
+          "I'm stuck in traffic.",
+          "أنا عالق في الزحام."
+        ],
+        [
+          "We got stuck in traffic.",
+          "علقنا في الزحام."
+        ]
+      ]
+    },
+
+    {
+      term:"convenient",
+      meaning:"مريح / مناسب",
+
+      note:
+        "تستخدم عندما يكون الخيار سهلًا وعمليًا.",
+
+      examples:[
+        [
+          "The train is very convenient.",
+          "القطار مريح ومناسب جدًا."
+        ],
+        [
+          "Online shopping is convenient.",
+          "التسوق عبر الإنترنت مريح ومناسب."
+        ]
+      ]
+    },
+
+    {
+      term:"fare",
+      meaning:"أجرة / تكلفة الرحلة",
+
+      note:
+        "تستخدم خصوصًا مع وسائل النقل.",
+
+      examples:[
+        [
+          "How much is the bus fare?",
+          "كم أجرة الحافلة؟"
+        ],
+        [
+          "The train fare is expensive.",
+          "أجرة القطار غالية."
+        ]
+      ]
+    },
+
+    {
+      term:"rush hour",
+      meaning:"ساعة الذروة",
+
+      note:
+        "الوقت الذي تكون فيه الطرق ووسائل النقل مزدحمة جدًا.",
+
+      examples:[
+        [
+          "The roads are busy during rush hour.",
+          "تكون الطرق مزدحمة خلال ساعة الذروة."
+        ],
+        [
+          "I avoid traveling during rush hour.",
+          "أتجنب التنقل خلال ساعة الذروة."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is the main topic?",
+      answers:[
+        "transportation",
+        "getting around Bangkok",
+        "transport"
+      ]
+    },
+
+    {
+      q:"Why can public transportation be useful in a big city?",
+      answers:[
+        "it can be cheaper",
+        "it helps avoid traffic",
+        "it is convenient"
+      ]
+    },
+
+    {
+      q:"What does 'get around' mean?",
+      answers:[
+        "move around",
+        "travel around",
+        "travel from place to place"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:16,
+  stage:2,
+  stageTitle:"المقارنة والوصف والحياة الواقعية",
+
+  title:"Photo Etiquette",
+
+  topic:"السلوك · الرأي · الحياة الاجتماعية",
+
+  description:
+    "نقاش حول متى يكون التقاط الصور مناسبًا ومتى قد يكون تصرفًا غير لائق.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1501/1524-Angela-Photo-Etiquite.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "ركز على اللغة المستخدمة لإبداء الرأي والحكم على سلوك معين، وليس فقط على المفردات.",
+
+  learn:[
+
+    {
+      term:"etiquette",
+      meaning:"آداب السلوك / قواعد التصرف المناسبة",
+
+      note:
+        "كلمة تستخدم للحديث عن التصرف المقبول اجتماعيًا.",
+
+      examples:[
+        [
+          "Good table etiquette is important.",
+          "آداب المائدة الجيدة مهمة."
+        ],
+        [
+          "We talked about social etiquette.",
+          "تحدثنا عن آداب السلوك الاجتماعي."
+        ]
+      ]
+    },
+
+    {
+      term:"be rude",
+      meaning:"يكون وقحًا / غير لائق",
+
+      note:
+        "rude تصف السلوك الذي يفتقر إلى الاحترام.",
+
+      examples:[
+        [
+          "It's rude to interrupt people.",
+          "من الوقاحة مقاطعة الناس."
+        ],
+        [
+          "I didn't mean to be rude.",
+          "لم أقصد أن أكون وقحًا."
+        ]
+      ]
+    },
+
+    {
+      term:"ask for permission",
+      meaning:"يطلب الإذن",
+
+      note:
+        "permission اسم غير معدود غالبًا.",
+
+      examples:[
+        [
+          "You should ask for permission first.",
+          "ينبغي أن تطلب الإذن أولًا."
+        ],
+        [
+          "He asked for permission to take a photo.",
+          "طلب الإذن لالتقاط صورة."
+        ]
+      ]
+    },
+
+    {
+      term:"take a photo",
+      meaning:"يلتقط صورة",
+
+      note:
+        "نستخدم take مع photo.",
+
+      examples:[
+        [
+          "Can I take a photo?",
+          "هل يمكنني التقاط صورة؟"
+        ],
+        [
+          "She took a photo of the building.",
+          "التقطت صورة للمبنى."
+        ]
+      ]
+    },
+
+    {
+      term:"inappropriate",
+      meaning:"غير مناسب",
+
+      note:
+        "عكس appropriate.",
+
+      examples:[
+        [
+          "That question is inappropriate.",
+          "ذلك السؤال غير مناسب."
+        ],
+        [
+          "It would be inappropriate to laugh.",
+          "سيكون من غير المناسب أن تضحك."
+        ]
+      ]
+    },
+
+    {
+      term:"I don't think it's okay.",
+      meaning:"لا أعتقد أن ذلك مقبول.",
+
+      note:
+        "طريقة طبيعية للتعبير عن عدم الموافقة على تصرف.",
+
+      examples:[
+        [
+          "I don't think it's okay to do that.",
+          "لا أعتقد أن فعل ذلك مقبول."
+        ],
+        [
+          "I don't think it's okay without permission.",
+          "لا أعتقد أنه مقبول دون إذن."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is the discussion about?",
+      answers:[
+        "photo etiquette",
+        "taking photos",
+        "when it is okay to take photos"
+      ]
+    },
+
+    {
+      q:"What should someone do before taking another person's photo?",
+      answers:[
+        "ask for permission",
+        "get permission",
+        "ask"
+      ]
+    },
+
+    {
+      q:"What does 'inappropriate' mean?",
+      answers:[
+        "not suitable",
+        "not acceptable",
+        "not appropriate"
+      ]
+    }
+  ]
+},
+
+
+/* =========================================================
+   STAGE 3
+   ========================================================= */
+
+{
+  id:17,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Meeting an Old Friend",
+
+  topic:"Present Perfect · Past Simple · التعبيرات الطبيعية",
+
+  description:
+    "محادثة بين صديقين قديمين يلتقيان بعد فترة طويلة.",
+
+  source:"British Council",
+
+  url:"https://learnenglish.britishcouncil.org/free-resources/listening/b1/meeting-old-friend",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "هذا استماع ممتاز لملاحظة الفرق بين الحديث عن تجربة أو فترة ممتدة وبين حدث ماضٍ محدد.",
+
+  learn:[
+
+    {
+      term:"It's been ages.",
+      meaning:"مر وقت طويل جدًا.",
+
+      note:
+        "ages هنا لا تعني الأعمار حرفيًا؛ إنها تعبير طبيعي يعني منذ وقت طويل.",
+
+      examples:[
+        [
+          "It's been ages since I saw you.",
+          "مر وقت طويل جدًا منذ أن رأيتك."
+        ],
+        [
+          "It's been ages! How are you?",
+          "مر وقت طويل جدًا! كيف حالك؟"
+        ]
+      ]
+    },
+
+    {
+      term:"I haven't seen you for...",
+      meaning:"لم أرك منذ...",
+
+      note:
+        "haven't seen + for تستخدم مع مدة زمنية.",
+
+      examples:[
+        [
+          "I haven't seen you for years.",
+          "لم أرك منذ سنوات."
+        ],
+        [
+          "I haven't seen him for a long time.",
+          "لم أره منذ وقت طويل."
+        ]
+      ]
+    },
+
+    {
+      term:"How have you been?",
+      meaning:"كيف كانت أحوالك؟",
+
+      note:
+        "تستخدم عند مقابلة شخص بعد غياب وسؤاله عن الفترة التي مرت.",
+
+      examples:[
+        [
+          "How have you been?",
+          "كيف كانت أحوالك؟"
+        ],
+        [
+          "I've been great, thanks.",
+          "كنت بخير جدًا، شكرًا."
+        ]
+      ]
+    },
+
+    {
+      term:"come round",
+      meaning:"يأتي إلى المنزل / يزور",
+
+      note:
+        "come round تعبير بريطاني شائع للزيارة غير الرسمية.",
+
+      examples:[
+        [
+          "Why don't you come round tonight?",
+          "لماذا لا تأتي لزيارتي الليلة؟"
+        ],
+        [
+          "She came round for coffee.",
+          "جاءت لزيارتي لتناول القهوة."
+        ]
+      ]
+    },
+
+    {
+      term:"It didn't work out.",
+      meaning:"لم ينجح الأمر / لم تسر الأمور كما كان متوقعًا.",
+
+      note:
+        "work out هنا لا تعني ممارسة الرياضة؛ تعني أن الخطة أو العلاقة لم تنجح.",
+
+      examples:[
+        [
+          "The job didn't work out.",
+          "لم تنجح الوظيفة."
+        ],
+        [
+          "Our plans didn't work out.",
+          "لم تنجح خططنا."
+        ]
+      ]
+    },
+
+    {
+      term:"time flies",
+      meaning:"الوقت يمر بسرعة",
+
+      note:
+        "تعبير ثابت وشائع جدًا.",
+
+      examples:[
+        [
+          "Time flies when you're having fun.",
+          "الوقت يمر بسرعة عندما تستمتع."
+        ],
+        [
+          "I can't believe it's been five years. Time flies.",
+          "لا أصدق أن خمس سنوات مرت. الوقت يمر بسرعة."
+        ]
+      ]
+    },
+
+    {
+      term:"catch up",
+      meaning:"يتبادل الأخبار بعد غياب",
+
+      note:
+        "من أهم التعبيرات الاجتماعية؛ لا تعني اللحاق حرفيًا في هذا السياق.",
+
+      examples:[
+        [
+          "Let's meet and catch up.",
+          "دعنا نلتقي ونتبادل الأخبار."
+        ],
+        [
+          "We need to catch up sometime.",
+          "نحتاج أن نلتقي ونتبادل الأخبار يومًا ما."
+        ]
+      ]
+    },
+
+    {
+      term:"What have you been up to?",
+      meaning:"ماذا كنت تفعل؟ / ما أخبارك؟",
+
+      note:
+        "تعبير محادثة طبيعي جدًا للسؤال عما فعله الشخص مؤخرًا.",
+
+      examples:[
+        [
+          "What have you been up to lately?",
+          "ماذا كنت تفعل مؤخرًا؟"
+        ],
+        [
+          "I've been studying a lot.",
+          "كنت أدرس كثيرًا."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"Why haven't the two friends seen each other?",
+      answers:[
+        "they haven't seen each other for a long time",
+        "because a long time has passed",
+        "they have been apart"
+      ]
+    },
+
+    {
+      q:"What does 'It's been ages' mean?",
+      answers:[
+        "a long time has passed",
+        "it's been a very long time",
+        "a very long time"
+      ]
+    },
+
+    {
+      q:"What does 'catch up' mean here?",
+      answers:[
+        "talk and exchange news",
+        "talk after a long time",
+        "exchange news"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:18,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Present Perfect — Experiences",
+
+  topic:"التجارب · Present Perfect",
+
+  description:
+    "محادثات قصيرة تركز على الحديث عن التجارب باستخدام Present Perfect.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+
+  grammarTitle:"Present Perfect — Experiences",
+
+  grammarText:
+    "استمع إلى الأسئلة والأجوبة التي تتحدث عن تجارب حدثت في حياة الشخص دون التركيز على وقت محدد.",
+
+  learn:[
+
+    {
+      term:"Have you ever...?",
+      meaning:"هل سبق لك أن...؟",
+
+      note:
+        "من أشهر تراكيب Present Perfect للسؤال عن التجارب.",
+
+      examples:[
+        [
+          "Have you ever been to Italy?",
+          "هل سبق لك أن ذهبت إلى إيطاليا؟"
+        ],
+        [
+          "Have you ever tried sushi?",
+          "هل سبق لك أن جربت السوشي؟"
+        ]
+      ]
+    },
+
+    {
+      term:"I've never...",
+      meaning:"لم يسبق لي أن...",
+
+      note:
+        "never تعطي معنى النفي داخل Present Perfect.",
+
+      examples:[
+        [
+          "I've never been there.",
+          "لم يسبق لي أن ذهبت إلى هناك."
+        ],
+        [
+          "I've never tried it.",
+          "لم يسبق لي أن جربته."
+        ]
+      ]
+    },
+
+    {
+      term:"I've already...",
+      meaning:"لقد ... بالفعل",
+
+      note:
+        "already تستخدم عندما حدث الشيء قبل الآن أو قبل المتوقع.",
+
+      examples:[
+        [
+          "I've already seen that movie.",
+          "لقد شاهدت ذلك الفيلم بالفعل."
+        ],
+        [
+          "I've already finished my work.",
+          "لقد أنهيت عملي بالفعل."
+        ]
+      ]
+    },
+
+    {
+      term:"experience",
+      meaning:"تجربة",
+
+      note:
+        "يمكن أن تكون experience شيئًا مررت به في حياتك.",
+
+      examples:[
+        [
+          "It was a great experience.",
+          "كانت تجربة رائعة."
+        ],
+        [
+          "I've had some interesting experiences.",
+          "مررت ببعض التجارب الممتعة."
+        ]
+      ]
+    },
+
+    {
+      term:"yet",
+      meaning:"حتى الآن",
+
+      note:
+        "تأتي كثيرًا في الأسئلة والنفي مع Present Perfect.",
+
+      examples:[
+        [
+          "Have you finished yet?",
+          "هل انتهيت حتى الآن؟"
+        ],
+        [
+          "I haven't finished yet.",
+          "لم أنتهِ حتى الآن."
+        ]
+      ]
+    },
+
+    {
+      term:"so far",
+      meaning:"حتى الآن / إلى الآن",
+
+      note:
+        "تستخدم للحديث عن النتيجة أو الخبرة من بداية فترة إلى الوقت الحالي.",
+
+      examples:[
+        [
+          "So far, everything is fine.",
+          "حتى الآن، كل شيء على ما يرام."
+        ],
+        [
+          "I've read three books so far.",
+          "قرأت ثلاثة كتب حتى الآن."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What does 'Have you ever...?' ask about?",
+      answers:[
+        "life experiences",
+        "experiences",
+        "things someone has done in their life"
+      ]
+    },
+
+    {
+      q:"Write one negative Present Perfect expression from the lesson.",
+      answers:[
+        "i've never",
+        "i have never",
+        "i haven't"
+      ]
+    },
+
+    {
+      q:"What does 'yet' mean in 'I haven't finished yet'?",
+      answers:[
+        "until now",
+        "up to now",
+        "until this time"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:19,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Present Perfect — Time",
+
+  topic:"Present Perfect · already · yet · so far",
+
+  description:
+    "استماع موجه لتثبيت استخدام Present Perfect مع الزمن والنتائج الحالية.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+
+  grammarTitle:"Present Perfect — Time",
+
+  grammarText:
+    "لاحظ الكلمات التي تربط الماضي بالحاضر مثل already وyet وso far، وكيف يتغير المعنى حسب الكلمة المستخدمة.",
+
+  learn:[
+
+    {
+      term:"so far",
+      meaning:"حتى الآن",
+
+      note:
+        "تستخدم عندما تتحدث عن ما حدث من بداية الفترة إلى اللحظة الحالية.",
+
+      examples:[
+        [
+          "So far, we've had three meetings.",
+          "حتى الآن، عقدنا ثلاثة اجتماعات."
+        ],
+        [
+          "Everything is going well so far.",
+          "كل شيء يسير جيدًا حتى الآن."
+        ]
+      ]
+    },
+
+    {
+      term:"already",
+      meaning:"بالفعل",
+
+      note:
+        "تشير إلى أن الشيء حدث قبل الآن أو قبل الوقت المتوقع.",
+
+      examples:[
+        [
+          "I've already eaten.",
+          "لقد أكلت بالفعل."
+        ],
+        [
+          "She's already left.",
+          "لقد غادرت بالفعل."
+        ]
+      ]
+    },
+
+    {
+      term:"yet",
+      meaning:"حتى الآن",
+
+      note:
+        "تستخدم كثيرًا في الأسئلة والنفي.",
+
+      examples:[
+        [
+          "Have you called him yet?",
+          "هل اتصلت به حتى الآن؟"
+        ],
+        [
+          "I haven't called him yet.",
+          "لم أتصل به حتى الآن."
+        ]
+      ]
+    },
+
+    {
+      term:"recently",
+      meaning:"مؤخرًا",
+
+      note:
+        "تعني في وقت قريب من الحاضر.",
+
+      examples:[
+        [
+          "I've recently started a new job.",
+          "بدأت مؤخرًا وظيفة جديدة."
+        ],
+        [
+          "Have you seen her recently?",
+          "هل رأيتها مؤخرًا؟"
+        ]
+      ]
+    },
+
+    {
+      term:"lately",
+      meaning:"مؤخرًا",
+
+      note:
+        "قريبة من recently وتستخدم كثيرًا للحديث عن الفترة الأخيرة.",
+
+      examples:[
+        [
+          "I've been very busy lately.",
+          "كنت مشغولًا جدًا مؤخرًا."
+        ],
+        [
+          "Have you been sleeping well lately?",
+          "هل كنت تنام جيدًا مؤخرًا؟"
+        ]
+      ]
+    },
+
+    {
+      term:"up to now",
+      meaning:"حتى الآن",
+
+      note:
+        "تعبير قريب من so far.",
+
+      examples:[
+        [
+          "Up to now, we've had no problems.",
+          "حتى الآن، لم نواجه أي مشكلات."
+        ],
+        [
+          "That's the best result up to now.",
+          "هذه أفضل نتيجة حتى الآن."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"Which expression means 'حتى الآن'?",
+      answers:[
+        "so far",
+        "up to now"
+      ]
+    },
+
+    {
+      q:"Which word is common in negative Present Perfect sentences?",
+      answers:[
+        "yet"
+      ]
+    },
+
+    {
+      q:"What is the difference between 'already' and 'yet'?",
+      answers:[
+        "already says something has happened; yet is common in questions and negatives",
+        "already means it happened; yet means until now"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:20,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Work–Life Balance",
+
+  topic:"العمل · الحياة · spend · although",
+
+  description:
+    "مقابلة إذاعية عن الحفاظ على توازن جيد بين العمل والحياة.",
+
+  source:"British Council",
+
+  url:"https://learnenglish.britishcouncil.org/free-resources/listening/b1/work-life-balance",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "لاحظ كيف يشرح المتحدث الأسباب والنتائج ويقارن بين العمل والحياة الشخصية.",
+
+  learn:[
+
+    {
+      term:"work-life balance",
+      meaning:"التوازن بين العمل والحياة",
+
+      note:
+        "تعبير شائع جدًا في الحديث عن الوقت والعمل والأسرة والراحة.",
+
+      examples:[
+        [
+          "I need a better work-life balance.",
+          "أحتاج إلى توازن أفضل بين العمل والحياة."
+        ],
+        [
+          "Working from home can improve work-life balance.",
+          "العمل من المنزل قد يحسن التوازن بين العمل والحياة."
+        ]
+      ]
+    },
+
+    {
+      term:"spend time",
+      meaning:"يقضي وقتًا",
+
+      note:
+        "spend + time + with/on/doing حسب المعنى.",
+
+      examples:[
+        [
+          "I spend a lot of time with my family.",
+          "أقضي الكثير من الوقت مع عائلتي."
+        ],
+        [
+          "She spends her evenings reading.",
+          "تقضي أمسياتها في القراءة."
+        ]
+      ]
+    },
+
+    {
+      term:"work overtime",
+      meaning:"يعمل ساعات إضافية",
+
+      note:
+        "overtime = الوقت الذي يعمل فيه الشخص فوق ساعات العمل المعتادة.",
+
+      examples:[
+        [
+          "I don't want to work overtime.",
+          "لا أريد العمل ساعات إضافية."
+        ],
+        [
+          "He often works overtime.",
+          "غالبًا ما يعمل ساعات إضافية."
+        ]
+      ]
+    },
+
+    {
+      term:"flexible",
+      meaning:"مرن",
+
+      note:
+        "في العمل قد تعني أن الوقت أو النظام يمكن تغييره حسب الحاجة.",
+
+      examples:[
+        [
+          "I have flexible working hours.",
+          "لدي ساعات عمل مرنة."
+        ],
+        [
+          "My schedule is quite flexible.",
+          "جدولي مرن إلى حد كبير."
+        ]
+      ]
+    },
+
+    {
+      term:"although",
+      meaning:"على الرغم من أن / رغم أن",
+
+      note:
+        "تربط بين فكرتين فيهما نوع من التناقض.",
+
+      examples:[
+        [
+          "Although I'm busy, I make time for my family.",
+          "رغم أنني مشغول، أخصص وقتًا لعائلتي."
+        ],
+        [
+          "Although it was difficult, we finished it.",
+          "رغم أنه كان صعبًا، أنهيناه."
+        ]
+      ]
+    },
+
+    {
+      term:"make time for",
+      meaning:"يخصص وقتًا لـ",
+
+      note:
+        "تعبير طبيعي جدًا عندما تكون مشغولًا لكنك تجد وقتًا لشيء مهم.",
+
+      examples:[
+        [
+          "I always make time for my family.",
+          "أخصص دائمًا وقتًا لعائلتي."
+        ],
+        [
+          "You need to make time for yourself.",
+          "تحتاج إلى تخصيص وقت لنفسك."
+        ]
+      ]
+    },
+
+    {
+      term:"maintain",
+      meaning:"يحافظ على",
+
+      note:
+        "كلمة أكثر رسمية من keep في بعض السياقات.",
+
+      examples:[
+        [
+          "It's hard to maintain a balance.",
+          "من الصعب الحفاظ على التوازن."
+        ],
+        [
+          "She maintains a healthy lifestyle.",
+          "تحافظ على نمط حياة صحي."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is the interview mainly about?",
+      answers:[
+        "work-life balance",
+        "balancing work and life"
+      ]
+    },
+
+    {
+      q:"What does 'spend time' mean?",
+      answers:[
+        "use time",
+        "pass time doing something",
+        "use a period of time"
+      ]
+    },
+
+    {
+      q:"What does 'make time for' mean?",
+      answers:[
+        "find time for",
+        "set aside time for",
+        "reserve time for"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:21,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Homesickness",
+
+  topic:"المشاعر · السفر · الغربة",
+
+  description:
+    "حديث عن الشعور بالحنين إلى الوطن عند العيش بعيدًا عنه.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1401/1437-Gilda-Homesick.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "لاحظ كيف يتحدث الشخص عن مشاعر وتجارب مستمرة، وكيف يصف الأشياء التي يفتقدها.",
+
+  learn:[
+
+    {
+      term:"homesick",
+      meaning:"يشعر بالحنين إلى الوطن",
+
+      note:
+        "homesick صفة، بينما homesickness اسم.",
+
+      examples:[
+        [
+          "I felt homesick when I first moved away.",
+          "شعرت بالحنين إلى الوطن عندما انتقلت بعيدًا لأول مرة."
+        ],
+        [
+          "She gets homesick sometimes.",
+          "تشعر بالحنين إلى الوطن أحيانًا."
+        ]
+      ]
+    },
+
+    {
+      term:"miss",
+      meaning:"يفتقد",
+
+      note:
+        "miss هنا لا تعني يفوّت؛ السياق يحدد المعنى.",
+
+      examples:[
+        [
+          "I miss my family.",
+          "أفتقد عائلتي."
+        ],
+        [
+          "She misses her hometown.",
+          "تفتقد مسقط رأسها."
+        ]
+      ]
+    },
+
+    {
+      term:"hometown",
+      meaning:"مسقط الرأس / المدينة التي نشأ فيها الشخص",
+
+      note:
+        "home + town تعطي معنى المدينة الأصلية للشخص.",
+
+      examples:[
+        [
+          "I visit my hometown every year.",
+          "أزور مسقط رأسي كل سنة."
+        ],
+        [
+          "My hometown is quite small.",
+          "مسقط رأسي صغير إلى حد ما."
+        ]
+      ]
+    },
+
+    {
+      term:"settle in",
+      meaning:"يستقر ويتأقلم في مكان جديد",
+
+      note:
+        "تستخدم عندما يبدأ الشخص بالشعور بالراحة في مكان جديد.",
+
+      examples:[
+        [
+          "It took me a few weeks to settle in.",
+          "احتجت إلى بضعة أسابيع لأستقر وأتأقلم."
+        ],
+        [
+          "I'm finally settling in.",
+          "أخيرًا بدأت أستقر وأتأقلم."
+        ]
+      ]
+    },
+
+    {
+      term:"feel lonely",
+      meaning:"يشعر بالوحدة",
+
+      note:
+        "lonely تعني الشعور بالوحدة، وليست مجرد being alone.",
+
+      examples:[
+        [
+          "I sometimes feel lonely.",
+          "أشعر أحيانًا بالوحدة."
+        ],
+        [
+          "She felt lonely after moving away.",
+          "شعرت بالوحدة بعد انتقالها بعيدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"get used to",
+      meaning:"يعتاد على",
+
+      note:
+        "مهم جدًا التفريق بينها وبين used to + verb.",
+
+      examples:[
+        [
+          "It takes time to get used to a new place.",
+          "يحتاج الأمر إلى وقت للاعتياد على مكان جديد."
+        ],
+        [
+          "I'm getting used to the weather.",
+          "بدأت أعتاد على الطقس."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What is homesickness?",
+      answers:[
+        "missing home",
+        "feeling sad because you miss home",
+        "missing your home or country"
+      ]
+    },
+
+    {
+      q:"What kinds of things might someone miss?",
+      answers:[
+        "family",
+        "friends",
+        "food",
+        "home"
+      ]
+    },
+
+    {
+      q:"What does 'settle in' mean?",
+      answers:[
+        "become comfortable in a new place",
+        "adapt to a new place",
+        "get comfortable"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:22,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Phone Addictions",
+
+  topic:"التكنولوجيا · العادات · الرأي",
+
+  description:
+    "نقاش حول الاعتماد الزائد على الهواتف وتأثيرها في الحياة اليومية.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1451/1482-Jen-SocialMedia.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "استمع إلى كيفية إبداء الرأي والتعبير عن العادات والمشكلات الاجتماعية.",
+
+  learn:[
+
+    {
+      term:"be addicted to",
+      meaning:"يكون مدمنًا على / متعلقًا بشدة بـ",
+
+      note:
+        "بعد to يأتي اسم أو فعل بـ-ing.",
+
+      examples:[
+        [
+          "He's addicted to his phone.",
+          "هو متعلق بهاتفه بشدة."
+        ],
+        [
+          "She is addicted to checking social media.",
+          "هي مدمنة على تفقد وسائل التواصل."
+        ]
+      ]
+    },
+
+    {
+      term:"screen time",
+      meaning:"وقت استخدام الشاشة",
+
+      note:
+        "تعبير شائع للمدة التي يقضيها الشخص أمام الأجهزة.",
+
+      examples:[
+        [
+          "I need to reduce my screen time.",
+          "أحتاج إلى تقليل وقت استخدام الشاشة."
+        ],
+        [
+          "My screen time is too high.",
+          "وقت استخدامي للشاشة مرتفع جدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"check your phone",
+      meaning:"يتفقد هاتفه",
+
+      note:
+        "check هنا تعني ينظر إلى الهاتف ليرى الرسائل أو الإشعارات.",
+
+      examples:[
+        [
+          "I check my phone too often.",
+          "أتفقد هاتفي كثيرًا."
+        ],
+        [
+          "Don't check your phone during dinner.",
+          "لا تتفقد هاتفك أثناء العشاء."
+        ]
+      ]
+    },
+
+    {
+      term:"pay attention",
+      meaning:"ينتبه",
+
+      note:
+        "تعبير ثابت.",
+
+      examples:[
+        [
+          "You need to pay attention.",
+          "تحتاج إلى الانتباه."
+        ],
+        [
+          "He wasn't paying attention to the conversation.",
+          "لم يكن منتبهًا للمحادثة."
+        ]
+      ]
+    },
+
+    {
+      term:"be distracted",
+      meaning:"يتشتت / يتشتت انتباهه",
+
+      note:
+        "distracted تصف حالة عدم التركيز بسبب شيء آخر.",
+
+      examples:[
+        [
+          "My phone makes me distracted.",
+          "هاتفي يشتتني."
+        ],
+        [
+          "I get distracted easily.",
+          "أتشتت بسهولة."
+        ]
+      ]
+    },
+
+    {
+      term:"cut back on",
+      meaning:"يقلل من",
+
+      note:
+        "قريبة من cut down on، وتستخدم لتقليل كمية أو تكرار شيء.",
+
+      examples:[
+        [
+          "I'm trying to cut back on social media.",
+          "أحاول تقليل استخدام وسائل التواصل."
+        ],
+        [
+          "We should cut back on screen time.",
+          "ينبغي أن نقلل وقت الشاشة."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What problem are the speakers discussing?",
+      answers:[
+        "phone addiction",
+        "phone use",
+        "being addicted to phones"
+      ]
+    },
+
+    {
+      q:"Why can phones be distracting?",
+      answers:[
+        "they interrupt attention",
+        "people keep checking them",
+        "notifications distract people"
+      ]
+    },
+
+    {
+      q:"What does 'cut back on' mean?",
+      answers:[
+        "reduce",
+        "use less",
+        "do less of"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:23,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Death to Email",
+
+  topic:"التواصل · التكنولوجيا · الآراء",
+
+  description:
+    "نقاش حول البريد الإلكتروني وطرق التواصل الحديثة.",
+
+  source:"ELLLO",
+
+  url:"https://elllo.org/english/1451/1483-Jen-Email-vs-SOME.htm",
+
+  grammarTitle:"ملاحظة من المقطع",
+
+  grammarText:
+    "ركز على لغة المقارنة وإبداء الرأي وتبرير الاختيار بين طرق مختلفة للتواصل.",
+
+  learn:[
+
+    {
+      term:"keep in touch",
+      meaning:"يبقى على تواصل",
+
+      note:
+        "تعبير مهم جدًا في العلاقات والتواصل.",
+
+      examples:[
+        [
+          "We keep in touch by email.",
+          "نبقى على تواصل عبر البريد الإلكتروني."
+        ],
+        [
+          "It's hard to keep in touch sometimes.",
+          "من الصعب أحيانًا البقاء على تواصل."
+        ]
+      ]
+    },
+
+    {
+      term:"get in touch",
+      meaning:"يتواصل",
+
+      note:
+        "get in touch تستخدم عندما تبدأ التواصل مع شخص أو تعود إليه.",
+
+      examples:[
+        [
+          "I'll get in touch with you tomorrow.",
+          "سأتواصل معك غدًا."
+        ],
+        [
+          "Please get in touch if you need help.",
+          "يرجى التواصل إذا احتجت إلى مساعدة."
+        ]
+      ]
+    },
+
+    {
+      term:"social media",
+      meaning:"وسائل التواصل الاجتماعي",
+
+      note:
+        "تعبير أساسي في الحديث عن التواصل الحديث.",
+
+      examples:[
+        [
+          "I use social media every day.",
+          "أستخدم وسائل التواصل الاجتماعي كل يوم."
+        ],
+        [
+          "Social media can be useful.",
+          "يمكن أن تكون وسائل التواصل الاجتماعي مفيدة."
+        ]
+      ]
+    },
+
+    {
+      term:"in person",
+      meaning:"شخصيًا / وجهًا لوجه",
+
+      note:
+        "تستخدم عندما يحدث اللقاء أو التواصل مباشرة وليس عبر الإنترنت.",
+
+      examples:[
+        [
+          "I'd rather talk in person.",
+          "أفضل أن أتحدث وجهًا لوجه."
+        ],
+        [
+          "We met in person for the first time.",
+          "التقينا وجهًا لوجه للمرة الأولى."
+        ]
+      ]
+    },
+
+    {
+      term:"rather than",
+      meaning:"بدلًا من",
+
+      note:
+        "تستخدم للمقارنة بين خيارين.",
+
+      examples:[
+        [
+          "I'd rather call rather than email.",
+          "أفضل الاتصال بدلًا من إرسال بريد إلكتروني."
+        ],
+        [
+          "She walked rather than took the bus.",
+          "مشَت بدلًا من أن تستقل الحافلة."
+        ]
+      ]
+    },
+
+    {
+      term:"prefer",
+      meaning:"يفضل",
+
+      note:
+        "prefer تعني اختيار شيء لأنه يعجبك أكثر من خيار آخر.",
+
+      examples:[
+        [
+          "I prefer email.",
+          "أفضل البريد الإلكتروني."
+        ],
+        [
+          "I prefer working from home.",
+          "أفضل العمل من المنزل."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What forms of communication are discussed?",
+      answers:[
+        "email and social media",
+        "email and other communication methods"
+      ]
+    },
+
+    {
+      q:"What does 'keep in touch' mean?",
+      answers:[
+        "stay in contact",
+        "stay connected",
+        "continue communicating"
+      ]
+    },
+
+    {
+      q:"What does 'in person' mean?",
+      answers:[
+        "face to face",
+        "directly",
+        "not online"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:24,
+  stage:3,
+  stageTitle:"التجارب والزمن واللغة الطبيعية",
+
+  title:"Used to — Past Tense",
+
+  topic:"used to · العادات الماضية",
+
+  description:
+    "محادثات قصيرة تركز على used to في الحديث عن الماضي.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/book/B1/B1-03-UsedTo.html",
+
+  grammarTitle:"Used to",
+
+  grammarText:
+    "ركز على الفرق بين used to + base verb، وبين استخدامات أخرى مشابهة مثل get used to.",
+
+  learn:[
+
+    {
+      term:"used to + verb",
+      meaning:"كان يفعل / كان معتادًا على",
+
+      note:
+        "تستخدم لعادات أو حالات في الماضي لم تعد صحيحة الآن.",
+
+      examples:[
+        [
+          "I used to live there.",
+          "كنت أعيش هناك في الماضي."
+        ],
+        [
+          "She used to play tennis.",
+          "كانت تلعب التنس في الماضي."
+        ]
+      ]
+    },
+
+    {
+      term:"I didn't use to...",
+      meaning:"لم أكن معتادًا على...",
+
+      note:
+        "في النفي نستخدم use وليس used بعد didn't.",
+
+      examples:[
+        [
+          "I didn't use to like coffee.",
+          "لم أكن أحب القهوة في الماضي."
+        ],
+        [
+          "We didn't use to have smartphones.",
+          "لم تكن لدينا هواتف ذكية في الماضي."
+        ]
+      ]
+    },
+
+    {
+      term:"Did you use to...?",
+      meaning:"هل كنت تفعل...؟",
+
+      note:
+        "في السؤال أيضًا يأتي use بعد did.",
+
+      examples:[
+        [
+          "Did you use to live here?",
+          "هل كنت تعيش هنا؟"
+        ],
+        [
+          "Did you use to play football?",
+          "هل كنت تلعب كرة القدم؟"
+        ]
+      ]
+    },
+
+    {
+      term:"back then",
+      meaning:"آنذاك",
+
+      note:
+        "تساعد على الإشارة إلى فترة ماضية.",
+
+      examples:[
+        [
+          "Life was different back then.",
+          "كانت الحياة مختلفة آنذاك."
+        ],
+        [
+          "Back then, we walked to school.",
+          "آنذاك كنا نذهب إلى المدرسة مشيًا."
+        ]
+      ]
+    },
+
+    {
+      term:"when I was younger",
+      meaning:"عندما كنت أصغر سنًا",
+
+      note:
+        "تعبير شائع لربط العادات الماضية بفترة العمر.",
+
+      examples:[
+        [
+          "When I was younger, I used to play outside.",
+          "عندما كنت أصغر سنًا، كنت ألعب في الخارج."
+        ],
+        [
+          "I used to read more when I was younger.",
+          "كنت أقرأ أكثر عندما كنت أصغر سنًا."
+        ]
+      ]
+    },
+
+    {
+      term:"no longer",
+      meaning:"لم يعد",
+
+      note:
+        "تعبير رسمي نسبيًا يعني أن شيئًا لم يعد صحيحًا.",
+
+      examples:[
+        [
+          "I no longer live there.",
+          "لم أعد أعيش هناك."
+        ],
+        [
+          "She no longer works at the company.",
+          "لم تعد تعمل في الشركة."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What does used to describe?",
+      answers:[
+        "past habits",
+        "past states",
+        "things that were true in the past"
+      ]
+    },
+
+    {
+      q:"Complete: I didn't ___ to like coffee.",
+      answers:[
+        "use"
+      ]
+    },
+
+    {
+      q:"What is the difference between 'used to' and 'no longer'?",
+      answers:[
+        "used to describes the past; no longer says something has stopped",
+        "used to talks about past habits; no longer means not anymore"
+      ]
+    }
+  ]
+},
+
+
+/* =========================================================
+   STAGE 4
+   ========================================================= */
+
+{
+  id:25,
+  stage:4,
+  stageTitle:"الشرط والجمل المركبة",
+
+  title:"Zero Conditional",
+
+  topic:"If · الحقائق والنتائج العامة",
+
+  description:
+    "محادثات قصيرة تستخدم Zero Conditional في مواقف طبيعية.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/english/course/L4-09-Zero-Conditionals.htm",
+
+  grammarTitle:"Zero Conditional",
+
+  grammarText:
+    "يستخدم Zero Conditional للحقائق العامة أو الأشياء التي تحدث عادة عندما يتحقق الشرط.",
+
+  learn:[
+
+    {
+      term:"if",
+      meaning:"إذا",
+
+      note:
+        "تربط if بين الشرط والنتيجة.",
+
+      examples:[
+        [
+          "If it rains, the roads get wet.",
+          "إذا هطل المطر، تصبح الطرق مبللة."
+        ],
+        [
+          "If you heat ice, it melts.",
+          "إذا سخنت الثلج، يذوب."
+        ]
+      ]
+    },
+
+    {
+      term:"as soon as",
+      meaning:"بمجرد أن",
+
+      note:
+        "تستخدم لشيء يحدث مباشرة بعد شيء آخر.",
+
+      examples:[
+        [
+          "Call me as soon as you arrive.",
+          "اتصل بي بمجرد أن تصل."
+        ],
+        [
+          "As soon as I get home, I relax.",
+          "بمجرد أن أصل إلى المنزل، أرتاح."
+        ]
+      ]
+    },
+
+    {
+      term:"whenever",
+      meaning:"كلما / في كل مرة",
+
+      note:
+        "تستخدم عندما يحدث شيء كل مرة يتحقق فيها شرط معين.",
+
+      examples:[
+        [
+          "Whenever I drink coffee, I feel better.",
+          "كلما شربت القهوة أشعر بتحسن."
+        ],
+        [
+          "Call me whenever you need help.",
+          "اتصل بي كلما احتجت إلى مساعدة."
+        ]
+      ]
+    },
+
+    {
+      term:"in general",
+      meaning:"بشكل عام",
+
+      note:
+        "تستخدم للحديث عن قاعدة أو فكرة عامة.",
+
+      examples:[
+        [
+          "In general, people need enough sleep.",
+          "بشكل عام، يحتاج الناس إلى نوم كافٍ."
+        ],
+        [
+          "In general, this system works well.",
+          "بشكل عام، يعمل هذا النظام جيدًا."
+        ]
+      ]
+    },
+
+    {
+      term:"as a result",
+      meaning:"ونتيجة لذلك",
+
+      note:
+        "تربط السبب بالنتيجة.",
+
+      examples:[
+        [
+          "It rained heavily. As a result, the roads flooded.",
+          "هطل المطر بغزارة. ونتيجة لذلك، غمرت المياه الطرق."
+        ],
+        [
+          "He studied hard. As a result, he passed.",
+          "درس بجد. ونتيجة لذلك، نجح."
+        ]
+      ]
+    },
+
+    {
+      term:"in that case",
+      meaning:"في هذه الحالة",
+
+      note:
+        "تستخدم عندما تكون النتيجة مبنية على معلومة أو شرط ذكره الشخص الآخر.",
+
+      examples:[
+        [
+          "In that case, let's wait.",
+          "في هذه الحالة، دعنا ننتظر."
+        ],
+        [
+          "If you're busy, in that case I'll come later.",
+          "إذا كنت مشغولًا، ففي هذه الحالة سأأتي لاحقًا."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What does Zero Conditional usually describe?",
+      answers:[
+        "general truths",
+        "general facts",
+        "things that usually happen"
+      ]
+    },
+
+    {
+      q:"What does 'whenever' mean?",
+      answers:[
+        "every time",
+        "each time"
+      ]
+    },
+
+    {
+      q:"Write one example of a general truth using if.",
+      answers:[
+        "if it rains the roads get wet",
+        "if you heat ice it melts"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:26,
+  stage:4,
+  stageTitle:"الشرط والجمل المركبة",
+
+  title:"First Conditional",
+
+  topic:"If · المستقبل · الاحتمالات الحقيقية",
+
+  description:
+    "محادثات قصيرة تستخدم First Conditional للحديث عن احتمالات مستقبلية.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+
+  grammarTitle:"First Conditional",
+
+  grammarText:
+    "ركز على العلاقة بين شرط محتمل في المستقبل والنتيجة التي قد تحدث بسببه.",
+
+  learn:[
+
+    {
+      term:"If I have time, I'll...",
+      meaning:"إذا كان لدي وقت، فسوف...",
+
+      note:
+        "صيغة طبيعية لشرط مستقبلي محتمل.",
+
+      examples:[
+        [
+          "If I have time, I'll call you.",
+          "إذا كان لدي وقت، سأتصل بك."
+        ],
+        [
+          "If I finish early, I'll come with you.",
+          "إذا انتهيت مبكرًا، سأأتي معك."
+        ]
+      ]
+    },
+
+    {
+      term:"unless",
+      meaning:"إلا إذا / ما لم",
+
+      note:
+        "unless تعطي معنى if not.",
+
+      examples:[
+        [
+          "I'll go unless it rains.",
+          "سأذهب ما لم تمطر."
+        ],
+        [
+          "You won't pass unless you study.",
+          "لن تنجح ما لم تدرس."
+        ]
+      ]
+    },
+
+    {
+      term:"as long as",
+      meaning:"بشرط أن / طالما أن",
+
+      note:
+        "تستخدم لوضع شرط يجب أن يتحقق.",
+
+      examples:[
+        [
+          "You can come as long as you're on time.",
+          "يمكنك المجيء بشرط أن تكون في الموعد."
+        ],
+        [
+          "I'll help you as long as you try.",
+          "سأساعدك طالما أنك تحاول."
+        ]
+      ]
+    },
+
+    {
+      term:"in case",
+      meaning:"في حال / تحسبًا لـ",
+
+      note:
+        "ليست هي نفسها if تمامًا؛ تستخدم كثيرًا للاستعداد لاحتمال.",
+
+      examples:[
+        [
+          "Take an umbrella in case it rains.",
+          "خذ مظلة تحسبًا لهطول المطر."
+        ],
+        [
+          "Save the number in case you need it.",
+          "احفظ الرقم في حال احتجته."
+        ]
+      ]
+    },
+
+    {
+      term:"there's a chance",
+      meaning:"هناك احتمال",
+
+      note:
+        "تستخدم للتعبير عن احتمال حدوث شيء.",
+
+      examples:[
+        [
+          "There's a chance we'll be late.",
+          "هناك احتمال أن نتأخر."
+        ],
+        [
+          "There's a good chance it will rain.",
+          "هناك احتمال كبير أن تمطر."
+        ]
+      ]
+    },
+
+    {
+      term:"make sure",
+      meaning:"يتأكد من",
+
+      note:
+        "تعبير شديد الاستخدام، وبعده غالبًا جملة أو شيء يجب التأكد منه.",
+
+      examples:[
+        [
+          "Make sure you lock the door.",
+          "تأكد من أنك تغلق الباب."
+        ],
+        [
+          "Make sure you're ready.",
+          "تأكد من أنك مستعد."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What kind of situation does First Conditional describe?",
+      answers:[
+        "a possible future situation",
+        "a real possibility in the future",
+        "possible future events"
+      ]
+    },
+
+    {
+      q:"What does 'unless' mean?",
+      answers:[
+        "if not",
+        "except if",
+        "if something does not happen"
+      ]
+    },
+
+    {
+      q:"What does 'as long as' mean here?",
+      answers:[
+        "provided that",
+        "on the condition that",
+        "if"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:27,
+  stage:4,
+  stageTitle:"الشرط والجمل المركبة",
+
+  title:"Second Conditional",
+
+  topic:"If · المواقف الخيالية · would",
+
+  description:
+    "محادثات قصيرة حول مواقف غير واقعية أو خيالية باستخدام Second Conditional.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+
+  grammarTitle:"Second Conditional",
+
+  grammarText:
+    "استمع إلى طريقة الحديث عن موقف غير حقيقي أو غير مرجح، ثم النتيجة المتخيلة.",
+
+  learn:[
+
+    {
+      term:"If I were...",
+      meaning:"لو كنت...",
+
+      note:
+        "في المواقف الافتراضية نستخدم were مع جميع الضمائر في الصيغة التقليدية: If I were...",
+
+      examples:[
+        [
+          "If I were rich, I'd travel more.",
+          "لو كنت غنيًا، لسافرت أكثر."
+        ],
+        [
+          "If I were you, I'd wait.",
+          "لو كنت مكانك، لانتظرت."
+        ]
+      ]
+    },
+
+    {
+      term:"If I had the chance...",
+      meaning:"لو أتيحت لي الفرصة...",
+
+      note:
+        "تستخدم لبدء موقف افتراضي.",
+
+      examples:[
+        [
+          "If I had the chance, I'd study abroad.",
+          "لو أتيحت لي الفرصة، لدرست في الخارج."
+        ],
+        [
+          "If I had the chance, I'd travel more.",
+          "لو أتيحت لي الفرصة، لسافرت أكثر."
+        ]
+      ]
+    },
+
+    {
+      term:"I'd",
+      meaning:"اختصار I would",
+
+      note:
+        "ستسمع هذا الاختصار كثيرًا في الكلام الطبيعي.",
+
+      examples:[
+        [
+          "I'd love to go.",
+          "أود جدًا أن أذهب."
+        ],
+        [
+          "I'd choose the second option.",
+          "سأختار الخيار الثاني."
+        ]
+      ]
+    },
+
+    {
+      term:"I would rather",
+      meaning:"أفضل أن",
+
+      note:
+        "تستخدم للتعبير عن تفضيل شيء على آخر.",
+
+      examples:[
+        [
+          "I'd rather stay home.",
+          "أفضل البقاء في المنزل."
+        ],
+        [
+          "I'd rather travel by train.",
+          "أفضل السفر بالقطار."
+        ]
+      ]
+    },
+
+    {
+      term:"in your position",
+      meaning:"لو كنت مكانك",
+
+      note:
+        "تعبير مشابه لـ If I were you.",
+
+      examples:[
+        [
+          "In your position, I'd wait.",
+          "لو كنت مكانك، لانتظرت."
+        ],
+        [
+          "In your position, I'd ask for help.",
+          "لو كنت مكانك، لطلبت المساعدة."
+        ]
+      ]
+    },
+
+    {
+      term:"imagine",
+      meaning:"تخيل",
+
+      note:
+        "تستخدم لبدء الحديث عن موقف افتراضي.",
+
+      examples:[
+        [
+          "Imagine you had unlimited money.",
+          "تخيل أن لديك مالًا بلا حدود."
+        ],
+        [
+          "Imagine living in another country.",
+          "تخيل العيش في بلد آخر."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What kind of situation does Second Conditional describe?",
+      answers:[
+        "imaginary situations",
+        "unreal situations",
+        "unlikely situations"
+      ]
+    },
+
+    {
+      q:"Complete: If I ___ rich, I'd travel more.",
+      answers:[
+        "were"
+      ]
+    },
+
+    {
+      q:"What does 'I'd' stand for?",
+      answers:[
+        "i would"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:28,
+  stage:4,
+  stageTitle:"الشرط والجمل المركبة",
+
+  title:"Third Conditional",
+
+  topic:"If · الماضي الافتراضي · الندم",
+
+  description:
+    "استماع موجه يساعد الطالب على سماع الحديث عن أشياء كان يمكن أن تحدث في الماضي بشكل مختلف.",
+
+  source:"British Council LearnEnglish Teens",
+
+  url:"https://learnenglishteens.britishcouncil.org/comment/90745",
+
+  grammarTitle:"Third Conditional",
+
+  grammarText:
+    "هنا نتحدث عن ماضٍ انتهى ولا يمكن تغييره، لكننا نتخيل نتيجة مختلفة: If + past perfect → would have + past participle.",
+
+  learn:[
+
+    {
+      term:"If I had known...",
+      meaning:"لو كنت أعرف...",
+
+      note:
+        "تستخدم للتحدث عن شيء لم تعرفه في الماضي وتتخيل ماذا كان سيحدث لو عرفته.",
+
+      examples:[
+        [
+          "If I had known, I would have called you.",
+          "لو كنت أعرف، لاتصلت بك."
+        ],
+        [
+          "If I had known about the problem, I would have helped.",
+          "لو كنت أعرف بالمشكلة، لكنت ساعدت."
+        ]
+      ]
+    },
+
+    {
+      term:"would have",
+      meaning:"لكان قد / لَفعل...",
+
+      note:
+        "تستخدم مع النتيجة المتخيلة في الماضي.",
+
+      examples:[
+        [
+          "I would have helped you.",
+          "لكنت ساعدتك."
+        ],
+        [
+          "She would have come.",
+          "لكانت قد جاءت."
+        ]
+      ]
+    },
+
+    {
+      term:"could have",
+      meaning:"كان يمكن أن...",
+
+      note:
+        "تستخدم للحديث عن إمكانية كانت موجودة في الماضي ولم تحدث.",
+
+      examples:[
+        [
+          "I could have gone with you.",
+          "كان يمكنني أن أذهب معك."
+        ],
+        [
+          "We could have arrived earlier.",
+          "كان يمكننا الوصول مبكرًا."
+        ]
+      ]
+    },
+
+    {
+      term:"should have",
+      meaning:"كان ينبغي أن...",
+
+      note:
+        "تستخدم كثيرًا للتعبير عن الندم أو أن الشيء الصحيح كان يجب أن يحدث.",
+
+      examples:[
+        [
+          "I should have called you.",
+          "كان ينبغي أن أتصل بك."
+        ],
+        [
+          "You should have told me.",
+          "كان ينبغي أن تخبرني."
+        ]
+      ]
+    },
+
+    {
+      term:"regret",
+      meaning:"يندم",
+
+      note:
+        "كلمة مهمة جدًا مع المواقف الماضية التي نتمنى لو كانت مختلفة.",
+
+      examples:[
+        [
+          "I regret not going.",
+          "أندم على عدم ذهابي."
+        ],
+        [
+          "She regrets her decision.",
+          "هي تندم على قرارها."
+        ]
+      ]
+    },
+
+    {
+      term:"if only",
+      meaning:"ليت / لو فقط",
+
+      note:
+        "تستخدم للتعبير عن رغبة أو ندم قوي.",
+
+      examples:[
+        [
+          "If only I had more time.",
+          "ليت لدي مزيد من الوقت."
+        ],
+        [
+          "If only I had known.",
+          "ليتني كنت أعرف."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"What kind of situation does Third Conditional describe?",
+      answers:[
+        "an unreal past situation",
+        "a past situation that cannot be changed",
+        "imaginary past situations"
+      ]
+    },
+
+    {
+      q:"Complete: If I had known, I ___ have called you.",
+      answers:[
+        "would"
+      ]
+    },
+
+    {
+      q:"What does 'could have' express?",
+      answers:[
+        "a past possibility",
+        "something that was possible but didn't happen",
+        "past possibility"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:29,
+  stage:4,
+  stageTitle:"الشرط والجمل المركبة",
+
+  title:"Adjective Clauses",
+
+  topic:"who · which · that · whose · where",
+
+  description:
+    "محادثات قصيرة تساعد الطالب على سماع الجمل الوصفية داخل الكلام.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+
+  grammarTitle:"Relative / Adjective Clauses",
+
+  grammarText:
+    "لاحظ كيف يضيف المتحدث معلومات عن شخص أو شيء داخل الجملة بدل أن يبدأ جملة جديدة كل مرة.",
+
+  learn:[
+
+    {
+      term:"who",
+      meaning:"الذي / التي للشخص",
+
+      note:
+        "تستخدم غالبًا للإشارة إلى الأشخاص.",
+
+      examples:[
+        [
+          "She's the woman who helped me.",
+          "هي المرأة التي ساعدتني."
+        ],
+        [
+          "I know someone who can help.",
+          "أعرف شخصًا يمكنه المساعدة."
+        ]
+      ]
+    },
+
+    {
+      term:"which",
+      meaning:"الذي / التي للأشياء والحيوانات",
+
+      note:
+        "تستخدم عادةً للأشياء، وقد تظهر في الجمل الوصفية.",
+
+      examples:[
+        [
+          "I bought a phone which has a great camera.",
+          "اشتريت هاتفًا لديه كاميرا رائعة."
+        ],
+        [
+          "The book, which is very popular, is sold out.",
+          "الكتاب، الذي يحظى بشعبية كبيرة، نفد."
+        ]
+      ]
+    },
+
+    {
+      term:"that",
+      meaning:"الذي / التي",
+
+      note:
+        "يمكن أن تستخدم مع الأشخاص أو الأشياء في كثير من الجمل الوصفية المحددة.",
+
+      examples:[
+        [
+          "This is the book that I told you about.",
+          "هذا هو الكتاب الذي أخبرتك عنه."
+        ],
+        [
+          "She's the person that called me.",
+          "هي الشخص الذي اتصل بي."
+        ]
+      ]
+    },
+
+    {
+      term:"whose",
+      meaning:"الذي له / التي لها",
+
+      note:
+        "تستخدم للملكية داخل الجملة الوصفية.",
+
+      examples:[
+        [
+          "I met a woman whose son is a doctor.",
+          "قابلت امرأة ابنها طبيب."
+        ],
+        [
+          "That's the student whose phone was lost.",
+          "ذلك هو الطالب الذي فُقد هاتفه."
+        ]
+      ]
+    },
+
+    {
+      term:"where",
+      meaning:"حيث / الذي فيه للمكان",
+
+      note:
+        "تستخدم للحديث عن مكان.",
+
+      examples:[
+        [
+          "This is the house where I grew up.",
+          "هذا هو المنزل الذي نشأت فيه."
+        ],
+        [
+          "That's the café where we met.",
+          "ذلك هو المقهى الذي التقينا فيه."
+        ]
+      ]
+    },
+
+    {
+      term:"the place where",
+      meaning:"المكان الذي",
+
+      note:
+        "تركيب شائع جدًا لوصف مكان.",
+
+      examples:[
+        [
+          "This is the place where I work.",
+          "هذا هو المكان الذي أعمل فيه."
+        ],
+        [
+          "Do you remember the place where we met?",
+          "هل تتذكر المكان الذي التقينا فيه؟"
+        ]
+      ]
+    },
+
+    {
+      term:"the person who",
+      meaning:"الشخص الذي",
+
+      note:
+        "تركيب طبيعي جدًا لتعريف شخص أو وصفه.",
+
+      examples:[
+        [
+          "She's the person who helped me.",
+          "هي الشخص الذي ساعدني."
+        ],
+        [
+          "I need someone who can speak English.",
+          "أحتاج إلى شخص يستطيع التحدث بالإنجليزية."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"Which word is commonly used for people?",
+      answers:[
+        "who"
+      ]
+    },
+
+    {
+      q:"Which word can show possession?",
+      answers:[
+        "whose"
+      ]
+    },
+
+    {
+      q:"Which word can describe a place?",
+      answers:[
+        "where"
+      ]
+    }
+  ]
+},
+
+
+{
+  id:30,
+  stage:4,
+  stageTitle:"الشرط والجمل المركبة",
+
+  title:"Gerunds",
+
+  topic:"-ing · gerunds · استخدام الفعل كاسم",
+
+  description:
+    "محادثات قصيرة توضح استخدام الأفعال مع -ing كأسماء أو بعد تراكيب معينة.",
+
+  source:"ELLLO · Sound Grammar B1",
+
+  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+
+  grammarTitle:"Gerunds",
+
+  grammarText:
+    "انتبه: صيغة -ing ليست دائمًا Present Continuous. أحيانًا تعمل كاسم أو تأتي بعد أفعال وتراكيب معينة.",
+
+  learn:[
+
+    {
+      term:"Reading is...",
+      meaning:"القراءة هي...",
+
+      note:
+        "reading هنا اسم، وليس Present Continuous؛ الفعل read تحول إلى اسم بإضافة -ing.",
+
+      examples:[
+        [
+          "Reading is good for you.",
+          "القراءة مفيدة لك."
+        ],
+        [
+          "Reading helps me relax.",
+          "القراءة تساعدني على الاسترخاء."
+        ]
+      ]
+    },
+
+    {
+      term:"I enjoy + -ing",
+      meaning:"أستمتع بـ...",
+
+      note:
+        "بعد enjoy يأتي فعل بـ-ing وليس to + verb.",
+
+      examples:[
+        [
+          "I enjoy reading.",
+          "أستمتع بالقراءة."
+        ],
+        [
+          "She enjoys cooking.",
+          "هي تستمتع بالطبخ."
+        ]
+      ]
+    },
+
+    {
+      term:"I don't mind + -ing",
+      meaning:"لا أمانع...",
+
+      note:
+        "mind هنا فعل، وبعده يأتي غالبًا -ing.",
+
+      examples:[
+        [
+          "I don't mind waiting.",
+          "لا أمانع الانتظار."
+        ],
+        [
+          "I don't mind helping.",
+          "لا أمانع المساعدة."
+        ]
+      ]
+    },
+
+    {
+      term:"be interested in + -ing",
+      meaning:"يكون مهتمًا بـ...",
+
+      note:
+        "بعد in يأتي اسم أو فعل بـ-ing.",
+
+      examples:[
+        [
+          "I'm interested in learning languages.",
+          "أنا مهتم بتعلم اللغات."
+        ],
+        [
+          "She's interested in studying abroad.",
+          "هي مهتمة بالدراسة في الخارج."
+        ]
+      ]
+    },
+
+    {
+      term:"before + -ing",
+      meaning:"قبل فعل شيء",
+
+      note:
+        "يمكن استخدام before مع gerund عندما يكون الفاعل مفهومًا من السياق.",
+
+      examples:[
+        [
+          "Wash your hands before eating.",
+          "اغسل يديك قبل الأكل."
+        ],
+        [
+          "Think before making a decision.",
+          "فكر قبل اتخاذ قرار."
+        ]
+      ]
+    },
+
+    {
+      term:"after + -ing",
+      meaning:"بعد فعل شيء",
+
+      note:
+        "يمكن استخدام after مع gerund.",
+
+      examples:[
+        [
+          "I felt better after talking to her.",
+          "شعرت بتحسن بعد التحدث معها."
+        ],
+        [
+          "After finishing work, I went home.",
+          "بعد إنهاء العمل، ذهبت إلى المنزل."
+        ]
+      ]
+    },
+
+    {
+      term:"without + -ing",
+      meaning:"من دون فعل شيء",
+
+      note:
+        "بعد without يأتي اسم أو gerund عندما نقصد فعلًا.",
+
+      examples:[
+        [
+          "He left without saying goodbye.",
+          "غادر دون أن يقول وداعًا."
+        ],
+        [
+          "She left without telling anyone.",
+          "غادرت دون إخبار أي شخص."
+        ]
+      ]
+    },
+
+    {
+      term:"instead of + -ing",
+      meaning:"بدلًا من فعل شيء",
+
+      note:
+        "تركيب مهم جدًا للمقارنة بين خيارين.",
+
+      examples:[
+        [
+          "I walked instead of taking the bus.",
+          "مشيت بدلًا من ركوب الحافلة."
+        ],
+        [
+          "She studied instead of watching TV.",
+          "درست بدلًا من مشاهدة التلفاز."
+        ]
+      ]
+    }
+
+  ],
+
+  questions:[
+    {
+      q:"In 'Reading is useful', what is 'reading'?",
+      answers:[
+        "a gerund",
+        "a noun",
+        "a gerund acting as a noun"
+      ]
+    },
+
+    {
+      q:"Complete: I enjoy ___ books.",
+      answers:[
+        "reading"
+      ]
+    },
+
+    {
+      q:"Complete: Think before ___ a decision.",
+      answers:[
+        "making"
+      ]
+    }
+  ]
+}
+
+];
+
+
+/* =========================================================
+   STAGES
+   ========================================================= */
+
+const stages = [
+
+  {
+    id:1,
+
+    title:"المستقبل والقدرة والقرارات",
+
+    description:
+      "استماعات تساعدك على فهم المستقبل والقدرة والقرارات واللغة العملية."
+  },
+
+  {
+    id:2,
+
+    title:"المقارنة والوصف والحياة الواقعية",
+
+    description:
+      "استماعات توسع لغتك في المقارنة والوصف والمواقف اليومية."
+  },
+
+  {
+    id:3,
+
+    title:"التجارب والزمن واللغة الطبيعية",
+
+    description:
+      "استماعات تركّز على التجارب والزمن والتعبيرات المستخدمة في المحادثة."
+  },
+
+  {
+    id:4,
+
+    title:"الشرط والجمل المركبة",
+
+    description:
+      "استماعات ترفع قدرتك على فهم الجمل المركبة والافتراض والربط."
+  }
+
+];
+
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const listView =
+  document.getElementById("listView");
+
+const lessonView =
+  document.getElementById("lessonView");
+
+const searchInput =
+  document.getElementById("searchInput");
+
+let currentLessonId = null;
+
+
+/* =========================================================
+   RENDER LIST
+   ========================================================= */
+
+function renderList(filter=""){
+
+  const query =
+    filter.trim().toLowerCase();
+
+  let html = "";
+
+
+  stages.forEach(stage=>{
+
+    const stageLessons =
+      lessons.filter(lesson=>{
+
+        if(lesson.stage !== stage.id){
+          return false;
+        }
+
+        if(!query){
+          return true;
+        }
+
+        const text = [
+
+          lesson.title,
+          lesson.topic,
+          lesson.description,
+          lesson.grammarTitle
+
+        ]
+        .join(" ")
+        .toLowerCase();
+
+        return text.includes(query);
+
+      });
+
+
+    if(!stageLessons.length){
+      return;
+    }
+
+
+    html += `
+
+      <section class="stage">
+
+        <div class="stage-title">
+
+          <div class="small">
+            المرحلة ${stage.id}
+          </div>
+
+          <h2>
+            ${stage.title}
+          </h2>
+
+          <p>
+            ${stage.description}
+          </p>
+
+        </div>
+
+
+        <div class="lessons-grid">
+
+          ${stageLessons.map(lesson=>`
+
+            <article
+              class="lesson-card"
+              onclick="openLesson(${lesson.id})"
+            >
+
+              <div class="lesson-top">
+
+                <div class="lesson-number">
+                  ${String(lesson.id).padStart(2,"0")}
+                </div>
+
+                <h3>
+                  ${lesson.title}
+                </h3>
+
+              </div>
+
+
+              <div class="lesson-topic">
+                ${lesson.topic}
+              </div>
+
+
+              <p class="lesson-description">
+                ${lesson.description}
+              </p>
+
+
+              <span class="open-label">
+                ابدأ الاستماع ←
+              </span>
+
+            </article>
+
+          `).join("")}
+
+        </div>
+
+      </section>
+
+    `;
+
+  });
+
+
+  if(!html){
+
+    html = `
+
+      <div class="empty">
+        لم نجد استماعًا مطابقًا لبحثك.
+      </div>
+
+    `;
+
+  }
+
+
+  listView.innerHTML = html;
+
+}
+
+
+/* =========================================================
+   OPEN LESSON
+   ========================================================= */
+
+function openLesson(id){
+
+  const lesson =
+    lessons.find(
+      item => item.id === id
+    );
+
+  if(!lesson){
+    return;
+  }
+
+
+  currentLessonId = id;
+
+
+  stopSpeaking();
+
+
+  listView.style.display = "none";
+
+
+  lessonView.classList.add("active");
+
+
+  lessonView.innerHTML =
+    buildLessonHTML(lesson);
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   BUILD LESSON HTML
+   ========================================================= */
+
+function buildLessonHTML(lesson){
+
+
+  const learnHTML =
+    lesson.learn
+      .map((item,index)=>`
+
+        <article class="learning-card">
+
+          <div class="learning-title-row">
+
+            <div
+              class="learning-title"
+              dir="ltr"
+            >
+              ${item.term}
+            </div>
+
+
+            <button
+              type="button"
+              class="audio-btn"
+              aria-label="استمع للنطق"
+              data-speak="${encodeURIComponent(item.term)}"
+            >
+              🔊
+            </button>
+
+          </div>
+
+
+          <div class="learning-meaning">
+            ${item.meaning}
+          </div>
+
+
+          ${
+            item.note
+            ?
+            `
+
+            <div class="learning-note">
+
+              <strong>
+                💡 لاحظ:
+              </strong>
+
+              ${item.note}
+
+            </div>
+
+            `
+            :
+            ""
+          }
+
+
+          ${
+            item.examples
+              .map(example=>`
+
+                <div class="learning-example">
+
+                  <div class="example-en">
+                    ${example[0]}
+                  </div>
+
+                  <div class="example-ar">
+                    ${example[1]}
+                  </div>
+
+                </div>
+
+              `)
+              .join("")
+          }
+
+        </article>
+
+      `)
+      .join("");
+
+
+  const questionsHTML =
+    lesson.questions
+      .map((item,index)=>`
+
+        <div class="question-card">
+
+          <div class="question-number">
+            السؤال ${index+1}
+          </div>
+
+
+          <div class="question-text">
+            ${item.q}
+          </div>
+
+
+          <textarea
+            class="answer-input"
+            data-question="${index}"
+            placeholder="اكتب إجابتك هنا..."
+          ></textarea>
+
+
+          <div
+            class="question-feedback"
+            id="feedback-${lesson.id}-${index}"
+          ></div>
+
+        </div>
+
+      `)
+      .join("");
+
+
+  return `
+
+    <!-- HEADER -->
+
+    <div class="lesson-header">
+
+      <div class="lesson-header-top">
+
+        <div>
+
+          <div class="lesson-stage">
+            المرحلة ${lesson.stage}
+          </div>
+
+
+          <h1>
+            ${lesson.title}
+          </h1>
+
+
+          <p>
+            ${lesson.description}
+          </p>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="close-btn"
+          onclick="closeLesson()"
+        >
+          ← العودة للقائمة
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- SOURCE -->
+
+    <section class="source-card">
+
+      <h2>
+        🎧 أولًا: استمع إلى المقطع
+      </h2>
+
+
+      <p>
+        استمع إلى المقطع الأصلي أولًا وحاول فهم الفكرة العامة
+        والتفاصيل قبل أن تبدأ قسم التعلم.
+      </p>
+
+
+      <a
+        class="source-btn"
+        href="${lesson.url}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        فتح المقطع الأصلي 🎧
+      </a>
+
+    </section>
+
+
+    <!-- LEARNING -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+
+        <div class="icon">
+          📚
+        </div>
+
+
+        <div>
+
+          <h2>
+            تعلّم من الاستماع
+          </h2>
+
+
+          <p>
+            لا تكتفِ بسماع المقطع؛ خذ منه لغة جديدة تستطيع استخدامها.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="learning-grid">
+
+        ${learnHTML}
+
+      </div>
+
+    </section>
+
+
+    <!-- GRAMMAR -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+
+        <div class="icon">
+          💡
+        </div>
+
+
+        <div>
+
+          <h2>
+            ${lesson.grammarTitle}
+          </h2>
+
+
+          <p>
+            ملاحظة لغوية من الاستماع
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="grammar-note">
+
+        <h3>
+          انتبه أثناء الاستماع
+        </h3>
+
+
+        <p>
+          ${lesson.grammarText}
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUESTIONS -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+
+        <div class="icon">
+          🧠
+        </div>
+
+
+        <div>
+
+          <h2>
+            اختبر فهمك
+          </h2>
+
+
+          <p>
+            أجب بنفسك أولًا، ثم تحقق من إجاباتك.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div id="questions-${lesson.id}">
+
+        ${questionsHTML}
+
+      </div>
+
+
+      <button
+        type="button"
+        class="check-btn"
+        onclick="checkAnswers(${lesson.id})"
+      >
+        تحقق من الإجابات
+      </button>
+
+
+      <div
+        id="score-${lesson.id}"
+        class="score-box"
+      ></div>
+
+
+      <button
+        type="button"
+        id="retry-${lesson.id}"
+        class="retry-btn"
+        onclick="retryLesson(${lesson.id})"
+      >
+        إعادة المحاولة
+      </button>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="lesson-navigation">
+
+      <button
+        type="button"
+        class="nav-btn"
+        onclick="previousLesson()"
+        ${lesson.id === 1 ? "disabled" : ""}
+      >
+        → الاستماع السابق
+      </button>
+
+
+      <button
+        type="button"
+        class="nav-btn primary"
+        onclick="nextLesson()"
+        ${lesson.id === lessons.length ? "disabled" : ""}
+      >
+        الاستماع التالي ←
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   AUDIO BUTTON EVENTS
+   ========================================================= */
+
+document.addEventListener(
+  "click",
+  function(event){
+
+    const button =
+      event.target.closest(".audio-btn");
+
+    if(!button){
+      return;
+    }
+
+
+    const encoded =
+      button.getAttribute("data-speak");
+
+    if(!encoded){
+      return;
+    }
+
+
+    const text =
+      decodeURIComponent(encoded);
+
+
+    /*
+      استدعاء النطق مباشرة من حدث الضغط.
+    */
+
+    speakText(
+      text,
+      button
+    );
+
+  }
+);
+
+
+/* =========================================================
+   CLOSE LESSON
+   ========================================================= */
+
+function closeLesson(){
+
+  stopSpeaking();
+
+
+  lessonView.classList.remove(
+    "active"
+  );
+
+
+  lessonView.innerHTML = "";
+
+
+  listView.style.display = "";
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+
+  currentLessonId = null;
+
+}
+
+
+/* =========================================================
+   NEXT LESSON
+   ========================================================= */
+
+function nextLesson(){
+
+  if(!currentLessonId){
+    return;
+  }
+
+
+  const index =
+    lessons.findIndex(
+      lesson =>
+        lesson.id === currentLessonId
+    );
+
+
+  if(index < lessons.length - 1){
+
+    openLesson(
+      lessons[index + 1].id
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   PREVIOUS LESSON
+   ========================================================= */
+
+function previousLesson(){
+
+  if(!currentLessonId){
+    return;
+  }
+
+
+  const index =
+    lessons.findIndex(
+      lesson =>
+        lesson.id === currentLessonId
+    );
+
+
+  if(index > 0){
+
+    openLesson(
+      lessons[index - 1].id
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   NORMALIZE ANSWER
+   ========================================================= */
+
+function normalizeAnswer(text){
+
+  return text
+
+    .toLowerCase()
+
+    .trim()
+
+    .replace(
+      /[؟?!.,،؛:"]/g,
+      ""
+    )
+
+    .replace(
+      /\s+/g,
+      " "
+    );
+
+}
+
+
+/* =========================================================
+   CHECK ANSWERS
+   ========================================================= */
+
+function checkAnswers(id){
+
+  const lesson =
+    lessons.find(
+      item => item.id === id
+    );
+
+
+  if(!lesson){
+    return;
+  }
+
+
+  const inputs =
+    document.querySelectorAll(
+      `#questions-${id} .answer-input`
+    );
+
+
+  let correct = 0;
+
+  let answered = 0;
+
+
+  lesson.questions.forEach(
+    (question,index)=>{
+
+      const input =
+        inputs[index];
+
+
+      const feedback =
+        document.getElementById(
+          `feedback-${id}-${index}`
+        );
+
+
+      const studentAnswer =
+        normalizeAnswer(
+          input.value
+        );
+
+
+      if(studentAnswer){
+        answered++;
+      }
+
+
+      const accepted =
+        question.answers
+          .map(normalizeAnswer);
+
+
+      const isCorrect =
+        accepted.some(
+          answer=>{
+
+            if(!answer){
+              return false;
+            }
+
+
+            return (
+              studentAnswer === answer ||
+
+              studentAnswer.includes(answer) ||
+
+              answer.includes(studentAnswer)
+            );
+
+          }
+        );
+
+
+      feedback.className =
+        "question-feedback";
+
+
+      if(!studentAnswer){
+
+        feedback.classList.add(
+          "wrong"
+        );
+
+
+        feedback.innerHTML =
+          "لم تكتب إجابة بعد.";
+
+
+        return;
+
+      }
+
+
+      if(isCorrect){
+
+        correct++;
+
+
+        feedback.classList.add(
+          "correct"
+        );
+
+
+        feedback.innerHTML =
+          "✓ إجابة صحيحة — ممتاز!";
+
+      }else{
+
+        feedback.classList.add(
+          "wrong"
+        );
+
+
+        feedback.innerHTML = `
+
+          ✗ ليست الإجابة المطلوبة.
+
+          <br>
+
+          <strong>
+            إجابة مقبولة:
+          </strong>
+
+          ${question.answers[0]}
+
+        `;
+
+      }
+
+    }
+  );
+
+
+  const score =
+    document.getElementById(
+      `score-${id}`
+    );
+
+
+  const retry =
+    document.getElementById(
+      `retry-${id}`
+    );
+
+
+  const total =
+    lesson.questions.length;
+
+
+  score.style.display =
+    "block";
+
+
+  score.innerHTML = `
+
+    نتيجتك:
+    ${correct} / ${total}
+
+    <br>
+
+    <span
+      style="
+        font-weight:700;
+        font-size:13px;
+      "
+    >
+
+      ${
+        answered < total
+
+        ?
+
+        "يمكنك إكمال الأسئلة التي لم تجب عنها."
+
+        :
+
+        correct === total
+
+        ?
+
+        "رائع جدًا! فهمك للمقطع ممتاز."
+
+        :
+
+        "راجع الإجابات الخاطئة وأعد الاستماع للمقطع إذا احتجت."
+
+      }
+
+    </span>
+
+  `;
+
+
+  retry.style.display =
+    "block";
+
+}
+
+
+/* =========================================================
+   RETRY
+   ========================================================= */
+
+function retryLesson(id){
+
+  const inputs =
+    document.querySelectorAll(
+      `#questions-${id} .answer-input`
+    );
+
+
+  inputs.forEach(
+    input=>{
+      input.value = "";
+    }
+  );
+
+
+  document
+    .querySelectorAll(
+      `#questions-${id} .question-feedback`
+    )
+    .forEach(
+      feedback=>{
+
+        feedback.className =
+          "question-feedback";
+
+        feedback.innerHTML =
+          "";
+
+      }
+    );
+
+
+  const score =
+    document.getElementById(
+      `score-${id}`
+    );
+
+
+  const retry =
+    document.getElementById(
+      `retry-${id}`
+    );
+
+
+  score.style.display =
+    "none";
+
+
+  retry.style.display =
+    "none";
+
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+searchInput.addEventListener(
+  "input",
+  function(){
+
+    if(
+      lessonView.classList.contains(
+        "active"
+      )
+    ){
+
+      closeLesson();
+
+    }
+
+
+    renderList(
+      this.value
+    );
+
+  }
+);
+
+
+/* =========================================================
+   INITIAL RENDER
+   ========================================================= */
+
+renderList();
+
+</script>
+
+</body>
+</html>
