@@ -30,7 +30,6 @@
 
   --blue-soft:#F2F5FF;
   --purple-soft:#F6F3FF;
-  --gold-soft:#FFF9EC;
 
   --shadow:0 12px 35px rgba(36,48,94,.08);
   --shadow-hover:0 18px 45px rgba(36,48,94,.13);
@@ -403,21 +402,26 @@ a{
   background:var(--purple);
 }
 
-/* المرحلة الثالثة */
+/* المرحلة الثالثة — أزرق/بنفسجي بدل الأصفر */
 
 .stage:nth-child(3) .stage-title{
   background:
     linear-gradient(
       135deg,
-      #FFF9EA,
-      #FFFCF5
+      #F2F4FF,
+      #F8F5FF
     );
 
-  border:1px solid #F1E4C4;
+  border:1px solid #DEE1F7;
 }
 
 .stage:nth-child(3) .stage-title::before{
-  background:var(--gold);
+  background:
+    linear-gradient(
+      180deg,
+      var(--blue),
+      var(--purple)
+    );
 }
 
 /* المرحلة الرابعة */
@@ -513,7 +517,7 @@ a{
   overflow:hidden;
 }
 
-/* ألوان البطاقات حسب المرحلة */
+/* المرحلة الأولى */
 
 .stage:nth-child(1) .lesson-card{
   background:
@@ -526,6 +530,8 @@ a{
   border:1px solid #E0E5FA;
 }
 
+/* المرحلة الثانية */
+
 .stage:nth-child(2) .lesson-card{
   background:
     linear-gradient(
@@ -537,16 +543,20 @@ a{
   border:1px solid #E7E1F7;
 }
 
+/* المرحلة الثالثة — أزرق/بنفسجي */
+
 .stage:nth-child(3) .lesson-card{
   background:
     linear-gradient(
       135deg,
-      #FFFAEF,
+      #F5F6FF,
       #FFFFFF
     );
 
-  border:1px solid #F0E5C9;
+  border:1px solid #E1E3F6;
 }
+
+/* المرحلة الرابعة */
 
 .stage:nth-child(4) .lesson-card{
   background:
@@ -592,7 +602,7 @@ a{
 }
 
 .stage:nth-child(3) .lesson-card::after{
-  background:#F7E7B7;
+  background:#DFE5FF;
 }
 
 .stage:nth-child(4) .lesson-card::after{
@@ -637,8 +647,8 @@ a{
 }
 
 .stage:nth-child(3) .lesson-number{
-  background:#FFF0C9;
-  color:#8A681D;
+  background:#E4E8FF;
+  color:var(--blue-dark);
 }
 
 .stage:nth-child(4) .lesson-number{
@@ -968,6 +978,8 @@ a{
   transition:.2s ease;
 
   -webkit-tap-highlight-color:transparent;
+
+  touch-action:manipulation;
 }
 
 .audio-btn:hover{
@@ -1270,6 +1282,14 @@ a{
   border-color:var(--blue);
 }
 
+.nav-btn:disabled{
+  opacity:.45;
+
+  cursor:not-allowed;
+
+  transform:none;
+}
+
 /* =========================================================
    EMPTY
    ========================================================= */
@@ -1481,18 +1501,14 @@ a{
 <script>
 
 /* =========================================================
-   SPEECH ENGINE
-   مناسب أكثر لـ iPad / iOS Safari
+   SPEECH ENGINE — iPad / iOS Safari
    ========================================================= */
 
 let englishVoice = null;
 let voicesLoaded = false;
 
 
-/*
-  البحث عن صوت إنجليزي مناسب.
-  نفضل en-US ثم أي صوت English.
-*/
+/* البحث عن صوت إنجليزي مناسب */
 
 function loadEnglishVoices(){
 
@@ -1526,9 +1542,7 @@ function loadEnglishVoices(){
 }
 
 
-/*
-  تحميل الأصوات عند جاهزية المتصفح.
-*/
+/* تهيئة الأصوات */
 
 if("speechSynthesis" in window){
 
@@ -1540,12 +1554,11 @@ if("speechSynthesis" in window){
       loadEnglishVoices();
 
     };
+
 }
 
 
-/*
-  إيقاف أي نطق سابق.
-*/
+/* إيقاف أي نطق حالي */
 
 function stopSpeaking(){
 
@@ -1563,21 +1576,16 @@ function stopSpeaking(){
 
       button.classList.remove("speaking");
 
-      button.textContent = "🔊";
+      button.textContent="🔊";
 
     });
+
 }
 
 
-/*
-  النطق.
+/* النطق */
 
-  مهم:
-  يتم استدعاء speak مباشرة من ضغطة الطالب
-  حتى يكون متوافقًا قدر الإمكان مع iOS Safari.
-*/
-
-function speakText(text, button){
+function speakText(text,button){
 
   if(!("speechSynthesis" in window)){
 
@@ -1586,12 +1594,9 @@ function speakText(text, button){
     );
 
     return;
+
   }
 
-
-  /*
-    نحاول تحميل الأصوات مرة أخرى إذا لم تكن جاهزة.
-  */
 
   if(!voicesLoaded){
 
@@ -1600,32 +1605,23 @@ function speakText(text, button){
   }
 
 
-  /*
-    إيقاف أي صوت حالي.
-  */
-
   stopSpeaking();
 
-
-  /*
-    إنشاء النطق مباشرة.
-  */
 
   const utterance =
     new SpeechSynthesisUtterance(text);
 
 
-  utterance.lang = "en-US";
+  utterance.lang="en-US";
 
-  utterance.rate = 0.78;
+  utterance.rate=0.78;
 
-  utterance.pitch = 1;
+  utterance.pitch=1;
 
 
   if(englishVoice){
 
-    utterance.voice =
-      englishVoice;
+    utterance.voice=englishVoice;
 
   }
 
@@ -1634,50 +1630,45 @@ function speakText(text, button){
 
     button.classList.add("speaking");
 
-    button.textContent = "🔈";
+    button.textContent="🔈";
 
   }
 
 
-  utterance.onend =
-    function(){
+  utterance.onend=function(){
 
-      if(button){
+    if(button){
 
-        button.classList.remove(
-          "speaking"
-        );
+      button.classList.remove("speaking");
 
-        button.textContent = "🔊";
+      button.textContent="🔊";
 
-      }
+    }
 
-    };
+  };
 
 
-  utterance.onerror =
-    function(){
+  utterance.onerror=function(){
 
-      if(button){
+    if(button){
 
-        button.classList.remove(
-          "speaking"
-        );
+      button.classList.remove("speaking");
 
-        button.textContent = "🔊";
+      button.textContent="🔊";
 
-      }
+    }
 
-    };
+  };
 
-
-  /*
-    مهم في iOS:
-    speak() يتم استدعاؤه مباشرة هنا
-    بدون setTimeout أو async.
-  */
 
   try{
+
+    /*
+      resume مهم أحيانًا في Safari
+      إذا كان speechSynthesis في حالة paused.
+    */
+
+    window.speechSynthesis.resume();
 
     window.speechSynthesis.speak(
       utterance
@@ -1687,11 +1678,9 @@ function speakText(text, button){
 
     if(button){
 
-      button.classList.remove(
-        "speaking"
-      );
+      button.classList.remove("speaking");
 
-      button.textContent = "🔊";
+      button.textContent="🔊";
 
     }
 
@@ -4943,7 +4932,7 @@ const lessons = [
 
   source:"ELLLO · Sound Grammar B1",
 
-  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+  url:"https://elllo.org/book/B1/B1-07-Present-Perfect-Experience.html",
 
   grammarTitle:"Present Perfect — Experiences",
 
@@ -5113,7 +5102,7 @@ const lessons = [
 
   source:"ELLLO · Sound Grammar B1",
 
-  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+  url:"https://elllo.org/book/B1/B1-20-Present-Perfect-Time.html",
 
   grammarTitle:"Present Perfect — Time",
 
@@ -6148,7 +6137,7 @@ const lessons = [
 
   source:"ELLLO · Sound Grammar B1",
 
-  url:"https://elllo.org/english/course/L4-09-Zero-Conditionals.htm",
+  url:"https://elllo.org/book/B1/B1-09-Zero-Conditional.html",
 
   grammarTitle:"Zero Conditional",
 
@@ -6316,7 +6305,7 @@ const lessons = [
 
   source:"ELLLO · Sound Grammar B1",
 
-  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+  url:"https://elllo.org/book/B1/B1-10-First-Conditional.html",
 
   grammarTitle:"First Conditional",
 
@@ -6486,7 +6475,7 @@ const lessons = [
 
   source:"ELLLO · Sound Grammar B1",
 
-  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+  url:"https://elllo.org/book/B1/B1-15-Second-Conditional.html",
 
   grammarTitle:"Second Conditional",
 
@@ -6650,9 +6639,9 @@ const lessons = [
   description:
     "استماع موجه يساعد الطالب على سماع الحديث عن أشياء كان يمكن أن تحدث في الماضي بشكل مختلف.",
 
-  source:"British Council LearnEnglish Teens",
+  source:"ELLLO · Past Conditional B1",
 
-  url:"https://learnenglishteens.britishcouncil.org/comment/90745",
+  url:"https://elllo.org/class/B1/B1-20-Past-Conditional.html",
 
   grammarTitle:"Third Conditional",
 
@@ -6820,7 +6809,7 @@ const lessons = [
 
   source:"ELLLO · Sound Grammar B1",
 
-  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+  url:"https://elllo.org/book/B1/B1-16-Adjective-Clause.html",
 
   grammarTitle:"Relative / Adjective Clauses",
 
@@ -7003,7 +6992,7 @@ const lessons = [
 
   source:"ELLLO · Sound Grammar B1",
 
-  url:"https://elllo.org/levels/B1-English-Lessons/B1-SGR-01-25.html",
+  url:"https://elllo.org/book/B1/B1-19-Gerunds.html",
 
   grammarTitle:"Gerunds",
 
@@ -7436,7 +7425,6 @@ function openLesson(id){
 
 function buildLessonHTML(lesson){
 
-
   const learnHTML =
     lesson.learn
       .map((item,index)=>`
@@ -7458,6 +7446,12 @@ function buildLessonHTML(lesson){
               class="audio-btn"
               aria-label="استمع للنطق"
               data-speak="${encodeURIComponent(item.term)}"
+              onclick="
+                speakText(
+                  decodeURIComponent(this.dataset.speak),
+                  this
+                )
+              "
             >
               🔊
             </button>
@@ -7786,47 +7780,6 @@ function buildLessonHTML(lesson){
   `;
 
 }
-
-
-/* =========================================================
-   AUDIO BUTTON EVENTS
-   ========================================================= */
-
-document.addEventListener(
-  "click",
-  function(event){
-
-    const button =
-      event.target.closest(".audio-btn");
-
-    if(!button){
-      return;
-    }
-
-
-    const encoded =
-      button.getAttribute("data-speak");
-
-    if(!encoded){
-      return;
-    }
-
-
-    const text =
-      decodeURIComponent(encoded);
-
-
-    /*
-      استدعاء النطق مباشرة من حدث الضغط.
-    */
-
-    speakText(
-      text,
-      button
-    );
-
-  }
-);
 
 
 /* =========================================================
