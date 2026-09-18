@@ -90,9 +90,36 @@ a{
     align-items:center;
     justify-content:space-between;
 
-    gap:20px;
+    direction:ltr;
 
     margin-bottom:26px;
+
+    min-height:64px;
+}
+
+
+/* =========================
+   EIRLO MASCOT
+   ========================= */
+
+.top-mascot{
+    width:76px;
+    height:76px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    display:block;
+
+    background:white;
+
+    border:3px solid white;
+
+    box-shadow:
+        0 8px 24px rgba(36,48,94,.12);
+
+    flex-shrink:0;
 }
 
 
@@ -106,71 +133,43 @@ a{
     align-items:center;
     justify-content:center;
 
-    gap:7px;
+    direction:rtl;
 
     min-width:108px;
+    height:58px;
 
-    padding:11px 18px;
+    padding:0 18px;
 
     background:white;
 
     color:var(--blue-dark);
 
-    border:
-        1px solid
-        var(--border);
+    border:0;
 
     border-radius:17px;
 
     font-size:16px;
     font-weight:800;
 
-    box-shadow:var(--shadow);
+    box-shadow:
+        0 8px 25px rgba(36,48,94,.09);
 
     transition:
         transform .18s ease,
-        box-shadow .18s ease,
-        background .18s ease;
+        box-shadow .18s ease;
 }
 
 .top-back-btn:hover{
 
     transform:translateY(-2px);
 
-    box-shadow:var(--shadow-hover);
-
-    background:#FCFCFF;
+    box-shadow:
+        0 12px 30px rgba(36,48,94,.13);
 }
 
 .top-back-btn:active{
 
     transform:translateY(0);
-}
-
-
-/* =========================
-   EIRLO MASCOT
-   ========================= */
-
-.top-mascot{
-    width:82px;
-    height:82px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    display:block;
-
-    background:white;
-
-    border:
-        3px solid
-        white;
-
-    box-shadow:
-        0 10px 28px
-        rgba(36,48,94,.14);
 }
 
 
@@ -184,23 +183,23 @@ a{
         margin-bottom:20px;
     }
 
+    .top-mascot{
+        width:68px;
+        height:68px;
+    }
+
     .top-back-btn{
-        min-width:94px;
+        min-width:96px;
+        height:54px;
 
-        padding:10px 15px;
+        padding:0 15px;
 
-        border-radius:15px;
+        border-radius:16px;
 
         font-size:15px;
     }
 
-    .top-mascot{
-        width:70px;
-        height:70px;
-    }
-
 }
-
 
    
 /* =========================
@@ -1408,19 +1407,20 @@ a{
 
 
 
+
 <!-- =====================================================
      TOP BAR
      ===================================================== -->
 
 <div class="top-bar">
 
-    <!-- صورة إيرلو -->
+    <!-- إيرلو — الجهة اليسرى -->
     <img
         class="top-mascot"
-        src="owl.PNG"
+        src="../owl.PNG"
         alt="Eirlo">
 
-    <!-- زر الرجوع -->
+    <!-- الرجوع — الجهة اليمنى -->
     <a
         class="top-back-btn"
         href="skills-practice.html">
@@ -1430,7 +1430,7 @@ a{
     </a>
 
 </div>
-
+   
    
 
 <!-- =====================================================
