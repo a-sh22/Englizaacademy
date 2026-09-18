@@ -79,9 +79,6 @@ img{
 }
 
 
-
-
-
 /* =========================
    TOP BAR
 ========================= */
@@ -93,6 +90,16 @@ img{
   direction:ltr;
   min-height:76px;
   margin-bottom:26px;
+}
+
+
+/* =========================================================
+   TOP BAR — TOPIC MODE
+   يختفي عندما يدخل الطالب داخل وحدة المفردات
+========================================================= */
+
+.top-bar.topic-mode{
+  display:none;
 }
 
 
@@ -123,9 +130,15 @@ img{
 .top-mascot{
   width:100%;
   height:100%;
+
   display:block;
+
   object-fit:cover;
-  transform:scale(1.08);
+
+  /* تكبير بسيط حتى تملأ صورة إيرلو الدائرة */
+  transform:scale(1.22);
+
+  transform-origin:center;
 }
 
 
@@ -197,7 +210,8 @@ img{
   .top-mascot{
     width:100%;
     height:100%;
-    transform:none;
+    transform:scale(1.22);
+    transform-origin:center;
   }
 
   .top-back-btn{
@@ -211,10 +225,6 @@ img{
 }
 
 
-
-   
-
-   
 /* =========================================================
    PAGE
 ========================================================= */
@@ -471,18 +481,35 @@ img{
   gap:18px;
 }
 
+
+/* =========================================================
+   TOPIC CARDS
+   بطاقات الوحدات الخارجية — أكثر حيوية
+========================================================= */
+
 .topic-card{
   position:relative;
 
-  background:var(--white);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(118,84,217,.12),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #FFFFFF 0%,
+      #F5F7FF 100%
+    );
 
-  border:1px solid var(--border);
+  border:1px solid #E1E5F5;
 
   border-radius:var(--radius-lg);
 
   padding:23px;
 
-  box-shadow:var(--shadow);
+  box-shadow:
+    0 10px 30px rgba(49,87,213,.07);
 
   transition:
     transform .22s ease,
@@ -495,42 +522,139 @@ img{
 
   display:flex;
   flex-direction:column;
+
+  overflow:hidden;
 }
+
+
+/* خط لوني أعلى البطاقة */
+
+.topic-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  right:0;
+  left:0;
+
+  height:5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  opacity:.9;
+}
+
+
+/* دائرة زخرفية خفيفة */
+
+.topic-card::after{
+  content:"";
+
+  position:absolute;
+
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(49,87,213,.07),
+      transparent 70%
+    );
+
+  left:-42px;
+  bottom:-55px;
+
+  pointer-events:none;
+}
+
 
 .topic-card:hover{
-  transform:translateY(-4px);
+  transform:translateY(-5px);
 
-  box-shadow:var(--shadow-hover);
+  box-shadow:
+    0 18px 42px rgba(49,87,213,.12);
 
-  border-color:#DADDF0;
+  border-color:#CFD5F0;
 }
 
+
+/* =========================================================
+   ICON
+========================================================= */
+
 .topic-icon{
-  width:58px;
-  height:58px;
+  position:relative;
+  z-index:1;
 
-  border-radius:18px;
+  width:62px;
+  height:62px;
 
-  background:var(--purple-light);
+  border-radius:19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #EEF2FF,
+      #F0EAFE
+    );
+
+  border:1px solid #E0E3F7;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  font-size:30px;
+  font-size:31px;
 
   margin-bottom:17px;
+
+  box-shadow:
+    0 7px 18px rgba(49,87,213,.07);
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease;
 }
 
+
+.topic-card:hover .topic-icon{
+  transform:translateY(-2px) scale(1.03);
+
+  box-shadow:
+    0 10px 22px rgba(118,84,217,.12);
+}
+
+
+/* =========================================================
+   TITLE / DESCRIPTION
+========================================================= */
+
 .topic-card h3{
+  position:relative;
+  z-index:1;
+
   margin:0 0 7px;
 
   font-size:19px;
 
   font-weight:900;
+
+  color:var(--text);
 }
 
 .topic-card p{
+  position:relative;
+  z-index:1;
+
   margin:0;
 
   color:var(--muted);
@@ -542,7 +666,15 @@ img{
   flex:1;
 }
 
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 .topic-footer{
+  position:relative;
+  z-index:1;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -550,10 +682,14 @@ img{
   gap:10px;
 
   margin-top:18px;
+
+  padding-top:14px;
+
+  border-top:1px solid rgba(49,87,213,.08);
 }
 
 .topic-count{
-  color:var(--muted);
+  color:#7A8299;
 
   font-size:13px;
 
@@ -566,7 +702,18 @@ img{
   font-weight:900;
 
   font-size:13px;
+
+  transition:
+    transform .18s ease,
+    color .18s ease;
 }
+
+.topic-card:hover .topic-open{
+  color:var(--purple);
+
+  transform:translateX(-3px);
+}
+
 
 /* =========================================================
    TOPIC VIEW
@@ -1163,14 +1310,9 @@ input:focus-visible{
 <div class="page">
 
 
-
 <!-- =====================================================
      TOP BAR
-     ===================================================== -->
-
-<!-- =====================================================
-     TOP BAR
-     ===================================================== -->
+===================================================== -->
 
 <div class="top-bar">
 
@@ -1196,167 +1338,167 @@ input:focus-visible{
 
 </div>
 
-   
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
 
-  <section class="hero">
+<!-- =====================================================
+     HERO
+====================================================== -->
 
-    <div class="hero-content">
+<section class="hero">
 
-      <div class="academy-label">
-        <span class="academy-dot"></span>
-        ENGLIZA ACADEMY
-      </div>
+  <div class="hero-content">
 
-      <h1>📚 المفردات</h1>
-
-      <p>
-        وسّع حصيلتك من الكلمات الإنجليزية،
-        واستمع إلى نطقها وتعلّم استخدامها داخل جمل بسيطة.
-      </p>
-
+    <div class="academy-label">
+      <span class="academy-dot"></span>
+      ENGLIZA ACADEMY
     </div>
 
-  </section>
+    <h1>📚 المفردات</h1>
+
+    <p>
+      وسّع حصيلتك من الكلمات الإنجليزية،
+      واستمع إلى نطقها وتعلّم استخدامها داخل جمل بسيطة.
+    </p>
+
+  </div>
+
+</section>
 
 
-  <!-- =====================================================
-       PATH
-  ====================================================== -->
+<!-- =====================================================
+     PATH
+===================================================== -->
 
-  <section class="path-card">
+<section class="path-card">
 
-    <div class="path-top">
+  <div class="path-top">
 
-      <div class="path-title">
-        🧠 مسار المفردات — المستوى المبتدئ
-      </div>
-
-      <div class="path-count" id="progressText">
-        30 وحدة
-      </div>
-
+    <div class="path-title">
+      🧠 مسار المفردات — المستوى المبتدئ
     </div>
 
-    <div class="progress-track">
-      <div class="progress-fill" id="progressFill"></div>
+    <div class="path-count" id="progressText">
+      30 وحدة
     </div>
 
-  </section>
+  </div>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+</section>
 
 
-  <!-- =====================================================
-       TOPICS VIEW
-  ====================================================== -->
+<!-- =====================================================
+     TOPICS VIEW
+===================================================== -->
 
-  <main id="topicsView">
+<main id="topicsView">
 
-    <div class="search-card">
+  <div class="search-card">
 
-      <input
-        id="searchInput"
-        class="search-input"
-        type="search"
-        placeholder="ابحث عن كلمة أو موضوع..."
-        autocomplete="off"
-      >
+    <input
+      id="searchInput"
+      class="search-input"
+      type="search"
+      placeholder="ابحث عن كلمة أو موضوع..."
+      autocomplete="off"
+    >
 
-    </div>
+  </div>
 
-    <div id="topicsContainer"></div>
+  <div id="topicsContainer"></div>
 
-  </main>
-
-
-  <!-- =====================================================
-       SINGLE TOPIC VIEW
-  ====================================================== -->
-
-  <main id="topicView">
-
-    <div class="topic-view-card">
-
-      <div class="topic-view-header">
-
-        <div class="topic-view-header-top">
-
-          <button
-            class="back-button"
-            type="button"
-            onclick="closeTopic()"
-          >
-            ← العودة إلى المفردات
-          </button>
-
-          <div
-            class="topic-number"
-            id="topicNumber"
-          ></div>
-
-        </div>
-
-        <h2 id="topicTitle"></h2>
-
-        <p id="topicDescription"></p>
-
-      </div>
+</main>
 
 
-      <div class="words-container">
+<!-- =====================================================
+     SINGLE TOPIC VIEW
+===================================================== -->
 
-        <div class="words-intro">
-          💡 ركّز على الكلمة الجديدة، استمع إلى نطقها،
-          ثم اقرأ الأمثلة وحاول ملاحظة كيف تُستخدم داخل الجملة.
-        </div>
+<main id="topicView">
+
+  <div class="topic-view-card">
+
+    <div class="topic-view-header">
+
+      <div class="topic-view-header-top">
+
+        <button
+          class="back-button"
+          type="button"
+          onclick="closeTopic()"
+        >
+          ← العودة إلى المفردات
+        </button>
 
         <div
-          class="words-grid"
-          id="wordsGrid"
+          class="topic-number"
+          id="topicNumber"
         ></div>
 
       </div>
 
+      <h2 id="topicTitle"></h2>
 
-      <div class="topic-navigation">
-
-        <button
-          id="previousButton"
-          class="nav-button"
-          type="button"
-          onclick="openPreviousTopic()"
-        >
-          → السابق
-        </button>
-
-        <button
-          class="nav-button primary"
-          type="button"
-          onclick="closeTopic()"
-        >
-          📚 كل الوحدات
-        </button>
-
-        <button
-          id="nextButton"
-          class="nav-button"
-          type="button"
-          onclick="openNextTopic()"
-        >
-          التالي ←
-        </button>
-
-      </div>
+      <p id="topicDescription"></p>
 
     </div>
 
-  </main>
+
+    <div class="words-container">
+
+      <div class="words-intro">
+        💡 ركّز على الكلمة الجديدة، استمع إلى نطقها،
+        ثم اقرأ الأمثلة وحاول ملاحظة كيف تُستخدم داخل الجملة.
+      </div>
+
+      <div
+        class="words-grid"
+        id="wordsGrid"
+      ></div>
+
+    </div>
 
 
-  <div class="footer">
-    Engliza Academy · Beginner Vocabulary
+    <div class="topic-navigation">
+
+      <button
+        id="previousButton"
+        class="nav-button"
+        type="button"
+        onclick="openPreviousTopic()"
+      >
+        → السابق
+      </button>
+
+      <button
+        class="nav-button primary"
+        type="button"
+        onclick="closeTopic()"
+      >
+        📚 كل الوحدات
+      </button>
+
+      <button
+        id="nextButton"
+        class="nav-button"
+        type="button"
+        onclick="openNextTopic()"
+      >
+        التالي ←
+      </button>
+
+    </div>
+
   </div>
+
+</main>
+
+
+<div class="footer">
+  Engliza Academy · Beginner Vocabulary
+</div>
 
 </div>
 
@@ -3725,6 +3867,9 @@ function word(
 const topicsView = document.getElementById("topicsView");
 const topicView = document.getElementById("topicView");
 
+const topBar =
+  document.querySelector(".top-bar");
+
 const topicsContainer =
   document.getElementById("topicsContainer");
 
@@ -4017,6 +4162,9 @@ function openTopic(index){
 
   topicView.style.display = "block";
 
+  /* إخفاء إيرلو وزر الرجوع أثناء دراسة الوحدة */
+  topBar.classList.add("topic-mode");
+
 
   updateProgress(index);
 
@@ -4039,6 +4187,9 @@ function closeTopic(){
   topicView.style.display = "none";
 
   topicsView.style.display = "block";
+
+  /* إعادة إيرلو وزر الرجوع عند العودة للقائمة */
+  topBar.classList.remove("topic-mode");
 
   currentTopicIndex = -1;
 
