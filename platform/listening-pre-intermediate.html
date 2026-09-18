@@ -149,7 +149,8 @@ input{
 
   border-radius:50%;
 
-  transform:scale(1);
+  /* تكبير الصورة داخل الدائرة فقط لإخفاء الفراغ الأبيض */
+  transform:scale(1.22);
 }
 
 
@@ -171,14 +172,34 @@ input{
   }
 
   .top-mascot{
-    transform:scale(1);
+    /* نفس فكرة الآيباد، مع الحفاظ على حجم الدائرة */
+    transform:scale(1.22);
   }
 
 }
 
 
+/* =========================
+   LESSON MODE
+   إخفاء الصفحة الرئيسية عند فتح درس
+========================= */
 
-  
+body.lesson-mode .top-bar,
+body.lesson-mode .hero,
+body.lesson-mode .path-card,
+body.lesson-mode .notice,
+body.lesson-mode .search-box,
+body.lesson-mode #listView,
+body.lesson-mode .empty{
+  display:none !important;
+}
+
+body.lesson-mode .lesson-view{
+  display:block;
+  margin-top:0;
+}
+
+
 /* =========================
    HERO
 ========================= */
@@ -3304,11 +3325,10 @@ function openLesson(id){
 
   currentLessonId = id;
 
-  document.getElementById("listView")
-    .style.display = "none";
-
-  document.querySelector(".search-box")
-    .style.display = "none";
+  /*
+    إخفاء الصفحة الرئيسية بالكامل وإظهار الاستماع فقط
+  */
+  document.body.classList.add("lesson-mode");
 
   document.getElementById("lessonView")
     .classList.add("active");
@@ -3413,14 +3433,10 @@ function openLesson(id){
 
 function closeLesson(){
 
+  document.body.classList.remove("lesson-mode");
+
   document.getElementById("lessonView")
     .classList.remove("active");
-
-  document.getElementById("listView")
-    .style.display = "";
-
-  document.querySelector(".search-box")
-    .style.display = "";
 
   window.scrollTo({
     top:0,
