@@ -80,131 +80,140 @@ a{
 
 
 
+
 /* =========================
    TOP BAR
-   ========================= */
+========================= */
 
 .top-bar{
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    direction:ltr;
-
-    margin-bottom:26px;
-
-    min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  direction:ltr;
+  min-height:76px;
+  margin-bottom:26px;
 }
 
 
 /* =========================
-   EIRLO MASCOT
-   ========================= */
+   EIRLO
+========================= */
 
-.top-mascot{
-    width:76px;
-    height:76px;
+.mascot-circle{
+  width:76px;
+  height:76px;
 
-    border-radius:50%;
+  flex:0 0 76px;
 
-    object-fit:cover;
+  border-radius:50%;
+  overflow:hidden;
 
-    display:block;
+  background:#fff;
+  border:3px solid #fff;
 
-    background:white;
+  box-shadow:
+    0 8px 24px rgba(36,48,94,.12);
 
-    border:3px solid white;
-
-    box-shadow:
-        0 8px 24px rgba(36,48,94,.12);
-
-    flex-shrink:0;
-
-    transform:scale(1.28);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-   
+.top-mascot{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transform:none;
+}
 
 
 /* =========================
    BACK BUTTON
-   ========================= */
+========================= */
 
 .top-back-btn{
-    display:inline-flex;
+  display:inline-flex;
 
-    align-items:center;
-    justify-content:center;
+  align-items:center;
+  justify-content:center;
 
-    direction:rtl;
+  direction:rtl;
 
-    min-width:108px;
-    height:58px;
+  min-width:108px;
+  height:58px;
 
-    padding:0 18px;
+  padding:0 18px;
 
-    background:white;
+  background:#fff;
+  color:var(--blue-dark);
 
-    color:var(--blue-dark);
+  border:0;
+  border-radius:17px;
 
-    border:0;
+  font-size:16px;
+  font-weight:800;
 
-    border-radius:17px;
+  text-decoration:none;
 
-    font-size:16px;
-    font-weight:800;
+  box-shadow:
+    0 8px 25px rgba(36,48,94,.09);
 
-    box-shadow:
-        0 8px 25px rgba(36,48,94,.09);
-
-    transition:
-        transform .18s ease,
-        box-shadow .18s ease;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
 }
 
 .top-back-btn:hover{
+  transform:translateY(-2px);
 
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 12px 30px rgba(36,48,94,.13);
+  box-shadow:
+    0 12px 30px rgba(36,48,94,.13);
 }
 
 .top-back-btn:active{
-
-    transform:translateY(0);
+  transform:translateY(0);
 }
 
 
 /* =========================
    MOBILE
-   ========================= */
+========================= */
 
 @media(max-width:650px){
 
-    .top-bar{
-        margin-bottom:20px;
-    }
+  .top-bar{
+    min-height:68px;
+    margin-bottom:20px;
+  }
 
-    .top-mascot{
-        width:68px;
-        height:68px;
-    }
+  .mascot-circle{
+    width:68px;
+    height:68px;
+    flex-basis:68px;
+  }
 
-    .top-back-btn{
-        min-width:96px;
-        height:54px;
+  .top-mascot{
+    width:100%;
+    height:100%;
+    transform:none;
+  }
 
-        padding:0 15px;
-
-        border-radius:16px;
-
-        font-size:15px;
-    }
+  .top-back-btn{
+    min-width:96px;
+    height:54px;
+    padding:0 15px;
+    border-radius:16px;
+    font-size:15px;
+  }
 
 }
 
+
+   
    
 /* =========================
    PAGE
@@ -1419,10 +1428,15 @@ a{
 <div class="top-bar">
 
     <!-- إيرلو — الجهة اليسرى -->
-    <img
-        class="top-mascot"
-        src="../owl.PNG"
-        alt="Eirlo">
+    <div class="mascot-circle">
+
+        <img
+            class="top-mascot"
+            src="../okay.owl.PNG"
+            alt="Eirlo">
+
+    </div>
+
 
     <!-- الرجوع — الجهة اليمنى -->
     <a
