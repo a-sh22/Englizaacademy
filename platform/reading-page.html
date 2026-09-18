@@ -93,28 +93,36 @@ a{
   justify-content:space-between;
   align-items:center;
   margin-bottom:18px;
+  min-height:92px;
+  transition:opacity .2s ease, transform .2s ease;
 }
 
-.top-mascot{
-  width:78px;
-  height:78px;
+/* يختفي البار كاملًا عند فتح القراءة */
+.top-bar.lesson-open{
+  display:none;
+}
 
-  object-fit:cover;
+/* صورة إيرلو */
+.top-mascot{
+  width:92px;
+  height:92px;
+
   display:block;
 
-  border-radius:50%;
-  border:3px solid #FFFFFF;
+  object-fit:cover;
+  object-position:center;
 
-  box-shadow:
-    0 8px 24px rgba(49,87,213,.14);
+  border-radius:50%;
 
   background:#fff;
 
-  transition:transform .2s ease;
-}
+  border:3px solid #fff;
 
-.top-mascot:hover{
-  transform:scale(1.04);
+  box-shadow:
+    0 8px 25px rgba(36,48,94,.12);
+
+  transform:scale(1.14);
+  transform-origin:center;
 }
 
 .back-home{
@@ -423,31 +431,23 @@ a{
   background:
     linear-gradient(
       135deg,
-      #FFFFFF,
-      #F7F8FF
+      #EEF3FF 0%,
+      #F2EEFF 100%
     );
 
-  border:1px solid #E0E4F2;
+  border:1px solid #DCE2FA;
   border-radius:var(--radius-md);
 
   padding:20px 22px;
 
-  box-shadow:var(--shadow);
+  box-shadow:
+    0 12px 35px rgba(49,87,213,.08);
 
   display:flex;
   align-items:center;
   gap:17px;
 
   margin-bottom:20px;
-}
-
-.stage:nth-child(even) .stage-header{
-  background:
-    linear-gradient(
-      135deg,
-      #FFFFFF,
-      #F8F5FF
-    );
 }
 
 .stage-number{
@@ -459,8 +459,16 @@ a{
   align-items:center;
   justify-content:center;
 
-  background:var(--purple-light);
+  background:
+    linear-gradient(
+      135deg,
+      #E3E9FF,
+      #EDE8FF
+    );
+
   color:var(--purple);
+
+  border:1px solid #D7DDF8;
 
   border-radius:18px;
 
@@ -505,23 +513,26 @@ a{
 .reading-card{
   background:
     linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F8F9FF 100%
+      135deg,
+      #EEF3FF 0%,
+      #F5F1FF 100%
     );
 
-  border:1px solid #E1E5F5;
+  border:1px solid #D9DFF5;
   border-radius:var(--radius-lg);
 
   padding:27px;
 
   box-shadow:
-    0 12px 35px rgba(49,87,213,.07);
+    0 12px 35px rgba(49,87,213,.09);
 
   display:flex;
   flex-direction:column;
 
   min-height:285px;
+
+  position:relative;
+  overflow:hidden;
 
   transition:
     transform .2s ease,
@@ -529,74 +540,32 @@ a{
     border-color .2s ease;
 }
 
-.stage:nth-child(1) .reading-card{
-  background:
-    linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F3F6FF 100%
-    );
-}
+.reading-card::before{
+  content:"";
 
-.stage:nth-child(2) .reading-card{
-  background:
-    linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F7F4FF 100%
-    );
-}
+  position:absolute;
 
-.stage:nth-child(3) .reading-card{
-  background:
-    linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F3F7FF 100%
-    );
-}
+  top:0;
+  right:0;
+  left:0;
 
-.stage:nth-child(4) .reading-card{
-  background:
-    linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F7F5FF 100%
-    );
-}
+  height:5px;
 
-.stage:nth-child(5) .reading-card{
   background:
     linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F2F6FF 100%
-    );
-}
-
-.stage:nth-child(6) .reading-card{
-  background:
-    linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F6F3FF 100%
-    );
-}
-
-.stage:nth-child(7) .reading-card{
-  background:
-    linear-gradient(
-      145deg,
-      #FFFFFF 0%,
-      #F1F5FF 100%
+      90deg,
+      var(--blue),
+      var(--purple)
     );
 }
 
 .reading-card:hover{
   transform:translateY(-4px);
+
   box-shadow:
-    0 18px 45px rgba(49,87,213,.13);
-  border-color:#CFC8F4;
+    0 18px 45px rgba(49,87,213,.14);
+
+  border-color:#C9D1F2;
 }
 
 .reading-card-top{
@@ -612,7 +581,14 @@ a{
 
   border-radius:21px;
 
-  background:var(--purple-light);
+  background:
+    linear-gradient(
+      135deg,
+      #E2E9FF,
+      #EDE7FF
+    );
+
+  border:1px solid #D9DDF6;
 
   display:flex;
   align-items:center;
@@ -663,26 +639,51 @@ a{
   font-weight:700;
 }
 
+/* =========================================================
+   START BUTTON — زر فعلي
+   ========================================================= */
+
 .start-button{
   border:0;
 
-  color:var(--blue);
+  color:#fff;
 
-  background:transparent;
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
 
   font-weight:900;
   font-size:15px;
 
-  padding:6px 0;
+  padding:11px 18px;
+
+  min-width:145px;
+
+  border-radius:15px;
+
+  box-shadow:
+    0 8px 20px rgba(49,87,213,.18);
 
   transition:
     transform .2s ease,
-    color .2s ease;
+    box-shadow .2s ease,
+    filter .2s ease;
 }
 
 .start-button:hover{
-  transform:translateX(-3px);
-  color:var(--purple);
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 12px 27px rgba(49,87,213,.25);
+
+  filter:brightness(1.03);
+}
+
+.start-button:active{
+  transform:translateY(0);
 }
 
 /* =========================================================
@@ -712,7 +713,7 @@ a{
 .lesson-view{
   display:none;
 
-  margin-top:28px;
+  margin-top:0;
 }
 
 .lesson-view.active{
@@ -1202,11 +1203,13 @@ a{
 
   .top-bar{
     margin-bottom:12px;
+    min-height:78px;
   }
 
   .top-mascot{
-    width:68px;
-    height:68px;
+    width:78px;
+    height:78px;
+    transform:scale(1.14);
   }
 
   .back-home{
@@ -1286,6 +1289,12 @@ a{
 
   .reading-card-bottom{
     margin-top:19px;
+    align-items:stretch;
+  }
+
+  .start-button{
+    min-width:0;
+    padding:11px 15px;
   }
 
   .lesson-header{
@@ -1330,10 +1339,6 @@ a{
    ========================================================= */
 
 .list-view.hidden{
-  display:none;
-}
-
-.top-bar.hidden{
   display:none;
 }
 
@@ -3045,7 +3050,8 @@ function openReading(id){
 
   lessonView.classList.add("active");
 
-  topBar.classList.add("hidden");
+  /* إخفاء البار العلوي عند فتح القراءة */
+  topBar.classList.add("lesson-open");
 
 
   lessonView.innerHTML = `
@@ -3284,11 +3290,12 @@ function openReading(id){
 
 function closeReading(){
 
-  topBar.classList.remove("hidden");
-
   lessonView.classList.remove("active");
 
   listView.classList.remove("hidden");
+
+  /* إعادة إظهار البار العلوي */
+  topBar.classList.remove("lesson-open");
 
   window.scrollTo({
     top:0,
