@@ -103,15 +103,17 @@ img{
    EIRLO MASCOT
    ========================= */
 
-.top-mascot{
+/* =========================
+   EIRLO CIRCLE
+   ========================= */
+
+.mascot-circle{
     width:76px;
     height:76px;
 
     border-radius:50%;
 
-    object-fit:cover;
-
-    display:block;
+    overflow:hidden;
 
     background:white;
 
@@ -122,8 +124,27 @@ img{
 
     flex-shrink:0;
 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================
+   EIRLO IMAGE
+   ========================= */
+
+.top-mascot{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
     transform:scale(1.28);
 }
+   
 
 
 /* =========================
@@ -186,11 +207,23 @@ img{
         margin-bottom:20px;
     }
 
-    .top-mascot{
+      .mascot-circle{
+
         width:68px;
+
         height:68px;
+
     }
 
+    .top-mascot{
+
+        transform:scale(1.28);
+
+    }
+
+}
+
+   
     .top-back-btn{
         min-width:96px;
         height:54px;
@@ -1163,11 +1196,13 @@ input:focus-visible{
 <div class="top-bar">
 
     <!-- إيرلو — الجهة اليسرى -->
+   
+        <div class="mascot-circle">
     <img
         class="top-mascot"
         src="../owl.PNG"
         alt="Eirlo">
-
+</div>
     <!-- الرجوع — الجهة اليمنى -->
     <a
         class="top-back-btn"
