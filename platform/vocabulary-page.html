@@ -78,6 +78,133 @@ img{
   max-width:100%;
 }
 
+
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top-bar{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    direction:ltr;
+
+    margin-bottom:26px;
+
+    min-height:64px;
+}
+
+
+/* =========================
+   EIRLO MASCOT
+   ========================= */
+
+.top-mascot{
+    width:76px;
+    height:76px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    display:block;
+
+    background:white;
+
+    border:3px solid white;
+
+    box-shadow:
+        0 8px 24px rgba(36,48,94,.12);
+
+    flex-shrink:0;
+}
+
+
+/* =========================
+   BACK BUTTON
+   ========================= */
+
+.top-back-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    direction:rtl;
+
+    min-width:108px;
+    height:58px;
+
+    padding:0 18px;
+
+    background:white;
+
+    color:var(--blue-dark);
+
+    border:0;
+
+    border-radius:17px;
+
+    font-size:16px;
+    font-weight:800;
+
+    box-shadow:
+        0 8px 25px rgba(36,48,94,.09);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.top-back-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(36,48,94,.13);
+}
+
+.top-back-btn:active{
+
+    transform:translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:650px){
+
+    .top-bar{
+        margin-bottom:20px;
+    }
+
+    .top-mascot{
+        width:68px;
+        height:68px;
+    }
+
+    .top-back-btn{
+        min-width:96px;
+        height:54px;
+
+        padding:0 15px;
+
+        border-radius:16px;
+
+        font-size:15px;
+    }
+
+}
+
+   
+
+   
 /* =========================================================
    PAGE
 ========================================================= */
@@ -1025,6 +1152,32 @@ input:focus-visible{
 
 <div class="page">
 
+
+
+<!-- =====================================================
+     TOP BAR
+     ===================================================== -->
+
+<div class="top-bar">
+
+    <!-- إيرلو — الجهة اليسرى -->
+    <img
+        class="top-mascot"
+        src="../owl.PNG"
+        alt="Eirlo">
+
+    <!-- الرجوع — الجهة اليمنى -->
+    <a
+        class="top-back-btn"
+        href="skills-practice.html">
+
+        رجوع ↩️
+
+    </a>
+
+</div>
+
+   
   <!-- =====================================================
        HERO
   ====================================================== -->
