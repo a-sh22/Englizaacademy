@@ -94,6 +94,29 @@ a{
 
 .top-area{
   padding:22px 0 0;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  min-height:82px;
+}
+
+.top-area::before{
+  content:"";
+
+  width:72px;
+  height:72px;
+
+  border-radius:50%;
+
+  background:#fff url("../okay.owl.PNG") center/cover no-repeat;
+
+  border:1px solid rgba(36,48,94,.08);
+
+  box-shadow:0 8px 24px rgba(36,48,94,.10);
+
+  flex-shrink:0;
 }
 
 .back-btn{
@@ -710,6 +733,22 @@ a{
   display:block;
 }
 
+
+/* =========================================================
+   LESSON OPEN MODE
+   إخفاء واجهة قائمة الاستماع عند فتح الدرس
+========================================================= */
+
+body.lesson-open .top-area,
+body.lesson-open .hero,
+body.lesson-open .notice,
+body.lesson-open .path-card,
+body.lesson-open .search-box{
+  display:none;
+}
+
+
+   
 .lesson-header{
   background:
     radial-gradient(
@@ -7404,6 +7443,10 @@ function openLesson(id){
   listView.style.display = "none";
 
 
+  document.body.classList.add(
+  "lesson-open"
+); 
+
   lessonView.classList.add("active");
 
 
@@ -7791,6 +7834,10 @@ function closeLesson(){
   stopSpeaking();
 
 
+document.body.classList.remove(
+  "lesson-open"
+);
+   
   lessonView.classList.remove(
     "active"
   );
