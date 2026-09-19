@@ -3146,159 +3146,148 @@ function stopSpeech(){
 
 function speakWord(word, button){
 
-  /*
-     إذا كان الجهاز لا يدعم Speech Synthesis،
-     نعطي المستخدم تنبيهًا واضحًا بدل أن يحدث
-     خطأ في الصفحة.
-  */
-
-  if(!("speechSynthesis" in window) ||
-     !("SpeechSynthesisUtterance" in window)){
+  if(
+    !("speechSynthesis" in window) ||
+    !("SpeechSynthesisUtterance" in window)
+  ){
 
     alert(
-      "عذرًا، المتصفح الحالي لا يدعم تشغيل النطق الصوتي."
+      "عذرًا، هذا الجهاز أو المتصفح لا يدعم النطق الصوتي."
     );
 
     return;
+  }
 
+  const synth = window.speechSynthesis;
+
+  /*
+     إيقاف أي كلمة يتم نطقها حاليًا
+  */
+  try{
+    synth.cancel();
+  }catch(error){
+    console.log(error);
   }
 
   /*
-     إيقاف أي كلمة يتم نطقها حاليًا.
+     إعادة جميع الأزرار لوضعها الطبيعي
   */
-
-  stopSpeech();
-
-  /*
-     تحديث شكل الزر.
-  */
-
   document
-    .querySelectorAll(".speak-button.speaking")
-    .forEach(activeButton => {
+    .querySelectorAll(".speak-button")
+    .forEach(btn => {
 
-      activeButton.classList.remove("speaking");
+      btn.classList.remove("speaking");
+      btn.disabled = false;
 
-      activeButton.disabled = false;
-
-      activeButton.innerHTML =
-        '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+      btn.innerHTML =
+        '<span class="speak-icon">🔊</span>' +
+        '<span>استمع للنطق</span>';
 
     });
 
   button.classList.add("speaking");
-
   button.disabled = true;
 
   button.innerHTML =
-    '<span class="speak-icon">🔊</span><span>جارٍ النطق...</span>';
+    '<span class="speak-icon">🔊</span>' +
+    '<span>جارٍ النطق...</span>';
 
   /*
-     بعض أجهزة iPhone/iPad قد تحتاج إلى إعادة
-     قراءة قائمة الأصوات قبل إنشاء الـutterance.
+     إنشاء النطق
   */
-
-  loadSpeechVoices();
-
   const utterance =
-    new SpeechSynthesisUtterance(word);
-
-  /*
-     الإنجليزية هي لغة النطق دائمًا.
-  */
+    new SpeechSynthesisUtterance(String(word));
 
   utterance.lang = "en-US";
-
-  /*
-     إعدادات مناسبة للتعلم.
-  */
-
-  utterance.rate = 0.88;
+  utterance.rate = 0.85;
   utterance.pitch = 1;
   utterance.volume = 1;
 
   /*
-     اختيار صوت إنجليزي حقيقي إذا كان موجودًا.
+     الحصول على الأصوات المتاحة
   */
+  let voices = [];
 
-  const englishVoice =
-    getEnglishVoice();
-
-  if(englishVoice){
-
-    utterance.voice =
-      englishVoice;
-
-    /*
-       استخدام لغة الصوت نفسه عند توفرها.
-    */
-
-    if(englishVoice.lang){
-
-      utterance.lang =
-        englishVoice.lang;
-
-    }
-
+  try{
+    voices = synth.getVoices() || [];
+  }catch(error){
+    voices = [];
   }
 
   /*
-     عند انتهاء النطق.
+     البحث عن صوت إنجليزي
   */
+  const englishVoice =
+    voices.find(v =>
+      /^en-US$/i.test(v.lang)
+    ) ||
+    voices.find(v =>
+      /^en-/i.test(v.lang)
+    ) ||
+    voices.find(v =>
+      /english/i.test(v.name)
+    );
 
+  if(englishVoice){
+    utterance.voice = englishVoice;
+    utterance.lang = englishVoice.lang || "en-US";
+  }
+
+  /*
+     انتهاء النطق
+  */
   utterance.onend = function(){
 
     button.classList.remove("speaking");
-
     button.disabled = false;
 
     button.innerHTML =
-      '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+      '<span class="speak-icon">🔊</span>' +
+      '<span>استمع للنطق</span>';
 
   };
 
   /*
-     في حالة حدوث خطأ، نعيد الزر لوضعه الطبيعي.
+     حدوث خطأ
   */
+  utterance.onerror = function(event){
 
-  utterance.onerror = function(){
+    console.log(
+      "Speech error:",
+      event
+    );
 
     button.classList.remove("speaking");
-
     button.disabled = false;
 
     button.innerHTML =
-      '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+      '<span class="speak-icon">🔊</span>' +
+      '<span>استمع للنطق</span>';
 
   };
 
   /*
-     تشغيل النطق.
+     تشغيل النطق
   */
-
   try{
 
-    window.speechSynthesis.speak(
-      utterance
-    );
+    synth.speak(utterance);
 
   }catch(error){
 
-    button.classList.remove("speaking");
+    console.log(error);
 
+    button.classList.remove("speaking");
     button.disabled = false;
 
     button.innerHTML =
-      '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
-
-    console.warn(
-      "Speech synthesis failed:",
-      error
-    );
+      '<span class="speak-icon">🔊</span>' +
+      '<span>استمع للنطق</span>';
 
   }
 
 }
+   
 
 /* =========================================================
    RENDER LIST
