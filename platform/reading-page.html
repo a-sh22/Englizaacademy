@@ -3015,22 +3015,10 @@ function escapeHTML(text){
    SPEECH SUPPORT
    ========================================================= */
 
-/*
-   نظام النطق:
-
-   - يستخدم SpeechSynthesis الموجود في المتصفح.
-   - يعمل مع Safari على iPhone/iPad عندما تكون الميزة
-     متاحة للنظام.
-   - يعمل مع Chrome / Edge / Android وغيرها.
-   - ينتظر تحميل الأصوات في الأجهزة التي تحتاج وقتًا
-     لتحميل قائمة الأصوات.
-   - يختار صوتًا إنجليزيًا تلقائيًا عند توفره.
-   - النطق يبدأ من ضغط المستخدم على الزر، وهذا يساعد
-     على تجاوز قيود تشغيل الصوت في الأجهزة المحمولة.
-*/
-
 let availableVoices = [];
 let speechReady = false;
+let currentUtterance = null;
+let currentSpeechButton = null;
 
 function loadSpeechVoices(){
 
@@ -3039,20 +3027,26 @@ function loadSpeechVoices(){
     return;
   }
 
-  availableVoices =
-    window.speechSynthesis.getVoices() || [];
+  try{
 
-  speechReady = true;
+    availableVoices =
+      window.speechSynthesis.getVoices() || [];
+
+    speechReady = true;
+
+  }catch(error){
+
+    availableVoices = [];
+    speechReady = false;
+
+  }
+
 }
 
 if("speechSynthesis" in window){
 
   loadSpeechVoices();
 
-  /*
-     بعض المتصفحات، خصوصًا Safari وChrome،
-     لا تُرجع الأصوات مباشرة عند تحميل الصفحة.
-  */
   window.speechSynthesis.onvoiceschanged =
     function(){
 
@@ -3072,10 +3066,6 @@ function getEnglishVoice(){
     return null;
   }
 
-  /*
-     نفضّل أصوات English-US.
-  */
-
   const usVoice =
     availableVoices.find(voice =>
       /^en[-_]US$/i.test(voice.lang)
@@ -3085,10 +3075,6 @@ function getEnglishVoice(){
     return usVoice;
   }
 
-  /*
-     ثم أي صوت إنجليزي.
-  */
-
   const englishVoice =
     availableVoices.find(voice =>
       /^en[-_]/i.test(voice.lang)
@@ -3097,10 +3083,6 @@ function getEnglishVoice(){
   if(englishVoice){
     return englishVoice;
   }
-
-  /*
-     ثم صوت يحتوي اسمه على English.
-  */
 
   const namedEnglishVoice =
     availableVoices.find(voice =>
@@ -3116,6 +3098,25 @@ function getEnglishVoice(){
 }
 
 /* =========================================================
+   إعادة زر النطق لوضعه الطبيعي
+   ========================================================= */
+
+function resetSpeechButton(button){
+
+  if(!button){
+    return;
+  }
+
+  button.classList.remove("speaking");
+  button.disabled = false;
+
+  button.innerHTML =
+    '<span class="speak-icon">🔊</span>' +
+    '<span>استمع للنطق</span>';
+
+}
+
+/* =========================================================
    إيقاف أي نطق سابق
    ========================================================= */
 
@@ -3124,19 +3125,29 @@ function stopSpeech(){
   if("speechSynthesis" in window){
 
     try{
-
       window.speechSynthesis.cancel();
-
     }catch(error){
-
       console.warn(
         "Speech cancellation failed:",
         error
       );
+    }
 
+    try{
+      window.speechSynthesis.pause();
+      window.speechSynthesis.resume();
+    }catch(error){
+      /* بعض المتصفحات لا تحتاج هذا */
     }
 
   }
+
+  if(currentSpeechButton){
+    resetSpeechButton(currentSpeechButton);
+  }
+
+  currentSpeechButton = null;
+  currentUtterance = null;
 
 }
 
@@ -3145,6 +3156,10 @@ function stopSpeech(){
    ========================================================= */
 
 function speakWord(word, button){
+
+  if(!button){
+    return;
+  }
 
   if(
     !("speechSynthesis" in window) ||
@@ -3161,8 +3176,9 @@ function speakWord(word, button){
   const synth = window.speechSynthesis;
 
   /*
-     إيقاف أي كلمة يتم نطقها حاليًا
+     إذا كان هناك نطق سابق، نوقفه أولًا.
   */
+
   try{
     synth.cancel();
   }catch(error){
@@ -3170,20 +3186,18 @@ function speakWord(word, button){
   }
 
   /*
-     إعادة جميع الأزرار لوضعها الطبيعي
+     إعادة كل الأزرار إلى الحالة الطبيعية.
   */
+
   document
     .querySelectorAll(".speak-button")
     .forEach(btn => {
 
-      btn.classList.remove("speaking");
-      btn.disabled = false;
-
-      btn.innerHTML =
-        '<span class="speak-icon">🔊</span>' +
-        '<span>استمع للنطق</span>';
+      resetSpeechButton(btn);
 
     });
+
+  currentSpeechButton = button;
 
   button.classList.add("speaking");
   button.disabled = true;
@@ -3193,10 +3207,30 @@ function speakWord(word, button){
     '<span>جارٍ النطق...</span>';
 
   /*
-     إنشاء النطق
+     تحديث قائمة الأصوات في حال تم تحميلها بعد فتح الصفحة.
   */
+
+  try{
+
+    availableVoices =
+      synth.getVoices() || [];
+
+  }catch(error){
+
+    availableVoices = [];
+
+  }
+
+  /*
+     إنشاء النطق.
+  */
+
   const utterance =
-    new SpeechSynthesisUtterance(String(word));
+    new SpeechSynthesisUtterance(
+      String(word)
+    );
+
+  currentUtterance = utterance;
 
   utterance.lang = "en-US";
   utterance.rate = 0.85;
@@ -3204,52 +3238,62 @@ function speakWord(word, button){
   utterance.volume = 1;
 
   /*
-     الحصول على الأصوات المتاحة
+     اختيار أفضل صوت إنجليزي متوفر.
   */
-  let voices = [];
 
-  try{
-    voices = synth.getVoices() || [];
-  }catch(error){
-    voices = [];
-  }
-
-  /*
-     البحث عن صوت إنجليزي
-  */
   const englishVoice =
-    voices.find(v =>
-      /^en-US$/i.test(v.lang)
-    ) ||
-    voices.find(v =>
-      /^en-/i.test(v.lang)
-    ) ||
-    voices.find(v =>
-      /english/i.test(v.name)
-    );
+    getEnglishVoice();
 
   if(englishVoice){
-    utterance.voice = englishVoice;
-    utterance.lang = englishVoice.lang || "en-US";
+
+    utterance.voice =
+      englishVoice;
+
+    utterance.lang =
+      englishVoice.lang || "en-US";
+
   }
 
   /*
-     انتهاء النطق
+     عند بدء الصوت.
   */
-  utterance.onend = function(){
 
-    button.classList.remove("speaking");
-    button.disabled = false;
+  utterance.onstart = function(){
 
-    button.innerHTML =
-      '<span class="speak-icon">🔊</span>' +
-      '<span>استمع للنطق</span>';
+    if(currentSpeechButton === button){
+
+      button.classList.add("speaking");
+      button.disabled = true;
+
+      button.innerHTML =
+        '<span class="speak-icon">🔊</span>' +
+        '<span>جارٍ النطق...</span>';
+
+    }
 
   };
 
   /*
-     حدوث خطأ
+     عند انتهاء الصوت.
   */
+
+  utterance.onend = function(){
+
+    if(currentSpeechButton === button){
+
+      resetSpeechButton(button);
+
+      currentSpeechButton = null;
+      currentUtterance = null;
+
+    }
+
+  };
+
+  /*
+     عند حدوث خطأ.
+  */
+
   utterance.onerror = function(event){
 
     console.log(
@@ -3257,37 +3301,99 @@ function speakWord(word, button){
       event
     );
 
-    button.classList.remove("speaking");
-    button.disabled = false;
+    if(currentSpeechButton === button){
 
-    button.innerHTML =
-      '<span class="speak-icon">🔊</span>' +
-      '<span>استمع للنطق</span>';
+      resetSpeechButton(button);
+
+      currentSpeechButton = null;
+      currentUtterance = null;
+
+    }
 
   };
 
   /*
-     تشغيل النطق
+     تشغيل النطق.
+
+     resume() مهم لبعض أجهزة iPhone/iPad
+     عندما تكون SpeechSynthesis في حالة pause.
   */
+
+  try{
+
+    synth.resume();
+
+  }catch(error){
+
+    console.log(
+      "Speech resume failed:",
+      error
+    );
+
+  }
+
   try{
 
     synth.speak(utterance);
 
   }catch(error){
 
-    console.log(error);
+    console.log(
+      "Speech start failed:",
+      error
+    );
 
-    button.classList.remove("speaking");
-    button.disabled = false;
+    resetSpeechButton(button);
 
-    button.innerHTML =
-      '<span class="speak-icon">🔊</span>' +
-      '<span>استمع للنطق</span>';
+    currentSpeechButton = null;
+    currentUtterance = null;
 
   }
 
 }
-   
+
+/* =========================================================
+   نظام الضغط على أزرار النطق
+   ========================================================= */
+
+/*
+   لا نستخدم onclick داخل HTML لزر النطق.
+
+   السبب:
+   الكلمات مثل:
+   comfortable
+   living room
+   first week
+
+   كانت تمر داخل onclick بطريقة قد تكسر
+   خاصية HTML نفسها.
+
+   الآن الكلمة محفوظة في data-word،
+   والضغط على الزر يصل إلى speakWord مباشرة.
+*/
+
+document.addEventListener("click", function(event){
+
+  const button =
+    event.target.closest(".speak-button");
+
+  if(!button){
+    return;
+  }
+
+  const word =
+    button.dataset.word;
+
+  if(!word){
+    return;
+  }
+
+  speakWord(
+    word,
+    button
+  );
+
+});
 
 /* =========================================================
    RENDER LIST
@@ -3466,7 +3572,6 @@ function openReading(id){
 
   lessonView.classList.add("active");
 
-  /* إخفاء البار العلوي عند فتح القراءة */
   topBar.classList.add("lesson-open");
 
   lessonView.innerHTML = `
@@ -3559,7 +3664,7 @@ function openReading(id){
                 class="speak-button"
                 type="button"
                 aria-label="استمع إلى نطق ${escapeHTML(item.word)}"
-                onclick="speakWord(${JSON.stringify(item.word)}, this)"
+                data-word="${escapeHTML(item.word)}"
               >
                 <span class="speak-icon">🔊</span>
                 <span>استمع للنطق</span>
@@ -3703,26 +3808,13 @@ function openReading(id){
 
 function closeReading(){
 
-  /*
-     إيقاف أي صوت عند الرجوع.
-  */
-
   stopSpeech();
-
-  /*
-     إعادة كل أزرار النطق إلى حالتها الطبيعية.
-  */
 
   document
     .querySelectorAll(".speak-button")
     .forEach(button => {
 
-      button.classList.remove("speaking");
-
-      button.disabled = false;
-
-      button.innerHTML =
-        '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+      resetSpeechButton(button);
 
     });
 
@@ -3730,7 +3822,6 @@ function closeReading(){
 
   listView.classList.remove("hidden");
 
-  /* إعادة إظهار البار العلوي */
   topBar.classList.remove("lesson-open");
 
   window.scrollTo({
