@@ -641,7 +641,6 @@ button{
 
 /* =========================================================
    IMAGE
-   الحجم هنا تم تثبيته حتى لا تتمدد الصورة بشكل مبالغ فيه
 ========================================================= */
 
 .image-card{
@@ -664,17 +663,9 @@ button{
 }
 
 .reading-image{
-
   display:block;
 
   width:100%;
-
-  /*
-     مهم:
-     لا نعتمد على aspect-ratio وحده.
-     الارتفاع محدد حتى لا تظهر الصورة
-     كمساحة ضخمة في الصفحة.
-  */
 
   height:470px;
 
@@ -1218,6 +1209,32 @@ footer{
 
 
 /* =========================================================
+   LESSON MODE
+   عند فتح درس القراءة:
+   نخفي كل واجهة قائمة القراءات بالكامل.
+========================================================= */
+
+body.lesson-mode .hero,
+body.lesson-mode .notice,
+body.lesson-mode .path-card,
+body.lesson-mode .search-wrap,
+body.lesson-mode #readingList,
+body.lesson-mode #emptyState,
+body.lesson-mode footer{
+  display:none !important;
+}
+
+body.lesson-mode .lesson-view{
+  display:block !important;
+  margin-top:0;
+}
+
+body.lesson-mode main.container{
+  padding-top:0;
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
@@ -1266,11 +1283,6 @@ footer{
   .lesson-navigation{
     flex-direction:column;
   }
-
-  /*
-     على شاشة الجوال نصغر الصورة قليلًا،
-     لكن تظل عريضة ومريحة.
-  */
 
   .reading-image{
     height:300px;
@@ -2423,7 +2435,11 @@ function speakText(
   }
 
 
-  window.speechSynthesis.cancel();
+  const synth =
+    window.speechSynthesis;
+
+
+  synth.cancel();
 
 
   if(speakingButton){
@@ -2453,18 +2469,8 @@ function speakText(
   }
 
 
-  /*
-     إذا لم تكن الأصوات قد حملت بعد،
-     نحاول تحميلها مرة أخرى.
-  */
-
   loadEnglishVoice();
 
-
-  /*
-     لا نستخدم أي طلب خارجي للصوت.
-     النطق يتم مباشرة من الجهاز.
-  */
 
   const utterance =
     new SpeechSynthesisUtterance(
@@ -2479,6 +2485,9 @@ function speakText(
     0.78;
 
   utterance.pitch =
+    1;
+
+  utterance.volume =
     1;
 
 
@@ -2504,8 +2513,14 @@ function speakText(
 
       }
 
-      speakingButton =
-        null;
+      if(
+        speakingButton === button
+      ){
+
+        speakingButton =
+          null;
+
+      }
 
     };
 
@@ -2524,19 +2539,36 @@ function speakText(
 
       }
 
-      speakingButton =
-        null;
+      if(
+        speakingButton === button
+      ){
+
+        speakingButton =
+          null;
+
+      }
 
     };
 
 
   /*
-     تشغيل النطق مباشرة من الحدث
-     حتى يكون متوافقًا قدر الإمكان
-     مع iPhone / iPad.
+     مهم جدًا في iPhone / iPad:
+     نحاول إيقاظ محرك النطق قبل التشغيل.
   */
 
-  window.speechSynthesis.speak(
+  try{
+
+    synth.resume();
+
+  }catch(error){}
+
+
+  /*
+     التشغيل يتم مباشرة بعد ضغط المستخدم
+     على زر النطق.
+  */
+
+  synth.speak(
     utterance
   );
 
@@ -3065,6 +3097,17 @@ function openLesson(id){
   );
 
 
+  /*
+     تشغيل وضع الدرس:
+     يخفي كل واجهة قائمة القراءات
+     ويُبقي محتوى الدرس فقط.
+  */
+
+  document.body.classList.add(
+    "lesson-mode"
+  );
+
+
   lessonEl.classList.add(
     "active"
   );
@@ -3427,6 +3470,16 @@ function closeLesson(){
       null;
 
   }
+
+
+  /*
+     إلغاء وضع الدرس وإظهار
+     واجهة قائمة القراءات مرة أخرى.
+  */
+
+  document.body.classList.remove(
+    "lesson-mode"
+  );
 
 
   lessonEl.classList.remove(
