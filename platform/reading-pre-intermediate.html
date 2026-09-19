@@ -65,7 +65,6 @@ button{
   cursor:pointer;
 }
 
-
 /* =========================================================
    CONTAINER
 ========================================================= */
@@ -75,6 +74,166 @@ button{
   margin:auto;
 }
 
+/* =========================================================
+   TOP BAR
+   نفس فكرة صفحة الاستماع:
+   البومة يسار + زر الرجوع يمين
+========================================================= */
+
+.topbar{
+  background:var(--bg);
+
+  padding:
+    28px 0
+    30px;
+
+  transition:
+    opacity .2s ease,
+    visibility .2s ease;
+}
+
+.topbar-inner{
+  width:min(1050px,calc(100% - 32px));
+  margin:auto;
+
+  min-height:100px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  direction:ltr;
+}
+
+/* شعار البومة */
+
+.topbar-logo{
+  width:76px;
+  height:76px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  display:block;
+
+  background:white;
+
+  border:
+    1px solid
+    rgba(36,48,94,.08);
+
+  box-shadow:
+    0 8px 24px
+    rgba(36,48,94,.10);
+
+  flex-shrink:0;
+}
+
+/*
+   احتياط بسيط إذا لم توجد الصورة:
+   يبقى مكان الشعار مرتبًا بدل ظهور
+   صورة مكسورة.
+*/
+
+.topbar-logo-fallback{
+  width:76px;
+  height:76px;
+
+  border-radius:50%;
+
+  background:white;
+
+  border:
+    1px solid
+    rgba(36,48,94,.08);
+
+  box-shadow:
+    0 8px 24px
+    rgba(36,48,94,.10);
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:38px;
+
+  flex-shrink:0;
+}
+
+/* زر الرجوع في البار الأبيض */
+
+.topbar-back{
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:9px;
+
+  min-width:124px;
+
+  height:72px;
+
+  padding:
+    0 20px;
+
+  border:
+    1px solid
+    var(--border);
+
+  background:white;
+
+  color:var(--text);
+
+  border-radius:20px;
+
+  text-decoration:none;
+
+  font-size:17px;
+
+  font-weight:700;
+
+  box-shadow:
+    0 8px 25px
+    rgba(36,48,94,.06);
+
+  direction:rtl;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.topbar-back:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(36,48,94,.10);
+
+  border-color:
+    #DCDFEB;
+}
+
+/* =========================================================
+   عندما تكون القراءة مفتوحة
+   نخفي كل ما فوق الدرس
+========================================================= */
+
+body.lesson-open .topbar,
+body.lesson-open .hero,
+body.lesson-open .notice,
+body.lesson-open .path-card,
+body.lesson-open .search-wrap,
+body.lesson-open footer{
+  display:none;
+}
 
 /* =========================================================
    HERO
@@ -94,40 +253,6 @@ button{
 
   border-radius:
     0 0 32px 32px;
-}
-
-.back-btn{
-  display:inline-flex;
-
-  align-items:center;
-  gap:8px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.28);
-
-  background:
-    rgba(255,255,255,.13);
-
-  color:white;
-
-  padding:
-    10px 17px;
-
-  border-radius:14px;
-
-  text-decoration:none;
-
-  font-size:14px;
-
-  margin-bottom:28px;
-
-  transition:.2s;
-}
-
-.back-btn:hover{
-  background:
-    rgba(255,255,255,.22);
 }
 
 .hero-label{
@@ -162,7 +287,6 @@ button{
 
   font-size:16px;
 }
-
 
 /* =========================================================
    NOTICE
@@ -209,19 +333,16 @@ button{
 ========================================================= */
 
 .path-card{
-  background:white;
+  background:#FFFFFF;
 
-  border:
-    1px solid
-    var(--border);
+  border:1px solid #E8EAF2;
 
-  border-radius:
-    var(--radius);
+  border-radius:28px;
 
-  padding:24px;
+  padding:28px 30px;
 
   box-shadow:
-    var(--shadow);
+    0 12px 35px rgba(36,48,94,.08);
 
   margin-bottom:22px;
 }
@@ -233,65 +354,122 @@ button{
 
   justify-content:space-between;
 
-  gap:15px;
+  gap:30px;
+
+  direction:rtl;
 }
 
-.path-icon{
-  width:52px;
-  height:52px;
-
-  border-radius:17px;
-
-  background:
-    var(--purple-light);
-
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  font-size:25px;
-
-  flex-shrink:0;
-}
+/* ---------------------------------------------------------
+   معلومات المسار
+--------------------------------------------------------- */
 
 .path-info{
   flex:1;
+
+  min-width:0;
+
+  text-align:right;
+}
+
+.path-info::before{
+  content:"المسار";
+
+  display:block;
+
+  color:#8A91A5;
+
+  font-size:13px;
+
+  line-height:1.4;
+
+  margin-bottom:4px;
 }
 
 .path-info h2{
   margin:0;
 
-  font-size:20px;
+  color:#17213C;
+
+  font-size:22px;
+
+  font-weight:800;
+
+  line-height:1.5;
 }
 
 .path-info p{
-  margin:
-    3px 0 0;
+  margin:3px 0 0;
 
-  color:var(--muted);
+  color:#7B8499;
 
   font-size:14px;
+
+  line-height:1.6;
 }
 
+/* ---------------------------------------------------------
+   عدد القراءات
+--------------------------------------------------------- */
+
 .path-count{
-  background:
-    var(--blue);
+  flex-shrink:0;
 
-  color:white;
+  background:#EEEAFE;
 
-  border-radius:14px;
+  color:#7654D9;
 
-  padding:
-    8px 12px;
+  border-radius:15px;
 
-  font-size:13px;
+  padding:9px 17px;
+
+  font-size:14px;
+
+  line-height:1.4;
 
   white-space:nowrap;
 
-  font-weight:700;
+  font-weight:800;
 }
 
+/* ---------------------------------------------------------
+   إخفاء الأيقونة القديمة
+--------------------------------------------------------- */
+
+.path-icon{
+  display:none;
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media(max-width:700px){
+
+  .path-card{
+    padding:24px 22px;
+  }
+
+  .path-top{
+    gap:18px;
+  }
+
+  .path-info h2{
+    font-size:19px;
+  }
+
+  .path-info p{
+    font-size:13px;
+  }
+
+  .path-count{
+    font-size:12px;
+
+    padding:8px 12px;
+  }
+
+}
+
+  
 
 /* =========================================================
    SEARCH
@@ -337,7 +515,6 @@ button{
 .search::placeholder{
   color:#9AA1B3;
 }
-
 
 /* =========================================================
    STAGES
@@ -391,7 +568,6 @@ button{
 
   font-size:14px;
 }
-
 
 /* =========================================================
    READING CARDS
@@ -511,7 +687,6 @@ button{
   font-weight:700;
 }
 
-
 /* =========================================================
    LESSON
 ========================================================= */
@@ -575,6 +750,11 @@ button{
   font-size:14px;
 }
 
+/*
+   زر العودة داخل المربع البنفسجي
+   يظهر فقط عند فتح القراءة
+*/
+
 .close-lesson{
   display:inline-flex;
 
@@ -598,7 +778,6 @@ button{
 
   margin-bottom:22px;
 }
-
 
 /* =========================================================
    BEFORE READING
@@ -638,7 +817,6 @@ button{
   font-size:15px;
 }
 
-
 /* =========================================================
    IMAGE
 ========================================================= */
@@ -663,6 +841,7 @@ button{
 }
 
 .reading-image{
+
   display:block;
 
   width:100%;
@@ -679,7 +858,6 @@ button{
 
   background:#EEF0F6;
 }
-
 
 /* =========================================================
    TEXT
@@ -731,7 +909,6 @@ button{
 .english-text p{
   margin:0;
 }
-
 
 /* =========================================================
    HELP
@@ -849,7 +1026,6 @@ button{
 
   margin-top:6px;
 }
-
 
 /* =========================================================
    QUESTIONS
@@ -1097,7 +1273,6 @@ button{
   font-weight:700;
 }
 
-
 /* =========================================================
    SOURCE / NAVIGATION
 ========================================================= */
@@ -1207,33 +1382,6 @@ footer{
     15px 0 35px;
 }
 
-
-/* =========================================================
-   LESSON MODE
-   عند فتح درس القراءة:
-   نخفي كل واجهة قائمة القراءات بالكامل.
-========================================================= */
-
-body.lesson-mode .hero,
-body.lesson-mode .notice,
-body.lesson-mode .path-card,
-body.lesson-mode .search-wrap,
-body.lesson-mode #readingList,
-body.lesson-mode #emptyState,
-body.lesson-mode footer{
-  display:none !important;
-}
-
-body.lesson-mode .lesson-view{
-  display:block !important;
-  margin-top:0;
-}
-
-body.lesson-mode main.container{
-  padding-top:0;
-}
-
-
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -1246,6 +1394,43 @@ body.lesson-mode main.container{
         100% - 22px,
         1050px
       );
+  }
+
+  /* البار العلوي مطابق لفكرة الصورة */
+
+  .topbar{
+    padding:
+      26px 0
+      28px;
+  }
+
+  .topbar-inner{
+    width:
+      min(
+        100% - 22px,
+        1050px
+      );
+
+    min-height:94px;
+  }
+
+  .topbar-logo,
+  .topbar-logo-fallback{
+    width:72px;
+    height:72px;
+  }
+
+  .topbar-back{
+    min-width:124px;
+
+    height:72px;
+
+    padding:
+      0 18px;
+
+    border-radius:19px;
+
+    font-size:16px;
   }
 
   .readings-grid{
@@ -1292,12 +1477,25 @@ body.lesson-mode main.container{
 
 }
 
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media(max-width:420px){
+
+  .topbar-logo,
+  .topbar-logo-fallback{
+    width:68px;
+    height:68px;
+  }
+
+  .topbar-back{
+    min-width:118px;
+
+    height:68px;
+
+    font-size:15px;
+  }
 
   .reading-image{
     height:240px;
@@ -1310,10 +1508,37 @@ body.lesson-mode main.container{
 </style>
 </head>
 
-
 <body>
 
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
 
+<div class="topbar">
+
+  <div class="topbar-inner">
+
+    <img
+      class="topbar-logo"
+      src="okay.owl.PNG"
+      alt="Engliza Academy"
+    >
+
+    <a
+      class="topbar-back"
+      href="skills-practice.html"
+      aria-label="العودة إلى صفحة المهارات"
+    >
+      <span>رجوع</span>
+      <span>→</span>
+    </a>
+
+  </div>
+
+</div>
+
+
+  
 <!-- =====================================================
      HERO
 ===================================================== -->
@@ -1321,14 +1546,6 @@ body.lesson-mode main.container{
 <header class="hero">
 
   <div class="container">
-
-    <a
-      class="back-btn"
-      href="skills-practice.html"
-      aria-label="العودة إلى صفحة المهارات"
-    >
-      ← العودة إلى المهارات
-    </a>
 
     <div class="hero-label">
       ENGLIZA ACADEMY
@@ -1347,10 +1564,7 @@ body.lesson-mode main.container{
 
 </header>
 
-
-
 <main class="container">
-
 
 <!-- =====================================================
      NOTICE
@@ -1369,8 +1583,6 @@ body.lesson-mode main.container{
 
 </div>
 
-
-
 <!-- =====================================================
      PATH
 ===================================================== -->
@@ -1378,10 +1590,6 @@ body.lesson-mode main.container{
 <div class="path-card">
 
   <div class="path-top">
-
-    <div class="path-icon">
-      📚
-    </div>
 
     <div class="path-info">
 
@@ -1403,8 +1611,6 @@ body.lesson-mode main.container{
 
 </div>
 
-
-
 <!-- =====================================================
      SEARCH
 ===================================================== -->
@@ -1421,8 +1627,6 @@ body.lesson-mode main.container{
 
 </div>
 
-
-
 <!-- =====================================================
      LESSON VIEW
 ===================================================== -->
@@ -1432,8 +1636,6 @@ body.lesson-mode main.container{
   class="lesson-view"
 ></section>
 
-
-
 <!-- =====================================================
      LIST
 ===================================================== -->
@@ -1441,8 +1643,6 @@ body.lesson-mode main.container{
 <section
   id="readingList"
 ></section>
-
-
 
 <div
   id="emptyState"
@@ -1453,16 +1653,11 @@ body.lesson-mode main.container{
 
 </main>
 
-
-
 <footer>
   Engliza Academy · Pre-intermediate Reading
 </footer>
 
-
-
 <script>
-
 
 /* =========================================================
    READINGS DATA
@@ -1495,7 +1690,6 @@ questions:[
 ]
 },
 
-
 {
 id:2,
 stage:1,
@@ -1520,7 +1714,6 @@ questions:[
 {text:"Why was Omar happy at the end of the lesson?",answers:["his first day had gone better than he expected","because his first day went better than expected"]}
 ]
 },
-
 
 {
 id:3,
@@ -1547,7 +1740,6 @@ questions:[
 ]
 },
 
-
 {
 id:4,
 stage:1,
@@ -1572,7 +1764,6 @@ questions:[
 {text:"Did they enjoy the new plan?",answers:["yes","yes they did","yes, they did"]}
 ]
 },
-
 
 {
 id:5,
@@ -1599,7 +1790,6 @@ questions:[
 ]
 },
 
-
 {
 id:6,
 stage:1,
@@ -1624,7 +1814,6 @@ questions:[
 {text:"Where was the notebook?",answers:["under a jacket","on the back seat under a jacket"]}
 ]
 },
-
 
 {
 id:7,
@@ -1651,7 +1840,6 @@ questions:[
 ]
 },
 
-
 {
 id:8,
 stage:1,
@@ -1676,7 +1864,6 @@ questions:[
 {text:"Was Yusuf late for his appointment?",answers:["no","no he was not","no, he was not"]}
 ]
 },
-
 
 {
 id:9,
@@ -1703,7 +1890,6 @@ questions:[
 ]
 },
 
-
 {
 id:10,
 stage:2,
@@ -1728,7 +1914,6 @@ questions:[
 {text:"What did Khalid do differently the second time?",answers:["he checked the information twice","he checked the bus information twice"]}
 ]
 },
-
 
 {
 id:11,
@@ -1755,7 +1940,6 @@ questions:[
 ]
 },
 
-
 {
 id:12,
 stage:2,
@@ -1780,7 +1964,6 @@ questions:[
 {text:"How did the relationship between the families change?",answers:["they became good neighbors","they became friends","the families became good neighbors"]}
 ]
 },
-
 
 {
 id:13,
@@ -1807,7 +1990,6 @@ questions:[
 ]
 },
 
-
 {
 id:14,
 stage:2,
@@ -1832,7 +2014,6 @@ questions:[
 {text:"How did she feel when she left the office?",answers:["tired but satisfied","she was tired but satisfied"]}
 ]
 },
-
 
 {
 id:15,
@@ -1859,7 +2040,6 @@ questions:[
 ]
 },
 
-
 {
 id:16,
 stage:2,
@@ -1884,7 +2064,6 @@ questions:[
 {text:"Why did the change of plans work out well?",answers:["they were able to meet and enjoyed their time together","they met on thursday and had a good time","because they met and talked for almost two hours"]}
 ]
 },
-
 
 {
 id:17,
@@ -1911,7 +2090,6 @@ questions:[
 ]
 },
 
-
 {
 id:18,
 stage:3,
@@ -1936,7 +2114,6 @@ questions:[
 {text:"What did Yara decide to do differently next time?",answers:["take more food and check the journey information","pack more food and check the journey information","take more food and check the information carefully"]}
 ]
 },
-
 
 {
 id:19,
@@ -1963,7 +2140,6 @@ questions:[
 ]
 },
 
-
 {
 id:20,
 stage:3,
@@ -1988,7 +2164,6 @@ questions:[
 {text:"What did Farah learn from the situation?",answers:["speaking calmly made the problem easier to solve","staying calm made it easier to solve","calm communication helped solve the problem"]}
 ]
 },
-
 
 {
 id:21,
@@ -2015,7 +2190,6 @@ questions:[
 ]
 },
 
-
 {
 id:22,
 stage:3,
@@ -2040,7 +2214,6 @@ questions:[
 {text:"What did the friends think about the changes?",answers:["they made the trip more interesting","the unexpected changes made it more interesting"]}
 ]
 },
-
 
 {
 id:23,
@@ -2067,7 +2240,6 @@ questions:[
 ]
 },
 
-
 {
 id:24,
 stage:4,
@@ -2092,7 +2264,6 @@ questions:[
 {text:"What is the main idea of the final sentence?",answers:["being together is more important than expensive or complicated things","the best days are when people are together","simple days with family can be the best"]}
 ]
 },
-
 
 {
 id:25,
@@ -2119,7 +2290,6 @@ questions:[
 ]
 },
 
-
 {
 id:26,
 stage:4,
@@ -2144,7 +2314,6 @@ questions:[
 {text:"What did Kareem decide to change?",answers:["to be ready five minutes earlier","he decided to be ready five minutes earlier"]}
 ]
 },
-
 
 {
 id:27,
@@ -2171,7 +2340,6 @@ questions:[
 ]
 },
 
-
 {
 id:28,
 stage:4,
@@ -2197,7 +2365,6 @@ questions:[
 ]
 },
 
-
 {
 id:29,
 stage:4,
@@ -2222,7 +2389,6 @@ questions:[
 {text:"Why did the man say Faisal's help was important?",answers:["it made a difficult afternoon easier","because it made his difficult afternoon easier"]}
 ]
 },
-
 
 {
 id:30,
@@ -2251,7 +2417,6 @@ questions:[
 
 ];
 
-
 /* =========================================================
    ELEMENTS
 ========================================================= */
@@ -2267,7 +2432,6 @@ const emptyEl =
 
 const searchInput =
   document.getElementById("searchInput");
-
 
 /* =========================================================
    NORMALIZE ANSWER
@@ -2286,7 +2450,6 @@ function normalizeAnswer(text){
     .trim();
 
 }
-
 
 /* =========================================================
    CHECK CORRECT
@@ -2312,7 +2475,6 @@ function isAnswerCorrect(
 
 }
 
-
 /* =========================================================
    ESCAPE HTML
 ========================================================= */
@@ -2327,7 +2489,6 @@ function escapeHTML(text){
     .replace(/'/g,"&#039;");
 
 }
-
 
 /* =========================================================
    ARABIC NUMBERS
@@ -2347,7 +2508,6 @@ function toArabicNumber(number){
 
 }
 
-
 /* =========================================================
    SPEECH ENGINE
 ========================================================= */
@@ -2355,7 +2515,6 @@ function toArabicNumber(number){
 let selectedEnglishVoice = null;
 
 let speakingButton = null;
-
 
 function loadEnglishVoice(){
 
@@ -2399,7 +2558,6 @@ function loadEnglishVoice(){
 
 }
 
-
 if(
   "speechSynthesis" in window
 ){
@@ -2411,7 +2569,6 @@ if(
     loadEnglishVoice;
 
 }
-
 
 /* =========================================================
    SPEAK
@@ -2434,13 +2591,7 @@ function speakText(
 
   }
 
-
-  const synth =
-    window.speechSynthesis;
-
-
-  synth.cancel();
-
+  window.speechSynthesis.cancel();
 
   if(speakingButton){
 
@@ -2453,9 +2604,7 @@ function speakText(
 
   }
 
-
   speakingButton = button;
-
 
   if(button){
 
@@ -2468,15 +2617,12 @@ function speakText(
 
   }
 
-
   loadEnglishVoice();
-
 
   const utterance =
     new SpeechSynthesisUtterance(
       String(text)
     );
-
 
   utterance.lang =
     "en-US";
@@ -2487,17 +2633,12 @@ function speakText(
   utterance.pitch =
     1;
 
-  utterance.volume =
-    1;
-
-
   if(selectedEnglishVoice){
 
     utterance.voice =
       selectedEnglishVoice;
 
   }
-
 
   utterance.onend =
     function(){
@@ -2513,17 +2654,10 @@ function speakText(
 
       }
 
-      if(
-        speakingButton === button
-      ){
-
-        speakingButton =
-          null;
-
-      }
+      speakingButton =
+        null;
 
     };
-
 
   utterance.onerror =
     function(){
@@ -2539,41 +2673,16 @@ function speakText(
 
       }
 
-      if(
-        speakingButton === button
-      ){
-
-        speakingButton =
-          null;
-
-      }
+      speakingButton =
+        null;
 
     };
 
-
-  /*
-     مهم جدًا في iPhone / iPad:
-     نحاول إيقاظ محرك النطق قبل التشغيل.
-  */
-
-  try{
-
-    synth.resume();
-
-  }catch(error){}
-
-
-  /*
-     التشغيل يتم مباشرة بعد ضغط المستخدم
-     على زر النطق.
-  */
-
-  synth.speak(
+  window.speechSynthesis.speak(
     utterance
   );
 
 }
-
 
 /* =========================================================
    RENDER READINGS
@@ -2587,7 +2696,6 @@ function renderReadings(
     filter
       .trim()
       .toLowerCase();
-
 
   const filtered =
     readings.filter(
@@ -2605,7 +2713,6 @@ function renderReadings(
         .join(" ")
         .toLowerCase();
 
-
         return searchable.includes(
           query
         );
@@ -2613,9 +2720,7 @@ function renderReadings(
       }
     );
 
-
   listEl.innerHTML = "";
-
 
   if(!filtered.length){
 
@@ -2626,10 +2731,8 @@ function renderReadings(
 
   }
 
-
   emptyEl.style.display =
     "none";
-
 
   const stages = [
     ...new Set(
@@ -2638,7 +2741,6 @@ function renderReadings(
       )
     )
   ];
-
 
   stages.forEach(
     stageNumber => {
@@ -2650,7 +2752,6 @@ function renderReadings(
             stageNumber
         );
 
-
       const first =
         readings.find(
           r =>
@@ -2658,16 +2759,13 @@ function renderReadings(
             stageNumber
         );
 
-
       const stage =
         document.createElement(
           "section"
         );
 
-
       stage.className =
         "stage";
-
 
       stage.innerHTML = `
 
@@ -2692,12 +2790,10 @@ function renderReadings(
 
       `;
 
-
       const grid =
         stage.querySelector(
           ".readings-grid"
         );
-
 
       stageReadings.forEach(
         reading => {
@@ -2707,10 +2803,8 @@ function renderReadings(
               "article"
             );
 
-
           card.className =
             "reading-card";
-
 
           card.innerHTML = `
 
@@ -2739,7 +2833,6 @@ function renderReadings(
 
           `;
 
-
           card.addEventListener(
             "click",
             () =>
@@ -2748,14 +2841,12 @@ function renderReadings(
               )
           );
 
-
           grid.appendChild(
             card
           );
 
         }
       );
-
 
       listEl.appendChild(
         stage
@@ -2765,7 +2856,6 @@ function renderReadings(
   );
 
 }
-
 
 /* =========================================================
    OPEN LESSON
@@ -2779,11 +2869,9 @@ function openLesson(id){
         r.id === id
     );
 
-
   if(!reading){
     return;
   }
-
 
   if(
     "speechSynthesis" in window
@@ -2792,7 +2880,6 @@ function openLesson(id){
     window.speechSynthesis.cancel();
 
   }
-
 
   const questionsHTML =
     reading.questions
@@ -2833,7 +2920,6 @@ function openLesson(id){
       )
       .join("");
 
-
   const helpHTML =
     reading.help
       .map(
@@ -2872,7 +2958,6 @@ function openLesson(id){
       )
       .join("");
 
-
   lessonEl.innerHTML = `
 
     <div class="lesson-top">
@@ -2900,7 +2985,6 @@ function openLesson(id){
 
     </div>
 
-
     <div class="before-reading">
 
       <div class="before-label">
@@ -2913,7 +2997,6 @@ function openLesson(id){
 
     </div>
 
-
     <div class="image-card">
 
       <img
@@ -2924,7 +3007,6 @@ function openLesson(id){
       >
 
     </div>
-
 
     <div class="text-card">
 
@@ -2942,7 +3024,6 @@ function openLesson(id){
 
     </div>
 
-
     <div class="help-card">
 
       <div class="section-label">
@@ -2954,7 +3035,6 @@ function openLesson(id){
       </div>
 
     </div>
-
 
     <div class="questions-card">
 
@@ -2974,7 +3054,6 @@ function openLesson(id){
         لمعرفة نتيجتك.
       </p>
 
-
       <div
         id="questionsContainer-${reading.id}"
       >
@@ -2982,7 +3061,6 @@ function openLesson(id){
         ${questionsHTML}
 
       </div>
-
 
       <div class="check-area">
 
@@ -2995,7 +3073,6 @@ function openLesson(id){
         </button>
 
       </div>
-
 
       <div
         class="score-card"
@@ -3015,12 +3092,10 @@ function openLesson(id){
 
         </div>
 
-
         <div
           class="score-message"
           id="scoreMessage-${reading.id}"
         ></div>
-
 
         <button
           class="retry-btn"
@@ -3034,11 +3109,9 @@ function openLesson(id){
 
     </div>
 
-
     <div class="source-note">
       هذه القراءة من محتوى Engliza Academy الأصلي.
     </div>
-
 
     <div class="lesson-navigation">
 
@@ -3050,7 +3123,6 @@ function openLesson(id){
       >
         → السابقة
       </button>
-
 
       <button
         class="nav-btn primary"
@@ -3065,16 +3137,14 @@ function openLesson(id){
 
   `;
 
-
-  /*
+  /* =======================================================
      ربط أزرار النطق
-  */
+  ======================================================= */
 
   const speakButtons =
     lessonEl.querySelectorAll(
       ".speak-btn"
     );
-
 
   speakButtons.forEach(
     (button,index) => {
@@ -3096,30 +3166,24 @@ function openLesson(id){
     }
   );
 
-
-  /*
-     تشغيل وضع الدرس:
-     يخفي كل واجهة قائمة القراءات
-     ويُبقي محتوى الدرس فقط.
-  */
+  /* =======================================================
+     إظهار القراءة فقط
+     وإخفاء البار + الهيرو + العناوين
+  ======================================================= */
 
   document.body.classList.add(
-    "lesson-mode"
+    "lesson-open"
   );
-
 
   lessonEl.classList.add(
     "active"
   );
 
-
   listEl.style.display =
     "none";
 
-
   emptyEl.style.display =
     "none";
-
 
   window.scrollTo({
     top:0,
@@ -3127,7 +3191,6 @@ function openLesson(id){
   });
 
 }
-
 
 /* =========================================================
    CHECK ANSWERS
@@ -3141,14 +3204,11 @@ function checkAnswers(id){
         r.id === id
     );
 
-
   if(!reading){
     return;
   }
 
-
   let score = 0;
-
 
   reading.questions.forEach(
     (question,index) => {
@@ -3158,12 +3218,10 @@ function checkAnswers(id){
           `.answer-box[data-question="${index}"]`
         );
 
-
       const feedback =
         document.getElementById(
           `feedback-${id}-${index}`
         );
-
 
       if(
         !input ||
@@ -3172,20 +3230,16 @@ function checkAnswers(id){
         return;
       }
 
-
       const userAnswer =
         input.value.trim();
-
 
       input.classList.remove(
         "correct",
         "wrong"
       );
 
-
       feedback.className =
         "answer-feedback";
-
 
       if(!userAnswer){
 
@@ -3193,11 +3247,9 @@ function checkAnswers(id){
           "wrong"
         );
 
-
         feedback.classList.add(
           "wrong"
         );
-
 
         feedback.innerHTML = `
 
@@ -3218,28 +3270,23 @@ function checkAnswers(id){
 
       }
 
-
       const correct =
         isAnswerCorrect(
           userAnswer,
           question.answers
         );
 
-
       if(correct){
 
         score++;
-
 
         input.classList.add(
           "correct"
         );
 
-
         feedback.classList.add(
           "correct"
         );
-
 
         feedback.innerHTML =
           "✓ إجابة صحيحة! أحسنت.";
@@ -3252,11 +3299,9 @@ function checkAnswers(id){
           "wrong"
         );
 
-
         feedback.classList.add(
           "wrong"
         );
-
 
         feedback.innerHTML = `
 
@@ -3278,32 +3323,26 @@ function checkAnswers(id){
     }
   );
 
-
   const scoreCard =
     document.getElementById(
       `score-${id}`
     );
-
 
   const scoreNumber =
     document.getElementById(
       `scoreNumber-${id}`
     );
 
-
   const scoreMessage =
     document.getElementById(
       `scoreMessage-${id}`
     );
 
-
   scoreNumber.textContent =
     score;
 
-
   const total =
     reading.questions.length;
-
 
   if(score === total){
 
@@ -3339,11 +3378,9 @@ function checkAnswers(id){
 
   }
 
-
   scoreCard.classList.add(
     "show"
   );
-
 
   scoreCard.scrollIntoView({
     behavior:"smooth",
@@ -3351,7 +3388,6 @@ function checkAnswers(id){
   });
 
 }
-
 
 /* =========================================================
    RESET
@@ -3365,11 +3401,9 @@ function resetAnswers(id){
         r.id === id
     );
 
-
   if(!reading){
     return;
   }
-
 
   reading.questions.forEach(
     (question,index) => {
@@ -3379,12 +3413,10 @@ function resetAnswers(id){
           `.answer-box[data-question="${index}"]`
         );
 
-
       const feedback =
         document.getElementById(
           `feedback-${id}-${index}`
         );
-
 
       if(input){
 
@@ -3396,7 +3428,6 @@ function resetAnswers(id){
         );
 
       }
-
 
       if(feedback){
 
@@ -3411,12 +3442,10 @@ function resetAnswers(id){
     }
   );
 
-
   const scoreCard =
     document.getElementById(
       `score-${id}`
     );
-
 
   if(scoreCard){
 
@@ -3426,12 +3455,10 @@ function resetAnswers(id){
 
   }
 
-
   const firstInput =
     document.querySelector(
       `.answer-box[data-question="0"]`
     );
-
 
   if(firstInput){
 
@@ -3440,7 +3467,6 @@ function resetAnswers(id){
   }
 
 }
-
 
 /* =========================================================
    CLOSE LESSON
@@ -3456,7 +3482,6 @@ function closeLesson(){
 
   }
 
-
   if(speakingButton){
 
     speakingButton
@@ -3471,34 +3496,25 @@ function closeLesson(){
 
   }
 
-
-  /*
-     إلغاء وضع الدرس وإظهار
-     واجهة قائمة القراءات مرة أخرى.
-  */
+  /* العودة إلى وضع صفحة القراءات */
 
   document.body.classList.remove(
-    "lesson-mode"
+    "lesson-open"
   );
-
 
   lessonEl.classList.remove(
     "active"
   );
 
-
   lessonEl.innerHTML =
     "";
-
 
   listEl.style.display =
     "block";
 
-
   renderReadings(
     searchInput.value
   );
-
 
   window.scrollTo({
     top:0,
@@ -3506,7 +3522,6 @@ function closeLesson(){
   });
 
 }
-
 
 /* =========================================================
    PREVIOUS
@@ -3520,7 +3535,6 @@ function previousLesson(id){
         reading.id === id
     );
 
-
   if(index > 0){
 
     openLesson(
@@ -3530,7 +3544,6 @@ function previousLesson(id){
   }
 
 }
-
 
 /* =========================================================
    NEXT
@@ -3544,7 +3557,6 @@ function nextLesson(id){
         reading.id === id
     );
 
-
   if(
     index <
     readings.length - 1
@@ -3557,7 +3569,6 @@ function nextLesson(id){
   }
 
 }
-
 
 /* =========================================================
    SEARCH
@@ -3573,7 +3584,6 @@ searchInput.addEventListener(
 
   }
 );
-
 
 /* =========================================================
    INITIAL
