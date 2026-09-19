@@ -869,7 +869,7 @@ a{
 }
 
 /* =========================================================
-   IMAGE — التعديل الأساسي
+   IMAGE — تم تعديلها لتملأ المساحة
    ========================================================= */
 
 .reading-image-wrap{
@@ -904,7 +904,7 @@ a{
 
   background:#F1F2F8;
 
-  border-radius:16px;
+  border-radius:22px;
 
   margin:0;
 }
@@ -957,6 +957,8 @@ a{
   border-radius:17px;
 
   padding:14px 16px;
+
+  position:relative;
 }
 
 .vocab-word{
@@ -967,13 +969,88 @@ a{
   font-size:17px;
 
   color:var(--blue);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:10px;
+}
+
+/* =========================================================
+   زر استمع للنطق
+   ========================================================= */
+
+.speak-button{
+  border:1px solid #D7DDF5;
+
+  background:#fff;
+
+  color:var(--blue);
+
+  border-radius:12px;
+
+  padding:7px 11px;
+
+  min-height:38px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:6px;
+
+  font-size:12px;
+  font-weight:900;
+
+  white-space:nowrap;
+
+  box-shadow:
+    0 4px 12px rgba(49,87,213,.07);
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.speak-button:hover{
+  background:#F7F8FF;
+
+  border-color:#C8D0F0;
+
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 7px 17px rgba(49,87,213,.11);
+}
+
+.speak-button:active{
+  transform:translateY(0);
+}
+
+.speak-button.speaking{
+  background:var(--purple-light);
+  border-color:#CFC7F2;
+  color:var(--purple);
+}
+
+.speak-button:disabled{
+  opacity:.75;
+  cursor:wait;
+}
+
+.speak-icon{
+  font-size:16px;
+  line-height:1;
 }
 
 .vocab-meaning{
   color:var(--muted);
   font-size:14px;
 
-  margin-top:2px;
+  margin-top:5px;
 }
 
 /* =========================================================
@@ -1213,7 +1290,6 @@ a{
 
   .reading-image{
     width:100%;
-    max-width:none;
   }
 
 }
@@ -1247,7 +1323,7 @@ a{
 
     aspect-ratio:16 / 9;
 
-    border-radius:14px;
+    border-radius:20px;
   }
 
   /* -----------------------------------------
@@ -1256,12 +1332,13 @@ a{
 
   .top-bar{
     margin-bottom:12px;
-    min-height:70px;
+    min-height:68px;
   }
 
   .top-mascot{
-    width:62px;
-    height:62px;
+    width:60px;
+    height:60px;
+
     transform:scale(1);
   }
 
@@ -1402,6 +1479,20 @@ a{
     grid-template-columns:1fr;
   }
 
+  .vocab-word{
+    align-items:center;
+  }
+
+  .speak-button{
+    padding:7px 10px;
+    font-size:11px;
+    min-height:36px;
+  }
+
+  .speak-icon{
+    font-size:15px;
+  }
+
   /* -----------------------------------------
      NAVIGATION
      ----------------------------------------- */
@@ -1433,7 +1524,6 @@ a{
 
 </style>
 
-   
 </head>
 
 <body>
@@ -2922,6 +3012,295 @@ function escapeHTML(text){
 }
 
 /* =========================================================
+   SPEECH SUPPORT
+   ========================================================= */
+
+/*
+   نظام النطق:
+
+   - يستخدم SpeechSynthesis الموجود في المتصفح.
+   - يعمل مع Safari على iPhone/iPad عندما تكون الميزة
+     متاحة للنظام.
+   - يعمل مع Chrome / Edge / Android وغيرها.
+   - ينتظر تحميل الأصوات في الأجهزة التي تحتاج وقتًا
+     لتحميل قائمة الأصوات.
+   - يختار صوتًا إنجليزيًا تلقائيًا عند توفره.
+   - النطق يبدأ من ضغط المستخدم على الزر، وهذا يساعد
+     على تجاوز قيود تشغيل الصوت في الأجهزة المحمولة.
+*/
+
+let availableVoices = [];
+let speechReady = false;
+
+function loadSpeechVoices(){
+
+  if(!("speechSynthesis" in window)){
+    speechReady = false;
+    return;
+  }
+
+  availableVoices =
+    window.speechSynthesis.getVoices() || [];
+
+  speechReady = true;
+}
+
+if("speechSynthesis" in window){
+
+  loadSpeechVoices();
+
+  /*
+     بعض المتصفحات، خصوصًا Safari وChrome،
+     لا تُرجع الأصوات مباشرة عند تحميل الصفحة.
+  */
+  window.speechSynthesis.onvoiceschanged =
+    function(){
+
+      loadSpeechVoices();
+
+    };
+
+}
+
+/* =========================================================
+   اختيار أفضل صوت إنجليزي
+   ========================================================= */
+
+function getEnglishVoice(){
+
+  if(!availableVoices.length){
+    return null;
+  }
+
+  /*
+     نفضّل أصوات English-US.
+  */
+
+  const usVoice =
+    availableVoices.find(voice =>
+      /^en[-_]US$/i.test(voice.lang)
+    );
+
+  if(usVoice){
+    return usVoice;
+  }
+
+  /*
+     ثم أي صوت إنجليزي.
+  */
+
+  const englishVoice =
+    availableVoices.find(voice =>
+      /^en[-_]/i.test(voice.lang)
+    );
+
+  if(englishVoice){
+    return englishVoice;
+  }
+
+  /*
+     ثم صوت يحتوي اسمه على English.
+  */
+
+  const namedEnglishVoice =
+    availableVoices.find(voice =>
+      /english/i.test(voice.name)
+    );
+
+  if(namedEnglishVoice){
+    return namedEnglishVoice;
+  }
+
+  return null;
+
+}
+
+/* =========================================================
+   إيقاف أي نطق سابق
+   ========================================================= */
+
+function stopSpeech(){
+
+  if("speechSynthesis" in window){
+
+    try{
+
+      window.speechSynthesis.cancel();
+
+    }catch(error){
+
+      console.warn(
+        "Speech cancellation failed:",
+        error
+      );
+
+    }
+
+  }
+
+}
+
+/* =========================================================
+   نطق الكلمة
+   ========================================================= */
+
+function speakWord(word, button){
+
+  /*
+     إذا كان الجهاز لا يدعم Speech Synthesis،
+     نعطي المستخدم تنبيهًا واضحًا بدل أن يحدث
+     خطأ في الصفحة.
+  */
+
+  if(!("speechSynthesis" in window) ||
+     !("SpeechSynthesisUtterance" in window)){
+
+    alert(
+      "عذرًا، المتصفح الحالي لا يدعم تشغيل النطق الصوتي."
+    );
+
+    return;
+
+  }
+
+  /*
+     إيقاف أي كلمة يتم نطقها حاليًا.
+  */
+
+  stopSpeech();
+
+  /*
+     تحديث شكل الزر.
+  */
+
+  document
+    .querySelectorAll(".speak-button.speaking")
+    .forEach(activeButton => {
+
+      activeButton.classList.remove("speaking");
+
+      activeButton.disabled = false;
+
+      activeButton.innerHTML =
+        '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+
+    });
+
+  button.classList.add("speaking");
+
+  button.disabled = true;
+
+  button.innerHTML =
+    '<span class="speak-icon">🔊</span><span>جارٍ النطق...</span>';
+
+  /*
+     بعض أجهزة iPhone/iPad قد تحتاج إلى إعادة
+     قراءة قائمة الأصوات قبل إنشاء الـutterance.
+  */
+
+  loadSpeechVoices();
+
+  const utterance =
+    new SpeechSynthesisUtterance(word);
+
+  /*
+     الإنجليزية هي لغة النطق دائمًا.
+  */
+
+  utterance.lang = "en-US";
+
+  /*
+     إعدادات مناسبة للتعلم.
+  */
+
+  utterance.rate = 0.88;
+  utterance.pitch = 1;
+  utterance.volume = 1;
+
+  /*
+     اختيار صوت إنجليزي حقيقي إذا كان موجودًا.
+  */
+
+  const englishVoice =
+    getEnglishVoice();
+
+  if(englishVoice){
+
+    utterance.voice =
+      englishVoice;
+
+    /*
+       استخدام لغة الصوت نفسه عند توفرها.
+    */
+
+    if(englishVoice.lang){
+
+      utterance.lang =
+        englishVoice.lang;
+
+    }
+
+  }
+
+  /*
+     عند انتهاء النطق.
+  */
+
+  utterance.onend = function(){
+
+    button.classList.remove("speaking");
+
+    button.disabled = false;
+
+    button.innerHTML =
+      '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+
+  };
+
+  /*
+     في حالة حدوث خطأ، نعيد الزر لوضعه الطبيعي.
+  */
+
+  utterance.onerror = function(){
+
+    button.classList.remove("speaking");
+
+    button.disabled = false;
+
+    button.innerHTML =
+      '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+
+  };
+
+  /*
+     تشغيل النطق.
+  */
+
+  try{
+
+    window.speechSynthesis.speak(
+      utterance
+    );
+
+  }catch(error){
+
+    button.classList.remove("speaking");
+
+    button.disabled = false;
+
+    button.innerHTML =
+      '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+
+    console.warn(
+      "Speech synthesis failed:",
+      error
+    );
+
+  }
+
+}
+
+/* =========================================================
    RENDER LIST
    ========================================================= */
 
@@ -2997,11 +3376,13 @@ function renderReadings(filter = ""){
 
     `;
 
-    const grid = stageElement.querySelector(".reading-grid");
+    const grid =
+      stageElement.querySelector(".reading-grid");
 
     stageReadings.forEach(reading => {
 
-      const card = document.createElement("article");
+      const card =
+        document.createElement("article");
 
       card.className = "reading-card";
 
@@ -3049,7 +3430,9 @@ function renderReadings(filter = ""){
 
     });
 
-    stagesContainer.appendChild(stageElement);
+    stagesContainer.appendChild(
+      stageElement
+    );
 
   });
 
@@ -3064,14 +3447,25 @@ function renderReadings(filter = ""){
 
 function openReading(id){
 
-  const reading = readings.find(item => item.id === id);
+  const reading =
+    readings.find(
+      item => item.id === id
+    );
 
   if(!reading){
     return;
   }
 
+  /*
+     عند فتح قراءة جديدة نوقف أي نطق سابق.
+  */
+
+  stopSpeech();
+
   const currentIndex =
-    readings.findIndex(item => item.id === id);
+    readings.findIndex(
+      item => item.id === id
+    );
 
   const previous =
     readings[currentIndex - 1] || null;
@@ -3162,12 +3556,26 @@ function openReading(id){
 
       <div class="vocab-grid">
 
-        ${reading.vocabulary.map(item => `
+        ${reading.vocabulary.map((item,index) => `
 
           <div class="vocab-item">
 
             <div class="vocab-word">
-              ${escapeHTML(item.word)}
+
+              <span>
+                ${escapeHTML(item.word)}
+              </span>
+
+              <button
+                class="speak-button"
+                type="button"
+                aria-label="استمع إلى نطق ${escapeHTML(item.word)}"
+                onclick="speakWord(${JSON.stringify(item.word)}, this)"
+              >
+                <span class="speak-icon">🔊</span>
+                <span>استمع للنطق</span>
+              </button>
+
             </div>
 
             <div class="vocab-meaning">
@@ -3306,6 +3714,29 @@ function openReading(id){
 
 function closeReading(){
 
+  /*
+     إيقاف أي صوت عند الرجوع.
+  */
+
+  stopSpeech();
+
+  /*
+     إعادة كل أزرار النطق إلى حالتها الطبيعية.
+  */
+
+  document
+    .querySelectorAll(".speak-button")
+    .forEach(button => {
+
+      button.classList.remove("speaking");
+
+      button.disabled = false;
+
+      button.innerHTML =
+        '<span class="speak-icon">🔊</span><span>استمع للنطق</span>';
+
+    });
+
   lessonView.classList.remove("active");
 
   listView.classList.remove("hidden");
@@ -3326,7 +3757,8 @@ function closeReading(){
 
 function checkAnswer(button, selected, correct){
 
-  const question = button.closest(".question");
+  const question =
+    button.closest(".question");
 
   if(!question){
     return;
@@ -3402,6 +3834,16 @@ document.addEventListener("keydown", function(event){
     }
 
   }
+
+});
+
+/* =========================================================
+   إيقاف النطق عند مغادرة الصفحة
+   ========================================================= */
+
+window.addEventListener("pagehide", function(){
+
+  stopSpeech();
 
 });
 
