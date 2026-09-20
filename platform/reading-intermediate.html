@@ -1,0 +1,5147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Intermediate Reading | Engliza Academy</title>
+
+<style>
+:root{
+  --blue:#3157D5;
+  --blue-dark:#233E9B;
+  --purple:#7654D9;
+  --purple-light:#EEEAFE;
+
+  --gold:#D9A441;
+  --gold-light:#FFF6DF;
+
+  --text:#17213C;
+  --muted:#6E7891;
+
+  --white:#FFFFFF;
+  --bg:#F7F8FC;
+  --border:#E8EAF2;
+
+  --green:#21865B;
+  --green-light:#EAF8F1;
+
+  --red:#C94C5B;
+  --red-light:#FFF0F2;
+
+  --shadow:0 12px 35px rgba(36,48,94,.08);
+  --shadow-hover:0 18px 45px rgba(36,48,94,.13);
+
+  --radius-xl:32px;
+  --radius-lg:28px;
+  --radius-md:22px;
+  --radius-sm:17px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+  background:var(--bg);
+  padding:28px 0 12px;
+}
+
+.topbar-inner{
+  width:min(1180px, calc(100% - 32px));
+  margin:auto;
+
+  min-height:100px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+
+  direction:ltr;
+}
+
+.owl-logo{
+  width:76px;
+  height:76px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  box-shadow:
+    0 8px 24px rgba(36,48,94,.08);
+}
+
+.back-btn{
+  min-height:72px;
+
+  padding:0 22px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:20px;
+
+  color:var(--text);
+
+  font-weight:800;
+
+  box-shadow:0 8px 24px rgba(36,48,94,.06);
+
+  transition:.2s ease;
+}
+
+.back-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+  color:var(--blue);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+  width:min(1180px, calc(100% - 32px));
+  margin:0 auto;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  margin-top:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  color:white;
+
+  border-radius:var(--radius-xl);
+
+  padding:48px 42px;
+
+  box-shadow:
+    0 18px 45px rgba(49,87,213,.18);
+}
+
+.hero-label{
+  font-size:13px;
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  opacity:.85;
+
+  margin-bottom:12px;
+}
+
+.hero h1{
+  margin:0 0 12px;
+
+  font-size:clamp(32px,5vw,52px);
+
+  line-height:1.15;
+}
+
+.hero p{
+  margin:0;
+
+  max-width:760px;
+
+  font-size:17px;
+
+  line-height:1.9;
+
+  opacity:.94;
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+  margin-top:20px;
+
+  background:var(--gold-light);
+
+  border:1px solid #F0D99E;
+
+  border-radius:22px;
+
+  padding:19px 21px;
+
+  color:#6F5622;
+
+  line-height:1.9;
+
+  box-shadow:0 8px 25px rgba(36,48,94,.04);
+}
+
+.notice strong{
+  color:#57400F;
+}
+
+/* =========================
+   PATH CARD
+========================= */
+
+.path-card{
+  margin-top:20px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:26px;
+
+  padding:23px 25px;
+
+  box-shadow:var(--shadow);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+.path-title{
+  font-size:18px;
+
+  font-weight:900;
+
+  margin-bottom:5px;
+}
+
+.path-sub{
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+.path-count{
+  flex-shrink:0;
+
+  background:var(--purple-light);
+
+  color:var(--purple);
+
+  border-radius:16px;
+
+  padding:11px 15px;
+
+  font-weight:900;
+
+  white-space:nowrap;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-wrap{
+  margin:20px 0 30px;
+}
+
+.search-box{
+  width:100%;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:19px;
+
+  padding:17px 20px;
+
+  outline:none;
+
+  color:var(--text);
+
+  box-shadow:0 7px 25px rgba(36,48,94,.05);
+
+  transition:.2s ease;
+}
+
+.search-box:focus{
+  border-color:#A8B7F0;
+
+  box-shadow:
+    0 0 0 4px rgba(49,87,213,.08);
+}
+
+/* =========================
+   STAGES
+========================= */
+
+.stage{
+  margin-bottom:50px;
+}
+
+.stage-header{
+  border-radius:24px;
+
+  padding:20px 23px;
+
+  margin-bottom:18px;
+
+  border:1px solid var(--border);
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+}
+
+.stage:nth-of-type(1) .stage-header{
+  background:#EEF3FF;
+}
+
+.stage:nth-of-type(2) .stage-header{
+  background:#F1EDFF;
+}
+
+.stage:nth-of-type(3) .stage-header{
+  background:#EDF7FF;
+}
+
+.stage:nth-of-type(4) .stage-header{
+  background:#F4F0FF;
+}
+
+.stage:nth-of-type(5) .stage-header{
+  background:#EEF4FF;
+}
+
+.stage:nth-of-type(6) .stage-header{
+  background:#F2EEFF;
+}
+
+.stage-number{
+  width:48px;
+  height:48px;
+
+  border-radius:15px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:white;
+
+  color:var(--blue);
+
+  font-weight:900;
+
+  box-shadow:0 5px 16px rgba(36,48,94,.08);
+
+  flex-shrink:0;
+}
+
+.stage-header h2{
+  margin:0;
+
+  font-size:21px;
+}
+
+.stage-header p{
+  margin:4px 0 0;
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+/* =========================
+   READING CARDS
+========================= */
+
+.readings-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:15px;
+}
+
+.reading-card{
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:20px;
+
+  box-shadow:0 9px 28px rgba(36,48,94,.055);
+
+  transition:.22s ease;
+
+  cursor:pointer;
+}
+
+.reading-card:hover{
+  transform:translateY(-3px);
+
+  box-shadow:var(--shadow-hover);
+
+  border-color:#D8DDF1;
+}
+
+.reading-number{
+  color:var(--blue);
+
+  font-size:12px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  margin-bottom:9px;
+}
+
+.reading-card h3{
+  margin:0 0 7px;
+
+  font-size:18px;
+
+  line-height:1.4;
+}
+
+.reading-topic{
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+/* =========================
+   LESSON VIEW
+========================= */
+
+.lesson-view{
+  display:none;
+
+  padding-bottom:45px;
+}
+
+body.lesson-open .hero,
+body.lesson-open .notice,
+body.lesson-open .path-card,
+body.lesson-open .search-wrap,
+body.lesson-open #readingList,
+body.lesson-open footer{
+  display:none;
+}
+
+body.lesson-open .lesson-view{
+  display:block;
+}
+
+.lesson-top{
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  color:white;
+
+  border-radius:30px;
+
+  padding:25px;
+
+  margin-bottom:20px;
+
+  box-shadow:
+    0 18px 45px rgba(49,87,213,.17);
+}
+
+.lesson-close{
+  border:1px solid rgba(255,255,255,.28);
+
+  background:rgba(255,255,255,.14);
+
+  color:white;
+
+  border-radius:13px;
+
+  padding:9px 14px;
+
+  font-weight:800;
+
+  margin-bottom:22px;
+}
+
+.lesson-close:hover{
+  background:rgba(255,255,255,.22);
+}
+
+.lesson-number{
+  font-size:12px;
+
+  font-weight:900;
+
+  letter-spacing:1.8px;
+
+  opacity:.82;
+
+  text-transform:uppercase;
+
+  margin-bottom:8px;
+}
+
+.lesson-top h2{
+  margin:0 0 7px;
+
+  font-size:clamp(25px,4vw,36px);
+
+  line-height:1.25;
+}
+
+.lesson-topic{
+  margin:0;
+
+  font-size:15px;
+
+  opacity:.9;
+
+  line-height:1.7;
+}
+
+/* =========================
+   BEFORE READING
+========================= */
+
+.before-read{
+  background:var(--gold-light);
+
+  border:1px solid #F0D99E;
+
+  border-radius:22px;
+
+  padding:19px 21px;
+
+  margin-bottom:20px;
+}
+
+.before-read-title{
+  color:#70551B;
+
+  font-weight:900;
+
+  margin-bottom:8px;
+
+  font-size:17px;
+}
+
+.before-read p{
+  margin:0;
+
+  color:#6E5A2B;
+
+  line-height:1.85;
+}
+
+/* =========================
+   IMAGE CARD
+========================= */
+
+.image-card{
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:26px;
+
+  padding:10px;
+
+  margin-bottom:20px;
+
+  box-shadow:var(--shadow);
+
+  overflow:hidden;
+
+  text-align:center;
+}
+
+.reading-image{
+  display:block;
+
+  width:100%;
+
+  max-width:760px;
+
+  height:470px;
+
+  object-fit:cover;
+
+  margin:auto;
+
+  border-radius:20px;
+}
+
+/* =========================
+   READING TEXT
+========================= */
+
+.reading-text-card{
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:26px;
+
+  padding:25px;
+
+  margin-bottom:20px;
+
+  box-shadow:var(--shadow);
+}
+
+.section-title{
+  margin:0 0 17px;
+
+  font-size:20px;
+
+  font-weight:900;
+}
+
+.reading-text{
+  direction:ltr;
+
+  text-align:left;
+
+  font-size:19px;
+
+  line-height:2;
+
+  color:#26314B;
+
+  white-space:normal;
+}
+
+.reading-text p{
+  margin:0 0 17px;
+}
+
+.reading-text p:last-child{
+  margin-bottom:0;
+}
+
+/* =========================
+   HELP / VOCAB
+========================= */
+
+.help-card{
+  background:var(--purple-light);
+
+  border:1px solid #DED6FA;
+
+  border-radius:24px;
+
+  padding:23px;
+
+  margin-bottom:20px;
+}
+
+.help-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:13px;
+}
+
+.help-item{
+  background:white;
+
+  border-radius:17px;
+
+  padding:15px;
+
+  border:1px solid rgba(118,84,217,.08);
+}
+
+.help-top{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  direction:ltr;
+
+  text-align:left;
+}
+
+.help-expression{
+  color:var(--purple);
+
+  font-weight:900;
+
+  font-size:16px;
+
+  line-height:1.5;
+}
+
+.speak-btn{
+  width:38px;
+  height:38px;
+
+  border-radius:12px;
+
+  border:none;
+
+  background:var(--purple-light);
+
+  color:var(--purple);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-shrink:0;
+
+  transition:.2s ease;
+}
+
+.speak-btn:hover{
+  background:#DED6FA;
+}
+
+.speak-btn.speaking{
+  background:var(--purple);
+
+  color:white;
+}
+
+.help-meaning{
+  margin-top:9px;
+
+  font-weight:800;
+
+  color:var(--text);
+
+  line-height:1.7;
+}
+
+.help-note{
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.7;
+}
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.questions-card{
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:26px;
+
+  padding:23px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:20px;
+}
+
+.question{
+  padding:20px 0;
+
+  border-bottom:1px solid var(--border);
+}
+
+.question:first-child{
+  padding-top:0;
+}
+
+.question:last-of-type{
+  border-bottom:none;
+}
+
+.question-label{
+  direction:ltr;
+
+  text-align:left;
+
+  font-size:16px;
+
+  line-height:1.75;
+
+  font-weight:800;
+
+  color:var(--text);
+}
+
+.question-number{
+  color:var(--blue);
+
+  font-weight:900;
+
+  margin-right:5px;
+}
+
+.answer-input{
+  width:100%;
+
+  min-height:82px;
+
+  resize:vertical;
+
+  margin-top:11px;
+
+  padding:13px 15px;
+
+  border:1px solid var(--border);
+
+  border-radius:15px;
+
+  background:#FCFCFE;
+
+  color:var(--text);
+
+  outline:none;
+
+  direction:ltr;
+
+  text-align:left;
+
+  line-height:1.7;
+
+  transition:.2s ease;
+}
+
+.answer-input:focus{
+  border-color:#A8B7F0;
+
+  box-shadow:
+    0 0 0 4px rgba(49,87,213,.07);
+}
+
+.answer-feedback{
+  display:none;
+
+  margin-top:9px;
+
+  padding:11px 13px;
+
+  border-radius:13px;
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+.answer-feedback.correct{
+  display:block;
+
+  background:var(--green-light);
+
+  color:var(--green);
+
+  border:1px solid #CBEBDD;
+}
+
+.answer-feedback.wrong{
+  display:block;
+
+  background:var(--red-light);
+
+  color:var(--red);
+
+  border:1px solid #F3CBD2;
+}
+
+.check-btn{
+  width:100%;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:var(--blue);
+
+  color:white;
+
+  padding:15px;
+
+  margin-top:17px;
+
+  font-weight:900;
+
+  box-shadow:0 9px 22px rgba(49,87,213,.16);
+
+  transition:.2s ease;
+}
+
+.check-btn:hover{
+  background:var(--blue-dark);
+
+  transform:translateY(-1px);
+}
+
+/* =========================
+   SCORE
+========================= */
+
+.score-card{
+  display:none;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple-light),
+      #F8F6FF
+    );
+
+  border:1px solid #DED6FA;
+
+  border-radius:22px;
+
+  padding:22px;
+
+  text-align:center;
+
+  margin-top:18px;
+}
+
+.score-card.show{
+  display:block;
+}
+
+.score-title{
+  color:var(--purple);
+
+  font-weight:900;
+
+  margin-bottom:6px;
+}
+
+.score-number{
+  color:var(--purple);
+
+  font-size:34px;
+
+  font-weight:950;
+
+  margin-bottom:13px;
+}
+
+.retry-btn{
+  border:1px solid var(--border);
+
+  background:white;
+
+  color:var(--text);
+
+  border-radius:13px;
+
+  padding:10px 17px;
+
+  font-weight:800;
+}
+
+/* =========================
+   SOURCE NOTE
+========================= */
+
+.source-note{
+  background:#F4F5F9;
+
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:13px 15px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.7;
+
+  margin-bottom:20px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.lesson-nav{
+  display:flex;
+
+  gap:12px;
+
+  justify-content:space-between;
+}
+
+.lesson-nav button{
+  flex:1;
+
+  border:1px solid var(--border);
+
+  background:white;
+
+  color:var(--blue);
+
+  border-radius:17px;
+
+  padding:15px;
+
+  font-weight:900;
+
+  box-shadow:0 7px 20px rgba(36,48,94,.06);
+
+  transition:.2s ease;
+}
+
+.lesson-nav button:hover:not(:disabled){
+  transform:translateY(-2px);
+
+  box-shadow:var(--shadow);
+}
+
+.lesson-nav button:disabled{
+  opacity:.4;
+
+  cursor:not-allowed;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  width:min(1180px, calc(100% - 32px));
+
+  margin:10px auto 40px;
+
+  padding-top:25px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+/* =========================
+   EMPTY SEARCH
+========================= */
+
+.empty-state{
+  display:none;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:35px 20px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  margin-bottom:30px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+  .topbar{
+    padding-top:17px;
+  }
+
+  .topbar-inner{
+    width:calc(100% - 22px);
+
+    min-height:78px;
+  }
+
+  .owl-logo{
+    width:60px;
+    height:60px;
+  }
+
+  .back-btn{
+    min-height:58px;
+
+    padding:0 16px;
+
+    border-radius:17px;
+
+    font-size:14px;
+  }
+
+  .container{
+    width:calc(100% - 22px);
+  }
+
+  .hero{
+    margin-top:8px;
+
+    padding:31px 23px;
+
+    border-radius:26px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero p{
+    font-size:15px;
+
+    line-height:1.85;
+  }
+
+  .path-card{
+    padding:19px;
+
+    align-items:flex-start;
+
+    flex-direction:column;
+  }
+
+  .path-count{
+    align-self:flex-start;
+  }
+
+  .readings-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stage{
+    margin-bottom:38px;
+  }
+
+  .stage-header{
+    padding:17px;
+
+    border-radius:21px;
+  }
+
+  .stage-number{
+    width:43px;
+    height:43px;
+
+    border-radius:13px;
+  }
+
+  .stage-header h2{
+    font-size:18px;
+  }
+
+  .lesson-top{
+    border-radius:25px;
+
+    padding:21px;
+
+    margin-bottom:17px;
+  }
+
+  .lesson-top h2{
+    font-size:26px;
+  }
+
+  .before-read{
+    padding:17px;
+
+    border-radius:20px;
+  }
+
+  .image-card{
+    padding:8px;
+
+    border-radius:22px;
+  }
+
+  .reading-image{
+    height:300px;
+
+    border-radius:17px;
+  }
+
+  .reading-text-card,
+  .questions-card{
+    padding:20px;
+
+    border-radius:22px;
+  }
+
+  .reading-text{
+    font-size:17px;
+
+    line-height:1.95;
+  }
+
+  .help-card{
+    padding:20px;
+
+    border-radius:22px;
+  }
+
+  .help-grid{
+    grid-template-columns:1fr;
+  }
+
+  .lesson-nav{
+    flex-direction:column;
+  }
+
+  .lesson-nav button{
+    width:100%;
+  }
+}
+
+@media(max-width:420px){
+
+  .reading-image{
+    height:240px;
+  }
+
+  .lesson-top h2{
+    font-size:24px;
+  }
+
+  .section-title{
+    font-size:19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="topbar">
+  <div class="topbar-inner">
+
+    <!-- استخدم هنا نفس مسار شعار البومة الموجود عندك -->
+    <img
+      class="owl-logo"
+      src="images/owl.webp"
+      alt="Engliza Academy"
+    >
+
+    <a
+      class="back-btn"
+      href="skills-practice.html"
+    >
+      ← العودة إلى المهارات
+    </a>
+
+  </div>
+</header>
+
+
+<main class="container">
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-label">
+    ENGLIZA ACADEMY
+  </div>
+
+  <h1>
+    القراءة 📖
+  </h1>
+
+  <p>
+    طوّر قدرتك على فهم النصوص الإنجليزية وقرأ نصوصًا مترابطة
+    من مستوى Intermediate، وتعلّم كلمات وعبارات جديدة من داخل السياق.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     NOTICE
+========================= -->
+
+<div class="notice">
+
+  <strong>قبل أن تبدأ:</strong>
+  هذا القسم مخصص لتطوير القراءة بعد بناء الأساس اللغوي.
+  حاول قراءة النص بنفسك أولًا، ثم راجع الكلمات والأسئلة بعد ذلك.
+
+</div>
+
+
+<!-- =========================
+     PATH CARD
+========================= -->
+
+<section class="path-card">
+
+  <div>
+    <div class="path-title">
+      مسار القراءة — المستوى المتوسط
+    </div>
+
+    <div class="path-sub">
+      نصوص متدرجة من الحياة اليومية إلى تحديات قراءة B1.
+    </div>
+  </div>
+
+  <div class="path-count">
+    30 قراءة · 6 مراحل
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<div class="search-wrap">
+
+  <input
+    id="searchInput"
+    class="search-box"
+    type="search"
+    placeholder="ابحث عن قراءة..."
+    autocomplete="off"
+  >
+
+</div>
+
+
+<!-- =========================
+     READING LIST
+========================= -->
+
+<section id="readingList"></section>
+
+<div
+  id="emptyState"
+  class="empty-state"
+>
+  لم نجد قراءة تطابق بحثك.
+</div>
+
+
+<!-- =========================
+     LESSON VIEW
+========================= -->
+
+<section
+  id="lessonView"
+  class="lesson-view"
+>
+
+  <div id="lessonContent"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+  Engliza Academy · Intermediate Reading
+</footer>
+
+
+<script>
+
+/* =========================================================
+   DATA
+========================================================= */
+
+const readings = [
+
+/* =========================
+   STAGE 1
+========================= */
+
+{
+  id:1,
+  stage:1,
+  title:"A Busy Monday",
+  topic:"Everyday Life & Experiences",
+  image:"int-reading-01.webp",
+  before:"Think about your last busy Monday. What made the day difficult or different?",
+  paragraphs:[
+    `Monday is usually the busiest day of my week. Last Monday was even more stressful because I had several things to do before noon. I woke up earlier than usual, checked my messages, and quickly prepared for work. When I arrived at the office, I found out that our first meeting had been moved to an earlier time. I had almost forgotten about it.`,
+    `The meeting lasted longer than expected, so I had to change my plans for the rest of the morning. Afterward, I answered several emails and finished a report that my manager needed that afternoon. By lunchtime, I was already tired. Still, the afternoon became easier because I had finished the most important tasks. When I finally went home, I felt exhausted, but I was also satisfied because I had managed to get everything done.`
+  ],
+  help:[
+    {
+      term:"as usual",
+      meaning:"كالمعتاد",
+      note:"تُستخدم للحديث عن شيء يحدث بالطريقة المعتادة.",
+      examples:[
+        "I arrived early as usual.",
+        "She was busy as usual.",
+        "Everything was quiet as usual."
+      ]
+    },
+    {
+      term:"find out",
+      meaning:"يكتشف / يعرف معلومة",
+      note:"Phrasal verb شائع جدًا لمعرفة شيء لم تكن تعرفه.",
+      examples:[
+        "I found out about the meeting this morning.",
+        "We need to find out what happened.",
+        "She found out the truth later."
+      ]
+    },
+    {
+      term:"move a meeting",
+      meaning:"يغيّر موعد الاجتماع",
+      note:"move هنا تعني تغيير الموعد، وليس التحرك من مكان إلى آخر.",
+      examples:[
+        "Can we move the meeting to Tuesday?",
+        "They moved the meeting to the afternoon.",
+        "The meeting was moved to an earlier time."
+      ]
+    },
+    {
+      term:"get everything done",
+      meaning:"ينجز كل شيء",
+      note:"get something done تعني إكمال المهمة أو إنجازها.",
+      examples:[
+        "I need to get everything done today.",
+        "She got her work done early.",
+        "We finally got everything done."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer have to change the morning plans?",
+      answers:[
+        "Because the meeting was moved to an earlier time.",
+        "The meeting was moved to an earlier time."
+      ]
+    },
+    {
+      q:"What did the writer need to finish for the manager?",
+      answers:[
+        "A report.",
+        "He needed to finish a report."
+      ]
+    },
+    {
+      q:"How did the writer feel at lunchtime?",
+      answers:[
+        "Tired.",
+        "He felt tired."
+      ]
+    },
+    {
+      q:"Why was the writer satisfied at the end of the day?",
+      answers:[
+        "Because he had managed to get everything done.",
+        "He had managed to get everything done."
+      ]
+    }
+  ]
+},
+
+{
+  id:2,
+  stage:1,
+  title:"The Day Everything Went Wrong",
+  topic:"Unexpected Problems",
+  image:"int-reading-02.webp",
+  before:"Have you ever had a day when several small problems happened one after another?",
+  paragraphs:[
+    `Last Thursday started normally, but by the end of the day I felt as if everything had gone wrong. First, I overslept because my phone had stopped charging during the night. I rushed out of the house without breakfast and missed the bus by only a few seconds. When I finally arrived at work, I realized that I had left an important document at home.`,
+    `Things did not get much better in the afternoon. My computer suddenly stopped working while I was preparing a presentation, and I had to use another computer. Later, I received a message saying that my evening appointment had been cancelled. At that point, I decided to stop worrying about everything. I went home, ordered some food, and watched a film. The problems had not disappeared, but at least I could finally relax.`
+  ],
+  help:[
+    {
+      term:"oversleep",
+      meaning:"ينام أكثر من اللازم / يفوّت موعد الاستيقاظ",
+      note:"فعل شائع عندما تستيقظ متأخرًا لأنك نمت أكثر مما خططت.",
+      examples:[
+        "I overslept this morning.",
+        "She overslept and missed the bus.",
+        "Try not to oversleep tomorrow."
+      ]
+    },
+    {
+      term:"by only a few seconds",
+      meaning:"بفارق ثوانٍ قليلة فقط",
+      note:"تُستخدم لإظهار أن شيئًا حدث بفارق صغير جدًا.",
+      examples:[
+        "I missed the train by only a few seconds.",
+        "We won by only a few points.",
+        "He arrived by only a few minutes."
+      ]
+    },
+    {
+      term:"at that point",
+      meaning:"في تلك اللحظة / عندها",
+      note:"عبارة للانتقال إلى قرار أو حدث حدث في تلك اللحظة.",
+      examples:[
+        "At that point, I decided to leave.",
+        "At that point, nobody knew the answer.",
+        "I was tired at that point."
+      ]
+    },
+    {
+      term:"disappear",
+      meaning:"يختفي",
+      note:"تُستخدم للأشياء أو المشكلات أو الأشخاص الذين لم يعودوا ظاهرين.",
+      examples:[
+        "The problem did not disappear.",
+        "The clouds disappeared later.",
+        "My worries slowly disappeared."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer oversleep?",
+      answers:[
+        "Because his phone had stopped charging.",
+        "His phone had stopped charging during the night."
+      ]
+    },
+    {
+      q:"What important thing did the writer leave at home?",
+      answers:[
+        "A document.",
+        "An important document."
+      ]
+    },
+    {
+      q:"What happened to the computer?",
+      answers:[
+        "It stopped working.",
+        "The computer stopped working."
+      ]
+    },
+    {
+      q:"What did the writer decide to do at the end?",
+      answers:[
+        "He decided to stop worrying and relax.",
+        "He went home and relaxed."
+      ]
+    }
+  ]
+},
+
+{
+  id:3,
+  stage:1,
+  title:"A New Routine",
+  topic:"Habits & Lifestyle",
+  image:"int-reading-03.webp",
+  before:"What is one habit you would like to change in your daily routine?",
+  paragraphs:[
+    `A few months ago, I realized that my daily routine was not helping me. I usually stayed up late, woke up tired, and started my day by checking social media. I often felt that I had no time for the things that were important to me. Instead of trying to change everything at once, I decided to make a few small changes.`,
+    `I now wake up at the same time most days and spend the first thirty minutes without my phone. I have breakfast, make a short plan for the day, and then start working. In the evening, I try to finish important tasks before I relax. The new routine has not made my life perfect, but I feel more organized and less stressed. The biggest difference is that I now feel that I am choosing how to spend my time instead of simply reacting to everything around me.`
+  ],
+  help:[
+    {
+      term:"daily routine",
+      meaning:"الروتين اليومي",
+      note:"الأشياء التي تفعلها بشكل منتظم خلال يومك.",
+      examples:[
+        "My daily routine is quite simple.",
+        "I want to improve my daily routine.",
+        "Exercise is part of my daily routine."
+      ]
+    },
+    {
+      term:"at once",
+      meaning:"دفعة واحدة / في الوقت نفسه",
+      note:"في هذا السياق تعني القيام بكل التغييرات مرة واحدة.",
+      examples:[
+        "You do not have to change everything at once.",
+        "She answered all the questions at once.",
+        "I cannot do everything at once."
+      ]
+    },
+    {
+      term:"instead of",
+      meaning:"بدلًا من",
+      note:"يتبعها اسم أو فعل بصيغة -ing.",
+      examples:[
+        "I walked instead of taking the bus.",
+        "Try tea instead of coffee.",
+        "He studied instead of watching TV."
+      ]
+    },
+    {
+      term:"react to",
+      meaning:"يتفاعل مع / يستجيب لـ",
+      note:"تُستخدم عندما يكون رد فعلك نتيجة لشيء حدث.",
+      examples:[
+        "People react differently to stress.",
+        "How did she react to the news?",
+        "Try not to react too quickly."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"What did the writer usually do first thing in the morning?",
+      answers:[
+        "Check social media.",
+        "The writer checked social media."
+      ]
+    },
+    {
+      q:"Why did the writer make small changes instead of changing everything?",
+      answers:[
+        "Because changing everything at once was difficult.",
+        "The writer did not want to change everything at once."
+      ]
+    },
+    {
+      q:"What does the writer do during the first thirty minutes now?",
+      answers:[
+        "The writer stays away from the phone, has breakfast, and makes a plan.",
+        "He stays without his phone, has breakfast, and plans the day."
+      ]
+    },
+    {
+      q:"What is the biggest difference the new routine has made?",
+      answers:[
+        "The writer feels more in control of how he spends his time.",
+        "He feels that he chooses how to spend his time."
+      ]
+    }
+  ]
+},
+
+{
+  id:4,
+  stage:1,
+  title:"A Small Decision",
+  topic:"Decisions & Consequences",
+  image:"int-reading-04.webp",
+  before:"Can a small decision change the way your day turns out?",
+  paragraphs:[
+    `One morning, I had to decide whether to take the usual bus or walk to work. The weather was pleasant, and I had some extra time, so I chose to walk. At first, it seemed like an unimportant decision. I simply wanted to enjoy the morning and get some exercise.`,
+    `Halfway to work, I saw a small coffee shop that I had never noticed before. I stopped for a few minutes and started talking to the person behind the counter. We discovered that we worked in nearby offices and had several friends in common. A few weeks later, we became friends and started meeting for coffee once a week. Looking back, I realize that choosing to walk that morning changed much more than my route to work. It reminded me that small decisions can sometimes lead to unexpected opportunities.`
+  ],
+  help:[
+    {
+      term:"turn out",
+      meaning:"يتضح / ينتهي به الأمر إلى أن يكون",
+      note:"تُستخدم عندما تظهر النتيجة الحقيقية لشيء لاحقًا.",
+      examples:[
+        "The day turned out well.",
+        "It turned out to be a good decision.",
+        "The plan turned out differently."
+      ]
+    },
+    {
+      term:"halfway",
+      meaning:"في منتصف الطريق تقريبًا",
+      note:"يمكن استخدامها للمكان أو لمنتصف مهمة أو فترة.",
+      examples:[
+        "We stopped halfway home.",
+        "I was halfway through the book.",
+        "Halfway through the trip, it started raining."
+      ]
+    },
+    {
+      term:"in common",
+      meaning:"مشترك",
+      note:"have something in common = لديهما شيء مشترك.",
+      examples:[
+        "We have a lot in common.",
+        "They have several interests in common.",
+        "We discovered that we had friends in common."
+      ]
+    },
+    {
+      term:"unexpected opportunity",
+      meaning:"فرصة غير متوقعة",
+      note:"opportunity تعني فرصة، وغالبًا تُستخدم في الدراسة والعمل والحياة.",
+      examples:[
+        "It was an unexpected opportunity.",
+        "She found a great opportunity online.",
+        "This job gave me a new opportunity."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer decide to walk?",
+      answers:[
+        "Because the weather was pleasant and he had extra time.",
+        "The weather was pleasant and he had some extra time."
+      ]
+    },
+    {
+      q:"Where did the writer meet the person who later became a friend?",
+      answers:[
+        "At a small coffee shop.",
+        "In a coffee shop."
+      ]
+    },
+    {
+      q:"What did they discover about each other?",
+      answers:[
+        "They worked in nearby offices and had friends in common.",
+        "They had nearby offices and several friends in common."
+      ]
+    },
+    {
+      q:"What lesson did the writer learn?",
+      answers:[
+        "Small decisions can lead to unexpected opportunities.",
+        "Small decisions can create unexpected opportunities."
+      ]
+    }
+  ]
+},
+
+{
+  id:5,
+  stage:1,
+  title:"Something I Didn't Expect",
+  topic:"Unexpected Experiences",
+  image:"int-reading-05.webp",
+  before:"Think of a time when something unexpected happened and changed your plans.",
+  paragraphs:[
+    `I had planned a quiet weekend at home. I wanted to finish a book, clean my room, and prepare for the following week. On Saturday morning, however, my cousin called and asked if I could help her move some furniture. I almost said no because I had already made plans for the day, but I changed my mind.`,
+    `We spent most of the morning carrying boxes and moving a large sofa. It was tiring, but we laughed a lot. In the afternoon, she suggested that we visit a small market nearby. I had never been there before, and we found several interesting shops and a small restaurant. By the time I returned home, I had done almost none of the things I had planned. Surprisingly, I did not feel disappointed. The weekend had turned out to be much more enjoyable because I had been willing to change my plans.`
+  ],
+  help:[
+    {
+      term:"change my mind",
+      meaning:"أغيّر رأيي",
+      note:"تُستخدم عندما تقرر شيئًا ثم تقرر شيئًا مختلفًا.",
+      examples:[
+        "I changed my mind about going.",
+        "She changed her mind at the last minute.",
+        "He changed his mind after talking to me."
+      ]
+    },
+    {
+      term:"move furniture",
+      meaning:"ينقل الأثاث",
+      note:"furniture اسم غير معدود.",
+      examples:[
+        "We need to move some furniture.",
+        "They moved the furniture upstairs.",
+        "I helped my friend move furniture."
+      ]
+    },
+    {
+      term:"nearby",
+      meaning:"بالقرب / قريب",
+      note:"يمكن أن تأتي كصفة أو ظرف.",
+      examples:[
+        "There is a restaurant nearby.",
+        "We found a nearby market.",
+        "Do you live nearby?"
+      ]
+    },
+    {
+      term:"willing to",
+      meaning:"مستعد لـ / لديه استعداد لـ",
+      note:"بعدها يأتي الفعل بصيغته الأساسية.",
+      examples:[
+        "I am willing to help.",
+        "She was willing to change her plans.",
+        "Are you willing to try again?"
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"What had the writer originally planned to do on Saturday?",
+      answers:[
+        "Finish a book, clean the room, and prepare for the following week.",
+        "He planned to read, clean his room, and prepare for the week."
+      ]
+    },
+    {
+      q:"Why did the writer almost refuse to help the cousin?",
+      answers:[
+        "Because he already had plans.",
+        "He had already made plans."
+      ]
+    },
+    {
+      q:"What did they do after moving the furniture?",
+      answers:[
+        "They visited a nearby market.",
+        "They went to a small market nearby."
+      ]
+    },
+    {
+      q:"Why was the writer not disappointed?",
+      answers:[
+        "Because the unexpected weekend was enjoyable.",
+        "The weekend turned out to be more enjoyable than expected."
+      ]
+    }
+  ]
+},
+
+/* =========================
+   STAGE 2
+========================= */
+
+{
+  id:6,
+  stage:2,
+  title:"An Old Friend",
+  topic:"People & Relationships",
+  image:"int-reading-06.webp",
+  before:"What would you talk about if you met an old friend after many years?",
+  paragraphs:[
+    `Last month, I unexpectedly met an old school friend in a bookstore. We had not seen each other for almost eight years. At first, neither of us was sure whether the other person was really the same friend from school. Then we started laughing about a silly memory from our final year, and everything suddenly felt familiar.`,
+    `We spent nearly an hour talking about our lives. She had moved to another city, started a new career, and recently bought her first apartment. I told her about my work and the projects I had been involved in. Although our lives had changed in many ways, we still had similar interests and the same sense of humor. Before we left, we exchanged phone numbers and promised to stay in touch. It was strange to realize how much time had passed, but it was also comforting to discover that some friendships can survive long periods of silence.`
+  ],
+  help:[
+    {
+      term:"stay in touch",
+      meaning:"يبقى على تواصل",
+      note:"تُستخدم للحفاظ على التواصل مع شخص.",
+      examples:[
+        "We should stay in touch.",
+        "I still stay in touch with my old classmates.",
+        "They promised to stay in touch."
+      ]
+    },
+    {
+      term:"sense of humor",
+      meaning:"حس الفكاهة",
+      note:"طريقة الشخص في فهم وصنع الأشياء المضحكة.",
+      examples:[
+        "She has a great sense of humor.",
+        "We have the same sense of humor.",
+        "His sense of humor makes people comfortable."
+      ]
+    },
+    {
+      term:"involved in",
+      meaning:"منخرط في / مشارك في",
+      note:"تُستخدم مع المشاريع والأنشطة والأعمال.",
+      examples:[
+        "I am involved in several projects.",
+        "She was involved in the event.",
+        "They are involved in community work."
+      ]
+    },
+    {
+      term:"survive",
+      meaning:"يستمر رغم الصعوبات",
+      note:"هنا تعني أن العلاقة استمرت رغم مرور وقت طويل.",
+      examples:[
+        "Their friendship survived many changes.",
+        "The business survived the difficult year.",
+        "Some traditions survive for centuries."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Where did the writer meet the old friend?",
+      answers:[
+        "In a bookstore.",
+        "At a bookstore."
+      ]
+    },
+    {
+      q:"How long had they not seen each other?",
+      answers:[
+        "Almost eight years.",
+        "For almost eight years."
+      ]
+    },
+    {
+      q:"What did they discover they still had in common?",
+      answers:[
+        "Similar interests and the same sense of humor.",
+        "They had similar interests and the same sense of humor."
+      ]
+    },
+    {
+      q:"What did they promise before leaving?",
+      answers:[
+        "To stay in touch.",
+        "They promised to stay in touch."
+      ]
+    }
+  ]
+},
+
+{
+  id:7,
+  stage:2,
+  title:"The New Neighbor",
+  topic:"Community & Relationships",
+  image:"int-reading-07.webp",
+  before:"What can make it easier to feel welcome in a new neighborhood?",
+  paragraphs:[
+    `When a new family moved into the apartment next to mine, I noticed that they seemed a little uncomfortable. They did not know anyone in the building, and they often looked unsure about where things were. One evening, I saw the father trying to carry several boxes through the entrance, so I offered to help.`,
+    `While we were carrying the boxes, we talked about the neighborhood. I explained where the nearest supermarket was and told him about a small park nearby. A few days later, his family invited me for coffee. I met his wife and two children, and we discovered that our families had several interests in common. Since then, we have often helped each other with small things. The experience reminded me that a simple conversation can make a new place feel much more comfortable.`
+  ],
+  help:[
+    {
+      term:"offer to help",
+      meaning:"يعرض المساعدة",
+      note:"offer to + verb.",
+      examples:[
+        "I offered to help her.",
+        "He offered to carry the boxes.",
+        "They offered to help us move."
+      ]
+    },
+    {
+      term:"nearest",
+      meaning:"الأقرب",
+      note:"صيغة التفضيل من near.",
+      examples:[
+        "Where is the nearest supermarket?",
+        "The nearest hospital is ten minutes away.",
+        "This is the nearest bus stop."
+      ]
+    },
+    {
+      term:"get comfortable",
+      meaning:"يشعر بالراحة / يعتاد المكان",
+      note:"يمكن استخدامها عن الشخص أو المكان.",
+      examples:[
+        "It took me time to get comfortable.",
+        "She quickly got comfortable in her new office.",
+        "The room helped us get comfortable."
+      ]
+    },
+    {
+      term:"small things",
+      meaning:"أمور بسيطة",
+      note:"تُستخدم كثيرًا عند الحديث عن مساعدات أو تفاصيل يومية.",
+      examples:[
+        "We help each other with small things.",
+        "Small things can make a difference.",
+        "I appreciate the small things."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the new family seem uncomfortable?",
+      answers:[
+        "They did not know anyone in the building.",
+        "They were new and did not know anyone."
+      ]
+    },
+    {
+      q:"How did the writer first help the father?",
+      answers:[
+        "By helping him carry boxes.",
+        "The writer helped him carry boxes."
+      ]
+    },
+    {
+      q:"What places did the writer tell him about?",
+      answers:[
+        "A supermarket and a park.",
+        "The nearest supermarket and a small park."
+      ]
+    },
+    {
+      q:"What did the experience teach the writer?",
+      answers:[
+        "A simple conversation can make a new place more comfortable.",
+        "Simple conversations can help people feel comfortable."
+      ]
+    }
+  ]
+},
+
+{
+  id:8,
+  stage:2,
+  title:"A Difficult Conversation",
+  topic:"Communication",
+  image:"int-reading-08.webp",
+  before:"Why can difficult conversations sometimes be necessary?",
+  paragraphs:[
+    `A few months ago, I had a difficult conversation with a colleague. We were working on the same project, but we had started to disagree about almost everything. At first, I avoided talking about the problem because I did not want to create tension. Unfortunately, avoiding it only made the situation worse.`,
+    `One afternoon, I asked if we could talk privately. I explained how I felt and, more importantly, listened to her point of view. I discovered that some of our disagreements were caused by misunderstandings rather than real differences. We agreed to communicate more clearly and discuss problems before they became serious. The conversation was uncomfortable at first, but it helped us work together much better. I learned that being honest does not always mean being rude. Sometimes, a respectful conversation is exactly what a difficult situation needs.`
+  ],
+  help:[
+    {
+      term:"avoid",
+      meaning:"يتجنب",
+      note:"avoid + noun أو verb-ing.",
+      examples:[
+        "I try to avoid unnecessary arguments.",
+        "She avoided talking about the problem.",
+        "We should avoid making the same mistake."
+      ]
+    },
+    {
+      term:"point of view",
+      meaning:"وجهة نظر",
+      note:"طريقة شخص في رؤية موضوع أو موقف.",
+      examples:[
+        "I understand your point of view.",
+        "Everyone has a different point of view.",
+        "She explained her point of view."
+      ]
+    },
+    {
+      term:"misunderstanding",
+      meaning:"سوء فهم",
+      note:"موقف يفهم فيه شخص كلام أو موقفًا بطريقة غير صحيحة.",
+      examples:[
+        "It was just a misunderstanding.",
+        "The problem started because of a misunderstanding.",
+        "We cleared up the misunderstanding."
+      ]
+    },
+    {
+      term:"work together",
+      meaning:"يعمل معًا",
+      note:"تعبير شائع للتعاون.",
+      examples:[
+        "We need to work together.",
+        "They work well together.",
+        "Working together made the project easier."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer initially avoid the conversation?",
+      answers:[
+        "Because he did not want to create tension.",
+        "He did not want to create tension."
+      ]
+    },
+    {
+      q:"What caused some of their disagreements?",
+      answers:[
+        "Misunderstandings.",
+        "Some misunderstandings caused the disagreements."
+      ]
+    },
+    {
+      q:"What did they agree to do differently?",
+      answers:[
+        "Communicate more clearly and discuss problems earlier.",
+        "They agreed to communicate clearly and discuss problems before they became serious."
+      ]
+    },
+    {
+      q:"What did the writer learn?",
+      answers:[
+        "Being honest does not always mean being rude.",
+        "A respectful conversation can help difficult situations."
+      ]
+    }
+  ]
+},
+
+{
+  id:9,
+  stage:2,
+  title:"A Promise",
+  topic:"Trust & Responsibility",
+  image:"int-reading-09.webp",
+  before:"What makes a promise difficult to keep?",
+  paragraphs:[
+    `Last year, I promised a close friend that I would help her prepare for an important exam. At the time, I thought it would be easy because I had plenty of free time. However, a few weeks later, my schedule became much busier than I expected. I had extra work, family responsibilities, and several things to deal with.`,
+    `For a moment, I considered telling my friend that I could no longer help. Instead, I explained the situation and suggested meeting twice a week rather than every day. She understood, and we found a schedule that worked for both of us. I kept my promise, although I had to organize my time more carefully. The experience taught me that keeping a promise does not always mean doing exactly what you originally planned. Sometimes, it means finding another way to do what you said you would do.`
+  ],
+  help:[
+    {
+      term:"keep a promise",
+      meaning:"يفي بوعد",
+      note:"من أكثر التراكيب شيوعًا مع promise.",
+      examples:[
+        "I always try to keep my promises.",
+        "He kept his promise.",
+        "It is important to keep a promise."
+      ]
+    },
+    {
+      term:"deal with",
+      meaning:"يتعامل مع",
+      note:"Phrasal verb مهم جدًا للتعامل مع مشكلة أو موقف.",
+      examples:[
+        "I have several problems to deal with.",
+        "She knows how to deal with stress.",
+        "We need to deal with this issue."
+      ]
+    },
+    {
+      term:"work for both of us",
+      meaning:"يناسبنا نحن الاثنين",
+      note:"work هنا بمعنى يكون مناسبًا أو ناجحًا.",
+      examples:[
+        "This schedule works for both of us.",
+        "Monday works for me.",
+        "The new plan works well for everyone."
+      ]
+    },
+    {
+      term:"organize my time",
+      meaning:"ينظم وقتي",
+      note:"تعبير شائع عند الحديث عن الدراسة والعمل.",
+      examples:[
+        "I need to organize my time better.",
+        "She is good at organizing her time.",
+        "Organizing your time can reduce stress."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer think keeping the promise would be easy?",
+      answers:[
+        "Because he had plenty of free time.",
+        "He thought he had plenty of free time."
+      ]
+    },
+    {
+      q:"What changed later?",
+      answers:[
+        "His schedule became much busier.",
+        "He became much busier because of work and responsibilities."
+      ]
+    },
+    {
+      q:"How did they change their plan?",
+      answers:[
+        "They met twice a week instead of every day.",
+        "They changed from every day to twice a week."
+      ]
+    },
+    {
+      q:"What did the writer learn about keeping promises?",
+      answers:[
+        "Sometimes you need to find another way to do what you promised.",
+        "Keeping a promise does not always mean following the original plan exactly."
+      ]
+    }
+  ]
+},
+
+{
+  id:10,
+  stage:2,
+  title:"The Message I Almost Ignored",
+  topic:"Communication & Opportunities",
+  image:"int-reading-10.webp",
+  before:"Have you ever ignored a message and later realized it was important?",
+  paragraphs:[
+    `One afternoon, I received a message from someone I did not know very well. The message was polite, but I was busy and almost ignored it. The person explained that she had seen one of my previous projects and wanted to ask me a few questions about it. I planned to answer later, but I completely forgot.`,
+    `That evening, I noticed the message again. I decided to reply even though several hours had passed. We had a short conversation, and she eventually told me about a project that needed someone with my experience. I was interested and agreed to take part. The opportunity came from a message that I had almost ignored simply because I was busy. Since then, I have tried to avoid judging messages too quickly. I do not answer everything immediately, but I make sure that I do not miss something important just because I am distracted.`
+  ],
+  help:[
+    {
+      term:"ignore",
+      meaning:"يتجاهل",
+      note:"عدم إعطاء الشيء اهتمامًا أو ردًا.",
+      examples:[
+        "I ignored the message at first.",
+        "You should not ignore the warning.",
+        "He ignored my question."
+      ]
+    },
+    {
+      term:"take part in",
+      meaning:"يشارك في",
+      note:"تعبير شائع جدًا مع الأنشطة والمشاريع.",
+      examples:[
+        "I want to take part in the project.",
+        "She took part in the competition.",
+        "Many students took part in the event."
+      ]
+    },
+    {
+      term:"come from",
+      meaning:"يأتي من / يكون مصدره",
+      note:"هنا تُستخدم بمعنى مصدر الفرصة.",
+      examples:[
+        "The idea came from a student.",
+        "The opportunity came from a message.",
+        "This information came from a reliable source."
+      ]
+    },
+    {
+      term:"distracted",
+      meaning:"مشتت الانتباه",
+      note:"صفة لشخص يصعب عليه التركيز بسبب أشياء أخرى.",
+      examples:[
+        "I was too distracted to study.",
+        "She looked distracted during the meeting.",
+        "My phone makes me easily distracted."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer almost ignore the message?",
+      answers:[
+        "Because he was busy.",
+        "He was busy."
+      ]
+    },
+    {
+      q:"Why had the sender contacted the writer?",
+      answers:[
+        "She had seen one of his projects and wanted to ask questions.",
+        "She wanted to ask about one of his previous projects."
+      ]
+    },
+    {
+      q:"What opportunity came from the message?",
+      answers:[
+        "A project that needed someone with his experience.",
+        "He was invited to take part in a project."
+      ]
+    },
+    {
+      q:"What did the writer change after this experience?",
+      answers:[
+        "He stopped judging messages too quickly.",
+        "He tried not to miss important messages when distracted."
+      ]
+    }
+  ]
+},
+
+/* =========================
+   STAGE 3
+========================= */
+
+{
+  id:11,
+  stage:3,
+  title:"My First Week at Work",
+  topic:"Work & Career",
+  image:"int-reading-11.webp",
+  before:"What can be difficult during your first week in a new job?",
+  paragraphs:[
+    `My first week at my new job was more challenging than I had expected. I knew that I had the necessary skills, but I did not know how the company worked. During the first two days, I had to learn where everything was, who was responsible for different tasks, and how people communicated with each other.`,
+    `My colleagues were helpful, but I still felt nervous whenever I had to ask a question. By the end of the week, I had become more comfortable. I understood the basic routine and had started to recognize the names of most people in my department. My manager also gave me some useful feedback about my first few tasks. I realized that being new did not mean I had to know everything immediately. It was more important to listen carefully, ask questions, and learn from the people around me.`
+  ],
+  help:[
+    {
+      term:"challenging",
+      meaning:"مليء بالتحديات",
+      note:"أقوى من difficult قليلًا، وغالبًا تحمل معنى إيجابيًا أحيانًا.",
+      examples:[
+        "The course is challenging.",
+        "My first week was challenging.",
+        "It was a challenging experience."
+      ]
+    },
+    {
+      term:"be responsible for",
+      meaning:"يكون مسؤولًا عن",
+      note:"تعبير مهم في الدراسة والعمل.",
+      examples:[
+        "She is responsible for the project.",
+        "Who is responsible for this task?",
+        "I am responsible for answering emails."
+      ]
+    },
+    {
+      term:"get comfortable",
+      meaning:"يصبح مرتاحًا / يعتاد",
+      note:"يمكن استخدامها مع مكان أو موقف جديد.",
+      examples:[
+        "It took me a week to get comfortable.",
+        "He quickly got comfortable at work.",
+        "You will get comfortable with practice."
+      ]
+    },
+    {
+      term:"feedback",
+      meaning:"ملاحظات وتغذية راجعة",
+      note:"مهم جدًا في العمل والدراسة.",
+      examples:[
+        "My teacher gave me useful feedback.",
+        "I need some feedback on my work.",
+        "Her feedback helped me improve."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why was the first week challenging?",
+      answers:[
+        "Because the writer did not know how the company worked.",
+        "He did not know the company's routines and communication."
+      ]
+    },
+    {
+      q:"What made the writer nervous?",
+      answers:[
+        "Having to ask questions.",
+        "He felt nervous when he had to ask questions."
+      ]
+    },
+    {
+      q:"What had the writer learned by the end of the week?",
+      answers:[
+        "He understood the basic routine and knew most people's names.",
+        "He understood the routine and recognized most names."
+      ]
+    },
+    {
+      q:"What did the writer realize about being new?",
+      answers:[
+        "Being new did not mean he had to know everything immediately.",
+        "He did not need to know everything immediately."
+      ]
+    }
+  ]
+},
+
+{
+  id:12,
+  stage:3,
+  title:"The Deadline",
+  topic:"Work & Time Management",
+  image:"int-reading-12.webp",
+  before:"How do deadlines affect the way you work?",
+  paragraphs:[
+    `I had three days to finish an important report, but I kept telling myself that there was plenty of time. On the first day, I worked on other tasks. On the second day, I answered emails and attended meetings. By the evening, I realized that I had done almost nothing for the report.`,
+    `The next morning, I decided to change my approach. I turned off unnecessary notifications, divided the report into smaller sections, and focused on one section at a time. I also asked a colleague to check the first part before I continued. This helped me discover a problem early instead of finding it at the end. I finished the report just before the deadline. The experience was stressful, but it taught me an important lesson: having enough time is not the same as using your time well.`
+  ],
+  help:[
+    {
+      term:"deadline",
+      meaning:"موعد نهائي",
+      note:"آخر وقت يجب أن تكون فيه المهمة مكتملة.",
+      examples:[
+        "The deadline is Friday.",
+        "We have a tight deadline.",
+        "I finished the project before the deadline."
+      ]
+    },
+    {
+      term:"divide into",
+      meaning:"يقسّم إلى",
+      note:"طريقة مفيدة عند تقسيم مهمة كبيرة إلى أجزاء.",
+      examples:[
+        "Divide the task into smaller parts.",
+        "I divided the report into sections.",
+        "The book is divided into five chapters."
+      ]
+    },
+    {
+      term:"one at a time",
+      meaning:"واحدًا تلو الآخر",
+      note:"تُستخدم للتركيز على شيء واحد في كل مرة.",
+      examples:[
+        "Let's solve these problems one at a time.",
+        "Do one task at a time.",
+        "I read the questions one at a time."
+      ]
+    },
+    {
+      term:"just before",
+      meaning:"قبل ... مباشرة",
+      note:"توضح أن شيئًا حدث قبل شيء آخر بفترة قصيرة.",
+      examples:[
+        "I arrived just before the meeting.",
+        "She called just before dinner.",
+        "We finished just before the deadline."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer have very little time left for the report?",
+      answers:[
+        "He spent the first two days on other tasks.",
+        "He worked on other tasks, emails, and meetings."
+      ]
+    },
+    {
+      q:"What did the writer do to focus?",
+      answers:[
+        "He turned off unnecessary notifications and divided the report into sections.",
+        "He turned off notifications and worked on smaller sections."
+      ]
+    },
+    {
+      q:"Why did he ask a colleague to check the first part?",
+      answers:[
+        "To discover problems early.",
+        "He wanted to find problems before finishing the report."
+      ]
+    },
+    {
+      q:"What lesson did he learn?",
+      answers:[
+        "Having enough time is not the same as using it well.",
+        "Time needs to be used effectively."
+      ]
+    }
+  ]
+},
+
+{
+  id:13,
+  stage:3,
+  title:"Learning Something New",
+  topic:"Learning & Skills",
+  image:"int-reading-13.webp",
+  before:"What is something new you would like to learn?",
+  paragraphs:[
+    `I had always wanted to learn how to cook better, but I kept thinking that I would start when I had more time. Finally, I decided to take a short online course. At first, I found it difficult to follow the instructions while preparing the food. I also made several simple mistakes, such as adding ingredients at the wrong time.`,
+    `Instead of giving up, I wrote down the mistakes I made and tried the same recipes again. After a few weeks, I noticed a clear improvement. I was not an expert, but I was more confident and could understand recipes more easily. The biggest lesson was not about cooking. I learned that being a beginner can feel uncomfortable, but progress usually comes from continuing even when the first attempts are not successful.`
+  ],
+  help:[
+    {
+      term:"give up",
+      meaning:"يستسلم / يتوقف عن المحاولة",
+      note:"Phrasal verb مهم جدًا.",
+      examples:[
+        "Do not give up.",
+        "She almost gave up.",
+        "I will not give up on this goal."
+      ]
+    },
+    {
+      term:"at first",
+      meaning:"في البداية",
+      note:"تُستخدم للحديث عن حالة في بداية تجربة ثم تغيرت.",
+      examples:[
+        "At first, it was difficult.",
+        "I did not like it at first.",
+        "At first, I felt nervous."
+      ]
+    },
+    {
+      term:"make a mistake",
+      meaning:"يرتكب خطأ",
+      note:"Collocation شائع.",
+      examples:[
+        "Everyone makes mistakes.",
+        "I made a small mistake.",
+        "Try not to make the same mistake."
+      ]
+    },
+    {
+      term:"clear improvement",
+      meaning:"تحسن واضح",
+      note:"تُستخدم improvement كثيرًا مع الدراسة والمهارات.",
+      examples:[
+        "I can see a clear improvement.",
+        "There has been a clear improvement.",
+        "Her English shows clear improvement."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why had the writer not started learning to cook earlier?",
+      answers:[
+        "He kept thinking he would start when he had more time.",
+        "He thought he needed more time."
+      ]
+    },
+    {
+      q:"What kind of mistakes did the writer make?",
+      answers:[
+        "He added ingredients at the wrong time.",
+        "He added ingredients at the wrong time."
+      ]
+    },
+    {
+      q:"What did the writer do instead of giving up?",
+      answers:[
+        "He wrote down his mistakes and tried the recipes again.",
+        "He recorded his mistakes and repeated the recipes."
+      ]
+    },
+    {
+      q:"What was the biggest lesson?",
+      answers:[
+        "Progress comes from continuing even when the first attempts are unsuccessful.",
+        "Being a beginner is uncomfortable, but continuing leads to progress."
+      ]
+    }
+  ]
+},
+
+{
+  id:14,
+  stage:3,
+  title:"A Different Way to Study",
+  topic:"Study & Learning",
+  image:"int-reading-14.webp",
+  before:"Does changing the way you study change how much you remember?",
+  paragraphs:[
+    `For a long time, I studied by reading the same notes again and again. I thought that looking at the information many times would help me remember it. However, I often felt that I understood everything while studying and then forgot important details during a test.`,
+    `I decided to try a different method. Instead of simply reading my notes, I started asking myself questions and answering them without looking at the page. I also explained difficult ideas aloud as if I were teaching someone else. At the end of each study session, I wrote down the information I could not remember and reviewed only those parts later. The new method required more effort, but I noticed that I remembered information for longer. It also helped me discover what I did not understand rather than simply giving me the feeling that I understood it.`
+  ],
+  help:[
+    {
+      term:"again and again",
+      meaning:"مرارًا وتكرارًا",
+      note:"تعبير للتكرار.",
+      examples:[
+        "I read the sentence again and again.",
+        "He made the same mistake again and again.",
+        "She practiced again and again."
+      ]
+    },
+    {
+      term:"instead of",
+      meaning:"بدلًا من",
+      note:"instead of + noun أو verb-ing.",
+      examples:[
+        "I listened instead of reading.",
+        "Try writing instead of copying.",
+        "We walked instead of driving."
+      ]
+    },
+    {
+      term:"aloud",
+      meaning:"بصوت عالٍ",
+      note:"تُستخدم عندما تقول شيئًا بصوت مسموع.",
+      examples:[
+        "Read the sentence aloud.",
+        "She explained the idea aloud.",
+        "I practiced the words aloud."
+      ]
+    },
+    {
+      term:"for longer",
+      meaning:"لمدة أطول",
+      note:"تُستخدم للمقارنة في المدة.",
+      examples:[
+        "I can remember it for longer.",
+        "The battery lasts for longer.",
+        "This method helps me focus for longer."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"How did the writer usually study?",
+      answers:[
+        "By reading the same notes again and again.",
+        "The writer repeatedly read the same notes."
+      ]
+    },
+    {
+      q:"What problem did the writer have during tests?",
+      answers:[
+        "He forgot important details.",
+        "He often forgot important details."
+      ]
+    },
+    {
+      q:"What new study method did the writer use?",
+      answers:[
+        "He asked himself questions and explained ideas aloud.",
+        "He used questions and explained ideas as if teaching someone."
+      ]
+    },
+    {
+      q:"What did the new method help the writer discover?",
+      answers:[
+        "What he did not understand.",
+        "It showed him what he did not understand."
+      ]
+    }
+  ]
+},
+
+{
+  id:15,
+  stage:3,
+  title:"A Goal Worth Reaching",
+  topic:"Goals & Achievement",
+  image:"int-reading-15.webp",
+  before:"What makes a goal worth working hard for?",
+  paragraphs:[
+    `Two years ago, I set myself a goal that seemed almost impossible at the time. I wanted to improve a skill that I had avoided for years because I was afraid of making mistakes. Instead of trying to become good at it quickly, I decided to practice for a short time every day.`,
+    `The first few months were frustrating. I could see other people improving faster than me, and sometimes I wondered whether I was making any progress at all. I continued anyway. I kept a simple record of what I practiced and looked back at it every few weeks. Slowly, the changes became visible. After a year, I was much more confident than I had been before. I still had more to learn, but reaching that point changed the way I thought about difficult goals. I realized that progress does not always feel exciting while it is happening. Sometimes, you only notice how far you have come when you look back.`
+  ],
+  help:[
+    {
+      term:"set a goal",
+      meaning:"يضع هدفًا",
+      note:"Collocation أساسي مع goal.",
+      examples:[
+        "I set a goal for this year.",
+        "She set herself a difficult goal.",
+        "We need to set clear goals."
+      ]
+    },
+    {
+      term:"avoid",
+      meaning:"يتجنب",
+      note:"avoid + verb-ing.",
+      examples:[
+        "I avoided speaking English.",
+        "Try to avoid making excuses.",
+        "He avoided difficult tasks."
+      ]
+    },
+    {
+      term:"make progress",
+      meaning:"يحرز تقدمًا",
+      note:"Collocation مهم جدًا.",
+      examples:[
+        "I am making progress.",
+        "She made a lot of progress.",
+        "You can make progress with regular practice."
+      ]
+    },
+    {
+      term:"look back",
+      meaning:"ينظر إلى الماضي / يتذكر ما حدث",
+      note:"Phrasal verb مفيد عند الحديث عن التجارب السابقة.",
+      examples:[
+        "When I look back, I feel proud.",
+        "She looked back at her old notes.",
+        "It is useful to look back sometimes."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why had the writer avoided the skill?",
+      answers:[
+        "Because he was afraid of making mistakes.",
+        "He was afraid of making mistakes."
+      ]
+    },
+    {
+      q:"What did the writer do every day?",
+      answers:[
+        "He practiced for a short time.",
+        "He practiced the skill for a short time every day."
+      ]
+    },
+    {
+      q:"Why did the writer sometimes feel frustrated?",
+      answers:[
+        "Other people seemed to improve faster.",
+        "He thought other people were improving faster than him."
+      ]
+    },
+    {
+      q:"When did the writer notice how far he had come?",
+      answers:[
+        "When he looked back.",
+        "He noticed it when he looked back at his progress."
+      ]
+    }
+  ]
+},
+
+/* =========================
+   STAGE 4
+========================= */
+
+{
+  id:16,
+  stage:4,
+  title:"A Missed Train",
+  topic:"Travel & Problems",
+  image:"int-reading-16.webp",
+  before:"What would you do if you arrived at the station just after your train left?",
+  paragraphs:[
+    `I arrived at the station ten minutes before my train was supposed to leave. I thought I had plenty of time, so I stopped to buy a drink. When I reached the platform, I saw the train moving away. For a moment, I just stood there. I had planned the whole journey carefully, and now everything had changed.`,
+    `I went to the information desk and asked what my options were. The next train was two hours later, but there was another route that required a change in a nearby city. I decided to take it. The journey became longer than expected, but I eventually arrived at my destination. Looking back, missing the train was frustrating, but it also taught me not to assume that I have more time than I actually do.`
+  ],
+  help:[
+    {
+      term:"be supposed to",
+      meaning:"من المفترض أن",
+      note:"تُستخدم للحديث عن موعد أو توقع.",
+      examples:[
+        "The train is supposed to leave at six.",
+        "We are supposed to meet at noon.",
+        "He was supposed to call me."
+      ]
+    },
+    {
+      term:"plenty of time",
+      meaning:"وقت كافٍ وأكثر",
+      note:"plenty of = كمية أكثر من كافية.",
+      examples:[
+        "We have plenty of time.",
+        "There is plenty of time to finish.",
+        "I thought I had plenty of time."
+      ]
+    },
+    {
+      term:"option",
+      meaning:"خيار",
+      note:"طريقة أو اختيار متاح.",
+      examples:[
+        "We have two options.",
+        "What are my options?",
+        "Taking a taxi is another option."
+      ]
+    },
+    {
+      term:"destination",
+      meaning:"الوجهة",
+      note:"المكان الذي تتجه إليه.",
+      examples:[
+        "We finally reached our destination.",
+        "Paris was our final destination.",
+        "Check your destination before leaving."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer stop before reaching the platform?",
+      answers:[
+        "To buy a drink.",
+        "He stopped to buy a drink."
+      ]
+    },
+    {
+      q:"How much later was the next direct train?",
+      answers:[
+        "Two hours later.",
+        "It was two hours later."
+      ]
+    },
+    {
+      q:"What alternative did the writer choose?",
+      answers:[
+        "A route that required a change in a nearby city.",
+        "He took another route with a change."
+      ]
+    },
+    {
+      q:"What lesson did the writer learn?",
+      answers:[
+        "Not to assume he has more time than he actually does.",
+        "He learned not to assume he had plenty of time."
+      ]
+    }
+  ]
+},
+
+{
+  id:17,
+  stage:4,
+  title:"A Weekend in a New City",
+  topic:"Travel & Experiences",
+  image:"int-reading-17.webp",
+  before:"What would you want to discover first in a city you had never visited?",
+  paragraphs:[
+    `I spent last weekend in a city I had never visited before. I had read about the main tourist attractions, but I was more interested in seeing how people actually lived there. On Saturday morning, I walked through a residential neighborhood instead of going directly to the city center.`,
+    `I found a small bakery, a local market, and a quiet park where families were spending time together. Later, I visited the main square and several famous buildings. The tourist areas were interesting, but I enjoyed the quieter streets more. On Sunday, I asked a local woman for a recommendation about where to eat. She suggested a small restaurant that I would never have found by myself. The food was excellent, and the experience made me realize that asking local people can completely change the way you experience a new place.`
+  ],
+  help:[
+    {
+      term:"residential neighborhood",
+      meaning:"حي سكني",
+      note:"منطقة يعيش فيها الناس، وليست منطقة سياحية بالضرورة.",
+      examples:[
+        "We stayed in a quiet residential neighborhood.",
+        "The hotel is near a residential neighborhood.",
+        "I walked through a residential area."
+      ]
+    },
+    {
+      term:"directly",
+      meaning:"مباشرة",
+      note:"بدون توقف أو تغيير.",
+      examples:[
+        "We went directly to the hotel.",
+        "She went directly home.",
+        "I walked directly to the station."
+      ]
+    },
+    {
+      term:"recommendation",
+      meaning:"توصية / اقتراح",
+      note:"اقتراح شخص لشيء يراه جيدًا.",
+      examples:[
+        "Can you give me a recommendation?",
+        "She gave me a great restaurant recommendation.",
+        "I followed his recommendation."
+      ]
+    },
+    {
+      term:"by myself",
+      meaning:"بنفسي / وحدي",
+      note:"تعني دون مساعدة شخص آخر.",
+      examples:[
+        "I found the place by myself.",
+        "She traveled by herself.",
+        "I fixed it by myself."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer avoid going directly to the city center?",
+      answers:[
+        "Because he wanted to see how people actually lived.",
+        "He wanted to explore local life."
+      ]
+    },
+    {
+      q:"What places did the writer find in the residential area?",
+      answers:[
+        "A bakery, a local market, and a quiet park.",
+        "He found a bakery, market, and park."
+      ]
+    },
+    {
+      q:"Who recommended the restaurant?",
+      answers:[
+        "A local woman.",
+        "A local woman recommended it."
+      ]
+    },
+    {
+      q:"What did the writer learn about visiting new places?",
+      answers:[
+        "Asking local people can change the experience.",
+        "Local recommendations can completely change the experience."
+      ]
+    }
+  ]
+},
+
+{
+  id:18,
+  stage:4,
+  title:"The Wrong Hotel",
+  topic:"Travel Problems",
+  image:"int-reading-18.webp",
+  before:"What would you do if you discovered that your hotel reservation was wrong?",
+  paragraphs:[
+    `When I arrived at the hotel, I was tired after a long journey. I showed the receptionist my reservation, but she could not find my name in the system. I checked the confirmation email again and realized that I had booked a different hotel with a very similar name. Unfortunately, the other hotel was on the opposite side of the city.`,
+    `At first, I was frustrated with myself. The receptionist, however, was extremely helpful. She called the other hotel and explained the situation. They had a room available, but getting there would take almost forty minutes. I thanked her and ordered a taxi. The mistake was inconvenient, but the staff made the situation much easier. Since then, I always check the full hotel address before I travel, especially when two hotels have similar names.`
+  ],
+  help:[
+    {
+      term:"reservation",
+      meaning:"حجز",
+      note:"تُستخدم للفنادق والمطاعم والرحلات وغيرها.",
+      examples:[
+        "I have a hotel reservation.",
+        "Can you check my reservation?",
+        "The reservation is under my name."
+      ]
+    },
+    {
+      term:"opposite side",
+      meaning:"الجهة المقابلة",
+      note:"تُستخدم للمكان على الجانب الآخر.",
+      examples:[
+        "The hotel is on the opposite side of the city.",
+        "The shop is on the opposite side of the road.",
+        "We live on opposite sides of town."
+      ]
+    },
+    {
+      term:"available",
+      meaning:"متاح",
+      note:"في هذا السياق تعني أن هناك غرفة يمكن حجزها.",
+      examples:[
+        "Is a room available?",
+        "The tickets are not available.",
+        "We found an available table."
+      ]
+    },
+    {
+      term:"inconvenient",
+      meaning:"غير مريح / يسبب إزعاجًا",
+      note:"شيء يجعل الوضع أصعب أو أقل راحة.",
+      examples:[
+        "The time is inconvenient.",
+        "The mistake was inconvenient.",
+        "It was an inconvenient situation."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why could the receptionist not find the writer's reservation?",
+      answers:[
+        "Because he had booked a different hotel.",
+        "He had booked another hotel with a similar name."
+      ]
+    },
+    {
+      q:"Where was the correct hotel?",
+      answers:[
+        "On the opposite side of the city.",
+        "It was on the other side of the city."
+      ]
+    },
+    {
+      q:"How did the receptionist help?",
+      answers:[
+        "She called the other hotel and explained the situation.",
+        "She contacted the other hotel for him."
+      ]
+    },
+    {
+      q:"What does the writer do now before traveling?",
+      answers:[
+        "He checks the full hotel address.",
+        "He always checks the full hotel address."
+      ]
+    }
+  ]
+},
+
+{
+  id:19,
+  stage:4,
+  title:"A Local Recommendation",
+  topic:"Travel & Local Life",
+  image:"int-reading-19.webp",
+  before:"Why might a local recommendation be better than an online search?",
+  paragraphs:[
+    `During a short trip, I wanted to find a quiet place to have lunch. I searched online and found dozens of restaurants, but I could not decide which one to choose. While I was looking at my phone, I started talking to a shop owner nearby. I asked him where he usually ate lunch.`,
+    `He immediately recommended a small restaurant a few streets away. He explained that it was not famous with tourists, but local people liked it because the food was fresh and reasonably priced. I followed his advice and was glad I did. The restaurant was simple, but the food was excellent and the staff were friendly. More importantly, I felt that I had discovered a small part of the city that I would probably have missed if I had only followed popular online recommendations.`
+  ],
+  help:[
+    {
+      term:"dozens of",
+      meaning:"عشرات من",
+      note:"تُستخدم للدلالة على عدد كبير وغير محدد بدقة.",
+      examples:[
+        "There were dozens of people there.",
+        "I found dozens of options online.",
+        "She received dozens of messages."
+      ]
+    },
+    {
+      term:"reasonably priced",
+      meaning:"سعره معقول",
+      note:"تعبير مفيد جدًا عن الأسعار.",
+      examples:[
+        "The restaurant is reasonably priced.",
+        "We found a reasonably priced hotel.",
+        "The clothes are reasonably priced."
+      ]
+    },
+    {
+      term:"follow someone's advice",
+      meaning:"يتبع نصيحة شخص",
+      note:"Collocation شائع.",
+      examples:[
+        "I followed her advice.",
+        "You should follow your doctor's advice.",
+        "He decided to follow my advice."
+      ]
+    },
+    {
+      term:"miss",
+      meaning:"يفوّت / لا يلاحظ",
+      note:"هنا بمعنى عدم اكتشاف شيء أو عدم رؤيته.",
+      examples:[
+        "I almost missed the small restaurant.",
+        "You might miss an important detail.",
+        "I did not want to miss the opportunity."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why could the writer not choose a restaurant online?",
+      answers:[
+        "There were too many options.",
+        "He found dozens of restaurants and could not decide."
+      ]
+    },
+    {
+      q:"Who gave the writer a recommendation?",
+      answers:[
+        "A shop owner.",
+        "A nearby shop owner."
+      ]
+    },
+    {
+      q:"Why did local people like the restaurant?",
+      answers:[
+        "The food was fresh and reasonably priced.",
+        "It had fresh food and reasonable prices."
+      ]
+    },
+    {
+      q:"What did the writer feel he had discovered?",
+      answers:[
+        "A small part of the city that tourists might miss.",
+        "A local part of the city."
+      ]
+    }
+  ]
+},
+
+{
+  id:20,
+  stage:4,
+  title:"A Change of Plans",
+  topic:"Travel & Flexibility",
+  image:"int-reading-20.webp",
+  before:"How do you usually react when your travel plans suddenly change?",
+  paragraphs:[
+    `My friends and I had planned a weekend trip to the mountains. We had booked a small house and prepared everything several days in advance. However, the weather forecast changed suddenly on Friday evening. Heavy rain was expected throughout the weekend, so we decided that it would not be safe to travel.`,
+    `Instead of cancelling the weekend completely, we looked for another option. One of my friends suggested visiting a nearby town where there was a museum, a cinema, and several cafés. At first, we were disappointed because the mountain trip was something we had been looking forward to. In the end, however, the new plan turned out to be enjoyable. We visited places we had never seen before and spent more time talking than we probably would have during the original trip.`
+  ],
+  help:[
+    {
+      term:"look forward to",
+      meaning:"يتطلع إلى / ينتظر بشوق",
+      note:"بعدها اسم أو verb-ing.",
+      examples:[
+        "I am looking forward to the trip.",
+        "She looks forward to meeting you.",
+        "We were looking forward to the weekend."
+      ]
+    },
+    {
+      term:"turn out",
+      meaning:"ينتهي به الأمر / يتضح أنه",
+      note:"تظهر النتيجة الحقيقية لاحقًا.",
+      examples:[
+        "The plan turned out well.",
+        "It turned out to be a great day.",
+        "The trip turned out differently."
+      ]
+    },
+    {
+      term:"instead",
+      meaning:"بدلًا من ذلك",
+      note:"تأتي غالبًا في بداية أو وسط الجملة.",
+      examples:[
+        "We did not go there. We stayed home instead.",
+        "Let's take the train instead.",
+        "She chose tea instead."
+      ]
+    },
+    {
+      term:"throughout",
+      meaning:"طوال / في جميع أنحاء",
+      note:"هنا تعني طوال فترة زمنية.",
+      examples:[
+        "It rained throughout the weekend.",
+        "He worked throughout the day.",
+        "The shop is open throughout the year."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the friends change their original plans?",
+      answers:[
+        "Because heavy rain was expected and the trip would not be safe.",
+        "The weather forecast predicted heavy rain."
+      ]
+    },
+    {
+      q:"What did one friend suggest doing instead?",
+      answers:[
+        "Visiting a nearby town.",
+        "They visited a nearby town."
+      ]
+    },
+    {
+      q:"How did the friends feel about the new plan at first?",
+      answers:[
+        "They were disappointed.",
+        "They were initially disappointed."
+      ]
+    },
+    {
+      q:"Why did the new plan turn out to be enjoyable?",
+      answers:[
+        "They visited new places and spent more time talking.",
+        "They discovered new places and had more time to talk."
+      ]
+    }
+  ]
+},
+
+/* =========================
+   STAGE 5
+========================= */
+
+{
+  id:21,
+  stage:5,
+  title:"Life Without My Phone",
+  topic:"Technology & Daily Life",
+  image:"int-reading-21.webp",
+  before:"What would be different about your day if you could not use your phone?",
+  paragraphs:[
+    `Last month, my phone stopped working for three days. At first, I was extremely frustrated because I use it for almost everything. I normally check messages, read the news, find directions, and listen to music on my phone. Suddenly, I had to do many of these things differently.`,
+    `After the first day, I noticed something unexpected. I was checking the time less often and spending more time talking to people around me. I also finished a book that I had been reading for weeks. Without constant notifications, it was easier to concentrate. Of course, there were disadvantages. I could not contact people as easily, and I had to use a map when I went somewhere unfamiliar. Still, the experience made me think about how often I use my phone without really needing it.`
+  ],
+  help:[
+    {
+      term:"constant",
+      meaning:"مستمر / دائم",
+      note:"شيء يحدث بشكل متكرر أو دون توقف تقريبًا.",
+      examples:[
+        "The constant noise was annoying.",
+        "I get constant notifications.",
+        "Constant practice can help."
+      ]
+    },
+    {
+      term:"concentrate",
+      meaning:"يركز",
+      note:"concentrate on + noun/verb-ing.",
+      examples:[
+        "I need to concentrate on my work.",
+        "It is hard to concentrate with noise.",
+        "She concentrated on reading."
+      ]
+    },
+    {
+      term:"disadvantage",
+      meaning:"عيب / جانب سلبي",
+      note:"عكسها advantage.",
+      examples:[
+        "One disadvantage is the cost.",
+        "There are advantages and disadvantages.",
+        "The main disadvantage is the distance."
+      ]
+    },
+    {
+      term:"without really needing it",
+      meaning:"من دون أن يكون بحاجة حقيقية إليه",
+      note:"needing it يوضح أن الاستخدام ليس ضروريًا.",
+      examples:[
+        "I use my phone without really needing it.",
+        "He buys things without really needing them.",
+        "Sometimes we worry without really needing to."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why was the writer frustrated when the phone stopped working?",
+      answers:[
+        "Because he used it for almost everything.",
+        "He used his phone for messages, news, directions, and music."
+      ]
+    },
+    {
+      q:"What positive change did the writer notice?",
+      answers:[
+        "He spent more time talking to people and reading.",
+        "He checked the time less and spent more time talking and reading."
+      ]
+    },
+    {
+      q:"What was one disadvantage of not having the phone?",
+      answers:[
+        "He could not contact people as easily.",
+        "It was harder to contact people and find directions."
+      ]
+    },
+    {
+      q:"What did the experience make the writer think about?",
+      answers:[
+        "How often he uses his phone without really needing it.",
+        "He thought about unnecessary phone use."
+      ]
+    }
+  ]
+},
+
+{
+  id:22,
+  stage:5,
+  title:"The Problem with Being Busy",
+  topic:"Work-Life Balance",
+  image:"int-reading-22.webp",
+  before:"Is being busy always the same as being productive?",
+  paragraphs:[
+    `For a long time, I thought that being busy meant I was doing well. My days were full of meetings, messages, tasks, and plans. Whenever someone asked how I was, I usually said, “Busy.” I felt proud of having so much to do, even when I was tired.`,
+    `Eventually, I started to notice a problem. I was spending a lot of time working, but some important tasks were still unfinished. I was also saying yes to things that were not really necessary. I decided to change the way I planned my days. Instead of filling every hour, I began choosing two or three important tasks and leaving some empty time between them. I now understand that productivity is not about having the busiest schedule. It is about using your time for things that actually matter.`
+  ],
+  help:[
+    {
+      term:"full of",
+      meaning:"مليء بـ",
+      note:"تركيب شائع جدًا.",
+      examples:[
+        "My day is full of meetings.",
+        "The room was full of people.",
+        "The book is full of useful ideas."
+      ]
+    },
+    {
+      term:"unfinished",
+      meaning:"غير مكتمل",
+      note:"عكس finished.",
+      examples:[
+        "I still have some unfinished work.",
+        "The project is unfinished.",
+        "She left the task unfinished."
+      ]
+    },
+    {
+      term:"say yes to",
+      meaning:"يوافق على",
+      note:"تُستخدم للموافقة على طلب أو فرصة أو نشاط.",
+      examples:[
+        "I often say yes to too many things.",
+        "She said yes to the invitation.",
+        "Learn when to say yes and no."
+      ]
+    },
+    {
+      term:"actually matter",
+      meaning:"يهم فعلًا",
+      note:"actually تضيف معنى الحقيقة أو الواقع.",
+      examples:[
+        "Focus on things that actually matter.",
+        "What actually matters is progress.",
+        "These are the things that actually matter."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer feel proud of being busy?",
+      answers:[
+        "He thought being busy meant he was doing well.",
+        "He believed being busy meant he was successful."
+      ]
+    },
+    {
+      q:"What problem did the writer notice?",
+      answers:[
+        "Important tasks were still unfinished.",
+        "He worked a lot but important tasks remained unfinished."
+      ]
+    },
+    {
+      q:"How did he change his daily planning?",
+      answers:[
+        "He chose two or three important tasks and left some empty time.",
+        "He stopped filling every hour."
+      ]
+    },
+    {
+      q:"What does productivity mean to the writer now?",
+      answers:[
+        "Using time for things that actually matter.",
+        "It means using time effectively for important things."
+      ]
+    }
+  ]
+},
+
+{
+  id:23,
+  stage:5,
+  title:"A Small Environmental Change",
+  topic:"Environment & Responsibility",
+  image:"int-reading-23.webp",
+  before:"What is one small environmental change that people can make?",
+  paragraphs:[
+    `Last year, my apartment building started a small recycling program. At first, only a few people seemed interested. Some residents thought that separating paper, plastic, and other materials would take too much effort. Others were not sure whether the collected materials would actually be recycled.`,
+    `The building manager decided to make the system easier. He placed clearly labeled containers near the entrance and explained what could be put into each one. Within a few weeks, more residents started using them. The change did not solve every environmental problem, but it reduced the amount of waste being thrown away. It also started conversations between neighbors about other ways to reduce waste. The experience showed me that small changes can become more effective when people understand why they matter and when the practical steps are simple.`
+  ],
+  help:[
+    {
+      term:"recycling program",
+      meaning:"برنامج إعادة التدوير",
+      note:"برنامج لجمع المواد وإعادة استخدامها أو معالجتها.",
+      examples:[
+        "Our school has a recycling program.",
+        "The recycling program started last year.",
+        "We joined a local recycling program."
+      ]
+    },
+    {
+      term:"separate",
+      meaning:"يفصل",
+      note:"يفصل الأشياء عن بعضها.",
+      examples:[
+        "We separate paper from plastic.",
+        "Please separate these materials.",
+        "The boxes are separated by type."
+      ]
+    },
+    {
+      term:"labeled",
+      meaning:"عليه ملصق يوضح المحتوى",
+      note:"label = ملصق/بطاقة توضح الشيء.",
+      examples:[
+        "The boxes were clearly labeled.",
+        "Use the labeled containers.",
+        "All the files are labeled."
+      ]
+    },
+    {
+      term:"reduce waste",
+      meaning:"يقلل النفايات",
+      note:"تعبير شائع في موضوع البيئة.",
+      examples:[
+        "We should reduce waste.",
+        "Recycling can reduce waste.",
+        "Small changes can help reduce waste."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why were some residents not interested at first?",
+      answers:[
+        "They thought separating materials would take too much effort.",
+        "They thought recycling would be difficult."
+      ]
+    },
+    {
+      q:"How did the manager make recycling easier?",
+      answers:[
+        "He placed clearly labeled containers near the entrance and explained the system.",
+        "He added labeled containers and explained what went into each one."
+      ]
+    },
+    {
+      q:"What happened after a few weeks?",
+      answers:[
+        "More residents started using the containers.",
+        "More people began recycling."
+      ]
+    },
+    {
+      q:"What lesson did the writer learn?",
+      answers:[
+        "Small changes work better when people understand them and the steps are simple.",
+        "Small changes can become effective when they are easy and meaningful."
+      ]
+    }
+  ]
+},
+
+{
+  id:24,
+  stage:5,
+  title:"What Makes a Good Community?",
+  topic:"Society & Community",
+  image:"int-reading-24.webp",
+  before:"What do people need in order to feel that they belong to a community?",
+  paragraphs:[
+    `A good community is not simply a place where many people live close to each other. It is a place where people know that they can ask for help and where they feel responsible for the area around them. I began thinking about this after my neighborhood organized a small community event.`,
+    `At first, I expected only a few people to attend. Instead, families, older residents, students, and shop owners all came. Some people brought food, while others organized activities for children. I noticed that many of the people did not know each other before the event. By the end of the evening, they were exchanging phone numbers and talking about other things they could do together. The event did not solve every problem in the neighborhood, but it created connections. I realized that communities become stronger when people have opportunities to meet, communicate, and help one another.`
+  ],
+  help:[
+    {
+      term:"belong to",
+      meaning:"ينتمي إلى / يشعر بأنه جزء من",
+      note:"يمكن أن تكون عن مكان أو مجموعة.",
+      examples:[
+        "I feel that I belong here.",
+        "She belongs to a local group.",
+        "Everyone wants to belong to a community."
+      ]
+    },
+    {
+      term:"responsible for",
+      meaning:"مسؤول عن",
+      note:"تعبير مهم جدًا.",
+      examples:[
+        "We are responsible for our community.",
+        "Who is responsible for the event?",
+        "Everyone is responsible for keeping the area clean."
+      ]
+    },
+    {
+      term:"attend",
+      meaning:"يحضر",
+      note:"يُستخدم مع الاجتماعات والفعاليات والدروس.",
+      examples:[
+        "Many people attended the event.",
+        "I attended the meeting.",
+        "She attends English classes."
+      ]
+    },
+    {
+      term:"create connections",
+      meaning:"يبني علاقات وروابط",
+      note:"مفيد عند الحديث عن المجتمع والعمل والعلاقات.",
+      examples:[
+        "Events help create connections.",
+        "We created strong connections.",
+        "The project helped people create connections."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"According to the writer, what is a good community more than?",
+      answers:[
+        "A place where many people live close together.",
+        "It is more than simply a place where people live close together."
+      ]
+    },
+    {
+      q:"Who attended the community event?",
+      answers:[
+        "Families, older residents, students, and shop owners.",
+        "Different groups of people from the neighborhood."
+      ]
+    },
+    {
+      q:"What did people do by the end of the evening?",
+      answers:[
+        "They exchanged phone numbers and talked about future activities.",
+        "They exchanged numbers and discussed other things they could do."
+      ]
+    },
+    {
+      q:"What makes communities stronger according to the writer?",
+      answers:[
+        "Opportunities to meet, communicate, and help one another.",
+        "Meeting, communicating, and helping each other."
+      ]
+    }
+  ]
+},
+
+{
+  id:25,
+  stage:5,
+  title:"Learning from Mistakes",
+  topic:"Growth & Experience",
+  image:"int-reading-25.webp",
+  before:"Why can mistakes sometimes be useful?",
+  paragraphs:[
+    `When I was younger, I believed that making mistakes was a sign that I was not good at something. Because of this, I often avoided difficult tasks. If I was not sure that I could do something well, I preferred not to try at all. Over time, I realized that this way of thinking was preventing me from learning.`,
+    `One experience changed my attitude. I was working on a project and made a mistake that affected the final result. Instead of hiding the mistake, I looked carefully at what had happened. I discovered that I had misunderstood one important instruction. Once I understood the problem, I knew how to avoid it in the future. Since then, I have tried to see mistakes as information. They do not automatically mean that I have failed. Sometimes, they show me exactly what I need to learn next.`
+  ],
+  help:[
+    {
+      term:"a sign that",
+      meaning:"علامة على أن",
+      note:"تُستخدم لربط دليل أو علامة بنتيجة.",
+      examples:[
+        "This is a sign that you are improving.",
+        "His smile was a sign that he was happy.",
+        "It may be a sign that something is wrong."
+      ]
+    },
+    {
+      term:"prevent",
+      meaning:"يمنع",
+      note:"prevent + noun أو from + verb-ing.",
+      examples:[
+        "Fear can prevent you from trying.",
+        "This can prevent problems.",
+        "The rule prevents accidents."
+      ]
+    },
+    {
+      term:"affect",
+      meaning:"يؤثر في",
+      note:"فعل مهم، ويأتي بعده الشيء المتأثر.",
+      examples:[
+        "Stress can affect your health.",
+        "The mistake affected the result.",
+        "Weather can affect our plans."
+      ]
+    },
+    {
+      term:"avoid a mistake",
+      meaning:"يتجنب خطأ",
+      note:"avoid + noun.",
+      examples:[
+        "I want to avoid the same mistake.",
+        "Careful planning can help avoid mistakes.",
+        "We learned how to avoid this mistake."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer avoid difficult tasks when he was younger?",
+      answers:[
+        "Because he thought mistakes meant he was not good at something.",
+        "He was afraid that mistakes meant he was not good."
+      ]
+    },
+    {
+      q:"What mistake did the writer make in the project?",
+      answers:[
+        "He misunderstood an important instruction.",
+        "He had misunderstood one important instruction."
+      ]
+    },
+    {
+      q:"What did he learn from the mistake?",
+      answers:[
+        "He learned how to avoid the problem in the future.",
+        "He understood what he needed to do differently."
+      ]
+    },
+    {
+      q:"How does he see mistakes now?",
+      answers:[
+        "As useful information about what he needs to learn.",
+        "He sees them as information rather than automatic failure."
+      ]
+    }
+  ]
+},
+
+/* =========================
+   STAGE 6
+========================= */
+
+{
+  id:26,
+  stage:6,
+  title:"The Decision That Changed My Plans",
+  topic:"Decisions & Life Changes",
+  image:"int-reading-26.webp",
+  before:"Have you ever made a decision that changed your plans completely?",
+  paragraphs:[
+    `For several months, I had planned to move to another city for work. I had already looked at apartments, compared prices, and told my friends about the move. Everything seemed ready. Then, a week before I was supposed to leave, my current company offered me a different position. It was not the job I had originally wanted, but it included new responsibilities and the chance to work on a project I found interesting.`,
+    `I spent several days thinking about the decision. Moving would have been exciting, but the new position would allow me to stay near my family while developing skills that I wanted to improve. In the end, I accepted the offer and cancelled my move. Some people were surprised by my decision, but I felt comfortable with it. The experience taught me that changing a plan does not always mean giving up. Sometimes, it means choosing a different direction after discovering a better possibility.`
+  ],
+  help:[
+    {
+      term:"be supposed to",
+      meaning:"من المفترض أن",
+      note:"للمواعيد والخطط المتوقعة.",
+      examples:[
+        "I was supposed to leave on Friday.",
+        "The meeting is supposed to start at nine.",
+        "She was supposed to call me."
+      ]
+    },
+    {
+      term:"include",
+      meaning:"يشمل",
+      note:"فعل مهم جدًا في وصف الوظائف والخطط.",
+      examples:[
+        "The job includes new responsibilities.",
+        "The price includes breakfast.",
+        "The course includes several activities."
+      ]
+    },
+    {
+      term:"develop skills",
+      meaning:"يطوّر مهارات",
+      note:"Collocation مهم في الدراسة والعمل.",
+      examples:[
+        "I want to develop new skills.",
+        "The course helps students develop skills.",
+        "Work can help you develop useful skills."
+      ]
+    },
+    {
+      term:"a different direction",
+      meaning:"اتجاه مختلف",
+      note:"تُستخدم مجازيًا عند تغيير الخطة أو المسار.",
+      examples:[
+        "My career took a different direction.",
+        "We decided to take a different direction.",
+        "The project went in a different direction."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"What had the writer already done before the new job offer?",
+      answers:[
+        "Looked at apartments, compared prices, and told friends about the move.",
+        "He had researched apartments, prices, and told his friends."
+      ]
+    },
+    {
+      q:"What did the new position offer?",
+      answers:[
+        "New responsibilities and a chance to work on an interesting project.",
+        "It included new responsibilities and an interesting project."
+      ]
+    },
+    {
+      q:"Why did the writer accept the new position?",
+      answers:[
+        "He could stay near his family and develop useful skills.",
+        "It allowed him to stay near his family and develop skills."
+      ]
+    },
+    {
+      q:"What did the writer learn about changing plans?",
+      answers:[
+        "Changing a plan can mean choosing a different direction rather than giving up.",
+        "Changing plans does not always mean giving up."
+      ]
+    }
+  ]
+},
+
+{
+  id:27,
+  stage:6,
+  title:"Why I Started Again",
+  topic:"Persistence & Personal Growth",
+  image:"int-reading-27.webp",
+  before:"What might make someone start working toward an old goal again?",
+  paragraphs:[
+    `Three years ago, I started learning a new skill, but I stopped after a few months. I was busy, and I did not feel that I was improving quickly enough. I told myself that I would return to it one day, but I forgot about it for a long time.`,
+    `Recently, I found my old notes while cleaning my room. Reading them reminded me why I had started in the first place. I also realized that I had learned more than I remembered. Instead of beginning from zero, I could use what I already knew and continue from there. This time, I changed my expectations. I no longer expect myself to improve quickly. I simply try to practice regularly and notice small improvements. Starting again has been easier than I expected, partly because I now understand that progress does not have to be fast to be real.`
+  ],
+  help:[
+    {
+      term:"return to",
+      meaning:"يعود إلى",
+      note:"يمكن استخدامها للأماكن أو الأنشطة أو العادات.",
+      examples:[
+        "I want to return to my studies.",
+        "She returned to the project later.",
+        "He returned to the habit."
+      ]
+    },
+    {
+      term:"in the first place",
+      meaning:"في الأصل / من الأساس",
+      note:"تُستخدم للحديث عن السبب الأصلي.",
+      examples:[
+        "Why did you start in the first place?",
+        "I remembered why I wanted it in the first place.",
+        "We should ask why it happened in the first place."
+      ]
+    },
+    {
+      term:"start from zero",
+      meaning:"يبدأ من الصفر",
+      note:"تُستخدم عندما لا يكون لديك أساس سابق.",
+      examples:[
+        "I do not have to start from zero.",
+        "He started from zero and learned quickly.",
+        "You can learn without starting from zero."
+      ]
+    },
+    {
+      term:"small improvement",
+      meaning:"تحسن بسيط",
+      note:"التحسن الصغير المتكرر قد يكون مهمًا على المدى الطويل.",
+      examples:[
+        "I notice a small improvement every week.",
+        "Small improvements add up.",
+        "She was happy with every small improvement."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer stop learning the skill three years ago?",
+      answers:[
+        "He was busy and did not feel he was improving quickly enough.",
+        "He was busy and felt his progress was too slow."
+      ]
+    },
+    {
+      q:"What reminded the writer about the skill?",
+      answers:[
+        "He found his old notes.",
+        "Finding his old notes reminded him."
+      ]
+    },
+    {
+      q:"Why did he not have to start from zero?",
+      answers:[
+        "Because he had already learned some things.",
+        "He could use what he already knew."
+      ]
+    },
+    {
+      q:"How has his attitude changed this time?",
+      answers:[
+        "He no longer expects fast improvement and focuses on regular practice.",
+        "He focuses on regular practice and small improvements."
+      ]
+    }
+  ]
+},
+
+{
+  id:28,
+  stage:6,
+  title:"A Lesson I Didn't Expect to Learn",
+  topic:"Experience & Perspective",
+  image:"int-reading-28.webp",
+  before:"Can an ordinary experience teach you something important?",
+  paragraphs:[
+    `A few years ago, I spent an afternoon helping an elderly neighbor organize some old boxes. I expected the work to take only an hour, but we ended up spending most of the afternoon together. While we worked, she told me stories about the neighborhood and about how much it had changed over the years.`,
+    `At first, I was mainly interested in finishing the task. Gradually, however, I became more interested in listening. She remembered details that I had never heard before, and I began to see the neighborhood differently. When we finally finished, she thanked me for my help. I remember thinking that I had probably received more than I had given. The experience taught me that spending time with people can be valuable even when there is no obvious goal. Sometimes, the most useful thing you can do is simply listen to someone who has something to share.`
+  ],
+  help:[
+    {
+      term:"elderly",
+      meaning:"كبير في السن",
+      note:"تُستخدم باحترام عند الحديث عن كبار السن.",
+      examples:[
+        "We helped an elderly neighbor.",
+        "The program supports elderly people.",
+        "She works with elderly residents."
+      ]
+    },
+    {
+      term:"over the years",
+      meaning:"على مر السنين",
+      note:"تُستخدم للحديث عن تغير حدث خلال فترة طويلة.",
+      examples:[
+        "The city has changed over the years.",
+        "I have learned a lot over the years.",
+        "The house has changed over the years."
+      ]
+    },
+    {
+      term:"gradually",
+      meaning:"تدريجيًا",
+      note:"شيء يحدث ببطء وليس فجأة.",
+      examples:[
+        "I gradually became more confident.",
+        "The weather gradually improved.",
+        "She gradually understood the idea."
+      ]
+    },
+    {
+      term:"have something to share",
+      meaning:"لديه شيء يشاركه",
+      note:"تُستخدم عن قصة أو خبرة أو معلومة.",
+      examples:[
+        "She has something interesting to share.",
+        "Everyone has a story to share.",
+        "He had some useful advice to share."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer spend most of the afternoon with the neighbor?",
+      answers:[
+        "They started talking while organizing the boxes.",
+        "They spent the afternoon organizing boxes and talking."
+      ]
+    },
+    {
+      q:"What did the neighbor talk about?",
+      answers:[
+        "Stories about the neighborhood and how it had changed.",
+        "She talked about the neighborhood and its changes."
+      ]
+    },
+    {
+      q:"How did the writer's attitude change?",
+      answers:[
+        "He became more interested in listening than simply finishing the task.",
+        "He became interested in listening."
+      ]
+    },
+    {
+      q:"What lesson did the writer learn?",
+      answers:[
+        "Spending time with people can be valuable even without an obvious goal.",
+        "Sometimes simply listening to someone is valuable."
+      ]
+    }
+  ]
+},
+
+{
+  id:29,
+  stage:6,
+  title:"The Conversation I Remember",
+  topic:"Communication & Memory",
+  image:"int-reading-29.webp",
+  before:"Why do some conversations stay in our memory for years?",
+  paragraphs:[
+    `I have had hundreds of conversations in my life, but one short conversation has stayed with me for years. It happened when I was worried about an important decision. I was talking to an older relative who had more experience than I did, and I expected him to tell me exactly what I should do.`,
+    `Instead, he asked me several questions. He wanted to know what I was afraid of, what I really wanted, and what I would choose if I knew that I could not fail. He did not give me a direct answer. At first, I was disappointed because I had hoped for simple advice. Later, however, I understood why the conversation had been useful. The questions forced me to think carefully about my own priorities. I eventually made my decision, but I still remember that conversation because it taught me that good advice does not always come in the form of an answer. Sometimes, it comes in the form of a question.`
+  ],
+  help:[
+    {
+      term:"stay with me",
+      meaning:"يبقى في ذهني / يؤثر فيّ",
+      note:"هنا مجازيًا عن ذكرى لا تنسى.",
+      examples:[
+        "That conversation stayed with me.",
+        "Her words stayed with me for years.",
+        "The experience stayed with me."
+      ]
+    },
+    {
+      term:"exactly",
+      meaning:"بالضبط",
+      note:"تستخدم للتأكيد على الدقة.",
+      examples:[
+        "Tell me exactly what happened.",
+        "That is exactly what I mean.",
+        "I know exactly where it is."
+      ]
+    },
+    {
+      term:"priorities",
+      meaning:"الأولويات",
+      note:"الأشياء التي تعتبرها أكثر أهمية.",
+      examples:[
+        "We need to set our priorities.",
+        "My priorities have changed.",
+        "Think about your priorities first."
+      ]
+    },
+    {
+      term:"in the form of",
+      meaning:"على شكل / في صورة",
+      note:"تُستخدم لوصف الشكل الذي يأتي به الشيء.",
+      examples:[
+        "The advice came in the form of a question.",
+        "The information came in the form of a letter.",
+        "Help can come in many forms."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why did the writer expect the relative to give a direct answer?",
+      answers:[
+        "Because the relative had more experience.",
+        "He thought the older relative would know what he should do."
+      ]
+    },
+    {
+      q:"What did the relative do instead?",
+      answers:[
+        "He asked several questions.",
+        "He asked questions about the writer's fears and wishes."
+      ]
+    },
+    {
+      q:"Why was the writer initially disappointed?",
+      answers:[
+        "He wanted simple advice.",
+        "He had hoped for a direct answer."
+      ]
+    },
+    {
+      q:"What did the writer eventually understand?",
+      answers:[
+        "The questions helped him think about his priorities.",
+        "The questions were useful because they made him think carefully."
+      ]
+    }
+  ]
+},
+
+{
+  id:30,
+  stage:6,
+  title:"A New Chapter",
+  topic:"Change & New Beginnings",
+  image:"int-reading-30.webp",
+  before:"What does a new chapter in life mean to you?",
+  paragraphs:[
+    `Starting something new can be exciting, but it can also be uncomfortable. Last year, I left a familiar job and began studying something completely different. I had thought about the change for a long time, but making the decision was still difficult. I knew that I would have to learn new skills, meet new people, and accept that I would not be good at everything immediately.`,
+    `The first few months were challenging. There were days when I wondered whether I had made the right choice. However, I gradually became more confident. I started making friends, understood more of what I was learning, and discovered that I enjoyed being a beginner again. Looking back, I realize that the most important part of the experience was not the final result. It was learning to accept uncertainty and continue moving forward. A new chapter does not have to begin because the previous one was bad. Sometimes, it begins simply because you are ready to grow in a different direction.`
+  ],
+  help:[
+    {
+      term:"a new chapter",
+      meaning:"مرحلة جديدة من الحياة",
+      note:"تعبير مجازي وليس المقصود فصل كتاب حرفيًا.",
+      examples:[
+        "Starting university was a new chapter for me.",
+        "She is beginning a new chapter in her life.",
+        "Moving abroad started a new chapter."
+      ]
+    },
+    {
+      term:"completely different",
+      meaning:"مختلف تمامًا",
+      note:"تستخدم للتأكيد على الاختلاف الكبير.",
+      examples:[
+        "My new job is completely different.",
+        "We had a completely different experience.",
+        "The situation is completely different now."
+      ]
+    },
+    {
+      term:"make the right choice",
+      meaning:"يتخذ القرار الصحيح",
+      note:"Collocation شائع مع choice.",
+      examples:[
+        "I hope I made the right choice.",
+        "She believes she made the right choice.",
+        "It is difficult to know if you made the right choice."
+      ]
+    },
+    {
+      term:"move forward",
+      meaning:"يمضي قدمًا",
+      note:"Phrasal verb مهم جدًا، ويستخدم مجازيًا للتقدم.",
+      examples:[
+        "We need to move forward.",
+        "She decided to move forward with her plans.",
+        "Learning from mistakes helps us move forward."
+      ]
+    },
+    {
+      term:"uncertainty",
+      meaning:"عدم اليقين",
+      note:"حالة عدم معرفة ما سيحدث.",
+      examples:[
+        "Starting something new can bring uncertainty.",
+        "I learned to accept uncertainty.",
+        "Uncertainty is a normal part of change."
+      ]
+    }
+  ],
+  questions:[
+    {
+      q:"Why was starting something new uncomfortable for the writer?",
+      answers:[
+        "He had to learn new skills, meet new people, and accept that he would not be good immediately.",
+        "He had to learn new skills and accept being a beginner."
+      ]
+    },
+    {
+      q:"What happened during the first few months?",
+      answers:[
+        "The experience was challenging and he sometimes questioned his decision.",
+        "He found the first months difficult and wondered if he had made the right choice."
+      ]
+    },
+    {
+      q:"What did the writer eventually discover?",
+      answers:[
+        "He enjoyed being a beginner again.",
+        "He discovered that he enjoyed learning something new."
+      ]
+    },
+    {
+      q:"What does the writer say about a new chapter?",
+      answers:[
+        "It can begin because you are ready to grow in a different direction.",
+        "A new chapter does not necessarily mean the previous one was bad."
+      ]
+    }
+  ]
+}
+
+];
+
+
+/* =========================================================
+   STAGE DATA
+========================================================= */
+
+const stages = [
+
+  {
+    id:1,
+    title:"الحياة اليومية والتجارب",
+    description:"مواقف يومية، عادات، قرارات وتجارب غير متوقعة."
+  },
+
+  {
+    id:2,
+    title:"الأشخاص والعلاقات",
+    description:"التواصل، العلاقات، الثقة والمواقف الاجتماعية."
+  },
+
+  {
+    id:3,
+    title:"الدراسة والعمل والأهداف",
+    description:"التعلم، العمل، إدارة الوقت وتحقيق الأهداف."
+  },
+
+  {
+    id:4,
+    title:"السفر والمواقف الواقعية",
+    description:"السفر، الخطط، المشاكل والمواقف التي تحدث في الحياة."
+  },
+
+  {
+    id:5,
+    title:"الحياة الحديثة والأفكار",
+    description:"التكنولوجيا، المجتمع، البيئة والنظرة إلى الحياة."
+  },
+
+  {
+    id:6,
+    title:"تحدي القراءة B1",
+    description:"نصوص أطول وأفكار أكثر تعقيدًا وتحديًا."
+  }
+
+];
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let currentLessonId = null;
+
+let selectedEnglishVoice = null;
+
+let speakingButton = null;
+
+
+/* =========================================================
+   SPEECH SYNTHESIS
+========================================================= */
+
+function loadEnglishVoice(){
+
+  if(!("speechSynthesis" in window)) return;
+
+  const voices =
+    window.speechSynthesis.getVoices();
+
+  selectedEnglishVoice =
+    voices.find(v =>
+      v.lang &&
+      v.lang.toLowerCase() === "en-us"
+    ) ||
+
+    voices.find(v =>
+      v.lang &&
+      v.lang.toLowerCase() === "en-gb"
+    ) ||
+
+    voices.find(v =>
+      v.lang &&
+      v.lang.toLowerCase().startsWith("en")
+    ) ||
+
+    null;
+}
+
+
+if("speechSynthesis" in window){
+
+  loadEnglishVoice();
+
+  window.speechSynthesis.onvoiceschanged =
+    loadEnglishVoice;
+
+}
+
+
+function speakText(text,button){
+
+  if(!("speechSynthesis" in window)){
+
+    alert(
+      "المتصفح لا يدعم تشغيل النطق الصوتي."
+    );
+
+    return;
+  }
+
+  try{
+
+    window.speechSynthesis.cancel();
+
+    if(speakingButton){
+
+      speakingButton.classList.remove(
+        "speaking"
+      );
+
+      speakingButton.textContent="🔊";
+    }
+
+    loadEnglishVoice();
+
+    const utterance =
+      new SpeechSynthesisUtterance(text);
+
+    utterance.lang="en-US";
+
+    utterance.rate=.78;
+
+    utterance.pitch=1;
+
+    if(selectedEnglishVoice){
+
+      utterance.voice =
+        selectedEnglishVoice;
+    }
+
+    speakingButton=button;
+
+    if(button){
+
+      button.classList.add("speaking");
+
+      button.textContent="🔈";
+    }
+
+    utterance.onend=()=>{
+
+      if(button){
+
+        button.classList.remove(
+          "speaking"
+        );
+
+        button.textContent="🔊";
+      }
+
+      if(speakingButton===button){
+
+        speakingButton=null;
+      }
+    };
+
+    utterance.onerror=()=>{
+
+      if(button){
+
+        button.classList.remove(
+          "speaking"
+        );
+
+        button.textContent="🔊";
+      }
+
+      if(speakingButton===button){
+
+        speakingButton=null;
+      }
+    };
+
+    window.speechSynthesis.speak(
+      utterance
+    );
+
+  }catch(error){
+
+    if(button){
+
+      button.classList.remove(
+        "speaking"
+      );
+
+      button.textContent="🔊";
+    }
+  }
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+
+/* =========================================================
+   NORMALIZE ANSWER
+========================================================= */
+
+function normalizeAnswer(text){
+
+  return text
+    .toLowerCase()
+    .trim()
+
+    .replace(/[’‘]/g,"'")
+
+    .replace(/[.,!?;:()[\]"]/g," ")
+
+    .replace(/\s+/g," ")
+
+    .replace(/^(the|a|an)\s+/,"")
+
+    .trim();
+}
+
+
+/* =========================================================
+   ANSWER CHECK
+========================================================= */
+
+function isAnswerCorrect(userAnswer,acceptedAnswers){
+
+  const normalizedUser =
+    normalizeAnswer(userAnswer);
+
+  if(!normalizedUser) return false;
+
+  return acceptedAnswers.some(answer => {
+
+    return normalizeAnswer(answer) ===
+      normalizedUser;
+
+  });
+
+}
+
+
+/* =========================================================
+   RENDER LIST
+========================================================= */
+
+function renderReadings(searchTerm=""){
+
+  const list =
+    document.getElementById(
+      "readingList"
+    );
+
+  const empty =
+    document.getElementById(
+      "emptyState"
+    );
+
+  const query =
+    searchTerm
+      .toLowerCase()
+      .trim();
+
+  let html="";
+
+  let totalVisible=0;
+
+  stages.forEach(stage=>{
+
+    const stageReadings =
+      readings.filter(item => {
+
+        if(item.stage !== stage.id)
+          return false;
+
+        if(!query)
+          return true;
+
+        const searchable = [
+
+          item.title,
+          item.topic,
+          item.before,
+          ...item.paragraphs
+
+        ]
+        .join(" ")
+        .toLowerCase();
+
+        return searchable.includes(query);
+
+      });
+
+    if(stageReadings.length===0)
+      return;
+
+    totalVisible +=
+      stageReadings.length;
+
+    html += `
+
+      <section class="stage">
+
+        <div class="stage-header">
+
+          <div class="stage-number">
+            ${stage.id}
+          </div>
+
+          <div>
+
+            <h2>
+              ${escapeHtml(stage.title)}
+            </h2>
+
+            <p>
+              ${escapeHtml(stage.description)}
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="readings-grid">
+
+          ${stageReadings.map(item=>`
+
+            <article
+              class="reading-card"
+              onclick="openLesson(${item.id})"
+            >
+
+              <div class="reading-number">
+                READING ${String(item.id).padStart(2,"0")}
+              </div>
+
+              <h3>
+                ${escapeHtml(item.title)}
+              </h3>
+
+              <div class="reading-topic">
+                ${escapeHtml(item.topic)}
+              </div>
+
+            </article>
+
+          `).join("")}
+
+        </div>
+
+      </section>
+
+    `;
+
+  });
+
+
+  list.innerHTML=html;
+
+  empty.style.display =
+    totalVisible===0
+      ? "block"
+      : "none";
+
+}
+
+
+/* =========================================================
+   RENDER HELP ITEMS
+========================================================= */
+
+function renderHelpItems(items){
+
+  return items.map((item,index)=>{
+
+    const encoded =
+      encodeURIComponent(item.term);
+
+    const examples =
+      item.examples || [];
+
+    return `
+
+      <div class="help-item">
+
+        <div class="help-top">
+
+          <div class="help-expression">
+
+            ${index+1}.
+            ${escapeHtml(item.term)}
+
+          </div>
+
+          <button
+            class="speak-btn"
+            type="button"
+            data-speak="${encoded}"
+            onclick="speakText(decodeURIComponent(this.dataset.speak),this)"
+            aria-label="استمع للنطق"
+          >
+            🔊
+          </button>
+
+        </div>
+
+        <div class="help-meaning">
+
+          ${escapeHtml(item.meaning)}
+
+        </div>
+
+        ${
+          item.note
+          ? `
+            <div class="help-note">
+              ${escapeHtml(item.note)}
+            </div>
+          `
+          : ""
+        }
+
+        ${
+          examples.length
+          ? `
+            <div
+              class="help-note"
+              style="margin-top:13px;"
+            >
+
+              ${examples.map(example=>`
+
+                <div
+                  style="
+                    direction:ltr;
+                    text-align:left;
+                    margin-top:9px;
+                  "
+                >
+
+                  <strong>
+                    ${escapeHtml(example)}
+                  </strong>
+
+                </div>
+
+                <div
+                  style="
+                    direction:rtl;
+                    text-align:right;
+                    color:#7A8195;
+                    font-size:12px;
+                    margin-top:2px;
+                  "
+                >
+
+                  ${
+                    getArabicExample(
+                      example,
+                      item
+                    )
+                  }
+
+                </div>
+
+              `).join("")}
+
+            </div>
+          `
+          : ""
+        }
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+
+/* =========================================================
+   EXAMPLE TRANSLATIONS
+========================================================= */
+
+function getArabicExample(example,item){
+
+  const translations = {
+
+    "as usual":[
+      "كالمعتاد.",
+      "كالعادة.",
+      "كالمعتاد."
+    ],
+
+    "find out":[
+      "عرفت عن الاجتماع هذا الصباح.",
+      "نحتاج أن نعرف ما حدث.",
+      "اكتشفت الحقيقة لاحقًا."
+    ],
+
+    "move a meeting":[
+      "هل يمكننا نقل الاجتماع إلى الثلاثاء؟",
+      "نقلوا الاجتماع إلى فترة الظهيرة.",
+      "تم نقل الاجتماع إلى وقت أبكر."
+    ],
+
+    "get everything done":[
+      "أحتاج أن أنجز كل شيء اليوم.",
+      "أنجزت عملها مبكرًا.",
+      "تمكنا أخيرًا من إنجاز كل شيء."
+    ]
+
+  };
+
+  const key =
+    item.term.toLowerCase();
+
+  if(translations[key]){
+
+    const index =
+      item.examples.indexOf(example);
+
+    return translations[key][index] || "";
+
+  }
+
+  return "ترجمة المثال موضحة من سياق العبارة.";
+
+}
+
+
+/* =========================================================
+   OPEN LESSON
+========================================================= */
+
+function openLesson(id){
+
+  const lesson =
+    readings.find(item =>
+      item.id===id
+    );
+
+  if(!lesson) return;
+
+  currentLessonId=id;
+
+  document.body.classList.add(
+    "lesson-open"
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"instant"
+  });
+
+  renderLesson(lesson);
+
+}
+
+
+/* =========================================================
+   RENDER LESSON
+========================================================= */
+
+function renderLesson(lesson){
+
+  const container =
+    document.getElementById(
+      "lessonContent"
+    );
+
+  const previous =
+    readings.find(item =>
+      item.id === lesson.id - 1
+    );
+
+  const next =
+    readings.find(item =>
+      item.id === lesson.id + 1
+    );
+
+
+  container.innerHTML = `
+
+    <!-- LESSON HEADER -->
+
+    <div class="lesson-top">
+
+      <button
+        class="lesson-close"
+        type="button"
+        onclick="closeLesson()"
+      >
+        ← العودة إلى القراءات
+      </button>
+
+      <div class="lesson-number">
+
+        READING
+        ${String(lesson.id).padStart(2,"0")}
+
+      </div>
+
+      <h2>
+        ${escapeHtml(lesson.title)}
+      </h2>
+
+      <p class="lesson-topic">
+        ${escapeHtml(lesson.topic)}
+      </p>
+
+    </div>
+
+
+    <!-- BEFORE READING -->
+
+    <div class="before-read">
+
+      <div class="before-read-title">
+        💡 قبل أن تقرأ
+      </div>
+
+      <p>
+        ${escapeHtml(lesson.before)}
+      </p>
+
+    </div>
+
+
+    <!-- IMAGE -->
+
+    <div class="image-card">
+
+      <img
+        class="reading-image"
+        src="${escapeHtml(lesson.image)}"
+        alt="${escapeHtml(lesson.title)}"
+        loading="eager"
+      >
+
+    </div>
+
+
+    <!-- TEXT -->
+
+    <div class="reading-text-card">
+
+      <h3 class="section-title">
+        📖 اقرأ
+      </h3>
+
+      <div class="reading-text">
+
+        ${lesson.paragraphs.map(
+          paragraph => `
+            <p>
+              ${escapeHtml(paragraph)}
+            </p>
+          `
+        ).join("")}
+
+      </div>
+
+    </div>
+
+
+    <!-- HELP -->
+
+    <div class="help-card">
+
+      <h3 class="section-title">
+        🧠 كلمات وعبارات من النص
+      </h3>
+
+      <div class="help-grid">
+
+        ${renderHelpItems(lesson.help)}
+
+      </div>
+
+    </div>
+
+
+    <!-- QUESTIONS -->
+
+    <div class="questions-card">
+
+      <h3 class="section-title">
+        📝 اختبر فهمك
+      </h3>
+
+      ${lesson.questions.map(
+        (question,index)=>`
+
+          <div class="question">
+
+            <div class="question-label">
+
+              <span class="question-number">
+                ${index+1}.
+              </span>
+
+              ${escapeHtml(question.q)}
+
+            </div>
+
+            <textarea
+              class="answer-input"
+              id="answer-${lesson.id}-${index}"
+              placeholder="اكتب إجابتك بالإنجليزية..."
+            ></textarea>
+
+            <div
+              class="answer-feedback"
+              id="feedback-${lesson.id}-${index}"
+            ></div>
+
+          </div>
+
+        `
+      ).join("")}
+
+
+      <button
+        class="check-btn"
+        type="button"
+        onclick="checkAnswers()"
+      >
+        تحقق من الإجابات
+      </button>
+
+
+      <div
+        id="scoreCard"
+        class="score-card"
+      >
+
+        <div class="score-title">
+          نتيجتك
+        </div>
+
+        <div
+          id="scoreNumber"
+          class="score-number"
+        >
+          0 / ${lesson.questions.length}
+        </div>
+
+        <button
+          class="retry-btn"
+          type="button"
+          onclick="resetAnswers()"
+        >
+          إعادة المحاولة
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- SOURCE -->
+
+    <div class="source-note">
+
+      هذا النص من إعداد
+      <strong>Engliza Academy</strong>
+      ومصمم للتدرب على القراءة باللغة الإنجليزية
+      في مستوى Intermediate.
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="lesson-nav">
+
+      <button
+        type="button"
+        ${previous ? "" : "disabled"}
+        onclick="${
+          previous
+            ? `openLesson(${previous.id})`
+            : ""
+        }"
+      >
+        ← القراءة السابقة
+      </button>
+
+      <button
+        type="button"
+        ${next ? "" : "disabled"}
+        onclick="${
+          next
+            ? `openLesson(${next.id})`
+            : ""
+        }"
+      >
+        القراءة التالية →
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   CHECK ANSWERS
+========================================================= */
+
+function checkAnswers(){
+
+  const lesson =
+    readings.find(item =>
+      item.id===currentLessonId
+    );
+
+  if(!lesson) return;
+
+  let score=0;
+
+
+  lesson.questions.forEach(
+    (question,index)=>{
+
+      const input =
+        document.getElementById(
+          `answer-${lesson.id}-${index}`
+        );
+
+      const feedback =
+        document.getElementById(
+          `feedback-${lesson.id}-${index}`
+        );
+
+      if(!input || !feedback)
+        return;
+
+      const correct =
+        isAnswerCorrect(
+          input.value,
+          question.answers
+        );
+
+
+      feedback.className =
+        "answer-feedback";
+
+
+      if(correct){
+
+        score++;
+
+        feedback.classList.add(
+          "correct"
+        );
+
+        feedback.innerHTML =
+          "✓ إجابة صحيحة! أحسنت.";
+
+      }else{
+
+        feedback.classList.add(
+          "wrong"
+        );
+
+        feedback.innerHTML =
+          `
+            ✗ حاول مرة أخرى.
+            <br>
+            <strong>
+              الإجابة المقبولة:
+            </strong>
+            ${escapeHtml(
+              question.answers[0]
+            )}
+          `;
+
+      }
+
+    }
+  );
+
+
+  const scoreCard =
+    document.getElementById(
+      "scoreCard"
+    );
+
+  const scoreNumber =
+    document.getElementById(
+      "scoreNumber"
+    );
+
+
+  scoreNumber.textContent =
+    `${score} / ${lesson.questions.length}`;
+
+
+  scoreCard.classList.add("show");
+
+
+  scoreCard.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+
+/* =========================================================
+   RESET ANSWERS
+========================================================= */
+
+function resetAnswers(){
+
+  const lesson =
+    readings.find(item =>
+      item.id===currentLessonId
+    );
+
+  if(!lesson) return;
+
+
+  lesson.questions.forEach(
+    (question,index)=>{
+
+      const input =
+        document.getElementById(
+          `answer-${lesson.id}-${index}`
+        );
+
+      const feedback =
+        document.getElementById(
+          `feedback-${lesson.id}-${index}`
+        );
+
+
+      if(input){
+
+        input.value="";
+      }
+
+
+      if(feedback){
+
+        feedback.className =
+          "answer-feedback";
+
+        feedback.innerHTML="";
+      }
+
+    }
+  );
+
+
+  const scoreCard =
+    document.getElementById(
+      "scoreCard"
+    );
+
+  if(scoreCard){
+
+    scoreCard.classList.remove(
+      "show"
+    );
+  }
+
+}
+
+
+/* =========================================================
+   CLOSE LESSON
+========================================================= */
+
+function closeLesson(){
+
+  if("speechSynthesis" in window){
+
+    window.speechSynthesis.cancel();
+  }
+
+  if(speakingButton){
+
+    speakingButton.classList.remove(
+      "speaking"
+    );
+
+    speakingButton.textContent="🔊";
+
+    speakingButton=null;
+  }
+
+  currentLessonId=null;
+
+  document.body.classList.remove(
+    "lesson-open"
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"instant"
+  });
+
+}
+
+
+/* =========================================================
+   PREVIOUS LESSON
+========================================================= */
+
+function previousLesson(){
+
+  if(currentLessonId===null)
+    return;
+
+  const previous =
+    readings.find(item =>
+      item.id === currentLessonId - 1
+    );
+
+  if(previous){
+
+    openLesson(previous.id);
+  }
+
+}
+
+
+/* =========================================================
+   NEXT LESSON
+========================================================= */
+
+function nextLesson(){
+
+  if(currentLessonId===null)
+    return;
+
+  const next =
+    readings.find(item =>
+      item.id === currentLessonId + 1
+    );
+
+  if(next){
+
+    openLesson(next.id);
+  }
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+document
+  .getElementById("searchInput")
+  .addEventListener(
+    "input",
+    function(){
+
+      renderReadings(
+        this.value
+      );
+
+    }
+  );
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.key==="Escape" &&
+      document.body.classList.contains(
+        "lesson-open"
+      )
+    ){
+
+      closeLesson();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   INITIAL RENDER
+========================================================= */
+
+renderReadings();
+
+</script>
+
+</body>
+</html>
