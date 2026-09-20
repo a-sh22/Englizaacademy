@@ -117,6 +117,32 @@ a{
   box-shadow:var(--shadow);
 }
 
+
+.top-area{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  min-height:82px;
+}
+
+.top-owl{
+  width:clamp(58px, 7vw, 82px);
+  height:clamp(58px, 7vw, 82px);
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  border:1px solid rgba(36,48,94,.08);
+
+  box-shadow:
+    0 8px 24px rgba(36,48,94,.10);
+
+  flex-shrink:0;
+}
+
+      
 /* =========================
    HERO
 ========================= */
@@ -575,6 +601,22 @@ a{
   display:block;
 }
 
+
+
+/* =========================
+   LESSON OPEN MODE
+========================= */
+
+body.lesson-open .top-area,
+body.lesson-open .hero,
+body.lesson-open .notice,
+body.lesson-open .path-card,
+body.lesson-open .search-wrap{
+  display:none;
+}
+
+
+      
 .lesson-header{
   background:
     linear-gradient(
@@ -1027,10 +1069,19 @@ a{
        BACK
   ========================== -->
 
+  <div class="top-area">
+
   <a class="back-btn" href="skills-practice.html">
     ← العودة إلى المهارات
   </a>
 
+  <img
+    src="okay.owl.PNG"
+    alt="Engliza Academy"
+    class="top-owl"
+  >
+
+</div>
 
   <!-- =========================
        HERO
@@ -4608,6 +4659,12 @@ function openLesson(id){
 
   listView.style.display = "none";
 
+
+document.body.classList.add(
+  "lesson-open"
+);
+
+      
   lessonView.classList.add("active");
 
   window.scrollTo({
@@ -4817,6 +4874,12 @@ function renderVocabItem(item,index){
 ========================================================= */
 
 function closeLesson(){
+
+
+document.body.classList.remove(
+  "lesson-open"
+);      
+
 
   lessonView.classList.remove("active");
 
