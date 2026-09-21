@@ -814,7 +814,7 @@ a{
   align-items:center;
   gap:8px;
 
-  margin:0 0 15px;
+  margin:12px 0 20px;
 }
 
 .selected-level-label{
@@ -1381,11 +1381,12 @@ footer{
   }
 
 
-  /* SELECTED LABEL */
+/* SELECTED LABEL */
 
-  .selected-level-line{
-    margin-bottom:8px;
-  }
+.selected-level-line{
+  margin-top:8px;
+  margin-bottom:13px;
+}
 
   .selected-level-label{
     min-height:21px;
@@ -1543,6 +1544,193 @@ footer{
     min-height:178px;
   }
 }
+
+
+
+/* =========================================================
+   IPAD / TABLET HERO FIX
+   لا يغيّر تصميم الجوال
+========================================================= */
+
+@media (min-width:701px) and (max-width:1100px){
+
+  /* -----------------------------------------
+     Hero نفسه
+  ----------------------------------------- */
+
+  .hero{
+    height:330px;
+  }
+
+
+  /* -----------------------------------------
+     مساحة النص
+     نعطي English Skills مساحة مستقلة
+  ----------------------------------------- */
+
+  .hero-content{
+    left:42px;
+    width:47%;
+  }
+
+
+  /* -----------------------------------------
+     ENGLISH SKILLS
+     يبقى بالإنجليزي لكن يصغر قليلًا على الآيباد
+     حتى لا يدخل على العبارة الجانبية
+  ----------------------------------------- */
+
+  .hero-title{
+    font-size:40px;
+    letter-spacing:-1.2px;
+
+    white-space:nowrap;
+
+    margin-bottom:12px;
+  }
+
+
+  /* -----------------------------------------
+     الوصف
+  ----------------------------------------- */
+
+  .hero-description{
+    width:400px;
+    max-width:100%;
+
+    font-size:16px;
+    line-height:1.8;
+
+    margin-bottom:20px;
+  }
+
+
+  /* -----------------------------------------
+     الزر
+  ----------------------------------------- */
+
+  .hero-button{
+    min-width:255px;
+    height:49px;
+
+    font-size:15px;
+  }
+
+
+  /* -----------------------------------------
+     Practice / Learn / Grow
+
+     لا نسمح لها أبدًا بالدخول فوق العنوان
+  ----------------------------------------- */
+
+  .hero-handwriting{
+    left:49%;
+    right:auto;
+
+    top:43px;
+
+    width:92px;
+
+    font-size:19px;
+    line-height:1.02;
+
+    transform:rotate(-7deg);
+
+    z-index:12;
+  }
+
+
+  /* -----------------------------------------
+     مساحة البومة
+  ----------------------------------------- */
+
+  .hero-visual{
+    width:45%;
+  }
+
+
+  /* -----------------------------------------
+     الأشكال الخلفية
+  ----------------------------------------- */
+
+  .hero-shape-one{
+    width:285px;
+    height:275px;
+
+    right:45px;
+    top:-35px;
+  }
+
+  .hero-shape-two{
+    width:245px;
+    height:220px;
+
+    right:0;
+    bottom:-72px;
+  }
+
+
+  /* -----------------------------------------
+     البومة
+
+     أصغر من نسخة الآيباد الحالية
+     ومقتصة من الأسفل مثل المرجع
+  ----------------------------------------- */
+
+  .hero-owl{
+    width:365px;
+
+    right:-8px;
+
+    bottom:-175px;
+
+    height:auto;
+
+    filter:
+      drop-shadow(0 18px 20px rgba(34,43,90,.12));
+  }
+
+
+  /* -----------------------------------------
+     علامة الاستفهام
+  ----------------------------------------- */
+
+  .hero-question{
+    right:67px;
+    top:19px;
+
+    font-size:66px;
+  }
+
+
+  /* -----------------------------------------
+     النجوم
+  ----------------------------------------- */
+
+  .star.one{
+    right:181px;
+    top:27px;
+
+    font-size:23px;
+  }
+
+  .star.two{
+    right:43px;
+    top:100px;
+
+    font-size:16px;
+  }
+
+  .star.three{
+    right:153px;
+    top:77px;
+
+    font-size:11px;
+  }
+}
+  
+
+  
 </style>
 </head>
 
@@ -1952,9 +2140,9 @@ const levels = {
     name:"المبتدئ",
     english:"Beginner",
 
-    reading:"beginner-reading.html",
-    listening:"beginner-listening.html",
-    vocabulary:"beginner-vocabulary.html",
+    reading:"reading-page.html",
+    listening:"listening-page.html",
+    vocabulary:"vocabulary-page.html",
 
     color:"#39A96B"
   },
@@ -1963,9 +2151,9 @@ const levels = {
     name:"ما قبل المتوسط",
     english:"Pre-intermediate",
 
-    reading:"pre-intermediate-reading.html",
-    listening:"pre-intermediate-listening.html",
-    vocabulary:"pre-intermediate-vocabulary.html",
+    reading:"reading-pre-intermediate.html",
+    listening:"listening-pre-intermediate.html",
+    vocabulary:"vocabulary-pre-intermediate.html",
 
     color:"#438FD0"
   },
@@ -1974,9 +2162,9 @@ const levels = {
     name:"المتوسط",
     english:"Intermediate",
 
-    reading:"intermediate-reading.html",
-    listening:"intermediate-listening.html",
-    vocabulary:"intermediate-vocabulary.html",
+    reading:"reading-intermediate.html",
+    listening:"listening-intermediate.html",
+    vocabulary:"vocabulary-intermediate.html",
 
     color:"#7654D9"
   }
