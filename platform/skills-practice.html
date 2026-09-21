@@ -1,0 +1,2766 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Skills | Engliza Academy</title>
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+  --blue:#3157D5;
+  --blue-dark:#233E9B;
+
+  --purple:#7654D9;
+  --purple-dark:#5B3FC1;
+  --purple-light:#EEEAFE;
+
+  --gold:#D9A441;
+  --gold-light:#FFF6DF;
+
+  --text:#17213C;
+  --muted:#6E7891;
+
+  --white:#FFFFFF;
+  --bg:#F7F8FC;
+  --border:#E8EAF2;
+
+  --green:#5EBB8A;
+  --green-light:#F1FBF5;
+
+  --shadow:
+    0 12px 35px rgba(36,48,94,.08);
+
+  --shadow-hover:
+    0 18px 45px rgba(36,48,94,.13);
+
+  --radius-xl:32px;
+  --radius-lg:26px;
+  --radius-md:22px;
+  --radius-sm:17px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+body{
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  background:
+
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(118,84,217,.055),
+      transparent 28%
+    ),
+
+    var(--bg);
+
+  color:var(--text);
+
+  line-height:1.7;
+
+}
+
+
+button,
+a{
+  font:inherit;
+}
+
+
+button{
+  border:0;
+}
+
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+
+  width:min(
+    1180px,
+    calc(100% - 32px)
+  );
+
+  margin:0 auto;
+
+  padding:
+    26px 0 55px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+  position:relative;
+
+  min-height:340px;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  align-items:center;
+
+  direction:ltr;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #F0F5FF 0%,
+      #F5F2FF 52%,
+      #EEF1FF 100%
+    );
+
+  border:
+    1px solid #DFE5FA;
+
+  border-radius:
+    var(--radius-xl);
+
+  box-shadow:
+    var(--shadow);
+
+  padding:
+    32px 42px;
+
+  margin-bottom:20px;
+
+}
+
+
+/* =========================================================
+   HERO DECORATION
+========================================================= */
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:390px;
+  height:390px;
+
+  border-radius:50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(118,84,217,.13),
+      rgba(118,84,217,0)
+    );
+
+  right:170px;
+  top:-180px;
+
+  pointer-events:none;
+
+}
+
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  border-radius:50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(49,87,213,.09),
+      rgba(49,87,213,0)
+    );
+
+  right:-100px;
+  bottom:-150px;
+
+  pointer-events:none;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+  position:relative;
+
+  z-index:2;
+
+  direction:rtl;
+
+  padding:
+    8px 18px 8px 10px;
+
+}
+
+
+.eyebrow{
+
+  display:block;
+
+  color:var(--blue);
+
+  font-size:14px;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+
+  margin-bottom:18px;
+
+  direction:ltr;
+
+  text-align:right;
+
+}
+
+
+.hero h1{
+
+  font-size:
+    clamp(46px,5.2vw,62px);
+
+  line-height:1.05;
+
+  color:var(--text);
+
+  margin-bottom:22px;
+
+  font-weight:900;
+
+  direction:ltr;
+
+  text-align:right;
+
+}
+
+
+.hero-description{
+
+  color:#4E5871;
+
+  font-size:18px;
+
+  max-width:500px;
+
+  line-height:1.9;
+
+  margin-bottom:25px;
+
+}
+
+
+/* =========================================================
+   HERO GUIDE
+   عنصر إرشادي وليس زرًا
+========================================================= */
+
+.hero-guide{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  color:var(--blue-dark);
+
+  font-size:14px;
+
+  font-weight:800;
+
+  line-height:1.5;
+
+  padding:2px 0;
+
+  direction:rtl;
+
+}
+
+
+.hero-guide-icon{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:29px;
+  height:29px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.72);
+
+  color:var(--blue);
+
+  font-size:18px;
+
+  box-shadow:
+    0 5px 13px rgba(36,48,94,.06);
+
+}
+
+
+/* =========================================================
+   HERO OWL
+========================================================= */
+
+.hero-owl{
+
+  position:relative;
+
+  direction:ltr;
+
+  height:100%;
+
+  min-height:280px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:
+    5px 15px 5px 20px;
+
+}
+
+
+.hero-owl::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:285px;
+  height:285px;
+
+  border-radius:50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(118,84,217,.15),
+      rgba(118,84,217,0)
+    );
+
+}
+
+
+.hero-owl img{
+
+  position:relative;
+
+  z-index:2;
+
+  display:block;
+
+  width:auto;
+
+  height:300px;
+
+  max-width:100%;
+
+  object-fit:contain;
+
+  filter:
+
+    drop-shadow(
+      0 15px 20px rgba(36,48,94,.13)
+    );
+
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice{
+
+  position:relative;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #F4F0FF,
+      #F8F6FF
+    );
+
+  border:
+    1px solid #DCD4F8;
+
+  border-radius:
+    var(--radius-md);
+
+  padding:
+    22px 26px;
+
+  margin-bottom:34px;
+
+  box-shadow:
+    0 8px 25px rgba(75,58,145,.045);
+
+}
+
+
+.notice-inner{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:17px;
+
+}
+
+
+.notice-icon{
+
+  flex:
+    0 0 auto;
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:white;
+
+  font-size:27px;
+
+  box-shadow:
+    0 7px 18px rgba(36,48,94,.08);
+
+}
+
+
+.notice-content{
+
+  flex:1;
+
+}
+
+
+.notice h2{
+
+  font-size:23px;
+
+  color:var(--text);
+
+  margin-bottom:5px;
+
+  font-weight:900;
+
+}
+
+
+.notice p{
+
+  color:#59647B;
+
+  font-size:15px;
+
+  line-height:1.85;
+
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-heading{
+
+  text-align:center;
+
+  margin-bottom:18px;
+
+}
+
+
+.section-heading h2{
+
+  font-size:30px;
+
+  color:var(--blue-dark);
+
+  font-weight:900;
+
+  line-height:1.3;
+
+}
+
+
+.section-heading p{
+
+  color:var(--muted);
+
+  font-size:15px;
+
+  margin-top:3px;
+
+}
+
+
+/* =========================================================
+   LEVEL CARDS
+========================================================= */
+
+.level-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:16px;
+
+  margin-bottom:14px;
+
+}
+
+
+.level-card{
+
+  position:relative;
+
+  cursor:pointer;
+
+  text-align:center;
+
+  border-radius:
+    var(--radius-md);
+
+  padding:
+    23px 18px 20px;
+
+  min-height:188px;
+
+  border:
+    1.5px solid transparent;
+
+  transition:
+
+    transform .22s ease,
+
+    box-shadow .22s ease,
+
+    border-color .22s ease;
+
+}
+
+
+.level-card:hover{
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    var(--shadow-hover);
+
+}
+
+
+/* =========================================================
+   BEGINNER
+========================================================= */
+
+.level-card.beginner{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #F2FCF6,
+      #ECFAF2
+    );
+
+  border-color:
+    #CBEED8;
+
+}
+
+
+.level-card.beginner.active{
+
+  border-color:
+    var(--green);
+
+  box-shadow:
+    0 10px 30px rgba(94,187,138,.13);
+
+}
+
+
+/* =========================================================
+   PRE
+========================================================= */
+
+.level-card.pre{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #F0F8FF,
+      #EEF5FF
+    );
+
+  border-color:
+    #C9E1F5;
+
+}
+
+
+.level-card.pre.active{
+
+  border-color:
+    #6BA9E4;
+
+  box-shadow:
+    0 10px 30px rgba(77,142,208,.13);
+
+}
+
+
+/* =========================================================
+   INTERMEDIATE
+========================================================= */
+
+.level-card.intermediate{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #F5F1FF,
+      #F2EEFF
+    );
+
+  border-color:
+    #D6CDF7;
+
+}
+
+
+.level-card.intermediate.active{
+
+  border-color:
+    var(--purple);
+
+  box-shadow:
+    0 10px 30px rgba(118,84,217,.14);
+
+}
+
+
+/* =========================================================
+   LEVEL ICON
+========================================================= */
+
+.level-icon{
+
+  width:52px;
+  height:52px;
+
+  margin:
+    0 auto 10px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.72);
+
+  font-size:27px;
+
+  box-shadow:
+    0 5px 15px rgba(36,48,94,.06);
+
+}
+
+
+.level-card h3{
+
+  font-size:21px;
+
+  color:var(--text);
+
+  font-weight:900;
+
+  line-height:1.3;
+
+  margin-bottom:0;
+
+}
+
+
+.level-card .english-name{
+
+  display:block;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  color:var(--blue-dark);
+
+  direction:ltr;
+
+  margin-bottom:4px;
+
+}
+
+
+.level-card .level-description{
+
+  color:#68738A;
+
+  font-size:13px;
+
+  line-height:1.6;
+
+  min-height:25px;
+
+}
+
+
+.level-count{
+
+  margin-top:8px;
+
+  font-size:12px;
+
+  color:#526078;
+
+  font-weight:700;
+
+}
+
+
+/* =========================================================
+   ACTIVE INDICATOR
+========================================================= */
+
+.level-card.active::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:9px;
+  height:9px;
+
+  border-radius:50%;
+
+  top:13px;
+  right:13px;
+
+  background:
+    var(--blue);
+
+  box-shadow:
+    0 0 0 4px rgba(49,87,213,.08);
+
+}
+
+
+/* =========================================================
+   SELECTED LEVEL AREA
+========================================================= */
+
+.selected-area{
+
+  margin-top:10px;
+
+  scroll-margin-top:20px;
+
+}
+
+
+.selected-arrow{
+
+  text-align:center;
+
+  color:#6D79A0;
+
+  font-size:29px;
+
+  line-height:1;
+
+  margin:
+    7px 0 2px;
+
+}
+
+
+.selected-title{
+
+  text-align:center;
+
+  margin-bottom:20px;
+
+}
+
+
+.selected-title h2{
+
+  color:var(--text);
+
+  font-size:29px;
+
+  font-weight:900;
+
+  line-height:1.3;
+
+}
+
+
+.selected-title p{
+
+  color:var(--muted);
+
+  font-size:15px;
+
+  margin-top:2px;
+
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:16px;
+
+  margin-bottom:24px;
+
+}
+
+
+.skill-card{
+
+  position:relative;
+
+  display:flex;
+
+  flex-direction:column;
+
+  text-align:center;
+
+  min-height:310px;
+
+  padding:
+    23px 20px 20px;
+
+  border-radius:
+    var(--radius-md);
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    0 9px 27px rgba(36,48,94,.055);
+
+  transition:
+
+    transform .22s ease,
+
+    box-shadow .22s ease;
+
+}
+
+
+.skill-card:hover{
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    var(--shadow-hover);
+
+}
+
+
+/* =========================================================
+   READING
+========================================================= */
+
+.skill-card.reading{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #F0F7FF,
+      #F6FAFF
+    );
+
+  border-color:
+    #CFE2FA;
+
+}
+
+
+/* =========================================================
+   LISTENING
+========================================================= */
+
+.skill-card.listening{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #F5F0FF,
+      #FAF8FF
+    );
+
+  border-color:
+    #DCD1FA;
+
+}
+
+
+/* =========================================================
+   VOCABULARY
+========================================================= */
+
+.skill-card.vocabulary{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #F1F7FF,
+      #F7FAFF
+    );
+
+  border-color:
+    #D1E1F6;
+
+}
+
+
+/* =========================================================
+   SKILL ICON
+========================================================= */
+
+.skill-icon{
+
+  width:70px;
+  height:70px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin:
+    0 auto 11px;
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.75);
+
+  font-size:42px;
+
+  box-shadow:
+    0 7px 18px rgba(36,48,94,.07);
+
+}
+
+
+.skill-card h3{
+
+  font-size:21px;
+
+  color:var(--text);
+
+  font-weight:900;
+
+  line-height:1.2;
+
+  direction:ltr;
+
+}
+
+
+.skill-card .arabic-name{
+
+  font-size:16px;
+
+  font-weight:800;
+
+  color:var(--blue-dark);
+
+  margin-top:1px;
+
+}
+
+
+.skill-description{
+
+  color:#59647B;
+
+  font-size:13.5px;
+
+  line-height:1.8;
+
+  margin:
+    12px auto 10px;
+
+  max-width:300px;
+
+  flex:1;
+
+}
+
+
+/* =========================================================
+   SKILL COUNT
+========================================================= */
+
+.skill-count{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  align-self:center;
+
+  min-width:88px;
+
+  padding:
+    5px 13px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.75);
+
+  color:var(--blue-dark);
+
+  font-size:12px;
+
+  font-weight:800;
+
+  margin-bottom:13px;
+
+}
+
+
+/* =========================================================
+   SKILL BUTTON
+========================================================= */
+
+.skill-button{
+
+  width:100%;
+
+  min-height:45px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:7px;
+
+  border-radius:15px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--blue),
+      #3E72E9
+    );
+
+  color:white;
+
+  font-weight:800;
+
+  font-size:14px;
+
+  box-shadow:
+    0 8px 18px rgba(49,87,213,.17);
+
+  transition:
+
+    transform .18s ease,
+
+    box-shadow .18s ease;
+
+}
+
+
+.skill-card.listening .skill-button{
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--purple),
+      #8B68E5
+    );
+
+  box-shadow:
+    0 8px 18px rgba(118,84,217,.17);
+
+}
+
+
+.skill-button:hover{
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 11px 22px rgba(49,87,213,.22);
+
+}
+
+
+/* =========================================================
+   HELP CARD
+========================================================= */
+
+.help-card{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  padding:
+    19px 23px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #F2F2FF,
+      #F8F7FF
+    );
+
+  border:
+    1px solid #DFDCF4;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 8px 25px rgba(36,48,94,.045);
+
+}
+
+
+.help-icon{
+
+  flex:
+    0 0 auto;
+
+  width:54px;
+  height:54px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:white;
+
+  font-size:28px;
+
+  box-shadow:
+    0 7px 17px rgba(36,48,94,.07);
+
+}
+
+
+.help-content{
+
+  flex:1;
+
+}
+
+
+.help-content h3{
+
+  font-size:20px;
+
+  color:var(--text);
+
+  font-weight:900;
+
+  margin-bottom:2px;
+
+}
+
+
+.help-content p{
+
+  color:#657088;
+
+  font-size:14px;
+
+  line-height:1.7;
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.skill-card{
+
+  animation:
+    fadeUp .35s ease both;
+
+}
+
+
+.skill-card:nth-child(2){
+
+  animation-delay:.05s;
+
+}
+
+
+.skill-card:nth-child(3){
+
+  animation-delay:.1s;
+
+}
+
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:
+      translateY(10px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+  .page{
+
+    width:
+      min(
+        calc(100% - 24px),
+        760px
+      );
+
+    padding-top:18px;
+
+  }
+
+
+  .hero{
+
+    grid-template-columns:
+      1fr .85fr;
+
+    padding:
+      25px 26px;
+
+    min-height:300px;
+
+  }
+
+
+  .hero h1{
+
+    font-size:42px;
+
+  }
+
+
+  .hero-description{
+
+    font-size:16px;
+
+  }
+
+
+  .hero-owl img{
+
+    height:255px;
+
+  }
+
+
+  .level-grid,
+  .skills-grid{
+
+    gap:12px;
+
+  }
+
+
+  .level-card{
+
+    padding:
+      20px 12px;
+
+  }
+
+
+  .skill-card{
+
+    padding:
+      20px 14px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:680px){
+
+  .page{
+
+    width:
+      calc(100% - 18px);
+
+    padding:
+      11px 0 35px;
+
+  }
+
+
+  /* -------------------------
+     HERO
+  ------------------------- */
+
+  .hero{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    min-height:auto;
+
+    padding:
+      24px 19px 13px;
+
+    text-align:center;
+
+    border-radius:26px;
+
+    margin-bottom:14px;
+
+  }
+
+
+  .hero-content{
+
+    padding:0;
+
+    order:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+  }
+
+
+  .eyebrow{
+
+    font-size:11px;
+
+    letter-spacing:1.7px;
+
+    margin-bottom:13px;
+
+    text-align:center;
+
+  }
+
+
+  .hero h1{
+
+    font-size:39px;
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+  }
+
+
+  .hero-description{
+
+    font-size:14px;
+
+    line-height:1.85;
+
+    margin:
+      0 auto 17px;
+
+    max-width:390px;
+
+    text-align:center;
+
+  }
+
+
+  .hero-guide{
+
+    font-size:12.5px;
+
+    gap:7px;
+
+  }
+
+
+  .hero-guide-icon{
+
+    width:27px;
+    height:27px;
+
+    font-size:16px;
+
+  }
+
+
+  .hero-owl{
+
+    order:2;
+
+    min-height:185px;
+
+    height:185px;
+
+    margin-top:9px;
+
+    padding:0;
+
+  }
+
+
+  .hero-owl::before{
+
+    width:185px;
+    height:185px;
+
+  }
+
+
+  .hero-owl img{
+
+    height:185px;
+
+    max-width:85%;
+
+  }
+
+
+  /* -------------------------
+     NOTICE
+  ------------------------- */
+
+  .notice{
+
+    padding:
+      17px 15px;
+
+    border-radius:20px;
+
+    margin-bottom:24px;
+
+  }
+
+
+  .notice-inner{
+
+    gap:11px;
+
+  }
+
+
+  .notice-icon{
+
+    width:44px;
+    height:44px;
+
+    font-size:22px;
+
+  }
+
+
+  .notice h2{
+
+    font-size:19px;
+
+  }
+
+
+  .notice p{
+
+    font-size:12.5px;
+
+    line-height:1.8;
+
+  }
+
+
+  /* -------------------------
+     SECTION
+  ------------------------- */
+
+  .section-heading{
+
+    margin-bottom:13px;
+
+  }
+
+
+  .section-heading h2{
+
+    font-size:24px;
+
+  }
+
+
+  .section-heading p{
+
+    font-size:13px;
+
+  }
+
+
+  /* -------------------------
+     LEVELS
+  ------------------------- */
+
+  .level-grid{
+
+    grid-template-columns:1fr;
+
+    gap:10px;
+
+    margin-bottom:9px;
+
+  }
+
+
+  .level-card{
+
+    min-height:0;
+
+    padding:
+      16px 17px;
+
+    display:grid;
+
+    grid-template-columns:
+      48px 1fr;
+
+    grid-template-rows:
+      auto auto auto;
+
+    column-gap:13px;
+
+    text-align:right;
+
+    align-items:center;
+
+  }
+
+
+  .level-icon{
+
+    grid-row:
+      1 / 4;
+
+    width:48px;
+    height:48px;
+
+    margin:0;
+
+    font-size:24px;
+
+  }
+
+
+  .level-card h3{
+
+    font-size:18px;
+
+  }
+
+
+  .level-card .english-name{
+
+    font-size:14px;
+
+    margin:0;
+
+  }
+
+
+  .level-card .level-description{
+
+    font-size:12px;
+
+    min-height:0;
+
+    margin-top:1px;
+
+  }
+
+
+  .level-count{
+
+    grid-column:2;
+
+    text-align:right;
+
+    margin-top:2px;
+
+    font-size:11px;
+
+  }
+
+
+  /* -------------------------
+     SELECTED LEVEL
+  ------------------------- */
+
+  .selected-arrow{
+
+    font-size:24px;
+
+    margin:
+      5px 0 0;
+
+  }
+
+
+  .selected-title{
+
+    margin-bottom:13px;
+
+  }
+
+
+  .selected-title h2{
+
+    font-size:24px;
+
+  }
+
+
+  .selected-title p{
+
+    font-size:12.5px;
+
+  }
+
+
+  /* -------------------------
+     SKILLS
+  ------------------------- */
+
+  .skills-grid{
+
+    grid-template-columns:1fr;
+
+    gap:11px;
+
+    margin-bottom:14px;
+
+  }
+
+
+  .skill-card{
+
+    min-height:0;
+
+    padding:
+      18px 17px;
+
+    border-radius:21px;
+
+  }
+
+
+  .skill-icon{
+
+    width:58px;
+    height:58px;
+
+    font-size:34px;
+
+    border-radius:17px;
+
+    margin-bottom:8px;
+
+  }
+
+
+  .skill-card h3{
+
+    font-size:19px;
+
+  }
+
+
+  .skill-card .arabic-name{
+
+    font-size:14px;
+
+  }
+
+
+  .skill-description{
+
+    font-size:12.5px;
+
+    line-height:1.75;
+
+    margin:
+      8px auto;
+
+  }
+
+
+  .skill-count{
+
+    font-size:11px;
+
+    padding:
+      4px 11px;
+
+    margin-bottom:9px;
+
+  }
+
+
+  .skill-button{
+
+    min-height:43px;
+
+    font-size:13px;
+
+  }
+
+
+  /* -------------------------
+     HELP
+  ------------------------- */
+
+  .help-card{
+
+    padding:
+      16px;
+
+    gap:11px;
+
+    border-radius:19px;
+
+  }
+
+
+  .help-icon{
+
+    width:45px;
+    height:45px;
+
+    font-size:23px;
+
+  }
+
+
+  .help-content h3{
+
+    font-size:17px;
+
+  }
+
+
+  .help-content p{
+
+    font-size:12px;
+
+    line-height:1.75;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
+
+  .hero{
+
+    padding:
+      21px 15px 11px;
+
+  }
+
+
+  .hero h1{
+
+    font-size:34px;
+
+  }
+
+
+  .hero-description{
+
+    font-size:13px;
+
+  }
+
+
+  .hero-owl{
+
+    min-height:165px;
+
+    height:165px;
+
+    margin-top:7px;
+
+  }
+
+
+  .hero-owl img{
+
+    height:165px;
+
+  }
+
+
+  .notice p{
+
+    font-size:11.5px;
+
+  }
+
+
+  .level-card{
+
+    grid-template-columns:
+      44px 1fr;
+
+  }
+
+
+  .level-icon{
+
+    width:44px;
+    height:44px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="hero">
+
+
+    <div class="hero-content">
+
+
+      <div class="eyebrow">
+        ENGLIZA ACADEMY
+      </div>
+
+
+      <h1>
+        Skills
+      </h1>
+
+
+      <p class="hero-description">
+
+        طبّق ما تعلمته، وطوّر فهمك للإنجليزية
+        من خلال القراءة والاستماع والمفردات.
+
+      </p>
+
+
+      <!--
+        هذا ليس زرًا.
+        مجرد إرشاد بصري للطالب.
+      -->
+
+      <div class="hero-guide">
+
+        <span class="hero-guide-icon">
+          ↓
+        </span>
+
+        <span>
+          اختر مستواك وابدأ التدريب
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="hero-owl">
+
+
+      <img
+        src="../owl2.png.PNG"
+        alt="Engliza Academy Owl"
+      >
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =====================================================
+       BEFORE START
+  ====================================================== -->
+
+  <section class="notice">
+
+
+    <div class="notice-inner">
+
+
+      <div class="notice-icon">
+        💡
+      </div>
+
+
+      <div class="notice-content">
+
+
+        <h2>
+          قبل أن تبدأ
+        </h2>
+
+
+        <p>
+
+          هذه المساحة مخصصة للممارسة وتطوير مستواك.
+          يُفضّل أن تنهي معظم دروس المستوى الأساسية أولًا،
+          ثم تستخدم هذه المهارات لتثبيت ما تعلمته وتوسيع حصيلتك اللغوية.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =====================================================
+       LEVELS
+  ====================================================== -->
+
+  <section id="levels">
+
+
+    <div class="section-heading">
+
+
+      <h2>
+        اختر مستواك
+      </h2>
+
+
+    </div>
+
+
+    <div class="level-grid">
+
+
+      <!-- BEGINNER -->
+
+      <button
+        type="button"
+        class="level-card beginner active"
+        data-level="beginner"
+      >
+
+
+        <div class="level-icon">
+          🌱
+        </div>
+
+
+        <h3>
+          المبتدئ
+        </h3>
+
+
+        <span class="english-name">
+          Beginner
+        </span>
+
+
+        <p class="level-description">
+          بداية بناء اللغة
+        </p>
+
+
+        <div class="level-count">
+          30 Reading · 30 Listening · 30 Vocabulary
+        </div>
+
+
+      </button>
+
+
+
+      <!-- PRE-INTERMEDIATE -->
+
+      <button
+        type="button"
+        class="level-card pre"
+        data-level="pre"
+      >
+
+
+        <div class="level-icon">
+          🚀
+        </div>
+
+
+        <h3>
+          ما قبل المتوسط
+        </h3>
+
+
+        <span class="english-name">
+          Pre-intermediate
+        </span>
+
+
+        <p class="level-description">
+          انتقل من الأساسيات إلى الاستخدام
+        </p>
+
+
+        <div class="level-count">
+          30 Reading · 30 Listening · 30 Vocabulary
+        </div>
+
+
+      </button>
+
+
+
+      <!-- INTERMEDIATE -->
+
+      <button
+        type="button"
+        class="level-card intermediate"
+        data-level="intermediate"
+      >
+
+
+        <div class="level-icon">
+          ⭐
+        </div>
+
+
+        <h3>
+          المتوسط
+        </h3>
+
+
+        <span class="english-name">
+          Intermediate
+        </span>
+
+
+        <p class="level-description">
+          وسّع لغتك واستخدم الإنجليزية بصورة أكثر طبيعية
+        </p>
+
+
+        <div class="level-count">
+          30 Reading · 30 Listening · 30 Vocabulary
+        </div>
+
+
+      </button>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =====================================================
+       SELECTED LEVEL
+  ====================================================== -->
+
+  <section
+    class="selected-area"
+    id="skills-area"
+  >
+
+
+    <div class="selected-arrow">
+      ↓
+    </div>
+
+
+    <div class="selected-title">
+
+
+      <h2 id="selectedLevelTitle">
+        مهارات المستوى المبتدئ
+      </h2>
+
+
+      <p>
+        اختر المهارة التي تريد التدرب عليها
+      </p>
+
+
+    </div>
+
+
+    <div
+      class="skills-grid"
+      id="skillsGrid"
+    >
+
+      <!--
+        JavaScript يضع المهارات هنا
+      -->
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HELP
+    ====================================================== -->
+
+    <div class="help-card">
+
+
+      <div class="help-icon">
+        🧭
+      </div>
+
+
+      <div class="help-content">
+
+
+        <h3>
+          لا تعرف من أين تبدأ؟
+        </h3>
+
+
+        <p>
+
+          ابدأ بالمستوى الذي تدرس دروسه حاليًا،
+          ثم استخدم المهارات الثلاث لتثبيت ما تعلمته.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================================================
+   LEVEL DATA
+========================================================= */
+
+
+/*
+  إذا كانت أسماء صفحات المهارات عندك مختلفة،
+  نعدل الروابط هنا فقط.
+*/
+
+const levelData = {
+
+
+  beginner: {
+
+    title:
+      "مهارات المستوى المبتدئ",
+
+    skills: [
+
+
+      {
+        type:"reading",
+
+        icon:"📖",
+
+        english:"Reading",
+
+        arabic:"القراءة",
+
+        description:
+          "اقرأ نصوصًا مترابطة، تعرّف على كلمات جديدة، واختبر فهمك.",
+
+        count:"30 قراءة",
+
+        button:"ابدأ القراءة",
+
+        url:"beginner-reading.html"
+
+      },
+
+
+      {
+        type:"listening",
+
+        icon:"🎧",
+
+        english:"Listening",
+
+        arabic:"الاستماع",
+
+        description:
+          "استمع إلى الإنجليزية الطبيعية، وتعلّم من المقطع، واختبر فهمك.",
+
+        count:"30 مقطعًا",
+
+        button:"ابدأ الاستماع",
+
+        url:"beginner-listening.html"
+
+      },
+
+
+      {
+        type:"vocabulary",
+
+        icon:"📚",
+
+        english:"Vocabulary",
+
+        arabic:"المفردات",
+
+        description:
+          "تعلّم كلمات وعبارات جديدة، واكتشف استخدامها داخل سياقات حقيقية.",
+
+        count:"30 وحدة",
+
+        button:"ابدأ المفردات",
+
+        url:"beginner-vocabulary.html"
+
+      }
+
+    ]
+
+  },
+
+
+  /* ===================================================== */
+
+  pre: {
+
+    title:
+      "مهارات المستوى ما قبل المتوسط",
+
+    skills: [
+
+
+      {
+        type:"reading",
+
+        icon:"📖",
+
+        english:"Reading",
+
+        arabic:"القراءة",
+
+        description:
+          "اقرأ نصوصًا أكثر ترابطًا، وتعرّف على استخدامات اللغة داخل السياق.",
+
+        count:"30 قراءة",
+
+        button:"ابدأ القراءة",
+
+        url:"pre-intermediate-reading.html"
+
+      },
+
+
+      {
+        type:"listening",
+
+        icon:"🎧",
+
+        english:"Listening",
+
+        arabic:"الاستماع",
+
+        description:
+          "استمع إلى الإنجليزية الطبيعية وتعلّم الكلمات والعبارات من المقطع.",
+
+        count:"30 مقطعًا",
+
+        button:"ابدأ الاستماع",
+
+        url:"pre-intermediate-listening.html"
+
+      },
+
+
+      {
+        type:"vocabulary",
+
+        icon:"📚",
+
+        english:"Vocabulary",
+
+        arabic:"المفردات",
+
+        description:
+          "وسّع حصيلتك من الكلمات والعبارات المستخدمة في مواقف الحياة اليومية.",
+
+        count:"30 وحدة",
+
+        button:"ابدأ المفردات",
+
+        url:"pre-intermediate-vocabulary.html"
+
+      }
+
+    ]
+
+  },
+
+
+  /* ===================================================== */
+
+  intermediate: {
+
+    title:
+      "مهارات المستوى المتوسط",
+
+    skills: [
+
+
+      {
+        type:"reading",
+
+        icon:"📖",
+
+        english:"Reading",
+
+        arabic:"القراءة",
+
+        description:
+          "اقرأ نصوصًا طبيعية بمستوى B1، واكتشف أفكارًا وعبارات جديدة من السياق.",
+
+        count:"30 قراءة",
+
+        button:"ابدأ القراءة",
+
+        url:"intermediate-reading.html"
+
+      },
+
+
+      {
+        type:"listening",
+
+        icon:"🎧",
+
+        english:"Listening",
+
+        arabic:"الاستماع",
+
+        description:
+          "استمع إلى الإنجليزية الطبيعية وتعلّم الكلمات والتعبيرات من المقاطع.",
+
+        count:"30 مقطعًا",
+
+        button:"ابدأ الاستماع",
+
+        url:"intermediate-listening.html"
+
+      },
+
+
+      {
+        type:"vocabulary",
+
+        icon:"📚",
+
+        english:"Vocabulary",
+
+        arabic:"المفردات",
+
+        description:
+          "تعلّم كلمات B1 المهمة، والـPhrasal Verbs والـCollocations والتعبيرات الطبيعية.",
+
+        count:"30 وحدة",
+
+        button:"ابدأ المفردات",
+
+        url:"intermediate-vocabulary.html"
+
+      }
+
+    ]
+
+  }
+
+};
+
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const levelCards =
+  document.querySelectorAll(".level-card");
+
+
+const skillsGrid =
+  document.getElementById("skillsGrid");
+
+
+const selectedLevelTitle =
+  document.getElementById(
+    "selectedLevelTitle"
+  );
+
+
+
+/* =========================================================
+   RENDER SKILLS
+========================================================= */
+
+function renderSkills(level){
+
+
+  const data =
+    levelData[level];
+
+
+  if(!data){
+    return;
+  }
+
+
+  selectedLevelTitle.textContent =
+    data.title;
+
+
+  skillsGrid.innerHTML =
+
+    data.skills.map(
+      skill => `
+
+        <article
+          class="skill-card ${skill.type}"
+        >
+
+
+          <div class="skill-icon">
+            ${skill.icon}
+          </div>
+
+
+          <h3>
+            ${skill.english}
+          </h3>
+
+
+          <div class="arabic-name">
+            ${skill.arabic}
+          </div>
+
+
+          <p class="skill-description">
+            ${skill.description}
+          </p>
+
+
+          <div class="skill-count">
+            ${skill.count}
+          </div>
+
+
+          <a
+            href="${skill.url}"
+            class="skill-button"
+          >
+
+            ${skill.button}
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+        </article>
+
+      `
+    ).join("");
+
+}
+
+
+
+/* =========================================================
+   LEVEL SELECTION
+========================================================= */
+
+levelCards.forEach(
+  card => {
+
+
+    card.addEventListener(
+      "click",
+      () => {
+
+
+        const level =
+          card.dataset.level;
+
+
+        levelCards.forEach(
+          item => {
+
+            item.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        card.classList.add(
+          "active"
+        );
+
+
+        renderSkills(
+          level
+        );
+
+
+        /*
+          على الجوال فقط:
+          بعد اختيار المستوى ننزل
+          إلى المهارات.
+        */
+
+        const isMobile =
+          window.innerWidth <= 680;
+
+
+        if(isMobile){
+
+
+          setTimeout(
+            () => {
+
+
+              document
+                .getElementById(
+                  "skills-area"
+                )
+                .scrollIntoView({
+                  behavior:"smooth",
+                  block:"start"
+                });
+
+
+            },
+            80
+          );
+
+        }
+
+
+      }
+    );
+
+
+  }
+);
+
+
+
+/* =========================================================
+   INITIAL
+========================================================= */
+
+renderSkills(
+  "beginner"
+);
+
+
+</script>
+
+
+</body>
+</html>
