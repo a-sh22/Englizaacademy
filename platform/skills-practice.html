@@ -147,18 +147,19 @@ a{
 
 .hero-content{
   position:absolute;
-  z-index:5;
+  z-index:10;
 
   left:43px;
   top:50%;
 
-  width:51%;
+  width:49%;
+
   transform:translateY(-50%);
 
   direction:rtl;
   text-align:left;
 }
-
+  
 
 /* ENGLIZA */
 
@@ -190,6 +191,9 @@ a{
   letter-spacing:-1.5px;
 
   white-space:nowrap;
+
+  position:relative;
+  z-index:11;
 }
 
 
@@ -254,10 +258,12 @@ a{
 
 .hero-handwriting{
   position:absolute;
-  z-index:7;
+  z-index:9;
 
-  right:365px;
-  top:48px;
+  left:49%;
+  top:45px;
+
+  width:105px;
 
   color:#4662B8;
 
@@ -266,7 +272,7 @@ a{
     "Bradley Hand",
     cursive;
 
-  font-size:22px;
+  font-size:21px;
   line-height:1.05;
 
   transform:rotate(-7deg);
@@ -275,16 +281,18 @@ a{
   text-align:left;
 
   opacity:.92;
+
+  pointer-events:none;
 }
 
 .hero-handwriting span{
   display:block;
 }
 
-
 /* =========================================================
    منطقة البومة
 ========================================================= */
+
 
 .hero-visual{
   position:absolute;
@@ -293,13 +301,15 @@ a{
   right:0;
   top:0;
 
-  width:48%;
+  width:46%;
   height:100%;
 
   overflow:hidden;
+
+  pointer-events:none;
 }
 
-
+  
 /* شكل عضوي خلف البومة */
 
 .hero-shape-one{
@@ -346,11 +356,17 @@ a{
 
   z-index:6;
 
-  width:410px;
+  width:470px;
   max-width:none;
 
-  right:-8px;
-  bottom:-125px;
+  right:-22px;
+
+  /*
+    رفع حجم الصورة وإنزالها بقوة
+    حتى يظهر الجزء العلوي فقط،
+    وتختفي الأرجل تمامًا مثل المرجع.
+  */
+  bottom:-245px;
 
   height:auto;
 
@@ -359,7 +375,7 @@ a{
   filter:
     drop-shadow(0 18px 20px rgba(34,43,90,.12));
 }
-
+  
 
 /* علامة الاستفهام */
 
@@ -1142,12 +1158,12 @@ footer{
     border-radius:25px;
   }
 
-  .hero-content{
-    left:18px;
-    top:50%;
+ .hero-content{
+  left:18px;
+  top:50%;
 
-    width:58%;
-  }
+  width:56%;
+} 
 
   .hero-brand{
     font-size:8px;
@@ -1185,22 +1201,25 @@ footer{
   }
 
   .hero-handwriting{
-    right:27%;
-    top:30px;
+  left:47%;
+  top:25px;
 
-    font-size:10px;
-  }
+  width:55px;
+
+  font-size:10px;
+  line-height:1;
+}
 
   .hero-visual{
     width:48%;
   }
 
-  .hero-owl{
-    width:205px;
+.hero-owl{
+  width:255px;
 
-    right:-18px;
-    bottom:-66px;
-  }
+  right:-20px;
+  bottom:-145px;
+}
 
   .hero-question{
     right:39px;
