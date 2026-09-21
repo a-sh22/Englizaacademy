@@ -4,25 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Skills | Engliza Academy</title>
+<title>مهارات اللغة | Engliza Academy</title>
 
 <style>
 
 /* =========================================================
-   ENGLIZA ACADEMY — SKILLS PAGE
+   ENGLIZA ACADEMY — SKILLS PRACTICE
    ========================================================= */
 
 :root{
   --blue:#3157D5;
   --blue-dark:#233E9B;
+
   --purple:#7654D9;
+  --purple-dark:#5B3DB8;
+
   --purple-light:#EEEAFE;
 
-  --green:#62B58A;
-  --green-light:#EEF9F2;
+  --blue-light:#EEF5FF;
 
-  --blue-light:#EEF6FF;
-  --lavender:#F4F0FF;
+  --green-light:#F0FAF3;
+  --green-border:#CFEBD7;
+  --green:#4D9A68;
 
   --gold:#D9A441;
   --gold-light:#FFF6DF;
@@ -50,8 +53,6 @@
 
 *{
   box-sizing:border-box;
-  margin:0;
-  padding:0;
 }
 
 html{
@@ -59,6 +60,9 @@ html{
 }
 
 body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -66,37 +70,21 @@ body{
     Tahoma,
     Arial,
     sans-serif;
-
-  background:
-    radial-gradient(
-      circle at 15% 10%,
-      rgba(118,84,217,.035),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 85% 30%,
-      rgba(49,87,213,.035),
-      transparent 28%
-    ),
-    var(--bg);
-
-  color:var(--text);
-  min-height:100vh;
   overflow-x:hidden;
 }
 
+button,
 a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
   font-family:inherit;
 }
 
-img{
-  max-width:100%;
-  display:block;
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 
@@ -105,9 +93,9 @@ img{
    ========================================================= */
 
 .page{
-  width:min(1180px, calc(100% - 34px));
+  width:min(1120px, calc(100% - 32px));
   margin:0 auto;
-  padding:24px 0 55px;
+  padding:24px 0 60px;
 }
 
 
@@ -117,227 +105,257 @@ img{
 
 .hero{
   position:relative;
-  min-height:330px;
-
-  display:flex;
-  align-items:center;
+  min-height:315px;
 
   overflow:hidden;
 
-  border:1px solid rgba(49,87,213,.08);
-  border-radius:var(--radius-xl);
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(260px,.92fr);
+  align-items:center;
+
+  direction:ltr;
 
   background:
     radial-gradient(
-      circle at 78% 45%,
-      rgba(118,84,217,.12),
+      circle at 76% 52%,
+      rgba(118,84,217,.14),
       transparent 28%
-    ),
-    radial-gradient(
-      circle at 55% 5%,
-      rgba(49,87,213,.09),
-      transparent 30%
     ),
     linear-gradient(
       135deg,
-      #F2F5FF 0%,
-      #F7F4FF 55%,
-      #EEF3FF 100%
+      #EEF4FF 0%,
+      #F4F1FF 100%
     );
+
+  border:1px solid #DFE5F7;
+  border-radius:var(--radius-xl);
 
   box-shadow:var(--shadow);
 
-  margin-bottom:22px;
+  margin-bottom:20px;
 }
 
 
-/* soft decorative shapes */
+/* subtle background shapes */
 
-.hero::before,
-.hero::after{
+.hero::before{
   content:"";
   position:absolute;
+
+  width:290px;
+  height:290px;
+
+  right:160px;
+  top:-150px;
+
   border-radius:50%;
+
+  background:rgba(118,84,217,.07);
+
   pointer-events:none;
 }
 
-.hero::before{
-  width:310px;
-  height:310px;
-
-  right:230px;
-  top:-190px;
-
-  background:rgba(255,255,255,.35);
-}
-
 .hero::after{
-  width:280px;
-  height:280px;
+  content:"";
 
-  right:-80px;
-  bottom:-170px;
+  position:absolute;
 
-  background:rgba(255,255,255,.25);
+  width:220px;
+  height:220px;
+
+  right:40px;
+  bottom:-125px;
+
+  border-radius:50%;
+
+  background:rgba(49,87,213,.07);
+
+  pointer-events:none;
 }
 
 
 /* =========================================================
-   HERO CONTENT
+   HERO TEXT
    ========================================================= */
 
 .hero-content{
-  position:relative;
-  z-index:3;
+  direction:rtl;
 
-  width:55%;
+  position:relative;
+  z-index:4;
 
   padding:
-    42px
-    0
-    42px
-    58px;
+    38px
+    30px
+    38px
+    54px;
 
   text-align:right;
 }
 
 .eyebrow{
+  display:inline-block;
+
   color:var(--blue);
-  font-size:15px;
-  font-weight:800;
-  letter-spacing:2.4px;
+
+  font-size:13px;
+  font-weight:900;
+
+  letter-spacing:2px;
 
   margin-bottom:10px;
 }
 
 .hero h1{
-  font-size:52px;
+  margin:0;
+
+  color:var(--text);
+
+  font-size:clamp(38px,5vw,58px);
+
   line-height:1.08;
-  font-weight:900;
 
-  color:#111A38;
+  font-weight:950;
 
-  margin-bottom:17px;
+  letter-spacing:-1.5px;
 }
 
 .hero-description{
+  max-width:520px;
+
+  margin:16px 0 22px;
+
   color:#4F5A73;
 
-  font-size:19px;
+  font-size:16px;
   line-height:1.9;
 
-  max-width:560px;
-
-  margin-bottom:22px;
+  font-weight:600;
 }
 
-
-/* =========================================================
-   HERO GUIDE — NOT A BUTTON
-   ========================================================= */
-
-.hero-guide{
+.hero-button{
   display:inline-flex;
   align-items:center;
-  gap:12px;
-
-  color:var(--blue-dark);
-
-  font-size:17px;
-  font-weight:800;
-
-  cursor:default;
-
-  user-select:none;
-}
-
-.hero-guide-arrow{
-  width:39px;
-  height:39px;
-
-  display:flex;
-  align-items:center;
   justify-content:center;
+  gap:8px;
 
-  border-radius:50%;
+  min-height:50px;
 
-  background:#FFFFFF;
-  color:var(--blue);
+  padding:0 23px;
+
+  border:0;
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      #4E45D8
+    );
+
+  color:white;
+
+  font-size:14px;
+  font-weight:900;
 
   box-shadow:
-    0 7px 18px rgba(36,48,94,.08);
+    0 10px 24px rgba(49,87,213,.23);
 
-  font-size:22px;
-  font-weight:900;
+  transition:.2s ease;
+}
+
+.hero-button:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 14px 30px rgba(49,87,213,.27);
 }
 
 
 /* =========================================================
-   HERO OWL
+   HERO MASCOT
    ========================================================= */
 
-.hero-owl-wrap{
-  position:absolute;
+/*
+  IMPORTANT:
+  البومة موجودة في عمود مستقل.
+  نستخدم overflow:hidden في الـHero حتى يتم قص الجزء السفلي
+  من الشخصية تمامًا مثل التصميم المرجعي.
+*/
 
-  z-index:2;
+.hero-mascot-area{
+  position:relative;
 
-  right:25px;
-  bottom:-54px;
+  height:100%;
 
-  width:45%;
-  height:112%;
+  direction:ltr;
 
   display:flex;
   align-items:flex-end;
   justify-content:center;
 
-  pointer-events:none;
+  overflow:visible;
+
+  z-index:3;
 }
 
-.hero-owl-bg{
+.hero-mascot{
   position:absolute;
 
-  width:390px;
-  height:390px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(118,84,217,.11),
-      rgba(118,84,217,.045) 58%,
-      transparent 72%
-    );
-
-  bottom:32px;
-  right:30px;
-}
-
-.hero-owl{
-  position:relative;
-  z-index:2;
-
-  width:auto;
-  height:370px;
-
+  width:310px;
   max-width:none;
+
+  right:38px;
+  bottom:-78px;
 
   object-fit:contain;
 
-  /*
-    الصورة الأصلية فيها مساحة بيضاء.
-    multiply يجعل الخلفية البيضاء تندمج
-    مع خلفية الـHero بدل ظهور مربع أبيض.
-  */
-  mix-blend-mode:multiply;
+  z-index:3;
 
-  transform:translateY(5px);
+  user-select:none;
+  pointer-events:none;
+
+  filter:
+    drop-shadow(0 15px 18px rgba(37,42,80,.12));
+}
+
+
+/* little handwritten decoration */
+
+.hero-note{
+  position:absolute;
+
+  top:34px;
+  right:285px;
+
+  z-index:5;
+
+  color:#6C5ACB;
+
+  font-family:
+    "Comic Sans MS",
+    "Segoe Print",
+    cursive;
+
+  font-size:20px;
+
+  line-height:1.05;
+
+  transform:rotate(-7deg);
+
+  opacity:.9;
+
+  text-align:center;
+
+  direction:ltr;
+}
+
+.hero-note span{
+  display:block;
 }
 
 
 /* =========================================================
-   BEFORE START
+   BEFORE START NOTICE
    ========================================================= */
 
 .notice{
@@ -345,27 +363,31 @@ img{
 
   display:flex;
   align-items:center;
-  gap:20px;
 
-  padding:23px 27px;
+  gap:17px;
 
-  border:1px solid #DCD5F6;
-  border-radius:var(--radius-md);
+  min-height:108px;
+
+  padding:20px 24px;
 
   background:
     linear-gradient(
       135deg,
-      #FAF8FF,
-      #F3F0FF
+      #F7F4FF,
+      #F4F7FF
     );
 
-  box-shadow:0 8px 26px rgba(72,59,128,.05);
+  border:1px solid #DCD7F6;
 
-  margin-bottom:29px;
+  border-radius:var(--radius-md);
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:30px;
 }
 
 .notice-icon{
-  flex:0 0 auto;
+  flex:0 0 56px;
 
   width:56px;
   height:56px;
@@ -374,107 +396,113 @@ img{
   align-items:center;
   justify-content:center;
 
-  border-radius:50%;
+  border-radius:18px;
 
-  background:#FFFFFF;
+  background:white;
 
-  box-shadow:
-    0 8px 20px rgba(36,48,94,.07);
+  border:1px solid #E4DFFA;
 
-  font-size:29px;
+  box-shadow:0 7px 18px rgba(55,49,110,.08);
+
+  font-size:27px;
 }
 
 .notice-content{
-  flex:1;
+  min-width:0;
 }
 
 .notice h2{
-  font-size:24px;
-  font-weight:900;
+  margin:0 0 7px;
 
-  margin-bottom:7px;
+  color:var(--text);
 
-  color:#1B2440;
+  font-size:21px;
+  font-weight:950;
 }
 
 .notice p{
-  color:#68738C;
-  font-size:15px;
+  margin:0;
+
+  color:#5C6680;
+
+  font-size:13px;
   line-height:1.8;
+
+  font-weight:600;
 }
 
 
 /* =========================================================
-   SECTION HEADINGS
+   SECTION HEADING
    ========================================================= */
 
 .section-heading{
   text-align:center;
 
-  margin:0 0 19px;
+  margin:10px 0 18px;
 }
 
 .section-heading h2{
-  color:var(--blue-dark);
+  margin:0;
 
-  font-size:32px;
-  line-height:1.3;
+  color:var(--text);
 
-  font-weight:900;
+  font-size:29px;
 
-  margin-bottom:4px;
+  font-weight:950;
+
+  letter-spacing:-.5px;
 }
 
 .section-heading p{
-  color:#788198;
+  margin:7px 0 0;
 
-  font-size:14px;
-  line-height:1.7;
+  color:var(--muted);
+
+  font-size:13px;
+
+  font-weight:650;
 }
 
 
 /* =========================================================
-   LEVELS
+   LEVEL CARDS
    ========================================================= */
 
 .level-grid{
   display:grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(3,minmax(0,1fr));
 
   gap:16px;
 
-  margin-bottom:14px;
+  margin-bottom:17px;
 }
 
 .level-card{
   position:relative;
 
-  min-height:210px;
+  min-width:0;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
+  border-radius:22px;
+
+  padding:22px 18px 18px;
 
   text-align:center;
 
-  padding:19px 15px 18px;
+  border:1px solid var(--border);
 
-  border-radius:var(--radius-md);
+  background:white;
 
-  border:1.5px solid var(--border);
-
-  cursor:pointer;
+  box-shadow:var(--shadow);
 
   transition:
     transform .2s ease,
     box-shadow .2s ease,
     border-color .2s ease;
 
-  box-shadow:
-    0 8px 25px rgba(36,48,94,.045);
+  overflow:hidden;
 }
 
 .level-card:hover{
@@ -482,70 +510,69 @@ img{
   box-shadow:var(--shadow-hover);
 }
 
-.level-card.selected{
-  transform:translateY(-1px);
-  box-shadow:var(--shadow);
+.level-card.active{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 15px 35px rgba(49,87,213,.13);
 }
+
+
+/* individual level colors */
 
 .level-card.beginner{
-  background:var(--green-light);
-  border-color:#BDE5CC;
+  background:
+    linear-gradient(
+      180deg,
+      #F5FCF7 0%,
+      #FFFFFF 100%
+    );
+
+  border-color:var(--green-border);
 }
 
-.level-card.beginner.selected{
-  border-color:var(--green);
+.level-card.beginner.active{
+  border-color:#83C997;
 }
 
 .level-card.pre{
-  background:var(--blue-light);
-  border-color:#C7DDF5;
+  background:
+    linear-gradient(
+      180deg,
+      #F0F8FF 0%,
+      #FFFFFF 100%
+    );
+
+  border-color:#CFE2F4;
 }
 
-.level-card.pre.selected{
-  border-color:#7EB8EC;
+.level-card.pre.active{
+  border-color:#79AEEA;
 }
 
 .level-card.intermediate{
-  background:var(--lavender);
-  border-color:#D9D0F5;
+  background:
+    linear-gradient(
+      180deg,
+      #F6F2FF 0%,
+      #FFFFFF 100%
+    );
+
+  border-color:#DAD1F5;
 }
 
-.level-card.intermediate.selected{
-  border-color:#A78CEB;
-}
-
-
-/* selected dot */
-
-.selected-dot{
-  position:absolute;
-
-  top:11px;
-  right:11px;
-
-  width:9px;
-  height:9px;
-
-  border-radius:50%;
-
-  background:var(--blue);
-
-  box-shadow:
-    0 0 0 4px rgba(49,87,213,.08);
-
-  opacity:0;
-}
-
-.level-card.selected .selected-dot{
-  opacity:1;
+.level-card.intermediate.active{
+  border-color:#987DE4;
 }
 
 
 /* level icon */
 
 .level-icon{
-  width:55px;
-  height:55px;
+  width:52px;
+  height:52px;
+
+  margin:0 auto 10px;
 
   display:flex;
   align-items:center;
@@ -553,56 +580,75 @@ img{
 
   border-radius:50%;
 
-  background:#FFFFFF;
+  font-size:25px;
+
+  background:rgba(255,255,255,.8);
 
   box-shadow:
-    0 7px 18px rgba(36,48,94,.07);
-
-  font-size:29px;
-
-  margin-bottom:10px;
+    0 6px 15px rgba(35,47,90,.08);
 }
 
 .level-card h3{
-  font-size:20px;
-  line-height:1.25;
+  margin:0;
 
-  font-weight:900;
+  font-size:19px;
 
-  color:#17213C;
+  color:var(--text);
 
-  margin-bottom:1px;
+  font-weight:950;
 }
 
-.level-card .english-name{
-  color:var(--blue-dark);
+.level-en{
+  margin-top:3px;
 
-  font-size:17px;
-  font-weight:800;
+  direction:ltr;
 
-  margin-bottom:6px;
+  color:#202B50;
+
+  font-size:14px;
+
+  font-weight:850;
 }
 
-.level-card .level-description{
-  color:#68738C;
+.level-description{
+  min-height:39px;
 
-  font-size:12.5px;
+  margin:9px 0 12px;
+
+  color:#68728A;
+
+  font-size:12px;
+
   line-height:1.65;
 
-  min-height:40px;
-
-  max-width:250px;
-
-  margin-bottom:7px;
+  font-weight:600;
 }
 
-.level-stats{
-  color:#526079;
+.level-count{
+  display:inline-flex;
 
-  font-size:11.5px;
-  font-weight:800;
+  align-items:center;
+  justify-content:center;
 
-  line-height:1.55;
+  max-width:100%;
+
+  padding:7px 11px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.82);
+
+  border:1px solid rgba(100,110,145,.12);
+
+  color:#4B5670;
+
+  font-size:10px;
+
+  font-weight:850;
+
+  direction:ltr;
+
+  white-space:nowrap;
 }
 
 
@@ -610,60 +656,61 @@ img{
    DOWN ARROW
    ========================================================= */
 
-.section-arrow{
-  text-align:center;
+.down-arrow{
+  width:30px;
+  height:30px;
 
-  color:#64739A;
+  margin:0 auto 2px;
 
-  font-size:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#6477B5;
+
+  font-size:26px;
+
   line-height:1;
-
-  margin:4px 0 3px;
 }
 
 
 /* =========================================================
-   ENGLISH SKILLS
+   SKILLS
    ========================================================= */
 
 .skills-section{
-  margin-top:2px;
+  margin-top:0;
 }
 
-.skills-heading{
-  margin-bottom:20px;
-}
-
-.skills-grid{
+.skill-grid{
   display:grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(3,minmax(0,1fr));
 
   gap:16px;
 
-  transition:opacity .18s ease;
+  margin-top:16px;
 }
 
 .skill-card{
+  min-width:0;
+
+  min-height:315px;
+
   display:flex;
   flex-direction:column;
   align-items:center;
 
   text-align:center;
 
-  min-height:290px;
+  padding:24px 20px 20px;
 
-  padding:24px 18px 19px;
+  border-radius:26px;
 
-  border-radius:var(--radius-md);
+  border:1px solid var(--border);
 
-  border:1.5px solid var(--border);
-
-  box-shadow:
-    0 10px 28px rgba(36,48,94,.055);
-
-  background:#FFFFFF;
+  box-shadow:var(--shadow);
 
   transition:
     transform .2s ease,
@@ -675,145 +722,158 @@ img{
   box-shadow:var(--shadow-hover);
 }
 
+
+/* skill backgrounds */
+
 .skill-card.reading{
-  background:#F0F7FF;
-  border-color:#D2E2F5;
+  background:
+    linear-gradient(
+      180deg,
+      #EEF6FF 0%,
+      #FFFFFF 100%
+    );
+
+  border-color:#CFE2F5;
 }
 
 .skill-card.listening{
-  background:#F7F1FF;
-  border-color:#DED2F4;
+  background:
+    linear-gradient(
+      180deg,
+      #F4EFFF 0%,
+      #FFFFFF 100%
+    );
+
+  border-color:#DCD2F5;
 }
 
 .skill-card.vocabulary{
-  background:#F0F7FF;
-  border-color:#D2E2F5;
+  background:
+    linear-gradient(
+      180deg,
+      #F2F7FF 0%,
+      #FFFFFF 100%
+    );
+
+  border-color:#D7E2F2;
 }
 
 
 /* skill icon */
 
 .skill-icon{
-  width:64px;
-  height:64px;
+  width:67px;
+  height:67px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  border-radius:18px;
+  margin-bottom:12px;
 
-  background:#FFFFFF;
+  border-radius:20px;
+
+  background:rgba(255,255,255,.82);
 
   box-shadow:
-    0 8px 20px rgba(36,48,94,.06);
+    0 8px 18px rgba(39,51,91,.08);
 
-  font-size:37px;
-
-  margin-bottom:13px;
+  font-size:35px;
 }
 
 .skill-card h3{
-  font-size:20px;
-  line-height:1.2;
+  margin:0;
 
-  font-weight:900;
+  color:var(--text);
 
-  color:#111A38;
+  font-size:22px;
 
-  margin-bottom:2px;
+  line-height:1.1;
+
+  font-weight:950;
+
+  direction:ltr;
 }
 
-.skill-arabic{
-  color:var(--blue-dark);
+.skill-ar{
+  margin-top:4px;
+
+  color:#253154;
 
   font-size:17px;
-  font-weight:800;
 
-  margin-bottom:12px;
+  font-weight:900;
 }
 
 .skill-description{
-  color:#59647B;
+  flex:1;
 
-  font-size:13px;
-  line-height:1.75;
+  width:100%;
 
-  max-width:255px;
+  max-width:270px;
 
-  min-height:48px;
+  margin:14px auto 13px;
 
-  margin-bottom:11px;
+  color:#626D84;
+
+  font-size:12px;
+
+  line-height:1.85;
+
+  font-weight:600;
 }
 
 .skill-count{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
 
-  min-height:29px;
-
-  padding:5px 14px;
+  padding:6px 13px;
 
   border-radius:999px;
 
-  background:#FFFFFF;
+  background:rgba(255,255,255,.86);
 
-  color:var(--blue-dark);
+  border:1px solid rgba(75,90,130,.12);
 
-  font-size:12px;
-  font-weight:800;
+  color:#4D5870;
 
-  margin-bottom:13px;
+  font-size:11px;
+
+  font-weight:900;
+
+  margin-bottom:12px;
 }
-
-.skill-card.listening .skill-count{
-  color:#7654D9;
-}
-
-
-/* skill button */
 
 .skill-button{
   width:100%;
 
-  min-height:43px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  min-height:44px;
 
   border:0;
-  border-radius:999px;
 
-  color:#FFFFFF;
+  border-radius:15px;
 
-  font-size:13px;
-  font-weight:800;
+  color:white;
 
-  margin-top:auto;
+  font-size:12px;
 
-  box-shadow:
-    0 8px 18px rgba(49,87,213,.16);
+  font-weight:900;
 
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+  transition:.2s ease;
 }
 
 .skill-button:hover{
-  transform:translateY(-2px);
-  box-shadow:
-    0 12px 24px rgba(49,87,213,.22);
+  transform:translateY(-1px);
 }
 
-.reading .skill-button,
-.vocabulary .skill-button{
+.reading .skill-button{
   background:
     linear-gradient(
       135deg,
       #3157D5,
-      #4674E8
+      #4679EA
     );
 }
 
@@ -822,164 +882,133 @@ img{
     linear-gradient(
       135deg,
       #7654D9,
-      #865DE8
+      #6843CC
+    );
+}
+
+.vocabulary .skill-button{
+  background:
+    linear-gradient(
+      135deg,
+      #3157D5,
+      #4B63D9
     );
 }
 
 
 /* =========================================================
-   HELP CARD
+   FINAL HELP CARD
    ========================================================= */
 
-.help-card{
+.final-card{
+  margin-top:20px;
+
+  min-height:86px;
+
   display:flex;
   align-items:center;
-  gap:20px;
 
-  padding:20px 24px;
+  gap:17px;
 
-  border:1px solid #DDD9F4;
-  border-radius:var(--radius-md);
+  padding:18px 23px;
 
   background:
     linear-gradient(
       135deg,
-      #F7F5FF,
-      #F1F0FF
+      #F0F4FF,
+      #F5F1FF
     );
 
-  box-shadow:
-    0 8px 25px rgba(72,59,128,.045);
+  border:1px solid #DCE1F3;
 
-  margin-top:20px;
+  border-radius:22px;
+
+  box-shadow:var(--shadow);
 }
 
-.help-icon{
-  flex:0 0 auto;
+.final-icon{
+  flex:0 0 49px;
 
-  width:58px;
-  height:58px;
+  width:49px;
+  height:49px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  border-radius:50%;
+  border-radius:16px;
 
-  background:#FFFFFF;
+  background:white;
 
-  box-shadow:
-    0 8px 20px rgba(36,48,94,.07);
+  border:1px solid #DCE2F1;
 
-  font-size:29px;
+  font-size:25px;
 }
 
-.help-content{
-  flex:1;
+.final-card h3{
+  margin:0 0 4px;
+
+  font-size:18px;
+
+  color:var(--text);
+
+  font-weight:950;
 }
 
-.help-content h3{
-  font-size:20px;
-  font-weight:900;
+.final-card p{
+  margin:0;
 
-  color:#1A2440;
+  color:var(--muted);
 
-  margin-bottom:4px;
-}
+  font-size:12px;
 
-.help-content p{
-  color:#737D94;
-
-  font-size:13px;
   line-height:1.7;
+
+  font-weight:600;
 }
 
 
 /* =========================================================
-   HIDDEN STATE
+   FOOTER
    ========================================================= */
 
-.fade-out{
-  opacity:0;
+.footer{
+  text-align:center;
+
+  padding-top:28px;
+
+  color:#9AA2B5;
+
+  font-size:10px;
+
+  font-weight:650;
 }
 
 
 /* =========================================================
-   TABLET
+   MOBILE
    ========================================================= */
 
-@media (max-width:900px){
+/*
+  مهم:
+  لا نغيّر بنية التصميم.
+  فقط نصغّر العناصر والمسافات.
+*/
 
-  .page{
-    width:min(100% - 26px, 760px);
-  }
-
-  .hero{
-    min-height:300px;
-  }
-
-  .hero-content{
-    width:57%;
-    padding:35px 0 35px 34px;
-  }
-
-  .hero h1{
-    font-size:43px;
-  }
-
-  .hero-description{
-    font-size:17px;
-  }
-
-  .hero-owl-wrap{
-    width:45%;
-    right:5px;
-    bottom:-50px;
-  }
-
-  .hero-owl{
-    height:325px;
-  }
-
-  .hero-owl-bg{
-    width:330px;
-    height:330px;
-    right:10px;
-  }
-
-  .notice{
-    padding:21px 23px;
-  }
-
-  .level-card{
-    min-height:205px;
-  }
-
-  .skill-card{
-    min-height:285px;
-  }
-}
-
-
-/* =========================================================
-   PHONE
-   IMPORTANT:
-   نفس توزيع الآيباد — وليس stacked design
-   ========================================================= */
-
-@media (max-width:680px){
+@media(max-width:700px){
 
   .page{
     width:calc(100% - 16px);
-    padding-top:8px;
+    padding-top:10px;
     padding-bottom:35px;
   }
 
-
-  /* ================= HERO ================= */
-
   .hero{
-    min-height:245px;
+    min-height:205px;
+
+    grid-template-columns:
+      minmax(0,1.12fr)
+      minmax(125px,.88fr);
 
     border-radius:24px;
 
@@ -987,306 +1016,284 @@ img{
   }
 
   .hero-content{
-    width:61%;
-
     padding:
-      26px
-      0
-      25px
-      18px;
-
-    text-align:right;
+      24px
+      8px
+      24px
+      21px;
   }
 
   .eyebrow{
-    font-size:9px;
-    letter-spacing:1.6px;
-
-    margin-bottom:7px;
+    font-size:8px;
+    letter-spacing:1.3px;
+    margin-bottom:6px;
   }
 
   .hero h1{
-    font-size:30px;
-    line-height:1.12;
-
-    margin-bottom:10px;
+    font-size:clamp(25px,8vw,35px);
+    letter-spacing:-.8px;
   }
 
   .hero-description{
-    font-size:11.5px;
-    line-height:1.8;
+    margin:9px 0 12px;
 
-    max-width:185px;
+    font-size:9px;
+    line-height:1.7;
 
-    margin-bottom:13px;
+    max-width:260px;
   }
 
-  .hero-guide{
-    gap:7px;
+  .hero-button{
+    min-height:35px;
 
-    font-size:11.5px;
+    padding:0 13px;
+
+    border-radius:11px;
+
+    font-size:9px;
   }
-
-  .hero-guide-arrow{
-    width:27px;
-    height:27px;
-
-    font-size:15px;
-  }
-
 
   /*
-    البومة تبقى بجانب الكلام
-    وتظهر جزئيًا مثل المرجع
+    البومة تظل في الجهة المقابلة.
+    فقط تصغر وتبقى مقصوصة من الأسفل.
   */
 
-  .hero-owl-wrap{
-    width:43%;
+  .hero-mascot{
+    width:190px;
 
-    right:0;
-    bottom:-34px;
-
-    height:106%;
+    right:-3px;
+    bottom:-55px;
   }
 
-  .hero-owl-bg{
+  .hero-note{
+    top:19px;
+    right:150px;
+
+    font-size:11px;
+  }
+
+  .hero::before{
     width:190px;
     height:190px;
 
-    right:-10px;
-    bottom:24px;
+    right:60px;
+    top:-100px;
   }
 
-  .hero-owl{
-    height:205px;
+  .hero::after{
+    width:150px;
+    height:150px;
 
-    transform:translateY(3px);
+    right:-15px;
+    bottom:-80px;
   }
 
 
-  /* ================= NOTICE ================= */
+  /* notice */
 
   .notice{
+    min-height:78px;
+
     gap:10px;
 
-    padding:15px 13px;
+    padding:13px 14px;
 
-    border-radius:19px;
+    border-radius:18px;
 
     margin-bottom:19px;
   }
 
   .notice-icon{
-    width:40px;
-    height:40px;
+    flex:0 0 37px;
 
-    font-size:21px;
+    width:37px;
+    height:37px;
+
+    border-radius:12px;
+
+    font-size:18px;
   }
 
   .notice h2{
-    font-size:17px;
-
-    margin-bottom:4px;
+    font-size:14px;
+    margin-bottom:3px;
   }
 
   .notice p{
-    font-size:10px;
-    line-height:1.75;
+    font-size:8px;
+    line-height:1.65;
   }
 
 
-  /* ================= HEADINGS ================= */
+  /* headings */
 
   .section-heading{
-    margin-bottom:11px;
+    margin:7px 0 10px;
   }
 
   .section-heading h2{
-    font-size:22px;
+    font-size:21px;
   }
 
   .section-heading p{
-    font-size:10px;
+    font-size:9px;
+    margin-top:4px;
   }
 
 
-  /* ================= LEVELS ================= */
+  /* level cards */
 
   .level-grid{
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-
-    gap:6px;
-
+    gap:7px;
     margin-bottom:7px;
   }
 
   .level-card{
-    min-height:157px;
+    border-radius:15px;
 
-    padding:
-      11px
-      5px
-      9px;
-
-    border-radius:18px;
-  }
-
-  .selected-dot{
-    width:6px;
-    height:6px;
-
-    top:7px;
-    right:7px;
-
-    box-shadow:
-      0 0 0 3px rgba(49,87,213,.08);
+    padding:12px 7px 10px;
   }
 
   .level-icon{
-    width:37px;
-    height:37px;
-
-    font-size:20px;
+    width:34px;
+    height:34px;
 
     margin-bottom:6px;
+
+    font-size:17px;
   }
 
   .level-card h3{
-    font-size:12.5px;
+    font-size:11px;
   }
 
-  .level-card .english-name{
-    font-size:10.5px;
-
-    margin-bottom:4px;
-  }
-
-  .level-card .level-description{
+  .level-en{
     font-size:8px;
-    line-height:1.55;
-
-    min-height:27px;
-
-    margin-bottom:4px;
+    margin-top:1px;
   }
 
-  .level-stats{
-    font-size:7.3px;
-    line-height:1.4;
+  .level-description{
+    min-height:31px;
+
+    margin:5px 0 7px;
+
+    font-size:7px;
+
+    line-height:1.45;
+  }
+
+  .level-count{
+    padding:4px 5px;
+
+    font-size:5.8px;
   }
 
 
-  /* ================= ARROW ================= */
+  .down-arrow{
+    width:20px;
+    height:20px;
 
-  .section-arrow{
-    font-size:24px;
-
-    margin:2px 0 1px;
+    font-size:18px;
   }
 
 
-  /* ================= ENGLISH SKILLS ================= */
+  /* skills */
 
-  .skills-heading{
-    margin-bottom:12px;
-  }
-
-  .skills-grid{
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-
-    gap:6px;
+  .skill-grid{
+    gap:7px;
+    margin-top:8px;
   }
 
   .skill-card{
-    min-height:218px;
+    min-height:220px;
 
-    padding:
-      12px
-      6px
-      9px;
+    padding:13px 8px 9px;
 
-    border-radius:18px;
+    border-radius:16px;
   }
 
   .skill-icon{
-    width:43px;
-    height:43px;
+    width:39px;
+    height:39px;
 
-    border-radius:13px;
-
-    font-size:24px;
+    border-radius:12px;
 
     margin-bottom:7px;
+
+    font-size:21px;
   }
 
   .skill-card h3{
-    font-size:13px;
+    font-size:12px;
   }
 
-  .skill-arabic{
-    font-size:10px;
-
-    margin-bottom:7px;
+  .skill-ar{
+    margin-top:2px;
+    font-size:9px;
   }
 
   .skill-description{
-    font-size:8px;
-    line-height:1.6;
+    margin:7px auto 6px;
 
-    min-height:39px;
-
-    margin-bottom:6px;
+    font-size:6.8px;
+    line-height:1.55;
   }
 
   .skill-count{
-    min-height:23px;
+    padding:4px 6px;
 
-    padding:3px 7px;
-
-    font-size:8px;
+    font-size:6px;
 
     margin-bottom:7px;
   }
 
   .skill-button{
-    min-height:32px;
+    min-height:29px;
 
-    font-size:8px;
+    border-radius:10px;
 
-    padding:0 4px;
+    font-size:7px;
   }
 
 
-  /* ================= HELP ================= */
+  /* final */
 
-  .help-card{
+  .final-card{
+    min-height:58px;
+
     gap:9px;
 
-    padding:13px 12px;
+    padding:10px 12px;
 
-    border-radius:18px;
+    border-radius:15px;
 
     margin-top:10px;
   }
 
-  .help-icon{
-    width:40px;
-    height:40px;
+  .final-icon{
+    flex:0 0 31px;
 
-    font-size:21px;
+    width:31px;
+    height:31px;
+
+    border-radius:10px;
+
+    font-size:16px;
   }
 
-  .help-content h3{
-    font-size:14px;
-
-    margin-bottom:3px;
+  .final-card h3{
+    font-size:10px;
+    margin-bottom:2px;
   }
 
-  .help-content p{
-    font-size:9px;
-    line-height:1.65;
+  .final-card p{
+    font-size:7px;
+    line-height:1.5;
+  }
+
+  .footer{
+    padding-top:17px;
+    font-size:7px;
   }
 }
 
@@ -1295,89 +1302,96 @@ img{
    VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width:380px){
+@media(max-width:380px){
 
   .page{
     width:calc(100% - 12px);
   }
 
   .hero{
-    min-height:225px;
+    min-height:185px;
   }
 
   .hero-content{
-    width:62%;
-
-    padding-left:14px;
+    padding-left:16px;
   }
 
   .hero h1{
-    font-size:27px;
+    font-size:23px;
   }
 
   .hero-description{
-    font-size:10px;
-    max-width:165px;
+    font-size:8px;
   }
 
-  .hero-guide{
-    font-size:10px;
+  .hero-mascot{
+    width:170px;
+    right:-4px;
+    bottom:-50px;
   }
 
-  .hero-guide-arrow{
-    width:24px;
-    height:24px;
-    font-size:13px;
-  }
-
-  .hero-owl{
-    height:188px;
-  }
-
-  .hero-owl-bg{
-    width:175px;
-    height:175px;
-  }
-
-  .level-card{
-    min-height:150px;
-  }
-
-  .level-card h3{
-    font-size:11.5px;
-  }
-
-  .level-card .english-name{
-    font-size:9.5px;
-  }
-
-  .level-card .level-description{
-    font-size:7.4px;
-  }
-
-  .level-stats{
-    font-size:6.8px;
-  }
-
-  .skill-card{
-    min-height:210px;
-  }
-
-  .skill-card h3{
-    font-size:12px;
-  }
-
-  .skill-arabic{
+  .hero-note{
+    right:132px;
     font-size:9px;
   }
 
-  .skill-description{
-    font-size:7.5px;
+  .level-card{
+    padding-left:5px;
+    padding-right:5px;
   }
 
-  .skill-button{
-    font-size:7.5px;
+  .level-description{
+    font-size:6.5px;
   }
+
+  .skill-description{
+    font-size:6.3px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / IPAD
+   ========================================================= */
+
+@media(min-width:701px) and (max-width:1100px){
+
+  .page{
+    width:calc(100% - 30px);
+  }
+
+  .hero{
+    min-height:280px;
+  }
+
+  .hero-content{
+    padding-left:40px;
+  }
+
+  .hero-mascot{
+    width:280px;
+    right:18px;
+    bottom:-72px;
+  }
+
+  .hero-note{
+    right:245px;
+  }
+
+  .skill-card{
+    min-height:300px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible{
+  outline:3px solid rgba(49,87,213,.25);
+  outline-offset:3px;
 }
 
 </style>
@@ -1386,14 +1400,14 @@ img{
 
 <body>
 
-<main class="page">
+<div class="page">
 
 
   <!-- =====================================================
        HERO
        ===================================================== -->
 
-  <section class="hero">
+  <section class="hero" id="hero">
 
     <div class="hero-content">
 
@@ -1402,39 +1416,40 @@ img{
       </div>
 
       <h1>
-        Skills
+        مهارات اللغة
       </h1>
 
       <p class="hero-description">
-        طبّق ما تعلمته، وطوّر فهمك للإنجليزية من خلال القراءة والاستماع والمفردات.
+        طبّق ما تعلمته، وطوّر فهمك للإنجليزية من خلال
+        القراءة والاستماع والمفردات.
       </p>
 
-      <!--
-        هذا ليس زرًا.
-        مجرد إرشاد بصري للطالب.
-      -->
-      <div class="hero-guide">
-        <span>
-          اختر مستواك وابدأ التدريب
-        </span>
-
-        <span class="hero-guide-arrow">
-          ↓
-        </span>
-      </div>
+      <button
+        class="hero-button"
+        type="button"
+        onclick="scrollToLevels()"
+      >
+        ← اختر مستواك وابدأ التدريب
+      </button>
 
     </div>
 
 
-    <!-- Owl -->
-    <div class="hero-owl-wrap">
+    <!-- mascot area -->
 
-      <div class="hero-owl-bg"></div>
+    <div class="hero-mascot-area">
+
+      <div class="hero-note" aria-hidden="true">
+        <span>Practice</span>
+        <span>Learn</span>
+        <span>Grow ♥</span>
+      </div>
 
       <img
-        class="hero-owl"
-        src="../owl2.png.PNG"
-        alt="Engliza Academy Owl"
+        class="hero-mascot"
+        src="owl2.png.PNG"
+        alt="Engliza Academy mascot"
+        draggable="false"
       >
 
     </div>
@@ -1442,9 +1457,8 @@ img{
   </section>
 
 
-
   <!-- =====================================================
-       BEFORE START
+       NOTICE
        ===================================================== -->
 
   <section class="notice">
@@ -1470,12 +1484,11 @@ img{
   </section>
 
 
-
   <!-- =====================================================
-       LEVEL SELECTION
+       LEVELS
        ===================================================== -->
 
-  <section>
+  <section id="levels">
 
     <div class="section-heading">
 
@@ -1491,13 +1504,12 @@ img{
 
       <!-- BEGINNER -->
 
-      <article
-        class="level-card beginner selected"
+      <button
+        class="level-card beginner active"
+        type="button"
         data-level="beginner"
         onclick="selectLevel('beginner')"
       >
-
-        <span class="selected-dot"></span>
 
         <div class="level-icon">
           🌱
@@ -1507,31 +1519,29 @@ img{
           المبتدئ
         </h3>
 
-        <div class="english-name">
+        <div class="level-en">
           Beginner
         </div>
 
-        <p class="level-description">
+        <div class="level-description">
           بداية بناء اللغة
-        </p>
+        </div>
 
-        <div class="level-stats">
+        <div class="level-count">
           30 Reading · 30 Listening · 30 Vocabulary
         </div>
 
-      </article>
-
+      </button>
 
 
       <!-- PRE-INTERMEDIATE -->
 
-      <article
+      <button
         class="level-card pre"
+        type="button"
         data-level="pre"
         onclick="selectLevel('pre')"
       >
-
-        <span class="selected-dot"></span>
 
         <div class="level-icon">
           🚀
@@ -1541,31 +1551,29 @@ img{
           ما قبل المتوسط
         </h3>
 
-        <div class="english-name">
+        <div class="level-en">
           Pre-intermediate
         </div>
 
-        <p class="level-description">
+        <div class="level-description">
           انتقل من الأساسيات إلى الاستخدام
-        </p>
+        </div>
 
-        <div class="level-stats">
+        <div class="level-count">
           30 Reading · 30 Listening · 30 Vocabulary
         </div>
 
-      </article>
-
+      </button>
 
 
       <!-- INTERMEDIATE -->
 
-      <article
+      <button
         class="level-card intermediate"
+        type="button"
         data-level="intermediate"
         onclick="selectLevel('intermediate')"
       >
-
-        <span class="selected-dot"></span>
 
         <div class="level-icon">
           ⭐
@@ -1575,63 +1583,54 @@ img{
           المتوسط
         </h3>
 
-        <div class="english-name">
+        <div class="level-en">
           Intermediate
         </div>
 
-        <p class="level-description">
-          وسّع لغتك واستخدم الإنجليزية بصورة أكثر طبيعية
-        </p>
+        <div class="level-description">
+          وسّع لغتك واستخدم الإنجليزية
+          بصورة أكثر طبيعية
+        </div>
 
-        <div class="level-stats">
+        <div class="level-count">
           30 Reading · 30 Listening · 30 Vocabulary
         </div>
 
-      </article>
-
+      </button>
 
     </div>
 
 
-    <div class="section-arrow">
+    <div class="down-arrow">
       ↓
     </div>
 
   </section>
 
 
-
   <!-- =====================================================
-       ENGLISH SKILLS
+       SKILLS
        ===================================================== -->
 
-  <section
-    class="skills-section"
-    id="skillsSection"
-  >
+  <section class="skills-section">
 
-    <div class="section-heading skills-heading">
+    <div class="section-heading">
 
       <h2 id="skillsTitle">
-        English Skills
+        مهارات المستوى المختار
       </h2>
 
       <p>
-        اختر المهارة التي تريد التدرب عليها
+        اختر المهارة التي تريد التدريب عليها
       </p>
 
     </div>
 
 
-    <div
-      class="skills-grid"
-      id="skillsGrid"
-    >
+    <div class="skill-grid">
 
 
-      <!-- =================================================
-           READING
-           ================================================= -->
+      <!-- READING -->
 
       <article class="skill-card reading">
 
@@ -1643,16 +1642,13 @@ img{
           Reading
         </h3>
 
-        <div class="skill-arabic">
+        <div class="skill-ar">
           القراءة
         </div>
 
-        <p
-          class="skill-description"
-          id="readingDescription"
-        >
-          اقرأ نصوصًا مترابطة، تعرّف على كلمات جديدة،
-          واختبر فهمك.
+        <p class="skill-description">
+          اقرأ نصوصًا مترابطة، تعرّف على كلمات
+          وعبارات جديدة، واختبر فهمك.
         </p>
 
         <div
@@ -1665,7 +1661,7 @@ img{
         <a
           class="skill-button"
           id="readingLink"
-          href="../beginner-reading.html"
+          href="reading-beginner.html"
         >
           ابدأ القراءة ←
         </a>
@@ -1673,10 +1669,7 @@ img{
       </article>
 
 
-
-      <!-- =================================================
-           LISTENING
-           ================================================= -->
+      <!-- LISTENING -->
 
       <article class="skill-card listening">
 
@@ -1688,16 +1681,13 @@ img{
           Listening
         </h3>
 
-        <div class="skill-arabic">
+        <div class="skill-ar">
           الاستماع
         </div>
 
-        <p
-          class="skill-description"
-          id="listeningDescription"
-        >
+        <p class="skill-description">
           استمع إلى الإنجليزية الطبيعية،
-          وتعلّم من المقطع، واختبر فهمك.
+          تعلّم من المقطع، واختبر فهمك.
         </p>
 
         <div
@@ -1710,7 +1700,7 @@ img{
         <a
           class="skill-button"
           id="listeningLink"
-          href="../beginner-listening.html"
+          href="listening-beginner.html"
         >
           ابدأ الاستماع ←
         </a>
@@ -1718,10 +1708,7 @@ img{
       </article>
 
 
-
-      <!-- =================================================
-           VOCABULARY
-           ================================================= -->
+      <!-- VOCABULARY -->
 
       <article class="skill-card vocabulary">
 
@@ -1733,16 +1720,13 @@ img{
           Vocabulary
         </h3>
 
-        <div class="skill-arabic">
+        <div class="skill-ar">
           المفردات
         </div>
 
-        <p
-          class="skill-description"
-          id="vocabularyDescription"
-        >
-          تعلّم كلمات وعبارات جديدة،
-          واكتشف استخدامها داخل سياقات حقيقية.
+        <p class="skill-description">
+          تعلّم كلمات وعبارات Phrasal Verbs
+          وCollocations واستخدمها في سياقات حقيقية.
         </p>
 
         <div
@@ -1755,180 +1739,120 @@ img{
         <a
           class="skill-button"
           id="vocabularyLink"
-          href="../beginner-vocabulary.html"
+          href="vocabulary-beginner.html"
         >
           ابدأ المفردات ←
         </a>
 
       </article>
 
-
     </div>
-
-
-
-    <!-- ===================================================
-         HELP
-         =================================================== -->
-
-    <div class="help-card">
-
-      <div class="help-icon">
-        🧭
-      </div>
-
-      <div class="help-content">
-
-        <h3>
-          لا تعرف من أين تبدأ؟
-        </h3>
-
-        <p>
-          ابدأ بالمستوى الذي تدرس دروسه حاليًا،
-          ثم استخدم المهارات الثلاث لتثبيت ما تعلمته.
-        </p>
-
-      </div>
-
-    </div>
-
 
   </section>
 
 
-</main>
+  <!-- =====================================================
+       FINAL HELP
+       ===================================================== -->
 
+  <section class="final-card">
+
+    <div class="final-icon">
+      🧭
+    </div>
+
+    <div>
+
+      <h3>
+        لا تعرف من أين تبدأ؟
+      </h3>
+
+      <p>
+        ابدأ بالمستوى الذي تدرس دروسه حاليًا،
+        ثم استخدم المهارات الثلاث لتثبيت ما تعلمته.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <div class="footer">
+    ENGLIZA ACADEMY · Learn · Practice · Grow
+  </div>
+
+
+</div>
 
 
 <script>
 
 /* =========================================================
    LEVEL DATA
-   =========================================================
-
-   إذا كانت أسماء ملفات صفحات المهارات مختلفة عندك،
-   نغيّر الروابط هنا فقط.
-   باقي الصفحة لا يحتاج أي تعديل.
    ========================================================= */
 
-const levelData = {
+const levels = {
 
-  beginner: {
+  beginner:{
+    title:"مهارات المستوى المختار",
 
     reading:{
-      link:"../beginner-reading.html",
-      description:
-        "اقرأ نصوصًا مترابطة، تعرّف على كلمات جديدة، واختبر فهمك.",
+      link:"reading-beginner.html",
       count:"30 قراءة"
     },
 
     listening:{
-      link:"../beginner-listening.html",
-      description:
-        "استمع إلى الإنجليزية الطبيعية، وتعلّم من المقطع، واختبر فهمك.",
+      link:"listening-beginner.html",
       count:"30 مقطعًا"
     },
 
     vocabulary:{
-      link:"../beginner-vocabulary.html",
-      description:
-        "تعلّم كلمات وعبارات جديدة، واكتشف استخدامها داخل سياقات حقيقية.",
+      link:"vocabulary-beginner.html",
       count:"30 وحدة"
     }
-
   },
 
 
-  pre: {
+  pre:{
+    title:"مهارات المستوى المختار",
 
     reading:{
-      link:"../pre-intermediate-reading.html",
-      description:
-        "اقرأ نصوصًا أكثر تنوعًا، وتعلّم من السياق، واختبر فهمك.",
+      link:"reading-pre-intermediate.html",
       count:"30 قراءة"
     },
 
     listening:{
-      link:"../pre-intermediate-listening.html",
-      description:
-        "استمع إلى الإنجليزية الطبيعية، وتعلّم من الاستماع وطريقة استخدام اللغة.",
+      link:"listening-pre-intermediate.html",
       count:"30 مقطعًا"
     },
 
     vocabulary:{
-      link:"../pre-intermediate-vocabulary.html",
-      description:
-        "وسّع حصيلتك من الكلمات والعبارات، وتعلّم استخدامها في سياقات يومية.",
+      link:"vocabulary-pre-intermediate.html",
       count:"30 وحدة"
     }
-
   },
 
 
-  intermediate: {
+  intermediate:{
+    title:"مهارات المستوى المختار",
 
     reading:{
-      link:"../intermediate-reading.html",
-      description:
-        "اقرأ نصوصًا طبيعية بمستوى أعلى، وتعرّف على اللغة من خلال السياق.",
+      link:"reading-intermediate.html",
       count:"30 قراءة"
     },
 
     listening:{
-      link:"../intermediate-listening.html",
-      description:
-        "استمع إلى الإنجليزية الطبيعية وتعلّم التعبيرات واللغة المستخدمة في المواقف الحقيقية.",
+      link:"listening-intermediate.html",
       count:"30 مقطعًا"
     },
 
     vocabulary:{
-      link:"../intermediate-vocabulary.html",
-      description:
-        "تعلّم كلمات وPhrasal Verbs وCollocations وعبارات طبيعية بمستوى B1.",
+      link:"vocabulary-intermediate.html",
       count:"30 وحدة"
     }
-
   }
 
 };
-
-
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
-
-const levelCards =
-  document.querySelectorAll(".level-card");
-
-const readingLink =
-  document.getElementById("readingLink");
-
-const listeningLink =
-  document.getElementById("listeningLink");
-
-const vocabularyLink =
-  document.getElementById("vocabularyLink");
-
-const readingDescription =
-  document.getElementById("readingDescription");
-
-const listeningDescription =
-  document.getElementById("listeningDescription");
-
-const vocabularyDescription =
-  document.getElementById("vocabularyDescription");
-
-const readingCount =
-  document.getElementById("readingCount");
-
-const listeningCount =
-  document.getElementById("listeningCount");
-
-const vocabularyCount =
-  document.getElementById("vocabularyCount");
-
-const skillsSection =
-  document.getElementById("skillsSection");
 
 
 /* =========================================================
@@ -1937,90 +1861,93 @@ const skillsSection =
 
 function selectLevel(level){
 
-  const data = levelData[level];
+  const data = levels[level];
 
   if(!data) return;
 
 
-  /* remove selected state */
+  /* active level */
 
-  levelCards.forEach(card => {
-
-    card.classList.remove("selected");
-
-  });
-
-
-  /* add selected state */
-
-  const selectedCard =
-    document.querySelector(
-      `.level-card[data-level="${level}"]`
-    );
-
-  if(selectedCard){
-
-    selectedCard.classList.add("selected");
-
-  }
+  document
+    .querySelectorAll(".level-card")
+    .forEach(card=>{
+      card.classList.toggle(
+        "active",
+        card.dataset.level === level
+      );
+    });
 
 
-  /* small visual transition */
+  /* title */
 
-  const grid =
-    document.getElementById("skillsGrid");
-
-  grid.classList.add("fade-out");
+  document.getElementById("skillsTitle").textContent =
+    data.title;
 
 
-  setTimeout(() => {
+  /* reading */
 
-    /* Reading */
+  const readingLink =
+    document.getElementById("readingLink");
 
-    readingLink.href =
-      data.reading.link;
+  const readingCount =
+    document.getElementById("readingCount");
 
-    readingDescription.textContent =
-      data.reading.description;
-
-    readingCount.textContent =
-      data.reading.count;
+  readingLink.href = data.reading.link;
+  readingCount.textContent = data.reading.count;
 
 
-    /* Listening */
+  /* listening */
 
-    listeningLink.href =
-      data.listening.link;
+  const listeningLink =
+    document.getElementById("listeningLink");
 
-    listeningDescription.textContent =
-      data.listening.description;
+  const listeningCount =
+    document.getElementById("listeningCount");
 
-    listeningCount.textContent =
-      data.listening.count;
-
-
-    /* Vocabulary */
-
-    vocabularyLink.href =
-      data.vocabulary.link;
-
-    vocabularyDescription.textContent =
-      data.vocabulary.description;
-
-    vocabularyCount.textContent =
-      data.vocabulary.count;
+  listeningLink.href = data.listening.link;
+  listeningCount.textContent = data.listening.count;
 
 
-    grid.classList.remove("fade-out");
+  /* vocabulary */
 
-  },150);
+  const vocabularyLink =
+    document.getElementById("vocabularyLink");
+
+  const vocabularyCount =
+    document.getElementById("vocabularyCount");
+
+  vocabularyLink.href = data.vocabulary.link;
+  vocabularyCount.textContent = data.vocabulary.count;
 
 
-  /*
-    على الهاتف فقط:
-    بعد اختيار المستوى، نُبقي المستخدم قريبًا
-    من English Skills بدون قفزة مزعجة.
-  */
+  /* smooth movement */
+
+  setTimeout(()=>{
+
+    document
+      .querySelector(".skills-section")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+  },80);
+
+}
+
+
+/* =========================================================
+   HERO BUTTON
+   ========================================================= */
+
+function scrollToLevels(){
+
+  document
+    .getElementById("levels")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
 
 }
 
@@ -2029,7 +1956,11 @@ function selectLevel(level){
    DEFAULT LEVEL
    ========================================================= */
 
-selectLevel("beginner");
+document.addEventListener("DOMContentLoaded",()=>{
+
+  selectLevel("beginner");
+
+});
 
 </script>
 
