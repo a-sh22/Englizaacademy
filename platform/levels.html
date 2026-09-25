@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport"
+
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
@@ -13,18 +15,42 @@ Engliza Academy | Levels
 
 <style>
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
 
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:
+Arial,
+sans-serif;
 
 }
+
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body{
 
 background:
+
+radial-gradient(
+circle at 50% 0%,
+rgba(111,67,255,.08),
+transparent 28%
+),
+
+radial-gradient(
+circle at 10% 20%,
+rgba(55,104,255,.06),
+transparent 25%
+),
+
 linear-gradient(
 135deg,
 #eef4ff,
@@ -33,11 +59,22 @@ linear-gradient(
 
 min-height:100vh;
 
-padding:45px 20px;
+padding:30px 20px 45px;
+
+color:#222;
+
+overflow-x:hidden;
 
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container{
+
+width:100%;
 
 max-width:1100px;
 
@@ -45,80 +82,486 @@ margin:auto;
 
 }
 
-.back-btn{
 
-display:inline-block;
+/* =========================================================
+   HERO
+========================================================= */
 
-background:white;
+.hero{
 
-padding:14px 24px;
+position:relative;
 
-border-radius:18px;
+height:330px;
 
-text-decoration:none;
+overflow:hidden;
 
-font-size:18px;
+border-radius:32px;
 
-font-weight:bold;
+background:
 
-color:#1f3c88;
+linear-gradient(
+120deg,
+#f7f9ff 0%,
+#eef3ff 48%,
+#e9edff 100%
+);
+
+border:1px solid rgba(49,87,213,.07);
 
 box-shadow:
-0 10px 25px
-rgba(0,0,0,.08);
 
-margin-bottom:35px;
+0 18px 55px rgba(49,87,213,.09),
 
-transition:.3s;
-
-}
-
-.back-btn:hover{
-
-transform:
-translateY(-3px);
-
-}
-
-.header{
-
-text-align:center;
-
-margin-top:-70px;
+inset
+0 1px 0
+rgba(255,255,255,.9);
 
 margin-bottom:40px;
 
 }
 
-  
-.header img{
 
-width:90px;
+/* =========================================================
+   HERO ORGANIC BACKGROUND
+========================================================= */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:390px;
+height:390px;
+
+right:165px;
+top:-210px;
+
+border-radius:
+48% 52% 42% 58% /
+56% 43% 57% 44%;
+
+background:
+rgba(255,255,255,.46);
+
+transform:
+rotate(18deg);
+
+pointer-events:none;
+
+}
+
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:330px;
+height:250px;
+
+right:60px;
+bottom:-105px;
+
+border-radius:
+48% 52% 61% 39% /
+42% 49% 51% 58%;
+
+background:
+rgba(118,84,217,.075);
+
+transform:
+rotate(-14deg);
+
+pointer-events:none;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+position:absolute;
+
+z-index:10;
+
+left:43px;
+
+top:50%;
+
+width:49%;
+
+transform:
+translateY(-50%);
+
+direction:rtl;
+
+text-align:left;
+
+}
+
+
+/* =========================================================
+   HERO BRAND
+========================================================= */
+
+.hero-brand{
 
 margin-bottom:10px;
 
-}
-  
+color:#2443AF;
 
-.header h1{
+font-size:15px;
 
-font-size:52px;
+font-weight:700;
 
-color:#1f3c88;
+letter-spacing:2.5px;
 
-margin-bottom:8px;
+direction:ltr;
 
-}
-
-.header p{
-
-font-size:22px;
-
-color:#666;
-
-line-height:1.9;
+text-align:left;
 
 }
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero-title{
+
+margin:
+0 0 12px;
+
+color:#111A3A;
+
+font-size:49px;
+
+line-height:1.08;
+
+font-weight:850;
+
+letter-spacing:-1.5px;
+
+white-space:nowrap;
+
+position:relative;
+
+z-index:11;
+
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-description{
+
+width:470px;
+
+max-width:100%;
+
+margin:
+0 0 22px;
+
+color:#27314C;
+
+font-size:18px;
+
+line-height:1.85;
+
+font-weight:500;
+
+text-align:left;
+
+}
+
+
+/* =========================================================
+   HERO BUTTON
+========================================================= */
+
+.hero-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:9px;
+
+min-width:285px;
+
+height:52px;
+
+padding:
+0 23px;
+
+border-radius:13px;
+
+background:
+
+linear-gradient(
+135deg,
+#4359E8 0%,
+#4B35D5 100%
+);
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:750;
+
+text-decoration:none;
+
+box-shadow:
+
+0 10px 24px
+rgba(67,65,220,.23);
+
+transition:
+
+transform .22s ease,
+box-shadow .22s ease;
+
+}
+
+
+.hero-button:hover{
+
+transform:
+translateY(-2px);
+
+box-shadow:
+
+0 15px 30px
+rgba(67,65,220,.28);
+
+}
+
+
+/* =========================================================
+   HANDWRITING
+========================================================= */
+
+.hero-handwriting{
+
+position:absolute;
+
+z-index:12;
+
+left:49%;
+
+top:45px;
+
+width:105px;
+
+color:#4662B8;
+
+font-family:
+"Comic Sans MS",
+"Bradley Hand",
+cursive;
+
+font-size:21px;
+
+line-height:1.05;
+
+transform:
+rotate(-7deg);
+
+direction:ltr;
+
+text-align:left;
+
+opacity:.92;
+
+pointer-events:none;
+
+}
+
+
+.hero-handwriting span{
+
+display:block;
+
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual{
+
+position:absolute;
+
+z-index:4;
+
+right:0;
+
+top:0;
+
+width:46%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+
+/* =========================================================
+   ORGANIC SHAPES
+========================================================= */
+
+.hero-shape-one{
+
+position:absolute;
+
+width:315px;
+
+height:300px;
+
+right:55px;
+
+top:-38px;
+
+border-radius:
+58% 42% 52% 48% /
+45% 56% 44% 55%;
+
+background:
+rgba(194,201,241,.34);
+
+transform:
+rotate(20deg);
+
+}
+
+
+.hero-shape-two{
+
+position:absolute;
+
+width:260px;
+
+height:230px;
+
+right:5px;
+
+bottom:-75px;
+
+border-radius:
+48% 52% 35% 65% /
+60% 40% 60% 40%;
+
+background:
+rgba(222,226,249,.72);
+
+transform:
+rotate(-18deg);
+
+}
+
+
+/* =========================================================
+   NEW LEVELS OWL
+========================================================= */
+
+.hero-owl{
+
+position:absolute;
+
+z-index:6;
+
+width:500px;
+
+max-width:none;
+
+right:-35px;
+
+bottom:-28px;
+
+height:auto;
+
+object-fit:contain;
+
+filter:
+drop-shadow(
+0 18px 20px
+rgba(34,43,90,.12)
+);
+
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+.star{
+
+position:absolute;
+
+z-index:8;
+
+color:#F5C52A;
+
+line-height:1;
+
+text-shadow:
+0 3px 8px
+rgba(217,164,65,.15);
+
+}
+
+
+.star.one{
+
+right:205px;
+
+top:28px;
+
+font-size:25px;
+
+}
+
+
+.star.two{
+
+right:48px;
+
+top:104px;
+
+font-size:17px;
+
+}
+
+
+.star.three{
+
+right:172px;
+
+top:80px;
+
+font-size:12px;
+
+}
+
+
+/* =========================================================
+   LEVELS
+========================================================= */
 
 .levels{
 
@@ -127,6 +570,7 @@ display:grid;
 gap:25px;
 
 }
+
 
 .level{
 
@@ -139,12 +583,12 @@ padding:30px;
 box-shadow:
 
 0 12px 30px
-
 rgba(0,0,0,.08);
 
 transition:.3s;
 
 }
+
 
 .level:hover{
 
@@ -152,6 +596,7 @@ transform:
 translateY(-3px);
 
 }
+
 
 .level h2{
 
@@ -162,6 +607,7 @@ color:#1f3c88;
 margin-bottom:15px;
 
 }
+
 
 .level p{
 
@@ -174,6 +620,7 @@ line-height:1.9;
 margin-bottom:20px;
 
 }
+
 
 .btn{
 
@@ -197,29 +644,30 @@ cursor:pointer;
 
 }
 
+
 .btn:hover{
 
 opacity:.95;
 
 }
 
+
 .current{
 
-border:4px solid #6b46ff;
+border:
+4px solid
+#6b46ff;
 
 background:
 
 linear-gradient(
-
 135deg,
-
 #ffffff,
-
 #f4efff
-
 );
 
 }
+
 
 .current-badge{
 
@@ -229,7 +677,8 @@ background:#6b46ff;
 
 color:white;
 
-padding:8px 18px;
+padding:
+8px 18px;
 
 border-radius:40px;
 
@@ -241,11 +690,15 @@ margin-bottom:18px;
 
 }
 
+
 .completed{
 
-border:3px solid #35b36c;
+border:
+3px solid
+#35b36c;
 
 }
+
 
 .completed-badge{
 
@@ -255,7 +708,8 @@ background:#35b36c;
 
 color:white;
 
-padding:8px 18px;
+padding:
+8px 18px;
 
 border-radius:40px;
 
@@ -267,11 +721,13 @@ margin-bottom:18px;
 
 }
 
+
 .locked{
 
 opacity:.65;
 
 }
+
 
 .locked .btn{
 
@@ -280,6 +736,7 @@ background:#bfc5d6;
 cursor:not-allowed;
 
 }
+
 
 .note{
 
@@ -292,12 +749,14 @@ padding:28px;
 border-radius:25px;
 
 box-shadow:
+
 0 10px 30px
 rgba(0,0,0,.08);
 
 text-align:center;
 
 }
+
 
 .note h3{
 
@@ -309,6 +768,7 @@ margin-bottom:15px;
 
 }
 
+
 .note p{
 
 font-size:18px;
@@ -319,19 +779,356 @@ color:#555;
 
 }
 
+
+/* =========================================================
+   TABLET / IPAD
+========================================================= */
+
+@media
+(min-width:769px)
+and
+(max-width:1100px){
+
+.hero{
+
+height:330px;
+
+}
+
+
+.hero-content{
+
+left:42px;
+
+width:47%;
+
+}
+
+
+.hero-title{
+
+font-size:40px;
+
+letter-spacing:-1.2px;
+
+white-space:nowrap;
+
+margin-bottom:12px;
+
+}
+
+
+.hero-description{
+
+width:400px;
+
+max-width:100%;
+
+font-size:16px;
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+}
+
+
+.hero-button{
+
+min-width:255px;
+
+height:49px;
+
+font-size:15px;
+
+}
+
+
+.hero-handwriting{
+
+left:49%;
+
+top:43px;
+
+width:92px;
+
+font-size:19px;
+
+line-height:1.02;
+
+transform:
+rotate(-7deg);
+
+z-index:12;
+
+}
+
+
+.hero-visual{
+
+width:45%;
+
+}
+
+
+.hero-shape-one{
+
+width:285px;
+
+height:275px;
+
+right:45px;
+
+top:-35px;
+
+}
+
+
+.hero-shape-two{
+
+width:245px;
+
+height:220px;
+
+right:0;
+
+bottom:-72px;
+
+}
+
+
+.hero-owl{
+
+width:430px;
+
+right:-25px;
+
+bottom:-20px;
+
+}
+
+
+.star.one{
+
+right:181px;
+
+top:27px;
+
+font-size:23px;
+
+}
+
+
+.star.two{
+
+right:43px;
+
+top:100px;
+
+font-size:16px;
+
+}
+
+
+.star.three{
+
+right:153px;
+
+top:77px;
+
+font-size:11px;
+
+}
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media(max-width:768px){
 
-.header h1{
+body{
 
-font-size:38px;
+padding:
+15px 10px 35px;
+
+}
+
+
+/* HERO */
+
+.hero{
+
+height:260px;
+
+border-radius:25px;
+
+margin-bottom:25px;
 
 }
 
-.header p{
 
-font-size:18px;
+.hero-content{
+
+left:18px;
+
+top:50%;
+
+width:56%;
 
 }
+
+
+.hero-brand{
+
+font-size:8px;
+
+letter-spacing:1.4px;
+
+margin-bottom:5px;
+
+}
+
+
+.hero-title{
+
+font-size:25px;
+
+letter-spacing:-.5px;
+
+margin-bottom:7px;
+
+}
+
+
+.hero-description{
+
+width:100%;
+
+margin-bottom:12px;
+
+font-size:9.5px;
+
+line-height:1.7;
+
+}
+
+
+.hero-button{
+
+min-width:0;
+
+width:185px;
+
+max-width:100%;
+
+height:37px;
+
+padding:
+0 9px;
+
+border-radius:9px;
+
+font-size:9px;
+
+}
+
+
+.hero-handwriting{
+
+left:47%;
+
+top:25px;
+
+width:55px;
+
+font-size:10px;
+
+line-height:1;
+
+}
+
+
+.hero-visual{
+
+width:48%;
+
+}
+
+
+.hero-owl{
+
+width:255px;
+
+right:-20px;
+
+bottom:-15px;
+
+}
+
+
+.hero-shape-one{
+
+width:180px;
+
+height:180px;
+
+right:23px;
+
+top:-45px;
+
+}
+
+
+.hero-shape-two{
+
+width:150px;
+
+height:135px;
+
+right:-5px;
+
+bottom:-40px;
+
+}
+
+
+.star.one{
+
+right:102px;
+
+top:20px;
+
+font-size:14px;
+
+}
+
+
+.star.two{
+
+right:18px;
+
+top:61px;
+
+font-size:9px;
+
+}
+
+
+.star.three{
+
+right:85px;
+
+top:53px;
+
+font-size:7px;
+
+}
+
+
+/* LEVEL CARDS */
 
 .level h2{
 
@@ -339,52 +1136,252 @@ font-size:26px;
 
 }
 
+
 .level p{
 
 font-size:17px;
 
 }
 
+
+/* NOTE */
+
+.note{
+
+padding:23px;
+
 }
+
+
+.note h3{
+
+font-size:24px;
+
+}
+
+
+.note p{
+
+font-size:16px;
+
+}
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:430px){
+
+.hero{
+
+height:235px;
+
+}
+
+
+.hero-content{
+
+left:14px;
+
+width:59%;
+
+}
+
+
+.hero-title{
+
+font-size:22px;
+
+}
+
+
+.hero-description{
+
+font-size:8.3px;
+
+}
+
+
+.hero-button{
+
+width:160px;
+
+height:33px;
+
+font-size:8px;
+
+}
+
+
+.hero-handwriting{
+
+left:46%;
+
+top:22px;
+
+font-size:9px;
+
+}
+
+
+.hero-owl{
+
+width:225px;
+
+right:-17px;
+
+bottom:-12px;
+
+}
+
+
+.level{
+
+padding:24px;
+
+}
+
+
+.level h2{
+
+font-size:22px;
+
+}
+
+
+.level p{
+
+font-size:16px;
+
+}
+
+}
+
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-<a
-href="home.html"
-class="back-btn">
 
-⬅️ رجوع
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-</a>
+<section class="hero">
 
-<div class="header">
 
-<img
-src="../owl.PNG">
+<div class="hero-content">
 
-<h1>
 
-📚 المستويات التعليمية
+<div class="hero-brand">
 
-</h1>
-
-<p>
-
-اختر المستوى الذي ترغب في متابعته.
-
-</p>
+ENGLIZA ACADEMY
 
 </div>
 
+
+<h1 class="hero-title">
+
+ENGLISH LEVELS
+
+</h1>
+
+
+<p class="hero-description">
+
+اختر المستوى المناسب لك وابدأ رحلتك في تعلم الإنجليزية بثقة.
+
+</p>
+
+
+<a
+href="home.html"
+class="hero-button">
+
+← العودة إلى الصفحة الرئيسية
+
+</a>
+
+
+</div>
+
+
+<!-- =====================================================
+     HANDWRITING
+====================================================== -->
+
+<div class="hero-handwriting">
+
+<span>
+Choose
+</span>
+
+<span>
+Learn
+</span>
+
+<span>
+Grow ♡
+</span>
+
+</div>
+
+
+<!-- =====================================================
+     OWL AREA
+====================================================== -->
+
+<div class="hero-visual">
+
+
+<div class="hero-shape-one"></div>
+
+<div class="hero-shape-two"></div>
+
+
+<div class="star one">
+✦
+</div>
+
+<div class="star two">
+✦
+</div>
+
+<div class="star three">
+✦
+</div>
+
+
+<img
+class="hero-owl"
+src="levels.owl.PNG"
+alt="Engliza Academy Owl">
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     LEVELS
+========================================================= -->
+
 <div class="levels">
 
-  <!-- Beginner -->
+
+<!-- Beginner -->
 
 <div
 id="beginnerLevel"
@@ -632,6 +1629,10 @@ disabled>
 
 
 
+<!-- =========================================================
+     ACHIEVEMENT NOTE
+========================================================= -->
+
 <div class="note">
 
 <h3>
@@ -650,473 +1651,712 @@ disabled>
 
 </div>
 
-  <script type="module">
+
+
+<!-- =========================================================
+     FIREBASE
+========================================================= -->
+
+<script type="module">
 
 import {
-    initializeApp
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+initializeApp
+
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
 
 import {
-    getAuth,
-    onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+getAuth,
+onAuthStateChanged
+
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
 
 import {
-    getFirestore,
-    doc,
-    getDoc
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+getFirestore,
+doc,
+getDoc
+
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+/* =========================================================
+   FIREBASE CONFIG
+========================================================= */
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+apiKey:
+"AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
 
-    authDomain: "engliza-academy.firebaseapp.com",
+authDomain:
+"engliza-academy.firebaseapp.com",
 
-    projectId: "engliza-academy",
+projectId:
+"engliza-academy",
 
-    storageBucket: "engliza-academy.firebasestorage.app",
+storageBucket:
+"engliza-academy.firebasestorage.app",
 
-    messagingSenderId: "389916153039",
+messagingSenderId:
+"389916153039",
 
-    appId: "1:389916153039:web:95b8a3056b1718cfd353ba",
+appId:
+"1:389916153039:web:95b8a3056b1718cfd353ba",
 
-    measurementId: "G-7S608ZTN0W"
+measurementId:
+"G-7S608ZTN0W"
 
 };
 
-const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
-
-const db = getFirestore(app);
+const app =
+initializeApp(firebaseConfig);
 
 
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
 const beginnerLevel =
-document.getElementById("beginnerLevel");
+document.getElementById(
+"beginnerLevel"
+);
+
 
 const preLevel =
-document.getElementById("preLevel");
+document.getElementById(
+"preLevel"
+);
+
 
 const intermediateLevel =
-document.getElementById("intermediateLevel");
+document.getElementById(
+"intermediateLevel"
+);
+
 
 const upperLevel =
-document.getElementById("upperLevel");
+document.getElementById(
+"upperLevel"
+);
+
 
 const advancedLevel =
-document.getElementById("advancedLevel");
-
+document.getElementById(
+"advancedLevel"
+);
 
 
 const beginnerBtn =
-document.getElementById("beginnerBtn");
+document.getElementById(
+"beginnerBtn"
+);
+
 
 const preBtn =
-document.getElementById("preBtn");
+document.getElementById(
+"preBtn"
+);
+
 
 const intermediateBtn =
-document.getElementById("intermediateBtn");
+document.getElementById(
+"intermediateBtn"
+);
+
 
 const upperBtn =
-document.getElementById("upperBtn");
+document.getElementById(
+"upperBtn"
+);
+
 
 const advancedBtn =
-document.getElementById("advancedBtn");
-
+document.getElementById(
+"advancedBtn"
+);
 
 
 const beginnerBadge =
-document.getElementById("beginnerBadge");
+document.getElementById(
+"beginnerBadge"
+);
+
 
 const preBadge =
-document.getElementById("preBadge");
+document.getElementById(
+"preBadge"
+);
+
 
 const intermediateBadge =
-document.getElementById("intermediateBadge");
+document.getElementById(
+"intermediateBadge"
+);
+
 
 const upperBadge =
-document.getElementById("upperBadge");
+document.getElementById(
+"upperBadge"
+);
+
 
 const advancedBadge =
-document.getElementById("advancedBadge");
-
+document.getElementById(
+"advancedBadge"
+);
 
 
 const beginnerCompleted =
-document.getElementById("beginnerCompleted");
+document.getElementById(
+"beginnerCompleted"
+);
+
 
 const preCompleted =
-document.getElementById("preCompleted");
+document.getElementById(
+"preCompleted"
+);
+
 
 const intermediateCompleted =
-document.getElementById("intermediateCompleted");
+document.getElementById(
+"intermediateCompleted"
+);
+
 
 const upperCompleted =
-document.getElementById("upperCompleted");
+document.getElementById(
+"upperCompleted"
+);
+
 
 const advancedCompleted =
-document.getElementById("advancedCompleted");
+document.getElementById(
+"advancedCompleted"
+);
 
 
-    function resetLevel(level){
+/* =========================================================
+   LEVEL FUNCTIONS
+========================================================= */
 
-    level.classList.remove("current");
-    level.classList.remove("completed");
-    level.classList.add("locked");
+function resetLevel(level){
+
+level.classList.remove(
+"current"
+);
+
+level.classList.remove(
+"completed"
+);
+
+level.classList.add(
+"locked"
+);
 
 }
+
 
 function unlockLevel(level,button){
 
-    level.classList.remove("locked");
+level.classList.remove(
+"locked"
+);
 
-    button.disabled = false;
+button.disabled=false;
 
-    button.textContent = "ابدأ التعلم";
+button.textContent=
+"ابدأ التعلم";
 
 }
+
 
 function makeCurrent(level,badge){
 
-    level.classList.add("current");
+level.classList.add(
+"current"
+);
 
-    badge.style.display = "inline-block";
+badge.style.display=
+"inline-block";
 
 }
+
 
 function makeCompleted(level,badge){
 
-    level.classList.add("completed");
+level.classList.add(
+"completed"
+);
 
-    badge.style.display = "inline-block";
+badge.style.display=
+"inline-block";
 
 }
+
+
+/* =========================================================
+   LOAD LEVELS
+========================================================= */
 
 async function loadLevels(user){
 
-    const snapshot = await getDoc(
-
-        doc(
-            db,
-            "users",
-            user.uid
-        )
-
-    );
-
-    if(!snapshot.exists()){
-
-        alert("تعذر العثور على بيانات المستخدم.");
-
-        return;
-
-    }
-
-    const data = snapshot.data();
-
-    const currentLevel = data.currentLevel;
-
-  if(data.placementTestCompleted === false){
-
-    window.location.href = "welcome.html";
-
-    return;
-
-}
-
-
-    resetLevel(beginnerLevel);
-
-    resetLevel(preLevel);
-
-    resetLevel(intermediateLevel);
-
-    resetLevel(upperLevel);
-
-    resetLevel(advancedLevel);
-
-
-
-    beginnerBadge.style.display="none";
-    preBadge.style.display="none";
-    intermediateBadge.style.display="none";
-    upperBadge.style.display="none";
-    advancedBadge.style.display="none";
-
-    beginnerCompleted.style.display="none";
-    preCompleted.style.display="none";
-    intermediateCompleted.style.display="none";
-    upperCompleted.style.display="none";
-    advancedCompleted.style.display="none";
-
-
-
-    beginnerBtn.disabled=true;
-    preBtn.disabled=true;
-    intermediateBtn.disabled=true;
-    upperBtn.disabled=true;
-    advancedBtn.disabled=true;
-
-
-
-    beginnerBtn.textContent="🔒 أكمل المستوى السابق";
-    preBtn.textContent="🔒 أكمل المستوى السابق";
-    intermediateBtn.textContent="🔒 أكمل المستوى السابق";
-    upperBtn.textContent="🔒 أكمل المستوى السابق";
-    advancedBtn.textContent="🔒 أكمل المستوى السابق";
-
-
-
-    switch(currentLevel){
-
-        case "beginner":
-
-            unlockLevel(
-                beginnerLevel,
-                beginnerBtn
-            );
-
-            makeCurrent(
-                beginnerLevel,
-                beginnerBadge
-            );
-
-        break;
-
-
-
-        case "preIntermediate":
-
-            unlockLevel(
-                beginnerLevel,
-                beginnerBtn
-            );
-
-            unlockLevel(
-                preLevel,
-                preBtn
-            );
-
-            makeCompleted(
-                beginnerLevel,
-                beginnerCompleted
-            );
-
-            makeCurrent(
-                preLevel,
-                preBadge
-            );
-
-        break;
-
-
-
-        case "intermediate":
-
-            unlockLevel(beginnerLevel,beginnerBtn);
-
-            unlockLevel(preLevel,preBtn);
-
-            unlockLevel(intermediateLevel,intermediateBtn);
-
-            makeCompleted(beginnerLevel,beginnerCompleted);
-
-            makeCompleted(preLevel,preCompleted);
-
-            makeCurrent(intermediateLevel,intermediateBadge);
-
-        break;
-
-
-
-        case "upper":
-
-            unlockLevel(beginnerLevel,beginnerBtn);
-
-            unlockLevel(preLevel,preBtn);
-
-            unlockLevel(intermediateLevel,intermediateBtn);
-
-            unlockLevel(upperLevel,upperBtn);
-
-            makeCompleted(beginnerLevel,beginnerCompleted);
-
-            makeCompleted(preLevel,preCompleted);
-
-            makeCompleted(intermediateLevel,intermediateCompleted);
-
-            makeCurrent(upperLevel,upperBadge);
-
-        break;
-
-
-
-        case "advanced":
-
-            unlockLevel(beginnerLevel,beginnerBtn);
-
-            unlockLevel(preLevel,preBtn);
-
-            unlockLevel(intermediateLevel,intermediateBtn);
-
-            unlockLevel(upperLevel,upperBtn);
-
-            unlockLevel(advancedLevel,advancedBtn);
-
-            makeCompleted(beginnerLevel,beginnerCompleted);
-
-            makeCompleted(preLevel,preCompleted);
-
-            makeCompleted(intermediateLevel,intermediateCompleted);
-
-            makeCompleted(upperLevel,upperCompleted);
-
-            makeCurrent(advancedLevel,advancedBadge);
-
-        break;
-
-
-
-        default:
-
-            unlockLevel(
-                beginnerLevel,
-                beginnerBtn
-            );
-
-            makeCurrent(
-                beginnerLevel,
-                beginnerBadge
-            );
-
-    }
-
-}
-
-
-    onAuthStateChanged(
-
-    auth,
-
-    async function(user){
-
-        if(!user){
-
-            window.location.href = "login.html";
-
-            return;
-
-        }
-
-        try{
-
-            await loadLevels(user);
-
-        }
-
-        catch(error){
-
-            console.error(error);
-
-            alert(
-
-                "حدث خطأ أثناء تحميل المستويات."
-
-            );
-
-        }
-
-    }
+const snapshot =
+await getDoc(
+
+doc(
+db,
+"users",
+user.uid
+)
 
 );
 
+
+if(!snapshot.exists()){
+
+alert(
+"تعذر العثور على بيانات المستخدم."
+);
+
+return;
+
+}
+
+
+const data =
+snapshot.data();
+
+
+const currentLevel =
+data.currentLevel;
+
+
+if(
+data.placementTestCompleted === false
+){
+
+window.location.href =
+"welcome.html";
+
+return;
+
+}
+
+
+/* RESET */
+
+resetLevel(beginnerLevel);
+
+resetLevel(preLevel);
+
+resetLevel(intermediateLevel);
+
+resetLevel(upperLevel);
+
+resetLevel(advancedLevel);
+
+
+/* HIDE BADGES */
+
+beginnerBadge.style.display=
+"none";
+
+preBadge.style.display=
+"none";
+
+intermediateBadge.style.display=
+"none";
+
+upperBadge.style.display=
+"none";
+
+advancedBadge.style.display=
+"none";
+
+
+beginnerCompleted.style.display=
+"none";
+
+preCompleted.style.display=
+"none";
+
+intermediateCompleted.style.display=
+"none";
+
+upperCompleted.style.display=
+"none";
+
+advancedCompleted.style.display=
+"none";
+
+
+/* RESET BUTTONS */
+
+beginnerBtn.disabled=true;
+
+preBtn.disabled=true;
+
+intermediateBtn.disabled=true;
+
+upperBtn.disabled=true;
+
+advancedBtn.disabled=true;
+
+
+beginnerBtn.textContent=
+"🔒 أكمل المستوى السابق";
+
+preBtn.textContent=
+"🔒 أكمل المستوى السابق";
+
+intermediateBtn.textContent=
+"🔒 أكمل المستوى السابق";
+
+upperBtn.textContent=
+"🔒 أكمل المستوى السابق";
+
+advancedBtn.textContent=
+"🔒 أكمل المستوى السابق";
+
+
+/* =====================================================
+   CURRENT LEVEL
+===================================================== */
+
+switch(currentLevel){
+
+case "beginner":
+
+unlockLevel(
+beginnerLevel,
+beginnerBtn
+);
+
+makeCurrent(
+beginnerLevel,
+beginnerBadge
+);
+
+break;
+
+
+case "preIntermediate":
+
+unlockLevel(
+beginnerLevel,
+beginnerBtn
+);
+
+unlockLevel(
+preLevel,
+preBtn
+);
+
+makeCompleted(
+beginnerLevel,
+beginnerCompleted
+);
+
+makeCurrent(
+preLevel,
+preBadge
+);
+
+break;
+
+
+case "intermediate":
+
+unlockLevel(
+beginnerLevel,
+beginnerBtn
+);
+
+unlockLevel(
+preLevel,
+preBtn
+);
+
+unlockLevel(
+intermediateLevel,
+intermediateBtn
+);
+
+makeCompleted(
+beginnerLevel,
+beginnerCompleted
+);
+
+makeCompleted(
+preLevel,
+preCompleted
+);
+
+makeCurrent(
+intermediateLevel,
+intermediateBadge
+);
+
+break;
+
+
+case "upper":
+
+unlockLevel(
+beginnerLevel,
+beginnerBtn
+);
+
+unlockLevel(
+preLevel,
+preBtn
+);
+
+unlockLevel(
+intermediateLevel,
+intermediateBtn
+);
+
+unlockLevel(
+upperLevel,
+upperBtn
+);
+
+makeCompleted(
+beginnerLevel,
+beginnerCompleted
+);
+
+makeCompleted(
+preLevel,
+preCompleted
+);
+
+makeCompleted(
+intermediateLevel,
+intermediateCompleted
+);
+
+makeCurrent(
+upperLevel,
+upperBadge
+);
+
+break;
+
+
+case "advanced":
+
+unlockLevel(
+beginnerLevel,
+beginnerBtn
+);
+
+unlockLevel(
+preLevel,
+preBtn
+);
+
+unlockLevel(
+intermediateLevel,
+intermediateBtn
+);
+
+unlockLevel(
+upperLevel,
+upperBtn
+);
+
+unlockLevel(
+advancedLevel,
+advancedBtn
+);
+
+makeCompleted(
+beginnerLevel,
+beginnerCompleted
+);
+
+makeCompleted(
+preLevel,
+preCompleted
+);
+
+makeCompleted(
+intermediateLevel,
+intermediateCompleted
+);
+
+makeCompleted(
+upperLevel,
+upperCompleted
+);
+
+makeCurrent(
+advancedLevel,
+advancedBadge
+);
+
+break;
+
+
+default:
+
+unlockLevel(
+beginnerLevel,
+beginnerBtn
+);
+
+makeCurrent(
+beginnerLevel,
+beginnerBadge
+);
+
+}
+
+}
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+onAuthStateChanged(
+
+auth,
+
+async function(user){
+
+if(!user){
+
+window.location.href=
+"login.html";
+
+return;
+
+}
+
+
+try{
+
+await loadLevels(user);
+
+}
+
+catch(error){
+
+console.error(error);
+
+alert(
+"حدث خطأ أثناء تحميل المستويات."
+);
+
+}
+
+}
+
+);
+
+
+/* =========================================================
+   LEVEL BUTTONS
+========================================================= */
 
 beginnerBtn.addEventListener(
 
-    "click",
+"click",
 
-    function(){
+function(){
 
-        window.location.href =
+window.location.href =
+"beginner.html";
 
-        "beginner.html";
-
-    }
+}
 
 );
-
 
 
 preBtn.addEventListener(
 
-    "click",
+"click",
 
-    function(){
+function(){
 
-        window.location.href =
+window.location.href =
+"pre-intermediate.html";
 
-        "pre-intermediate.html";
-
-    }
+}
 
 );
-
 
 
 intermediateBtn.addEventListener(
 
-    "click",
+"click",
 
-    function(){
+function(){
 
-        window.location.href =
+window.location.href =
+"intermediate.html";
 
-        "intermediate.html";
-
-    }
+}
 
 );
-
 
 
 upperBtn.addEventListener(
 
-    "click",
+"click",
 
-    function(){
+function(){
 
-        window.location.href =
+window.location.href =
+"upper-intermediate.html";
 
-        "upper-intermediate.html";
-
-    }
+}
 
 );
-
 
 
 advancedBtn.addEventListener(
 
-    "click",
+"click",
 
-    function(){
+function(){
 
-        window.location.href =
+window.location.href =
+"advanced.html";
 
-        "advanced.html";
-
-    }
+}
 
 );
 
-    
 </script>
+
 
 </body>
 
 </html>
-
-    
-  
