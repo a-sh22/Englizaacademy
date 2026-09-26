@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English Practice | Engliza Academy</title>
+
+<style>
+
+/* =========================================================
+   ENGLIZA ACADEMY — ENGLISH PRACTICE
+   المرحلة الأولى:
+   Hero + Video + Main Sections + Internal Views
+========================================================= */
+
+:root{
+    --blue:#3157D5;
+    --blue-dark:#233E9B;
+    --blue-soft:#EEF3FF;
+
+    --purple:#7654D9;
+    --purple-dark:#5B3EC2;
+    --purple-soft:#F1EDFF;
+
+    --gold:#D9A441;
+    --gold-soft:#FFF6DF;
+
+    --text:#17213C;
+    --muted:#6E7891;
+
+    --white:#FFFFFF;
+    --bg:#F7F8FC;
+    --border:#E8EAF2;
+
+    --shadow:0 12px 35px rgba(36,48,94,.08);
+    --shadow-hover:0 18px 45px rgba(36,48,94,.13);
+
+    --radius-xl:32px;
+    --radius-lg:26px;
+    --radius-md:20px;
+    --radius-sm:16px;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 0%, rgba(49,87,213,.055), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(118,84,217,.045), transparent 28%),
+        var(--bg);
+
+    color:var(--text);
+    min-height:100vh;
+    padding:30px 20px 50px;
+}
+
+button,
+a,
+input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.page-shell{
+    width:100%;
+    max-width:1120px;
+    margin:0 auto;
+}
+
+
+/* =========================================================
+   MAIN SCREEN
+========================================================= */
+
+.main-screen{
+    display:block;
+}
+
+.main-screen.hidden{
+    display:none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    min-height:330px;
+
+    border-radius:var(--radius-xl);
+
+    background:
+        linear-gradient(
+            135deg,
+            #F8FAFF 0%,
+            #EEF3FF 52%,
+            #EAEFFF 100%
+        );
+
+    border:1px solid rgba(49,87,213,.08);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+
+    margin-bottom:28px;
+}
+
+/* soft decorative shapes */
+
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(49,87,213,.055);
+
+    right:-105px;
+    top:-115px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    background:rgba(118,84,217,.055);
+
+    left:-85px;
+    bottom:-105px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:3;
+
+    width:100%;
+
+    padding:48px 50px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    text-align:right;
+}
+
+.hero-brand{
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:2.5px;
+
+    color:var(--blue);
+
+    margin-bottom:13px;
+}
+
+.hero-title{
+    font-size:48px;
+    line-height:1.08;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+    color:var(--text);
+
+    margin-bottom:16px;
+}
+
+.hero-description{
+    max-width:620px;
+
+    font-size:18px;
+    line-height:1.85;
+
+    color:var(--muted);
+
+    margin-bottom:27px;
+}
+
+.hero-actions{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    min-height:52px;
+
+    padding:0 27px;
+
+    border:none;
+    border-radius:15px;
+
+    color:white;
+
+    font-size:15px;
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4359E8,
+            #4B35D5
+        );
+
+    box-shadow:
+        0 9px 22px rgba(67,89,232,.20);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.primary-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 13px 28px rgba(67,89,232,.25);
+}
+
+.secondary-btn{
+    min-height:52px;
+
+    padding:0 22px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(49,87,213,.14);
+
+    background:rgba(255,255,255,.78);
+
+    color:var(--blue-dark);
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.secondary-btn:hover{
+    transform:translateY(-2px);
+    background:white;
+}
+
+
+/* =========================================================
+   INTRO VIDEO
+========================================================= */
+
+.video-section{
+    margin-bottom:42px;
+}
+
+.section-heading{
+    margin-bottom:18px;
+}
+
+.section-kicker{
+    color:var(--blue);
+    font-size:13px;
+    font-weight:850;
+    letter-spacing:.4px;
+
+    margin-bottom:7px;
+}
+
+.section-title{
+    font-size:29px;
+    line-height:1.25;
+    font-weight:900;
+
+    color:var(--text);
+}
+
+.section-description{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.8;
+
+    margin-top:8px;
+}
+
+.video-card{
+    position:relative;
+
+    width:100%;
+
+    min-height:310px;
+
+    border-radius:var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #F1F4FF,
+            #F5F1FF
+        );
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.video-placeholder{
+    width:100%;
+    min-height:310px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.video-icon{
+    width:70px;
+    height:70px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+
+    box-shadow:
+        0 10px 28px rgba(49,87,213,.12);
+
+    font-size:29px;
+
+    margin-bottom:18px;
+}
+
+.video-placeholder h3{
+    font-size:22px;
+    font-weight:850;
+
+    margin-bottom:8px;
+}
+
+.video-placeholder p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.8;
+
+    max-width:500px;
+}
+
+
+/*
+When your Cloudflare video is ready,
+replace the placeholder with:
+
+<video controls ...>
+    <source src="YOUR_CLOUDFLARE_VIDEO_URL" type="video/mp4">
+</video>
+
+The surrounding .video-card can remain unchanged.
+*/
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-section{
+    margin-bottom:46px;
+}
+
+.quick-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:16px;
+}
+
+.quick-card{
+    position:relative;
+
+    min-width:0;
+
+    border:1px solid var(--border);
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:22px 19px 20px;
+
+    text-align:right;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+.quick-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-hover);
+
+    border-color:rgba(49,87,213,.15);
+}
+
+.quick-icon{
+    width:50px;
+    height:50px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:23px;
+
+    margin-bottom:17px;
+}
+
+.quick-card:nth-child(1) .quick-icon{
+    background:var(--blue-soft);
+}
+
+.quick-card:nth-child(2) .quick-icon{
+    background:var(--purple-soft);
+}
+
+.quick-card:nth-child(3) .quick-icon{
+    background:#EEF7FF;
+}
+
+.quick-card:nth-child(4) .quick-icon{
+    background:#F3F0FF;
+}
+
+.quick-card h3{
+    font-size:18px;
+    font-weight:850;
+
+    margin-bottom:7px;
+}
+
+.quick-card p{
+    color:var(--muted);
+
+    font-size:13px;
+    line-height:1.75;
+
+    margin-bottom:17px;
+}
+
+.card-arrow{
+    color:var(--blue);
+
+    font-size:19px;
+    font-weight:900;
+
+    transition:transform .2s ease;
+}
+
+.quick-card:hover .card-arrow{
+    transform:translateX(-4px);
+}
+
+
+/* =========================================================
+   SMALL INFORMATION CARD
+========================================================= */
+
+.info-card{
+    display:flex;
+    align-items:center;
+    gap:17px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:20px 23px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:40px;
+}
+
+.info-icon{
+    flex:0 0 auto;
+
+    width:48px;
+    height:48px;
+
+    border-radius:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--gold-soft);
+
+    font-size:22px;
+}
+
+.info-card strong{
+    display:block;
+
+    font-size:15px;
+
+    margin-bottom:4px;
+}
+
+.info-card span{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   INTERNAL VIEWS
+========================================================= */
+
+.internal-view{
+    display:none;
+
+    animation:viewIn .32s ease both;
+}
+
+.internal-view.active{
+    display:block;
+}
+
+@keyframes viewIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.view-topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:22px;
+}
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:45px;
+
+    padding:0 18px;
+
+    border-radius:14px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    color:var(--blue-dark);
+
+    font-size:14px;
+    font-weight:800;
+
+    box-shadow:
+        0 7px 22px rgba(36,48,94,.06);
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.back-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 11px 27px rgba(36,48,94,.10);
+}
+
+.view-label{
+    color:var(--blue);
+
+    font-size:13px;
+    font-weight:850;
+}
+
+.internal-hero{
+    background:
+        linear-gradient(
+            135deg,
+            #F5F8FF,
+            #F1EDFF
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-xl);
+
+    padding:38px 40px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:25px;
+}
+
+.internal-hero-icon{
+    width:60px;
+    height:60px;
+
+    border-radius:19px;
+
+    background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    margin-bottom:17px;
+
+    box-shadow:
+        0 9px 24px rgba(36,48,94,.08);
+}
+
+.internal-hero h1{
+    font-size:34px;
+    font-weight:900;
+
+    margin-bottom:9px;
+}
+
+.internal-hero p{
+    max-width:680px;
+
+    color:var(--muted);
+
+    font-size:15px;
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    text-align:center;
+
+    padding:35px 10px 8px;
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   Same design — only proportional adaptation.
+========================================================= */
+
+@media(max-width:900px){
+
+    body{
+        padding:22px 15px 40px;
+    }
+
+    .hero{
+        min-height:300px;
+    }
+
+    .hero-content{
+        padding:40px;
+    }
+
+    .hero-title{
+        font-size:41px;
+    }
+
+    .hero-description{
+        max-width:570px;
+        font-size:16px;
+    }
+
+    .quick-grid{
+        gap:12px;
+    }
+
+    .quick-card{
+        padding:18px 15px;
+    }
+
+    .quick-card h3{
+        font-size:16px;
+    }
+
+    .quick-card p{
+        font-size:12px;
+    }
+
+    .video-card,
+    .video-placeholder{
+        min-height:270px;
+    }
+}
+
+
+/* =========================================================
+   PHONE
+   Do NOT change the composition.
+   Only scale the same design.
+========================================================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:13px 10px 30px;
+    }
+
+    .hero{
+        min-height:275px;
+
+        border-radius:26px;
+
+        margin-bottom:22px;
+    }
+
+    .hero-content{
+        padding:30px 24px;
+    }
+
+    .hero-brand{
+        font-size:10px;
+        letter-spacing:1.7px;
+
+        margin-bottom:9px;
+    }
+
+    .hero-title{
+        font-size:31px;
+
+        letter-spacing:-.6px;
+
+        margin-bottom:11px;
+    }
+
+    .hero-description{
+        font-size:13px;
+        line-height:1.75;
+
+        max-width:95%;
+
+        margin-bottom:19px;
+    }
+
+    .hero-actions{
+        gap:7px;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        min-height:43px;
+
+        padding:0 14px;
+
+        border-radius:12px;
+
+        font-size:11.5px;
+    }
+
+    .section-kicker{
+        font-size:11px;
+    }
+
+    .section-title{
+        font-size:23px;
+    }
+
+    .section-description{
+        font-size:12px;
+    }
+
+    .video-section{
+        margin-bottom:30px;
+    }
+
+    .video-card{
+        min-height:210px;
+
+        border-radius:20px;
+    }
+
+    .video-placeholder{
+        min-height:210px;
+
+        padding:25px 18px;
+    }
+
+    .video-icon{
+        width:54px;
+        height:54px;
+
+        border-radius:17px;
+
+        font-size:23px;
+
+        margin-bottom:12px;
+    }
+
+    .video-placeholder h3{
+        font-size:17px;
+    }
+
+    .video-placeholder p{
+        font-size:11px;
+        line-height:1.7;
+    }
+
+    .quick-section{
+        margin-bottom:30px;
+    }
+
+    /*
+       Four cards remain side-by-side.
+       We only scale them.
+    */
+
+    .quick-grid{
+        grid-template-columns:
+            repeat(4, minmax(0,1fr));
+
+        gap:6px;
+    }
+
+    .quick-card{
+        padding:11px 7px 10px;
+
+        border-radius:15px;
+    }
+
+    .quick-icon{
+        width:31px;
+        height:31px;
+
+        border-radius:10px;
+
+        font-size:15px;
+
+        margin-bottom:9px;
+    }
+
+    .quick-card h3{
+        font-size:10.5px;
+
+        line-height:1.35;
+
+        margin-bottom:4px;
+    }
+
+    .quick-card p{
+        font-size:8px;
+
+        line-height:1.5;
+
+        margin-bottom:8px;
+    }
+
+    .card-arrow{
+        font-size:12px;
+    }
+
+    .info-card{
+        gap:10px;
+
+        padding:14px;
+
+        border-radius:17px;
+
+        margin-bottom:27px;
+    }
+
+    .info-icon{
+        width:37px;
+        height:37px;
+
+        border-radius:11px;
+
+        font-size:17px;
+    }
+
+    .info-card strong{
+        font-size:11px;
+    }
+
+    .info-card span{
+        font-size:9px;
+    }
+
+    .view-topbar{
+        margin-bottom:14px;
+    }
+
+    .back-btn{
+        min-height:38px;
+
+        padding:0 12px;
+
+        border-radius:11px;
+
+        font-size:11px;
+    }
+
+    .view-label{
+        font-size:10px;
+    }
+
+    .internal-hero{
+        border-radius:24px;
+
+        padding:27px 22px;
+    }
+
+    .internal-hero-icon{
+        width:48px;
+        height:48px;
+
+        border-radius:15px;
+
+        font-size:22px;
+    }
+
+    .internal-hero h1{
+        font-size:25px;
+    }
+
+    .internal-hero p{
+        font-size:12px;
+    }
+
+    .footer{
+        font-size:9px;
+        padding-top:25px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:360px){
+
+    .hero-content{
+        padding:26px 19px;
+    }
+
+    .hero-title{
+        font-size:28px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        font-size:10px;
+        padding:0 11px;
+    }
+
+    .quick-grid{
+        gap:4px;
+    }
+
+    .quick-card{
+        padding:9px 5px;
+    }
+
+    .quick-card h3{
+        font-size:9px;
+    }
+
+    .quick-card p{
+        font-size:7px;
+    }
+
+    .quick-icon{
+        width:28px;
+        height:28px;
+        font-size:13px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page-shell">
+
+
+<!-- =======================================================
+     MAIN SCREEN
+======================================================= -->
+
+<main id="mainScreen" class="main-screen">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-brand">
+                ENGLIZA ACADEMY
+            </div>
+
+            <h1 class="hero-title">
+                تكلّم. مارس. تطوّر.
+            </h1>
+
+            <p class="hero-description">
+                حوّل ما تتعلمه إلى ممارسة حقيقية، وطوّر تحدثك،
+                وتعلّم طرقًا عملية لاستخدام الإنجليزية في حياتك اليومية.
+            </p>
+
+            <div class="hero-actions">
+
+                <button
+                    class="primary-btn"
+                    onclick="openView('speakingView')"
+                >
+                    ابدأ التدريب الآن
+                </button>
+
+                <a
+                    href="home.html"
+                    class="secondary-btn"
+                >
+                    ← العودة إلى الصفحة الرئيسية
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         INTRO VIDEO
+    ==================================================== -->
+
+    <section class="video-section">
+
+        <div class="section-heading">
+
+            <div class="section-kicker">
+                START HERE
+            </div>
+
+            <h2 class="section-title">
+                كيف تستخدم مساحة التدريب؟
+            </h2>
+
+            <p class="section-description">
+                شاهد الفيديو أولًا لتتعرف على طريقة استخدام هذه الصفحة
+                والاستفادة من الأدوات الموجودة فيها.
+            </p>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <div class="video-placeholder">
+
+                <div class="video-icon">
+                    ▶
+                </div>
+
+                <h3>
+                    الفيديو التعريفي
+                </h3>
+
+                <p>
+                    سيتم وضع فيديو الشرح هنا.
+                    يمكنك رفع الفيديو على Cloudflare ثم وضع رابط الفيديو
+                    في هذا المكان.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         QUICK ACTIONS
+    ==================================================== -->
+
+    <section class="quick-section">
+
+        <div class="section-heading">
+
+            <div class="section-kicker">
+                PRACTICE YOUR WAY
+            </div>
+
+            <h2 class="section-title">
+                ماذا تريد أن تفعل اليوم؟
+            </h2>
+
+            <p class="section-description">
+                اختر الطريقة التي تناسب تدريبك، وستظهر لك مساحتها
+                داخل الصفحة نفسها.
+            </p>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+            <!-- SPEAKING -->
+
+            <article
+                class="quick-card"
+                onclick="openView('speakingView')"
+            >
+
+                <div class="quick-icon">
+                    🎤
+                </div>
+
+                <h3>
+                    التحدث
+                </h3>
+
+                <p>
+                    مارس التحدث تدريجيًا من دقيقة إلى سبع دقائق.
+                </p>
+
+                <div class="card-arrow">
+                    ←
+                </div>
+
+            </article>
+
+
+
+            <!-- TECHNIQUES -->
+
+            <article
+                class="quick-card"
+                onclick="openView('techniquesView')"
+            >
+
+                <div class="quick-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    طرق الممارسة
+                </h3>
+
+                <p>
+                    أفكار وتقنيات عملية تساعدك على ممارسة الإنجليزية.
+                </p>
+
+                <div class="card-arrow">
+                    ←
+                </div>
+
+            </article>
+
+
+
+            <!-- CONVERSATION -->
+
+            <article
+                class="quick-card"
+                onclick="openView('conversationView')"
+            >
+
+                <div class="quick-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    المحادثة
+                </h3>
+
+                <p>
+                    مواقف وعبارات تساعدك على بناء محادثة حقيقية.
+                </p>
+
+                <div class="card-arrow">
+                    ←
+                </div>
+
+            </article>
+
+
+
+            <!-- PLANNER -->
+
+            <article
+                class="quick-card"
+                onclick="openView('plannerView')"
+            >
+
+                <div class="quick-icon">
+                    📅
+                </div>
+
+                <h3>
+                    خطتي الدراسية
+                </h3>
+
+                <p>
+                    نظّم أهدافك ومهامك اليومية والأسبوعية والشهرية.
+                </p>
+
+                <div class="card-arrow">
+                    ←
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SMALL INFO -->
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            🌱
+        </div>
+
+        <div>
+
+            <strong>
+                لا تبحث عن الكمال، ابحث عن الاستمرار.
+            </strong>
+
+            <span>
+                الممارسة المنتظمة، حتى لو كانت لفترة قصيرة،
+                تساعدك على تحويل ما تتعلمه إلى لغة تستخدمها فعليًا.
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <footer class="footer">
+        © Engliza Academy — English Practice
+    </footer>
+
+</main>
+
+
+
+<!-- =======================================================
+     SPEAKING VIEW
+======================================================= -->
+
+<section
+    id="speakingView"
+    class="internal-view"
+>
+
+    <div class="view-topbar">
+
+        <button
+            class="back-btn"
+            onclick="backToMain()"
+        >
+            → العودة لمساحة التدريب
+        </button>
+
+        <div class="view-label">
+            SPEAKING
+        </div>
+
+    </div>
+
+
+    <div class="internal-hero">
+
+        <div class="internal-hero-icon">
+            🎤
+        </div>
+
+        <h1>
+            تحدي التحدث
+        </h1>
+
+        <p>
+            ابدأ بالمدة التي تناسبك، وحاول أن تستمر في التحدث
+            دون القلق من الأخطاء. الهدف هو أن تجعل الإنجليزية
+            جزءًا من ممارستك اليومية.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            ⏱️
+        </div>
+
+        <div>
+
+            <strong>
+                اختر مدة التحدي
+            </strong>
+
+            <span>
+                ستكون جميع المراحل متاحة لك. اختر المدة التي تريد
+                تجربتها اليوم.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!--
+        سيتم بناء بطاقات 1–7 دقائق في المرحلة التالية.
+    -->
+
+</section>
+
+
+
+<!-- =======================================================
+     TECHNIQUES VIEW
+======================================================= -->
+
+<section
+    id="techniquesView"
+    class="internal-view"
+>
+
+    <div class="view-topbar">
+
+        <button
+            class="back-btn"
+            onclick="backToMain()"
+        >
+            → العودة لمساحة التدريب
+        </button>
+
+        <div class="view-label">
+            SPEAKING TECHNIQUES
+        </div>
+
+    </div>
+
+
+    <div class="internal-hero">
+
+        <div class="internal-hero-icon">
+            🧠
+        </div>
+
+        <h1>
+            طرق ممارسة التحدث
+        </h1>
+
+        <p>
+            طرق بسيطة وعملية تساعدك على تحويل الإنجليزية
+            من شيء تتعلمه إلى شيء تستخدمه في حياتك اليومية.
+        </p>
+
+    </div>
+
+
+    <!--
+        سيتم بناء بطاقات تقنيات الممارسة في المرحلة التالية.
+    -->
+
+</section>
+
+
+
+<!-- =======================================================
+     CONVERSATION VIEW
+======================================================= -->
+
+<section
+    id="conversationView"
+    class="internal-view"
+>
+
+    <div class="view-topbar">
+
+        <button
+            class="back-btn"
+            onclick="backToMain()"
+        >
+            → العودة لمساحة التدريب
+        </button>
+
+        <div class="view-label">
+            CONVERSATION
+        </div>
+
+    </div>
+
+
+    <div class="internal-hero">
+
+        <div class="internal-hero-icon">
+            🤝
+        </div>
+
+        <h1>
+            تدريب المحادثة
+        </h1>
+
+        <p>
+            تدرب على مواقف حقيقية، وتعلم عبارات تساعدك
+            على بدء المحادثة والاستمرار فيها بشكل طبيعي.
+        </p>
+
+    </div>
+
+
+    <!--
+        سيتم بناء مواقف المحادثة والعبارات في المرحلة التالية.
+    -->
+
+</section>
+
+
+
+<!-- =======================================================
+     PLANNER VIEW
+======================================================= -->
+
+<section
+    id="plannerView"
+    class="internal-view"
+>
+
+    <div class="view-topbar">
+
+        <button
+            class="back-btn"
+            onclick="backToMain()"
+        >
+            → العودة لمساحة التدريب
+        </button>
+
+        <div class="view-label">
+            STUDY PLANNER
+        </div>
+
+    </div>
+
+
+    <div class="internal-hero">
+
+        <div class="internal-hero-icon">
+            📅
+        </div>
+
+        <h1>
+            خطتي الدراسية
+        </h1>
+
+        <p>
+            أنشئ خطتك الخاصة، وحدد ما تريد إنجازه اليوم
+            وخلال الأسبوع والشهر، ورتّب دراستك بالطريقة التي تناسبك.
+        </p>
+
+    </div>
+
+
+    <!--
+        سيتم بناء Planner الحقيقي في المرحلة التالية.
+    -->
+
+</section>
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   INTERNAL VIEW SYSTEM
+========================================================= */
+
+const mainScreen = document.getElementById("mainScreen");
+
+const internalViews = document.querySelectorAll(".internal-view");
+
+
+function openView(viewId){
+
+    /*
+        إخفاء الصفحة الرئيسية بالكامل
+    */
+
+    mainScreen.classList.add("hidden");
+
+
+    /*
+        إخفاء جميع الواجهات الداخلية
+    */
+
+    internalViews.forEach(view => {
+        view.classList.remove("active");
+    });
+
+
+    /*
+        إظهار الواجهة المطلوبة
+    */
+
+    const target = document.getElementById(viewId);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+
+    /*
+        العودة لأعلى الصفحة
+    */
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+
+function backToMain(){
+
+    /*
+        إخفاء كل الواجهات الداخلية
+    */
+
+    internalViews.forEach(view => {
+        view.classList.remove("active");
+    });
+
+
+    /*
+        إعادة الصفحة الرئيسية
+    */
+
+    mainScreen.classList.remove("hidden");
+
+
+    /*
+        العودة إلى بداية الصفحة
+    */
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
