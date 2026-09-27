@@ -9,37 +9,46 @@
 <style>
 
 /* =========================================================
-   ENGLIZA ACADEMY — ENGLISH PRACTICE
-   المرحلة الأولى:
-   Hero + Video + Main Sections + Internal Views
+   ENGLIZA ACADEMY
+   ENGLISH PRACTICE
 ========================================================= */
 
 :root{
     --blue:#3157D5;
     --blue-dark:#233E9B;
-    --blue-soft:#EEF3FF;
+    --blue-light:#EEF3FF;
 
     --purple:#7654D9;
     --purple-dark:#5B3EC2;
-    --purple-soft:#F1EDFF;
+    --purple-light:#F1EDFF;
 
     --gold:#D9A441;
-    --gold-soft:#FFF6DF;
+    --gold-light:#FFF6DF;
+
+    --green:#2D9B72;
+    --green-light:#EAF8F2;
+
+    --red:#D85B68;
+    --red-light:#FFF0F2;
 
     --text:#17213C;
     --muted:#6E7891;
+    --soft:#9AA2B5;
 
-    --white:#FFFFFF;
     --bg:#F7F8FC;
-    --border:#E8EAF2;
+    --white:#FFFFFF;
+    --border:#E7EAF2;
 
-    --shadow:0 12px 35px rgba(36,48,94,.08);
-    --shadow-hover:0 18px 45px rgba(36,48,94,.13);
+    --shadow:
+        0 12px 35px rgba(36,48,94,.075);
+
+    --shadow-hover:
+        0 18px 45px rgba(36,48,94,.13);
 
     --radius-xl:32px;
     --radius-lg:26px;
     --radius-md:20px;
-    --radius-sm:16px;
+    --radius-sm:15px;
 }
 
 *{
@@ -53,6 +62,23 @@ html{
 }
 
 body{
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 8% 0%,
+            rgba(49,87,213,.055),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 95% 15%,
+            rgba(118,84,217,.045),
+            transparent 28%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -61,19 +87,13 @@ body{
         Arial,
         sans-serif;
 
-    background:
-        radial-gradient(circle at 10% 0%, rgba(49,87,213,.055), transparent 25%),
-        radial-gradient(circle at 90% 20%, rgba(118,84,217,.045), transparent 28%),
-        var(--bg);
-
-    color:var(--text);
-    min-height:100vh;
-    padding:30px 20px 50px;
+    padding:30px 20px 55px;
 }
 
 button,
-a,
-input{
+input,
+textarea,
+select{
     font:inherit;
 }
 
@@ -81,12 +101,21 @@ button{
     cursor:pointer;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+    outline:3px solid rgba(49,87,213,.22);
+    outline-offset:2px;
 }
 
-.page-shell{
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.page{
     width:100%;
     max-width:1120px;
     margin:0 auto;
@@ -94,15 +123,76 @@ a{
 
 
 /* =========================================================
-   MAIN SCREEN
+   GLOBAL
 ========================================================= */
 
-.main-screen{
-    display:block;
+.hidden{
+    display:none !important;
 }
 
-.main-screen.hidden{
+.screen{
     display:none;
+}
+
+.screen.active{
+    display:block;
+    animation:screenIn .32s ease both;
+}
+
+@keyframes screenIn{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.section{
+    margin-bottom:48px;
+}
+
+.section-head{
+    margin-bottom:20px;
+}
+
+.section-kicker{
+    color:var(--blue);
+
+    font-size:12px;
+    font-weight:850;
+
+    letter-spacing:1.3px;
+
+    margin-bottom:7px;
+}
+
+.section-title{
+    font-size:29px;
+    line-height:1.25;
+    font-weight:900;
+    letter-spacing:-.35px;
+}
+
+.section-description{
+    max-width:700px;
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:14px;
+    line-height:1.85;
+}
+
+.card{
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
 }
 
 
@@ -112,21 +202,8 @@ a{
 
 .hero{
     position:relative;
-    min-height:330px;
 
-    border-radius:var(--radius-xl);
-
-    background:
-        linear-gradient(
-            135deg,
-            #F8FAFF 0%,
-            #EEF3FF 52%,
-            #EAEFFF 100%
-        );
-
-    border:1px solid rgba(49,87,213,.08);
-
-    box-shadow:var(--shadow);
+    min-height:335px;
 
     overflow:hidden;
 
@@ -134,85 +211,96 @@ a{
     align-items:center;
 
     margin-bottom:28px;
-}
 
-/* soft decorative shapes */
+    border-radius:var(--radius-xl);
+
+    border:1px solid rgba(49,87,213,.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            #F9FBFF 0%,
+            #EFF3FF 52%,
+            #ECEBFF 100%
+        );
+
+    box-shadow:var(--shadow);
+}
 
 .hero::before{
     content:"";
+
     position:absolute;
 
-    width:300px;
-    height:300px;
+    width:350px;
+    height:350px;
 
     border-radius:50%;
 
-    background:rgba(49,87,213,.055);
+    background:rgba(49,87,213,.045);
 
-    right:-105px;
-    top:-115px;
+    top:-170px;
+    right:-120px;
 }
 
 .hero::after{
     content:"";
+
     position:absolute;
 
-    width:230px;
-    height:230px;
+    width:260px;
+    height:260px;
 
     border-radius:50%;
 
-    background:rgba(118,84,217,.055);
+    background:rgba(118,84,217,.045);
 
-    left:-85px;
-    bottom:-105px;
+    left:-110px;
+    bottom:-145px;
 }
 
 .hero-content{
     position:relative;
-    z-index:3;
+    z-index:2;
 
     width:100%;
 
-    padding:48px 50px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-
-    text-align:right;
+    padding:50px 52px;
 }
 
 .hero-brand{
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:2.5px;
-
     color:var(--blue);
+
+    font-size:13px;
+    font-weight:850;
+
+    letter-spacing:2.6px;
 
     margin-bottom:13px;
 }
 
 .hero-title{
-    font-size:48px;
+    max-width:700px;
+
+    color:var(--text);
+
+    font-size:50px;
     line-height:1.08;
 
     font-weight:900;
 
-    letter-spacing:-1px;
-
-    color:var(--text);
+    letter-spacing:-1.2px;
 
     margin-bottom:16px;
 }
 
 .hero-description{
-    max-width:620px;
-
-    font-size:18px;
-    line-height:1.85;
+    max-width:650px;
 
     color:var(--muted);
+
+    font-size:17px;
+    line-height:1.9;
 
     margin-bottom:27px;
 }
@@ -220,23 +308,39 @@ a{
 .hero-actions{
     display:flex;
     align-items:center;
-    gap:11px;
-
     flex-wrap:wrap;
+
+    gap:10px;
 }
 
-.primary-btn{
-    min-height:52px;
+.btn{
+    min-height:49px;
 
-    padding:0 27px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
     border:none;
-    border-radius:15px;
+    border-radius:14px;
 
-    color:white;
+    padding:0 21px;
 
-    font-size:15px;
+    font-size:14px;
     font-weight:800;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    color:#fff;
 
     background:
         linear-gradient(
@@ -246,113 +350,44 @@ a{
         );
 
     box-shadow:
-        0 9px 22px rgba(67,89,232,.20);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        0 9px 23px rgba(67,89,232,.2);
 }
 
-.primary-btn:hover{
-    transform:translateY(-2px);
-
+.btn-primary:hover{
     box-shadow:
-        0 13px 28px rgba(67,89,232,.25);
+        0 14px 30px rgba(67,89,232,.26);
 }
 
-.secondary-btn{
-    min-height:52px;
-
-    padding:0 22px;
-
-    border-radius:15px;
-
-    border:1px solid rgba(49,87,213,.14);
-
-    background:rgba(255,255,255,.78);
-
+.btn-secondary{
     color:var(--blue-dark);
 
-    font-size:14px;
-    font-weight:800;
+    background:rgba(255,255,255,.8);
 
-    transition:
-        transform .2s ease,
-        background .2s ease;
+    border:1px solid rgba(49,87,213,.13);
 }
 
-.secondary-btn:hover{
-    transform:translateY(-2px);
-    background:white;
+.btn-secondary:hover{
+    background:#fff;
 }
 
 
 /* =========================================================
-   INTRO VIDEO
+   VIDEO
 ========================================================= */
 
-.video-section{
-    margin-bottom:42px;
-}
-
-.section-heading{
-    margin-bottom:18px;
-}
-
-.section-kicker{
-    color:var(--blue);
-    font-size:13px;
-    font-weight:850;
-    letter-spacing:.4px;
-
-    margin-bottom:7px;
-}
-
-.section-title{
-    font-size:29px;
-    line-height:1.25;
-    font-weight:900;
-
-    color:var(--text);
-}
-
-.section-description{
-    color:var(--muted);
-    font-size:15px;
-    line-height:1.8;
-
-    margin-top:8px;
-}
-
 .video-card{
-    position:relative;
-
-    width:100%;
-
-    min-height:310px;
+    overflow:hidden;
 
     border-radius:var(--radius-lg);
 
-    background:
-        linear-gradient(
-            135deg,
-            #F1F4FF,
-            #F5F1FF
-        );
-
-    border:1px solid var(--border);
+    background:#10162A;
 
     box-shadow:var(--shadow);
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    overflow:hidden;
+    border:1px solid rgba(23,33,60,.08);
 }
 
 .video-placeholder{
-    width:100%;
     min-height:310px;
 
     display:flex;
@@ -360,90 +395,86 @@ a{
     align-items:center;
     justify-content:center;
 
-    padding:40px;
-
     text-align:center;
+
+    padding:35px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(118,84,217,.22),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            #17213C,
+            #202B4A
+        );
+
+    color:white;
 }
 
-.video-icon{
+.video-play{
     width:70px;
     height:70px;
-
-    border-radius:22px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:white;
+    border-radius:22px;
 
-    box-shadow:
-        0 10px 28px rgba(49,87,213,.12);
+    background:rgba(255,255,255,.12);
 
-    font-size:29px;
+    border:1px solid rgba(255,255,255,.15);
+
+    font-size:25px;
 
     margin-bottom:18px;
+
+    backdrop-filter:blur(8px);
 }
 
 .video-placeholder h3{
-    font-size:22px;
+    font-size:21px;
     font-weight:850;
 
-    margin-bottom:8px;
+    margin-bottom:7px;
 }
 
 .video-placeholder p{
-    color:var(--muted);
-    font-size:14px;
+    max-width:530px;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:13px;
     line-height:1.8;
-
-    max-width:500px;
 }
-
-
-/*
-When your Cloudflare video is ready,
-replace the placeholder with:
-
-<video controls ...>
-    <source src="YOUR_CLOUDFLARE_VIDEO_URL" type="video/mp4">
-</video>
-
-The surrounding .video-card can remain unchanged.
-*/
 
 
 /* =========================================================
    QUICK ACTIONS
 ========================================================= */
 
-.quick-section{
-    margin-bottom:46px;
-}
-
 .quick-grid{
     display:grid;
 
     grid-template-columns:
-        repeat(4, minmax(0,1fr));
+        repeat(4,minmax(0,1fr));
 
     gap:16px;
 }
 
 .quick-card{
-    position:relative;
-
     min-width:0;
 
-    border:1px solid var(--border);
-
-    background:white;
+    padding:23px 20px 20px;
 
     border-radius:22px;
 
-    padding:22px 19px 20px;
+    background:#fff;
 
-    text-align:right;
+    border:1px solid var(--border);
 
     box-shadow:var(--shadow);
 
@@ -460,155 +491,128 @@ The surrounding .video-card can remain unchanged.
 
     box-shadow:var(--shadow-hover);
 
-    border-color:rgba(49,87,213,.15);
+    border-color:rgba(49,87,213,.14);
 }
 
 .quick-icon{
-    width:50px;
-    height:50px;
-
-    border-radius:16px;
+    width:52px;
+    height:52px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    font-size:23px;
+    border-radius:17px;
+
+    font-size:24px;
 
     margin-bottom:17px;
 }
 
 .quick-card:nth-child(1) .quick-icon{
-    background:var(--blue-soft);
+    background:var(--blue-light);
 }
 
 .quick-card:nth-child(2) .quick-icon{
-    background:var(--purple-soft);
+    background:var(--purple-light);
 }
 
 .quick-card:nth-child(3) .quick-icon{
-    background:#EEF7FF;
+    background:#EDF7FF;
 }
 
 .quick-card:nth-child(4) .quick-icon{
-    background:#F3F0FF;
+    background:#F5F0FF;
 }
 
 .quick-card h3{
-    font-size:18px;
+    font-size:17px;
     font-weight:850;
 
     margin-bottom:7px;
 }
 
 .quick-card p{
+    min-height:45px;
+
     color:var(--muted);
 
-    font-size:13px;
+    font-size:12px;
     line-height:1.75;
 
-    margin-bottom:17px;
+    margin-bottom:14px;
 }
 
-.card-arrow{
+.quick-arrow{
     color:var(--blue);
 
-    font-size:19px;
+    font-size:18px;
     font-weight:900;
-
-    transition:transform .2s ease;
-}
-
-.quick-card:hover .card-arrow{
-    transform:translateX(-4px);
 }
 
 
 /* =========================================================
-   SMALL INFORMATION CARD
+   INFO CARD
 ========================================================= */
 
 .info-card{
     display:flex;
     align-items:center;
-    gap:17px;
 
-    background:white;
+    gap:15px;
+
+    padding:19px 21px;
+
+    background:#fff;
 
     border:1px solid var(--border);
 
-    border-radius:22px;
-
-    padding:20px 23px;
+    border-radius:21px;
 
     box-shadow:var(--shadow);
-
-    margin-bottom:40px;
 }
 
 .info-icon{
     flex:0 0 auto;
 
-    width:48px;
-    height:48px;
-
-    border-radius:15px;
+    width:47px;
+    height:47px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:var(--gold-soft);
+    border-radius:15px;
 
-    font-size:22px;
+    background:var(--gold-light);
+
+    font-size:21px;
 }
 
-.info-card strong{
+.info-content strong{
     display:block;
 
-    font-size:15px;
+    font-size:14px;
 
     margin-bottom:4px;
 }
 
-.info-card span{
+.info-content span{
     display:block;
 
     color:var(--muted);
 
-    font-size:13px;
+    font-size:12px;
 
     line-height:1.7;
 }
 
 
 /* =========================================================
-   INTERNAL VIEWS
+   INTERNAL HEADER
 ========================================================= */
 
-.internal-view{
-    display:none;
-
-    animation:viewIn .32s ease both;
-}
-
-.internal-view.active{
-    display:block;
-}
-
-@keyframes viewIn{
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.view-topbar{
+.internal-top{
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -619,102 +623,2024 @@ The surrounding .video-card can remain unchanged.
 }
 
 .back-btn{
+    min-height:43px;
+
     display:inline-flex;
     align-items:center;
     justify-content:center;
 
-    min-height:45px;
+    padding:0 16px;
 
-    padding:0 18px;
+    border-radius:13px;
 
-    border-radius:14px;
+    border:1px solid rgba(49,87,213,.11);
 
-    background:white;
-
-    border:1px solid var(--border);
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F7F8FF
+        );
 
     color:var(--blue-dark);
 
-    font-size:14px;
-    font-weight:800;
+    font-size:12px;
+    font-weight:850;
 
     box-shadow:
-        0 7px 22px rgba(36,48,94,.06);
+        0 7px 22px rgba(36,48,94,.055);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.back-btn:hover{
+    transform:translateY(-2px);
+
+    border-color:rgba(49,87,213,.2);
+
+    box-shadow:
+        0 12px 27px rgba(36,48,94,.09);
+}
+
+.view-label{
+    color:var(--blue);
+
+    font-size:11px;
+    font-weight:850;
+
+    letter-spacing:1.3px;
+}
+
+.internal-title-card{
+    padding:35px 38px;
+
+    margin-bottom:24px;
+
+    border-radius:var(--radius-xl);
+
+    background:
+        linear-gradient(
+            135deg,
+            #F5F8FF,
+            #F2EEFF
+        );
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+}
+
+.internal-icon{
+    width:59px;
+    height:59px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:19px;
+
+    background:#fff;
+
+    font-size:27px;
+
+    margin-bottom:17px;
+
+    box-shadow:
+        0 9px 24px rgba(36,48,94,.075);
+}
+
+.internal-title-card h1{
+    font-size:34px;
+    line-height:1.2;
+
+    font-weight:900;
+
+    margin-bottom:9px;
+}
+
+.internal-title-card p{
+    max-width:720px;
+
+    color:var(--muted);
+
+    font-size:14px;
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   SPEAKING TOPICS
+========================================================= */
+
+.topic-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:10px;
+
+    margin-bottom:22px;
+}
+
+.topic-card{
+    min-width:0;
+
+    padding:15px 14px;
+
+    border-radius:17px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 7px 20px rgba(36,48,94,.045);
 
     cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.topic-card:hover{
+    transform:translateY(-2px);
+
+    border-color:rgba(49,87,213,.18);
+
+    box-shadow:
+        0 11px 25px rgba(36,48,94,.075);
+}
+
+.topic-card.active{
+    color:#fff;
+
+    border-color:transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 11px 27px rgba(67,80,220,.18);
+}
+
+.topic-icon{
+    font-size:20px;
+
+    margin-bottom:8px;
+}
+
+.topic-card h3{
+    font-size:12px;
+    font-weight:850;
+
+    margin-bottom:3px;
+}
+
+.topic-card p{
+    color:var(--muted);
+
+    font-size:9px;
+    line-height:1.55;
+}
+
+.topic-card.active p{
+    color:rgba(255,255,255,.78);
+}
+
+.topic-level{
+    display:inline-flex;
+
+    margin-top:7px;
+
+    padding:3px 7px;
+
+    border-radius:7px;
+
+    background:var(--purple-light);
+
+    color:var(--purple-dark);
+
+    font-size:8px;
+    font-weight:850;
+}
+
+.topic-card.active .topic-level{
+    background:rgba(255,255,255,.14);
+    color:#fff;
+}
+
+
+/* =========================================================
+   SPEAKING
+========================================================= */
+
+.duration-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(7,minmax(0,1fr));
+
+    gap:10px;
+
+    margin-bottom:22px;
+}
+
+.duration-btn{
+    min-width:0;
+
+    padding:17px 8px;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--text);
+
+    box-shadow:
+        0 7px 20px rgba(36,48,94,.05);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.duration-btn:hover{
+    transform:translateY(-3px);
+
+    border-color:rgba(49,87,213,.2);
+}
+
+.duration-btn.active{
+    color:white;
+
+    border-color:transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 11px 26px rgba(67,80,220,.2);
+}
+
+.duration-number{
+    display:block;
+
+    font-size:23px;
+    font-weight:900;
+
+    line-height:1;
+
+    margin-bottom:6px;
+}
+
+.duration-label{
+    display:block;
+
+    font-size:10px;
+    font-weight:750;
+
+    opacity:.78;
+}
+
+.speaking-panel{
+    padding:28px;
+
+    border-radius:var(--radius-lg);
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+}
+
+.challenge-meta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.challenge-badge{
+    display:inline-flex;
+    align-items:center;
+
+    min-height:30px;
+
+    padding:0 11px;
+
+    border-radius:10px;
+
+    background:var(--blue-light);
+
+    color:var(--blue-dark);
+
+    font-size:11px;
+    font-weight:850;
+}
+
+.challenge-status{
+    color:var(--muted);
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.challenge-title{
+    font-size:25px;
+    font-weight:900;
+
+    margin-bottom:10px;
+}
+
+.challenge-topic{
+    color:var(--blue-dark);
+
+    font-size:18px;
+    font-weight:800;
+
+    line-height:1.6;
+
+    margin-bottom:19px;
+}
+
+.helper-box{
+    padding:18px 19px;
+
+    border-radius:17px;
+
+    background:#F8F9FD;
+
+    border:1px solid var(--border);
+
+    margin-bottom:20px;
+}
+
+.helper-box-title{
+    font-size:12px;
+    font-weight:850;
+
+    margin-bottom:10px;
+}
+
+.helper-list{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:8px 18px;
+
+    list-style:none;
+}
+
+.helper-list li{
+    position:relative;
+
+    color:var(--muted);
+
+    font-size:12px;
+    line-height:1.7;
+
+    padding-right:17px;
+}
+
+.helper-list li::before{
+    content:"";
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--purple);
+
+    right:0;
+    top:8px;
+}
+
+.timer{
+    text-align:center;
+
+    font-size:56px;
+    line-height:1;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    color:var(--text);
+
+    margin:25px 0;
+}
+
+.timer.running{
+    color:var(--blue);
+}
+
+.timer.finished{
+    color:var(--green);
+}
+
+.challenge-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:9px;
+}
+
+.small-btn{
+    min-height:43px;
+
+    padding:0 18px;
+
+    border-radius:13px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--text);
+
+    font-size:12px;
+    font-weight:800;
+
+    transition:.2s ease;
+}
+
+.small-btn:hover{
+    transform:translateY(-2px);
+}
+
+.small-btn.primary{
+    color:white;
+
+    border-color:transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+}
+
+.small-btn.green{
+    color:#237957;
+
+    background:var(--green-light);
+
+    border-color:#D2EFE3;
+}
+
+.completed-message{
+    display:none;
+
+    margin-top:19px;
+
+    padding:14px 16px;
+
+    border-radius:14px;
+
+    background:var(--green-light);
+
+    color:#247B59;
+
+    font-size:12px;
+    font-weight:750;
+
+    text-align:center;
+}
+
+.completed-message.show{
+    display:block;
+}
+
+
+/* =========================================================
+   TECHNIQUES
+========================================================= */
+
+.techniques-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:16px;
+}
+
+.technique-card{
+    padding:23px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
 
     transition:
         transform .2s ease,
         box-shadow .2s ease;
 }
 
-.back-btn:hover{
-    transform:translateY(-2px);
+.technique-card:hover{
+    transform:translateY(-3px);
 
-    box-shadow:
-        0 11px 27px rgba(36,48,94,.10);
+    box-shadow:var(--shadow-hover);
 }
 
-.view-label{
-    color:var(--blue);
+.technique-top{
+    display:flex;
+    align-items:flex-start;
 
-    font-size:13px;
-    font-weight:850;
+    gap:13px;
+
+    margin-bottom:15px;
 }
 
-.internal-hero{
-    background:
-        linear-gradient(
-            135deg,
-            #F5F8FF,
-            #F1EDFF
-        );
+.technique-icon{
+    flex:0 0 auto;
 
-    border:1px solid var(--border);
-
-    border-radius:var(--radius-xl);
-
-    padding:38px 40px;
-
-    box-shadow:var(--shadow);
-
-    margin-bottom:25px;
-}
-
-.internal-hero-icon{
-    width:60px;
-    height:60px;
-
-    border-radius:19px;
-
-    background:white;
+    width:45px;
+    height:45px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    font-size:28px;
+    border-radius:14px;
 
-    margin-bottom:17px;
+    background:var(--purple-light);
 
-    box-shadow:
-        0 9px 24px rgba(36,48,94,.08);
+    font-size:20px;
 }
 
-.internal-hero h1{
-    font-size:34px;
-    font-weight:900;
+.technique-card h3{
+    font-size:16px;
+    font-weight:850;
 
-    margin-bottom:9px;
+    margin-bottom:4px;
 }
 
-.internal-hero p{
-    max-width:680px;
+.technique-card .short{
+    color:var(--blue);
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.technique-card p{
+    color:var(--muted);
+
+    font-size:12px;
+    line-height:1.85;
+
+    margin-bottom:14px;
+}
+
+.technique-tip{
+    padding:11px 13px;
+
+    border-radius:13px;
+
+    background:#F8F9FD;
+
+    color:var(--text);
+
+    font-size:11px;
+    line-height:1.75;
+}
+
+
+/* =========================================================
+   CONVERSATION
+========================================================= */
+
+.conversation-categories{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:18px;
+}
+
+.category-btn{
+    min-height:39px;
+
+    padding:0 14px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
 
     color:var(--muted);
 
+    font-size:11px;
+    font-weight:800;
+
+    transition:.2s ease;
+}
+
+.category-btn.active,
+.category-btn:hover{
+    color:var(--blue-dark);
+
+    background:var(--blue-light);
+
+    border-color:rgba(49,87,213,.15);
+}
+
+.conversation-list{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:13px;
+
+    margin-bottom:22px;
+}
+
+.conversation-card{
+    padding:19px;
+
+    border-radius:19px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+.conversation-card:hover,
+.conversation-card.active{
+    transform:translateY(-2px);
+
+    border-color:rgba(49,87,213,.2);
+
+    box-shadow:var(--shadow-hover);
+}
+
+.conversation-card.active{
+    background:#F9FAFF;
+}
+
+.conversation-emoji{
+    font-size:23px;
+
+    margin-bottom:11px;
+}
+
+.conversation-card h3{
+    font-size:14px;
+    font-weight:850;
+
+    margin-bottom:5px;
+}
+
+.conversation-card p{
+    color:var(--muted);
+
+    font-size:10px;
+    line-height:1.65;
+}
+
+.conversation-detail{
+    display:none;
+
+    padding:27px;
+
+    border-radius:var(--radius-lg);
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    animation:screenIn .25s ease both;
+}
+
+.conversation-detail.active{
+    display:block;
+}
+
+.detail-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:21px;
+}
+
+.detail-head-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:var(--blue-light);
+
+    font-size:22px;
+}
+
+.detail-head h2{
+    font-size:22px;
+    font-weight:900;
+}
+
+.detail-head p{
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:3px;
+}
+
+.phrase-list{
+    display:grid;
+
+    gap:10px;
+}
+
+.phrase-card{
+    padding:16px;
+
+    border-radius:16px;
+
+    background:#F9FAFD;
+
+    border:1px solid var(--border);
+}
+
+.phrase-line{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.phrase-text{
+    color:var(--text);
+
     font-size:15px;
-    line-height:1.85;
+    font-weight:850;
+
+    line-height:1.6;
+}
+
+.speak-btn{
+    flex:0 0 auto;
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--blue);
+
+    font-size:16px;
+
+    transition:.2s ease;
+}
+
+.speak-btn:hover,
+.speak-btn.speaking{
+    background:var(--blue-light);
+
+    border-color:rgba(49,87,213,.2);
+}
+
+.phrase-translation{
+    color:var(--purple-dark);
+
+    font-size:12px;
+    line-height:1.7;
+
+    margin-top:5px;
+}
+
+.phrase-use{
+    color:var(--muted);
+
+    font-size:11px;
+    line-height:1.75;
+
+    margin-top:9px;
+
+    padding-top:9px;
+
+    border-top:1px solid var(--border);
+}
+
+.conversation-practice{
+    margin-top:18px;
+
+    padding:17px;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F5F8FF,
+            #F5F1FF
+        );
+
+    border:1px solid var(--border);
+}
+
+.conversation-practice strong{
+    display:block;
+
+    font-size:12px;
+
+    margin-bottom:5px;
+}
+
+.conversation-practice span{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   PLANNER
+========================================================= */
+
+.planner-toolbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    padding:17px;
+
+    margin-bottom:17px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+}
+
+.planner-tabs{
+    display:flex;
+    gap:6px;
+}
+
+.planner-tab{
+    min-height:38px;
+
+    padding:0 13px;
+
+    border-radius:11px;
+
+    border:1px solid transparent;
+
+    background:transparent;
+
+    color:var(--muted);
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.planner-tab.active{
+    background:var(--blue-light);
+
+    color:var(--blue-dark);
+
+    border-color:rgba(49,87,213,.1);
+}
+
+.add-task-btn{
+    min-height:40px;
+
+    padding:0 15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    font-size:11px;
+    font-weight:850;
+
+    box-shadow:
+        0 7px 18px rgba(49,87,213,.17);
+}
+
+.planner-panel{
+    display:none;
+}
+
+.planner-panel.active{
+    display:block;
+    animation:screenIn .25s ease both;
+}
+
+.planner-month-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-bottom:14px;
+}
+
+.month-title{
+    font-size:17px;
+    font-weight:850;
+}
+
+.month-subtitle{
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.calendar-nav{
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+}
+
+.calendar-nav button{
+    width:35px;
+    height:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--blue-dark);
+
+    font-size:14px;
+    font-weight:900;
+
+    transition:.2s ease;
+}
+
+.calendar-nav button:hover{
+    background:var(--blue-light);
+
+    border-color:rgba(49,87,213,.15);
+}
+
+.calendar-today-btn{
+    width:auto !important;
+
+    padding:0 10px;
+
+    font-size:10px !important;
+}
+
+.calendar{
+    display:grid;
+
+    grid-template-columns:
+        repeat(7,minmax(0,1fr));
+
+    gap:6px;
+
+    margin-bottom:19px;
+}
+
+.calendar-day-name{
+    padding:8px 3px;
+
+    color:var(--muted);
+
+    text-align:center;
+
+    font-size:9px;
+    font-weight:850;
+}
+
+.calendar-day{
+    min-height:68px;
+
+    padding:8px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    transition:.15s ease;
+}
+
+.calendar-day:hover{
+    border-color:rgba(49,87,213,.15);
+}
+
+.calendar-day.today{
+    border-color:rgba(49,87,213,.35);
+
+    background:#F6F8FF;
+}
+
+.calendar-number{
+    display:block;
+
+    font-size:10px;
+    font-weight:850;
+
+    margin-bottom:5px;
+}
+
+.calendar-task-dot{
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    display:inline-block;
+
+    margin-left:2px;
+}
+
+.task-list{
+    display:grid;
+
+    gap:9px;
+}
+
+.task-item{
+    display:grid;
+
+    grid-template-columns:
+        8px minmax(0,1fr) auto;
+
+    align-items:center;
+
+    gap:11px;
+
+    padding:13px 14px;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    box-shadow:
+        0 6px 18px rgba(36,48,94,.045);
+}
+
+.task-color{
+    width:8px;
+    height:42px;
+
+    border-radius:5px;
+}
+
+.task-main{
+    min-width:0;
+}
+
+.task-title{
+    font-size:12px;
+    font-weight:800;
+
+    line-height:1.55;
+}
+
+.task-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    margin-top:4px;
+}
+
+.task-meta span{
+    display:inline-flex;
+    align-items:center;
+
+    padding:3px 6px;
+
+    border-radius:7px;
+
+    background:#F6F7FB;
+}
+
+.task-status{
+    font-weight:800;
+}
+
+.status-planned{
+    color:var(--blue-dark);
+}
+
+.status-progress{
+    color:var(--purple-dark);
+}
+
+.status-completed{
+    color:var(--green);
+}
+
+.task-actions{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.task-action{
+    width:31px;
+    height:31px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    font-size:12px;
+
+    transition:.2s ease;
+}
+
+.task-action:hover{
+    background:#F7F8FC;
+
+    transform:translateY(-1px);
+}
+
+.task-complete{
+    opacity:.58;
+}
+
+.task-complete .task-title{
+    text-decoration:line-through;
+}
+
+.empty-state{
+    padding:38px 20px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    border:1px dashed #DDE1EC;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+.empty-state-icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.goals-card{
+    padding:23px;
+
+    border-radius:21px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    margin-top:18px;
+}
+
+.goals-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:15px;
+}
+
+.goals-head h3{
+    font-size:16px;
+    font-weight:850;
+}
+
+.progress-number{
+    color:var(--blue);
+
+    font-size:12px;
+    font-weight:900;
+}
+
+.progress-track{
+    width:100%;
+    height:9px;
+
+    border-radius:20px;
+
+    background:#EEF0F6;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+}
+
+.progress-fill{
+    height:100%;
+
+    width:0%;
+
+    border-radius:inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    transition:width .35s ease;
+}
+
+.goal-list{
+    display:grid;
+
+    gap:8px;
+}
+
+.goal-row{
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 11px;
+
+    border-radius:12px;
+
+    background:#F8F9FD;
+
+    border:1px solid var(--border);
+}
+
+.goal-row input{
+    accent-color:var(--blue);
+}
+
+.goal-row span{
+    color:var(--text);
+
+    font-size:11px;
+
+    flex:1;
+}
+
+
+/* =========================================================
+   PLANNER FIX
+   الجدول + دعم iOS/iPad + الألوان + الكتابة
+========================================================= */
+
+.modal{
+    pointer-events:none;
+}
+
+.modal.show{
+    display:flex;
+    pointer-events:auto;
+}
+
+.modal-box{
+    position:relative;
+    z-index:101;
+}
+
+.form-input,
+.form-select{
+    -webkit-appearance:none;
+    appearance:none;
+
+    width:100%;
+
+    min-height:44px;
+
+    padding:0 12px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#fff !important;
+
+    color:var(--text) !important;
+
+    -webkit-text-fill-color:var(--text) !important;
+
+    caret-color:var(--blue);
+
+    font-size:12px;
+
+    outline:none;
+
+    opacity:1 !important;
+
+    pointer-events:auto;
+
+    user-select:text;
+    -webkit-user-select:text;
+}
+
+.form-input::placeholder{
+    color:#9AA2B5 !important;
+
+    -webkit-text-fill-color:#9AA2B5 !important;
+
+    opacity:1;
+}
+
+.color-option{
+    appearance:none;
+    -webkit-appearance:none;
+
+    display:block;
+
+    padding:0;
+    margin:0;
+
+    background-clip:padding-box;
+
+    touch-action:manipulation;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+.color-option.active{
+    border-color:var(--text);
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 0 2px #fff,
+        0 0 0 4px var(--text);
+}
+
+
+/* =========================================================
+   PLANNER TABLE
+========================================================= */
+
+.planner-table-wrap{
+    width:100%;
+
+    overflow-x:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow);
+
+    margin-top:14px;
+}
+
+.planner-table{
+    width:100%;
+
+    min-width:700px;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+}
+
+.planner-table th,
+.planner-table td{
+    padding:13px 12px;
+
+    border-bottom:1px solid var(--border);
+
+    text-align:right;
+
+    vertical-align:middle;
+
+    font-size:11px;
+}
+
+.planner-table th{
+    background:#F8F9FD;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    font-weight:850;
+
+    white-space:nowrap;
+}
+
+.planner-table tr:last-child td{
+    border-bottom:none;
+}
+
+.planner-table td{
+    color:var(--text);
+}
+
+.planner-table .planner-date{
+    width:18%;
+}
+
+.planner-table .planner-task{
+    width:29%;
+
+    font-weight:800;
+}
+
+.planner-table .planner-type{
+    width:16%;
+}
+
+.planner-table .planner-color{
+    width:9%;
+    text-align:center;
+}
+
+.planner-table .planner-status{
+    width:18%;
+}
+
+.planner-table .planner-actions{
+    width:10%;
+    white-space:nowrap;
+}
+
+.planner-color-dot{
+    width:15px;
+    height:15px;
+
+    display:inline-block;
+
+    border-radius:5px;
+
+    vertical-align:middle;
+}
+
+.planner-status-select{
+    min-height:33px;
+
+    width:100%;
+
+    padding:0 8px;
+
+    border-radius:9px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--text);
+
+    font-size:10px;
+
+    outline:none;
+}
+
+.planner-status-select:focus{
+    border-color:rgba(49,87,213,.35);
+
+    box-shadow:
+        0 0 0 3px rgba(49,87,213,.07);
+}
+
+.planner-table-actions{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    gap:4px;
+}
+
+.planner-table-action{
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:8px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    font-size:11px;
+
+    transition:.2s ease;
+}
+
+.planner-table-action:hover{
+    background:#F7F8FC;
+
+    transform:translateY(-1px);
+}
+
+.planner-row-completed td{
+    opacity:.58;
+}
+
+.planner-row-completed .planner-task{
+    text-decoration:line-through;
+}
+
+.planner-date-text{
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+.planner-date-text strong{
+    display:block;
+
+    color:var(--text);
+
+    font-size:11px;
+}
+
+.planner-empty{
+    padding:0 !important;
+}
+
+.planner-empty .empty-state{
+    border:none;
+
+    border-radius:0;
+
+    box-shadow:none;
+}
+
+
+/* =========================================================
+   TASK MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(23,33,60,.42);
+
+    backdrop-filter:blur(7px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:470px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:27px;
+
+    border-radius:25px;
+
+    background:#fff;
+
+    box-shadow:
+        0 25px 70px rgba(23,33,60,.22);
+
+    animation:modalIn .25s ease both;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.modal-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:22px;
+}
+
+.modal-head h2{
+    font-size:20px;
+    font-weight:900;
+}
+
+.close-modal{
+    width:35px;
+    height:35px;
+
+    border-radius:11px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--muted);
+}
+
+.form-group{
+    margin-bottom:14px;
+}
+
+.form-label{
+    display:block;
+
+    color:var(--text);
+
+    font-size:11px;
+    font-weight:850;
+
+    margin-bottom:7px;
+}
+
+.form-input,
+.form-select{
+    width:100%;
+
+    min-height:44px;
+
+    padding:0 12px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#FAFBFD;
+
+    color:var(--text);
+
+    -webkit-text-fill-color:var(--text);
+
+    caret-color:var(--blue);
+
+    font-size:12px;
+
+    outline:none;
+
+    opacity:1;
+}
+
+.form-input::placeholder{
+    color:#9AA2B5;
+
+    opacity:1;
+}
+
+.form-input:focus,
+.form-select:focus{
+    background:#fff;
+
+    border-color:rgba(49,87,213,.35);
+
+    box-shadow:
+        0 0 0 4px rgba(49,87,213,.07);
+}
+
+.form-select option{
+    color:var(--text);
+
+    background:#fff;
+}
+
+.color-options{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.color-option{
+    width:30px;
+    height:30px;
+
+    border-radius:10px;
+
+    border:3px solid transparent;
+
+    cursor:pointer;
+
+    transition:.15s ease;
+}
+
+.color-option.active{
+    border-color:var(--text);
+
+    transform:scale(1.08);
+}
+
+.modal-actions{
+    display:flex;
+    gap:8px;
+
+    margin-top:20px;
+}
+
+.modal-actions .btn{
+    flex:1;
+}
+
+
+/* =========================================================
+   TODAY'S PRACTICE
+========================================================= */
+
+.today-card{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F1F5FF,
+            #F2EEFF
+        );
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+}
+
+.today-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+
+    background:rgba(118,84,217,.07);
+
+    left:-80px;
+    bottom:-110px;
+}
+
+.today-top{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:17px;
+}
+
+.today-badge{
+    color:var(--blue);
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.today-duration{
+    padding:7px 10px;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    color:var(--purple-dark);
+
+    font-size:10px;
+    font-weight:850;
+}
+
+.today-card h3{
+    position:relative;
+    z-index:2;
+
+    font-size:24px;
+    font-weight:900;
+
+    margin-bottom:8px;
+}
+
+.today-card p{
+    position:relative;
+    z-index:2;
+
+    max-width:700px;
+
+    color:var(--muted);
+
+    font-size:13px;
+    line-height:1.8;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.progress-card{
+    padding:19px;
+
+    border-radius:19px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+}
+
+.progress-card-icon{
+    font-size:21px;
+
+    margin-bottom:12px;
+}
+
+.progress-card-title{
+    color:var(--muted);
+
+    font-size:10px;
+    font-weight:750;
+
+    margin-bottom:4px;
+}
+
+.progress-card-number{
+    font-size:24px;
+    font-weight:900;
+}
+
+.progress-card-number span{
+    color:var(--muted);
+
+    font-size:10px;
+    font-weight:700;
+}
+
+.progress-line{
+    height:5px;
+
+    border-radius:20px;
+
+    background:#EEF0F5;
+
+    overflow:hidden;
+
+    margin-top:11px;
+}
+
+.progress-line-fill{
+    height:100%;
+
+    width:0%;
+
+    border-radius:inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    transition:width .35s ease;
 }
 
 
@@ -723,42 +2649,40 @@ The surrounding .video-card can remain unchanged.
 ========================================================= */
 
 .footer{
-    text-align:center;
-
-    padding:35px 10px 8px;
+    padding:35px 10px 7px;
 
     color:var(--muted);
 
-    font-size:12px;
+    text-align:center;
+
+    font-size:11px;
 }
 
 
 /* =========================================================
    RESPONSIVE
-   Same design — only proportional adaptation.
 ========================================================= */
 
 @media(max-width:900px){
 
     body{
-        padding:22px 15px 40px;
+        padding:22px 15px 45px;
     }
 
     .hero{
-        min-height:300px;
+        min-height:310px;
     }
 
     .hero-content{
-        padding:40px;
+        padding:43px;
     }
 
     .hero-title{
-        font-size:41px;
+        font-size:42px;
     }
 
     .hero-description{
-        max-width:570px;
-        font-size:16px;
+        font-size:15px;
     }
 
     .quick-grid{
@@ -766,38 +2690,34 @@ The surrounding .video-card can remain unchanged.
     }
 
     .quick-card{
-        padding:18px 15px;
+        padding:19px 15px;
     }
 
-    .quick-card h3{
-        font-size:16px;
+    .conversation-list{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
     }
 
-    .quick-card p{
-        font-size:12px;
+    .progress-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
     }
 
-    .video-card,
-    .video-placeholder{
-        min-height:270px;
+    .topic-grid{
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
     }
 }
 
 
-/* =========================================================
-   PHONE
-   Do NOT change the composition.
-   Only scale the same design.
-========================================================= */
-
-@media(max-width:600px){
+@media(max-width:650px){
 
     body{
         padding:13px 10px 30px;
     }
 
     .hero{
-        min-height:275px;
+        min-height:290px;
 
         border-radius:26px;
 
@@ -805,12 +2725,12 @@ The surrounding .video-card can remain unchanged.
     }
 
     .hero-content{
-        padding:30px 24px;
+        padding:31px 23px;
     }
 
     .hero-brand{
         font-size:10px;
-        letter-spacing:1.7px;
+        letter-spacing:1.8px;
 
         margin-bottom:9px;
     }
@@ -818,16 +2738,16 @@ The surrounding .video-card can remain unchanged.
     .hero-title{
         font-size:31px;
 
-        letter-spacing:-.6px;
+        letter-spacing:-.7px;
 
         margin-bottom:11px;
     }
 
     .hero-description{
-        font-size:13px;
+        font-size:12.5px;
         line-height:1.75;
 
-        max-width:95%;
+        max-width:100%;
 
         margin-bottom:19px;
     }
@@ -836,54 +2756,47 @@ The surrounding .video-card can remain unchanged.
         gap:7px;
     }
 
-    .primary-btn,
-    .secondary-btn{
+    .btn{
         min-height:43px;
 
-        padding:0 14px;
+        padding:0 13px;
 
         border-radius:12px;
 
-        font-size:11.5px;
+        font-size:10.5px;
+    }
+
+    .section{
+        margin-bottom:33px;
     }
 
     .section-kicker{
-        font-size:11px;
+        font-size:9px;
+        letter-spacing:1px;
     }
 
     .section-title{
-        font-size:23px;
+        font-size:22px;
     }
 
     .section-description{
-        font-size:12px;
-    }
-
-    .video-section{
-        margin-bottom:30px;
-    }
-
-    .video-card{
-        min-height:210px;
-
-        border-radius:20px;
+        font-size:11px;
+        line-height:1.7;
     }
 
     .video-placeholder{
-        min-height:210px;
+        min-height:220px;
 
         padding:25px 18px;
     }
 
-    .video-icon{
-        width:54px;
-        height:54px;
+    .video-play{
+        width:55px;
+        height:55px;
 
         border-radius:17px;
 
-        font-size:23px;
-
-        margin-bottom:12px;
+        font-size:20px;
     }
 
     .video-placeholder h3{
@@ -891,71 +2804,55 @@ The surrounding .video-card can remain unchanged.
     }
 
     .video-placeholder p{
-        font-size:11px;
-        line-height:1.7;
+        font-size:10px;
     }
-
-    .quick-section{
-        margin-bottom:30px;
-    }
-
-    /*
-       Four cards remain side-by-side.
-       We only scale them.
-    */
 
     .quick-grid{
         grid-template-columns:
-            repeat(4, minmax(0,1fr));
+            repeat(2,minmax(0,1fr));
 
-        gap:6px;
+        gap:9px;
     }
 
     .quick-card{
-        padding:11px 7px 10px;
+        padding:16px 13px;
 
-        border-radius:15px;
+        border-radius:18px;
     }
 
     .quick-icon{
-        width:31px;
-        height:31px;
+        width:41px;
+        height:41px;
 
-        border-radius:10px;
+        border-radius:13px;
 
-        font-size:15px;
+        font-size:19px;
 
-        margin-bottom:9px;
+        margin-bottom:11px;
     }
 
     .quick-card h3{
-        font-size:10.5px;
-
-        line-height:1.35;
-
-        margin-bottom:4px;
+        font-size:13px;
     }
 
     .quick-card p{
-        font-size:8px;
+        min-height:auto;
 
-        line-height:1.5;
+        font-size:10px;
 
-        margin-bottom:8px;
+        margin-bottom:10px;
     }
 
-    .card-arrow{
-        font-size:12px;
+    .quick-arrow{
+        font-size:15px;
     }
 
     .info-card{
-        gap:10px;
-
         padding:14px;
 
         border-radius:17px;
 
-        margin-bottom:27px;
+        gap:10px;
     }
 
     .info-icon{
@@ -967,15 +2864,15 @@ The surrounding .video-card can remain unchanged.
         font-size:17px;
     }
 
-    .info-card strong{
-        font-size:11px;
+    .info-content strong{
+        font-size:10.5px;
     }
 
-    .info-card span{
+    .info-content span{
         font-size:9px;
     }
 
-    .view-topbar{
+    .internal-top{
         margin-bottom:14px;
     }
 
@@ -986,51 +2883,287 @@ The surrounding .video-card can remain unchanged.
 
         border-radius:11px;
 
-        font-size:11px;
-    }
-
-    .view-label{
         font-size:10px;
     }
 
-    .internal-hero{
-        border-radius:24px;
-
-        padding:27px 22px;
+    .view-label{
+        font-size:9px;
     }
 
-    .internal-hero-icon{
+    .internal-title-card{
+        padding:26px 21px;
+
+        border-radius:23px;
+    }
+
+    .internal-icon{
         width:48px;
         height:48px;
 
         border-radius:15px;
 
         font-size:22px;
+
+        margin-bottom:13px;
     }
 
-    .internal-hero h1{
+    .internal-title-card h1{
         font-size:25px;
     }
 
-    .internal-hero p{
+    .internal-title-card p{
+        font-size:11px;
+    }
+
+    .topic-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:7px;
+    }
+
+    .topic-card{
+        padding:13px 11px;
+
+        border-radius:15px;
+    }
+
+    .topic-icon{
+        font-size:18px;
+
+        margin-bottom:6px;
+    }
+
+    .topic-card h3{
+        font-size:11px;
+    }
+
+    .topic-card p{
+        font-size:8px;
+    }
+
+    .topic-level{
+        font-size:7px;
+    }
+
+    .duration-grid{
+        grid-template-columns:
+            repeat(4,minmax(0,1fr));
+
+        gap:7px;
+    }
+
+    .duration-btn{
+        padding:12px 5px;
+
+        border-radius:14px;
+    }
+
+    .duration-number{
+        font-size:19px;
+    }
+
+    .duration-label{
+        font-size:8px;
+    }
+
+    .speaking-panel{
+        padding:18px;
+
+        border-radius:20px;
+    }
+
+    .challenge-title{
+        font-size:21px;
+    }
+
+    .challenge-topic{
+        font-size:15px;
+    }
+
+    .helper-list{
+        grid-template-columns:1fr;
+    }
+
+    .timer{
+        font-size:45px;
+    }
+
+    .techniques-grid{
+        grid-template-columns:1fr;
+    }
+
+    .conversation-list{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:8px;
+    }
+
+    .conversation-card{
+        padding:14px;
+
+        border-radius:16px;
+    }
+
+    .conversation-card h3{
         font-size:12px;
     }
 
-    .footer{
+    .conversation-card p{
         font-size:9px;
-        padding-top:25px;
+    }
+
+    .conversation-detail{
+        padding:19px;
+    }
+
+    .phrase-text{
+        font-size:13px;
+    }
+
+    .phrase-translation{
+        font-size:10px;
+    }
+
+    .phrase-use{
+        font-size:9px;
+    }
+
+    .planner-toolbar{
+        align-items:stretch;
+
+        flex-direction:column;
+    }
+
+    .planner-tabs{
+        width:100%;
+    }
+
+    .planner-tab{
+        flex:1;
+    }
+
+    .add-task-btn{
+        width:100%;
+    }
+
+    .planner-month-head{
+        align-items:flex-start;
+    }
+
+    .calendar-nav button{
+        width:31px;
+        height:31px;
+    }
+
+    .calendar-today-btn{
+        padding:0 7px !important;
+    }
+
+    .calendar{
+        gap:3px;
+    }
+
+    .calendar-day{
+        min-height:53px;
+
+        padding:5px;
+
+        border-radius:9px;
+    }
+
+    .calendar-day-name{
+        font-size:7px;
+    }
+
+    .calendar-number{
+        font-size:8px;
+    }
+
+    .task-item{
+        grid-template-columns:
+            7px minmax(0,1fr) auto;
+
+        padding:11px;
+    }
+
+    .task-title{
+        font-size:10px;
+    }
+
+    .task-meta{
+        font-size:8px;
+    }
+
+    .task-action{
+        width:28px;
+        height:28px;
+    }
+
+    .goals-card{
+        padding:18px;
+    }
+
+    .today-card{
+        padding:21px;
+    }
+
+    .today-card h3{
+        font-size:20px;
+    }
+
+    .today-card p{
+        font-size:11px;
+    }
+
+    .progress-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:8px;
+    }
+
+    .progress-card{
+        padding:15px;
+    }
+
+    .progress-card-number{
+        font-size:21px;
+    }
+
+    .footer{
+        font-size:8px;
+    }
+
+    /* planner table on small screens */
+    .planner-table{
+        min-width:700px;
+    }
+
+    .planner-table th,
+    .planner-table td{
+        padding:10px 9px;
+    }
+
+    .planner-table th{
+        font-size:9px;
+    }
+
+    .planner-table td{
+        font-size:9px;
+    }
+
+    .planner-status-select{
+        font-size:9px;
     }
 }
 
 
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
 @media(max-width:360px){
 
     .hero-content{
-        padding:26px 19px;
+        padding:27px 18px;
     }
 
     .hero-title{
@@ -1038,35 +3171,42 @@ The surrounding .video-card can remain unchanged.
     }
 
     .hero-description{
-        font-size:12px;
+        font-size:11.5px;
     }
 
-    .primary-btn,
-    .secondary-btn{
-        font-size:10px;
-        padding:0 11px;
-    }
-
-    .quick-grid{
-        gap:4px;
+    .btn{
+        font-size:9.5px;
+        padding:0 10px;
     }
 
     .quick-card{
-        padding:9px 5px;
+        padding:14px 10px;
     }
 
     .quick-card h3{
-        font-size:9px;
+        font-size:12px;
     }
 
     .quick-card p{
-        font-size:7px;
+        font-size:9px;
     }
 
-    .quick-icon{
-        width:28px;
-        height:28px;
-        font-size:13px;
+    .duration-grid{
+        grid-template-columns:
+            repeat(4,minmax(0,1fr));
+    }
+
+    .conversation-list{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .topic-card p{
+        display:none;
+    }
+
+    .topic-level{
+        margin-top:5px;
     }
 }
 
@@ -1076,17 +3216,14 @@ The surrounding .video-card can remain unchanged.
 
 <body>
 
-<div class="page-shell">
+<div class="page">
 
 
-<!-- =======================================================
-     MAIN SCREEN
-======================================================= -->
+<!-- =====================================================
+     MAIN HOME SCREEN
+===================================================== -->
 
-<main id="mainScreen" class="main-screen">
-
-
-    <!-- HERO -->
+<main id="homeScreen" class="screen active">
 
     <section class="hero">
 
@@ -1108,15 +3245,15 @@ The surrounding .video-card can remain unchanged.
             <div class="hero-actions">
 
                 <button
-                    class="primary-btn"
-                    onclick="openView('speakingView')"
+                    class="btn btn-primary"
+                    onclick="openScreen('speakingScreen')"
                 >
                     ابدأ التدريب الآن
                 </button>
 
                 <a
                     href="home.html"
-                    class="secondary-btn"
+                    class="btn btn-secondary"
                 >
                     ← العودة إلى الصفحة الرئيسية
                 </a>
@@ -1128,14 +3265,9 @@ The surrounding .video-card can remain unchanged.
     </section>
 
 
+    <section class="section">
 
-    <!-- ===================================================
-         INTRO VIDEO
-    ==================================================== -->
-
-    <section class="video-section">
-
-        <div class="section-heading">
+        <div class="section-head">
 
             <div class="section-kicker">
                 START HERE
@@ -1147,28 +3279,26 @@ The surrounding .video-card can remain unchanged.
 
             <p class="section-description">
                 شاهد الفيديو أولًا لتتعرف على طريقة استخدام هذه الصفحة
-                والاستفادة من الأدوات الموجودة فيها.
+                والاستفادة من أدوات التدريب الموجودة فيها.
             </p>
 
         </div>
-
 
         <div class="video-card">
 
             <div class="video-placeholder">
 
-                <div class="video-icon">
+                <div class="video-play">
                     ▶
                 </div>
 
                 <h3>
-                    الفيديو التعريفي
+                    فيديو شرح مساحة التدريب
                 </h3>
 
                 <p>
-                    سيتم وضع فيديو الشرح هنا.
-                    يمكنك رفع الفيديو على Cloudflare ثم وضع رابط الفيديو
-                    في هذا المكان.
+                    مكان الفيديو جاهز. بعد رفع فيديو الشرح على Cloudflare،
+                    نضع رابط الفيديو هنا.
                 </p>
 
             </div>
@@ -1178,14 +3308,9 @@ The surrounding .video-card can remain unchanged.
     </section>
 
 
+    <section class="section">
 
-    <!-- ===================================================
-         QUICK ACTIONS
-    ==================================================== -->
-
-    <section class="quick-section">
-
-        <div class="section-heading">
+        <div class="section-head">
 
             <div class="section-kicker">
                 PRACTICE YOUR WAY
@@ -1196,8 +3321,8 @@ The surrounding .video-card can remain unchanged.
             </h2>
 
             <p class="section-description">
-                اختر الطريقة التي تناسب تدريبك، وستظهر لك مساحتها
-                داخل الصفحة نفسها.
+                اختر المساحة التي تريد التدريب فيها. ستفتح لك داخل الصفحة
+                نفسها دون إنشاء صفحة جديدة.
             </p>
 
         </div>
@@ -1205,121 +3330,244 @@ The surrounding .video-card can remain unchanged.
 
         <div class="quick-grid">
 
-
-            <!-- SPEAKING -->
-
             <article
                 class="quick-card"
-                onclick="openView('speakingView')"
+                onclick="openScreen('speakingScreen')"
             >
+                <div class="quick-icon">🎤</div>
 
-                <div class="quick-icon">
-                    🎤
-                </div>
-
-                <h3>
-                    التحدث
-                </h3>
+                <h3>تحدي التحدث</h3>
 
                 <p>
-                    مارس التحدث تدريجيًا من دقيقة إلى سبع دقائق.
+                    اختر موضوعًا وتمرّن على التحدث تدريجيًا من دقيقة واحدة
+                    حتى سبع دقائق.
                 </p>
 
-                <div class="card-arrow">
-                    ←
-                </div>
-
+                <div class="quick-arrow">←</div>
             </article>
 
 
-
-            <!-- TECHNIQUES -->
-
             <article
                 class="quick-card"
-                onclick="openView('techniquesView')"
+                onclick="openScreen('techniquesScreen')"
             >
+                <div class="quick-icon">🧠</div>
 
-                <div class="quick-icon">
-                    🧠
-                </div>
-
-                <h3>
-                    طرق الممارسة
-                </h3>
+                <h3>طرق الممارسة</h3>
 
                 <p>
-                    أفكار وتقنيات عملية تساعدك على ممارسة الإنجليزية.
+                    أفكار وتقنيات واقعية تساعدك على ممارسة الإنجليزية.
                 </p>
 
-                <div class="card-arrow">
-                    ←
-                </div>
-
+                <div class="quick-arrow">←</div>
             </article>
 
 
-
-            <!-- CONVERSATION -->
-
             <article
                 class="quick-card"
-                onclick="openView('conversationView')"
+                onclick="openScreen('conversationScreen')"
             >
+                <div class="quick-icon">🤝</div>
 
-                <div class="quick-icon">
-                    🤝
-                </div>
-
-                <h3>
-                    المحادثة
-                </h3>
+                <h3>تدريب المحادثة</h3>
 
                 <p>
-                    مواقف وعبارات تساعدك على بناء محادثة حقيقية.
+                    مواقف وعبارات كثيرة تساعدك على بناء محادثات حقيقية.
                 </p>
 
-                <div class="card-arrow">
-                    ←
-                </div>
-
+                <div class="quick-arrow">←</div>
             </article>
 
 
-
-            <!-- PLANNER -->
-
             <article
                 class="quick-card"
-                onclick="openView('plannerView')"
+                onclick="openScreen('plannerScreen')"
             >
+                <div class="quick-icon">📅</div>
 
-                <div class="quick-icon">
-                    📅
-                </div>
-
-                <h3>
-                    خطتي الدراسية
-                </h3>
+                <h3>خطتي الدراسية</h3>
 
                 <p>
-                    نظّم أهدافك ومهامك اليومية والأسبوعية والشهرية.
+                    رتّب أهدافك ومهامك اليومية والأسبوعية والشهرية.
                 </p>
 
-                <div class="card-arrow">
-                    ←
-                </div>
-
+                <div class="quick-arrow">←</div>
             </article>
-
 
         </div>
 
     </section>
 
 
+    <section class="section">
 
-    <!-- SMALL INFO -->
+        <div class="section-head">
+
+            <div class="section-kicker">
+                DAILY PRACTICE
+            </div>
+
+            <h2 class="section-title">
+                تدريب اليوم 🎯
+            </h2>
+
+        </div>
+
+
+        <div class="today-card">
+
+            <div class="today-top">
+
+                <div class="today-badge">
+                    TODAY'S CHALLENGE
+                </div>
+
+                <div
+                    class="today-duration"
+                    id="todayDuration"
+                >
+                    2 دقائق
+                </div>
+
+            </div>
+
+            <h3 id="todayTitle">
+                تحدث عن شيء تعلمته مؤخرًا.
+            </h3>
+
+            <p id="todayDescription">
+                حاول أن تشرح ماذا تعلمت، لماذا كان مهمًا بالنسبة لك،
+                وكيف يمكنك استخدامه.
+            </p>
+
+            <button
+                class="btn btn-primary"
+                onclick="openScreen('speakingScreen'); selectDuration(2)"
+            >
+                ابدأ تدريب اليوم
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-head">
+
+            <div class="section-kicker">
+                YOUR PROGRESS
+            </div>
+
+            <h2 class="section-title">
+                تقدّمك
+            </h2>
+
+            <p class="section-description">
+                تابع إنجازاتك في مساحة التدريب خطوة بخطوة.
+            </p>
+
+        </div>
+
+
+        <div class="progress-grid">
+
+            <div class="progress-card">
+                <div class="progress-card-icon">🎤</div>
+
+                <div class="progress-card-title">
+                    تحديات التحدث
+                </div>
+
+                <div
+                    class="progress-card-number"
+                    id="progressSpeaking"
+                >
+                    0 <span>منجز</span>
+                </div>
+
+                <div class="progress-line">
+                    <div
+                        class="progress-line-fill"
+                        id="progressSpeakingBar"
+                    ></div>
+                </div>
+            </div>
+
+
+            <div class="progress-card">
+                <div class="progress-card-icon">📅</div>
+
+                <div class="progress-card-title">
+                    المهام المكتملة
+                </div>
+
+                <div
+                    class="progress-card-number"
+                    id="progressTasks"
+                >
+                    0 <span>مهمة</span>
+                </div>
+
+                <div class="progress-line">
+                    <div
+                        class="progress-line-fill"
+                        id="progressTasksBar"
+                    ></div>
+                </div>
+            </div>
+
+
+            <div class="progress-card">
+                <div class="progress-card-icon">💬</div>
+
+                <div class="progress-card-title">
+                    تدريبات المحادثة
+                </div>
+
+                <div
+                    class="progress-card-number"
+                    id="progressConversation"
+                >
+                    0 <span>منجز</span>
+                </div>
+
+                <div class="progress-line">
+                    <div
+                        class="progress-line-fill"
+                        id="progressConversationBar"
+                    ></div>
+                </div>
+            </div>
+
+
+            <div class="progress-card">
+                <div class="progress-card-icon">🌱</div>
+
+                <div class="progress-card-title">
+                    أيام الممارسة
+                </div>
+
+                <div
+                    class="progress-card-number"
+                    id="progressDays"
+                >
+                    0 <span>يوم</span>
+                </div>
+
+                <div class="progress-line">
+                    <div
+                        class="progress-line-fill"
+                        id="progressDaysBar"
+                    ></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
 
     <div class="info-card">
 
@@ -1327,21 +3575,19 @@ The surrounding .video-card can remain unchanged.
             🌱
         </div>
 
-        <div>
+        <div class="info-content">
 
             <strong>
                 لا تبحث عن الكمال، ابحث عن الاستمرار.
             </strong>
 
             <span>
-                الممارسة المنتظمة، حتى لو كانت لفترة قصيرة،
-                تساعدك على تحويل ما تتعلمه إلى لغة تستخدمها فعليًا.
+                حتى الممارسة القصيرة تصبح مؤثرة عندما تستمر عليها.
             </span>
 
         </div>
 
     </div>
-
 
 
     <footer class="footer">
@@ -1352,20 +3598,17 @@ The surrounding .video-card can remain unchanged.
 
 
 
-<!-- =======================================================
-     SPEAKING VIEW
-======================================================= -->
+<!-- =====================================================
+     SPEAKING SCREEN
+===================================================== -->
 
-<section
-    id="speakingView"
-    class="internal-view"
->
+<section id="speakingScreen" class="screen">
 
-    <div class="view-topbar">
+    <div class="internal-top">
 
         <button
             class="back-btn"
-            onclick="backToMain()"
+            onclick="openScreen('homeScreen')"
         >
             → العودة لمساحة التدريب
         </button>
@@ -1377,9 +3620,9 @@ The surrounding .video-card can remain unchanged.
     </div>
 
 
-    <div class="internal-hero">
+    <div class="internal-title-card">
 
-        <div class="internal-hero-icon">
+        <div class="internal-icon">
             🎤
         </div>
 
@@ -1388,58 +3631,212 @@ The surrounding .video-card can remain unchanged.
         </h1>
 
         <p>
-            ابدأ بالمدة التي تناسبك، وحاول أن تستمر في التحدث
-            دون القلق من الأخطاء. الهدف هو أن تجعل الإنجليزية
-            جزءًا من ممارستك اليومية.
+            اختر الموضوع الذي يناسبك، ثم استخدم الأسئلة المساعدة
+            لبناء حديثك. لا تحتاج إلى حفظ إجابة؛ الهدف أن تتعلم
+            كيف تستمر في الكلام والتعبير عن أفكارك.
         </p>
 
     </div>
 
 
-    <div class="info-card">
+    <div class="section">
 
-        <div class="info-icon">
-            ⏱️
+        <div class="section-head">
+
+            <div class="section-kicker">
+                CHOOSE A TOPIC
+            </div>
+
+            <h2 class="section-title">
+                عن ماذا تريد أن تتحدث؟
+            </h2>
+
+            <p class="section-description">
+                اختر أي موضوع يعجبك. يمكنك تغيير الموضوع في كل مرة
+                وتكرار الموضوع نفسه لاحقًا لملاحظة تطورك.
+            </p>
+
         </div>
 
-        <div>
 
-            <strong>
-                اختر مدة التحدي
-            </strong>
+        <div
+            class="topic-grid"
+            id="topicGrid"
+        ></div>
 
-            <span>
-                ستكون جميع المراحل متاحة لك. اختر المدة التي تريد
-                تجربتها اليوم.
-            </span>
+
+        <div class="section-head">
+
+            <div class="section-kicker">
+                CHOOSE YOUR TIME
+            </div>
+
+            <h2 class="section-title">
+                كم تريد أن تتحدث؟
+            </h2>
+
+            <p class="section-description">
+                ابدأ بالمدة التي تناسبك، ثم ارفع التحدي تدريجيًا.
+            </p>
+
+        </div>
+
+
+        <div class="duration-grid">
+
+            <button class="duration-btn active" data-minutes="1"
+                onclick="selectDuration(1)">
+                <span class="duration-number">1</span>
+                <span class="duration-label">دقيقة</span>
+            </button>
+
+            <button class="duration-btn" data-minutes="2"
+                onclick="selectDuration(2)">
+                <span class="duration-number">2</span>
+                <span class="duration-label">دقيقتان</span>
+            </button>
+
+            <button class="duration-btn" data-minutes="3"
+                onclick="selectDuration(3)">
+                <span class="duration-number">3</span>
+                <span class="duration-label">دقائق</span>
+            </button>
+
+            <button class="duration-btn" data-minutes="4"
+                onclick="selectDuration(4)">
+                <span class="duration-number">4</span>
+                <span class="duration-label">دقائق</span>
+            </button>
+
+            <button class="duration-btn" data-minutes="5"
+                onclick="selectDuration(5)">
+                <span class="duration-number">5</span>
+                <span class="duration-label">دقائق</span>
+            </button>
+
+            <button class="duration-btn" data-minutes="6"
+                onclick="selectDuration(6)">
+                <span class="duration-number">6</span>
+                <span class="duration-label">دقائق</span>
+            </button>
+
+            <button class="duration-btn" data-minutes="7"
+                onclick="selectDuration(7)">
+                <span class="duration-number">7</span>
+                <span class="duration-label">دقائق</span>
+            </button>
+
+        </div>
+
+
+        <div class="speaking-panel">
+
+            <div class="challenge-meta">
+
+                <div class="challenge-badge">
+                    🎤 SPEAKING CHALLENGE
+                </div>
+
+                <div
+                    class="challenge-status"
+                    id="challengeStatus"
+                >
+                    1 دقيقة
+                </div>
+
+            </div>
+
+
+            <h2
+                class="challenge-title"
+                id="challengeTitle"
+            >
+                تحدث عن يومك
+            </h2>
+
+            <div
+                class="challenge-topic"
+                id="challengeTopic"
+            >
+                Talk about your day.
+            </div>
+
+
+            <div class="helper-box">
+
+                <div class="helper-box-title">
+                    💡 أسئلة تساعدك على الاستمرار
+                </div>
+
+                <ul
+                    class="helper-list"
+                    id="helperList"
+                ></ul>
+
+            </div>
+
+
+            <div
+                class="timer"
+                id="timer"
+            >
+                01:00
+            </div>
+
+
+            <div class="challenge-actions">
+
+                <button
+                    class="small-btn primary"
+                    id="startTimerBtn"
+                    onclick="startSpeakingTimer()"
+                >
+                    ▶ ابدأ التحدي
+                </button>
+
+                <button
+                    class="small-btn"
+                    onclick="resetSpeakingTimer()"
+                >
+                    ↻ إعادة
+                </button>
+
+                <button
+                    class="small-btn green"
+                    onclick="completeSpeakingChallenge()"
+                >
+                    ✓ أنجزت التحدي
+                </button>
+
+            </div>
+
+
+            <div
+                class="completed-message"
+                id="completedMessage"
+            >
+                🎉 أحسنت! تم تسجيل هذا التحدي ضمن تقدمك.
+            </div>
 
         </div>
 
     </div>
 
-
-    <!--
-        سيتم بناء بطاقات 1–7 دقائق في المرحلة التالية.
-    -->
-
 </section>
 
 
 
-<!-- =======================================================
-     TECHNIQUES VIEW
-======================================================= -->
+<!-- =====================================================
+     TECHNIQUES SCREEN
+===================================================== -->
 
-<section
-    id="techniquesView"
-    class="internal-view"
->
+<section id="techniquesScreen" class="screen">
 
-    <div class="view-topbar">
+    <div class="internal-top">
 
         <button
             class="back-btn"
-            onclick="backToMain()"
+            onclick="openScreen('homeScreen')"
         >
             → العودة لمساحة التدريب
         </button>
@@ -1451,46 +3848,243 @@ The surrounding .video-card can remain unchanged.
     </div>
 
 
-    <div class="internal-hero">
+    <div class="internal-title-card">
 
-        <div class="internal-hero-icon">
+        <div class="internal-icon">
             🧠
         </div>
 
         <h1>
-            طرق ممارسة التحدث
+            طرق ممارسة الإنجليزية
         </h1>
 
         <p>
-            طرق بسيطة وعملية تساعدك على تحويل الإنجليزية
-            من شيء تتعلمه إلى شيء تستخدمه في حياتك اليومية.
+            لا تعتمد على طريقة واحدة. جرّب طرقًا مختلفة للممارسة
+            حتى تجد الأساليب التي تناسب حياتك وشخصيتك وتساعدك
+            على الاستمرار.
         </p>
 
     </div>
 
 
-    <!--
-        سيتم بناء بطاقات تقنيات الممارسة في المرحلة التالية.
-    -->
+    <div class="techniques-grid">
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">📝</div>
+                <div>
+                    <h3>اكتب ثم تحدث</h3>
+                    <div class="short">Write → Speak</div>
+                </div>
+            </div>
+
+            <p>
+                اختر موضوعًا، واكتب كلمات أو نقاطًا بسيطة على ورقة،
+                ثم تحدث عنها دون كتابة جمل كاملة.
+            </p>
+
+            <div class="technique-tip">
+                💡 استخدم الورقة لتذكيرك بالأفكار، وليس لقراءة الكلام.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">🪞</div>
+                <div>
+                    <h3>تحدث مع نفسك</h3>
+                    <div class="short">Self Talk</div>
+                </div>
+            </div>
+
+            <p>
+                تحدث بصوت مرتفع عن يومك، خططك، الأشياء حولك
+                أو أي فكرة تخطر في بالك.
+            </p>
+
+            <div class="technique-tip">
+                💡 لا تنتظر موضوعًا مثاليًا؛ استخدم أي شيء يحدث حولك.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">🎙️</div>
+                <div>
+                    <h3>سجل صوتك</h3>
+                    <div class="short">Record Yourself</div>
+                </div>
+            </div>
+
+            <p>
+                افتح مسجل الصوت في هاتفك، تحدث لمدة محددة،
+                ثم استمع إلى التسجيل لاحقًا.
+            </p>
+
+            <div class="technique-tip">
+                💡 لا تبحث عن كل خطأ. ركّز على شيء واحد تريد تحسينه.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">👥</div>
+                <div>
+                    <h3>تحدث مع صديق</h3>
+                    <div class="short">Practice With a Friend</div>
+                </div>
+            </div>
+
+            <p>
+                اتفق مع صديق على وقت قصير تتحدثان فيه بالإنجليزية
+                فقط، حتى لو كانت المحادثة بسيطة.
+            </p>
+
+            <div class="technique-tip">
+                💡 اتفقا مسبقًا على عدم التحول للعربية بسرعة.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">🎴</div>
+                <div>
+                    <h3>موضوع عشوائي</h3>
+                    <div class="short">Random Topic</div>
+                </div>
+            </div>
+
+            <p>
+                اكتب عدة مواضيع على أوراق صغيرة، اختر واحدًا عشوائيًا،
+                وابدأ التحدث فورًا.
+            </p>
+
+            <div class="technique-tip">
+                💡 هذه الطريقة ممتازة لتدريب نفسك على التفكير بسرعة.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">🚶</div>
+                <div>
+                    <h3>تحدث أثناء المشي</h3>
+                    <div class="short">Walk & Talk</div>
+                </div>
+            </div>
+
+            <p>
+                أثناء المشي، صف ما تراه حولك باللغة الإنجليزية:
+                الشارع، الطقس، الأماكن والأشياء.
+            </p>
+
+            <div class="technique-tip">
+                💡 لا تحاول ترجمة كل شيء؛ استخدم الكلمات التي تعرفها.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">🧠</div>
+                <div>
+                    <h3>فكر بالإنجليزية</h3>
+                    <div class="short">Think in English</div>
+                </div>
+            </div>
+
+            <p>
+                خلال بعض الأنشطة اليومية، حاول وصف ما تفعله
+                في ذهنك باللغة الإنجليزية بدل ترجمة كل شيء أولًا.
+            </p>
+
+            <div class="technique-tip">
+                💡 ابدأ بأفكار قصيرة جدًا، ثم زدها مع الوقت.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">🔁</div>
+                <div>
+                    <h3>أعد نفس الموضوع</h3>
+                    <div class="short">Repeat & Improve</div>
+                </div>
+            </div>
+
+            <p>
+                تحدث عن الموضوع نفسه أكثر من مرة. في كل مرة حاول
+                إضافة تفاصيل أو جعل كلامك أكثر وضوحًا.
+            </p>
+
+            <div class="technique-tip">
+                💡 إعادة الموضوع ليست تكرارًا بلا فائدة؛ أنت تعطي عقلك فرصة لبناء اللغة.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">📱</div>
+                <div>
+                    <h3>حوّل هاتفك إلى أداة تدريب</h3>
+                    <div class="short">Use Your Phone</div>
+                </div>
+            </div>
+
+            <p>
+                استخدم الملاحظات لتسجيل أفكارك، والمسجل الصوتي للتحدث،
+                والمؤقت لتحدي نفسك.
+            </p>
+
+            <div class="technique-tip">
+                💡 لا تحتاج إلى تطبيقات كثيرة؛ الهاتف الموجود معك يكفي للبدء.
+            </div>
+        </article>
+
+
+        <article class="technique-card">
+            <div class="technique-top">
+                <div class="technique-icon">☀️</div>
+                <div>
+                    <h3>اجعل الإنجليزية جزءًا من يومك</h3>
+                    <div class="short">Daily English</div>
+                </div>
+            </div>
+
+            <p>
+                خصص وقتًا صغيرًا يوميًا للإنجليزية بدل الاعتماد
+                على جلسة طويلة مرة واحدة في الأسبوع.
+            </p>
+
+            <div class="technique-tip">
+                💡 الاستمرار أهم من طول الجلسة.
+            </div>
+        </article>
+
+    </div>
 
 </section>
 
 
 
-<!-- =======================================================
-     CONVERSATION VIEW
-======================================================= -->
+<!-- =====================================================
+     CONVERSATION SCREEN
+===================================================== -->
 
-<section
-    id="conversationView"
-    class="internal-view"
->
+<section id="conversationScreen" class="screen">
 
-    <div class="view-topbar">
+    <div class="internal-top">
 
         <button
             class="back-btn"
-            onclick="backToMain()"
+            onclick="openScreen('homeScreen')"
         >
             → العودة لمساحة التدريب
         </button>
@@ -1502,9 +4096,9 @@ The surrounding .video-card can remain unchanged.
     </div>
 
 
-    <div class="internal-hero">
+    <div class="internal-title-card">
 
-        <div class="internal-hero-icon">
+        <div class="internal-icon">
             🤝
         </div>
 
@@ -1513,35 +4107,80 @@ The surrounding .video-card can remain unchanged.
         </h1>
 
         <p>
-            تدرب على مواقف حقيقية، وتعلم عبارات تساعدك
-            على بدء المحادثة والاستمرار فيها بشكل طبيعي.
+            لا تحفظ عبارة واحدة وتغادر. اختر موقفًا، وتعلّم مجموعة
+            من العبارات التي تحتاجها فعلًا، ثم استخدمها لبناء محادثة
+            كاملة بنفسك.
         </p>
 
     </div>
 
 
-    <!--
-        سيتم بناء مواقف المحادثة والعبارات في المرحلة التالية.
-    -->
+    <div class="conversation-categories">
+
+        <button
+            class="category-btn active"
+            onclick="filterConversation('all',this)"
+        >
+            الكل
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterConversation('daily',this)"
+        >
+            الحياة اليومية
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterConversation('travel',this)"
+        >
+            السفر
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterConversation('social',this)"
+        >
+            اجتماعي
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterConversation('work',this)"
+        >
+            العمل والدراسة
+        </button>
+
+    </div>
+
+
+    <div
+        class="conversation-list"
+        id="conversationList"
+    ></div>
+
+
+    <div
+        class="conversation-detail active"
+        id="conversationDetail"
+    ></div>
 
 </section>
 
 
 
-<!-- =======================================================
-     PLANNER VIEW
-======================================================= -->
+<!-- =====================================================
+     PLANNER SCREEN
+===================================================== -->
 
-<section
-    id="plannerView"
-    class="internal-view"
->
+<section id="plannerScreen" class="screen">
 
-    <div class="view-topbar">
+    <div class="internal-top">
 
         <button
             class="back-btn"
-            onclick="backToMain()"
+            onclick="openScreen('homeScreen')"
         >
             → العودة لمساحة التدريب
         </button>
@@ -1553,9 +4192,9 @@ The surrounding .video-card can remain unchanged.
     </div>
 
 
-    <div class="internal-hero">
+    <div class="internal-title-card">
 
-        <div class="internal-hero-icon">
+        <div class="internal-icon">
             📅
         </div>
 
@@ -1564,104 +4203,3838 @@ The surrounding .video-card can remain unchanged.
         </h1>
 
         <p>
-            أنشئ خطتك الخاصة، وحدد ما تريد إنجازه اليوم
-            وخلال الأسبوع والشهر، ورتّب دراستك بالطريقة التي تناسبك.
+            خطط لدراستك بالطريقة التي تناسبك. أضف ما تريد أن تفعله،
+            حدد التاريخ، اختر النوع واللون والحالة، ثم تابع تقدمك.
         </p>
 
     </div>
 
 
-    <!--
-        سيتم بناء Planner الحقيقي في المرحلة التالية.
-    -->
+    <div class="planner-toolbar">
+
+        <div class="planner-tabs">
+
+            <button
+                type="button"
+                class="planner-tab active"
+                onclick="showPlanner('today',this)"
+            >
+                اليوم
+            </button>
+
+            <button
+                type="button"
+                class="planner-tab"
+                onclick="showPlanner('week',this)"
+            >
+                الأسبوع
+            </button>
+
+            <button
+                type="button"
+                class="planner-tab"
+                onclick="showPlanner('month',this)"
+            >
+                الشهر
+            </button>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="add-task-btn"
+            onclick="openTaskModal()"
+        >
+            + إضافة مهمة
+        </button>
+
+    </div>
+
+
+    <!-- TODAY -->
+
+    <div
+        class="planner-panel active"
+        id="plannerToday"
+    >
+
+        <div class="planner-month-head">
+
+            <div>
+                <div class="month-title">
+                    مهامي اليوم
+                </div>
+
+                <div
+                    class="month-subtitle"
+                    id="todayDateLabel"
+                ></div>
+            </div>
+
+            <div class="calendar-nav">
+                <button
+                    type="button"
+                    class="calendar-today-btn"
+                    onclick="goToToday()"
+                >
+                    اليوم
+                </button>
+            </div>
+
+        </div>
+
+
+        <div
+            class="task-list"
+            id="todayTaskList"
+        ></div>
+
+    </div>
+
+
+    <!-- WEEK -->
+
+    <div
+        class="planner-panel"
+        id="plannerWeek"
+    >
+
+        <div class="planner-month-head">
+
+            <div>
+                <div class="month-title">
+                    خطتي الأسبوعية
+                </div>
+
+                <div
+                    class="month-subtitle"
+                    id="weekLabel"
+                >
+                </div>
+            </div>
+
+            <div class="calendar-nav">
+
+                <button
+                    type="button"
+                    onclick="changePlannerWeek(-1)"
+                    aria-label="الأسبوع السابق"
+                >
+                    →
+                </button>
+
+                <button
+                    type="button"
+                    class="calendar-today-btn"
+                    onclick="goToToday()"
+                >
+                    اليوم
+                </button>
+
+                <button
+                    type="button"
+                    onclick="changePlannerWeek(1)"
+                    aria-label="الأسبوع التالي"
+                >
+                    ←
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="calendar"
+            id="weekCalendar"
+        ></div>
+
+
+        <div
+            class="task-list"
+            id="weekTaskList"
+        ></div>
+
+    </div>
+
+
+    <!-- MONTH -->
+
+    <div
+        class="planner-panel"
+        id="plannerMonth"
+    >
+
+        <div class="planner-month-head">
+
+            <div>
+                <div
+                    class="month-title"
+                    id="monthTitle"
+                >
+                    هذا الشهر
+                </div>
+
+                <div class="month-subtitle">
+                    خطتك الشهرية وأهدافك.
+                </div>
+            </div>
+
+            <div class="calendar-nav">
+
+                <button
+                    type="button"
+                    onclick="changePlannerMonth(-1)"
+                    aria-label="الشهر السابق"
+                >
+                    →
+                </button>
+
+                <button
+                    type="button"
+                    class="calendar-today-btn"
+                    onclick="goToToday()"
+                >
+                    اليوم
+                </button>
+
+                <button
+                    type="button"
+                    onclick="changePlannerMonth(1)"
+                    aria-label="الشهر التالي"
+                >
+                    ←
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="calendar"
+            id="monthCalendar"
+        ></div>
+
+
+        <div class="goals-card">
+
+            <div class="goals-head">
+
+                <h3>
+                    🎯 أهدافي لهذا الشهر
+                </h3>
+
+                <div
+                    class="progress-number"
+                    id="goalProgressText"
+                >
+                    0%
+                </div>
+
+            </div>
+
+
+            <div class="progress-track">
+
+                <div
+                    class="progress-fill"
+                    id="goalProgressBar"
+                ></div>
+
+            </div>
+
+
+            <div class="goal-list">
+
+                <label class="goal-row">
+                    <input type="checkbox" onchange="saveGoals()">
+                    <span>إنهاء مجموعة من الدروس</span>
+                </label>
+
+                <label class="goal-row">
+                    <input type="checkbox" onchange="saveGoals()">
+                    <span>إكمال تدريبات Listening</span>
+                </label>
+
+                <label class="goal-row">
+                    <input type="checkbox" onchange="saveGoals()">
+                    <span>مراجعة مفردات جديدة</span>
+                </label>
+
+                <label class="goal-row">
+                    <input type="checkbox" onchange="saveGoals()">
+                    <span>الوصول إلى مدة Speaking جديدة</span>
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
+
+<!-- =====================================================
+     TASK MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="taskModal"
+    onclick="closeModalOutside(event)"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h2 id="modalTitle">
+                إضافة مهمة
+            </h2>
+
+            <button
+                type="button"
+                class="close-modal"
+                onclick="closeTaskModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                ماذا ستفعل؟
+            </label>
+
+            <input
+                class="form-input"
+                id="taskTitle"
+                type="text"
+                autocomplete="off"
+                placeholder="مثلاً: مراجعة 10 كلمات"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                التاريخ
+            </label>
+
+            <input
+                class="form-input"
+                id="taskDate"
+                type="date"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                نوع المهمة
+            </label>
+
+            <select
+                class="form-select"
+                id="taskType"
+            >
+                <option value="📚 درس">📚 درس</option>
+                <option value="📖 قراءة">📖 قراءة</option>
+                <option value="🎧 استماع">🎧 استماع</option>
+                <option value="📚 مفردات">📚 مفردات</option>
+                <option value="🎤 تحدث">🎤 تحدث</option>
+                <option value="🔄 مراجعة">🔄 مراجعة</option>
+                <option value="✍️ مهمة أخرى">✍️ مهمة أخرى</option>
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                حالة المهمة
+            </label>
+
+            <select
+                class="form-select"
+                id="taskStatus"
+            >
+                <option value="planned">لم أبدأ</option>
+                <option value="progress">قيد التنفيذ</option>
+                <option value="completed">مكتملة</option>
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                اختر لون المهمة
+            </label>
+
+            <div class="color-options">
+
+                <button
+                    type="button"
+                    class="color-option active"
+                    style="background:#3157D5"
+                    data-color="#3157D5"
+                    onclick="selectTaskColor(this)"
+                ></button>
+
+                <button
+                    type="button"
+                    class="color-option"
+                    style="background:#7654D9"
+                    data-color="#7654D9"
+                    onclick="selectTaskColor(this)"
+                ></button>
+
+                <button
+                    type="button"
+                    class="color-option"
+                    style="background:#2D9B72"
+                    data-color="#2D9B72"
+                    onclick="selectTaskColor(this)"
+                ></button>
+
+                <button
+                    type="button"
+                    class="color-option"
+                    style="background:#D9A441"
+                    data-color="#D9A441"
+                    onclick="selectTaskColor(this)"
+                ></button>
+
+                <button
+                    type="button"
+                    class="color-option"
+                    style="background:#D85B68"
+                    data-color="#D85B68"
+                    onclick="selectTaskColor(this)"
+                ></button>
+
+                <button
+                    type="button"
+                    class="color-option"
+                    style="background:#4FA6C8"
+                    data-color="#4FA6C8"
+                    onclick="selectTaskColor(this)"
+                ></button>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="closeTaskModal()"
+            >
+                إلغاء
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                onclick="saveTask()"
+            >
+                حفظ المهمة
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
+
 
 
 <script>
 
 /* =========================================================
-   INTERNAL VIEW SYSTEM
+   SCREEN NAVIGATION
 ========================================================= */
 
-const mainScreen = document.getElementById("mainScreen");
+const screens =
+    document.querySelectorAll(".screen");
 
-const internalViews = document.querySelectorAll(".internal-view");
+function openScreen(id){
 
-
-function openView(viewId){
-
-    /*
-        إخفاء الصفحة الرئيسية بالكامل
-    */
-
-    mainScreen.classList.add("hidden");
-
-
-    /*
-        إخفاء جميع الواجهات الداخلية
-    */
-
-    internalViews.forEach(view => {
-        view.classList.remove("active");
+    screens.forEach(screen => {
+        screen.classList.remove("active");
     });
 
-
-    /*
-        إظهار الواجهة المطلوبة
-    */
-
-    const target = document.getElementById(viewId);
+    const target =
+        document.getElementById(id);
 
     if(target){
         target.classList.add("active");
     }
 
-
-    /*
-        العودة لأعلى الصفحة
-    */
-
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
 
+    if(id === "plannerScreen"){
+        renderPlanner();
+    }
+
+    if(id === "speakingScreen"){
+        renderTopicGrid();
+        resetSpeakingTimer();
+    }
+
+    if(id === "conversationScreen"){
+        renderConversationCards();
+        showConversation(
+            selectedConversationId || "cafe"
+        );
+    }
 }
 
 
+/* =========================================================
+   SPEAKING TOPICS
+========================================================= */
 
-function backToMain(){
+const speakingTopics = {
 
-    /*
-        إخفاء كل الواجهات الداخلية
-    */
+    day:{
+        icon:"☀️",
+        title:"يومك وحياتك اليومية",
+        level:"Pre-intermediate",
+        topic:"Talk about your daily life.",
+        helpers:[
+            "What does a normal day look like for you?",
+            "What do you usually do in the morning?",
+            "What part of your day do you enjoy most?",
+            "What would you like to change about your routine?",
+            "What is something you have been doing differently recently?"
+        ]
+    },
 
-    internalViews.forEach(view => {
-        view.classList.remove("active");
-    });
+    place:{
+        icon:"📍",
+        title:"مكان تحبه",
+        level:"Pre-intermediate",
+        topic:"Talk about a place you really like.",
+        helpers:[
+            "Where is the place?",
+            "What does it look and feel like?",
+            "What do you usually do there?",
+            "Why is this place special to you?",
+            "Would you recommend it to someone else?"
+        ]
+    },
+
+    learning:{
+        icon:"📚",
+        title:"شيء تعلمته",
+        level:"Intermediate",
+        topic:"Talk about something useful you learned recently.",
+        helpers:[
+            "What did you learn?",
+            "Why did you decide to learn it?",
+            "Was it easier or harder than you expected?",
+            "How has it helped you?",
+            "What would you like to learn next?"
+        ]
+    },
+
+    experience:{
+        icon:"🧳",
+        title:"تجربة تتذكرها",
+        level:"Intermediate",
+        topic:"Talk about an experience you still remember.",
+        helpers:[
+            "When and where did it happen?",
+            "Who was with you?",
+            "What happened?",
+            "How did you feel at the time?",
+            "What did you learn from the experience?"
+        ]
+    },
+
+    goal:{
+        icon:"🎯",
+        title:"هدف تريد تحقيقه",
+        level:"Intermediate",
+        topic:"Talk about a goal you want to achieve.",
+        helpers:[
+            "What is the goal?",
+            "Why does it matter to you?",
+            "What have you done so far?",
+            "What might make it difficult?",
+            "What will you do if you reach it?"
+        ]
+    },
+
+    opinion:{
+        icon:"💭",
+        title:"أعطِ رأيك",
+        level:"Intermediate",
+        topic:"Give your opinion about an issue and support it.",
+        helpers:[
+            "What is your opinion?",
+            "Why do you think that?",
+            "Can you give an example?",
+            "What might someone disagree with?",
+            "Has your opinion changed over time?"
+        ]
+    },
+
+    future:{
+        icon:"🔮",
+        title:"المستقبل",
+        level:"Intermediate",
+        topic:"Talk about how you imagine your life in the future.",
+        helpers:[
+            "Where do you see yourself in a few years?",
+            "What would you like to achieve?",
+            "What are you going to do to get there?",
+            "What might change your plans?",
+            "What would your ideal future look like?"
+        ]
+    },
+
+    problem:{
+        icon:"🧩",
+        title:"مشكلة وحل",
+        level:"Intermediate",
+        topic:"Describe a problem and explain how you would solve it.",
+        helpers:[
+            "What is the problem?",
+            "Why does it happen?",
+            "What are the possible solutions?",
+            "Which solution would you choose?",
+            "What could happen if nothing changes?"
+        ]
+    },
+
+    comparison:{
+        icon:"⚖️",
+        title:"قارن بين شيئين",
+        level:"Intermediate",
+        topic:"Compare two places, habits, products or experiences.",
+        helpers:[
+            "What are the main differences?",
+            "What do they have in common?",
+            "Which one do you prefer?",
+            "What are the advantages of each?",
+            "Would your choice change in another situation?"
+        ]
+    },
+
+    story:{
+        icon:"📖",
+        title:"احكِ قصة",
+        level:"Intermediate",
+        topic:"Tell a short story about something unexpected.",
+        helpers:[
+            "Where did the story begin?",
+            "What happened first?",
+            "What happened next?",
+            "What was unexpected?",
+            "How did the story end?"
+        ]
+    },
+
+    change:{
+        icon:"🔄",
+        title:"تغيير في حياتك",
+        level:"Intermediate+",
+        topic:"Talk about a change that affected your life.",
+        helpers:[
+            "What changed?",
+            "Why did the change happen?",
+            "How did you react at first?",
+            "What became easier or more difficult?",
+            "Looking back, would you make the same choice?"
+        ]
+    },
+
+    advice:{
+        icon:"💡",
+        title:"انصح شخصًا",
+        level:"Intermediate+",
+        topic:"Imagine a friend has a problem and give them advice.",
+        helpers:[
+            "What is your friend's problem?",
+            "What would you suggest?",
+            "Why would you recommend that?",
+            "What should they avoid doing?",
+            "What might happen if they follow your advice?"
+        ]
+    }
+
+};
 
 
-    /*
-        إعادة الصفحة الرئيسية
-    */
+let selectedTopic =
+    "day";
 
-    mainScreen.classList.remove("hidden");
+let selectedMinutes =
+    1;
+
+let timerInterval =
+    null;
+
+let remainingSeconds =
+    60;
 
 
-    /*
-        العودة إلى بداية الصفحة
-    */
+function renderTopicGrid(){
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    const container =
+        document.getElementById("topicGrid");
+
+    if(!container) return;
+
+    container.innerHTML =
+        Object.entries(speakingTopics)
+            .map(([id,item]) => `
+
+                <article
+                    class="topic-card ${id === selectedTopic ? "active" : ""}"
+                    onclick="selectTopic('${id}')"
+                >
+
+                    <div class="topic-icon">
+                        ${item.icon}
+                    </div>
+
+                    <h3>
+                        ${item.title}
+                    </h3>
+
+                    <p>
+                        ${item.topic}
+                    </p>
+
+                    <span class="topic-level">
+                        ${item.level}
+                    </span>
+
+                </article>
+
+            `)
+            .join("");
 
 }
+
+
+function selectTopic(id){
+
+    if(!speakingTopics[id]) return;
+
+    selectedTopic =
+        id;
+
+    renderTopicGrid();
+
+    updateSpeakingChallenge();
+
+    resetSpeakingTimer();
+
+}
+
+
+function updateSpeakingChallenge(){
+
+    const challenge =
+        speakingTopics[selectedTopic];
+
+    if(!challenge) return;
+
+    document.getElementById(
+        "challengeTitle"
+    ).textContent =
+        challenge.title;
+
+    document.getElementById(
+        "challengeTopic"
+    ).textContent =
+        challenge.topic;
+
+    const helperList =
+        document.getElementById(
+            "helperList"
+        );
+
+    helperList.innerHTML =
+        challenge.helpers
+            .map(item =>
+                `<li>${escapeHTML(item)}</li>`
+            )
+            .join("");
+
+}
+
+
+/* =========================================================
+   SELECT DURATION
+========================================================= */
+
+function selectDuration(minutes){
+
+    selectedMinutes =
+        Number(minutes);
+
+    document
+        .querySelectorAll(".duration-btn")
+        .forEach(btn => {
+
+            btn.classList.toggle(
+                "active",
+                Number(btn.dataset.minutes) ===
+                selectedMinutes
+            );
+
+        });
+
+    document.getElementById(
+        "challengeStatus"
+    ).textContent =
+        selectedMinutes === 1
+            ? "1 دقيقة"
+            : `${selectedMinutes} دقائق`;
+
+    resetSpeakingTimer();
+
+    updateSpeakingChallenge();
+
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+function formatTime(seconds){
+
+    const minutes =
+        Math.floor(seconds / 60)
+            .toString()
+            .padStart(2,"0");
+
+    const secs =
+        (seconds % 60)
+            .toString()
+            .padStart(2,"0");
+
+    return `${minutes}:${secs}`;
+}
+
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById("timer");
+
+    if(timer){
+        timer.textContent =
+            formatTime(remainingSeconds);
+    }
+
+}
+
+
+function startSpeakingTimer(){
+
+    if(timerInterval) return;
+
+    const timer =
+        document.getElementById("timer");
+
+    const button =
+        document.getElementById(
+            "startTimerBtn"
+        );
+
+    timer.classList.remove("finished");
+
+    timer.classList.add("running");
+
+    button.textContent =
+        "⏸ جارٍ التحدي";
+
+    timerInterval =
+        setInterval(() => {
+
+            remainingSeconds--;
+
+            updateTimer();
+
+            if(remainingSeconds <= 0){
+
+                clearInterval(
+                    timerInterval
+                );
+
+                timerInterval =
+                    null;
+
+                timer.classList.remove(
+                    "running"
+                );
+
+                timer.classList.add(
+                    "finished"
+                );
+
+                button.textContent =
+                    "✓ انتهى التحدي";
+
+                completeSpeakingChallenge();
+
+            }
+
+        },1000);
+
+}
+
+
+function resetSpeakingTimer(){
+
+    if(timerInterval){
+
+        clearInterval(
+            timerInterval
+        );
+
+        timerInterval =
+            null;
+    }
+
+    remainingSeconds =
+        selectedMinutes * 60;
+
+    const timer =
+        document.getElementById(
+            "timer"
+        );
+
+    if(timer){
+
+        timer.classList.remove(
+            "running",
+            "finished"
+        );
+
+    }
+
+    const button =
+        document.getElementById(
+            "startTimerBtn"
+        );
+
+    if(button){
+        button.textContent =
+            "▶ ابدأ التحدي";
+    }
+
+    const message =
+        document.getElementById(
+            "completedMessage"
+        );
+
+    if(message){
+        message.classList.remove(
+            "show"
+        );
+    }
+
+    updateTimer();
+
+}
+
+
+/* =========================================================
+   SPEAKING PROGRESS
+========================================================= */
+
+function completeSpeakingChallenge(){
+
+    const data =
+        getStoredData();
+
+    data.speakingCompleted =
+        Number(
+            data.speakingCompleted || 0
+        ) + 1;
+
+    data.practiceDays =
+        updatePracticeDays(
+            data.practiceDays || []
+        );
+
+    saveStoredData(data);
+
+    const message =
+        document.getElementById(
+            "completedMessage"
+        );
+
+    if(message){
+        message.classList.add(
+            "show"
+        );
+    }
+
+    updateProgress();
+
+}
+
+
+function updatePracticeDays(days){
+
+    const today =
+        getTodayString();
+
+    if(!days.includes(today)){
+        days.push(today);
+    }
+
+    return days;
+}
+
+
+/* =========================================================
+   ROBUST SPEECH SYNTHESIS
+========================================================= */
+
+let englishVoice =
+    null;
+
+
+function loadEnglishVoice(){
+
+    if(!("speechSynthesis" in window)){
+        return;
+    }
+
+    const voices =
+        window.speechSynthesis
+            .getVoices();
+
+    if(!voices.length){
+        return;
+    }
+
+    englishVoice =
+        voices.find(
+            voice =>
+                voice.lang &&
+                voice.lang
+                    .toLowerCase() ===
+                "en-us"
+        )
+        ||
+        voices.find(
+            voice =>
+                voice.lang &&
+                voice.lang
+                    .toLowerCase()
+                    .startsWith("en")
+        )
+        ||
+        null;
+
+}
+
+
+if("speechSynthesis" in window){
+
+    loadEnglishVoice();
+
+    window.speechSynthesis
+        .addEventListener(
+            "voiceschanged",
+            loadEnglishVoice
+        );
+
+}
+
+
+function speakPhrase(button){
+
+    if(!button) return;
+
+    if(!("speechSynthesis" in window)){
+
+        alert(
+            "النطق الصوتي غير متاح في هذا المتصفح."
+        );
+
+        return;
+    }
+
+    const text =
+        button.getAttribute(
+            "data-speak"
+        );
+
+    if(!text) return;
+
+    loadEnglishVoice();
+
+    const synth =
+        window.speechSynthesis;
+
+    synth.cancel();
+
+    try{
+        synth.resume();
+    }catch(error){}
+
+    const utterance =
+        new SpeechSynthesisUtterance(
+            text
+        );
+
+    utterance.lang =
+        "en-US";
+
+    utterance.rate =
+        0.78;
+
+    utterance.pitch =
+        1;
+
+    utterance.volume =
+        1;
+
+    if(englishVoice){
+        utterance.voice =
+            englishVoice;
+    }
+
+    document
+        .querySelectorAll(
+            ".speak-btn.speaking"
+        )
+        .forEach(
+            btn =>
+                btn.classList.remove(
+                    "speaking"
+                )
+        );
+
+    button.classList.add(
+        "speaking"
+    );
+
+    utterance.onend =
+        () => {
+            button.classList.remove(
+                "speaking"
+            );
+        };
+
+    utterance.onerror =
+        () => {
+            button.classList.remove(
+                "speaking"
+            );
+        };
+
+    synth.speak(
+        utterance
+    );
+
+}
+
+
+/* =========================================================
+   CONVERSATION DATA
+========================================================= */
+
+const conversationData = {
+
+    cafe:{
+        category:"daily",
+        emoji:"☕",
+        title:"في المقهى",
+        subtitle:"Ordering, asking questions & making requests",
+        description:"اطلب، اسأل عن الخيارات، عدّل طلبك، وتحدث مع الموظف بشكل طبيعي.",
+        practice:"مثّل الموقف كاملًا: ابدأ بطلبك، اسأل عن اقتراح، اسأل عن مكونات شيء، ثم اطلب الحساب وكأنك تتحدث مع الموظف فعلًا.",
+        phrases:[
+            ["Could I have a coffee, please?","هل يمكنني الحصول على قهوة من فضلك؟","طلب مهذب وطبيعي لشيء تريده."],
+            ["What do you recommend?","ماذا تقترح؟","استخدمها عندما تريد اقتراحًا من الموظف."],
+            ["What comes with this?","ماذا يأتي مع هذا؟","للسؤال عمّا يأتي مع الوجبة أو الطلب."],
+            ["Could I get this without sugar?","هل يمكنني الحصول على هذا بدون سكر؟","مفيدة عندما تريد تعديل طلبك."],
+            ["Is there anything you would recommend?","هل هناك شيء تقترحه؟","صيغة أوسع عندما تريد معرفة أفضل الخيارات."],
+            ["I'll have the same, please.","سأطلب نفس الشيء من فضلك.","عندما تريد طلب نفس ما طلبه شخص آخر."],
+            ["Could we get the bill, please?","هل يمكننا الحصول على الحساب من فضلك؟","للطلب من الموظف إحضار الحساب."],
+            ["Is this available in a smaller size?","هل هذا متوفر بحجم أصغر؟","يمكن استخدامها مع بعض المنتجات أو الطلبات."],
+            ["I'm just looking, thanks.","أنا فقط أتصفح، شكرًا.","رد طبيعي عندما يعرض الموظف مساعدتك وأنت لا تحتاج شيئًا الآن."],
+            ["Could you give me a minute to decide?","هل يمكنك أن تعطيني دقيقة لأقرر؟","عندما تحتاج وقتًا قبل اتخاذ القرار."],
+            ["I'd rather have something lighter.","أفضل أن أطلب شيئًا أخف.","للتعبير عن تفضيل خيار أخف."],
+            ["That sounds good. I'll go with that.","هذا يبدو جيدًا. سأختار ذلك.","عبارة طبيعية عندما تقرر اختيار اقتراح."]
+        ]
+    },
+
+    airport:{
+        category:"travel",
+        emoji:"✈️",
+        title:"في المطار",
+        subtitle:"Check-in, boarding & travel problems",
+        description:"تعامل مع تسجيل الوصول، الأمتعة، البوابة، الصعود إلى الطائرة والمشكلات.",
+        practice:"تخيل أنك وصلت المطار متأخرًا قليلًا. اشرح للموظف وضعك، اسأل عن البوابة، ثم اسأل عن الأمتعة والصعود.",
+        phrases:[
+            ["Where is the check-in desk?","أين مكتب تسجيل الوصول؟","للسؤال عن مكان تسجيل الوصول."],
+            ["I'd like to check in for my flight.","أريد تسجيل الوصول لرحلتي.","تستخدم عند الوصول إلى مكتب التسجيل."],
+            ["Could you tell me which gate I need?","هل يمكنك إخباري بالبوابة التي أحتاجها؟","للتأكد من رقم أو مكان البوابة."],
+            ["What time does boarding start?","في أي وقت يبدأ الصعود إلى الطائرة؟","للسؤال عن وقت بدء الصعود."],
+            ["Has the gate changed?","هل تغيرت البوابة؟","مفيدة عند الشك في تغيير البوابة."],
+            ["Where can I collect my baggage?","أين يمكنني استلام أمتعتي؟","للسؤال عن مكان استلام الأمتعة."],
+            ["My bag hasn't arrived.","حقيبتي لم تصل.","عندما لا تجد حقيبتك بعد الوصول."],
+            ["I'm afraid I've missed my flight.","أخشى أنني فاتتني رحلتي.","للتعبير عن مشكلة بعد فوات الرحلة."],
+            ["Is there another flight I can take?","هل توجد رحلة أخرى يمكنني أخذها؟","للسؤال عن بديل."],
+            ["How long is the delay expected to be?","كم يُتوقع أن يستمر التأخير؟","للسؤال عن مدة التأخير المتوقعة."],
+            ["Could you point me in the right direction?","هل يمكنك إرشادي إلى الاتجاه الصحيح؟","عبارة مهذبة عندما تحتاج إلى معرفة الاتجاه."],
+            ["Do I need to go through security again?","هل أحتاج إلى المرور بالتفتيش مرة أخرى؟","للتأكد من الإجراءات."]
+        ]
+    },
+
+    shopping:{
+        category:"daily",
+        emoji:"🛍️",
+        title:"التسوق",
+        subtitle:"Sizes, prices, choices & returns",
+        description:"اسأل عن الأسعار والمقاسات، قارن الخيارات، واطلب المساعدة أو الاستبدال.",
+        practice:"اختر منتجًا في ذهنك وتظاهر أنك في متجر. اسأل عن المقاس والسعر، ثم قارن بين خيارين قبل أن تقرر.",
+        phrases:[
+            ["How much is this?","كم سعر هذا؟","سؤال مباشر وطبيعي عن السعر."],
+            ["Do you have this in another size?","هل لديكم هذا بمقاس آخر؟","للسؤال عن مقاس مختلف."],
+            ["Do you have anything similar?","هل لديكم شيء مشابه؟","عندما تريد بديلًا قريبًا من المنتج."],
+            ["I'm looking for something a little cheaper.","أبحث عن شيء أرخص قليلًا.","للتعبير عن ميزانية أقل."],
+            ["Could I try this on?","هل يمكنني تجربة هذا؟","للسؤال عن تجربة الملابس."],
+            ["Where are the fitting rooms?","أين غرف القياس؟","للسؤال عن مكان تجربة الملابس."],
+            ["Is this on sale?","هل هذا عليه تخفيض؟","للسؤال عن وجود خصم."],
+            ["Is there a discount if I buy two?","هل يوجد خصم إذا اشتريت اثنين؟","للسؤال عن خصم عند شراء أكثر من قطعة."],
+            ["I'll think about it.","سأفكر في الأمر.","رد طبيعي عندما لا تريد اتخاذ القرار فورًا."],
+            ["I'd like to return this.","أود إرجاع هذا.","عندما تريد إرجاع المنتج."],
+            ["Is it possible to exchange this?","هل من الممكن استبدال هذا؟","للسؤال عن إمكانية الاستبدال."],
+            ["I'm not sure which one to choose.","لست متأكدًا أي واحد أختار.","عندما تكون محتارًا بين خيارات."]
+        ]
+    },
+
+    meeting:{
+        category:"social",
+        emoji:"👋",
+        title:"التعرف على شخص جديد",
+        subtitle:"Starting and developing a conversation",
+        description:"ابدأ الحديث، اسأل أسئلة طبيعية، واكتشف نقاطًا مشتركة مع الشخص الآخر.",
+        practice:"تخيل أنك قابلت شخصًا لأول مرة في دورة أو فعالية. حاول إبقاء الحديث مستمرًا لمدة دقيقتين.",
+        phrases:[
+            ["Nice to meet you.","سعيد بلقائك.","عبارة أساسية عند مقابلة شخص لأول مرة."],
+            ["How do you know everyone here?","كيف تعرف كل الموجودين هنا؟","سؤال طبيعي في مناسبة أو تجمع."],
+            ["What do you do?","ماذا تعمل؟","للسؤال عن عمل الشخص."],
+            ["What brings you here?","ما الذي أتى بك إلى هنا؟","عبارة طبيعية لمعرفة سبب حضور الشخص."],
+            ["Have you been here before?","هل سبق أن أتيت إلى هنا؟","مناسبة لبدء حديث عن المكان."],
+            ["How did you get into that?","كيف دخلت في هذا المجال؟","للسؤال عن بداية اهتمام الشخص بمجال أو نشاط."],
+            ["What do you enjoy doing in your free time?","ماذا تستمتع بفعله في وقت فراغك؟","لفتح موضوع عن الهوايات."],
+            ["That sounds interesting. Tell me more.","هذا يبدو ممتعًا. أخبرني المزيد.","لتشجيع الشخص على التوسع في كلامه."],
+            ["I can relate to that.","أستطيع أن أتفهم ذلك / مررت بشيء مشابه.","عندما تجد تجربة مشتركة."],
+            ["We seem to have a lot in common.","يبدو أن بيننا الكثير من الأمور المشتركة.","عندما تكتشف اهتمامات مشتركة."],
+            ["It was great talking to you.","كان من الرائع التحدث معك.","لإنهاء المحادثة بطريقة لطيفة."],
+            ["Let's keep in touch.","لنبقَ على تواصل.","عندما تريد الاستمرار في التواصل."]
+        ]
+    },
+
+    hotel:{
+        category:"travel",
+        emoji:"🏨",
+        title:"في الفندق",
+        subtitle:"Check-in, requests & solving problems",
+        description:"تعامل مع تسجيل الوصول، الغرفة، الخدمات، والمشكلات بطريقة طبيعية.",
+        practice:"تخيل أنك وصلت للفندق، سجل دخولك، ثم اكتشف مشكلة بسيطة في الغرفة واطلب حلها.",
+        phrases:[
+            ["I have a reservation under the name ...","لدي حجز باسم ...","لإخبار الموظف باسم الحجز."],
+            ["I'd like to check in.","أود تسجيل الوصول.","عند الوصول إلى الفندق."],
+            ["Could you tell me what time breakfast is?","هل يمكنك إخباري بموعد الإفطار؟","للسؤال عن وقت الإفطار."],
+            ["Is Wi-Fi included?","هل خدمة الواي فاي مشمولة؟","للسؤال عما إذا كانت الخدمة ضمن الحجز."],
+            ["Could I have a room with a better view?","هل يمكنني الحصول على غرفة بإطلالة أفضل؟","لطلب غرفة مختلفة بطريقة مهذبة."],
+            ["There's a problem with the air conditioning.","هناك مشكلة في تكييف الهواء.","لشرح مشكلة في الغرفة."],
+            ["Could someone take a look at it?","هل يمكن لأحد أن يفحصها؟","لطلب أن يأتي شخص لحل المشكلة."],
+            ["Would it be possible to change rooms?","هل سيكون من الممكن تغيير الغرفة؟","طلب تغيير الغرفة بصيغة مهذبة."],
+            ["Could you recommend somewhere nearby?","هل يمكنك اقتراح مكان قريب؟","لطلب اقتراح من موظف الفندق."],
+            ["Is there a late check-out option?","هل يوجد خيار لتسجيل خروج متأخر؟","للسؤال عن المغادرة المتأخرة."],
+            ["Could you arrange a taxi for me?","هل يمكنك ترتيب سيارة أجرة لي؟","لطلب مساعدة في ترتيب وسيلة نقل."],
+            ["Everything was great. Thank you for your help.","كل شيء كان رائعًا. شكرًا لمساعدتك.","لإنهاء الموقف بطريقة إيجابية."]
+        ]
+    },
+
+    directions:{
+        category:"travel",
+        emoji:"🗺️",
+        title:"السؤال عن الطريق",
+        subtitle:"Finding places & understanding directions",
+        description:"اسأل عن الاتجاهات، افهم التعليمات، وتأكد أنك تسير في الطريق الصحيح.",
+        practice:"اختر مكانًا وهميًا تريد الوصول إليه، واطلب من شخص أن يشرح لك الطريق ثم أعد شرح الطريق بصوتك.",
+        phrases:[
+            ["Excuse me, could you tell me how to get to the station?","عذرًا، هل يمكنك إخباري كيف أصل إلى المحطة؟","طريقة مهذبة للسؤال عن الطريق."],
+            ["Is it within walking distance?","هل يمكن الوصول إليه سيرًا؟","للسؤال إذا كان المكان قريبًا بما يكفي للمشي."],
+            ["How long does it take to get there?","كم يستغرق الوصول إلى هناك؟","للسؤال عن مدة الرحلة."],
+            ["Am I heading in the right direction?","هل أنا متجه في الاتجاه الصحيح؟","للتأكد من أنك تسير بشكل صحيح."],
+            ["Could you show me on the map?","هل يمكنك أن تريني على الخريطة؟","عندما تحتاج إلى توضيح بصري."],
+            ["Is there a bus that goes there?","هل توجد حافلة تذهب إلى هناك؟","للسؤال عن وسيلة نقل عامة."],
+            ["Where should I get off?","أين يجب أن أنزل؟","للسؤال عن محطة النزول."],
+            ["Is it far from here?","هل هو بعيد من هنا؟","سؤال قصير وشائع عن المسافة."],
+            ["Go straight ahead and turn left.","اذهب مباشرة ثم انعطف يسارًا.","إعطاء تعليمات بسيطة للطريق."],
+            ["It's just around the corner.","إنه قريب جدًا بعد الزاوية.","عبارة شائعة عندما يكون المكان قريبًا."],
+            ["You can't miss it.","لن تخطئ في العثور عليه.","للتأكيد أن المكان واضح وسهل العثور عليه."],
+            ["Thanks, I really appreciate it.","شكرًا، أقدّر مساعدتك فعلًا.","رد طبيعي بعد الحصول على المساعدة."]
+        ]
+    },
+
+    plans:{
+        category:"social",
+        emoji:"📆",
+        title:"عمل خطط مع شخص",
+        subtitle:"Making, changing & confirming plans",
+        description:"اقترح موعدًا، تفاوض على الوقت، غيّر الخطة، وأكد الاتفاق.",
+        practice:"تخيل أنك تريد مقابلة صديق. اقترح موعدًا، تعامل مع عدم مناسبته، ثم اتفقا على خطة نهائية.",
+        phrases:[
+            ["Are you free this weekend?","هل أنت متفرغ في نهاية هذا الأسبوع؟","لبدء الحديث عن الخطط."],
+            ["Do you fancy going out for coffee?","هل ترغب في الخروج لتناول القهوة؟","صيغة طبيعية وغير رسمية لاقتراح نشاط."],
+            ["What are you up to tomorrow?","ماذا ستفعل غدًا؟","للسؤال عن خطط الشخص."],
+            ["How does Saturday sound?","ما رأيك في يوم السبت؟","لاقتراح يوم بطريقة طبيعية."],
+            ["What time would suit you?","ما الوقت المناسب لك؟","عند الاتفاق على وقت."],
+            ["I'm afraid I can't make it.","للأسف لا أستطيع الحضور.","عندما لا تستطيع الالتزام بالخطة."],
+            ["Something's come up.","طرأ شيء ما.","لتوضيح أن شيئًا غير متوقع حدث."],
+            ["Could we do it another day?","هل يمكننا فعل ذلك في يوم آخر؟","لاقتراح تغيير الموعد."],
+            ["How about next week instead?","ما رأيك في الأسبوع القادم بدلًا من ذلك؟","اقتراح بديل."],
+            ["That works for me.","هذا مناسب لي.","للموافقة على الموعد أو الخطة."],
+            ["Let's make it six o'clock, then.","إذًا لنجعلها الساعة السادسة.","لتأكيد وقت نهائي."],
+            ["I'll let you know if anything changes.","سأخبرك إذا تغير شيء.","عندما تريد إبقاء الشخص على اطلاع."]
+        ]
+    },
+
+    phone:{
+        category:"daily",
+        emoji:"📱",
+        title:"مكالمة هاتفية",
+        subtitle:"Starting, clarifying & ending a call",
+        description:"تعلم كيف تبدأ مكالمة، تطلب التوضيح، تترك رسالة، وتنهي الحديث.",
+        practice:"مثّل مكالمة هاتفية قصيرة: ابدأ المكالمة، اشرح سبب الاتصال، اطلب معلومة، ثم أنهِ المكالمة.",
+        phrases:[
+            ["Hi, is this a good time to talk?","مرحبًا، هل هذا وقت مناسب للتحدث؟","طريقة مهذبة للتأكد من أن الشخص يستطيع التحدث."],
+            ["I'm calling about ...","أتصل بخصوص ...","لبدء شرح سبب الاتصال."],
+            ["Could you put me through to ...?","هل يمكنك تحويلي إلى ...؟","عند الاتصال بمكتب أو شركة."],
+            ["Sorry, I didn't catch that.","عذرًا، لم أفهم ما قلت.","لطلب إعادة الكلام بطريقة طبيعية."],
+            ["Could you speak a little more slowly?","هل يمكنك التحدث ببطء أكثر قليلًا؟","عندما يكون الكلام سريعًا."],
+            ["The connection isn't very good.","الاتصال ليس جيدًا جدًا.","عندما تكون جودة المكالمة ضعيفة."],
+            ["Could you repeat that?","هل يمكنك إعادة ذلك؟","لطلب التكرار."],
+            ["Would you mind sending me the details?","هل تمانع في إرسال التفاصيل لي؟","لطلب إرسال معلومات."],
+            ["Can I leave a message?","هل يمكنني ترك رسالة؟","عندما لا تستطيع الوصول إلى الشخص."],
+            ["I'll get back to you later.","سأعود للتواصل معك لاحقًا.","عندما تحتاج إلى إنهاء المكالمة والمتابعة لاحقًا."],
+            ["Thanks for getting back to me.","شكرًا لتواصلك معي.","عندما يرد شخص عليك بعد تواصل سابق."],
+            ["I'll talk to you soon.","سأتحدث معك قريبًا.","إنهاء طبيعي للمكالمة."]
+        ]
+    },
+
+    restaurant:{
+        category:"daily",
+        emoji:"🍽️",
+        title:"في المطعم",
+        subtitle:"Ordering, asking & dealing with preferences",
+        description:"تعامل مع الطلب، المكونات، الخيارات، والمشكلات البسيطة في المطعم.",
+        practice:"مثّل طلب وجبة كاملة: اسأل عن المكونات، أخبر النادل بتفضيلك، ثم اطلب شيئًا إضافيًا.",
+        phrases:[
+            ["Could we have a table for two?","هل يمكننا الحصول على طاولة لشخصين؟","عند الوصول إلى المطعم."],
+            ["Could I see the menu, please?","هل يمكنني رؤية القائمة من فضلك؟","للطلب من الموظف إحضار القائمة."],
+            ["What would you recommend?","ماذا تقترح؟","لطلب اقتراح من النادل."],
+            ["Does this contain nuts?","هل يحتوي هذا على مكسرات؟","للسؤال عن مكونات الطعام."],
+            ["Could I have this without onions?","هل يمكنني الحصول على هذا بدون بصل؟","لطلب تعديل الوجبة."],
+            ["I'll go for the chicken.","سأختار الدجاج.","طريقة طبيعية لاختيار طبق."],
+            ["Could we have some more water?","هل يمكننا الحصول على المزيد من الماء؟","لطلب شيء إضافي."],
+            ["Sorry, I think this isn't what I ordered.","عذرًا، أعتقد أن هذا ليس ما طلبته.","عند وجود خطأ في الطلب."],
+            ["Could you check this for me?","هل يمكنك التحقق من هذا لي؟","لطلب المساعدة في مشكلة."],
+            ["Is service included?","هل الخدمة مشمولة؟","للسؤال عن رسوم الخدمة."],
+            ["Could we split the bill?","هل يمكننا تقسيم الحساب؟","عندما يريد كل شخص دفع جزء منه."],
+            ["Everything was delicious.","كل شيء كان لذيذًا.","عبارة لطيفة بعد الوجبة."]
+        ]
+    },
+
+    work:{
+        category:"work",
+        emoji:"💼",
+        title:"في العمل أو الدراسة",
+        subtitle:"Meetings, ideas & professional communication",
+        description:"عبارات تساعدك على المشاركة، طلب التوضيح، وإبداء رأيك باحترافية.",
+        practice:"تخيل أنك في اجتماع أو نقاش دراسي. اطرح سؤالًا، أعط رأيك، وافق أو اختلف مع فكرة، ثم اقترح حلًا.",
+        phrases:[
+            ["Could you clarify what you mean?","هل يمكنك توضيح ما تقصده؟","لطلب توضيح لفكرة غير واضحة."],
+            ["I'd like to add something.","أود إضافة شيء.","للدخول في النقاش وإضافة فكرة."],
+            ["From my point of view, ...","من وجهة نظري...","لبدء إبداء رأيك."],
+            ["I see your point, but ...","أفهم وجهة نظرك، لكن...","للاختلاف بطريقة محترمة."],
+            ["That makes sense.","هذا منطقي.","لإظهار أنك تفهم الفكرة وتوافق عليها."],
+            ["I'm not entirely convinced.","لست مقتنعًا تمامًا.","للتعبير عن تحفظك بطريقة طبيعية."],
+            ["Could we look at another option?","هل يمكننا النظر في خيار آخر؟","عند اقتراح بديل."],
+            ["What would you suggest?","ماذا تقترح؟","لدعوة شخص لتقديم حل أو فكرة."],
+            ["Let's take that into consideration.","لنأخذ ذلك بعين الاعتبار.","عند مناقشة اقتراح بجدية."],
+            ["I'll look into it.","سأبحث في الأمر.","عندما تحتاج إلى التحقق من شيء."],
+            ["I'll keep you updated.","سأبقيك على اطلاع.","عندما ستخبر الشخص بالتطورات لاحقًا."],
+            ["Let's come back to this later.","لنعد إلى هذه النقطة لاحقًا.","عندما تحتاج إلى تأجيل موضوع في النقاش."]
+        ]
+    },
+
+    problem:{
+        category:"daily",
+        emoji:"🛠️",
+        title:"حل مشكلة أو شكوى",
+        subtitle:"Explaining problems & finding solutions",
+        description:"تعلّم كيف تشرح المشكلة بدون ارتباك، تطلب حلًا، وتقترح بدائل.",
+        practice:"اختر مشكلة افتراضية واشرحها لشخص آخر. لا تكتفِ بقول المشكلة؛ وضح ما حدث وما الحل الذي تريده.",
+        phrases:[
+            ["I'm having a problem with ...","لدي مشكلة مع ...","لبدء شرح المشكلة."],
+            ["Something doesn't seem to be working.","يبدو أن هناك شيئًا لا يعمل.","عندما تكون المشكلة في جهاز أو خدمة."],
+            ["I've tried everything I can think of.","لقد جربت كل ما خطر في بالي.","لتوضيح أنك حاولت حل المشكلة."],
+            ["Could you take a look at this?","هل يمكنك إلقاء نظرة على هذا؟","لطلب المساعدة."],
+            ["Is there anything you can do about it?","هل هناك شيء يمكنك فعله حيال ذلك؟","للسؤال عن الحلول الممكنة."],
+            ["What are my options?","ما الخيارات المتاحة أمامي؟","عندما تريد معرفة البدائل."],
+            ["Would it be possible to get a refund?","هل سيكون من الممكن استرداد المبلغ؟","للسؤال عن استرجاع المال."],
+            ["I'd appreciate it if you could help me.","سأكون ممتنًا إذا تمكنت من مساعدتي.","طلب مهذب وأكثر رسمية."],
+            ["That doesn't really solve the problem.","هذا لا يحل المشكلة فعلًا.","عندما يكون الحل المقترح غير كافٍ."],
+            ["Could we find another solution?","هل يمكننا إيجاد حل آخر؟","لاقتراح البحث عن بديل."],
+            ["I understand, but I still need a solution.","أتفهم، لكنني ما زلت بحاجة إلى حل.","للمتابعة بحزم وباحترام."],
+            ["Thanks for sorting that out.","شكرًا لحل هذه المشكلة.","بعد حل المشكلة."]
+        ]
+    },
+
+    keepgoing:{
+        category:"social",
+        emoji:"💬",
+        title:"استمرار المحادثة",
+        subtitle:"Follow-up questions, reactions & natural responses",
+        description:"هذه ليست عبارات موقف واحد؛ إنها أدوات تساعدك على منع المحادثة من التوقف.",
+        practice:"تحدث مع نفسك أو مع شخص آخر. بعد كل إجابة، لا تنتقل لموضوع جديد مباشرة؛ استخدم واحدة من هذه العبارات واطلب تفاصيل إضافية.",
+        phrases:[
+            ["How about you?","وماذا عنك؟","من أبسط الطرق لإعادة السؤال إلى الطرف الآخر."],
+            ["What do you mean by that?","ماذا تقصد بذلك؟","لطلب توضيح أو تفاصيل أكثر."],
+            ["What happened next?","ماذا حدث بعد ذلك؟","ممتازة عندما يحكي شخص قصة."],
+            ["How did that make you feel?","كيف جعلك ذلك تشعر؟","للسؤال عن المشاعر وراء التجربة."],
+            ["What was that like?","كيف كانت التجربة؟","للتوسع في تجربة ذكرها الشخص."],
+            ["Really? Tell me more.","حقًا؟ أخبرني المزيد.","لإظهار الاهتمام وتشجيع الاستمرار."],
+            ["That reminds me of ...","هذا يذكرني بـ...","للانتقال إلى تجربة مرتبطة دون قطع الموضوع."],
+            ["I know what you mean.","أفهم ما تقصده.","لإظهار أنك تفهم التجربة أو الشعور."],
+            ["I've never thought about it that way.","لم أفكر في الأمر بهذه الطريقة من قبل.","رد طبيعي عندما يقدم الشخص زاوية جديدة."],
+            ["That's an interesting point.","هذه نقطة مثيرة للاهتمام.","لإظهار الاهتمام بفكرة الشخص."],
+            ["It depends on the situation.","يعتمد على الموقف.","مفيد عندما لا تكون الإجابة نعم أو لا بشكل مباشر."],
+            ["What makes you say that?","ما الذي يجعلك تقول ذلك؟","لدعوة الشخص لشرح السبب."],
+            ["On the other hand, ...","من ناحية أخرى...","لإضافة وجهة نظر مختلفة."],
+            ["If you don't mind me asking, ...","إذا كنت لا تمانع في سؤالي...","لبدء سؤال شخصي أو حساس نسبيًا بأدب."]
+        ]
+    }
+
+};
+
+
+let selectedConversationId =
+    "cafe";
+
+
+function renderConversationCards(){
+
+    const container =
+        document.getElementById(
+            "conversationList"
+        );
+
+    if(!container) return;
+
+    container.innerHTML =
+        Object.entries(
+            conversationData
+        )
+        .map(
+            ([id,item]) => `
+
+                <article
+                    class="conversation-card ${id === selectedConversationId ? "active" : ""}"
+                    data-category="${item.category}"
+                    data-id="${id}"
+                    onclick="showConversation('${id}')"
+                >
+
+                    <div class="conversation-emoji">
+                        ${item.emoji}
+                    </div>
+
+                    <h3>
+                        ${item.title}
+                    </h3>
+
+                    <p>
+                        ${item.subtitle}
+                    </p>
+
+                </article>
+
+            `
+        )
+        .join("");
+
+}
+
+
+function showConversation(id){
+
+    if(!conversationData[id]) return;
+
+    selectedConversationId =
+        id;
+
+    const item =
+        conversationData[id];
+
+    const detail =
+        document.getElementById(
+            "conversationDetail"
+        );
+
+    detail.innerHTML = `
+
+        <div class="detail-head">
+
+            <div class="detail-head-icon">
+                ${item.emoji}
+            </div>
+
+            <div>
+
+                <h2>
+                    ${item.title}
+                </h2>
+
+                <p>
+                    ${item.subtitle}
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="phrase-list">
+
+            ${item.phrases
+                .map(
+                    phrase => `
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-line">
+
+                                <div class="phrase-text">
+                                    ${escapeHTML(phrase[0])}
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="speak-btn"
+                                    data-speak="${escapeAttribute(phrase[0])}"
+                                    onclick="speakPhrase(this)"
+                                    aria-label="تشغيل النطق"
+                                >
+                                    🔊
+                                </button>
+
+                            </div>
+
+                            <div class="phrase-translation">
+                                ${escapeHTML(phrase[1])}
+                            </div>
+
+                            <div class="phrase-use">
+                                💡 ${escapeHTML(phrase[2])}
+                            </div>
+
+                        </div>
+
+                    `
+                )
+                .join("")
+            }
+
+        </div>
+
+
+        <div class="conversation-practice">
+
+            <strong>
+                🎯 طبّق الموقف بنفسك
+            </strong>
+
+            <span>
+                ${escapeHTML(item.practice)}
+            </span>
+
+        </div>
+
+    `;
+
+
+    document
+        .querySelectorAll(
+            ".conversation-card"
+        )
+        .forEach(card => {
+
+            card.classList.toggle(
+                "active",
+                card.dataset.id === id
+            );
+
+        });
+
+
+    updateConversationProgress();
+
+}
+
+
+function filterConversation(
+    category,
+    button
+){
+
+    document
+        .querySelectorAll(
+            ".category-btn"
+        )
+        .forEach(btn => {
+            btn.classList.remove(
+                "active"
+            );
+        });
+
+    button.classList.add(
+        "active"
+    );
+
+    document
+        .querySelectorAll(
+            ".conversation-card"
+        )
+        .forEach(card => {
+
+            const matches =
+                category === "all" ||
+                card.dataset.category ===
+                category;
+
+            card.style.display =
+                matches
+                    ? ""
+                    : "none";
+
+        });
+
+}
+
+
+/* =========================================================
+   CONVERSATION PROGRESS
+========================================================= */
+
+function updateConversationProgress(){
+
+    const data =
+        getStoredData();
+
+    const key =
+        "conversationSeen";
+
+    if(!data[key]){
+        data[key] = [];
+    }
+
+    if(
+        !data[key]
+            .includes(
+                selectedConversationId
+            )
+    ){
+
+        data[key].push(
+            selectedConversationId
+        );
+
+        data.conversationCompleted =
+            data[key].length;
+
+        saveStoredData(data);
+
+    }
+
+    updateProgress();
+
+}
+
+
+/* =========================================================
+   PLANNER DATA
+========================================================= */
+
+const STORAGE_KEY =
+    "englizaEnglishPracticeData";
+
+
+function defaultData(){
+
+    return {
+
+        tasks:[],
+
+        goals:[
+            false,
+            false,
+            false,
+            false
+        ],
+
+        speakingCompleted:0,
+
+        conversationCompleted:0,
+
+        conversationSeen:[],
+
+        practiceDays:[]
+
+    };
+
+}
+
+
+function getStoredData(){
+
+    try{
+
+        const saved =
+            localStorage.getItem(
+                STORAGE_KEY
+            );
+
+        if(!saved){
+            return defaultData();
+        }
+
+        const parsed =
+            JSON.parse(saved);
+
+        const base =
+            defaultData();
+
+        const merged = {
+            ...base,
+            ...parsed
+        };
+
+        if(!Array.isArray(merged.tasks)){
+            merged.tasks = [];
+        }
+
+        if(!Array.isArray(merged.goals)){
+            merged.goals = base.goals;
+        }
+
+        if(!Array.isArray(merged.practiceDays)){
+            merged.practiceDays = [];
+        }
+
+        if(!Array.isArray(merged.conversationSeen)){
+            merged.conversationSeen = [];
+        }
+
+        if(
+            !merged.conversationCompleted &&
+            merged.conversationSeen.length
+        ){
+
+            merged.conversationCompleted =
+                merged.conversationSeen.length;
+
+        }
+
+        return merged;
+
+    }catch(error){
+
+        return defaultData();
+
+    }
+
+}
+
+
+function saveStoredData(data){
+
+    try{
+
+        localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify(data)
+        );
+
+    }catch(error){
+
+        console.warn(
+            "Could not save planner data.",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   REAL DEVICE DATE
+========================================================= */
+
+function getTodayString(){
+
+    const date =
+        new Date();
+
+    return formatDateObject(
+        date
+    );
+
+}
+
+
+function formatArabicDate(dateString){
+
+    if(!dateString) return "";
+
+    const date =
+        new Date(
+            `${dateString}T00:00:00`
+        );
+
+    return date.toLocaleDateString(
+        "ar",
+        {
+            weekday:"long",
+            day:"numeric",
+            month:"long",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+function formatDateObject(date){
+
+    const year =
+        date.getFullYear();
+
+    const month =
+        String(
+            date.getMonth()+1
+        ).padStart(2,"0");
+
+    const day =
+        String(
+            date.getDate()
+        ).padStart(2,"0");
+
+    return `${year}-${month}-${day}`;
+
+}
+
+
+/*
+   يبدأ عرض Planner بتاريخ الجهاز الحقيقي.
+   لا توجد سنة ثابتة هنا.
+*/
+
+let plannerViewDate =
+    new Date();
+
+plannerViewDate.setHours(
+    0,0,0,0
+);
+
+
+function goToToday(){
+
+    plannerViewDate =
+        new Date();
+
+    plannerViewDate.setHours(
+        0,0,0,0
+    );
+
+    renderPlanner();
+
+}
+
+
+function changePlannerMonth(delta){
+
+    plannerViewDate.setDate(1);
+
+    plannerViewDate.setMonth(
+        plannerViewDate.getMonth() +
+        Number(delta)
+    );
+
+    renderPlanner();
+
+}
+
+
+function changePlannerWeek(delta){
+
+    plannerViewDate.setDate(
+        plannerViewDate.getDate() +
+        Number(delta) * 7
+    );
+
+    renderPlanner();
+
+}
+
+
+/* =========================================================
+   TASK MODAL
+========================================================= */
+
+let selectedTaskColor =
+    "#3157D5";
+
+let editingTaskId =
+    null;
+
+
+function openTaskModal(taskId = null){
+
+    const modal =
+        document.getElementById(
+            "taskModal"
+        );
+
+    const titleInput =
+        document.getElementById(
+            "taskTitle"
+        );
+
+    const dateInput =
+        document.getElementById(
+            "taskDate"
+        );
+
+    const typeInput =
+        document.getElementById(
+            "taskType"
+        );
+
+    const statusInput =
+        document.getElementById(
+            "taskStatus"
+        );
+
+    if(!modal || !titleInput || !dateInput){
+        return;
+    }
+
+    editingTaskId =
+        taskId;
+
+    if(taskId !== null){
+
+        const data =
+            getStoredData();
+
+        const task =
+            data.tasks.find(
+                item =>
+                    String(item.id) ===
+                    String(taskId)
+            );
+
+        if(!task) return;
+
+        document.getElementById(
+            "modalTitle"
+        ).textContent =
+            "تعديل المهمة";
+
+        titleInput.value =
+            task.title || "";
+
+        dateInput.value =
+            task.date || getTodayString();
+
+        typeInput.value =
+            task.type || "📚 درس";
+
+        statusInput.value =
+            task.status ||
+            (
+                task.completed
+                    ? "completed"
+                    : "planned"
+            );
+
+        selectedTaskColor =
+            task.color ||
+            "#3157D5";
+
+        updateColorButtons();
+
+    }else{
+
+        document.getElementById(
+            "modalTitle"
+        ).textContent =
+            "إضافة مهمة";
+
+        titleInput.value =
+            "";
+
+        dateInput.value =
+            getTodayString();
+
+        typeInput.value =
+            "📚 درس";
+
+        statusInput.value =
+            "planned";
+
+        selectedTaskColor =
+            "#3157D5";
+
+        updateColorButtons();
+
+    }
+
+    modal.classList.add(
+        "show"
+    );
+
+    /*
+       نضمن أن حقل الكتابة قابل للنقر والكتابة
+       مباشرة على iPhone وiPad.
+    */
+
+    setTimeout(
+        () => {
+
+            titleInput.removeAttribute(
+                "readonly"
+            );
+
+            titleInput.removeAttribute(
+                "disabled"
+            );
+
+            titleInput.focus();
+
+        },
+        120
+    );
+
+}
+
+
+function closeTaskModal(){
+
+    const modal =
+        document.getElementById(
+            "taskModal"
+        );
+
+    if(modal){
+
+        modal.classList.remove(
+            "show"
+        );
+
+    }
+
+    editingTaskId =
+        null;
+
+}
+
+
+function closeModalOutside(event){
+
+    if(
+        event.target.id ===
+        "taskModal"
+    ){
+
+        closeTaskModal();
+
+    }
+
+}
+
+
+function selectTaskColor(button){
+
+    if(!button) return;
+
+    const color =
+        button.getAttribute(
+            "data-color"
+        );
+
+    if(!color) return;
+
+    selectedTaskColor =
+        color;
+
+    updateColorButtons();
+
+}
+
+
+function updateColorButtons(){
+
+    document
+        .querySelectorAll(
+            ".color-option"
+        )
+        .forEach(option => {
+
+            option.classList.toggle(
+                "active",
+                option.getAttribute(
+                    "data-color"
+                ) ===
+                selectedTaskColor
+            );
+
+        });
+
+}
+
+
+function saveTask(){
+
+    const titleInput =
+        document.getElementById(
+            "taskTitle"
+        );
+
+    const dateInput =
+        document.getElementById(
+            "taskDate"
+        );
+
+    const typeInput =
+        document.getElementById(
+            "taskType"
+        );
+
+    const statusInput =
+        document.getElementById(
+            "taskStatus"
+        );
+
+    if(
+        !titleInput ||
+        !dateInput ||
+        !typeInput ||
+        !statusInput
+    ){
+
+        return;
+
+    }
+
+
+    const title =
+        String(
+            titleInput.value || ""
+        ).trim();
+
+    const date =
+        dateInput.value;
+
+    const type =
+        typeInput.value;
+
+    const status =
+        statusInput.value;
+
+
+    if(!title){
+
+        alert(
+            "اكتب المهمة أولًا."
+        );
+
+        titleInput.focus();
+
+        return;
+
+    }
+
+    if(!date){
+
+        alert(
+            "اختر تاريخ المهمة."
+        );
+
+        dateInput.focus();
+
+        return;
+
+    }
+
+
+    const data =
+        getStoredData();
+
+
+    if(editingTaskId !== null){
+
+        const task =
+            data.tasks.find(
+                item =>
+                    String(item.id) ===
+                    String(editingTaskId)
+            );
+
+        if(task){
+
+            task.title =
+                title;
+
+            task.date =
+                date;
+
+            task.type =
+                type;
+
+            task.color =
+                selectedTaskColor;
+
+            task.status =
+                status;
+
+            task.completed =
+                status ===
+                "completed";
+
+        }
+
+    }else{
+
+        data.tasks.push({
+
+            id:
+                Date.now(),
+
+            title:
+
+                title,
+
+            date:
+
+                date,
+
+            type:
+
+                type,
+
+            color:
+
+                selectedTaskColor,
+
+            status:
+
+                status,
+
+            completed:
+
+                status ===
+                "completed"
+
+        });
+
+    }
+
+
+    if(
+        status ===
+        "completed"
+    ){
+
+        data.practiceDays =
+            updatePracticeDays(
+                data.practiceDays || []
+            );
+
+    }
+
+
+    saveStoredData(
+        data
+    );
+
+    closeTaskModal();
+
+    renderPlanner();
+
+    updateProgress();
+
+}
+
+
+/* =========================================================
+   TASK ACTIONS
+========================================================= */
+
+function changeTaskStatus(id,status){
+
+    const data =
+        getStoredData();
+
+    const task =
+        data.tasks.find(
+            item =>
+                String(item.id) ===
+                String(id)
+        );
+
+    if(!task) return;
+
+    task.status =
+        status;
+
+    task.completed =
+        status === "completed";
+
+    if(status === "completed"){
+
+        data.practiceDays =
+            updatePracticeDays(
+                data.practiceDays || []
+            );
+
+    }
+
+    saveStoredData(
+        data
+    );
+
+    renderPlanner();
+
+    updateProgress();
+
+}
+
+
+function toggleTask(id){
+
+    const data =
+        getStoredData();
+
+    const task =
+        data.tasks.find(
+            item =>
+                String(item.id) ===
+                String(id)
+        );
+
+    if(!task) return;
+
+    const current =
+        task.status ||
+        (
+            task.completed
+                ? "completed"
+                : "planned"
+        );
+
+
+    if(current === "planned"){
+
+        task.status =
+            "progress";
+
+        task.completed =
+            false;
+
+    }else if(current === "progress"){
+
+        task.status =
+            "completed";
+
+        task.completed =
+            true;
+
+        data.practiceDays =
+            updatePracticeDays(
+                data.practiceDays || []
+            );
+
+    }else{
+
+        task.status =
+            "planned";
+
+        task.completed =
+            false;
+
+    }
+
+
+    saveStoredData(
+        data
+    );
+
+    renderPlanner();
+
+    updateProgress();
+
+}
+
+
+function deleteTask(id){
+
+    const confirmed =
+        confirm(
+            "هل تريد حذف هذه المهمة؟"
+        );
+
+    if(!confirmed) return;
+
+    const data =
+        getStoredData();
+
+    data.tasks =
+        data.tasks.filter(
+            task =>
+                String(task.id) !==
+                String(id)
+        );
+
+    saveStoredData(
+        data
+    );
+
+    renderPlanner();
+
+    updateProgress();
+
+}
+
+
+function getStatusLabel(status){
+
+    if(status === "completed"){
+        return "✓ مكتملة";
+    }
+
+    if(status === "progress"){
+        return "◐ قيد التنفيذ";
+    }
+
+    return "○ لم أبدأ";
+
+}
+
+
+function getStatusClass(status){
+
+    if(status === "completed"){
+        return "status-completed";
+    }
+
+    if(status === "progress"){
+        return "status-progress";
+    }
+
+    return "status-planned";
+
+}
+
+
+/* =========================================================
+   TASK HTML
+========================================================= */
+
+function createTaskHTML(task){
+
+    const status =
+        task.status ||
+        (
+            task.completed
+                ? "completed"
+                : "planned"
+        );
+
+    return `
+
+        <div
+            class="task-item ${status === "completed" ? "task-complete" : ""}"
+        >
+
+            <div
+                class="task-color"
+                style="background:${task.color || "#3157D5"}"
+            ></div>
+
+            <div class="task-main">
+
+                <div class="task-title">
+                    ${escapeHTML(
+                        task.title
+                    )}
+                </div>
+
+                <div class="task-meta">
+
+                    <span>
+                        ${escapeHTML(
+                            task.type
+                        )}
+                    </span>
+
+                    <span>
+                        📅 ${escapeHTML(
+                            formatArabicDate(
+                                task.date
+                            )
+                        )}
+                    </span>
+
+                    <span
+                        class="task-status ${getStatusClass(status)}"
+                    >
+                        ${getStatusLabel(status)}
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="task-actions">
+
+                <button
+                    type="button"
+                    class="task-action"
+                    title="تغيير الحالة"
+                    onclick="toggleTask('${String(task.id)}')"
+                >
+                    ${status === "completed"
+                        ? "↶"
+                        : status === "progress"
+                            ? "✓"
+                            : "▶"
+                    }
+                </button>
+
+                <button
+                    type="button"
+                    class="task-action"
+                    title="تعديل"
+                    onclick="openTaskModal('${String(task.id)}')"
+                >
+                    ✎
+                </button>
+
+                <button
+                    type="button"
+                    class="task-action"
+                    title="حذف"
+                    onclick="deleteTask('${String(task.id)}')"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   PLANNER TABLE
+========================================================= */
+
+function createPlannerTable(tasks){
+
+    if(!tasks.length){
+
+        return `
+
+            <div class="planner-table-wrap">
+
+                <table class="planner-table">
+
+                    <thead>
+                        <tr>
+                            <th>التاريخ</th>
+                            <th>وش بسوي؟</th>
+                            <th>النوع</th>
+                            <th>اللون</th>
+                            <th>الحالة</th>
+                            <th>إجراء</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="planner-empty"
+                            >
+
+                                <div class="empty-state">
+
+                                    <div class="empty-state-icon">
+                                        📝
+                                    </div>
+
+                                    لا توجد مهام هنا بعد.
+                                    <br>
+                                    أضف مهمتك الأولى وابدأ خطتك.
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        `;
+
+    }
+
+
+    return `
+
+        <div class="planner-table-wrap">
+
+            <table class="planner-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th class="planner-date">
+                            التاريخ
+                        </th>
+
+                        <th class="planner-task">
+                            وش بسوي؟
+                        </th>
+
+                        <th class="planner-type">
+                            النوع
+                        </th>
+
+                        <th class="planner-color">
+                            اللون
+                        </th>
+
+                        <th class="planner-status">
+                            الحالة
+                        </th>
+
+                        <th class="planner-actions">
+                            إجراء
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    ${tasks
+                        .map(
+                            task =>
+                                createPlannerRow(task)
+                        )
+                        .join("")
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    `;
+
+}
+
+
+function createPlannerRow(task){
+
+    const status =
+        task.status ||
+        (
+            task.completed
+                ? "completed"
+                : "planned"
+        );
+
+    const date =
+        new Date(
+            `${task.date}T00:00:00`
+        );
+
+    const weekday =
+        date.toLocaleDateString(
+            "ar",
+            {
+                weekday:"long"
+            }
+        );
+
+    const formattedDate =
+        date.toLocaleDateString(
+            "ar",
+            {
+                day:"numeric",
+                month:"short",
+                year:"numeric"
+            }
+        );
+
+
+    return `
+
+        <tr
+            class="${
+                status === "completed"
+                    ? "planner-row-completed"
+                    : ""
+            }"
+        >
+
+            <td>
+
+                <div class="planner-date-text">
+
+                    <strong>
+                        ${escapeHTML(
+                            weekday
+                        )}
+                    </strong>
+
+                    ${escapeHTML(
+                        formattedDate
+                    )}
+
+                </div>
+
+            </td>
+
+
+            <td class="planner-task">
+
+                ${escapeHTML(
+                    task.title
+                )}
+
+            </td>
+
+
+            <td class="planner-type">
+
+                ${escapeHTML(
+                    task.type
+                )}
+
+            </td>
+
+
+            <td class="planner-color">
+
+                <span
+                    class="planner-color-dot"
+                    style="background:${
+                        task.color ||
+                        "#3157D5"
+                    }"
+                    title="لون المهمة"
+                ></span>
+
+            </td>
+
+
+            <td>
+
+                <select
+                    class="planner-status-select"
+                    onchange="changeTaskStatus('${String(task.id)}',this.value)"
+                    aria-label="حالة المهمة"
+                >
+
+                    <option
+                        value="planned"
+                        ${
+                            status === "planned"
+                                ? "selected"
+                                : ""
+                        }
+                    >
+                        لم أبدأ
+                    </option>
+
+                    <option
+                        value="progress"
+                        ${
+                            status === "progress"
+                                ? "selected"
+                                : ""
+                        }
+                    >
+                        قيد التنفيذ
+                    </option>
+
+                    <option
+                        value="completed"
+                        ${
+                            status === "completed"
+                                ? "selected"
+                                : ""
+                        }
+                    >
+                        مكتملة
+                    </option>
+
+                </select>
+
+            </td>
+
+
+            <td>
+
+                <div class="planner-table-actions">
+
+                    <button
+                        type="button"
+                        class="planner-table-action"
+                        onclick="openTaskModal('${String(task.id)}')"
+                        title="تعديل"
+                    >
+                        ✎
+                    </button>
+
+                    <button
+                        type="button"
+                        class="planner-table-action"
+                        onclick="deleteTask('${String(task.id)}')"
+                        title="حذف"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+            </td>
+
+        </tr>
+
+    `;
+
+}
+
+
+function escapeHTML(text){
+
+    return String(text ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function escapeAttribute(text){
+
+    return String(text ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/"/g,"&quot;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;");
+
+}
+
+
+/* =========================================================
+   RENDER PLANNER
+========================================================= */
+
+function renderPlanner(){
+
+    const data =
+        getStoredData();
+
+    const today =
+        getTodayString();
+
+
+    document.getElementById(
+        "todayDateLabel"
+    ).textContent =
+        formatArabicDate(
+            today
+        );
+
+
+    /* TODAY */
+
+    const todayTasks =
+        data.tasks
+            .filter(
+                task =>
+                    task.date ===
+                    today
+            )
+            .sort(
+                sortTasks
+            );
+
+
+    const todayContainer =
+        document.getElementById(
+            "todayTaskList"
+        );
+
+
+    if(todayContainer){
+
+        todayContainer.innerHTML =
+            createPlannerTable(
+                todayTasks
+            );
+
+    }
+
+
+    /* WEEK */
+
+    renderWeekCalendar(
+        data.tasks
+    );
+
+
+    const weekTasks =
+        getPlannerWeekTasks(
+            data.tasks
+        );
+
+
+    const weekContainer =
+        document.getElementById(
+            "weekTaskList"
+        );
+
+
+    if(weekContainer){
+
+        weekContainer.innerHTML =
+            createPlannerTable(
+                weekTasks
+            );
+
+    }
+
+
+    /* MONTH */
+
+    renderMonthCalendar(
+        data.tasks
+    );
+
+
+    renderGoals();
+
+}
+
+
+function sortTasks(a,b){
+
+    if(a.date !== b.date){
+
+        return a.date.localeCompare(
+            b.date
+        );
+
+    }
+
+    return Number(a.id) -
+           Number(b.id);
+
+}
+
+
+/* =========================================================
+   WEEK
+========================================================= */
+
+function getStartOfWeek(date){
+
+    const result =
+        new Date(date);
+
+    result.setHours(
+        0,0,0,0
+    );
+
+    const day =
+        result.getDay();
+
+    const diff =
+        day === 0
+            ? -6
+            : 1 - day;
+
+    result.setDate(
+        result.getDate() +
+        diff
+    );
+
+    return result;
+
+}
+
+
+function getPlannerWeekTasks(tasks){
+
+    const start =
+        getStartOfWeek(
+            plannerViewDate
+        );
+
+    const end =
+        new Date(start);
+
+    end.setDate(
+        end.getDate() + 7
+    );
+
+    return tasks
+        .filter(task => {
+
+            const date =
+                new Date(
+                    `${task.date}T00:00:00`
+                );
+
+            return (
+                date >= start &&
+                date < end
+            );
+
+        })
+        .sort(
+            sortTasks
+        );
+
+}
+
+
+function renderWeekCalendar(tasks){
+
+    const container =
+        document.getElementById(
+            "weekCalendar"
+        );
+
+    const start =
+        getStartOfWeek(
+            plannerViewDate
+        );
+
+    const end =
+        new Date(start);
+
+    end.setDate(
+        end.getDate() + 6
+    );
+
+
+    document.getElementById(
+        "weekLabel"
+    ).textContent =
+        `${formatShortDate(start)} — ${formatShortDate(end)}`;
+
+
+    const names =
+        [
+            "الإثنين",
+            "الثلاثاء",
+            "الأربعاء",
+            "الخميس",
+            "الجمعة",
+            "السبت",
+            "الأحد"
+        ];
+
+
+    let html =
+        names
+            .map(
+                name =>
+                    `<div class="calendar-day-name">${name}</div>`
+            )
+            .join("");
+
+
+    for(let i=0;i<7;i++){
+
+        const date =
+            new Date(start);
+
+        date.setDate(
+            start.getDate() + i
+        );
+
+        const dateString =
+            formatDateObject(
+                date
+            );
+
+        const dayTasks =
+            tasks.filter(
+                task =>
+                    task.date ===
+                    dateString
+            );
+
+        const isToday =
+            dateString ===
+            getTodayString();
+
+
+        html += `
+
+            <div
+                class="calendar-day ${isToday ? "today" : ""}"
+            >
+
+                <span class="calendar-number">
+                    ${date.getDate()}
+                </span>
+
+                ${
+                    dayTasks
+                        .map(
+                            task =>
+                                `<span
+                                    class="calendar-task-dot"
+                                    style="background:${task.color || "#3157D5"}"
+                                ></span>`
+                        )
+                        .join("")
+                }
+
+            </div>
+
+        `;
+
+    }
+
+
+    container.innerHTML =
+        html;
+
+}
+
+
+function formatShortDate(date){
+
+    return date.toLocaleDateString(
+        "ar",
+        {
+            day:"numeric",
+            month:"short",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MONTH
+========================================================= */
+
+function renderMonthCalendar(tasks){
+
+    const container =
+        document.getElementById(
+            "monthCalendar"
+        );
+
+    const year =
+        plannerViewDate
+            .getFullYear();
+
+    const month =
+        plannerViewDate
+            .getMonth();
+
+
+    const monthDate =
+        new Date(
+            year,
+            month,
+            1
+        );
+
+
+    document.getElementById(
+        "monthTitle"
+    ).textContent =
+        monthDate.toLocaleDateString(
+            "ar",
+            {
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+
+    const first =
+        new Date(
+            year,
+            month,
+            1
+        );
+
+    const last =
+        new Date(
+            year,
+            month + 1,
+            0
+        );
+
+
+    const firstDay =
+        first.getDay() === 0
+            ? 6
+            : first.getDay() - 1;
+
+
+    const names =
+        [
+            "الإثنين",
+            "الثلاثاء",
+            "الأربعاء",
+            "الخميس",
+            "الجمعة",
+            "السبت",
+            "الأحد"
+        ];
+
+
+    let html =
+        names
+            .map(
+                name =>
+                    `<div class="calendar-day-name">${name}</div>`
+            )
+            .join("");
+
+
+    for(
+        let i=0;
+        i<firstDay;
+        i++
+    ){
+
+        html +=
+            `<div></div>`;
+
+    }
+
+
+    for(
+        let day=1;
+        day<=last.getDate();
+        day++
+    ){
+
+        const date =
+            new Date(
+                year,
+                month,
+                day
+            );
+
+        const dateString =
+            formatDateObject(
+                date
+            );
+
+        const dayTasks =
+            tasks.filter(
+                task =>
+                    task.date ===
+                    dateString
+            );
+
+        const isToday =
+            dateString ===
+            getTodayString();
+
+
+        html += `
+
+            <div
+                class="calendar-day ${isToday ? "today" : ""}"
+            >
+
+                <span class="calendar-number">
+                    ${day}
+                </span>
+
+                ${
+                    dayTasks
+                        .map(
+                            task =>
+                                `<span
+                                    class="calendar-task-dot"
+                                    style="background:${task.color || "#3157D5"}"
+                                ></span>`
+                        )
+                        .join("")
+                }
+
+            </div>
+
+        `;
+
+    }
+
+
+    container.innerHTML =
+        html;
+
+}
+
+
+/* =========================================================
+   PLANNER TABS
+========================================================= */
+
+function showPlanner(
+    name,
+    button
+){
+
+    document
+        .querySelectorAll(
+            ".planner-tab"
+        )
+        .forEach(tab => {
+            tab.classList.remove(
+                "active"
+            );
+        });
+
+    if(button){
+
+        button.classList.add(
+            "active"
+        );
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".planner-panel"
+        )
+        .forEach(panel => {
+            panel.classList.remove(
+                "active"
+            );
+        });
+
+
+    const target =
+        document.getElementById(
+            `planner${capitalize(name)}`
+        );
+
+
+    if(target){
+
+        target.classList.add(
+            "active"
+        );
+
+    }
+
+
+    renderPlanner();
+
+}
+
+
+function capitalize(text){
+
+    return text.charAt(0).toUpperCase()
+        + text.slice(1);
+
+}
+
+
+/* =========================================================
+   GOALS
+========================================================= */
+
+function renderGoals(){
+
+    const data =
+        getStoredData();
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".goal-row input"
+        );
+
+
+    checkboxes.forEach(
+        (
+            checkbox,
+            index
+        ) => {
+
+            checkbox.checked =
+                Boolean(
+                    data.goals[index]
+                );
+
+        }
+    );
+
+
+    updateGoalProgress();
+
+}
+
+
+function saveGoals(){
+
+    const data =
+        getStoredData();
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".goal-row input"
+        );
+
+
+    data.goals =
+        Array.from(
+            checkboxes
+        ).map(
+            checkbox =>
+                checkbox.checked
+        );
+
+
+    saveStoredData(
+        data
+    );
+
+    updateGoalProgress();
+
+}
+
+
+function updateGoalProgress(){
+
+    const data =
+        getStoredData();
+
+    const total =
+        data.goals.length;
+
+    const completed =
+        data.goals
+            .filter(Boolean)
+            .length;
+
+    const percentage =
+        total
+            ? Math.round(
+                completed /
+                total *
+                100
+              )
+            : 0;
+
+
+    document.getElementById(
+        "goalProgressText"
+    ).textContent =
+        `${percentage}%`;
+
+
+    document.getElementById(
+        "goalProgressBar"
+    ).style.width =
+        `${percentage}%`;
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+    const data =
+        getStoredData();
+
+
+    const speaking =
+        Number(
+            data.speakingCompleted || 0
+        );
+
+
+    const tasksCompleted =
+        data.tasks.filter(
+            task =>
+                task.completed ||
+                task.status ===
+                "completed"
+        ).length;
+
+
+    const conversations =
+        Number(
+            data.conversationCompleted ||
+            (
+                data.conversationSeen
+                    ? data.conversationSeen.length
+                    : 0
+            )
+        );
+
+
+    const days =
+        (
+            data.practiceDays ||
+            []
+        ).length;
+
+
+    document.getElementById(
+        "progressSpeaking"
+    ).innerHTML =
+        `${speaking} <span>منجز</span>`;
+
+
+    document.getElementById(
+        "progressTasks"
+    ).innerHTML =
+        `${tasksCompleted} <span>مهمة</span>`;
+
+
+    document.getElementById(
+        "progressConversation"
+    ).innerHTML =
+        `${conversations} <span>منجز</span>`;
+
+
+    document.getElementById(
+        "progressDays"
+    ).innerHTML =
+        `${days} <span>يوم</span>`;
+
+
+    document.getElementById(
+        "progressSpeakingBar"
+    ).style.width =
+        `${Math.min(
+            speaking * 10,
+            100
+        )}%`;
+
+
+    document.getElementById(
+        "progressTasksBar"
+    ).style.width =
+        `${Math.min(
+            tasksCompleted * 10,
+            100
+        )}%`;
+
+
+    document.getElementById(
+        "progressConversationBar"
+    ).style.width =
+        `${Math.min(
+            conversations * 8,
+            100
+        )}%`;
+
+
+    document.getElementById(
+        "progressDaysBar"
+    ).style.width =
+        `${Math.min(
+            days * 5,
+            100
+        )}%`;
+
+}
+
+
+/* =========================================================
+   ESCAPE HELPERS
+========================================================= */
+
+function escapeHTMLSafe(value){
+
+    return escapeHTML(
+        value
+    );
+
+}
+
+
+/* =========================================================
+   PLANNER INTERACTION FIX
+   نربط الألوان مباشرة بالـDOM بدل الاعتماد فقط
+   على inline onclick، ونضمن عملها على iOS/iPad.
+========================================================= */
+
+function initializePlannerControls(){
+
+    const colorButtons =
+        document.querySelectorAll(
+            ".color-option"
+        );
+
+    colorButtons.forEach(
+        button => {
+
+            button.addEventListener(
+                "click",
+                function(event){
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    selectTaskColor(
+                        this
+                    );
+
+                },
+                {
+                    passive:false
+                }
+            );
+
+        }
+    );
+
+
+    const taskTitle =
+        document.getElementById(
+            "taskTitle"
+        );
+
+    if(taskTitle){
+
+        taskTitle.addEventListener(
+            "input",
+            function(){
+
+                /*
+                   لا نمنع الكتابة.
+                   هذا المستمع فقط يتأكد أن قيمة
+                   الحقل تتحدث طبيعيًا على iOS.
+                */
+
+                this.removeAttribute(
+                    "readonly"
+                );
+
+                this.removeAttribute(
+                    "disabled"
+                );
+
+            }
+        );
+
+    }
+
+
+    const modal =
+        document.getElementById(
+            "taskModal"
+        );
+
+    if(modal){
+
+        modal.addEventListener(
+            "click",
+            function(event){
+
+                if(
+                    event.target ===
+                    modal
+                ){
+
+                    closeTaskModal();
+
+                }
+
+            }
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIALIZATION
+========================================================= */
+
+function initialize(){
+
+    renderTopicGrid();
+
+    selectTopic(
+        selectedTopic
+    );
+
+    selectDuration(
+        selectedMinutes
+    );
+
+    renderConversationCards();
+
+    showConversation(
+        selectedConversationId
+    );
+
+    renderPlanner();
+
+    updateProgress();
+
+    updateGoalProgress();
+
+    updateColorButtons();
+
+    initializePlannerControls();
+
+}
+
+
+initialize();
+
+
+/* =========================================================
+   KEEP REAL DATE CURRENT
+   إذا بقيت الصفحة مفتوحة عند منتصف الليل،
+   يعاد ضبط تاريخ العرض تلقائيًا.
+========================================================= */
+
+let lastKnownDate =
+    getTodayString();
+
+
+setInterval(
+    () => {
+
+        const currentDate =
+            getTodayString();
+
+        if(
+            currentDate !==
+            lastKnownDate
+        ){
+
+            lastKnownDate =
+                currentDate;
+
+            plannerViewDate =
+                new Date();
+
+            plannerViewDate.setHours(
+                0,0,0,0
+            );
+
+            renderPlanner();
+
+            updateProgress();
+
+        }
+
+    },
+    60000
+);
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key ===
+            "Escape"
+        ){
+
+            closeTaskModal();
+
+        }
+
+    }
+);
 
 </script>
 
