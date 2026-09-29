@@ -4,362 +4,941 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Engliza Academy | Login</title>
 
-
 <style>
+
+/* =========================================================
+   ENGLIZA LOGIN — CLASSROOM EXPERIENCE
+   ========================================================= */
+
+:root{
+    --blue:#3157D5;
+    --blue-dark:#233E9B;
+    --purple:#7654D9;
+    --purple-dark:#5438B7;
+    --gold:#D9A441;
+    --text:#17213C;
+    --muted:#68738D;
+    --white:#FFFFFF;
+    --border:rgba(49,87,213,.12);
+
+    --shadow:
+        0 24px 70px rgba(27,38,84,.20);
+}
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
 }
 
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
 
 body{
-
     min-height:100vh;
+    overflow:hidden;
 
-    display:flex;
+    font-family:
+        Arial,
+        "Segoe UI",
+        sans-serif;
 
-    justify-content:center;
-
-    align-items:flex-start;
-
-    background:linear-gradient(
-        135deg,
-        #eef4ff,
-        #f3efff
-    );
-
-    padding:50px 20px;
-
+    background:#eef3ff;
 }
 
 
-.container{
+/* =========================================================
+   MAIN CLASSROOM
+   ========================================================= */
+
+.login-page{
+    position:relative;
 
     width:100%;
+    height:100vh;
+    min-height:620px;
 
-    max-width:420px;
+    overflow:hidden;
 
+    background:#eef3ff;
 }
 
 
-.header{
+/* =========================================================
+   CLASSROOM IMAGE
+   ========================================================= */
 
-    text-align:center;
+.classroom-scene{
+    position:absolute;
 
-    margin-bottom:35px;
+    inset:0;
 
-}
-
-
-.welcome-text{
-
-    font-size:20px;
-
-    color:#555;
-
-    margin-bottom:0;
-
-    font-weight:600;
-
-}
-
-
-.logo-row{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin-top:8px;
-
-    margin-bottom:18px;
-
-}
-
-
-.logo{
-
-    width:95px;
-
-    height:95px;
-
-    border-radius:50%;
+    width:100%;
+    height:100%;
 
     object-fit:cover;
 
+    z-index:1;
+
+    user-select:none;
+    -webkit-user-drag:none;
 }
 
 
-h1{
+/* subtle cinematic overlay */
 
-    font-size:28px;
+.scene-overlay{
+    position:absolute;
 
-    color:#1f3c88;
+    inset:0;
 
-    font-weight:700;
+    z-index:2;
 
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15,24,55,.02) 0%,
+            rgba(15,24,55,.02) 50%,
+            rgba(255,255,255,.06) 100%
+        );
 }
 
 
-.subtitle{
+/* =========================================================
+   LOGIN AREA
+   ========================================================= */
 
-    color:#555;
+.login-area{
+    position:absolute;
 
-    line-height:1.8;
+    z-index:10;
 
-    font-size:17px;
+    top:50%;
+    right:8%;
 
+    width:min(390px,32vw);
+
+    transform:translateY(-50%);
 }
 
 
-.card{
+/*
+    This creates the real UI panel over the empty
+    frosted area that exists inside the artwork.
+*/
 
-    background:white;
+.login-panel{
 
-    border-radius:22px;
+    width:100%;
 
-    padding:26px;
+    padding:30px 30px 26px;
+
+    border-radius:27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(248,249,255,.84)
+        );
+
+    border:1px solid rgba(255,255,255,.82);
+
+    box-shadow:
+        0 25px 65px rgba(30,40,90,.20),
+        inset 0 1px 0 rgba(255,255,255,.95);
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+}
+
+
+/* =========================================================
+   LOGIN BRAND
+   ========================================================= */
+
+.login-brand{
+    text-align:center;
+
+    margin-bottom:20px;
+}
+
+.brand-name{
+    color:var(--blue-dark);
+
+    font-size:13px;
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    margin-bottom:9px;
+}
+
+.login-title{
+    color:var(--text);
+
+    font-size:29px;
+    line-height:1.15;
+
+    font-weight:900;
+
+    margin-bottom:7px;
+}
+
+.login-subtitle{
+    color:var(--muted);
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   MODE SWITCH
+   ========================================================= */
+
+.mode-switch{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:5px;
+
+    padding:5px;
 
     margin-bottom:22px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    border-radius:14px;
 
+    background:#EEF1FA;
 }
 
+.mode-btn{
 
-.card h2{
-
-    color:#1f3c88;
-
-    margin-bottom:14px;
-
-    font-size:34px;
-
-}
-
-
-.card p{
-
-    color:#444;
-
-    font-size:16px;
-
-    line-height:1.8;
-
-    font-weight:500;
-
-    margin-bottom:18px;
-
-}
-
-
-.btn-login{
-
-    width:100%;
-
-    padding:16px;
+    height:40px;
 
     border:none;
 
-    border-radius:14px;
+    border-radius:10px;
 
-    background:#2f6bff;
+    background:transparent;
 
-    color:white;
+    color:#737C94;
 
-    font-size:18px;
+    font-size:13px;
 
-    font-weight:600;
+    font-weight:800;
 
     cursor:pointer;
 
+    transition:.2s ease;
 }
 
-
-.btn-register{
-
-    width:100%;
-
-    padding:16px;
-
-    border:2px solid #2f6bff;
-
-    border-radius:14px;
+.mode-btn.active{
 
     background:white;
 
-    color:#2f6bff;
+    color:var(--blue);
 
-    font-size:18px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
+    box-shadow:
+        0 4px 14px rgba(40,55,110,.10);
 }
 
 
-.btn-login:hover{
+/* =========================================================
+   FORMS
+   ========================================================= */
 
-    opacity:.95;
-
-}
-
-
-.btn-register:hover{
-
-    background:#f8fbff;
-
-}
-
-
-.form-container{
-
+.auth-form{
     display:none;
+}
 
-    margin-top:20px;
-
+.auth-form.active{
+    display:block;
 }
 
 
-.form-container input{
+/* field */
 
-    width:100%;
-
-    padding:14px;
-
-    border:1px solid #d8d8d8;
-
-    border-radius:12px;
-
-    margin-bottom:12px;
-
-    font-size:15px;
-
+.field{
+    margin-bottom:13px;
 }
 
-
-.submit-btn{
-
-    margin-top:10px;
-
-}
-
-
-.forgot-password{
+.field-label{
 
     display:block;
 
-    margin-top:4px;
+    margin-bottom:7px;
 
-    margin-bottom:12px;
+    color:#4F5870;
 
-    color:#2f6bff;
+    font-size:12px;
+
+    font-weight:800;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.auth-input{
+
+    width:100%;
+
+    height:48px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid #E0E4EF;
+
+    border-radius:13px;
+
+    background:rgba(255,255,255,.94);
+
+    color:var(--text);
+
+    font-size:14px;
+
+    outline:none;
+
+    direction:rtl;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.auth-input::placeholder{
+    color:#A1A8B8;
+}
+
+.auth-input:focus{
+
+    border-color:var(--blue);
+
+    box-shadow:
+        0 0 0 4px rgba(49,87,213,.09);
+}
+
+
+/* password */
+
+.password-row{
+    position:relative;
+}
+
+.password-toggle{
+
+    position:absolute;
+
+    left:11px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:34px;
+    height:34px;
+
+    border:none;
+
+    border-radius:9px;
+
+    background:transparent;
+
+    color:#7D879D;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+   ========================================================= */
+
+.forgot-row{
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    margin-top:-3px;
+
+    margin-bottom:15px;
+}
+
+.forgot-password{
+
+    color:var(--blue);
+
+    font-size:12px;
+
+    font-weight:800;
 
     text-decoration:none;
 
-    font-size:14px;
-
+    cursor:pointer;
 }
 
+.forgot-password:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+   ========================================================= */
+
+.submit-btn{
+
+    width:100%;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4359E8,
+            #5A39D6
+        );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(67,89,232,.24);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        opacity .2s ease;
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 14px 30px rgba(67,89,232,.30);
+}
+
+.submit-btn:active{
+    transform:translateY(0);
+}
+
+.submit-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+
+/* =========================================================
+   REGISTER NOTE
+   ========================================================= */
 
 .password-note{
 
-    font-size:14px;
+    margin:
+        -2px 0 14px;
 
-    color:#555;
+    color:#737C91;
+
+    font-size:11px;
 
     line-height:1.7;
 
-    margin-bottom:14px;
-
+    text-align:right;
 }
 
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
 
 .message{
 
     display:none;
 
-    margin-top:15px;
+    margin-top:12px;
 
-    padding:12px;
+    padding:11px 12px;
 
-    border-radius:10px;
+    border-radius:11px;
 
-    font-size:14px;
+    font-size:12px;
 
     line-height:1.7;
 
     text-align:center;
 
+    font-weight:700;
 }
 
-
-.success{
+.message.success{
 
     display:block;
 
-    background:#e8f7ed;
+    background:#EAF8F0;
 
-    color:#18763b;
+    color:#237957;
 
+    border:1px solid #CDEBDD;
 }
 
-
-.error{
+.message.error{
 
     display:block;
 
-    background:#fff0f0;
+    background:#FFF0F0;
 
-    color:#c62828;
+    color:#C62828;
 
+    border:1px solid #F4D2D2;
 }
 
 
-button:disabled{
-
-    opacity:.6;
-
-    cursor:not-allowed;
-
-}
+/* =========================================================
+   SUPPORT
+   ========================================================= */
 
 .support-box{
-    text-align:center;
-    margin-top:30px;
-    padding:22px;
-    color:#555;
-    font-size:15px;
-    line-height:1.9;
-}
 
-.support-box p{
-    margin-bottom:8px;
+    margin-top:18px;
+
+    text-align:center;
+
+    color:#737C91;
+
+    font-size:11px;
+
+    line-height:1.8;
 }
 
 .support-email{
-    color:#2f6bff;
-    font-weight:700;
+
+    color:var(--blue);
+
+    font-weight:800;
+
     text-decoration:none;
 }
 
 .support-email:hover{
     text-decoration:underline;
 }
-    
+
+
+/* =========================================================
+   SMALL BRAND MARK
+   ========================================================= */
+
+.login-accent{
+
+    width:38px;
+    height:4px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--purple)
+        );
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width:1101px){
+
+    .login-area{
+        right:8.5%;
+        width:380px;
+    }
+
+    .login-panel{
+        padding:30px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+   ========================================================= */
+
+@media
+(min-width:901px)
+and
+(max-width:1100px){
+
+    .login-area{
+
+        right:5.5%;
+
+        width:350px;
+    }
+
+    .login-panel{
+        padding:27px;
+    }
+
+    .login-title{
+        font-size:26px;
+    }
+}
+
+
+/* =========================================================
+   IPAD LANDSCAPE
+   ========================================================= */
+
+@media
+(min-width:701px)
+and
+(max-width:1100px)
+and
+(orientation:landscape){
+
+    .login-area{
+
+        right:5%;
+
+        width:min(340px,34vw);
+    }
+
+    .login-panel{
+
+        padding:25px 24px;
+        border-radius:24px;
+    }
+
+    .login-title{
+        font-size:24px;
+    }
+
+    .login-subtitle{
+        font-size:12px;
+    }
+
+    .auth-input{
+        height:45px;
+    }
+
+    .submit-btn{
+        height:47px;
+    }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+   ========================================================= */
+
+@media
+(min-width:601px)
+and
+(max-width:900px)
+and
+(orientation:portrait){
+
+    .login-page{
+        min-height:100vh;
+    }
+
+    .classroom-scene{
+        object-position:center center;
+    }
+
+    .login-area{
+
+        top:auto;
+
+        right:5%;
+
+        bottom:5%;
+
+        width:52%;
+
+        transform:none;
+    }
+
+    .login-panel{
+
+        padding:25px;
+
+        border-radius:24px;
+    }
+
+    .login-title{
+        font-size:25px;
+    }
+
+    .login-subtitle{
+        font-size:12px;
+    }
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width:600px){
+
+    body{
+        overflow:hidden;
+    }
+
+    .login-page{
+        min-height:100svh;
+        height:100svh;
+    }
+
+    /*
+       The portrait image is already designed for this ratio,
+       so we keep it intact rather than stretching it.
+    */
+
+    .classroom-scene{
+
+        object-position:center center;
+    }
+
+    .login-area{
+
+        top:auto;
+
+        right:5.5%;
+
+        bottom:4.5%;
+
+        width:49%;
+
+        max-width:none;
+
+        transform:none;
+    }
+
+    .login-panel{
+
+        padding:17px 15px 15px;
+
+        border-radius:20px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.94),
+                rgba(248,249,255,.88)
+            );
+
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+    }
+
+    .login-brand{
+        margin-bottom:12px;
+    }
+
+    .brand-name{
+        font-size:8px;
+        letter-spacing:1.8px;
+        margin-bottom:5px;
+    }
+
+    .login-title{
+        font-size:17px;
+        margin-bottom:4px;
+    }
+
+    .login-subtitle{
+        font-size:8px;
+        line-height:1.5;
+    }
+
+    .login-accent{
+        width:25px;
+        height:3px;
+        margin-bottom:9px;
+    }
+
+    .mode-switch{
+
+        gap:3px;
+
+        padding:3px;
+
+        margin-bottom:12px;
+
+        border-radius:10px;
+    }
+
+    .mode-btn{
+
+        height:28px;
+
+        border-radius:8px;
+
+        font-size:8px;
+    }
+
+    .field{
+        margin-bottom:7px;
+    }
+
+    .field-label{
+        font-size:8px;
+        margin-bottom:4px;
+    }
+
+    .auth-input{
+
+        height:34px;
+
+        padding:0 9px;
+
+        border-radius:9px;
+
+        font-size:9px;
+    }
+
+    .password-toggle{
+
+        width:25px;
+        height:25px;
+
+        left:5px;
+
+        font-size:11px;
+    }
+
+    .forgot-row{
+        margin-top:-1px;
+        margin-bottom:8px;
+    }
+
+    .forgot-password{
+        font-size:8px;
+    }
+
+    .submit-btn{
+
+        height:35px;
+
+        border-radius:9px;
+
+        font-size:9px;
+    }
+
+    .password-note{
+        font-size:7px;
+        margin-bottom:8px;
+    }
+
+    .message{
+
+        margin-top:7px;
+
+        padding:7px;
+
+        border-radius:8px;
+
+        font-size:8px;
+    }
+
+    .support-box{
+        margin-top:8px;
+        font-size:7px;
+        line-height:1.5;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width:390px){
+
+    .login-area{
+
+        right:5%;
+
+        bottom:3.5%;
+
+        width:51%;
+    }
+
+    .login-panel{
+        padding:14px 12px 12px;
+    }
+
+    .login-title{
+        font-size:15px;
+    }
+
+    .login-subtitle{
+        font-size:7px;
+    }
+
+    .mode-btn{
+        font-size:7px;
+    }
+
+    .auth-input{
+        height:31px;
+        font-size:8px;
+    }
+
+    .submit-btn{
+        height:32px;
+        font-size:8px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        transition:none !important;
+        animation:none !important;
+    }
+}
+
 </style>
 
 </head>
@@ -368,230 +947,337 @@ button:disabled{
 <body>
 
 
-<div class="container">
+<div class="login-page">
 
 
-    <div class="header">
+    <!-- =====================================================
+         RESPONSIVE CLASSROOM IMAGE
+         ===================================================== -->
+
+    <picture>
+
+        <!-- Portrait:
+             iPhone + iPad portrait -->
+
+        <source
+            media="(max-width: 900px)"
+            srcset="login-classroom-portrait.webp">
+
+        <!-- Landscape:
+             Desktop + iPad landscape -->
+
+        <img
+            src="login-classroom-wide.webp"
+            alt=""
+            class="classroom-scene">
+
+    </picture>
 
 
-        <p class="welcome-text">
+    <!-- Cinematic overlay -->
 
-            أهلًا بك في
-
-        </p>
+    <div class="scene-overlay"></div>
 
 
-        <div class="logo-row">
+    <!-- =====================================================
+         REAL HTML LOGIN
+         ===================================================== -->
+
+    <div class="login-area">
+
+        <div class="login-panel">
 
 
-            <img src="../owl.PNG" class="logo">
+            <!-- BRAND -->
+
+            <div class="login-brand">
+
+                <div class="brand-name">
+                    ENGLIZA ACADEMY
+                </div>
+
+                <div class="login-accent"></div>
+
+                <h1 class="login-title">
+                    أهلًا بعودتك 👋
+                </h1>
+
+                <p class="login-subtitle">
+                    سعيد بعودتك إلى منصتك التعليمية.
+                </p>
+
+            </div>
 
 
-            <h1>
+            <!-- =================================================
+                 LOGIN / REGISTER SWITCH
+                 ================================================= -->
 
-                Engliza Academy
+            <div class="mode-switch">
 
-            </h1>
+                <button
+                    type="button"
+                    id="loginModeBtn"
+                    class="mode-btn active">
 
+                    تسجيل الدخول
 
-        </div>
-
-
-        <p class="subtitle">
-
-            ابدأ رحلتك التعليمية أو أكمل من حيث توقفت
-
-        </p>
-
-
-    </div>
+                </button>
 
 
+                <button
+                    type="button"
+                    id="registerModeBtn"
+                    class="mode-btn">
 
-    <div class="card">
+                    إنشاء حساب
 
+                </button>
 
-        <h2>
-
-            👤 تسجيل الدخول
-
-        </h2>
-
-
-        <p>
-
-            لديك حساب بالفعل؟ سجّل دخولك من هنا.
-
-        </p>
+            </div>
 
 
-        <button
-            id="loginBtn"
-            class="btn-login"
-            onclick="showLogin()">
+            <!-- =================================================
+                 LOGIN FORM
+                 ================================================= -->
 
-            تسجيل الدخول
-
-        </button>
-
-
-
-        <div
-            id="loginForm"
-            class="form-container">
+            <form
+                id="loginForm"
+                class="auth-form active"
+                novalidate>
 
 
-            <input
-                id="loginEmail"
-                type="email"
-                placeholder="البريد الإلكتروني">
+                <div class="field">
+
+                    <label
+                        class="field-label"
+                        for="loginEmail">
+
+                        البريد الإلكتروني
+
+                    </label>
+
+                    <input
+                        id="loginEmail"
+                        class="auth-input"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="أدخل بريدك الإلكتروني">
+
+                </div>
 
 
-            <input
-                id="loginPassword"
-                type="password"
-                placeholder="كلمة المرور">
+                <div class="field">
+
+                    <label
+                        class="field-label"
+                        for="loginPassword">
+
+                        كلمة المرور
+
+                    </label>
+
+                    <div class="password-row">
+
+                        <input
+                            id="loginPassword"
+                            class="auth-input"
+                            type="password"
+                            autocomplete="current-password"
+                            placeholder="أدخل كلمة المرور">
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="loginPasswordToggle"
+                            aria-label="إظهار كلمة المرور">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                </div>
 
 
-            <a
-                href="#"
-                id="forgotPassword"
-                class="forgot-password">
+                <div class="forgot-row">
 
-                نسيت كلمة المرور؟
+                    <a
+                        href="#"
+                        id="forgotPassword"
+                        class="forgot-password">
 
-            </a>
+                        نسيت كلمة المرور؟
 
+                    </a>
 
-            <button
-                id="loginSubmitBtn"
-                class="btn-login submit-btn">
-
-                تسجيل الدخول
-
-            </button>
+                </div>
 
 
-            <div
-                id="loginMessage"
-                class="message">
+                <button
+                    id="loginSubmitBtn"
+                    type="submit"
+                    class="submit-btn">
+
+                    تسجيل الدخول
+
+                </button>
+
+
+                <div
+                    id="loginMessage"
+                    class="message">
+                </div>
+
+
+            </form>
+
+
+            <!-- =================================================
+                 REGISTER FORM
+                 ================================================= -->
+
+            <form
+                id="registerForm"
+                class="auth-form"
+                novalidate>
+
+
+                <div class="field">
+
+                    <label
+                        class="field-label"
+                        for="registerName">
+
+                        الاسم الكامل
+
+                    </label>
+
+                    <input
+                        id="registerName"
+                        class="auth-input"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="اكتب اسمك الكامل">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label
+                        class="field-label"
+                        for="registerEmail">
+
+                        البريد الإلكتروني
+
+                    </label>
+
+                    <input
+                        id="registerEmail"
+                        class="auth-input"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="أدخل بريدك الإلكتروني">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label
+                        class="field-label"
+                        for="registerPassword">
+
+                        كلمة المرور
+
+                    </label>
+
+                    <div class="password-row">
+
+                        <input
+                            id="registerPassword"
+                            class="auth-input"
+                            type="password"
+                            autocomplete="new-password"
+                            placeholder="أنشئ كلمة مرور">
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="registerPasswordToggle"
+                            aria-label="إظهار كلمة المرور">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p class="password-note">
+
+                    🔒 احتفظ بكلمة المرور في مكان آمن،
+                    ستحتاج إليها عند تسجيل الدخول لاحقًا.
+
+                </p>
+
+
+                <button
+                    id="registerSubmitBtn"
+                    type="submit"
+                    class="submit-btn">
+
+                    إنشاء الحساب
+
+                </button>
+
+
+                <div
+                    id="registerMessage"
+                    class="message">
+                </div>
+
+
+            </form>
+
+
+            <!-- SUPPORT -->
+
+            <div class="support-box">
+
+                <div>
+                    هل واجهتك مشكلة؟ 🤝
+                </div>
+
+                <a
+                    href="mailto:support@englizaacademy.com"
+                    class="support-email">
+
+                    support@englizaacademy.com
+
+                </a>
+
             </div>
 
 
         </div>
 
-
     </div>
 
-
-
-
-    <div class="card">
-
-
-        <h2>
-
-            ✨ إنشاء حساب
-
-        </h2>
-
-
-        <p>
-
-            إذا كانت هذه أول مرة تدخل فيها إلى المنصة.
-
-        </p>
-
-
-        <button
-            id="registerBtn"
-            class="btn-register"
-            onclick="showRegister()">
-
-            إنشاء حساب
-
-        </button>
-
-
-
-        <div
-            id="registerForm"
-            class="form-container">
-
-
-            <input
-                id="registerName"
-                type="text"
-                placeholder="الاسم الكامل">
-
-
-            <input
-                id="registerEmail"
-                type="email"
-                placeholder="البريد الإلكتروني">
-
-
-            <input
-                id="registerPassword"
-                type="password"
-                placeholder="كلمة المرور">
-
-
-            <p class="password-note">
-
-                🔒 احتفظ بكلمة المرور في مكان آمن، ستحتاج إليها عند تسجيل الدخول لاحقًا.
-
-            </p>
-
-
-            <button
-                id="registerSubmitBtn"
-                class="btn-login submit-btn">
-
-                إنشاء الحساب
-
-            </button>
-
-
-            <div
-                id="registerMessage"
-                class="message">
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-    <div class="support-box">
-
-    <p>
-        <strong>هل واجهتك مشكلة؟ 🤝</strong>
-    </p>
-
-    <p>
-        يمكنك التواصل مع فريق أكاديمية Engliza عبر البريد الإلكتروني،
-        وسيتم الرد عليك في أقرب وقت ممكن خلال أوقات العمل.
-    </p>
-
-    <a
-        href="mailto:support@englizaacademy.com"
-        class="support-email">
-
-        support@englizaacademy.com
-
-    </a>
-
-</div>
-    
 
 </div>
 
 
+
+<!-- =========================================================
+     FIREBASE
+     ========================================================= -->
 
 <script type="module">
-
 
 import {
 
@@ -603,128 +1289,252 @@ import {
 import {
 
     getAuth,
-
     createUserWithEmailAndPassword,
-
     signInWithEmailAndPassword,
-
     sendPasswordResetEmail,
-
     updateProfile
 
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
+
 import {
 
     getFirestore,
-
     doc,
-
     setDoc,
-
     serverTimestamp
 
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-    
 
-    
+
+
+/* =========================================================
+   FIREBASE CONFIG
+   ========================================================= */
+
 const firebaseConfig = {
 
-    apiKey: "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+    apiKey:
+        "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
 
-    authDomain: "engliza-academy.firebaseapp.com",
+    authDomain:
+        "engliza-academy.firebaseapp.com",
 
-    projectId: "engliza-academy",
+    projectId:
+        "engliza-academy",
 
-    storageBucket: "engliza-academy.firebasestorage.app",
+    storageBucket:
+        "engliza-academy.firebasestorage.app",
 
-    messagingSenderId: "389916153039",
+    messagingSenderId:
+        "389916153039",
 
-    appId: "1:389916153039:web:95b8a3056b1718cfd353ba",
+    appId:
+        "1:389916153039:web:95b8a3056b1718cfd353ba",
 
-    measurementId: "G-7S608ZTN0W"
+    measurementId:
+        "G-7S608ZTN0W"
 
 };
 
 
+const app =
+    initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig);
+
+const auth =
+    getAuth(app);
 
 
-const auth = getAuth(app);
+const db =
+    getFirestore(app);
 
-    
-    const db = getFirestore(app);
 
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const loginModeBtn =
+    document.getElementById("loginModeBtn");
+
+const registerModeBtn =
+    document.getElementById("registerModeBtn");
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const registerForm =
+    document.getElementById("registerForm");
 
 
 const loginEmail =
-
-document.getElementById("loginEmail");
-
+    document.getElementById("loginEmail");
 
 const loginPassword =
-
-document.getElementById("loginPassword");
-
+    document.getElementById("loginPassword");
 
 const loginSubmitBtn =
-
-document.getElementById("loginSubmitBtn");
-
+    document.getElementById("loginSubmitBtn");
 
 const loginMessage =
-
-document.getElementById("loginMessage");
-
-
+    document.getElementById("loginMessage");
 
 
 const registerName =
-
-document.getElementById("registerName");
-
+    document.getElementById("registerName");
 
 const registerEmail =
-
-document.getElementById("registerEmail");
-
+    document.getElementById("registerEmail");
 
 const registerPassword =
-
-document.getElementById("registerPassword");
-
+    document.getElementById("registerPassword");
 
 const registerSubmitBtn =
-
-document.getElementById("registerSubmitBtn");
-
+    document.getElementById("registerSubmitBtn");
 
 const registerMessage =
-
-document.getElementById("registerMessage");
-
+    document.getElementById("registerMessage");
 
 
+const forgotPassword =
+    document.getElementById("forgotPassword");
 
-function showMessage(element, text, type){
 
-    element.textContent = text;
+/* =========================================================
+   SWITCH LOGIN / REGISTER
+   ========================================================= */
+
+function showLoginMode(){
+
+    loginForm.classList.add("active");
+
+    registerForm.classList.remove("active");
+
+    loginModeBtn.classList.add("active");
+
+    registerModeBtn.classList.remove("active");
+
+}
+
+
+function showRegisterMode(){
+
+    registerForm.classList.add("active");
+
+    loginForm.classList.remove("active");
+
+    registerModeBtn.classList.add("active");
+
+    loginModeBtn.classList.remove("active");
+
+}
+
+
+loginModeBtn.addEventListener(
+    "click",
+    showLoginMode
+);
+
+
+registerModeBtn.addEventListener(
+    "click",
+    showRegisterMode
+);
+
+
+
+/* =========================================================
+   PASSWORD VISIBILITY
+   ========================================================= */
+
+function togglePassword(input, button){
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        button.textContent = "🙈";
+
+    }else{
+
+        input.type = "password";
+
+        button.textContent = "👁";
+
+    }
+
+}
+
+
+document
+.getElementById("loginPasswordToggle")
+.addEventListener(
+    "click",
+    function(){
+
+        togglePassword(
+            loginPassword,
+            this
+        );
+
+    }
+);
+
+
+document
+.getElementById("registerPasswordToggle")
+.addEventListener(
+    "click",
+    function(){
+
+        togglePassword(
+            registerPassword,
+            this
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+function showMessage(
+    element,
+    text,
+    type
+){
+
+    element.textContent =
+        text;
 
     element.className =
+        "message " + type;
 
-    "message " + type;
+}
+
+
+function clearMessage(element){
+
+    element.textContent = "";
+
+    element.className =
+        "message";
 
 }
 
 
 
+/* =========================================================
+   FIREBASE ERROR TRANSLATION
+   ========================================================= */
 
 function getArabicError(errorCode){
 
-
     switch(errorCode){
-
 
         case "auth/email-already-in-use":
 
@@ -766,6 +1576,16 @@ function getArabicError(errorCode){
             return "تم إجراء محاولات كثيرة. يرجى المحاولة لاحقًا.";
 
 
+        case "auth/network-request-failed":
+
+            return "تعذر الاتصال بالإنترنت. تحقق من الاتصال وحاول مرة أخرى.";
+
+
+        case "auth/operation-not-allowed":
+
+            return "تسجيل الدخول بهذه الطريقة غير مفعّل حاليًا.";
+
+
         default:
 
             return "حدث خطأ. يرجى المحاولة مرة أخرى.";
@@ -776,449 +1596,357 @@ function getArabicError(errorCode){
 
 
 
+/* =========================================================
+   REGISTER
+   ========================================================= */
 
-registerSubmitBtn.addEventListener(
+registerForm.addEventListener(
+    "submit",
+    async function(event){
 
-"click",
+        event.preventDefault();
 
-async function(){
+        clearMessage(registerMessage);
 
 
-    const name =
+        const name =
+            registerName.value.trim();
 
-    registerName.value.trim();
+        const email =
+            registerEmail.value.trim();
 
+        const password =
+            registerPassword.value;
 
-    const email =
 
-    registerEmail.value.trim();
+        if(
+            name === "" ||
+            email === "" ||
+            password === ""
+        ){
 
+            showMessage(
+                registerMessage,
+                "يرجى تعبئة جميع الحقول.",
+                "error"
+            );
 
-    const password =
+            return;
 
-    registerPassword.value;
+        }
 
 
-
-    if(
-
-        name === "" ||
-
-        email === "" ||
-
-        password === ""
-
-    ){
-
-        showMessage(
-
-            registerMessage,
-
-            "يرجى تعبئة جميع الحقول.",
-
-            "error"
-
-        );
-
-
-        return;
-
-    }
-
-
-
-    registerSubmitBtn.disabled = true;
-
-
-    registerSubmitBtn.textContent =
-
-    "جارٍ إنشاء الحساب...";
-
-
-
-    try{
-
-
-        const userCredential =
-
-        await createUserWithEmailAndPassword(
-
-            auth,
-
-            email,
-
-            password
-
-        );
-
-
-
-        await updateProfile(
-
-            userCredential.user,
-
-            {
-
-                displayName:name
-
-            }
-
-        );
-
-
-     await setDoc(
-
-    doc(
-        db,
-        "users",
-        userCredential.user.uid
-    ),
-
-    {
-
-        name: name,
-
-        email: email,
-
-        placementTestCompleted: false,
-
-        currentLevel: null,
-
-        lastLesson: null,
-
-        createdAt: serverTimestamp(),
-
-        coins: 0,
-
-        streak: 0,
-
-        completedLessons: [],
-
-        completedUnits: [],
-
-        unlockedWords: [],
-
-        unlockedExpressions: []
-
-    }
-
-);   
-        
-
-        showMessage(
-
-            registerMessage,
-
-            "تم إنشاء الحساب بنجاح. سيتم نقلك إلى المنصة.",
-
-            "success"
-
-        );
-
-
-
-        setTimeout(
-
-            function(){
-
-                window.location.href = "home.html";
-
-            },
-
-            1500
-
-        );
-
-
-    }
-
-
-    catch(error){
-
-
-        showMessage(
-
-            registerMessage,
-
-            getArabicError(error.code),
-
-            "error"
-
-        );
-
-
-        registerSubmitBtn.disabled = false;
-
+        registerSubmitBtn.disabled =
+            true;
 
         registerSubmitBtn.textContent =
+            "جارٍ إنشاء الحساب...";
 
-        "إنشاء الحساب";
+
+        try{
+
+            const userCredential =
+                await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+
+
+            await updateProfile(
+                userCredential.user,
+                {
+                    displayName:name
+                }
+            );
+
+
+            await setDoc(
+
+                doc(
+                    db,
+                    "users",
+                    userCredential.user.uid
+                ),
+
+                {
+
+                    name:name,
+
+                    email:email,
+
+                    placementTestCompleted:false,
+
+                    currentLevel:null,
+
+                    lastLesson:null,
+
+                    createdAt:
+                        serverTimestamp(),
+
+                    coins:0,
+
+                    streak:0,
+
+                    completedLessons:[],
+
+                    completedUnits:[],
+
+                    unlockedWords:[],
+
+                    unlockedExpressions:[]
+
+                }
+
+            );
+
+
+            showMessage(
+
+                registerMessage,
+
+                "تم إنشاء الحساب بنجاح. سيتم نقلك إلى المنصة.",
+
+                "success"
+
+            );
+
+
+            setTimeout(
+
+                function(){
+
+                    window.location.href =
+                        "home.html";
+
+                },
+
+                1500
+
+            );
+
+        }
+
+
+        catch(error){
+
+            showMessage(
+
+                registerMessage,
+
+                getArabicError(error.code),
+
+                "error"
+
+            );
+
+
+            registerSubmitBtn.disabled =
+                false;
+
+            registerSubmitBtn.textContent =
+                "إنشاء الحساب";
+
+        }
 
     }
-
-
-}
-
 );
 
 
 
+/* =========================================================
+   LOGIN
+   ========================================================= */
 
-loginSubmitBtn.addEventListener(
+loginForm.addEventListener(
+    "submit",
+    async function(event){
 
-"click",
+        event.preventDefault();
 
-async function(){
+        clearMessage(loginMessage);
 
 
-    const email =
+        const email =
+            loginEmail.value.trim();
 
-    loginEmail.value.trim();
+        const password =
+            loginPassword.value;
 
 
-    const password =
+        if(
+            email === "" ||
+            password === ""
+        ){
 
-    loginPassword.value;
+            showMessage(
 
+                loginMessage,
 
+                "يرجى كتابة البريد الإلكتروني وكلمة المرور.",
 
-    if(
+                "error"
 
-        email === "" ||
+            );
 
-        password === ""
+            return;
 
-    ){
+        }
 
-        showMessage(
 
-            loginMessage,
-
-            "يرجى كتابة البريد الإلكتروني وكلمة المرور.",
-
-            "error"
-
-        );
-
-
-        return;
-
-    }
-
-
-
-    loginSubmitBtn.disabled = true;
-
-
-    loginSubmitBtn.textContent =
-
-    "جارٍ تسجيل الدخول...";
-
-
-
-    try{
-
-
-        await signInWithEmailAndPassword(
-
-            auth,
-
-            email,
-
-            password
-
-        );
-
-
-
-        showMessage(
-
-            loginMessage,
-
-            "تم تسجيل الدخول بنجاح. سيتم نقلك إلى المنصة.",
-
-            "success"
-
-        );
-
-
-
-        setTimeout(
-
-            function(){
-
-                window.location.href = "home.html";
-
-            },
-
-            1500
-
-        );
-
-
-    }
-
-
-    catch(error){
-
-
-        showMessage(
-
-            loginMessage,
-
-            getArabicError(error.code),
-
-            "error"
-
-        );
-
-
-        loginSubmitBtn.disabled = false;
-
+        loginSubmitBtn.disabled =
+            true;
 
         loginSubmitBtn.textContent =
+            "جارٍ تسجيل الدخول...";
 
-        "تسجيل الدخول";
+
+        try{
+
+            await signInWithEmailAndPassword(
+
+                auth,
+
+                email,
+
+                password
+
+            );
+
+
+            showMessage(
+
+                loginMessage,
+
+                "تم تسجيل الدخول بنجاح. سيتم نقلك إلى المنصة.",
+
+                "success"
+
+            );
+
+
+            setTimeout(
+
+                function(){
+
+                    window.location.href =
+                        "home.html";
+
+                },
+
+                1500
+
+            );
+
+        }
+
+
+        catch(error){
+
+            showMessage(
+
+                loginMessage,
+
+                getArabicError(error.code),
+
+                "error"
+
+            );
+
+
+            loginSubmitBtn.disabled =
+                false;
+
+            loginSubmitBtn.textContent =
+                "تسجيل الدخول";
+
+        }
 
     }
-
-
-}
-
 );
 
 
 
+/* =========================================================
+   FORGOT PASSWORD
+   ========================================================= */
 
-document
-.getElementById("forgotPassword")
-.addEventListener(
+forgotPassword.addEventListener(
 
-"click",
+    "click",
 
-async function(event){
+    async function(event){
 
-
-    event.preventDefault();
-
-
-    const email =
-
-    loginEmail.value.trim();
+        event.preventDefault();
 
 
-
-    if(email === ""){
-
-
-        showMessage(
-
-            loginMessage,
-
-            "اكتب بريدك الإلكتروني أولًا، ثم اضغط على نسيت كلمة المرور.",
-
-            "error"
-
-        );
+        clearMessage(loginMessage);
 
 
-        return;
-
-    }
-
+        const email =
+            loginEmail.value.trim();
 
 
-    try{
+        if(email === ""){
+
+            showMessage(
+
+                loginMessage,
+
+                "اكتب بريدك الإلكتروني أولًا، ثم اضغط على نسيت كلمة المرور.",
+
+                "error"
+
+            );
+
+            loginEmail.focus();
+
+            return;
+
+        }
 
 
-        await sendPasswordResetEmail(
+        try{
 
-            auth,
+            await sendPasswordResetEmail(
 
-            email
+                auth,
 
-        );
+                email
 
-
-        showMessage(
-
-            loginMessage,
-
-            "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
-
-            "success"
-
-        );
+            );
 
 
-    }
+            showMessage(
+
+                loginMessage,
+
+                "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
+
+                "success"
+
+            );
+
+        }
 
 
-    catch(error){
+        catch(error){
 
+            showMessage(
 
-        showMessage(
+                loginMessage,
 
-            loginMessage,
+                getArabicError(error.code),
 
-            getArabicError(error.code),
+                "error"
 
-            "error"
+            );
 
-        );
-
+        }
 
     }
-
-
-}
 
 );
-
-
-</script>
-
-
-
-<script>
-
-
-function showLogin(){
-
-
-    document
-    .getElementById("loginForm")
-    .style
-    .display = "block";
-
-
-    document
-    .getElementById("loginBtn")
-    .style
-    .display = "none";
-
-
-}
-
-
-
-function showRegister(){
-
-
-    document
-    .getElementById("registerForm")
-    .style
-    .display = "block";
-
-
-    document
-    .getElementById("registerBtn")
-    .style
-    .display = "none";
-
-
-}
-
 
 </script>
 
