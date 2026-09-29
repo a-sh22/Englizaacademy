@@ -16,18 +16,22 @@
 <style>
 
 /* =========================================================
-   ENGLIZA LOGIN — CLASSROOM EXPERIENCE
+   ENGLIZA ACADEMY — MODERN LOGIN
    ========================================================= */
 
 :root{
 
+    --navy:#172554;
+
+    --navy-2:#1E2F68;
+
     --blue:#3157D5;
 
-    --blue-dark:#233E9B;
+    --blue-light:#EEF3FF;
 
     --purple:#7654D9;
 
-    --purple-dark:#5438B7;
+    --purple-light:#F2EEFF;
 
     --gold:#D9A441;
 
@@ -35,19 +39,32 @@
 
     --muted:#68738D;
 
+    --muted-light:#8A93A8;
+
     --white:#FFFFFF;
 
-    --border:rgba(49,87,213,.12);
+    --background:#F7F8FC;
+
+    --border:#E4E8F2;
 
     --shadow:
-        0 24px 70px rgba(27,38,84,.20);
+        0 25px 70px rgba(23,37,84,.10);
+
 }
 
 
+/* =========================================================
+   RESET
+   ========================================================= */
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
 
 
@@ -65,20 +82,21 @@ body{
 
     min-height:100vh;
 
-    overflow:hidden;
-
     font-family:
         Arial,
         "Segoe UI",
         sans-serif;
 
-    background:#eef3ff;
+    background:
+        #F7F8FC;
+
+    color:var(--text);
 
 }
 
 
 /* =========================================================
-   MAIN CLASSROOM
+   PAGE
    ========================================================= */
 
 .login-page{
@@ -87,136 +105,323 @@ body{
 
     width:100%;
 
-    height:100vh;
-
-    min-height:620px;
+    min-height:100vh;
 
     overflow:hidden;
 
-    background:#eef3ff;
+    background:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(49,87,213,.08),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 88% 85%,
+            rgba(118,84,217,.09),
+            transparent 30%
+        ),
+
+        #F7F8FC;
 
 }
 
 
 /* =========================================================
-   CLASSROOM IMAGE
+   DECORATIVE BACKGROUND
    ========================================================= */
 
-.classroom-scene{
+.background-shape{
 
     position:absolute;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    z-index:1;
-
-    user-select:none;
-
-    -webkit-user-drag:none;
-
-}
-
-
-/* =========================================================
-   CINEMATIC OVERLAY
-   ========================================================= */
-
-.scene-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:2;
 
     pointer-events:none;
 
+    z-index:0;
+
+}
+
+
+.shape-one{
+
+    width:520px;
+
+    height:520px;
+
+    top:-280px;
+
+    left:-180px;
+
+    border-radius:50%;
+
     background:
         linear-gradient(
-            90deg,
-            rgba(15,24,55,.02) 0%,
-            rgba(15,24,55,.02) 50%,
-            rgba(255,255,255,.06) 100%
+            135deg,
+            rgba(49,87,213,.10),
+            rgba(118,84,217,.05)
         );
 
 }
 
 
-/* =========================================================
-   LOGIN AREA
-   ========================================================= */
+.shape-two{
 
-/*
-   The login area contains:
-   1. Welcome text
-   2. Real login panel
-*/
+    width:420px;
 
-.login-area{
+    height:420px;
 
-    position:absolute;
+    right:-230px;
 
-    z-index:10;
+    bottom:-220px;
 
-    top:50%;
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(118,84,217,.10),
+            rgba(49,87,213,.04)
+        );
+
+}
+
+
+.shape-three{
+
+    width:160px;
+
+    height:160px;
+
+    left:44%;
+
+    top:8%;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(49,87,213,.08);
+
+}
+
+
+.shape-four{
+
+    width:90px;
+
+    height:90px;
 
     right:8%;
 
-    width:min(390px,32vw);
+    top:18%;
 
-    transform:translateY(-50%);
+    border-radius:24px;
+
+    border:
+        1px solid rgba(118,84,217,.10);
+
+    transform:rotate(18deg);
 
 }
 
 
 /* =========================================================
-   WELCOME / BRAND
-   خارج الـ glass panel
+   TOP BAR
    ========================================================= */
 
-.login-brand{
+.top-bar{
 
-    text-align:center;
+    position:relative;
 
-    margin-bottom:16px;
+    z-index:5;
 
-    padding:0 8px;
+    width:min(
+        1180px,
+        calc(100% - 64px)
+    );
 
-    text-shadow:
-        0 2px 12px rgba(255,255,255,.70);
+    margin:0 auto;
+
+    padding-top:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    text-decoration:none;
+
+}
+
+
+.brand-mark{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(49,87,213,.18);
+
+}
+
+
+.brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
 
 }
 
 
 .brand-name{
 
-    color:var(--blue-dark);
+    color:var(--navy);
 
     font-size:13px;
 
     font-weight:900;
 
-    letter-spacing:3px;
-
-    margin-bottom:8px;
+    letter-spacing:2.7px;
 
 }
 
 
-.login-accent{
+.brand-tagline{
 
-    width:38px;
+    color:#8992A7;
 
-    height:4px;
+    font-size:8px;
 
-    margin:
-        0 auto 12px;
+    font-weight:700;
+
+    letter-spacing:1.3px;
+
+}
+
+
+.top-note{
+
+    color:#7D879B;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.login-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(
+        1080px,
+        calc(100% - 64px)
+    );
+
+    min-height:
+        calc(100vh - 100px);
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(360px,430px);
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+
+/* =========================================================
+   INTRODUCTION SIDE
+   ========================================================= */
+
+.intro-side{
+
+    padding:
+        20px
+        0;
+
+}
+
+
+.intro-eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+    color:var(--blue);
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:2.5px;
+
+}
+
+
+.intro-eyebrow::before{
+
+    content:"";
+
+    width:32px;
+
+    height:2px;
 
     border-radius:20px;
 
@@ -230,13 +435,258 @@ body{
 }
 
 
-.login-title{
+.intro-title{
 
-    color:var(--text);
+    max-width:560px;
 
-    font-size:29px;
+    color:var(--navy);
+
+    font-size:
+        clamp(
+            39px,
+            4.1vw,
+            61px
+        );
 
     line-height:1.15;
+
+    font-weight:900;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:22px;
+
+}
+
+
+.intro-title span{
+
+    color:var(--blue);
+
+}
+
+
+.intro-description{
+
+    max-width:510px;
+
+    color:#667189;
+
+    font-size:15px;
+
+    line-height:2;
+
+    font-weight:500;
+
+    margin-bottom:35px;
+
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.benefits{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap:12px;
+
+    max-width:570px;
+
+}
+
+
+.benefit{
+
+    padding:
+        17px 15px;
+
+    border:
+        1px solid rgba(224,228,239,.85);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    box-shadow:
+        0 8px 25px
+        rgba(30,40,80,.04);
+
+}
+
+
+.benefit-line{
+
+    width:27px;
+
+    height:3px;
+
+    border-radius:20px;
+
+    margin-bottom:13px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--purple)
+        );
+
+}
+
+
+.benefit-title{
+
+    color:var(--navy);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:6px;
+
+}
+
+
+.benefit-text{
+
+    color:#8A93A8;
+
+    font-size:10px;
+
+    line-height:1.6;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   DECORATIVE QUOTE
+   ========================================================= */
+
+.intro-quote{
+
+    margin-top:31px;
+
+    color:#9AA2B4;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+}
+
+
+.intro-quote span{
+
+    color:var(--gold);
+
+}
+
+
+/* =========================================================
+   LOGIN COLUMN
+   ========================================================= */
+
+.auth-column{
+
+    width:100%;
+
+}
+
+
+.auth-card{
+
+    width:100%;
+
+    padding:
+        31px 32px 27px;
+
+    border:
+        1px solid rgba(255,255,255,.95);
+
+    border-radius:26px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    box-shadow:
+        var(--shadow);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.card-header{
+
+    text-align:center;
+
+    margin-bottom:24px;
+
+}
+
+
+.card-brand{
+
+    color:var(--blue);
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    margin-bottom:9px;
+
+}
+
+
+.card-accent{
+
+    width:30px;
+
+    height:3px;
+
+    border-radius:20px;
+
+    margin:
+        0 auto 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--purple)
+        );
+
+}
+
+
+.card-title{
+
+    color:var(--navy);
+
+    font-size:25px;
+
+    line-height:1.25;
 
     font-weight:900;
 
@@ -245,52 +695,15 @@ body{
 }
 
 
-.login-subtitle{
+.card-subtitle{
 
-    color:#5D6780;
+    color:#7B8498;
 
-    font-size:13px;
+    font-size:11px;
 
     line-height:1.7;
 
     font-weight:600;
-
-}
-
-
-/* =========================================================
-   REAL LOGIN PANEL
-   ========================================================= */
-
-.login-panel{
-
-    width:100%;
-
-    padding:27px 29px 25px;
-
-    border-radius:27px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.91),
-            rgba(248,249,255,.82)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.88);
-
-    box-shadow:
-
-        0 25px 65px
-        rgba(30,40,90,.20),
-
-        inset 0 1px 0
-        rgba(255,255,255,.96);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
 
 }
 
@@ -305,23 +718,25 @@ body{
 
     grid-template-columns:1fr 1fr;
 
-    gap:5px;
+    gap:4px;
 
-    padding:5px;
+    padding:4px;
 
-    margin-bottom:20px;
+    margin-bottom:21px;
 
-    border-radius:14px;
+    border-radius:13px;
 
-    background:
-        rgba(238,241,250,.90);
+    background:#F0F2F7;
 
 }
 
 
 .mode-btn{
 
-    min-height:51px;
+    min-height:50px;
+
+    padding:
+        5px 7px;
 
     border:none;
 
@@ -329,15 +744,16 @@ body{
 
     background:transparent;
 
-    color:#737C94;
+    color:#7D879B;
 
-    font-size:13px;
-
-    font-weight:800;
+    font-family:inherit;
 
     cursor:pointer;
 
-    transition:.2s ease;
+    transition:
+        background .2s ease,
+        color .2s ease,
+        box-shadow .2s ease;
 
 }
 
@@ -351,13 +767,13 @@ body{
 
 .mode-btn.active{
 
-    background:white;
-
     color:var(--blue);
 
+    background:#FFFFFF;
+
     box-shadow:
-        0 4px 14px
-        rgba(40,55,110,.10);
+        0 5px 15px
+        rgba(35,55,110,.08);
 
 }
 
@@ -366,7 +782,7 @@ body{
 
     display:block;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:900;
 
@@ -381,11 +797,11 @@ body{
 
     margin-top:4px;
 
-    color:#9AA2B3;
+    color:#9BA3B3;
 
-    font-size:9px;
+    font-size:8px;
 
-    font-weight:500;
+    font-weight:600;
 
     line-height:1.3;
 
@@ -423,7 +839,7 @@ body{
 
 .field{
 
-    margin-bottom:13px;
+    margin-bottom:14px;
 
 }
 
@@ -434,11 +850,11 @@ body{
 
     margin-bottom:7px;
 
-    color:#4F5870;
+    color:#4D5770;
 
-    font-size:12px;
+    font-size:11px;
 
-    font-weight:800;
+    font-weight:900;
 
 }
 
@@ -454,22 +870,23 @@ body{
 
     width:100%;
 
-    height:48px;
+    height:47px;
 
     padding:
-        0 15px;
+        0 14px;
 
     border:
-        1px solid #E0E4EF;
+        1px solid #E0E4ED;
 
-    border-radius:13px;
+    border-radius:12px;
 
-    background:
-        rgba(255,255,255,.95);
+    background:#FFFFFF;
 
     color:var(--text);
 
-    font-size:14px;
+    font-family:inherit;
+
+    font-size:13px;
 
     outline:none;
 
@@ -477,14 +894,22 @@ body{
 
     transition:
         border-color .2s ease,
-        box-shadow .2s ease;
+        box-shadow .2s ease,
+        background .2s ease;
 
 }
 
 
 .auth-input::placeholder{
 
-    color:#A1A8B8;
+    color:#A5ACBB;
+
+}
+
+
+.auth-input:hover{
+
+    border-color:#CCD3E1;
 
 }
 
@@ -493,9 +918,11 @@ body{
 
     border-color:var(--blue);
 
+    background:#FFFFFF;
+
     box-shadow:
         0 0 0 4px
-        rgba(49,87,213,.09);
+        rgba(49,87,213,.08);
 
 }
 
@@ -515,27 +942,33 @@ body{
 
     position:absolute;
 
-    left:11px;
+    left:9px;
 
     top:50%;
 
     transform:translateY(-50%);
 
-    width:34px;
+    width:32px;
 
-    height:34px;
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     border:none;
 
-    border-radius:9px;
+    border-radius:8px;
 
     background:transparent;
 
-    color:#7D879D;
+    color:#7C869B;
 
     cursor:pointer;
 
-    font-size:16px;
+    font-size:14px;
 
 }
 
@@ -550,7 +983,7 @@ body{
 
     justify-content:flex-start;
 
-    margin-top:-3px;
+    margin-top:-2px;
 
     margin-bottom:15px;
 
@@ -561,7 +994,7 @@ body{
 
     color:var(--blue);
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:800;
 
@@ -580,37 +1013,39 @@ body{
 
 
 /* =========================================================
-   MAIN BUTTON
+   SUBMIT BUTTON
    ========================================================= */
 
 .submit-btn{
 
     width:100%;
 
-    height:50px;
+    height:48px;
 
     border:none;
 
-    border-radius:13px;
+    border-radius:12px;
 
     background:
         linear-gradient(
             135deg,
-            #4359E8,
-            #5A39D6
+            #3157D5,
+            #6845D5
         );
 
     color:white;
 
-    font-size:15px;
+    font-family:inherit;
+
+    font-size:14px;
 
     font-weight:900;
 
     cursor:pointer;
 
     box-shadow:
-        0 10px 25px
-        rgba(67,89,232,.24);
+        0 10px 24px
+        rgba(49,87,213,.19);
 
     transition:
         transform .2s ease,
@@ -626,7 +1061,7 @@ body{
 
     box-shadow:
         0 14px 30px
-        rgba(67,89,232,.30);
+        rgba(49,87,213,.25);
 
 }
 
@@ -654,11 +1089,11 @@ body{
 .password-note{
 
     margin:
-        -2px 0 14px;
+        -1px 0 14px;
 
-    color:#737C91;
+    color:#7B8498;
 
-    font-size:11px;
+    font-size:10px;
 
     line-height:1.7;
 
@@ -675,13 +1110,13 @@ body{
 
     display:none;
 
-    margin-top:12px;
+    margin-top:11px;
 
-    padding:11px 12px;
+    padding:10px 11px;
 
-    border-radius:11px;
+    border-radius:10px;
 
-    font-size:12px;
+    font-size:11px;
 
     line-height:1.7;
 
@@ -724,13 +1159,18 @@ body{
 
 .support-box{
 
-    margin-top:16px;
+    margin-top:18px;
+
+    padding-top:16px;
+
+    border-top:
+        1px solid #EDF0F5;
 
     text-align:center;
 
-    color:#737C91;
+    color:#8A93A6;
 
-    font-size:11px;
+    font-size:10px;
 
     line-height:1.8;
 
@@ -741,7 +1181,7 @@ body{
 
     color:var(--blue);
 
-    font-weight:800;
+    font-weight:900;
 
     text-decoration:none;
 
@@ -756,54 +1196,48 @@ body{
 
 
 /* =========================================================
-   DESKTOP
-   ========================================================= */
-
-@media (min-width:1101px){
-
-    .login-area{
-
-        right:8.5%;
-
-        width:380px;
-
-    }
-
-    .login-panel{
-
-        padding:27px 30px 25px;
-
-    }
-
-}
-
-
-/* =========================================================
-   LAPTOP / SMALL DESKTOP
+   TABLET / SMALL LAPTOP
    ========================================================= */
 
 @media
 (min-width:901px)
 and
-(max-width:1100px){
+(max-width:1150px){
 
-    .login-area{
+    .login-content{
 
-        right:5.5%;
+        width:
+            min(
+                960px,
+                calc(100% - 50px)
+            );
 
-        width:350px;
+        gap:55px;
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(340px,400px);
 
     }
 
-    .login-panel{
 
-        padding:25px 27px 23px;
+    .intro-title{
+
+        font-size:43px;
 
     }
 
-    .login-title{
 
-        font-size:26px;
+    .intro-description{
+
+        font-size:14px;
+
+    }
+
+
+    .benefits{
+
+        gap:9px;
 
     }
 
@@ -821,49 +1255,140 @@ and
 and
 (orientation:landscape){
 
-    .login-area{
+    .top-bar{
 
-        right:5%;
+        width:
+            calc(100% - 44px);
 
-        width:min(360px,37vw);
-
-    }
-
-    .login-panel{
-
-        padding:24px 24px 22px;
-
-        border-radius:24px;
+        padding-top:18px;
 
     }
 
-    .login-brand{
 
-        margin-bottom:13px;
+    .login-content{
+
+        width:
+            calc(100% - 44px);
+
+        min-height:
+            calc(100vh - 75px);
+
+        gap:35px;
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(315px,370px);
 
     }
 
-    .login-title{
 
-        font-size:24px;
+    .intro-title{
+
+        font-size:37px;
+
+        margin-bottom:16px;
 
     }
 
-    .login-subtitle{
+
+    .intro-description{
 
         font-size:12px;
 
+        line-height:1.8;
+
+        margin-bottom:23px;
+
     }
+
+
+    .benefits{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+
+    .benefit{
+
+        padding:
+            13px 11px;
+
+    }
+
+
+    .benefit-title{
+
+        font-size:10px;
+
+    }
+
+
+    .benefit-text{
+
+        font-size:8px;
+
+    }
+
+
+    .intro-quote{
+
+        margin-top:20px;
+
+        font-size:9px;
+
+    }
+
+
+    .auth-card{
+
+        padding:
+            24px 24px 21px;
+
+        border-radius:22px;
+
+    }
+
+
+    .card-header{
+
+        margin-bottom:17px;
+
+    }
+
+
+    .card-title{
+
+        font-size:21px;
+
+    }
+
+
+    .mode-switch{
+
+        margin-bottom:15px;
+
+    }
+
+
+    .mode-btn{
+
+        min-height:43px;
+
+    }
+
 
     .auth-input{
 
-        height:45px;
+        height:43px;
 
     }
 
+
     .submit-btn{
 
-        height:47px;
+        height:44px;
 
     }
 
@@ -881,48 +1406,126 @@ and
 and
 (orientation:portrait){
 
-    .login-page{
+    .top-bar{
 
-        min-height:100vh;
+        width:
+            calc(100% - 50px);
 
-    }
-
-    .classroom-scene{
-
-        object-position:center center;
+        padding-top:22px;
 
     }
 
-    .login-area{
 
-        top:50%;
+    .top-note{
 
-        right:50%;
-
-        width:min(480px,78vw);
-
-        transform:
-            translate(50%,-50%);
+        display:none;
 
     }
 
-    .login-panel{
 
-        padding:25px;
+    .login-content{
 
-        border-radius:25px;
+        width:
+            min(
+                650px,
+                calc(100% - 50px)
+            );
+
+        min-height:auto;
+
+        padding:
+            45px 0 55px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        gap:30px;
 
     }
 
-    .login-title{
 
-        font-size:25px;
+    .intro-side{
+
+        width:100%;
+
+        text-align:center;
+
+        padding:0;
 
     }
 
-    .login-subtitle{
 
-        font-size:12px;
+    .intro-eyebrow{
+
+        justify-content:center;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .intro-title{
+
+        max-width:650px;
+
+        margin:
+            0 auto 13px;
+
+        font-size:38px;
+
+    }
+
+
+    .intro-description{
+
+        max-width:580px;
+
+        margin:
+            0 auto 20px;
+
+        font-size:13px;
+
+    }
+
+
+    .benefits{
+
+        max-width:620px;
+
+        margin:0 auto;
+
+    }
+
+
+    .intro-quote{
+
+        display:none;
+
+    }
+
+
+    .auth-column{
+
+        width:
+            min(
+                470px,
+                100%
+            );
+
+        margin:0 auto;
+
+    }
+
+
+    .auth-card{
+
+        padding:
+            27px 27px 24px;
+
+        border-radius:24px;
 
     }
 
@@ -930,14 +1533,14 @@ and
 
 
 /* =========================================================
-   PHONE
+   MOBILE
    ========================================================= */
 
 @media (max-width:600px){
 
     body{
 
-        overflow:hidden;
+        overflow:auto;
 
     }
 
@@ -946,124 +1549,301 @@ and
 
         min-height:100svh;
 
-        height:100svh;
+        overflow:hidden;
 
     }
 
 
-    .classroom-scene{
+    .shape-one{
 
-        object-position:center center;
+        width:330px;
+
+        height:330px;
+
+        top:-190px;
+
+        left:-170px;
 
     }
 
 
-    /*
-       The login interface is now centered.
-       The background remains visible around it.
-    */
+    .shape-two{
 
-    .login-area{
+        width:300px;
 
-        top:50%;
+        height:300px;
 
-        right:50%;
+        right:-180px;
 
-        width:84%;
+        bottom:-160px;
 
-        max-width:390px;
+    }
 
-        transform:
-            translate(50%,-50%);
+
+    .shape-three{
+
+        width:100px;
+
+        height:100px;
+
+        left:auto;
+
+        right:10%;
+
+        top:12%;
+
+    }
+
+
+    .shape-four{
+
+        width:60px;
+
+        height:60px;
+
+        right:8%;
+
+        top:28%;
+
+        border-radius:15px;
 
     }
 
 
     /* =====================================================
-       MOBILE WELCOME
+       MOBILE TOP BAR
        ===================================================== */
 
-    .login-brand{
+    .top-bar{
 
-        margin-bottom:10px;
+        width:
+            calc(100% - 34px);
 
-        padding:0 5px;
+        padding-top:19px;
 
-        text-shadow:
-            0 2px 10px
-            rgba(255,255,255,.82);
+    }
+
+
+    .brand-mark{
+
+        width:34px;
+
+        height:34px;
+
+        border-radius:10px;
+
+        font-size:13px;
 
     }
 
 
     .brand-name{
 
-        font-size:8px;
+        font-size:10px;
 
-        letter-spacing:1.8px;
-
-        margin-bottom:5px;
+        letter-spacing:2px;
 
     }
 
 
-    .login-accent{
+    .brand-tagline{
 
-        width:25px;
+        font-size:6px;
 
-        height:3px;
-
-        margin-bottom:7px;
+        letter-spacing:1px;
 
     }
 
 
-    .login-title{
+    .top-note{
 
-        font-size:19px;
-
-        margin-bottom:3px;
-
-    }
-
-
-    .login-subtitle{
-
-        font-size:8px;
-
-        line-height:1.5;
+        display:none;
 
     }
 
 
     /* =====================================================
-       MOBILE PANEL
+       MOBILE CONTENT
        ===================================================== */
 
-    .login-panel{
+    .login-content{
 
-        padding:16px 15px 14px;
+        width:
+            calc(100% - 32px);
 
-        border-radius:20px;
+        min-height:auto;
+
+        padding:
+            42px 0 35px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        align-items:center;
+
+        gap:24px;
+
+    }
+
+
+    /* =====================================================
+       MOBILE INTRO
+       ===================================================== */
+
+    .intro-side{
+
+        width:100%;
+
+        padding:0;
+
+        text-align:center;
+
+    }
+
+
+    .intro-eyebrow{
+
+        justify-content:center;
+
+        gap:7px;
+
+        margin-bottom:11px;
+
+        font-size:8px;
+
+        letter-spacing:1.8px;
+
+    }
+
+
+    .intro-eyebrow::before{
+
+        width:22px;
+
+        height:2px;
+
+    }
+
+
+    .intro-title{
+
+        max-width:100%;
+
+        font-size:29px;
+
+        line-height:1.2;
+
+        letter-spacing:-.5px;
+
+        margin-bottom:11px;
+
+    }
+
+
+    .intro-description{
+
+        max-width:330px;
+
+        margin:
+            0 auto;
+
+        font-size:10px;
+
+        line-height:1.8;
+
+    }
+
+
+    .benefits{
+
+        display:none;
+
+    }
+
+
+    .intro-quote{
+
+        display:none;
+
+    }
+
+
+    /* =====================================================
+       MOBILE AUTH
+       ===================================================== */
+
+    .auth-column{
+
+        width:100%;
+
+        max-width:400px;
+
+    }
+
+
+    .auth-card{
+
+        padding:
+            21px 17px 17px;
+
+        border-radius:21px;
 
         background:
-            linear-gradient(
-                145deg,
-                rgba(255,255,255,.93),
-                rgba(248,249,255,.87)
-            );
-
-        backdrop-filter:blur(15px);
-
-        -webkit-backdrop-filter:blur(15px);
+            rgba(255,255,255,.94);
 
         box-shadow:
+            0 20px 55px
+            rgba(23,37,84,.10);
 
-            0 18px 45px
-            rgba(30,40,90,.22),
+    }
 
-            inset 0 1px 0
-            rgba(255,255,255,.95);
+
+    .card-header{
+
+        margin-bottom:17px;
+
+    }
+
+
+    .card-brand{
+
+        font-size:7px;
+
+        letter-spacing:2.3px;
+
+        margin-bottom:6px;
+
+    }
+
+
+    .card-accent{
+
+        width:24px;
+
+        height:2px;
+
+        margin-bottom:10px;
+
+    }
+
+
+    .card-title{
+
+        font-size:19px;
+
+        margin-bottom:4px;
+
+    }
+
+
+    .card-subtitle{
+
+        font-size:9px;
+
+        line-height:1.6;
 
     }
 
@@ -1078,16 +1858,16 @@ and
 
         padding:3px;
 
-        margin-bottom:11px;
+        margin-bottom:14px;
 
-        border-radius:10px;
+        border-radius:11px;
 
     }
 
 
     .mode-btn{
 
-        min-height:40px;
+        min-height:42px;
 
         border-radius:8px;
 
@@ -1105,7 +1885,7 @@ and
 
         margin-top:2px;
 
-        font-size:6.5px;
+        font-size:6px;
 
     }
 
@@ -1116,7 +1896,7 @@ and
 
     .field{
 
-        margin-bottom:7px;
+        margin-bottom:8px;
 
     }
 
@@ -1132,7 +1912,7 @@ and
 
     .auth-input{
 
-        height:34px;
+        height:35px;
 
         padding:
             0 9px;
@@ -1146,11 +1926,11 @@ and
 
     .password-toggle{
 
+        left:5px;
+
         width:25px;
 
         height:25px;
-
-        left:5px;
 
         font-size:11px;
 
@@ -1158,14 +1938,14 @@ and
 
 
     /* =====================================================
-       MOBILE FORGOT PASSWORD
+       MOBILE FORGOT
        ===================================================== */
 
     .forgot-row{
 
         margin-top:-1px;
 
-        margin-bottom:8px;
+        margin-bottom:9px;
 
     }
 
@@ -1183,11 +1963,11 @@ and
 
     .submit-btn{
 
-        height:35px;
+        height:36px;
 
         border-radius:9px;
 
-        font-size:9px;
+        font-size:10px;
 
     }
 
@@ -1198,15 +1978,18 @@ and
 
     .password-note{
 
+        margin:
+            -1px 0 8px;
+
         font-size:7px;
 
-        margin-bottom:8px;
+        line-height:1.6;
 
     }
 
 
     /* =====================================================
-       MOBILE MESSAGES
+       MOBILE MESSAGE
        ===================================================== */
 
     .message{
@@ -1228,11 +2011,13 @@ and
 
     .support-box{
 
-        margin-top:7px;
+        margin-top:10px;
+
+        padding-top:10px;
 
         font-size:7px;
 
-        line-height:1.5;
+        line-height:1.6;
 
     }
 
@@ -1245,46 +2030,67 @@ and
 
 @media (max-width:390px){
 
-    .login-area{
+    .top-bar{
 
-        width:87%;
-
-    }
-
-
-    .login-brand{
-
-        margin-bottom:7px;
+        width:
+            calc(100% - 26px);
 
     }
 
 
-    .login-title{
+    .login-content{
 
-        font-size:17px;
+        width:
+            calc(100% - 24px);
 
-    }
+        padding-top:34px;
 
-
-    .login-subtitle{
-
-        font-size:7px;
+        gap:19px;
 
     }
 
 
-    .login-panel{
+    .intro-title{
 
-        padding:13px 12px 11px;
+        font-size:25px;
+
+    }
+
+
+    .intro-description{
+
+        font-size:9px;
+
+    }
+
+
+    .auth-card{
+
+        padding:
+            17px 13px 14px;
 
         border-radius:18px;
 
     }
 
 
+    .card-title{
+
+        font-size:17px;
+
+    }
+
+
+    .card-subtitle{
+
+        font-size:8px;
+
+    }
+
+
     .mode-btn{
 
-        min-height:37px;
+        min-height:39px;
 
     }
 
@@ -1298,14 +2104,14 @@ and
 
     .mode-note{
 
-        font-size:6px;
+        font-size:5.5px;
 
     }
 
 
     .auth-input{
 
-        height:31px;
+        height:33px;
 
         font-size:8px;
 
@@ -1314,9 +2120,9 @@ and
 
     .submit-btn{
 
-        height:32px;
+        height:34px;
 
-        font-size:8px;
+        font-size:9px;
 
     }
 
@@ -1353,237 +2159,567 @@ and
 
 
     <!-- =====================================================
-         RESPONSIVE CLASSROOM IMAGE
+         DECORATIVE CSS BACKGROUND
          ===================================================== -->
 
-    <picture>
+    <div class="background-shape shape-one"></div>
 
+    <div class="background-shape shape-two"></div>
 
-        <!-- =================================================
-             PORTRAIT
-             iPhone + iPad portrait
-             ================================================= -->
+    <div class="background-shape shape-three"></div>
 
-        <source
-            media="(max-width: 900px)"
-            srcset="login-classroom-portrait.webp"
-        >
-
-
-        <!-- =================================================
-             LANDSCAPE
-             Desktop + iPad landscape
-             ================================================= -->
-
-        <img
-            src="login-classroom-wide.webp"
-            alt=""
-            class="classroom-scene"
-        >
-
-
-    </picture>
+    <div class="background-shape shape-four"></div>
 
 
     <!-- =====================================================
-         CINEMATIC OVERLAY
+         TOP BAR
          ===================================================== -->
 
-    <div class="scene-overlay"></div>
+    <header class="top-bar">
 
 
-    <!-- =====================================================
-         REAL LOGIN AREA
-         ===================================================== -->
+        <a
+            href="#"
+            class="brand"
+        >
 
-    <div class="login-area">
+            <div class="brand-mark">
 
-
-        <!-- =================================================
-             WELCOME
-             خارج الـ glass panel
-             ================================================= -->
-
-        <div class="login-brand">
-
-
-            <div class="brand-name">
-
-                ENGLIZA ACADEMY
+                E
 
             </div>
 
 
-            <div class="login-accent"></div>
+            <div class="brand-text">
+
+                <div class="brand-name">
+
+                    ENGLIZA ACADEMY
+
+                </div>
 
 
-            <h1 class="login-title">
+                <div class="brand-tagline">
 
-                أهلًا بعودتك 👋
+                    ENGLISH • CONFIDENCE • GROWTH
 
-            </h1>
+                </div>
+
+            </div>
+
+        </a>
 
 
-            <p class="login-subtitle">
+        <div class="top-note">
 
-                سعيدون بتواجدك في منصتك التعليمية.
-
-            </p>
-
+            منصة تعليمية للغة الإنجليزية
 
         </div>
 
 
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="login-content">
+
+
         <!-- =================================================
-             REAL GLASS LOGIN PANEL
+             INTRODUCTION
              ================================================= -->
 
-        <div class="login-panel">
+        <section class="intro-side">
+
+
+            <div class="intro-eyebrow">
+
+                ENGLISH • CONFIDENCE • GROWTH
+
+            </div>
+
+
+            <h1 class="intro-title">
+
+                طوّر لغتك،
+                <br>
+                <span>ووسّع عالمك.</span>
+
+            </h1>
+
+
+            <p class="intro-description">
+
+                تعلّم الإنجليزية بطريقة واضحة ومنظمة،
+                وطوّر مهاراتك خطوة بخطوة في منصة
+                صُممت لترافقك في رحلتك التعليمية.
+
+            </p>
 
 
             <!-- =================================================
-                 LOGIN / REGISTER SWITCH
+                 BENEFITS
                  ================================================= -->
 
-            <div class="mode-switch">
+            <div class="benefits">
 
 
-                <button
-                    type="button"
-                    id="loginModeBtn"
-                    class="mode-btn active"
-                >
+                <div class="benefit">
 
-                    <span class="mode-title">
+                    <div class="benefit-line"></div>
 
-                        تسجيل الدخول
+                    <div class="benefit-title">
 
-                    </span>
+                        تعلّم منظّم
 
+                    </div>
 
-                    <span class="mode-note">
+                    <div class="benefit-text">
 
-                        إذا كان لديك حساب مسبقًا
+                        دروس مرتبة تساعدك على التقدم بثبات.
 
-                    </span>
+                    </div>
 
-                </button>
+                </div>
 
 
-                <button
-                    type="button"
-                    id="registerModeBtn"
-                    class="mode-btn"
-                >
+                <div class="benefit">
 
-                    <span class="mode-title">
+                    <div class="benefit-line"></div>
 
-                        إنشاء حساب
+                    <div class="benefit-title">
 
-                    </span>
+                        تعلّم بمرونة
+
+                    </div>
+
+                    <div class="benefit-text">
+
+                        تعلّم في الوقت والمكان المناسبين لك.
+
+                    </div>
+
+                </div>
 
 
-                    <span class="mode-note">
+                <div class="benefit">
 
-                        إذا كانت هذه أول مرة لك في الأكاديمية
+                    <div class="benefit-line"></div>
 
-                    </span>
+                    <div class="benefit-title">
 
-                </button>
+                        تطوّر مستمر
+
+                    </div>
+
+                    <div class="benefit-text">
+
+                        تابع تقدمك وابنِ ثقتك باللغة.
+
+                    </div>
+
+                </div>
 
 
             </div>
 
 
-            <!-- =================================================
-                 LOGIN FORM
-                 ================================================= -->
+            <div class="intro-quote">
 
-            <form
-                id="loginForm"
-                class="auth-form active"
-                novalidate
-            >
+                YOUR ENGLISH JOURNEY STARTS HERE
+                <span>•</span>
+
+            </div>
 
 
-                <div class="field">
+        </section>
 
 
-                    <label
-                        class="field-label"
-                        for="loginEmail"
-                    >
 
-                        البريد الإلكتروني
+        <!-- =================================================
+             AUTH COLUMN
+             ================================================= -->
 
-                    </label>
+        <section class="auth-column">
 
 
-                    <input
-                        id="loginEmail"
-                        class="auth-input"
-                        type="email"
-                        autocomplete="email"
-                        placeholder="أدخل بريدك الإلكتروني"
-                    >
+            <div class="auth-card">
+
+
+                <!-- =================================================
+                     CARD HEADER
+                     ================================================= -->
+
+                <div class="card-header">
+
+
+                    <div class="card-brand">
+
+                        ENGLIZA ACADEMY
+
+                    </div>
+
+
+                    <div class="card-accent"></div>
+
+
+                    <h2 class="card-title">
+
+                        أهلًا بعودتك 👋
+
+                    </h2>
+
+
+                    <p class="card-subtitle">
+
+                        سعيدون بتواجدك في منصتك التعليمية.
+
+                    </p>
 
 
                 </div>
 
 
-                <div class="field">
+
+                <!-- =================================================
+                     LOGIN / REGISTER SWITCH
+                     ================================================= -->
+
+                <div class="mode-switch">
 
 
-                    <label
-                        class="field-label"
-                        for="loginPassword"
+                    <button
+                        type="button"
+                        id="loginModeBtn"
+                        class="mode-btn active"
                     >
 
-                        كلمة المرور
+                        <span class="mode-title">
 
-                    </label>
+                            تسجيل الدخول
+
+                        </span>
 
 
-                    <div class="password-row">
+                        <span class="mode-note">
+
+                            إذا كان لديك حساب مسبقًا
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="registerModeBtn"
+                        class="mode-btn"
+                    >
+
+                        <span class="mode-title">
+
+                            إنشاء حساب
+
+                        </span>
+
+
+                        <span class="mode-note">
+
+                            إذا كانت هذه أول مرة لك في الأكاديمية
+
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LOGIN FORM
+                     ================================================= -->
+
+                <form
+                    id="loginForm"
+                    class="auth-form active"
+                    novalidate
+                >
+
+
+                    <div class="field">
+
+
+                        <label
+                            class="field-label"
+                            for="loginEmail"
+                        >
+
+                            البريد الإلكتروني
+
+                        </label>
 
 
                         <input
-                            id="loginPassword"
+                            id="loginEmail"
                             class="auth-input"
-                            type="password"
-                            autocomplete="current-password"
-                            placeholder="أدخل كلمة المرور"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="أدخل بريدك الإلكتروني"
                         >
-
-
-                        <button
-                            type="button"
-                            class="password-toggle"
-                            id="loginPasswordToggle"
-                            aria-label="إظهار كلمة المرور"
-                        >
-
-                            👁
-
-                        </button>
 
 
                     </div>
 
 
-                </div>
+
+                    <div class="field">
 
 
-                <div class="forgot-row">
+                        <label
+                            class="field-label"
+                            for="loginPassword"
+                        >
+
+                            كلمة المرور
+
+                        </label>
+
+
+                        <div class="password-row">
+
+
+                            <input
+                                id="loginPassword"
+                                class="auth-input"
+                                type="password"
+                                autocomplete="current-password"
+                                placeholder="أدخل كلمة المرور"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="loginPasswordToggle"
+                                aria-label="إظهار كلمة المرور"
+                            >
+
+                                👁
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="forgot-row">
+
+
+                        <a
+                            href="#"
+                            id="forgotPassword"
+                            class="forgot-password"
+                        >
+
+                            نسيت كلمة المرور؟
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <button
+                        id="loginSubmitBtn"
+                        type="submit"
+                        class="submit-btn"
+                    >
+
+                        تسجيل الدخول
+
+                    </button>
+
+
+
+                    <div
+                        id="loginMessage"
+                        class="message"
+                    >
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- =================================================
+                     REGISTER FORM
+                     ================================================= -->
+
+                <form
+                    id="registerForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+
+                    <div class="field">
+
+
+                        <label
+                            class="field-label"
+                            for="registerName"
+                        >
+
+                            الاسم الكامل
+
+                        </label>
+
+
+                        <input
+                            id="registerName"
+                            class="auth-input"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="اكتب اسمك الكامل"
+                        >
+
+
+                    </div>
+
+
+
+                    <div class="field">
+
+
+                        <label
+                            class="field-label"
+                            for="registerEmail"
+                        >
+
+                            البريد الإلكتروني
+
+                        </label>
+
+
+                        <input
+                            id="registerEmail"
+                            class="auth-input"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="أدخل بريدك الإلكتروني"
+                        >
+
+
+                    </div>
+
+
+
+                    <div class="field">
+
+
+                        <label
+                            class="field-label"
+                            for="registerPassword"
+                        >
+
+                            كلمة المرور
+
+                        </label>
+
+
+                        <div class="password-row">
+
+
+                            <input
+                                id="registerPassword"
+                                class="auth-input"
+                                type="password"
+                                autocomplete="new-password"
+                                placeholder="أنشئ كلمة مرور"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="registerPasswordToggle"
+                                aria-label="إظهار كلمة المرور"
+                            >
+
+                                👁
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <p class="password-note">
+
+                        🔒 احتفظ بكلمة المرور في مكان آمن،
+                        ستحتاج إليها عند تسجيل الدخول لاحقًا.
+
+                    </p>
+
+
+
+                    <button
+                        id="registerSubmitBtn"
+                        type="submit"
+                        class="submit-btn"
+                    >
+
+                        إنشاء الحساب
+
+                    </button>
+
+
+
+                    <div
+                        id="registerMessage"
+                        class="message"
+                    >
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- =================================================
+                     SUPPORT
+                     ================================================= -->
+
+                <div class="support-box">
+
+
+                    <div>
+
+                        إذا واجهتك مشكلة، تواصل مع فريق الأكاديمية 🤝
+
+                    </div>
 
 
                     <a
-                        href="#"
-                        id="forgotPassword"
-                        class="forgot-password"
+                        href="mailto:support@englizaacademy.com"
+                        class="support-email"
                     >
 
-                        نسيت كلمة المرور؟
+                        support@englizaacademy.com
 
                     </a>
 
@@ -1591,191 +2727,13 @@ and
                 </div>
 
 
-                <button
-                    id="loginSubmitBtn"
-                    type="submit"
-                    class="submit-btn"
-                >
-
-                    تسجيل الدخول
-
-                </button>
-
-
-                <div
-                    id="loginMessage"
-                    class="message"
-                >
-                </div>
-
-
-            </form>
-
-
-            <!-- =================================================
-                 REGISTER FORM
-                 ================================================= -->
-
-            <form
-                id="registerForm"
-                class="auth-form"
-                novalidate
-            >
-
-
-                <div class="field">
-
-
-                    <label
-                        class="field-label"
-                        for="registerName"
-                    >
-
-                        الاسم الكامل
-
-                    </label>
-
-
-                    <input
-                        id="registerName"
-                        class="auth-input"
-                        type="text"
-                        autocomplete="name"
-                        placeholder="اكتب اسمك الكامل"
-                    >
-
-
-                </div>
-
-
-                <div class="field">
-
-
-                    <label
-                        class="field-label"
-                        for="registerEmail"
-                    >
-
-                        البريد الإلكتروني
-
-                    </label>
-
-
-                    <input
-                        id="registerEmail"
-                        class="auth-input"
-                        type="email"
-                        autocomplete="email"
-                        placeholder="أدخل بريدك الإلكتروني"
-                    >
-
-
-                </div>
-
-
-                <div class="field">
-
-
-                    <label
-                        class="field-label"
-                        for="registerPassword"
-                    >
-
-                        كلمة المرور
-
-                    </label>
-
-
-                    <div class="password-row">
-
-
-                        <input
-                            id="registerPassword"
-                            class="auth-input"
-                            type="password"
-                            autocomplete="new-password"
-                            placeholder="أنشئ كلمة مرور"
-                        >
-
-
-                        <button
-                            type="button"
-                            class="password-toggle"
-                            id="registerPasswordToggle"
-                            aria-label="إظهار كلمة المرور"
-                        >
-
-                            👁
-
-                        </button>
-
-
-                    </div>
-
-
-                </div>
-
-
-                <p class="password-note">
-
-                    🔒 احتفظ بكلمة المرور في مكان آمن،
-                    ستحتاج إليها عند تسجيل الدخول لاحقًا.
-
-                </p>
-
-
-                <button
-                    id="registerSubmitBtn"
-                    type="submit"
-                    class="submit-btn"
-                >
-
-                    إنشاء الحساب
-
-                </button>
-
-
-                <div
-                    id="registerMessage"
-                    class="message"
-                >
-                </div>
-
-
-            </form>
-
-
-            <!-- =================================================
-                 SUPPORT
-                 ================================================= -->
-
-            <div class="support-box">
-
-
-                <div>
-
-                    إذا واجهتك مشكلة، تواصل مع فريق الأكاديمية 🤝
-
-                </div>
-
-
-                <a
-                    href="mailto:support@englizaacademy.com"
-                    class="support-email"
-                >
-
-                    support@englizaacademy.com
-
-                </a>
-
-
             </div>
 
 
-        </div>
+        </section>
 
 
-    </div>
+    </main>
 
 
 </div>
