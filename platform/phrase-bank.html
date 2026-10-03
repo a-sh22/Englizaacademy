@@ -278,8 +278,6 @@ grid-template-columns:
 }
 
 
-
-
 /* ==========================================================
    بطاقات العبارات
 ========================================================== */
@@ -647,6 +645,328 @@ margin-bottom:15px;
 
 
 /* ==========================================================
+   📝 بطاقات العبارات التعليمية الجديدة
+========================================================== */
+
+.card-phrase-content{
+
+background:
+linear-gradient(
+135deg,
+#fbfcff,
+#f5f3ff
+);
+
+border:
+2px solid #e3e7ff;
+
+border-radius:22px;
+
+padding:23px;
+
+}
+
+
+/* ==========================================================
+   مستوى العبارة
+========================================================== */
+
+.level-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:6px;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+background:#eef4ff;
+
+border:2px solid #dce5ff;
+
+color:#1f3c88;
+
+font-size:15px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   العبارة نفسها
+========================================================== */
+
+.card-phrase-title{
+
+direction:ltr;
+
+text-align:center;
+
+font-size:29px;
+
+font-weight:900;
+
+color:#1f3c88;
+
+line-height:1.4;
+
+margin-bottom:12px;
+
+}
+
+
+/* ==========================================================
+   زر النطق
+========================================================== */
+
+.pronunciation-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
+
+margin:
+0 auto 23px;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:15px;
+
+background:#fff;
+
+border:
+2px solid #dce5ff;
+
+color:#1f3c88;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.pronunciation-btn:hover{
+
+transform:
+translateY(-2px);
+
+box-shadow:
+0 8px 20px
+rgba(31,60,136,.10);
+
+}
+
+
+/* ==========================================================
+   أقسام البطاقة
+========================================================== */
+
+.card-info-section{
+
+background:white;
+
+border:
+1px solid #e4e8f5;
+
+border-radius:17px;
+
+padding:16px;
+
+margin-bottom:13px;
+
+}
+
+.card-info-section:last-child{
+
+margin-bottom:0;
+
+}
+
+.card-info-title{
+
+font-size:16px;
+
+font-weight:900;
+
+color:#1f3c88;
+
+margin-bottom:8px;
+
+}
+
+.card-info-text{
+
+font-size:15px;
+
+color:#555;
+
+line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   الأمثلة
+========================================================== */
+
+.examples-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.example-item{
+
+background:#f8f9ff;
+
+border:
+1px solid #e4e8f5;
+
+border-radius:14px;
+
+padding:12px 14px;
+
+}
+
+.example-en{
+
+direction:ltr;
+
+text-align:left;
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+line-height:1.6;
+
+}
+
+.example-ar{
+
+font-size:14px;
+
+color:#777;
+
+margin-top:5px;
+
+line-height:1.6;
+
+}
+
+
+/* ==========================================================
+   بطاقة المستوى قبل الفتح
+========================================================== */
+
+.locked-card-type{
+
+background:
+linear-gradient(
+135deg,
+#f8f9ff,
+#f5f2ff
+);
+
+border:
+2px solid #e4e8ff;
+
+border-radius:20px;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+.locked-card-type .lock-icon{
+
+margin-bottom:10px;
+
+}
+
+.locked-card-label{
+
+font-size:20px;
+
+font-weight:900;
+
+color:#1f3c88;
+
+margin-bottom:10px;
+
+}
+
+.locked-card-description{
+
+font-size:15px;
+
+color:#777;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   نوع المحتوى
+========================================================== */
+
+.content-type-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:6px;
+
+padding:7px 12px;
+
+border-radius:999px;
+
+background:#f3efff;
+
+border:
+1px solid #ddd6ff;
+
+color:#6546b8;
+
+font-size:13px;
+
+font-weight:bold;
+
+margin-bottom:14px;
+
+}
+
+
+/* ==========================================================
    الجوال
 ========================================================== */
 
@@ -712,9 +1032,65 @@ padding:15px;
 
 }
 
+.card-phrase-content{
+
+padding:18px;
+
 }
-  
- 
+
+.card-phrase-title{
+
+font-size:24px;
+
+}
+
+.example-en{
+
+font-size:15px;
+
+}
+
+}
+
+
+/* ==========================================================
+   تحسينات للشاشات الصغيرة جدًا
+========================================================== */
+
+@media(max-width:400px){
+
+body{
+
+padding-left:12px;
+padding-right:12px;
+
+}
+
+.phrase-grid{
+
+gap:18px;
+
+}
+
+.phrase-card{
+
+padding:20px;
+
+}
+
+.card-phrase-content{
+
+padding:15px;
+
+}
+
+.card-phrase-title{
+
+font-size:22px;
+
+}
+
+}
 
 </style>
 
@@ -816,6 +1192,10 @@ id="phraseGrid">
 // ==========================================================
 
 const phrases=[
+
+/* ==========================================================
+   🎥 العبارات القديمة — لم يتم تغييرها
+========================================================== */
 
 {
 id:"phrase-01",
@@ -936,6 +1316,1735 @@ price:10,
 
 video:"https://videos.englizaacademy.com/Pre-Intermediate/phrase11.MP4"
 
+},
+
+
+/* ==========================================================
+   📝 العبارات الجديدة — بطاقات تعليمية
+========================================================== */
+
+{
+id:"phrase-12",
+type:"card",
+phrase:"Take your time",
+level:"A2",
+price:3,
+meaning:"خذ وقتك / لا تستعجل.",
+explanation:"تُستخدم عندما تريد أن تخبر شخصًا بأنه ليس بحاجة إلى الاستعجال، ويمكنه أن يأخذ الوقت الذي يحتاجه.",
+whenToUse:"عندما يكون الشخص مستعجلًا في اتخاذ قرار أو إنهاء شيء، وتريد أن تطمئنه بأنه يستطيع التمهّل.",
+examples:[
+{
+en:"Take your time. I'm not in a hurry.",
+ar:"خذ وقتك، أنا لست مستعجلًا."
+},
+{
+en:"Take your time and choose whatever you like.",
+ar:"خذ وقتك واختر ما يعجبك."
+},
+{
+en:"There's no rush. Take your time.",
+ar:"لا يوجد استعجال. خذ وقتك."
+}
+]
+},
+
+{
+id:"phrase-13",
+type:"card",
+phrase:"No worries",
+level:"A2",
+price:3,
+meaning:"لا مشكلة / لا تقلق.",
+explanation:"عبارة شائعة جدًا للطمأنة أو للرد على اعتذار أو طلب شكر بطريقة ودية.",
+whenToUse:"عندما يعتذر شخص، أو يشكرك، أو يقلق من أنه سبب لك مشكلة.",
+examples:[
+{
+en:"Sorry I'm late.",
+ar:"آسف لأنني تأخرت."
+},
+{
+en:"No worries. Take your time.",
+ar:"لا مشكلة. خذ وقتك."
+},
+{
+en:"Thanks for helping me.",
+ar:"شكرًا لمساعدتي."
+},
+{
+en:"No worries!",
+ar:"لا مشكلة!"
+}
+]
+},
+
+{
+id:"phrase-14",
+type:"card",
+phrase:"Sounds good",
+level:"A2",
+price:3,
+meaning:"يبدو جيدًا / فكرة جيدة.",
+explanation:"تُستخدم للموافقة على اقتراح أو خطة بطريقة طبيعية وغير رسمية.",
+whenToUse:"عندما يقترح شخص خطة أو فكرة وتريد أن تقول إنك موافق عليها.",
+examples:[
+{
+en:"Let's meet at six.",
+ar:"لنلتقِ الساعة السادسة."
+},
+{
+en:"Sounds good!",
+ar:"يبدو جيدًا!"
+},
+{
+en:"How about pizza tonight?",
+ar:"ما رأيك بالبيتزا الليلة؟"
+},
+{
+en:"Sounds good to me.",
+ar:"مناسب لي / يبدو جيدًا بالنسبة لي."
+}
+]
+},
+
+{
+id:"phrase-15",
+type:"card",
+phrase:"It depends",
+level:"A2",
+price:3,
+meaning:"هذا يعتمد / يعتمد على الأمر.",
+explanation:"تُستخدم عندما لا تكون الإجابة ثابتة وتعتمد على الظروف أو المعلومات المتاحة.",
+whenToUse:"عندما يسألك شخص سؤالًا لا يمكن الإجابة عنه بنعم أو لا بشكل مباشر.",
+examples:[
+{
+en:"Are you coming tomorrow?",
+ar:"هل ستأتي غدًا؟"
+},
+{
+en:"It depends on the weather.",
+ar:"هذا يعتمد على الطقس."
+},
+{
+en:"Is it expensive?",
+ar:"هل هو غالي؟"
+},
+{
+en:"It depends.",
+ar:"يعتمد الأمر."
+}
+]
+},
+
+{
+id:"phrase-16",
+type:"card",
+phrase:"Not really",
+level:"A2",
+price:3,
+meaning:"ليس حقًا / ليس تمامًا.",
+explanation:"طريقة طبيعية ولطيفة نسبيًا لقول لا عندما لا تكون الإجابة بالنفي الكامل أو القاطع.",
+whenToUse:"عندما تريد الإجابة بالنفي ولكن بطريقة محادثية وطبيعية.",
+examples:[
+{
+en:"Do you like spicy food?",
+ar:"هل تحب الطعام الحار؟"
+},
+{
+en:"Not really.",
+ar:"ليس حقًا."
+},
+{
+en:"Are you tired?",
+ar:"هل أنت متعب؟"
+},
+{
+en:"Not really. I'm okay.",
+ar:"ليس حقًا. أنا بخير."
+}
+]
+},
+
+{
+id:"phrase-17",
+type:"card",
+phrase:"I don't mind",
+level:"A2",
+price:3,
+meaning:"لا مانع لدي.",
+explanation:"تُستخدم عندما يكون لديك استعداد لقبول خيار أو اقتراح، ولا يهمك أي خيار يتم اختياره.",
+whenToUse:"عندما يسألك شخص عن تفضيلك وأنت لا تمانع أيًا من الخيارات.",
+examples:[
+{
+en:"Where should we sit?",
+ar:"أين يجب أن نجلس؟"
+},
+{
+en:"I don't mind. You choose.",
+ar:"لا مانع لدي. اختر أنت."
+},
+{
+en:"Do you mind if I open the window?",
+ar:"هل تمانع إذا فتحت النافذة؟"
+},
+{
+en:"No, I don't mind.",
+ar:"لا، لا مانع لدي."
+}
+]
+},
+
+{
+id:"phrase-18",
+type:"card",
+phrase:"I'm not sure",
+level:"A2",
+price:3,
+meaning:"لست متأكدًا / لست متأكدة.",
+explanation:"تُستخدم عندما لا تكون متأكدًا من معلومة أو قرار أو إجابة.",
+whenToUse:"عندما لا تعرف الإجابة بشكل مؤكد ولا تريد أن تعطي معلومة غير واثق منها.",
+examples:[
+{
+en:"Is Sarah coming tonight?",
+ar:"هل سارة ستأتي الليلة؟"
+},
+{
+en:"I'm not sure.",
+ar:"لست متأكدًا."
+},
+{
+en:"I'm not sure what he means.",
+ar:"لست متأكدًا مما يقصده."
+}
+]
+},
+
+{
+id:"phrase-19",
+type:"card",
+phrase:"Give me a minute",
+level:"A2",
+price:3,
+meaning:"أعطني دقيقة.",
+explanation:"عبارة طبيعية لطلب وقت قصير قبل أن تجيب أو تفعل شيئًا.",
+whenToUse:"عندما تحتاج إلى لحظات قليلة لإنهاء شيء أو التفكير في أمر.",
+examples:[
+{
+en:"Can you help me now?",
+ar:"هل يمكنك مساعدتي الآن؟"
+},
+{
+en:"Give me a minute. I'll be right there.",
+ar:"أعطني دقيقة. سأكون هناك حالًا."
+},
+{
+en:"Give me a minute to finish this.",
+ar:"أعطني دقيقة لأنهي هذا."
+}
+]
+},
+
+{
+id:"phrase-20",
+type:"card",
+phrase:"Here you go",
+level:"A2–B1",
+price:3,
+meaning:"تفضل / ها أنت.",
+explanation:"تُستخدم غالبًا عندما تعطي شخصًا شيئًا طلبه أو ينتظره.",
+whenToUse:"عند تسليم شيء لشخص، مثل كتاب أو طعام أو نقود أو أي غرض.",
+examples:[
+{
+en:"Can I have the menu?",
+ar:"هل يمكنني الحصول على القائمة؟"
+},
+{
+en:"Sure. Here you go.",
+ar:"بالتأكيد. تفضل."
+},
+{
+en:"Here's your coffee. Here you go.",
+ar:"هذه قهوتك. تفضل."
+}
+]
+},
+
+{
+id:"phrase-21",
+type:"card",
+phrase:"Never mind",
+level:"A2–B1",
+price:3,
+meaning:"لا بأس / انسَ الأمر.",
+explanation:"تُستخدم عندما تقرر أن الأمر لم يعد مهمًا، أو عندما لا تحتاج إلى إجابة أو مساعدة بعد الآن.",
+whenToUse:"عندما تغيّر رأيك بشأن طلب أو سؤال، أو عندما تريد أن تقول للشخص إن الأمر لم يعد مهمًا.",
+examples:[
+{
+en:"What did you say?",
+ar:"ماذا قلت؟"
+},
+{
+en:"Never mind. It's not important.",
+ar:"لا بأس. الأمر ليس مهمًا."
+},
+{
+en:"I was going to ask you something, but never mind.",
+ar:"كنت سأطلب منك شيئًا، لكن لا بأس."
+}
+]
+},
+
+{
+id:"phrase-22",
+type:"card",
+phrase:"My bad",
+level:"A2–B1",
+price:3,
+meaning:"خطئي / آسف، هذا خطئي.",
+explanation:"عبارة غير رسمية وشائعة للاعتراف بخطأ بسيط والاعتذار عنه.",
+whenToUse:"في المواقف اليومية غير الرسمية عندما ترتكب خطأ بسيطًا.",
+examples:[
+{
+en:"You took my seat.",
+ar:"أنت أخذت مقعدي."
+},
+{
+en:"Oh, my bad!",
+ar:"أوه، خطئي!"
+},
+{
+en:"My bad. I sent it to the wrong person.",
+ar:"خطئي. أرسلته إلى الشخص الخطأ."
+}
+]
+},
+
+{
+id:"phrase-23",
+type:"card",
+phrase:"I'm on my way",
+level:"A2–B1",
+price:3,
+meaning:"أنا في طريقي.",
+explanation:"تُستخدم لإخبار شخص أنك بدأت طريقك إلى المكان أو أنك قادم إليه.",
+whenToUse:"عندما يتصل بك شخص أو يراسلك ليسأل أين أنت أو متى ستصل.",
+examples:[
+{
+en:"Where are you?",
+ar:"أين أنت؟"
+},
+{
+en:"I'm on my way.",
+ar:"أنا في طريقي."
+},
+{
+en:"Don't worry. I'm on my way home.",
+ar:"لا تقلق. أنا في طريقي إلى المنزل."
+}
+]
+},
+
+{
+id:"phrase-24",
+type:"card",
+phrase:"What's going on?",
+level:"A2–B1",
+price:3,
+meaning:"ماذا يحدث؟ / ما الأمر؟",
+explanation:"تُستخدم للسؤال عما يحدث في موقف معين، وقد تكون للسؤال بشكل عام أو بسبب ملاحظة شيء غير طبيعي.",
+whenToUse:"عندما تريد معرفة ما يحدث حولك أو ما المشكلة.",
+examples:[
+{
+en:"Everyone looks worried. What's going on?",
+ar:"الجميع يبدو قلقًا. ماذا يحدث؟"
+},
+{
+en:"Hey, what's going on?",
+ar:"مرحبًا، ما الأمر؟"
+},
+{
+en:"What's going on here?",
+ar:"ماذا يحدث هنا؟"
+}
+]
+},
+
+{
+id:"phrase-25",
+type:"card",
+phrase:"Are you sure?",
+level:"A2–B1",
+price:3,
+meaning:"هل أنت متأكد؟",
+explanation:"تُستخدم للتأكد من أن الشخص متأكد من كلامه أو قراره.",
+whenToUse:"عندما تريد التأكد من معلومة أو قرار قبل أن تتصرف بناءً عليه.",
+examples:[
+{
+en:"I'm going to quit my job.",
+ar:"سأترك عملي."
+},
+{
+en:"Are you sure?",
+ar:"هل أنت متأكد؟"
+},
+{
+en:"Are you sure this is the right address?",
+ar:"هل أنت متأكد أن هذا هو العنوان الصحيح؟"
+}
+]
+},
+
+{
+id:"phrase-26",
+type:"card",
+phrase:"That makes sense",
+level:"B1",
+price:4,
+meaning:"هذا منطقي / كلامك منطقي.",
+explanation:"تُستخدم عندما تفهم سببًا أو تفسيرًا قدمه شخص آخر وترى أنه منطقي.",
+whenToUse:"في المحادثات عندما يشرح شخص شيئًا وتريد إظهار أنك فهمت منطقه.",
+examples:[
+{
+en:"I stayed home because I was exhausted.",
+ar:"بقيت في المنزل لأنني كنت مرهقًا."
+},
+{
+en:"That makes sense.",
+ar:"هذا منطقي."
+},
+{
+en:"That makes sense now. I understand.",
+ar:"هذا منطقي الآن. فهمت."
+}
+]
+},
+
+{
+id:"phrase-27",
+type:"card",
+phrase:"It's up to you",
+level:"B1",
+price:4,
+meaning:"الأمر يعود لك / القرار لك.",
+explanation:"تُستخدم عندما تترك الاختيار أو القرار للشخص الآخر.",
+whenToUse:"عندما لا تريد فرض خيار معين وتريد أن يقرر الشخص الآخر.",
+examples:[
+{
+en:"Where should we eat?",
+ar:"أين يجب أن نأكل؟"
+},
+{
+en:"It's up to you.",
+ar:"الأمر يعود لك."
+},
+{
+en:"We can leave now or later. It's up to you.",
+ar:"يمكننا المغادرة الآن أو لاحقًا. القرار لك."
+}
+]
+},
+
+{
+id:"phrase-28",
+type:"card",
+phrase:"I'm just kidding",
+level:"B1",
+price:4,
+meaning:"أنا أمزح فقط.",
+explanation:"تُستخدم لتوضيح أنك لم تكن جادًا وأن ما قلته كان مزاحًا.",
+whenToUse:"بعد قول شيء على سبيل المزاح، خصوصًا إذا كان من الممكن أن يفهمه الشخص الآخر بجدية.",
+examples:[
+{
+en:"I'm going to eat all your cake.",
+ar:"سآكل كل كعكتك."
+},
+{
+en:"I'm just kidding!",
+ar:"أنا أمزح فقط!"
+},
+{
+en:"Don't worry, I'm just kidding.",
+ar:"لا تقلق، أنا أمزح فقط."
+}
+]
+},
+
+{
+id:"phrase-29",
+type:"card",
+phrase:"Don't worry about it",
+level:"B1",
+price:4,
+meaning:"لا تقلق بشأن الأمر.",
+explanation:"عبارة شائعة لطمأنة شخص وإخباره بأن الأمر ليس مشكلة.",
+whenToUse:"عندما يكون شخص قلقًا أو يعتذر عن شيء وتريد طمأنته.",
+examples:[
+{
+en:"I'm sorry I forgot.",
+ar:"آسف لأنني نسيت."
+},
+{
+en:"Don't worry about it.",
+ar:"لا تقلق بشأن الأمر."
+},
+{
+en:"Don't worry about it. We can fix it.",
+ar:"لا تقلق بشأن الأمر. يمكننا إصلاحه."
+}
+]
+},
+
+{
+id:"phrase-30",
+type:"card",
+phrase:"Let me think about it",
+level:"B1",
+price:4,
+meaning:"دعني أفكر في الأمر.",
+explanation:"تُستخدم عندما تحتاج إلى وقت للتفكير قبل إعطاء إجابة أو اتخاذ قرار.",
+whenToUse:"عندما يُطلب منك اتخاذ قرار فورًا لكنك تحتاج إلى التفكير أولًا.",
+examples:[
+{
+en:"Do you want to join us?",
+ar:"هل تريد الانضمام إلينا؟"
+},
+{
+en:"Let me think about it.",
+ar:"دعني أفكر في الأمر."
+},
+{
+en:"Let me think about it and I'll let you know.",
+ar:"دعني أفكر في الأمر وسأخبرك."
+}
+]
+},
+
+{
+id:"phrase-31",
+type:"card",
+phrase:"I'll get back to you",
+level:"B1",
+price:4,
+meaning:"سأعود إليك / سأخبرك لاحقًا.",
+explanation:"تُستخدم عندما تحتاج إلى التحقق من شيء أو التفكير فيه قبل إعطاء الشخص إجابة.",
+whenToUse:"في المحادثات اليومية أو العمل عندما لا تستطيع إعطاء إجابة فورية.",
+examples:[
+{
+en:"Can you confirm the date?",
+ar:"هل يمكنك تأكيد التاريخ؟"
+},
+{
+en:"I'll get back to you this afternoon.",
+ar:"سأعود إليك بعد ظهر اليوم."
+},
+{
+en:"I need to check first. I'll get back to you.",
+ar:"أحتاج إلى التحقق أولًا. سأعود إليك."
+}
+]
+},
+
+{
+id:"phrase-32",
+type:"card",
+phrase:"I'm running late",
+level:"B1",
+price:4,
+meaning:"أنا متأخر / سأتأخر.",
+explanation:"تُستخدم عندما تكون متأخرًا عن موعد أو تتوقع أن تصل بعد الوقت المحدد.",
+whenToUse:"عندما تريد إخبار شخص ينتظرك بأنك لن تصل في الوقت المحدد.",
+examples:[
+{
+en:"I'm running late. I'll be there in ten minutes.",
+ar:"سأتأخر. سأكون هناك خلال عشر دقائق."
+},
+{
+en:"Sorry, I'm running late.",
+ar:"آسف، سأتأخر."
+},
+{
+en:"I'm running late for work.",
+ar:"أنا متأخر عن العمل."
+}
+]
+},
+
+{
+id:"phrase-33",
+type:"card",
+phrase:"I'm in a hurry",
+level:"B1",
+price:4,
+meaning:"أنا مستعجل.",
+explanation:"تُستخدم لإخبار شخص أنك تحتاج إلى القيام بشيء بسرعة لأن وقتك محدود.",
+whenToUse:"عندما تكون مستعجلًا ولا تملك وقتًا كافيًا.",
+examples:[
+{
+en:"Can we talk later? I'm in a hurry.",
+ar:"هل يمكننا التحدث لاحقًا؟ أنا مستعجل."
+},
+{
+en:"I'm in a hurry, so I'll take a taxi.",
+ar:"أنا مستعجل، لذلك سأستقل سيارة أجرة."
+},
+{
+en:"Sorry, I'm in a hurry.",
+ar:"آسف، أنا مستعجل."
+}
+]
+},
+
+{
+id:"phrase-34",
+type:"card",
+phrase:"I'm not in the mood",
+level:"B1",
+price:4,
+meaning:"لست في مزاج يسمح لي بذلك.",
+explanation:"تُستخدم عندما لا تشعر بالرغبة في القيام بشيء معين في الوقت الحالي.",
+whenToUse:"عندما يعرض عليك شخص نشاطًا أو شيئًا وأنت لا تشعر بالرغبة فيه.",
+examples:[
+{
+en:"Do you want to go out tonight?",
+ar:"هل تريد الخروج الليلة؟"
+},
+{
+en:"Not really. I'm not in the mood.",
+ar:"ليس حقًا. لست في مزاج يسمح لي بذلك."
+},
+{
+en:"I'm not in the mood for a movie tonight.",
+ar:"لست في مزاج يسمح لي بمشاهدة فيلم الليلة."
+}
+]
+},
+
+{
+id:"phrase-35",
+type:"card",
+phrase:"I can't make it",
+level:"B1",
+price:4,
+meaning:"لا أستطيع الحضور / لن أتمكن من الحضور.",
+explanation:"تُستخدم عندما لا تستطيع حضور موعد أو مناسبة أو الالتزام بخطة معينة.",
+whenToUse:"عندما تكون لديك خطة أو موعد ولكنك لن تستطيع الحضور.",
+examples:[
+{
+en:"Can you come to dinner tonight?",
+ar:"هل يمكنك الحضور للعشاء الليلة؟"
+},
+{
+en:"Sorry, I can't make it.",
+ar:"آسف، لا أستطيع الحضور."
+},
+{
+en:"I can't make it tomorrow, but I'm free on Friday.",
+ar:"لا أستطيع الحضور غدًا، لكنني متفرغ يوم الجمعة."
+}
+]
+},
+
+{
+id:"phrase-36",
+type:"card",
+phrase:"What do you mean?",
+level:"B1",
+price:4,
+meaning:"ماذا تقصد؟",
+explanation:"تُستخدم لطلب توضيح لما قاله شخص آخر عندما لم تفهم قصده تمامًا.",
+whenToUse:"عندما تكون عبارة الشخص غير واضحة أو تريد معرفة قصده بالتحديد.",
+examples:[
+{
+en:"You should leave.",
+ar:"يجب أن تغادر."
+},
+{
+en:"What do you mean?",
+ar:"ماذا تقصد؟"
+},
+{
+en:"What do you mean by that?",
+ar:"ماذا تقصد بذلك؟"
+}
+]
+},
+
+{
+id:"phrase-37",
+type:"card",
+phrase:"As far as I know",
+level:"B1–B2",
+price:4,
+meaning:"على حد علمي.",
+explanation:"تُستخدم عندما تعطي معلومة تعتقد أنها صحيحة بناءً على ما تعرفه، مع الإشارة إلى أنك لست متأكدًا بنسبة 100٪.",
+whenToUse:"عندما تجيب عن سؤال بمعلومة لديك، لكنك تريد توضيح أن معرفتك قد تكون محدودة.",
+examples:[
+{
+en:"As far as I know, the store closes at nine.",
+ar:"على حد علمي، يغلق المتجر الساعة التاسعة."
+},
+{
+en:"As far as I know, she's still in Oman.",
+ar:"على حد علمي، لا تزال في عُمان."
+},
+{
+en:"As far as I know, nothing has changed.",
+ar:"على حد علمي، لم يتغير شيء."
+}
+]
+},
+
+{
+id:"phrase-38",
+type:"card",
+phrase:"So far, so good",
+level:"B1–B2",
+price:4,
+meaning:"حتى الآن، الأمور جيدة.",
+explanation:"تُستخدم لوصف شيء بدأ بالفعل وتسير الأمور فيه بشكل جيد حتى هذه اللحظة.",
+whenToUse:"عندما يسألك شخص عن تقدم شيء ما أو كيف تسير الأمور.",
+examples:[
+{
+en:"How's your new job?",
+ar:"كيف هو عملك الجديد؟"
+},
+{
+en:"So far, so good.",
+ar:"حتى الآن، الأمور جيدة."
+},
+{
+en:"How is the course going?",
+ar:"كيف تسير الدورة؟"
+},
+{
+en:"So far, so good.",
+ar:"حتى الآن، كل شيء جيد."
+}
+]
+},
+
+{
+id:"phrase-39",
+type:"card",
+phrase:"It turns out",
+level:"B1–B2",
+price:4,
+meaning:"اتضح أن...",
+explanation:"تُستخدم عندما تكتشف حقيقة أو نتيجة لم تكن واضحة أو متوقعة في البداية.",
+whenToUse:"عندما تتحدث عن شيء اكتشفته لاحقًا.",
+examples:[
+{
+en:"I thought he was busy, but it turns out he was free.",
+ar:"ظننت أنه مشغول، لكن اتضح أنه كان متفرغًا."
+},
+{
+en:"It turns out we were wrong.",
+ar:"اتضح أننا كنا مخطئين."
+},
+{
+en:"It turns out she already knew.",
+ar:"اتضح أنها كانت تعرف بالفعل."
+}
+]
+},
+
+{
+id:"phrase-40",
+type:"card",
+phrase:"I'm used to it",
+level:"B1–B2",
+price:4,
+meaning:"أنا معتاد على ذلك.",
+explanation:"تُستخدم عندما يكون الشيء مألوفًا لك لأنك اعتدت عليه.",
+whenToUse:"عندما تتحدث عن شيء كان صعبًا أو غريبًا في البداية لكنه أصبح طبيعيًا بالنسبة لك.",
+examples:[
+{
+en:"Isn't the noise annoying?",
+ar:"أليس الضجيج مزعجًا؟"
+},
+{
+en:"I'm used to it.",
+ar:"أنا معتاد عليه."
+},
+{
+en:"I'm used to waking up early.",
+ar:"أنا معتاد على الاستيقاظ مبكرًا."
+}
+]
+},
+
+{
+id:"phrase-41",
+type:"card",
+phrase:"I'm getting used to it",
+level:"B1–B2",
+price:4,
+meaning:"بدأت أعتاد عليه.",
+explanation:"تُستخدم عندما تكون في مرحلة التعود على شيء جديد ولم يصبح طبيعيًا تمامًا لك بعد.",
+whenToUse:"عندما تتكيف تدريجيًا مع مكان أو عادة أو وضع جديد.",
+examples:[
+{
+en:"How do you like your new schedule?",
+ar:"كيف تجد جدولك الجديد؟"
+},
+{
+en:"It's different, but I'm getting used to it.",
+ar:"إنه مختلف، لكنني بدأت أعتاد عليه."
+},
+{
+en:"I'm getting used to living here.",
+ar:"بدأت أعتاد على العيش هنا."
+}
+]
+},
+
+{
+id:"phrase-42",
+type:"card",
+phrase:"That's a good point",
+level:"B1–B2",
+price:4,
+meaning:"هذه نقطة جيدة / كلامك في محله.",
+explanation:"تُستخدم عندما يذكر شخص فكرة أو سببًا لم تكن قد فكرت فيه أو تراه منطقيًا ومهمًا.",
+whenToUse:"في النقاشات والمحادثات عندما تريد الاعتراف بأن فكرة الشخص الآخر مهمة.",
+examples:[
+{
+en:"We should leave early to avoid traffic.",
+ar:"يجب أن نغادر مبكرًا لتجنب الازدحام."
+},
+{
+en:"That's a good point.",
+ar:"هذه نقطة جيدة."
+},
+{
+en:"That's a good point. I hadn't thought about that.",
+ar:"هذه نقطة جيدة. لم أفكر في ذلك."
+}
+]
+},
+
+{
+id:"phrase-43",
+type:"card",
+phrase:"Fair enough",
+level:"B1–B2",
+price:4,
+meaning:"مقبول / وجهة نظر منطقية.",
+explanation:"تُستخدم عندما ترى أن سبب الشخص أو موقفه معقول حتى لو لم تكن تتفق معه تمامًا.",
+whenToUse:"عندما يقدم شخص سببًا أو تفسيرًا منطقيًا وتريد الاعتراف بأنه معقول.",
+examples:[
+{
+en:"I don't want to go out because I'm tired.",
+ar:"لا أريد الخروج لأنني متعب."
+},
+{
+en:"Fair enough.",
+ar:"مقبول / مفهوم."
+},
+{
+en:"You have a point. Fair enough.",
+ar:"لديك وجهة نظر. كلامك مقبول."
+}
+]
+},
+
+{
+id:"phrase-44",
+type:"card",
+phrase:"I see what you mean",
+level:"B1–B2",
+price:4,
+meaning:"أفهم ما تقصده.",
+explanation:"تُستخدم عندما تفهم وجهة نظر الشخص أو قصده بعد أن يشرح لك فكرته.",
+whenToUse:"في المحادثات والنقاشات لإظهار أنك فهمت وجهة نظر الطرف الآخر.",
+examples:[
+{
+en:"This design is simpler and easier to use.",
+ar:"هذا التصميم أبسط وأسهل في الاستخدام."
+},
+{
+en:"I see what you mean.",
+ar:"أفهم ما تقصده."
+},
+{
+en:"Now I see what you mean.",
+ar:"الآن فهمت ما تقصده."
+}
+]
+},
+
+{
+id:"phrase-45",
+type:"card",
+phrase:"Keep me posted",
+level:"B2",
+price:5,
+meaning:"أبقني على اطلاع / أخبرني بالتحديثات.",
+explanation:"تُستخدم عندما تريد من شخص أن يطلعك على أي تطورات أو أخبار جديدة.",
+whenToUse:"في العمل أو الدراسة أو أي موقف تتوقع فيه حدوث تحديثات لاحقًا.",
+examples:[
+{
+en:"Keep me posted if anything changes.",
+ar:"أبقني على اطلاع إذا تغير أي شيء."
+},
+{
+en:"Keep me posted about the project.",
+ar:"أطلعني على مستجدات المشروع."
+},
+{
+en:"I'll keep you posted.",
+ar:"سأبقيك على اطلاع."
+}
+]
+},
+
+{
+id:"phrase-46",
+type:"card",
+phrase:"Give me a heads-up",
+level:"B2",
+price:5,
+meaning:"نبّهني مسبقًا / أخبرني مسبقًا.",
+explanation:"تُستخدم لطلب إشعار مسبق قبل حدوث شيء أو قبل اتخاذ إجراء.",
+whenToUse:"عندما تريد أن يخبرك شخص مسبقًا إذا كان هناك تغيير أو حدث مهم.",
+examples:[
+{
+en:"Give me a heads-up before you arrive.",
+ar:"نبّهني قبل أن تصل."
+},
+{
+en:"Please give me a heads-up if you're going to be late.",
+ar:"من فضلك أخبرني مسبقًا إذا كنت ستتأخر."
+},
+{
+en:"Thanks for the heads-up.",
+ar:"شكرًا على التنبيه المسبق."
+}
+]
+},
+
+{
+id:"phrase-47",
+type:"card",
+phrase:"I'm tied up right now",
+level:"B2",
+price:5,
+meaning:"أنا مشغول جدًا الآن.",
+explanation:"عبارة طبيعية تعني أنك مشغول حاليًا ولا تستطيع التعامل مع شيء آخر.",
+whenToUse:"عندما تكون مشغولًا بعمل أو مهمة ولا تستطيع التحدث أو المساعدة في الوقت الحالي.",
+examples:[
+{
+en:"Can I call you?",
+ar:"هل يمكنني الاتصال بك؟"
+},
+{
+en:"I'm tied up right now. Can I call you later?",
+ar:"أنا مشغول جدًا الآن. هل يمكنني الاتصال بك لاحقًا؟"
+},
+{
+en:"She's tied up with work today.",
+ar:"هي مشغولة جدًا بالعمل اليوم."
+}
+]
+},
+
+{
+id:"phrase-48",
+type:"card",
+phrase:"It's not a big deal",
+level:"B2",
+price:4,
+meaning:"الأمر ليس مشكلة كبيرة.",
+explanation:"تُستخدم لتقليل أهمية مشكلة أو خطأ وطمأنة الشخص الآخر بأن الأمر بسيط.",
+whenToUse:"عندما يعتذر شخص أو يقلق من خطأ بسيط.",
+examples:[
+{
+en:"I'm sorry I broke the cup.",
+ar:"آسف لأنني كسرت الكوب."
+},
+{
+en:"It's not a big deal.",
+ar:"الأمر ليس مشكلة كبيرة."
+},
+{
+en:"Don't worry. It's not a big deal.",
+ar:"لا تقلق. الأمر ليس مشكلة كبيرة."
+}
+]
+},
+
+{
+id:"phrase-49",
+type:"card",
+phrase:"I'm all ears",
+level:"B2",
+price:5,
+meaning:"أنا أستمع إليك / أنا مستعد لسماعك.",
+explanation:"تعبير غير رسمي يعني أنك مستعد للاستماع باهتمام لما سيقوله الشخص الآخر.",
+whenToUse:"عندما يخبرك شخص أن لديه شيئًا يريد أن يقوله أو يشاركك به.",
+examples:[
+{
+en:"I need to tell you something.",
+ar:"أحتاج أن أخبرك بشيء."
+},
+{
+en:"I'm all ears.",
+ar:"أنا أستمع إليك."
+},
+{
+en:"Go ahead. I'm all ears.",
+ar:"تفضل، أنا أستمع إليك."
+}
+]
+},
+
+{
+id:"phrase-50",
+type:"card",
+phrase:"It slipped my mind",
+level:"B2",
+price:5,
+meaning:"نسيت الأمر / غاب عن بالي.",
+explanation:"تُستخدم عندما تنسى شيئًا لم تكن تقصد نسيانه، وكأن المعلومة خرجت من ذاكرتك للحظة.",
+whenToUse:"عندما تنسى موعدًا أو مهمة أو معلومة كان من المفترض أن تتذكرها.",
+examples:[
+{
+en:"Why didn't you call me?",
+ar:"لماذا لم تتصل بي؟"
+},
+{
+en:"I'm sorry. It slipped my mind.",
+ar:"آسف. نسيت الأمر."
+},
+{
+en:"I was supposed to send the email, but it slipped my mind.",
+ar:"كان من المفترض أن أرسل البريد، لكنني نسيت."
+}
+]
+},
+
+{
+id:"phrase-51",
+type:"card",
+phrase:"I couldn't agree more",
+level:"B2",
+price:5,
+meaning:"لا يمكنني أن أوافق أكثر / أتفق معك تمامًا.",
+explanation:"تعبير قوي جدًا للموافقة مع رأي شخص آخر.",
+whenToUse:"عندما تكون موافقًا تمامًا على ما قاله الشخص الآخر.",
+examples:[
+{
+en:"Practice is the key to improving.",
+ar:"الممارسة هي مفتاح التحسن."
+},
+{
+en:"I couldn't agree more.",
+ar:"أتفق معك تمامًا."
+},
+{
+en:"We need more time. I couldn't agree more.",
+ar:"نحتاج إلى مزيد من الوقت. أتفق تمامًا."
+}
+]
+},
+
+{
+id:"phrase-52",
+type:"card",
+phrase:"That's beside the point",
+level:"B2",
+price:5,
+meaning:"هذا خارج الموضوع / ليس هذا هو المقصود.",
+explanation:"تُستخدم عندما يذكر شخص نقطة قد تكون صحيحة لكنها ليست النقطة الأساسية التي تتم مناقشتها.",
+whenToUse:"في النقاشات عندما يبتعد الكلام عن الفكرة الرئيسية.",
+examples:[
+{
+en:"Maybe he was tired, but that's beside the point.",
+ar:"ربما كان متعبًا، لكن هذا ليس هو الموضوع."
+},
+{
+en:"That's beside the point. We need to solve the problem.",
+ar:"هذا خارج الموضوع. نحتاج إلى حل المشكلة."
+},
+{
+en:"You're right, but that's beside the point.",
+ar:"أنت محق، لكن هذا ليس هو المقصود."
+}
+]
+},
+
+{
+id:"phrase-53",
+type:"card",
+phrase:"It's worth it",
+level:"B2",
+price:4,
+meaning:"الأمر يستحق ذلك.",
+explanation:"تُستخدم عندما ترى أن الفائدة أو النتيجة تستحق الوقت أو المال أو الجهد المبذول.",
+whenToUse:"عندما تتحدث عن تجربة أو شراء أو جهد وتريد القول إن النتيجة تستحق.",
+examples:[
+{
+en:"The course is expensive, but it's worth it.",
+ar:"الدورة غالية، لكنها تستحق ذلك."
+},
+{
+en:"It's a long trip, but it's worth it.",
+ar:"إنها رحلة طويلة، لكنها تستحق."
+},
+{
+en:"Trust me, it's worth it.",
+ar:"ثق بي، الأمر يستحق."
+}
+]
+},
+
+{
+id:"phrase-54",
+type:"card",
+phrase:"Go ahead",
+level:"B2",
+price:4,
+meaning:"تفضل / تابع / افعل ذلك.",
+explanation:"تُستخدم لإعطاء شخص الإذن بالقيام بشيء أو الاستمرار في الحديث أو الفعل.",
+whenToUse:"عندما يطلب شخص إذنك أو يتردد قبل أن يفعل شيئًا.",
+examples:[
+{
+en:"Can I ask you something?",
+ar:"هل يمكنني أن أسألك شيئًا؟"
+},
+{
+en:"Go ahead.",
+ar:"تفضل."
+},
+{
+en:"If you want to leave, go ahead.",
+ar:"إذا كنت تريد المغادرة، فتفضل."
+}
+]
+},
+
+{
+id:"phrase-55",
+type:"card",
+phrase:"I'm better off",
+level:"B2",
+price:5,
+meaning:"من الأفضل لي أن... / وضعي أفضل عندما...",
+explanation:"تُستخدم للمقارنة بين وضعين وبيان أن خيارًا معينًا سيكون أفضل لك.",
+whenToUse:"عندما تتحدث عن قرار أو خيار ترى أن نتيجته ستكون أفضل بالنسبة لك.",
+examples:[
+{
+en:"I'm better off staying home tonight.",
+ar:"من الأفضل لي أن أبقى في المنزل الليلة."
+},
+{
+en:"I think you're better off waiting.",
+ar:"أعتقد أنه من الأفضل لك أن تنتظر."
+},
+{
+en:"I'm better off without it.",
+ar:"وضعي أفضل من دونه."
+}
+]
+},
+
+{
+id:"phrase-56",
+type:"card",
+phrase:"I ended up",
+level:"B2",
+price:5,
+meaning:"انتهى بي الأمر إلى...",
+explanation:"تُستخدم للحديث عن النتيجة النهائية لشيء، خصوصًا عندما كانت النتيجة مختلفة عما كنت تخطط له.",
+whenToUse:"عندما تتحدث عن شيء حدث في النهاية رغم أن الخطة أو التوقع كان مختلفًا.",
+examples:[
+{
+en:"I planned to stay for an hour, but I ended up staying all day.",
+ar:"خططت للبقاء ساعة، لكن انتهى بي الأمر بالبقاء طوال اليوم."
+},
+{
+en:"We ended up going home early.",
+ar:"انتهى بنا الأمر بالعودة إلى المنزل مبكرًا."
+},
+{
+en:"I ended up buying the blue one.",
+ar:"انتهى بي الأمر بشراء الأزرق."
+}
+]
+},
+
+{
+id:"phrase-57",
+type:"card",
+phrase:"At the end of the day",
+level:"B2",
+price:5,
+meaning:"في نهاية المطاف / في النهاية.",
+explanation:"تُستخدم للانتقال إلى النقطة أو النتيجة الأساسية بعد الحديث عن عدة عوامل أو تفاصيل.",
+whenToUse:"عندما تريد تلخيص الفكرة الأساسية أو الوصول إلى النتيجة النهائية.",
+examples:[
+{
+en:"There are many options, but at the end of the day, it's your decision.",
+ar:"هناك خيارات كثيرة، لكن في النهاية القرار قرارك."
+},
+{
+en:"At the end of the day, we all want the same thing.",
+ar:"في نهاية المطاف، نريد جميعًا الشيء نفسه."
+},
+{
+en:"At the end of the day, experience matters.",
+ar:"في النهاية، الخبرة مهمة."
+}
+]
+},
+
+{
+id:"phrase-58",
+type:"card",
+phrase:"Long story short",
+level:"B2",
+price:5,
+meaning:"باختصار / باختصار شديد.",
+explanation:"تُستخدم عندما تريد اختصار قصة أو شرح طويل والانتقال مباشرة إلى النتيجة.",
+whenToUse:"في المحادثات غير الرسمية عندما تكون القصة طويلة وتريد إعطاء الخلاصة.",
+examples:[
+{
+en:"Long story short, we missed the train.",
+ar:"باختصار، فاتنا القطار."
+},
+{
+en:"Long story short, I got the job.",
+ar:"باختصار، حصلت على الوظيفة."
+},
+{
+en:"Long story short, everything worked out.",
+ar:"باختصار، سارت الأمور على ما يرام."
+}
+]
+},
+
+{
+id:"phrase-59",
+type:"card",
+phrase:"For the time being",
+level:"B2–C1",
+price:5,
+meaning:"في الوقت الحالي / في هذه الفترة.",
+explanation:"تُستخدم للحديث عن وضع مؤقت سيستمر في الوقت الحالي، لكنه قد يتغير لاحقًا.",
+whenToUse:"عندما يكون الشيء صحيحًا أو مناسبًا الآن لكنه ليس بالضرورة دائمًا.",
+examples:[
+{
+en:"For the time being, we'll work from home.",
+ar:"في الوقت الحالي، سنعمل من المنزل."
+},
+{
+en:"I'm staying here for the time being.",
+ar:"سأبقى هنا في الوقت الحالي."
+},
+{
+en:"For the time being, this is the best option.",
+ar:"في الوقت الحالي، هذا هو الخيار الأفضل."
+}
+]
+},
+
+{
+id:"phrase-60",
+type:"card",
+phrase:"Come to think of it",
+level:"B2–C1",
+price:5,
+meaning:"الآن بعد أن فكرت في الأمر / عندما أفكر في الأمر.",
+explanation:"تُستخدم عندما تتذكر أو تدرك شيئًا أثناء الحديث بعد أن تفكر فيه للحظة.",
+whenToUse:"عندما تخطر ببالك معلومة أو فكرة جديدة مرتبطة بما تتحدث عنه.",
+examples:[
+{
+en:"Come to think of it, I haven't seen him today.",
+ar:"الآن بعد أن فكرت في الأمر، لم أره اليوم."
+},
+{
+en:"Come to think of it, you're right.",
+ar:"عندما أفكر في الأمر، أنت محق."
+},
+{
+en:"Come to think of it, I already have one.",
+ar:"الآن بعد أن فكرت في الأمر، لدي واحد بالفعل."
+}
+]
+},
+
+{
+id:"phrase-61",
+type:"card",
+phrase:"Once in a blue moon",
+level:"B2–C1",
+price:5,
+meaning:"نادرًا جدًا / مرة كل فترة طويلة.",
+explanation:"تعبير اصطلاحي يعني أن شيئًا يحدث في حالات نادرة جدًا.",
+whenToUse:"عندما تريد وصف عادة أو حدث لا يحدث إلا نادرًا.",
+examples:[
+{
+en:"I eat fast food once in a blue moon.",
+ar:"آكل الوجبات السريعة نادرًا جدًا."
+},
+{
+en:"We see each other once in a blue moon.",
+ar:"نحن نلتقي نادرًا جدًا."
+},
+{
+en:"She only goes to the cinema once in a blue moon.",
+ar:"هي لا تذهب إلى السينما إلا نادرًا جدًا."
+}
+]
+},
+
+{
+id:"phrase-62",
+type:"card",
+phrase:"Break the ice",
+level:"B2",
+price:5,
+meaning:"يكسر الحاجز / يخفف التوتر في البداية.",
+explanation:"تعبير يعني القيام بشيء يساعد الناس على الشعور براحة أكبر عندما يلتقون أو يتحدثون لأول مرة.",
+whenToUse:"خصوصًا في بداية اجتماع أو لقاء أو محادثة بين أشخاص لا يعرفون بعضهم جيدًا.",
+examples:[
+{
+en:"I told a joke to break the ice.",
+ar:"قلت نكتة لكسر الحاجز وتخفيف التوتر."
+},
+{
+en:"The game helped everyone break the ice.",
+ar:"ساعدت اللعبة الجميع على كسر الحاجز."
+},
+{
+en:"A simple question can break the ice.",
+ar:"يمكن لسؤال بسيط أن يكسر الحاجز."
+}
+]
+},
+
+{
+id:"phrase-63",
+type:"card",
+phrase:"Get the hang of it",
+level:"B2",
+price:5,
+meaning:"يتقن الأمر تدريجيًا / يفهم طريقة القيام به.",
+explanation:"تعبير يُستخدم عندما تبدأ في فهم كيفية القيام بشيء بعد بعض التدريب أو المحاولة.",
+whenToUse:"عندما تتعلم مهارة أو طريقة جديدة وتبدأ في إتقانها.",
+examples:[
+{
+en:"I'm still learning, but I'm getting the hang of it.",
+ar:"ما زلت أتعلم، لكنني بدأت أفهم الطريقة."
+},
+{
+en:"You'll get the hang of it soon.",
+ar:"ستتقن الأمر قريبًا."
+},
+{
+en:"It was difficult at first, but I got the hang of it.",
+ar:"كان صعبًا في البداية، لكنني أتقنت الطريقة."
+}
+]
+},
+
+{
+id:"phrase-64",
+type:"card",
+phrase:"Under the weather",
+level:"B2",
+price:5,
+meaning:"يشعر بتوعك / ليس على ما يرام.",
+explanation:"تعبير اصطلاحي شائع يعني أن الشخص يشعر بالمرض أو التعب.",
+whenToUse:"في المحادثات اليومية عندما تشعر أنك لست بصحة جيدة.",
+examples:[
+{
+en:"I'm feeling a little under the weather today.",
+ar:"أشعر بتوعك قليل اليوم."
+},
+{
+en:"She stayed home because she was under the weather.",
+ar:"بقيت في المنزل لأنها لم تكن على ما يرام."
+},
+{
+en:"You look under the weather.",
+ar:"تبدو متعبًا / لست على ما يرام."
+}
+]
+},
+
+{
+id:"phrase-65",
+type:"card",
+phrase:"Hit the nail on the head",
+level:"B2–C1",
+price:5,
+meaning:"أصاب كبد الحقيقة / وصف الأمر بدقة.",
+explanation:"تعبير اصطلاحي يعني أن شخصًا قال شيئًا دقيقًا جدًا أو حدد المشكلة الحقيقية.",
+whenToUse:"عندما يصف شخص المشكلة أو الفكرة بطريقة دقيقة جدًا.",
+examples:[
+{
+en:"You hit the nail on the head. That's exactly the problem.",
+ar:"لقد وصفت المشكلة بدقة. هذه هي المشكلة بالضبط."
+},
+{
+en:"She hit the nail on the head with her comment.",
+ar:"لقد أصابت كبد الحقيقة بتعليقها."
+},
+{
+en:"You really hit the nail on the head.",
+ar:"لقد أصبت الحقيقة تمامًا."
+}
+]
+},
+
+{
+id:"phrase-66",
+type:"card",
+phrase:"On the same page",
+level:"B2",
+price:5,
+meaning:"متفقون / نفهم الأمر بالطريقة نفسها.",
+explanation:"تعبير يُستخدم عندما يكون الأشخاص متفقين أو لديهم الفهم نفسه حول موضوع أو خطة.",
+whenToUse:"خصوصًا في العمل أو الدراسة أو عند وضع خطة مشتركة.",
+examples:[
+{
+en:"Let's make sure we're all on the same page.",
+ar:"لنتأكد من أننا جميعًا متفقون ونفهم الأمر بالطريقة نفسها."
+},
+{
+en:"We're on the same page now.",
+ar:"نحن متفقون الآن."
+},
+{
+en:"I just want to make sure we're on the same page.",
+ar:"أريد فقط أن أتأكد أننا نفهم الأمر بالطريقة نفسها."
+}
+]
+},
+
+{
+id:"phrase-67",
+type:"card",
+phrase:"Speak of the devil",
+level:"B2–C1",
+price:5,
+meaning:"جاء ذكره / جاء في الوقت المناسب بعد أن تحدثنا عنه.",
+explanation:"تعبير يُقال عندما تتحدث عن شخص ثم يظهر هذا الشخص أو يتصل بك فجأة.",
+whenToUse:"في المحادثات غير الرسمية عندما يظهر شخص كنت تتحدث عنه للتو.",
+examples:[
+{
+en:"We were just talking about Sarah. Speak of the devil!",
+ar:"كنا نتحدث عن سارة للتو. جاء ذكرها!"
+},
+{
+en:"Speak of the devil, here he is.",
+ar:"جاء ذكره، ها هو هنا."
+},
+{
+en:"We were wondering where you were. Speak of the devil!",
+ar:"كنا نتساءل أين كنت. جاء ذكرُك!"
+}
+]
+},
+
+{
+id:"phrase-68",
+type:"card",
+phrase:"When pigs fly",
+level:"B2–C1",
+price:5,
+meaning:"لن يحدث أبدًا / عندما تطير الخنازير.",
+explanation:"تعبير ساخر يعني أن شيئًا لن يحدث أبدًا أو من المستبعد جدًا أن يحدث.",
+whenToUse:"عندما تتحدث بشكل غير رسمي عن شيء تعتقد أنه مستحيل أو بعيد جدًا.",
+examples:[
+{
+en:"Will he apologize?",
+ar:"هل سيعتذر؟"
+},
+{
+en:"When pigs fly!",
+ar:"لن يحدث ذلك أبدًا!"
+},
+{
+en:"She'll wake up early when pigs fly.",
+ar:"لن تستيقظ مبكرًا أبدًا."
+}
+]
+},
+
+{
+id:"phrase-69",
+type:"card",
+phrase:"A piece of cake",
+level:"B1–B2",
+price:4,
+meaning:"سهل جدًا.",
+explanation:"تعبير اصطلاحي يعني أن شيئًا ما سهل جدًا القيام به.",
+whenToUse:"في المحادثات غير الرسمية عندما تريد وصف مهمة أو اختبار أو نشاط بأنه سهل.",
+examples:[
+{
+en:"Was the test difficult?",
+ar:"هل كان الاختبار صعبًا؟"
+},
+{
+en:"No, it was a piece of cake.",
+ar:"لا، كان سهلًا جدًا."
+},
+{
+en:"Don't worry. It's a piece of cake.",
+ar:"لا تقلق. الأمر سهل جدًا."
+}
+]
+},
+
+{
+id:"phrase-70",
+type:"card",
+phrase:"Go the extra mile",
+level:"B2–C1",
+price:5,
+meaning:"يبذل جهدًا إضافيًا.",
+explanation:"تعبير يعني القيام بجهد أكبر من المتوقع من أجل تحقيق نتيجة أفضل أو مساعدة شخص.",
+whenToUse:"عندما تتحدث عن شخص يبذل جهدًا إضافيًا في العمل أو الدراسة أو مساعدة الآخرين.",
+examples:[
+{
+en:"She always goes the extra mile for her students.",
+ar:"هي دائمًا تبذل جهدًا إضافيًا من أجل طلابها."
+},
+{
+en:"Going the extra mile can make a big difference.",
+ar:"بذل جهد إضافي يمكن أن يحدث فرقًا كبيرًا."
+},
+{
+en:"He went the extra mile to help me.",
+ar:"بذل جهدًا إضافيًا لمساعدتي."
+}
+]
+},
+
+{
+id:"phrase-71",
+type:"card",
+phrase:"Call it a day",
+level:"B2",
+price:5,
+meaning:"ينهي العمل لهذا اليوم.",
+explanation:"تعبير يُستخدم عندما تقرر التوقف عن العمل أو النشاط لبقية اليوم.",
+whenToUse:"خصوصًا بعد العمل أو الدراسة عندما تشعر أن الوقت مناسب للتوقف.",
+examples:[
+{
+en:"We've been working for eight hours. Let's call it a day.",
+ar:"لقد عملنا ثماني ساعات. لننهِ العمل لهذا اليوم."
+},
+{
+en:"I'm tired. I'm going to call it a day.",
+ar:"أنا متعب. سأنهي العمل لهذا اليوم."
+},
+{
+en:"Let's call it a day and continue tomorrow.",
+ar:"لننهِ العمل اليوم ونكمل غدًا."
+}
+]
+},
+
+{
+id:"phrase-72",
+type:"card",
+phrase:"Once and for all",
+level:"B2",
+price:5,
+meaning:"نهائيًا / مرة واحدة وإلى الأبد.",
+explanation:"تُستخدم عندما تريد إنهاء مشكلة أو حسم موضوع بشكل نهائي.",
+whenToUse:"عندما تتحدث عن قرار أو حل نهائي لمشكلة متكررة.",
+examples:[
+{
+en:"Let's solve this problem once and for all.",
+ar:"لنحل هذه المشكلة نهائيًا."
+},
+{
+en:"I want to know the truth once and for all.",
+ar:"أريد أن أعرف الحقيقة بشكل نهائي."
+},
+{
+en:"We need to settle this once and for all.",
+ar:"نحتاج إلى حسم هذا الأمر نهائيًا."
+}
+]
+},
+
+{
+id:"phrase-73",
+type:"card",
+phrase:"Out of the blue",
+level:"B2",
+price:5,
+meaning:"فجأة ومن دون توقع.",
+explanation:"تعبير يعني أن شيئًا حدث بشكل مفاجئ ومن دون أي علامة أو تحذير مسبق.",
+whenToUse:"عندما يحدث شيء غير متوقع تمامًا.",
+examples:[
+{
+en:"She called me out of the blue.",
+ar:"اتصلت بي فجأة ومن دون توقع."
+},
+{
+en:"He showed up out of the blue.",
+ar:"ظهر فجأة ومن دون توقع."
+},
+{
+en:"The news came out of the blue.",
+ar:"جاء الخبر بشكل مفاجئ."
+}
+]
+},
+
+{
+id:"phrase-74",
+type:"card",
+phrase:"In the long run",
+level:"B2",
+price:5,
+meaning:"على المدى البعيد.",
+explanation:"تُستخدم للحديث عن النتائج أو الفوائد التي تظهر بعد فترة طويلة.",
+whenToUse:"عندما تقارن بين الفائدة الحالية والنتيجة التي ستظهر مستقبلًا.",
+examples:[
+{
+en:"It may be difficult now, but it'll help you in the long run.",
+ar:"قد يكون صعبًا الآن، لكنه سيساعدك على المدى البعيد."
+},
+{
+en:"Saving money will help you in the long run.",
+ar:"توفير المال سيساعدك على المدى البعيد."
+},
+{
+en:"Exercise is good for you in the long run.",
+ar:"الرياضة مفيدة لك على المدى البعيد."
+}
+]
+},
+
+{
+id:"phrase-75",
+type:"card",
+phrase:"The ball is in your court",
+level:"B2–C1",
+price:5,
+meaning:"القرار الآن بيدك / الدور دورك.",
+explanation:"تعبير يعني أن الشخص الآخر أصبح مسؤولًا الآن عن اتخاذ الخطوة التالية أو اتخاذ القرار.",
+whenToUse:"عندما تكون قد فعلت ما عليك والقرار أو الخطوة التالية أصبحت عند الطرف الآخر.",
+examples:[
+{
+en:"I've made my offer. The ball is in your court.",
+ar:"قدمت عرضي. القرار الآن بيدك."
+},
+{
+en:"I've explained everything. The ball is in your court.",
+ar:"شرحت كل شيء. الدور الآن دورك."
+},
+{
+en:"We've done our part. The ball is in their court.",
+ar:"لقد قمنا بدورنا. القرار الآن بيدهم."
+}
+]
+},
+
+{
+id:"phrase-76",
+type:"card",
+phrase:"Cut corners",
+level:"B2–C1",
+price:5,
+meaning:"يختصر بطريقة تقلل الجودة / يتجنب القيام بالعمل بشكل كامل.",
+explanation:"تعبير يُستخدم عندما يحاول شخص توفير الوقت أو المال بطريقة تؤثر في جودة العمل.",
+whenToUse:"عندما تتحدث عن عمل تم إنجازه بطريقة سريعة أو رخيصة على حساب الجودة.",
+examples:[
+{
+en:"Don't cut corners when you're doing important work.",
+ar:"لا تختصر بطريقة تقلل الجودة عندما تقوم بعمل مهم."
+},
+{
+en:"They cut corners to save money.",
+ar:"اختصروا في العمل لتوفير المال."
+},
+{
+en:"Good companies don't cut corners.",
+ar:"الشركات الجيدة لا تتنازل عن الجودة بهذه الطريقة."
+}
+]
+},
+
+{
+id:"phrase-77",
+type:"card",
+phrase:"A blessing in disguise",
+level:"C1",
+price:5,
+meaning:"نعمة في صورة مشكلة / شيء يبدو سيئًا لكنه يحمل فائدة.",
+explanation:"تعبير عن موقف يبدو سيئًا في البداية لكنه يؤدي في النهاية إلى نتيجة جيدة.",
+whenToUse:"عندما تتحدث عن شيء سلبي حدث ثم اكتشفت لاحقًا أنه كان مفيدًا لك.",
+examples:[
+{
+en:"Losing that job was a blessing in disguise.",
+ar:"فقدان ذلك العمل كان نعمة في صورة مشكلة."
+},
+{
+en:"Missing the flight was a blessing in disguise.",
+ar:"تفويت الرحلة كان في النهاية شيئًا مفيدًا."
+},
+{
+en:"The mistake turned out to be a blessing in disguise.",
+ar:"اتضح أن الخطأ كان نعمة في صورة مشكلة."
+}
+]
+},
+
+{
+id:"phrase-78",
+type:"card",
+phrase:"The tip of the iceberg",
+level:"C1",
+price:5,
+meaning:"مجرد الجزء الظاهر من مشكلة أكبر.",
+explanation:"تعبير يعني أن الشيء الذي تراه أو تعرفه هو جزء صغير فقط من مشكلة أو موضوع أكبر بكثير.",
+whenToUse:"عندما تكون هناك مشكلة أو معلومات كثيرة مخفية خلف الجزء الظاهر.",
+examples:[
+{
+en:"These problems are just the tip of the iceberg.",
+ar:"هذه المشكلات ليست سوى الجزء الظاهر من مشكلة أكبر."
+},
+{
+en:"The report shows only the tip of the iceberg.",
+ar:"التقرير يظهر فقط الجزء الظاهر من المشكلة."
+},
+{
+en:"What we know is only the tip of the iceberg.",
+ar:"ما نعرفه ليس سوى الجزء الظاهر من الموضوع."
+}
+]
+},
+
+{
+id:"phrase-79",
+type:"card",
+phrase:"Better late than never",
+level:"B1–B2",
+price:4,
+meaning:"أن تأتي متأخرًا خير من ألا تأتي أبدًا.",
+explanation:"تُستخدم عندما يحدث شيء متأخرًا، لكن حدوثه في النهاية أفضل من عدم حدوثه إطلاقًا.",
+whenToUse:"عندما يبدأ شخص شيئًا أو ينفذ وعدًا أو يصل متأخرًا لكنه قام به في النهاية.",
+examples:[
+{
+en:"I finally started learning English.",
+ar:"بدأت أخيرًا في تعلم الإنجليزية."
+},
+{
+en:"Better late than never!",
+ar:"أن تأتي متأخرًا خير من ألا تأتي أبدًا!"
+},
+{
+en:"He finally apologized. Better late than never.",
+ar:"اعتذر أخيرًا. أن يأتي متأخرًا خير من ألا يأتي أبدًا."
+}
+]
 }
 
 ];
@@ -945,19 +3054,115 @@ video:"https://videos.englizaacademy.com/Pre-Intermediate/phrase11.MP4"
 // 🗂️ إنشاء بطاقات العبارات
 // ==========================================================
 
-const phraseGrid = document.getElementById("phraseGrid");
+const phraseGrid =
+document.getElementById("phraseGrid");
 
 
-function createPhraseCard(phrase){
+// ==========================================================
+// 🔊 تشغيل نطق العبارة
+// ==========================================================
 
-const card = document.createElement("div");
+function speakPhrase(text,button){
 
-card.className = "phrase-card";
+if(!("speechSynthesis" in window)){
 
-card.dataset.id = phrase.id;
+alert(
+"⚠️ المتصفح لا يدعم تشغيل النطق الصوتي."
+);
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+const utterance =
+new SpeechSynthesisUtterance(text);
+
+utterance.lang="en-US";
+
+utterance.rate=.88;
+
+utterance.pitch=1;
+
+button.disabled=true;
+
+const originalText =
+button.innerHTML;
+
+button.innerHTML=
+"🔊 يتم النطق...";
+
+utterance.onend=()=>{
+
+button.disabled=false;
+
+button.innerHTML=
+originalText;
+
+};
+
+utterance.onerror=()=>{
+
+button.disabled=false;
+
+button.innerHTML=
+originalText;
+
+};
+
+window.speechSynthesis.speak(
+utterance
+);
+
+}
 
 
-card.innerHTML = `
+// ==========================================================
+// 🧩 إنشاء أمثلة البطاقة
+// ==========================================================
+
+function createExamples(examples){
+
+return examples.map(example=>`
+
+<div class="example-item">
+
+<div class="example-en">
+
+${example.en}
+
+</div>
+
+<div class="example-ar">
+
+${example.ar}
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+// ==========================================================
+// 🎥 بطاقة الفيديو القديمة
+// ==========================================================
+
+function createVideoPhraseCard(phrase){
+
+const card =
+document.createElement("div");
+
+card.className="phrase-card";
+
+card.dataset.id=
+phrase.id;
+
+
+card.innerHTML=`
 
 <!-- ==========================================
      رأس البطاقة
@@ -1075,17 +3280,280 @@ return card;
 
 
 // ==========================================================
+// 📝 بطاقة العبارة التعليمية الجديدة
+// ==========================================================
+
+function createCardPhraseCard(phrase){
+
+const card =
+document.createElement("div");
+
+card.className="phrase-card";
+
+card.dataset.id=
+phrase.id;
+
+
+card.innerHTML=`
+
+<!-- ==========================================
+     رأس البطاقة
+========================================== -->
+
+<div class="phrase-header">
+
+<div class="phrase-icon">
+
+📝
+
+</div>
+
+<div class="phrase-title">
+
+<h3>
+
+عبارة تعليمية
+
+</h3>
+
+<p>
+
+عبارة عملية • ${phrase.level}
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ==========================================
+     المحتوى المغلق
+========================================== -->
+
+<div class="locked-content">
+
+<div class="locked-card-type">
+
+<div class="lock-icon">
+
+🔒
+
+</div>
+
+<div class="content-type-badge">
+
+📝 بطاقة تعليمية
+
+</div>
+
+<div class="locked-card-label">
+
+عبارة جديدة بانتظارك
+
+</div>
+
+<p class="locked-card-description">
+
+تعلّم عبارة إنجليزية عملية
+مع معناها، وطريقة استخدامها،
+وأمثلة حقيقية بعد فتحها.
+
+</p>
+
+<div class="level-badge">
+
+🎯 المستوى: ${phrase.level}
+
+</div>
+
+<div class="phrase-price">
+
+🪙
+
+${phrase.price}
+
+كوينز
+
+</div>
+
+<button
+class="unlock-btn"
+type="button">
+
+🔓 فتح العبارة
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ==========================================
+     المحتوى المفتوح
+========================================== -->
+
+<div class="unlocked-content">
+
+<div class="unlocked-badge">
+
+✅ العبارة مفتوحة
+
+</div>
+
+<div class="card-phrase-content">
+
+<div class="level-badge">
+
+🎯 المستوى: ${phrase.level}
+
+</div>
+
+<div class="card-phrase-title">
+
+${phrase.phrase}
+
+</div>
+
+<button
+class="pronunciation-btn"
+type="button">
+
+🔊 استمع للنطق
+
+</button>
+
+<div class="card-info-section">
+
+<div class="card-info-title">
+
+💡 المعنى
+
+</div>
+
+<div class="card-info-text">
+
+${phrase.meaning}
+
+</div>
+
+</div>
+
+<div class="card-info-section">
+
+<div class="card-info-title">
+
+📚 شرح العبارة
+
+</div>
+
+<div class="card-info-text">
+
+${phrase.explanation}
+
+</div>
+
+</div>
+
+<div class="card-info-section">
+
+<div class="card-info-title">
+
+🕐 متى نستخدمها؟
+
+</div>
+
+<div class="card-info-text">
+
+${phrase.whenToUse}
+
+</div>
+
+</div>
+
+<div class="card-info-section">
+
+<div class="card-info-title">
+
+✏️ أمثلة
+
+</div>
+
+<div class="examples-list">
+
+${createExamples(
+phrase.examples
+)}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+
+// ==========================================================
+// 🔊 ربط زر النطق
+// ==========================================================
+
+const pronunciationButton =
+card.querySelector(
+".pronunciation-btn"
+);
+
+if(pronunciationButton){
+
+pronunciationButton.addEventListener(
+"click",
+()=>{
+
+speakPhrase(
+phrase.phrase,
+pronunciationButton
+);
+
+}
+);
+
+}
+
+return card;
+
+}
+
+
+// ==========================================================
 // عرض جميع العبارات
 // ==========================================================
 
 phrases.forEach(phrase=>{
 
-const card = createPhraseCard(phrase);
+let card;
+
+if(phrase.type==="card"){
+
+card =
+createCardPhraseCard(
+phrase
+);
+
+}else{
+
+card =
+createVideoPhraseCard(
+phrase
+);
+
+}
 
 phraseGrid.appendChild(card);
 
 });
-  
 
 
 // ==========================================================
@@ -1124,7 +3592,7 @@ playPurchaseSound,
 unlockCoinSound
 
 }from "./js/reward.js?v=2";
-  
+
 
 // ==========================================================
 // التحقق من المستخدم والعبارات المملوكة
@@ -1161,19 +3629,16 @@ return;
 
 
 const data=
-
 snap.data();
 
 
 const ownedPhrases=
-
 data.ownedPhrases || [];
 
 
 phrases.forEach(phrase=>{
 
 const card=
-
 document.querySelector(
 
 `.phrase-card[data-id="${phrase.id}"]`
@@ -1189,10 +3654,14 @@ return;
 
 
 if(
-ownedPhrases.includes(phrase.id)
+ownedPhrases.includes(
+phrase.id
+)
 ){
 
-card.classList.add("unlocked");
+card.classList.add(
+"unlocked"
+);
 
 }
 
@@ -1209,17 +3678,18 @@ async function unlockPhrase(
 
 phrase,
 button
+
 ){
 
-   
 const user=
-
 auth.currentUser;
 
 
 if(!user){
 
-alert("⚠️ يجب تسجيل الدخول أولًا.");
+alert(
+"⚠️ يجب تسجيل الدخول أولًا."
+);
 
 return;
 
@@ -1228,13 +3698,12 @@ return;
 
 button.disabled=true;
 
- unlockCoinSound();  
+unlockCoinSound();
+
 
 try{
 
-
 const userRef=
-
 doc(
 db,
 "users",
@@ -1243,13 +3712,16 @@ user.uid
 
 
 const snap=
-
-await getDoc(userRef);
+await getDoc(
+userRef
+);
 
 
 if(!snap.exists()){
 
-alert("⚠️ لم يتم العثور على حسابك.");
+alert(
+"⚠️ لم يتم العثور على حسابك."
+);
 
 button.disabled=false;
 
@@ -1259,31 +3731,28 @@ return;
 
 
 const data=
-
 snap.data();
 
 
 const coins=
-
 data.coins || 0;
 
 
 const ownedPhrases=
-
 data.ownedPhrases || [];
 
 
-  
 // ==========================================================
 // العبارة مملوكة مسبقًا
 // ==========================================================
 
 if(
-ownedPhrases.includes(phrase.id)
+ownedPhrases.includes(
+phrase.id
+)
 ){
 
 const card=
-
 document.querySelector(
 
 `.phrase-card[data-id="${phrase.id}"]`
@@ -1293,7 +3762,9 @@ document.querySelector(
 
 if(card){
 
-card.classList.add("unlocked");
+card.classList.add(
+"unlocked"
+);
 
 }
 
@@ -1308,7 +3779,9 @@ return;
 // التحقق من الرصيد
 // ==========================================================
 
-if(coins < phrase.price){
+if(
+coins < phrase.price
+){
 
 alert(
 
@@ -1328,7 +3801,6 @@ return;
 // ==========================================================
 
 const confirmed=
-
 confirm(
 
 `هل تريد فتح هذه العبارة مقابل ${phrase.price} كوينز؟`
@@ -1356,15 +3828,18 @@ userRef,
 {
 
 coins:
-increment(-phrase.price),
+increment(
+-phrase.price
+),
 
 ownedPhrases:
-arrayUnion(phrase.id)
+arrayUnion(
+phrase.id
+)
 
 }
 
 );
-
 
 
 // ==========================================================
@@ -1373,15 +3848,12 @@ arrayUnion(phrase.id)
 
 playPurchaseSound();
 
-  
 
-  
 // ==========================================================
 // فتح البطاقة مباشرة
 // ==========================================================
 
 const card=
-
 document.querySelector(
 
 `.phrase-card[data-id="${phrase.id}"]`
@@ -1391,7 +3863,9 @@ document.querySelector(
 
 if(card){
 
-card.classList.add("unlocked");
+card.classList.add(
+"unlocked"
+);
 
 }
 
@@ -1401,18 +3875,14 @@ card.classList.add("unlocked");
 // ==========================================================
 
 const balance=
-
 document.getElementById(
-
 "coinBalance"
-
 );
 
 
 if(balance){
 
 balance.textContent=
-
 coins - phrase.price;
 
 }
@@ -1444,27 +3914,26 @@ button.disabled=false;
 // ==========================================================
 
 document
-.querySelectorAll(".phrase-card")
+.querySelectorAll(
+".phrase-card"
+)
 .forEach(card=>{
 
-
 const phraseId=
-
 card.dataset.id;
 
 
 const phrase=
-
 phrases.find(
 
 item=>
-item.id===phraseId
+item.id===
+phraseId
 
 );
 
 
 const button=
-
 card.querySelector(
 ".unlock-btn"
 );
@@ -1515,7 +3984,6 @@ return;
 
 
 const userRef=
-
 doc(
 db,
 "users",
@@ -1524,8 +3992,9 @@ user.uid
 
 
 const snap=
-
-await getDoc(userRef);
+await getDoc(
+userRef
+);
 
 
 if(!snap.exists()){
@@ -1536,17 +4005,14 @@ return;
 
 
 const data=
-
 snap.data();
 
 
 const coins=
-
 data.coins || 0;
 
 
 const balance=
-
 document.getElementById(
 "coinBalance"
 );
@@ -1560,14 +4026,16 @@ coins;
 }
 
 
-await loadPhraseOwnership(user);
+await loadPhraseOwnership(
+user
+);
 
 }
 
 );
 
-
-  
 </script>
-  
-  
+
+</body>
+
+</html>
