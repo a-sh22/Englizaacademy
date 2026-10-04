@@ -668,6 +668,347 @@ object-fit:cover;
 
 
 /* ==========================================================
+   📝 بطاقات الكلمات التعليمية الجديدة
+========================================================== */
+
+.word-card-content{
+
+background:
+linear-gradient(
+135deg,
+#fbfcff,
+#f5f3ff
+);
+
+border:
+2px solid #e3e7ff;
+
+border-radius:22px;
+
+padding:23px;
+
+}
+
+
+/* ==========================================================
+   مستوى الكلمة
+========================================================== */
+
+.word-level-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:6px;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+background:#eef4ff;
+
+border:2px solid #dce5ff;
+
+color:#1f3c88;
+
+font-size:15px;
+
+font-weight:bold;
+
+margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   الكلمة نفسها
+========================================================== */
+
+.word-learning-title{
+
+direction:ltr;
+
+text-align:center;
+
+font-size:31px;
+
+font-weight:900;
+
+color:#1f3c88;
+
+line-height:1.4;
+
+margin-bottom:14px;
+
+}
+
+
+/* ==========================================================
+   زر النطق
+========================================================== */
+
+.pronunciation-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
+
+margin:
+0 auto 22px;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:15px;
+
+background:white;
+
+border:
+2px solid #dce5ff;
+
+color:#1f3c88;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+
+.pronunciation-btn:hover{
+
+transform:
+translateY(-2px);
+
+box-shadow:
+0 8px 20px
+rgba(31,60,136,.10);
+
+}
+
+
+.pronunciation-btn:disabled{
+
+opacity:.65;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+
+/* ==========================================================
+   أقسام المعلومات
+========================================================== */
+
+.word-info-section{
+
+background:white;
+
+border:
+1px solid #e4e8f5;
+
+border-radius:17px;
+
+padding:16px;
+
+margin-bottom:13px;
+
+}
+
+
+.word-info-section:last-child{
+
+margin-bottom:0;
+
+}
+
+
+.word-info-title{
+
+font-size:16px;
+
+font-weight:900;
+
+color:#1f3c88;
+
+margin-bottom:8px;
+
+}
+
+
+.word-info-text{
+
+font-size:15px;
+
+color:#555;
+
+line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   التركيب / المرافق
+========================================================== */
+
+.word-collocation{
+
+direction:ltr;
+
+text-align:center;
+
+font-size:21px;
+
+font-weight:900;
+
+color:#6546b8;
+
+background:#f3efff;
+
+border:
+1px solid #ddd6ff;
+
+border-radius:14px;
+
+padding:12px;
+
+margin-top:8px;
+
+}
+
+
+/* ==========================================================
+   الأمثلة
+========================================================== */
+
+.word-examples-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+
+.word-example-item{
+
+background:#f8f9ff;
+
+border:
+1px solid #e4e8f5;
+
+border-radius:14px;
+
+padding:12px 14px;
+
+}
+
+
+.word-example-en{
+
+direction:ltr;
+
+text-align:left;
+
+font-size:16px;
+
+font-weight:bold;
+
+color:#1f3c88;
+
+line-height:1.6;
+
+}
+
+
+.word-example-ar{
+
+font-size:14px;
+
+color:#777;
+
+margin-top:5px;
+
+line-height:1.6;
+
+}
+
+
+/* ==========================================================
+   بطاقة الكلمة التعليمية المغلقة
+========================================================== */
+
+.locked-word-type{
+
+background:
+linear-gradient(
+135deg,
+#f8f9ff,
+#f5f2ff
+);
+
+border:
+2px solid #e4e8ff;
+
+border-radius:20px;
+
+padding:23px;
+
+text-align:center;
+
+}
+
+
+.locked-word-type .lock-icon{
+
+margin-bottom:10px;
+
+}
+
+
+.locked-word-label{
+
+font-size:21px;
+
+font-weight:900;
+
+color:#1f3c88;
+
+margin-bottom:9px;
+
+}
+
+
+.locked-word-description{
+
+font-size:15px;
+
+color:#777;
+
+line-height:1.7;
+
+margin-bottom:16px;
+
+}
+
+
+/* ==========================================================
    TABLET
 ========================================================== */
 
@@ -848,6 +1189,27 @@ padding:15px;
 
 }
 
+
+.word-card-content{
+
+padding:18px;
+
+}
+
+
+.word-learning-title{
+
+font-size:27px;
+
+}
+
+
+.word-example-en{
+
+font-size:15px;
+
+}
+
 }
 
 
@@ -899,6 +1261,20 @@ width:55px;
 height:55px;
 
 font-size:27px;
+
+}
+
+
+.word-card-content{
+
+padding:15px;
+
+}
+
+
+.word-learning-title{
+
+font-size:24px;
 
 }
 
@@ -1021,13 +1397,13 @@ id="wordGrid">
 // ==========================================================
 // 📖 بيانات بنك الكلمات
 // ==========================================================
-//
-// لإضافة كلمات مستقبلًا:
-// أضيفي عنصرًا جديدًا داخل هذه القائمة فقط.
-// ==========================================================
 
 const words = [
 
+
+/* ==========================================================
+   🎥 الكلمات القديمة — لم يتم تغييرها
+========================================================== */
 
 {
 
@@ -1124,6 +1500,1515 @@ price:10,
 video:
 "https://videos.englizaacademy.com/Pre-Intermediate/word7.MP4"
 
+},
+
+
+/* ==========================================================
+   🟢 A1–A2
+========================================================== */
+
+{
+id:"word-08",
+type:"card",
+term:"enough",
+level:"A2",
+price:3,
+meaning:"كافٍ / بما يكفي",
+explanation:"تُستخدم للتعبير عن أن الكمية أو الدرجة تصل إلى الحد المطلوب.",
+whenToUse:"عندما تريد القول إن شيئًا يكفي أو لا يكفي.",
+examples:[
+{en:"I have enough time.",ar:"لدي وقت كافٍ."},
+{en:"Is this enough?",ar:"هل هذا كافٍ؟"},
+{en:"We don't have enough money.",ar:"ليس لدينا مال كافٍ."}
+]
+},
+
+{
+id:"word-09",
+type:"card",
+term:"already",
+level:"A2",
+price:3,
+meaning:"بالفعل / مسبقًا",
+explanation:"تُستخدم عندما حدث شيء قبل الوقت المتوقع أو قبل الآن.",
+whenToUse:"عندما تريد الإشارة إلى أن شيئًا حدث مسبقًا.",
+examples:[
+{en:"I've already eaten.",ar:"لقد أكلت بالفعل."},
+{en:"She already knows.",ar:"هي تعرف بالفعل."},
+{en:"I already finished it.",ar:"لقد أنهيته بالفعل."}
+]
+},
+
+{
+id:"word-10",
+type:"card",
+term:"yet",
+level:"A2",
+price:3,
+meaning:"بعد / حتى الآن",
+explanation:"تظهر كثيرًا في النفي والأسئلة للحديث عن شيء لم يحدث حتى الآن.",
+whenToUse:"خصوصًا مع المضارع التام في الأسئلة والنفي.",
+examples:[
+{en:"Have you finished yet?",ar:"هل انتهيت بعد؟"},
+{en:"I haven't finished yet.",ar:"لم أنتهِ بعد."},
+{en:"Has she arrived yet?",ar:"هل وصلت بعد؟"}
+]
+},
+
+{
+id:"word-11",
+type:"card",
+term:"still",
+level:"A2",
+price:3,
+meaning:"ما زال / لا يزال",
+explanation:"تُستخدم للإشارة إلى أن حالة أو فعلًا مستمر حتى الآن.",
+whenToUse:"عندما يكون الشيء مستمرًا رغم مرور الوقت.",
+examples:[
+{en:"I'm still waiting.",ar:"ما زلت أنتظر."},
+{en:"She still lives here.",ar:"هي لا تزال تعيش هنا."},
+{en:"Are you still working?",ar:"هل ما زلت تعمل؟"}
+]
+},
+
+{
+id:"word-12",
+type:"card",
+term:"probably",
+level:"A2",
+price:3,
+meaning:"على الأرجح / غالبًا",
+explanation:"تُستخدم عندما تعتقد أن شيئًا سيحدث أو أنه صحيح لكنك لست متأكدًا تمامًا.",
+whenToUse:"عند التعبير عن احتمال قوي.",
+examples:[
+{en:"I'll probably stay home.",ar:"على الأرجح سأبقى في المنزل."},
+{en:"She's probably busy.",ar:"ربما تكون مشغولة."},
+{en:"It will probably rain.",ar:"من المحتمل أن تمطر."}
+]
+},
+
+{
+id:"word-13",
+type:"card",
+term:"especially",
+level:"A2",
+price:3,
+meaning:"خصوصًا / بشكل خاص",
+explanation:"تُستخدم لتحديد شيء معين على أنه أكثر أهمية أو تميزًا من غيره.",
+whenToUse:"عندما تريد التركيز على شخص أو شيء معين.",
+examples:[
+{en:"I love fruit, especially strawberries.",ar:"أحب الفواكه، خصوصًا الفراولة."},
+{en:"It's especially useful for students.",ar:"إنه مفيد بشكل خاص للطلاب."},
+{en:"I was especially tired yesterday.",ar:"كنت متعبًا جدًا بشكل خاص أمس."}
+]
+},
+
+{
+id:"word-14",
+type:"card",
+term:"usually",
+level:"A2",
+price:3,
+meaning:"عادةً",
+explanation:"تُستخدم للحديث عن شيء يحدث بشكل معتاد.",
+whenToUse:"عند وصف العادات والروتين.",
+examples:[
+{en:"I usually wake up early.",ar:"عادةً أستيقظ مبكرًا."},
+{en:"She usually walks to work.",ar:"عادةً تذهب إلى العمل مشيًا."},
+{en:"We usually eat at home.",ar:"عادةً نأكل في المنزل."}
+]
+},
+
+{
+id:"word-15",
+type:"card",
+term:"recently",
+level:"A2",
+price:3,
+meaning:"مؤخرًا",
+explanation:"تُستخدم للحديث عن شيء حدث في فترة قريبة من الوقت الحالي.",
+whenToUse:"عندما تتحدث عن حدث حديث.",
+examples:[
+{en:"I recently started a new job.",ar:"بدأت مؤخرًا عملًا جديدًا."},
+{en:"Have you seen her recently?",ar:"هل رأيتها مؤخرًا؟"},
+{en:"He recently moved here.",ar:"انتقل إلى هنا مؤخرًا."}
+]
+},
+
+{
+id:"word-16",
+type:"card",
+term:"actually",
+level:"A2",
+price:3,
+meaning:"في الواقع / في الحقيقة",
+explanation:"تُستخدم لتقديم حقيقة أو تصحيح فكرة أو معلومة.",
+whenToUse:"عندما تريد توضيح ما هو صحيح فعلًا.",
+examples:[
+{en:"Actually, I don't agree.",ar:"في الواقع، أنا لا أوافق."},
+{en:"I thought he was busy, but he was actually free.",ar:"ظننته مشغولًا، لكنه كان في الواقع متفرغًا."},
+{en:"Actually, that's a good idea.",ar:"في الواقع، هذه فكرة جيدة."}
+]
+},
+
+{
+id:"word-17",
+type:"card",
+term:"instead",
+level:"A2–B1",
+price:3,
+meaning:"بدلًا من ذلك",
+explanation:"تُستخدم عندما تختار شيئًا أو تفعل شيئًا مختلفًا عن الشيء المذكور سابقًا.",
+whenToUse:"عندما تستبدل خيارًا بخيار آخر.",
+examples:[
+{en:"I didn't go out. I stayed home instead.",ar:"لم أخرج. بقيت في المنزل بدلًا من ذلك."},
+{en:"We can walk instead.",ar:"يمكننا المشي بدلًا من ذلك."},
+{en:"She chose tea instead.",ar:"اختارت الشاي بدلًا من ذلك."}
+]
+},
+
+{
+id:"word-18",
+type:"card",
+term:"instead of",
+level:"A2–B1",
+price:3,
+meaning:"بدلًا من",
+explanation:"تُستخدم لبيان أن شيئًا حل محل شيء آخر، ويأتي بعدها اسم أو فعل بصيغة -ing.",
+whenToUse:"عندما تتحدث عن اختيار شيء بدل شيء آخر.",
+collocation:"instead of + noun / verb-ing",
+examples:[
+{en:"I had tea instead of coffee.",ar:"شربت الشاي بدلًا من القهوة."},
+{en:"She walked instead of taking a taxi.",ar:"مشَت بدلًا من ركوب سيارة أجرة."},
+{en:"Try calling instead of texting.",ar:"جرّب الاتصال بدلًا من إرسال رسالة."}
+]
+},
+
+{
+id:"word-19",
+type:"card",
+term:"although",
+level:"A2–B1",
+price:3,
+meaning:"بالرغم من أن / مع أن",
+explanation:"تُستخدم لربط فكرتين بينهما تعارض.",
+whenToUse:"عندما تريد ذكر حقيقة ثم تقديم فكرة مخالفة لها.",
+examples:[
+{en:"Although it was raining, we went out.",ar:"بالرغم من أن الجو كان ممطرًا، خرجنا."},
+{en:"Although she was tired, she continued.",ar:"بالرغم من أنها كانت متعبة، واصلت."},
+{en:"I enjoyed it although it was difficult.",ar:"استمتعت به رغم أنه كان صعبًا."}
+]
+},
+
+{
+id:"word-20",
+type:"card",
+term:"however",
+level:"A2–B1",
+price:3,
+meaning:"ومع ذلك / لكن",
+explanation:"تُستخدم لإظهار التباين بين فكرتين.",
+whenToUse:"عندما تريد الانتقال إلى فكرة مختلفة أو مخالفة.",
+examples:[
+{en:"It was expensive. However, I bought it.",ar:"كان غاليًا. ومع ذلك، اشتريته."},
+{en:"I was tired. However, I kept working.",ar:"كنت متعبًا. ومع ذلك، واصلت العمل."},
+{en:"The task is difficult. However, it's possible.",ar:"المهمة صعبة. ومع ذلك، فهي ممكنة."}
+]
+},
+
+{
+id:"word-21",
+type:"card",
+term:"notice",
+level:"A2–B1",
+price:3,
+meaning:"يلاحظ",
+explanation:"تعني الانتباه إلى شيء أو إدراك وجوده.",
+whenToUse:"عندما تتحدث عن ملاحظة شيء لم يكن واضحًا من قبل.",
+examples:[
+{en:"Did you notice the change?",ar:"هل لاحظت التغيير؟"},
+{en:"I noticed that she was tired.",ar:"لاحظت أنها كانت متعبة."},
+{en:"He didn't notice me.",ar:"لم يلاحظني."}
+]
+},
+
+{
+id:"word-22",
+type:"card",
+term:"suggest",
+level:"A2–B1",
+price:3,
+meaning:"يقترح",
+explanation:"تُستخدم عندما تقدم فكرة أو خيارًا لشخص آخر.",
+whenToUse:"عند تقديم اقتراح أو فكرة.",
+examples:[
+{en:"I suggest taking a break.",ar:"أقترح أخذ استراحة."},
+{en:"What do you suggest?",ar:"ماذا تقترح؟"},
+{en:"She suggested a different plan.",ar:"اقترحت خطة مختلفة."}
+]
+},
+
+
+/* ==========================================================
+   🔵 B1
+========================================================== */
+
+{
+id:"word-23",
+type:"card",
+term:"depend on",
+level:"B1",
+price:4,
+meaning:"يعتمد على",
+explanation:"تُستخدم عندما تتوقف النتيجة أو الحالة على شيء آخر.",
+whenToUse:"عندما لا تكون الإجابة ثابتة وتعتمد على عامل معين.",
+collocation:"depend on + noun",
+examples:[
+{en:"It depends on the weather.",ar:"يعتمد ذلك على الطقس."},
+{en:"The price depends on the size.",ar:"السعر يعتمد على الحجم."},
+{en:"It depends on what you want.",ar:"يعتمد ذلك على ما تريده."}
+]
+},
+
+{
+id:"word-24",
+type:"card",
+term:"belong to",
+level:"B1",
+price:4,
+meaning:"ينتمي إلى / يخص",
+explanation:"تُستخدم للحديث عن ملكية شيء أو انتمائه لشخص أو مجموعة.",
+whenToUse:"عند الحديث عن صاحب شيء أو المجموعة التي ينتمي إليها شخص.",
+collocation:"belong to + person/group",
+examples:[
+{en:"This book belongs to me.",ar:"هذا الكتاب يخصني."},
+{en:"Who does this bag belong to?",ar:"لمن هذه الحقيبة؟"},
+{en:"She belongs to a local club.",ar:"هي تنتمي إلى نادٍ محلي."}
+]
+},
+
+{
+id:"word-25",
+type:"card",
+term:"deal with",
+level:"B1",
+price:4,
+meaning:"يتعامل مع",
+explanation:"تعني التعامل مع مشكلة أو موقف أو شخص.",
+whenToUse:"عند الحديث عن معالجة مشكلة أو التعامل مع موقف.",
+collocation:"deal with + problem / situation",
+examples:[
+{en:"We need to deal with this problem.",ar:"نحتاج إلى التعامل مع هذه المشكلة."},
+{en:"She knows how to deal with stress.",ar:"تعرف كيف تتعامل مع التوتر."},
+{en:"I'll deal with it later.",ar:"سأتعامل معه لاحقًا."}
+]
+},
+
+{
+id:"word-26",
+type:"card",
+term:"focus on",
+level:"B1",
+price:4,
+meaning:"يركز على",
+explanation:"تعني توجيه الانتباه أو الجهد إلى شيء معين.",
+whenToUse:"عند الحديث عن الشيء الذي تركز عليه.",
+collocation:"focus on + noun / verb-ing",
+examples:[
+{en:"Focus on your studies.",ar:"ركز على دراستك."},
+{en:"We need to focus on the main problem.",ar:"نحتاج إلى التركيز على المشكلة الرئيسية."},
+{en:"I'm focusing on improving my English.",ar:"أركز على تحسين لغتي الإنجليزية."}
+]
+},
+
+{
+id:"word-27",
+type:"card",
+term:"agree with",
+level:"B1",
+price:4,
+meaning:"يتفق مع",
+explanation:"تُستخدم عندما تشارك شخصًا رأيًا أو توافق على ما يقوله.",
+whenToUse:"عند التعبير عن الموافقة على رأي شخص.",
+collocation:"agree with + person / opinion",
+examples:[
+{en:"I agree with you.",ar:"أتفق معك."},
+{en:"I don't agree with that idea.",ar:"لا أوافق على تلك الفكرة."},
+{en:"She agrees with her teacher.",ar:"هي تتفق مع معلمتها."}
+]
+},
+
+{
+id:"word-28",
+type:"card",
+term:"care about",
+level:"B1",
+price:4,
+meaning:"يهتم بـ",
+explanation:"تعني أن شيئًا أو شخصًا مهم بالنسبة لك.",
+whenToUse:"عند التعبير عن الاهتمام بشخص أو موضوع.",
+collocation:"care about + person / thing",
+examples:[
+{en:"I really care about my family.",ar:"أنا أهتم حقًا بعائلتي."},
+{en:"She cares about her students.",ar:"هي تهتم بطلابها."},
+{en:"Do you care about what people think?",ar:"هل تهتم بما يعتقده الناس؟"}
+]
+},
+
+{
+id:"word-29",
+type:"card",
+term:"look for",
+level:"B1",
+price:4,
+meaning:"يبحث عن",
+explanation:"تُستخدم عندما تحاول العثور على شخص أو شيء.",
+whenToUse:"عند البحث عن شيء مفقود أو مطلوب.",
+collocation:"look for + noun",
+examples:[
+{en:"I'm looking for my keys.",ar:"أبحث عن مفاتيحي."},
+{en:"She's looking for a new job.",ar:"هي تبحث عن عمل جديد."},
+{en:"What are you looking for?",ar:"عماذا تبحث؟"}
+]
+},
+
+{
+id:"word-30",
+type:"card",
+term:"find out",
+level:"B1",
+price:4,
+meaning:"يكتشف / يعرف",
+explanation:"تعني الحصول على معلومة أو اكتشاف حقيقة لم تكن تعرفها.",
+whenToUse:"عندما تتحدث عن اكتشاف معلومة.",
+collocation:"find out + information / fact",
+examples:[
+{en:"I need to find out what happened.",ar:"أحتاج إلى معرفة ما حدث."},
+{en:"Did you find out the answer?",ar:"هل عرفت الإجابة؟"},
+{en:"She found out the truth.",ar:"اكتشفت الحقيقة."}
+]
+},
+
+{
+id:"word-31",
+type:"card",
+term:"figure out",
+level:"B1",
+price:4,
+meaning:"يفهم / يجد الحل",
+explanation:"تُستخدم عندما تصل إلى فهم شيء أو تجد طريقة لحل مشكلة.",
+whenToUse:"عندما تحتاج إلى التفكير حتى تفهم شيئًا أو تحل مشكلة.",
+collocation:"figure out + problem / answer / how",
+examples:[
+{en:"I can't figure out how it works.",ar:"لا أستطيع أن أفهم كيف يعمل."},
+{en:"We'll figure it out.",ar:"سنجد الحل."},
+{en:"She finally figured out the answer.",ar:"تمكنت أخيرًا من معرفة الإجابة."}
+]
+},
+
+{
+id:"word-32",
+type:"card",
+term:"avoid",
+level:"B1",
+price:4,
+meaning:"يتجنب",
+explanation:"تعني الابتعاد عن شيء أو عدم القيام به عمدًا.",
+whenToUse:"عند الحديث عن تجنب مشكلة أو موقف أو فعل.",
+examples:[
+{en:"Try to avoid mistakes.",ar:"حاول تجنب الأخطاء."},
+{en:"I avoid eating late at night.",ar:"أتجنب الأكل في وقت متأخر من الليل."},
+{en:"He avoided talking about it.",ar:"تجنب الحديث عن الأمر."}
+]
+},
+
+{
+id:"word-33",
+type:"card",
+term:"realize",
+level:"B1",
+price:4,
+meaning:"يدرك",
+explanation:"تعني أن تفهم أو تدرك حقيقة معينة، أحيانًا بعد فترة.",
+whenToUse:"عندما تدرك شيئًا لم تكن منتبهًا له من قبل.",
+examples:[
+{en:"I realized I was wrong.",ar:"أدركت أنني كنت مخطئًا."},
+{en:"She suddenly realized the truth.",ar:"أدركت الحقيقة فجأة."},
+{en:"I didn't realize how late it was.",ar:"لم أدرك كم كان الوقت متأخرًا."}
+]
+},
+
+{
+id:"word-34",
+type:"card",
+term:"improve",
+level:"B1",
+price:4,
+meaning:"يحسن / يتحسن",
+explanation:"تعني جعل شيء أفضل أو أن يصبح الشيء أفضل.",
+whenToUse:"عند الحديث عن التطور والتحسن.",
+examples:[
+{en:"I want to improve my English.",ar:"أريد تحسين لغتي الإنجليزية."},
+{en:"Her English has improved.",ar:"تحسنت لغتها الإنجليزية."},
+{en:"Practice will help you improve.",ar:"الممارسة ستساعدك على التحسن."}
+]
+},
+
+{
+id:"word-35",
+type:"card",
+term:"afford",
+level:"B1",
+price:4,
+meaning:"يستطيع تحمّل تكلفة شيء",
+explanation:"تُستخدم عندما يكون الشخص قادرًا أو غير قادر ماليًا على شراء شيء.",
+whenToUse:"خصوصًا عند الحديث عن المال والأسعار.",
+collocation:"afford + noun / afford to + verb",
+examples:[
+{en:"I can't afford a new phone.",ar:"لا أستطيع تحمل تكلفة هاتف جديد."},
+{en:"Can you afford to travel?",ar:"هل تستطيع تحمل تكلفة السفر؟"},
+{en:"We can't afford to waste time.",ar:"لا يمكننا تحمل إضاعة الوقت."}
+]
+},
+
+{
+id:"word-36",
+type:"card",
+term:"prefer",
+level:"B1",
+price:4,
+meaning:"يفضل",
+explanation:"تعني أنك تحب خيارًا أكثر من خيار آخر.",
+whenToUse:"عند الحديث عن التفضيلات والاختيارات.",
+collocation:"prefer A to B",
+examples:[
+{en:"I prefer tea to coffee.",ar:"أفضل الشاي على القهوة."},
+{en:"I prefer working in the morning.",ar:"أفضل العمل في الصباح."},
+{en:"Which one do you prefer?",ar:"أي واحد تفضل؟"}
+]
+},
+
+{
+id:"word-37",
+type:"card",
+term:"opportunity",
+level:"B1",
+price:4,
+meaning:"فرصة",
+explanation:"تعني فرصة لفعل شيء أو تحقيق شيء مفيد.",
+whenToUse:"عند الحديث عن فرص الدراسة أو العمل أو التطور.",
+collocation:"opportunity to + verb",
+examples:[
+{en:"This is a great opportunity.",ar:"هذه فرصة رائعة."},
+{en:"I had an opportunity to study abroad.",ar:"أتيحت لي فرصة للدراسة في الخارج."},
+{en:"Don't miss this opportunity.",ar:"لا تفوّت هذه الفرصة."}
+]
+},
+
+{
+id:"word-38",
+type:"card",
+term:"achieve",
+level:"B1–B2",
+price:4,
+meaning:"يحقق",
+explanation:"تعني الوصول إلى هدف أو نتيجة بعد جهد.",
+whenToUse:"عند الحديث عن الأهداف والنجاحات.",
+collocation:"achieve a goal / achieve success",
+examples:[
+{en:"She achieved her goal.",ar:"حققت هدفها."},
+{en:"Hard work helps you achieve success.",ar:"العمل الجاد يساعدك على تحقيق النجاح."},
+{en:"I want to achieve a high score.",ar:"أريد تحقيق درجة عالية."}
+]
+},
+
+{
+id:"word-39",
+type:"card",
+term:"effort",
+level:"B1",
+price:4,
+meaning:"جهد",
+explanation:"تعني الطاقة أو العمل الذي تبذله من أجل تحقيق شيء.",
+whenToUse:"عند الحديث عن مقدار الجهد المبذول.",
+collocation:"make an effort",
+examples:[
+{en:"You need to make an effort.",ar:"تحتاج إلى بذل جهد."},
+{en:"She made a great effort.",ar:"بذلت جهدًا كبيرًا."},
+{en:"Your effort really helped.",ar:"جهدك ساعد حقًا."}
+]
+},
+
+{
+id:"word-40",
+type:"card",
+term:"challenge",
+level:"B1",
+price:4,
+meaning:"تحدٍّ",
+explanation:"تعني شيئًا صعبًا يحتاج إلى جهد ومهارة للتعامل معه.",
+whenToUse:"عند الحديث عن الصعوبات التي تحتاج إلى التغلب عليها.",
+examples:[
+{en:"Learning a language is a challenge.",ar:"تعلم لغة يمثل تحديًا."},
+{en:"This was a difficult challenge.",ar:"كان هذا تحديًا صعبًا."},
+{en:"I'm ready for the challenge.",ar:"أنا مستعد للتحدي."}
+]
+},
+
+{
+id:"word-41",
+type:"card",
+term:"confident",
+level:"B1",
+price:4,
+meaning:"واثق",
+explanation:"تعني الشعور بالثقة في نفسك أو في قدرتك على فعل شيء.",
+whenToUse:"عند الحديث عن الثقة بالنفس والقدرات.",
+collocation:"confident about / confident in",
+examples:[
+{en:"I'm confident about the exam.",ar:"أنا واثق بشأن الاختبار."},
+{en:"She feels confident in her English.",ar:"تشعر بالثقة في لغتها الإنجليزية."},
+{en:"Be confident.",ar:"كن واثقًا."}
+]
+},
+
+{
+id:"word-42",
+type:"card",
+term:"reliable",
+level:"B1–B2",
+price:4,
+meaning:"موثوق",
+explanation:"تُستخدم لوصف شخص أو شيء يمكنك الاعتماد عليه.",
+whenToUse:"عند وصف شخص يفي بوعوده أو شيئًا يعمل بشكل جيد ويمكن الاعتماد عليه.",
+examples:[
+{en:"She's very reliable.",ar:"هي موثوقة جدًا."},
+{en:"We need a reliable car.",ar:"نحتاج إلى سيارة موثوقة."},
+{en:"He's a reliable friend.",ar:"إنه صديق يمكن الاعتماد عليه."}
+]
+},
+
+{
+id:"word-43",
+type:"card",
+term:"consider",
+level:"B1–B2",
+price:4,
+meaning:"يفكر في / يأخذ بعين الاعتبار",
+explanation:"تعني التفكير في شيء بعناية قبل اتخاذ قرار.",
+whenToUse:"عند الحديث عن الخيارات والقرارات.",
+collocation:"consider + noun / verb-ing",
+examples:[
+{en:"I'm considering moving.",ar:"أفكر في الانتقال."},
+{en:"Please consider my suggestion.",ar:"من فضلك خذ اقتراحي بعين الاعتبار."},
+{en:"We need to consider all options.",ar:"نحتاج إلى التفكير في جميع الخيارات."}
+]
+},
+
+{
+id:"word-44",
+type:"card",
+term:"require",
+level:"B1–B2",
+price:4,
+meaning:"يتطلب",
+explanation:"تعني أن شيئًا ضروري أو مطلوب من أجل القيام بشيء.",
+whenToUse:"عند الحديث عن المتطلبات أو الأشياء الضرورية.",
+examples:[
+{en:"This job requires experience.",ar:"هذه الوظيفة تتطلب خبرة."},
+{en:"The course requires regular practice.",ar:"الدورة تتطلب ممارسة منتظمة."},
+{en:"Does this require a password?",ar:"هل هذا يتطلب كلمة مرور؟"}
+]
+},
+
+{
+id:"word-45",
+type:"card",
+term:"support",
+level:"B1",
+price:4,
+meaning:"يدعم / دعم",
+explanation:"تعني تقديم المساعدة أو المساندة لشخص أو فكرة أو مشروع.",
+whenToUse:"عند الحديث عن المساعدة والمساندة.",
+examples:[
+{en:"My family supports me.",ar:"عائلتي تدعمني."},
+{en:"We need your support.",ar:"نحتاج إلى دعمك."},
+{en:"She supported my decision.",ar:"دعمت قراري."}
+]
+},
+
+{
+id:"word-46",
+type:"card",
+term:"develop",
+level:"B1",
+price:4,
+meaning:"يطوّر / يتطور",
+explanation:"تعني أن شيئًا يصبح أفضل أو أكثر تقدمًا مع الوقت.",
+whenToUse:"عند الحديث عن المهارات والمشاريع والأفكار.",
+examples:[
+{en:"I want to develop my skills.",ar:"أريد تطوير مهاراتي."},
+{en:"The company is developing a new product.",ar:"تطوّر الشركة منتجًا جديدًا."},
+{en:"Children develop quickly.",ar:"يتطور الأطفال بسرعة."}
+]
+},
+
+{
+id:"word-47",
+type:"card",
+term:"encourage",
+level:"B1–B2",
+price:4,
+meaning:"يشجع",
+explanation:"تعني إعطاء شخص الثقة أو الحافز لفعل شيء.",
+whenToUse:"عند الحديث عن تشجيع شخص على الاستمرار أو المحاولة.",
+collocation:"encourage someone to + verb",
+examples:[
+{en:"My teacher encouraged me to speak English.",ar:"شجعني معلمي على التحدث بالإنجليزية."},
+{en:"We should encourage students.",ar:"يجب أن نشجع الطلاب."},
+{en:"She encouraged him to try again.",ar:"شجعته على المحاولة مرة أخرى."}
+]
+},
+
+{
+id:"word-48",
+type:"card",
+term:"benefit",
+level:"B1–B2",
+price:4,
+meaning:"فائدة / يستفيد",
+explanation:"يمكن أن تكون اسمًا بمعنى فائدة أو فعلًا بمعنى يستفيد.",
+whenToUse:"عند الحديث عن الفوائد والنتائج الإيجابية.",
+examples:[
+{en:"Exercise has many benefits.",ar:"للرياضة فوائد كثيرة."},
+{en:"Students benefit from practice.",ar:"يستفيد الطلاب من الممارسة."},
+{en:"One benefit is better health.",ar:"إحدى الفوائد هي صحة أفضل."}
+]
+},
+
+{
+id:"word-49",
+type:"card",
+term:"experience",
+level:"B1",
+price:4,
+meaning:"خبرة / تجربة",
+explanation:"يمكن أن تعني المعرفة التي تكتسبها من العمل أو الحياة، أو حدثًا مررت به.",
+whenToUse:"عند الحديث عن الخبرة أو التجارب الشخصية.",
+examples:[
+{en:"She has a lot of experience.",ar:"لديها خبرة كبيرة."},
+{en:"It was a great experience.",ar:"كانت تجربة رائعة."},
+{en:"I learned a lot from the experience.",ar:"تعلمت الكثير من التجربة."}
+]
+},
+
+{
+id:"word-50",
+type:"card",
+term:"purpose",
+level:"B1–B2",
+price:4,
+meaning:"هدف / غرض",
+explanation:"تعني السبب الذي من أجله يتم فعل شيء.",
+whenToUse:"عند السؤال عن سبب أو هدف شيء ما.",
+collocation:"purpose of + noun",
+examples:[
+{en:"What is the purpose of this lesson?",ar:"ما هدف هذا الدرس؟"},
+{en:"The purpose is to help students.",ar:"الهدف هو مساعدة الطلاب."},
+{en:"What is the purpose of this tool?",ar:"ما الغرض من هذه الأداة؟"}
+]
+},
+
+
+/* ==========================================================
+   🔵 B1–B2
+========================================================== */
+
+{
+id:"word-51",
+type:"card",
+term:"be used to",
+level:"B1–B2",
+price:4,
+meaning:"يكون معتادًا على",
+explanation:"تُستخدم عندما يكون الشيء مألوفًا لك لأنك اعتدت عليه.",
+whenToUse:"للتحدث عن شيء أصبح طبيعيًا ومعتادًا بالنسبة لك.",
+collocation:"be used to + noun / verb-ing",
+examples:[
+{en:"I'm used to waking up early.",ar:"أنا معتاد على الاستيقاظ مبكرًا."},
+{en:"She's used to the weather.",ar:"هي معتادة على الطقس."},
+{en:"I'm used to working under pressure.",ar:"أنا معتاد على العمل تحت الضغط."}
+]
+},
+
+{
+id:"word-52",
+type:"card",
+term:"get used to",
+level:"B1–B2",
+price:4,
+meaning:"يعتاد على",
+explanation:"تُستخدم عندما يكون الشخص في عملية التعود على شيء جديد.",
+whenToUse:"عندما تتكيف تدريجيًا مع وضع أو مكان أو عادة.",
+collocation:"get used to + noun / verb-ing",
+examples:[
+{en:"I'm getting used to my new job.",ar:"بدأت أعتاد على عملي الجديد."},
+{en:"You'll get used to it.",ar:"ستعتاد على الأمر."},
+{en:"She's getting used to living alone.",ar:"بدأت تعتاد على العيش بمفردها."}
+]
+},
+
+{
+id:"word-53",
+type:"card",
+term:"responsible for",
+level:"B1–B2",
+price:4,
+meaning:"مسؤول عن",
+explanation:"تُستخدم للحديث عن الشيء أو المهمة التي تقع مسؤوليتها على شخص.",
+whenToUse:"عند الحديث عن المسؤوليات.",
+collocation:"responsible for + noun / verb-ing",
+examples:[
+{en:"I'm responsible for this project.",ar:"أنا مسؤول عن هذا المشروع."},
+{en:"She's responsible for training new staff.",ar:"هي مسؤولة عن تدريب الموظفين الجدد."},
+{en:"Who is responsible for this?",ar:"من المسؤول عن هذا؟"}
+]
+},
+
+{
+id:"word-54",
+type:"card",
+term:"interested in",
+level:"B1–B2",
+price:4,
+meaning:"مهتم بـ",
+explanation:"تُستخدم للحديث عن شيء يجذب اهتمامك.",
+whenToUse:"عند الحديث عن الهوايات والمواضيع التي تهتم بها.",
+collocation:"interested in + noun / verb-ing",
+examples:[
+{en:"I'm interested in learning English.",ar:"أنا مهتم بتعلم الإنجليزية."},
+{en:"She's interested in art.",ar:"هي مهتمة بالفن."},
+{en:"Are you interested in this course?",ar:"هل أنت مهتم بهذه الدورة؟"}
+]
+},
+
+{
+id:"word-55",
+type:"card",
+term:"familiar with",
+level:"B1–B2",
+price:4,
+meaning:"على دراية بـ / مألوف لديه",
+explanation:"تُستخدم عندما يكون لديك معرفة سابقة بشيء.",
+whenToUse:"عندما تريد القول إنك تعرف شيئًا أو لديك خبرة سابقة به.",
+collocation:"familiar with + noun",
+examples:[
+{en:"Are you familiar with this system?",ar:"هل أنت على دراية بهذا النظام؟"},
+{en:"I'm familiar with the process.",ar:"أنا على دراية بالعملية."},
+{en:"She isn't familiar with the area.",ar:"هي ليست على دراية بالمنطقة."}
+]
+},
+
+{
+id:"word-56",
+type:"card",
+term:"similar to",
+level:"B1–B2",
+price:4,
+meaning:"مشابه لـ",
+explanation:"تُستخدم للمقارنة بين شيئين متشابهين.",
+whenToUse:"عند وصف أوجه التشابه.",
+collocation:"similar to + noun",
+examples:[
+{en:"This is similar to my old phone.",ar:"هذا مشابه لهاتفي القديم."},
+{en:"The two ideas are similar.",ar:"الفكرتان متشابهتان."},
+{en:"Her style is similar to mine.",ar:"أسلوبها مشابه لأسلوبي."}
+]
+},
+
+{
+id:"word-57",
+type:"card",
+term:"different from",
+level:"B1–B2",
+price:4,
+meaning:"مختلف عن",
+explanation:"تُستخدم لبيان أن شيئًا ليس مثل شيء آخر.",
+whenToUse:"عند المقارنة وإظهار الاختلاف.",
+collocation:"different from + noun",
+examples:[
+{en:"This is different from what I expected.",ar:"هذا مختلف عما توقعت."},
+{en:"My opinion is different from yours.",ar:"رأيي مختلف عن رأيك."},
+{en:"This version is different from the old one.",ar:"هذه النسخة مختلفة عن القديمة."}
+]
+},
+
+{
+id:"word-58",
+type:"card",
+term:"good at",
+level:"B1–B2",
+price:4,
+meaning:"جيد في",
+explanation:"تُستخدم للحديث عن مهارة الشخص في شيء معين.",
+whenToUse:"عند وصف المهارات والقدرات.",
+collocation:"good at + noun / verb-ing",
+examples:[
+{en:"She's good at English.",ar:"هي جيدة في الإنجليزية."},
+{en:"I'm good at explaining things.",ar:"أنا جيد في شرح الأشياء."},
+{en:"He's good at solving problems.",ar:"هو جيد في حل المشكلات."}
+]
+},
+
+{
+id:"word-59",
+type:"card",
+term:"capable of",
+level:"B1–B2",
+price:4,
+meaning:"قادر على",
+explanation:"تُستخدم للحديث عن قدرة شخص على القيام بشيء.",
+whenToUse:"عندما تريد التعبير عن قدرة حقيقية على فعل شيء.",
+collocation:"capable of + noun / verb-ing",
+examples:[
+{en:"She's capable of doing it alone.",ar:"هي قادرة على فعل ذلك بمفردها."},
+{en:"Are you capable of handling this?",ar:"هل أنت قادر على التعامل مع هذا؟"},
+{en:"He's capable of great things.",ar:"هو قادر على القيام بأشياء عظيمة."}
+]
+},
+
+{
+id:"word-60",
+type:"card",
+term:"make a decision",
+level:"B1–B2",
+price:4,
+meaning:"يتخذ قرارًا",
+explanation:"تركيب شائع جدًا يُستخدم عند الحديث عن اتخاذ قرار.",
+whenToUse:"عندما تتحدث عن اختيار أو قرار يجب اتخاذه.",
+collocation:"make a decision",
+examples:[
+{en:"I need to make a decision.",ar:"أحتاج إلى اتخاذ قرار."},
+{en:"Have you made a decision yet?",ar:"هل اتخذت قرارًا بعد؟"},
+{en:"It was a difficult decision to make.",ar:"كان قرارًا صعبًا لاتخاذه."}
+]
+},
+
+{
+id:"word-61",
+type:"card",
+term:"approach",
+level:"B2",
+price:4,
+meaning:"نهج / طريقة / أسلوب",
+explanation:"تعني الطريقة التي تتعامل بها مع مشكلة أو مهمة أو موقف.",
+whenToUse:"خصوصًا في الدراسة والعمل وحل المشكلات.",
+examples:[
+{en:"We need a different approach.",ar:"نحتاج إلى طريقة مختلفة."},
+{en:"I like your approach to teaching.",ar:"أعجبني أسلوبك في التدريس."},
+{en:"This approach works well.",ar:"هذه الطريقة تعمل بشكل جيد."}
+]
+},
+
+{
+id:"word-62",
+type:"card",
+term:"outcome",
+level:"B2",
+price:4,
+meaning:"نتيجة / حصيلة",
+explanation:"تعني النتيجة النهائية لحدث أو عملية أو قرار.",
+whenToUse:"عند الحديث عن نتائج الخطط أو القرارات أو الأحداث.",
+examples:[
+{en:"We don't know the outcome yet.",ar:"لا نعرف النتيجة بعد."},
+{en:"The outcome was positive.",ar:"كانت النتيجة إيجابية."},
+{en:"We were happy with the outcome.",ar:"كنا سعداء بالنتيجة."}
+]
+},
+
+{
+id:"word-63",
+type:"card",
+term:"adapt",
+level:"B2",
+price:4,
+meaning:"يتكيف",
+explanation:"تعني تغيير السلوك أو الطريقة لتناسب وضعًا جديدًا.",
+whenToUse:"عند الحديث عن التكيف مع بيئة أو ظروف جديدة.",
+collocation:"adapt to + noun",
+examples:[
+{en:"It takes time to adapt to change.",ar:"يستغرق التكيف مع التغيير وقتًا."},
+{en:"She quickly adapted to her new job.",ar:"تكيفت بسرعة مع عملها الجديد."},
+{en:"We need to adapt to the situation.",ar:"نحتاج إلى التكيف مع الوضع."}
+]
+},
+
+{
+id:"word-64",
+type:"card",
+term:"eventually",
+level:"B2",
+price:4,
+meaning:"في النهاية / في نهاية المطاف",
+explanation:"تُستخدم عندما يحدث شيء بعد فترة أو بعد سلسلة من الأحداث.",
+whenToUse:"عندما تتحدث عن النتيجة النهائية بعد مرور وقت.",
+examples:[
+{en:"Eventually, she found a job.",ar:"في النهاية، وجدت وظيفة."},
+{en:"We eventually reached an agreement.",ar:"توصلنا في النهاية إلى اتفاق."},
+{en:"He eventually understood.",ar:"فهم في النهاية."}
+]
+},
+
+{
+id:"word-65",
+type:"card",
+term:"relevant",
+level:"B2",
+price:4,
+meaning:"ذو صلة / مرتبط بالموضوع",
+explanation:"تُستخدم عندما يكون الشيء مرتبطًا بالموضوع أو مفيدًا له.",
+whenToUse:"خصوصًا في الدراسة والعمل والمناقشات.",
+collocation:"relevant to + noun",
+examples:[
+{en:"Please provide relevant information.",ar:"يرجى تقديم معلومات ذات صلة."},
+{en:"This example is relevant to the topic.",ar:"هذا المثال مرتبط بالموضوع."},
+{en:"Is this information relevant?",ar:"هل هذه المعلومات ذات صلة؟"}
+]
+},
+
+{
+id:"word-66",
+type:"card",
+term:"emphasize",
+level:"B2",
+price:4,
+meaning:"يؤكد على / يشدد على",
+explanation:"تعني إعطاء أهمية خاصة لفكرة أو نقطة معينة.",
+whenToUse:"عندما تريد التأكيد على شيء مهم.",
+collocation:"emphasize the importance of",
+examples:[
+{en:"The teacher emphasized the importance of practice.",ar:"أكد المعلم على أهمية الممارسة."},
+{en:"I want to emphasize one point.",ar:"أريد أن أؤكد على نقطة واحدة."},
+{en:"She emphasized that everyone should participate.",ar:"أكدت أن على الجميع المشاركة."}
+]
+},
+
+{
+id:"word-67",
+type:"card",
+term:"rely on",
+level:"B2",
+price:5,
+meaning:"يعتمد على / يعتمد عليه",
+explanation:"تعني الاعتماد على شخص أو شيء للحصول على المساعدة أو النتيجة.",
+whenToUse:"عندما يكون شخص أو شيء مصدرًا تعتمد عليه.",
+collocation:"rely on + person / thing",
+examples:[
+{en:"You can rely on me.",ar:"يمكنك الاعتماد عليّ."},
+{en:"We rely on technology every day.",ar:"نعتمد على التكنولوجيا كل يوم."},
+{en:"She relies on her team.",ar:"هي تعتمد على فريقها."}
+]
+},
+
+{
+id:"word-68",
+type:"card",
+term:"result in",
+level:"B2",
+price:5,
+meaning:"يؤدي إلى / ينتج عنه",
+explanation:"تُستخدم لبيان أن شيئًا تسبب في نتيجة معينة.",
+whenToUse:"عند الحديث عن السبب والنتيجة.",
+collocation:"result in + noun",
+examples:[
+{en:"Lack of sleep can result in stress.",ar:"قلة النوم قد تؤدي إلى التوتر."},
+{en:"The mistake resulted in a delay.",ar:"أدى الخطأ إلى تأخير."},
+{en:"Poor planning can result in problems.",ar:"سوء التخطيط قد يؤدي إلى مشكلات."}
+]
+},
+
+
+/* ==========================================================
+   🟣 B2
+========================================================== */
+
+{
+id:"word-69",
+type:"card",
+term:"prevent someone from",
+level:"B2",
+price:5,
+meaning:"يمنع شخصًا من",
+explanation:"تُستخدم عندما يتسبب شيء في عدم قدرة شخص على القيام بشيء.",
+whenToUse:"عند الحديث عن منع حدوث فعل.",
+collocation:"prevent + someone + from + verb-ing",
+examples:[
+{en:"The rain prevented us from leaving.",ar:"منعنا المطر من المغادرة."},
+{en:"Nothing can prevent her from trying.",ar:"لا شيء يستطيع منعها من المحاولة."},
+{en:"This prevents people from making mistakes.",ar:"هذا يمنع الناس من ارتكاب الأخطاء."}
+]
+},
+
+{
+id:"word-70",
+type:"card",
+term:"succeed in",
+level:"B2",
+price:5,
+meaning:"ينجح في",
+explanation:"تُستخدم للحديث عن النجاح في القيام بشيء.",
+whenToUse:"عندما تتحدث عن تحقيق شيء بعد محاولة أو جهد.",
+collocation:"succeed in + verb-ing",
+examples:[
+{en:"She succeeded in passing the exam.",ar:"نجحت في اجتياز الاختبار."},
+{en:"He succeeded in solving the problem.",ar:"نجح في حل المشكلة."},
+{en:"You'll succeed if you keep trying.",ar:"ستنجح إذا واصلت المحاولة."}
+]
+},
+
+{
+id:"word-71",
+type:"card",
+term:"consist of",
+level:"B2",
+price:5,
+meaning:"يتكوّن من",
+explanation:"تُستخدم لبيان الأجزاء أو العناصر التي يتكون منها شيء.",
+whenToUse:"عند وصف مكونات شيء.",
+collocation:"consist of + noun",
+examples:[
+{en:"The course consists of ten lessons.",ar:"تتكون الدورة من عشرة دروس."},
+{en:"The team consists of five people.",ar:"يتكون الفريق من خمسة أشخاص."},
+{en:"The meal consists of three dishes.",ar:"تتكون الوجبة من ثلاثة أطباق."}
+]
+},
+
+{
+id:"word-72",
+type:"card",
+term:"benefit from",
+level:"B2",
+price:5,
+meaning:"يستفيد من",
+explanation:"تُستخدم عندما يحصل شخص أو شيء على فائدة من شيء آخر.",
+whenToUse:"عند الحديث عن الفوائد التي يحصل عليها شخص من نشاط أو شيء.",
+collocation:"benefit from + noun / verb-ing",
+examples:[
+{en:"Students benefit from regular practice.",ar:"يستفيد الطلاب من الممارسة المنتظمة."},
+{en:"You can benefit from this experience.",ar:"يمكنك الاستفادة من هذه التجربة."},
+{en:"Everyone can benefit from exercise.",ar:"يمكن للجميع الاستفادة من الرياضة."}
+]
+},
+
+{
+id:"word-73",
+type:"card",
+term:"take advantage of",
+level:"B2",
+price:5,
+meaning:"يستفيد من / يستغل",
+explanation:"قد تعني الاستفادة من فرصة، وقد تعني استغلال شخص حسب السياق.",
+whenToUse:"عندما تتحدث عن الاستفادة من فرصة أو مورد.",
+collocation:"take advantage of + noun",
+examples:[
+{en:"Take advantage of this opportunity.",ar:"استفد من هذه الفرصة."},
+{en:"You should take advantage of the free course.",ar:"يجب أن تستفيد من الدورة المجانية."},
+{en:"He took advantage of my kindness.",ar:"استغل طيبتي."}
+]
+},
+
+{
+id:"word-74",
+type:"card",
+term:"maintain",
+level:"B2",
+price:5,
+meaning:"يحافظ على",
+explanation:"تعني إبقاء شيء في حالة معينة أو الاستمرار في المحافظة عليه.",
+whenToUse:"عند الحديث عن الحفاظ على مستوى أو حالة أو علاقة.",
+examples:[
+{en:"It's important to maintain a healthy lifestyle.",ar:"من المهم الحفاظ على نمط حياة صحي."},
+{en:"She maintains good relationships with her students.",ar:"تحافظ على علاقات جيدة مع طلابها."},
+{en:"We need to maintain high quality.",ar:"نحتاج إلى الحفاظ على جودة عالية."}
+]
+},
+
+{
+id:"word-75",
+type:"card",
+term:"contribute to",
+level:"B2",
+price:5,
+meaning:"يساهم في",
+explanation:"تعني أن شخصًا أو شيئًا يساعد في حدوث نتيجة أو تحقيق هدف.",
+whenToUse:"عند الحديث عن العوامل التي تساعد في تحقيق نتيجة.",
+collocation:"contribute to + noun / verb-ing",
+examples:[
+{en:"Exercise contributes to better health.",ar:"تساهم الرياضة في صحة أفضل."},
+{en:"Everyone contributed to the project.",ar:"ساهم الجميع في المشروع."},
+{en:"This can contribute to the problem.",ar:"قد يساهم هذا في المشكلة."}
+]
+},
+
+{
+id:"word-76",
+type:"card",
+term:"significant",
+level:"B2",
+price:5,
+meaning:"مهم / ملحوظ / كبير",
+explanation:"تُستخدم لوصف شيء له أهمية أو تأثير واضح.",
+whenToUse:"خصوصًا في الدراسة والعمل والكتابة الرسمية.",
+examples:[
+{en:"There has been a significant improvement.",ar:"حدث تحسن ملحوظ."},
+{en:"This is a significant change.",ar:"هذا تغيير مهم."},
+{en:"The project made a significant difference.",ar:"أحدث المشروع فرقًا كبيرًا."}
+]
+},
+
+{
+id:"word-77",
+type:"card",
+term:"establish",
+level:"B2",
+price:5,
+meaning:"يؤسس / يرسخ",
+explanation:"تعني إنشاء شيء بشكل رسمي أو جعله ثابتًا ومستقرًا.",
+whenToUse:"عند الحديث عن تأسيس شركة أو علاقة أو نظام أو قاعدة.",
+examples:[
+{en:"They established a new company.",ar:"أسسوا شركة جديدة."},
+{en:"We need to establish clear rules.",ar:"نحتاج إلى وضع قواعد واضحة."},
+{en:"The study established a clear connection.",ar:"أثبتت الدراسة وجود علاقة واضحة."}
+]
+},
+
+{
+id:"word-78",
+type:"card",
+term:"prioritize",
+level:"B2",
+price:5,
+meaning:"يعطي الأولوية لـ",
+explanation:"تعني تحديد الأشياء الأكثر أهمية والتعامل معها أولًا.",
+whenToUse:"عند الحديث عن تنظيم الوقت والمهام والقرارات.",
+collocation:"prioritize + noun",
+examples:[
+{en:"You need to prioritize your tasks.",ar:"تحتاج إلى إعطاء الأولوية لمهامك."},
+{en:"We should prioritize important issues.",ar:"يجب أن نعطي الأولوية للقضايا المهمة."},
+{en:"I need to prioritize my studies.",ar:"أحتاج إلى إعطاء الأولوية لدراستي."}
+]
+},
+
+{
+id:"word-79",
+type:"card",
+term:"overwhelmed",
+level:"B2",
+price:5,
+meaning:"مرهق نفسيًا / مثقل بالضغوط",
+explanation:"تُستخدم عندما يشعر الشخص أن لديه الكثير من الأشياء أو المشاعر ولا يستطيع التعامل معها بسهولة.",
+whenToUse:"عند الحديث عن ضغط كبير بسبب العمل أو الدراسة أو المسؤوليات.",
+examples:[
+{en:"I feel overwhelmed with work.",ar:"أشعر بإرهاق شديد بسبب العمل."},
+{en:"She was overwhelmed by everything.",ar:"شعرت بأنها مثقلة بكل شيء."},
+{en:"Don't feel overwhelmed. Take it one step at a time.",ar:"لا تشعر بالإرهاق. خذ الأمر خطوة بخطوة."}
+]
+},
+
+{
+id:"word-80",
+type:"card",
+term:"hesitate",
+level:"B2",
+price:5,
+meaning:"يتردد",
+explanation:"تعني عدم القدرة على اتخاذ قرار أو التصرف بسرعة بسبب الشك أو عدم اليقين.",
+whenToUse:"عند الحديث عن التردد قبل فعل شيء.",
+collocation:"hesitate to + verb",
+examples:[
+{en:"Don't hesitate to ask questions.",ar:"لا تتردد في طرح الأسئلة."},
+{en:"She hesitated before answering.",ar:"ترددت قبل الإجابة."},
+{en:"I wouldn't hesitate to help you.",ar:"لن أتردد في مساعدتك."}
+]
+},
+
+{
+id:"word-81",
+type:"card",
+term:"perspective",
+level:"B2",
+price:5,
+meaning:"وجهة نظر / منظور",
+explanation:"تعني الطريقة التي يرى بها شخص موضوعًا أو موقفًا.",
+whenToUse:"عند الحديث عن الآراء وطرق النظر إلى الأمور.",
+collocation:"from my perspective",
+examples:[
+{en:"From my perspective, it's a good idea.",ar:"من وجهة نظري، إنها فكرة جيدة."},
+{en:"Try to see it from her perspective.",ar:"حاول أن تراها من وجهة نظرها."},
+{en:"We need a different perspective.",ar:"نحتاج إلى وجهة نظر مختلفة."}
+]
+},
+
+{
+id:"word-82",
+type:"card",
+term:"assume",
+level:"B2",
+price:5,
+meaning:"يفترض",
+explanation:"تعني الاعتقاد بأن شيئًا صحيح دون امتلاك دليل كامل.",
+whenToUse:"عندما تتحدث عن شيء اعتقدته قبل التأكد منه.",
+examples:[
+{en:"I assumed you were busy.",ar:"افترضت أنك مشغول."},
+{en:"Don't assume that everyone agrees.",ar:"لا تفترض أن الجميع يوافق."},
+{en:"I assumed it would be easy.",ar:"افترضت أنه سيكون سهلًا."}
+]
+},
+
+{
+id:"word-83",
+type:"card",
+term:"compelling",
+level:"B2",
+price:5,
+meaning:"مقنع جدًا / قوي التأثير",
+explanation:"تُستخدم لوصف شيء قوي جدًا لدرجة أنه يجذب الانتباه أو يقنعك.",
+whenToUse:"خصوصًا مع الحجج والقصص والأسباب والمحتوى.",
+examples:[
+{en:"She gave a compelling argument.",ar:"قدمت حجة مقنعة جدًا."},
+{en:"The story was compelling.",ar:"كانت القصة قوية وجذابة جدًا."},
+{en:"There is compelling evidence.",ar:"هناك أدلة قوية ومقنعة."}
+]
+},
+
+{
+id:"word-84",
+type:"card",
+term:"substantial",
+level:"B2–C1",
+price:5,
+meaning:"كبير / ملحوظ / جوهري",
+explanation:"تُستخدم لوصف شيء كبير في الحجم أو القيمة أو التأثير.",
+whenToUse:"خصوصًا في اللغة الأكاديمية والرسمية.",
+examples:[
+{en:"There was a substantial increase in sales.",ar:"حدثت زيادة كبيرة في المبيعات."},
+{en:"She made a substantial contribution.",ar:"قدمت مساهمة كبيرة."},
+{en:"The project requires a substantial amount of time.",ar:"المشروع يتطلب قدرًا كبيرًا من الوقت."}
+]
+},
+
+
+/* ==========================================================
+   🔴 C1
+========================================================== */
+
+{
+id:"word-85",
+type:"card",
+term:"inevitable",
+level:"C1",
+price:5,
+meaning:"حتمي / لا مفر منه",
+explanation:"تُستخدم عندما يكون من المؤكد تقريبًا أن شيئًا سيحدث ولا يمكن تجنبه.",
+whenToUse:"عند الحديث عن نتائج أو أحداث لا يمكن منعها.",
+examples:[
+{en:"Change is inevitable.",ar:"التغيير حتمي."},
+{en:"Some mistakes are inevitable.",ar:"بعض الأخطاء لا مفر منها."},
+{en:"It was inevitable that prices would rise.",ar:"كان من الحتمي أن ترتفع الأسعار."}
+]
+},
+
+{
+id:"word-86",
+type:"card",
+term:"ambiguous",
+level:"C1",
+price:5,
+meaning:"غامض / يحتمل عدة معانٍ",
+explanation:"تُستخدم عندما يكون الكلام أو المعنى غير واضح ويمكن تفسيره بأكثر من طريقة.",
+whenToUse:"عند الحديث عن نص أو عبارة أو موقف غير واضح.",
+examples:[
+{en:"His answer was ambiguous.",ar:"كانت إجابته غامضة."},
+{en:"The sentence is ambiguous.",ar:"الجملة تحتمل أكثر من معنى."},
+{en:"The instructions were too ambiguous.",ar:"كانت التعليمات غامضة جدًا."}
+]
+},
+
+{
+id:"word-87",
+type:"card",
+term:"resilient",
+level:"C1",
+price:5,
+meaning:"قادر على التعافي / صامد",
+explanation:"تصف شخصًا أو مجتمعًا أو نظامًا يستطيع التعافي بعد الصعوبات.",
+whenToUse:"عند الحديث عن القدرة على تحمل الأزمات والعودة إلى الوضع الجيد.",
+examples:[
+{en:"She is very resilient.",ar:"هي قادرة جدًا على تجاوز الصعوبات."},
+{en:"Children can be remarkably resilient.",ar:"يمكن للأطفال أن يكونوا صامدين بشكل ملحوظ."},
+{en:"The company proved to be resilient.",ar:"أثبتت الشركة قدرتها على الصمود."}
+]
+},
+
+{
+id:"word-88",
+type:"card",
+term:"insightful",
+level:"C1",
+price:5,
+meaning:"ثاقب / عميق الفهم",
+explanation:"تُستخدم لوصف فكرة أو تعليق يظهر فهمًا عميقًا للموضوع.",
+whenToUse:"عند وصف تحليل أو تعليق ذكي وعميق.",
+examples:[
+{en:"She made an insightful comment.",ar:"قدمت تعليقًا عميقًا وثاقبًا."},
+{en:"The book is very insightful.",ar:"الكتاب عميق ومليء بالأفكار المفيدة."},
+{en:"He gave an insightful analysis.",ar:"قدم تحليلًا عميقًا."}
+]
+},
+
+{
+id:"word-89",
+type:"card",
+term:"deteriorate",
+level:"C1",
+price:5,
+meaning:"يتدهور",
+explanation:"تعني أن الحالة أو الجودة تصبح أسوأ مع مرور الوقت.",
+whenToUse:"عند الحديث عن تدهور الصحة أو الظروف أو الجودة.",
+examples:[
+{en:"His health began to deteriorate.",ar:"بدأت صحته في التدهور."},
+{en:"The situation is deteriorating.",ar:"الوضع يتدهور."},
+{en:"The quality has deteriorated over time.",ar:"تدهورت الجودة مع مرور الوقت."}
+]
+},
+
+{
+id:"word-90",
+type:"card",
+term:"articulate",
+level:"C1",
+price:5,
+meaning:"يعبّر بوضوح",
+explanation:"تُستخدم لوصف شخص يستطيع التعبير عن أفكاره بوضوح ودقة.",
+whenToUse:"عند الحديث عن القدرة على التعبير والتواصل.",
+examples:[
+{en:"She's very articulate.",ar:"هي تجيد التعبير عن أفكارها بوضوح."},
+{en:"He articulated his ideas clearly.",ar:"عبّر عن أفكاره بوضوح."},
+{en:"She was able to articulate her concerns.",ar:"تمكنت من التعبير عن مخاوفها بوضوح."}
+]
+},
+
+{
+id:"word-91",
+type:"card",
+term:"undermine",
+level:"C1",
+price:5,
+meaning:"يقوّض / يضعف",
+explanation:"تعني إضعاف شيء أو شخص بشكل تدريجي، غالبًا بطريقة غير مباشرة.",
+whenToUse:"عند الحديث عن إضعاف الثقة أو السلطة أو الجهود.",
+examples:[
+{en:"This could undermine public trust.",ar:"قد يقوض هذا ثقة الجمهور."},
+{en:"His actions undermined the team's efforts.",ar:"أضعفت أفعاله جهود الفريق."},
+{en:"Don't undermine your own confidence.",ar:"لا تضعف ثقتك بنفسك."}
+]
+},
+
+{
+id:"word-92",
+type:"card",
+term:"profound",
+level:"C1",
+price:5,
+meaning:"عميق / بالغ التأثير",
+explanation:"تُستخدم لوصف شيء عميق جدًا في المعنى أو له تأثير قوي.",
+whenToUse:"خصوصًا مع الأفكار والمشاعر والتغييرات والتأثيرات.",
+examples:[
+{en:"The experience had a profound impact on me.",ar:"كان للتجربة تأثير عميق عليّ."},
+{en:"She made a profound observation.",ar:"قدمت ملاحظة عميقة."},
+{en:"The book had a profound effect on him.",ar:"كان للكتاب تأثير عميق عليه."}
+]
+},
+
+{
+id:"word-93",
+type:"card",
+term:"feasible",
+level:"C1",
+price:5,
+meaning:"قابل للتنفيذ / ممكن عمليًا",
+explanation:"تُستخدم عندما يكون الشيء ممكنًا من الناحية العملية، وليس فقط من الناحية النظرية.",
+whenToUse:"عند الحديث عن الخطط والمشاريع والحلول.",
+examples:[
+{en:"Is this plan feasible?",ar:"هل هذه الخطة قابلة للتنفيذ؟"},
+{en:"We need a feasible solution.",ar:"نحتاج إلى حل قابل للتنفيذ."},
+{en:"The project is financially feasible.",ar:"المشروع قابل للتنفيذ من الناحية المالية."}
+]
+},
+
+{
+id:"word-94",
+type:"card",
+term:"skeptical",
+level:"C1",
+price:5,
+meaning:"متشكك",
+explanation:"تصف شخصًا لا يصدق شيئًا بسهولة ويريد دليلًا قبل الاقتناع.",
+whenToUse:"عند الحديث عن الشك في صحة ادعاء أو معلومة.",
+examples:[
+{en:"I'm skeptical about his claim.",ar:"أنا متشكك بشأن ادعائه."},
+{en:"She was skeptical at first.",ar:"كانت متشككة في البداية."},
+{en:"It's reasonable to be skeptical.",ar:"من المعقول أن تكون متشككًا."}
+]
+},
+
+{
+id:"word-95",
+type:"card",
+term:"meticulous",
+level:"C1",
+price:5,
+meaning:"دقيق جدًا / شديد الانتباه للتفاصيل",
+explanation:"تُستخدم لوصف شخص يهتم بالتفاصيل الصغيرة ويعمل بدقة كبيرة.",
+whenToUse:"عند وصف طريقة شخص في العمل أو التنظيم.",
+examples:[
+{en:"She's meticulous about her work.",ar:"هي دقيقة جدًا في عملها."},
+{en:"He keeps meticulous records.",ar:"يحتفظ بسجلات دقيقة جدًا."},
+{en:"The report was prepared with meticulous attention to detail.",ar:"أُعد التقرير بعناية شديدة للتفاصيل."}
+]
+},
+
+{
+id:"word-96",
+type:"card",
+term:"unprecedented",
+level:"C1",
+price:5,
+meaning:"غير مسبوق",
+explanation:"تُستخدم عندما يكون الشيء لم يحدث أو لم يُرَ من قبل بهذا الشكل.",
+whenToUse:"عند وصف حدث أو مستوى أو موقف جديد تمامًا وغير معتاد.",
+examples:[
+{en:"The country faced an unprecedented crisis.",ar:"واجهت البلاد أزمة غير مسبوقة."},
+{en:"The company experienced unprecedented growth.",ar:"شهدت الشركة نموًا غير مسبوق."},
+{en:"This is an unprecedented situation.",ar:"هذا وضع غير مسبوق."}
+]
+},
+
+{
+id:"word-97",
+type:"card",
+term:"convey",
+level:"C1",
+price:5,
+meaning:"ينقل فكرة أو شعورًا بوضوح",
+explanation:"تعني إيصال فكرة أو شعور أو رسالة إلى شخص آخر.",
+whenToUse:"خصوصًا عند الحديث عن التواصل والكتابة والصور والكلمات.",
+collocation:"convey a message / idea / feeling",
+examples:[
+{en:"Words cannot convey how grateful I am.",ar:"الكلمات لا تستطيع التعبير عن مدى امتناني."},
+{en:"The image conveys a strong message.",ar:"تنقل الصورة رسالة قوية."},
+{en:"She conveyed her feelings clearly.",ar:"عبّرت عن مشاعرها بوضوح."}
+]
 }
 
 ];
@@ -1142,8 +3027,110 @@ document.getElementById(
 
 
 
-function createWordCard(word){
+// ==========================================================
+// 🔊 تشغيل نطق الكلمة
+// ==========================================================
 
+function speakWord(text,button){
+
+if(!("speechSynthesis" in window)){
+
+alert(
+"⚠️ المتصفح لا يدعم تشغيل النطق الصوتي."
+);
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+const utterance =
+new SpeechSynthesisUtterance(text);
+
+utterance.lang =
+"en-US";
+
+utterance.rate =
+.88;
+
+utterance.pitch =
+1;
+
+button.disabled =
+true;
+
+const originalText =
+button.innerHTML;
+
+button.innerHTML =
+"🔊 يتم النطق...";
+
+utterance.onend =
+()=>{
+
+button.disabled =
+false;
+
+button.innerHTML =
+originalText;
+
+};
+
+utterance.onerror =
+()=>{
+
+button.disabled =
+false;
+
+button.innerHTML =
+originalText;
+
+};
+
+window.speechSynthesis.speak(
+utterance
+);
+
+}
+
+
+
+// ==========================================================
+// 🧩 إنشاء أمثلة
+// ==========================================================
+
+function createWordExamples(examples){
+
+return examples.map(example=>`
+
+<div class="word-example-item">
+
+<div class="word-example-en">
+
+${example.en}
+
+</div>
+
+<div class="word-example-ar">
+
+${example.ar}
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+
+// ==========================================================
+// 🎥 بطاقة الفيديو القديمة
+// ==========================================================
+
+function createVideoWordCard(word){
 
 const card =
 
@@ -1151,14 +3138,11 @@ document.createElement(
 "div"
 );
 
-
 card.className =
 "word-card";
 
-
 card.dataset.id =
 word.id;
-
 
 
 card.innerHTML = `
@@ -1293,6 +3277,327 @@ type="video/mp4">
 
 `;
 
+return card;
+
+}
+
+
+
+// ==========================================================
+// 📝 بطاقة الكلمة التعليمية الجديدة
+// ==========================================================
+
+function createCardWordCard(word){
+
+const card =
+
+document.createElement(
+"div"
+);
+
+card.className =
+"word-card";
+
+card.dataset.id =
+word.id;
+
+
+card.innerHTML = `
+
+
+<div class="word-header">
+
+
+<div class="word-icon">
+
+📝
+
+</div>
+
+
+<div class="word-title">
+
+
+<h3>
+
+كلمة تعليمية
+
+</h3>
+
+
+<p>
+
+${word.level} • كلمة عملية
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ======================================================
+     المحتوى المغلق
+====================================================== -->
+
+<div class="locked-content">
+
+
+<div class="locked-word-type">
+
+
+<div class="lock-icon">
+
+🔒
+
+</div>
+
+
+<div class="locked-word-label">
+
+كلمة جديدة بانتظارك
+
+</div>
+
+
+<p class="locked-word-description">
+
+افتح الكلمة وتعلّم معناها
+وطريقة استخدامها مع أمثلة حقيقية.
+
+</p>
+
+
+<div class="word-level-badge">
+
+🎯 المستوى: ${word.level}
+
+</div>
+
+
+<div class="word-price">
+
+🪙
+
+${word.price}
+
+كوينز
+
+</div>
+
+
+<button
+class="unlock-btn"
+type="button">
+
+🔓 فتح الكلمة
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ======================================================
+     المحتوى المفتوح
+====================================================== -->
+
+<div class="unlocked-content">
+
+
+<div class="unlocked-badge">
+
+✅ الكلمة مفتوحة
+
+</div>
+
+
+<div class="word-card-content">
+
+
+<div class="word-level-badge">
+
+🎯 المستوى: ${word.level}
+
+</div>
+
+
+<div class="word-learning-title">
+
+${word.term}
+
+</div>
+
+
+<button
+class="pronunciation-btn"
+type="button">
+
+🔊 استمع للنطق
+
+</button>
+
+
+<div class="word-info-section">
+
+
+<div class="word-info-title">
+
+💡 المعنى
+
+</div>
+
+
+<div class="word-info-text">
+
+${word.meaning}
+
+</div>
+
+
+</div>
+
+
+
+<div class="word-info-section">
+
+
+<div class="word-info-title">
+
+📚 شرح الكلمة
+
+</div>
+
+
+<div class="word-info-text">
+
+${word.explanation}
+
+</div>
+
+
+</div>
+
+
+
+${
+word.collocation
+?
+`
+
+<div class="word-info-section">
+
+<div class="word-info-title">
+
+🔗 التركيب المستخدم
+
+</div>
+
+<div class="word-collocation">
+
+${word.collocation}
+
+</div>
+
+</div>
+
+`
+:
+""
+}
+
+
+
+<div class="word-info-section">
+
+
+<div class="word-info-title">
+
+🕐 متى نستخدمها؟
+
+</div>
+
+
+<div class="word-info-text">
+
+${word.whenToUse}
+
+</div>
+
+
+</div>
+
+
+
+<div class="word-info-section">
+
+
+<div class="word-info-title">
+
+✏️ أمثلة
+
+</div>
+
+
+<div class="word-examples-list">
+
+${createWordExamples(
+word.examples
+)}
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+
+
+// ==========================================================
+// 🔊 ربط زر النطق
+// ==========================================================
+
+const pronunciationButton =
+
+card.querySelector(
+".pronunciation-btn"
+);
+
+
+if(pronunciationButton){
+
+pronunciationButton.addEventListener(
+
+"click",
+
+()=>{
+
+speakWord(
+word.term,
+pronunciationButton
+);
+
+}
+
+);
+
+}
+
 
 return card;
 
@@ -1306,13 +3611,27 @@ return card;
 
 words.forEach(word=>{
 
+let card;
 
-const card =
-createWordCard(word);
+
+if(word.type === "card"){
+
+card =
+createCardWordCard(
+word
+);
+
+}else{
+
+card =
+createVideoWordCard(
+word
+);
+
+}
 
 
 wordGrid.appendChild(card);
-
 
 });
 
