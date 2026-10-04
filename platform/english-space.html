@@ -273,24 +273,6 @@
       max-width:min(65vw,500px);
     }
 
-    .points-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-top:7px;
-      padding:6px 11px;
-      border-radius:999px;
-      background:rgba(255,216,107,.18);
-      border:1px solid rgba(255,216,107,.34);
-      color:#fff;
-      font-weight:900;
-      font-size:13px;
-    }
-
-    .points-number{
-      color:var(--gold);
-    }
-
     .hero-copy{
       position:relative;
       z-index:1;
@@ -379,37 +361,8 @@
       overflow:hidden;
     }
 
-    .composer-tabs{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      border-bottom:1px solid var(--line);
-    }
-
-    .composer-tab{
-      border:0;
-      background:#fff;
-      padding:14px;
-      color:var(--muted);
-      font-weight:900;
-      font-size:13px;
-    }
-
-    .composer-tab.active{
-      color:var(--navy);
-      background:linear-gradient(180deg,#fff,#f8faff);
-      box-shadow:inset 0 -3px 0 var(--purple);
-    }
-
     .composer-body{
       padding:17px;
-    }
-
-    .composer-panel{
-      display:none;
-    }
-
-    .composer-panel.active{
-      display:block;
     }
 
     textarea{
@@ -495,90 +448,6 @@
       background:#fff7f7;
     }
 
-    /* VOICE */
-
-    .voice-box{
-      display:grid;
-      place-items:center;
-      min-height:205px;
-      padding:12px;
-      border:1px dashed #ccd5e8;
-      border-radius:20px;
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(111,67,255,.09),
-          transparent 12rem
-        ),
-        #fbfcff;
-      text-align:center;
-    }
-
-    .record-status{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:5px;
-    }
-
-    .record-icon{
-      width:66px;
-      height:66px;
-      border-radius:22px;
-      display:grid;
-      place-items:center;
-      background:var(--purple-soft);
-      color:var(--purple);
-      font-size:26px;
-      margin-bottom:4px;
-    }
-
-    .record-icon.recording{
-      background:#fff0f0;
-      color:var(--danger);
-      animation:pulseRecord 1.2s infinite;
-    }
-
-    @keyframes pulseRecord{
-      50%{
-        transform:scale(1.05);
-        box-shadow:0 0 0 9px rgba(228,88,88,.08);
-      }
-    }
-
-    .timer{
-      font-variant-numeric:tabular-nums;
-      font-size:27px;
-      font-weight:950;
-      color:var(--navy);
-      letter-spacing:1px;
-    }
-
-    .record-hint{
-      color:var(--muted);
-      font-size:11px;
-      max-width:310px;
-      line-height:1.55;
-    }
-
-    .voice-controls{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:8px;
-      margin-top:14px;
-    }
-
-    .audio-preview{
-      width:min(100%,420px);
-      margin:13px auto 0;
-    }
-
-    .audio-preview audio{
-      width:100%;
-      height:40px;
-    }
-
     /* FEED */
 
     .feed-status{
@@ -612,14 +481,28 @@
       padding:16px 16px 10px;
     }
 
+    /* LETTER AVATAR */
+
+    .post-avatar,
+    .comment-avatar{
+      display:grid;
+      place-items:center;
+      flex:none;
+      overflow:hidden;
+      color:#fff;
+      font-weight:950;
+      text-transform:uppercase;
+      user-select:none;
+      -webkit-user-select:none;
+    }
+
     .post-avatar{
       width:43px;
       height:43px;
       border-radius:15px;
-      object-fit:cover;
-      flex:none;
-      border:1px solid #e7eaf2;
-      background:#fff;
+      border:1px solid rgba(255,255,255,.35);
+      box-shadow:0 5px 14px rgba(31,60,136,.10);
+      font-size:16px;
     }
 
     .post-author{
@@ -638,16 +521,6 @@
       font-size:13px;
       font-weight:950;
       color:var(--ink);
-    }
-
-    .post-points{
-      color:#a87500;
-      background:var(--gold-soft);
-      border:1px solid #f5e4a9;
-      padding:3px 7px;
-      border-radius:999px;
-      font-size:10px;
-      font-weight:950;
     }
 
     .post-time{
@@ -719,44 +592,6 @@
       line-height:1.78;
       font-size:14px;
       color:#27324e;
-    }
-
-    .post-audio{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      padding:13px;
-      border-radius:18px;
-      background:linear-gradient(135deg,#f5f2ff,#f3f7ff);
-      border:1px solid #e6e1ff;
-    }
-
-    .audio-play{
-      width:45px;
-      height:45px;
-      flex:none;
-      border:0;
-      border-radius:15px;
-      color:#fff;
-      background:linear-gradient(135deg,var(--purple),var(--navy));
-      font-size:17px;
-    }
-
-    .audio-info{
-      min-width:0;
-      flex:1;
-    }
-
-    .audio-title{
-      font-weight:900;
-      font-size:12px;
-      color:var(--navy);
-    }
-
-    .audio-duration{
-      font-size:10px;
-      color:var(--muted);
-      margin-top:3px;
     }
 
     .post-footer{
@@ -881,16 +716,6 @@
       font-size:16px;
     }
 
-    .comment-voice{
-      width:43px;
-      height:43px;
-      border:1px solid #dce2ef;
-      border-radius:14px;
-      background:#fff;
-      color:var(--purple);
-      font-size:17px;
-    }
-
     .comment-list{
       display:grid;
       gap:8px;
@@ -915,9 +740,9 @@
       width:31px;
       height:31px;
       border-radius:11px;
-      object-fit:cover;
-      flex:none;
-      border:1px solid #e8ebf2;
+      border:1px solid rgba(255,255,255,.35);
+      box-shadow:0 4px 10px rgba(31,60,136,.08);
+      font-size:11px;
     }
 
     .comment-card{
@@ -937,12 +762,6 @@
 
     .comment-author strong{
       font-size:11px;
-    }
-
-    .comment-author span{
-      color:#a87500;
-      font-size:9px;
-      font-weight:900;
     }
 
     .comment-text{
@@ -974,25 +793,12 @@
       font-weight:800;
     }
 
-    .comment-audio{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      margin-top:5px;
+    .mini-btn.delete-comment{
+      color:#bd4242;
     }
 
-    .comment-audio button{
-      width:33px;
-      height:33px;
-      border:0;
-      border-radius:10px;
-      color:#fff;
-      background:var(--purple);
-    }
-
-    .comment-audio small{
-      color:var(--muted);
-      font-size:9px;
+    .mini-btn.delete-comment:hover{
+      color:#9e3030;
     }
 
     .reply-box{
@@ -1115,142 +921,6 @@
       background:#9e3d3d;
     }
 
-    /* REWARD */
-
-    .reward-float{
-      position:fixed;
-      z-index:110;
-      pointer-events:none;
-      left:50%;
-      top:37%;
-      transform:translate(-50%,15px) scale(.86);
-      opacity:0;
-      font-weight:950;
-      font-size:22px;
-      color:#b77a00;
-      text-shadow:
-        0 2px 0 #fff,
-        0 5px 18px rgba(183,122,0,.15);
-    }
-
-    .reward-float.show{
-      animation:rewardPop 1.35s ease-out forwards;
-    }
-
-    @keyframes rewardPop{
-      0%{
-        opacity:0;
-        transform:translate(-50%,15px) scale(.86);
-      }
-
-      16%{
-        opacity:1;
-        transform:translate(-50%,0) scale(1);
-      }
-
-      72%{
-        opacity:1;
-        transform:translate(-50%,-30px) scale(1.02);
-      }
-
-      100%{
-        opacity:0;
-        transform:translate(-50%,-55px) scale(.96);
-      }
-    }
-
-    .spark{
-      position:fixed;
-      z-index:109;
-      pointer-events:none;
-      left:50%;
-      top:39%;
-      width:5px;
-      height:5px;
-      border-radius:50%;
-      background:var(--gold);
-      opacity:0;
-    }
-
-    .spark.show{
-      animation:spark 1s ease-out forwards;
-    }
-
-    @keyframes spark{
-      0%{
-        opacity:0;
-        transform:translate(0,0) scale(.5);
-      }
-
-      15%{
-        opacity:1;
-      }
-
-      100%{
-        opacity:0;
-        transform:translate(var(--x),var(--y)) scale(0);
-      }
-    }
-
-    /* MODAL */
-
-    .modal{
-      display:none;
-      position:fixed;
-      inset:0;
-      z-index:200;
-      background:rgba(12,20,44,.48);
-      backdrop-filter:blur(7px);
-      -webkit-backdrop-filter:blur(7px);
-      padding:18px;
-      align-items:flex-end;
-      justify-content:center;
-    }
-
-    .modal.open{
-      display:flex;
-    }
-
-    .modal-card{
-      width:min(100%,520px);
-      max-height:90vh;
-      overflow:auto;
-      background:#fff;
-      border-radius:28px;
-      box-shadow:0 30px 80px rgba(10,20,50,.28);
-      padding:19px;
-    }
-
-    .modal-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
-
-    .modal-head h3{
-      margin:0;
-      color:var(--navy);
-      font-size:18px;
-    }
-
-    .close-modal{
-      width:38px;
-      height:38px;
-      border:0;
-      border-radius:13px;
-      background:#f5f6fa;
-      color:var(--navy);
-    }
-
-    .reply-record-box{
-      margin-top:14px;
-      padding:16px;
-      border-radius:19px;
-      background:#f8f8ff;
-      text-align:center;
-    }
-
     /* LOGIN */
 
     .login-state{
@@ -1292,6 +962,7 @@
     }
 
     @media (min-width:720px){
+
       .app{
         padding-left:24px;
         padding-right:24px;
@@ -1311,9 +982,11 @@
       .composer-body{
         padding:20px;
       }
+
     }
 
     @media (max-width:520px){
+
       .hero{
         padding:22px 19px;
       }
@@ -1337,13 +1010,10 @@
         font-size:25px;
       }
 
-      .reaction-picker{
-        bottom:55px;
-      }
-
       .post-tools{
         gap:2px;
       }
+
     }
   </style>
 </head>
@@ -1356,6 +1026,7 @@
     id="loginState"
     class="login-state"
   >
+
     <div class="login-card">
 
       <img
@@ -1380,6 +1051,7 @@
       </button>
 
     </div>
+
   </div>
 
 
@@ -1460,6 +1132,8 @@
 
           <div class="avatar-wrap">
 
+            <!-- HERO MASCOT REMAINS EXACTLY AS BEFORE -->
+
             <img
               id="profileAvatar"
               class="avatar"
@@ -1482,21 +1156,6 @@
               Loading…
             </div>
 
-            <div class="points-pill">
-
-              ⭐
-
-              <span
-                id="pointsNumber"
-                class="points-number"
-              >
-                0
-              </span>
-
-              points
-
-            </div>
-
           </div>
 
         </div>
@@ -1510,7 +1169,7 @@
           <p class="hero-text">
             This is your place to practice English, share your thoughts,
             and connect with other learners.
-            Read, write, listen, speak, reply, and help each other grow.
+            Read, write, and help each other grow.
           </p>
 
         </div>
@@ -1582,167 +1241,42 @@
 
         <div class="composer">
 
-          <div class="composer-tabs">
-
-            <button
-              class="composer-tab active"
-              data-tab="text"
-              type="button"
-            >
-              📝 Write a post
-            </button>
-
-            <button
-              class="composer-tab"
-              data-tab="voice"
-              type="button"
-            >
-              🎙️ Voice post
-            </button>
-
-          </div>
-
-
           <div class="composer-body">
 
-            <!-- TEXT -->
+            <textarea
+              id="postText"
+              maxlength="4000"
+              placeholder="Share your day, an experience, something you learned, or your opinion…"
+            ></textarea>
 
-            <div
-              id="textPanel"
-              class="composer-panel active"
-            >
+            <div class="composer-meta">
 
-              <textarea
-                id="postText"
-                maxlength="4000"
-                placeholder="Share your day, an experience, something you learned, or your opinion…"
-              ></textarea>
-
-              <div class="composer-meta">
-
-                <div
-                  id="textValidation"
-                  class="validation"
-                >
-                  ✏️ Please write a little more before posting.
-                </div>
-
-                <div
-                  id="textCounter"
-                  class="counter"
-                >
-                  0 words
-                </div>
-
+              <div
+                id="textValidation"
+                class="validation"
+              >
+                ✏️ Please write a little more before posting.
               </div>
 
-              <div class="composer-actions">
-
-                <button
-                  id="publishTextBtn"
-                  class="primary-btn"
-                  type="button"
-                  disabled
-                >
-                  Publish +5 ⭐
-                </button>
-
+              <div
+                id="textCounter"
+                class="counter"
+              >
+                0 words
               </div>
 
             </div>
 
+            <div class="composer-actions">
 
-            <!-- VOICE -->
-
-            <div
-              id="voicePanel"
-              class="composer-panel"
-            >
-
-              <div class="voice-box">
-
-                <div class="record-status">
-
-                  <div
-                    id="recordIcon"
-                    class="record-icon"
-                  >
-                    🎙️
-                  </div>
-
-                  <div
-                    id="voiceTimer"
-                    class="timer"
-                  >
-                    00:00 / 01:00
-                  </div>
-
-                  <div
-                    id="voiceHint"
-                    class="record-hint"
-                  >
-                    Record for at least 30 seconds.
-                    Maximum 60 seconds.
-                  </div>
-
-                </div>
-
-                <div class="voice-controls">
-
-                  <button
-                    id="startRecordBtn"
-                    class="primary-btn"
-                    type="button"
-                  >
-                    Start recording
-                  </button>
-
-                  <button
-                    id="stopRecordBtn"
-                    class="secondary-btn danger-btn hidden"
-                    type="button"
-                  >
-                    Stop
-                  </button>
-
-                  <button
-                    id="resetRecordBtn"
-                    class="secondary-btn hidden"
-                    type="button"
-                  >
-                    Record again
-                  </button>
-
-                </div>
-
-                <div
-                  id="postAudioPreview"
-                  class="audio-preview hidden"
-                >
-
-                  <audio
-                    id="postAudio"
-                    controls
-                    preload="metadata"
-                    playsinline
-                  ></audio>
-
-                </div>
-
-                <div class="composer-actions">
-
-                  <button
-                    id="publishVoiceBtn"
-                    class="primary-btn hidden"
-                    type="button"
-                    disabled
-                  >
-                    Publish voice +10 ⭐
-                  </button>
-
-                </div>
-
-              </div>
+              <button
+                id="publishTextBtn"
+                class="primary-btn"
+                type="button"
+                disabled
+              >
+                Publish
+              </button>
 
             </div>
 
@@ -1777,8 +1311,10 @@
           id="feedStatus"
           class="loading"
         >
+
           <span class="spinner"></span>
           Loading posts…
+
         </div>
 
         <div
@@ -1831,131 +1367,6 @@
   ></div>
 
 
-  <!-- REWARD -->
-
-  <div
-    id="rewardFloat"
-    class="reward-float"
-  >
-    ✨ +5 ⭐
-  </div>
-
-  <div id="spark1" class="spark"></div>
-  <div id="spark2" class="spark"></div>
-  <div id="spark3" class="spark"></div>
-  <div id="spark4" class="spark"></div>
-  <div id="spark5" class="spark"></div>
-
-
-  <!-- VOICE REPLY MODAL -->
-
-  <div
-    id="voiceReplyModal"
-    class="modal"
-    aria-hidden="true"
-  >
-
-    <div class="modal-card">
-
-      <div class="modal-head">
-
-        <h3>
-          🎙️ Voice reply
-        </h3>
-
-        <button
-          class="close-modal"
-          id="closeVoiceReply"
-          type="button"
-          aria-label="Close"
-        >
-          ✕
-        </button>
-
-      </div>
-
-      <div class="reply-record-box">
-
-        <div
-          id="replyRecordIcon"
-          class="record-icon"
-        >
-          🎙️
-        </div>
-
-        <div
-          id="replyTimer"
-          class="timer"
-        >
-          00:00 / 01:00
-        </div>
-
-        <div class="record-hint">
-          Minimum 10 seconds · Maximum 60 seconds
-        </div>
-
-        <div class="voice-controls">
-
-          <button
-            id="replyStartBtn"
-            class="primary-btn"
-            type="button"
-          >
-            Start recording
-          </button>
-
-          <button
-            id="replyStopBtn"
-            class="secondary-btn danger-btn hidden"
-            type="button"
-          >
-            Stop
-          </button>
-
-          <button
-            id="replyAgainBtn"
-            class="secondary-btn hidden"
-            type="button"
-          >
-            Record again
-          </button>
-
-        </div>
-
-        <div
-          id="replyAudioPreview"
-          class="audio-preview hidden"
-        >
-
-          <audio
-            id="replyAudio"
-            controls
-            preload="metadata"
-            playsinline
-          ></audio>
-
-        </div>
-
-        <div class="composer-actions">
-
-          <button
-            id="publishReplyVoiceBtn"
-            class="primary-btn hidden"
-            type="button"
-            disabled
-          >
-            Publish voice reply +5 ⭐
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
   <!-- JAVASCRIPT -->
 
   <script type="module">
@@ -1979,8 +1390,7 @@
       orderBy,
       limit,
       serverTimestamp,
-      runTransaction,
-      updateDoc
+      runTransaction
     } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
@@ -1999,9 +1409,6 @@
 
     const SHORT_COMMENT_MIN_WORDS =
       4;
-
-    const LONG_COMMENT_MIN_WORDS =
-      10;
 
     const REACTIONS = [
       "❤️",
@@ -2026,30 +1433,9 @@
 
       userData:null,
 
-      points:0,
-
       posts:[],
 
-      commentsByPost:new Map(),
-
-      postRecorder:null,
-      postChunks:[],
-      postStream:null,
-      postStartedAt:0,
-      postDuration:0,
-      postBlob:null,
-      postAudioUrl:null,
-
-      replyRecorder:null,
-      replyChunks:[],
-      replyStream:null,
-      replyStartedAt:0,
-      replyDuration:0,
-      replyBlob:null,
-      replyAudioUrl:null,
-      replyTarget:null,
-
-      activeAudios:new Set()
+      commentsByPost:new Map()
 
     };
 
@@ -2072,46 +1458,20 @@
 
       profileAvatar:$("profileAvatar"),
       studentName:$("studentName"),
-      pointsNumber:$("pointsNumber"),
 
       composerSection:$("composerSection"),
-      textPanel:$("textPanel"),
-      voicePanel:$("voicePanel"),
 
       postText:$("postText"),
       textValidation:$("textValidation"),
       textCounter:$("textCounter"),
       publishTextBtn:$("publishTextBtn"),
 
-      recordIcon:$("recordIcon"),
-      voiceTimer:$("voiceTimer"),
-      voiceHint:$("voiceHint"),
-      startRecordBtn:$("startRecordBtn"),
-      stopRecordBtn:$("stopRecordBtn"),
-      resetRecordBtn:$("resetRecordBtn"),
-      postAudioPreview:$("postAudioPreview"),
-      postAudio:$("postAudio"),
-      publishVoiceBtn:$("publishVoiceBtn"),
-
       feedStatus:$("feedStatus"),
       feed:$("feed"),
       emptyState:$("emptyState"),
       firstPostBtn:$("firstPostBtn"),
 
-      toast:$("toast"),
-
-      rewardFloat:$("rewardFloat"),
-
-      voiceReplyModal:$("voiceReplyModal"),
-      closeVoiceReply:$("closeVoiceReply"),
-      replyRecordIcon:$("replyRecordIcon"),
-      replyTimer:$("replyTimer"),
-      replyStartBtn:$("replyStartBtn"),
-      replyStopBtn:$("replyStopBtn"),
-      replyAgainBtn:$("replyAgainBtn"),
-      replyAudioPreview:$("replyAudioPreview"),
-      replyAudio:$("replyAudio"),
-      publishReplyVoiceBtn:$("publishReplyVoiceBtn")
+      toast:$("toast")
 
     };
 
@@ -2120,7 +1480,10 @@
        GENERAL HELPERS
     ========================================================= */
 
-    function normalizeName(data,user){
+    function normalizeName(
+      data,
+      user
+    ){
 
       return String(
         data?.name ||
@@ -2133,7 +1496,10 @@
     }
 
 
-    function getAvatar(data,user){
+    function getAvatar(
+      data,
+      user
+    ){
 
       return String(
         data?.photoURL ||
@@ -2142,12 +1508,14 @@
         data?.profileImage ||
         user?.photoURL ||
         ""
-      ).trim() || "../owl.PNG";
+      ).trim();
 
     }
 
 
-    function countWords(text){
+    function countWords(
+      text
+    ){
 
       return String(text || "")
         .trim()
@@ -2158,7 +1526,9 @@
     }
 
 
-    function cleanText(text){
+    function cleanText(
+      text
+    ){
 
       return String(text || "")
         .replace(/\r/g,"")
@@ -2167,25 +1537,9 @@
     }
 
 
-    function formatDuration(seconds){
-
-      const s =
-        Math.max(
-          0,
-          Math.min(
-            60,
-            Math.floor(
-              Number(seconds) || 0
-            )
-          )
-        );
-
-      return `00:${String(s).padStart(2,"0")}`;
-
-    }
-
-
-    function timestampToDate(timestamp){
+    function timestampToDate(
+      timestamp
+    ){
 
       if(!timestamp){
         return null;
@@ -2233,7 +1587,9 @@
     }
 
 
-    function formatPostTime(timestamp){
+    function formatPostTime(
+      timestamp
+    ){
 
       const date =
         timestampToDate(timestamp);
@@ -2287,7 +1643,9 @@
     }
 
 
-    function escapeHTML(value){
+    function escapeHTML(
+      value
+    ){
 
       return String(value ?? "")
         .replaceAll("&","&amp;")
@@ -2299,7 +1657,9 @@
     }
 
 
-    function safeKey(value){
+    function safeKey(
+      value
+    ){
 
       return encodeURIComponent(
         String(value || "")
@@ -2338,7 +1698,181 @@
 
 
     /* =========================================================
+       LETTER AVATAR
+       Same name = same letter + same color
+    ========================================================= */
+
+    const AVATAR_COLORS = [
+
+      "#4F46E5",
+      "#7C3AED",
+      "#0EA5E9",
+      "#0891B2",
+      "#059669",
+      "#65A30D",
+      "#D97706",
+      "#EA580C",
+      "#DB2777",
+      "#C026D3",
+      "#9333EA",
+      "#2563EB"
+
+    ];
+
+
+    function getAvatarInitial(
+      name
+    ){
+
+      const value =
+        String(
+          name ||
+          "Engliza Student"
+        )
+        .trim();
+
+
+      if(!value){
+        return "E";
+      }
+
+
+      /*
+        Pick the first meaningful visible
+        character.
+
+        This works with:
+        English names
+        Arabic names
+        accented names
+        numbers
+      */
+
+      const chars =
+        Array.from(value);
+
+
+      const meaningful =
+        chars.find(
+          char =>
+            /[\p{L}\p{N}]/u.test(char)
+        );
+
+
+      return (
+        meaningful ||
+        chars[0] ||
+        "E"
+      ).toUpperCase();
+
+    }
+
+
+    function hashString(
+      value
+    ){
+
+      const text =
+        String(value || "");
+
+
+      let hash =
+        0;
+
+
+      for(
+        let i = 0;
+        i < text.length;
+        i++
+      ){
+
+        hash =
+          (
+            (
+              hash << 5
+            ) -
+            hash +
+            text.charCodeAt(i)
+          ) |
+          0;
+
+      }
+
+
+      return Math.abs(hash);
+
+    }
+
+
+    function getAvatarColor(
+      name,
+      uid=""
+    ){
+
+      /*
+        Prefer UID when available because it
+        remains stable even if the display name
+        changes.
+
+        The name is included as fallback.
+      */
+
+      const seed =
+        String(
+          uid ||
+          name ||
+          "Engliza Student"
+        ).trim();
+
+
+      return AVATAR_COLORS[
+        hashString(seed) %
+        AVATAR_COLORS.length
+      ];
+
+    }
+
+
+    function letterAvatarHTML(
+      name,
+      uid="",
+      className="post-avatar"
+    ){
+
+      const initial =
+        getAvatarInitial(
+          name
+        );
+
+
+      const color =
+        getAvatarColor(
+          name,
+          uid
+        );
+
+
+      return `
+
+        <div
+          class="${className}"
+          style="background:${color};"
+          aria-label="${escapeHTML(name || "Engliza Student")}"
+          title="${escapeHTML(name || "Engliza Student")}"
+        >
+          ${escapeHTML(initial)}
+        </div>
+
+      `;
+
+    }
+
+
+    /* =========================================================
        WORKER REQUEST
+       Used only for:
+       - loading the authenticated academy profile
+       - deleting content
     ========================================================= */
 
     async function workerRequest(
@@ -2362,10 +1896,12 @@
 
 
       const headers = {
+
         ...(options.headers || {}),
 
         "Authorization":
           `Bearer ${token}`
+
       };
 
 
@@ -2439,698 +1975,6 @@
 
 
     /* =========================================================
-       REWARD ANIMATION
-    ========================================================= */
-
-    function showReward(
-      points,
-      label=""
-    ){
-
-      const amount =
-        Number(points || 0);
-
-      if(amount <= 0){
-        return;
-      }
-
-      el.rewardFloat.textContent =
-        `${label ? label + " " : "✨ "}+${amount} ⭐`;
-
-      el.rewardFloat.classList.remove(
-        "show"
-      );
-
-      void el.rewardFloat.offsetWidth;
-
-      el.rewardFloat.classList.add(
-        "show"
-      );
-
-
-      [1,2,3,4,5].forEach(
-        (n,i) => {
-
-          const spark =
-            $(`spark${n}`);
-
-          const angle =
-            (Math.PI * 2 * i / 5)
-            - Math.PI / 2;
-
-          const distance =
-            34 + (i % 2) * 18;
-
-          spark.style.setProperty(
-            "--x",
-            `${Math.cos(angle) * distance}px`
-          );
-
-          spark.style.setProperty(
-            "--y",
-            `${Math.sin(angle) * distance}px`
-          );
-
-          spark.classList.remove(
-            "show"
-          );
-
-          void spark.offsetWidth;
-
-          spark.classList.add(
-            "show"
-          );
-
-        }
-      );
-
-    }
-
-
-    function setPoints(value){
-
-      const points =
-        Math.max(
-          0,
-          Number(value || 0)
-        );
-
-      state.points =
-        points;
-
-      el.pointsNumber.textContent =
-        points;
-
-    }
-
-
-    /* =========================================================
-       LOAD POINTS
-    ========================================================= */
-
-    async function loadPoints(){
-
-      if(!state.user){
-
-        setPoints(0);
-
-        return;
-
-      }
-
-
-      try{
-
-        const snap =
-          await getDoc(
-            doc(
-              db,
-              "englishSpacePoints",
-              state.user.uid
-            )
-          );
-
-
-        if(
-          snap.exists()
-        ){
-
-          const data =
-            snap.data() || {};
-
-
-          const total =
-            Number(
-              data.totalPoints ??
-              data.points ??
-              0
-            );
-
-
-          setPoints(
-            Number.isFinite(total)
-              ? total
-              : 0
-          );
-
-
-          return;
-
-        }
-
-      }catch(error){
-
-        console.warn(
-          "Could not load English Space points:",
-          error
-        );
-
-      }
-
-
-      setPoints(0);
-
-    }
-
-
-    /* =========================================================
-       TRUSTED REWARD
-       IMPORTANT:
-       Worker returns:
-       points
-       totalPoints
-    ========================================================= */
-
-    async function requestTrustedReward(
-      payload
-    ){
-
-      const data =
-        await workerRequest(
-          "/reward",
-          {
-            method:"POST",
-
-            body:
-              JSON.stringify(
-                payload
-              )
-          }
-        );
-
-
-      if(
-        typeof data.totalPoints ===
-        "number"
-      ){
-
-        setPoints(
-          data.totalPoints
-        );
-
-      }else{
-
-        await loadPoints();
-
-      }
-
-
-      return data;
-
-    }
-
-
-    async function awardPoints(
-      payload
-    ){
-
-      try{
-
-        const result =
-          await requestTrustedReward(
-            payload
-          );
-
-
-        const gained =
-          Number(
-            result?.points || 0
-          );
-
-
-        if(gained > 0){
-
-          showReward(
-            gained,
-            payload.voice
-              ? "🎙️"
-              : "✨"
-          );
-
-        }
-
-
-        return result;
-
-      }catch(error){
-
-        console.error(
-          "Trusted reward failed:",
-          error
-        );
-
-
-        return {
-
-          ok:false,
-
-          awarded:false,
-
-          points:0,
-
-          rewardUnavailable:true,
-
-          error:
-            String(
-              error?.message ||
-              error
-            ),
-
-          totalPoints:
-            state.points
-
-        };
-
-      }
-
-    }
-
-
-    /* =========================================================
-       AUDIO RECORDING
-       IMPORTANT FIX:
-       We do NOT force audio/mp4 first.
-
-       The browser is allowed to choose its native
-       recording format when possible.
-
-       We then use recorder.mimeType as the
-       actual Blob type.
-    ========================================================= */
-
-    function createRecorder(
-      stream
-    ){
-
-      if(
-        !window.MediaRecorder
-      ){
-
-        throw new Error(
-          "Voice recording is not supported in this browser."
-        );
-
-      }
-
-
-      /*
-        First try the browser's own default.
-
-        This avoids forcing Safari/iPadOS into a
-        container that may technically be supported
-        but may not behave reliably for this exact
-        recording path.
-      */
-
-      try{
-
-        const recorder =
-          new MediaRecorder(
-            stream
-          );
-
-        return recorder;
-
-      }catch(error){
-
-        console.warn(
-          "Default MediaRecorder failed. Trying supported formats.",
-          error
-        );
-
-      }
-
-
-      if(
-        typeof MediaRecorder.isTypeSupported ===
-        "function"
-      ){
-
-        const candidates = [
-
-          "audio/webm;codecs=opus",
-
-          "audio/webm",
-
-          "audio/mp4",
-
-          "audio/ogg;codecs=opus",
-
-          "audio/ogg"
-
-        ];
-
-
-        for(
-          const type of candidates
-        ){
-
-          try{
-
-            if(
-              MediaRecorder.isTypeSupported(
-                type
-              )
-            ){
-
-              return new MediaRecorder(
-                stream,
-                {
-                  mimeType:type
-                }
-              );
-
-            }
-
-          }catch{}
-
-        }
-
-      }
-
-
-      throw new Error(
-        "This browser could not create an audio recorder."
-      );
-
-    }
-
-
-    function getRecorderMime(
-      recorder
-    ){
-
-      return String(
-        recorder?.mimeType ||
-        ""
-      ).trim();
-
-    }
-
-
-    function getSafeAudioMime(
-      recorder,
-      blob
-    ){
-
-      const recorderMime =
-        getRecorderMime(
-          recorder
-        );
-
-
-      const blobMime =
-        String(
-          blob?.type || ""
-        ).trim();
-
-
-      return (
-        recorderMime ||
-        blobMime ||
-        "audio/webm"
-      );
-
-    }
-
-
-    /* =========================================================
-       AUDIO UPLOAD
-    ========================================================= */
-
-    async function uploadAudio(
-      blob,
-      kind,
-      duration,
-      recorderMime=""
-    ){
-
-      if(
-        !blob ||
-        !blob.size
-      ){
-
-        throw new Error(
-          "No audio was recorded."
-        );
-
-      }
-
-
-      const seconds =
-        Math.max(
-          0,
-          Math.min(
-            60,
-            Math.floor(
-              Number(duration) || 0
-            )
-          )
-        );
-
-
-      if(seconds <= 0){
-
-        throw new Error(
-          "The recording duration is invalid."
-        );
-
-      }
-
-
-      const token =
-        await state.user.getIdToken(
-          true
-        );
-
-
-      const mime =
-        String(
-          recorderMime ||
-          blob.type ||
-          "audio/webm"
-        ).trim();
-
-
-      let response;
-
-
-      try{
-
-        response =
-          await fetch(
-            `${WORKER_URL}/upload?kind=${encodeURIComponent(kind)}`,
-            {
-
-              method:"POST",
-
-              headers:{
-
-                "Authorization":
-                  `Bearer ${token}`,
-
-                "Content-Type":
-                  mime,
-
-                "X-Audio-Duration":
-                  String(seconds)
-
-              },
-
-              body:blob
-
-            }
-          );
-
-      }catch(error){
-
-        console.error(
-          "Audio upload network error:",
-          error
-        );
-
-        throw new Error(
-          "Could not connect to the English Space audio server."
-        );
-
-      }
-
-
-      let data = {};
-
-
-      try{
-
-        data =
-          await response.json();
-
-      }catch{}
-
-
-      if(!response.ok){
-
-        throw new Error(
-          data?.error ||
-          `Audio upload failed (${response.status}).`
-        );
-
-      }
-
-
-      const audioKey =
-        data?.audioKey ||
-        data?.key ||
-        data?.objectKey;
-
-
-      if(!audioKey){
-
-        throw new Error(
-          "The audio service did not return an audio key."
-        );
-
-      }
-
-
-      return {
-
-        audioKey,
-
-        audioDuration:
-          Number(
-            data?.audioDuration ??
-            data?.duration ??
-            seconds
-          ),
-
-        mimeType:
-          data?.mimeType ||
-          data?.audioMimeType ||
-          mime
-
-      };
-
-    }
-
-
-    /* =========================================================
-       PROTECTED AUDIO
-    ========================================================= */
-
-    async function getAudioUrl(
-      audioKey
-    ){
-
-      if(!state.user){
-
-        throw new Error(
-          "You must be signed in."
-        );
-
-      }
-
-
-      const cleanKey =
-        String(
-          audioKey || ""
-        );
-
-
-      if(!cleanKey){
-
-        throw new Error(
-          "Audio key is missing."
-        );
-
-      }
-
-
-      const token =
-        await state.user.getIdToken(
-          true
-        );
-
-
-      let response;
-
-
-      try{
-
-        response =
-          await fetch(
-            `${WORKER_URL}/audio/${cleanKey}`,
-            {
-
-              method:"GET",
-
-              headers:{
-                "Authorization":
-                  `Bearer ${token}`
-              }
-
-            }
-          );
-
-      }catch(error){
-
-        console.error(
-          "Audio server network error:",
-          error
-        );
-
-        throw new Error(
-          "Could not connect to the audio server."
-        );
-
-      }
-
-
-      if(!response.ok){
-
-        let message =
-          "Unable to load audio.";
-
-
-        try{
-
-          const data =
-            await response.json();
-
-          message =
-            data?.error ||
-            message;
-
-        }catch{}
-
-
-        throw new Error(
-          message
-        );
-
-      }
-
-
-      const blob =
-        await response.blob();
-
-
-      if(!blob.size){
-
-        throw new Error(
-          "The audio file is empty."
-        );
-
-      }
-
-
-      return URL.createObjectURL(
-        blob
-      );
-
-    }
-
-
-    /* =========================================================
        USER / PROFILE
     ========================================================= */
 
@@ -3151,14 +1995,6 @@
             }
           );
 
-
-        /*
-          The Worker returns:
-          data.user
-
-          Previous HTML incorrectly expected
-          data.profile / data.authProfile.
-        */
 
         state.userData =
           data?.user ||
@@ -3199,18 +2035,26 @@
       }
 
 
-      el.studentName.textContent =
+      const name =
         normalizeName(
           state.userData,
           state.user
         );
 
 
+      el.studentName.textContent =
+        name;
+
+
+      /*
+        IMPORTANT:
+        The Hero keeps the mascot exactly as requested.
+        We intentionally do NOT replace this image with
+        the student's letter avatar.
+      */
+
       el.profileAvatar.src =
-        getAvatar(
-          state.userData,
-          state.user
-        );
+        "../owl.PNG";
 
 
       el.profileAvatar.onerror =
@@ -3220,9 +2064,6 @@
             "../owl.PNG";
 
         };
-
-
-      await loadPoints();
 
     }
 
@@ -3282,7 +2123,7 @@
 
     /* =========================================================
        PUBLISH TEXT POST
-       Worker source = writtenPost
+       No points / rewards
     ========================================================= */
 
     async function publishTextPost(){
@@ -3303,9 +2144,7 @@
 
 
       const wordCount =
-        countWords(
-          text
-        );
+        countWords(text);
 
 
       el.publishTextBtn.disabled =
@@ -3324,116 +2163,54 @@
           );
 
 
-        const postRef =
-          await addDoc(
-            collection(
-              db,
-              POSTS_COLLECTION
-            ),
-            {
+        await addDoc(
+          collection(
+            db,
+            POSTS_COLLECTION
+          ),
+          {
 
-              uid:
-                state.user.uid,
+            uid:
+              state.user.uid,
 
-              authorName:
-                name,
+            authorName:
+              name,
 
-              authorPhoto:
-                getAvatar(
-                  state.userData,
-                  state.user
-                ),
+            /*
+              Kept for compatibility with
+              older posts/data, but the UI
+              no longer displays it.
+            */
+            authorPhoto:
+              getAvatar(
+                state.userData,
+                state.user
+              ),
 
-              authorPoints:
-                state.points,
+            type:
+              "text",
 
-              type:
-                "text",
+            text,
 
-              text,
+            wordCount,
 
-              wordCount,
+            createdAt:
+              serverTimestamp(),
 
-              audioKey:
-                "",
+            updatedAt:
+              serverTimestamp(),
 
-              audioDuration:
-                0,
+            reactionCounts:
+              {},
 
-              createdAt:
-                serverTimestamp(),
+            reactionUsers:
+              {},
 
-              updatedAt:
-                serverTimestamp(),
-
-              reactionCounts:
-                {},
-
-              reactionUsers:
-                {},
-
-              edited:
-                false,
-
-              rewardEligible:
-                true
-
-            }
-          );
-
-
-        const reward =
-          await awardPoints(
-            {
-
-              source:
-                "writtenPost",
-
-              kind:
-                "post",
-
-              contentId:
-                postRef.id,
-
-              postId:
-                postRef.id,
-
-              type:
-                "text",
-
-              text,
-
-              wordCount
-
-            }
-          );
-
-
-        if(
-          typeof reward?.totalPoints ===
-          "number"
-        ){
-
-          try{
-
-            await updateDoc(
-              postRef,
-              {
-                authorPoints:
-                  reward.totalPoints
-              }
-            );
-
-          }catch(error){
-
-            console.warn(
-              "Could not update post authorPoints:",
-              error
-            );
+            edited:
+              false
 
           }
-
-        }
+        );
 
 
         el.postText.value =
@@ -3444,32 +2221,9 @@
         await loadPosts();
 
 
-        if(
-          reward?.rewardUnavailable
-        ){
-
-          showToast(
-            "Posted successfully. Points could not be awarded this time.",
-            true
-          );
-
-        }else if(
-          Number(
-            reward?.points || 0
-          ) > 0
-        ){
-
-          showToast(
-            `Posted! +${reward.points} ⭐`
-          );
-
-        }else{
-
-          showToast(
-            "Posted successfully."
-          );
-
-        }
+        showToast(
+          "Posted successfully."
+        );
 
 
       }catch(error){
@@ -3488,968 +2242,11 @@
       }finally{
 
         el.publishTextBtn.textContent =
-          "Publish +5 ⭐";
+          "Publish";
 
         validateTextPost();
 
       }
-
-    }
-
-
-    /* =========================================================
-       POST TIMER
-    ========================================================= */
-
-    function updatePostTimer(){
-
-      if(
-        !state.postStartedAt ||
-        !state.postRecorder
-      ){
-
-        return;
-
-      }
-
-
-      const elapsed =
-        Math.min(
-          60,
-          Math.floor(
-            (
-              Date.now() -
-              state.postStartedAt
-            ) / 1000
-          )
-        );
-
-
-      state.postDuration =
-        elapsed;
-
-
-      el.voiceTimer.textContent =
-        `${formatDuration(elapsed)} / 01:00`;
-
-
-      if(
-        elapsed >= 60
-      ){
-
-        stopPostRecording(true);
-
-        return;
-
-      }
-
-
-      if(
-        state.postRecorder?.state ===
-        "recording"
-      ){
-
-        requestAnimationFrame(
-          updatePostTimer
-        );
-
-      }
-
-    }
-
-
-    /* =========================================================
-       START POST RECORDING
-    ========================================================= */
-
-    async function startPostRecording(){
-
-      if(
-        !navigator.mediaDevices ||
-        !navigator.mediaDevices.getUserMedia ||
-        !window.MediaRecorder
-      ){
-
-        showToast(
-          "Voice recording is not supported in this browser.",
-          true
-        );
-
-        return;
-
-      }
-
-
-      await resetPostRecording(
-        true
-      );
-
-
-      try{
-
-        state.postStream =
-          await navigator.mediaDevices.getUserMedia(
-            {
-              audio:{
-                echoCancellation:true,
-                noiseSuppression:true,
-                autoGainControl:true
-              }
-            }
-          );
-
-
-        const tracks =
-          state.postStream.getAudioTracks();
-
-
-        if(
-          !tracks.length
-        ){
-
-          throw new Error(
-            "No microphone audio track was created."
-          );
-
-        }
-
-
-        tracks.forEach(
-          track => {
-
-            track.enabled =
-              true;
-
-          }
-        );
-
-
-        state.postRecorder =
-          createRecorder(
-            state.postStream
-          );
-
-
-        state.postChunks =
-          [];
-
-        state.postStartedAt =
-          Date.now();
-
-        state.postDuration =
-          0;
-
-        state.postBlob =
-          null;
-
-
-        const recorder =
-          state.postRecorder;
-
-
-        recorder.ondataavailable =
-          event => {
-
-            if(
-              event.data &&
-              event.data.size > 0
-            ){
-
-              state.postChunks.push(
-                event.data
-              );
-
-            }
-
-          };
-
-
-        recorder.onstop =
-          () => {
-
-            const duration =
-              Math.min(
-                60,
-                Math.floor(
-                  (
-                    Date.now() -
-                    state.postStartedAt
-                  ) / 1000
-                )
-              );
-
-
-            const recorderMime =
-              getRecorderMime(
-                recorder
-              );
-
-
-            const chunks =
-              state.postChunks.slice();
-
-
-            state.postDuration =
-              duration;
-
-
-            state.postBlob =
-              new Blob(
-                chunks,
-                {
-                  type:
-                    recorderMime ||
-                    undefined
-                }
-              );
-
-
-            state.postStream
-              ?.getTracks()
-              .forEach(
-                track =>
-                  track.stop()
-              );
-
-
-            state.postStream =
-              null;
-
-            state.postRecorder =
-              null;
-
-            state.postStartedAt =
-              0;
-
-
-            if(
-              state.postAudioUrl
-            ){
-
-              URL.revokeObjectURL(
-                state.postAudioUrl
-              );
-
-            }
-
-
-            state.postAudioUrl =
-              null;
-
-
-            if(
-              state.postBlob.size > 0
-            ){
-
-              state.postAudioUrl =
-                URL.createObjectURL(
-                  state.postBlob
-                );
-
-
-              el.postAudio.src =
-                state.postAudioUrl;
-
-
-              el.postAudioPreview
-                .classList
-                .remove("hidden");
-
-
-              /*
-                Load the local recording explicitly.
-                This is the actual Blob recorded by
-                MediaRecorder — no Worker involved.
-              */
-
-              el.postAudio.load();
-
-            }
-
-
-            el.startRecordBtn
-              .classList
-              .add("hidden");
-
-            el.stopRecordBtn
-              .classList
-              .add("hidden");
-
-            el.resetRecordBtn
-              .classList
-              .remove("hidden");
-
-            el.publishVoiceBtn
-              .classList
-              .remove("hidden");
-
-
-            el.publishVoiceBtn.disabled =
-              duration < 30 ||
-              !state.postBlob?.size;
-
-
-            el.recordIcon
-              .classList
-              .remove("recording");
-
-
-            if(
-              duration < 30
-            ){
-
-              el.voiceHint.textContent =
-                `You recorded ${duration}s. You need at least 30 seconds.`;
-
-            }else if(
-              duration === 60
-            ){
-
-              el.voiceHint.textContent =
-                "Perfect — a full minute earns +10 ⭐.";
-
-            }else{
-
-              el.voiceHint.textContent =
-                "Ready to publish. Your recording is ready.";
-
-            }
-
-          };
-
-
-        recorder.onerror =
-          event => {
-
-            console.error(
-              "Post recorder error:",
-              event
-            );
-
-
-            state.postStream
-              ?.getTracks()
-              .forEach(
-                track =>
-                  track.stop()
-              );
-
-
-            state.postStream =
-              null;
-
-            state.postRecorder =
-              null;
-
-            state.postChunks =
-              [];
-
-            state.postStartedAt =
-              0;
-
-
-            el.recordIcon
-              .classList
-              .remove("recording");
-
-            el.startRecordBtn
-              .classList
-              .remove("hidden");
-
-            el.stopRecordBtn
-              .classList
-              .add("hidden");
-
-            el.resetRecordBtn
-              .classList
-              .add("hidden");
-
-            el.publishVoiceBtn
-              .classList
-              .add("hidden");
-
-
-            showToast(
-              "Recording failed. Please try again.",
-              true
-            );
-
-          };
-
-
-        try{
-
-          recorder.start(250);
-
-        }catch{
-
-          recorder.start();
-
-        }
-
-
-        el.startRecordBtn
-          .classList
-          .add("hidden");
-
-        el.stopRecordBtn
-          .classList
-          .remove("hidden");
-
-        el.resetRecordBtn
-          .classList
-          .add("hidden");
-
-        el.publishVoiceBtn
-          .classList
-          .add("hidden");
-
-        el.recordIcon
-          .classList
-          .add("recording");
-
-        el.voiceHint.textContent =
-          "Keep speaking. Recording stops automatically at 60 seconds.";
-
-        el.voiceTimer.textContent =
-          "00:00 / 01:00";
-
-
-        updatePostTimer();
-
-
-      }catch(error){
-
-        console.error(
-          "Could not start post recording:",
-          error
-        );
-
-
-        state.postStream
-          ?.getTracks()
-          .forEach(
-            track =>
-              track.stop()
-          );
-
-
-        state.postStream =
-          null;
-
-        state.postRecorder =
-          null;
-
-        state.postChunks =
-          [];
-
-        state.postStartedAt =
-          0;
-
-
-        if(
-          error?.name ===
-          "NotAllowedError"
-        ){
-
-          showToast(
-            "Microphone permission was denied. Please allow microphone access.",
-            true
-          );
-
-        }else if(
-          error?.name ===
-          "NotFoundError"
-        ){
-
-          showToast(
-            "No microphone was found on this device.",
-            true
-          );
-
-        }else{
-
-          showToast(
-            error?.message ||
-            "Could not start the microphone. Please try again.",
-            true
-          );
-
-        }
-
-      }
-
-    }
-
-
-    /* =========================================================
-       STOP POST
-    ========================================================= */
-
-    function stopPostRecording(
-      auto=false
-    ){
-
-      const recorder =
-        state.postRecorder;
-
-
-      if(
-        recorder &&
-        recorder.state ===
-        "recording"
-      ){
-
-        try{
-
-          recorder.stop();
-
-        }catch(error){
-
-          console.error(
-            "Could not stop recorder:",
-            error
-          );
-
-        }
-
-
-        if(auto){
-
-          showToast(
-            "60 seconds reached. Recording stopped."
-          );
-
-        }
-
-      }
-
-    }
-
-
-    /* =========================================================
-       RESET POST
-    ========================================================= */
-
-    async function resetPostRecording(
-      showStart=true
-    ){
-
-      const recorder =
-        state.postRecorder;
-
-
-      if(
-        recorder &&
-        recorder.state ===
-        "recording"
-      ){
-
-        await new Promise(
-          resolve => {
-
-            let finished =
-              false;
-
-
-            const done =
-              () => {
-
-                if(finished){
-                  return;
-                }
-
-                finished =
-                  true;
-
-                resolve();
-
-              };
-
-
-            recorder.addEventListener(
-              "stop",
-              done,
-              {
-                once:true
-              }
-            );
-
-
-            try{
-
-              recorder.stop();
-
-            }catch{
-
-              done();
-
-            }
-
-          }
-        );
-
-      }
-
-
-      state.postStream
-        ?.getTracks()
-        .forEach(
-          track =>
-            track.stop()
-        );
-
-
-      state.postStream =
-        null;
-
-      state.postRecorder =
-        null;
-
-      state.postChunks =
-        [];
-
-      state.postStartedAt =
-        0;
-
-      state.postDuration =
-        0;
-
-      state.postBlob =
-        null;
-
-
-      if(
-        state.postAudioUrl
-      ){
-
-        URL.revokeObjectURL(
-          state.postAudioUrl
-        );
-
-        state.postAudioUrl =
-          null;
-
-      }
-
-
-      el.postAudio.removeAttribute(
-        "src"
-      );
-
-      el.postAudio.load();
-
-      el.postAudioPreview
-        .classList
-        .add("hidden");
-
-      el.voiceTimer.textContent =
-        "00:00 / 01:00";
-
-      el.recordIcon
-        .classList
-        .remove("recording");
-
-      el.stopRecordBtn
-        .classList
-        .add("hidden");
-
-      el.resetRecordBtn
-        .classList
-        .add("hidden");
-
-      el.publishVoiceBtn
-        .classList
-        .add("hidden");
-
-      el.publishVoiceBtn.disabled =
-        true;
-
-
-      if(showStart){
-
-        el.startRecordBtn
-          .classList
-          .remove("hidden");
-
-      }else{
-
-        el.startRecordBtn
-          .classList
-          .add("hidden");
-
-      }
-
-
-      el.voiceHint.textContent =
-        "Record for at least 30 seconds. Maximum 60 seconds.";
-
-    }
-
-
-    /* =========================================================
-       PUBLISH VOICE POST
-       Worker source = voicePost
-    ========================================================= */
-
-    async function publishVoicePost(){
-
-      if(
-        !state.postBlob ||
-        !state.postBlob.size ||
-        state.postDuration < 30
-      ){
-
-        return;
-
-      }
-
-
-      el.publishVoiceBtn.disabled =
-        true;
-
-      el.publishVoiceBtn.textContent =
-        "Uploading…";
-
-
-      try{
-
-        const uploaded =
-          await uploadAudio(
-            state.postBlob,
-            "post",
-            state.postDuration,
-            state.postBlob.type
-          );
-
-
-        const name =
-          normalizeName(
-            state.userData,
-            state.user
-          );
-
-
-        const postRef =
-          await addDoc(
-            collection(
-              db,
-              POSTS_COLLECTION
-            ),
-            {
-
-              uid:
-                state.user.uid,
-
-              authorName:
-                name,
-
-              authorPhoto:
-                getAvatar(
-                  state.userData,
-                  state.user
-                ),
-
-              authorPoints:
-                state.points,
-
-              type:
-                "voice",
-
-              text:
-                "",
-
-              audioKey:
-                uploaded.audioKey,
-
-              audioDuration:
-                uploaded.audioDuration,
-
-              audioMimeType:
-                uploaded.mimeType || "",
-
-              createdAt:
-                serverTimestamp(),
-
-              updatedAt:
-                serverTimestamp(),
-
-              reactionCounts:
-                {},
-
-              reactionUsers:
-                {},
-
-              edited:
-                false,
-
-              rewardEligible:
-                true
-
-            }
-          );
-
-
-        const reward =
-          await awardPoints(
-            {
-
-              source:
-                "voicePost",
-
-              kind:
-                "post",
-
-              contentId:
-                postRef.id,
-
-              postId:
-                postRef.id,
-
-              type:
-                "voice",
-
-              duration:
-                uploaded.audioDuration,
-
-              audioDuration:
-                uploaded.audioDuration,
-
-              voice:true
-
-            }
-          );
-
-
-        if(
-          typeof reward?.totalPoints ===
-          "number"
-        ){
-
-          try{
-
-            await updateDoc(
-              postRef,
-              {
-                authorPoints:
-                  reward.totalPoints
-              }
-            );
-
-          }catch(error){
-
-            console.warn(
-              "Could not update voice post authorPoints:",
-              error
-            );
-
-          }
-
-        }
-
-
-        await resetPostRecording(
-          true
-        );
-
-
-        await loadPosts();
-
-
-        if(
-          reward?.rewardUnavailable
-        ){
-
-          showToast(
-            "Voice post published. Points could not be awarded this time.",
-            true
-          );
-
-        }else if(
-          Number(
-            reward?.points || 0
-          ) > 0
-        ){
-
-          showToast(
-            `Voice post published! +${reward.points} ⭐`
-          );
-
-        }else{
-
-          showToast(
-            "Voice post published."
-          );
-
-        }
-
-
-      }catch(error){
-
-        console.error(
-          "Voice post error:",
-          error
-        );
-
-
-        showToast(
-          error?.message ||
-          "Could not publish the voice post.",
-          true
-        );
-
-
-        el.publishVoiceBtn.disabled =
-          !state.postBlob ||
-          state.postDuration < 30;
-
-      }finally{
-
-        el.publishVoiceBtn.textContent =
-          "Publish voice +10 ⭐";
-
-      }
-
-    }
-
-
-    /* =========================================================
-       COMPOSER TABS
-    ========================================================= */
-
-    function switchComposerTab(
-      tab
-    ){
-
-      document
-        .querySelectorAll(
-          ".composer-tab"
-        )
-        .forEach(
-          button => {
-
-            button.classList.toggle(
-              "active",
-              button.dataset.tab === tab
-            );
-
-          }
-        );
-
-
-      el.textPanel
-        .classList
-        .toggle(
-          "active",
-          tab === "text"
-        );
-
-      el.voicePanel
-        .classList
-        .toggle(
-          "active",
-          tab === "voice"
-        );
 
     }
 
@@ -4481,10 +2278,15 @@
         .map(
           ([emoji,count]) =>
             `
+
               <span class="reaction-count">
+
                 ${escapeHTML(emoji)}
+
                 ${Number(count)}
+
               </span>
+
             `
         )
         .join("");
@@ -4507,42 +2309,15 @@
 
 
       const body =
-        post.type === "voice"
+        `
 
-          ? `
-              <div class="post-audio">
+          <p class="post-text">
+            ${escapeHTML(
+              post.text || ""
+            )}
+          </p>
 
-                <button
-                  class="audio-play"
-                  data-action="play-audio"
-                  data-key="${safeKey(post.audioKey || "")}"
-                  type="button"
-                  aria-label="Play voice post"
-                >
-                  ▶
-                </button>
-
-                <div class="audio-info">
-
-                  <div class="audio-title">
-                    🎙️ Voice practice
-                  </div>
-
-                  <div class="audio-duration">
-                    ${formatDuration(post.audioDuration)}
-                    / 01:00
-                  </div>
-
-                </div>
-
-              </div>
-            `
-
-          : `
-              <p class="post-text">
-                ${escapeHTML(post.text || "")}
-              </p>
-            `;
+        `;
 
 
       const isOwner =
@@ -4559,15 +2334,12 @@
 
           <div class="post-head">
 
-            <img
-              class="post-avatar"
-              src="${escapeHTML(
-                post.authorPhoto ||
-                "../owl.PNG"
-              )}"
-              onerror="this.src='../owl.PNG'"
-              alt=""
-            >
+            ${letterAvatarHTML(
+              post.authorName ||
+              "Engliza Student",
+              post.uid || "",
+              "post-avatar"
+            )}
 
             <div class="post-author">
 
@@ -4577,13 +2349,6 @@
                   ${escapeHTML(
                     post.authorName ||
                     "Engliza Student"
-                  )}
-                </span>
-
-                <span class="post-points">
-                  ⭐
-                  ${Number(
-                    post.authorPoints || 0
                   )}
                 </span>
 
@@ -4600,16 +2365,13 @@
             <div class="post-tools">
 
               <div class="post-type">
-                ${
-                  post.type === "voice"
-                    ? "🎙️"
-                    : "📝"
-                }
+                📝
               </div>
 
               ${
                 isOwner
                   ? `
+
                     <button
                       class="more-btn"
                       data-action="post-menu"
@@ -4634,6 +2396,7 @@
                       </button>
 
                     </div>
+
                   `
                   : ""
 
@@ -4693,6 +2456,7 @@
               .map(
                 emoji =>
                   `
+
                     <button
                       class="emoji-btn"
                       data-action="react"
@@ -4702,6 +2466,7 @@
                     >
                       ${emoji}
                     </button>
+
                   `
               )
               .join("")}
@@ -4724,21 +2489,11 @@
               ></textarea>
 
               <button
-                class="comment-voice"
-                data-action="voice-reply"
-                data-post-id="${escapeHTML(post.id)}"
-                data-parent-id=""
-                title="Voice reply"
-                type="button"
-              >
-                🎙️
-              </button>
-
-              <button
                 class="send-comment"
                 data-action="comment"
                 data-post-id="${escapeHTML(post.id)}"
                 type="button"
+                aria-label="Send comment"
               >
                 ➤
               </button>
@@ -4750,9 +2505,11 @@
               class="comment-list"
               id="comment-list-${escapeHTML(post.id)}"
             >
+
               <div class="feed-status">
                 Loading comments…
               </div>
+
             </div>
 
           </div>
@@ -4776,8 +2533,11 @@
 
       el.feedStatus.innerHTML =
         `
+
           <span class="spinner"></span>
+
           Loading posts…
+
         `;
 
       el.feed.innerHTML =
@@ -4811,8 +2571,12 @@
         state.posts =
           snap.docs.map(
             document => ({
-              id:document.id,
+
+              id:
+                document.id,
+
               ...document.data()
+
             })
           );
 
@@ -4851,11 +2615,15 @@
 
         el.feedStatus.innerHTML =
           `
+
             Could not load posts.
+
             <br>
+
             ${escapeHTML(
               error?.message || ""
             )}
+
           `;
 
 
@@ -4871,6 +2639,7 @@
 
     /* =========================================================
        REACTIONS
+       No rewards
     ========================================================= */
 
     async function updateReaction(
@@ -4973,11 +2742,13 @@
             transaction.update(
               postRef,
               {
+
                 reactionCounts:
                   counts,
 
                 reactionUsers:
                   users
+
               }
             );
 
@@ -5131,8 +2902,12 @@
         const comments =
           snap.docs.map(
             document => ({
-              id:document.id,
+
+              id:
+                document.id,
+
               ...document.data()
+
             })
           );
 
@@ -5186,9 +2961,11 @@
 
           list.innerHTML =
             `
+
               <div class="feed-status">
                 Comments could not be loaded.
               </div>
+
             `;
 
         }
@@ -5274,41 +3051,10 @@
         );
 
 
-      const body =
-        comment.type === "voice"
-
-          ? `
-              <div class="comment-audio">
-
-                <button
-                  data-action="play-comment-audio"
-                  data-key="${safeKey(
-                    comment.audioKey || ""
-                  )}"
-                  type="button"
-                  aria-label="Play voice reply"
-                >
-                  ▶
-                </button>
-
-                <small>
-                  🎙️
-                  ${formatDuration(
-                    comment.audioDuration
-                  )}
-                  / 01:00
-                </small>
-
-              </div>
-            `
-
-          : `
-              <div class="comment-text">
-                ${escapeHTML(
-                  comment.text || ""
-                )}
-              </div>
-            `;
+      const isOwner =
+        state.user &&
+        comment.uid ===
+        state.user.uid;
 
 
       return `
@@ -5318,15 +3064,12 @@
           data-comment-id="${escapeHTML(comment.id)}"
         >
 
-          <img
-            class="comment-avatar"
-            src="${escapeHTML(
-              comment.authorPhoto ||
-              "../owl.PNG"
-            )}"
-            onerror="this.src='../owl.PNG'"
-            alt=""
-          >
+          ${letterAvatarHTML(
+            comment.authorName ||
+            "Engliza Student",
+            comment.uid || "",
+            "comment-avatar"
+          )}
 
           <div class="comment-card">
 
@@ -5339,22 +3082,22 @@
                 )}
               </strong>
 
-              <span>
-                ⭐
-                ${Number(
-                  comment.authorPoints || 0
-                )}
-              </span>
-
             </div>
 
-            ${body}
+
+            <div class="comment-text">
+              ${escapeHTML(
+                comment.text || ""
+              )}
+            </div>
+
 
             <div class="comment-time">
               ${formatPostTime(
                 comment.createdAt
               )}
             </div>
+
 
             <div class="comment-actions">
 
@@ -5372,21 +3115,30 @@
                 Reply
               </button>
 
-              <button
-                class="mini-btn"
-                data-action="voice-reply"
-                data-post-id="${escapeHTML(
-                  comment.postId
-                )}"
-                data-parent-id="${escapeHTML(
-                  comment.id
-                )}"
-                type="button"
-              >
-                🎙️ Voice reply
-              </button>
+              ${
+                isOwner
+                  ? `
+
+                    <button
+                      class="mini-btn delete-comment"
+                      data-action="delete-comment"
+                      data-post-id="${escapeHTML(
+                        comment.postId
+                      )}"
+                      data-comment-id="${escapeHTML(
+                        comment.id
+                      )}"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+
+                  `
+                  : ""
+              }
 
             </div>
+
 
             <div
               class="reply-box"
@@ -5449,9 +3201,11 @@
 
         list.innerHTML =
           `
+
             <div class="feed-status">
               Be the first to start the conversation.
             </div>
+
           `;
 
         return;
@@ -5473,6 +3227,7 @@
             comment.parentId ||
             "";
 
+
           if(
             !byParent.has(key)
           ){
@@ -5483,6 +3238,7 @@
             );
 
           }
+
 
           byParent
             .get(key)
@@ -5563,8 +3319,7 @@
 
     /* =========================================================
        PUBLISH WRITTEN COMMENT
-       Worker source:
-       writtenComment / longComment is not sent.
+       No rewards
     ========================================================= */
 
     async function publishComment(
@@ -5595,17 +3350,6 @@
       }
 
 
-      /*
-        The Worker understands:
-        writtenComment
-
-        The Worker itself controls the reward amount.
-      */
-
-      const source =
-        "writtenComment";
-
-
       const post =
         state.posts.find(
           item =>
@@ -5627,6 +3371,13 @@
 
       try{
 
+        const name =
+          normalizeName(
+            state.userData,
+            state.user
+          );
+
+
         const ref =
           await addDoc(
             collection(
@@ -5646,19 +3397,18 @@
                 state.user.uid,
 
               authorName:
-                normalizeName(
-                  state.userData,
-                  state.user
-                ),
+                name,
 
+              /*
+                Kept only for compatibility
+                with existing data.
+                It is not displayed.
+              */
               authorPhoto:
                 getAvatar(
                   state.userData,
                   state.user
                 ),
-
-              authorPoints:
-                state.points,
 
               type:
                 "text",
@@ -5668,12 +3418,6 @@
               wordCount:
                 words,
 
-              audioKey:
-                "",
-
-              audioDuration:
-                0,
-
               createdAt:
                 serverTimestamp(),
 
@@ -5681,10 +3425,7 @@
                 serverTimestamp(),
 
               edited:
-                false,
-
-              rewardEligible:
-                true
+                false
 
             }
           );
@@ -5700,101 +3441,9 @@
         );
 
 
-        const reward =
-          await awardPoints(
-            {
-
-              source,
-
-              kind:
-                "comment",
-
-              contentId:
-                ref.id,
-
-              postId,
-
-              commentId:
-                ref.id,
-
-              parentId:
-                parentId || "",
-
-              type:
-                "text",
-
-              text,
-
-              wordCount:
-                words
-
-            }
-          );
-
-
-        if(
-          typeof reward?.totalPoints ===
-          "number"
-        ){
-
-          try{
-
-            await updateDoc(
-              ref,
-              {
-                authorPoints:
-                  reward.totalPoints
-              }
-            );
-
-          }catch(error){
-
-            console.warn(
-              "Could not update comment authorPoints:",
-              error
-            );
-
-          }
-
-        }
-
-
-        state.commentsByPost.delete(
-          postId
+        showToast(
+          "Comment posted."
         );
-
-
-        await ensureCommentsLoaded(
-          postId
-        );
-
-
-        if(
-          reward?.rewardUnavailable
-        ){
-
-          showToast(
-            "Comment posted. Points could not be awarded this time.",
-            true
-          );
-
-        }else if(
-          Number(
-            reward?.points || 0
-          ) > 0
-        ){
-
-          showToast(
-            `Comment posted! +${reward.points} ⭐`
-          );
-
-        }else{
-
-          showToast(
-            "Comment posted."
-          );
-
-        }
 
 
         return true;
@@ -5814,6 +3463,158 @@
         );
 
         return false;
+
+      }
+
+    }
+
+
+    /* =========================================================
+       DELETE COMMENT
+       Owner only
+    ========================================================= */
+
+    async function deleteComment(
+      postId,
+      commentId
+    ){
+
+      const comments =
+        state.commentsByPost.get(
+          postId
+        ) || [];
+
+
+      const comment =
+        comments.find(
+          item =>
+            item.id === commentId
+        );
+
+
+      if(
+        comment &&
+        comment.uid !==
+        state.user?.uid
+      ){
+
+        showToast(
+          "You can only delete your own comments.",
+          true
+        );
+
+        return;
+
+      }
+
+
+      const confirmed =
+        window.confirm(
+          "Delete this comment? This action cannot be undone."
+        );
+
+
+      if(!confirmed){
+        return;
+      }
+
+
+      try{
+
+        /*
+          The Worker handles the actual
+          deletion and authorization.
+        */
+
+        await workerRequest(
+          "/delete-content",
+          {
+
+            method:"POST",
+
+            body:
+              JSON.stringify({
+
+                contentType:
+                  "comment",
+
+                contentId:
+                  commentId,
+
+                postId,
+
+                commentId
+
+              })
+
+          }
+        );
+
+
+        /*
+          Remove it immediately from the local
+          state so the UI updates without a
+          full page refresh.
+        */
+
+        if(
+          state.commentsByPost.has(
+            postId
+          )
+        ){
+
+          const updated =
+            state.commentsByPost
+              .get(postId)
+              .filter(
+                item =>
+                  item.id !==
+                  commentId
+              );
+
+
+          state.commentsByPost.set(
+            postId,
+            updated
+          );
+
+
+          renderComments(
+            postId,
+            updated
+          );
+
+        }else{
+
+          state.commentsByPost.delete(
+            postId
+          );
+
+          await ensureCommentsLoaded(
+            postId
+          );
+
+        }
+
+
+        showToast(
+          "Comment deleted successfully."
+        );
+
+
+      }catch(error){
+
+        console.error(
+          "Delete comment error:",
+          error
+        );
+
+
+        showToast(
+          error?.message ||
+          "Could not delete the comment.",
+          true
+        );
 
       }
 
@@ -5860,1150 +3661,8 @@
 
 
     /* =========================================================
-       OPEN VOICE REPLY
-    ========================================================= */
-
-    async function openVoiceReply(
-      postId,
-      parentId
-    ){
-
-      state.replyTarget = {
-
-        postId,
-
-        parentId:
-          parentId || ""
-
-      };
-
-
-      await resetReplyRecording(
-        true
-      );
-
-
-      el.voiceReplyModal
-        .classList
-        .add("open");
-
-      el.voiceReplyModal
-        .setAttribute(
-          "aria-hidden",
-          "false"
-        );
-
-    }
-
-
-    /* =========================================================
-       CLOSE VOICE REPLY
-    ========================================================= */
-
-    async function closeVoiceReply(){
-
-      await resetReplyRecording(
-        true
-      );
-
-
-      el.voiceReplyModal
-        .classList
-        .remove("open");
-
-      el.voiceReplyModal
-        .setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-
-      state.replyTarget =
-        null;
-
-    }
-
-
-    /* =========================================================
-       REPLY TIMER
-    ========================================================= */
-
-    function updateReplyTimer(){
-
-      if(
-        !state.replyStartedAt ||
-        !state.replyRecorder
-      ){
-
-        return;
-
-      }
-
-
-      const elapsed =
-        Math.min(
-          60,
-          Math.floor(
-            (
-              Date.now() -
-              state.replyStartedAt
-            ) / 1000
-          )
-        );
-
-
-      state.replyDuration =
-        elapsed;
-
-
-      el.replyTimer.textContent =
-        `${formatDuration(elapsed)} / 01:00`;
-
-
-      if(
-        elapsed >= 60
-      ){
-
-        stopReplyRecording(
-          true
-        );
-
-        return;
-
-      }
-
-
-      if(
-        state.replyRecorder?.state ===
-        "recording"
-      ){
-
-        requestAnimationFrame(
-          updateReplyTimer
-        );
-
-      }
-
-    }
-
-
-    /* =========================================================
-       START REPLY RECORDING
-    ========================================================= */
-
-    async function startReplyRecording(){
-
-      if(
-        !navigator.mediaDevices ||
-        !navigator.mediaDevices.getUserMedia ||
-        !window.MediaRecorder
-      ){
-
-        showToast(
-          "Voice recording is not supported in this browser.",
-          true
-        );
-
-        return;
-
-      }
-
-
-      await resetReplyRecording(
-        true
-      );
-
-
-      try{
-
-        state.replyStream =
-          await navigator.mediaDevices.getUserMedia(
-            {
-              audio:{
-                echoCancellation:true,
-                noiseSuppression:true,
-                autoGainControl:true
-              }
-            }
-          );
-
-
-        const tracks =
-          state.replyStream.getAudioTracks();
-
-
-        if(
-          !tracks.length
-        ){
-
-          throw new Error(
-            "No microphone audio track was created."
-          );
-
-        }
-
-
-        tracks.forEach(
-          track => {
-
-            track.enabled =
-              true;
-
-          }
-        );
-
-
-        state.replyRecorder =
-          createRecorder(
-            state.replyStream
-          );
-
-
-        state.replyChunks =
-          [];
-
-        state.replyStartedAt =
-          Date.now();
-
-        state.replyDuration =
-          0;
-
-        state.replyBlob =
-          null;
-
-
-        const recorder =
-          state.replyRecorder;
-
-
-        recorder.ondataavailable =
-          event => {
-
-            if(
-              event.data &&
-              event.data.size > 0
-            ){
-
-              state.replyChunks.push(
-                event.data
-              );
-
-            }
-
-          };
-
-
-        recorder.onstop =
-          () => {
-
-            const duration =
-              Math.min(
-                60,
-                Math.floor(
-                  (
-                    Date.now() -
-                    state.replyStartedAt
-                  ) / 1000
-                )
-              );
-
-
-            const recorderMime =
-              getRecorderMime(
-                recorder
-              );
-
-
-            const chunks =
-              state.replyChunks.slice();
-
-
-            state.replyDuration =
-              duration;
-
-
-            state.replyBlob =
-              new Blob(
-                chunks,
-                {
-                  type:
-                    recorderMime ||
-                    undefined
-                }
-              );
-
-
-            state.replyStream
-              ?.getTracks()
-              .forEach(
-                track =>
-                  track.stop()
-              );
-
-
-            state.replyStream =
-              null;
-
-            state.replyRecorder =
-              null;
-
-            state.replyStartedAt =
-              0;
-
-
-            if(
-              state.replyAudioUrl
-            ){
-
-              URL.revokeObjectURL(
-                state.replyAudioUrl
-              );
-
-            }
-
-
-            state.replyAudioUrl =
-              null;
-
-
-            if(
-              state.replyBlob.size > 0
-            ){
-
-              state.replyAudioUrl =
-                URL.createObjectURL(
-                  state.replyBlob
-                );
-
-
-              el.replyAudio.src =
-                state.replyAudioUrl;
-
-
-              el.replyAudioPreview
-                .classList
-                .remove("hidden");
-
-
-              el.replyAudio.load();
-
-            }
-
-
-            el.replyStartBtn
-              .classList
-              .add("hidden");
-
-            el.replyStopBtn
-              .classList
-              .add("hidden");
-
-            el.replyAgainBtn
-              .classList
-              .remove("hidden");
-
-            el.publishReplyVoiceBtn
-              .classList
-              .remove("hidden");
-
-
-            el.publishReplyVoiceBtn.disabled =
-              duration < 10 ||
-              !state.replyBlob?.size;
-
-
-            el.replyRecordIcon
-              .classList
-              .remove("recording");
-
-
-            if(
-              duration < 10
-            ){
-
-              showToast(
-                "Voice reply must be at least 10 seconds.",
-                true
-              );
-
-            }
-
-          };
-
-
-        recorder.onerror =
-          event => {
-
-            console.error(
-              "Reply recorder error:",
-              event
-            );
-
-
-            state.replyStream
-              ?.getTracks()
-              .forEach(
-                track =>
-                  track.stop()
-              );
-
-
-            state.replyStream =
-              null;
-
-            state.replyRecorder =
-              null;
-
-            state.replyChunks =
-              [];
-
-            state.replyStartedAt =
-              0;
-
-
-            el.replyRecordIcon
-              .classList
-              .remove("recording");
-
-            el.replyStartBtn
-              .classList
-              .remove("hidden");
-
-            el.replyStopBtn
-              .classList
-              .add("hidden");
-
-            el.replyAgainBtn
-              .classList
-              .add("hidden");
-
-            el.publishReplyVoiceBtn
-              .classList
-              .add("hidden");
-
-
-            showToast(
-              "Recording failed. Please try again.",
-              true
-            );
-
-          };
-
-
-        try{
-
-          recorder.start(250);
-
-        }catch{
-
-          recorder.start();
-
-        }
-
-
-        el.replyStartBtn
-          .classList
-          .add("hidden");
-
-        el.replyStopBtn
-          .classList
-          .remove("hidden");
-
-        el.replyAgainBtn
-          .classList
-          .add("hidden");
-
-        el.publishReplyVoiceBtn
-          .classList
-          .add("hidden");
-
-        el.replyRecordIcon
-          .classList
-          .add("recording");
-
-        el.replyTimer.textContent =
-          "00:00 / 01:00";
-
-
-        updateReplyTimer();
-
-
-      }catch(error){
-
-        console.error(
-          "Could not start reply recording:",
-          error
-        );
-
-
-        state.replyStream
-          ?.getTracks()
-          .forEach(
-            track =>
-              track.stop()
-          );
-
-
-        state.replyStream =
-          null;
-
-        state.replyRecorder =
-          null;
-
-        state.replyChunks =
-          [];
-
-        state.replyStartedAt =
-          0;
-
-
-        if(
-          error?.name ===
-          "NotAllowedError"
-        ){
-
-          showToast(
-            "Microphone permission was denied. Please allow microphone access.",
-            true
-          );
-
-        }else if(
-          error?.name ===
-          "NotFoundError"
-        ){
-
-          showToast(
-            "No microphone was found on this device.",
-            true
-          );
-
-        }else{
-
-          showToast(
-            error?.message ||
-            "Could not start the microphone. Please try again.",
-            true
-          );
-
-        }
-
-      }
-
-    }
-
-
-    /* =========================================================
-       STOP REPLY
-    ========================================================= */
-
-    function stopReplyRecording(
-      auto=false
-    ){
-
-      const recorder =
-        state.replyRecorder;
-
-
-      if(
-        recorder &&
-        recorder.state ===
-        "recording"
-      ){
-
-        try{
-
-          recorder.stop();
-
-        }catch(error){
-
-          console.error(
-            "Could not stop reply recorder:",
-            error
-          );
-
-        }
-
-
-        if(auto){
-
-          showToast(
-            "60 seconds reached. Recording stopped."
-          );
-
-        }
-
-      }
-
-    }
-
-
-    /* =========================================================
-       RESET REPLY
-    ========================================================= */
-
-    async function resetReplyRecording(
-      showStart=true
-    ){
-
-      const recorder =
-        state.replyRecorder;
-
-
-      if(
-        recorder &&
-        recorder.state ===
-        "recording"
-      ){
-
-        await new Promise(
-          resolve => {
-
-            let finished =
-              false;
-
-
-            const done =
-              () => {
-
-                if(finished){
-                  return;
-                }
-
-                finished =
-                  true;
-
-                resolve();
-
-              };
-
-
-            recorder.addEventListener(
-              "stop",
-              done,
-              {
-                once:true
-              }
-            );
-
-
-            try{
-
-              recorder.stop();
-
-            }catch{
-
-              done();
-
-            }
-
-          }
-        );
-
-      }
-
-
-      state.replyStream
-        ?.getTracks()
-        .forEach(
-          track =>
-            track.stop()
-        );
-
-
-      state.replyStream =
-        null;
-
-      state.replyRecorder =
-        null;
-
-      state.replyChunks =
-        [];
-
-      state.replyStartedAt =
-        0;
-
-      state.replyDuration =
-        0;
-
-      state.replyBlob =
-        null;
-
-
-      if(
-        state.replyAudioUrl
-      ){
-
-        URL.revokeObjectURL(
-          state.replyAudioUrl
-        );
-
-        state.replyAudioUrl =
-          null;
-
-      }
-
-
-      el.replyAudio.removeAttribute(
-        "src"
-      );
-
-      el.replyAudio.load();
-
-      el.replyAudioPreview
-        .classList
-        .add("hidden");
-
-      el.replyTimer.textContent =
-        "00:00 / 01:00";
-
-      el.replyRecordIcon
-        .classList
-        .remove("recording");
-
-      el.replyStopBtn
-        .classList
-        .add("hidden");
-
-      el.replyAgainBtn
-        .classList
-        .add("hidden");
-
-
-      if(showStart){
-
-        el.replyStartBtn
-          .classList
-          .remove("hidden");
-
-      }else{
-
-        el.replyStartBtn
-          .classList
-          .add("hidden");
-
-      }
-
-
-      el.publishReplyVoiceBtn
-        .classList
-        .add("hidden");
-
-      el.publishReplyVoiceBtn.disabled =
-        true;
-
-    }
-
-
-    /* =========================================================
-       PUBLISH VOICE REPLY
-       Worker source = voiceComment
-    ========================================================= */
-
-    async function publishVoiceReply(){
-
-      if(
-        !state.replyBlob ||
-        !state.replyBlob.size ||
-        state.replyDuration < 10 ||
-        !state.replyTarget
-      ){
-
-        return;
-
-      }
-
-
-      el.publishReplyVoiceBtn.disabled =
-        true;
-
-      el.publishReplyVoiceBtn.textContent =
-        "Uploading…";
-
-
-      try{
-
-        const target = {
-
-          postId:
-            state.replyTarget.postId,
-
-          parentId:
-            state.replyTarget.parentId ||
-            ""
-
-        };
-
-
-        const uploaded =
-          await uploadAudio(
-            state.replyBlob,
-            "comment",
-            state.replyDuration,
-            state.replyBlob.type
-          );
-
-
-        const ref =
-          await addDoc(
-            collection(
-              db,
-              POSTS_COLLECTION,
-              target.postId,
-              "comments"
-            ),
-            {
-
-              postId:
-                target.postId,
-
-              parentId:
-                target.parentId,
-
-              uid:
-                state.user.uid,
-
-              authorName:
-                normalizeName(
-                  state.userData,
-                  state.user
-                ),
-
-              authorPhoto:
-                getAvatar(
-                  state.userData,
-                  state.user
-                ),
-
-              authorPoints:
-                state.points,
-
-              type:
-                "voice",
-
-              text:
-                "",
-
-              audioKey:
-                uploaded.audioKey,
-
-              audioDuration:
-                uploaded.audioDuration,
-
-              audioMimeType:
-                uploaded.mimeType || "",
-
-              createdAt:
-                serverTimestamp(),
-
-              updatedAt:
-                serverTimestamp(),
-
-              edited:
-                false,
-
-              rewardEligible:
-                true
-
-            }
-          );
-
-
-        state.commentsByPost.delete(
-          target.postId
-        );
-
-
-        await ensureCommentsLoaded(
-          target.postId
-        );
-
-
-        const reward =
-          await awardPoints(
-            {
-
-              source:
-                "voiceComment",
-
-              kind:
-                "comment",
-
-              contentId:
-                ref.id,
-
-              postId:
-                target.postId,
-
-              commentId:
-                ref.id,
-
-              parentId:
-                target.parentId,
-
-              type:
-                "voice",
-
-              duration:
-                uploaded.audioDuration,
-
-              audioDuration:
-                uploaded.audioDuration,
-
-              voice:true
-
-            }
-          );
-
-
-        if(
-          typeof reward?.totalPoints ===
-          "number"
-        ){
-
-          try{
-
-            await updateDoc(
-              ref,
-              {
-                authorPoints:
-                  reward.totalPoints
-              }
-            );
-
-          }catch(error){
-
-            console.warn(
-              "Could not update voice comment authorPoints:",
-              error
-            );
-
-          }
-
-        }
-
-
-        state.commentsByPost.delete(
-          target.postId
-        );
-
-
-        await ensureCommentsLoaded(
-          target.postId
-        );
-
-
-        await closeVoiceReply();
-
-
-        if(
-          reward?.rewardUnavailable
-        ){
-
-          showToast(
-            "Voice reply posted. Points could not be awarded this time.",
-            true
-          );
-
-        }else if(
-          Number(
-            reward?.points || 0
-          ) > 0
-        ){
-
-          showToast(
-            `Voice reply posted! +${reward.points} ⭐`
-          );
-
-        }else{
-
-          showToast(
-            "Voice reply posted."
-          );
-
-        }
-
-
-      }catch(error){
-
-        console.error(
-          "Voice reply error:",
-          error
-        );
-
-
-        showToast(
-          error?.message ||
-          "Could not publish the voice reply.",
-          true
-        );
-
-      }finally{
-
-        el.publishReplyVoiceBtn.textContent =
-          "Publish voice reply +5 ⭐";
-
-      }
-
-    }
-
-
-    /* =========================================================
-       PLAY PROTECTED AUDIO
-    ========================================================= */
-
-    async function playProtectedAudio(
-      encodedKey,
-      button
-    ){
-
-      if(!encodedKey){
-
-        showToast(
-          "This recording is unavailable.",
-          true
-        );
-
-        return;
-
-      }
-
-
-      let audioKey = "";
-
-
-      try{
-
-        audioKey =
-          decodeURIComponent(
-            encodedKey
-          );
-
-      }catch{
-
-        audioKey =
-          encodedKey;
-
-      }
-
-
-      if(!audioKey){
-        return;
-      }
-
-
-      try{
-
-        button.disabled =
-          true;
-
-        button.textContent =
-          "…";
-
-
-        const url =
-          await getAudioUrl(
-            audioKey
-          );
-
-
-        const audio =
-          new Audio();
-
-
-        audio.preload =
-          "auto";
-
-        audio.src =
-          url;
-
-
-        state.activeAudios.add(
-          audio
-        );
-
-
-        button.disabled =
-          false;
-
-        button.textContent =
-          "⏸";
-
-
-        audio.onended =
-          () => {
-
-            button.textContent =
-              "▶";
-
-            URL.revokeObjectURL(
-              url
-            );
-
-            state.activeAudios.delete(
-              audio
-            );
-
-          };
-
-
-        audio.onerror =
-          () => {
-
-            button.disabled =
-              false;
-
-            button.textContent =
-              "▶";
-
-            URL.revokeObjectURL(
-              url
-            );
-
-            state.activeAudios.delete(
-              audio
-            );
-
-            showToast(
-              "Could not play this recording.",
-              true
-            );
-
-          };
-
-
-        await audio.play();
-
-
-      }catch(error){
-
-        console.error(
-          "Protected audio error:",
-          error
-        );
-
-
-        button.disabled =
-          false;
-
-        button.textContent =
-          "▶";
-
-
-        showToast(
-          error?.message ||
-          "Could not play this recording.",
-          true
-        );
-
-      }
-
-    }
-
-
-    /* =========================================================
        DELETE POST
-       IMPORTANT FIX:
-       Worker expects contentType + contentId.
+       Owner only
     ========================================================= */
 
     async function deletePost(
@@ -7057,28 +3716,27 @@
 
       try{
 
-        const data =
-          await workerRequest(
-            "/delete-content",
-            {
+        await workerRequest(
+          "/delete-content",
+          {
 
-              method:"POST",
+            method:"POST",
 
-              body:
-                JSON.stringify({
+            body:
+              JSON.stringify({
 
-                  contentType:
-                    "post",
+                contentType:
+                  "post",
 
-                  contentId:
-                    postId,
+                contentId:
+                  postId,
 
-                  postId
+                postId
 
-                })
+              })
 
-            }
-          );
+          }
+        );
 
 
         state.posts =
@@ -7091,22 +3749,6 @@
         state.commentsByPost.delete(
           postId
         );
-
-
-        if(
-          typeof data?.totalPoints ===
-          "number"
-        ){
-
-          setPoints(
-            data.totalPoints
-          );
-
-        }else{
-
-          await loadPoints();
-
-        }
 
 
         await loadPosts();
@@ -7205,7 +3847,7 @@
         }
 
 
-        /* DELETE */
+        /* DELETE POST */
 
         if(
           action ===
@@ -7430,36 +4072,16 @@
         }
 
 
-        /* VOICE REPLY */
+        /* DELETE COMMENT */
 
         if(
           action ===
-          "voice-reply"
+          "delete-comment"
         ){
 
-          await openVoiceReply(
+          await deleteComment(
             postId,
-            button.dataset.parentId || ""
-          );
-
-
-          return;
-
-        }
-
-
-        /* AUDIO */
-
-        if(
-          action ===
-            "play-audio" ||
-          action ===
-            "play-comment-audio"
-        ){
-
-          await playProtectedAudio(
-            button.dataset.key,
-            button
+            button.dataset.commentId
           );
 
 
@@ -7526,32 +4148,6 @@
 
 
     /* =========================================================
-       COMPOSER TABS
-    ========================================================= */
-
-    document
-      .querySelectorAll(
-        ".composer-tab"
-      )
-      .forEach(
-        button => {
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              switchComposerTab(
-                button.dataset.tab
-              );
-
-            }
-          );
-
-        }
-      );
-
-
-    /* =========================================================
        COMING SOON
     ========================================================= */
 
@@ -7594,46 +4190,6 @@
 
 
     /* =========================================================
-       POST VOICE EVENTS
-    ========================================================= */
-
-    el.startRecordBtn.addEventListener(
-      "click",
-      startPostRecording
-    );
-
-
-    el.stopRecordBtn.addEventListener(
-      "click",
-      () => {
-
-        stopPostRecording(
-          false
-        );
-
-      }
-    );
-
-
-    el.resetRecordBtn.addEventListener(
-      "click",
-      async () => {
-
-        await resetPostRecording(
-          true
-        );
-
-      }
-    );
-
-
-    el.publishVoiceBtn.addEventListener(
-      "click",
-      publishVoicePost
-    );
-
-
-    /* =========================================================
        FIRST POST
     ========================================================= */
 
@@ -7646,11 +4202,6 @@
             behavior:"smooth",
             block:"start"
           }
-        );
-
-
-        switchComposerTab(
-          "text"
         );
 
 
@@ -7686,8 +4237,6 @@
       "click",
       async () => {
 
-        await loadPoints();
-
         await loadPosts();
 
       }
@@ -7700,134 +4249,6 @@
 
         location.href =
           "login.html";
-
-      }
-    );
-
-
-    /* =========================================================
-       VOICE REPLY MODAL
-    ========================================================= */
-
-    el.closeVoiceReply.addEventListener(
-      "click",
-      closeVoiceReply
-    );
-
-
-    el.voiceReplyModal.addEventListener(
-      "click",
-      event => {
-
-        if(
-          event.target ===
-          el.voiceReplyModal
-        ){
-
-          closeVoiceReply();
-
-        }
-
-      }
-    );
-
-
-    el.replyStartBtn.addEventListener(
-      "click",
-      startReplyRecording
-    );
-
-
-    el.replyStopBtn.addEventListener(
-      "click",
-      () => {
-
-        stopReplyRecording(
-          false
-        );
-
-      }
-    );
-
-
-    el.replyAgainBtn.addEventListener(
-      "click",
-      async () => {
-
-        await resetReplyRecording(
-          true
-        );
-
-      }
-    );
-
-
-    el.publishReplyVoiceBtn.addEventListener(
-      "click",
-      publishVoiceReply
-    );
-
-
-    /* =========================================================
-       PAGE CLEANUP
-    ========================================================= */
-
-    window.addEventListener(
-      "pagehide",
-      () => {
-
-        try{
-
-          state.postStream
-            ?.getTracks()
-            .forEach(
-              track =>
-                track.stop()
-            );
-
-
-          state.replyStream
-            ?.getTracks()
-            .forEach(
-              track =>
-                track.stop()
-            );
-
-
-          state.activeAudios
-            .forEach(
-              audio => {
-
-                try{
-                  audio.pause();
-                }catch{}
-
-              }
-            );
-
-
-          if(
-            state.postAudioUrl
-          ){
-
-            URL.revokeObjectURL(
-              state.postAudioUrl
-            );
-
-          }
-
-
-          if(
-            state.replyAudioUrl
-          ){
-
-            URL.revokeObjectURL(
-              state.replyAudioUrl
-            );
-
-          }
-
-        }catch{}
 
       }
     );
@@ -7848,8 +4269,6 @@
 
           state.userData =
             null;
-
-          setPoints(0);
 
 
           el.app
