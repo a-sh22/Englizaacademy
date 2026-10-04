@@ -1737,17 +1737,6 @@
       }
 
 
-      /*
-        Pick the first meaningful visible
-        character.
-
-        This works with:
-        English names
-        Arabic names
-        accented names
-        numbers
-      */
-
       const chars =
         Array.from(value);
 
@@ -1808,14 +1797,6 @@
       name,
       uid=""
     ){
-
-      /*
-        Prefer UID when available because it
-        remains stable even if the display name
-        changes.
-
-        The name is included as fallback.
-      */
 
       const seed =
         String(
@@ -2176,11 +2157,6 @@
             authorName:
               name,
 
-            /*
-              Kept for compatibility with
-              older posts/data, but the UI
-              no longer displays it.
-            */
             authorPhoto:
               getAvatar(
                 state.userData,
@@ -2399,7 +2375,6 @@
 
                   `
                   : ""
-
               }
 
             </div>
@@ -3378,57 +3353,51 @@
           );
 
 
-        const ref =
-          await addDoc(
-            collection(
-              db,
-              POSTS_COLLECTION,
-              postId,
-              "comments"
-            ),
-            {
+        await addDoc(
+          collection(
+            db,
+            POSTS_COLLECTION,
+            postId,
+            "comments"
+          ),
+          {
 
-              postId,
+            postId,
 
-              parentId:
-                parentId || "",
+            parentId:
+              parentId || "",
 
-              uid:
-                state.user.uid,
+            uid:
+              state.user.uid,
 
-              authorName:
-                name,
+            authorName:
+              name,
 
-              /*
-                Kept only for compatibility
-                with existing data.
-                It is not displayed.
-              */
-              authorPhoto:
-                getAvatar(
-                  state.userData,
-                  state.user
-                ),
+            authorPhoto:
+              getAvatar(
+                state.userData,
+                state.user
+              ),
 
-              type:
-                "text",
+            type:
+              "text",
 
-              text,
+            text,
 
-              wordCount:
-                words,
+            wordCount:
+              words,
 
-              createdAt:
-                serverTimestamp(),
+            createdAt:
+              serverTimestamp(),
 
-              updatedAt:
-                serverTimestamp(),
+            updatedAt:
+              serverTimestamp(),
 
-              edited:
-                false
+            edited:
+              false
 
-            }
-          );
+          }
+        );
 
 
         state.commentsByPost.delete(
@@ -3535,7 +3504,7 @@
             body:
               JSON.stringify({
 
-                contentType:
+                kind:
                   "comment",
 
                 contentId:
@@ -3725,7 +3694,7 @@
             body:
               JSON.stringify({
 
-                contentType:
+                kind:
                   "post",
 
                 contentId:
