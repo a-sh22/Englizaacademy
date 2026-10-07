@@ -7,6 +7,7 @@
 <title>الاستماع — المستوى ما قبل المتوسط | Engliza Academy</title>
 
 <style>
+
 :root{
   --blue:#3157D5;
   --blue-dark:#233E9B;
@@ -64,6 +65,7 @@ input{
   margin:0 auto;
   padding:24px 0 70px;
 }
+
 
 /* =========================
    BACK
@@ -149,7 +151,6 @@ input{
 
   border-radius:50%;
 
-  /* تكبير الصورة داخل الدائرة فقط لإخفاء الفراغ الأبيض */
   transform:scale(1.22);
 }
 
@@ -172,7 +173,6 @@ input{
   }
 
   .top-mascot{
-    /* نفس فكرة الآيباد، مع الحفاظ على حجم الدائرة */
     transform:scale(1.22);
   }
 
@@ -181,7 +181,6 @@ input{
 
 /* =========================
    LESSON MODE
-   إخفاء الصفحة الرئيسية عند فتح درس
 ========================= */
 
 body.lesson-mode .top-bar,
@@ -189,6 +188,7 @@ body.lesson-mode .hero,
 body.lesson-mode .path-card,
 body.lesson-mode .notice,
 body.lesson-mode .search-box,
+body.lesson-mode .listening-modes,
 body.lesson-mode #listView,
 body.lesson-mode .empty{
   display:none !important;
@@ -283,6 +283,7 @@ body.lesson-mode .lesson-view{
   max-width:760px;
 }
 
+
 /* =========================
    PATH
 ========================= */
@@ -329,6 +330,203 @@ body.lesson-mode .lesson-view{
   font-size:14px;
 }
 
+
+/* =========================================================
+   LISTENING MODES
+   بطاقتا المسارين
+========================================================= */
+
+.listening-modes{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:18px;
+
+  margin-top:20px;
+}
+
+.mode-card{
+  position:relative;
+
+  border:1px solid var(--border);
+
+  background:var(--white);
+
+  border-radius:28px;
+
+  padding:27px;
+
+  box-shadow:var(--shadow);
+
+  cursor:pointer;
+
+  transition:.25s ease;
+
+  overflow:hidden;
+}
+
+.mode-card::before{
+  content:"";
+
+  position:absolute;
+
+  width:150px;
+  height:150px;
+
+  border-radius:50%;
+
+  background:rgba(49,87,213,.055);
+
+  top:-65px;
+  left:-50px;
+}
+
+.mode-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-hover);
+}
+
+.mode-card.active{
+  border-color:rgba(49,87,213,.42);
+
+  box-shadow:
+    0 15px 40px rgba(49,87,213,.12);
+}
+
+.mode-card.long.active{
+  border-color:rgba(118,84,217,.42);
+
+  box-shadow:
+    0 15px 40px rgba(118,84,217,.13);
+}
+
+.mode-top{
+  position:relative;
+  z-index:1;
+
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+
+  gap:15px;
+}
+
+.mode-icon{
+  width:58px;
+  height:58px;
+
+  border-radius:19px;
+
+  background:var(--purple-light);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
+
+  flex-shrink:0;
+}
+
+.mode-card.long .mode-icon{
+  background:#EDE9FF;
+}
+
+.mode-badge{
+  background:#F3F5FB;
+
+  color:var(--muted);
+
+  padding:7px 11px;
+
+  border-radius:12px;
+
+  font-size:11px;
+
+  font-weight:850;
+
+  white-space:nowrap;
+}
+
+.mode-card.active .mode-badge{
+  background:var(--purple-light);
+  color:var(--purple);
+}
+
+.mode-card h2{
+  position:relative;
+  z-index:1;
+
+  margin-top:18px;
+
+  font-size:22px;
+  line-height:1.4;
+}
+
+.mode-card p{
+  position:relative;
+  z-index:1;
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.85;
+
+  margin-top:7px;
+}
+
+.mode-meta{
+  position:relative;
+  z-index:1;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:17px;
+}
+
+.mode-meta span{
+  background:#F8F9FD;
+
+  border:1px solid var(--border);
+
+  padding:6px 10px;
+
+  border-radius:11px;
+
+  font-size:11px;
+
+  color:var(--muted);
+
+  font-weight:750;
+}
+
+.mode-action{
+  position:relative;
+  z-index:1;
+
+  display:block;
+
+  margin-top:18px;
+
+  color:var(--blue);
+
+  font-size:13px;
+
+  font-weight:850;
+}
+
+.mode-card.long .mode-action{
+  color:var(--purple);
+}
+
+
 /* =========================
    NOTICE
 ========================= */
@@ -371,6 +569,7 @@ body.lesson-mode .lesson-view{
   display:block;
   margin-bottom:3px;
 }
+
 
 /* =========================
    SEARCH
@@ -419,6 +618,7 @@ body.lesson-mode .lesson-view{
   color:var(--muted);
 }
 
+
 /* =========================
    STAGE
 ========================= */
@@ -458,6 +658,7 @@ body.lesson-mode .lesson-view{
   color:var(--muted);
   font-size:14px;
 }
+
 
 /* =========================
    CARDS
@@ -577,14 +778,163 @@ body.lesson-mode .lesson-view{
   transform:translateY(-1px);
 }
 
+.long-card .listen-btn{
+  background:var(--purple);
+}
+
+.long-card .listen-btn:hover{
+  background:#6041C7;
+}
+
+.lesson-duration{
+  text-align:center;
+
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  font-weight:750;
+}
+
 .source{
   text-align:center;
 
-  margin-top:9px;
+  margin-top:6px;
 
   color:var(--muted);
   font-size:11px;
 }
+
+
+/* =========================
+   LONG LISTENING HEADER
+========================= */
+
+.long-listening-intro{
+  display:none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #F4F1FF,
+      #FBFAFF
+    );
+
+  border:1px solid #E3DDF9;
+
+  border-radius:24px;
+
+  padding:22px;
+
+  margin-top:50px;
+
+  box-shadow:var(--shadow);
+}
+
+.long-listening-intro.active{
+  display:block;
+}
+
+.long-listening-intro .small-label{
+  color:var(--purple);
+
+  font-size:12px;
+
+  font-weight:850;
+
+  margin-bottom:4px;
+}
+
+.long-listening-intro h2{
+  font-size:25px;
+
+  margin-bottom:5px;
+}
+
+.long-listening-intro p{
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.8;
+}
+
+
+/* =========================
+   LONG LISTENING GRID
+========================= */
+
+#longListeningView{
+  display:none;
+}
+
+#longListeningView.active{
+  display:block;
+}
+
+.long-cards{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:17px;
+
+  margin-top:20px;
+}
+
+.long-card{
+  background:var(--white);
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:23px;
+
+  box-shadow:var(--shadow);
+
+  transition:.25s ease;
+
+  display:flex;
+
+  flex-direction:column;
+}
+
+.long-card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:var(--shadow-hover);
+}
+
+.long-card .lesson-icon{
+  background:#EEEAFE;
+}
+
+.long-level{
+  display:inline-flex;
+
+  align-items:center;
+
+  width:max-content;
+
+  margin-top:12px;
+
+  padding:6px 10px;
+
+  border-radius:10px;
+
+  background:#F1EEFF;
+
+  color:var(--purple);
+
+  font-size:11px;
+
+  font-weight:850;
+}
+
 
 /* =========================
    LESSON VIEW
@@ -615,6 +965,15 @@ body.lesson-mode .lesson-view{
 
   box-shadow:
     0 18px 45px rgba(49,87,213,.16);
+}
+
+.lesson-header.long-header{
+  background:
+    linear-gradient(
+      135deg,
+      #4A369E,
+      #7654D9
+    );
 }
 
 .lesson-header-top{
@@ -658,30 +1017,90 @@ body.lesson-mode .lesson-view{
   white-space:nowrap;
 }
 
-.lesson-section{
-  background:var(--white);
+
+/* =========================
+   AUDIO BOX
+========================= */
+
+.audio-box{
+  display:none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #F4F6FF,
+      #FBFAFF
+    );
+
+  border:1px solid #E3E6F8;
+
+  border-radius:20px;
+
+  padding:22px;
+}
+
+.audio-box.active{
+  display:block;
+}
+
+.audio-box p{
+  color:var(--muted);
+
+  font-size:14px;
+
+  margin-bottom:15px;
+}
+
+.audio-box audio{
+  width:100%;
+
+  display:block;
+
+  height:48px;
+}
+
+.audio-meta{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:13px;
+}
+
+.audio-meta span{
+  background:#fff;
 
   border:1px solid var(--border);
 
-  border-radius:var(--radius-lg);
+  border-radius:10px;
 
-  padding:26px;
+  padding:6px 10px;
 
-  margin-top:18px;
+  font-size:11px;
 
-  box-shadow:var(--shadow);
-}
-
-.lesson-section h3{
-  font-size:21px;
-  margin-bottom:8px;
-}
-
-.section-intro{
   color:var(--muted);
-  font-size:14px;
-  margin-bottom:18px;
+
+  font-weight:750;
 }
+
+.audio-source-link{
+  display:inline-flex;
+
+  margin-top:14px;
+
+  color:var(--purple);
+
+  font-size:12px;
+
+  font-weight:850;
+}
+
+
+/* =========================
+   ORIGINAL
+========================= */
 
 .original-box{
   background:
@@ -723,6 +1142,7 @@ body.lesson-mode .lesson-view{
 .original-btn:hover{
   background:var(--blue-dark);
 }
+
 
 /* =========================
    LANGUAGE ITEMS
@@ -798,6 +1218,38 @@ body.lesson-mode .lesson-view{
   font-size:13px;
 }
 
+.pronounce-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:5px;
+
+  margin-top:10px;
+
+  border:0;
+
+  background:var(--purple-light);
+
+  color:var(--purple);
+
+  border-radius:11px;
+
+  padding:7px 10px;
+
+  cursor:pointer;
+
+  font-size:11px;
+
+  font-weight:850;
+}
+
+.pronounce-btn:hover{
+  background:#E4DFFF;
+}
+
+
 /* =========================
    GRAMMAR NOTE
 ========================= */
@@ -823,6 +1275,7 @@ body.lesson-mode .lesson-view{
   color:#756128;
   font-size:14px;
 }
+
 
 /* =========================
    QUESTIONS
@@ -900,6 +1353,7 @@ body.lesson-mode .lesson-view{
   display:block;
 }
 
+
 /* =========================
    NAVIGATION
 ========================= */
@@ -949,6 +1403,7 @@ body.lesson-mode .lesson-view{
   background:var(--blue-dark);
 }
 
+
 /* =========================
    FINAL
 ========================= */
@@ -989,6 +1444,7 @@ body.lesson-mode .lesson-view{
   margin:auto;
 }
 
+
 /* =========================
    EMPTY
 ========================= */
@@ -1009,6 +1465,7 @@ body.lesson-mode .lesson-view{
 
   color:var(--muted);
 }
+
 
 /* =========================
    MOBILE
@@ -1045,7 +1502,74 @@ body.lesson-mode .lesson-view{
     text-align:center;
   }
 
+  /*
+    مهم:
+    البطاقتان تبقيان جنبًا إلى جنب على الجوال
+  */
+
+  .listening-modes{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+    gap:10px;
+  }
+
+  .mode-card{
+    padding:15px;
+
+    border-radius:20px;
+  }
+
+  .mode-icon{
+    width:43px;
+    height:43px;
+
+    border-radius:14px;
+
+    font-size:21px;
+  }
+
+  .mode-badge{
+    font-size:9px;
+
+    padding:5px 7px;
+  }
+
+  .mode-card h2{
+    font-size:16px;
+
+    margin-top:13px;
+  }
+
+  .mode-card p{
+    font-size:11px;
+
+    line-height:1.7;
+  }
+
+  .mode-meta{
+    gap:5px;
+
+    margin-top:11px;
+  }
+
+  .mode-meta span{
+    font-size:9px;
+
+    padding:5px 7px;
+  }
+
+  .mode-action{
+    font-size:10px;
+
+    margin-top:12px;
+  }
+
   .cards{
+    grid-template-columns:1fr;
+  }
+
+  .long-cards{
     grid-template-columns:1fr;
   }
 
@@ -1088,17 +1612,24 @@ body.lesson-mode .lesson-view{
   .lesson-navigation{
     flex-direction:column;
   }
+
 }
 
 .hidden{
   display:none !important;
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="page">
+
+
+<!-- =========================================================
+     TOP
+========================================================= -->
 
 <div class="top-bar">
 
@@ -1108,14 +1639,21 @@ body.lesson-mode .lesson-view{
   </a>
 
   <div class="mascot-circle">
+
     <img
       class="top-mascot"
       src="../okay.owl.PNG"
       alt="Eirlo"
     >
+
   </div>
 
 </div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
@@ -1140,9 +1678,14 @@ body.lesson-mode .lesson-view{
 </section>
 
 
+<!-- =========================================================
+     PATH
+========================================================= -->
+
 <div class="path-card">
 
   <div>
+
     <div class="path-label">
       المسار
     </div>
@@ -1150,14 +1693,120 @@ body.lesson-mode .lesson-view{
     <div class="path-title">
       مسار الاستماع — المستوى ما قبل المتوسط
     </div>
+
   </div>
 
   <div class="path-count">
-    30 استماع · 4 مراحل
+    30 استماع · 4 مراحل + 15 استماع مطوّل
   </div>
 
 </div>
 
+
+<!-- =========================================================
+     TWO LISTENING MODES
+========================================================= -->
+
+<div class="listening-modes">
+
+
+  <!-- =========================
+       EDUCATIONAL LISTENINGS
+  ========================= -->
+
+  <article
+    class="mode-card active"
+    id="regularModeCard"
+    onclick="switchMode('regular')"
+  >
+
+    <div class="mode-top">
+
+      <div class="mode-icon">
+        🎧
+      </div>
+
+      <div class="mode-badge">
+        المسار الأساسي
+      </div>
+
+    </div>
+
+    <h2>
+      الاستماعات التعليمية
+    </h2>
+
+    <p>
+      30 استماعًا موزعة على أربع مراحل، تبدأ من المضارع
+      والروتين ثم الكميات والماضي والوقت والمواقف اليومية.
+    </p>
+
+    <div class="mode-meta">
+
+      <span>30 استماع</span>
+      <span>4 مراحل</span>
+      <span>A2</span>
+
+    </div>
+
+    <div class="mode-action">
+      عرض الاستماعات →
+    </div>
+
+  </article>
+
+
+  <!-- =========================
+       LONG LISTENING
+  ========================= -->
+
+  <article
+    class="mode-card long"
+    id="longModeCard"
+    onclick="switchMode('long')"
+  >
+
+    <div class="mode-top">
+
+      <div class="mode-icon">
+        🎙️
+      </div>
+
+      <div class="mode-badge">
+        استماع مطوّل
+      </div>
+
+    </div>
+
+    <h2>
+      الاستماع المطوّل
+    </h2>
+
+    <p>
+      15 مقطعًا أطول من VOA Learning English،
+      مناسبة للتدرج من Pre-Intermediate نحو B1.
+    </p>
+
+    <div class="mode-meta">
+
+      <span>15 استماع</span>
+      <span>VOA</span>
+      <span>A2 → B1</span>
+
+    </div>
+
+    <div class="mode-action">
+      عرض الاستماعات المطوّلة →
+    </div>
+
+  </article>
+
+</div>
+
+
+<!-- =========================================================
+     NOTICE
+========================================================= -->
 
 <div class="notice">
 
@@ -1181,6 +1830,10 @@ body.lesson-mode .lesson-view{
 </div>
 
 
+<!-- =========================================================
+     SEARCH
+========================================================= -->
+
 <div class="search-box">
 
   <span class="search-icon">
@@ -1198,7 +1851,7 @@ body.lesson-mode .lesson-view{
 
 
 <!-- =========================================================
-     LIST VIEW
+     REGULAR LIST
 ========================================================= -->
 
 <div id="listView">
@@ -1225,7 +1878,6 @@ body.lesson-mode .lesson-view{
   </p>
 
 </div>
-
 
 <div class="cards" id="cardsContainer"></div>
 
@@ -1333,6 +1985,37 @@ body.lesson-mode .lesson-view{
 </div>
 
 
+<!-- =========================================================
+     LONG LISTENING
+========================================================= -->
+
+<div id="longListeningView">
+
+  <div class="long-listening-intro active">
+
+    <div class="small-label">
+      VOA LEARNING ENGLISH · LONG LISTENING
+    </div>
+
+    <h2>
+      الاستماع المطوّل — Pre-Intermediate
+    </h2>
+
+    <p>
+      استمع إلى مقاطع أطول، ثم تعلّم أهم الكلمات والعبارات
+      من داخل المقطع واختبر فهمك من خلال أسئلة مبنية على الاستماع.
+    </p>
+
+  </div>
+
+  <div
+    class="long-cards"
+    id="longCardsContainer"
+  ></div>
+
+</div>
+
+
 <div class="empty" id="emptyState">
   لم نجد مقطعًا مطابقًا لبحثك.
 </div>
@@ -1344,17 +2027,23 @@ body.lesson-mode .lesson-view{
 
 <section class="lesson-view" id="lessonView">
 
-  <div class="lesson-header">
+  <div class="lesson-header" id="lessonHeader">
 
     <div class="lesson-header-top">
 
       <div>
 
-        <div class="lesson-header-number" id="detailNumber"></div>
+        <div
+          class="lesson-header-number"
+          id="detailNumber"
+        ></div>
 
         <h2 id="detailTitle"></h2>
 
-        <div class="lesson-topic" id="detailTopic"></div>
+        <div
+          class="lesson-topic"
+          id="detailTopic"
+        ></div>
 
       </div>
 
@@ -1370,7 +2059,9 @@ body.lesson-mode .lesson-view{
   </div>
 
 
-  <!-- ORIGINAL -->
+  <!-- =======================================================
+       AUDIO / ORIGINAL
+  ======================================================== -->
 
   <div class="lesson-section">
 
@@ -1379,11 +2070,46 @@ body.lesson-mode .lesson-view{
     </h3>
 
     <p class="section-intro">
-      افتح المقطع الأصلي واستمع إليه أولًا.
-      حاول أن تفهم الفكرة العامة قبل التركيز على التفاصيل.
+      استمع أولًا وحاول فهم الفكرة العامة قبل التركيز على التفاصيل.
     </p>
 
-    <div class="original-box">
+
+    <!-- LONG AUDIO -->
+
+    <div
+      class="audio-box"
+      id="longAudioBox"
+    >
+
+      <p id="audioIntro">
+        استمع إلى المقطع من البداية، ثم أعد الاستماع عند الحاجة
+        للتركيز على الكلمات والعبارات المهمة.
+      </p>
+
+      <audio
+        id="detailAudio"
+        controls
+        preload="metadata"
+      ></audio>
+
+      <div class="audio-meta">
+
+        <span id="audioLevel"></span>
+        <span id="audioDuration"></span>
+        <span>VOA Learning English</span>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- REGULAR ORIGINAL -->
+
+    <div
+      class="original-box"
+      id="regularOriginalBox"
+    >
 
       <p id="detailDescription"></p>
 
@@ -1402,7 +2128,9 @@ body.lesson-mode .lesson-view{
   </div>
 
 
-  <!-- LANGUAGE -->
+  <!-- =======================================================
+       LANGUAGE
+  ======================================================== -->
 
   <div class="lesson-section">
 
@@ -1423,7 +2151,9 @@ body.lesson-mode .lesson-view{
   </div>
 
 
-  <!-- GRAMMAR -->
+  <!-- =======================================================
+       GRAMMAR
+  ======================================================== -->
 
   <div
     class="lesson-section"
@@ -1445,7 +2175,9 @@ body.lesson-mode .lesson-view{
   </div>
 
 
-  <!-- QUESTIONS -->
+  <!-- =======================================================
+       QUESTIONS
+  ======================================================== -->
 
   <div class="lesson-section">
 
@@ -1462,7 +2194,9 @@ body.lesson-mode .lesson-view{
   </div>
 
 
-  <!-- NAV -->
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
   <div class="lesson-navigation">
 
@@ -1492,14 +2226,11 @@ body.lesson-mode .lesson-view{
 <script>
 
 /* =========================================================
-   DATA
+   REGULAR LESSONS
+   الـ30 الأصلية — بدون تغيير في البيانات
 ========================================================= */
 
 const lessons = [
-
-/* =========================
-   1
-========================= */
 
 {
  id:1,
@@ -1559,11 +2290,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   2
-========================= */
-
 {
  id:2,
  stage:1,
@@ -1614,11 +2340,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   3
-========================= */
 
 {
  id:3,
@@ -1671,11 +2392,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   4
-========================= */
-
 {
  id:4,
  stage:1,
@@ -1726,11 +2442,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   5
-========================= */
 
 {
  id:5,
@@ -1783,11 +2494,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   6
-========================= */
-
 {
  id:6,
  stage:1,
@@ -1838,11 +2544,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   7
-========================= */
 
 {
  id:7,
@@ -1895,11 +2596,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   8
-========================= */
-
 {
  id:8,
  stage:1,
@@ -1950,11 +2646,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   9
-========================= */
 
 {
  id:9,
@@ -2007,11 +2698,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   10
-========================= */
-
 {
  id:10,
  stage:2,
@@ -2062,11 +2748,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   11
-========================= */
 
 {
  id:11,
@@ -2119,11 +2800,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   12
-========================= */
-
 {
  id:12,
  stage:2,
@@ -2174,11 +2850,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   13
-========================= */
 
 {
  id:13,
@@ -2231,11 +2902,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   14
-========================= */
-
 {
  id:14,
  stage:2,
@@ -2286,11 +2952,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   15
-========================= */
 
 {
  id:15,
@@ -2343,11 +3004,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   16
-========================= */
-
 {
  id:16,
  stage:3,
@@ -2398,11 +3054,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   17
-========================= */
 
 {
  id:17,
@@ -2455,11 +3106,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   18
-========================= */
-
 {
  id:18,
  stage:3,
@@ -2510,11 +3156,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   19
-========================= */
 
 {
  id:19,
@@ -2574,11 +3215,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   20
-========================= */
-
 {
  id:20,
  stage:3,
@@ -2630,11 +3266,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   21
-========================= */
-
 {
  id:21,
  stage:3,
@@ -2685,11 +3316,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   22
-========================= */
 
 {
  id:22,
@@ -2749,11 +3375,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   23
-========================= */
-
 {
  id:23,
  stage:3,
@@ -2804,11 +3425,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   24
-========================= */
 
 {
  id:24,
@@ -2861,11 +3477,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   25
-========================= */
-
 {
  id:25,
  stage:4,
@@ -2916,11 +3527,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   26
-========================= */
 
 {
  id:26,
@@ -2973,11 +3579,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   27
-========================= */
-
 {
  id:27,
  stage:4,
@@ -3028,11 +3629,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   28
-========================= */
 
 {
  id:28,
@@ -3085,11 +3681,6 @@ const lessons = [
  ]
 },
 
-
-/* =========================
-   29
-========================= */
-
 {
  id:29,
  stage:4,
@@ -3140,11 +3731,6 @@ const lessons = [
   }
  ]
 },
-
-
-/* =========================
-   30
-========================= */
 
 {
  id:30,
@@ -3225,6 +3811,931 @@ const lessons = [
 
 
 /* =========================================================
+   LONG LISTENING — PRE-INTERMEDIATE
+   15 مقطعًا جديدًا
+========================================================= */
+
+const longLessons = [
+
+{
+ id:1,
+ icon:"🌧️",
+ title:"Rain, Rain, Go Away!",
+ level:"Pre-Intermediate",
+ duration:"8:02",
+ topic:"Weather Expressions · Idioms",
+ description:"استماع عن المطر وتعبيرات إنجليزية مرتبطة بالطقس، مع أمثلة تساعدك على فهم التعبير داخل السياق.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Rain%2C%20Rain%2C%20Go%20Away!%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/words-and-their-stories-rain-rain-go-away/3789183.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"right as rain",
+   meaning:"بخير تمامًا / على ما يرام",
+   note:"تعبير يعني أن الشخص أو الشيء أصبح بخير.",
+   example:"Don't worry. I'll be right as rain soon.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"come rain or shine",
+   meaning:"سواء أمطرت أم أشرقت الشمس / مهما كانت الظروف",
+   note:"تستخدم عندما نقصد أن شيئًا سيحدث مهما كانت الظروف.",
+   example:"Come rain or shine, I'll be there.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"inconvenient",
+   meaning:"غير مريح / يسبب إزعاجًا",
+   note:"تستخدم لشيء يسبب صعوبة أو إزعاجًا.",
+   example:"The rain was inconvenient.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"تعلّم التعبير كوحدة واحدة",
+ grammarText:"في هذا النوع من الاستماع لا تحاول ترجمة كل كلمة داخل التعبير حرفيًا. احفظ العبارة كاملة ومعناها واستخدامها.",
+
+ questions:[
+  {
+   q:"What does 'right as rain' mean?",
+   options:["Completely fine.","Very angry.","Very tired."],
+   answer:0
+  },
+  {
+   q:"What is the main topic of the listening?",
+   options:["Weather-related expressions.","Cooking instructions.","Travel plans."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:2,
+ icon:"😴",
+ title:"Ways We Sleep. Zzzzzz",
+ level:"Pre-Intermediate",
+ duration:"8:58",
+ topic:"Sleep Expressions · Everyday English",
+ description:"مقطع غني بتعبيرات النوم اليومية مثل cat nap وsleep in وcatch some z's وغيرها.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Ways%20We%20Sleep.%20Zzzzzz%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/amp/words-and-their-stories-zzzzzz/4282439.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"sleep in",
+   meaning:"ينام لوقت متأخر",
+   note:"تستخدم عندما ينام الشخص بعد الوقت المعتاد للاستيقاظ.",
+   example:"I like to sleep in on weekends.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"catch some z's",
+   meaning:"ينام / يأخذ قسطًا من النوم",
+   note:"تعبير غير رسمي يعني النوم.",
+   example:"I need to catch some z's.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"nod off",
+   meaning:"يغفو",
+   note:"يعني أن تغفو دون أن تقصد، غالبًا لفترة قصيرة.",
+   example:"I nodded off on the train.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"hit the sack",
+   meaning:"يذهب إلى النوم",
+   note:"تعبير غير رسمي شائع.",
+   example:"I'm tired. I'm going to hit the sack.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Phrasal verbs and expressions",
+ grammarText:"ستسمع أفعالًا وعبارات لا يمكن فهم معناها دائمًا من الكلمات منفردة، لذلك ركّز على معناها الكامل داخل الجملة.",
+
+ questions:[
+  {
+   q:"What does 'sleep in' mean?",
+   options:["Sleep later than usual.","Sleep very early.","Never sleep."],
+   answer:0
+  },
+  {
+   q:"What does 'nod off' mean?",
+   options:["Fall asleep unintentionally.","Wake up suddenly.","Get out of bed."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:3,
+ icon:"🤫",
+ title:"Shhh! The Walls Have Ears!",
+ level:"Pre-Intermediate",
+ duration:"7:13",
+ topic:"Secrets · Listening Expressions",
+ description:"استماع عن الأسرار والاستماع إلى محادثات الآخرين وتعبيرات مثل eavesdrop وthe walls have ears.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Shhh!%20The%20Walls%20Have%20Ears!.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/words-and-their-stories-the-walls-have-ears/4003874.html",
+
+ language:[
+  {
+   type:"كلمة",
+   expression:"eavesdrop",
+   meaning:"يتنصت / يستمع سرًا",
+   note:"تعني الاستماع سرًا إلى محادثة خاصة.",
+   example:"He was eavesdropping on their conversation.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"the walls have ears",
+   meaning:"الجدران لها آذان / قد يكون هناك من يستمع",
+   note:"تحذير من التحدث عن أسرار في مكان قد يسمعك فيه الآخرون.",
+   example:"Don't talk about it here. The walls have ears.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"listen in on",
+   meaning:"يستمع إلى محادثة أو اجتماع",
+   note:"يمكن أن يكون الاستماع سريًا أو ببساطة الاستماع إلى اجتماع أو درس.",
+   example:"I listened in on the meeting.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"الفرق بين eavesdrop وoverhear",
+ grammarText:"eavesdrop يعني الاستماع سرًا إلى حديث خاص، بينما overhear يعني أن تسمع شيئًا بالصدفة دون أن تكون تحاول الاستماع إليه.",
+
+ questions:[
+  {
+   q:"What does 'eavesdrop' mean?",
+   options:["Listen secretly to a private conversation.","Speak very loudly.","Ask for directions."],
+   answer:0
+  },
+  {
+   q:"What does 'the walls have ears' warn us about?",
+   options:["Someone may be listening.","The room is empty.","The house is old."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:4,
+ icon:"👣",
+ title:"Put Your Best Foot Forward!",
+ level:"Pre-Intermediate",
+ duration:"8:55",
+ topic:"Idioms · First Impressions",
+ description:"استماع يشرح مجموعة من التعبيرات المرتبطة بالقدم، ومنها put your best foot forward وland on your feet.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Put%20Your%20Best%20Foot%20Forward!%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/3693215.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"put your best foot forward",
+   meaning:"يُظهر أفضل ما لديه",
+   note:"تعني أن تتصرف بأفضل طريقة ممكنة، خاصة في بداية موقف جديد.",
+   example:"I want to put my best foot forward at my new job.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"drag your feet",
+   meaning:"يتباطأ / يتلكأ",
+   note:"تعني التأخر أو عدم الإسراع في فعل شيء.",
+   example:"He's dragging his feet on the project.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"land on your feet",
+   meaning:"يتجاوز المشكلة بنجاح",
+   note:"تستخدم عندما يتعافى الشخص من مشكلة أو موقف صعب.",
+   example:"She lost her job but landed on her feet.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Idioms لا تُترجم حرفيًا",
+ grammarText:"تعبير put your best foot forward لا يعني حرفيًا وضع القدم إلى الأمام؛ معناه أن تظهر بأفضل صورة ممكنة.",
+
+ questions:[
+  {
+   q:"What does 'put your best foot forward' mean?",
+   options:["Show yourself in the best possible way.","Walk very quickly.","Buy new shoes."],
+   answer:0
+  },
+  {
+   q:"What does 'drag your feet' mean?",
+   options:["Be slow to do something.","Run quickly.","Fall down."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:5,
+ icon:"🏠",
+ title:"Make Yourself at Home!",
+ level:"Pre-Intermediate",
+ duration:"8:37",
+ topic:"Home Expressions · Social English",
+ description:"استماع عن تعبيرات مرتبطة بالبيت والشعور بالراحة والانتماء أثناء زيارة الآخرين أو السفر.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Make%20Yourself%20at%20Home!.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/amp/words-and-their-stories-home-expressions/3628225.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"make yourself at home",
+   meaning:"اشعر وكأنك في بيتك",
+   note:"تقال للضيف حتى يشعر بالراحة والترحيب.",
+   example:"Come in and make yourself at home.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"home away from home",
+   meaning:"مكان يشعرك وكأنه بيتك",
+   note:"تستخدم لوصف مكان آخر تشعر فيه بالراحة مثل منزلك.",
+   example:"This hotel feels like a home away from home.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"homesick",
+   meaning:"يشتاق إلى وطنه أو منزله",
+   note:"تصف شعور الشخص الذي يفتقد بيته ومكانه المعتاد.",
+   example:"She felt homesick when she moved abroad.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Home ليست دائمًا مكانًا فقط",
+ grammarText:"في الاستماع ستلاحظ أن كلمة home تدخل في تعبيرات تحمل معاني اجتماعية ومشاعر، وليس فقط معنى المنزل كمكان.",
+
+ questions:[
+  {
+   q:"What does 'make yourself at home' mean?",
+   options:["Feel relaxed and welcome.","Leave immediately.","Clean the house."],
+   answer:0
+  },
+  {
+   q:"What does 'homesick' describe?",
+   options:["Missing home.","Being afraid of houses.","Moving into a new house."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:6,
+ icon:"🎩",
+ title:"Hats Off to You!",
+ level:"Pre-Intermediate",
+ duration:"8:45",
+ topic:"Clothing Expressions · Idioms",
+ description:"مقطع عن تعبيرات إنجليزية مرتبطة بالملابس والقبعات مع استخدامها في مواقف مختلفة.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Hats%20Off%20to%20You!.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/words-and-their-stories-clothing-expressions/3538378.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"hats off to you",
+   meaning:"أحسنت / كل الاحترام لك",
+   note:"تقال للتعبير عن الإعجاب بإنجاز شخص أو جهده.",
+   example:"You finished the project early? Hats off to you!",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"cut from the same cloth",
+   meaning:"متشابهان جدًا في الصفات",
+   note:"تستخدم لوصف شخصين متشابهين في الشخصية أو السلوك.",
+   example:"The two brothers are cut from the same cloth.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"fit like a glove",
+   meaning:"يناسب تمامًا",
+   note:"يمكن استخدامها للملابس أو مجازيًا لشيء يناسب شخصًا أو موقفًا بشكل ممتاز.",
+   example:"The new job fits her like a glove.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"تعلّم التعبير من الموقف",
+ grammarText:"التعبيرات المرتبطة بالملابس هنا لها معانٍ مجازية؛ لذلك حاول ربطها بالموقف الذي وردت فيه بدل ترجمتها كلمة بكلمة.",
+
+ questions:[
+  {
+   q:"What does 'hats off to you' express?",
+   options:["Admiration or congratulations.","Anger.","Confusion."],
+   answer:0
+  },
+  {
+   q:"What does 'fit like a glove' mean?",
+   options:["Fit very well.","Be too large.","Be uncomfortable."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:7,
+ icon:"🐢",
+ title:"The Tortoise and the Hare",
+ level:"Pre-Intermediate",
+ duration:"7:29",
+ topic:"Story Listening · Life Lessons",
+ description:"قصة معروفة تساعدك على متابعة أحداث متسلسلة وفهم الشخصيات والنتيجة النهائية للقصة.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/The%20Tortoise%20and%20the%20Hare%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/animals-stories-the-tortoise-and-the-hare/5239051.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"slow and steady wins the race",
+   meaning:"التأني والاستمرار يؤديان إلى النجاح",
+   note:"الدرس الأساسي من القصة.",
+   example:"Keep studying. Slow and steady wins the race.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"eyes on the prize",
+   meaning:"ابقَ مركزًا على هدفك",
+   note:"تعني أن تحافظ على تركيزك على النتيجة التي تريد الوصول إليها.",
+   example:"Keep your eyes on the prize.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"determination",
+   meaning:"العزيمة / الإصرار",
+   note:"الاستمرار في المحاولة لتحقيق شيء صعب.",
+   example:"She succeeded through hard work and determination.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Story Listening",
+ grammarText:"في القصص لا تبحث عن معنى كل كلمة. تابع ترتيب الأحداث: البداية، المشكلة، الأحداث، ثم النتيجة والدرس.",
+
+ questions:[
+  {
+   q:"Who wins the race?",
+   options:["The Tortoise.","The Hare.","The Fox."],
+   answer:0
+  },
+  {
+   q:"What is the main lesson?",
+   options:["Focus and steady effort can lead to success.","Being fast is always enough.","Never try anything difficult."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:8,
+ icon:"❌",
+ title:"To Err Is Human...",
+ level:"Pre-Intermediate",
+ duration:"8:21",
+ topic:"Mistakes · Expressions",
+ description:"استماع يشرح تعبيرات مرتبطة بالأخطاء والتسامح والحذر والتعلم من التجربة.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/To%20Err%20Is%20Human%E2%80%A6.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/words-and-their-stories-to-err-is-human/3921794.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"to err is human",
+   meaning:"الخطأ من طبيعة الإنسان",
+   note:"تعبير مشهور يعني أن البشر يخطئون بطبيعتهم.",
+   example:"Don't be too hard on yourself. To err is human.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"err on the side of caution",
+   meaning:"يميل إلى الخيار الأكثر أمانًا",
+   note:"يعني اختيار التصرف الأكثر حذرًا عندما تكون غير متأكد.",
+   example:"I decided to stay home and err on the side of caution.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"trial and error",
+   meaning:"التجربة والخطأ",
+   note:"التعلم من تجربة طرق مختلفة والتخلي عن الطرق التي لا تنجح.",
+   example:"I learned how to use the program through trial and error.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"err / error / erroneous",
+ grammarText:"استمع إلى العلاقة بين err وerror والكلمات المرتبطة بها، ولاحظ كيف تتحول الكلمة إلى أشكال مختلفة حسب وظيفتها في الجملة.",
+
+ questions:[
+  {
+   q:"What does 'to err is human' mean?",
+   options:["People naturally make mistakes.","People never make mistakes.","Mistakes are impossible."],
+   answer:0
+  },
+  {
+   q:"What does 'trial and error' mean?",
+   options:["Trying different methods and learning from failures.","Avoiding all experiments.","Doing something only once."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:9,
+ icon:"👥",
+ title:"We Really Need to Talk About Your Friends",
+ level:"Pre-Intermediate",
+ duration:"9:35",
+ topic:"Friendship · Social Vocabulary",
+ description:"مقطع غني بمفردات وصف أنواع الصداقة، من acquaintance إلى close friend وfair-weather friend.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/We%20Really%20Need%20to%20Talk%20About%20Your%20Friends%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/words-and-their-stories-talk-about-friends/4074867.html",
+
+ language:[
+  {
+   type:"كلمة",
+   expression:"acquaintance",
+   meaning:"شخص تعرفه لكنك لست قريبًا منه",
+   note:"أضعف من friend من حيث درجة القرب.",
+   example:"She's not a close friend. She's an acquaintance.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"mutual friend",
+   meaning:"صديق مشترك",
+   note:"شخص تعرفه أنت وشخص آخر معًا.",
+   example:"We met through a mutual friend.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"fair-weather friend",
+   meaning:"صديق وقت الراحة فقط",
+   note:"شخص يكون موجودًا عندما تكون الأمور سهلة، ويختفي وقت الصعوبات.",
+   example:"He's a fair-weather friend.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"through thick and thin",
+   meaning:"في السراء والضراء",
+   note:"تصف الوقوف مع شخص في الأوقات الجيدة والصعبة.",
+   example:"She stayed with me through thick and thin.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Vocabulary by relationship",
+ grammarText:"هذا المقطع مفيد لتعلم درجات مختلفة من العلاقات. انتبه إلى أن الكلمات لا تعني كلها friend بالدرجة نفسها؛ بعضها يصف علاقة قريبة وبعضها بعيدة.",
+
+ questions:[
+  {
+   q:"What is an acquaintance?",
+   options:["Someone you know but not well.","Your best friend.","A family member."],
+   answer:0
+  },
+  {
+   q:"What is a fair-weather friend like?",
+   options:["They stay only when things are easy.","They always help in difficult times.","They are a childhood friend."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:10,
+ icon:"❤️",
+ title:"Romantic Relationships. Let's Talk.",
+ level:"Pre-Intermediate",
+ duration:"9:31",
+ topic:"Relationships · Social English",
+ description:"استماع عن العلاقات العاطفية والتعبيرات المستخدمة للحديث عن التعارف والارتباط والمشاعر.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Romantic%20Relationships.%20Let%E2%80%99s%20Talk..mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"get to know someone",
+   meaning:"يتعرف على شخص بشكل أفضل",
+   note:"تستخدم عندما تتطور معرفة الشخص بالآخر مع الوقت.",
+   example:"I want to get to know her better.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"fall in love",
+   meaning:"يقع في الحب",
+   note:"تعبير شائع جدًا للحديث عن بداية الحب.",
+   example:"They fell in love at university.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"break up",
+   meaning:"ينفصل / ينهي العلاقة",
+   note:"فعل مركب يستخدم عند انتهاء علاقة عاطفية.",
+   example:"They decided to break up.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Phrasal verbs in relationships",
+ grammarText:"انتبه إلى الأفعال المركبة مثل get to know وbreak up. معناها الكامل يظهر من السياق وليس من ترجمة كل كلمة منفردة.",
+
+ questions:[
+  {
+   q:"What does 'get to know someone' mean?",
+   options:["Learn more about the person over time.","Forget the person.","Avoid speaking to the person."],
+   answer:0
+  },
+  {
+   q:"What does 'break up' mean in a romantic relationship?",
+   options:["End the relationship.","Start a relationship.","Meet someone for the first time."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:11,
+ icon:"🎁",
+ title:"The Gift of the Magi",
+ level:"Pre-Intermediate",
+ duration:"14:16",
+ topic:"Story Listening · Love · Giving",
+ description:"قصة أطول عن Della وJim، وتحتاج إلى متابعة التفاصيل والعلاقة بين الشخصيات وتسلسل الأحداث.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/The%20Gift%20of%20the%20Magi.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/the-gift-of-the-magi-o-henry/4076022.html",
+
+ language:[
+  {
+   type:"كلمة",
+   expression:"negotiate",
+   meaning:"يفاوض / يتفاوض",
+   note:"مناقشة شيء مع شخص للوصول إلى اتفاق.",
+   example:"They negotiated the price.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"possession",
+   meaning:"ممتلكات / شيء يملكه الشخص",
+   note:"تستخدم للحديث عن شيء مهم يملكه شخص.",
+   example:"Her hair was one of her most valuable possessions.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"immovable",
+   meaning:"غير قابل للتحرك",
+   note:"تصف شيئًا ثابتًا ولا يتحرك.",
+   example:"He stood completely immovable.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"treasure",
+   meaning:"كنز / شيء ثمين جدًا",
+   note:"يمكن أن تكون شيئًا ماديًا أو شيئًا ذا قيمة عاطفية كبيرة.",
+   example:"Family can be a great treasure.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"متابعة القصة الطويلة",
+ grammarText:"هذا المقطع أطول من بقية المقاطع. لا تحاول حفظ كل جملة؛ ركّز على الشخصيات، المشكلة، القرارات، ثم النتيجة النهائية.",
+
+ questions:[
+  {
+   q:"What does Della sell to get money?",
+   options:["Her hair.","Her house.","Jim's watch."],
+   answer:0
+  },
+  {
+   q:"What does Jim sell?",
+   options:["His gold watch.","Della's hair.","His house."],
+   answer:0
+  },
+  {
+   q:"Why do both gifts become difficult to use?",
+   options:["Each person gave up the thing needed to use the other's gift.","They lost the gifts.","The gifts were broken."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:12,
+ icon:"🐒",
+ title:"From Monkeys to Potatoes",
+ level:"Pre-Intermediate",
+ duration:"8:24",
+ topic:"Idioms · Everyday Expressions",
+ description:"مقطع ممتع يشرح عدة تعبيرات شائعة مثل monkey around وcouch potato وlet the cat out of the bag.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/From%20Monkeys%20to%20Potatoes%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/words-and-their-stories-from-monkeys-to-potatoes/4141925.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"monkey around",
+   meaning:"يعبث / يضيع الوقت",
+   note:"تعني القيام بأشياء غير جادة أو غير مفيدة.",
+   example:"Stop monkeying around and finish your work.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"let the cat out of the bag",
+   meaning:"يفشي السر",
+   note:"تعني كشف معلومة كان من المفترض أن تبقى سرًا.",
+   example:"She let the cat out of the bag.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"couch potato",
+   meaning:"شخص يقضي وقتًا طويلًا جالسًا يشاهد التلفاز",
+   note:"تستخدم لوصف شخص قليل النشاط.",
+   example:"He became a couch potato during the holiday.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"throw money at a problem",
+   meaning:"يحاول حل المشكلة بالمال فقط",
+   note:"تعني إنفاق المال على المشكلة بدل معالجة السبب الحقيقي.",
+   example:"You can't always throw money at a problem.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Idioms with simple words",
+ grammarText:"هذا المقطع يوضح أن كلمات بسيطة مثل cat وpotato وmonkey يمكن أن تدخل في تعبيرات تحمل معاني مختلفة تمامًا.",
+
+ questions:[
+  {
+   q:"What does 'let the cat out of the bag' mean?",
+   options:["Reveal a secret.","Buy a pet.","Leave a house."],
+   answer:0
+  },
+  {
+   q:"What is a couch potato?",
+   options:["A person who is very inactive.","A type of food.","A person who works outdoors."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:13,
+ icon:"💊",
+ title:"Why Do We Use “Rx” for Medicine?",
+ level:"Pre-Intermediate",
+ duration:"7:08",
+ topic:"Medicine · Word Origins",
+ description:"استماع يشرح أصل الرمز Rx وكيف أصبح مرتبطًا بالوصفات الطبية، مع تعبير medicine-related في النهاية.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Why%20Do%20We%20Use%20%E2%80%9CRx%E2%80%9D%20for%20Medicine%3F.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/why-do-we-use-rx-for-medicine-/4617609.html",
+
+ language:[
+  {
+   type:"كلمة",
+   expression:"prescription",
+   meaning:"وصفة طبية",
+   note:"تعليمات الطبيب الخاصة بالدواء الذي يحتاجه المريض.",
+   example:"The doctor gave me a prescription.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"take medicine",
+   meaning:"يتناول الدواء",
+   note:"عبارة أساسية عند الحديث عن الأدوية.",
+   example:"You need to take your medicine.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"a taste of your own medicine",
+   meaning:"تلقى المعاملة نفسها التي عاملت بها الآخرين",
+   note:"تستخدم غالبًا عندما تكون المعاملة سيئة.",
+   example:"He finally got a taste of his own medicine.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Word origins",
+ grammarText:"المقطع لا يعلّمك كلمة Rx فقط؛ بل يريك كيف يمكن أن يتغير معنى كلمة أو رمز مع مرور الزمن.",
+
+ questions:[
+  {
+   q:"What does Rx represent?",
+   options:["Prescription medicine.","A type of food.","A hospital room."],
+   answer:0
+  },
+  {
+   q:"What does 'a taste of your own medicine' mean?",
+   options:["Someone treats you as you treated them.","You take new medicine.","You visit a doctor."],
+   answer:0
+  }
+ ]
+},
+
+{
+ id:14,
+ icon:"⭐",
+ title:"Be Special, Not Just “Run-of-the-Mill”",
+ level:"Pre-Intermediate",
+ duration:"8:33",
+ topic:"Ordinary vs Special · Expressions",
+ description:"مقطع عن run-of-the-mill وتعبيرات أخرى تصف الأشياء العادية أو المتشابهة أو غير المميزة.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Be%20Special%2C%20Not%20Just%20%E2%80%9CRun-of-the-Mill%E2%80%9D%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/be-special-not-just-run-of-the-mill-/4594717.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"run-of-the-mill",
+   meaning:"عادي / تقليدي / غير مميز",
+   note:"تستخدم لوصف شيء طبيعي أو عادي وليس مميزًا.",
+   example:"It was a run-of-the-mill performance.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"ordinary",
+   meaning:"عادي / غير مميز",
+   note:"شيء طبيعي وليس مختلفًا أو استثنائيًا.",
+   example:"It looked like an ordinary shop.",
+   pronounce:true
+  },
+  {
+   type:"كلمة",
+   expression:"unique",
+   meaning:"فريد / مميز",
+   note:"شيء مختلف عن غيره ولا يشبه الأشياء الأخرى.",
+   example:"The design is completely unique.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"cookie-cutter",
+   meaning:"متشابه جدًا / غير أصلي",
+   note:"تستخدم لوصف أشياء كثيرة تبدو متطابقة أو متشابهة جدًا.",
+   example:"The houses all have a cookie-cutter design.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"Ordinary vs special",
+ grammarText:"انتبه إلى الفرق بين ordinary وunique، وبين التعبيرات run-of-the-mill وcookie-cutter وgarden-variety التي تصف الأشياء العادية أو المتشابهة.",
+
+ questions:[
+  {
+   q:"What does 'run-of-the-mill' mean?",
+   options:["Ordinary or not special.","Very expensive.","Completely new."],
+   answer:0
+  },
+  {
+   q:"What does 'unique' mean?",
+   options:["The same as everything else.","Different and special.","Very cheap."],
+   answer:1
+  }
+ ]
+},
+
+{
+ id:15,
+ icon:"👟",
+ title:"Start Off on the Right Foot",
+ level:"Pre-Intermediate",
+ duration:"5:46",
+ topic:"First Impressions · Success",
+ description:"مقطع عن التعبيرات المرتبطة بالقدم، وخاصة start off on the right foot والانطباع الأول.",
+
+ audio:"https://videos.englizaacademy.com/Long%20listing%20pre-intermediate/Start%20Off%20on%20the%20Right%20Foot%20.mp3",
+
+ source:"VOA Learning English",
+ sourceUrl:"https://learningenglish.voanews.com/a/start-off-on-the-right-foot/5976285.html",
+
+ language:[
+  {
+   type:"عبارة",
+   expression:"start off on the right foot",
+   meaning:"يبدأ بطريقة جيدة",
+   note:"تستخدم عندما يبدأ مشروع أو علاقة أو موقف بداية ناجحة.",
+   example:"I want to start my new job off on the right foot.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"first impression",
+   meaning:"الانطباع الأول",
+   note:"الفكرة أو الشعور الذي يتكون عند مقابلة شخص لأول مرة.",
+   example:"You only get one chance to make a first impression.",
+   pronounce:true
+  },
+  {
+   type:"عبارة",
+   expression:"start off on the wrong foot",
+   meaning:"يبدأ بطريقة سيئة",
+   note:"عكس start off on the right foot.",
+   example:"We started off on the wrong foot.",
+   pronounce:true
+  }
+ ],
+
+ grammarTitle:"right foot / wrong foot",
+ grammarText:"التعبيران right foot وwrong foot مجازيان هنا؛ المقصود هو بداية جيدة أو بداية سيئة، وليس القدم حرفيًا.",
+
+ questions:[
+  {
+   q:"What does 'start off on the right foot' mean?",
+   options:["Start in a good way.","Walk correctly.","Buy new shoes."],
+   answer:0
+  },
+  {
+   q:"What is a first impression?",
+   options:["The feeling or opinion formed when you first meet someone.","A final decision.","A type of shoe."],
+   answer:0
+  }
+ ]
+}
+
+];
+
+
+/* =========================================================
    STAGE HELPERS
 ========================================================= */
 
@@ -3237,25 +4748,43 @@ const stageContainers = {
 
 
 /* =========================================================
-   RENDER CARDS
+   CURRENT MODE
+========================================================= */
+
+let currentMode = "regular";
+
+let currentLessonId = 1;
+
+
+/* =========================================================
+   RENDER REGULAR CARDS
 ========================================================= */
 
 function renderCards(){
 
+  Object.values(stageContainers).forEach(container => {
+    container.innerHTML = "";
+  });
+
   lessons.forEach(lesson => {
 
-    const card = document.createElement("article");
+    const card =
+      document.createElement("article");
 
     card.className = "lesson-card";
 
     card.dataset.search = (
+
       lesson.title +
       " " +
       lesson.topic +
       " " +
       lesson.description +
       " " +
-      lesson.language.map(x => x.expression).join(" ")
+      lesson.language
+        .map(x => x.expression)
+        .join(" ")
+
     ).toLowerCase();
 
     card.innerHTML = `
@@ -3298,23 +4827,169 @@ function renderCards(){
         </div>
 
       </div>
+
     `;
 
-    stageContainers[lesson.stage].appendChild(card);
+    stageContainers[lesson.stage]
+      .appendChild(card);
 
   });
 
 }
 
+
+/* =========================================================
+   RENDER LONG LISTENING
+========================================================= */
+
+function renderLongLessons(){
+
+  const container =
+    document.getElementById("longCardsContainer");
+
+  container.innerHTML = "";
+
+  longLessons.forEach(lesson => {
+
+    const card =
+      document.createElement("article");
+
+    card.className =
+      "long-card";
+
+    card.dataset.search = (
+
+      lesson.title +
+      " " +
+      lesson.topic +
+      " " +
+      lesson.description +
+      " " +
+      lesson.level +
+      " " +
+      lesson.language
+        .map(x => x.expression)
+        .join(" ")
+
+    ).toLowerCase();
+
+    card.innerHTML = `
+
+      <div class="lesson-top">
+
+        <div class="lesson-icon">
+          ${lesson.icon}
+        </div>
+
+        <div class="lesson-number">
+          الاستماع ${String(lesson.id).padStart(2,"0")}
+        </div>
+
+      </div>
+
+      <div class="long-level">
+        ${lesson.level}
+      </div>
+
+      <h3>
+        ${lesson.title}
+      </h3>
+
+      <div class="topic">
+        ${lesson.topic}
+      </div>
+
+      <p>
+        ${lesson.description}
+      </p>
+
+      <div class="lesson-bottom">
+
+        <button
+          class="listen-btn"
+          onclick="openLongLesson(${lesson.id})"
+        >
+          🎧 ابدأ الاستماع
+        </button>
+
+        <div class="lesson-duration">
+          ⏱️ ${lesson.duration}
+        </div>
+
+        <div class="source">
+          ${lesson.source}
+        </div>
+
+      </div>
+
+    `;
+
+    container.appendChild(card);
+
+  });
+
+}
+
+
 renderCards();
+renderLongLessons();
 
 
 /* =========================================================
-   LESSON VIEW
+   SWITCH MODE
 ========================================================= */
 
-let currentLessonId = 1;
+function switchMode(mode){
 
+  currentMode = mode;
+
+  const regularCard =
+    document.getElementById("regularModeCard");
+
+  const longCard =
+    document.getElementById("longModeCard");
+
+  const regularView =
+    document.getElementById("listView");
+
+  const longView =
+    document.getElementById("longListeningView");
+
+  regularCard.classList.toggle(
+    "active",
+    mode === "regular"
+  );
+
+  longCard.classList.toggle(
+    "active",
+    mode === "long"
+  );
+
+  regularView.style.display =
+    mode === "regular"
+      ? "block"
+      : "none";
+
+  longView.classList.toggle(
+    "active",
+    mode === "long"
+  );
+
+  document.getElementById("searchInput").value = "";
+
+  clearSearch();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   OPEN REGULAR LESSON
+========================================================= */
 
 function openLesson(id){
 
@@ -3323,49 +4998,307 @@ function openLesson(id){
 
   if(!lesson) return;
 
+  currentMode = "regular";
+
   currentLessonId = id;
 
-  /*
-    إخفاء الصفحة الرئيسية بالكامل وإظهار الاستماع فقط
-  */
   document.body.classList.add("lesson-mode");
 
-  document.getElementById("lessonView")
+  document
+    .getElementById("lessonView")
     .classList.add("active");
 
-  document.getElementById("detailNumber")
+  document
+    .getElementById("lessonHeader")
+    .classList.remove("long-header");
+
+  document
+    .getElementById("detailNumber")
     .textContent =
       `الاستماع ${String(lesson.id).padStart(2,"0")}`;
 
-  document.getElementById("detailTitle")
-    .textContent = lesson.title;
+  document
+    .getElementById("detailTitle")
+    .textContent =
+      lesson.title;
 
-  document.getElementById("detailTopic")
+  document
+    .getElementById("detailTopic")
     .textContent =
       `${lesson.topic} · ${lesson.source}`;
 
-  document.getElementById("detailDescription")
-    .textContent = lesson.description;
+  document
+    .getElementById("detailDescription")
+    .textContent =
+      lesson.description;
 
-  const originalLink =
-    document.getElementById("originalLink");
 
-  originalLink.href = lesson.url;
+  /* REGULAR AUDIO */
+
+  document
+    .getElementById("longAudioBox")
+    .classList.remove("active");
+
+  document
+    .getElementById("regularOriginalBox")
+    .style.display =
+      "block";
+
+  document
+    .getElementById("originalLink")
+    .href =
+      lesson.url;
+
+
+  const audio =
+    document.getElementById("detailAudio");
+
+  audio.pause();
+  audio.removeAttribute("src");
+  audio.load();
 
 
   /* LANGUAGE */
 
+  renderLanguage(
+    lesson.language,
+    false
+  );
+
+
+  /* GRAMMAR */
+
+  document
+    .getElementById("grammarTitle")
+    .textContent =
+      lesson.grammarTitle;
+
+  document
+    .getElementById("grammarText")
+    .textContent =
+      lesson.grammarText;
+
+
+  /* QUESTIONS */
+
+  renderQuestions(
+    lesson.questions
+  );
+
+
+  updateNavigation();
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   OPEN LONG LESSON
+========================================================= */
+
+function openLongLesson(id){
+
+  const lesson =
+    longLessons.find(item => item.id === id);
+
+  if(!lesson) return;
+
+  currentMode = "long";
+
+  currentLessonId = id;
+
+  document.body.classList.add("lesson-mode");
+
+  document
+    .getElementById("lessonView")
+    .classList.add("active");
+
+  document
+    .getElementById("lessonHeader")
+    .classList.add("long-header");
+
+
+  document
+    .getElementById("detailNumber")
+    .textContent =
+      `الاستماع المطوّل ${String(lesson.id).padStart(2,"0")}`;
+
+
+  document
+    .getElementById("detailTitle")
+    .textContent =
+      lesson.title;
+
+
+  document
+    .getElementById("detailTopic")
+    .textContent =
+      `${lesson.topic} · ${lesson.level}`;
+
+
+  document
+    .getElementById("detailDescription")
+    .textContent =
+      lesson.description;
+
+
+  /* LONG AUDIO */
+
+  document
+    .getElementById("regularOriginalBox")
+    .style.display =
+      "none";
+
+
+  const audioBox =
+    document.getElementById("longAudioBox");
+
+  audioBox.classList.add("active");
+
+
+  const audio =
+    document.getElementById("detailAudio");
+
+  audio.pause();
+
+  audio.src =
+    lesson.audio;
+
+  audio.load();
+
+
+  document
+    .getElementById("audioLevel")
+    .textContent =
+      lesson.level;
+
+
+  document
+    .getElementById("audioDuration")
+    .textContent =
+      `⏱️ ${lesson.duration}`;
+
+
+
+
+  /* LANGUAGE */
+
+  renderLanguage(
+    lesson.language,
+    true
+  );
+
+
+  /* GRAMMAR */
+
+  document
+    .getElementById("grammarTitle")
+    .textContent =
+      lesson.grammarTitle;
+
+
+  document
+    .getElementById("grammarText")
+    .textContent =
+      lesson.grammarText;
+
+
+  /* QUESTIONS */
+
+  renderQuestions(
+    lesson.questions
+  );
+
+
+  updateNavigation();
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   CLOSE LESSON
+========================================================= */
+
+function closeLesson(){
+
+  const audio =
+    document.getElementById("detailAudio");
+
+  audio.pause();
+
+  audio.removeAttribute("src");
+
+  audio.load();
+
+
+  document.body.classList.remove(
+    "lesson-mode"
+  );
+
+  document
+    .getElementById("lessonView")
+    .classList.remove("active");
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+function renderLanguage(
+  language,
+  showPronunciation
+){
+
   const languageGrid =
-    document.getElementById("languageGrid");
+    document.getElementById(
+      "languageGrid"
+    );
 
   languageGrid.innerHTML = "";
 
-  lesson.language.forEach(item => {
+
+  language.forEach(item => {
 
     const div =
       document.createElement("div");
 
-    div.className = "language-item";
+    div.className =
+      "language-item";
+
+
+    const pronunciationButton =
+      showPronunciation && item.pronounce
+      ?
+      `
+        <button
+          class="pronounce-btn"
+          onclick='speakText(${JSON.stringify(item.expression)})'
+        >
+          🔊 نطق
+        </button>
+      `
+      :
+      "";
+
 
     div.innerHTML = `
 
@@ -3397,51 +5330,42 @@ function openLesson(id){
         ""
       }
 
+      ${pronunciationButton}
+
     `;
+
 
     languageGrid.appendChild(div);
 
   });
 
-
-  /* GRAMMAR */
-
-  document.getElementById("grammarTitle")
-    .textContent =
-      lesson.grammarTitle;
-
-  document.getElementById("grammarText")
-    .textContent =
-      lesson.grammarText;
-
-
-  /* QUESTIONS */
-
-  renderQuestions(lesson.questions);
-
-
-  updateNavigation();
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
 }
 
 
-function closeLesson(){
+/* =========================================================
+   TEXT TO SPEECH
+========================================================= */
 
-  document.body.classList.remove("lesson-mode");
+function speakText(text){
 
-  document.getElementById("lessonView")
-    .classList.remove("active");
+  if(!("speechSynthesis" in window)){
+    return;
+  }
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  window.speechSynthesis.cancel();
+
+  const utterance =
+    new SpeechSynthesisUtterance(text);
+
+  utterance.lang = "en-US";
+
+  utterance.rate = .88;
+
+  utterance.pitch = 1;
+
+  window.speechSynthesis.speak(
+    utterance
+  );
 
 }
 
@@ -3453,56 +5377,72 @@ function closeLesson(){
 function renderQuestions(questions){
 
   const container =
-    document.getElementById("questionsContainer");
+    document.getElementById(
+      "questionsContainer"
+    );
 
   container.innerHTML = "";
 
-  questions.forEach((question,index) => {
 
-    const div =
-      document.createElement("div");
+  questions.forEach(
+    (question,index) => {
 
-    div.className = "question";
+      const div =
+        document.createElement("div");
 
-    div.innerHTML = `
+      div.className =
+        "question";
 
-      <div class="question-text">
-        ${index + 1}. ${question.q}
-      </div>
 
-      <div class="options">
+      div.innerHTML = `
 
-        ${
-          question.options.map(
-            (option,optionIndex) => `
-              <button
-                class="option"
-                onclick="
-                  answerQuestion(
-                    this,
-                    ${optionIndex},
-                    ${question.answer}
-                  )
-                "
-              >
-                ${option}
-              </button>
-            `
-          ).join("")
-        }
+        <div class="question-text">
+          ${index + 1}. ${question.q}
+        </div>
 
-      </div>
+        <div class="options">
 
-      <div class="feedback"></div>
+          ${
+            question.options
+              .map(
+                (option,optionIndex) => `
 
-    `;
+                  <button
+                    class="option"
+                    onclick="
+                      answerQuestion(
+                        this,
+                        ${optionIndex},
+                        ${question.answer}
+                      )
+                    "
+                  >
+                    ${option}
+                  </button>
 
-    container.appendChild(div);
+                `
+              )
+              .join("")
+          }
 
-  });
+        </div>
+
+        <div class="feedback"></div>
+
+      `;
+
+
+      container.appendChild(div);
+
+    }
+  );
 
 }
 
+
+/* =========================================================
+   ANSWER
+========================================================= */
 
 function answerQuestion(
   button,
@@ -3513,19 +5453,30 @@ function answerQuestion(
   const question =
     button.closest(".question");
 
+
   const options =
-    question.querySelectorAll(".option");
+    question.querySelectorAll(
+      ".option"
+    );
+
 
   const feedback =
-    question.querySelector(".feedback");
+    question.querySelector(
+      ".feedback"
+    );
+
 
   options.forEach(
-    option => option.disabled = true
+    option =>
+      option.disabled = true
   );
+
 
   if(selected === correct){
 
-    button.classList.add("correct");
+    button.classList.add(
+      "correct"
+    );
 
     feedback.textContent =
       "✓ إجابة صحيحة";
@@ -3535,19 +5486,27 @@ function answerQuestion(
 
   }else{
 
-    button.classList.add("wrong");
+    button.classList.add(
+      "wrong"
+    );
 
     options[correct]
-      .classList.add("correct");
+      .classList.add(
+        "correct"
+      );
 
     feedback.textContent =
       "✗ ليست الإجابة الصحيحة. حاول تذكر ما سمعته في المقطع.";
 
     feedback.style.color =
       "#B33A3A";
+
   }
 
-  feedback.classList.add("show");
+
+  feedback.classList.add(
+    "show"
+  );
 
 }
 
@@ -3559,43 +5518,104 @@ function answerQuestion(
 function updateNavigation(){
 
   const previous =
-    document.getElementById("previousBtn");
+    document.getElementById(
+      "previousBtn"
+    );
 
   const next =
-    document.getElementById("nextBtn");
+    document.getElementById(
+      "nextBtn"
+    );
+
+
+  let length;
+
+
+  if(currentMode === "regular"){
+
+    length =
+      lessons.length;
+
+  }else{
+
+    length =
+      longLessons.length;
+
+  }
+
 
   previous.disabled =
     currentLessonId === 1;
 
+
   next.disabled =
-    currentLessonId === lessons.length;
+    currentLessonId === length;
+
 
   previous.style.opacity =
     currentLessonId === 1
       ? ".45"
       : "1";
 
+
   next.style.opacity =
-    currentLessonId === lessons.length
+    currentLessonId === length
       ? ".45"
       : "1";
+
 }
 
 
 function previousLesson(){
 
-  if(currentLessonId <= 1) return;
+  if(currentLessonId <= 1){
+    return;
+  }
 
-  openLesson(currentLessonId - 1);
+
+  if(currentMode === "regular"){
+
+    openLesson(
+      currentLessonId - 1
+    );
+
+  }else{
+
+    openLongLesson(
+      currentLessonId - 1
+    );
+
+  }
 
 }
 
 
 function nextLesson(){
 
-  if(currentLessonId >= lessons.length) return;
+  const length =
+    currentMode === "regular"
+      ? lessons.length
+      : longLessons.length;
 
-  openLesson(currentLessonId + 1);
+
+  if(currentLessonId >= length){
+    return;
+  }
+
+
+  if(currentMode === "regular"){
+
+    openLesson(
+      currentLessonId + 1
+    );
+
+  }else{
+
+    openLongLesson(
+      currentLessonId + 1
+    );
+
+  }
 
 }
 
@@ -3605,10 +5625,15 @@ function nextLesson(){
 ========================================================= */
 
 const searchInput =
-  document.getElementById("searchInput");
+  document.getElementById(
+    "searchInput"
+  );
+
 
 const emptyState =
-  document.getElementById("emptyState");
+  document.getElementById(
+    "emptyState"
+  );
 
 
 searchInput.addEventListener(
@@ -3620,47 +5645,94 @@ searchInput.addEventListener(
         .toLowerCase()
         .trim();
 
+
     let visibleCount = 0;
 
-    const cards =
-      document.querySelectorAll(".lesson-card");
 
-    cards.forEach(card => {
+    if(currentMode === "regular"){
 
-      const text =
-        card.dataset.search;
-
-      const match =
-        !value ||
-        text.includes(value);
-
-      card.classList.toggle(
-        "hidden",
-        !match
-      );
-
-      if(match){
-        visibleCount++;
-      }
-
-    });
-
-
-    document
-      .querySelectorAll(".stage")
-      .forEach(stage => {
-
-        const visibleCards =
-          stage.querySelectorAll(
-            ".lesson-card:not(.hidden)"
-          );
-
-        stage.classList.toggle(
-          "hidden",
-          visibleCards.length === 0
+      const cards =
+        document.querySelectorAll(
+          "#listView .lesson-card"
         );
 
+
+      cards.forEach(card => {
+
+        const text =
+          card.dataset.search;
+
+
+        const match =
+          !value ||
+          text.includes(value);
+
+
+        card.classList.toggle(
+          "hidden",
+          !match
+        );
+
+
+        if(match){
+          visibleCount++;
+        }
+
       });
+
+
+      document
+        .querySelectorAll(
+          "#listView .stage"
+        )
+        .forEach(stage => {
+
+          const visibleCards =
+            stage.querySelectorAll(
+              ".lesson-card:not(.hidden)"
+            );
+
+
+          stage.classList.toggle(
+            "hidden",
+            visibleCards.length === 0
+          );
+
+        });
+
+
+    }else{
+
+      const cards =
+        document.querySelectorAll(
+          "#longCardsContainer .long-card"
+        );
+
+
+      cards.forEach(card => {
+
+        const text =
+          card.dataset.search;
+
+
+        const match =
+          !value ||
+          text.includes(value);
+
+
+        card.classList.toggle(
+          "hidden",
+          !match
+        );
+
+
+        if(match){
+          visibleCount++;
+        }
+
+      });
+
+    }
 
 
     emptyState.style.display =
@@ -3670,6 +5742,51 @@ searchInput.addEventListener(
 
   }
 );
+
+
+/* =========================================================
+   CLEAR SEARCH
+========================================================= */
+
+function clearSearch(){
+
+  const cards =
+    document.querySelectorAll(
+      ".lesson-card, .long-card"
+    );
+
+
+  cards.forEach(card => {
+
+    card.classList.remove(
+      "hidden"
+    );
+
+  });
+
+
+  document
+    .querySelectorAll(".stage")
+    .forEach(stage => {
+
+      stage.classList.remove(
+        "hidden"
+      );
+
+    });
+
+
+  emptyState.style.display =
+    "none";
+
+}
+
+
+/* =========================================================
+   DEFAULT
+========================================================= */
+
+switchMode("regular");
 
 </script>
 
