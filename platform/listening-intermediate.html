@@ -124,6 +124,11 @@ a{
   box-shadow:0 8px 24px rgba(36,48,94,.10);
 }
 
+.hidden{
+  display:none !important;
+}
+
+ 
 /* =========================================================
    HERO
    ========================================================= */
@@ -5557,6 +5562,11 @@ function openLongLesson(id){
 
   if(!lesson) return;
 
+
+document.querySelector(".top-area").classList.add("hidden");
+document.querySelector(".hero").classList.add("hidden");
+
+ 
   stopSpeaking();
 
   currentType="long";
@@ -5587,6 +5597,10 @@ function openStandardLesson(id){
 
   if(!lesson) return;
 
+
+document.querySelector(".top-area").classList.add("hidden");
+document.querySelector(".hero").classList.add("hidden");
+ 
   stopSpeaking();
 
   currentType="standard";
@@ -6072,6 +6086,10 @@ function backToLongList(){
 
   detailView.classList.remove("active");
 
+document.querySelector(".top-area").classList.remove("hidden");
+document.querySelector(".hero").classList.remove("hidden");
+
+ 
   detailView.innerHTML="";
 
   longListView.classList.add("active");
@@ -6092,6 +6110,10 @@ function backToStandardList(){
 
   detailView.classList.remove("active");
 
+document.querySelector(".top-area").classList.remove("hidden");
+document.querySelector(".hero").classList.remove("hidden");
+
+ 
   detailView.innerHTML="";
 
   standardListView.classList.add("active");
