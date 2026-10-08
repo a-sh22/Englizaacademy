@@ -1980,6 +1980,8 @@ button{
 
     text-align:center;
 
+    margin-top:20px;
+
     padding:
         25px 0 10px;
 
@@ -1989,6 +1991,13 @@ button{
 .recording-state.active{
 
     display:block;
+
+
+    /*
+       مهم:
+       هذه الحالة أصبحت تظهر أسفل الموضوع والأسئلة
+       بدل أن تستبدلها.
+    */
 
 }
 
@@ -2136,6 +2145,8 @@ button{
     display:none;
 
     text-align:center;
+
+    margin-top:20px;
 
     padding:
         15px 0 5px;
@@ -3758,7 +3769,7 @@ button{
         class="back-home"
     >
 
-        ←العودة للصفحةالرئيسية
+        ← الرئيسية
 
     </a>
 
@@ -3964,9 +3975,7 @@ button{
 
 
 
-    <!-- =====================================================
-         NEW FOURTH CARD
-    ====================================================== -->
+    <!-- FOURTH CARD -->
 
     <button
         class="practice-card"
@@ -4363,10 +4372,6 @@ button{
     id="selectedTopic"
 >
 
-
-    <!-- =================================================
-         NEW BACK TO TOPICS BUTTON
-    ================================================== -->
 
     <div class="speaking-back-row">
 
@@ -5394,7 +5399,13 @@ $("#openPlan")
 $("#openSpeaking")
     .addEventListener(
         "click",
-        () => openModal("speakingModal")
+        () => {
+
+            resetSpeakingUI();
+
+            openModal("speakingModal");
+
+        }
     );
 
 
@@ -6715,8 +6726,9 @@ function selectSpeakingTopic(id){
 }
 
 
+
 /* =========================================================
-   NEW — BACK TO TOPICS
+   BACK TO TOPICS
 ========================================================= */
 
 $("#backToTopics")
@@ -6724,15 +6736,7 @@ $("#backToTopics")
         "click",
         () => {
 
-            if(
-                mediaRecorder &&
-                mediaRecorder.state !==
-                "inactive"
-            ){
-
-                stopRecording();
-
-            }
+            cancelCurrentRecording();
 
 
             $("#recordingState")
@@ -6801,7 +6805,7 @@ $("#chooseAnotherTopicBtn")
         "click",
         () => {
 
-            stopSpeakingTimer();
+            cancelCurrentRecording();
 
 
             $("#recordingResult")
@@ -6857,6 +6861,12 @@ $("#tryAgainBtn")
                 );
 
 
+            $("#recordingState")
+                .classList.remove(
+                    "active"
+                );
+
+
             $("#resultAudio")
                 .removeAttribute(
                     "src"
@@ -6869,6 +6879,7 @@ $("#tryAgainBtn")
 
 /* =========================================================
    AUDIO RECORDING
+   UPDATED
 ========================================================= */
 
 let mediaRecorder =
@@ -6888,6 +6899,22 @@ let recordingSeconds =
 
 let recordingPaused =
     false;
+
+
+/*
+   رقم الجلسة يمنع أي onstop قديم من إعادة إظهار
+   شاشة النتيجة بعد إغلاق Speaking Challenge.
+*/
+let recordingSessionId =
+    0;
+
+
+/*
+   رابط التسجيل السابق حتى يتم تنظيفه.
+*/
+let resultAudioUrl =
+    null;
+
 
 
 function formatTime(
@@ -6921,6 +6948,7 @@ function formatTime(
 }
 
 
+
 function stopSpeakingTimer(){
 
     clearInterval(
@@ -6931,6 +6959,7 @@ function stopSpeakingTimer(){
         null;
 
 }
+
 
 
 function updateRecordingTimer(){
@@ -6944,6 +6973,288 @@ function updateRecordingTimer(){
 }
 
 
+
+/*
+   تنظيف الـ Stream.
+*/
+function cleanupRecordingStream(){
+
+    if(recordingStream){
+
+        recordingStream
+            .getTracks()
+            .forEach(
+                track => {
+
+                    try{
+
+                        track.stop();
+
+                    }
+
+                    catch(error){
+
+                        console.warn(
+                            "Track cleanup error:",
+                            error
+                        );
+
+                    }
+
+                }
+            );
+
+    }
+
+    recordingStream =
+        null;
+
+}
+
+
+
+/*
+   تنظيف رابط التسجيل القديم.
+*/
+function cleanupResultAudio(){
+
+    if(resultAudioUrl){
+
+        try{
+
+            URL.revokeObjectURL(
+                resultAudioUrl
+            );
+
+        }
+
+        catch(error){
+
+            console.warn(
+                "Audio URL cleanup error:",
+                error
+            );
+
+        }
+
+    }
+
+    resultAudioUrl =
+        null;
+
+
+    const audio =
+        $("#resultAudio");
+
+    if(audio){
+
+        audio.pause();
+
+        audio.removeAttribute(
+            "src"
+        );
+
+        audio.load();
+
+    }
+
+}
+
+
+
+/*
+   إعادة Speaking Challenge إلى حالته النظيفة.
+
+   هذه الدالة تستخدم عند:
+   - فتح Speaking Challenge من جديد
+   - إغلاقه أثناء التسجيل
+*/
+function resetSpeakingUI(){
+
+    /*
+       إبطال أي جلسة تسجيل قديمة.
+    */
+    recordingSessionId++;
+
+
+    stopSpeakingTimer();
+
+
+    /*
+       إذا كان هناك Recorder يعمل،
+       نوقفه لكن لا نسمح له بإظهار النتيجة.
+    */
+    if(
+        mediaRecorder &&
+        mediaRecorder.state !== "inactive"
+    ){
+
+        try{
+
+            mediaRecorder.stop();
+
+        }
+
+        catch(error){
+
+            console.warn(
+                "Recorder stop error:",
+                error
+            );
+
+        }
+
+    }
+
+
+    cleanupRecordingStream();
+
+
+    mediaRecorder =
+        null;
+
+
+    audioChunks =
+        [];
+
+
+    recordingSeconds =
+        0;
+
+
+    recordingPaused =
+        false;
+
+
+    updateRecordingTimer();
+
+
+    cleanupResultAudio();
+
+
+    $("#recordingState")
+        .classList.remove(
+            "active"
+        );
+
+
+    $("#recordingResult")
+        .classList.remove(
+            "active"
+        );
+
+
+    $("#selectedTopic")
+        .classList.remove(
+            "active"
+        );
+
+
+    $("#topicLibrary")
+        .classList.remove(
+            "hidden"
+        );
+
+
+    $$(".topic-card").forEach(
+        card => {
+
+            card.classList.remove(
+                "selected"
+            );
+
+        }
+    );
+
+
+    selectedSpeakingTopic =
+        null;
+
+
+    $("#pauseRecordingBtn")
+        .textContent =
+        "⏸ إيقاف مؤقت";
+
+}
+
+
+
+/*
+   إلغاء جلسة التسجيل الحالية.
+
+   الفرق بينها وبين stopRecording:
+   stopRecording = المستخدم يريد إنهاء التسجيل والحصول على النتيجة.
+
+   cancelCurrentRecording = المستخدم خرج من القسم،
+   لذلك لا نريد ظهور النتيجة لاحقًا.
+*/
+function cancelCurrentRecording(){
+
+    recordingSessionId++;
+
+
+    stopSpeakingTimer();
+
+
+    if(
+        mediaRecorder &&
+        mediaRecorder.state !== "inactive"
+    ){
+
+        try{
+
+            mediaRecorder.stop();
+
+        }
+
+        catch(error){
+
+            console.warn(
+                "Recorder cancel error:",
+                error
+            );
+
+        }
+
+    }
+
+
+    cleanupRecordingStream();
+
+
+    mediaRecorder =
+        null;
+
+
+    audioChunks =
+        [];
+
+
+    recordingSeconds =
+        0;
+
+
+    recordingPaused =
+        false;
+
+
+    $("#recordingState")
+        .classList.remove(
+            "active"
+        );
+
+
+    $("#pauseRecordingBtn")
+        .textContent =
+        "⏸ إيقاف مؤقت";
+
+}
+
+
+
+/*
+   بدء التسجيل.
+*/
 async function startRecording(){
 
     if(!selectedSpeakingTopic){
@@ -6971,9 +7282,49 @@ async function startRecording(){
     }
 
 
+    if(
+        typeof MediaRecorder ===
+        "undefined"
+    ){
+
+        showToast(
+            "تسجيل الصوت غير مدعوم في هذا المتصفح."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       تنظيف أي جلسة قديمة قبل البدء.
+    */
+    stopSpeakingTimer();
+
+    cleanupRecordingStream();
+
+    cleanupResultAudio();
+
+
+    audioChunks =
+        [];
+
+
+    recordingSeconds =
+        0;
+
+
+    recordingPaused =
+        false;
+
+
+    const currentSession =
+        ++recordingSessionId;
+
+
     try{
 
-        recordingStream =
+        const stream =
             await navigator
                 .mediaDevices
                 .getUserMedia({
@@ -6981,8 +7332,29 @@ async function startRecording(){
                 });
 
 
-        audioChunks =
-            [];
+        /*
+           إذا انتهت الجلسة أثناء انتظار إذن الميكروفون،
+           لا نكمل التسجيل.
+        */
+        if(
+            currentSession !==
+            recordingSessionId
+        ){
+
+            stream
+                .getTracks()
+                .forEach(
+                    track =>
+                        track.stop()
+                );
+
+            return;
+
+        }
+
+
+        recordingStream =
+            stream;
 
 
         const mimeTypes = [
@@ -6998,39 +7370,32 @@ async function startRecording(){
             "";
 
 
-        if(
-            typeof MediaRecorder !==
-            "undefined"
+        for(
+            const type of mimeTypes
         ){
 
-            for(
-                const type of mimeTypes
+            if(
+                MediaRecorder
+                    .isTypeSupported(type)
             ){
 
-                if(
-                    MediaRecorder
-                        .isTypeSupported(type)
-                ){
+                selectedMime =
+                    type;
 
-                    selectedMime =
-                        type;
-
-                    break;
-
-                }
+                break;
 
             }
 
         }
 
 
-        mediaRecorder =
+        const recorder =
             selectedMime
 
             ?
 
             new MediaRecorder(
-                recordingStream,
+                stream,
                 {
                     mimeType:
                         selectedMime
@@ -7040,11 +7405,15 @@ async function startRecording(){
             :
 
             new MediaRecorder(
-                recordingStream
+                stream
             );
 
 
-        mediaRecorder.ondataavailable =
+        mediaRecorder =
+            recorder;
+
+
+        recorder.ondataavailable =
             event => {
 
                 if(
@@ -7061,24 +7430,48 @@ async function startRecording(){
             };
 
 
-        mediaRecorder.onstop =
-            finishRecording;
+        recorder.onstop =
+            () => {
+
+                finishRecording(
+                    currentSession,
+                    recorder,
+                    stream
+                );
+
+            };
 
 
-        mediaRecorder.start();
+        recorder.onerror =
+            event => {
+
+                console.error(
+                    "MediaRecorder error:",
+                    event
+                );
+
+                showToast(
+                    "حدث خطأ أثناء تسجيل الصوت."
+                );
+
+            };
 
 
-        recordingSeconds =
-            0;
+        recorder.start();
 
-        recordingPaused =
-            false;
 
         updateRecordingTimer();
 
 
+        /*
+           التغيير المهم:
+           لا نخفي selectedTopic هنا.
+
+           الأسئلة تبقى ظاهرة،
+           والتسجيل يظهر أسفلها.
+        */
         $("#selectedTopic")
-            .classList.remove(
+            .classList.add(
                 "active"
             );
 
@@ -7110,6 +7503,16 @@ async function startRecording(){
         recordingInterval =
             setInterval(
                 () => {
+
+                    if(
+                        currentSession !==
+                        recordingSessionId
+                    ){
+
+                        return;
+
+                    }
+
 
                     if(
                         recordingPaused
@@ -7147,15 +7550,70 @@ async function startRecording(){
             error
         );
 
-        showToast(
-            "لم نتمكن من الوصول إلى الميكروفون. اسمحي للمتصفح باستخدام الميكروفون ثم حاولي مرة أخرى."
-        );
+
+        cleanupRecordingStream();
+
+
+        mediaRecorder =
+            null;
+
+
+        audioChunks =
+            [];
+
+
+        stopSpeakingTimer();
+
+
+        /*
+           صيغة عامة للطالب والطالبة.
+        */
+        if(
+            error &&
+            (
+                error.name ===
+                "NotAllowedError" ||
+
+                error.name ===
+                "PermissionDeniedError"
+            )
+        ){
+
+            showToast(
+                "تعذّر الوصول إلى الميكروفون. تحقّق من صلاحية الميكروفون في إعدادات الجهاز أو المتصفح، ثم حاول مرة أخرى."
+            );
+
+        }
+
+        else if(
+            error &&
+            error.name ===
+            "NotFoundError"
+        ){
+
+            showToast(
+                "لم يتم العثور على ميكروفون متاح. تحقّق من إعدادات الجهاز ثم حاول مرة أخرى."
+            );
+
+        }
+
+        else{
+
+            showToast(
+                "تعذّر تشغيل تسجيل الصوت. تحقّق من إعدادات الميكروفون ثم حاول مرة أخرى."
+            );
+
+        }
 
     }
 
 }
 
 
+
+/*
+   إيقاف مؤقت / متابعة.
+*/
 function pauseRecording(){
 
     if(!mediaRecorder) return;
@@ -7199,6 +7657,13 @@ function pauseRecording(){
 }
 
 
+
+/*
+   إنهاء التسجيل يدويًا.
+
+   حتى لو كان التسجيل 8 ثوانٍ فقط،
+   سيتم إنهاؤه طبيعيًا وإنشاء النتيجة.
+*/
 function stopRecording(){
 
     stopSpeakingTimer();
@@ -7206,43 +7671,182 @@ function stopRecording(){
 
     if(
         mediaRecorder &&
-        mediaRecorder.state !==
-        "inactive"
+        (
+            mediaRecorder.state ===
+            "recording" ||
+
+            mediaRecorder.state ===
+            "paused"
+        )
     ){
 
-        mediaRecorder.stop();
+        try{
+
+            mediaRecorder.stop();
+
+        }
+
+        catch(error){
+
+            console.error(
+                "Stop recording error:",
+                error
+            );
+
+            cleanupRecordingStream();
+
+            mediaRecorder =
+                null;
+
+        }
 
     }
 
 }
 
 
-function finishRecording(){
 
-    if(recordingStream){
+/*
+   إنهاء التسجيل وإنشاء الـ Blob.
 
-        recordingStream
+   هذه الدالة مرتبطة بجلسة التسجيل نفسها،
+   لذلك أي onstop قديم لن يستطيع إعادة الواجهة
+   بعد إغلاق Speaking Challenge.
+*/
+function finishRecording(
+    sessionId,
+    recorder,
+    stream
+){
+
+    /*
+       إذا كانت هذه جلسة قديمة أو تم إلغاؤها،
+       ننظف فقط ولا نظهر النتيجة.
+    */
+    if(
+        sessionId !==
+        recordingSessionId
+    ){
+
+        if(stream){
+
+            stream
+                .getTracks()
+                .forEach(
+                    track => {
+
+                        try{
+
+                            track.stop();
+
+                        }
+
+                        catch(error){}
+
+                    }
+                );
+
+        }
+
+        return;
+
+    }
+
+
+    stopSpeakingTimer();
+
+
+    if(stream){
+
+        stream
             .getTracks()
             .forEach(
-                track =>
-                    track.stop()
+                track => {
+
+                    try{
+
+                        track.stop();
+
+                    }
+
+                    catch(error){}
+
+                }
             );
 
     }
 
 
+    if(
+        recordingStream ===
+        stream
+    ){
+
+        recordingStream =
+            null;
+
+    }
+
+
+    const chunks =
+        audioChunks.slice();
+
+
+    audioChunks =
+        [];
+
+
+    /*
+       نأخذ mimeType من الـ recorder نفسه
+       قبل التخلص منه.
+    */
+    const mimeType =
+        recorder &&
+        recorder.mimeType
+            ? recorder.mimeType
+            : "audio/webm";
+
+
     const blob =
         new Blob(
-            audioChunks,
+            chunks,
             {
-                type:
-                    mediaRecorder?.mimeType ||
-                    "audio/webm"
+                type:mimeType
             }
         );
 
 
-    const url =
+    /*
+       لو لم يتم تسجيل أي بيانات فعلية،
+       لا نعرض تسجيلًا فارغًا.
+    */
+    if(
+        !blob ||
+        blob.size === 0
+    ){
+
+        mediaRecorder =
+            null;
+
+        $("#recordingState")
+            .classList.remove(
+                "active"
+            );
+
+
+        showToast(
+            "لم يتم التقاط صوت. تحقّق من الميكروفون ثم حاول مرة أخرى."
+        );
+
+        return;
+
+    }
+
+
+    cleanupResultAudio();
+
+
+    resultAudioUrl =
         URL.createObjectURL(
             blob
         );
@@ -7250,7 +7854,7 @@ function finishRecording(){
 
     $("#resultAudio")
         .src =
-        url;
+        resultAudioUrl;
 
 
     $("#recordingState")
@@ -7259,6 +7863,10 @@ function finishRecording(){
         );
 
 
+    /*
+       تبقى الأسئلة والموضوع ظاهرين،
+       والنتيجة تظهر أسفلها.
+    */
     $("#recordingResult")
         .classList.add(
             "active"
@@ -7268,7 +7876,17 @@ function finishRecording(){
     mediaRecorder =
         null;
 
+
+    recordingPaused =
+        false;
+
+
+    $("#pauseRecordingBtn")
+        .textContent =
+        "⏸ إيقاف مؤقت";
+
 }
+
 
 
 $("#startSpeakingBtn")
@@ -7366,10 +7984,6 @@ const lifeCategories = [
 
 
 const situations = [
-
-/* =========================================================
-   AIRPORT
-========================================================= */
 
 {
     id:"airport-checkin",
@@ -7482,10 +8096,6 @@ const situations = [
 },
 
 
-/* =========================================================
-   HOTEL
-========================================================= */
-
 {
     id:"hotel-checkin",
     category:"hotel",
@@ -7593,10 +8203,6 @@ const situations = [
 },
 
 
-/* =========================================================
-   DOCTOR
-========================================================= */
-
 {
     id:"doctor-appointment",
     category:"doctor",
@@ -7694,10 +8300,6 @@ const situations = [
 },
 
 
-/* =========================================================
-   CAFE
-========================================================= */
-
 {
     id:"cafe-order",
     category:"cafe",
@@ -7786,10 +8388,6 @@ const situations = [
 },
 
 
-/* =========================================================
-   RESTAURANT
-========================================================= */
-
 {
     id:"restaurant-table",
     category:"restaurant",
@@ -7876,10 +8474,6 @@ const situations = [
     ]
 },
 
-
-/* =========================================================
-   PHONE
-========================================================= */
 
 {
     id:"phone-friend",
@@ -7969,10 +8563,6 @@ const situations = [
 },
 
 
-/* =========================================================
-   SHOPPING
-========================================================= */
-
 {
     id:"shopping-size",
     category:"shopping",
@@ -8061,10 +8651,6 @@ const situations = [
 },
 
 
-/* =========================================================
-   TRANSPORT
-========================================================= */
-
 {
     id:"transport-taxi",
     category:"transport",
@@ -8133,10 +8719,6 @@ const situations = [
     ]
 },
 
-
-/* =========================================================
-   BANK
-========================================================= */
 
 {
     id:"bank-opening",
@@ -8208,10 +8790,6 @@ const situations = [
     ]
 },
 
-
-/* =========================================================
-   WORK
-========================================================= */
 
 {
     id:"work-interview",
@@ -8752,6 +9330,7 @@ renderScenarios();
 
 /* =========================================================
    RESET SPEAKING WHEN MODAL CLOSES
+   UPDATED
 ========================================================= */
 
 const speakingCloseButton =
@@ -8766,32 +9345,73 @@ if(speakingCloseButton){
         "click",
         () => {
 
-            if(
-                mediaRecorder &&
-                mediaRecorder.state !==
-                "inactive"
-            ){
-
-                stopRecording();
-
-            }
-
-
-            $("#recordingState")
-                .classList.remove(
-                    "active"
-                );
-
-
-            $("#recordingResult")
-                .classList.remove(
-                    "active"
-                );
+            /*
+               عند الإغلاق لا نريد نتيجة التسجيل
+               أن تظهر بعد إغلاق النافذة.
+            */
+            resetSpeakingUI();
 
         }
     );
 
 }
+
+
+/*
+   إذا أغلق المستخدم الـ modal بالضغط على الخلفية
+   أو زر Escape، يتم تنظيف Speaking أيضًا.
+*/
+const speakingModal =
+    $("#speakingModal");
+
+
+if(speakingModal){
+
+    speakingModal.addEventListener(
+        "click",
+        event => {
+
+            if(
+                event.target ===
+                speakingModal
+            ){
+
+                resetSpeakingUI();
+
+            }
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key !== "Escape"
+        ){
+
+            return;
+
+        }
+
+
+        if(
+            speakingModal &&
+            speakingModal.classList.contains(
+                "active"
+            )
+        ){
+
+            resetSpeakingUI();
+
+        }
+
+    }
+);
 
 </script>
 
