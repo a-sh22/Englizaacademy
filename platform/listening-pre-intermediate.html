@@ -5157,6 +5157,8 @@ function openBasicLesson(id){
 
   if(!lesson) return;
 
+document.querySelector(".hero").classList.add("hidden");
+  
   currentLessonType = "basic";
   currentLessonId = id;
 
@@ -5214,6 +5216,8 @@ function openLongLesson(id){
 
   if(!lesson) return;
 
+document.querySelector(".hero").classList.add("hidden");
+  
   currentLessonType = "long";
   currentLessonId = id;
 
@@ -5683,6 +5687,8 @@ function closeLesson(){
 
   lessonView.classList.remove("active");
 
+document.querySelector(".hero").classList.remove("hidden");
+  
   if(currentLessonType === "basic"){
 
     basicSection.classList.add("active");
