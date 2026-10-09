@@ -2,17 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
-
-  <meta
-    name="theme-color"
-    content="#1f3c88"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f3c88">
   <title>Engliza Academy | English Space</title>
 
   <style>
@@ -38,79 +29,33 @@
       --radius:24px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box}
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{scroll-behavior:smooth}
 
     body{
       margin:0;
       min-height:100vh;
       color:var(--ink);
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,
+        BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
       background:
-        radial-gradient(
-          circle at 8% 0%,
-          rgba(111,67,255,.10),
-          transparent 27rem
-        ),
-        radial-gradient(
-          circle at 95% 5%,
-          rgba(31,60,136,.10),
-          transparent 26rem
-        ),
-        linear-gradient(
-          180deg,
-          #f8fbff 0%,
-          #fff 34%,
-          #fafaff 100%
-        );
+        radial-gradient(circle at 8% 0%,rgba(111,67,255,.10),transparent 27rem),
+        radial-gradient(circle at 95% 5%,rgba(31,60,136,.10),transparent 26rem),
+        linear-gradient(180deg,#f8fbff 0%,#fff 34%,#fafaff 100%);
     }
 
-    button,
-    input,
-    textarea{
-      font:inherit;
-    }
-
-    button{
-      cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
-    }
-
-    button:disabled{
-      cursor:not-allowed;
-      opacity:.52;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    .hidden{
-      display:none !important;
-    }
+    button,input,textarea{font:inherit}
+    button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+    button:disabled{cursor:not-allowed;opacity:.52}
+    a{color:inherit;text-decoration:none}
+    .hidden{display:none!important}
 
     .app{
       width:min(100%,1120px);
       margin:auto;
       padding:18px 16px 80px;
     }
-
-    /* TOP BAR */
 
     .topbar{
       position:sticky;
@@ -133,1248 +78,327 @@
       gap:12px;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-    }
-
-    .brand img{
-      width:46px;
-      height:46px;
-      object-fit:contain;
-      flex:none;
-    }
-
-    .brand-copy{
-      min-width:0;
-    }
-
-    .brand-name{
-      font-size:16px;
-      font-weight:900;
-      letter-spacing:.7px;
-      color:var(--navy);
-      line-height:1.1;
-    }
-
-    .brand-sub{
-      margin-top:3px;
-      color:var(--muted);
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:.5px;
-    }
-
-    .top-actions{
-      display:flex;
-      gap:8px;
-    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .brand img{width:46px;height:46px;object-fit:contain;flex:none}
+    .brand-copy{min-width:0}
+    .brand-name{font-size:16px;font-weight:900;letter-spacing:.7px;color:var(--navy);line-height:1.1}
+    .brand-sub{margin-top:3px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.5px}
+    .top-actions{display:flex;gap:8px}
 
     .icon-btn{
-      width:42px;
-      height:42px;
+      width:42px;height:42px;
       border:1px solid var(--line);
       border-radius:15px;
-      background:#fff;
-      color:var(--navy);
+      background:#fff;color:var(--navy);
       box-shadow:0 5px 18px rgba(31,60,136,.06);
-      display:grid;
-      place-items:center;
-      font-size:19px;
+      display:grid;place-items:center;font-size:19px;
     }
 
-    /* HERO */
-
     .hero{
-      position:relative;
-      overflow:hidden;
-      padding:26px;
-      border-radius:30px;
+      position:relative;overflow:hidden;padding:26px;border-radius:30px;
       color:#fff;
       background:
-        radial-gradient(
-          circle at 86% 20%,
-          rgba(255,216,107,.28),
-          transparent 9rem
-        ),
-        radial-gradient(
-          circle at 12% 110%,
-          rgba(138,104,255,.30),
-          transparent 13rem
-        ),
-        linear-gradient(
-          135deg,
-          var(--navy),
-          #3454ad 48%,
-          var(--purple)
-        );
+        radial-gradient(circle at 86% 20%,rgba(255,216,107,.28),transparent 9rem),
+        radial-gradient(circle at 12% 110%,rgba(138,104,255,.30),transparent 13rem),
+        linear-gradient(135deg,var(--navy),#3454ad 48%,var(--purple));
       box-shadow:var(--shadow);
     }
 
     .hero::after{
-      content:"";
-      position:absolute;
-      width:190px;
-      height:190px;
-      right:-70px;
-      bottom:-90px;
-      border:2px solid rgba(255,255,255,.13);
+      content:"";position:absolute;width:190px;height:190px;
+      right:-70px;bottom:-90px;border:2px solid rgba(255,255,255,.13);
       border-radius:50%;
-      box-shadow:
-        0 0 0 20px rgba(255,255,255,.04),
-        0 0 0 42px rgba(255,255,255,.025);
+      box-shadow:0 0 0 20px rgba(255,255,255,.04),0 0 0 42px rgba(255,255,255,.025);
     }
 
-    .profile{
-      position:relative;
-      z-index:1;
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
+    .profile{position:relative;z-index:1;display:flex;align-items:center;gap:14px}
     .avatar-wrap{
-      width:72px;
-      height:72px;
-      flex:none;
-      padding:4px;
-      border-radius:24px;
-      background:rgba(255,255,255,.20);
-      border:1px solid rgba(255,255,255,.25);
+      width:72px;height:72px;flex:none;padding:4px;border-radius:24px;
+      background:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.25);
     }
-
-    .avatar{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:20px;
-      background:#fff;
-    }
-
-    .profile-copy{
-      min-width:0;
-    }
-
-    .welcome-small{
-      font-size:12px;
-      opacity:.78;
-      font-weight:700;
-      margin-bottom:3px;
-    }
-
+    .avatar{width:100%;height:100%;object-fit:cover;border-radius:20px;background:#fff}
+    .profile-copy{min-width:0}
+    .welcome-small{font-size:12px;opacity:.78;font-weight:700;margin-bottom:3px}
     .student-name{
-      font-size:22px;
-      font-weight:900;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-width:min(65vw,500px);
+      font-size:22px;font-weight:900;white-space:nowrap;overflow:hidden;
+      text-overflow:ellipsis;max-width:min(65vw,500px);
     }
+    .hero-copy{position:relative;z-index:1;margin-top:24px;max-width:720px}
+    .hero-title{margin:0;font-size:clamp(25px,5vw,38px);line-height:1.12;font-weight:950;letter-spacing:-.7px}
+    .hero-text{margin:10px 0 0;color:rgba(255,255,255,.82);line-height:1.65;font-size:14px;max-width:650px}
 
-    .hero-copy{
-      position:relative;
-      z-index:1;
-      margin-top:24px;
-      max-width:720px;
-    }
-
-    .hero-title{
-      margin:0;
-      font-size:clamp(25px,5vw,38px);
-      line-height:1.12;
-      font-weight:950;
-      letter-spacing:-.7px;
-    }
-
-    .hero-text{
-      margin:10px 0 0;
-      color:rgba(255,255,255,.82);
-      line-height:1.65;
-      font-size:14px;
-      max-width:650px;
-    }
-
-    /* NAV */
-
-    .space-nav{
-      display:flex;
-      gap:8px;
-      overflow:auto;
-      padding:14px 1px 4px;
-      scrollbar-width:none;
-    }
-
-    .space-nav::-webkit-scrollbar{
-      display:none;
-    }
-
+    .space-nav{display:flex;gap:8px;overflow:auto;padding:14px 1px 4px;scrollbar-width:none}
+    .space-nav::-webkit-scrollbar{display:none}
     .nav-chip{
-      flex:none;
-      border:1px solid var(--line);
-      background:#fff;
-      color:var(--muted);
-      padding:9px 13px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:800;
+      flex:none;border:1px solid var(--line);background:#fff;color:var(--muted);
+      padding:9px 13px;border-radius:999px;font-size:12px;font-weight:800;
     }
-
-    .nav-chip.active{
-      color:var(--navy);
-      background:var(--blue-soft);
-      border-color:#d8e5ff;
-    }
-
-    /* HEADINGS */
+    .nav-chip.active{color:var(--navy);background:var(--blue-soft);border-color:#d8e5ff}
 
     .section-heading{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      gap:12px;
+      display:flex;justify-content:space-between;align-items:end;gap:12px;
       margin:22px 2px 11px;
     }
-
-    .section-heading h2{
-      margin:0;
-      font-size:19px;
-      font-weight:950;
-      color:var(--navy);
-    }
-
-    .section-heading p{
-      margin:3px 0 0;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.4;
-    }
-
-    /* COMPOSER */
+    .section-heading h2{margin:0;font-size:19px;font-weight:950;color:var(--navy)}
+    .section-heading p{margin:3px 0 0;color:var(--muted);font-size:12px;line-height:1.4}
 
     .composer{
-      background:#fff;
-      border:1px solid rgba(222,227,240,.9);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-sm);
-      overflow:hidden;
+      background:#fff;border:1px solid rgba(222,227,240,.9);
+      border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;
     }
-
-    .composer-body{
-      padding:17px;
-    }
-
+    .composer-body{padding:17px}
     textarea{
-      width:100%;
-      min-height:125px;
-      resize:vertical;
-      border:1px solid #e1e6f0;
-      border-radius:18px;
-      padding:15px;
-      outline:none;
-      color:var(--ink);
-      background:#fbfcff;
-      line-height:1.7;
-      transition:.18s ease;
+      width:100%;min-height:125px;resize:vertical;border:1px solid #e1e6f0;
+      border-radius:18px;padding:15px;outline:none;color:var(--ink);
+      background:#fbfcff;line-height:1.7;transition:.18s ease;
     }
+    textarea:focus{border-color:#a997ff;box-shadow:0 0 0 4px rgba(111,67,255,.09);background:#fff}
+    textarea::placeholder{color:#9aa2b5}
 
-    textarea:focus{
-      border-color:#a997ff;
-      box-shadow:0 0 0 4px rgba(111,67,255,.09);
-      background:#fff;
-    }
-
-    textarea::placeholder{
-      color:#9aa2b5;
-    }
-
-    .composer-meta{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:center;
-      margin-top:9px;
-      min-height:20px;
-    }
-
-    .validation{
-      color:var(--danger);
-      font-size:11px;
-      font-weight:800;
-    }
-
-    .validation.ok{
-      color:var(--success);
-    }
-
-    .counter{
-      color:var(--muted);
-      font-size:11px;
-      font-weight:800;
-      white-space:nowrap;
-    }
-
-    .composer-actions{
-      display:flex;
-      justify-content:flex-end;
-      margin-top:14px;
-    }
+    .composer-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:9px;min-height:20px}
+    .validation{color:var(--danger);font-size:11px;font-weight:800}
+    .validation.ok{color:var(--success)}
+    .counter{color:var(--muted);font-size:11px;font-weight:800;white-space:nowrap}
+    .composer-actions{display:flex;justify-content:flex-end;margin-top:14px}
 
     .primary-btn{
-      border:0;
-      border-radius:15px;
-      padding:11px 18px;
-      color:#fff;
+      border:0;border-radius:15px;padding:11px 18px;color:#fff;
       background:linear-gradient(135deg,var(--navy),var(--purple));
-      box-shadow:0 9px 22px rgba(70,65,190,.20);
-      font-weight:900;
-      font-size:13px;
+      box-shadow:0 9px 22px rgba(70,65,190,.20);font-weight:900;font-size:13px;
     }
+    .secondary-btn{border:1px solid #dce2ef;border-radius:13px;padding:10px 14px;background:#fff;color:var(--navy);font-weight:900;font-size:12px}
+    .danger-btn{border-color:#f2caca;color:#bd4242;background:#fff7f7}
 
-    .secondary-btn{
-      border:1px solid #dce2ef;
-      border-radius:13px;
-      padding:10px 14px;
-      background:#fff;
-      color:var(--navy);
-      font-weight:900;
-      font-size:12px;
-    }
-
-    .danger-btn{
-      border-color:#f2caca;
-      color:#bd4242;
-      background:#fff7f7;
-    }
-
-    /* FEED */
-
-    .feed-status{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:50px;
-      color:var(--muted);
-      font-size:13px;
-      text-align:center;
-    }
-
-    .feed{
-      display:grid;
-      gap:13px;
-    }
-
+    .feed-status{display:flex;align-items:center;justify-content:center;min-height:50px;color:var(--muted);font-size:13px;text-align:center}
+    .feed{display:grid;gap:13px}
     .post{
-      position:relative;
-      background:#fff;
-      border:1px solid rgba(222,227,240,.9);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-sm);
-      overflow:visible;
+      position:relative;background:#fff;border:1px solid rgba(222,227,240,.9);
+      border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:visible;
     }
+    .post-head{display:flex;align-items:center;gap:11px;padding:16px 16px 10px}
 
-    .post-head{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      padding:16px 16px 10px;
+    .post-avatar,.comment-avatar{
+      display:grid;place-items:center;flex:none;overflow:hidden;color:#fff;
+      font-weight:950;text-transform:uppercase;user-select:none;-webkit-user-select:none;
     }
-
-    /* LETTER AVATAR */
-
-    .post-avatar,
-    .comment-avatar{
-      display:grid;
-      place-items:center;
-      flex:none;
-      overflow:hidden;
-      color:#fff;
-      font-weight:950;
-      text-transform:uppercase;
-      user-select:none;
-      -webkit-user-select:none;
-    }
-
-    .post-avatar{
-      width:43px;
-      height:43px;
-      border-radius:15px;
-      border:1px solid rgba(255,255,255,.35);
-      box-shadow:0 5px 14px rgba(31,60,136,.10);
-      font-size:16px;
-    }
-
-    .post-author{
-      min-width:0;
-      flex:1;
-    }
-
-    .post-name-line{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:6px;
-    }
-
-    .post-name{
-      font-size:13px;
-      font-weight:950;
-      color:var(--ink);
-    }
-
-    .post-time{
-      margin-top:3px;
-      color:var(--muted);
-      font-size:10px;
-    }
-
-    .post-tools{
-      display:flex;
-      align-items:center;
-      gap:5px;
-      flex:none;
-    }
-
-    .post-type{
-      font-size:17px;
-      opacity:.85;
-    }
-
-    .more-btn{
-      width:38px;
-      height:38px;
-      border:0;
-      border-radius:13px;
-      background:#f6f7fb;
-      color:var(--muted);
-      font-size:20px;
-      line-height:1;
-    }
+    .post-avatar{width:43px;height:43px;border-radius:15px;border:1px solid rgba(255,255,255,.35);box-shadow:0 5px 14px rgba(31,60,136,.10);font-size:16px}
+    .post-author{min-width:0;flex:1}
+    .post-name-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+    .post-name{font-size:13px;font-weight:950;color:var(--ink)}
+    .post-time{margin-top:3px;color:var(--muted);font-size:10px}
+    .post-tools{display:flex;align-items:center;gap:5px;flex:none}
+    .post-type{font-size:17px;opacity:.85}
+    .more-btn{width:38px;height:38px;border:0;border-radius:13px;background:#f6f7fb;color:var(--muted);font-size:20px;line-height:1}
 
     .post-menu{
-      position:absolute;
-      top:62px;
-      right:12px;
-      z-index:30;
-      min-width:150px;
-      padding:6px;
-      border:1px solid var(--line);
-      border-radius:15px;
-      background:#fff;
+      position:absolute;top:62px;right:12px;z-index:30;min-width:150px;padding:6px;
+      border:1px solid var(--line);border-radius:15px;background:#fff;
       box-shadow:0 15px 40px rgba(23,33,61,.16);
     }
-
-    .post-menu button{
-      width:100%;
-      border:0;
-      background:#fff;
-      padding:10px 11px;
-      border-radius:10px;
-      text-align:left;
-      color:#b83d3d;
-      font-weight:850;
-      font-size:12px;
-    }
-
-    .post-menu button:hover{
-      background:#fff4f4;
-    }
-
-    .post-body{
-      padding:4px 16px 14px;
-    }
-
-    .post-text{
-      margin:0;
-      white-space:pre-wrap;
-      overflow-wrap:anywhere;
-      line-height:1.78;
-      font-size:14px;
-      color:#27324e;
-    }
-
-    .post-footer{
-      display:flex;
-      align-items:center;
-      gap:7px;
-      padding:9px 12px 12px;
-      border-top:1px solid #f0f2f7;
-    }
-
-    .reaction-btn,
-    .comment-toggle{
-      border:1px solid transparent;
-      background:#f7f8fb;
-      border-radius:12px;
-      min-height:36px;
-      padding:7px 10px;
-      color:var(--muted);
-      font-weight:800;
-      font-size:12px;
-    }
-
-    .reaction-btn.active{
-      color:#8e3f88;
-      background:#fff3fb;
-      border-color:#f5d7ea;
-    }
-
-    .comment-toggle{
-      margin-left:auto;
-      color:var(--navy);
-    }
-
-    /* REACTIONS */
+    .post-menu button{width:100%;border:0;background:#fff;padding:10px 11px;border-radius:10px;text-align:left;color:#b83d3d;font-weight:850;font-size:12px}
+    .post-menu button:hover{background:#fff4f4}
+    .post-body{padding:4px 16px 14px}
+    .post-text{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.78;font-size:14px;color:#27324e}
+    .post-footer{display:flex;align-items:center;gap:7px;padding:9px 12px 12px;border-top:1px solid #f0f2f7}
+    .reaction-btn,.comment-toggle{border:1px solid transparent;background:#f7f8fb;border-radius:12px;min-height:36px;padding:7px 10px;color:var(--muted);font-weight:800;font-size:12px}
+    .reaction-btn.active{color:#8e3f88;background:#fff3fb;border-color:#f5d7ea}
+    .comment-toggle{margin-left:auto;color:var(--navy)}
 
     .reaction-picker{
-      display:none;
-      position:absolute;
-      left:12px;
-      bottom:52px;
-      z-index:20;
-      padding:8px;
-      gap:3px;
-      grid-template-columns:repeat(9,1fr);
-      width:min(94%,370px);
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:17px;
-      box-shadow:0 16px 40px rgba(23,33,61,.16);
+      display:none;position:absolute;left:12px;bottom:52px;z-index:20;padding:8px;gap:3px;
+      grid-template-columns:repeat(9,1fr);width:min(94%,370px);background:#fff;
+      border:1px solid var(--line);border-radius:17px;box-shadow:0 16px 40px rgba(23,33,61,.16);
     }
+    .reaction-picker.open{display:grid}
+    .emoji-btn{border:0;background:#fff;border-radius:10px;min-width:31px;min-height:34px;font-size:18px}
+    .emoji-btn:hover{background:#f5f6fb}
+    .reactions-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+    .reaction-count{border:1px solid #edf0f5;background:#fbfcff;border-radius:999px;padding:4px 7px;font-size:11px;color:var(--muted)}
 
-    .reaction-picker.open{
-      display:grid;
-    }
+    .comments{display:none;padding:0 12px 14px;border-top:1px solid #f0f2f7}
+    .comments.open{display:block}
+    .comment-compose{display:flex;gap:8px;align-items:flex-end;padding:12px 2px}
+    .comment-input{min-height:43px;height:43px;resize:none;padding:10px 12px;border-radius:14px;font-size:12px;flex:1}
+    .send-comment{width:43px;height:43px;padding:0;border:0;border-radius:14px;color:#fff;background:var(--navy);font-size:16px}
+    .comment-list{display:grid;gap:8px}
+    .comment{position:relative;display:flex;gap:8px;align-items:flex-start}
+    .comment.depth-1{margin-left:26px}
+    .comment.depth-2{margin-left:52px}
+    .comment-avatar{width:31px;height:31px;border-radius:11px;border:1px solid rgba(255,255,255,.35);box-shadow:0 4px 10px rgba(31,60,136,.08);font-size:11px}
+    .comment-card{min-width:0;flex:1;padding:9px 11px;border-radius:14px;background:#f7f8fb}
+    .comment-author{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+    .comment-author strong{font-size:11px}
+    .comment-text{margin:4px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6;font-size:12px}
+    .comment-time{margin-top:4px;color:#9aa2b5;font-size:9px}
+    .comment-actions{display:flex;gap:4px;margin-top:5px}
+    .mini-btn{border:0;background:transparent;color:var(--muted);font-size:10px;padding:2px 4px;font-weight:800}
+    .mini-btn.delete-comment{color:#bd4242}
+    .mini-btn.delete-comment:hover{color:#9e3030}
+    .reply-box{display:none;margin:6px 0 0 39px;gap:5px;align-items:center}
+    .reply-box.open{display:flex}
+    .reply-box textarea{min-height:38px;height:38px;padding:8px 10px;border-radius:12px;font-size:11px}
+    .reply-send{width:38px;height:38px;border:0;border-radius:12px;background:var(--navy);color:#fff}
 
-    .emoji-btn{
-      border:0;
-      background:#fff;
-      border-radius:10px;
-      min-width:31px;
-      min-height:34px;
-      font-size:18px;
-    }
-
-    .emoji-btn:hover{
-      background:#f5f6fb;
-    }
-
-    .reactions-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:5px;
-      margin-top:10px;
-    }
-
-    .reaction-count{
-      border:1px solid #edf0f5;
-      background:#fbfcff;
-      border-radius:999px;
-      padding:4px 7px;
-      font-size:11px;
-      color:var(--muted);
-    }
-
-    /* COMMENTS */
-
-    .comments{
-      display:none;
-      padding:0 12px 14px;
-      border-top:1px solid #f0f2f7;
-    }
-
-    .comments.open{
-      display:block;
-    }
-
-    .comment-compose{
-      display:flex;
-      gap:8px;
-      align-items:flex-end;
-      padding:12px 2px;
-    }
-
-    .comment-input{
-      min-height:43px;
-      height:43px;
-      resize:none;
-      padding:10px 12px;
-      border-radius:14px;
-      font-size:12px;
-      flex:1;
-    }
-
-    .send-comment{
-      width:43px;
-      height:43px;
-      padding:0;
-      border:0;
-      border-radius:14px;
-      color:#fff;
-      background:var(--navy);
-      font-size:16px;
-    }
-
-    .comment-list{
-      display:grid;
-      gap:8px;
-    }
-
-    .comment{
-      position:relative;
-      display:flex;
-      gap:8px;
-      align-items:flex-start;
-    }
-
-    .comment.depth-1{
-      margin-left:26px;
-    }
-
-    .comment.depth-2{
-      margin-left:52px;
-    }
-
-    .comment-avatar{
-      width:31px;
-      height:31px;
-      border-radius:11px;
-      border:1px solid rgba(255,255,255,.35);
-      box-shadow:0 4px 10px rgba(31,60,136,.08);
-      font-size:11px;
-    }
-
-    .comment-card{
-      min-width:0;
-      flex:1;
-      padding:9px 11px;
-      border-radius:14px;
-      background:#f7f8fb;
-    }
-
-    .comment-author{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:5px;
-    }
-
-    .comment-author strong{
-      font-size:11px;
-    }
-
-    .comment-text{
-      margin:4px 0 0;
-      white-space:pre-wrap;
-      overflow-wrap:anywhere;
-      line-height:1.6;
-      font-size:12px;
-    }
-
-    .comment-time{
-      margin-top:4px;
-      color:#9aa2b5;
-      font-size:9px;
-    }
-
-    .comment-actions{
-      display:flex;
-      gap:4px;
-      margin-top:5px;
-    }
-
-    .mini-btn{
-      border:0;
-      background:transparent;
-      color:var(--muted);
-      font-size:10px;
-      padding:2px 4px;
-      font-weight:800;
-    }
-
-    .mini-btn.delete-comment{
-      color:#bd4242;
-    }
-
-    .mini-btn.delete-comment:hover{
-      color:#9e3030;
-    }
-
-    .reply-box{
-      display:none;
-      margin:6px 0 0 39px;
-      gap:5px;
-      align-items:center;
-    }
-
-    .reply-box.open{
-      display:flex;
-    }
-
-    .reply-box textarea{
-      min-height:38px;
-      height:38px;
-      padding:8px 10px;
-      border-radius:12px;
-      font-size:11px;
-    }
-
-    .reply-send{
-      width:38px;
-      height:38px;
-      border:0;
-      border-radius:12px;
-      background:var(--navy);
-      color:#fff;
-    }
-
-    /* EMPTY */
-
-    .empty{
-      text-align:center;
-      padding:42px 22px;
-      background:#fff;
-      border:1px dashed #d6ddeb;
-      border-radius:26px;
-      box-shadow:var(--shadow-sm);
-    }
-
-    .empty-owl{
-      width:85px;
-      height:85px;
-      object-fit:contain;
-      margin-bottom:8px;
-    }
-
-    .empty h3{
-      margin:0;
-      color:var(--navy);
-      font-size:21px;
-    }
-
-    .empty p{
-      margin:8px auto 17px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.6;
-      max-width:390px;
-    }
-
-    .loading{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:9px;
-      color:var(--muted);
-      padding:30px;
-      font-size:12px;
-      font-weight:800;
-    }
-
-    .spinner{
-      width:17px;
-      height:17px;
-      border-radius:50%;
-      border:2px solid #dce2ef;
-      border-top-color:var(--purple);
-      animation:spin .8s linear infinite;
-    }
-
-    @keyframes spin{
-      to{
-        transform:rotate(360deg);
-      }
-    }
-
-    /* TOAST */
+    .empty{text-align:center;padding:42px 22px;background:#fff;border:1px dashed #d6ddeb;border-radius:26px;box-shadow:var(--shadow-sm)}
+    .empty-owl{width:85px;height:85px;object-fit:contain;margin-bottom:8px}
+    .empty h3{margin:0;color:var(--navy);font-size:21px}
+    .empty p{margin:8px auto 17px;color:var(--muted);font-size:13px;line-height:1.6;max-width:390px}
+    .loading{display:flex;align-items:center;justify-content:center;gap:9px;color:var(--muted);padding:30px;font-size:12px;font-weight:800}
+    .spinner{width:17px;height:17px;border-radius:50%;border:2px solid #dce2ef;border-top-color:var(--purple);animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
 
     .toast{
-      position:fixed;
-      left:50%;
-      bottom:23px;
-      transform:translate(-50%,20px);
-      z-index:100;
-      opacity:0;
-      pointer-events:none;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      max-width:calc(100vw - 28px);
-      padding:11px 15px;
-      border-radius:15px;
-      background:#17213d;
-      color:#fff;
-      box-shadow:0 18px 45px rgba(23,33,61,.22);
-      font-size:12px;
-      font-weight:800;
-      transition:.25s ease;
-      text-align:center;
+      position:fixed;left:50%;bottom:23px;transform:translate(-50%,20px);z-index:100;opacity:0;
+      pointer-events:none;display:flex;align-items:center;gap:8px;max-width:calc(100vw - 28px);
+      padding:11px 15px;border-radius:15px;background:#17213d;color:#fff;
+      box-shadow:0 18px 45px rgba(23,33,61,.22);font-size:12px;font-weight:800;
+      transition:.25s ease;text-align:center;
+    }
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .toast.error{background:#9e3d3d}
+
+    .login-state{display:none;min-height:60vh;align-items:center;justify-content:center;text-align:center;padding:20px}
+    .login-state.show{display:flex}
+    .login-card{width:min(100%,450px);background:#fff;border-radius:28px;padding:30px 22px;box-shadow:var(--shadow)}
+    .login-card img{width:80px;height:80px;object-fit:contain}
+    .login-card h2{color:var(--navy);margin:10px 0 6px}
+    .login-card p{color:var(--muted);font-size:13px;line-height:1.6}
+
+    @media(min-width:720px){
+      .app{padding-left:24px;padding-right:24px}
+      .topbar{margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px}
+      .hero{padding:34px}
+      .composer-body{padding:20px}
     }
 
-    .toast.show{
-      opacity:1;
-      transform:translate(-50%,0);
+    @media(max-width:520px){
+      .hero{padding:22px 19px}
+      .avatar-wrap{width:62px;height:62px;border-radius:20px}
+      .avatar{border-radius:16px}
+      .student-name{font-size:19px;max-width:58vw}
+      .hero-title{font-size:25px}
+      .post-tools{gap:2px}
     }
 
-    .toast.error{
-      background:#9e3d3d;
-    }
-
-    /* LOGIN */
-
-    .login-state{
-      display:none;
-      min-height:60vh;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-    }
-
-    .login-state.show{
-      display:flex;
-    }
-
-    .login-card{
-      width:min(100%,450px);
-      background:#fff;
-      border-radius:28px;
-      padding:30px 22px;
-      box-shadow:var(--shadow);
-    }
-
-    .login-card img{
-      width:80px;
-      height:80px;
-      object-fit:contain;
-    }
-
-    .login-card h2{
-      color:var(--navy);
-      margin:10px 0 6px;
-    }
-
-    .login-card p{
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.6;
-    }
-
-    @media (min-width:720px){
-
-      .app{
-        padding-left:24px;
-        padding-right:24px;
-      }
-
-      .topbar{
-        margin-left:-24px;
-        margin-right:-24px;
-        padding-left:24px;
-        padding-right:24px;
-      }
-
-      .hero{
-        padding:34px;
-      }
-
-      .composer-body{
-        padding:20px;
-      }
-
-    }
-
-    @media (max-width:520px){
-
-      .hero{
-        padding:22px 19px;
-      }
-
-      .avatar-wrap{
-        width:62px;
-        height:62px;
-        border-radius:20px;
-      }
-
-      .avatar{
-        border-radius:16px;
-      }
-
-      .student-name{
-        font-size:19px;
-        max-width:58vw;
-      }
-
-      .hero-title{
-        font-size:25px;
-      }
-
-      .post-tools{
-        gap:2px;
-      }
-
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- LOGIN -->
-
-  <div
-    id="loginState"
-    class="login-state"
-  >
-
+  <div id="loginState" class="login-state">
     <div class="login-card">
-
-      <img
-        src="../owl.PNG"
-        alt="Engliza Academy"
-      >
-
-      <h2>
-        Sign in to enter English Space
-      </h2>
-
-      <p>
-        Please sign in with your academy account to practice with other learners.
-      </p>
-
-      <button
-        class="primary-btn"
-        id="goLogin"
-        type="button"
-      >
-        Go to login
-      </button>
-
+      <img src="../owl.PNG" alt="Engliza Academy">
+      <h2>Sign in to enter English Space</h2>
+      <p>Please sign in with your academy account to practice with other learners.</p>
+      <button class="primary-btn" id="goLogin" type="button">Go to login</button>
     </div>
-
   </div>
 
-
-  <!-- APP -->
-
-  <div
-    id="app"
-    class="app hidden"
-  >
-
-    <!-- TOP BAR -->
+  <div id="app" class="app hidden">
 
     <header class="topbar">
-
       <div class="topbar-inner">
-
-        <a
-          class="brand"
-          href="home.html"
-          aria-label="Engliza Academy Home"
-        >
-
-          <img
-            src="../owl.PNG"
-            alt="Engliza Academy owl"
-          >
-
+        <a class="brand" href="home.html" aria-label="Engliza Academy Home">
+          <img src="../owl.PNG" alt="Engliza Academy owl">
           <div class="brand-copy">
-
-            <div class="brand-name">
-              ENGLIZA
-            </div>
-
-            <div class="brand-sub">
-              ACADEMY · ENGLISH SPACE
-            </div>
-
+            <div class="brand-name">ENGLIZA</div>
+            <div class="brand-sub">ACADEMY · ENGLISH SPACE</div>
           </div>
-
         </a>
 
         <div class="top-actions">
-
-          <button
-            class="icon-btn"
-            id="homeBtn"
-            type="button"
-            title="Home"
-            aria-label="Home"
-          >
-            ⌂
-          </button>
-
-          <button
-            class="icon-btn"
-            id="refreshBtn"
-            type="button"
-            title="Refresh"
-            aria-label="Refresh"
-          >
-            ↻
-          </button>
-
+          <button class="icon-btn" id="homeBtn" type="button" title="Home" aria-label="Home">⌂</button>
+          <button class="icon-btn" id="refreshBtn" type="button" title="Refresh" aria-label="Refresh">↻</button>
         </div>
-
       </div>
-
     </header>
-
 
     <main>
 
-      <!-- HERO -->
-
       <section class="hero">
-
         <div class="profile">
-
           <div class="avatar-wrap">
-
-            <!-- HERO MASCOT REMAINS EXACTLY AS BEFORE -->
-
-            <img
-              id="profileAvatar"
-              class="avatar"
-              src="../owl.PNG"
-              alt="Student profile"
-            >
-
+            <img id="profileAvatar" class="avatar" src="../owl.PNG" alt="Student profile">
           </div>
-
           <div class="profile-copy">
-
-            <div class="welcome-small">
-              Your English Space profile
-            </div>
-
-            <div
-              id="studentName"
-              class="student-name"
-            >
-              Loading…
-            </div>
-
+            <div class="welcome-small">Your English Space profile</div>
+            <div id="studentName" class="student-name">Loading…</div>
           </div>
-
         </div>
 
         <div class="hero-copy">
-
-          <h1 class="hero-title">
-            Welcome to English Space! 🌱
-          </h1>
-
+          <h1 class="hero-title">Welcome to English Space! 🌱</h1>
           <p class="hero-text">
             This is your place to practice English, share your thoughts,
-            and connect with other learners.
-            Read, write, and help each other grow.
+            and connect with other learners. Read, write, and help each other grow.
           </p>
-
         </div>
-
       </section>
 
-
-      <!-- NAV -->
-
-      <nav
-        class="space-nav"
-        aria-label="Community sections"
-      >
-
-        <button
-          class="nav-chip active"
-          type="button"
-        >
-          📝 English Space
-        </button>
-
-        <button
-          class="nav-chip"
-          type="button"
-          data-coming-soon="Listening"
-        >
-          🎧 Listening
-        </button>
-
-        <button
-          class="nav-chip"
-          type="button"
-          data-coming-soon="Reading"
-        >
-          📖 Reading
-        </button>
-
-        <button
-          class="nav-chip"
-          type="button"
-          data-coming-soon="Speaking"
-        >
-          🗣️ Speaking techniques
-        </button>
-
+      <nav class="space-nav" aria-label="Community sections">
+        <button class="nav-chip active" type="button">📝 English Space</button>
+        <button class="nav-chip" type="button" data-coming-soon="Listening">🎧 Listening</button>
+        <button class="nav-chip" type="button" data-coming-soon="Reading">📖 Reading</button>
+        <button class="nav-chip" type="button" data-coming-soon="Speaking">🗣️ Speaking techniques</button>
       </nav>
 
-
-      <!-- COMPOSER -->
-
       <section id="composerSection">
-
         <div class="section-heading">
-
           <div>
-
-            <h2>
-              Share something
-            </h2>
-
-            <p>
-              Practice with real people, not perfect sentences.
-            </p>
-
+            <h2>Share something</h2>
+            <p>Practice with real people, not perfect sentences.</p>
           </div>
-
         </div>
 
-
         <div class="composer">
-
           <div class="composer-body">
-
-            <textarea
-              id="postText"
-              maxlength="4000"
-              placeholder="Share your day, an experience, something you learned, or your opinion…"
-            ></textarea>
+            <textarea id="postText" maxlength="4000" placeholder="Share your day, an experience, something you learned, or your opinion…"></textarea>
 
             <div class="composer-meta">
-
-              <div
-                id="textValidation"
-                class="validation"
-              >
-                ✏️ Please write a little more before posting.
-              </div>
-
-              <div
-                id="textCounter"
-                class="counter"
-              >
-                0 words
-              </div>
-
+              <div id="textValidation" class="validation">✏️ Please write a little more before posting.</div>
+              <div id="textCounter" class="counter">0 words</div>
             </div>
 
             <div class="composer-actions">
-
-              <button
-                id="publishTextBtn"
-                class="primary-btn"
-                type="button"
-                disabled
-              >
-                Publish
-              </button>
-
+              <button id="publishTextBtn" class="primary-btn" type="button" disabled>Publish</button>
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-
-      <!-- FEED -->
-
       <section id="feedSection">
-
         <div class="section-heading">
-
           <div>
-
-            <h2>
-              From the English Space
-            </h2>
-
-            <p>
-              See what other learners are practicing today.
-            </p>
-
+            <h2>From the English Space</h2>
+            <p>See what other learners are practicing today.</p>
           </div>
-
         </div>
 
-        <div
-          id="feedStatus"
-          class="loading"
-        >
-
-          <span class="spinner"></span>
-          Loading posts…
-
+        <div id="feedStatus" class="loading">
+          <span class="spinner"></span> Loading posts…
         </div>
 
-        <div
-          id="feed"
-          class="feed"
-        ></div>
+        <div id="feed" class="feed"></div>
 
-        <div
-          id="emptyState"
-          class="empty hidden"
-        >
-
-          <img
-            class="empty-owl"
-            src="../owl.PNG"
-            alt="Engliza Academy owl"
-          >
-
-          <h3>
-            🌱 No posts yet!
-          </h3>
-
-          <p>
-            Be the first learner to share something in English
-            and start the conversation.
-          </p>
-
-          <button
-            class="primary-btn"
-            id="firstPostBtn"
-            type="button"
-          >
-            ✨ Create your first post
-          </button>
-
+        <div id="emptyState" class="empty hidden">
+          <img class="empty-owl" src="../owl.PNG" alt="Engliza Academy owl">
+          <h3>🌱 No posts yet!</h3>
+          <p>Be the first learner to share something in English and start the conversation.</p>
+          <button class="primary-btn" id="firstPostBtn" type="button">✨ Create your first post</button>
         </div>
-
       </section>
 
     </main>
-
   </div>
 
-
-  <!-- TOAST -->
-
-  <div
-    id="toast"
-    class="toast"
-  ></div>
-
-
-  <!-- JAVASCRIPT -->
+  <div id="toast" class="toast"></div>
 
   <script type="module">
 
-    import {
-      auth,
-      db
-    } from "./js/firebase.js";
+    import { auth, db } from "./js/firebase.js";
 
     import {
       onAuthStateChanged
@@ -1390,7 +414,9 @@
       orderBy,
       limit,
       serverTimestamp,
-      runTransaction
+      runTransaction,
+      deleteDoc,
+      writeBatch
     } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
@@ -1401,26 +427,15 @@
     const WORKER_URL =
       "https://engliza-english-space-api.englizaacademy.workers.dev";
 
-    const POSTS_COLLECTION =
-      "englishSpacePosts";
-
-    const MIN_POST_WORDS =
-      10;
-
-    const SHORT_COMMENT_MIN_WORDS =
-      4;
+    const POSTS_COLLECTION = "englishSpacePosts";
+    const MIN_POST_WORDS = 10;
+    const SHORT_COMMENT_MIN_WORDS = 4;
 
     const REACTIONS = [
-      "❤️",
-      "😂",
-      "🌟",
-      "🌸",
-      "😊",
-      "👏",
-      "😮",
-      "😢",
-      "😡"
+      "❤️","😂","🌟","🌸","😊","👏","😮","😢","😡"
     ];
+
+    const DELETE_BATCH_SIZE = 400;
 
 
     /* =========================================================
@@ -1428,15 +443,10 @@
     ========================================================= */
 
     const state = {
-
       user:null,
-
       userData:null,
-
       posts:[],
-
       commentsByPost:new Map()
-
     };
 
 
@@ -1444,35 +454,26 @@
        ELEMENTS
     ========================================================= */
 
-    const $ =
-      id => document.getElementById(id);
+    const $ = id => document.getElementById(id);
 
     const el = {
-
       app:$("app"),
       loginState:$("loginState"),
       goLogin:$("goLogin"),
-
       homeBtn:$("homeBtn"),
       refreshBtn:$("refreshBtn"),
-
       profileAvatar:$("profileAvatar"),
       studentName:$("studentName"),
-
       composerSection:$("composerSection"),
-
       postText:$("postText"),
       textValidation:$("textValidation"),
       textCounter:$("textCounter"),
       publishTextBtn:$("publishTextBtn"),
-
       feedStatus:$("feedStatus"),
       feed:$("feed"),
       emptyState:$("emptyState"),
       firstPostBtn:$("firstPostBtn"),
-
       toast:$("toast")
-
     };
 
 
@@ -1480,11 +481,7 @@
        GENERAL HELPERS
     ========================================================= */
 
-    function normalizeName(
-      data,
-      user
-    ){
-
+    function normalizeName(data,user){
       return String(
         data?.name ||
         data?.displayName ||
@@ -1492,15 +489,9 @@
         user?.displayName ||
         "Engliza Student"
       ).trim();
-
     }
 
-
-    function getAvatar(
-      data,
-      user
-    ){
-
+    function getAvatar(data,user){
       return String(
         data?.photoURL ||
         data?.photoUrl ||
@@ -1509,449 +500,191 @@
         user?.photoURL ||
         ""
       ).trim();
-
     }
 
-
-    function countWords(
-      text
-    ){
-
+    function countWords(text){
       return String(text || "")
         .trim()
         .split(/\s+/)
         .filter(Boolean)
         .length;
-
     }
 
-
-    function cleanText(
-      text
-    ){
-
+    function cleanText(text){
       return String(text || "")
         .replace(/\r/g,"")
         .trim();
-
     }
 
-
-    function timestampToDate(
-      timestamp
-    ){
-
-      if(!timestamp){
-        return null;
-      }
+    function timestampToDate(timestamp){
+      if(!timestamp) return null;
 
       try{
-
-        if(
-          typeof timestamp.toDate ===
-          "function"
-        ){
-
+        if(typeof timestamp.toDate === "function"){
           return timestamp.toDate();
-
         }
 
-        if(
-          typeof timestamp.toMillis ===
-          "function"
-        ){
-
-          return new Date(
-            timestamp.toMillis()
-          );
-
+        if(typeof timestamp.toMillis === "function"){
+          return new Date(timestamp.toMillis());
         }
 
-        const date =
-          new Date(timestamp);
+        const date = new Date(timestamp);
 
-        if(
-          !Number.isNaN(
-            date.getTime()
-          )
-        ){
-
+        if(!Number.isNaN(date.getTime())){
           return date;
-
         }
-
       }catch{}
 
       return null;
-
     }
 
+    function formatPostTime(timestamp){
+      const date = timestampToDate(timestamp);
 
-    function formatPostTime(
-      timestamp
-    ){
+      if(!date) return "just now";
 
-      const date =
-        timestampToDate(timestamp);
+      const diff = Math.max(0,Date.now() - date.getTime());
+      const sec = Math.floor(diff / 1000);
 
-      if(!date){
-        return "just now";
-      }
+      if(sec < 60) return "just now";
 
-      const diff =
-        Math.max(
-          0,
-          Date.now() - date.getTime()
-        );
+      const min = Math.floor(sec / 60);
+      if(min < 60) return `${min}m ago`;
 
-      const sec =
-        Math.floor(diff / 1000);
+      const hour = Math.floor(min / 60);
+      if(hour < 24) return `${hour}h ago`;
 
-      if(sec < 60){
-        return "just now";
-      }
+      const day = Math.floor(hour / 24);
+      if(day < 7) return `${day}d ago`;
 
-      const min =
-        Math.floor(sec / 60);
-
-      if(min < 60){
-        return `${min}m ago`;
-      }
-
-      const hour =
-        Math.floor(min / 60);
-
-      if(hour < 24){
-        return `${hour}h ago`;
-      }
-
-      const day =
-        Math.floor(hour / 24);
-
-      if(day < 7){
-        return `${day}d ago`;
-      }
-
-      return date.toLocaleDateString(
-        undefined,
-        {
-          month:"short",
-          day:"numeric"
-        }
-      );
-
+      return date.toLocaleDateString(undefined,{
+        month:"short",
+        day:"numeric"
+      });
     }
 
-
-    function escapeHTML(
-      value
-    ){
-
+    function escapeHTML(value){
       return String(value ?? "")
         .replaceAll("&","&amp;")
         .replaceAll("<","&lt;")
         .replaceAll(">","&gt;")
         .replaceAll('"',"&quot;")
         .replaceAll("'","&#039;");
-
     }
 
+    function showToast(message,isError=false){
+      el.toast.textContent = String(message || "");
+      el.toast.className = `toast show${isError ? " error" : ""}`;
 
-    function safeKey(
-      value
-    ){
+      clearTimeout(showToast.timer);
 
-      return encodeURIComponent(
-        String(value || "")
-      );
-
-    }
-
-
-    function showToast(
-      message,
-      isError=false
-    ){
-
-      el.toast.textContent =
-        String(message || "");
-
-      el.toast.className =
-        `toast show${isError ? " error" : ""}`;
-
-      clearTimeout(
-        showToast.timer
-      );
-
-      showToast.timer =
-        setTimeout(
-          () => {
-
-            el.toast.className =
-              "toast";
-
-          },
-          3200
-        );
-
+      showToast.timer = setTimeout(()=>{
+        el.toast.className = "toast";
+      },3200);
     }
 
 
     /* =========================================================
        LETTER AVATAR
-       Same name = same letter + same color
     ========================================================= */
 
     const AVATAR_COLORS = [
-
-      "#4F46E5",
-      "#7C3AED",
-      "#0EA5E9",
-      "#0891B2",
-      "#059669",
-      "#65A30D",
-      "#D97706",
-      "#EA580C",
-      "#DB2777",
-      "#C026D3",
-      "#9333EA",
-      "#2563EB"
-
+      "#4F46E5","#7C3AED","#0EA5E9","#0891B2",
+      "#059669","#65A30D","#D97706","#EA580C",
+      "#DB2777","#C026D3","#9333EA","#2563EB"
     ];
 
+    function getAvatarInitial(name){
+      const value = String(name || "Engliza Student").trim();
+      if(!value) return "E";
 
-    function getAvatarInitial(
-      name
-    ){
+      const chars = Array.from(value);
+      const meaningful = chars.find(char=>/[\p{L}\p{N}]/u.test(char));
 
-      const value =
-        String(
-          name ||
-          "Engliza Student"
-        )
-        .trim();
-
-
-      if(!value){
-        return "E";
-      }
-
-
-      const chars =
-        Array.from(value);
-
-
-      const meaningful =
-        chars.find(
-          char =>
-            /[\p{L}\p{N}]/u.test(char)
-        );
-
-
-      return (
-        meaningful ||
-        chars[0] ||
-        "E"
-      ).toUpperCase();
-
+      return (meaningful || chars[0] || "E").toUpperCase();
     }
 
+    function hashString(value){
+      const text = String(value || "");
+      let hash = 0;
 
-    function hashString(
-      value
-    ){
-
-      const text =
-        String(value || "");
-
-
-      let hash =
-        0;
-
-
-      for(
-        let i = 0;
-        i < text.length;
-        i++
-      ){
-
-        hash =
-          (
-            (
-              hash << 5
-            ) -
-            hash +
-            text.charCodeAt(i)
-          ) |
-          0;
-
+      for(let i=0;i<text.length;i++){
+        hash = (((hash << 5)-hash)+text.charCodeAt(i))|0;
       }
-
 
       return Math.abs(hash);
-
     }
 
-
-    function getAvatarColor(
-      name,
-      uid=""
-    ){
-
-      const seed =
-        String(
-          uid ||
-          name ||
-          "Engliza Student"
-        ).trim();
-
-
-      return AVATAR_COLORS[
-        hashString(seed) %
-        AVATAR_COLORS.length
-      ];
-
+    function getAvatarColor(name,uid=""){
+      const seed = String(uid || name || "Engliza Student").trim();
+      return AVATAR_COLORS[hashString(seed)%AVATAR_COLORS.length];
     }
 
-
-    function letterAvatarHTML(
-      name,
-      uid="",
-      className="post-avatar"
-    ){
-
-      const initial =
-        getAvatarInitial(
-          name
-        );
-
-
-      const color =
-        getAvatarColor(
-          name,
-          uid
-        );
-
+    function letterAvatarHTML(name,uid="",className="post-avatar"){
+      const initial = getAvatarInitial(name);
+      const color = getAvatarColor(name,uid);
 
       return `
-
         <div
           class="${className}"
           style="background:${color};"
           aria-label="${escapeHTML(name || "Engliza Student")}"
           title="${escapeHTML(name || "Engliza Student")}"
-        >
-          ${escapeHTML(initial)}
-        </div>
-
+        >${escapeHTML(initial)}</div>
       `;
-
     }
 
 
     /* =========================================================
        WORKER REQUEST
-       Used only for:
-       - loading the authenticated academy profile
-       - deleting content
+       Kept for /me only. DELETE DOES NOT USE THE WORKER.
     ========================================================= */
 
-    async function workerRequest(
-      path,
-      options={}
-    ){
-
+    async function workerRequest(path,options={}){
       if(!state.user){
-
-        throw new Error(
-          "You must be signed in."
-        );
-
+        throw new Error("You must be signed in.");
       }
 
-
-      const token =
-        await state.user.getIdToken(
-          true
-        );
-
+      const token = await state.user.getIdToken(true);
 
       const headers = {
-
         ...(options.headers || {}),
-
-        "Authorization":
-          `Bearer ${token}`
-
+        "Authorization":`Bearer ${token}`
       };
 
-
-      if(
-        options.body &&
-        !headers["Content-Type"]
-      ){
-
-        headers["Content-Type"] =
-          "application/json";
-
+      if(options.body && !headers["Content-Type"]){
+        headers["Content-Type"] = "application/json";
       }
-
 
       let response;
 
-
       try{
-
-        response =
-          await fetch(
-            `${WORKER_URL}${path}`,
-            {
-              ...options,
-              headers
-            }
-          );
-
+        response = await fetch(`${WORKER_URL}${path}`,{
+          ...options,
+          headers
+        });
       }catch(error){
-
-        console.error(
-          "Worker network error:",
-          error
-        );
-
+        console.error("Worker network error:",error);
         throw new Error(
           "Could not connect to the English Space server. Please check your connection and try again."
         );
-
       }
-
 
       let data = {};
 
-
       try{
-
-        data =
-          await response.json();
-
+        data = await response.json();
       }catch{
-
         data = {};
-
       }
-
 
       if(!response.ok){
-
         throw new Error(
-          data?.error ||
-          `Server request failed (${response.status}).`
+          data?.error || `Server request failed (${response.status}).`
         );
-
       }
 
-
       return data;
-
     }
 
 
@@ -1960,92 +693,34 @@
     ========================================================= */
 
     async function loadUser(){
-
-      if(!state.user){
-        return;
-      }
-
+      if(!state.user) return;
 
       try{
-
-        const data =
-          await workerRequest(
-            "/me",
-            {
-              method:"GET"
-            }
-          );
-
-
-        state.userData =
-          data?.user ||
-          {};
-
-
+        const data = await workerRequest("/me",{method:"GET"});
+        state.userData = data?.user || {};
       }catch(error){
-
         console.warn(
           "English Space /me failed; using Firebase Auth fallback:",
           error
         );
 
-
         state.userData = {
-
-          name:
-            state.user.displayName ||
-            "Engliza Student",
-
-          displayName:
-            state.user.displayName ||
-            "",
-
-          photoURL:
-            state.user.photoURL ||
-            "",
-
-          email:
-            state.user.email ||
-            "",
-
-          uid:
-            state.user.uid
-
+          name:state.user.displayName || "Engliza Student",
+          displayName:state.user.displayName || "",
+          photoURL:state.user.photoURL || "",
+          email:state.user.email || "",
+          uid:state.user.uid
         };
-
       }
 
-
-      const name =
-        normalizeName(
-          state.userData,
-          state.user
-        );
-
-
       el.studentName.textContent =
-        name;
+        normalizeName(state.userData,state.user);
 
-
-      /*
-        IMPORTANT:
-        The Hero keeps the mascot exactly as requested.
-        We intentionally do NOT replace this image with
-        the student's letter avatar.
-      */
-
-      el.profileAvatar.src =
-        "../owl.PNG";
-
-
-      el.profileAvatar.onerror =
-        () => {
-
-          el.profileAvatar.src =
-            "../owl.PNG";
-
-        };
-
+      // Keep the academy owl in the hero.
+      el.profileAvatar.src = "../owl.PNG";
+      el.profileAvatar.onerror = ()=>{
+        el.profileAvatar.src = "../owl.PNG";
+      };
     }
 
 
@@ -2054,176 +729,72 @@
     ========================================================= */
 
     function validateTextPost(){
-
-      const text =
-        cleanText(
-          el.postText.value
-        );
-
-      const words =
-        countWords(text);
-
+      const text = cleanText(el.postText.value);
+      const words = countWords(text);
 
       el.textCounter.textContent =
         `${words} word${words === 1 ? "" : "s"}`;
 
-
-      if(
-        words < MIN_POST_WORDS
-      ){
-
+      if(words < MIN_POST_WORDS){
         el.textValidation.textContent =
           "✏️ Please write a little more before posting.";
 
-        el.textValidation.classList.remove(
-          "ok"
-        );
-
-        el.publishTextBtn.disabled =
-          true;
-
+        el.textValidation.classList.remove("ok");
+        el.publishTextBtn.disabled = true;
         return false;
-
       }
 
-
-      el.textValidation.textContent =
-        "✓ Ready to practice.";
-
-      el.textValidation.classList.add(
-        "ok"
-      );
-
-      el.publishTextBtn.disabled =
-        false;
-
+      el.textValidation.textContent = "✓ Ready to practice.";
+      el.textValidation.classList.add("ok");
+      el.publishTextBtn.disabled = false;
       return true;
-
     }
 
 
     /* =========================================================
        PUBLISH TEXT POST
-       No points / rewards
+       Same Firestore saving method as before.
     ========================================================= */
 
     async function publishTextPost(){
+      if(!validateTextPost()) return;
 
-      if(
-        !validateTextPost()
-      ){
+      const text = cleanText(el.postText.value);
+      const wordCount = countWords(text);
 
-        return;
-
-      }
-
-
-      const text =
-        cleanText(
-          el.postText.value
-        );
-
-
-      const wordCount =
-        countWords(text);
-
-
-      el.publishTextBtn.disabled =
-        true;
-
-      el.publishTextBtn.textContent =
-        "Publishing…";
-
+      el.publishTextBtn.disabled = true;
+      el.publishTextBtn.textContent = "Publishing…";
 
       try{
+        const name = normalizeName(state.userData,state.user);
 
-        const name =
-          normalizeName(
-            state.userData,
-            state.user
-          );
+        await addDoc(collection(db,POSTS_COLLECTION),{
+          uid:state.user.uid,
+          authorName:name,
+          authorPhoto:getAvatar(state.userData,state.user),
+          type:"text",
+          text,
+          wordCount,
+          createdAt:serverTimestamp(),
+          updatedAt:serverTimestamp(),
+          reactionCounts:{},
+          reactionUsers:{},
+          edited:false
+        });
 
-
-        await addDoc(
-          collection(
-            db,
-            POSTS_COLLECTION
-          ),
-          {
-
-            uid:
-              state.user.uid,
-
-            authorName:
-              name,
-
-            authorPhoto:
-              getAvatar(
-                state.userData,
-                state.user
-              ),
-
-            type:
-              "text",
-
-            text,
-
-            wordCount,
-
-            createdAt:
-              serverTimestamp(),
-
-            updatedAt:
-              serverTimestamp(),
-
-            reactionCounts:
-              {},
-
-            reactionUsers:
-              {},
-
-            edited:
-              false
-
-          }
-        );
-
-
-        el.postText.value =
-          "";
-
+        el.postText.value = "";
         validateTextPost();
 
         await loadPosts();
 
-
-        showToast(
-          "Posted successfully."
-        );
-
-
+        showToast("Posted successfully.");
       }catch(error){
-
-        console.error(
-          "Text post error:",
-          error
-        );
-
-        showToast(
-          error?.message ||
-          "Could not publish the post.",
-          true
-        );
-
+        console.error("Text post error:",error);
+        showToast(error?.message || "Could not publish the post.",true);
       }finally{
-
-        el.publishTextBtn.textContent =
-          "Publish";
-
+        el.publishTextBtn.textContent = "Publish";
         validateTextPost();
-
       }
-
     }
 
 
@@ -2231,42 +802,17 @@
        REACTION HTML
     ========================================================= */
 
-    function reactionCountsHTML(
-      counts
-    ){
+    function reactionCountsHTML(counts){
+      if(!counts || typeof counts !== "object") return "";
 
-      if(
-        !counts ||
-        typeof counts !== "object"
-      ){
-
-        return "";
-
-      }
-
-
-      return Object
-        .entries(counts)
-        .filter(
-          ([,count]) =>
-            Number(count) > 0
-        )
-        .map(
-          ([emoji,count]) =>
-            `
-
-              <span class="reaction-count">
-
-                ${escapeHTML(emoji)}
-
-                ${Number(count)}
-
-              </span>
-
-            `
-        )
+      return Object.entries(counts)
+        .filter(([,count])=>Number(count)>0)
+        .map(([emoji,count])=>`
+          <span class="reaction-count">
+            ${escapeHTML(emoji)} ${Number(count)}
+          </span>
+        `)
         .join("");
-
     }
 
 
@@ -2274,188 +820,87 @@
        POST HTML
     ========================================================= */
 
-    function postHTML(
-      post
-    ){
-
-      const selected =
-        post.reactionUsers?.[
-          state.user.uid
-        ] || "";
-
-
-      const body =
-        `
-
-          <p class="post-text">
-            ${escapeHTML(
-              post.text || ""
-            )}
-          </p>
-
-        `;
-
-
-      const isOwner =
-        state.user &&
-        post.uid === state.user.uid;
-
+    function postHTML(post){
+      const selected = post.reactionUsers?.[state.user.uid] || "";
+      const isOwner = state.user && post.uid === state.user.uid;
 
       return `
-
-        <article
-          class="post"
-          data-post-id="${escapeHTML(post.id)}"
-        >
+        <article class="post" data-post-id="${escapeHTML(post.id)}">
 
           <div class="post-head">
-
             ${letterAvatarHTML(
-              post.authorName ||
-              "Engliza Student",
+              post.authorName || "Engliza Student",
               post.uid || "",
               "post-avatar"
             )}
 
             <div class="post-author">
-
               <div class="post-name-line">
-
-                <span class="post-name">
-                  ${escapeHTML(
-                    post.authorName ||
-                    "Engliza Student"
-                  )}
-                </span>
-
+                <span class="post-name">${escapeHTML(post.authorName || "Engliza Student")}</span>
               </div>
-
-              <div class="post-time">
-                ${formatPostTime(
-                  post.createdAt
-                )}
-              </div>
-
+              <div class="post-time">${formatPostTime(post.createdAt)}</div>
             </div>
 
             <div class="post-tools">
+              <div class="post-type">📝</div>
 
-              <div class="post-type">
-                📝
-              </div>
+              ${isOwner ? `
+                <button
+                  class="more-btn"
+                  data-action="post-menu"
+                  data-post-id="${escapeHTML(post.id)}"
+                  type="button"
+                  aria-label="Post options"
+                >⋯</button>
 
-              ${
-                isOwner
-                  ? `
-
-                    <button
-                      class="more-btn"
-                      data-action="post-menu"
-                      data-post-id="${escapeHTML(post.id)}"
-                      type="button"
-                      aria-label="Post options"
-                    >
-                      ⋯
-                    </button>
-
-                    <div
-                      class="post-menu hidden"
-                      id="menu-${escapeHTML(post.id)}"
-                    >
-
-                      <button
-                        data-action="delete-post"
-                        data-post-id="${escapeHTML(post.id)}"
-                        type="button"
-                      >
-                        🗑️ Delete post
-                      </button>
-
-                    </div>
-
-                  `
-                  : ""
-              }
-
+                <div class="post-menu hidden" id="menu-${escapeHTML(post.id)}">
+                  <button
+                    data-action="delete-post"
+                    data-post-id="${escapeHTML(post.id)}"
+                    type="button"
+                  >🗑️ Delete post</button>
+                </div>
+              ` : ""}
             </div>
-
           </div>
-
 
           <div class="post-body">
-
-            ${body}
-
-            <div
-              class="reactions-row"
-            >
-              ${reactionCountsHTML(
-                post.reactionCounts
-              )}
+            <p class="post-text">${escapeHTML(post.text || "")}</p>
+            <div class="reactions-row">
+              ${reactionCountsHTML(post.reactionCounts)}
             </div>
-
           </div>
 
-
           <div class="post-footer">
-
             <button
-              class="reaction-btn ${
-                selected ? "active" : ""
-              }"
+              class="reaction-btn ${selected ? "active" : ""}"
               data-action="reactions"
               data-post-id="${escapeHTML(post.id)}"
               type="button"
-            >
-              ${selected || "😊"} React
-            </button>
+            >${selected || "😊"} React</button>
 
             <button
               class="comment-toggle"
               data-action="comments"
               data-post-id="${escapeHTML(post.id)}"
               type="button"
-            >
-              💬 Comments
-            </button>
-
+            >💬 Comments</button>
           </div>
 
-
-          <div
-            class="reaction-picker"
-            id="picker-${escapeHTML(post.id)}"
-          >
-
-            ${REACTIONS
-              .map(
-                emoji =>
-                  `
-
-                    <button
-                      class="emoji-btn"
-                      data-action="react"
-                      data-post-id="${escapeHTML(post.id)}"
-                      data-emoji="${escapeHTML(emoji)}"
-                      type="button"
-                    >
-                      ${emoji}
-                    </button>
-
-                  `
-              )
-              .join("")}
-
+          <div class="reaction-picker" id="picker-${escapeHTML(post.id)}">
+            ${REACTIONS.map(emoji=>`
+              <button
+                class="emoji-btn"
+                data-action="react"
+                data-post-id="${escapeHTML(post.id)}"
+                data-emoji="${escapeHTML(emoji)}"
+                type="button"
+              >${emoji}</button>
+            `).join("")}
           </div>
 
-
-          <div
-            class="comments"
-            id="comments-${escapeHTML(post.id)}"
-          >
-
+          <div class="comments" id="comments-${escapeHTML(post.id)}">
             <div class="comment-compose">
-
               <textarea
                 class="comment-input"
                 id="comment-input-${escapeHTML(post.id)}"
@@ -2469,30 +914,16 @@
                 data-post-id="${escapeHTML(post.id)}"
                 type="button"
                 aria-label="Send comment"
-              >
-                ➤
-              </button>
-
+              >➤</button>
             </div>
 
-
-            <div
-              class="comment-list"
-              id="comment-list-${escapeHTML(post.id)}"
-            >
-
-              <div class="feed-status">
-                Loading comments…
-              </div>
-
+            <div class="comment-list" id="comment-list-${escapeHTML(post.id)}">
+              <div class="feed-status">Open comments to load them.</div>
             </div>
-
           </div>
 
         </article>
-
       `;
-
     }
 
 
@@ -2501,281 +932,96 @@
     ========================================================= */
 
     async function loadPosts(){
-
-      el.feedStatus.classList.remove(
-        "hidden"
-      );
-
-      el.feedStatus.innerHTML =
-        `
-
-          <span class="spinner"></span>
-
-          Loading posts…
-
-        `;
-
-      el.feed.innerHTML =
-        "";
-
-      el.emptyState
-        .classList
-        .add("hidden");
-
+      el.feedStatus.classList.remove("hidden");
+      el.feedStatus.innerHTML = `<span class="spinner"></span> Loading posts…`;
+      el.feed.innerHTML = "";
+      el.emptyState.classList.add("hidden");
 
       try{
+        const q = query(
+          collection(db,POSTS_COLLECTION),
+          orderBy("createdAt","desc"),
+          limit(50)
+        );
 
-        const q =
-          query(
-            collection(
-              db,
-              POSTS_COLLECTION
-            ),
-            orderBy(
-              "createdAt",
-              "desc"
-            ),
-            limit(50)
-          );
+        const snap = await getDocs(q);
 
+        state.posts = snap.docs.map(document=>({
+          id:document.id,
+          ...document.data()
+        }));
 
-        const snap =
-          await getDocs(q);
+        el.feedStatus.classList.add("hidden");
 
-
-        state.posts =
-          snap.docs.map(
-            document => ({
-
-              id:
-                document.id,
-
-              ...document.data()
-
-            })
-          );
-
-
-        el.feedStatus
-          .classList
-          .add("hidden");
-
-
-        if(
-          state.posts.length === 0
-        ){
-
-          el.emptyState
-            .classList
-            .remove("hidden");
-
+        if(state.posts.length===0){
+          el.emptyState.classList.remove("hidden");
           return;
-
         }
 
-
-        el.feed.innerHTML =
-          state.posts
-            .map(postHTML)
-            .join("");
-
-
+        el.feed.innerHTML = state.posts.map(postHTML).join("");
       }catch(error){
+        console.error("Load posts error:",error);
 
-        console.error(
-          "Load posts error:",
-          error
-        );
+        el.feedStatus.innerHTML = `
+          Could not load posts.<br>
+          ${escapeHTML(error?.message || "")}
+        `;
 
-
-        el.feedStatus.innerHTML =
-          `
-
-            Could not load posts.
-
-            <br>
-
-            ${escapeHTML(
-              error?.message || ""
-            )}
-
-          `;
-
-
-        showToast(
-          "Could not load English Space posts.",
-          true
-        );
-
+        showToast("Could not load English Space posts.",true);
       }
-
     }
 
 
     /* =========================================================
        REACTIONS
-       No rewards
     ========================================================= */
 
-    async function updateReaction(
-      postId,
-      emoji
-    ){
-
-      const postRef =
-        doc(
-          db,
-          POSTS_COLLECTION,
-          postId
-        );
-
+    async function updateReaction(postId,emoji){
+      const postRef = doc(db,POSTS_COLLECTION,postId);
 
       try{
+        await runTransaction(db,async transaction=>{
+          const snap = await transaction.get(postRef);
 
-        await runTransaction(
-          db,
-          async transaction => {
-
-            const snap =
-              await transaction.get(
-                postRef
-              );
-
-
-            if(!snap.exists()){
-
-              throw new Error(
-                "Post no longer exists."
-              );
-
-            }
-
-
-            const data =
-              snap.data() || {};
-
-
-            const counts = {
-              ...(data.reactionCounts || {})
-            };
-
-
-            const users = {
-              ...(data.reactionUsers || {})
-            };
-
-
-            const old =
-              users[
-                state.user.uid
-              ] || "";
-
-
-            if(
-              old === emoji
-            ){
-
-              counts[emoji] =
-                Math.max(
-                  0,
-                  Number(
-                    counts[emoji] || 0
-                  ) - 1
-                );
-
-              delete users[
-                state.user.uid
-              ];
-
-            }else{
-
-              if(old){
-
-                counts[old] =
-                  Math.max(
-                    0,
-                    Number(
-                      counts[old] || 0
-                    ) - 1
-                  );
-
-              }
-
-              counts[emoji] =
-                Number(
-                  counts[emoji] || 0
-                ) + 1;
-
-              users[
-                state.user.uid
-              ] =
-                emoji;
-
-            }
-
-
-            transaction.update(
-              postRef,
-              {
-
-                reactionCounts:
-                  counts,
-
-                reactionUsers:
-                  users
-
-              }
-            );
-
+          if(!snap.exists()){
+            throw new Error("Post no longer exists.");
           }
-        );
 
+          const data = snap.data() || {};
+          const counts = {...(data.reactionCounts || {})};
+          const users = {...(data.reactionUsers || {})};
+          const old = users[state.user.uid] || "";
 
-        const post =
-          state.posts.find(
-            item =>
-              item.id === postId
-          );
+          if(old===emoji){
+            counts[emoji] = Math.max(0,Number(counts[emoji]||0)-1);
+            delete users[state.user.uid];
+          }else{
+            if(old){
+              counts[old] = Math.max(0,Number(counts[old]||0)-1);
+            }
 
+            counts[emoji] = Number(counts[emoji]||0)+1;
+            users[state.user.uid] = emoji;
+          }
+
+          transaction.update(postRef,{
+            reactionCounts:counts,
+            reactionUsers:users
+          });
+        });
+
+        const post = state.posts.find(item=>item.id===postId);
 
         if(post){
-
-          const snap =
-            await getDoc(
-              postRef
-            );
-
-          if(snap.exists()){
-
-            Object.assign(
-              post,
-              snap.data()
-            );
-
-          }
-
+          const snap = await getDoc(postRef);
+          if(snap.exists()) Object.assign(post,snap.data());
         }
 
-
-        renderSinglePost(
-          postId
-        );
-
-
+        renderSinglePost(postId);
       }catch(error){
-
-        console.error(
-          "Reaction error:",
-          error
-        );
-
-        showToast(
-          "Could not update the reaction.",
-          true
-        );
-
+        console.error("Reaction error:",error);
+        showToast("Could not update the reaction.",true);
       }
-
     }
 
 
@@ -2783,55 +1029,19 @@
        RENDER SINGLE POST
     ========================================================= */
 
-    function renderSinglePost(
-      postId
-    ){
+    function renderSinglePost(postId){
+      const post = state.posts.find(item=>item.id===postId);
+      const old = Array.from(el.feed.querySelectorAll(".post"))
+        .find(item=>item.dataset.postId===postId);
 
-      const post =
-        state.posts.find(
-          item =>
-            item.id === postId
-        );
+      if(!post || !old) return;
 
+      const wrapper = document.createElement("div");
+      wrapper.innerHTML = postHTML(post);
 
-      const old =
-        el.feed.querySelector(
-          `[data-post-id="${CSS.escape(postId)}"]`
-        );
+      const newPost = wrapper.firstElementChild;
 
-
-      if(
-        !post ||
-        !old
-      ){
-
-        return;
-
-      }
-
-
-      const wrapper =
-        document.createElement(
-          "div"
-        );
-
-
-      wrapper.innerHTML =
-        postHTML(post);
-
-
-      const newPost =
-        wrapper.firstElementChild;
-
-
-      if(newPost){
-
-        old.replaceWith(
-          newPost
-        );
-
-      }
-
+      if(newPost) old.replaceWith(newPost);
     }
 
 
@@ -2839,114 +1049,39 @@
        LOAD COMMENTS
     ========================================================= */
 
-    async function ensureCommentsLoaded(
-      postId
-    ){
-
-      if(
-        state.commentsByPost.has(
-          postId
-        )
-      ){
-
-        renderComments(
-          postId,
-          state.commentsByPost.get(
-            postId
-          )
-        );
-
+    async function ensureCommentsLoaded(postId){
+      if(state.commentsByPost.has(postId)){
+        renderComments(postId,state.commentsByPost.get(postId));
         return;
-
       }
-
 
       try{
-
-        const snap =
-          await getDocs(
-            collection(
-              db,
-              POSTS_COLLECTION,
-              postId,
-              "comments"
-            )
-          );
-
-
-        const comments =
-          snap.docs.map(
-            document => ({
-
-              id:
-                document.id,
-
-              ...document.data()
-
-            })
-          );
-
-
-        comments.sort(
-          (a,b) => {
-
-            const ta =
-              timestampToDate(
-                a.createdAt
-              )?.getTime() || 0;
-
-            const tb =
-              timestampToDate(
-                b.createdAt
-              )?.getTime() || 0;
-
-            return ta - tb;
-
-          }
+        const snap = await getDocs(
+          collection(db,POSTS_COLLECTION,postId,"comments")
         );
 
+        const comments = snap.docs.map(document=>({
+          id:document.id,
+          ...document.data()
+        }));
 
-        state.commentsByPost.set(
-          postId,
-          comments
-        );
+        comments.sort((a,b)=>{
+          const ta = timestampToDate(a.createdAt)?.getTime() || 0;
+          const tb = timestampToDate(b.createdAt)?.getTime() || 0;
+          return ta-tb;
+        });
 
-
-        renderComments(
-          postId,
-          comments
-        );
-
-
+        state.commentsByPost.set(postId,comments);
+        renderComments(postId,comments);
       }catch(error){
+        console.error("Load comments error:",error);
 
-        console.error(
-          "Load comments error:",
-          error
-        );
-
-
-        const list =
-          $(
-            `comment-list-${postId}`
-          );
-
+        const list = $(`comment-list-${postId}`);
 
         if(list){
-
-          list.innerHTML =
-            `
-
-              <div class="feed-status">
-                Comments could not be loaded.
-              </div>
-
-            `;
-
+          list.innerHTML = `<div class="feed-status">Comments could not be loaded.</div>`;
         }
-
       }
-
     }
 
 
@@ -2954,59 +1089,22 @@
        COMMENT DEPTH
     ========================================================= */
 
-    function commentDepth(
-      comment,
-      all
-    ){
+    function commentDepth(comment,all){
+      let depth = 0;
+      let parentId = comment.parentId || "";
+      const seen = new Set();
 
-      let depth =
-        0;
+      while(parentId && depth<10 && !seen.has(parentId)){
+        seen.add(parentId);
 
-      let parentId =
-        comment.parentId ||
-        "";
+        const parent = all.find(item=>item.id===parentId);
+        if(!parent) break;
 
-      const seen =
-        new Set();
-
-
-      while(
-        parentId &&
-        depth < 10 &&
-        !seen.has(parentId)
-      ){
-
-        seen.add(
-          parentId
-        );
-
-
-        const parent =
-          all.find(
-            item =>
-              item.id === parentId
-          );
-
-
-        if(!parent){
-          break;
-        }
-
-
-        depth += 1;
-
-        parentId =
-          parent.parentId ||
-          "";
-
+        depth++;
+        parentId = parent.parentId || "";
       }
 
-
-      return Math.min(
-        depth,
-        2
-      );
-
+      return Math.min(depth,2);
     }
 
 
@@ -3014,112 +1112,48 @@
        COMMENT HTML
     ========================================================= */
 
-    function commentHTML(
-      comment,
-      all
-    ){
-
-      const depth =
-        commentDepth(
-          comment,
-          all
-        );
-
-
-      const isOwner =
-        state.user &&
-        comment.uid ===
-        state.user.uid;
-
+    function commentHTML(comment,all){
+      const depth = commentDepth(comment,all);
+      const isOwner = state.user && comment.uid===state.user.uid;
 
       return `
-
-        <div
-          class="comment depth-${depth}"
-          data-comment-id="${escapeHTML(comment.id)}"
-        >
+        <div class="comment depth-${depth}" data-comment-id="${escapeHTML(comment.id)}">
 
           ${letterAvatarHTML(
-            comment.authorName ||
-            "Engliza Student",
+            comment.authorName || "Engliza Student",
             comment.uid || "",
             "comment-avatar"
           )}
 
           <div class="comment-card">
-
             <div class="comment-author">
-
-              <strong>
-                ${escapeHTML(
-                  comment.authorName ||
-                  "Engliza Student"
-                )}
-              </strong>
-
+              <strong>${escapeHTML(comment.authorName || "Engliza Student")}</strong>
             </div>
 
-
-            <div class="comment-text">
-              ${escapeHTML(
-                comment.text || ""
-              )}
-            </div>
-
-
-            <div class="comment-time">
-              ${formatPostTime(
-                comment.createdAt
-              )}
-            </div>
-
+            <div class="comment-text">${escapeHTML(comment.text || "")}</div>
+            <div class="comment-time">${formatPostTime(comment.createdAt)}</div>
 
             <div class="comment-actions">
-
               <button
                 class="mini-btn"
                 data-action="reply"
-                data-post-id="${escapeHTML(
-                  comment.postId
-                )}"
-                data-comment-id="${escapeHTML(
-                  comment.id
-                )}"
+                data-post-id="${escapeHTML(comment.postId || "")}"
+                data-comment-id="${escapeHTML(comment.id)}"
                 type="button"
-              >
-                Reply
-              </button>
+              >Reply</button>
 
-              ${
-                isOwner
-                  ? `
-
-                    <button
-                      class="mini-btn delete-comment"
-                      data-action="delete-comment"
-                      data-post-id="${escapeHTML(
-                        comment.postId
-                      )}"
-                      data-comment-id="${escapeHTML(
-                        comment.id
-                      )}"
-                      type="button"
-                    >
-                      Delete
-                    </button>
-
-                  `
-                  : ""
-              }
-
+              ${isOwner ? `
+                <button
+                  class="mini-btn delete-comment"
+                  data-action="delete-comment"
+                  data-post-id="${escapeHTML(comment.postId || "")}"
+                  data-comment-id="${escapeHTML(comment.id)}"
+                  type="button"
+                >Delete</button>
+              ` : ""}
             </div>
 
-
-            <div
-              class="reply-box"
-              id="reply-box-${escapeHTML(comment.id)}"
-            >
-
+            <div class="reply-box" id="reply-box-${escapeHTML(comment.id)}">
               <textarea
                 id="reply-input-${escapeHTML(comment.id)}"
                 placeholder="Write a reply…"
@@ -3128,25 +1162,14 @@
               <button
                 class="reply-send"
                 data-action="send-reply"
-                data-post-id="${escapeHTML(
-                  comment.postId
-                )}"
-                data-parent-id="${escapeHTML(
-                  comment.id
-                )}"
+                data-post-id="${escapeHTML(comment.postId || "")}"
+                data-parent-id="${escapeHTML(comment.id)}"
                 type="button"
-              >
-                ➤
-              </button>
-
+              >➤</button>
             </div>
-
           </div>
-
         </div>
-
       `;
-
     }
 
 
@@ -3154,439 +1177,216 @@
        RENDER COMMENTS
     ========================================================= */
 
-    function renderComments(
-      postId,
-      comments
-    ){
+    function renderComments(postId,comments){
+      const list = $(`comment-list-${postId}`);
+      if(!list) return;
 
-      const list =
-        $(
-          `comment-list-${postId}`
-        );
-
-
-      if(!list){
+      if(!comments.length){
+        list.innerHTML = `<div class="feed-status">Be the first to start the conversation.</div>`;
         return;
       }
 
+      const ordered = [];
+      const byParent = new Map();
 
-      if(
-        !comments.length
-      ){
+      comments.forEach(comment=>{
+        const key = comment.parentId || "";
 
-        list.innerHTML =
-          `
+        if(!byParent.has(key)) byParent.set(key,[]);
+        byParent.get(key).push(comment);
+      });
 
-            <div class="feed-status">
-              Be the first to start the conversation.
-            </div>
-
-          `;
-
-        return;
-
+      function walk(parentId){
+        (byParent.get(parentId)||[]).forEach(comment=>{
+          ordered.push(comment);
+          walk(comment.id);
+        });
       }
-
-
-      const ordered =
-        [];
-
-      const byParent =
-        new Map();
-
-
-      comments.forEach(
-        comment => {
-
-          const key =
-            comment.parentId ||
-            "";
-
-
-          if(
-            !byParent.has(key)
-          ){
-
-            byParent.set(
-              key,
-              []
-            );
-
-          }
-
-
-          byParent
-            .get(key)
-            .push(comment);
-
-        }
-      );
-
-
-      function walk(
-        parentId
-      ){
-
-        (
-          byParent.get(parentId) ||
-          []
-        ).forEach(
-          comment => {
-
-            ordered.push(
-              comment
-            );
-
-            walk(
-              comment.id
-            );
-
-          }
-        );
-
-      }
-
 
       walk("");
 
-
-      if(
-        ordered.length !==
-        comments.length
-      ){
-
-        comments.forEach(
-          comment => {
-
-            if(
-              !ordered.some(
-                item =>
-                  item.id ===
-                  comment.id
-              )
-            ){
-
-              ordered.push(
-                comment
-              );
-
-            }
-
+      if(ordered.length!==comments.length){
+        comments.forEach(comment=>{
+          if(!ordered.some(item=>item.id===comment.id)){
+            ordered.push(comment);
           }
-        );
-
+        });
       }
 
-
-      list.innerHTML =
-        ordered
-          .map(
-            comment =>
-              commentHTML(
-                comment,
-                comments
-              )
-          )
-          .join("");
-
+      list.innerHTML = ordered.map(comment=>{
+        // Ensure old comment documents still carry their postId in the UI.
+        return commentHTML({...comment,postId},comments);
+      }).join("");
     }
 
 
     /* =========================================================
-       PUBLISH WRITTEN COMMENT
-       No rewards
+       PUBLISH COMMENT
+       Same Firestore saving method as before.
     ========================================================= */
 
-    async function publishComment(
-      postId,
-      parentId,
-      text
-    ){
+    async function publishComment(postId,parentId,text){
+      text = cleanText(text);
 
-      text =
-        cleanText(text);
+      const words = countWords(text);
 
-
-      const words =
-        countWords(text);
-
-
-      if(
-        words < SHORT_COMMENT_MIN_WORDS
-      ){
-
-        showToast(
-          "Please write a little more before posting your comment.",
-          true
-        );
-
+      if(words<SHORT_COMMENT_MIN_WORDS){
+        showToast("Please write a little more before posting your comment.",true);
         return false;
-
       }
 
-
-      const post =
-        state.posts.find(
-          item =>
-            item.id === postId
-        );
-
+      const post = state.posts.find(item=>item.id===postId);
 
       if(!post){
-
-        showToast(
-          "This post could not be found.",
-          true
-        );
-
+        showToast("This post could not be found.",true);
         return false;
-
       }
 
-
       try{
-
-        const name =
-          normalizeName(
-            state.userData,
-            state.user
-          );
-
+        const name = normalizeName(state.userData,state.user);
 
         await addDoc(
-          collection(
-            db,
-            POSTS_COLLECTION,
-            postId,
-            "comments"
-          ),
+          collection(db,POSTS_COLLECTION,postId,"comments"),
           {
-
             postId,
-
-            parentId:
-              parentId || "",
-
-            uid:
-              state.user.uid,
-
-            authorName:
-              name,
-
-            authorPhoto:
-              getAvatar(
-                state.userData,
-                state.user
-              ),
-
-            type:
-              "text",
-
+            parentId:parentId || "",
+            uid:state.user.uid,
+            authorName:name,
+            authorPhoto:getAvatar(state.userData,state.user),
+            type:"text",
             text,
-
-            wordCount:
-              words,
-
-            createdAt:
-              serverTimestamp(),
-
-            updatedAt:
-              serverTimestamp(),
-
-            edited:
-              false
-
+            wordCount:words,
+            createdAt:serverTimestamp(),
+            updatedAt:serverTimestamp(),
+            edited:false
           }
         );
 
+        state.commentsByPost.delete(postId);
+        await ensureCommentsLoaded(postId);
 
-        state.commentsByPost.delete(
-          postId
-        );
-
-
-        await ensureCommentsLoaded(
-          postId
-        );
-
-
-        showToast(
-          "Comment posted."
-        );
-
-
+        showToast("Comment posted.");
         return true;
-
-
       }catch(error){
-
-        console.error(
-          "Comment error:",
-          error
-        );
-
-        showToast(
-          error?.message ||
-          "Could not post the comment.",
-          true
-        );
-
+        console.error("Comment error:",error);
+        showToast(error?.message || "Could not post the comment.",true);
         return false;
-
       }
+    }
 
+
+    /* =========================================================
+       DIRECT FIRESTORE DELETION HELPERS
+       No Cloudflare Worker calls in either delete function.
+    ========================================================= */
+
+    async function deleteCommentsInBatches(postId,comments){
+      const commentsRef = collection(
+        db,
+        POSTS_COLLECTION,
+        postId,
+        "comments"
+      );
+
+      /*
+       * All replies are documents in the same comments subcollection.
+       * Therefore deleting every document in this collection also
+       * removes the replies belonging to the post.
+       *
+       * Keep each batch below Firestore's 500-write limit.
+       */
+      const ids = comments.map(comment=>comment.id);
+
+      for(let start=0;start<ids.length;start+=DELETE_BATCH_SIZE){
+        const batch = writeBatch(db);
+        const chunk = ids.slice(start,start+DELETE_BATCH_SIZE);
+
+        chunk.forEach(commentId=>{
+          batch.delete(doc(commentsRef,commentId));
+        });
+
+        await batch.commit();
+      }
     }
 
 
     /* =========================================================
        DELETE COMMENT
-       Owner only
+       Directly from Firestore.
     ========================================================= */
 
-    async function deleteComment(
-      postId,
-      commentId
-    ){
-
-      const comments =
-        state.commentsByPost.get(
-          postId
-        ) || [];
-
-
-      const comment =
-        comments.find(
-          item =>
-            item.id === commentId
-        );
-
-
-      if(
-        comment &&
-        comment.uid !==
-        state.user?.uid
-      ){
-
-        showToast(
-          "You can only delete your own comments.",
-          true
-        );
-
-        return;
-
-      }
-
-
-      const confirmed =
-        window.confirm(
-          "Delete this comment? This action cannot be undone."
-        );
-
-
-      if(!confirmed){
+    async function deleteComment(postId,commentId){
+      if(!state.user){
+        showToast("Please sign in again.",true);
         return;
       }
 
+      const comments = state.commentsByPost.get(postId) || [];
+      const comment = comments.find(item=>item.id===commentId);
+
+      if(comment && comment.uid!==state.user.uid){
+        showToast("You can only delete your own comments.",true);
+        return;
+      }
+
+      const confirmed = window.confirm(
+        "Delete this comment? This action cannot be undone."
+      );
+
+      if(!confirmed) return;
+
+      const button = document.querySelector(
+        `[data-action="delete-comment"][data-comment-id="${CSS.escape(commentId)}"]`
+      );
+
+      if(button){
+        button.disabled = true;
+        button.textContent = "Deleting…";
+      }
 
       try{
-
-        /*
-          The Worker handles the actual
-          deletion and authorization.
-        */
-
-        await workerRequest(
-          "/delete-content",
-          {
-
-            method:"POST",
-
-            body:
-              JSON.stringify({
-
-                kind:
-                  "comment",
-
-                contentId:
-                  commentId,
-
-                postId,
-
-                commentId
-
-              })
-
-          }
+        await deleteDoc(
+          doc(
+            db,
+            POSTS_COLLECTION,
+            postId,
+            "comments",
+            commentId
+          )
         );
 
-
         /*
-          Remove it immediately from the local
-          state so the UI updates without a
-          full page refresh.
-        */
+         * Remove the comment from the local state immediately.
+         * Replies, if any, remain unless separately deleted.
+         */
+        if(state.commentsByPost.has(postId)){
+          const updated = state.commentsByPost
+            .get(postId)
+            .filter(item=>item.id!==commentId);
 
-        if(
-          state.commentsByPost.has(
-            postId
-          )
-        ){
-
-          const updated =
-            state.commentsByPost
-              .get(postId)
-              .filter(
-                item =>
-                  item.id !==
-                  commentId
-              );
-
-
-          state.commentsByPost.set(
-            postId,
-            updated
-          );
-
-
-          renderComments(
-            postId,
-            updated
-          );
-
+          state.commentsByPost.set(postId,updated);
+          renderComments(postId,updated);
         }else{
-
-          state.commentsByPost.delete(
-            postId
-          );
-
-          await ensureCommentsLoaded(
-            postId
-          );
-
+          state.commentsByPost.delete(postId);
+          await ensureCommentsLoaded(postId);
         }
 
-
-        showToast(
-          "Comment deleted successfully."
-        );
-
-
+        showToast("Comment deleted successfully.");
       }catch(error){
-
-        console.error(
-          "Delete comment error:",
-          error
-        );
-
+        console.error("Direct Firestore comment deletion error:",error);
 
         showToast(
-          error?.message ||
-          "Could not delete the comment.",
+          error?.code==="permission-denied"
+            ? "Firestore rules denied this deletion. Check the published Rules."
+            : (error?.message || "Could not delete the comment."),
           true
         );
 
+        if(button){
+          button.disabled = false;
+          button.textContent = "Delete";
+        }
       }
-
     }
 
 
@@ -3594,156 +1394,115 @@
        REPLY BOX
     ========================================================= */
 
-    function openReplyBox(
-      commentId
-    ){
+    function openReplyBox(commentId){
+      const box = $(`reply-box-${commentId}`);
+      if(!box) return;
 
-      const box =
-        $(
-          `reply-box-${commentId}`
-        );
+      box.classList.toggle("open");
 
-
-      if(!box){
-        return;
+      if(box.classList.contains("open")){
+        $(`reply-input-${commentId}`)?.focus();
       }
-
-
-      box.classList.toggle(
-        "open"
-      );
-
-
-      if(
-        box.classList.contains(
-          "open"
-        )
-      ){
-
-        $(
-          `reply-input-${commentId}`
-        )?.focus();
-
-      }
-
     }
 
 
     /* =========================================================
        DELETE POST
-       Owner only
+       Delete comments/replies first, then the post.
+       No Cloudflare Worker call.
     ========================================================= */
 
-    async function deletePost(
-      postId
-    ){
-
-      const post =
-        state.posts.find(
-          item =>
-            item.id === postId
-        );
-
+    async function deletePost(postId){
+      const post = state.posts.find(item=>item.id===postId);
 
       if(!post){
-
-        showToast(
-          "This post could not be found.",
-          true
-        );
-
-        return;
-
-      }
-
-
-      if(
-        post.uid !==
-        state.user?.uid
-      ){
-
-        showToast(
-          "You can only delete your own posts.",
-          true
-        );
-
-        return;
-
-      }
-
-
-      const confirmed =
-        window.confirm(
-          "Delete this post? This action cannot be undone."
-        );
-
-
-      if(!confirmed){
+        showToast("This post could not be found.",true);
         return;
       }
 
+      if(post.uid!==state.user?.uid){
+        showToast("You can only delete your own posts.",true);
+        return;
+      }
+
+      const confirmed = window.confirm(
+        "Delete this post and all its comments and replies? This action cannot be undone."
+      );
+
+      if(!confirmed) return;
+
+      const menu = $(`menu-${postId}`);
+      menu?.classList.add("hidden");
+
+      const deleteButton = document.querySelector(
+        `[data-action="delete-post"][data-post-id="${CSS.escape(postId)}"]`
+      );
+
+      if(deleteButton){
+        deleteButton.disabled = true;
+        deleteButton.textContent = "Deleting…";
+      }
 
       try{
-
-        await workerRequest(
-          "/delete-content",
-          {
-
-            method:"POST",
-
-            body:
-              JSON.stringify({
-
-                kind:
-                  "post",
-
-                contentId:
-                  postId,
-
-                postId
-
-              })
-
-          }
+        /*
+         * Read the complete comments subcollection first.
+         * Every reply is stored in this same subcollection.
+         */
+        const commentsRef = collection(
+          db,
+          POSTS_COLLECTION,
+          postId,
+          "comments"
         );
 
+        const commentsSnap = await getDocs(commentsRef);
 
-        state.posts =
-          state.posts.filter(
-            item =>
-              item.id !== postId
-          );
+        const comments = commentsSnap.docs.map(item=>({
+          id:item.id,
+          ...item.data()
+        }));
 
+        /*
+         * Delete all comments/replies in batches.
+         * The post remains present while the batches run,
+         * allowing the post owner's delete permission on comments.
+         */
+        await deleteCommentsInBatches(postId,comments);
 
-        state.commentsByPost.delete(
-          postId
+        /*
+         * Delete the parent post only after comment deletion succeeds.
+         */
+        await deleteDoc(
+          doc(db,POSTS_COLLECTION,postId)
         );
 
+        state.posts = state.posts.filter(item=>item.id!==postId);
+        state.commentsByPost.delete(postId);
 
         await loadPosts();
 
-
-        showToast(
-          "Post deleted successfully."
-        );
-
-
+        showToast("Post and its comments deleted successfully.");
       }catch(error){
-
-        console.error(
-          "Delete post error:",
-          error
-        );
-
+        console.error("Direct Firestore post deletion error:",error);
 
         showToast(
-          error?.message ||
-          "Could not delete the post.",
+          error?.code==="permission-denied"
+            ? "Firestore rules denied the deletion. Check that the updated Rules have been published."
+            : (error?.message || "Could not delete the post."),
           true
         );
 
-      }
+        if(deleteButton){
+          deleteButton.disabled = false;
+          deleteButton.textContent = "🗑️ Delete post";
+        }
 
+        /*
+         * Reload from Firestore in case some comment batches
+         * completed before a later operation failed.
+         */
+        await loadPosts();
+      }
     }
 
 
@@ -3751,548 +1510,218 @@
        GLOBAL CLICK HANDLER
     ========================================================= */
 
-    document.addEventListener(
-      "click",
-      async event => {
+    document.addEventListener("click",async event=>{
+      const button = event.target.closest("[data-action]");
+      if(!button) return;
 
-        const button =
-          event.target.closest(
-            "[data-action]"
-          );
+      const action = button.dataset.action;
+      const postId = button.dataset.postId;
 
+      if(action==="post-menu"){
+        const menu = $(`menu-${postId}`);
 
-        if(!button){
-          return;
-        }
+        document.querySelectorAll(".post-menu").forEach(item=>{
+          if(item!==menu) item.classList.add("hidden");
+        });
 
-
-        const action =
-          button.dataset.action;
-
-
-        const postId =
-          button.dataset.postId;
-
-
-        /* POST MENU */
-
-        if(
-          action ===
-          "post-menu"
-        ){
-
-          const menu =
-            $(
-              `menu-${postId}`
-            );
-
-
-          document
-            .querySelectorAll(
-              ".post-menu"
-            )
-            .forEach(
-              item => {
-
-                if(item !== menu){
-
-                  item.classList.add(
-                    "hidden"
-                  );
-
-                }
-
-              }
-            );
-
-
-          menu?.classList.toggle(
-            "hidden"
-          );
-
-
-          return;
-
-        }
-
-
-        /* DELETE POST */
-
-        if(
-          action ===
-          "delete-post"
-        ){
-
-          $(
-            `menu-${postId}`
-          )?.classList.add(
-            "hidden"
-          );
-
-
-          await deletePost(
-            postId
-          );
-
-
-          return;
-
-        }
-
-
-        /* REACTIONS */
-
-        if(
-          action ===
-          "reactions"
-        ){
-
-          const picker =
-            $(
-              `picker-${postId}`
-            );
-
-
-          document
-            .querySelectorAll(
-              ".reaction-picker.open"
-            )
-            .forEach(
-              item => {
-
-                if(
-                  item !== picker
-                ){
-
-                  item.classList.remove(
-                    "open"
-                  );
-
-                }
-
-              }
-            );
-
-
-          picker?.classList.toggle(
-            "open"
-          );
-
-
-          return;
-
-        }
-
-
-        /* REACT */
-
-        if(
-          action ===
-          "react"
-        ){
-
-          const emoji =
-            button.dataset.emoji;
-
-
-          $(
-            `picker-${postId}`
-          )?.classList.remove(
-            "open"
-          );
-
-
-          await updateReaction(
-            postId,
-            emoji
-          );
-
-
-          return;
-
-        }
-
-
-        /* COMMENTS */
-
-        if(
-          action ===
-          "comments"
-        ){
-
-          const box =
-            $(
-              `comments-${postId}`
-            );
-
-
-          const opened =
-            box?.classList.toggle(
-              "open"
-            );
-
-
-          if(opened){
-
-            await ensureCommentsLoaded(
-              postId
-            );
-
-          }
-
-
-          return;
-
-        }
-
-
-        /* NEW COMMENT */
-
-        if(
-          action ===
-          "comment"
-        ){
-
-          const input =
-            $(
-              `comment-input-${postId}`
-            );
-
-
-          const success =
-            await publishComment(
-              postId,
-              "",
-              input?.value || ""
-            );
-
-
-          if(
-            success &&
-            input
-          ){
-
-            input.value =
-              "";
-
-          }
-
-
-          return;
-
-        }
-
-
-        /* REPLY BOX */
-
-        if(
-          action ===
-          "reply"
-        ){
-
-          openReplyBox(
-            button.dataset.commentId
-          );
-
-
-          return;
-
-        }
-
-
-        /* WRITTEN REPLY */
-
-        if(
-          action ===
-          "send-reply"
-        ){
-
-          const commentId =
-            button.dataset.parentId;
-
-
-          const input =
-            $(
-              `reply-input-${commentId}`
-            );
-
-
-          const success =
-            await publishComment(
-              postId,
-              commentId,
-              input?.value || ""
-            );
-
-
-          if(
-            success &&
-            input
-          ){
-
-            input.value =
-              "";
-
-          }
-
-
-          return;
-
-        }
-
-
-        /* DELETE COMMENT */
-
-        if(
-          action ===
-          "delete-comment"
-        ){
-
-          await deleteComment(
-            postId,
-            button.dataset.commentId
-          );
-
-
-          return;
-
-        }
-
+        menu?.classList.toggle("hidden");
+        return;
       }
-    );
+
+      if(action==="delete-post"){
+        await deletePost(postId);
+        return;
+      }
+
+      if(action==="reactions"){
+        const picker = $(`picker-${postId}`);
+
+        document.querySelectorAll(".reaction-picker.open").forEach(item=>{
+          if(item!==picker) item.classList.remove("open");
+        });
+
+        picker?.classList.toggle("open");
+        return;
+      }
+
+      if(action==="react"){
+        const emoji = button.dataset.emoji;
+        $(`picker-${postId}`)?.classList.remove("open");
+        await updateReaction(postId,emoji);
+        return;
+      }
+
+      if(action==="comments"){
+        const box = $(`comments-${postId}`);
+        const opened = box?.classList.toggle("open");
+
+        if(opened) await ensureCommentsLoaded(postId);
+        return;
+      }
+
+      if(action==="comment"){
+        const input = $(`comment-input-${postId}`);
+
+        button.disabled = true;
+
+        try{
+          const success = await publishComment(
+            postId,
+            "",
+            input?.value || ""
+          );
+
+          if(success && input) input.value = "";
+        }finally{
+          button.disabled = false;
+        }
+
+        return;
+      }
+
+      if(action==="reply"){
+        openReplyBox(button.dataset.commentId);
+        return;
+      }
+
+      if(action==="send-reply"){
+        const commentId = button.dataset.parentId;
+        const input = $(`reply-input-${commentId}`);
+
+        button.disabled = true;
+
+        try{
+          const success = await publishComment(
+            postId,
+            commentId,
+            input?.value || ""
+          );
+
+          if(success && input) input.value = "";
+        }finally{
+          button.disabled = false;
+        }
+
+        return;
+      }
+
+      if(action==="delete-comment"){
+        await deleteComment(
+          postId,
+          button.dataset.commentId
+        );
+      }
+    });
 
 
     /* =========================================================
        CLOSE MENUS / PICKERS
     ========================================================= */
 
-    document.addEventListener(
-      "click",
-      event => {
-
-        if(
-          !event.target.closest(
-            ".post-tools"
-          )
-        ){
-
-          document
-            .querySelectorAll(
-              ".post-menu"
-            )
-            .forEach(
-              menu =>
-                menu.classList.add(
-                  "hidden"
-                )
-            );
-
-        }
-
-
-        if(
-          !event.target.closest(
-            ".post-footer"
-          ) &&
-          !event.target.closest(
-            ".reaction-picker"
-          )
-        ){
-
-          document
-            .querySelectorAll(
-              ".reaction-picker.open"
-            )
-            .forEach(
-              picker =>
-                picker.classList.remove(
-                  "open"
-                )
-            );
-
-        }
-
+    document.addEventListener("click",event=>{
+      if(!event.target.closest(".post-tools")){
+        document.querySelectorAll(".post-menu").forEach(menu=>{
+          menu.classList.add("hidden");
+        });
       }
-    );
+
+      if(
+        !event.target.closest(".post-footer") &&
+        !event.target.closest(".reaction-picker")
+      ){
+        document.querySelectorAll(".reaction-picker.open").forEach(picker=>{
+          picker.classList.remove("open");
+        });
+      }
+    });
 
 
     /* =========================================================
        COMING SOON
     ========================================================= */
 
-    document
-      .querySelectorAll(
-        "[data-coming-soon]"
-      )
-      .forEach(
-        button => {
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              showToast(
-                `${button.dataset.comingSoon} is part of the community plan and will be connected here next.`
-              );
-
-            }
-          );
-
-        }
-      );
+    document.querySelectorAll("[data-coming-soon]").forEach(button=>{
+      button.addEventListener("click",()=>{
+        showToast(
+          `${button.dataset.comingSoon} is part of the community plan and will be connected here next.`
+        );
+      });
+    });
 
 
     /* =========================================================
        TEXT EVENTS
     ========================================================= */
 
-    el.postText.addEventListener(
-      "input",
-      validateTextPost
-    );
-
-
-    el.publishTextBtn.addEventListener(
-      "click",
-      publishTextPost
-    );
+    el.postText.addEventListener("input",validateTextPost);
+    el.publishTextBtn.addEventListener("click",publishTextPost);
 
 
     /* =========================================================
        FIRST POST
     ========================================================= */
 
-    el.firstPostBtn.addEventListener(
-      "click",
-      () => {
+    el.firstPostBtn.addEventListener("click",()=>{
+      el.composerSection.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
 
-        el.composerSection.scrollIntoView(
-          {
-            behavior:"smooth",
-            block:"start"
-          }
-        );
-
-
-        setTimeout(
-          () => {
-
-            el.postText.focus();
-
-          },
-          350
-        );
-
-      }
-    );
+      setTimeout(()=>{
+        el.postText.focus();
+      },350);
+    });
 
 
     /* =========================================================
        NAVIGATION
     ========================================================= */
 
-    el.homeBtn.addEventListener(
-      "click",
-      () => {
+    el.homeBtn.addEventListener("click",()=>{
+      location.href = "home.html";
+    });
 
-        location.href =
-          "home.html";
+    el.refreshBtn.addEventListener("click",async()=>{
+      await loadPosts();
+    });
 
-      }
-    );
-
-
-    el.refreshBtn.addEventListener(
-      "click",
-      async () => {
-
-        await loadPosts();
-
-      }
-    );
-
-
-    el.goLogin.addEventListener(
-      "click",
-      () => {
-
-        location.href =
-          "login.html";
-
-      }
-    );
+    el.goLogin.addEventListener("click",()=>{
+      location.href = "login.html";
+    });
 
 
     /* =========================================================
        AUTH
     ========================================================= */
 
-    onAuthStateChanged(
-      auth,
-      async user => {
+    onAuthStateChanged(auth,async user=>{
+      if(!user){
+        state.user = null;
+        state.userData = null;
 
-        if(!user){
-
-          state.user =
-            null;
-
-          state.userData =
-            null;
-
-
-          el.app
-            .classList
-            .add("hidden");
-
-          el.loginState
-            .classList
-            .add("show");
-
-          return;
-
-        }
-
-
-        state.user =
-          user;
-
-
-        el.loginState
-          .classList
-          .remove("show");
-
-        el.app
-          .classList
-          .remove("hidden");
-
-
-        try{
-
-          await loadUser();
-
-          await loadPosts();
-
-          validateTextPost();
-
-
-        }catch(error){
-
-          console.error(
-            "English Space initialization error:",
-            error
-          );
-
-
-          showToast(
-            error?.message ||
-            "Could not load your English Space profile.",
-            true
-          );
-
-        }
-
+        el.app.classList.add("hidden");
+        el.loginState.classList.add("show");
+        return;
       }
-    );
+
+      state.user = user;
+
+      el.loginState.classList.remove("show");
+      el.app.classList.remove("hidden");
+
+      try{
+        await loadUser();
+        await loadPosts();
+        validateTextPost();
+      }catch(error){
+        console.error("English Space initialization error:",error);
+
+        showToast(
+          error?.message || "Could not load your English Space profile.",
+          true
+        );
+      }
+    });
 
   </script>
 
