@@ -2,3875 +2,1908 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1028">
 <title>Engliza Academy | Login</title>
 
-
 <style>
-
-/* =========================================================
-   ENGLIZA ACADEMY — PREMIUM LOGIN
-   ========================================================= */
-
-:root{
-
-    --navy:#172554;
-
-    --navy-soft:#263766;
-
-    --blue:#3157D5;
-
-    --blue-bright:#4264E8;
-
-    --purple:#6845D5;
-
-    --gold:#D9A441;
-
-    --text:#17213C;
-
-    --muted:#6D7890;
-
-    --muted-light:#8B95AA;
-
-    --background:#F7F9FF;
-
-    --white:#FFFFFF;
-
-    --border:#E3E8F3;
-
-    --shadow:
-        0 28px 75px
-        rgba(23,37,84,.12);
-
+:root {
+    --navy: #0b1028;
+    --navy2: #111a39;
+    --navy3: #19264b;
+    --blue: #6e8dff;
+    --purple: #a78bfa;
+    --gold: #e8c77a;
+    --gold2: #f6e4b1;
+    --white: #f8f9ff;
+    --muted: #aeb9d5;
+    --line: rgba(255,255,255,.12);
+    --panel: rgba(255,255,255,.055);
+    --shadow: 0 25px 70px rgba(0,0,0,.3);
 }
 
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-*{
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 html,
-body{
-
-    width:100%;
-    min-height:100%;
-
+body {
+    width: 100%;
+    min-height: 100%;
 }
 
-
-body{
-
-    min-height:100vh;
-
-    font-family:
-        Arial,
-        "Segoe UI",
-        sans-serif;
-
-    color:var(--text);
-
-    background:
-        var(--background);
-
+body {
+    min-height: 100vh;
+    font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Arial, sans-serif;
+    color: var(--white);
+    background: var(--navy);
+    line-height: 1.7;
 }
 
+button,
+input {
+    font: inherit;
+}
 
-/* =========================================================
-   PAGE
-   ========================================================= */
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-.login-page{
+/* PAGE */
 
-    position:relative;
-
-    width:100%;
-
-    min-height:100vh;
-
-    overflow:hidden;
-
+.login-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
     background:
-
         radial-gradient(
-            circle at 0% 0%,
-            rgba(49,87,213,.09),
+            ellipse at 50% -15%,
+            rgba(94,112,207,.22),
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 0% 75%,
+            rgba(110,141,255,.08),
             transparent 30%
         ),
+        var(--navy);
+}
+
+/* ABSTRACT BACKGROUND */
+
+.background-shape {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shape-one {
+    width: 520px;
+    height: 520px;
+    top: -300px;
+    left: -210px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(110,141,255,.16),
+        rgba(167,139,250,.035)
+    );
+    filter: blur(2px);
+}
+
+.shape-two {
+    width: 450px;
+    height: 450px;
+    right: -260px;
+    bottom: -270px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(167,139,250,.15),
+        rgba(110,141,255,.035)
+    );
+    filter: blur(2px);
+}
+
+.shape-three {
+    width: 170px;
+    height: 170px;
+    left: 43%;
+    top: 7%;
+    border-radius: 50%;
+    border: 1px solid rgba(110,141,255,.12);
+}
+
+.shape-four {
+    width: 85px;
+    height: 85px;
+    right: 8%;
+    top: 20%;
+    border-radius: 24px;
+    border: 1px solid rgba(232,199,122,.14);
+    transform: rotate(18deg);
+}
+
+/* TOP BRAND */
+
+.top-bar {
+    position: relative;
+    z-index: 5;
+    width: min(1080px, calc(100% - 80px));
+    margin: 0 auto;
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    color: #17203c;
+    font-size: 17px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold2), var(--gold));
+    box-shadow: 0 9px 24px rgba(0,0,0,.24);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brand-name {
+    color: var(--gold2);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 2.4px;
+}
 
-        radial-gradient(
-            circle at 100% 100%,
-            rgba(104,69,213,.08),
-            transparent 30%
-        ),
-
-        #F7F9FF;
-
-}
-
-
-/* =========================================================
-   ABSTRACT BACKGROUND
-   ========================================================= */
-
-.background-shape{
-
-    position:absolute;
-
-    pointer-events:none;
-
-    z-index:0;
-
-}
-
-
-.shape-one{
-
-    width:520px;
-
-    height:520px;
-
-    top:-300px;
-
-    left:-210px;
-
-    border-radius:50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(49,87,213,.11),
-            rgba(104,69,213,.035)
-        );
-
-}
-
-
-.shape-two{
-
-    width:450px;
-
-    height:450px;
-
-    right:-260px;
-
-    bottom:-270px;
-
-    border-radius:50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(104,69,213,.10),
-            rgba(49,87,213,.035)
-        );
-
-}
-
-
-.shape-three{
-
-    width:170px;
-
-    height:170px;
-
-    left:43%;
-
-    top:7%;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(49,87,213,.07);
-
-}
-
-
-.shape-four{
-
-    width:85px;
-
-    height:85px;
-
-    right:8%;
-
-    top:20%;
-
-    border-radius:24px;
-
-    border:
-        1px solid
-        rgba(104,69,213,.08);
-
-    transform:
-        rotate(18deg);
-
-}
-
-
-/* =========================================================
-   TOP BRAND
-   ========================================================= */
-
-.top-bar{
-
-    position:relative;
-
-    z-index:5;
-
-    width:
-        min(
-            1080px,
-            calc(100% - 80px)
-        );
-
-    margin:
-        0 auto;
-
-    padding-top:28px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.brand{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:11px;
-
-    text-decoration:none;
-
-}
-
-
-.brand-mark{
-
-    width:39px;
-
-    height:39px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:11px;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:900;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        );
-
-    box-shadow:
-        0 9px 22px
-        rgba(49,87,213,.18);
-
-}
-
-
-.brand-text{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:2px;
-
-}
-
-
-.brand-name{
-
-    color:var(--navy);
-
-    font-size:13px;
-
-    font-weight:900;
-
-    letter-spacing:2.7px;
-
-}
-
-
-.brand-tagline{
-
-    color:#8A94AA;
-
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:1.25px;
-
-}
-
-
-.top-note{
-
-    color:#7B869C;
-
-    font-size:11px;
-
-    font-weight:600;
-
-}
-
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
-/*
-   تم ضبط منطقة التصميم ككتلة واحدة
-   حتى لا يلتصق الطرفان بحواف الشاشة.
-
-   البطاقة + منطقة العنوان والأيقونات
-   الآن تتحركان معًا في منتصف الشاشة.
-*/
-
-.login-content{
-
-    position:relative;
-
-    z-index:2;
-
-    width:
-        min(
-            940px,
-            calc(100% - 80px)
-        );
-
-    min-height:
-        calc(100vh - 92px);
-
-    margin:
-        0 auto;
-
-    display:grid;
-
-    grid-template-columns:
-        470px
-        390px;
-
-    gap:48px;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-/* =========================================================
-   LEFT BRANDING AREA
-   ========================================================= */
-
-.intro-side{
-
-    padding:
-        20px 0;
-
-}
-
-
-.intro-eyebrow{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:11px;
-
-    margin-bottom:19px;
-
-    color:var(--blue);
-
-    font-size:11px;
-
-    font-weight:900;
-
-    letter-spacing:2.7px;
-
-}
-
-
-.intro-eyebrow::before{
-
-    content:"";
-
-    width:34px;
-
-    height:3px;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--blue),
-            var(--purple)
-        );
-
-}
-
-
-.intro-title{
-
-    max-width:590px;
-
-    color:var(--navy);
-
-    font-size:
-        clamp(
-            43px,
-            4.5vw,
-            65px
-        );
-
-    line-height:1.16;
-
-    font-weight:900;
-
-    letter-spacing:-1.8px;
-
-    margin-bottom:39px;
-
-}
-
-
-.intro-title span{
-
-    color:var(--blue);
-
-}
-
-
-/* =========================================================
-   FEATURES
-   ========================================================= */
-
-.features{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:17px;
-
-    max-width:430px;
-
-}
-
-
-.feature{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-}
-
-
-.feature-icon{
-
-    flex:0 0 auto;
-
-    width:50px;
-
-    height:50px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:15px;
-
-    border:
-        1px solid
-        rgba(49,87,213,.12);
-
-    background:
-        rgba(255,255,255,.78);
-
-    color:var(--blue);
-
-    box-shadow:
-        0 8px 24px
-        rgba(30,45,90,.055);
-
-    font-size:21px;
-
-}
-
-
-.feature:nth-child(2)
-.feature-icon{
-
-    color:var(--purple);
-
-}
-
-
-.feature-text{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:4px;
-
-}
-
-
-.feature-title{
-
-    color:var(--navy);
-
-    font-size:13px;
-
-    font-weight:900;
-
-}
-
-
-.feature-description{
-
-    color:#8993A7;
-
-    font-size:10px;
-
-    line-height:1.6;
-
-    font-weight:600;
-
-}
-
-
-/* =========================================================
-   DECORATIVE LINE
-   ========================================================= */
-
-.intro-bottom{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-
-    margin-top:42px;
-
-    color:#A0A8B8;
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:3px;
-
-}
-
-
-.intro-bottom::before{
-
-    content:"";
-
-    width:42px;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--blue),
-            transparent
-        );
-
-}
-
-
-/* =========================================================
-   AUTH COLUMN
-   ========================================================= */
-
-.auth-column{
-
-    width:100%;
-
-}
-
-
-/* =========================================================
-   AUTH CARD
-   ========================================================= */
-
-.auth-card{
-
-    width:100%;
-
-    padding:
-        34px 34px 29px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.95);
-
-    border-radius:27px;
-
-    background:
-        rgba(255,255,255,.94);
-
-    box-shadow:
-        var(--shadow);
-
-}
-
-
-/* =========================================================
-   CARD HEADER
-   ========================================================= */
-
-.card-header{
-
-    text-align:center;
-
-    margin-bottom:25px;
-
-}
-
-
-.card-brand{
-
-    color:var(--blue);
-
-    font-size:9px;
-
-    font-weight:900;
-
-    letter-spacing:3.2px;
-
-    margin-bottom:9px;
-
-}
-
-
-.card-accent{
-
-    width:31px;
-
-    height:3px;
-
-    margin:
-        0 auto 15px;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--blue),
-            var(--purple)
-        );
-
-}
-
-
-.card-title{
-
-    color:var(--navy);
-
-    font-size:27px;
-
-    line-height:1.25;
-
-    font-weight:900;
-
-    margin-bottom:7px;
-
-}
-
-
-.card-subtitle{
-
-    color:#7D879B;
-
-    font-size:11px;
-
-    line-height:1.7;
-
-    font-weight:600;
-
-}
-
-
-/* =========================================================
-   MODE SWITCH
-   ========================================================= */
-
-.mode-switch{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:4px;
-
-    padding:4px;
-
-    margin-bottom:22px;
-
-    border-radius:14px;
-
-    background:#F0F3F9;
-
-}
-
-
-.mode-btn{
-
-    min-height:52px;
-
-    padding:
-        5px 8px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:transparent;
-
-    color:#7D879B;
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-    transition:
-        background .2s ease,
-        color .2s ease,
-        box-shadow .2s ease;
-
-}
-
-
-.mode-btn:hover{
-
-    color:var(--blue);
-
-}
-
-
-.mode-btn.active{
-
-    color:var(--blue);
-
-    background:#FFFFFF;
-
-    box-shadow:
-        0 5px 17px
-        rgba(35,55,110,.09);
-
-}
-
-
-.mode-title{
-
-    display:block;
-
-    font-size:13px;
-
-    font-weight:900;
-
-    line-height:1.2;
-
-}
-
-
-.mode-note{
-
-    display:block;
-
-    margin-top:4px;
-
-    color:#9BA4B5;
-
-    font-size:8px;
-
-    font-weight:600;
-
-    line-height:1.35;
-
-}
-
-
-.mode-btn.active .mode-note{
-
-    color:#7D88A0;
-
-}
-
-
-/* =========================================================
-   FORMS
-   ========================================================= */
-
-.auth-form{
-
-    display:none;
-
-}
-
-
-.auth-form.active{
-
-    display:block;
-
-}
-
-
-/* =========================================================
-   FIELD
-   ========================================================= */
-
-.field{
-
-    margin-bottom:15px;
-
-}
-
-
-.field-label{
-
-    display:block;
-
-    margin-bottom:7px;
-
-    color:#4C5770;
-
-    font-size:12px;
-
-    font-weight:900;
-
-}
-
-
-.auth-input{
-
-    width:100%;
-
-    height:49px;
-
-    padding:
-        0 15px;
-
-    border:
-        1px solid
-        #DDE3EE;
-
-    border-radius:13px;
-
-    background:#FFFFFF;
-
-    color:var(--text);
-
-    font-family:inherit;
-
-    font-size:14px;
-
-    outline:none;
-
-    direction:rtl;
-
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
-
-}
-
-
-.auth-input::placeholder{
-
-    color:#A3ACBC;
-
-}
-
-
-.auth-input:hover{
-
-    border-color:#C9D1E0;
-
-}
-
-
-.auth-input:focus{
-
-    border-color:var(--blue);
-
-    box-shadow:
-        0 0 0 4px
-        rgba(49,87,213,.08);
-
-}
-
-
-/* =========================================================
-   PASSWORD
-   ========================================================= */
-
-.password-row{
-
-    position:relative;
-
-}
-
-
-.password-toggle{
-
-    position:absolute;
-
-    left:9px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    width:34px;
-
-    height:34px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:none;
-
-    border-radius:9px;
-
-    background:transparent;
-
-    color:#78849A;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-}
-
-
-/* =========================================================
-   FORGOT PASSWORD
-   ========================================================= */
-
-.forgot-row{
-
-    display:flex;
-
-    justify-content:flex-start;
-
-    margin-top:-2px;
-
-    margin-bottom:17px;
-
-}
-
-
-.forgot-password{
-
-    color:var(--blue);
-
-    font-size:12px;
-
-    font-weight:800;
-
-    text-decoration:none;
-
-    cursor:pointer;
-
-}
-
-
-.forgot-password:hover{
-
-    text-decoration:underline;
-
-}
-
-
-/* =========================================================
-   SUBMIT BUTTON
-   ========================================================= */
-
-.submit-btn{
-
-    width:100%;
-
-    height:51px;
-
-    border:none;
-
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #3157D5,
-            #6845D5
-        );
-
-    color:#FFFFFF;
-
-    font-family:inherit;
-
-    font-size:15px;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 12px 27px
-        rgba(49,87,213,.20);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        opacity .2s ease;
-
-}
-
-
-.submit-btn:hover{
-
-    transform:
-        translateY(-1px);
-
-    box-shadow:
-        0 16px 32px
-        rgba(49,87,213,.27);
-
-}
-
-
-.submit-btn:active{
-
-    transform:
-        translateY(0);
-
-}
-
-
-.submit-btn:disabled{
-
-    opacity:.6;
-
-    cursor:not-allowed;
-
-}
-
-
-/* =========================================================
-   REGISTER NOTE
-   ========================================================= */
-
-.password-note{
-
-    margin:
-        -2px 0 15px;
-
-    color:#778299;
-
-    font-size:10px;
-
-    line-height:1.7;
-
-    text-align:right;
-
-}
-
-
-/* =========================================================
-   MESSAGES
-   ========================================================= */
-
-.message{
-
-    display:none;
-
-    margin-top:12px;
-
-    padding:11px 12px;
-
-    border-radius:11px;
-
-    font-size:11px;
-
-    line-height:1.7;
-
-    text-align:center;
-
-    font-weight:700;
-
-}
-
-
-.message.success{
-
-    display:block;
-
-    background:#EAF8F0;
-
-    color:#237957;
-
-    border:
-        1px solid
-        #CDEBDD;
-
-}
-
-
-.message.error{
-
-    display:block;
-
-    background:#FFF0F0;
-
-    color:#C62828;
-
-    border:
-        1px solid
-        #F4D2D2;
-
-}
-
-
-/* =========================================================
-   SUPPORT — OUTSIDE CARD
-   ========================================================= */
-
-.support-box{
-
-    margin-top:20px;
-
-    text-align:center;
-
-    color:#626E86;
-
-    font-size:11px;
-
-    line-height:1.8;
-
-}
-
-
-.support-email{
-
-    display:inline-block;
-
-    margin-top:2px;
-
-    color:var(--blue);
-
-    font-size:12px;
-
-    font-weight:900;
-
-    text-decoration:none;
-
-}
-
-
-.support-email:hover{
-
-    text-decoration:underline;
-
-}
-
-
-/* =========================================================
-   LAPTOP
-   ========================================================= */
-
-@media
-(min-width:901px)
-and
-(max-width:1150px){
-
-    .top-bar{
-
-        width:
-            calc(100% - 60px);
-
-    }
-
-
-    .login-content{
-
-        width:
-            min(
-                900px,
-                calc(100% - 60px)
-            );
-
-        gap:40px;
-
-        grid-template-columns:
-            minmax(0,1fr)
-            370px;
-
-        justify-content:center;
-
-    }
-
-
-    .intro-title{
-
-        font-size:47px;
-
-        margin-bottom:31px;
-
-    }
-
-
-    .features{
-
-        gap:14px;
-
-    }
-
-
-    .feature-icon{
-
-        width:46px;
-
-        height:46px;
-
-    }
-
-
-    .auth-card{
-
-        padding:
-            30px 29px 26px;
-
-    }
-
-}
-
-
-/* =========================================================
-   IPAD LANDSCAPE
-   ========================================================= */
-
-/*
-   التعديل الأساسي:
-
-   جعلنا منطقة التصميم كلها كتلة محددة
-   بدل أن تتمدد على كامل عرض الآيباد.
-
-   النتيجة:
-   - البطاقة لا تلتصق بالحافة اليسرى.
-   - العنوان والأيقونات لا تلتصق بالحافة اليمنى.
-   - المسافة بين الطرفين أصبحت أقصر.
-   - يبقى فراغ خارجي أنيق حول التصميم.
-*/
-
-@media
-(min-width:701px)
-and
-(max-width:1100px)
-and
-(orientation:landscape){
-
-    .top-bar{
-
-        width:
-            min(
-                900px,
-                calc(100% - 80px)
-            );
-
-        padding-top:18px;
-
-    }
-
-
-    .login-content{
-
-        width:
-            min(
-                900px,
-                calc(100% - 80px)
-            );
-
-        min-height:
-            calc(100vh - 76px);
-
-        gap:32px;
-
-        grid-template-columns:
-            minmax(0,1fr)
-            350px;
-
-        justify-content:center;
-
-    }
-
-
-    .intro-eyebrow{
-
-        margin-bottom:13px;
-
-        font-size:9px;
-
-    }
-
-
-    .intro-title{
-
-        font-size:36px;
-
-        margin-bottom:24px;
-
-    }
-
-
-    .features{
-
-        gap:11px;
-
-    }
-
-
-    .feature-icon{
-
-        width:42px;
-
-        height:42px;
-
-        border-radius:12px;
-
-        font-size:18px;
-
-    }
-
-
-    .feature-title{
-
-        font-size:11px;
-
-    }
-
-
-    .feature-description{
-
-        font-size:8px;
-
-    }
-
-
-    .intro-bottom{
-
-        margin-top:25px;
-
-        font-size:8px;
-
-    }
-
-
-    .auth-card{
-
-        padding:
-            24px 24px 22px;
-
-        border-radius:23px;
-
-    }
-
-
-    .card-header{
-
-        margin-bottom:17px;
-
-    }
-
-
-    .card-title{
-
-        font-size:22px;
-
-    }
-
-
-    .mode-switch{
-
-        margin-bottom:16px;
-
-    }
-
-
-    .mode-btn{
-
-        min-height:44px;
-
-    }
-
-
-    .mode-title{
-
-        font-size:11px;
-
-    }
-
-
-    .mode-note{
-
-        font-size:7px;
-
-    }
-
-
-    .field{
-
-        margin-bottom:11px;
-
-    }
-
-
-    .field-label{
-
-        font-size:10px;
-
-        margin-bottom:5px;
-
-    }
-
-
-    .auth-input{
-
-        height:43px;
-
-        font-size:12px;
-
-    }
-
-
-    .forgot-password{
-
-        font-size:10px;
-
-    }
-
-
-    .submit-btn{
-
-        height:45px;
-
-        font-size:13px;
-
-    }
-
-
-    .support-box{
-
-        margin-top:14px;
-
-        font-size:9px;
-
-    }
-
-
-    .support-email{
-
-        font-size:10px;
-
-    }
-
-}
-
-
-/* =========================================================
-   TABLET PORTRAIT
-   ========================================================= */
-
-@media
-(min-width:601px)
-and
-(max-width:900px)
-and
-(orientation:portrait){
-
-    .top-bar{
-
-        width:
-            calc(100% - 50px);
-
-        padding-top:22px;
-
-    }
-
-
-    .top-note{
-
-        display:none;
-
-    }
-
-
-    .login-content{
-
-        width:
-            min(
-                610px,
-                calc(100% - 50px)
-            );
-
-        min-height:auto;
-
-        padding:
-            50px 0 55px;
-
-        display:flex;
-
-        flex-direction:column;
-
-        gap:34px;
-
-    }
-
-
-    .intro-side{
-
-        width:100%;
-
-        text-align:center;
-
-        padding:0;
-
-    }
-
-
-    .intro-eyebrow{
-
-        justify-content:center;
-
-        font-size:10px;
-
-        margin-bottom:14px;
-
-    }
-
-
-    .intro-title{
-
-        max-width:600px;
-
-        margin:
-            0 auto 25px;
-
-        font-size:40px;
-
-    }
-
-
-    .features{
-
-        width:100%;
-
-        max-width:540px;
-
-        margin:0 auto;
-
-        display:grid;
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-        gap:12px;
-
-    }
-
-
-    .feature{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        gap:8px;
-
-    }
-
-
-    .feature-icon{
-
-        width:46px;
-
-        height:46px;
-
-    }
-
-
-    .feature-description{
-
-        font-size:8px;
-
-    }
-
-
-    .intro-bottom{
-
-        display:none;
-
-    }
-
-
-    .auth-column{
-
-        width:
-            min(
-                470px,
-                100%
-            );
-
-        margin:0 auto;
-
-    }
-
-
-    .auth-card{
-
-        padding:
-            29px 29px 25px;
-
-        border-radius:25px;
-
-    }
-
+.brand-tagline {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
 }
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width:600px){
-
-    body{
-
-        overflow:auto;
-
-    }
-
-
-    .login-page{
-
-        min-height:100svh;
-
-        overflow:hidden;
-
-    }
-
-
-    /* -----------------------------------------------------
-       BACKGROUND
-       ----------------------------------------------------- */
-
-    .shape-one{
-
-        width:330px;
-
-        height:330px;
-
-        top:-200px;
-
-        left:-180px;
-
-    }
-
-
-    .shape-two{
-
-        width:300px;
-
-        height:300px;
-
-        right:-190px;
-
-        bottom:-180px;
-
-    }
-
-
-    .shape-three{
-
-        width:95px;
-
-        height:95px;
-
-        left:auto;
-
-        right:8%;
-
-        top:11%;
-
-    }
-
-
-    .shape-four{
-
-        width:58px;
-
-        height:58px;
-
-        right:7%;
-
-        top:27%;
-
-        border-radius:16px;
-
-    }
-
-
-    /* -----------------------------------------------------
-       TOP BAR
-       ----------------------------------------------------- */
-
-    .top-bar{
-
-        width:
-            calc(100% - 32px);
-
-        padding-top:18px;
-
-    }
-
-
-    .brand{
-
-        gap:9px;
-
-    }
-
 
-    .brand-mark{
+.top-note {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
 
-        width:34px;
+/* MAIN LAYOUT */
 
-        height:34px;
+.login-content {
+    position: relative;
+    z-index: 2;
+    width: min(940px, calc(100% - 80px));
+    min-height: calc(100vh - 92px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 470px 390px;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+}
 
-        border-radius:10px;
+/* INTRO SIDE */
 
-        font-size:13px;
+.intro-side {
+    padding: 20px 0;
+}
 
-    }
+.intro-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 19px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+}
 
+.intro-eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--gold), var(--purple));
+}
 
-    .brand-name{
+.intro-title {
+    max-width: 590px;
+    color: var(--white);
+    font-size: clamp(43px, 4.5vw, 65px);
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -1.8px;
+    margin-bottom: 39px;
+}
 
-        font-size:10px;
+.intro-title span {
+    background: linear-gradient(90deg, var(--gold2), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        letter-spacing:2px;
+/* FEATURES */
 
-    }
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    max-width: 430px;
+}
 
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-    .brand-tagline{
+.feature-icon {
+    flex: 0 0 auto;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid rgba(110,141,255,.2);
+    background: rgba(255,255,255,.045);
+    color: var(--gold);
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    font-size: 21px;
+}
 
-        font-size:6px;
+.feature:nth-child(2) .feature-icon {
+    color: var(--purple);
+}
 
-        letter-spacing:.9px;
+.feature:nth-child(3) .feature-icon {
+    color: var(--blue);
+}
 
-    }
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
+.feature-title {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 900;
+}
 
-    .top-note{
+.feature-description {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.6;
+    font-weight: 600;
+}
 
-        display:none;
+/* DECORATIVE LINE */
 
-    }
+.intro-bottom {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 42px;
+    color: #8794b7;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
 
+.intro-bottom::before {
+    content: "";
+    width: 42px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
 
-    /* -----------------------------------------------------
-       MAIN
-       ----------------------------------------------------- */
+/* AUTH COLUMN */
 
-    .login-content{
+.auth-column {
+    width: 100%;
+}
 
-        width:
-            calc(100% - 28px);
+/* AUTH CARD */
 
-        min-height:auto;
+.auth-card {
+    width: 100%;
+    padding: 34px 34px 29px;
+    border: 1px solid var(--line);
+    border-radius: 27px;
+    background: linear-gradient(
+        145deg,
+        rgba(25,38,75,.97),
+        rgba(17,26,57,.98)
+    );
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+}
 
-        padding:
-            38px 0 34px;
+/* CARD HEADER */
 
-        display:flex;
+.card-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-        flex-direction:column;
+.card-brand {
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3.2px;
+    margin-bottom: 9px;
+}
 
-        align-items:center;
+.card-accent {
+    width: 31px;
+    height: 3px;
+    margin: 0 auto 15px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--gold), var(--purple));
+}
 
-        gap:23px;
+.card-title {
+    color: var(--white);
+    font-size: 27px;
+    line-height: 1.35;
+    font-weight: 900;
+    margin-bottom: 7px;
+}
 
-    }
+.card-subtitle {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+    font-weight: 600;
+}
 
+/* LOGIN / REGISTER SWITCH */
 
-    /* -----------------------------------------------------
-       MOBILE INTRO
-       ----------------------------------------------------- */
+.mode-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    background: rgba(5,10,30,.48);
+    border: 1px solid rgba(255,255,255,.055);
+}
 
-    .intro-side{
+.mode-btn {
+    min-height: 52px;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease,
+        border-color .2s ease, box-shadow .2s ease;
+}
 
-        width:100%;
+.mode-btn:hover {
+    color: var(--gold2);
+}
 
-        padding:0;
+.mode-btn.active {
+    color: var(--gold2);
+    background: rgba(232,199,122,.1);
+    border-color: rgba(232,199,122,.2);
+    box-shadow: 0 5px 17px rgba(0,0,0,.14);
+}
 
-        text-align:center;
+.mode-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.3;
+}
 
-    }
+.mode-note {
+    display: block;
+    margin-top: 4px;
+    color: #8996b6;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 1.4;
+}
 
+.mode-btn.active .mode-note {
+    color: var(--muted);
+}
 
-    .intro-eyebrow{
+/* FORMS */
 
-        justify-content:center;
+.auth-form {
+    display: none;
+}
 
-        gap:7px;
+.auth-form.active {
+    display: block;
+}
 
-        margin-bottom:12px;
+/* FIELD */
 
-        font-size:8px;
+.field {
+    margin-bottom: 15px;
+}
 
-        letter-spacing:1.8px;
+.field-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #e0e6f8;
+    font-size: 12px;
+    font-weight: 900;
+}
 
-    }
+.auth-input {
+    width: 100%;
+    height: 49px;
+    padding: 0 15px;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 13px;
+    background: rgba(5,10,30,.38);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    direction: rtl;
+    transition: border-color .2s ease, box-shadow .2s ease,
+        background .2s ease;
+}
 
+.auth-input::placeholder {
+    color: #8793b2;
+}
 
-    .intro-eyebrow::before{
+.auth-input:hover {
+    border-color: rgba(174,185,213,.35);
+}
 
-        width:22px;
+.auth-input:focus {
+    border-color: var(--blue);
+    background: rgba(5,10,30,.55);
+    box-shadow: 0 0 0 4px rgba(110,141,255,.12);
+}
 
-        height:2px;
+.auth-input:-webkit-autofill,
+.auth-input:-webkit-autofill:hover,
+.auth-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--white);
+    box-shadow: 0 0 0 1000px #111a39 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
 
-    }
+/* PASSWORD */
 
+.password-row {
+    position: relative;
+}
 
-    .intro-title{
+.password-toggle {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--gold2);
+    cursor: pointer;
+    font-size: 15px;
+}
 
-        max-width:100%;
+.password-toggle:hover {
+    background: rgba(255,255,255,.07);
+}
 
-        margin:
-            0 auto 21px;
+/* FORGOT PASSWORD */
 
-        font-size:30px;
+.forgot-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -2px;
+    margin-bottom: 17px;
+}
 
-        line-height:1.2;
+.forgot-password {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-        letter-spacing:-.7px;
+.forgot-password:hover {
+    color: var(--gold2);
+    text-decoration: underline;
+}
 
-    }
+/* SUBMIT BUTTON */
 
+.submit-btn {
+    width: 100%;
+    min-height: 51px;
+    border: 1px solid rgba(246,228,177,.55);
+    border-radius: 13px;
+    background: linear-gradient(135deg, #f2d997, #d8b65e);
+    color: #17203c;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 12px 27px rgba(0,0,0,.2);
+    transition: transform .2s ease, box-shadow .2s ease,
+        filter .2s ease, opacity .2s ease;
+}
 
-    /* -----------------------------------------------------
-       MOBILE FEATURES
-       ----------------------------------------------------- */
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(0,0,0,.28);
+    filter: brightness(1.05);
+}
 
-    .features{
+.submit-btn:active {
+    transform: translateY(0);
+}
 
-        width:100%;
+.submit-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+}
 
-        max-width:430px;
+/* REGISTER NOTE */
 
-        display:grid;
+.password-note {
+    margin: -2px 0 15px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+    text-align: right;
+}
 
-        grid-template-columns:
-            repeat(3,1fr);
+/* MESSAGES */
 
-        gap:7px;
+.message {
+    display: none;
+    margin-top: 12px;
+    padding: 11px 12px;
+    border-radius: 11px;
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: center;
+    font-weight: 700;
+}
 
-        margin:0 auto;
+.message.success {
+    display: block;
+    background: rgba(52,211,153,.1);
+    color: #8ce8c1;
+    border: 1px solid rgba(52,211,153,.25);
+}
 
-    }
+.message.error {
+    display: block;
+    background: rgba(248,113,113,.1);
+    color: #ffaaaa;
+    border: 1px solid rgba(248,113,113,.24);
+}
 
+/* SUPPORT */
 
-    .feature{
+.support-box {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
 
-        flex-direction:column;
+.support-email {
+    display: inline-block;
+    margin-top: 2px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
 
-        align-items:center;
+.support-email:hover {
+    color: var(--gold2);
+    text-decoration: underline;
+}
 
-        justify-content:flex-start;
+/* FOCUS ACCESSIBILITY */
 
-        text-align:center;
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 4px;
+}
 
-        gap:7px;
+/* LAPTOP */
 
+@media (min-width:901px) and (max-width:1150px) {
+    .top-bar {
+        width: calc(100% - 60px);
     }
-
-
-    .feature-icon{
-
-        width:42px;
-
-        height:42px;
 
-        border-radius:12px;
-
-        font-size:18px;
-
+    .login-content {
+        width: min(900px, calc(100% - 60px));
+        gap: 40px;
+        grid-template-columns: minmax(0,1fr) 370px;
     }
-
-
-    .feature-title{
 
-        font-size:9px;
-
-        line-height:1.4;
-
+    .intro-title {
+        font-size: 47px;
+        margin-bottom: 31px;
     }
-
-
-    .feature-description{
 
-        display:none;
-
+    .features {
+        gap: 14px;
     }
-
-
-    .intro-bottom{
-
-        display:none;
 
+    .feature-icon {
+        width: 46px;
+        height: 46px;
     }
-
-
-    /* -----------------------------------------------------
-       MOBILE AUTH
-       ----------------------------------------------------- */
-
-    .auth-column{
-
-        width:100%;
 
-        max-width:430px;
-
+    .auth-card {
+        padding: 30px 29px 26px;
     }
-
-
-    .auth-card{
-
-        width:100%;
-
-        padding:
-            25px 18px 21px;
-
-        border-radius:22px;
-
-        background:
-            rgba(255,255,255,.97);
+}
 
-        box-shadow:
-            0 22px 55px
-            rgba(23,37,84,.13);
+/* IPAD LANDSCAPE */
 
+@media (min-width:701px) and (max-width:1100px)
+and (orientation:landscape) {
+    .top-bar {
+        width: min(900px, calc(100% - 80px));
+        padding-top: 18px;
     }
 
-
-    /* -----------------------------------------------------
-       MOBILE CARD HEADER
-       ----------------------------------------------------- */
-
-    .card-header{
-
-        margin-bottom:20px;
-
+    .login-content {
+        width: min(900px, calc(100% - 80px));
+        min-height: calc(100vh - 76px);
+        gap: 32px;
+        grid-template-columns: minmax(0,1fr) 350px;
     }
-
-
-    .card-brand{
-
-        font-size:8px;
-
-        letter-spacing:2.5px;
 
-        margin-bottom:7px;
-
+    .intro-eyebrow {
+        margin-bottom: 13px;
+        font-size: 9px;
     }
-
-
-    .card-accent{
-
-        width:27px;
 
-        height:3px;
-
-        margin-bottom:12px;
-
+    .intro-title {
+        font-size: 36px;
+        margin-bottom: 24px;
     }
-
-
-    .card-title{
 
-        font-size:22px;
-
-        margin-bottom:5px;
-
+    .features {
+        gap: 11px;
     }
-
-
-    .card-subtitle{
 
-        font-size:10px;
-
-        line-height:1.7;
-
+    .feature-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        font-size: 18px;
     }
-
-
-    /* -----------------------------------------------------
-       MOBILE MODE SWITCH
-       ----------------------------------------------------- */
 
-    .mode-switch{
-
-        gap:3px;
-
-        padding:3px;
-
-        margin-bottom:18px;
-
-        border-radius:12px;
-
+    .feature-title {
+        font-size: 11px;
     }
-
-
-    .mode-btn{
-
-        min-height:48px;
 
-        border-radius:9px;
-
+    .feature-description {
+        font-size: 8px;
     }
-
-
-    .mode-title{
-
-        font-size:11px;
 
+    .intro-bottom {
+        margin-top: 25px;
+        font-size: 8px;
     }
-
-
-    .mode-note{
-
-        margin-top:3px;
-
-        font-size:6.5px;
 
+    .auth-card {
+        padding: 24px 24px 22px;
+        border-radius: 23px;
     }
 
-
-    /* -----------------------------------------------------
-       MOBILE FIELDS
-       ----------------------------------------------------- */
-
-    .field{
-
-        margin-bottom:12px;
-
+    .card-header {
+        margin-bottom: 17px;
     }
-
-
-    .field-label{
-
-        font-size:9px;
-
-        margin-bottom:5px;
 
+    .card-title {
+        font-size: 22px;
     }
 
-
-    .auth-input{
-
-        height:45px;
-
-        padding:
-            0 11px;
-
-        border-radius:11px;
-
-        font-size:11px;
-
+    .mode-switch {
+        margin-bottom: 16px;
     }
-
-
-    .password-toggle{
 
-        left:6px;
-
-        width:29px;
-
-        height:29px;
-
-        font-size:12px;
-
+    .mode-btn {
+        min-height: 44px;
     }
-
-
-    /* -----------------------------------------------------
-       MOBILE FORGOT
-       ----------------------------------------------------- */
-
-    .forgot-row{
-
-        margin-top:0;
 
-        margin-bottom:13px;
-
+    .mode-title {
+        font-size: 11px;
     }
-
-
-    .forgot-password{
-
-        font-size:9px;
 
+    .mode-note {
+        font-size: 7px;
     }
-
-
-    /* -----------------------------------------------------
-       MOBILE BUTTON
-       ----------------------------------------------------- */
-
-    .submit-btn{
-
-        height:46px;
 
-        border-radius:11px;
-
-        font-size:12px;
-
+    .field {
+        margin-bottom: 11px;
     }
-
-
-    /* -----------------------------------------------------
-       MOBILE REGISTER NOTE
-       ----------------------------------------------------- */
-
-    .password-note{
-
-        margin:
-            -1px 0 11px;
-
-        font-size:8px;
-
-        line-height:1.7;
 
+    .field-label {
+        font-size: 10px;
+        margin-bottom: 5px;
     }
 
-
-    /* -----------------------------------------------------
-       MOBILE MESSAGE
-       ----------------------------------------------------- */
-
-    .message{
-
-        margin-top:9px;
-
-        padding:8px;
-
-        border-radius:9px;
-
-        font-size:9px;
-
+    .auth-input {
+        height: 43px;
+        font-size: 12px;
     }
-
 
-    /* -----------------------------------------------------
-       MOBILE SUPPORT
-       ----------------------------------------------------- */
-
-    .support-box{
-
-        margin-top:15px;
-
-        padding:
-            0 4px;
-
-        color:#59657D;
-
-        font-size:9px;
-
-        line-height:1.8;
-
+    .forgot-password {
+        font-size: 10px;
     }
-
 
-    .support-email{
-
-        margin-top:2px;
-
-        font-size:10px;
+    .submit-btn {
+        min-height: 45px;
+        font-size: 13px;
+    }
 
+    .support-box {
+        margin-top: 14px;
+        font-size: 9px;
     }
 
+    .support-email {
+        font-size: 10px;
+    }
 }
 
+/* TABLET PORTRAIT */
 
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+@media (min-width:601px) and (max-width:900px)
+and (orientation:portrait) {
+    .top-bar {
+        width: calc(100% - 50px);
+        padding-top: 22px;
+    }
 
-@media (max-width:390px){
+    .top-note {
+        display: none;
+    }
 
-    .top-bar{
+    .login-content {
+        width: min(610px, calc(100% - 50px));
+        min-height: auto;
+        padding: 50px 0 55px;
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+    }
 
-        width:
-            calc(100% - 24px);
+    .intro-side {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
 
+    .intro-eyebrow {
+        justify-content: center;
+        font-size: 10px;
+        margin-bottom: 14px;
     }
 
+    .intro-title {
+        max-width: 600px;
+        margin: 0 auto 25px;
+        font-size: 40px;
+    }
 
-    .login-content{
+    .features {
+        width: 100%;
+        max-width: 540px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px;
+    }
 
-        width:
-            calc(100% - 22px);
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
 
-        padding-top:31px;
+    .feature-icon {
+        width: 46px;
+        height: 46px;
+    }
 
-        gap:19px;
+    .feature-description {
+        font-size: 8px;
+    }
 
+    .intro-bottom {
+        display: none;
     }
 
+    .auth-column {
+        width: min(470px, 100%);
+        margin: 0 auto;
+    }
 
-    .intro-title{
+    .auth-card {
+        padding: 29px 29px 25px;
+        border-radius: 25px;
+    }
+}
 
-        font-size:27px;
+/* MOBILE */
 
-        margin-bottom:18px;
+@media (max-width:600px) {
+    .login-page {
+        min-height: 100svh;
+    }
 
+    .shape-one {
+        width: 330px;
+        height: 330px;
+        top: -200px;
+        left: -180px;
     }
 
+    .shape-two {
+        width: 300px;
+        height: 300px;
+        right: -190px;
+        bottom: -180px;
+    }
 
-    .features{
+    .shape-three {
+        width: 95px;
+        height: 95px;
+        left: auto;
+        right: 8%;
+        top: 11%;
+    }
 
-        gap:4px;
+    .shape-four {
+        width: 58px;
+        height: 58px;
+        right: 7%;
+        top: 27%;
+        border-radius: 16px;
+    }
 
+    .top-bar {
+        width: calc(100% - 32px);
+        padding-top: 18px;
     }
 
+    .brand {
+        gap: 9px;
+    }
 
-    .feature-icon{
+    .brand-mark {
+        width: 35px;
+        height: 35px;
+        border-radius: 11px;
+        font-size: 14px;
+    }
 
-        width:38px;
+    .brand-name {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
 
-        height:38px;
+    .brand-tagline {
+        font-size: 6px;
+        letter-spacing: .8px;
+    }
 
-        border-radius:11px;
+    .top-note {
+        display: none;
+    }
 
-        font-size:16px;
+    .login-content {
+        width: calc(100% - 28px);
+        min-height: auto;
+        padding: 38px 0 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 23px;
+    }
 
+    .intro-side {
+        width: 100%;
+        padding: 0;
+        text-align: center;
     }
 
+    .intro-eyebrow {
+        justify-content: center;
+        gap: 7px;
+        margin-bottom: 12px;
+        font-size: 8px;
+        letter-spacing: 1.6px;
+    }
 
-    .feature-title{
+    .intro-eyebrow::before {
+        width: 22px;
+        height: 2px;
+    }
 
-        font-size:8px;
+    .intro-title {
+        max-width: 100%;
+        margin: 0 auto 21px;
+        font-size: 30px;
+        line-height: 1.25;
+        letter-spacing: -.7px;
+    }
 
+    .features {
+        width: 100%;
+        max-width: 430px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 7px;
+        margin: 0 auto;
     }
 
+    .feature {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        gap: 7px;
+    }
 
-    .auth-card{
+    .feature-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
 
-        padding:
-            22px 14px 18px;
+    .feature-title {
+        font-size: 9px;
+        line-height: 1.5;
+    }
 
-        border-radius:20px;
+    .feature-description {
+        display: none;
+    }
 
+    .intro-bottom {
+        display: none;
     }
 
+    .auth-column {
+        width: 100%;
+        max-width: 430px;
+    }
 
-    .card-title{
+    .auth-card {
+        width: 100%;
+        padding: 25px 18px 21px;
+        border-radius: 22px;
+    }
 
-        font-size:20px;
+    .card-header {
+        margin-bottom: 20px;
+    }
 
+    .card-brand {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+        margin-bottom: 7px;
     }
 
+    .card-accent {
+        width: 27px;
+        margin-bottom: 12px;
+    }
 
-    .card-subtitle{
+    .card-title {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
 
-        font-size:9px;
+    .card-subtitle {
+        font-size: 10px;
+    }
 
+    .mode-switch {
+        gap: 3px;
+        padding: 3px;
+        margin-bottom: 18px;
+        border-radius: 12px;
     }
 
+    .mode-btn {
+        min-height: 48px;
+        border-radius: 9px;
+    }
 
-    .mode-btn{
+    .mode-title {
+        font-size: 11px;
+    }
 
-        min-height:45px;
+    .mode-note {
+        margin-top: 3px;
+        font-size: 6.5px;
+    }
 
+    .field {
+        margin-bottom: 12px;
     }
 
+    .field-label {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
 
-    .mode-title{
+    .auth-input {
+        height: 45px;
+        padding: 0 11px;
+        border-radius: 11px;
+        font-size: 12px;
+    }
 
-        font-size:10px;
+    .password-toggle {
+        left: 6px;
+        width: 29px;
+        height: 29px;
+        font-size: 12px;
+    }
 
+    .forgot-row {
+        margin-top: 0;
+        margin-bottom: 13px;
     }
 
+    .forgot-password {
+        font-size: 10px;
+    }
 
-    .mode-note{
+    .submit-btn {
+        min-height: 46px;
+        border-radius: 11px;
+        font-size: 13px;
+    }
 
-        font-size:6px;
+    .password-note {
+        margin: -1px 0 11px;
+        font-size: 9px;
+    }
 
+    .message {
+        margin-top: 9px;
+        padding: 8px;
+        border-radius: 9px;
+        font-size: 10px;
     }
 
+    .support-box {
+        margin-top: 15px;
+        padding: 0 4px;
+        font-size: 9px;
+        line-height: 1.8;
+    }
 
-    .auth-input{
+    .support-email {
+        font-size: 10px;
+    }
+}
 
-        height:43px;
+/* VERY SMALL PHONES */
 
-        font-size:10px;
+@media (max-width:390px) {
+    .top-bar {
+        width: calc(100% - 24px);
+    }
 
+    .login-content {
+        width: calc(100% - 22px);
+        padding-top: 31px;
+        gap: 19px;
     }
 
+    .intro-title {
+        font-size: 27px;
+        margin-bottom: 18px;
+    }
 
-    .submit-btn{
+    .features {
+        gap: 4px;
+    }
 
-        height:44px;
+    .feature-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        font-size: 16px;
+    }
 
-        font-size:11px;
+    .feature-title {
+        font-size: 8px;
+    }
 
+    .auth-card {
+        padding: 22px 14px 18px;
+        border-radius: 20px;
     }
 
+    .card-title {
+        font-size: 20px;
+    }
 
-    .support-box{
+    .card-subtitle {
+        font-size: 9px;
+    }
 
-        font-size:8px;
+    .mode-btn {
+        min-height: 45px;
+    }
 
+    .mode-title {
+        font-size: 10px;
     }
 
+    .mode-note {
+        font-size: 6px;
+    }
 
-    .support-email{
+    .auth-input {
+        height: 43px;
+        font-size: 11px;
+    }
 
-        font-size:9px;
+    .submit-btn {
+        min-height: 44px;
+        font-size: 12px;
+    }
 
+    .support-box {
+        font-size: 8px;
     }
 
+    .support-email {
+        font-size: 9px;
+    }
 }
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
 
-@media (prefers-reduced-motion:reduce){
+/* REDUCED MOTION */
 
+@media (prefers-reduced-motion: reduce) {
     *,
     *::before,
-    *::after{
-
-        transition:none !important;
-
-        animation:none !important;
-
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
     }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="login-page">
 
-
-    <!-- =====================================================
-         ABSTRACT BACKGROUND
-         ===================================================== -->
-
+    <!-- ABSTRACT BACKGROUND -->
     <div class="background-shape shape-one"></div>
-
     <div class="background-shape shape-two"></div>
-
     <div class="background-shape shape-three"></div>
-
     <div class="background-shape shape-four"></div>
 
-
-
-    <!-- =====================================================
-         TOP BRAND
-         ===================================================== -->
-
+    <!-- TOP BRAND -->
     <header class="top-bar">
 
-
-        <a
-            href="#"
-            class="brand"
-        >
-
-            <div class="brand-mark">
-
-                E
-
-            </div>
-
+        <a href="#" class="brand">
+            <div class="brand-mark">E</div>
 
             <div class="brand-text">
-
-                <div class="brand-name">
-
-                    ENGLIZA ACADEMY
-
-                </div>
-
-
+                <div class="brand-name">ENGLIZA ACADEMY</div>
                 <div class="brand-tagline">
-
                     ENGLISH • CONFIDENCE • GROWTH
-
                 </div>
-
             </div>
-
         </a>
 
-
         <div class="top-note">
-
             منصة Engliza التعليمية
-
         </div>
-
 
     </header>
 
-
-
-    <!-- =====================================================
-         MAIN CONTENT
-         ===================================================== -->
-
+    <!-- MAIN CONTENT -->
     <main class="login-content">
 
-
-        <!-- =================================================
-             BRANDING SIDE
-             ================================================= -->
-
+        <!-- BRANDING SIDE -->
         <section class="intro-side">
 
-
             <div class="intro-eyebrow">
-
                 ENGLISH • CONFIDENCE • GROWTH
-
             </div>
 
-
             <h1 class="intro-title">
-
                 طوّر لغتك،
                 <br>
                 <span>ووسّع عالمك.</span>
-
             </h1>
 
-
-
-            <!-- =================================================
-                 FEATURES
-                 ================================================= -->
-
+            <!-- FEATURES -->
             <div class="features">
 
-
                 <div class="feature">
-
-
-                    <div class="feature-icon">
-
-                        📈
-
-                    </div>
-
+                    <div class="feature-icon">📈</div>
 
                     <div class="feature-text">
-
-
-                        <div class="feature-title">
-
-                            تطوّر مستمر
-
-                        </div>
-
-
+                        <div class="feature-title">تطوّر مستمر</div>
                         <div class="feature-description">
-
                             تابع تقدمك وشاهد تطورك.
-
                         </div>
-
-
                     </div>
-
-
                 </div>
 
-
-
                 <div class="feature">
-
-
-                    <div class="feature-icon">
-
-                        ⚡
-
-                    </div>
-
+                    <div class="feature-icon">⚡</div>
 
                     <div class="feature-text">
-
-
-                        <div class="feature-title">
-
-                            تعلّم بمرونة
-
-                        </div>
-
-
+                        <div class="feature-title">تعلّم بمرونة</div>
                         <div class="feature-description">
-
                             تعلّم في الوقت والمكان المناسبين لك.
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-
-
 
                 <div class="feature">
-
-
-                    <div class="feature-icon">
-
-                        📖
-
-                    </div>
-
+                    <div class="feature-icon">📖</div>
 
                     <div class="feature-text">
-
-
-                        <div class="feature-title">
-
-                            تعلّم منظّم
-
-                        </div>
-
-
+                        <div class="feature-title">تعلّم منظّم</div>
                         <div class="feature-description">
-
                             محتوى مرتب يساعدك على التقدم بثبات.
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-
 
             </div>
-
-
 
             <div class="intro-bottom">
-
                 A BETTER YOU IN ENGLISH
-
             </div>
-
 
         </section>
 
-
-
-        <!-- =================================================
-             AUTH
-             ================================================= -->
-
+        <!-- AUTH -->
         <section class="auth-column">
-
 
             <div class="auth-card">
 
-
-                <!-- =================================================
-                     CARD HEADER
-                     ================================================= -->
-
+                <!-- CARD HEADER -->
                 <div class="card-header">
 
-
                     <div class="card-brand">
-
                         ENGLIZA ACADEMY
-
                     </div>
-
 
                     <div class="card-accent"></div>
 
-
                     <h2 class="card-title">
-
                         أهلًا بعودتك 👋
-
                     </h2>
 
-
                     <p class="card-subtitle">
-
                         سعيدون بتواجدك في منصتك التعليمية.
-
                     </p>
-
 
                 </div>
 
-
-
-                <!-- =================================================
-                     LOGIN / REGISTER SWITCH
-                     ================================================= -->
-
+                <!-- LOGIN / REGISTER SWITCH -->
                 <div class="mode-switch">
-
 
                     <button
                         type="button"
                         id="loginModeBtn"
-                        class="mode-btn active"
-                    >
+                        class="mode-btn active">
 
                         <span class="mode-title">
-
                             تسجيل الدخول
-
                         </span>
 
-
                         <span class="mode-note">
-
                             إذا كان لديك حساب مسبقًا
-
                         </span>
 
                     </button>
-
-
 
                     <button
                         type="button"
                         id="registerModeBtn"
-                        class="mode-btn"
-                    >
+                        class="mode-btn">
 
                         <span class="mode-title">
-
                             إنشاء حساب
-
                         </span>
 
-
                         <span class="mode-note">
-
                             إذا كانت هذه أول مرة لك في الأكاديمية
-
                         </span>
 
                     </button>
 
-
                 </div>
 
-
-
-                <!-- =================================================
-                     LOGIN FORM
-                     ================================================= -->
-
+                <!-- LOGIN FORM -->
                 <form
                     id="loginForm"
                     class="auth-form active"
-                    novalidate
-                >
-
+                    novalidate>
 
                     <div class="field">
 
-
                         <label
                             class="field-label"
-                            for="loginEmail"
-                        >
+                            for="loginEmail">
 
                             البريد الإلكتروني
 
                         </label>
-
 
                         <input
                             id="loginEmail"
                             class="auth-input"
                             type="email"
                             autocomplete="email"
-                            placeholder="أدخل بريدك الإلكتروني"
-                        >
-
+                            placeholder="أدخل بريدك الإلكتروني">
 
                     </div>
 
-
-
                     <div class="field">
-
 
                         <label
                             class="field-label"
-                            for="loginPassword"
-                        >
+                            for="loginPassword">
 
                             كلمة المرور
 
                         </label>
 
-
                         <div class="password-row">
-
 
                             <input
                                 id="loginPassword"
                                 class="auth-input"
                                 type="password"
                                 autocomplete="current-password"
-                                placeholder="أدخل كلمة المرور"
-                            >
-
+                                placeholder="أدخل كلمة المرور">
 
                             <button
                                 type="button"
                                 class="password-toggle"
                                 id="loginPasswordToggle"
-                                aria-label="إظهار كلمة المرور"
-                            >
+                                aria-label="إظهار كلمة المرور">
 
                                 👁
 
                             </button>
 
-
                         </div>
-
 
                     </div>
 
-
-
                     <div class="forgot-row">
-
 
                         <a
                             href="#"
                             id="forgotPassword"
-                            class="forgot-password"
-                        >
+                            class="forgot-password">
 
                             نسيت كلمة المرور؟
 
                         </a>
 
-
                     </div>
-
-
 
                     <button
                         id="loginSubmitBtn"
                         type="submit"
-                        class="submit-btn"
-                    >
+                        class="submit-btn">
 
                         تسجيل الدخول
 
                     </button>
 
-
-
-                    <div
-                        id="loginMessage"
-                        class="message"
-                    >
-                    </div>
-
+                    <div id="loginMessage" class="message"></div>
 
                 </form>
 
-
-
-                <!-- =================================================
-                     REGISTER FORM
-                     ================================================= -->
-
+                <!-- REGISTER FORM -->
                 <form
                     id="registerForm"
                     class="auth-form"
-                    novalidate
-                >
-
+                    novalidate>
 
                     <div class="field">
 
-
                         <label
                             class="field-label"
-                            for="registerName"
-                        >
+                            for="registerName">
 
                             الاسم الكامل
 
                         </label>
-
 
                         <input
                             id="registerName"
                             class="auth-input"
                             type="text"
                             autocomplete="name"
-                            placeholder="اكتب اسمك الكامل"
-                        >
-
+                            placeholder="اكتب اسمك الكامل">
 
                     </div>
 
-
-
                     <div class="field">
-
 
                         <label
                             class="field-label"
-                            for="registerEmail"
-                        >
+                            for="registerEmail">
 
                             البريد الإلكتروني
 
                         </label>
-
 
                         <input
                             id="registerEmail"
                             class="auth-input"
                             type="email"
                             autocomplete="email"
-                            placeholder="أدخل بريدك الإلكتروني"
-                        >
-
+                            placeholder="أدخل بريدك الإلكتروني">
 
                     </div>
 
-
-
                     <div class="field">
-
 
                         <label
                             class="field-label"
-                            for="registerPassword"
-                        >
+                            for="registerPassword">
 
                             كلمة المرور
 
                         </label>
 
-
                         <div class="password-row">
-
 
                             <input
                                 id="registerPassword"
                                 class="auth-input"
                                 type="password"
                                 autocomplete="new-password"
-                                placeholder="أنشئ كلمة مرور"
-                            >
-
+                                placeholder="أنشئ كلمة مرور">
 
                             <button
                                 type="button"
                                 class="password-toggle"
                                 id="registerPasswordToggle"
-                                aria-label="إظهار كلمة المرور"
-                            >
+                                aria-label="إظهار كلمة المرور">
 
                                 👁
 
                             </button>
 
-
                         </div>
-
 
                     </div>
 
-
-
                     <p class="password-note">
-
                         🔒 احتفظ بكلمة المرور في مكان آمن،
                         ستحتاج إليها عند تسجيل الدخول لاحقًا.
-
                     </p>
-
-
 
                     <button
                         id="registerSubmitBtn"
                         type="submit"
-                        class="submit-btn"
-                    >
+                        class="submit-btn">
 
                         إنشاء الحساب
 
                     </button>
 
-
-
-                    <div
-                        id="registerMessage"
-                        class="message"
-                    >
-                    </div>
-
+                    <div id="registerMessage" class="message"></div>
 
                 </form>
 
-
             </div>
 
-
-
-            <!-- =================================================
-                 SUPPORT — OUTSIDE CARD
-                 ================================================= -->
-
+            <!-- SUPPORT -->
             <div class="support-box">
 
-
                 <div>
-
                     تحتاج مساعدة؟ تواصل مع فريق الأكاديمية 🤝
-
                 </div>
-
 
                 <a
                     href="mailto:support@englizaacademy.com"
-                    class="support-email"
-                >
+                    class="support-email">
 
                     support@englizaacademy.com
 
                 </a>
 
-
             </div>
-
 
         </section>
 
-
     </main>
-
 
 </div>
 
-
-
-<!-- =========================================================
-     FIREBASE
-     ========================================================= -->
-
+<!-- FIREBASE -->
 <script type="module">
 
-
 import {
-
     initializeApp
-
-}
-from
-"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
 import {
-
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     sendPasswordResetEmail,
     updateProfile
-
-}
-from
-"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 import {
-
     getFirestore,
     doc,
     setDoc,
     serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-}
-from
-"https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-
-
-
-/* =========================================================
-   FIREBASE CONFIG
-   ========================================================= */
-
+/* FIREBASE CONFIG */
 const firebaseConfig = {
-
-    apiKey:
-        "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
-
-    authDomain:
-        "engliza-academy.firebaseapp.com",
-
-    projectId:
-        "engliza-academy",
-
-    storageBucket:
-        "engliza-academy.firebasestorage.app",
-
-    messagingSenderId:
-        "389916153039",
-
-    appId:
-        "1:389916153039:web:95b8a3056b1718cfd353ba",
-
-    measurementId:
-        "G-7S608ZTN0W"
-
+    apiKey: "AIzaSyD-t1qrChOYuMIGO8O3JFVgRZolstvZUrk",
+    authDomain: "engliza-academy.firebaseapp.com",
+    projectId: "engliza-academy",
+    storageBucket: "engliza-academy.firebasestorage.app",
+    messagingSenderId: "389916153039",
+    appId: "1:389916153039:web:95b8a3056b1718cfd353ba",
+    measurementId: "G-7S608ZTN0W"
 };
 
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-const app =
-    initializeApp(firebaseConfig);
+/* ELEMENTS */
+const loginModeBtn = document.getElementById("loginModeBtn");
+const registerModeBtn = document.getElementById("registerModeBtn");
 
+const loginForm = document.getElementById("loginForm");
+const registerForm = document.getElementById("registerForm");
 
-const auth =
-    getAuth(app);
+const loginEmail = document.getElementById("loginEmail");
+const loginPassword = document.getElementById("loginPassword");
+const loginSubmitBtn = document.getElementById("loginSubmitBtn");
+const loginMessage = document.getElementById("loginMessage");
 
+const registerName = document.getElementById("registerName");
+const registerEmail = document.getElementById("registerEmail");
+const registerPassword = document.getElementById("registerPassword");
+const registerSubmitBtn = document.getElementById("registerSubmitBtn");
+const registerMessage = document.getElementById("registerMessage");
 
-const db =
-    getFirestore(app);
+const forgotPassword = document.getElementById("forgotPassword");
 
+/* SWITCH LOGIN / REGISTER */
+function showLoginMode() {
+    loginForm.classList.add("active");
+    registerForm.classList.remove("active");
 
+    loginModeBtn.classList.add("active");
+    registerModeBtn.classList.remove("active");
 
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
-
-const loginModeBtn =
-    document.getElementById("loginModeBtn");
-
-
-const registerModeBtn =
-    document.getElementById("registerModeBtn");
-
-
-const loginForm =
-    document.getElementById("loginForm");
-
-
-const registerForm =
-    document.getElementById("registerForm");
-
-
-const loginEmail =
-    document.getElementById("loginEmail");
-
-
-const loginPassword =
-    document.getElementById("loginPassword");
-
-
-const loginSubmitBtn =
-    document.getElementById("loginSubmitBtn");
-
-
-const loginMessage =
-    document.getElementById("loginMessage");
-
-
-const registerName =
-    document.getElementById("registerName");
-
-
-const registerEmail =
-    document.getElementById("registerEmail");
-
-
-const registerPassword =
-    document.getElementById("registerPassword");
-
-
-const registerSubmitBtn =
-    document.getElementById("registerSubmitBtn");
-
-
-const registerMessage =
-    document.getElementById("registerMessage");
-
-
-const forgotPassword =
-    document.getElementById("forgotPassword");
-
-
-
-/* =========================================================
-   SWITCH LOGIN / REGISTER
-   ========================================================= */
-
-function showLoginMode(){
-
-
-    loginForm.classList.add(
-        "active"
-    );
-
-
-    registerForm.classList.remove(
-        "active"
-    );
-
-
-    loginModeBtn.classList.add(
-        "active"
-    );
-
-
-    registerModeBtn.classList.remove(
-        "active"
-    );
-
+    clearMessage(loginMessage);
+    clearMessage(registerMessage);
 }
 
+function showRegisterMode() {
+    registerForm.classList.add("active");
+    loginForm.classList.remove("active");
 
-function showRegisterMode(){
+    registerModeBtn.classList.add("active");
+    loginModeBtn.classList.remove("active");
 
-
-    registerForm.classList.add(
-        "active"
-    );
-
-
-    loginForm.classList.remove(
-        "active"
-    );
-
-
-    registerModeBtn.classList.add(
-        "active"
-    );
-
-
-    loginModeBtn.classList.remove(
-        "active"
-    );
-
+    clearMessage(loginMessage);
+    clearMessage(registerMessage);
 }
 
+loginModeBtn.addEventListener("click", showLoginMode);
+registerModeBtn.addEventListener("click", showRegisterMode);
 
-loginModeBtn.addEventListener(
-    "click",
-    showLoginMode
-);
-
-
-registerModeBtn.addEventListener(
-    "click",
-    showRegisterMode
-);
-
-
-
-/* =========================================================
-   PASSWORD VISIBILITY
-   ========================================================= */
-
-function togglePassword(
-    input,
-    button
-){
-
-
-    if(
-        input.type === "password"
-    ){
-
+/* PASSWORD VISIBILITY */
+function togglePassword(input, button) {
+    if (input.type === "password") {
         input.type = "text";
-
-        button.textContent =
-            "🙈";
-
-    }
-
-    else{
-
+        button.textContent = "🙈";
+        button.setAttribute("aria-label", "إخفاء كلمة المرور");
+    } else {
         input.type = "password";
-
-        button.textContent =
-            "👁";
-
+        button.textContent = "👁";
+        button.setAttribute("aria-label", "إظهار كلمة المرور");
     }
-
 }
-
 
 document
-    .getElementById(
-        "loginPasswordToggle"
-    )
-    .addEventListener(
-        "click",
-        function(){
-
-            togglePassword(
-                loginPassword,
-                this
-            );
-
-        }
-    );
-
+    .getElementById("loginPasswordToggle")
+    .addEventListener("click", function() {
+        togglePassword(loginPassword, this);
+    });
 
 document
-    .getElementById(
-        "registerPasswordToggle"
-    )
-    .addEventListener(
-        "click",
-        function(){
+    .getElementById("registerPasswordToggle")
+    .addEventListener("click", function() {
+        togglePassword(registerPassword, this);
+    });
 
-            togglePassword(
-                registerPassword,
-                this
-            );
-
-        }
-    );
-
-
-
-/* =========================================================
-   MESSAGES
-   ========================================================= */
-
-function showMessage(
-    element,
-    text,
-    type
-){
-
-
-    element.textContent =
-        text;
-
-
-    element.className =
-        "message " + type;
-
+/* MESSAGES */
+function showMessage(element, text, type) {
+    element.textContent = text;
+    element.className = "message " + type;
 }
 
-
-function clearMessage(
-    element
-){
-
-
-    element.textContent =
-        "";
-
-
-    element.className =
-        "message";
-
+function clearMessage(element) {
+    element.textContent = "";
+    element.className = "message";
 }
 
-
-
-/* =========================================================
-   FIREBASE ERROR TRANSLATION
-   ========================================================= */
-
-function getArabicError(
-    errorCode
-){
-
-
-    switch(errorCode){
-
-
+/* FIREBASE ERROR TRANSLATION */
+function getArabicError(errorCode) {
+    switch (errorCode) {
         case "auth/email-already-in-use":
-
-            return
-                "هذا البريد الإلكتروني مسجل بالفعل.";
-
+            return "هذا البريد الإلكتروني مسجل بالفعل.";
 
         case "auth/invalid-email":
-
-            return
-                "البريد الإلكتروني غير صحيح.";
-
+            return "البريد الإلكتروني غير صحيح.";
 
         case "auth/weak-password":
-
-            return
-                "كلمة المرور ضعيفة. يجب أن تتكون من 6 أحرف على الأقل.";
-
+            return "كلمة المرور ضعيفة. يجب أن تتكون من 6 أحرف على الأقل.";
 
         case "auth/invalid-credential":
-
-            return
-                "البريد الإلكتروني أو كلمة المرور غير صحيحة.";
-
+            return "البريد الإلكتروني أو كلمة المرور غير صحيحة.";
 
         case "auth/user-not-found":
-
-            return
-                "لا يوجد حساب مسجل بهذا البريد الإلكتروني.";
-
+            return "لا يوجد حساب مسجل بهذا البريد الإلكتروني.";
 
         case "auth/wrong-password":
-
-            return
-                "كلمة المرور غير صحيحة.";
-
+            return "كلمة المرور غير صحيحة.";
 
         case "auth/missing-password":
-
-            return
-                "يرجى كتابة كلمة المرور.";
-
+            return "يرجى كتابة كلمة المرور.";
 
         case "auth/too-many-requests":
-
-            return
-                "تم إجراء محاولات كثيرة. يرجى المحاولة لاحقًا.";
-
+            return "تم إجراء محاولات كثيرة. يرجى المحاولة لاحقًا.";
 
         case "auth/network-request-failed":
-
-            return
-                "تعذر الاتصال بالإنترنت. تحقق من الاتصال وحاول مرة أخرى.";
-
+            return "تعذر الاتصال بالإنترنت. تحقق من الاتصال وحاول مرة أخرى.";
 
         case "auth/operation-not-allowed":
-
-            return
-                "تسجيل الدخول بهذه الطريقة غير مفعّل حاليًا.";
-
+            return "تسجيل الدخول بهذه الطريقة غير مفعّل حاليًا.";
 
         default:
-
-            return
-                "حدث خطأ. يرجى المحاولة مرة أخرى.";
-
+            return "حدث خطأ. يرجى المحاولة مرة أخرى.";
     }
-
 }
 
+/* REGISTER */
+registerForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+    clearMessage(registerMessage);
 
+    const name = registerName.value.trim();
+    const email = registerEmail.value.trim();
+    const password = registerPassword.value;
 
-/* =========================================================
-   REGISTER
-   ========================================================= */
-
-registerForm.addEventListener(
-
-    "submit",
-
-    async function(event){
-
-
-        event.preventDefault();
-
-
-        clearMessage(
-            registerMessage
+    if (name === "" || email === "" || password === "") {
+        showMessage(
+            registerMessage,
+            "يرجى تعبئة جميع الحقول.",
+            "error"
         );
-
-
-        const name =
-            registerName.value.trim();
-
-
-        const email =
-            registerEmail.value.trim();
-
-
-        const password =
-            registerPassword.value;
-
-
-        if(
-
-            name === "" ||
-
-            email === "" ||
-
-            password === ""
-
-        ){
-
-            showMessage(
-
-                registerMessage,
-
-                "يرجى تعبئة جميع الحقول.",
-
-                "error"
-
-            );
-
-            return;
-
-        }
-
-
-        registerSubmitBtn.disabled =
-            true;
-
-
-        registerSubmitBtn.textContent =
-            "جارٍ إنشاء الحساب...";
-
-
-        try{
-
-
-            const userCredential =
-
-                await
-                createUserWithEmailAndPassword(
-
-                    auth,
-
-                    email,
-
-                    password
-
-                );
-
-
-            await updateProfile(
-
-                userCredential.user,
-
-                {
-
-                    displayName:name
-
-                }
-
-            );
-
-
-            await setDoc(
-
-                doc(
-
-                    db,
-
-                    "users",
-
-                    userCredential.user.uid
-
-                ),
-
-                {
-
-                    name:name,
-
-                    email:email,
-
-                    placementTestCompleted:false,
-
-                    currentLevel:null,
-
-                    lastLesson:null,
-
-                    createdAt:
-                        serverTimestamp(),
-
-                    coins:0,
-
-                    streak:0,
-
-                    completedLessons:[],
-
-                    completedUnits:[],
-
-                    unlockedWords:[],
-
-                    unlockedExpressions:[]
-
-                }
-
-            );
-
-
-            showMessage(
-
-                registerMessage,
-
-                "تم إنشاء الحساب بنجاح. سيتم نقلك إلى المنصة.",
-
-                "success"
-
-            );
-
-
-            setTimeout(
-
-                function(){
-
-
-                    window.location.href =
-                        "home.html";
-
-
-                },
-
-                1500
-
-            );
-
-        }
-
-
-        catch(error){
-
-
-            showMessage(
-
-                registerMessage,
-
-                getArabicError(
-                    error.code
-                ),
-
-                "error"
-
-            );
-
-
-            registerSubmitBtn.disabled =
-                false;
-
-
-            registerSubmitBtn.textContent =
-                "إنشاء الحساب";
-
-        }
-
+        return;
     }
 
-);
+    registerSubmitBtn.disabled = true;
+    registerSubmitBtn.textContent = "جارٍ إنشاء الحساب...";
 
-
-
-/* =========================================================
-   LOGIN
-   ========================================================= */
-
-loginForm.addEventListener(
-
-    "submit",
-
-    async function(event){
-
-
-        event.preventDefault();
-
-
-        clearMessage(
-            loginMessage
+    try {
+        const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
         );
 
-
-        const email =
-            loginEmail.value.trim();
-
-
-        const password =
-            loginPassword.value;
-
-
-        if(
-
-            email === "" ||
-
-            password === ""
-
-        ){
-
-            showMessage(
-
-                loginMessage,
-
-                "يرجى كتابة البريد الإلكتروني وكلمة المرور.",
-
-                "error"
-
-            );
-
-            return;
-
-        }
-
-
-        loginSubmitBtn.disabled =
-            true;
-
-
-        loginSubmitBtn.textContent =
-            "جارٍ تسجيل الدخول...";
-
-
-        try{
-
-
-            await signInWithEmailAndPassword(
-
-                auth,
-
-                email,
-
-                password
-
-            );
-
-
-            showMessage(
-
-                loginMessage,
-
-                "تم تسجيل الدخول بنجاح. سيتم نقلك إلى المنصة.",
-
-                "success"
-
-            );
-
-
-            setTimeout(
-
-                function(){
-
-
-                    window.location.href =
-                        "home.html";
-
-
-                },
-
-                1500
-
-            );
-
-        }
-
-
-        catch(error){
-
-
-            showMessage(
-
-                loginMessage,
-
-                getArabicError(
-                    error.code
-                ),
-
-                "error"
-
-            );
-
-
-            loginSubmitBtn.disabled =
-                false;
-
-
-            loginSubmitBtn.textContent =
-                "تسجيل الدخول";
-
-        }
-
-    }
-
-);
-
-
-
-/* =========================================================
-   FORGOT PASSWORD
-   ========================================================= */
-
-forgotPassword.addEventListener(
-
-    "click",
-
-    async function(event){
-
-
-        event.preventDefault();
-
-
-        clearMessage(
-            loginMessage
+        await updateProfile(userCredential.user, {
+            displayName: name
+        });
+
+        await setDoc(
+            doc(db, "users", userCredential.user.uid),
+            {
+                name: name,
+                email: email,
+                placementTestCompleted: false,
+                currentLevel: null,
+                lastLesson: null,
+                createdAt: serverTimestamp(),
+                coins: 0,
+                streak: 0,
+                completedLessons: [],
+                completedUnits: [],
+                unlockedWords: [],
+                unlockedExpressions: []
+            }
         );
 
+        showMessage(
+            registerMessage,
+            "تم إنشاء الحساب بنجاح. سيتم نقلك إلى المنصة.",
+            "success"
+        );
 
-        const email =
-            loginEmail.value.trim();
+        setTimeout(function() {
+            window.location.href = "home.html";
+        }, 1500);
 
+    } catch (error) {
+        console.error("Registration error:", error);
 
-        if(
-            email === ""
-        ){
+        showMessage(
+            registerMessage,
+            getArabicError(error.code),
+            "error"
+        );
 
-            showMessage(
+        registerSubmitBtn.disabled = false;
+        registerSubmitBtn.textContent = "إنشاء الحساب";
+    }
+});
 
-                loginMessage,
+/* LOGIN */
+loginForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+    clearMessage(loginMessage);
 
-                "اكتب بريدك الإلكتروني أولًا، ثم اضغط على نسيت كلمة المرور.",
+    const email = loginEmail.value.trim();
+    const password = loginPassword.value;
 
-                "error"
-
-            );
-
-
-            loginEmail.focus();
-
-
-            return;
-
-        }
-
-
-        try{
-
-
-            await sendPasswordResetEmail(
-
-                auth,
-
-                email
-
-            );
-
-
-            showMessage(
-
-                loginMessage,
-
-                "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
-
-                "success"
-
-            );
-
-        }
-
-
-        catch(error){
-
-
-            showMessage(
-
-                loginMessage,
-
-                getArabicError(
-                    error.code
-                ),
-
-                "error"
-
-            );
-
-        }
-
+    if (email === "" || password === "") {
+        showMessage(
+            loginMessage,
+            "يرجى كتابة البريد الإلكتروني وكلمة المرور.",
+            "error"
+        );
+        return;
     }
 
-);
+    loginSubmitBtn.disabled = true;
+    loginSubmitBtn.textContent = "جارٍ تسجيل الدخول...";
+
+    try {
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        showMessage(
+            loginMessage,
+            "تم تسجيل الدخول بنجاح. سيتم نقلك إلى المنصة.",
+            "success"
+        );
+
+        setTimeout(function() {
+            window.location.href = "home.html";
+        }, 1500);
+
+    } catch (error) {
+        console.error("Login error:", error);
+
+        showMessage(
+            loginMessage,
+            getArabicError(error.code),
+            "error"
+        );
+
+        loginSubmitBtn.disabled = false;
+        loginSubmitBtn.textContent = "تسجيل الدخول";
+    }
+});
+
+/* FORGOT PASSWORD */
+forgotPassword.addEventListener("click", async function(event) {
+    event.preventDefault();
+    clearMessage(loginMessage);
+
+    const email = loginEmail.value.trim();
+
+    if (email === "") {
+        showMessage(
+            loginMessage,
+            "اكتب بريدك الإلكتروني أولًا، ثم اضغط على نسيت كلمة المرور.",
+            "error"
+        );
+
+        loginEmail.focus();
+        return;
+    }
+
+    try {
+        await sendPasswordResetEmail(auth, email);
+
+        showMessage(
+            loginMessage,
+            "إذا كان البريد الإلكتروني مسجلًا، فستصلك تعليمات إعادة تعيين كلمة المرور.",
+            "success"
+        );
+
+    } catch (error) {
+        console.error("Password reset error:", error);
+
+        showMessage(
+            loginMessage,
+            getArabicError(error.code),
+            "error"
+        );
+    }
+});
 
 </script>
 
-
 </body>
-
 </html>
