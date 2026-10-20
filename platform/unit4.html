@@ -2,782 +2,980 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-
-الوحدة الرابعة | Engliza Academy
-
-</title>
+<title>الوحدة الرابعة | Engliza Academy</title>
 
 <style>
-
-*{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body{
-
-background:linear-gradient(
-135deg,
-#eef4ff,
-#f7f3ff
-);
-
-padding:30px 20px;
-
+:root {
+    --bg: #080d18;
+    --card: #111c2e;
+    --card-hover: #16243a;
+    --gold: #e8c77b;
+    --gold-light: #f5dfa2;
+    --text: #f4f1e9;
+    --muted: #a7b2c5;
+    --border: rgba(232, 199, 123, 0.19);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.23);
 }
 
-.container{
-
-max-width:1050px;
-margin:auto;
-
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    background:
+        radial-gradient(ellipse at top, #14213a 0%, transparent 55%),
+        linear-gradient(145deg, var(--bg), #090f1c 55%, #0d1422);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 30px 20px 45px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
 /* ==========================
-   الأعلى
+   الشريط العلوي
 ========================== */
 
-.top-bar{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
-
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 42px;
 }
 
-.back-btn{
-
-background:white;
-padding:14px 25px;
-border-radius:18px;
-text-decoration:none;
-color:#1f3c88;
-font-size:18px;
-font-weight:bold;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
-
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(17, 28, 46, 0.92);
+    border: 1px solid var(--border);
+    padding: 13px 22px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--gold-light);
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.25s ease;
 }
 
-.back-btn:hover{
-
-transform:translateY(-4px);
-
+.back-btn:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+    border-color: rgba(232, 199, 123, 0.45);
 }
 
-.owl-circle img{
-
-width:80px;
-height:80px;
-border-radius:50%;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
+.brand-mark {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(232, 199, 123, 0.5);
+    border-radius: 13px;
+    color: var(--gold);
+    font-size: 23px;
+    font-weight: bold;
+    background: linear-gradient(145deg, #18253a, #0d1525);
+}
+
+.brand-name {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.brand-caption {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    direction: ltr;
+    text-align: right;
+}
 
 /* ==========================
    عنوان الوحدة
 ========================== */
 
-.title{
-
-text-align:center;
-font-size:52px;
-color:#1f3c88;
-margin-bottom:18px;
-
+.unit-heading {
+    text-align: center;
+    margin-bottom: 38px;
+    animation: fadeUp 0.6s ease both;
 }
 
-.subtitle{
-
-text-align:center;
-font-size:22px;
-font-weight:600;
-line-height:2;
-color:#555;
-margin-bottom:55px;
-
+.unit-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    direction: ltr;
+    margin-bottom: 19px;
 }
 
+.unit-kicker::before,
+.unit-kicker::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.65;
+}
+
+.title {
+    color: var(--text);
+    font-size: clamp(34px, 5vw, 49px);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.title span {
+    color: var(--gold);
+}
+
+.subtitle {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 2;
+}
 
 /* ==========================
-   البطاقات العامة
+   بطاقة الترحيب
 ========================== */
 
-.card{
-
-background:white;
-padding:40px;
-border-radius:35px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-margin-bottom:40px;
-transition:.35s;
-animation:fadeUp .6s ease;
-
+.welcome-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden;
+    padding: 29px 30px;
+    margin-bottom: 38px;
+    border: 1px solid var(--border);
+    border-radius: 21px;
+    background:
+        linear-gradient(120deg, rgba(232, 199, 123, 0.07), transparent 60%),
+        var(--card);
+    box-shadow: var(--shadow);
+    animation: fadeUp 0.65s ease both;
 }
 
-.card:hover{
-
-transform:translateY(-4px);
-box-shadow:0 22px 50px rgba(0,0,0,.12);
-
+.welcome-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--gold),
+        transparent
+    );
 }
 
+.welcome-number {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 82px;
+    border: 1px solid rgba(232, 199, 123, 0.35);
+    border-radius: 19px;
+    background: rgba(232, 199, 123, 0.055);
+    color: var(--gold);
+    font-size: 27px;
+    font-weight: bold;
+    direction: ltr;
+}
+
+.welcome-content {
+    flex: 1;
+}
+
+.welcome-content h2 {
+    color: var(--gold-light);
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2;
+}
 
 /* ==========================
-   بطاقة الفيديو
+   عنوان قائمة الدروس
 ========================== */
 
-.video-card iframe{
-
-width:100%;
-aspect-ratio:16/9;
-border:none;
-border-radius:25px;
-
+.lessons-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 19px;
 }
 
-
-/* ==========================
-   بطاقة البومة
-========================== */
-
-.message-card{
-
-display:flex;
-align-items:center;
-justify-content:flex-start;
-gap:25px;
-
+.lessons-heading h2 {
+    color: var(--text);
+    font-size: 21px;
 }
 
-.message-card img{
-
-width:130px;
-flex-shrink:0;
-display:block;
-
+.lessons-heading h2 span {
+    color: var(--gold);
 }
 
-.message-content{
-
-flex:1;
-
+.lessons-count {
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
 }
-
-.message-content h2{
-
-font-size:32px;
-color:#1f3c88;
-margin-bottom:12px;
-
-}
-
-.message-content p{
-
-font-size:22px;
-line-height:1.9;
-font-weight:600;
-color:#444;
-margin:0;
-
-}
-
 
 /* ==========================
    بطاقات الدروس
 ========================== */
 
-.lesson-card{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:25px;
-
+.lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
 }
 
-.lesson-info h2{
-
-font-size:30px;
-color:#1f3c88;
-margin-bottom:12px;
-
+.lesson-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 21px 23px;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 17px;
+    background: linear-gradient(115deg, #111c2e, #101a2b);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    animation: fadeUp 0.5s ease both;
 }
 
-.lesson-info p{
-
-font-size:22px;
-font-weight:600;
-color:#555;
-
+.lesson-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(232, 199, 123, 0.32);
+    background: linear-gradient(115deg, #16243a, #111d30);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.17);
 }
 
+.lesson-info {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    min-width: 0;
+}
+
+.lesson-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: rgba(232, 199, 123, 0.075);
+    border: 1px solid rgba(232, 199, 123, 0.2);
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: bold;
+    direction: ltr;
+}
+
+.lesson-info h3 {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 3px;
+}
+
+.lesson-info p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.lesson-action {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+.start-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 125px;
+    padding: 12px 17px;
+    border: 1px solid rgba(232, 199, 123, 0.45);
+    border-radius: 11px;
+    background: linear-gradient(135deg, #e8c77b, #d6ad57);
+    color: #172033;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.start-btn:hover {
+    background: linear-gradient(135deg, #f5dfa2, #e8c77b);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(232, 199, 123, 0.13);
+}
+
+.lesson-arrow {
+    color: var(--gold);
+    font-size: 20px;
+    opacity: 0.7;
+    transition: 0.25s ease;
+}
+
+.lesson-card:hover .lesson-arrow {
+    opacity: 1;
+    transform: translateX(-3px);
+}
 
 /* ==========================
-   زر الدرس
+   بطاقة المراجعة
 ========================== */
 
-.start-btn{
-
-background:linear-gradient(
-90deg,
-#3768ff,
-#6f43ff
-);
-
-color:white;
-border:none;
-padding:18px 32px;
-border-radius:22px;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 12px 30px rgba(0,0,0,.15);
-
+.final-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 35px 28px;
+    margin-top: 37px;
+    border: 1px solid rgba(232, 199, 123, 0.3);
+    border-radius: 21px;
+    background:
+        radial-gradient(ellipse at top, rgba(232, 199, 123, 0.11), transparent 70%),
+        linear-gradient(135deg, #142037, #101827);
+    box-shadow: var(--shadow);
 }
 
-.start-btn:hover{
-
-transform:translateY(-4px);
-box-shadow:0 18px 40px rgba(0,0,0,.20);
-
+.final-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 59px;
+    height: 59px;
+    margin: 0 auto 18px;
+    border: 1px solid rgba(232, 199, 123, 0.35);
+    border-radius: 17px;
+    background: rgba(232, 199, 123, 0.07);
+    color: var(--gold);
+    font-size: 25px;
 }
 
+.final-card h2 {
+    color: var(--gold-light);
+    font-size: 27px;
+    margin-bottom: 13px;
+}
+
+.final-card p {
+    max-width: 520px;
+    margin: 0 auto 24px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+.final-card .start-btn {
+    min-width: 210px;
+    padding: 14px 23px;
+    font-size: 14px;
+}
 
 /* ==========================
-   بطاقة النهاية
+   التذييل
 ========================== */
 
-.final-card{
-
-text-align:center;
-
-background:linear-gradient(
-135deg,
-#6f43ff,
-#8f6dff
-);
-
-padding:40px;
-
+.footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    text-align: center;
+    color: #77849a;
+    font-size: 11px;
+    letter-spacing: 0.5px;
 }
 
-.final-card h2{
-
-font-size:40px;
-color:#ffe082;
-margin-bottom:20px;
-
+.footer span {
+    color: var(--gold);
 }
-
-.final-card p{
-
-font-size:22px;
-line-height:2;
-font-weight:600;
-color:white;
-margin-bottom:30px;
-
-}
-
 
 /* ==========================
    الحركات
 ========================== */
 
-@keyframes fadeUp{
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(13px);
+    }
 
-from{
-
-opacity:0;
-transform:translateY(20px);
-
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
 
 /* ==========================
-   الجوال
+   الأجهزة اللوحية والجوال
 ========================== */
 
-@media(max-width:768px){
+@media (max-width: 768px) {
+    body {
+        padding: 22px 15px 32px;
+    }
 
-.title{
+    .top-bar {
+        margin-bottom: 32px;
+    }
 
-font-size:38px;
+    .brand-mark {
+        width: 39px;
+        height: 39px;
+        font-size: 21px;
+    }
 
+    .brand-name {
+        font-size: 14px;
+    }
+
+    .brand-caption {
+        font-size: 9px;
+    }
+
+    .back-btn {
+        padding: 11px 14px;
+        font-size: 13px;
+    }
+
+    .unit-heading {
+        margin-bottom: 29px;
+    }
+
+    .unit-kicker {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .welcome-card {
+        gap: 16px;
+        padding: 22px 19px;
+        margin-bottom: 30px;
+    }
+
+    .welcome-number {
+        width: 63px;
+        height: 63px;
+        border-radius: 15px;
+        font-size: 22px;
+    }
+
+    .welcome-content h2 {
+        font-size: 19px;
+    }
+
+    .welcome-content p {
+        font-size: 13px;
+    }
+
+    .lessons-heading h2 {
+        font-size: 18px;
+    }
+
+    .lessons-count {
+        font-size: 11px;
+    }
+
+    .lesson-card {
+        padding: 17px 15px;
+        gap: 13px;
+    }
+
+    .lesson-info {
+        gap: 12px;
+    }
+
+    .lesson-number {
+        width: 41px;
+        height: 41px;
+        border-radius: 11px;
+        font-size: 12px;
+    }
+
+    .lesson-info h3 {
+        font-size: 15px;
+    }
+
+    .lesson-info p {
+        font-size: 12px;
+    }
+
+    .lesson-action {
+        gap: 7px;
+    }
+
+    .start-btn {
+        min-width: auto;
+        padding: 11px 12px;
+        font-size: 12px;
+    }
+
+    .lesson-arrow {
+        display: none;
+    }
+
+    .final-card {
+        padding: 29px 20px;
+        margin-top: 30px;
+    }
+
+    .final-card h2 {
+        font-size: 24px;
+    }
+
+    .final-card p {
+        font-size: 13px;
+    }
 }
 
-.subtitle{
+@media (max-width: 420px) {
+    .brand {
+        gap: 8px;
+    }
 
-font-size:18px;
+    .brand-name {
+        font-size: 12px;
+    }
 
+    .brand-caption {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .back-btn {
+        padding: 10px 11px;
+        font-size: 12px;
+    }
+
+    .lesson-card {
+        align-items: flex-start;
+    }
+
+    .lesson-info {
+        align-items: flex-start;
+    }
+
+    .lesson-number {
+        width: 35px;
+        height: 35px;
+        font-size: 11px;
+    }
+
+    .lesson-info h3 {
+        font-size: 14px;
+    }
+
+    .lesson-info p {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    .start-btn {
+        padding: 10px;
+        font-size: 11px;
+    }
 }
-
-.card{
-
-padding:28px;
-
-}
-
-.message-card{
-
-display:flex;
-align-items:center;
-justify-content:flex-start;
-gap:16px;
-
-}
-
-.message-card img{
-
-width:95px;
-
-}
-
-.message-content h2{
-
-font-size:24px;
-
-}
-
-.message-content p{
-
-font-size:17px;
-line-height:1.8;
-
-}
-
-.lesson-card{
-
-flex-direction:column;
-align-items:stretch;
-gap:20px;
-
-}
-
-.lesson-info{
-
-text-align:center;
-
-}
-
-.lesson-info h2{
-
-font-size:24px;
-
-}
-
-.lesson-info p{
-
-font-size:18px;
-
-}
-
-.start-btn{
-
-width:100%;
-
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
+    <!-- الشريط العلوي -->
 
-<!-- ==========================
-        الأعلى
-========================== -->
+    <header class="top-bar">
 
-<div class="top-bar">
+        <a href="beginner.html" class="back-btn">
+            ⬅️ رجوع
+        </a>
 
-<a
-href=beginner.html"
-class="back-btn">
+        <div class="brand">
+            <div class="brand-mark">E</div>
 
-⬅️ رجوع
+            <div>
+                <div class="brand-name">Engliza Academy</div>
+                <span class="brand-caption">LEARN ENGLISH</span>
+            </div>
+        </div>
 
-</a>
+    </header>
 
-<div class="owl-circle">
 
-<img src="../okay.owl.PNG">
+    <!-- عنوان الوحدة -->
+
+    <section class="unit-heading">
+
+        <div class="unit-kicker">
+            BEGINNER · UNIT 04
+        </div>
+
+        <h1 class="title">
+            الوحدة <span>الرابعة</span>
+        </h1>
+
+        <p class="subtitle">
+            طوّر مهاراتك في المحادثة والقراءة، وتعلّم كيف تتحدث عن نفسك
+            وتقارن الأعمار وتصف المنزل والوظائف.
+        </p>
+
+    </section>
+
+
+    <!-- بطاقة الترحيب -->
+
+    <section class="welcome-card">
+
+        <div class="welcome-number">04</div>
+
+        <div class="welcome-content">
+
+            <h2>أهلًا بك في الوحدة الرابعة!</h2>
+
+            <p>
+                أنت تقترب خطوة جديدة من تطوير لغتك الإنجليزية.
+                تابع الدروس بالترتيب، وطبّق ما تتعلمه حتى تتمكن من استخدامه بثقة.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- عنوان الدروس -->
+
+    <div class="lessons-heading">
+
+        <h2>دروس <span>الوحدة</span></h2>
+
+        <span class="lessons-count">8 دروس تعليمية</span>
+
+    </div>
+
+
+    <!-- قائمة الدروس -->
+
+    <main class="lessons-list">
+
+
+        <!-- الدرس الأول -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">01</div>
+
+                <div>
+                    <h3>الدرس الأول</h3>
+                    <p>تعلم كيف تسأل عن حال الناس</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="conversation-part1.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- الدرس الثاني -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">02</div>
+
+                <div>
+                    <h3>الدرس الثاني</h3>
+                    <p>Age | العمر</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="conversation-part2.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- الدرس الثالث -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">03</div>
+
+                <div>
+                    <h3>الدرس الثالث</h3>
+                    <p>Reading | القراءة</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="reading-part1.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- الدرس الرابع -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">04</div>
+
+                <div>
+                    <h3>الدرس الرابع</h3>
+                    <p>تعلم كيف تقارن الأعمار</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="comparing.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- الدرس الخامس -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">05</div>
+
+                <div>
+                    <h3>الدرس الخامس</h3>
+                    <p>تعلم كيف تعرّف بنفسك</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="conversation-part3.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- الدرس السادس -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">06</div>
+
+                <div>
+                    <h3>الدرس السادس</h3>
+                    <p>Adjectives | الصفات</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="adjectives-part3.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- الدرس السابع -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">07</div>
+
+                <div>
+                    <h3>الدرس السابع</h3>
+                    <p>أجزاء المنزل | House Parts</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="house-parts.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- الدرس الثامن -->
+
+        <article class="lesson-card">
+
+            <div class="lesson-info">
+
+                <div class="lesson-number">08</div>
+
+                <div>
+                    <h3>الدرس الثامن</h3>
+                    <p>الوظائف | Jobs</p>
+                </div>
+
+            </div>
+
+            <div class="lesson-action">
+
+                <a class="start-btn" href="jobs.html">
+                    ابدأ الدرس <span>←</span>
+                </a>
+
+                <span class="lesson-arrow">←</span>
+
+            </div>
+
+        </article>
+
+
+    </main>
+
+
+    <!-- بطاقة مراجعة الوحدة -->
+
+    <section class="final-card">
+
+        <div class="final-icon">✦</div>
+
+        <h2>أحسنت! أكملت دروس الوحدة</h2>
+
+        <p>
+            بعد إكمال جميع دروس الوحدة الرابعة، حان وقت مراجعة ما تعلمته
+            واختبار فهمك للمعلومات قبل إنهاء المستوى.
+        </p>
+
+        <a class="start-btn" href="unit4-review.html">
+            مراجعة الوحدة الرابعة <span>←</span>
+        </a>
+
+    </section>
+
+
+    <!-- التذييل -->
+
+    <footer class="footer">
+        <span>Engliza Academy</span> · Your Journey to English Starts Here
+    </footer>
 
 </div>
-
-</div>
-
-
-<!-- ==========================
-      عنوان الوحدة
-========================== -->
-
-<h1 class="title">
-
-📘 الوحدة الرابعة
-
-</h1>
-
-<p class="subtitle">
-
-مرحبًا بك في الوحدة الرابعة، هيا نبدأ رحلة تعلم جديدة!
-
-</p>
-
-
-
-<!-- ==========================
-      بطاقة البومة
-========================== -->
-
-<div class="card message-card">
-
-<img src="../success.owl.PNG">
-
-<div class="message-content">
-
-<h2>
-
-• أهلاً بك
-
-</h2>
-
-<p>
-
-أتمنى لك رحلة ممتعة في هذه الوحدة 💙.
-
-</p>
-
-</div>
-
-</div>
-
-
-<!-- ==========================
-        الدروس
-========================== -->
-
-
-<!-- الدرس الأول -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس الأول
-
-</h2>
-
-<p>
-
-تعلم كيف تسأل عن حال الناس 
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href='conversation-part1.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-<!-- الدرس الثاني -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس الثاني
-
-</h2>
-
-<p>
-
-Age | العمر
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href='conversation-part2.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-<!-- الدرس الثالث -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس الثالث
-
-</h2>
-
-<p>
-
-Reading | القراءة
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href='reading-part1.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-   <!-- الدرس الرابع -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس الرابع
-
-</h2>
-
-<p>
-
-تعلم كيف تقارن الاعمار 
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href='comparing.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-
-<!-- الدرس الخامس -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس الخامس
-
-</h2>
-
-<p>
-
-تعلم كيف تعرّف بنفسك
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href='conversation-part3.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-
-<!-- الدرس السادس -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس السادس
-
-</h2>
-
-<p>
-
-adjectives | الصفات
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href='adjectives-part3.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-
-<!-- الدرس السابع -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس السابع
-
-</h2>
-
-<p>
-
-أجزاء المنزل | House parts
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href=house-parts.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-
-<!-- الدرس الثامن -->
-
-<div class="card lesson-card">
-
-<div class="lesson-info">
-
-<h2>
-
-📖 الدرس الثامن
-
-</h2>
-
-<p>
-
-الوظائف | Jobs
-
-</p>
-
-</div>
-
-<button
-class="start-btn"
-onclick="window.location.href='jobs.html'">
-
-🚀 ابدأ الدرس
-
-</button>
-
-</div>
-
-
-   
-<!-- ==========================
-      بطاقة النهاية
-========================== -->
-
-<div class="card final-card">
-
-<h2>
-
-🏆 أحسنت!
-
-</h2>
-
-<p>
-
-بعد إكمال جميع دروس هذه الوحدة،
-
-<br><br>
-
-أنت الآن جاهز لمراجعة الوحدة الرابعة واختبار نفسك.
-
-</p>
-
-<button
-class="start-btn"
-onclick="window.location.href='unit4-review.html'">
-
-🚀 مراجعة الوحدة الرابعة
-
-</button>
-
-</div>
-
-
-</div>
-
-<!-- نهاية container -->
 
 </body>
-
 </html>
