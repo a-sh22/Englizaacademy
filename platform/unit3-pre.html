@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة الثالثة: الماضي والنصيحة والضرورة | Engliza Academy</title>
+
+<style>
+/* ENGLIZA ACADEMY — SHARED UNIT IDENTITY */
+:root {
+  --bg: #0b1028;
+  --card: #151d37;
+  --card-hover: #1a2340;
+  --border: rgba(163, 176, 218, .15);
+  --border-hover: rgba(229, 204, 145, .45);
+  --text: #f5f6fc;
+  --muted: #a6afca;
+  --gold: #e5cc91;
+  --gold-soft: rgba(229, 204, 145, .10);
+  --blue: #91a9ff;
+  --blue-soft: rgba(145, 169, 255, .10);
+  --transition: .25s ease;
+}
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+html { scroll-behavior:smooth; background:var(--bg); }
+body {
+  min-height:100vh; padding:28px 22px 18px; color:var(--text);
+  background:
+    radial-gradient(ellipse at 50% -10%, rgba(85,105,190,.19), transparent 48%),
+    radial-gradient(ellipse at 100% 40%, rgba(119,89,180,.07), transparent 35%),
+    var(--bg);
+  line-height:1.8;
+}
+button,a { -webkit-tap-highlight-color:transparent; }
+button { font:inherit; }
+.container { width:100%; max-width:1050px; margin:0 auto; }
+.top-bar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:38px; }
+.back-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px;
+  padding:10px 18px; border:1px solid var(--border); border-radius:14px;
+  background:rgba(255,255,255,.035); color:var(--text); text-decoration:none;
+  font-size:15px; font-weight:700; transition:var(--transition);
+}
+.back-btn:hover { background:var(--blue-soft); border-color:rgba(145,169,255,.4); transform:translateY(-2px); }
+.back-arrow { color:var(--gold); font-size:19px; line-height:1; }
+.brand-mark { display:flex; align-items:center; gap:11px; }
+.brand-symbol {
+  display:flex; align-items:center; justify-content:center; width:43px; height:43px;
+  border:1px solid rgba(229,204,145,.35); border-radius:14px; background:var(--gold-soft);
+  color:var(--gold); font-size:19px; font-weight:800;
+}
+.brand-name { color:var(--text); font-size:15px; font-weight:800; }
+.brand-caption { color:var(--muted); font-size:11px; direction:ltr; text-align:right; letter-spacing:.7px; }
+.hero { text-align:center; padding:25px 14px 29px; animation:fadeUp .5s ease both; }
+.unit-kicker {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:7px 14px;
+  margin-bottom:19px; border:1px solid rgba(229,204,145,.28); border-radius:999px;
+  background:var(--gold-soft); color:var(--gold); font-size:12px; font-weight:700; letter-spacing:.5px;
+}
+.kicker-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); }
+.title { color:var(--text); font-size:clamp(32px,5vw,46px); font-weight:800; line-height:1.5; margin-bottom:13px; }
+.title-highlight { color:var(--gold); }
+.subtitle { max-width:690px; margin:0 auto; color:var(--muted); font-size:17px; line-height:2; }
+.hero-divider { display:flex; align-items:center; justify-content:center; gap:13px; margin:4px auto 30px; }
+.hero-divider span { width:52px; height:1px; background:linear-gradient(90deg,transparent,rgba(229,204,145,.6)); }
+.hero-divider span:last-child { transform:rotate(180deg); }
+.hero-divider i { color:var(--gold); font-style:normal; font-size:13px; }
+.card {
+  position:relative; padding:29px; margin-bottom:18px; border:1px solid var(--border); border-radius:22px;
+  background:linear-gradient(145deg,rgba(24,33,61,.97),rgba(17,24,48,.97));
+  box-shadow:0 14px 38px rgba(0,0,0,.12); animation:fadeUp .5s ease both;
+}
+.message-card {
+  display:flex; align-items:center; gap:20px; border-color:rgba(229,204,145,.22);
+  background:radial-gradient(ellipse at 100% 0%,rgba(229,204,145,.075),transparent 50%),linear-gradient(145deg,#171e38,#111831);
+}
+.message-symbol {
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; width:65px; height:65px;
+  border:1px solid rgba(229,204,145,.27); border-radius:19px; background:var(--gold-soft);
+  color:var(--gold); font-size:25px; font-weight:700;
+}
+.message-content { flex:1; min-width:0; }
+.message-content h2 { color:var(--gold); font-size:24px; margin-bottom:5px; }
+.message-content p { color:#c2cbe0; font-size:16px; line-height:2; }
+.lessons-heading { display:flex; align-items:center; gap:13px; margin:43px 0 19px; }
+.lessons-heading-icon {
+  display:flex; align-items:center; justify-content:center; width:46px; height:46px; flex-shrink:0;
+  border:1px solid rgba(145,169,255,.20); border-radius:14px; background:var(--blue-soft);
+  color:var(--blue); font-size:20px; font-weight:700;
+}
+.lessons-heading h2 { color:var(--text); font-size:26px; line-height:1.5; }
+.lessons-heading p { color:var(--muted); font-size:13px; margin-top:2px; }
+.lesson-list { display:flex; flex-direction:column; gap:13px; }
+.lesson-card {
+  display:flex; align-items:center; justify-content:space-between; gap:22px; padding:23px 25px;
+  border:1px solid var(--border); border-radius:20px;
+  background:linear-gradient(145deg,rgba(24,32,59,.98),rgba(17,24,46,.98));
+  transition:transform var(--transition),border-color var(--transition),background var(--transition),box-shadow var(--transition);
+  animation:fadeUp .5s ease both;
+}
+.lesson-card:hover {
+  transform:translateY(-3px); border-color:var(--border-hover);
+  background:linear-gradient(145deg,rgba(29,38,68,.98),rgba(20,28,52,.98));
+  box-shadow:0 15px 32px rgba(0,0,0,.15);
+}
+.lesson-info { display:flex; align-items:flex-start; gap:16px; flex:1; min-width:0; }
+.lesson-number {
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; width:47px; height:47px;
+  border:1px solid rgba(145,169,255,.19); border-radius:14px; background:var(--blue-soft);
+  color:#b7c4ff; font-size:15px; font-weight:800; direction:ltr;
+}
+.lesson-text { min-width:0; }
+.lesson-info h3 { color:var(--text); font-size:19px; line-height:1.6; margin-bottom:4px; }
+.lesson-info p { color:var(--muted); font-size:15px; line-height:1.9; overflow-wrap:anywhere; }
+.start-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:10px; flex-shrink:0;
+  min-height:46px; min-width:145px; padding:11px 17px; border:1px solid rgba(229,204,145,.36);
+  border-radius:13px; background:linear-gradient(110deg,#e5cc91,#d7b873); color:#17182a;
+  font-size:14px; font-weight:800; text-decoration:none; cursor:pointer;
+  transition:transform var(--transition),box-shadow var(--transition),filter var(--transition);
+}
+.start-btn:hover { transform:translateY(-2px); box-shadow:0 9px 23px rgba(207,177,107,.16); filter:brightness(1.04); }
+.start-btn:active { transform:scale(.985); }
+.start-arrow { font-size:18px; line-height:1; }
+.final-card {
+  text-align:center; margin-top:30px; padding:34px 28px; border-color:rgba(229,204,145,.30);
+  background:radial-gradient(ellipse at 50% 0%,rgba(229,204,145,.10),transparent 60%),linear-gradient(145deg,#171f3b,#10172f);
+}
+.final-symbol {
+  display:flex; align-items:center; justify-content:center; width:61px; height:61px; margin:0 auto 17px;
+  border:1px solid rgba(229,204,145,.30); border-radius:19px; background:var(--gold-soft);
+  color:var(--gold); font-size:25px; font-weight:800;
+}
+.final-card h2 { color:var(--gold); font-size:29px; margin-bottom:12px; }
+.final-card p { max-width:620px; margin:0 auto 23px; color:#c2cbe0; font-size:16px; line-height:2; }
+.final-card .start-btn { min-width:230px; }
+.bottom-message {
+  display:flex; align-items:center; justify-content:center; gap:10px; margin-top:27px;
+  padding:20px 10px; border-top:1px solid var(--border); color:var(--muted);
+  text-align:center; font-size:13px; line-height:2;
+}
+.bottom-mark { flex-shrink:0; color:var(--gold); }
+@keyframes fadeUp { from {opacity:0;transform:translateY(13px)} to {opacity:1;transform:translateY(0)} }
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
+}
+@media(max-width:768px) {
+  body { padding:21px 16px 12px; }
+  .top-bar { margin-bottom:26px; }
+  .hero { padding:20px 8px 24px; }
+  .title { font-size:35px; }
+  .subtitle { font-size:16px; }
+  .card { padding:23px; border-radius:19px; }
+  .lesson-card { gap:15px; padding:20px; }
+  .lesson-info { gap:12px; }
+  .lesson-number { width:42px; height:42px; border-radius:12px; font-size:13px; }
+  .lesson-info h3 { font-size:17px; }
+  .lesson-info p { font-size:14px; }
+  .start-btn { min-width:125px; padding:11px 13px; font-size:13px; }
+}
+@media(max-width:520px) {
+  body { padding:16px 12px 10px; }
+  .top-bar { margin-bottom:19px; }
+  .back-btn { min-height:40px; padding:8px 12px; border-radius:12px; font-size:13px; }
+  .brand-mark { gap:8px; }
+  .brand-symbol { width:36px; height:36px; border-radius:11px; font-size:16px; }
+  .brand-name { font-size:12px; }
+  .brand-caption { font-size:9px; }
+  .hero { padding:19px 2px 20px; }
+  .unit-kicker { font-size:11px; margin-bottom:14px; }
+  .title { font-size:clamp(27px,7.5vw,34px); line-height:1.6; }
+  .subtitle { font-size:14px; line-height:2; }
+  .hero-divider { margin-bottom:22px; }
+  .card { padding:18px 15px; border-radius:17px; margin-bottom:13px; }
+  .message-card { align-items:flex-start; gap:13px; }
+  .message-symbol { width:45px; height:45px; border-radius:13px; font-size:20px; }
+  .message-content h2 { font-size:19px; }
+  .message-content p { font-size:13px; line-height:2; }
+  .lessons-heading { gap:11px; margin:33px 0 16px; }
+  .lessons-heading-icon { width:40px; height:40px; border-radius:12px; font-size:17px; }
+  .lessons-heading h2 { font-size:22px; }
+  .lessons-heading p { font-size:11px; }
+  .lesson-list { gap:10px; }
+  .lesson-card { align-items:stretch; flex-direction:column; gap:17px; padding:17px 15px; border-radius:17px; }
+  .lesson-info { align-items:flex-start; gap:12px; }
+  .lesson-number { width:39px; height:39px; border-radius:11px; font-size:12px; }
+  .lesson-info h3 { font-size:16px; margin-bottom:3px; }
+  .lesson-info p { font-size:13px; line-height:1.9; }
+  .start-btn { width:100%; min-height:45px; min-width:0; font-size:14px; }
+  .final-card { margin-top:20px; padding:25px 16px; }
+  .final-symbol { width:51px; height:51px; border-radius:16px; font-size:21px; margin-bottom:13px; }
+  .final-card h2 { font-size:24px; }
+  .final-card p { font-size:14px; margin-bottom:19px; }
+  .final-card .start-btn { min-width:0; }
+  .bottom-message { font-size:11px; padding:17px 4px; }
+}
+a:focus-visible,button:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+</style>
+
+</head>
+
+<body>
+<div class="container">
+  <header class="top-bar">
+    <a href="pre-intermediate.html" class="back-btn"><span class="back-arrow" aria-hidden="true">←</span><span>العودة للمستوى ما قبل المتوسط</span></a>
+    <div class="brand-mark" aria-label="Engliza Academy"><div class="brand-symbol" aria-hidden="true">E</div><div><div class="brand-name">Engliza Academy</div><div class="brand-caption">LEARN · PRACTICE · GROW</div></div></div>
+  </header>
+  <section class="hero">
+    <div class="unit-kicker"><span class="kicker-dot"></span>PRE-INTERMEDIATE · UNIT 03</div>
+    <h1 class="title">الوحدة الثالثة: <span class="title-highlight">الماضي والنصيحة والضرورة</span></h1>
+    <p class="subtitle">تعلّم كيف تتحدث عن الأحداث الماضية، وتصف ما كان يحدث، وتعبّر عن النصيحة والضرورة بطريقة صحيحة.</p>
+  </section>
+  <div class="hero-divider" aria-hidden="true"><span></span><i>✦</i><span></span></div>
+  <section class="card message-card"><div class="message-symbol" aria-hidden="true">03</div><div class="message-content"><h2>أهلاً بك في الوحدة الثالثة!</h2><p>في هذه الوحدة ستتعلّم كيف تستخدم الماضي البسيط والماضي المستمر، وكيف تسأل عن الأحداث الماضية، بالإضافة إلى التعبير عن النصيحة والضرورة واستخدام الـ Adverbs بطريقة صحيحة. 💙</p></div></section>
+  <div class="lessons-heading"><div class="lessons-heading-icon" aria-hidden="true">▤</div><div><h2>دروس الوحدة</h2><p>11 درسًا لفهم الماضي والتعبير عن النصيحة والضرورة</p></div></div>
+  <main class="lesson-list">
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">01</div><div class="lesson-text"><h3>الدرس الأول</h3><p>Past Simple | الجملة المثبتة</p></div></div><button class="start-btn" type="button" onclick="window.location.href='past-simple.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">02</div><div class="lesson-text"><h3>الدرس الثاني</h3><p>Past Simple | النفي</p></div></div><button class="start-btn" type="button" onclick="window.location.href='past-simple2.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">03</div><div class="lesson-text"><h3>الدرس الثالث</h3><p>Past Simple | السؤال</p></div></div><button class="start-btn" type="button" onclick="window.location.href='past-simple3.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">04</div><div class="lesson-text"><h3>الدرس الرابع</h3><p>Past Continuous | الجملة المثبتة</p></div></div><button class="start-btn" type="button" onclick="window.location.href='past-continuous1.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">05</div><div class="lesson-text"><h3>الدرس الخامس</h3><p>Past Continuous | النفي</p></div></div><button class="start-btn" type="button" onclick="window.location.href='past-continuous2.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">06</div><div class="lesson-text"><h3>الدرس السادس</h3><p>Past Continuous | السؤال</p></div></div><button class="start-btn" type="button" onclick="window.location.href='past-continuous3.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">07</div><div class="lesson-text"><h3>الدرس السابع</h3><p>W Questions with Past Simple</p></div></div><button class="start-btn" type="button" onclick="window.location.href='past-simple-wh.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">08</div><div class="lesson-text"><h3>الدرس الثامن</h3><p>Have To • Should • Must</p></div></div><button class="start-btn" type="button" onclick="window.location.href='should.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">09</div><div class="lesson-text"><h3>الدرس التاسع</h3><p>Good vs Well</p></div></div><button class="start-btn" type="button" onclick="window.location.href='good-well.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">10</div><div class="lesson-text"><h3>الدرس العاشر</h3><p>Adverbs | حال الفعل</p></div></div><button class="start-btn" type="button" onclick="window.location.href='adverbs.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+    <article class="lesson-card"><div class="lesson-info"><div class="lesson-number">11</div><div class="lesson-text"><h3>الدرس الحادي عشر</h3><p>Reading Practice | Adverbs</p></div></div><button class="start-btn" type="button" onclick="window.location.href='reading-adverbs.html'"><span>ابدأ الدرس</span><span class="start-arrow" aria-hidden="true">←</span></button></article>
+  </main>
+  <section class="card final-card"><div class="final-symbol" aria-hidden="true">✓</div><h2>أكملت دروس الوحدة؟</h2><p>بعد إكمال جميع دروس هذه الوحدة، انتقل إلى المراجعة واختبر مدى فهمك لما تعلمته.</p><button class="start-btn" type="button" onclick="window.location.href='unit3-review.html'"><span>مراجعة الوحدة الثالثة</span><span class="start-arrow" aria-hidden="true">←</span></button></section>
+  <footer class="bottom-message"><span class="bottom-mark" aria-hidden="true">✦</span><span>كل درس جديد هو خطوة نحو ثقة أكبر في استخدام اللغة الإنجليزية.</span></footer>
+</div>
+</body>
+</html>
