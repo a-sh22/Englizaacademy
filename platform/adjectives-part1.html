@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -903,8 +902,7 @@ box-shadow:
 
 }
 
-
-/* ==========================================================
+ /* ==========================================================
    صندوق الكتابة
 ========================================================== */
 
@@ -2201,8 +2199,6 @@ I am happy.
 
 </div>
 
-
-
 <!-- ==========================================================
      السؤال 1
 ========================================================== -->
@@ -3174,9 +3170,7 @@ btn.innerHTML +=
 
 }
 
-
-
-// ==========================================================
+  // ==========================================================
 // نظام ترتيب الكلمات
 // ==========================================================
 
@@ -3422,4 +3416,77 @@ answerBox.classList.remove(
 
 // إجبار المتصفح على إعادة تشغيل الأنيميشن
 
-void answerBox.offs
+void answerBox.offsetWidth;
+
+answerBox.classList.add("shake");
+
+setTimeout(function () {
+  answerBox.classList.remove("shake");
+}, 400);
+
+}
+
+}
+
+
+// ==========================================================
+// إنهاء الدرس والانتقال إلى الدرس التالي
+// ==========================================================
+
+function finishLesson(lessonId, lessonTitle, nextPage) {
+  try {
+    const storageKey = "engliza_completed_lessons";
+    const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
+
+    const completedLessons = Array.isArray(saved) ? saved : [];
+    const existingIndex = completedLessons.findIndex(function (lesson) {
+      return lesson && lesson.id === lessonId;
+    });
+
+    const lessonData = {
+      id: lessonId,
+      title: lessonTitle,
+      completedAt: new Date().toISOString()
+    };
+
+    if (existingIndex >= 0) {
+      completedLessons[existingIndex] = lessonData;
+    } else {
+      completedLessons.push(lessonData);
+    }
+
+    localStorage.setItem(storageKey, JSON.stringify(completedLessons));
+  } catch (error) {
+    console.warn("تعذر حفظ تقدم الدرس على هذا الجهاز:", error);
+  }
+
+  if (nextPage) {
+    window.location.href = nextPage;
+  }
+}
+
+
+// ==========================================================
+// تحسين إعادة المحاولة في الأسئلة الكتابية
+// ==========================================================
+
+document.querySelectorAll(".write-box").forEach(function (input) {
+  input.addEventListener("input", function () {
+    input.classList.remove("correct-input", "wrong-input", "shake");
+
+    const resultId = input.id.replace("input", "result");
+    const result = document.getElementById(resultId);
+
+    if (result) {
+      result.innerHTML = "";
+      result.style.color = "";
+    }
+  });
+});
+
+</script>
+
+</body>
+</html> 
+
+   
