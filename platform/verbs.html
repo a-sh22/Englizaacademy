@@ -1039,7 +1039,7 @@ class="back-btn">
 
 <h1 class="title">
 
-الأفعال العادية والغير عادية | المقدمة
+Past Simple Verbs
 
 </h1>
 
@@ -1047,6 +1047,8 @@ class="back-btn">
 <p class="subtitle">
 
 ستفهم تقسيم أفعال اللغة الإنجليزية بشكل مبسط.
+
+         Regular & Irregular Verbs  
 
 </p>
 
@@ -1627,183 +1629,7 @@ onclick="finishLessonPage()">
 </div>
 
 
-<!-- =========================================================
-     نظام المكافآت
-========================================================= -->
-
-<script type="module">
-
-import {
-
-finishLesson
-
-}
-
-from "./js/reward.js";
-
-
-window.finishLesson =
-finishLesson;
-
-</script>
-
-
-<script>
-
-
-// =========================================================
-// بيانات الدرس
-// =========================================================
-
-const LEVEL_ID =
-"pre-intermediate";
-
-const UNIT_ID =
-"unit1";
-
-const LESSON_ID =
-"lesson1";
-
-const LESSON_TITLE =
-"Regular & Irregular Verbs | المقدمة";
-
-const LESSON_REWARD =
-5;
-
-const NEXT_LESSON_PAGE =
-"lesson-next.html";
-
-
-// =========================================================
-// أسئلة الاختيار
-// =========================================================
-
-function checkAnswer(
-button,
-isCorrect,
-resultId
-){
-
-let result =
-document.getElementById(
-resultId
-);
-
-
-let allButtons =
-button.parentElement
-.querySelectorAll(
-".choice-btn"
-);
-
-
-// منع الضغط مرة أخرى
-
-allButtons.forEach(btn=>{
-
-btn.disabled = true;
-
-});
-
-
-if(isCorrect){
-
-button.classList.add(
-"correct"
-);
-
-
-button.innerHTML +=
-" ✔️";
-
-
-result.innerHTML =
-
-'<div class="confetti">'+
-
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-'<span class="star">🌟</span>'+
-'<span class="star">✨</span>'+
-'<span class="star">⭐</span>'+
-
-'</div>'+
-
-'✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
-
-
-result.className =
-"result-text success-text";
-
-}
-
-
-else{
-
-button.classList.add(
-"wrong",
-"shake"
-);
-
-
-setTimeout(function(){
-
-button.classList.remove(
-"shake"
-);
-
-},300);
-
-
-button.innerHTML +=
-" ✖️";
-
-
-result.innerHTML =
-
-"😅❌ لقد اخترت الإجابة الخاطئة.";
-
-
-result.className =
-"result-text error-text";
-
-
-// إظهار الإجابة الصحيحة
-
-allButtons.forEach(btn=>{
-
-if(
-btn.getAttribute("onclick")
-.includes("true")
-){
-
-btn.classList.add(
-"correct"
-);
-
-
-if(
-!btn.innerHTML.includes("✔️")
-){
-
-btn.innerHTML +=
-" ✔️";
-
-}
-
-}
-
-});
-
-}
-
-}
-
-
-<!-- =========================================================
-     نظام المكافآت
-========================================================= -->
-
+<!-- نظام المكافآت -->
 <script type="module">
 
 import { finishLesson } from "./js/reward.js";
@@ -1813,43 +1639,122 @@ window.finishLesson = finishLesson;
 </script>
 
 
+<!-- وظائف الدرس -->
 <script>
 
-// =========================================================
 // بيانات الدرس
-// =========================================================
+const LESSON_ID = "pre-intermediate-unit1-lesson1";
 
-const LESSON_ID =
-"pre-intermediate-unit1-lesson1";
+const LESSON_TITLE = "Regular & Irregular Verbs | المقدمة";
 
-const LESSON_TITLE =
-"Regular & Irregular Verbs | المقدمة";
-
-const NEXT_LESSON_PAGE =
-"regular-verbs.html";
+const NEXT_LESSON_PAGE = "regular-verbs.html";
 
 
-// =========================================================
-// إنهاء الدرس والانتقال للدرس التالي
-// =========================================================
+// تصحيح الإجابات
+function checkAnswer(button, isCorrect, resultId) {
 
-function finishLessonPage(){
+  const result = document.getElementById(resultId);
 
-window.finishLesson(
+  const container = button.parentElement;
 
-LESSON_ID,
+  const allButtons = container.querySelectorAll(".choice-btn");
 
-LESSON_TITLE,
+  if (!result || button.disabled) return;
 
-NEXT_LESSON_PAGE
 
-);
+  // منع تكرار الضغط
+  allButtons.forEach(function(btn) {
+    btn.disabled = true;
+    btn.classList.remove("shake");
+  });
+
+
+  if (isCorrect) {
+
+    // الإجابة الصحيحة
+    button.classList.add("correct");
+
+    button.innerHTML += " ✔️";
+
+    result.innerHTML =
+      '<div class="confetti">' +
+      '<span class="star">✨</span>' +
+      '<span class="star">⭐</span>' +
+      '<span class="star">🌟</span>' +
+      '<span class="star">✨</span>' +
+      '<span class="star">⭐</span>' +
+      '</div>' +
+      "✅ أحسنت! لقد اخترت الإجابة الصحيحة.";
+
+    result.className = "result-text success-text";
+
+  } else {
+
+    // الإجابة الخاطئة
+    button.classList.add("wrong");
+
+    button.innerHTML += " ✖️";
+
+    void button.offsetWidth;
+
+    button.classList.add("shake");
+
+    setTimeout(function() {
+      button.classList.remove("shake");
+    }, 400);
+
+    result.innerHTML = "😅❌ لقد اخترت الإجابة الخاطئة.";
+
+    result.className = "result-text error-text";
+
+
+    // إظهار الإجابة الصحيحة
+    allButtons.forEach(function(btn) {
+
+      const onclickCode = btn.getAttribute("onclick") || "";
+
+      if (onclickCode.includes("true")) {
+
+        btn.classList.add("correct");
+
+        if (!btn.innerHTML.includes("✔️")) {
+          btn.innerHTML += " ✔️";
+        }
+
+      }
+
+    });
+
+  }
+
+}
+
+
+// الانتقال إلى الدرس التالي
+function finishLessonPage() {
+
+  if (typeof window.finishLesson === "function") {
+
+    window.finishLesson(
+      LESSON_ID,
+      LESSON_TITLE,
+      NEXT_LESSON_PAGE
+    );
+
+  } else {
+
+    console.error("تعذر تحميل نظام المكافآت.");
+
+  }
 
 }
 
 </script>
 
-   
+</body>
+</html>
+
+
 </script>
 
 
