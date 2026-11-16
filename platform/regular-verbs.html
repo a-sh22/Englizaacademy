@@ -1553,78 +1553,61 @@ onclick="finishLessonPage()">
      JavaScript
 ========================================================== -->
 
-<script>
 
+<script>
 
 // ==========================================================
 // تنظيف النص
 // ==========================================================
 
-function normalizeText(text){
+function normalizeText(text) {
 
-return text
-
-.toLowerCase()
-
-.trim()
-
-.replace(/\s+/g," ")
-
-.replace(/[?.؟!,]/g,"")
-
-.replace(/’/g,"'")
-
-.replace(/'/g,"");
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/[?.؟!,]/g, "")
+    .replace(/’/g, "'")
+    .replace(/'/g, "");
 
 }
 
 
-
 // ==========================================================
-// أسئلة الاختيار
+// دالة تصحيح الإجابات
 // ==========================================================
 
-function checkAnswer(
-button,
-isCorrect,
-resultId
-){
+function checkAnswer(button) {
 
-const result =
-document.getElementById(
-resultId
-);
-
-
-const container =
-button.parentElement;
-
-
-const allButtons =
-container.querySelectorAll(
-".choice-btn"
-);
-
-
-
-function checkAnswer(button, isCorrect, resultId) {
+  const resultId = button.dataset.result;
+  const isCorrect = button.dataset.correct === "true";
 
   const result = document.getElementById(resultId);
+
   const container = button.parentElement;
+
   const allButtons = container.querySelectorAll(".choice-btn");
 
   if (!result || button.disabled) return;
 
-  // منع الضغط على الاختيارات مرة ثانية
+
+  // منع الضغط مرة أخرى
   allButtons.forEach(function(btn) {
+
     btn.disabled = true;
     btn.classList.remove("shake");
+
   });
+
+
+  // ========================================================
+  // الإجابة الصحيحة
+  // ========================================================
 
   if (isCorrect) {
 
-    // إذا كانت الإجابة صحيحة
     button.classList.add("correct");
+
     button.innerHTML += " ✔️";
 
     result.innerHTML =
@@ -1639,32 +1622,43 @@ function checkAnswer(button, isCorrect, resultId) {
 
     result.style.color = "#0f8b4c";
 
-  } else {
+  }
 
-    // إذا كانت الإجابة خاطئة
+
+  // ========================================================
+  // الإجابة الخاطئة
+  // ========================================================
+
+  else {
+
     button.classList.add("wrong");
+
     button.innerHTML += " ✖️";
 
     void button.offsetWidth;
+
     button.classList.add("shake");
 
     setTimeout(function() {
+
       button.classList.remove("shake");
+
     }, 400);
 
+
     result.innerHTML = "❌ لقد اخترت الإجابة الخاطئة.";
+
     result.style.color = "#c62828";
 
-    // إظهار الإجابة الصحيحة للطالب
+
+    // إظهار الإجابة الصحيحة
     allButtons.forEach(function(btn) {
 
       if (btn.dataset.correct === "true") {
 
         btn.classList.add("correct");
 
-        if (!btn.innerHTML.includes("✔️")) {
-          btn.innerHTML += " ✔️";
-        }
+        btn.innerHTML += " ✔️";
 
       }
 
@@ -1675,43 +1669,26 @@ function checkAnswer(button, isCorrect, resultId) {
 }
 
 
-// مستمع الضغط على أزرار الإجابات
+// ==========================================================
+// مستمع الضغط على أزرار الأسئلة الثمانية
+// ==========================================================
+
 document.addEventListener("click", function(event) {
 
   const button = event.target.closest(".choice-btn");
 
-  if (!button || button.disabled) return;
+  if (!button) return;
 
-  const isCorrect = button.dataset.correct === "true";
-  const resultId = button.dataset.result;
+  if (button.disabled) return;
 
-  if (!resultId) return;
+  if (!button.dataset.result || !button.dataset.correct) return;
 
-  checkAnswer(button, isCorrect, resultId);
+  checkAnswer(button);
 
 });
 
-
-
-
 </script>
 
-
-<script type="module">
-
-import { finishLesson } from "./js/reward.js";
-
-window.finishLessonPage = function(){
-
-finishLesson(
-"pre-intermediate-unit1-lesson2",
-"Regular Verbs",
-"Irregular-verbs.html"
-);
-
-};
-
-</script>
 
    
 </body>
