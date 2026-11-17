@@ -1,29 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Adverbs | Reading Practice | Engliza Academy</title>
 
-<title>
-Adverbs | Reading Practice | Engliza Academy
-</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   RESET
+   RESET & VARIABLES
 ========================================================= */
+
+:root{
+    --blue:#1f3c88;
+    --purple:#7546d8;
+    --purple-dark:#5c35b4;
+    --purple-light:#f2edff;
+    --purple-soft:#faf8ff;
+    --text:#28324a;
+    --muted:#737d91;
+    --white:#ffffff;
+    --border:#e9e3f7;
+    --green:#16845b;
+    --red:#d94c5c;
+}
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
 }
 
 html{
@@ -31,3562 +43,2513 @@ html{
 }
 
 body{
-
+    font-family:"Cairo",Arial,sans-serif;
+    color:var(--text);
     background:
-    linear-gradient(
-        135deg,
-        #eef4ff 0%,
-        #f8f4ff 50%,
-        #f4f8ff 100%
-    );
-
-    color:#222;
-
-    padding:30px 20px;
-
+        radial-gradient(circle at 8% 8%,rgba(117,70,216,.11),transparent 27%),
+        radial-gradient(circle at 92% 35%,rgba(31,60,136,.08),transparent 28%),
+        linear-gradient(135deg,#f8f7ff 0%,#f3f5ff 48%,#fbf9ff 100%);
     min-height:100vh;
+    padding:30px 16px 45px;
 }
 
-.container{
+button,
+input{
+    font:inherit;
+}
 
-    max-width:1050px;
+button{
+    cursor:pointer;
+}
 
+.page-container{
+    width:min(100% - 0px,1050px);
     margin:auto;
 }
-
 
 /* =========================================================
    TOP BAR
 ========================================================= */
 
 .top-bar{
-
     display:flex;
-
-    justify-content:space-between;
-
     align-items:center;
-
-    margin-bottom:40px;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:28px;
+    padding:12px 18px;
 }
 
 .back-btn{
-
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:white;
-
-    padding:14px 25px;
-
-    border-radius:18px;
-
+    gap:8px;
     text-decoration:none;
-
-    color:#1f3c88;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.08);
-
-    transition:.3s;
+    color:var(--blue);
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:50px;
+    padding:10px 19px;
+    font-weight:800;
+    font-size:14px;
+    box-shadow:0 5px 18px rgba(42,35,90,.06);
+    transition:.25s;
 }
 
 .back-btn:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 16px 32px rgba(0,0,0,.12);
+    background:var(--purple-light);
+    transform:translateY(-2px);
 }
 
-.owl-circle img{
-
-    width:80px;
-
-    height:80px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.08);
+.academy-label{
+    color:var(--purple-dark);
+    font-family:"Nunito",sans-serif;
+    font-weight:900;
+    letter-spacing:2px;
+    font-size:12px;
 }
-
 
 /* =========================================================
-   TITLE
+   HERO
 ========================================================= */
 
-.title{
-
+.hero{
     text-align:center;
-
-    font-size:52px;
-
-    color:#1f3c88;
-
-    margin-bottom:18px;
-
-    line-height:1.3;
+    padding:12px 15px 32px;
 }
 
-.subtitle{
+.hero-owl{
+    width:125px;
+    height:125px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 12px;
+    filter:drop-shadow(0 9px 12px rgba(65,48,120,.12));
+}
 
-    text-align:center;
+.hero h1{
+    color:var(--blue);
+    font-size:36px;
+    font-weight:900;
+    line-height:1.5;
+    margin-bottom:7px;
+}
 
-    font-size:22px;
+.hero h1 span{
+    color:var(--purple);
+}
 
-    font-weight:600;
-
+.hero p{
+    max-width:690px;
+    margin:auto;
+    color:var(--muted);
+    font-size:15px;
     line-height:2;
-
-    color:#555;
-
-    max-width:800px;
-
-    margin:
-    0 auto 55px;
 }
-
 
 /* =========================================================
-   GENERAL CARD
-========================================================= */
-
-.card{
-
-    background:white;
-
-    padding:40px;
-
-    border-radius:35px;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.08);
-
-    margin-bottom:30px;
-
-    transition:.3s;
-
-    animation:
-    fadeUp .6s ease;
-}
-
-.card:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.11);
-}
-
-
-/* =========================================================
-   OWL TIP
+   TIP CARD
 ========================================================= */
 
 .tip-card{
-
-    position:relative;
-
-    overflow:hidden;
-
     display:flex;
-
     align-items:center;
-
-    gap:25px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffffff,
-        #f6f3ff
-    );
-
-    border:
-    2px solid #e5ddff;
-}
-
-.tip-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:190px;
-
-    height:190px;
-
-    border-radius:50%;
-
-    background:
-    rgba(111,67,255,.07);
-
-    left:-90px;
-
-    top:-100px;
-}
-
-.tip-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-
-    height:150px;
-
-    border-radius:50%;
-
-    background:
-    rgba(55,104,255,.06);
-
-    right:-70px;
-
-    bottom:-80px;
+    gap:20px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-right:5px solid var(--purple);
+    border-radius:23px;
+    padding:20px 23px;
+    margin-bottom:35px;
+    box-shadow:0 9px 28px rgba(55,40,110,.055);
 }
 
 .tip-card img{
-
-    width:125px;
-
+    width:90px;
+    height:90px;
+    object-fit:contain;
     flex-shrink:0;
-
-    position:relative;
-
-    z-index:1;
-}
-
-.tip-content{
-
-    position:relative;
-
-    z-index:1;
-
-    flex:1;
 }
 
 .tip-content h2{
-
-    font-size:30px;
-
-    color:#1f3c88;
-
-    margin-bottom:12px;
+    color:var(--purple-dark);
+    font-size:19px;
+    margin-bottom:7px;
+    font-weight:900;
 }
 
 .tip-content p{
-
-    font-size:20px;
-
-    line-height:1.9;
-
-    font-weight:600;
-
-    color:#444;
+    color:#626d83;
+    font-size:14px;
+    line-height:2;
 }
-
 
 /* =========================================================
    READING SECTION
 ========================================================= */
 
 .reading-section{
-
-    margin-top:50px;
+    margin-bottom:35px;
 }
 
-.reading-heading{
-
+.section-heading{
     display:flex;
-
     align-items:center;
-
-    gap:15px;
-
-    margin-bottom:20px;
+    gap:13px;
+    margin-bottom:17px;
 }
 
-.reading-number{
-
-    width:58px;
-
-    height:58px;
-
-    flex-shrink:0;
-
+.section-number{
+    width:43px;
+    height:43px;
+    border-radius:14px;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
+    color:#fff;
+    font-family:"Nunito",sans-serif;
+    font-weight:900;
+    font-size:18px;
+    background:linear-gradient(135deg,var(--purple),var(--blue));
+    box-shadow:0 5px 13px rgba(92,53,180,.2);
+    flex-shrink:0;
+}
 
+.section-heading h2{
+    color:var(--blue);
+    font-size:22px;
+    font-weight:900;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:2px;
+}
+
+/* =========================================================
+   AUDIO CARD
+========================================================= */
+
+.audio-card{
+    background:linear-gradient(135deg,#f4efff,#f3f6ff);
+    border:1px solid #e5dcfb;
     border-radius:20px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #3768ff,
-        #6f43ff
-    );
-
-    color:white;
-
-    font-size:23px;
-
-    font-weight:bold;
-
-    box-shadow:
-    0 10px 25px rgba(111,67,255,.20);
+    padding:17px 20px;
+    margin-bottom:15px;
 }
 
-.reading-heading h2{
-
-    color:#1f3c88;
-
-    font-size:31px;
-
-    line-height:1.4;
+.audio-heading{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+    color:var(--purple-dark);
+    font-size:15px;
+    font-weight:800;
 }
 
-.reading-heading p{
-
-    color:#777;
-
-    font-size:16px;
-
-    margin-top:4px;
-
-    font-weight:600;
+.audio-heading span:first-child{
+    font-size:21px;
 }
 
+.audio-card audio{
+    display:block;
+    width:100%;
+    height:42px;
+}
+
+.audio-note{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:8px;
+}
 
 /* =========================================================
    READING CARD
 ========================================================= */
 
 .reading-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffffff,
-        #fbfcff
-    );
-
-    border:
-    2px solid #dfe6ff;
-
-    padding:
-    38px 42px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-top:5px solid var(--purple);
+    border-radius:22px;
+    padding:27px 29px;
+    box-shadow:0 9px 28px rgba(55,40,110,.055);
 }
 
-.reading-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    right:0;
-
-    left:0;
-
-    height:7px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #3768ff,
-        #6f43ff,
-        #9b7cff
-    );
+.reading-title{
+    color:var(--blue);
+    font-family:"Nunito",sans-serif;
+    font-size:24px;
+    font-weight:900;
+    margin-bottom:18px;
+    text-align:left;
+    direction:ltr;
 }
-
-
-/*
-   IMPORTANT:
-   النص عبارة عن فقرة حقيقية متصلة
-*/
 
 .reading-text{
-
-    direction:ltr;
-
-    text-align:left;
-
-    max-width:850px;
-
-    margin:auto;
-
-    font-size:23px;
-
-    line-height:2.05;
-
-    letter-spacing:.1px;
-
-    color:#242424;
-
+    color:#30394d;
+    font-family:"Nunito",sans-serif;
+    font-size:19px;
     font-weight:500;
+    line-height:2.05;
+    text-align:left;
+    direction:ltr;
+    white-space:normal;
 }
 
-
 /* =========================================================
-   ADVERB HIGHLIGHT
+   VOCABULARY SECTION
 ========================================================= */
 
-.adverb{
+.vocab-section{
+    margin-top:17px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 7px 22px rgba(55,40,110,.04);
+}
 
-    display:inline;
+.vocab-toggle{
+    width:100%;
+    border:0;
+    background:linear-gradient(100deg,#f5f0ff,#f7f8ff);
+    color:var(--purple-dark);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding:17px 20px;
+    text-align:right;
+    font-weight:900;
+    font-size:16px;
+}
 
-    color:#5f3dff;
+.vocab-toggle:hover{
+    background:#eee7ff;
+}
 
-    font-weight:800;
+.vocab-toggle .toggle-arrow{
+    font-size:17px;
+    transition:transform .25s;
+}
 
-    cursor:pointer;
+.vocab-toggle[aria-expanded="true"] .toggle-arrow{
+    transform:rotate(180deg);
+}
 
-    border-bottom:
-    2px solid #9a84ff;
+.vocab-content{
+    display:none;
+    padding:18px;
+    border-top:1px solid var(--border);
+}
 
-    padding-bottom:1px;
+.vocab-content.open{
+    display:block;
+}
 
+.vocab-intro{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+.vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:13px;
+}
+
+.vocab-item{
+    background:#fcfbff;
+    border:1px solid #ebe5f8;
+    border-radius:16px;
+    padding:15px;
+    min-width:0;
+}
+
+.vocab-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin-bottom:8px;
+}
+
+.vocab-word{
+    color:var(--blue);
+    font-family:"Nunito",sans-serif;
+    font-size:19px;
+    font-weight:900;
+    direction:ltr;
+    text-align:left;
+    overflow-wrap:anywhere;
+}
+
+.pronounce-btn{
+    width:36px;
+    height:36px;
+    border:0;
+    border-radius:50%;
+    background:#eee8ff;
+    color:var(--purple-dark);
+    font-size:16px;
+    flex-shrink:0;
     transition:.2s;
 }
 
-.adverb:hover{
-
-    color:#3768ff;
-
-    border-bottom-color:#3768ff;
+.pronounce-btn:hover{
+    background:var(--purple);
+    color:#fff;
+    transform:scale(1.06);
 }
 
-.adverb.active{
-
-    background:#eeeaff;
-
-    border-radius:7px;
-
-    padding:
-    2px 5px;
+.vocab-type{
+    display:inline-block;
+    background:#f0edff;
+    color:var(--purple-dark);
+    padding:3px 10px;
+    border-radius:30px;
+    font-family:"Nunito",sans-serif;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:8px;
 }
 
+.vocab-meaning{
+    color:#3f4960;
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.example-block{
+    border-top:1px solid #eeeaf7;
+    padding-top:9px;
+    margin-top:9px;
+}
+
+.example-en{
+    color:#34415c;
+    font-family:"Nunito",sans-serif;
+    font-size:14px;
+    line-height:1.7;
+    direction:ltr;
+    text-align:left;
+}
+
+.example-ar{
+    color:#7a8293;
+    font-size:12px;
+    line-height:1.8;
+    margin-top:3px;
+}
 
 /* =========================================================
-   SECTION DIVIDER
+   QUESTIONS
+========================================================= */
+
+.questions-title{
+    margin:25px 0 15px;
+    padding:14px 18px;
+    background:var(--purple-light);
+    border-radius:15px;
+    color:var(--purple-dark);
+    font-size:18px;
+    font-weight:900;
+}
+
+.question-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:13px;
+    box-shadow:0 5px 17px rgba(55,40,110,.035);
+}
+
+.question-instruction{
+    color:var(--purple-dark);
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.question-text{
+    font-family:"Nunito",sans-serif;
+    color:#283653;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.7;
+    direction:ltr;
+    text-align:left;
+    margin-bottom:15px;
+}
+
+.choice-container{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+}
+
+.choice-btn{
+    background:#faf9ff;
+    border:1px solid #e5def5;
+    color:#39445b;
+    border-radius:13px;
+    padding:12px 14px;
+    font-family:"Nunito",sans-serif;
+    font-size:15px;
+    font-weight:700;
+    text-align:left;
+    direction:ltr;
+    transition:.2s;
+}
+
+.choice-btn:hover:not(:disabled){
+    background:#f0eaff;
+    border-color:var(--purple);
+}
+
+.choice-btn:disabled{
+    cursor:default;
+    opacity:1;
+}
+
+.choice-btn.correct{
+    background:#e8f8f0;
+    border-color:#75c9a2;
+    color:#176b49;
+}
+
+.choice-btn.wrong{
+    background:#fff0f1;
+    border-color:#e8a0a8;
+    color:#b53242;
+}
+
+.write-box{
+    width:100%;
+    border:1px solid #ddd5ef;
+    background:#fcfbff;
+    border-radius:12px;
+    padding:13px 15px;
+    font-family:"Nunito",sans-serif;
+    font-size:16px;
+    direction:ltr;
+    text-align:left;
+    outline:none;
+    margin-bottom:10px;
+    transition:.2s;
+}
+
+.write-box:focus{
+    border-color:var(--purple);
+    box-shadow:0 0 0 3px rgba(117,70,216,.1);
+}
+
+.check-btn{
+    border:0;
+    background:linear-gradient(135deg,var(--purple),var(--blue));
+    color:#fff;
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:800;
+    font-size:13px;
+    transition:.2s;
+}
+
+.check-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 13px rgba(92,53,180,.2);
+}
+
+.result-text{
+    min-height:24px;
+    margin-top:10px;
+    font-size:13px;
+    font-weight:800;
+}
+
+.result-text.success{
+    color:var(--green);
+}
+
+.result-text.error{
+    color:var(--red);
+}
+
+/* =========================================================
+   DIVIDER
 ========================================================= */
 
 .reading-divider{
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
-    margin:
-    55px 0 45px;
+    color:#a18bcf;
+    margin:35px 0;
+    font-size:18px;
 }
 
 .reading-divider::before,
 .reading-divider::after{
-
     content:"";
-
-    height:2px;
-
+    height:1px;
     flex:1;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        #d9def5
-    );
+    background:linear-gradient(90deg,transparent,#d8cbed,transparent);
 }
-
-.reading-divider span{
-
-    width:44px;
-
-    height:44px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#f0edff;
-
-    color:#6f43ff;
-
-    font-size:20px;
-
-    border:
-    1px solid #ddd6ff;
-}
-
 
 /* =========================================================
-   QUESTIONS HEADER
-========================================================= */
-
-.questions-header{
-
-    text-align:center;
-
-    margin:
-    28px 0 20px;
-}
-
-.questions-header h2{
-
-    color:#1f3c88;
-
-    font-size:28px;
-
-    margin-bottom:7px;
-}
-
-.questions-header p{
-
-    color:#777;
-
-    font-size:17px;
-
-    font-weight:600;
-}
-
-
-/* =========================================================
-   QUESTION CARD
-========================================================= */
-
-.question-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 12px 32px rgba(0,0,0,.07);
-
-    margin-bottom:20px;
-
-    border:
-    1px solid #e3e7f8;
-
-    transition:.3s;
-}
-
-.question-card:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 18px 40px rgba(0,0,0,.10);
-}
-
-.question-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    right:0;
-
-    width:6px;
-
-    height:100%;
-
-    background:
-    linear-gradient(
-        180deg,
-        #3768ff,
-        #6f43ff
-    );
-}
-
-.question-number{
-
-    width:48px;
-
-    height:48px;
-
-    border-radius:16px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#f4f1ff;
-
-    color:#6f43ff;
-
-    border:
-    2px solid #ded6ff;
-
-    font-size:19px;
-
-    font-weight:bold;
-
-    margin-bottom:20px;
-}
-
-.question-title{
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    color:#1f3c88;
-
-    line-height:1.8;
-
-    margin-bottom:18px;
-}
-
-.question-text{
-
-    direction:ltr;
-
-    text-align:left;
-
-    font-size:22px;
-
-    font-weight:bold;
-
-    line-height:1.8;
-
-    color:#222;
-
-    margin-bottom:25px;
-}
-
-.arabic-question{
-
-    font-size:17px;
-
-    color:#777;
-
-    font-weight:600;
-
-    line-height:1.8;
-
-    margin-top:-15px;
-
-    margin-bottom:20px;
-}
-
-
-/* =========================================================
-   CHOICE BUTTONS
-========================================================= */
-
-.choice-container{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
-    direction:ltr;
-}
-
-.choice-btn{
-
-    width:100%;
-
-    padding:18px 20px;
-
-    background:#fafbff;
-
-    border:
-    2px solid #dce4ff;
-
-    border-radius:19px;
-
-    font-size:19px;
-
-    font-weight:bold;
-
-    color:#1f3c88;
-
-    cursor:pointer;
-
-    text-align:left;
-
-    transition:.25s;
-
-    box-shadow:
-    0 7px 18px rgba(0,0,0,.05);
-}
-
-.choice-btn:hover{
-
-    transform:translateX(-3px);
-
-    border-color:#b9c6ff;
-
-    background:#f5f7ff;
-}
-
-.choice-btn:disabled{
-
-    cursor:default;
-
-    opacity:.95;
-}
-
-
-/* =========================================================
-   WRITING
-========================================================= */
-
-.write-box{
-
-    width:100%;
-
-    padding:18px 20px;
-
-    border-radius:20px;
-
-    border:
-    2px solid #dce4ff;
-
-    font-size:19px;
-
-    outline:none;
-
-    background:white;
-
-    margin-bottom:18px;
-
-    transition:.25s;
-}
-
-.write-box:focus{
-
-    border-color:#6f43ff;
-
-    box-shadow:
-    0 0 0 5px
-    rgba(111,67,255,.10);
-}
-
-.check-btn{
-
-    background:
-    linear-gradient(
-        135deg,
-        #3768ff,
-        #6f43ff
-    ) !important;
-
-    color:white !important;
-
-    border:none !important;
-
-    padding:16px 25px !important;
-
-    border-radius:18px !important;
-
-    font-size:17px !important;
-
-    font-weight:bold !important;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 10px 25px rgba(80,60,220,.18) !important;
-}
-
-
-/* =========================================================
-   RESULT
-========================================================= */
-
-.result-text{
-
-    margin-top:18px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    line-height:1.9;
-
-    min-height:10px;
-}
-
-.success-text{
-
-    color:#0f8b4c;
-}
-
-.error-text{
-
-    color:#c62828;
-}
-
-.correct-input{
-
-    background:#e8fff0 !important;
-
-    border-color:#a9dfbb !important;
-
-    color:#087a42;
-}
-
-.wrong-input{
-
-    background:#ffeaea !important;
-
-    border-color:#ffb3b3 !important;
-
-    color:#c62828;
-}
-
-.correct{
-
-    background:#e8fff0 !important;
-
-    border-color:#a9dfbb !important;
-
-    color:#087a42 !important;
-}
-
-.wrong{
-
-    background:#ffeaea !important;
-
-    border-color:#ffb3b3 !important;
-
-    color:#c62828 !important;
-}
-
-
-/* =========================================================
-   VOCAB POPUP
-========================================================= */
-
-#vocab-popup{
-
-    position:absolute;
-
-    display:none;
-
-    width:330px;
-
-    background:white;
-
-    border:
-    2px solid #ded8ff;
-
-    border-radius:25px;
-
-    padding:22px;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.18);
-
-    z-index:99999;
-
-    animation:
-    popupShow .18s ease;
-}
-
-#vocab-popup.show{
-
-    display:block;
-}
-
-.popup-top{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:10px;
-
-    margin-bottom:8px;
-}
-
-#popup-word{
-
-    font-size:27px;
-
-    color:#1f3c88;
-}
-
-.popup-close{
-
-    width:34px;
-
-    height:34px;
-
-    padding:0 !important;
-
-    border:none !important;
-
-    border-radius:50% !important;
-
-    background:#f3f1ff !important;
-
-    color:#6f43ff !important;
-
-    box-shadow:none !important;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-}
-
-#popup-type{
-
-    color:#6f43ff;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    margin-bottom:14px;
-}
-
-#popup-meaning{
-
-    font-size:21px;
-
-    font-weight:bold;
-
-    color:#222;
-
-    margin-bottom:15px;
-}
-
-.popup-pronunciation{
-
-    background:#f5f3ff;
-
-    border-radius:14px;
-
-    padding:10px 13px;
-
-    color:#6f43ff;
-
-    font-weight:bold;
-
-    margin-bottom:15px;
-
-    direction:ltr;
-
-    text-align:left;
-}
-
-#popup-example{
-
-    direction:ltr;
-
-    text-align:left;
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    color:#444;
-
-    margin-bottom:6px;
-}
-
-#popup-translation{
-
-    font-size:16px;
-
-    line-height:1.8;
-
-    color:#777;
-
-    margin-bottom:17px;
-}
-
-.speak-btn{
-
-    width:100%;
-
-    padding:13px !important;
-
-    border:none !important;
-
-    border-radius:16px !important;
-
-    background:#eef2ff !important;
-
-    color:#1f3c88 !important;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:none !important;
-}
-
-.speak-btn:hover{
-
-    background:#dfe7ff !important;
-}
-
-@keyframes popupShow{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(.95);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-}
-
-
-/* =========================================================
-   OWL FINAL TIP
+   FINAL TIP
 ========================================================= */
 
 .final-tip{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
-        135deg,
-        #f8f5ff,
-        #eef4ff
-    );
-
-    border:
-    2px solid #ddd7ff;
-}
-
-.final-tip-inner{
-
     display:flex;
-
     align-items:center;
-
-    gap:25px;
-
-    position:relative;
-
-    z-index:1;
+    gap:18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:20px 23px;
+    margin:36px 0 22px;
+    box-shadow:0 7px 22px rgba(55,40,110,.045);
 }
 
 .final-tip img{
-
-    width:120px;
-
+    width:85px;
+    height:85px;
+    object-fit:contain;
     flex-shrink:0;
 }
 
 .final-tip h2{
-
-    font-size:29px;
-
-    color:#1f3c88;
-
-    margin-bottom:12px;
+    color:var(--purple-dark);
+    font-size:18px;
+    margin-bottom:6px;
 }
 
 .final-tip p{
-
-    font-size:19px;
-
-    line-height:1.9;
-
-    color:#444;
-
-    font-weight:600;
+    color:#687389;
+    font-size:14px;
+    line-height:2;
 }
-
 
 /* =========================================================
-   FINAL UNIT CARD
+   FINISH CARD
 ========================================================= */
 
-.final-card{
-
-    position:relative;
-
-    overflow:hidden;
-
+.finish-card{
     text-align:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #4930bd,
-        #6f43ff,
-        #8c6dff
-    );
-
-    padding:
-    50px 40px;
-
-    color:white;
+    padding:31px 22px;
+    color:#fff;
+    border-radius:25px;
+    background:linear-gradient(125deg,#7546d8 0%,#5c35b4 48%,#1f3c88 100%);
+    box-shadow:0 13px 30px rgba(65,43,130,.2);
 }
 
-.final-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:260px;
-
-    height:260px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.08);
-
-    left:-100px;
-
-    top:-120px;
+.finish-card h2{
+    font-size:24px;
+    font-weight:900;
+    margin-bottom:9px;
 }
 
-.final-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-
-    height:220px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.07);
-
-    right:-90px;
-
-    bottom:-110px;
-}
-
-.final-content{
-
-    position:relative;
-
-    z-index:1;
-}
-
-.final-icon{
-
-    font-size:52px;
-
-    margin-bottom:15px;
-}
-
-.final-card h2{
-
-    color:#ffe082;
-
-    font-size:38px;
-
-    margin-bottom:18px;
-}
-
-.final-card p{
-
-    color:white;
-
-    font-size:20px;
-
+.finish-card p{
+    color:rgba(255,255,255,.88);
+    font-size:14px;
     line-height:2;
-
-    font-weight:600;
-
-    max-width:760px;
-
-    margin:
-    0 auto 30px;
+    margin-bottom:20px;
 }
 
-.next-lesson-btn{
-
-    width:100%;
-
-    max-width:650px;
-
-    padding:20px;
-
-    border:none;
-
-    border-radius:22px;
-
-    background:white;
-
-    color:#6f43ff;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.18);
-
-    transition:.3s;
+.finish-btn{
+    border:0;
+    background:#fff;
+    color:var(--purple-dark);
+    padding:13px 25px;
+    border-radius:40px;
+    font-size:14px;
+    font-weight:900;
+    transition:.25s;
 }
 
-.next-lesson-btn:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.23);
+.finish-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 7px 18px rgba(0,0,0,.16);
 }
 
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    text-align:center;
+    color:#9299aa;
+    font-family:"Nunito",sans-serif;
+    font-size:12px;
+    margin-top:30px;
+    letter-spacing:.3px;
+}
 
 /* =========================================================
    CONFETTI
 ========================================================= */
 
 .confetti{
-
-    position:relative;
-
-    height:0;
+    position:fixed;
+    top:-15px;
+    width:9px;
+    height:13px;
+    z-index:9999;
+    pointer-events:none;
+    animation:fall 2.3s linear forwards;
 }
 
-.star{
-
-    position:absolute;
-
-    font-size:21px;
-
-    opacity:0;
-
-    animation:
-    flyStars 1.3s ease-out forwards;
-}
-
-.star:nth-child(1){
-    left:10%;
-}
-
-.star:nth-child(2){
-    left:30%;
-    animation-delay:.1s;
-}
-
-.star:nth-child(3){
-    left:50%;
-    animation-delay:.2s;
-}
-
-.star:nth-child(4){
-    left:70%;
-    animation-delay:.15s;
-}
-
-.star:nth-child(5){
-    left:90%;
-    animation-delay:.05s;
-}
-
-@keyframes flyStars{
-
-    0%{
-        opacity:0;
-        transform:
-        translateY(15px)
-        scale(.4);
-    }
-
-    20%{
-        opacity:1;
-    }
-
-    100%{
-        opacity:0;
-        transform:
-        translateY(-60px)
-        rotate(360deg)
-        scale(1.3);
-    }
-}
-
-
-/* =========================================================
-   SHAKE
-========================================================= */
-
-.shake{
-
-    animation:
-    shake .3s;
-}
-
-@keyframes shake{
-
-    0%{
-        transform:translateX(0);
-    }
-
-    25%{
-        transform:translateX(-6px);
-    }
-
-    50%{
-        transform:translateX(6px);
-    }
-
-    75%{
-        transform:translateX(-6px);
-    }
-
-    100%{
-        transform:translateX(0);
-    }
-}
-
-
-/* =========================================================
-   FADE
-========================================================= */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(20px);
-    }
-
+@keyframes fall{
     to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
+        transform:translateY(105vh) rotate(720deg);
+        opacity:0;
     }
 }
 
-
 /* =========================================================
-   MOBILE
+   RESPONSIVE
 ========================================================= */
 
-@media(max-width:768px){
+@media(max-width:700px){
 
     body{
-
-        padding:
-        20px 14px;
+        padding:18px 12px 35px;
     }
 
-    .top-bar{
 
-        margin-bottom:30px;
+   .top-bar{
+    margin-bottom:18px;
+    padding:12px 10px;
+}
+
+    .academy-label{
+        font-size:10px;
+        letter-spacing:1px;
     }
 
     .back-btn{
-
-        padding:
-        12px 17px;
-
-        font-size:16px;
+        padding:8px 14px;
+        font-size:12px;
     }
 
-    .owl-circle img{
-
-        width:65px;
-
-        height:65px;
+    .hero{
+        padding:8px 8px 25px;
     }
 
-    .title{
-
-        font-size:37px;
+    .hero-owl{
+        width:105px;
+        height:105px;
     }
 
-    .subtitle{
-
-        font-size:18px;
-
-        line-height:1.8;
-
-        margin-bottom:38px;
+    .hero h1{
+        font-size:28px;
     }
 
-    .card{
-
-        padding:27px;
-
-        border-radius:28px;
+    .hero p{
+        font-size:13px;
     }
 
     .tip-card{
-
-        gap:15px;
+        padding:16px;
+        gap:12px;
+        border-radius:18px;
     }
 
     .tip-card img{
-
-        width:85px;
+        width:68px;
+        height:68px;
     }
 
     .tip-content h2{
-
-        font-size:23px;
+        font-size:16px;
     }
 
     .tip-content p{
-
-        font-size:16px;
-
-        line-height:1.8;
+        font-size:12px;
     }
 
-    .reading-heading h2{
-
-        font-size:25px;
+    .section-heading h2{
+        font-size:19px;
     }
 
-    .reading-heading p{
-
-        font-size:14px;
-    }
-
-    .reading-number{
-
-        width:50px;
-
-        height:50px;
-
-        border-radius:16px;
+    .section-heading p{
+        font-size:12px;
     }
 
     .reading-card{
+        padding:20px 17px;
+    }
 
-        padding:
-        27px 22px;
+    .reading-title{
+        font-size:21px;
     }
 
     .reading-text{
-
-        font-size:19px;
-
-        line-height:2;
-
-        text-align:left;
+        font-size:17px;
+        line-height:1.95;
     }
 
-    .questions-header h2{
+    .vocab-grid{
+        grid-template-columns:1fr;
+    }
 
-        font-size:24px;
+    .vocab-content{
+        padding:13px;
+    }
+
+    .choice-container{
+        grid-template-columns:1fr;
     }
 
     .question-card{
-
-        padding:
-        27px 24px;
-    }
-
-    .question-title{
-
-        font-size:18px;
-    }
-
-    .question-text{
-
-        font-size:19px;
-    }
-
-    .choice-btn{
-
-        font-size:17px;
-
         padding:16px;
     }
 
-    .final-tip-inner{
-
-        gap:15px;
-    }
-
-    .final-tip img{
-
-        width:80px;
-    }
-
-    .final-tip h2{
-
-        font-size:23px;
-    }
-
-    .final-tip p{
-
+    .question-text{
         font-size:16px;
     }
 
-    .final-card{
-
-        padding:
-        40px 25px;
+    .final-tip{
+        padding:16px;
+        gap:10px;
     }
 
-    .final-card h2{
-
-        font-size:30px;
+    .final-tip img{
+        width:65px;
+        height:65px;
     }
 
-    .final-card p{
-
-        font-size:17px;
+    .final-tip h2{
+        font-size:16px;
     }
 
-    .next-lesson-btn{
-
-        font-size:18px;
+    .final-tip p{
+        font-size:12px;
     }
 
-    #vocab-popup{
-
-        width:
-        calc(100vw - 30px);
-
-        max-width:330px;
+    .finish-card h2{
+        font-size:21px;
     }
 }
 
+@media(max-width:390px){
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .vocab-word{
+        font-size:17px;
+    }
+
+    .reading-text{
+        font-size:16px;
+    }
+
+    .tip-card img{
+        width:58px;
+        height:58px;
+    }
+}
+
+
+.vocab-action{
+    background:linear-gradient(135deg,#7546d8,#5c35b4);
+    color:#fff;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+    transition:.2s;
+}
+
+.vocab-toggle:hover .vocab-action{
+    background:#1f3c88;
+}
+
+.vocab-toggle[aria-expanded="true"] .vocab-action{
+    background:#1f3c88;
+}
+
+@media(max-width:500px){
+    .vocab-toggle{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .vocab-action{
+        font-size:11px;
+        padding:7px 12px;
+    }
+}
+
+   
 </style>
-
 </head>
-
 
 <body>
 
-<div class="container">
-
+<main class="page-container">
 
 <!-- =========================================================
-   TOP
+     TOP BAR
 ========================================================= -->
 
 <div class="top-bar">
 
-<a
-href="unit3-pre.html"
-class="back-btn">
+    <a href="unit3-pre.html" class="back-btn">
+        ⬅️ رجوع
+    </a>
 
-⬅️ رجوع
-
-</a>
-
-<div class="owl-circle">
-
-<img
-src="../okay.owl.PNG"
-alt="Engliza Academy">
-
-</div>
+    <div class="academy-label">
+        ENGLIZA ACADEMY
+    </div>
 
 </div>
 
 
 <!-- =========================================================
-   TITLE
+     HERO
 ========================================================= -->
 
-<h1 class="title">
+<header class="hero">
 
-📖 Adverbs | Reading Practice
+    <img
+        src="../okay.owl.PNG"
+        alt="Engliza Academy Owl"
+        class="hero-owl"
+    >
 
-</h1>
+    <h1>
+        📖 Adverbs <span>| Reading Practice</span>
+    </h1>
 
-<p class="subtitle">
+    <p>
+        اقرأ الفقرات التالية بهدوء، وحاول فهم الفكرة العامة والتفاصيل.
+        ثم اختبر فهمك من خلال الأسئلة وتعلّم كلمات وعبارات جديدة من سياق القراءة.
+    </p>
 
-اقرأ الفقرات التالية بهدوء، وحاول ملاحظة الكلمات التي تصف
-<strong>كيف يحدث الفعل</strong>.
-ثم اختبر فهمك من خلال الأسئلة.
-
-</p>
+</header>
 
 
 <!-- =========================================================
-   OWL TIP
+     READING TIP
 ========================================================= -->
 
-<div class="card tip-card">
+<section class="tip-card">
 
-<img
-src="../earlo .PNG"
-alt="Engliza Academy Owl">
+    <img
+        src="../earlo .PNG"
+        alt="Reading Tip Owl"
+    >
 
-<div class="tip-content">
+    <div class="tip-content">
 
-<h2>
+        <h2>🦉 نصيحة قبل أن تبدأ</h2>
 
-🦉 نصيحة قبل أن تبدأ
+        <p>
+            لا تحاول ترجمة كل كلمة تقرؤها.
+            اقرأ الفقرة كاملة أولًا، ثم حاول فهم الفكرة العامة.
+            إذا وجدت كلمة جديدة، حاول معرفة معناها من خلال السياق.
+            بعد ذلك، راجع قائمة المفردات وأجب عن الأسئلة.
+        </p>
 
-</h2>
-
-<p>
-
-لا تتوقف عند كل كلمة جديدة أثناء القراءة.
-حاول أولًا فهم الفكرة العامة للفقرة، ثم ارجع للكلمات التي لم تعرفها.
-
-وأثناء القراءة، انتبه للكلمات التي تخبرك
-<strong>كيف حدث الفعل</strong>؛
-فملاحظتك لها داخل الجمل ستجعل استخدامها أسهل مع الوقت. ✨
-
-</p>
-
-</div>
-
-</div>
-
-
-<!-- =========================================================
-   READING 1
-========================================================= -->
-
-<section class="reading-section">
-
-<div class="reading-heading">
-
-<div class="reading-number">
-1
-</div>
-
-<div>
-
-<h2>
-A Busy Morning
-</h2>
-
-<p>
-صباح مزدحم
-</p>
-
-</div>
-
-</div>
-
-
-<div class="card reading-card">
-
-<div class="reading-text">
-
-Maya wakes up
-<span
-class="adverb"
-data-word="early">
-early
-</span>
-every morning because she has school at 7:30. She gets ready
-<span
-class="adverb"
-data-word="quickly">
-quickly
-</span>
-and eats breakfast with her family. Before she leaves, she checks her school bag
-<span
-class="adverb"
-data-word="carefully">
-carefully
-</span>
-to make sure everything is inside. Then she walks to the bus stop. The bus usually comes
-<span
-class="adverb"
-data-word="early">
-early
-</span>,
-so Maya does not want to be late. She arrives at school
-<span
-class="adverb"
-data-word="early">
-early
-</span>
-and starts her day with a smile.
-
-</div>
-
-</div>
-
-
-<div class="questions-header">
-
-<h2>
-📝 أسئلة الفقرة
-</h2>
-
-<p>
-اقرأ السؤال جيدًا ثم اختر أو اكتب إجابتك.
-</p>
-
-</div>
-
-
-<!-- Q1 -->
-
-<div class="question-card">
-
-<div class="question-number">
-1
-</div>
-
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
-
-<p class="question-text">
-How does Maya get ready?
-</p>
-
-<p class="arabic-question">
-كيف تستعد مايا؟
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r1q1')">
-
-Slowly
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r1q1')">
-
-Quickly
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r1q1')">
-
-Loudly
-
-</button>
-
-</div>
-
-<p
-id="r1q1"
-class="result-text">
-</p>
-
-</div>
-
-
-<!-- Q2 -->
-
-<div class="question-card">
-
-<div class="question-number">
-2
-</div>
-
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
-
-<p class="question-text">
-Why does Maya check her school bag carefully?
-</p>
-
-<p class="arabic-question">
-لماذا تتفقد مايا حقيبتها المدرسية بعناية؟
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r1q2')">
-
-To make sure everything is inside.
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r1q2')">
-
-Because she wants to go home.
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r1q2')">
-
-Because she is tired.
-
-</button>
-
-</div>
-
-<p
-id="r1q2"
-class="result-text">
-</p>
-
-</div>
-
-
-<!-- Q3 -->
-
-<div class="question-card">
-
-<div class="question-number">
-3
-</div>
-
-<p class="question-title">
-✍️ أكمل الجملة بالكلمة المناسبة.
-</p>
-
-<p class="question-text">
-Maya wakes up ______ every morning.
-</p>
-
-<p class="arabic-question">
-مايا تستيقظ ______ كل صباح.
-</p>
-
-<input
-id="r1input"
-class="write-box"
-type="text"
-placeholder="اكتب الكلمة بالإنجليزية...">
-
-<button
-class="check-btn"
-onclick="checkWriting(
-'r1input',
-'r1result',
-['early']
-)">
-
-تحقق من الإجابة
-
-</button>
-
-<p
-id="r1result"
-class="result-text">
-</p>
-
-</div>
-
-
-<!-- Q4 -->
-
-<div class="question-card">
-
-<div class="question-number">
-4
-</div>
-
-<p class="question-title">
-🎯 اختر الكلمة التي تصف طريقة حدوث الفعل.
-</p>
-
-<p class="question-text">
-She checks her school bag ______.
-</p>
-
-<p class="arabic-question">
-هي تتفقد حقيبتها المدرسية ______.
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r1q4')">
-
-early
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r1q4')">
-
-carefully
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r1q4')">
-
-happy
-
-</button>
-
-</div>
-
-<p
-id="r1q4"
-class="result-text">
-</p>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- =========================================================
-   DIVIDER
+     READING 1
+========================================================= -->
+
+<section class="reading-section">
+
+    <div class="section-heading">
+
+        <div class="section-number">01</div>
+
+        <div>
+            <h2>Reading 1 – A Busy Morning</h2>
+            <p>صباح مزدحم</p>
+        </div>
+
+    </div>
+
+
+    <!-- AUDIO -->
+
+    <div class="audio-card">
+
+        <div class="audio-heading">
+            <span>🎧</span>
+            <span>Listen to the Reading</span>
+        </div>
+
+        <audio controls preload="none">
+            <source
+                src="https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/A%20busy%20morning.mp3"
+                type="audio/mpeg"
+            >
+            Your browser does not support audio.
+        </audio>
+
+        <p class="audio-note">
+            استمع إلى القراءة وحاول متابعة الكلمات أثناء الاستماع.
+        </p>
+
+    </div>
+
+
+    <!-- READING TEXT -->
+
+    <div class="reading-card">
+
+        <h3 class="reading-title">
+            A Busy Morning
+        </h3>
+
+        <div class="reading-text">
+
+            Maya wakes up early every morning because she has school at 7:30.
+            She gets ready quickly and eats breakfast with her family.
+            Before she leaves, she checks her school bag carefully to make sure everything is inside.
+            Then she walks to the bus stop.
+            The bus usually comes early, so Maya does not want to be late.
+            She arrives at school early and starts her day with a smile.
+
+        </div>
+
+    </div>
+
+
+    <!-- VOCABULARY -->
+
+    <section class="vocab-section">
+
+        <button
+    class="vocab-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="vocab-reading-1"
+>
+    <span>📚 Vocabulary & Expressions</span>
+
+    <span class="vocab-action">
+        اضغط هنا لعرض المفردات
+    </span>
+</button>
+
+        <div class="vocab-content" id="vocab-reading-1">
+
+            <p class="vocab-intro">
+                تعلّم أهم الكلمات والتعبيرات الواردة في القراءة، ولاحظ كيف يمكن استخدامها في جمل أخرى.
+            </p>
+
+            <div class="vocab-grid">
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">wake up</div>
+                        <button class="pronounce-btn" data-word="wake up" aria-label="Pronounce wake up">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Phrasal Verb</span>
+                    <p class="vocab-meaning">يستيقظ</p>
+
+                    <div class="example-block">
+                        <p class="example-en">I wake up at six every morning.</p>
+                        <p class="example-ar">أستيقظ في السادسة كل صباح.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">She woke up late yesterday.</p>
+                        <p class="example-ar">استيقظت متأخرة أمس.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">get ready</div>
+                        <button class="pronounce-btn" data-word="get ready" aria-label="Pronounce get ready">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Expression</span>
+                    <p class="vocab-meaning">يستعد / يجهّز نفسه</p>
+
+                    <div class="example-block">
+                        <p class="example-en">I need ten minutes to get ready.</p>
+                        <p class="example-ar">أحتاج إلى عشر دقائق حتى أستعد.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">The children are getting ready for school.</p>
+                        <p class="example-ar">الأطفال يستعدون للمدرسة.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">check</div>
+                        <button class="pronounce-btn" data-word="check" aria-label="Pronounce check">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يتفقد / يتحقق من</p>
+
+                    <div class="example-block">
+                        <p class="example-en">Please check your answers before you finish.</p>
+                        <p class="example-ar">من فضلك تحقق من إجاباتك قبل أن تنتهي.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">He checked his phone for messages.</p>
+                        <p class="example-ar">تفقد هاتفه بحثًا عن رسائل.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">school bag</div>
+                        <button class="pronounce-btn" data-word="school bag" aria-label="Pronounce school bag">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Noun</span>
+                    <p class="vocab-meaning">حقيبة المدرسة</p>
+
+                    <div class="example-block">
+                        <p class="example-en">My school bag is very heavy today.</p>
+                        <p class="example-ar">حقيبة مدرستي ثقيلة جدًا اليوم.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">She put her notebook in her school bag.</p>
+                        <p class="example-ar">وضعت دفترها في حقيبتها المدرسية.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">make sure</div>
+                        <button class="pronounce-btn" data-word="make sure" aria-label="Pronounce make sure">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Expression</span>
+                    <p class="vocab-meaning">يتأكد من</p>
+
+                    <div class="example-block">
+                        <p class="example-en">Make sure the door is locked.</p>
+                        <p class="example-ar">تأكد من أن الباب مغلق.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">I called her to make sure she was okay.</p>
+                        <p class="example-ar">اتصلت بها لأتأكد من أنها بخير.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">bus stop</div>
+                        <button class="pronounce-btn" data-word="bus stop" aria-label="Pronounce bus stop">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Noun</span>
+                    <p class="vocab-meaning">موقف الحافلة</p>
+
+                    <div class="example-block">
+                        <p class="example-en">There is a bus stop near my house.</p>
+                        <p class="example-ar">يوجد موقف حافلات بالقرب من منزلي.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">We waited at the bus stop for fifteen minutes.</p>
+                        <p class="example-ar">انتظرنا في موقف الحافلة لمدة خمس عشرة دقيقة.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">be late</div>
+                        <button class="pronounce-btn" data-word="be late" aria-label="Pronounce be late">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Expression</span>
+                    <p class="vocab-meaning">يتأخر</p>
+
+                    <div class="example-block">
+                        <p class="example-en">I do not want to be late for class.</p>
+                        <p class="example-ar">لا أريد التأخر عن الحصة.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">She was late for the meeting.</p>
+                        <p class="example-ar">تأخرت عن الاجتماع.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">arrive</div>
+                        <button class="pronounce-btn" data-word="arrive" aria-label="Pronounce arrive">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يصل</p>
+
+                    <div class="example-block">
+                        <p class="example-en">What time did you arrive at school?</p>
+                        <p class="example-ar">في أي وقت وصلت إلى المدرسة؟</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">The train will arrive in ten minutes.</p>
+                        <p class="example-ar">سيصل القطار خلال عشر دقائق.</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUESTIONS -->
+
+    <h3 class="questions-title">📝 أسئلة الفقرة الأولى</h3>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">1. How does Maya get ready?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r1q1')">
+                Slowly
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r1q1')">
+                Quickly
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r1q1')">
+                Loudly
+            </button>
+
+        </div>
+
+        <p id="r1q1" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">2. Why does Maya check her school bag carefully?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r1q2')">
+                To make sure everything is inside.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r1q2')">
+                Because she wants to go home.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r1q2')">
+                Because she is tired.
+            </button>
+
+        </div>
+
+        <p id="r1q2" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">✍️ أكمل الجملة بالكلمة المناسبة.</p>
+
+        <p class="question-text">3. Maya wakes up ______ every morning.</p>
+
+        <input
+            id="r1write1"
+            class="write-box"
+            type="text"
+            placeholder="Type your answer..."
+        >
+
+        <button
+            class="check-btn"
+            onclick="checkWriting('r1write1','r1result1',['early'])"
+        >
+            تحقق من الإجابة
+        </button>
+
+        <p id="r1result1" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">4. She checks her school bag ______.</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r1q4')">
+                Early
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r1q4')">
+                Carefully
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r1q4')">
+                Happy
+            </button>
+
+        </div>
+
+        <p id="r1q4" class="result-text"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DIVIDER
 ========================================================= -->
 
 <div class="reading-divider">
-
-<span>
-📚
-</span>
-
+    📚 ✨ 📚
 </div>
 
 
 <!-- =========================================================
-   READING 2
+     READING 2
 ========================================================= -->
 
 <section class="reading-section">
 
-<div class="reading-heading">
+    <div class="section-heading">
 
-<div class="reading-number">
-2
-</div>
+        <div class="section-number">02</div>
 
-<div>
+        <div>
+            <h2>Reading 2 – At the Library</h2>
+            <p>في المكتبة</p>
+        </div>
 
-<h2>
-At the Library
-</h2>
-
-<p>
-في المكتبة
-</p>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="card reading-card">
+    <!-- AUDIO -->
 
-<div class="reading-text">
+    <div class="audio-card">
 
-Omar goes to the library after school because he likes reading. He walks
-<span
-class="adverb"
-data-word="slowly">
-slowly
-</span>
-between the shelves and looks for a good book. When he finds one, he opens it
-<span
-class="adverb"
-data-word="carefully">
-carefully
-</span>
-and starts reading. The library is quiet, so Omar speaks
-<span
-class="adverb"
-data-word="quietly">
-quietly
-</span>
-when he talks to the librarian. He reads
-<span
-class="adverb"
-data-word="quickly">
-quickly
-</span>
-when the story is easy, but he reads more
-<span
-class="adverb"
-data-word="slowly">
-slowly
-</span>
-when the book has difficult words. Omar enjoys the library because he can study
-<span
-class="adverb"
-data-word="quietly">
-quietly
-</span>
-and concentrate.
+        <div class="audio-heading">
+            <span>🎧</span>
+            <span>Listen to the Reading</span>
+        </div>
 
-</div>
+        <audio controls preload="none">
+            <source
+                src="https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/At%20the%20library.mp3"
+                type="audio/mpeg"
+            >
+            Your browser does not support audio.
+        </audio>
 
-</div>
+        <p class="audio-note">
+            استمع إلى القراءة وحاول متابعة الكلمات أثناء الاستماع.
+        </p>
+
+    </div>
 
 
-<div class="questions-header">
+    <!-- READING TEXT -->
 
-<h2>
-📝 أسئلة الفقرة
-</h2>
+    <div class="reading-card">
 
-<p>
-حاول أن تجد الإجابة داخل الفقرة.
-</p>
+        <h3 class="reading-title">
+            At the Library
+        </h3>
 
-</div>
+        <div class="reading-text">
+
+            Omar goes to the library after school because he likes reading.
+            He walks slowly between the shelves and looks for a good book.
+            When he finds one, he opens it carefully and starts reading.
+            The library is quiet, so Omar speaks quietly when he talks to the librarian.
+            He reads quickly when the story is easy, but he reads more slowly when the book has difficult words.
+            Omar enjoys the library because he can study quietly and concentrate.
+
+        </div>
+
+    </div>
 
 
-<!-- Q1 -->
+    <!-- VOCABULARY -->
 
-<div class="question-card">
+    <section class="vocab-section">
 
-<div class="question-number">
-1
-</div>
+        <button
+    class="vocab-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="vocab-reading-1"
+>
+    <span>📚 Vocabulary & Expressions</span>
 
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
-
-<p class="question-text">
-How does Omar walk between the shelves?
-</p>
-
-<p class="arabic-question">
-كيف يمشي عمر بين الرفوف؟
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r2q1')">
-
-Slowly
-
+    <span class="vocab-action">
+        اضغط هنا لعرض المفردات
+    </span>
 </button>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r2q1')">
+        <div class="vocab-content" id="vocab-reading-2">
 
-Quickly
+            <p class="vocab-intro">
+                تعلّم الكلمات والتعبيرات المهمة من القراءة، وحاول استخدامها في مواقف مختلفة.
+            </p>
 
-</button>
+            <div class="vocab-grid">
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r2q1')">
+                <article class="vocab-item">
 
-Loudly
+                    <div class="vocab-head">
+                        <div class="vocab-word">library</div>
+                        <button class="pronounce-btn" data-word="library" aria-label="Pronounce library">🔊</button>
+                    </div>
 
-</button>
+                    <span class="vocab-type">Noun</span>
+                    <p class="vocab-meaning">مكتبة</p>
 
-</div>
+                    <div class="example-block">
+                        <p class="example-en">I borrowed a book from the library.</p>
+                        <p class="example-ar">استعرت كتابًا من المكتبة.</p>
+                    </div>
 
-<p
-id="r2q1"
-class="result-text">
-</p>
+                    <div class="example-block">
+                        <p class="example-en">The library closes at six o'clock.</p>
+                        <p class="example-ar">تغلق المكتبة في الساعة السادسة.</p>
+                    </div>
 
-</div>
-
-
-<!-- Q2 -->
-
-<div class="question-card">
-
-<div class="question-number">
-2
-</div>
-
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
-
-<p class="question-text">
-Why does Omar speak quietly?
-</p>
-
-<p class="arabic-question">
-لماذا يتحدث عمر بهدوء؟
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r2q2')">
-
-Because the library is quiet.
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r2q2')">
-
-Because he is outside.
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r2q2')">
-
-Because he is running.
-
-</button>
-
-</div>
-
-<p
-id="r2q2"
-class="result-text">
-</p>
-
-</div>
+                </article>
 
 
-<!-- Q3 -->
+                <article class="vocab-item">
 
-<div class="question-card">
+                    <div class="vocab-head">
+                        <div class="vocab-word">look for</div>
+                        <button class="pronounce-btn" data-word="look for" aria-label="Pronounce look for">🔊</button>
+                    </div>
 
-<div class="question-number">
-3
-</div>
+                    <span class="vocab-type">Phrasal Verb</span>
+                    <p class="vocab-meaning">يبحث عن</p>
 
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
+                    <div class="example-block">
+                        <p class="example-en">I am looking for my keys.</p>
+                        <p class="example-ar">أنا أبحث عن مفاتيحي.</p>
+                    </div>
 
-<p class="question-text">
-When does Omar read slowly?
-</p>
+                    <div class="example-block">
+                        <p class="example-en">She looked for a quiet place to study.</p>
+                        <p class="example-ar">بحثت عن مكان هادئ للدراسة.</p>
+                    </div>
 
-<p class="arabic-question">
-متى يقرأ عمر ببطء؟
-</p>
-
-<div class="choice-container">
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r2q3')">
-
-When the story is easy.
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r2q3')">
-
-When the book has difficult words.
-
-</button>
-
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r2q3')">
-
-When he goes home.
-
-</button>
-
-</div>
-
-<p
-id="r2q3"
-class="result-text">
-</p>
-
-</div>
+                </article>
 
 
-<!-- Q4 -->
+                <article class="vocab-item">
 
-<div class="question-card">
+                    <div class="vocab-head">
+                        <div class="vocab-word">shelf / shelves</div>
+                        <button class="pronounce-btn" data-word="shelf shelves" aria-label="Pronounce shelf">🔊</button>
+                    </div>
 
-<div class="question-number">
-4
-</div>
+                    <span class="vocab-type">Noun</span>
+                    <p class="vocab-meaning">رف / رفوف</p>
 
-<p class="question-title">
-✍️ أكمل الجملة.
-</p>
+                    <div class="example-block">
+                        <p class="example-en">The books are on the top shelf.</p>
+                        <p class="example-ar">الكتب على الرف العلوي.</p>
+                    </div>
 
-<p class="question-text">
-Omar opens the book ______.
-</p>
+                    <div class="example-block">
+                        <p class="example-en">There are many shelves in this room.</p>
+                        <p class="example-ar">توجد رفوف كثيرة في هذه الغرفة.</p>
+                    </div>
 
-<p class="arabic-question">
-عمر يفتح الكتاب ______.
-</p>
+                </article>
 
-<input
-id="r2input"
-class="write-box"
-type="text"
-placeholder="اكتب الكلمة بالإنجليزية...">
 
-<button
-class="check-btn"
-onclick="checkWriting(
-'r2input',
-'r2result',
-['carefully']
-)">
+                <article class="vocab-item">
 
-تحقق من الإجابة
+                    <div class="vocab-head">
+                        <div class="vocab-word">librarian</div>
+                        <button class="pronounce-btn" data-word="librarian" aria-label="Pronounce librarian">🔊</button>
+                    </div>
 
-</button>
+                    <span class="vocab-type">Noun</span>
+                    <p class="vocab-meaning">أمين المكتبة</p>
 
-<p
-id="r2result"
-class="result-text">
-</p>
+                    <div class="example-block">
+                        <p class="example-en">The librarian helped me find a book.</p>
+                        <p class="example-ar">ساعدني أمين المكتبة في العثور على كتاب.</p>
+                    </div>
 
-</div>
+                    <div class="example-block">
+                        <p class="example-en">Ask the librarian if you need help.</p>
+                        <p class="example-ar">اسأل أمين المكتبة إذا كنت بحاجة إلى مساعدة.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">concentrate</div>
+                        <button class="pronounce-btn" data-word="concentrate" aria-label="Pronounce concentrate">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يركّز</p>
+
+                    <div class="example-block">
+                        <p class="example-en">I cannot concentrate when the TV is on.</p>
+                        <p class="example-ar">لا أستطيع التركيز عندما يكون التلفاز يعمل.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">She needs a quiet room to concentrate.</p>
+                        <p class="example-ar">تحتاج إلى غرفة هادئة حتى تركز.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">difficult</div>
+                        <button class="pronounce-btn" data-word="difficult" aria-label="Pronounce difficult">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Adjective</span>
+                    <p class="vocab-meaning">صعب</p>
+
+                    <div class="example-block">
+                        <p class="example-en">This exercise is difficult for beginners.</p>
+                        <p class="example-ar">هذا التمرين صعب على المبتدئين.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">It was difficult to understand the instructions.</p>
+                        <p class="example-ar">كان من الصعب فهم التعليمات.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">quiet</div>
+                        <button class="pronounce-btn" data-word="quiet" aria-label="Pronounce quiet">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Adjective</span>
+                    <p class="vocab-meaning">هادئ</p>
+
+                    <div class="example-block">
+                        <p class="example-en">This is a quiet place to work.</p>
+                        <p class="example-ar">هذا مكان هادئ للعمل.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">The streets are quiet at night.</p>
+                        <p class="example-ar">الشوارع هادئة في الليل.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">enjoy</div>
+                        <button class="pronounce-btn" data-word="enjoy" aria-label="Pronounce enjoy">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يستمتع بـ</p>
+
+                    <div class="example-block">
+                        <p class="example-en">I enjoy reading stories in English.</p>
+                        <p class="example-ar">أستمتع بقراءة القصص باللغة الإنجليزية.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">They enjoyed their trip to London.</p>
+                        <p class="example-ar">استمتعوا برحلتهم إلى لندن.</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUESTIONS -->
+
+    <h3 class="questions-title">📝 أسئلة الفقرة الثانية</h3>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">1. How does Omar walk between the shelves?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r2q1')">
+                Slowly
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r2q1')">
+                Quickly
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r2q1')">
+                Loudly
+            </button>
+
+        </div>
+
+        <p id="r2q1" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">2. Why does Omar speak quietly?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r2q2')">
+                Because the library is quiet.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r2q2')">
+                Because he is outside.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r2q2')">
+                Because he is running.
+            </button>
+
+        </div>
+
+        <p id="r2q2" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">3. When does Omar read slowly?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r2q3')">
+                When the story is easy.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r2q3')">
+                When the book has difficult words.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r2q3')">
+                When he goes home.
+            </button>
+
+        </div>
+
+        <p id="r2q3" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">✍️ أكمل الجملة بالكلمة المناسبة.</p>
+
+        <p class="question-text">4. Omar opens the book ______.</p>
+
+        <input
+            id="r2write1"
+            class="write-box"
+            type="text"
+            placeholder="Type your answer..."
+        >
+
+        <button
+            class="check-btn"
+            onclick="checkWriting('r2write1','r2result1',['carefully'])"
+        >
+            تحقق من الإجابة
+        </button>
+
+        <p id="r2result1" class="result-text"></p>
+
+    </div>
 
 </section>
 
 
 <!-- =========================================================
-   DIVIDER
+     DIVIDER
 ========================================================= -->
 
 <div class="reading-divider">
-
-<span>
-✨
-</span>
-
+    📚 ✨ 📚
 </div>
 
 
 <!-- =========================================================
-   READING 3
+     READING 3
 ========================================================= -->
 
 <section class="reading-section">
 
-<div class="reading-heading">
+    <div class="section-heading">
 
-<div class="reading-number">
-3
-</div>
+        <div class="section-number">03</div>
 
-<div>
+        <div>
+            <h2>Reading 3 – A Day at Home</h2>
+            <p>يوم في المنزل</p>
+        </div>
 
-<h2>
-A Day at Home
-</h2>
+    </div>
 
-<p>
-يوم في المنزل
-</p>
 
-</div>
+    <!-- AUDIO -->
 
-</div>
+    <div class="audio-card">
 
+        <div class="audio-heading">
+            <span>🎧</span>
+            <span>Listen to the Reading</span>
+        </div>
 
-<div class="card reading-card">
+        <audio controls preload="none">
+            <source
+                src="https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/A%20day%20at%20home.mp3"
+                type="audio/mpeg"
+            >
+            Your browser does not support audio.
+        </audio>
 
-<div class="reading-text">
+        <p class="audio-note">
+            استمع إلى القراءة وحاول متابعة الكلمات أثناء الاستماع.
+        </p>
 
-Sara has a busy day at home. In the morning, she cleans her room
-<span
-class="adverb"
-data-word="carefully">
-carefully
-</span>
-and puts her books on the desk. Then she helps her mother in the kitchen. Her little brother sometimes talks
-<span
-class="adverb"
-data-word="loudly">
-loudly
-</span>,
-but Sara asks him to speak more quietly. In the afternoon, Sara studies
-<span
-class="adverb"
-data-word="hard">
-hard
-</span>
-because she has an English test the next day. She understands the lesson
-<span
-class="adverb"
-data-word="easily">
-easily
-</span>
-because she studies every day. Suddenly, her phone rings
-<span
-class="adverb"
-data-word="loudly">
-loudly
-</span>.
-She smiles, answers the phone, and talks happily with her friend.
+    </div>
 
-</div>
 
-</div>
+    <!-- READING TEXT -->
 
+    <div class="reading-card">
 
-<div class="questions-header">
+        <h3 class="reading-title">
+            A Day at Home
+        </h3>
 
-<h2>
-📝 أسئلة الفقرة
-</h2>
+        <div class="reading-text">
 
-<p>
-اقرأ الفقرة مرة أخرى إذا احتجت إلى ذلك.
-</p>
+            Sara has a busy day at home.
+            In the morning, she cleans her room carefully and puts her books on the desk.
+            Then she helps her mother in the kitchen.
+            Her little brother sometimes talks loudly, but Sara asks him to speak more quietly.
+            In the afternoon, Sara studies hard because she has an English test the next day.
+            She understands the lesson easily because she studies every day.
+            Suddenly, her phone rings loudly.
+            She smiles, answers the phone, and talks happily with her friend.
 
-</div>
+        </div>
 
+    </div>
 
-<!-- Q1 -->
 
-<div class="question-card">
+    <!-- VOCABULARY -->
 
-<div class="question-number">
-1
-</div>
+    <section class="vocab-section">
 
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
+        <button
+            class="vocab-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="vocab-reading-3"
+        >
+            <span>📚 Vocabulary & Expressions</span>
+            <span class="toggle-arrow">⌄</span>
+        </button>
 
-<p class="question-text">
-Why does Sara study hard?
-</p>
+        <div class="vocab-content" id="vocab-reading-3">
 
-<p class="arabic-question">
-لماذا تدرس سارة بجد؟
-</p>
+            <p class="vocab-intro">
+                ركّز على الأفعال والتعبيرات التي يمكنك استخدامها عند الحديث عن المنزل والدراسة والتواصل مع الآخرين.
+            </p>
 
-<div class="choice-container">
+            <div class="vocab-grid">
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r3q1')">
+                <article class="vocab-item">
 
-Because she has an English test.
+                    <div class="vocab-head">
+                        <div class="vocab-word">busy</div>
+                        <button class="pronounce-btn" data-word="busy" aria-label="Pronounce busy">🔊</button>
+                    </div>
 
-</button>
+                    <span class="vocab-type">Adjective</span>
+                    <p class="vocab-meaning">مشغول</p>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r3q1')">
+                    <div class="example-block">
+                        <p class="example-en">I have a busy day tomorrow.</p>
+                        <p class="example-ar">لدي يوم مزدحم غدًا.</p>
+                    </div>
 
-Because she wants to sleep.
+                    <div class="example-block">
+                        <p class="example-en">She is busy with her homework.</p>
+                        <p class="example-ar">هي مشغولة بواجبها المنزلي.</p>
+                    </div>
 
-</button>
+                </article>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r3q1')">
 
-Because she is cooking.
+                <article class="vocab-item">
 
-</button>
+                    <div class="vocab-head">
+                        <div class="vocab-word">clean</div>
+                        <button class="pronounce-btn" data-word="clean" aria-label="Pronounce clean">🔊</button>
+                    </div>
 
-</div>
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">ينظف</p>
 
-<p
-id="r3q1"
-class="result-text">
-</p>
+                    <div class="example-block">
+                        <p class="example-en">I clean my room every weekend.</p>
+                        <p class="example-ar">أنظف غرفتي في نهاية كل أسبوع.</p>
+                    </div>
 
-</div>
+                    <div class="example-block">
+                        <p class="example-en">He cleaned the kitchen after dinner.</p>
+                        <p class="example-ar">نظف المطبخ بعد العشاء.</p>
+                    </div>
 
+                </article>
 
-<!-- Q2 -->
 
-<div class="question-card">
+                <article class="vocab-item">
 
-<div class="question-number">
-2
-</div>
+                    <div class="vocab-head">
+                        <div class="vocab-word">put</div>
+                        <button class="pronounce-btn" data-word="put" aria-label="Pronounce put">🔊</button>
+                    </div>
 
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يضع</p>
 
-<p class="question-text">
-How does Sara understand the lesson?
-</p>
+                    <div class="example-block">
+                        <p class="example-en">Put your phone on the table.</p>
+                        <p class="example-ar">ضع هاتفك على الطاولة.</p>
+                    </div>
 
-<p class="arabic-question">
-كيف تفهم سارة الدرس؟
-</p>
+                    <div class="example-block">
+                        <p class="example-en">She put the keys in her bag.</p>
+                        <p class="example-ar">وضعت المفاتيح في حقيبتها.</p>
+                    </div>
 
-<div class="choice-container">
+                </article>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r3q2')">
 
-Hardly
+                <article class="vocab-item">
 
-</button>
+                    <div class="vocab-head">
+                        <div class="vocab-word">help</div>
+                        <button class="pronounce-btn" data-word="help" aria-label="Pronounce help">🔊</button>
+                    </div>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r3q2')">
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يساعد</p>
 
-Easily
+                    <div class="example-block">
+                        <p class="example-en">Can you help me with this exercise?</p>
+                        <p class="example-ar">هل يمكنك مساعدتي في هذا التمرين؟</p>
+                    </div>
 
-</button>
+                    <div class="example-block">
+                        <p class="example-en">My brother helps me with my homework.</p>
+                        <p class="example-ar">يساعدني أخي في واجبي المنزلي.</p>
+                    </div>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r3q2')">
+                </article>
 
-Loudly
 
-</button>
+                <article class="vocab-item">
 
-</div>
+                    <div class="vocab-head">
+                        <div class="vocab-word">speak quietly</div>
+                        <button class="pronounce-btn" data-word="speak quietly" aria-label="Pronounce speak quietly">🔊</button>
+                    </div>
 
-<p
-id="r3q2"
-class="result-text">
-</p>
+                    <span class="vocab-type">Expression</span>
+                    <p class="vocab-meaning">يتحدث بهدوء / بصوت منخفض</p>
 
-</div>
+                    <div class="example-block">
+                        <p class="example-en">Please speak quietly in the hospital.</p>
+                        <p class="example-ar">من فضلك تحدث بهدوء في المستشفى.</p>
+                    </div>
 
+                    <div class="example-block">
+                        <p class="example-en">The teacher asked us to speak quietly.</p>
+                        <p class="example-ar">طلب منا المعلم أن نتحدث بصوت منخفض.</p>
+                    </div>
 
-<!-- Q3 -->
+                </article>
 
-<div class="question-card">
 
-<div class="question-number">
-3
-</div>
+                <article class="vocab-item">
 
-<p class="question-title">
-🎯 اختر الإجابة الصحيحة.
-</p>
+                    <div class="vocab-head">
+                        <div class="vocab-word">study hard</div>
+                        <button class="pronounce-btn" data-word="study hard" aria-label="Pronounce study hard">🔊</button>
+                    </div>
 
-<p class="question-text">
-What happens suddenly?
-</p>
+                    <span class="vocab-type">Expression</span>
+                    <p class="vocab-meaning">يدرس بجد</p>
 
-<p class="arabic-question">
-ماذا يحدث فجأة؟
-</p>
+                    <div class="example-block">
+                        <p class="example-en">You need to study hard for the exam.</p>
+                        <p class="example-ar">تحتاج إلى الدراسة بجد من أجل الاختبار.</p>
+                    </div>
 
-<div class="choice-container">
+                    <div class="example-block">
+                        <p class="example-en">She studied hard and got a high grade.</p>
+                        <p class="example-ar">درست بجد وحصلت على درجة عالية.</p>
+                    </div>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,true,'r3q3')">
+                </article>
 
-Sara's phone rings.
 
-</button>
+                <article class="vocab-item">
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r3q3')">
+                    <div class="vocab-head">
+                        <div class="vocab-word">understand</div>
+                        <button class="pronounce-btn" data-word="understand" aria-label="Pronounce understand">🔊</button>
+                    </div>
 
-Sara cleans her room.
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يفهم</p>
 
-</button>
+                    <div class="example-block">
+                        <p class="example-en">I understand the question now.</p>
+                        <p class="example-ar">أفهم السؤال الآن.</p>
+                    </div>
 
-<button
-class="choice-btn"
-onclick="checkAnswer(this,false,'r3q3')">
+                    <div class="example-block">
+                        <p class="example-en">He did not understand the instructions.</p>
+                        <p class="example-ar">لم يفهم التعليمات.</p>
+                    </div>
 
-Sara studies English.
+                </article>
 
-</button>
 
-</div>
+                <article class="vocab-item">
 
-<p
-id="r3q3"
-class="result-text">
-</p>
+                    <div class="vocab-head">
+                        <div class="vocab-word">the next day</div>
+                        <button class="pronounce-btn" data-word="the next day" aria-label="Pronounce the next day">🔊</button>
+                    </div>
 
-</div>
+                    <span class="vocab-type">Expression</span>
+                    <p class="vocab-meaning">اليوم التالي</p>
 
+                    <div class="example-block">
+                        <p class="example-en">We travelled to Muscat the next day.</p>
+                        <p class="example-ar">سافرنا إلى مسقط في اليوم التالي.</p>
+                    </div>
 
-<!-- Q4 -->
+                    <div class="example-block">
+                        <p class="example-en">She called me the next day.</p>
+                        <p class="example-ar">اتصلت بي في اليوم التالي.</p>
+                    </div>
 
-<div class="question-card">
+                </article>
 
-<div class="question-number">
-4
-</div>
 
-<p class="question-title">
-✍️ أكمل الجملة بالكلمة المناسبة.
-</p>
+                <article class="vocab-item">
 
-<p class="question-text">
-Sara talks ______ with her friend.
-</p>
+                    <div class="vocab-head">
+                        <div class="vocab-word">ring</div>
+                        <button class="pronounce-btn" data-word="ring" aria-label="Pronounce ring">🔊</button>
+                    </div>
 
-<p class="arabic-question">
-سارة تتحدث ______ مع صديقتها.
-</p>
+                    <span class="vocab-type">Verb</span>
+                    <p class="vocab-meaning">يرنّ</p>
 
-<input
-id="r3input"
-class="write-box"
-type="text"
-placeholder="اكتب الكلمة بالإنجليزية...">
+                    <div class="example-block">
+                        <p class="example-en">My phone rings every morning.</p>
+                        <p class="example-ar">يرن هاتفي كل صباح.</p>
+                    </div>
 
-<button
-class="check-btn"
-onclick="checkWriting(
-'r3input',
-'r3result',
-['happily']
-)">
+                    <div class="example-block">
+                        <p class="example-en">The doorbell rang while I was studying.</p>
+                        <p class="example-ar">رن جرس الباب بينما كنت أدرس.</p>
+                    </div>
 
-تحقق من الإجابة
+                </article>
 
-</button>
 
-<p
-id="r3result"
-class="result-text">
-</p>
+                <article class="vocab-item">
 
-</div>
+                    <div class="vocab-head">
+                        <div class="vocab-word">answer the phone</div>
+                        <button class="pronounce-btn" data-word="answer the phone" aria-label="Pronounce answer the phone">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Expression</span>
+                    <p class="vocab-meaning">يرد على الهاتف</p>
+
+                    <div class="example-block">
+                        <p class="example-en">Please answer the phone.</p>
+                        <p class="example-ar">من فضلك أجب عن الهاتف.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">I could not answer the phone because I was busy.</p>
+                        <p class="example-ar">لم أستطع الرد على الهاتف لأنني كنت مشغولًا.</p>
+                    </div>
+
+                </article>
+
+
+                <article class="vocab-item">
+
+                    <div class="vocab-head">
+                        <div class="vocab-word">talk to</div>
+                        <button class="pronounce-btn" data-word="talk to" aria-label="Pronounce talk to">🔊</button>
+                    </div>
+
+                    <span class="vocab-type">Verb + Preposition</span>
+                    <p class="vocab-meaning">يتحدث إلى</p>
+
+                    <div class="example-block">
+                        <p class="example-en">I need to talk to my teacher.</p>
+                        <p class="example-ar">أحتاج إلى التحدث إلى معلمي.</p>
+                    </div>
+
+                    <div class="example-block">
+                        <p class="example-en">She talked to her friend about the problem.</p>
+                        <p class="example-ar">تحدثت إلى صديقتها عن المشكلة.</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUESTIONS -->
+
+    <h3 class="questions-title">📝 أسئلة الفقرة الثالثة</h3>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">1. Why does Sara study hard?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r3q1')">
+                Because she has an English test.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r3q1')">
+                Because she wants to sleep.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r3q1')">
+                Because she is cooking.
+            </button>
+
+        </div>
+
+        <p id="r3q1" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">2. How does Sara understand the lesson?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r3q2')">
+                Hardly
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r3q2')">
+                Easily
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r3q2')">
+                Loudly
+            </button>
+
+        </div>
+
+        <p id="r3q2" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">🎯 اختر الإجابة الصحيحة.</p>
+
+        <p class="question-text">3. What happens suddenly?</p>
+
+        <div class="choice-container">
+
+            <button class="choice-btn" onclick="checkAnswer(this,true,'r3q3')">
+                Sara's phone rings.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r3q3')">
+                Sara cleans her room.
+            </button>
+
+            <button class="choice-btn" onclick="checkAnswer(this,false,'r3q3')">
+                Sara studies English.
+            </button>
+
+        </div>
+
+        <p id="r3q3" class="result-text"></p>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <p class="question-instruction">✍️ أكمل الجملة بالكلمة المناسبة.</p>
+
+        <p class="question-text">4. Sara talks ______ with her friend.</p>
+
+        <input
+            id="r3write1"
+            class="write-box"
+            type="text"
+            placeholder="Type your answer..."
+        >
+
+        <button
+            class="check-btn"
+            onclick="checkWriting('r3write1','r3result1',['happily'])"
+        >
+            تحقق من الإجابة
+        </button>
+
+        <p id="r3result1" class="result-text"></p>
+
+    </div>
 
 </section>
 
 
 <!-- =========================================================
-   FINAL TIP
+     FINAL TIP
 ========================================================= -->
 
-<div class="card final-tip">
+<section class="final-tip">
 
-<div class="final-tip-inner">
+    <img
+        src="../success.owl.PNG"
+        alt="Success Owl"
+    >
 
-<img
-src="../success.owl.PNG"
-alt="Engliza Academy">
+    <div>
 
-<div>
+        <h2>💡 سر صغير يساعدك في تطوير لغتك</h2>
 
-<h2>
-💡 سر صغير يساعدك في تطوير لغتك
-</h2>
+        <p>
+            عندما تقرأ باللغة الإنجليزية، حاول أن تلاحظ كيف تُستخدم الكلمات داخل الجملة.
+            لا تكتفِ بمعرفة معناها فقط؛ جرّب تكوين جمل جديدة بها.
+            كلما استخدمت الكلمات في سياقات مختلفة، أصبح تذكّرها واستخدامها أسهل.
+        </p>
 
-<p>
+    </div>
 
-كلما قرأت أكثر، بدأت الكلمات التي تعلمتها تظهر لك بشكل طبيعي داخل الجمل.
-لا تحاول حفظ الـadverbs كقائمة فقط؛
-لاحظها عندما تراها في قراءة أو تسمعها في محادثة، وحاول استخدامها لاحقًا في جملة من حياتك.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
+</section>
 
 
 <!-- =========================================================
-   FINAL UNIT 3 CARD
+     FINISH CARD
 ========================================================= -->
 
-<div class="card final-card">
+<section class="finish-card">
 
-<div class="final-content">
+    <h2>🎉 مبروك! لقد أكملت الوحدة الثالثة</h2>
 
-<div class="final-icon">
-🏆✨
-</div>
+    <p>
+        أنهيت تدريبات القراءة لهذا الدرس.
+        يمكنك الآن الانتقال إلى مراجعة الوحدة الثالثة واختبار ما تعلمته.
+    </p>
 
-<h2>
-مبروك! لقد أكملت الوحدة الثالثة
-</h2>
+    <button
+        class="finish-btn"
+        type="button"
+        onclick="finishLessonPage()"
+    >
+        📚 الانتقال إلى مراجعة الوحدة الثالثة
+    </button>
 
-<p>
-
-أنهيت آخر تدريب في الوحدة الثالثة، وتدرّبت على قراءة نصوص قصيرة
-وفهم الكلمات واستخدام الـ<strong>Adverbs</strong> داخل السياق.
-
-<br><br>
-
-قبل أن تبدأ الوحدة التالية، خذ وقتك في مراجعة ما تعلمته.
-المراجعة ليست مجرد اختبار؛ إنها فرصة لتثبيت المعلومات في ذاكرتك. 💙
-
-</p>
-
-<button
-class="next-lesson-btn"
-onclick="finishLessonPage()">
-
-📚 الانتقال إلى مراجعة الوحدة الثالثة
-
-</button>
-
-</div>
-
-</div>
+</section>
 
 
 <!-- =========================================================
-   VOCAB POPUP
+     FOOTER
 ========================================================= -->
 
-<div
-id="vocab-popup">
+<footer>
+    © Engliza Academy — Learn English with Confidence
+</footer>
 
-<div class="popup-top">
-
-<h3 id="popup-word">
-</h3>
-
-<button
-class="popup-close"
-id="popup-close"
-type="button">
-
-×
-</button>
-
-</div>
-
-<div
-id="popup-type">
-</div>
-
-<div
-class="popup-pronunciation"
-id="popup-pronunciation">
-</div>
-
-<div
-id="popup-meaning">
-</div>
-
-<div
-id="popup-example">
-</div>
-
-<div
-id="popup-translation">
-</div>
-
-<button
-class="speak-btn"
-id="popup-speak"
-type="button">
-
-🔊 استمع للنطق
-
-</button>
-
-</div>
+</main>
 
 
-</div>
-
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
 /* =========================================================
-   NORMALIZE TEXT
+   CHECK MULTIPLE CHOICE ANSWERS
 ========================================================= */
 
-function normalizeText(text){
+function checkAnswer(button,isCorrect,resultId){
 
-return String(text)
+    const result = document.getElementById(resultId);
 
-.toLowerCase()
+    if(!result) return;
 
-.trim()
+    const questionCard = button.closest(".question-card");
 
-.replace(/’/g,"'")
+    if(!questionCard) return;
 
-.replace(/\bI'm\b/gi,"i am")
+    const buttons = questionCard.querySelectorAll(".choice-btn");
 
-.replace(/\bI've\b/gi,"i have")
+    if(buttons[0] && buttons[0].disabled) return;
 
-.replace(/\bI'd\b/gi,"i would")
-
-.replace(/\bI'll\b/gi,"i will")
-
-.replace(/\bhe's\b/gi,"he is")
-
-.replace(/\bshe's\b/gi,"she is")
-
-.replace(/\bit's\b/gi,"it is")
-
-.replace(/\byou're\b/gi,"you are")
-
-.replace(/\bwe're\b/gi,"we are")
-
-.replace(/\bthey're\b/gi,"they are")
-
-.replace(/\bdoesn't\b/gi,"does not")
-
-.replace(/\bdon't\b/gi,"do not")
-
-.replace(/\bcan't\b/gi,"cannot")
-
-.replace(/[.,!?؟]/g,"")
-
-.replace(/'/g,"")
-
-.replace(/-/g," ")
-
-.replace(/\s+/g," ")
-
-.trim();
-
-}
-
-
-/* =========================================================
-   WRITING CHECK
-========================================================= */
-
-function checkWriting(
-    inputId,
-    resultId,
-    correctAnswers
-){
-
-    const input =
-    document.getElementById(inputId);
-
-    const result =
-    document.getElementById(resultId);
-
-    if(!input || !result){
-
-        return;
-    }
-
-    const userAnswer =
-    normalizeText(input.value);
-
-    const answers =
-    correctAnswers.map(
-        answer =>
-        normalizeText(answer)
-    );
-
-    input.classList.remove(
-        "correct-input",
-        "wrong-input",
-        "shake"
-    );
-
-    if(
-        answers.includes(userAnswer)
-    ){
-
-        input.classList.add(
-            "correct-input"
-        );
-
-        result.innerHTML =
-        '<div class="confetti">'+
-        '<span class="star">✨</span>'+
-        '<span class="star">⭐</span>'+
-        '<span class="star">🌟</span>'+
-        '<span class="star">✨</span>'+
-        '<span class="star">⭐</span>'+
-        '</div>'+
-        '✅ أحسنت! إجابتك صحيحة.';
-
-        result.className =
-        "result-text success-text";
-
-    }
-
-    else{
-
-        input.classList.add(
-            "wrong-input",
-            "shake"
-        );
-
-        setTimeout(function(){
-
-            input.classList.remove(
-                "shake"
-            );
-
-        },350);
-
-        result.innerHTML =
-        "😅❌ ليست الإجابة الصحيحة."+
-        "<br><br>"+
-        "💡 الإجابة الصحيحة:"+
-        "<br><br>"+
-        "<b>"+
-        correctAnswers[0]+
-        "</b>";
-
-        result.className =
-        "result-text error-text";
-
-    }
-
-}
-
-
-/* =========================================================
-   MULTIPLE CHOICE
-========================================================= */
-
-function checkAnswer(
-    button,
-    isCorrect,
-    resultId
-){
-
-    if(!button){
-
-        return;
-    }
-
-    const result =
-    document.getElementById(resultId);
-
-    const container =
-    button.parentElement;
-
-    if(!result || !container){
-
-        return;
-    }
-
-    const allButtons =
-    container.querySelectorAll(
-        ".choice-btn"
-    );
-
-    allButtons.forEach(function(btn){
-
+    buttons.forEach(function(btn){
         btn.disabled = true;
-
     });
-
 
     if(isCorrect){
 
-        button.classList.add(
-            "correct"
-        );
+        button.classList.add("correct");
 
-        if(
-            !button.innerHTML.includes("✔️")
-        ){
+        result.textContent = "✓ Excellent! إجابة صحيحة، أحسنت!";
 
-            button.innerHTML +=
-            " ✔️";
+        result.className = "result-text success";
 
-        }
+        createConfetti();
 
-        result.innerHTML =
-        '<div class="confetti">'+
-        '<span class="star">✨</span>'+
-        '<span class="star">⭐</span>'+
-        '<span class="star">🌟</span>'+
-        '<span class="star">✨</span>'+
-        '<span class="star">⭐</span>'+
-        '</div>'+
-        "✅ أحسنت! إجابتك صحيحة.";
+    }else{
 
-        result.className =
-        "result-text success-text";
+        button.classList.add("wrong");
 
-    }
+        buttons.forEach(function(btn){
 
-    else{
+            if(btn.getAttribute("onclick") &&
+               btn.getAttribute("onclick").includes("true")){
 
-        button.classList.add(
-            "wrong",
-            "shake"
-        );
-
-        setTimeout(function(){
-
-            button.classList.remove(
-                "shake"
-            );
-
-        },350);
-
-        if(
-            !button.innerHTML.includes("✖️")
-        ){
-
-            button.innerHTML +=
-            " ✖️";
-
-        }
-
-        result.innerHTML =
-        "😅❌ ليست الإجابة الصحيحة.";
-
-        result.className =
-        "result-text error-text";
-
-
-        allButtons.forEach(function(btn){
-
-            const onclickValue =
-            btn.getAttribute("onclick");
-
-            if(
-                onclickValue &&
-                onclickValue.includes(",true,")
-            ){
-
-                btn.classList.add(
-                    "correct"
-                );
-
-                if(
-                    !btn.innerHTML.includes("✔️")
-                ){
-
-                    btn.innerHTML +=
-                    " ✔️";
-
-                }
+                btn.classList.add("correct");
 
             }
 
         });
 
+        result.textContent = "✗ ليست الإجابة الصحيحة. راجع الإجابة المظللة بالأخضر.";
+
+        result.className = "result-text error";
+
     }
 
 }
 
 
 /* =========================================================
-   ENTER KEY
+   NORMALIZE WRITTEN ANSWERS
 ========================================================= */
 
-document
-.querySelectorAll(".write-box")
-.forEach(function(input){
-
-    input.addEventListener(
-        "keydown",
-        function(event){
-
-            if(
-                event.key === "Enter"
-            ){
-
-                event.preventDefault();
-
-                const button =
-                this.nextElementSibling;
-
-                if(
-                    button &&
-                    typeof button.click === "function"
-                ){
-
-                    button.click();
-
-                }
-
-            }
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   VOCABULARY DATA
-========================================================= */
-
-const vocabulary = {
-
-    "early":{
-
-        word:"early",
-
-        type:"Adjective / Adverb",
-
-        pronunciation:"/ˈɜːrli/",
-
-        meaning:"مبكرًا / مبكر",
-
-        example:"I wake up early every morning.",
-
-        translation:"أنا أستيقظ مبكرًا كل صباح."
-
-    },
-
-    "quickly":{
-
-        word:"quickly",
-
-        type:"Adverb",
-
-        pronunciation:"/ˈkwɪkli/",
-
-        meaning:"بسرعة",
-
-        example:"She finished her homework quickly.",
-
-        translation:"أنهت واجبها بسرعة."
-
-    },
-
-    "carefully":{
-
-        word:"carefully",
-
-        type:"Adverb",
-
-        pronunciation:"/ˈkerfəli/",
-
-        meaning:"بعناية / بحذر",
-
-        example:"Please read the question carefully.",
-
-        translation:"من فضلك اقرأ السؤال بعناية."
-
-    },
-
-    "slowly":{
-
-        word:"slowly",
-
-        type:"Adverb",
-
-        pronunciation:"/ˈsloʊli/",
-
-        meaning:"ببطء",
-
-        example:"Please speak slowly.",
-
-        translation:"من فضلك تحدث ببطء."
-
-    },
-
-    "quietly":{
-
-        word:"quietly",
-
-        type:"Adverb",
-
-        pronunciation:"/ˈkwaɪətli/",
-
-        meaning:"بهدوء",
-
-        example:"The students are working quietly.",
-
-        translation:"الطلاب يعملون بهدوء."
-
-    },
-
-    "hard":{
-
-        word:"hard",
-
-        type:"Adjective / Adverb",
-
-        pronunciation:"/hɑːrd/",
-
-        meaning:"بجد / بجدية",
-
-        example:"She studies hard for her exams.",
-
-        translation:"هي تدرس بجد من أجل اختباراتِها."
-
-    },
-
-    "easily":{
-
-        word:"easily",
-
-        type:"Adverb",
-
-        pronunciation:"/ˈiːzəli/",
-
-        meaning:"بسهولة",
-
-        example:"He learns new words easily.",
-
-        translation:"هو يتعلم الكلمات الجديدة بسهولة."
-
-    },
-
-    "loudly":{
-
-        word:"loudly",
-
-        type:"Adverb",
-
-        pronunciation:"/ˈlaʊdli/",
-
-        meaning:"بصوت عالٍ",
-
-        example:"The children are laughing loudly.",
-
-        translation:"الأطفال يضحكون بصوت عالٍ."
-
-    },
-
-    "happily":{
-
-        word:"happily",
-
-        type:"Adverb",
-
-        pronunciation:"/ˈhæpɪli/",
-
-        meaning:"بسعادة",
-
-        example:"She smiled happily.",
-
-        translation:"ابتسمت بسعادة."
-
-    }
-
-};
-
-
-/* =========================================================
-   VOCAB POPUP ELEMENTS
-========================================================= */
-
-const popup =
-document.getElementById(
-    "vocab-popup"
-);
-
-const popupWord =
-document.getElementById(
-    "popup-word"
-);
-
-const popupType =
-document.getElementById(
-    "popup-type"
-);
-
-const popupPronunciation =
-document.getElementById(
-    "popup-pronunciation"
-);
-
-const popupMeaning =
-document.getElementById(
-    "popup-meaning"
-);
-
-const popupExample =
-document.getElementById(
-    "popup-example"
-);
-
-const popupTranslation =
-document.getElementById(
-    "popup-translation"
-);
-
-const popupSpeak =
-document.getElementById(
-    "popup-speak"
-);
-
-const popupClose =
-document.getElementById(
-    "popup-close"
-);
-
-let activeAdverb = null;
-
-
-/* =========================================================
-   OPEN VOCAB POPUP
-========================================================= */
-
-document
-.querySelectorAll(".adverb")
-.forEach(function(word){
-
-    word.addEventListener(
-        "click",
-        function(event){
-
-            event.stopPropagation();
-
-            const key =
-            this.dataset.word;
-
-            const data =
-            vocabulary[key];
-
-            if(!data){
-
-                return;
-            }
-
-
-            if(
-                activeAdverb === this &&
-                popup.classList.contains("show")
-            ){
-
-                closeVocabularyPopup();
-
-                return;
-
-            }
-
-
-            document
-            .querySelectorAll(".adverb")
-            .forEach(function(item){
-
-                item.classList.remove(
-                    "active"
-                );
-
-            });
-
-
-            this.classList.add(
-                "active"
-            );
-
-            activeAdverb = this;
-
-
-            popupWord.textContent =
-            data.word;
-
-            popupType.textContent =
-            data.type;
-
-            popupPronunciation.textContent =
-            "🔊 " +
-            data.pronunciation;
-
-            popupMeaning.textContent =
-            data.meaning;
-
-            popupExample.textContent =
-            data.example;
-
-            popupTranslation.textContent =
-            data.translation;
-
-
-            popupSpeak.onclick =
-            function(event){
-
-                event.stopPropagation();
-
-                if(
-                    "speechSynthesis" in window
-                ){
-
-                    const speech =
-                    new SpeechSynthesisUtterance(
-                        data.word
-                    );
-
-                    speech.lang =
-                    "en-US";
-
-                    speech.rate =
-                    .85;
-
-                    window.speechSynthesis.cancel();
-
-                    window.speechSynthesis.speak(
-                        speech
-                    );
-
-                }
-
-            };
-
-
-            popup.style.display =
-            "block";
-
-            popup.classList.add(
-                "show"
-            );
-
-
-            positionPopup(
-                this
-            );
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   POSITION POPUP
-========================================================= */
-
-function positionPopup(element){
-
-    const rect =
-    element.getBoundingClientRect();
-
-    const popupWidth =
-    Math.min(
-        330,
-        window.innerWidth - 30
-    );
-
-    popup.style.width =
-    popupWidth + "px";
-
-
-    const popupHeight =
-    popup.offsetHeight || 300;
-
-    let left =
-    rect.left +
-    window.scrollX +
-    (rect.width / 2) -
-    (popupWidth / 2);
-
-
-    const minLeft =
-    window.scrollX + 15;
-
-    const maxLeft =
-    window.scrollX +
-    window.innerWidth -
-    popupWidth -
-    15;
-
-
-    if(left < minLeft){
-
-        left =
-        minLeft;
-
-    }
-
-    if(left > maxLeft){
-
-        left =
-        maxLeft;
-
-    }
-
-
-    let top =
-    rect.bottom +
-    window.scrollY +
-    14;
-
-
-    const bottomLimit =
-    window.scrollY +
-    window.innerHeight -
-    15;
-
-
-    if(
-        top + popupHeight >
-        bottomLimit
-    ){
-
-        top =
-        rect.top +
-        window.scrollY -
-        popupHeight -
-        14;
-
-    }
-
-
-    if(top < window.scrollY + 15){
-
-        top =
-        window.scrollY + 15;
-
-    }
-
-
-    popup.style.left =
-    left + "px";
-
-    popup.style.top =
-    top + "px";
+function normalizeText(text){
+
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/[’‘]/g,"'")
+        .replace(/[.!?,;:؟،]/g,"")
+        .replace(/\s+/g," ");
 
 }
 
 
 /* =========================================================
-   CLOSE POPUP
+   CHECK WRITING ANSWERS
 ========================================================= */
 
-function closeVocabularyPopup(){
+function checkWriting(inputId,resultId,correctAnswers){
 
-    popup.classList.remove(
-        "show"
-    );
+    const input = document.getElementById(inputId);
 
-    popup.style.display =
-    "none";
+    const result = document.getElementById(resultId);
 
-    document
-    .querySelectorAll(".adverb")
-    .forEach(function(item){
+    if(!input || !result) return;
 
-        item.classList.remove(
-            "active"
-        );
+    const userAnswer = normalizeText(input.value);
+
+    const acceptedAnswers = correctAnswers.map(function(answer){
+        return normalizeText(answer);
+    });
+
+    if(!userAnswer){
+
+        result.textContent = "اكتب إجابتك أولًا.";
+
+        result.className = "result-text error";
+
+        return;
+
+    }
+
+    if(acceptedAnswers.includes(userAnswer)){
+
+        result.textContent = "✓ Excellent! إجابة صحيحة، أحسنت!";
+
+        result.className = "result-text success";
+
+        input.style.borderColor = "#75c9a2";
+
+        createConfetti();
+
+    }else{
+
+        result.textContent = "✗ حاول مرة أخرى. تأكد من كتابة الكلمة بشكل صحيح.";
+
+        result.className = "result-text error";
+
+        input.style.borderColor = "#e8a0a8";
+
+    }
+
+}
+
+
+/* =========================================================
+   ENTER KEY FOR WRITING QUESTIONS
+========================================================= */
+
+document.querySelectorAll(".write-box").forEach(function(input){
+
+    input.addEventListener("keydown",function(event){
+
+        if(event.key === "Enter"){
+
+            event.preventDefault();
+
+            const button = input.nextElementSibling;
+
+            if(button && button.classList.contains("check-btn")){
+                button.click();
+            }
+
+        }
 
     });
 
-    activeAdverb = null;
+});
+
+
+/* =========================================================
+   VOCABULARY TOGGLE
+========================================================= */
+
+document.querySelectorAll(".vocab-toggle").forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+        const contentId = button.getAttribute("aria-controls");
+
+        const content = document.getElementById(contentId);
+
+        if(!content) return;
+
+        const isOpen = content.classList.toggle("open");
+
+        button.setAttribute("aria-expanded",String(isOpen));
+
+    });
+
+});
+
+
+/* =========================================================
+   WORD PRONUNCIATION
+========================================================= */
+
+function speakWord(word){
+
+    if(!("speechSynthesis" in window)){
+
+        alert("عذرًا، خاصية النطق غير مدعومة في هذا المتصفح.");
+
+        return;
+
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(word);
+
+    utterance.lang = "en-US";
+
+    utterance.rate = 0.85;
+
+    utterance.pitch = 1;
+
+    window.speechSynthesis.speak(utterance);
 
 }
 
 
-popupClose.addEventListener(
-    "click",
-    function(event){
+/* =========================================================
+   PRONUNCIATION BUTTONS
+========================================================= */
 
-        event.stopPropagation();
+document.addEventListener("click",function(event){
 
-        closeVocabularyPopup();
+    const button = event.target.closest(".pronounce-btn");
+
+    if(!button) return;
+
+    const word = button.getAttribute("data-word");
+
+    if(word){
+        speakWord(word);
+    }
+
+});
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createConfetti(){
+
+    const symbols = ["💜","✨","🎉","💙","⭐"];
+
+    for(let i = 0; i < 18; i++){
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.textContent = symbols[
+            Math.floor(Math.random() * symbols.length)
+        ];
+
+        piece.style.left = Math.random() * 100 + "vw";
+
+        piece.style.animationDelay = Math.random() * 0.5 + "s";
+
+        piece.style.fontSize = (10 + Math.random() * 10) + "px";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+            piece.remove();
+        },3000);
 
     }
-);
 
-
-document.addEventListener(
-    "click",
-    function(){
-
-        closeVocabularyPopup();
-
-    }
-);
-
-
-popup.addEventListener(
-    "click",
-    function(event){
-
-        event.stopPropagation();
-
-    }
-);
-
-
-window.addEventListener(
-    "resize",
-    function(){
-
-        if(
-            activeAdverb &&
-            popup.classList.contains("show")
-        ){
-
-            positionPopup(
-                activeAdverb
-            );
-
-        }
-
-    }
-);
-
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(
-            activeAdverb &&
-            popup.classList.contains("show")
-        ){
-
-            positionPopup(
-                activeAdverb
-            );
-
-        }
-
-    },
-    true
-);
+}
 
 
 /* =========================================================
@@ -3595,27 +2558,17 @@ window.addEventListener(
 
 function finishLessonPage(){
 
-    if(
-        typeof window.finishLesson ===
-        "function"
-    ){
+    if(typeof window.finishLesson === "function"){
 
         window.finishLesson(
-
             "unit3-adverbs-reading",
-
             "📖 Adverbs | Reading Practice",
-
             "unit3-pre-review.html"
-
         );
 
-    }
+    }else{
 
-    else{
-
-        window.location.href =
-        "unit3-pre-review.html";
+        window.location.href = "unit3-pre-review.html";
 
     }
 
@@ -3625,24 +2578,16 @@ function finishLessonPage(){
 
 
 <!-- =========================================================
-   REWARD SYSTEM
+     REWARD SYSTEM
 ========================================================= -->
 
 <script type="module">
 
-import {
+import { finishLesson } from "./js/reward.js";
 
-    finishLesson
-
-} from "./js/reward.js";
-
-
-window.finishLesson =
-finishLesson;
+window.finishLesson = finishLesson;
 
 </script>
 
-
 </body>
-
 </html>
