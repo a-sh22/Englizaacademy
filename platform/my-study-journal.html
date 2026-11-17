@@ -5,988 +5,302 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Study Journal | Engliza Academy</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --blue: #1f3c88;
-  --purple: #7546d8;
-  --purple-dark: #5c35b4;
-  --purple-light: #f2edff;
-  --blue-light: #edf3ff;
-  --text: #263452;
-  --muted: #71809d;
-  --border: #e7eaf4;
-  --white: #ffffff;
-  --green: #209b73;
-  --bg: #f7f8ff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Cairo', sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at 10% 5%, rgba(117,70,216,.10), transparent 28%),
-    radial-gradient(circle at 90% 20%, rgba(31,60,136,.08), transparent 30%),
-    linear-gradient(135deg, #faf9ff, #f2f5ff);
-}
-
-button, input {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-.page-container {
-  width: min(100% - 32px, 1050px);
-  margin: auto;
-  padding: 24px 0 55px;
-}
-
-/* Top bar */
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 42px;
-}
-
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 17px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  color: var(--blue);
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(40,50,90,.04);
-  transition: .2s;
-}
-
-.back-button:hover {
-  transform: translateY(-2px);
-  border-color: #cfc2f4;
-}
-
-.brand {
-  color: var(--purple);
-  font-family: 'Nunito', sans-serif;
-  font-weight: 900;
-  font-size: 15px;
-  letter-spacing: 1.5px;
-  direction: ltr;
-}
-
-/* Hero */
-
-.hero {
-  text-align: center;
-  margin-bottom: 38px;
-}
-
-.hero-icon {
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 17px;
-  border-radius: 25px;
-  display: grid;
-  place-items: center;
-  font-size: 38px;
-  background: linear-gradient(135deg, #eee6ff, #e7efff);
-  box-shadow: 0 8px 25px rgba(117,70,216,.10);
-}
-
-.hero h1 {
-  margin: 0;
-  color: var(--blue);
-  font-size: clamp(27px, 5vw, 39px);
-  font-weight: 900;
-  line-height: 1.5;
-}
-
-.hero h1 span {
-  color: var(--purple);
-}
-
-.hero p {
-  margin: 9px auto 0;
-  max-width: 570px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 2;
-}
-
-/* Main section */
-
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.section-heading h2 {
-  margin: 0;
-  color: var(--blue);
-  font-size: 21px;
-  font-weight: 900;
-}
-
-.section-heading p {
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.create-button {
-  border: none;
-  border-radius: 14px;
-  padding: 12px 19px;
-  color: white;
-  background: linear-gradient(135deg, var(--purple), #9065e8);
-  box-shadow: 0 7px 18px rgba(117,70,216,.20);
-  font-size: 13px;
-  font-weight: 800;
-  white-space: nowrap;
-  transition: .2s;
-}
-
-.create-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(117,70,216,.25);
-}
-
-.create-button span {
-  font-size: 19px;
-  vertical-align: -2px;
-  margin-left: 5px;
-}
-
-/* Notebook grid */
-
-.notebook-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 19px;
-}
-
-.notebook-card {
-  position: relative;
-  min-height: 220px;
-  padding: 17px;
-  border-radius: 22px;
-  background: white;
-  border: 1px solid var(--border);
-  box-shadow: 0 7px 24px rgba(40,50,90,.045);
-  transition: .22s;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.notebook-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 13px 28px rgba(40,50,90,.09);
-}
-
-.cover {
-  height: 119px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cover::before,
-.cover::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,255,255,.27);
-}
-
-.cover::before {
-  width: 115px;
-  height: 115px;
-  top: -48px;
-  right: -20px;
-}
-
-.cover::after {
-  width: 75px;
-  height: 75px;
-  bottom: -38px;
-  left: 20px;
-}
-
-.cover-icon {
-  position: relative;
-  z-index: 1;
-  font-size: 43px;
-  filter: drop-shadow(0 4px 4px rgba(0,0,0,.08));
-}
-
-.cover-pink { background: linear-gradient(135deg,#ffdce9,#f8b8d3); }
-.cover-yellow { background: linear-gradient(135deg,#fff1bd,#f9d875); }
-.cover-blue { background: linear-gradient(135deg,#d8e9ff,#a9caff); }
-.cover-purple { background: linear-gradient(135deg,#e9ddff,#c9b4f8); }
-.cover-green { background: linear-gradient(135deg,#d7f4e7,#a6dfc4); }
-.cover-orange { background: linear-gradient(135deg,#ffe3cf,#ffc29a); }
-
-.notebook-info {
-  padding: 13px 2px 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.notebook-title {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 900;
-  color: var(--blue);
-  overflow-wrap: anywhere;
-}
-
-.notebook-date {
-  margin: 5px 0 0;
-  font-family: 'Nunito', sans-serif;
-  font-size: 11px;
-  color: var(--muted);
-  direction: ltr;
-  text-align: right;
-}
-
-.card-actions {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.menu-button {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #fff;
-  color: var(--muted);
-  font-size: 19px;
-  line-height: 1;
-}
-
-.menu-button:hover {
-  background: var(--purple-light);
-  color: var(--purple);
-}
-
-.action-menu {
-  display: none;
-  position: absolute;
-  z-index: 5;
-  top: 37px;
-  left: 0;
-  min-width: 125px;
-  padding: 6px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 8px 22px rgba(30,40,80,.13);
-}
-
-.action-menu.show {
-  display: block;
-}
-
-.action-menu button {
-  width: 100%;
-  text-align: right;
-  padding: 8px 10px;
-  border: none;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text);
-  font-size: 12px;
-}
-
-.action-menu button:hover {
-  background: var(--purple-light);
-}
-
-.action-menu .delete-action {
-  color: #d64d65;
-}
-
-/* Empty state */
-
-.empty-state {
-  display: none;
-  text-align: center;
-  padding: 48px 20px;
-  background: rgba(255,255,255,.8);
-  border: 1px dashed #d8d3ed;
-  border-radius: 22px;
-}
-
-.empty-state .empty-icon {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.empty-state h3 {
-  margin: 0;
-  color: var(--blue);
-  font-size: 18px;
-}
-
-.empty-state p {
-  color: var(--muted);
-  font-size: 13px;
-  margin: 7px 0 18px;
-}
-
-/* Info note */
-
-.info-note {
-  margin-top: 29px;
-  padding: 15px 17px;
-  border-radius: 16px;
-  background: linear-gradient(110deg,#f2edff,#edf3ff);
-  border: 1px solid #e6def9;
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.9;
-}
-
-.info-note span {
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
-/* Modal */
-
-.modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  padding: 18px;
-  background: rgba(26,32,62,.42);
-  backdrop-filter: blur(5px);
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-overlay.show {
-  display: flex;
-}
-
-.modal {
-  width: min(100%, 430px);
-  padding: 25px;
-  background: white;
-  border-radius: 23px;
-  box-shadow: 0 20px 60px rgba(20,25,60,.2);
-  animation: modalIn .2s ease;
-}
-
-@keyframes modalIn {
-  from { opacity: 0; transform: translateY(10px) scale(.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.modal h3 {
-  margin: 0 0 6px;
-  color: var(--blue);
-  font-size: 20px;
-  font-weight: 900;
-}
-
-.modal-description {
-  margin: 0 0 20px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.field-label {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.notebook-name-input {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  outline: none;
-  color: var(--text);
-  background: #fcfcff;
-  font-size: 14px;
-}
-
-.notebook-name-input:focus {
-  border-color: var(--purple);
-  box-shadow: 0 0 0 3px rgba(117,70,216,.09);
-}
-
-.color-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 11px;
-  margin: 11px 0 23px;
-}
-
-.color-choice {
-  width: 35px;
-  height: 35px;
-  border: 3px solid white;
-  border-radius: 50%;
-  outline: 1px solid transparent;
-  box-shadow: 0 2px 7px rgba(0,0,0,.12);
-  transition: .15s;
-}
-
-.color-choice.selected {
-  outline: 2px solid var(--purple);
-  transform: scale(1.08);
-}
-
-.color-choice[data-color="pink"] { background: #f5b8d0; }
-.color-choice[data-color="yellow"] { background: #f6d978; }
-.color-choice[data-color="blue"] { background: #a9caff; }
-.color-choice[data-color="purple"] { background: #c9b4f8; }
-.color-choice[data-color="green"] { background: #a6dfc4; }
-.color-choice[data-color="orange"] { background: #ffc29a; }
-
-.modal-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.modal-buttons button {
-  flex: 1;
-  padding: 11px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.cancel-button {
-  background: white;
-  border: 1px solid var(--border);
-  color: var(--muted);
-}
-
-.save-button {
-  background: var(--purple);
-  border: 1px solid var(--purple);
-  color: white;
-}
-
-.save-button:hover {
-  background: var(--purple-dark);
-}
-
-/* Footer */
-
-.footer {
-  margin-top: 42px;
-  text-align: center;
-  color: #929bb0;
-  font-family: 'Nunito', sans-serif;
-  font-size: 11px;
-  direction: ltr;
-}
-
-/* Responsive */
-
-@media (max-width: 750px) {
-  .notebook-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .page-container {
-    width: min(100% - 26px, 600px);
-  }
-}
-
-@media (max-width: 430px) {
-  .page-container {
-    width: calc(100% - 24px);
-    padding-top: 17px;
-  }
-
-  .topbar {
-    margin-bottom: 32px;
-  }
-
-  .brand {
-    font-size: 12px;
-  }
-
-  .back-button {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .hero {
-    margin-bottom: 30px;
-  }
-
-  .hero-icon {
-    width: 65px;
-    height: 65px;
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 12px;
-  }
-
-  .section-heading {
-    align-items: center;
-  }
-
-  .section-heading h2 {
-    font-size: 17px;
-  }
-
-  .section-heading p {
-    font-size: 10px;
-  }
-
-  .create-button {
-    padding: 10px 12px;
-    font-size: 11px;
-  }
-
-  .notebook-grid {
-    gap: 11px;
-  }
-
-  .notebook-card {
-    min-height: 190px;
-    padding: 11px;
-    border-radius: 17px;
-  }
-
-  .cover {
-    height: 100px;
-    border-radius: 12px;
-  }
-
-  .cover-icon {
-    font-size: 36px;
-  }
-
-  .notebook-title {
-    font-size: 12px;
-  }
-
-  .notebook-date {
-    font-size: 10px;
-  }
-
-  .info-note {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 350px) {
-  .notebook-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .notebook-card {
-    min-height: auto;
-  }
-
-  .cover {
-    height: 125px;
-  }
-}
+:root{--blue:#23436f;--purple:#6656a8;--purple-dark:#514486;--purple-light:#f0eef8;--blue-light:#edf2f8;--text:#29364b;--muted:#748096;--border:#e4e8ef;--white:#fff;--green:#438b78;--bg:#f5f7fa}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Cairo',sans-serif;color:var(--text);background:radial-gradient(circle at 10% 5%,rgba(102,86,168,.07),transparent 28%),radial-gradient(circle at 90% 20%,rgba(35,67,111,.07),transparent 30%),linear-gradient(135deg,#fafbfd,#f1f4f8)}
+button,input{font:inherit}button{cursor:pointer}
+.page-container{width:min(100% - 32px,1050px);margin:auto;padding:24px 0 55px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:42px}
+.back-button{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;background:#fff;border:1px solid var(--border);border-radius:14px;color:var(--blue);font-weight:800;text-decoration:none;box-shadow:0 4px 14px rgba(40,50,90,.04);transition:.2s}
+.back-button:hover{transform:translateY(-2px);border-color:#c8cddd}
+.brand{color:var(--purple);font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;letter-spacing:1.5px;direction:ltr}
+.hero{text-align:center;margin-bottom:38px}
+.hero-icon{width:76px;height:76px;margin:0 auto 17px;border-radius:22px;display:grid;place-items:center;font-size:38px;background:linear-gradient(135deg,#e9edf5,#e8e7f1);box-shadow:0 8px 25px rgba(55,67,95,.08)}
+.hero h1{margin:0;color:var(--blue);font-size:clamp(27px,5vw,39px);font-weight:900;line-height:1.5}
+.hero h1 span{color:var(--purple)}
+.hero p{margin:9px auto 0;max-width:570px;color:var(--muted);font-size:14px;line-height:2}
+.section-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}
+.section-heading h2{margin:0;color:var(--blue);font-size:21px;font-weight:900}
+.section-heading p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.create-button{border:0;border-radius:13px;padding:12px 19px;color:#fff;background:linear-gradient(135deg,var(--blue),#536f9a);box-shadow:0 7px 18px rgba(35,67,111,.17);font-size:13px;font-weight:800;white-space:nowrap;transition:.2s;display:inline-flex;align-items:center;gap:8px;direction:ltr}
+.create-button:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(35,67,111,.22)}
+.create-button .plus{font-size:19px;line-height:1}
+.notebook-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.notebook-card{position:relative;min-height:220px;padding:17px;border-radius:20px;background:#fff;border:1px solid var(--border);box-shadow:0 7px 24px rgba(40,50,90,.045);transition:.22s;overflow:visible;display:flex;flex-direction:column}
+.notebook-card:hover{transform:translateY(-4px);box-shadow:0 13px 28px rgba(40,50,90,.09)}
+.cover{height:119px;border-radius:14px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cover:before,.cover:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.3)}
+.cover:before{width:115px;height:115px;top:-48px;right:-20px}.cover:after{width:75px;height:75px;bottom:-38px;left:20px}
+.cover-icon{position:relative;z-index:1;font-size:43px;filter:drop-shadow(0 4px 4px rgba(0,0,0,.08))}
+.cover-blue{background:linear-gradient(135deg,#dce7f2,#b9cce0)}.cover-slate{background:linear-gradient(135deg,#e3e8ed,#c5ced8)}.cover-purple{background:linear-gradient(135deg,#e6e3f0,#c9c3df)}.cover-green{background:linear-gradient(135deg,#dcece6,#b8d8cc)}.cover-amber{background:linear-gradient(135deg,#f1e9d6,#dfcda8)}.cover-teal{background:linear-gradient(135deg,#d9ecec,#b5d6d5)}
+.notebook-info{padding:13px 2px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.notebook-title{margin:0;font-size:15px;font-weight:900;color:var(--blue);overflow-wrap:anywhere}
+.notebook-date{margin:5px 0 0;font-family:'Nunito',sans-serif;font-size:11px;color:var(--muted);direction:ltr;text-align:right}
+.card-actions{position:relative;flex-shrink:0}
+.menu-button{width:32px;height:32px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--muted);font-size:19px;line-height:1}
+.menu-button:hover{background:var(--purple-light);color:var(--purple)}
+.action-menu{display:none;position:absolute;z-index:5;top:37px;left:0;min-width:125px;padding:6px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 22px rgba(30,40,80,.13)}
+.action-menu.show{display:block}
+.action-menu button{width:100%;text-align:right;padding:8px 10px;border:0;border-radius:8px;background:transparent;color:var(--text);font-size:12px}
+.action-menu button:hover{background:var(--purple-light)}.action-menu .delete-action{color:#c4515d}
+.empty-state{display:none;text-align:center;padding:48px 20px;background:rgba(255,255,255,.85);border:1px dashed #cbd3df;border-radius:20px}
+.empty-state .empty-icon{font-size:48px;margin-bottom:10px}.empty-state h3{margin:0;color:var(--blue);font-size:18px}.empty-state p{color:var(--muted);font-size:13px;margin:7px 0 18px}
+.info-note{margin-top:29px;padding:15px 17px;border-radius:15px;background:linear-gradient(110deg,#f0eef8,#edf2f8);border:1px solid #e0e4ed;display:flex;align-items:flex-start;gap:11px;color:var(--muted);font-size:12px;line-height:1.9}
+.info-note span{font-size:20px;flex-shrink:0}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:20;padding:18px;background:rgba(26,32,62,.42);backdrop-filter:blur(5px);align-items:center;justify-content:center}
+.modal-overlay.show{display:flex}.modal{width:min(100%,430px);padding:25px;background:#fff;border-radius:21px;box-shadow:0 20px 60px rgba(20,25,60,.2);animation:modalIn .2s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal h3{margin:0 0 6px;color:var(--blue);font-size:20px;font-weight:900}.modal-description{margin:0 0 20px;color:var(--muted);font-size:12px;line-height:1.8}
+.field-label{display:block;margin-bottom:8px;color:var(--text);font-size:13px;font-weight:800}
+.notebook-name-input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:11px;outline:none;color:var(--text);background:#fafbfd;font-size:14px}
+.notebook-name-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(102,86,168,.09)}
+.color-options{display:flex;flex-wrap:wrap;gap:11px;margin:11px 0 23px}
+.color-choice{width:35px;height:35px;border:3px solid white;border-radius:50%;outline:1px solid transparent;box-shadow:0 2px 7px rgba(0,0,0,.12);transition:.15s}
+.color-choice.selected{outline:2px solid var(--purple);transform:scale(1.08)}
+.color-choice[data-color="blue"]{background:#b9cce0}.color-choice[data-color="slate"]{background:#c5ced8}.color-choice[data-color="purple"]{background:#c9c3df}.color-choice[data-color="green"]{background:#b8d8cc}.color-choice[data-color="amber"]{background:#dfcda8}.color-choice[data-color="teal"]{background:#b5d6d5}
+.modal-buttons{display:flex;gap:10px}.modal-buttons button{flex:1;padding:11px;border-radius:11px;font-size:13px;font-weight:800}
+.cancel-button{background:#fff;border:1px solid var(--border);color:var(--muted)}.save-button{background:var(--blue);border:1px solid var(--blue);color:#fff}.save-button:hover{background:#1b365b}
+.footer{margin-top:42px;text-align:center;color:#929bb0;font-family:'Nunito',sans-serif;font-size:11px;direction:ltr}
+@media(max-width:750px){.notebook-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.page-container{width:min(100% - 26px,600px)}}
+@media(max-width:430px){.page-container{width:calc(100% - 24px);padding-top:17px}.topbar{margin-bottom:32px}.brand{font-size:12px}.back-button{padding:8px 12px;font-size:12px}.hero{margin-bottom:30px}.hero-icon{width:65px;height:65px;font-size:32px}.hero p{font-size:12px}.section-heading h2{font-size:17px}.section-heading p{font-size:10px}.create-button{padding:10px 12px;font-size:11px}.notebook-grid{gap:11px}.notebook-card{min-height:190px;padding:11px;border-radius:16px}.cover{height:100px;border-radius:11px}.cover-icon{font-size:36px}.notebook-title{font-size:12px}.notebook-date{font-size:10px}.info-note{font-size:11px}}
+@media(max-width:350px){.notebook-grid{grid-template-columns:1fr}.notebook-card{min-height:auto}.cover{height:125px}}
 </style>
 </head>
-
 <body>
-
 <div class="page-container">
-
-  <header class="topbar">
-    <a class="back-button" href="home.html">
-      <span>←</span>
-      العودة للرئيسية
-    </a>
-    <div class="brand">ENGLIZA ACADEMY</div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-icon">📒</div>
-    <h1>My Study <span>Journal</span></h1>
-    <p>
-      مساحتك الخاصة للتعلّم والإبداع!
-      أنشئي دفاترك، اكتبي ملاحظاتك، ونظّمي رحلتك في تعلّم اللغة الإنجليزية بطريقتك.
-    </p>
-  </section>
-
-  <main>
-    <div class="section-heading">
-      <div>
-        <h2>دفاتري الخاصة</h2>
-        <p>كل أفكارك وملاحظاتك في مكان واحد</p>
-      </div>
-
-      <button class="create-button" id="createNotebookButton">
-        <span>＋</span>
-        دفتر جديد
-      </button>
-    </div>
-
-    <div class="notebook-grid" id="notebookGrid"></div>
-
-    <div class="empty-state" id="emptyState">
-      <div class="empty-icon">📚</div>
-      <h3>مساحتك جاهزة!</h3>
-      <p>ابدئي بإنشاء أول دفتر خاص بك.</p>
-      <button class="create-button" onclick="openCreateModal()">
-        <span>＋</span>
-        إنشاء أول دفتر
-      </button>
-    </div>
-
-    <div class="info-note">
-      <span>💡</span>
-      <div>
-        هذه مساحتك الدراسية الخاصة. يمكنك إنشاء دفتر للمفردات،
-        وآخر للقواعد، وآخر للكتابة أو لأي موضوع تحبينه.
-        سيتم حفظ أسماء دفاترك على هذا الجهاز والمتصفح.
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    ENGLIZA ACADEMY · LEARN. CREATE. GROW.
-  </footer>
-
+<header class="topbar">
+<a class="back-button" href="home.html"><span>←</span> العودة للرئيسية</a>
+<div class="brand">ENGLIZA ACADEMY</div>
+</header>
+<section class="hero">
+<div class="hero-icon">📓</div>
+<h1>My Study <span>Journal</span></h1>
+<p>مساحتك الخاصة للتعلّم والإبداع. أنشئ دفاترك، واكتب ملاحظاتك، ونظّم رحلتك في تعلّم اللغة الإنجليزية بطريقتك.</p>
+</section>
+<main>
+<div class="section-heading">
+<div><h2>دفاتري الخاصة</h2><p>كل الأفكار والملاحظات في مكان واحد</p></div>
+<button class="create-button" id="createNotebookButton" type="button"><span class="plus">＋</span>New Notebook</button>
 </div>
-
-<!-- Create / Edit Modal -->
-
+<div class="notebook-grid" id="notebookGrid"></div>
+<div class="empty-state" id="emptyState">
+<div class="empty-icon">📚</div><h3>مساحتك جاهزة!</h3><p>ابدأ بإنشاء أول دفتر خاص بك.</p>
+<button class="create-button" id="emptyCreateButton" type="button"><span class="plus">＋</span>New Notebook</button>
+</div>
+<div class="info-note"><span>💡</span><div>هذه مساحتك الدراسية الخاصة. يمكنك إنشاء دفتر للمفردات، وآخر للقواعد، وآخر للكتابة أو لأي موضوع تريده. سيتم حفظ أسماء الدفاتر على هذا الجهاز والمتصفح.</div></div>
+</main>
+<footer class="footer">ENGLIZA ACADEMY · LEARN. CREATE. GROW.</footer>
+</div>
 <div class="modal-overlay" id="notebookModal">
-  <div class="modal">
-    <h3 id="modalTitle">إنشاء دفتر جديد</h3>
-    <p class="modal-description">اختاري اسمًا ولونًا يعبّران عن دفترِك.</p>
-
-    <label class="field-label" for="notebookName">اسم الدفتر</label>
-    <input
-      class="notebook-name-input"
-      id="notebookName"
-      type="text"
-      maxlength="40"
-      placeholder="مثال: Vocabulary Notebook"
-      autocomplete="off"
-    >
-
-    <div style="margin-top:19px">
-      <span class="field-label">لون الغلاف</span>
-      <div class="color-options" id="colorOptions">
-        <button type="button" class="color-choice selected" data-color="pink" aria-label="وردي"></button>
-        <button type="button" class="color-choice" data-color="yellow" aria-label="أصفر"></button>
-        <button type="button" class="color-choice" data-color="blue" aria-label="أزرق"></button>
-        <button type="button" class="color-choice" data-color="purple" aria-label="بنفسجي"></button>
-        <button type="button" class="color-choice" data-color="green" aria-label="أخضر"></button>
-        <button type="button" class="color-choice" data-color="orange" aria-label="برتقالي"></button>
-      </div>
-    </div>
-
-    <div class="modal-buttons">
-      <button class="cancel-button" id="cancelModalButton">إلغاء</button>
-      <button class="save-button" id="saveNotebookButton">حفظ الدفتر</button>
-    </div>
-  </div>
-</div>
-
+<div class="modal">
+<h3 id="modalTitle">إنشاء دفتر جديد</h3>
+<p class="modal-description">اختر اسمًا ولونًا مناسبين لدفترك.</p>
+<label class="field-label" for="notebookName">اسم الدفتر</label>
+<input class="notebook-name-input" id="notebookName" type="text" maxlength="40" placeholder="مثال: Vocabulary Notebook" autocomplete="off">
+<div style="margin-top:19px"><span class="field-label">لون الغلاف</span>
+<div class="color-options" id="colorOptions">
+<button type="button" class="color-choice selected" data-color="blue" aria-label="أزرق"></button>
+<button type="button" class="color-choice" data-color="slate" aria-label="رمادي"></button>
+<button type="button" class="color-choice" data-color="purple" aria-label="بنفسجي هادئ"></button>
+<button type="button" class="color-choice" data-color="green" aria-label="أخضر"></button>
+<button type="button" class="color-choice" data-color="amber" aria-label="رملي"></button>
+<button type="button" class="color-choice" data-color="teal" aria-label="تركوازي"></button>
+</div></div>
+<div class="modal-buttons"><button class="cancel-button" id="cancelModalButton" type="button">إلغاء</button><button class="save-button" id="saveNotebookButton" type="button">حفظ الدفتر</button></div>
+</div></div>
 <script>
 (() => {
+  "use strict";
   const STORAGE_KEY = "englizaStudyJournalNotebooks";
-
+  const EDITOR_URL = "study-journal-editor-fixed.html";
   const grid = document.getElementById("notebookGrid");
   const emptyState = document.getElementById("emptyState");
   const modal = document.getElementById("notebookModal");
   const nameInput = document.getElementById("notebookName");
   const modalTitle = document.getElementById("modalTitle");
   const saveButton = document.getElementById("saveNotebookButton");
-
   let notebooks = loadNotebooks();
-  let selectedColor = "pink";
+  let selectedColor = "blue";
   let editingId = null;
 
   function loadNotebooks() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
+      const parsed = saved ? JSON.parse(saved) : [];
+      return Array.isArray(parsed) ? parsed.filter(item => item && item.id && typeof item.name === "string") : [];
     } catch (error) {
+      console.error("Could not load notebooks:", error);
       return [];
     }
   }
-
   function saveNotebooks() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(notebooks));
+      return true;
     } catch (error) {
-      alert("تعذّر حفظ البيانات على هذا المتصفح. تأكدي من توفر مساحة التخزين.");
+      alert("تعذّر حفظ البيانات في هذا المتصفح. تحقق من مساحة التخزين وإعدادات الخصوصية.");
+      console.error("Could not save notebooks:", error);
+      return false;
     }
   }
-
   function createId() {
-    return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    return (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   }
-
   function formatDate(timestamp) {
-    return new Intl.DateTimeFormat("ar", {
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    }).format(new Date(timestamp));
+    const date = new Date(Number(timestamp));
+    if (!Number.isFinite(date.getTime())) return "—";
+    return new Intl.DateTimeFormat("ar", {year:"numeric",month:"short",day:"numeric"}).format(date);
   }
-
   function escapeHTML(value) {
-    return String(value).replace(/[&<>"']/g, char => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#039;"
-    })[char]);
+    return String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[char]));
   }
-
   function renderNotebooks() {
     grid.innerHTML = "";
-
     emptyState.style.display = notebooks.length ? "none" : "block";
     grid.style.display = notebooks.length ? "grid" : "none";
-
     notebooks.forEach(notebook => {
       const card = document.createElement("article");
       card.className = "notebook-card";
-
+      const allowedColors = ["blue","slate","purple","green","amber","teal"];
+      const color = allowedColors.includes(notebook.color) ? notebook.color : "blue";
       card.innerHTML = `
-        <div class="cover cover-${notebook.color}">
-          <span class="cover-icon">${notebook.icon || "📒"}</span>
-        </div>
-
+        <div class="cover cover-${color}"><span class="cover-icon">📓</span></div>
         <div class="notebook-info">
           <div style="min-width:0">
             <h3 class="notebook-title">${escapeHTML(notebook.name)}</h3>
-            <p class="notebook-date">
-              آخر تعديل: ${formatDate(notebook.updatedAt)}
-            </p>
+            <p class="notebook-date">آخر تعديل: ${formatDate(notebook.updatedAt || notebook.createdAt)}</p>
           </div>
-
           <div class="card-actions">
-            <button class="menu-button" type="button" aria-label="خيارات الدفتر">⋯</button>
+            <button class="menu-button" type="button" aria-label="خيارات الدفتر" aria-expanded="false">⋯</button>
             <div class="action-menu">
               <button type="button" data-action="open">فتح الدفتر</button>
               <button type="button" data-action="rename">إعادة التسمية</button>
               <button type="button" class="delete-action" data-action="delete">حذف الدفتر</button>
             </div>
           </div>
-        </div>
-      `;
-
+        </div>`;
       const menuButton = card.querySelector(".menu-button");
       const menu = card.querySelector(".action-menu");
-
       menuButton.addEventListener("click", event => {
         event.stopPropagation();
-
         document.querySelectorAll(".action-menu.show").forEach(openMenu => {
-          if (openMenu !== menu) openMenu.classList.remove("show");
+          if (openMenu !== menu) {
+            openMenu.classList.remove("show");
+            const otherButton = openMenu.parentElement.querySelector(".menu-button");
+            if (otherButton) otherButton.setAttribute("aria-expanded","false");
+          }
         });
-
-        menu.classList.toggle("show");
+        const isOpen = menu.classList.toggle("show");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
       });
-
       menu.querySelectorAll("button").forEach(button => {
         button.addEventListener("click", event => {
           event.stopPropagation();
           menu.classList.remove("show");
-
+          menuButton.setAttribute("aria-expanded","false");
           const action = button.dataset.action;
-
-          if (action === "open") {
-            openNotebook(notebook.id);
-          } else if (action === "rename") {
-            openEditModal(notebook.id);
-          } else if (action === "delete") {
-            deleteNotebook(notebook.id);
-          }
+          if (action === "open") openNotebook(notebook.id);
+          if (action === "rename") openEditModal(notebook.id);
+          if (action === "delete") deleteNotebook(notebook.id);
         });
       });
-
+      card.addEventListener("click", event => {
+        if (!event.target.closest(".card-actions")) openNotebook(notebook.id);
+      });
       grid.appendChild(card);
     });
   }
-
   function openNotebook(id) {
-  const notebook = notebooks.find(item => item.id === id);
-  if (!notebook) return;
-
-  window.location.href =
-    "study-journal-editor-final.html?id=" + encodeURIComponent(id);
-}
-  
+    const notebook = notebooks.find(item => item.id === id);
+    if (!notebook) return;
+    window.location.href = EDITOR_URL + "?id=" + encodeURIComponent(id);
   }
-
   function openCreateModal() {
     editingId = null;
     modalTitle.textContent = "إنشاء دفتر جديد";
     saveButton.textContent = "حفظ الدفتر";
     nameInput.value = "";
-    selectedColor = "pink";
+    selectedColor = "blue";
     updateColorSelection();
     modal.classList.add("show");
-    setTimeout(() => nameInput.focus(), 100);
+    setTimeout(() => nameInput.focus(), 80);
   }
-
   function openEditModal(id) {
     const notebook = notebooks.find(item => item.id === id);
     if (!notebook) return;
-
     editingId = id;
     modalTitle.textContent = "إعادة تسمية الدفتر";
     saveButton.textContent = "حفظ التغييرات";
     nameInput.value = notebook.name;
-    selectedColor = notebook.color;
+    selectedColor = ["blue","slate","purple","green","amber","teal"].includes(notebook.color) ? notebook.color : "blue";
     updateColorSelection();
     modal.classList.add("show");
-    setTimeout(() => nameInput.focus(), 100);
+    setTimeout(() => nameInput.focus(), 80);
   }
-
   function closeModal() {
     modal.classList.remove("show");
     editingId = null;
   }
-
   function updateColorSelection() {
     document.querySelectorAll(".color-choice").forEach(button => {
-      button.classList.toggle(
-        "selected",
-        button.dataset.color === selectedColor
-      );
+      button.classList.toggle("selected", button.dataset.color === selectedColor);
+      button.setAttribute("aria-pressed", String(button.dataset.color === selectedColor));
     });
   }
-
   function saveNotebook() {
     const name = nameInput.value.trim();
-
     if (!name) {
       nameInput.focus();
-      nameInput.style.borderColor = "#e05270";
+      nameInput.style.borderColor = "#c4515d";
       return;
     }
-
     nameInput.style.borderColor = "";
-
     if (editingId) {
       const notebook = notebooks.find(item => item.id === editingId);
-
       if (notebook) {
         notebook.name = name;
         notebook.color = selectedColor;
         notebook.updatedAt = Date.now();
       }
     } else {
-      notebooks.unshift({
-        id: createId(),
-        name,
-        color: selectedColor,
-        icon: "📒",
-        createdAt: Date.now(),
-        updatedAt: Date.now()
-      });
+      const now = Date.now();
+      notebooks.unshift({id:createId(),name,color:selectedColor,icon:"📓",createdAt:now,updatedAt:now});
     }
-
-    saveNotebooks();
+    if (!saveNotebooks()) return;
     renderNotebooks();
     closeModal();
   }
-
   function deleteNotebook(id) {
     const notebook = notebooks.find(item => item.id === id);
     if (!notebook) return;
-
-    const confirmed = confirm(
-      `هل أنتِ متأكدة من حذف دفتر "${notebook.name}"؟`
-    );
-
+    const confirmed = confirm(`هل أنت متأكد من حذف دفتر "${notebook.name}"؟`);
     if (!confirmed) return;
-
     notebooks = notebooks.filter(item => item.id !== id);
-    saveNotebooks();
-    renderNotebooks();
+    if (saveNotebooks()) renderNotebooks();
   }
-
-  document.getElementById("createNotebookButton")
-    .addEventListener("click", openCreateModal);
-
-  document.getElementById("cancelModalButton")
-    .addEventListener("click", closeModal);
-
+  document.getElementById("createNotebookButton").addEventListener("click", openCreateModal);
+  document.getElementById("emptyCreateButton").addEventListener("click", openCreateModal);
+  document.getElementById("cancelModalButton").addEventListener("click", closeModal);
   saveButton.addEventListener("click", saveNotebook);
-
-  nameInput.addEventListener("keydown", event => {
-    if (event.key === "Enter") saveNotebook();
-  });
-
+  nameInput.addEventListener("keydown", event => { if (event.key === "Enter") saveNotebook(); });
   document.querySelectorAll(".color-choice").forEach(button => {
-    button.addEventListener("click", () => {
-      selectedColor = button.dataset.color;
-      updateColorSelection();
-    });
+    button.addEventListener("click", () => { selectedColor = button.dataset.color; updateColorSelection(); });
   });
-
-  modal.addEventListener("click", event => {
-    if (event.target === modal) closeModal();
-  });
-
+  modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
   document.addEventListener("click", () => {
     document.querySelectorAll(".action-menu.show").forEach(menu => {
       menu.classList.remove("show");
+      const menuButton = menu.parentElement.querySelector(".menu-button");
+      if (menuButton) menuButton.setAttribute("aria-expanded","false");
     });
   });
-
-  window.openCreateModal = openCreateModal;
-
+  document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("show")) closeModal(); });
   renderNotebooks();
 })();
 </script>
-
 </body>
 </html>
