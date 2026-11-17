@@ -1,0 +1,1443 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7046c8">
+<title>Reading Practice | In, On & At - Engliza Academy</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --blue: #1f3c88;
+    --purple: #7546d8;
+    --purple-dark: #5c35b4;
+    --purple-light: #f2edff;
+    --blue-light: #edf3ff;
+    --text: #263452;
+    --muted: #71809d;
+    --border: #e7eaf4;
+    --white: #ffffff;
+    --green: #209b73;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        radial-gradient(circle at 8% 5%, rgba(164, 130, 255, .16), transparent 25%),
+        radial-gradient(circle at 95% 35%, rgba(111, 160, 255, .13), transparent 27%),
+        linear-gradient(135deg, #f7f5ff 0%, #f2f6ff 50%, #faf8ff 100%);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+}
+
+button, audio {
+    font-family: inherit;
+}
+
+.page-container {
+    width: min(100% - 32px, 1050px);
+    margin: 0 auto;
+    padding: 25px 0 55px;
+}
+
+/* Top bar */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--blue);
+    background: white;
+    border: 1px solid #e5e8f4;
+    padding: 10px 19px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 5px 16px rgba(39, 55, 105, .06);
+    transition: .2s;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(39, 55, 105, .12);
+}
+
+.academy-label {
+    color: var(--purple);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: .5px;
+    font-size: 14px;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 15px 15px 30px;
+}
+
+.hero-owl {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 8px 12px rgba(91, 63, 161, .13));
+}
+
+.hero h1 {
+    color: var(--blue);
+    font-size: clamp(27px, 5vw, 39px);
+    line-height: 1.35;
+    margin: 5px 0 8px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* General cards */
+
+.card {
+    background: var(--white);
+    border: 1px solid rgba(222, 226, 242, .9);
+    border-radius: 23px;
+    box-shadow: 0 9px 28px rgba(43, 55, 103, .055);
+}
+
+.tip-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 25px;
+    margin-bottom: 38px;
+    border-right: 5px solid var(--purple);
+    background: linear-gradient(110deg, #fff 0%, #f8f5ff 100%);
+}
+
+.tip-owl {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.tip-content h2 {
+    color: var(--purple-dark);
+    font-size: 19px;
+    margin: 0 0 8px;
+    font-weight: 900;
+}
+
+.tip-content p {
+    color: #586783;
+    line-height: 1.9;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Reading section */
+
+.reading-section {
+    margin-bottom: 48px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 0 0 15px;
+}
+
+.section-number {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7952dc, #5237b4);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 19px;
+    font-weight: 900;
+    box-shadow: 0 5px 13px rgba(105, 69, 199, .2);
+}
+
+.section-heading h2 {
+    color: var(--blue);
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 1px 0 0;
+}
+
+/* Audio card */
+
+.audio-card {
+    padding: 19px 22px;
+    margin-bottom: 15px;
+    background: linear-gradient(120deg, #f0eaff 0%, #f7f4ff 55%, #edf2ff 100%);
+    border: 1px solid #e1d8ff;
+    border-radius: 19px;
+}
+
+.audio-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--purple-dark);
+    font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.audio-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: white;
+    font-size: 18px;
+}
+
+.audio-card audio {
+    display: block;
+    width: 100%;
+    height: 43px;
+    border-radius: 30px;
+}
+
+/* Reading card */
+
+.reading-card {
+    padding: 25px 27px;
+    margin-bottom: 17px;
+    border-top: 4px solid #7b5be0;
+    background: white;
+}
+
+.reading-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.reading-card-top h3 {
+    color: var(--blue);
+    font-size: 19px;
+    margin: 0;
+    font-weight: 900;
+}
+
+.reading-level {
+    color: var(--purple-dark);
+    background: #f1ecff;
+    border: 1px solid #e4dbff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.reading-text {
+    direction: ltr;
+    text-align: left;
+    color: #34415d;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 600;
+    overflow-wrap: break-word;
+}
+
+.reading-text .prep {
+    color: #7546d8;
+    background: #f0eaff;
+    border-radius: 5px;
+    padding: 0 3px;
+    font-weight: 900;
+}
+
+/* Vocabulary */
+
+.vocab-section {
+    padding: 20px;
+    background: linear-gradient(145deg, #f8f6ff, #f2f6ff);
+    border: 1px solid #e4e3f5;
+    border-radius: 20px;
+}
+
+.vocab-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--blue);
+    text-align: right;
+    cursor: pointer;
+}
+
+.vocab-toggle-main {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.vocab-toggle-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 3px 10px rgba(65, 66, 130, .08);
+    font-size: 19px;
+}
+
+.vocab-toggle h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.vocab-toggle small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.toggle-arrow {
+    color: var(--purple);
+    font-size: 21px;
+    transition: transform .25s;
+}
+
+.vocab-section.open .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+.vocab-content {
+    display: none;
+    padding-top: 20px;
+}
+
+.vocab-section.open .vocab-content {
+    display: block;
+}
+
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.vocab-item {
+    background: white;
+    border: 1px solid #e7e4f4;
+    border-radius: 16px;
+    padding: 16px;
+    min-width: 0;
+    box-shadow: 0 3px 10px rgba(46, 54, 100, .035);
+}
+
+.vocab-word-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.vocab-word {
+    direction: ltr;
+    text-align: left;
+    color: var(--purple-dark);
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    overflow-wrap: anywhere;
+}
+
+.pronounce-btn {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 11px;
+    background: #f0eaff;
+    color: var(--purple-dark);
+    cursor: pointer;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.pronounce-btn:hover {
+    background: var(--purple);
+    color: white;
+    transform: scale(1.06);
+}
+
+.vocab-meaning {
+    color: #53617d;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.word-type {
+    display: inline-block;
+    color: #65728e;
+    background: #f2f5fb;
+    border-radius: 7px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    margin-bottom: 11px;
+}
+
+.examples {
+    border-top: 1px solid #edf0f7;
+    padding-top: 9px;
+}
+
+.example {
+    margin-bottom: 10px;
+}
+
+.example:last-child {
+    margin-bottom: 0;
+}
+
+.example-en {
+    direction: ltr;
+    text-align: left;
+    color: #34415d;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.example-ar {
+    color: #7b849b;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 2px;
+}
+
+/* Final card */
+
+.finish-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 33px 22px;
+    margin-top: 45px;
+    color: white;
+    background: linear-gradient(125deg, #5033a6 0%, #7548d4 55%, #5274d7 100%);
+    border-radius: 25px;
+    box-shadow: 0 12px 28px rgba(89, 59, 174, .22);
+}
+
+.finish-card::before,
+.finish-card::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+
+.finish-card::before {
+    top: -100px;
+    right: -50px;
+}
+
+.finish-card::after {
+    bottom: -120px;
+    left: -55px;
+}
+
+.finish-card h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 25px;
+    margin: 0 0 8px;
+    font-weight: 900;
+}
+
+.finish-card p {
+    position: relative;
+    z-index: 1;
+    color: rgba(255,255,255,.87);
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0 auto 20px;
+    max-width: 570px;
+}
+
+.finish-btn {
+    position: relative;
+    z-index: 1;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 28px;
+    background: white;
+    color: #5b3bb1;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(32, 21, 72, .15);
+    transition: .2s;
+}
+
+.finish-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(32, 21, 72, .2);
+}
+
+.footer {
+    text-align: center;
+    color: #929bb0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    padding-top: 25px;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+    .page-container {
+        width: min(100% - 22px, 1050px);
+        padding-top: 15px;
+    }
+
+    .top-bar {
+        margin-bottom: 15px;
+    }
+
+    .hero {
+        padding-bottom: 23px;
+    }
+
+    .hero-owl {
+        width: 105px;
+        height: 105px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .tip-card {
+        padding: 16px;
+        gap: 12px;
+        margin-bottom: 30px;
+        align-items: flex-start;
+    }
+
+    .tip-owl {
+        width: 68px;
+        height: 68px;
+    }
+
+    .tip-content h2 {
+        font-size: 16px;
+    }
+
+    .tip-content p {
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .section-heading h2 {
+        font-size: 19px;
+    }
+
+    .section-heading p {
+        font-size: 11px;
+    }
+
+    .audio-card {
+        padding: 15px;
+    }
+
+    .reading-card {
+        padding: 19px 16px;
+    }
+
+    .reading-card-top h3 {
+        font-size: 17px;
+    }
+
+    .reading-text {
+        font-size: 17px;
+        line-height: 1.95;
+    }
+
+    .vocab-section {
+        padding: 16px;
+    }
+
+    .vocab-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .vocab-item {
+        padding: 14px;
+    }
+
+    .finish-card {
+        padding: 28px 17px;
+    }
+
+    .finish-card h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 360px) {
+    .academy-label {
+        font-size: 11px;
+    }
+
+    .back-btn {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+
+    .reading-text {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="unit1-pre.html" class="back-btn">⬅️ رجوع</a>
+        <div class="academy-label">ENGLIZA ACADEMY</div>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <img src="../okay.owl.PNG" alt="Engliza Academy Owl" class="hero-owl">
+        <h1>📖 Reading Practice | <span>In, On & At</span></h1>
+        <p>تدرّب على استخدام حروف الجر من خلال خمس فقرات قراءة متدرجة</p>
+    </header>
+
+    <!-- Before you start -->
+    <section class="card tip-card">
+        <img src="../earlo .PNG" alt="Learning Tip" class="tip-owl">
+        <div class="tip-content">
+            <h2>💡 Before You Start</h2>
+            <p>
+                للحصول على أفضل نتيجة من هذا التدريب، ابدأ بالاستماع إلى التسجيل
+                وأنت تتابع الكلمات مع القراءة. بعد ذلك، اقرأ الفقرة بنفسك دون
+                الاستماع. وأخيرًا، انتقل إلى المفردات الجديدة، وتعلّم معانيها
+                وطريقة استخدامها واحرص على حفظها. بهذه الطريقة ستطوّر مهارة
+                القراءة والاستماع وتزيد حصيلتك اللغوية في الوقت نفسه.
+            </p>
+        </div>
+    </section>
+
+    <main id="readings-container"></main>
+
+    <!-- Finish Unit 2 -->
+    <section class="finish-card">
+        <h2>🎉 Great Job!</h2>
+        <p>
+            لقد أنهيت تدريبات القراءة على In, On & At.
+            استمر في الممارسة، وراجع المفردات الجديدة حتى تصبح أكثر ثقة
+            في استخدامها داخل الجمل والمحادثات.
+        </p>
+        <button class="finish-btn" onclick="completeLesson()">
+            Complete Unit 2 ✨
+        </button>
+    </section>
+
+    <footer class="footer">
+        © Engliza Academy — Learn English with Confidence
+    </footer>
+
+</div>
+
+<script>
+/* =========================================
+   READING PARAGRAPHS AND AUDIO LINKS
+========================================= */
+
+const readings = [
+
+{
+    title: "A Busy Morning",
+    level: "Reading 1",
+    audio: "https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/A%20Busy%20Morning.mp3",
+    text: `My name is Emma, and I usually wake up at seven o’clock in the morning. I have breakfast in the kitchen with my family. My classes start at eight thirty, so I leave home early. On Monday, I have an English class first. I usually study at home in the evening and go to bed at ten.`,
+    vocabulary: [
+        {
+            word: "usually",
+            meaning: "عادةً",
+            type: "Adverb",
+            examples: [
+                ["I usually drink tea in the morning.", "أنا عادةً أشرب الشاي في الصباح."],
+                ["She usually walks to school.", "هي عادةً تمشي إلى المدرسة."]
+            ]
+        },
+        {
+            word: "wake up",
+            meaning: "يستيقظ",
+            type: "Phrasal verb",
+            examples: [
+                ["I wake up early every day.", "أستيقظ مبكرًا كل يوم."],
+                ["He wakes up at six o’clock.", "هو يستيقظ في الساعة السادسة."]
+            ]
+        },
+        {
+            word: "breakfast",
+            meaning: "وجبة الإفطار",
+            type: "Noun",
+            examples: [
+                ["We have breakfast together.", "نتناول الإفطار معًا."],
+                ["I eat eggs for breakfast.", "آكل البيض على الإفطار."]
+            ]
+        },
+        {
+            word: "class",
+            meaning: "حصة دراسية / صف",
+            type: "Noun",
+            examples: [
+                ["My English class starts at nine.", "تبدأ حصتي الإنجليزية في التاسعة."],
+                ["We have a science class today.", "لدينا حصة علوم اليوم."]
+            ]
+        },
+        {
+            word: "leave",
+            meaning: "يغادر / يترك",
+            type: "Verb",
+            examples: [
+                ["I leave home at seven.", "أغادر المنزل في السابعة."],
+                ["She leaves work late.", "هي تغادر العمل متأخرة."]
+            ]
+        },
+        {
+            word: "early",
+            meaning: "مبكرًا",
+            type: "Adverb / Adjective",
+            examples: [
+                ["He arrived early.", "وصل مبكرًا."],
+                ["I have an early appointment.", "لدي موعد مبكر."]
+            ]
+        },
+        {
+            word: "in the evening",
+            meaning: "في المساء",
+            type: "Time expression",
+            examples: [
+                ["I read in the evening.", "أقرأ في المساء."],
+                ["We watch TV in the evening.", "نشاهد التلفاز في المساء."]
+            ]
+        },
+        {
+            word: "go to bed",
+            meaning: "يذهب إلى الفراش / يخلد إلى النوم",
+            type: "Expression",
+            examples: [
+                ["I go to bed at ten.", "أذهب إلى الفراش في العاشرة."],
+                ["The children go to bed early.", "يذهب الأطفال إلى الفراش مبكرًا."]
+            ]
+        }
+    ]
+},
+
+{
+    title: "A Weekend by the Sea",
+    level: "Reading 2",
+    audio: "https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/A%20weekend%20by%20sea.mp3",
+    text: `Last weekend, my family and I went on a short trip to the sea. We left home on Friday morning and arrived at the beach at nine o’clock. The weather was beautiful, and the water was clear. We stayed in a small hotel near the beach. In the afternoon, we walked along the shore and took many pictures. At night, we had dinner at a lovely restaurant. It was a wonderful weekend, and I hope to visit that place again.`,
+    vocabulary: [
+        {
+            word: "weekend",
+            meaning: "عطلة نهاية الأسبوع",
+            type: "Noun",
+            examples: [
+                ["What are you doing this weekend?", "ماذا ستفعل في عطلة نهاية الأسبوع؟"],
+                ["I usually visit my family at the weekend.", "عادةً أزور عائلتي في عطلة نهاية الأسبوع."]
+            ]
+        },
+        {
+            word: "trip",
+            meaning: "رحلة",
+            type: "Noun",
+            examples: [
+                ["We went on a school trip.", "ذهبنا في رحلة مدرسية."],
+                ["The trip was very enjoyable.", "كانت الرحلة ممتعة جدًا."]
+            ]
+        },
+        {
+            word: "arrive",
+            meaning: "يصل",
+            type: "Verb",
+            examples: [
+                ["We arrived at the airport early.", "وصلنا إلى المطار مبكرًا."],
+                ["What time will you arrive?", "في أي وقت ستصل؟"]
+            ]
+        },
+        {
+            word: "clear",
+            meaning: "صافٍ / واضح",
+            type: "Adjective",
+            examples: [
+                ["The sea is clear today.", "البحر صافٍ اليوم."],
+                ["The sky was clear in the morning.", "كانت السماء صافية في الصباح."]
+            ]
+        },
+        {
+            word: "stay",
+            meaning: "يقيم / يبقى",
+            type: "Verb",
+            examples: [
+                ["We stayed in a hotel.", "أقمنا في فندق."],
+                ["I want to stay here for two days.", "أريد أن أبقى هنا لمدة يومين."]
+            ]
+        },
+        {
+            word: "shore",
+            meaning: "شاطئ / ساحل",
+            type: "Noun",
+            examples: [
+                ["We walked along the shore.", "مشينا على طول الشاطئ."],
+                ["The boat was close to the shore.", "كان القارب قريبًا من الساحل."]
+            ]
+        },
+        {
+            word: "lovely",
+            meaning: "جميل / رائع",
+            type: "Adjective",
+            examples: [
+                ["We had a lovely evening.", "قضينا أمسية جميلة."],
+                ["She has a lovely garden.", "لديها حديقة جميلة."]
+            ]
+        },
+        {
+            word: "wonderful",
+            meaning: "رائع / مذهل",
+            type: "Adjective",
+            examples: [
+                ["We had a wonderful time.", "قضينا وقتًا رائعًا."],
+                ["It was a wonderful experience.", "كانت تجربة رائعة."]
+            ]
+        },
+        {
+            word: "hope",
+            meaning: "يأمل",
+            type: "Verb",
+            examples: [
+                ["I hope to see you soon.", "آمل أن أراك قريبًا."],
+                ["We hope the weather will be good.", "نأمل أن يكون الطقس جيدًا."]
+            ]
+        }
+    ]
+},
+
+{
+    title: "My First Day at a New School",
+    level: "Reading 3",
+    audio: "https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/%20My%20First%20Day%20at%20a%20New%20School.mp3",
+    text: `I will never forget my first day at my new school. I arrived at eight fifteen in the morning, and my father walked with me to the main entrance. My classroom was on the second floor, next to the library. There were colorful pictures on the walls and a large clock above the door. Our teacher welcomed us at the beginning of the lesson and introduced herself. On Wednesday, we had our first science class, and I really enjoyed it. At first, I felt nervous, but I made two new friends before the end of the day.`,
+    vocabulary: [
+        {
+            word: "forget",
+            meaning: "ينسى",
+            type: "Verb",
+            examples: [
+                ["Do not forget your homework.", "لا تنسَ واجبك."],
+                ["I will never forget that day.", "لن أنسى ذلك اليوم أبدًا."]
+            ]
+        },
+        {
+            word: "arrive",
+            meaning: "يصل",
+            type: "Verb",
+            examples: [
+                ["She arrived at school at eight.", "وصلت إلى المدرسة في الثامنة."],
+                ["We arrived late because of the traffic.", "وصلنا متأخرين بسبب الازدحام."]
+            ]
+        },
+        {
+            word: "entrance",
+            meaning: "مدخل",
+            type: "Noun",
+            examples: [
+                ["Wait for me at the main entrance.", "انتظرني عند المدخل الرئيسي."],
+                ["The entrance is next to the library.", "المدخل بجانب المكتبة."]
+            ]
+        },
+        {
+            word: "floor",
+            meaning: "طابق / أرضية",
+            type: "Noun",
+            examples: [
+                ["My office is on the third floor.", "مكتبي في الطابق الثالث."],
+                ["The classroom is on the first floor.", "الفصل في الطابق الأول."]
+            ]
+        },
+        {
+            word: "colorful",
+            meaning: "ملوّن / زاهي الألوان",
+            type: "Adjective",
+            examples: [
+                ["The children made colorful drawings.", "رسم الأطفال رسومات ملوّنة."],
+                ["She wore a colorful dress.", "ارتدت فستانًا زاهي الألوان."]
+            ]
+        },
+        {
+            word: "welcome",
+            meaning: "يرحّب",
+            type: "Verb",
+            examples: [
+                ["The teacher welcomed the new students.", "رحّب المعلم بالطلاب الجدد."],
+                ["They welcomed us with a smile.", "رحّبوا بنا بابتسامة."]
+            ]
+        },
+        {
+            word: "introduce",
+            meaning: "يعرّف / يقدّم",
+            type: "Verb",
+            examples: [
+                ["Let me introduce my friend.", "دعني أعرّفك على صديقي."],
+                ["The teacher introduced herself.", "عرّفت المعلمة بنفسها."]
+            ]
+        },
+        {
+            word: "nervous",
+            meaning: "متوتر / قلق",
+            type: "Adjective",
+            examples: [
+                ["I feel nervous before exams.", "أشعر بالتوتر قبل الاختبارات."],
+                ["She was nervous on her first day.", "كانت متوترة في يومها الأول."]
+            ]
+        },
+        {
+            word: "enjoy",
+            meaning: "يستمتع بـ",
+            type: "Verb",
+            examples: [
+                ["I enjoy learning English.", "أستمتع بتعلم الإنجليزية."],
+                ["They enjoyed the science lesson.", "استمتعوا بحصة العلوم."]
+            ]
+        },
+        {
+            word: "at first",
+            meaning: "في البداية",
+            type: "Expression",
+            examples: [
+                ["At first, the task was difficult.", "في البداية، كانت المهمة صعبة."],
+                ["I felt shy at first.", "شعرت بالخجل في البداية."]
+            ]
+        }
+    ]
+},
+
+{
+    title: "A Special Family Celebration",
+    level: "Reading 4",
+    audio: "https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/A%20Special%20Family%20Celebration.mp3",
+    text: `Every year, my family has a special celebration in December. This year, we are celebrating my grandmother's birthday on December fifteenth. Everyone will meet at my grandmother's house in the afternoon. My mother is preparing delicious food, while my sisters are decorating the garden with colorful lights. We will have dinner at seven o’clock, and then we will sing a birthday song together. At night, we usually sit in the garden and talk about our favorite memories. These family gatherings are important to me because they bring everyone closer together.`,
+    vocabulary: [
+        {
+            word: "celebration",
+            meaning: "احتفال",
+            type: "Noun",
+            examples: [
+                ["We had a big celebration.", "أقمنا احتفالًا كبيرًا."],
+                ["The celebration starts at six.", "يبدأ الاحتفال في السادسة."]
+            ]
+        },
+        {
+            word: "grandmother",
+            meaning: "الجدة",
+            type: "Noun",
+            examples: [
+                ["My grandmother tells wonderful stories.", "تحكي جدتي قصصًا رائعة."],
+                ["I visited my grandmother yesterday.", "زرت جدتي أمس."]
+            ]
+        },
+        {
+            word: "delicious",
+            meaning: "لذيذ",
+            type: "Adjective",
+            examples: [
+                ["This cake is delicious.", "هذه الكعكة لذيذة."],
+                ["My mother cooked a delicious meal.", "أعدّت أمي وجبة لذيذة."]
+            ]
+        },
+        {
+            word: "prepare",
+            meaning: "يحضّر / يجهّز",
+            type: "Verb",
+            examples: [
+                ["I need to prepare for the exam.", "أحتاج إلى الاستعداد للاختبار."],
+                ["She is preparing dinner.", "هي تحضّر العشاء."]
+            ]
+        },
+        {
+            word: "decorate",
+            meaning: "يزين",
+            type: "Verb",
+            examples: [
+                ["We decorate the house for the party.", "نزيّن المنزل من أجل الحفلة."],
+                ["They decorated the garden with lights.", "زيّنوا الحديقة بالأضواء."]
+            ]
+        },
+        {
+            word: "together",
+            meaning: "معًا",
+            type: "Adverb",
+            examples: [
+                ["We study together every evening.", "ندرس معًا كل مساء."],
+                ["The whole family had dinner together.", "تناولت العائلة كلها العشاء معًا."]
+            ]
+        },
+        {
+            word: "memory",
+            meaning: "ذكرى",
+            type: "Noun",
+            examples: [
+                ["This photo brings back a happy memory.", "تعيد هذه الصورة ذكرى سعيدة."],
+                ["I have many memories of my childhood.", "لدي ذكريات كثيرة من طفولتي."]
+            ]
+        },
+        {
+            word: "gathering",
+            meaning: "تجمّع / اجتماع",
+            type: "Noun",
+            examples: [
+                ["We had a family gathering on Friday.", "كان لدينا تجمع عائلي يوم الجمعة."],
+                ["The gathering was full of laughter.", "كان التجمع مليئًا بالضحك."]
+            ]
+        },
+        {
+            word: "important",
+            meaning: "مهم",
+            type: "Adjective",
+            examples: [
+                ["Family is very important to me.", "العائلة مهمة جدًا بالنسبة لي."],
+                ["This is an important decision.", "هذا قرار مهم."]
+            ]
+        },
+        {
+            word: "bring closer",
+            meaning: "يقرّب / يجعل العلاقة أقوى",
+            type: "Expression",
+            examples: [
+                ["Shared experiences bring people closer.", "التجارب المشتركة تقرّب الناس من بعضهم."],
+                ["Family celebrations bring us closer together.", "الاحتفالات العائلية تقرّبنا من بعضنا."]
+            ]
+        }
+    ]
+},
+
+{
+    title: "Planning for the Future",
+    level: "Reading 5",
+    audio: "https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/Planning%20for%20the%20future.mp3",
+    text: `Maya is a young woman who has big dreams for her future. She wants to become a successful teacher, so she has made a plan to improve her English and continue her education. In twenty twenty-seven, she hopes to join a special training programme. She studies English at home every day and follows a weekly schedule. On Sundays and Tuesdays, she attends online lessons. She usually studies at six p.m. and reads a book in the evening. She also writes new vocabulary in a notebook and reviews it regularly. Sometimes, she feels tired, especially at the end of a busy week, but she does not give up. She believes that small steps can make a big difference over time. In the future, she wants to help students learn English and feel more confident about their abilities. She knows that reaching her goals will take time, patience, and hard work, but she is ready to do her best.`,
+    vocabulary: [
+        {
+            word: "dream",
+            meaning: "حلم",
+            type: "Noun",
+            examples: [
+                ["My dream is to become a doctor.", "حلمي أن أصبح طبيبة."],
+                ["She has big dreams for the future.", "لديها أحلام كبيرة للمستقبل."]
+            ]
+        },
+        {
+            word: "successful",
+            meaning: "ناجح",
+            type: "Adjective",
+            examples: [
+                ["She is a successful businesswoman.", "هي سيدة أعمال ناجحة."],
+                ["Hard work can help you become successful.", "يمكن للعمل الجاد أن يساعدك على النجاح."]
+            ]
+        },
+        {
+            word: "improve",
+            meaning: "يطوّر / يحسّن",
+            type: "Verb",
+            examples: [
+                ["I want to improve my English.", "أريد أن أطور لغتي الإنجليزية."],
+                ["Practice will improve your speaking skills.", "ستطوّر الممارسة مهاراتك في التحدث."]
+            ]
+        },
+        {
+            word: "education",
+            meaning: "التعليم",
+            type: "Noun",
+            examples: [
+                ["Education is important for everyone.", "التعليم مهم للجميع."],
+                ["She wants to continue her education.", "تريد أن تواصل تعليمها."]
+            ]
+        },
+        {
+            word: "training programme",
+            meaning: "برنامج تدريبي",
+            type: "Noun phrase",
+            examples: [
+                ["I joined a training programme last year.", "انضممت إلى برنامج تدريبي العام الماضي."],
+                ["The training programme lasts three months.", "يستمر البرنامج التدريبي ثلاثة أشهر."]
+            ]
+        },
+        {
+            word: "schedule",
+            meaning: "جدول / جدول زمني",
+            type: "Noun",
+            examples: [
+                ["I follow a daily study schedule.", "أتبع جدولًا يوميًا للدراسة."],
+                ["My schedule is very busy this week.", "جدولي مزدحم جدًا هذا الأسبوع."]
+            ]
+        },
+        {
+            word: "attend",
+            meaning: "يحضر",
+            type: "Verb",
+            examples: [
+                ["I attend English classes twice a week.", "أحضر حصص الإنجليزية مرتين في الأسبوع."],
+                ["She attends an online meeting every Monday.", "تحضر اجتماعًا عبر الإنترنت كل يوم اثنين."]
+            ]
+        },
+        {
+            word: "regularly",
+            meaning: "بانتظام",
+            type: "Adverb",
+            examples: [
+                ["You should practise regularly.", "ينبغي أن تتدرب بانتظام."],
+                ["He exercises regularly.", "يمارس الرياضة بانتظام."]
+            ]
+        },
+        {
+            word: "give up",
+            meaning: "يستسلم / يتخلى عن",
+            type: "Phrasal verb",
+            examples: [
+                ["Never give up on your dreams.", "لا تستسلم أبدًا عن أحلامك."],
+                ["She did not give up when things became difficult.", "لم تستسلم عندما أصبحت الأمور صعبة."]
+            ]
+        },
+        {
+            word: "make a big difference",
+            meaning: "يُحدث فرقًا كبيرًا",
+            type: "Expression",
+            examples: [
+                ["A little practice can make a big difference.", "يمكن للقليل من الممارسة أن يُحدث فرقًا كبيرًا."],
+                ["Your support made a big difference.", "دعمك أحدث فرقًا كبيرًا."]
+            ]
+        },
+        {
+            word: "confident",
+            meaning: "واثق من نفسه",
+            type: "Adjective",
+            examples: [
+                ["I feel more confident when I practise.", "أشعر بثقة أكبر عندما أتدرب."],
+                ["She is confident about her abilities.", "هي واثقة من قدراتها."]
+            ]
+        },
+        {
+            word: "ability",
+            meaning: "قدرة / مهارة",
+            type: "Noun",
+            examples: [
+                ["Everyone has the ability to learn.", "كل شخص لديه القدرة على التعلم."],
+                ["Reading improves your language abilities.", "تحسّن القراءة قدراتك اللغوية."]
+            ]
+        },
+        {
+            word: "patience",
+            meaning: "الصبر",
+            type: "Noun",
+            examples: [
+                ["Learning a language takes patience.", "تعلم لغة يحتاج إلى الصبر."],
+                ["You need patience when learning something new.", "تحتاج إلى الصبر عند تعلم شيء جديد."]
+            ]
+        },
+        {
+            word: "reach a goal",
+            meaning: "يحقق هدفًا / يصل إلى هدف",
+            type: "Expression",
+            examples: [
+                ["She worked hard to reach her goal.", "عملت بجد لتحقيق هدفها."],
+                ["You can reach your goals step by step.", "يمكنك تحقيق أهدافك خطوة بخطوة."]
+            ]
+        },
+        {
+            word: "do one's best",
+            meaning: "يبذل قصارى جهده",
+            type: "Expression",
+            examples: [
+                ["I always try to do my best.", "أحاول دائمًا أن أبذل قصارى جهدي."],
+                ["Just do your best and keep learning.", "فقط ابذل قصارى جهدك واستمر في التعلم."]
+            ]
+        }
+    ]
+}
+];
+
+
+/* =========================================
+   HIGHLIGHT IN, ON AND AT
+========================================= */
+
+function highlightPrepositions(text) {
+    const escaped = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+    return escaped.replace(
+        /\b(in|on|at)\b/gi,
+        '<span class="prep">$1</span>'
+    );
+}
+
+
+/* =========================================
+   VOCABULARY HTML
+========================================= */
+
+function escapeHTML(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function createVocabularyItem(item) {
+    const examplesHTML = item.examples.map(example => `
+        <div class="example">
+            <div class="example-en">${escapeHTML(example[0])}</div>
+            <div class="example-ar">${escapeHTML(example[1])}</div>
+        </div>
+    `).join("");
+
+    return `
+        <article class="vocab-item">
+            <div class="vocab-word-row">
+                <div class="vocab-word">${escapeHTML(item.word)}</div>
+                <button
+                    class="pronounce-btn"
+                    type="button"
+                    onclick="speakWord(${JSON.stringify(item.word)})"
+                    aria-label="Listen to pronunciation"
+                    title="Listen to pronunciation"
+                >🔊</button>
+            </div>
+
+            <div class="vocab-meaning">${escapeHTML(item.meaning)}</div>
+            <span class="word-type">${escapeHTML(item.type)}</span>
+
+            <div class="examples">
+                ${examplesHTML}
+            </div>
+        </article>
+    `;
+}
+
+
+/* =========================================
+   CREATE EACH READING SECTION
+========================================= */
+
+function createReading(reading, index) {
+    const vocabularyHTML = reading.vocabulary
+        .map(createVocabularyItem)
+        .join("");
+
+    return `
+        <section class="reading-section">
+
+            <div class="section-heading">
+                <div class="section-number">${index + 1}</div>
+                <div>
+                    <h2>${escapeHTML(reading.title)}</h2>
+                    <p>${reading.vocabulary.length} useful vocabulary items</p>
+                </div>
+            </div>
+
+            <!-- Audio card: separate from the reading -->
+            <div class="audio-card">
+                <div class="audio-title">
+                    <span class="audio-icon">🎧</span>
+                    <span>Listen to the Reading</span>
+                </div>
+
+                <audio controls preload="none">
+                    <source src="${escapeHTML(reading.audio)}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- Reading card -->
+            <article class="card reading-card">
+                <div class="reading-card-top">
+                    <h3>📖 ${escapeHTML(reading.title)}</h3>
+                    <span class="reading-level">${escapeHTML(reading.level)}</span>
+                </div>
+
+                <div class="reading-text">
+                    ${highlightPrepositions(reading.text)}
+                </div>
+            </article>
+
+            <!-- Vocabulary card -->
+            <section class="vocab-section">
+                <button
+                    class="vocab-toggle"
+                    type="button"
+                    onclick="toggleVocabulary(this)"
+                    aria-expanded="false"
+                >
+                    <span class="vocab-toggle-main">
+                        <span class="vocab-toggle-icon">📚</span>
+                        <span>
+                            <h3>Vocabulary & Expressions</h3>
+                            <small>${reading.vocabulary.length} words and expressions with examples</small>
+                        </span>
+                    </span>
+                    <span class="toggle-arrow">⌄</span>
+                </button>
+
+                <div class="vocab-content">
+                    <div class="vocab-grid">
+                        ${vocabularyHTML}
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    `;
+}
+
+
+/* =========================================
+   RENDER ALL FIVE READINGS
+========================================= */
+
+document.getElementById("readings-container").innerHTML =
+    readings.map(createReading).join("");
+
+
+
+/* =========================================
+   VOCABULARY COLLAPSE / EXPAND
+========================================= */
+
+function toggleVocabulary(button) {
+    const section = button.closest(".vocab-section");
+    const isOpen = section.classList.toggle("open");
+
+    button.setAttribute("aria-expanded", String(isOpen));
+}
+
+
+
+/* =========================================
+   WORD PRONUNCIATION
+========================================= */
+
+function speakWord(word) {
+    if (!("speechSynthesis" in window)) {
+        alert("Pronunciation is not supported by this browser.");
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "en-US";
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+
+    window.speechSynthesis.speak(utterance);
+}
+
+
+
+/* =========================================
+   COMPLETE UNIT 2
+========================================= */
+
+function completeLesson() {
+    if (typeof window.finishLesson === "function") {
+        window.finishLesson(
+            "unit2-in-on-at-reading-practice",
+            "In, On & At | Reading Practice",
+            "unit3-pre-review.html"
+        );
+    } else {
+        window.location.href = "unit3-pre-review.html";
+    }
+}
+</script>
+
+<script type="module">
+import "./js/reward.js";
+</script>
+
+</body>
+</html>
