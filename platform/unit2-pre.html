@@ -4,25 +4,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f1efff">
+<meta name="theme-color" content="#0b1028">
 <title>Unit 02 | Engliza Academy</title>
 
 <style>
 :root {
-  --bg: #f1efff;
-  --bg2: #e9eaff;
-  --white: #ffffff;
-  --surface: #fbfaff;
-  --purple: #6845ed;
-  --purple2: #8064f5;
-  --blue: #4779ed;
-  --blue2: #6a9cf8;
-  --navy: #293d7d;
-  --text: #343651;
-  --muted: #81829d;
-  --line: #e5e0fb;
-  --lavender: #eae5ff;
-  --shadow: 0 14px 38px rgba(65, 55, 145, .09);
+  --bg: #0b1028;
+  --bg2: #111b36;
+  --card: #151f3b;
+  --card2: #1c2b4b;
+  --surface: #202f50;
+  --gold: #e5cc91;
+  --gold2: #d7b873;
+  --gold-soft: rgba(229,204,145,.11);
+  --blue: #91a9ff;
+  --blue2: #b5c5ff;
+  --blue-soft: rgba(145,169,255,.12);
+  --navy: #dce5ff;
+  --text: #f5f6fc;
+  --muted: #a6b2d0;
+  --line: rgba(163,176,218,.16);
+  --shadow: 0 15px 38px rgba(0,0,0,.17);
   --transition: .28s ease;
 }
 
@@ -44,9 +46,9 @@ body {
   color: var(--text);
   line-height: 1.8;
   background:
-    radial-gradient(circle at 5% 8%, rgba(177,160,255,.23), transparent 27%),
-    radial-gradient(circle at 100% 42%, rgba(135,174,255,.19), transparent 30%),
-    linear-gradient(145deg, #f5f3ff, #eeefff 55%, #edf3ff);
+    radial-gradient(circle at 5% 8%, rgba(91,119,190,.17), transparent 27%),
+    radial-gradient(circle at 100% 42%, rgba(91,113,177,.13), transparent 30%),
+    linear-gradient(145deg, #101a35, #0b142d 55%, #111b36);
 }
 
 button, a {
@@ -80,10 +82,10 @@ button {
   gap: 9px;
   padding: 10px 16px;
   min-height: 43px;
-  border: 1px solid rgba(216,209,250,.9);
+  border: 1px solid var(--line);
   border-radius: 13px;
-  background: rgba(255,255,255,.76);
-  color: var(--navy);
+  background: rgba(255,255,255,.045);
+  color: var(--text);
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
@@ -91,13 +93,14 @@ button {
 }
 
 .back-btn:hover {
-  background: #fff;
+  background: var(--blue-soft);
+  border-color: rgba(145,169,255,.4);
   transform: translateY(-2px);
-  box-shadow: 0 7px 18px rgba(76,60,170,.08);
+  box-shadow: 0 7px 18px rgba(0,0,0,.12);
 }
 
 .back-arrow {
-  color: var(--purple);
+  color: var(--gold);
   font-size: 19px;
 }
 
@@ -112,16 +115,17 @@ button {
   place-items: center;
   width: 43px;
   height: 43px;
+  border: 1px solid rgba(229,204,145,.35);
   border-radius: 14px;
-  background: linear-gradient(140deg, var(--blue), var(--purple));
-  color: white;
+  background: linear-gradient(140deg, #344b7a, #26365f);
+  color: var(--gold);
   font-size: 20px;
   font-weight: 800;
-  box-shadow: 0 6px 16px rgba(104,69,237,.2);
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
 }
 
 .brand-name {
-  color: var(--navy);
+  color: var(--text);
   font-size: 14px;
   font-weight: 800;
 }
@@ -140,12 +144,12 @@ button {
   isolation: isolate;
   overflow: hidden;
   padding: 48px 45px 43px;
-  border: 1px solid rgba(255,255,255,.75);
+  border: 1px solid rgba(169,189,255,.20);
   border-radius: 30px;
   background:
-    radial-gradient(circle at 90% 10%, rgba(255,255,255,.42), transparent 25%),
-    radial-gradient(circle at 5% 100%, rgba(255,255,255,.24), transparent 30%),
-    linear-gradient(125deg, #e8e1ff 0%, #dce4ff 48%, #e9e3ff 100%);
+    radial-gradient(circle at 90% 10%, rgba(169,189,255,.15), transparent 25%),
+    radial-gradient(circle at 5% 100%, rgba(229,204,145,.07), transparent 30%),
+    linear-gradient(125deg, #26395f 0%, #1c2e52 48%, #202b4e 100%);
   box-shadow: var(--shadow);
   animation: appear .6s ease both;
 }
@@ -156,7 +160,7 @@ button {
   z-index: -1;
   top: -48px;
   left: 15px;
-  color: rgba(255,255,255,.36);
+  color: rgba(190,205,255,.07);
   font-size: 245px;
   font-weight: 900;
   line-height: 1;
@@ -171,11 +175,11 @@ button {
   height: 210px;
   right: -115px;
   bottom: -130px;
-  border: 1px solid rgba(255,255,255,.6);
+  border: 1px solid rgba(169,189,255,.18);
   border-radius: 50%;
   box-shadow:
-    0 0 0 25px rgba(255,255,255,.08),
-    0 0 0 50px rgba(255,255,255,.06);
+    0 0 0 25px rgba(169,189,255,.045),
+    0 0 0 50px rgba(169,189,255,.03);
 }
 
 .hero-content {
@@ -188,10 +192,10 @@ button {
   gap: 9px;
   padding: 7px 14px;
   margin-bottom: 18px;
-  border: 1px solid rgba(104,69,237,.13);
+  border: 1px solid rgba(229,204,145,.30);
   border-radius: 30px;
-  background: rgba(255,255,255,.62);
-  color: var(--purple);
+  background: var(--gold-soft);
+  color: var(--gold);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .7px;
@@ -201,13 +205,13 @@ button {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--purple);
-  box-shadow: 0 0 0 4px rgba(104,69,237,.10);
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(229,204,145,.10);
 }
 
 .hero h1 {
   max-width: 720px;
-  color: var(--navy);
+  color: var(--text);
   font-size: clamp(31px, 5vw, 45px);
   line-height: 1.5;
   font-weight: 800;
@@ -215,12 +219,12 @@ button {
 }
 
 .hero h1 strong {
-  color: var(--purple);
+  color: var(--gold);
 }
 
 .hero-description {
   max-width: 690px;
-  color: #5e6387;
+  color: #c2cce2;
   font-size: 16px;
   line-height: 2;
 }
@@ -239,16 +243,16 @@ button {
   align-items: center;
   gap: 9px;
   padding: 9px 15px;
-  border: 1px solid rgba(255,255,255,.78);
+  border: 1px solid rgba(169,189,255,.17);
   border-radius: 13px;
-  background: rgba(255,255,255,.57);
-  color: var(--navy);
+  background: rgba(12,22,46,.30);
+  color: #e0e7fb;
   font-size: 12px;
   font-weight: 700;
 }
 
 .info-icon {
-  color: var(--purple);
+  color: var(--gold);
   font-size: 15px;
 }
 
@@ -262,12 +266,12 @@ button {
   margin-top: 24px;
   padding: 25px 27px;
   overflow: hidden;
-  border: 1px solid #ded8ff;
+  border: 1px solid rgba(229,204,145,.20);
   border-radius: 22px;
   background:
-    radial-gradient(circle at 100% 0%, rgba(181,165,255,.17), transparent 40%),
-    linear-gradient(115deg, #fff, #f5f2ff);
-  box-shadow: 0 8px 25px rgba(70,60,150,.055);
+    radial-gradient(circle at 100% 0%, rgba(229,204,145,.09), transparent 40%),
+    linear-gradient(115deg, #1d2c4c, #17243f);
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
 }
 
 .welcome-icon {
@@ -276,20 +280,21 @@ button {
   flex-shrink: 0;
   width: 59px;
   height: 59px;
+  border: 1px solid rgba(229,204,145,.25);
   border-radius: 18px;
-  background: linear-gradient(140deg, #e6deff, #dce8ff);
-  color: var(--purple);
+  background: var(--gold-soft);
+  color: var(--gold);
   font-size: 23px;
 }
 
 .welcome h2 {
-  color: var(--navy);
+  color: var(--gold);
   font-size: 21px;
   margin-bottom: 4px;
 }
 
 .welcome p {
-  color: #777994;
+  color: #c1cce1;
   font-size: 14px;
   line-height: 1.9;
 }
@@ -315,15 +320,15 @@ button {
   place-items: center;
   width: 46px;
   height: 46px;
-  border: 1px solid #ddd6ff;
+  border: 1px solid rgba(145,169,255,.22);
   border-radius: 15px;
-  background: linear-gradient(140deg, #e7e0ff, #e1eaff);
-  color: var(--purple);
+  background: var(--blue-soft);
+  color: var(--blue);
   font-size: 20px;
 }
 
 .section-heading h2 {
-  color: var(--navy);
+  color: var(--text);
   font-size: 25px;
 }
 
@@ -334,10 +339,10 @@ button {
 
 .lesson-count {
   padding: 7px 13px;
-  border: 1px solid #ddd7ff;
+  border: 1px solid rgba(229,204,145,.24);
   border-radius: 30px;
-  background: #f8f6ff;
-  color: var(--purple-dark, #4931b8);
+  background: var(--gold-soft);
+  color: var(--gold);
   font-size: 12px;
   font-weight: 800;
   white-space: nowrap;
@@ -358,10 +363,10 @@ button {
   min-height: 220px;
   padding: 22px 20px 19px;
   overflow: hidden;
-  border: 1px solid #e3defb;
+  border: 1px solid var(--line);
   border-radius: 21px;
-  background: linear-gradient(150deg, #fff 0%, #fcfbff 70%, #f4f2ff 100%);
-  box-shadow: 0 8px 24px rgba(67,55,145,.055);
+  background: linear-gradient(150deg, #1c2b4b 0%, #172541 70%, #192744 100%);
+  box-shadow: 0 8px 24px rgba(0,0,0,.13);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   animation: appear .55s ease both;
 }
@@ -373,8 +378,8 @@ button {
   right: 0;
   left: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--blue), var(--purple));
-  opacity: .78;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+  opacity: .82;
 }
 
 .lesson-card::after {
@@ -385,14 +390,15 @@ button {
   left: -65px;
   bottom: -65px;
   border-radius: 50%;
-  background: rgba(225,218,255,.28);
+  background: rgba(145,169,255,.055);
   pointer-events: none;
 }
 
 .lesson-card:hover {
   transform: translateY(-5px);
-  border-color: #cfc5ff;
-  box-shadow: 0 15px 32px rgba(77,62,165,.12);
+  border-color: var(--border-hover);
+  box-shadow: 0 15px 32px rgba(0,0,0,.22);
+  background: linear-gradient(150deg, #243758, #1b2c4d);
 }
 
 .lesson-top {
@@ -408,10 +414,10 @@ button {
   place-items: center;
   width: 43px;
   height: 43px;
-  border: 1px solid #ded8ff;
+  border: 1px solid rgba(145,169,255,.24);
   border-radius: 14px;
-  background: linear-gradient(145deg, #ebe5ff, #e3ebff);
-  color: var(--purple);
+  background: var(--blue-soft);
+  color: var(--blue2);
   font-size: 14px;
   font-weight: 900;
   direction: ltr;
@@ -419,15 +425,16 @@ button {
 
 .lesson-tag {
   padding: 5px 10px;
+  border: 1px solid rgba(145,169,255,.14);
   border-radius: 30px;
-  background: #f0edff;
-  color: #7159d6;
+  background: var(--blue-soft);
+  color: #b5c5ff;
   font-size: 10px;
   font-weight: 700;
 }
 
 .lesson-card h3 {
-  color: var(--navy);
+  color: var(--text);
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 5px;
@@ -447,11 +454,11 @@ button {
   gap: 10px;
   margin-top: 19px;
   padding-top: 14px;
-  border-top: 1px solid #eeeafd;
+  border-top: 1px solid var(--line);
 }
 
 .lesson-type {
-  color: #9694ac;
+  color: #9daac8;
   font-size: 11px;
 }
 
@@ -462,19 +469,21 @@ button {
   gap: 8px;
   min-height: 36px;
   padding: 7px 13px;
+  border: 1px solid rgba(229,204,145,.30);
   border-radius: 11px;
-  background: linear-gradient(110deg, #4779ed, #6845ed);
-  color: white;
+  background: linear-gradient(110deg, #e5cc91, #d7b873);
+  color: #172039;
   font-size: 11px;
   font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 5px 12px rgba(104,69,237,.15);
+  box-shadow: 0 5px 12px rgba(0,0,0,.13);
   transition: var(--transition);
 }
 
 .lesson-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 17px rgba(104,69,237,.24);
+  box-shadow: 0 8px 17px rgba(207,177,107,.17);
+  filter: brightness(1.05);
 }
 
 .lesson-link span {
@@ -489,14 +498,14 @@ button {
   overflow: hidden;
   margin-top: 38px;
   padding: 39px 28px;
-  border: 1px solid rgba(255,255,255,.25);
+  border: 1px solid rgba(229,204,145,.30);
   border-radius: 27px;
   text-align: center;
   background:
-    radial-gradient(circle at 0% 0%, rgba(255,255,255,.17), transparent 28%),
-    radial-gradient(circle at 100% 100%, rgba(185,176,255,.22), transparent 30%),
-    linear-gradient(120deg, #4932bd, #6945ee 55%, #5079ed);
-  box-shadow: 0 16px 36px rgba(80,60,195,.19);
+    radial-gradient(circle at 0% 0%, rgba(145,169,255,.13), transparent 28%),
+    radial-gradient(circle at 100% 100%, rgba(229,204,145,.09), transparent 30%),
+    linear-gradient(120deg, #26395f, #1d2e52 55%, #263758);
+  box-shadow: 0 16px 36px rgba(0,0,0,.20);
 }
 
 .review-card::before {
@@ -507,9 +516,9 @@ button {
   height: 220px;
   top: -145px;
   right: -65px;
-  border: 1px solid rgba(255,255,255,.17);
+  border: 1px solid rgba(229,204,145,.18);
   border-radius: 50%;
-  box-shadow: 0 0 0 25px rgba(255,255,255,.045), 0 0 0 50px rgba(255,255,255,.035);
+  box-shadow: 0 0 0 25px rgba(229,204,145,.035), 0 0 0 50px rgba(229,204,145,.025);
 }
 
 .review-card::after {
@@ -521,7 +530,7 @@ button {
   bottom: -125px;
   left: -60px;
   border-radius: 50%;
-  background: rgba(255,255,255,.08);
+  background: rgba(145,169,255,.07);
 }
 
 .review-icon {
@@ -530,15 +539,15 @@ button {
   width: 63px;
   height: 63px;
   margin: 0 auto 17px;
-  border: 1px solid rgba(255,255,255,.32);
+  border: 1px solid rgba(229,204,145,.32);
   border-radius: 20px;
-  background: rgba(255,255,255,.15);
-  color: white;
+  background: var(--gold-soft);
+  color: var(--gold);
   font-size: 26px;
 }
 
 .review-card h2 {
-  color: white;
+  color: var(--gold);
   font-size: 29px;
   margin-bottom: 10px;
 }
@@ -546,7 +555,7 @@ button {
 .review-card p {
   max-width: 640px;
   margin: 0 auto 23px;
-  color: rgba(255,255,255,.9);
+  color: #c5d0e7;
   font-size: 15px;
   line-height: 2;
 }
@@ -559,20 +568,21 @@ button {
   min-height: 49px;
   min-width: 245px;
   padding: 12px 23px;
+  border: 1px solid rgba(229,204,145,.38);
   border-radius: 14px;
-  background: white;
-  color: #5237c5;
+  background: linear-gradient(110deg, #e5cc91, #d7b873);
+  color: #172039;
   text-decoration: none;
   font-size: 14px;
   font-weight: 800;
-  box-shadow: 0 7px 19px rgba(37,25,111,.15);
+  box-shadow: 0 7px 19px rgba(0,0,0,.16);
   transition: var(--transition);
 }
 
 .review-btn:hover {
   transform: translateY(-3px);
-  background: #f5f2ff;
-  box-shadow: 0 10px 23px rgba(37,25,111,.22);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 23px rgba(0,0,0,.22);
 }
 
 /* FOOTER */
@@ -584,14 +594,14 @@ button {
   gap: 10px;
   margin-top: 27px;
   padding: 20px 8px 5px;
-  border-top: 1px solid #dedaf4;
+  border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 12px;
   text-align: center;
 }
 
 .footer-star {
-  color: var(--purple);
+  color: var(--gold);
   font-size: 17px;
 }
 
@@ -830,7 +840,7 @@ button {
 }
 
 a:focus-visible {
-  outline: 3px solid #8c77ff;
+  outline: 3px solid var(--gold);
   outline-offset: 4px;
 }
 </style>
@@ -975,7 +985,7 @@ a:focus-visible {
       </div>
 
       <h3>Lesson 2</h3>
-      <p>Countable & Uncountable Nouns | الأسماء المعدودة وغير المعدودة</p>
+      <p>Countable &amp; Uncountable Nouns | الأسماء المعدودة وغير المعدودة</p>
 
       <div class="lesson-bottom">
         <span class="lesson-type">الدرس الثاني</span>
@@ -996,7 +1006,7 @@ a:focus-visible {
       </div>
 
       <h3>Lesson 3</h3>
-      <p>Countable & Uncountable Nouns | الجزء الثاني</p>
+      <p>Countable &amp; Uncountable Nouns | الجزء الثاني</p>
 
       <div class="lesson-bottom">
         <span class="lesson-type">الدرس الثالث</span>
@@ -1059,7 +1069,7 @@ a:focus-visible {
       </div>
 
       <h3>Lesson 6</h3>
-      <p>In & On | حروف الجر</p>
+      <p>In &amp; On | حروف الجر</p>
 
       <div class="lesson-bottom">
         <span class="lesson-type">الدرس السادس</span>
@@ -1080,7 +1090,7 @@ a:focus-visible {
       </div>
 
       <h3>Lesson 7</h3>
-      <p>In & On | حروف الجر – الجزء الثاني</p>
+      <p>In &amp; On | حروف الجر – الجزء الثاني</p>
 
       <div class="lesson-bottom">
         <span class="lesson-type">الدرس السابع</span>
@@ -1101,7 +1111,7 @@ a:focus-visible {
       </div>
 
       <h3>Lesson 8</h3>
-      <p>In & On | حروف الجر – الجزء الثالث</p>
+      <p>In &amp; On | حروف الجر – الجزء الثالث</p>
 
       <div class="lesson-bottom">
         <span class="lesson-type">الدرس الثامن</span>
@@ -1122,7 +1132,7 @@ a:focus-visible {
       </div>
 
       <h3>Lesson 9</h3>
-      <p>In & On | تدريب وممارسة</p>
+      <p>In &amp; On | تدريب وممارسة</p>
 
       <div class="lesson-bottom">
         <span class="lesson-type">التدريب الختامي</span>
