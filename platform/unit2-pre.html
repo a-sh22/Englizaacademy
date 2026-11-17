@@ -1,467 +1,1173 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الوحدة الثانية: بناء اللغة وتوسيع المفردات | Engliza Academy</title>
+<meta name="theme-color" content="#f1efff">
+<title>Unit 02 | Engliza Academy</title>
 
 <style>
-/* ENGLIZA ACADEMY — SHARED UNIT IDENTITY */
 :root {
-  --bg: #0b1028;
-  --card: #151d37;
-  --card-hover: #1a2340;
-  --border: rgba(163, 176, 218, .15);
-  --border-hover: rgba(229, 204, 145, .45);
-  --text: #f5f6fc;
-  --muted: #a6afca;
-  --gold: #e5cc91;
-  --gold-soft: rgba(229, 204, 145, .10);
-  --blue: #91a9ff;
-  --blue-soft: rgba(145, 169, 255, .10);
-  --transition: .25s ease;
+  --bg: #f1efff;
+  --bg2: #e9eaff;
+  --white: #ffffff;
+  --surface: #fbfaff;
+  --purple: #6845ed;
+  --purple2: #8064f5;
+  --blue: #4779ed;
+  --blue2: #6a9cf8;
+  --navy: #293d7d;
+  --text: #343651;
+  --muted: #81829d;
+  --line: #e5e0fb;
+  --lavender: #eae5ff;
+  --shadow: 0 14px 38px rgba(65, 55, 145, .09);
+  --transition: .28s ease;
 }
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
-html { scroll-behavior:smooth; background:var(--bg); }
-body {
-  min-height:100vh; padding:28px 22px 18px; color:var(--text);
-  background:
-    radial-gradient(ellipse at 50% -10%, rgba(85,105,190,.19), transparent 48%),
-    radial-gradient(ellipse at 100% 40%, rgba(119,89,180,.07), transparent 35%),
-    var(--bg);
-  line-height:1.8;
-}
-button,a { -webkit-tap-highlight-color:transparent; }
-button { font:inherit; }
-.container { width:100%; max-width:1050px; margin:0 auto; }
-.top-bar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:38px; }
-.back-btn {
-  display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:46px;
-  padding:10px 18px; border:1px solid var(--border); border-radius:14px;
-  background:rgba(255,255,255,.035); color:var(--text); text-decoration:none;
-  font-size:15px; font-weight:700; transition:var(--transition);
-}
-.back-btn:hover { background:var(--blue-soft); border-color:rgba(145,169,255,.4); transform:translateY(-2px); }
-.back-arrow { color:var(--gold); font-size:19px; line-height:1; }
-.brand-mark { display:flex; align-items:center; gap:11px; }
-.brand-symbol {
-  display:flex; align-items:center; justify-content:center; width:43px; height:43px;
-  border:1px solid rgba(229,204,145,.35); border-radius:14px; background:var(--gold-soft);
-  color:var(--gold); font-size:19px; font-weight:800;
-}
-.brand-name { color:var(--text); font-size:15px; font-weight:800; }
-.brand-caption { color:var(--muted); font-size:11px; direction:ltr; text-align:right; letter-spacing:.7px; }
-.hero { text-align:center; padding:25px 14px 29px; animation:fadeUp .5s ease both; }
-.unit-kicker {
-  display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:7px 14px;
-  margin-bottom:19px; border:1px solid rgba(229,204,145,.28); border-radius:999px;
-  background:var(--gold-soft); color:var(--gold); font-size:12px; font-weight:700; letter-spacing:.5px;
-}
-.kicker-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); }
-.title { color:var(--text); font-size:clamp(32px,5vw,46px); font-weight:800; line-height:1.5; margin-bottom:13px; }
-.title-highlight { color:var(--gold); }
-.subtitle { max-width:690px; margin:0 auto; color:var(--muted); font-size:17px; line-height:2; }
-.hero-divider { display:flex; align-items:center; justify-content:center; gap:13px; margin:4px auto 30px; }
-.hero-divider span { width:52px; height:1px; background:linear-gradient(90deg,transparent,rgba(229,204,145,.6)); }
-.hero-divider span:last-child { transform:rotate(180deg); }
-.hero-divider i { color:var(--gold); font-style:normal; font-size:13px; }
-.card {
-  position:relative; padding:29px; margin-bottom:18px; border:1px solid var(--border); border-radius:22px;
-  background:linear-gradient(145deg,rgba(24,33,61,.97),rgba(17,24,48,.97));
-  box-shadow:0 14px 38px rgba(0,0,0,.12); animation:fadeUp .5s ease both;
-}
-.message-card {
-  display:flex; align-items:center; gap:20px; border-color:rgba(229,204,145,.22);
-  background:radial-gradient(ellipse at 100% 0%,rgba(229,204,145,.075),transparent 50%),linear-gradient(145deg,#171e38,#111831);
-}
-.message-symbol {
-  display:flex; align-items:center; justify-content:center; flex-shrink:0; width:65px; height:65px;
-  border:1px solid rgba(229,204,145,.27); border-radius:19px; background:var(--gold-soft);
-  color:var(--gold); font-size:25px; font-weight:700;
-}
-.message-content { flex:1; min-width:0; }
-.message-content h2 { color:var(--gold); font-size:24px; margin-bottom:5px; }
-.message-content p { color:#c2cbe0; font-size:16px; line-height:2; }
-.lessons-heading { display:flex; align-items:center; gap:13px; margin:43px 0 19px; }
-.lessons-heading-icon {
-  display:flex; align-items:center; justify-content:center; width:46px; height:46px; flex-shrink:0;
-  border:1px solid rgba(145,169,255,.20); border-radius:14px; background:var(--blue-soft);
-  color:var(--blue); font-size:20px; font-weight:700;
-}
-.lessons-heading h2 { color:var(--text); font-size:26px; line-height:1.5; }
-.lessons-heading p { color:var(--muted); font-size:13px; margin-top:2px; }
-.lesson-list { display:flex; flex-direction:column; gap:13px; }
-.lesson-card {
-  display:flex; align-items:center; justify-content:space-between; gap:22px; padding:23px 25px;
-  border:1px solid var(--border); border-radius:20px;
-  background:linear-gradient(145deg,rgba(24,32,59,.98),rgba(17,24,46,.98));
-  transition:transform var(--transition),border-color var(--transition),background var(--transition),box-shadow var(--transition);
-  animation:fadeUp .5s ease both;
-}
-.lesson-card:hover {
-  transform:translateY(-3px); border-color:var(--border-hover);
-  background:linear-gradient(145deg,rgba(29,38,68,.98),rgba(20,28,52,.98));
-  box-shadow:0 15px 32px rgba(0,0,0,.15);
-}
-.lesson-info { display:flex; align-items:flex-start; gap:16px; flex:1; min-width:0; }
-.lesson-number {
-  display:flex; align-items:center; justify-content:center; flex-shrink:0; width:47px; height:47px;
-  border:1px solid rgba(145,169,255,.19); border-radius:14px; background:var(--blue-soft);
-  color:#b7c4ff; font-size:15px; font-weight:800; direction:ltr;
-}
-.lesson-text { min-width:0; }
-.lesson-info h3 { color:var(--text); font-size:19px; line-height:1.6; margin-bottom:4px; }
-.lesson-info p { color:var(--muted); font-size:15px; line-height:1.9; overflow-wrap:anywhere; }
-.start-btn {
-  display:inline-flex; align-items:center; justify-content:center; gap:10px; flex-shrink:0;
-  min-height:46px; min-width:145px; padding:11px 17px; border:1px solid rgba(229,204,145,.36);
-  border-radius:13px; background:linear-gradient(110deg,#e5cc91,#d7b873); color:#17182a;
-  font-size:14px; font-weight:800; text-decoration:none; cursor:pointer;
-  transition:transform var(--transition),box-shadow var(--transition),filter var(--transition);
-}
-.start-btn:hover { transform:translateY(-2px); box-shadow:0 9px 23px rgba(207,177,107,.16); filter:brightness(1.04); }
-.start-btn:active { transform:scale(.985); }
-.start-arrow { font-size:18px; line-height:1; }
-.final-card {
-  text-align:center; margin-top:30px; padding:34px 28px; border-color:rgba(229,204,145,.30);
-  background:radial-gradient(ellipse at 50% 0%,rgba(229,204,145,.10),transparent 60%),linear-gradient(145deg,#171f3b,#10172f);
-}
-.final-symbol {
-  display:flex; align-items:center; justify-content:center; width:61px; height:61px; margin:0 auto 17px;
-  border:1px solid rgba(229,204,145,.30); border-radius:19px; background:var(--gold-soft);
-  color:var(--gold); font-size:25px; font-weight:800;
-}
-.final-card h2 { color:var(--gold); font-size:29px; margin-bottom:12px; }
-.final-card p { max-width:620px; margin:0 auto 23px; color:#c2cbe0; font-size:16px; line-height:2; }
-.final-card .start-btn { min-width:230px; }
-.bottom-message {
-  display:flex; align-items:center; justify-content:center; gap:10px; margin-top:27px;
-  padding:20px 10px; border-top:1px solid var(--border); color:var(--muted);
-  text-align:center; font-size:13px; line-height:2;
-}
-.bottom-mark { flex-shrink:0; color:var(--gold); }
-@keyframes fadeUp { from {opacity:0;transform:translateY(13px)} to {opacity:1;transform:translateY(0)} }
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
-}
-@media(max-width:768px) {
-  body { padding:21px 16px 12px; }
-  .top-bar { margin-bottom:26px; }
-  .hero { padding:20px 8px 24px; }
-  .title { font-size:35px; }
-  .subtitle { font-size:16px; }
-  .card { padding:23px; border-radius:19px; }
-  .lesson-card { gap:15px; padding:20px; }
-  .lesson-info { gap:12px; }
-  .lesson-number { width:42px; height:42px; border-radius:12px; font-size:13px; }
-  .lesson-info h3 { font-size:17px; }
-  .lesson-info p { font-size:14px; }
-  .start-btn { min-width:125px; padding:11px 13px; font-size:13px; }
-}
-@media(max-width:520px) {
-  body { padding:16px 12px 10px; }
-  .top-bar { margin-bottom:19px; }
-  .back-btn { min-height:40px; padding:8px 12px; border-radius:12px; font-size:13px; }
-  .brand-mark { gap:8px; }
-  .brand-symbol { width:36px; height:36px; border-radius:11px; font-size:16px; }
-  .brand-name { font-size:12px; }
-  .brand-caption { font-size:9px; }
-  .hero { padding:19px 2px 20px; }
-  .unit-kicker { font-size:11px; margin-bottom:14px; }
-  .title { font-size:clamp(27px,7.5vw,34px); line-height:1.6; }
-  .subtitle { font-size:14px; line-height:2; }
-  .hero-divider { margin-bottom:22px; }
-  .card { padding:18px 15px; border-radius:17px; margin-bottom:13px; }
-  .message-card { align-items:flex-start; gap:13px; }
-  .message-symbol { width:45px; height:45px; border-radius:13px; font-size:20px; }
-  .message-content h2 { font-size:19px; }
-  .message-content p { font-size:13px; line-height:2; }
-  .lessons-heading { gap:11px; margin:33px 0 16px; }
-  .lessons-heading-icon { width:40px; height:40px; border-radius:12px; font-size:17px; }
-  .lessons-heading h2 { font-size:22px; }
-  .lessons-heading p { font-size:11px; }
-  .lesson-list { gap:10px; }
-  .lesson-card { align-items:stretch; flex-direction:column; gap:17px; padding:17px 15px; border-radius:17px; }
-  .lesson-info { align-items:flex-start; gap:12px; }
-  .lesson-number { width:39px; height:39px; border-radius:11px; font-size:12px; }
-  .lesson-info h3 { font-size:16px; margin-bottom:3px; }
-  .lesson-info p { font-size:13px; line-height:1.9; }
-  .start-btn { width:100%; min-height:45px; min-width:0; font-size:14px; }
-  .final-card { margin-top:20px; padding:25px 16px; }
-  .final-symbol { width:51px; height:51px; border-radius:16px; font-size:21px; margin-bottom:13px; }
-  .final-card h2 { font-size:24px; }
-  .final-card p { font-size:14px; margin-bottom:19px; }
-  .final-card .start-btn { min-width:0; }
-  .bottom-message { font-size:11px; padding:17px 4px; }
-}
-a:focus-visible,button:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
-</style>
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100vh;
+  padding: 24px 20px;
+  color: var(--text);
+  line-height: 1.8;
+  background:
+    radial-gradient(circle at 5% 8%, rgba(177,160,255,.23), transparent 27%),
+    radial-gradient(circle at 100% 42%, rgba(135,174,255,.19), transparent 30%),
+    linear-gradient(145deg, #f5f3ff, #eeefff 55%, #edf3ff);
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* NAVIGATION */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 38px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  min-height: 43px;
+  border: 1px solid rgba(216,209,250,.9);
+  border-radius: 13px;
+  background: rgba(255,255,255,.76);
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.back-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(76,60,170,.08);
+}
+
+.back-arrow {
+  color: var(--purple);
+  font-size: 19px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, var(--blue), var(--purple));
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(104,69,237,.2);
+}
+
+.brand-name {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.brand-tagline {
+  color: var(--muted);
+  font-size: 9px;
+  direction: ltr;
+  letter-spacing: 1px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 48px 45px 43px;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255,255,255,.42), transparent 25%),
+    radial-gradient(circle at 5% 100%, rgba(255,255,255,.24), transparent 30%),
+    linear-gradient(125deg, #e8e1ff 0%, #dce4ff 48%, #e9e3ff 100%);
+  box-shadow: var(--shadow);
+  animation: appear .6s ease both;
+}
+
+.hero::before {
+  content: "02";
+  position: absolute;
+  z-index: -1;
+  top: -48px;
+  left: 15px;
+  color: rgba(255,255,255,.36);
+  font-size: 245px;
+  font-weight: 900;
+  line-height: 1;
+  direction: ltr;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 210px;
+  height: 210px;
+  right: -115px;
+  bottom: -130px;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 25px rgba(255,255,255,.08),
+    0 0 0 50px rgba(255,255,255,.06);
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 14px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(104,69,237,.13);
+  border-radius: 30px;
+  background: rgba(255,255,255,.62);
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+.hero-label span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 0 4px rgba(104,69,237,.10);
+}
+
+.hero h1 {
+  max-width: 720px;
+  color: var(--navy);
+  font-size: clamp(31px, 5vw, 45px);
+  line-height: 1.5;
+  font-weight: 800;
+  margin-bottom: 13px;
+}
+
+.hero h1 strong {
+  color: var(--purple);
+}
+
+.hero-description {
+  max-width: 690px;
+  color: #5e6387;
+  font-size: 16px;
+  line-height: 2;
+}
+
+/* UNIT INFO */
+
+.unit-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 29px;
+}
+
+.info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 13px;
+  background: rgba(255,255,255,.57);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.info-icon {
+  color: var(--purple);
+  font-size: 15px;
+}
+
+/* WELCOME */
+
+.welcome {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  margin-top: 24px;
+  padding: 25px 27px;
+  overflow: hidden;
+  border: 1px solid #ded8ff;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(181,165,255,.17), transparent 40%),
+    linear-gradient(115deg, #fff, #f5f2ff);
+  box-shadow: 0 8px 25px rgba(70,60,150,.055);
+}
+
+.welcome-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 59px;
+  height: 59px;
+  border-radius: 18px;
+  background: linear-gradient(140deg, #e6deff, #dce8ff);
+  color: var(--purple);
+  font-size: 23px;
+}
+
+.welcome h2 {
+  color: var(--navy);
+  font-size: 21px;
+  margin-bottom: 4px;
+}
+
+.welcome p {
+  color: #777994;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* SECTION HEADER */
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 44px 0 20px;
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.section-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #ddd6ff;
+  border-radius: 15px;
+  background: linear-gradient(140deg, #e7e0ff, #e1eaff);
+  color: var(--purple);
+  font-size: 20px;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: 25px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.lesson-count {
+  padding: 7px 13px;
+  border: 1px solid #ddd7ff;
+  border-radius: 30px;
+  background: #f8f6ff;
+  color: var(--purple-dark, #4931b8);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* LESSON GRID */
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lesson-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 22px 20px 19px;
+  overflow: hidden;
+  border: 1px solid #e3defb;
+  border-radius: 21px;
+  background: linear-gradient(150deg, #fff 0%, #fcfbff 70%, #f4f2ff 100%);
+  box-shadow: 0 8px 24px rgba(67,55,145,.055);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  animation: appear .55s ease both;
+}
+
+.lesson-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  opacity: .78;
+}
+
+.lesson-card::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  left: -65px;
+  bottom: -65px;
+  border-radius: 50%;
+  background: rgba(225,218,255,.28);
+  pointer-events: none;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
+  border-color: #cfc5ff;
+  box-shadow: 0 15px 32px rgba(77,62,165,.12);
+}
+
+.lesson-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.lesson-number {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #ded8ff;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ebe5ff, #e3ebff);
+  color: var(--purple);
+  font-size: 14px;
+  font-weight: 900;
+  direction: ltr;
+}
+
+.lesson-tag {
+  padding: 5px 10px;
+  border-radius: 30px;
+  background: #f0edff;
+  color: #7159d6;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.lesson-card h3 {
+  color: var(--navy);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+.lesson-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  flex: 1;
+}
+
+.lesson-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 19px;
+  padding-top: 14px;
+  border-top: 1px solid #eeeafd;
+}
+
+.lesson-type {
+  color: #9694ac;
+  font-size: 11px;
+}
+
+.lesson-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 7px 13px;
+  border-radius: 11px;
+  background: linear-gradient(110deg, #4779ed, #6845ed);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(104,69,237,.15);
+  transition: var(--transition);
+}
+
+.lesson-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 17px rgba(104,69,237,.24);
+}
+
+.lesson-link span {
+  font-size: 16px;
+}
+
+/* REVIEW CARD */
+
+.review-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 38px;
+  padding: 39px 28px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 27px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,255,255,.17), transparent 28%),
+    radial-gradient(circle at 100% 100%, rgba(185,176,255,.22), transparent 30%),
+    linear-gradient(120deg, #4932bd, #6945ee 55%, #5079ed);
+  box-shadow: 0 16px 36px rgba(80,60,195,.19);
+}
+
+.review-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 220px;
+  height: 220px;
+  top: -145px;
+  right: -65px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 50%;
+  box-shadow: 0 0 0 25px rgba(255,255,255,.045), 0 0 0 50px rgba(255,255,255,.035);
+}
+
+.review-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 180px;
+  height: 180px;
+  bottom: -125px;
+  left: -60px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+}
+
+.review-icon {
+  display: grid;
+  place-items: center;
+  width: 63px;
+  height: 63px;
+  margin: 0 auto 17px;
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: 20px;
+  background: rgba(255,255,255,.15);
+  color: white;
+  font-size: 26px;
+}
+
+.review-card h2 {
+  color: white;
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  max-width: 640px;
+  margin: 0 auto 23px;
+  color: rgba(255,255,255,.9);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.review-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 49px;
+  min-width: 245px;
+  padding: 12px 23px;
+  border-radius: 14px;
+  background: white;
+  color: #5237c5;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 7px 19px rgba(37,25,111,.15);
+  transition: var(--transition);
+}
+
+.review-btn:hover {
+  transform: translateY(-3px);
+  background: #f5f2ff;
+  box-shadow: 0 10px 23px rgba(37,25,111,.22);
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 27px;
+  padding: 20px 8px 5px;
+  border-top: 1px solid #dedaf4;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer-star {
+  color: var(--purple);
+  font-size: 17px;
+}
+
+/* ANIMATION */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* TABLET */
+
+@media(max-width:850px) {
+  .lesson-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    padding: 40px 30px;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:560px) {
+  body {
+    padding: 15px 12px;
+  }
+
+  .top-bar {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .back-btn {
+    padding: 8px 10px;
+    min-height: 39px;
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 11px;
+    font-size: 16px;
+  }
+
+  .brand-name {
+    font-size: 11px;
+  }
+
+  .brand-tagline {
+    font-size: 8px;
+  }
+
+  .hero {
+    padding: 33px 17px 29px;
+    border-radius: 23px;
+  }
+
+  .hero::before {
+    font-size: 165px;
+    top: -23px;
+    left: 5px;
+  }
+
+  .hero-label {
+    font-size: 9px;
+    margin-bottom: 13px;
+  }
+
+  .hero h1 {
+    font-size: clamp(27px, 7vw, 34px);
+    line-height: 1.6;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .unit-info {
+    gap: 8px;
+    margin-top: 21px;
+  }
+
+  .info-pill {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .welcome {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 15px;
+    margin-top: 15px;
+    border-radius: 18px;
+  }
+
+  .welcome-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    font-size: 18px;
+  }
+
+  .welcome h2 {
+    font-size: 17px;
+  }
+
+  .welcome p {
+    font-size: 12px;
+  }
+
+  .section-heading {
+    align-items: center;
+    margin: 32px 0 15px;
+  }
+
+  .section-title-wrap {
+    gap: 10px;
+  }
+
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 21px;
+  }
+
+  .section-heading p {
+    font-size: 10px;
+  }
+
+  .lesson-count {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .lesson-grid {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .lesson-card {
+    min-height: 0;
+    padding: 17px 16px 15px;
+    border-radius: 17px;
+  }
+
+  .lesson-top {
+    margin-bottom: 12px;
+  }
+
+  .lesson-number {
+    width: 39px;
+    height: 39px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+  .lesson-card h3 {
+    font-size: 16px;
+  }
+
+  .lesson-card p {
+    font-size: 12px;
+  }
+
+  .lesson-bottom {
+    margin-top: 14px;
+    padding-top: 11px;
+  }
+
+  .lesson-link {
+    min-height: 35px;
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .review-card {
+    margin-top: 25px;
+    padding: 30px 17px;
+    border-radius: 22px;
+  }
+
+  .review-icon {
+    width: 53px;
+    height: 53px;
+    border-radius: 17px;
+    font-size: 22px;
+  }
+
+  .review-card h2 {
+    font-size: 23px;
+  }
+
+  .review-card p {
+    font-size: 13px;
+  }
+
+  .review-btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 13px;
+  }
+
+  .footer {
+    font-size: 10px;
+    padding-top: 16px;
+  }
+}
+
+a:focus-visible {
+  outline: 3px solid #8c77ff;
+  outline-offset: 4px;
+}
+</style>
 </head>
 
 <body>
+
 <div class="container">
-  <!-- TOP BAR -->
+
+  <!-- HEADER -->
   <header class="top-bar">
+
     <a href="pre-intermediate.html" class="back-btn">
       <span class="back-arrow" aria-hidden="true">←</span>
       <span>العودة للمستوى ما قبل المتوسط</span>
     </a>
-    <div class="brand-mark" aria-label="Engliza Academy">
-      <div class="brand-symbol" aria-hidden="true">E</div>
+
+    <div class="brand">
+      <div class="brand-logo">E</div>
       <div>
         <div class="brand-name">Engliza Academy</div>
-        <div class="brand-caption">LEARN · PRACTICE · GROW</div>
+        <div class="brand-tagline">LEARN · PRACTICE · GROW</div>
       </div>
     </div>
+
   </header>
 
-  <!-- UNIT HERO -->
+
+  <!-- HERO -->
   <section class="hero">
-    <div class="unit-kicker">
-      <span class="kicker-dot"></span>
-      PRE-INTERMEDIATE · UNIT 02
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        <span></span>
+        PRE-INTERMEDIATE · UNIT 02
+      </div>
+
+      <h1>
+        الوحدة الثانية:
+        <strong>بناء اللغة وتوسيع المفردات</strong>
+      </h1>
+
+      <p class="hero-description">
+        في هذه الوحدة ستتعرف على مجموعة من الكلمات والتراكيب المهمة،
+        وستتعلم كيفية الحديث عن الأشياء والكميات واستخدام أدوات النكرة
+        وحروف الجر بطريقة صحيحة.
+      </p>
+
+      <div class="unit-info">
+
+        <div class="info-pill">
+          <span class="info-icon">✦</span>
+          المستوى ما قبل المتوسط
+        </div>
+
+        <div class="info-pill">
+          <span class="info-icon">▤</span>
+          9 دروس تعليمية
+        </div>
+
+        <div class="info-pill">
+          <span class="info-icon">✓</span>
+          مراجعة ختامية
+        </div>
+
+      </div>
+
     </div>
-    <h1 class="title">الوحدة الثانية: <span class="title-highlight">بناء اللغة وتوسيع المفردات</span></h1>
-    <p class="subtitle">
-      تعلّم كلمات وتراكيب جديدة تساعدك على تكوين جمل أكثر تنوعًا
-      وفهم اللغة الإنجليزية واستخدامها بثقة أكبر.
-    </p>
+
   </section>
 
-  <div class="hero-divider" aria-hidden="true"><span></span><i>✦</i><span></span></div>
 
-  <!-- WELCOME CARD -->
-  <section class="card message-card">
-    <div class="message-symbol" aria-hidden="true">02</div>
-    <div class="message-content">
-      <h2>أهلاً بك في الوحدة الثانية!</h2>
-      <p>واصل رحلتك بالترتيب، وامنح نفسك الوقت الكافي لفهم كل درس والتدرّب على استخدام ما تتعلمه.</p>
-    </div>
-  </section>
+  <!-- WELCOME -->
+  <section class="welcome">
 
-  <!-- LESSONS HEADING -->
-  <div class="lessons-heading">
-    <div class="lessons-heading-icon" aria-hidden="true">▤</div>
+    <div class="welcome-icon" aria-hidden="true">✧</div>
+
     <div>
-      <h2>دروس الوحدة</h2>
-      <p>13 درسًا لتوسيع مفرداتك وتطوير أساسياتك</p>
+      <h2>أهلاً بك في الوحدة الثانية!</h2>
+
+      <p>
+        تقدّم خطوة جديدة في رحلتك لتعلّم الإنجليزية.
+        ابدأ بالدروس بالترتيب، وركّز على فهم القواعد
+        واستخدام الكلمات والتراكيب في جمل من إنشائك.
+      </p>
     </div>
+
+  </section>
+
+
+  <!-- LESSONS TITLE -->
+  <div class="section-heading">
+
+    <div class="section-title-wrap">
+
+      <div class="section-icon" aria-hidden="true">▤</div>
+
+      <div>
+        <h2>دروس الوحدة</h2>
+        <p>اختر الدرس وابدأ رحلة التعلّم</p>
+      </div>
+
+    </div>
+
+    <div class="lesson-count">09 LESSONS</div>
+
   </div>
 
-  <main class="lesson-list">
+
+  <!-- LESSON GRID -->
+  <main class="lesson-grid">
+
+
     <!-- LESSON 1 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">01</div>
-        <div class="lesson-text">
-          <h3> Lesson 1</h3>
-          <p>الصفات | الجزء الأول</p>
-        </div>
+        <span class="lesson-tag">Vocabulary</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='adjectives-part1.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 1</h3>
+      <p>Different Words | الكلمات المختلفة</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس الأول</span>
+        <a class="lesson-link" href="different-words.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 2 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">02</div>
-        <div class="lesson-text">
-          <h3> Lesson 2</h3>
-          <p>أدوات الإشارة | الجزء الأول</p>
-        </div>
+        <span class="lesson-tag">Grammar</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='demonstratives-part1.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 2</h3>
+      <p>Countable & Uncountable Nouns | الأسماء المعدودة وغير المعدودة</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس الثاني</span>
+        <a class="lesson-link" href="countable1.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 3 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">03</div>
-        <div class="lesson-text">
-          <h3> Lesson 3</h3>
-          <p>أدوات الإشارة | الجزء الثاني</p>
-        </div>
+        <span class="lesson-tag">Grammar</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='demonstratives-part2.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 3</h3>
+      <p>Countable & Uncountable Nouns | الجزء الثاني</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس الثالث</span>
+        <a class="lesson-link" href="countable2.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 4 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">04</div>
-        <div class="lesson-text">
-          <h3> Lesson 4</h3>
-          <p>أفراد العائلة</p>
-        </div>
+        <span class="lesson-tag">Grammar</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='family-members-part1.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 4</h3>
+      <p>A / An | أدوات النكرة</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس الرابع</span>
+        <a class="lesson-link" href="a-an1.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 5 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">05</div>
-        <div class="lesson-text">
-          <h3> Lesson 5</h3>
-          <p>الأرقام | الجزء الأول</p>
-        </div>
+        <span class="lesson-tag">Grammar</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='numbers-part1.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 5</h3>
+      <p>A / An | أدوات النكرة – الجزء الثاني</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس الخامس</span>
+        <a class="lesson-link" href="a-an2.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 6 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">06</div>
-        <div class="lesson-text">
-          <h3> Lesson 6</h3>
-          <p>الأرقام | الجزء الثاني</p>
-        </div>
+        <span class="lesson-tag">Prepositions</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='numbers-part2.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 6</h3>
+      <p>In & On | حروف الجر</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس السادس</span>
+        <a class="lesson-link" href="in-on.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 7 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">07</div>
-        <div class="lesson-text">
-          <h3> Lesson 7</h3>
-          <p>الأرقام | الجزء الثالث</p>
-        </div>
+        <span class="lesson-tag">Prepositions</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='numbers-part3.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 7</h3>
+      <p>In & On | حروف الجر – الجزء الثاني</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس السابع</span>
+        <a class="lesson-link" href="in-on2.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 8 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">08</div>
-        <div class="lesson-text">
-          <h3> Lesson 8</h3>
-          <p>كلمات السؤال</p>
-        </div>
+        <span class="lesson-tag">Prepositions</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='question-words.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 8</h3>
+      <p>In & On | حروف الجر – الجزء الثالث</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">الدرس الثامن</span>
+        <a class="lesson-link" href="in-on3.html">
+          ابدأ الدرس <span>←</span>
+        </a>
+      </div>
+
     </article>
+
 
     <!-- LESSON 9 -->
     <article class="lesson-card">
-      <div class="lesson-info">
+
+      <div class="lesson-top">
         <div class="lesson-number">09</div>
-        <div class="lesson-text">
-          <h3> Lesson 9</h3>
-          <p>الأماكن</p>
-        </div>
+        <span class="lesson-tag">Practice</span>
       </div>
-      <button class="start-btn" type="button" onclick="window.location.href='places.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
+
+      <h3>Lesson 9</h3>
+      <p>In & On | تدريب وممارسة</p>
+
+      <div class="lesson-bottom">
+        <span class="lesson-type">التدريب الختامي</span>
+        <a class="lesson-link" href="in-on-practice">
+          ابدأ التدريب <span>←</span>
+        </a>
+      </div>
+
     </article>
 
-    <!-- LESSON 10 -->
-    <article class="lesson-card">
-      <div class="lesson-info">
-        <div class="lesson-number">10</div>
-        <div class="lesson-text">
-          <h3> Lesson 10</h3>
-          <p>الأشياء اليومية</p>
-        </div>
-      </div>
-      <button class="start-btn" type="button" onclick="window.location.href='things.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
-    </article>
 
-    <!-- LESSON 11 -->
-    <article class="lesson-card">
-      <div class="lesson-info">
-        <div class="lesson-number">11</div>
-        <div class="lesson-text">
-          <h3> Lesson 11</h3>
-          <p>الألوان</p>
-        </div>
-      </div>
-      <button class="start-btn" type="button" onclick="window.location.href='colours.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
-    </article>
-
-    <!-- LESSON 12 -->
-    <article class="lesson-card">
-      <div class="lesson-info">
-        <div class="lesson-number">12</div>
-        <div class="lesson-text">
-          <h3> Lesson 12</h3>
-          <p>كلمات الزمن</p>
-        </div>
-      </div>
-      <button class="start-btn" type="button" onclick="window.location.href='time-words.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
-    </article>
-
-    <!-- LESSON 13 -->
-    <article class="lesson-card">
-      <div class="lesson-info">
-        <div class="lesson-number">13</div>
-        <div class="lesson-text">
-          <h3> Lesson 13</h3>
-          <p>And • But • Maybe</p>
-        </div>
-      </div>
-      <button class="start-btn" type="button" onclick="window.location.href='last-lesson.html'">
-        <span>ابدأ الدرس</span>
-        <span class="start-arrow" aria-hidden="true">←</span>
-      </button>
-    </article>
   </main>
 
-  <!-- UNIT REVIEW -->
-  <section class="card final-card">
-    <div class="final-symbol" aria-hidden="true">✓</div>
-    <h2>أكملت دروس الوحدة؟</h2>
-    <p>بعد إكمال دروس الوحدة الثانية، انتقل إلى المراجعة واختبر مدى فهمك للمفردات والتراكيب التي تعلمتها.</p>
-    <button class="start-btn" type="button" onclick="window.location.href='unit2-review.html'">
+
+  <!-- REVIEW -->
+  <section class="review-card">
+
+    <div class="review-icon" aria-hidden="true">✓</div>
+
+    <h2>وصلت إلى نهاية دروس الوحدة؟</h2>
+
+    <p>
+      رائع! بعد الانتهاء من الدروس التسعة،
+      حان وقت مراجعة ما تعلمته.
+      اختبر فهمك للقواعد والكلمات والتراكيب،
+      وثبّت معلوماتك قبل الانتقال إلى الوحدة التالية.
+    </p>
+
+    <a class="review-btn" href="unit2-review.html">
       <span>مراجعة الوحدة الثانية</span>
-      <span class="start-arrow" aria-hidden="true">←</span>
-    </button>
+      <span aria-hidden="true">←</span>
+    </a>
+
   </section>
 
-  <footer class="bottom-message">
-    <span class="bottom-mark" aria-hidden="true">✦</span>
-    <span>كل درس جديد هو خطوة نحو ثقة أكبر في استخدام اللغة الإنجليزية.</span>
-  </footer>
-</div>
-</body>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-star">✦</span>
+    <span>
+      كل خطوة تتعلمها اليوم تقرّبك من طلاقة الغد.
+    </span>
+  </footer>
+
+</div>
+
+</body>
 </html>
