@@ -1,1090 +1,1447 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-Sequencing Words | Practice | Engliza Academy
-</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sequencing Words | Practice | Engliza Academy</title>
 
 <style>
-
-/* ==========================================================
-   الأساسيات
-========================================================== */
-
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
-
 font-family:Arial,sans-serif;
-
 }
-
 
 body{
-
-background:
-linear-gradient(
-135deg,
-#eef4ff,
-#f7f3ff
-);
-
+background:linear-gradient(135deg,#eef4ff,#f7f3ff);
 padding:30px 20px;
-
 }
-
 
 .container{
-
 max-width:1000px;
-
 margin:auto;
-
 }
 
-
-/* ==========================================================
-   الأعلى
-========================================================== */
-
+/* الأعلى */
 .top-bar{
-
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
-
 margin-bottom:40px;
-
 }
-
 
 .back-btn{
-
 background:white;
-
 padding:14px 25px;
-
 border-radius:18px;
-
 text-decoration:none;
-
 color:#1f3c88;
-
 font-size:18px;
-
 font-weight:bold;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.08);
-
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 transition:.3s;
-
 }
-
 
 .back-btn:hover{
-
 transform:translateY(-4px);
-
 }
-
 
 .owl-circle img{
-
 width:80px;
-
 height:80px;
-
 border-radius:50%;
-
-box-shadow:
-0 8px 20px rgba(0,0,0,.08);
-
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-
-/* ==========================================================
-   عنوان الدرس
-========================================================== */
-
+/* عنوان الدرس */
 .title{
-
 text-align:center;
-
 font-size:52px;
-
 color:#1f3c88;
-
 margin-bottom:15px;
-
 }
-
 
 .subtitle{
-
 text-align:center;
-
 font-size:23px;
-
 line-height:2.3;
-
 font-weight:600;
-
 color:#4b4b4b;
-
 margin-bottom:40px;
-
 }
 
-
-/* ==========================================================
-   الفيديو
-========================================================== */
-
+/* الفيديو */
 .video-box{
-
 background:white;
-
 padding:0;
-
 border-radius:35px;
-
-box-shadow:
-0 15px 35px rgba(0,0,0,.08);
-
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 margin-bottom:35px;
-
 overflow:hidden;
-
 }
-
 
 .video-box video{
-
 width:100%;
-
 display:block;
-
 aspect-ratio:16/9;
-
 object-fit:cover;
-
 border-radius:35px;
-
 }
 
-
-/* ==========================================================
-   البطاقات العامة
-========================================================== */
-
+/* البطاقات العامة */
 .card{
-
 background:white;
-
 padding:40px;
-
 border-radius:35px;
-
 border:2px solid #dfe8ff;
-
-box-shadow:
-0 15px 35px rgba(0,0,0,.08);
-
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 margin-bottom:35px;
-
 }
 
-
-/* ==========================================================
-   بطاقة البومة
-========================================================== */
-
+/* بطاقة البومة */
 .message-card{
-
 display:flex;
-
 align-items:center;
-
 justify-content:flex-start;
-
 gap:25px;
-
 }
-
 
 .message-card img{
-
 width:130px;
-
 flex-shrink:0;
-
 display:block;
-
 }
-
 
 .message-content{
-
 flex:1;
-
 }
-
 
 .message-content h2{
-
 font-size:32px;
-
 color:#1f3c88;
-
 margin-bottom:12px;
-
 }
-
 
 .message-content p{
-
 font-size:22px;
-
 line-height:1.9;
-
 font-weight:600;
-
 color:#444;
-
 margin:0;
-
 }
 
-
-/* ==========================================================
-   بطاقة التمهيد للقراءة
-========================================================== */
-
+/* تمهيد القراءة */
 .reading-header{
-
-background:
-linear-gradient(
-135deg,
-#ffffff,
-#f8f6ff
-);
-
+background:linear-gradient(135deg,#ffffff,#f8f6ff);
 border-radius:30px;
-
 padding:25px 30px;
-
 margin:45px 0 30px;
-
 display:flex;
-
 align-items:center;
-
 gap:20px;
-
-box-shadow:
-0 12px 30px rgba(0,0,0,.07);
-
+box-shadow:0 12px 30px rgba(0,0,0,.07);
 border:1px solid #eee9ff;
-
 }
-
 
 .reading-icon{
-
 width:58px;
-
 height:58px;
-
 border-radius:20px;
-
 display:flex;
-
 align-items:center;
-
 justify-content:center;
-
 font-size:30px;
-
 background:#eee9ff;
-
-box-shadow:
-0 8px 20px rgba(111,67,255,.12);
-
+box-shadow:0 8px 20px rgba(111,67,255,.12);
 flex-shrink:0;
-
 }
-
 
 .reading-header h2{
-
 font-size:32px;
-
 color:#1f3c88;
-
 margin:0 0 5px;
-
 }
-
 
 .reading-header p{
-
 font-size:18px;
-
 color:#777;
-
 margin:0;
-
 line-height:1.7;
-
 }
 
-
-/* ==========================================================
-   بطاقات القراءة
-========================================================== */
-
+/* بطاقات القراءة */
 .reading-card{
-
 background:white;
-
 padding:35px;
-
 border-radius:30px;
-
 border:2px solid #edf1ff;
-
-box-shadow:
-0 15px 35px rgba(0,0,0,.08);
-
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 margin-bottom:28px;
-
 position:relative;
-
 overflow:hidden;
-
 animation:fadeUp .6s ease;
-
 }
-
 
 .reading-card::before{
-
 content:"";
-
 position:absolute;
-
 top:0;
-
 left:0;
-
 right:0;
-
 height:7px;
-
-background:
-linear-gradient(
-90deg,
-#ffd86b,
-#ffb300
-);
-
+background:linear-gradient(90deg,#ffd86b,#ffb300);
 }
-
-
-/* ==========================================================
-   عنوان الفقرة
-========================================================== */
 
 .reading-title{
-
 font-size:28px;
-
 font-weight:bold;
-
 color:#1f3c88;
-
 margin-bottom:22px;
-
 line-height:1.7;
-
 }
 
-
-/* ==========================================================
-   نص القراءة
-========================================================== */
-
-.reading-text{
-
+/* مشغل الصوت */
+.audio-box{
 direction:ltr;
-
-unicode-bidi:embed;
-
-text-align:left;
-
-font-size:22px;
-
-font-weight:500;
-
-line-height:2;
-
-color:#333;
-
-margin:0;
-
+background:linear-gradient(135deg,#f4f6ff,#f8f5ff);
+border:1px solid #e5e7ff;
+border-radius:18px;
+padding:17px 20px;
+margin-bottom:25px;
 }
 
+.audio-heading{
+direction:rtl;
+display:flex;
+align-items:center;
+gap:9px;
+color:#1f3c88;
+font-size:17px;
+font-weight:bold;
+margin-bottom:12px;
+}
 
-/* ==========================================================
-   إبراز كلمات التسلسل
-========================================================== */
+.audio-box audio{
+width:100%;
+display:block;
+}
+
+/* نص القراءة */
+.reading-text{
+direction:ltr;
+unicode-bidi:embed;
+text-align:left;
+font-size:22px;
+font-weight:500;
+line-height:2;
+color:#333;
+margin:0;
+}
 
 .sequence-word{
-
 font-weight:800;
-
 color:#6f43ff;
-
 }
 
-
-/* ==========================================================
-   ترجمة الفقرة
-========================================================== */
-
+/* ترجمة الفقرة */
 .reading-translation{
-
 margin-top:25px;
-
 padding-top:20px;
-
 border-top:1px solid #eee;
-
 font-size:18px;
-
 line-height:2;
-
 font-weight:600;
-
 color:#777;
-
 text-align:right;
-
 }
 
+/* قسم المفردات */
+.vocabulary-section{
+margin-top:28px;
+border:1px solid #e6e1ff;
+border-radius:22px;
+overflow:hidden;
+background:#fbfaff;
+}
 
-/* ==========================================================
-   بطاقة النهاية
-========================================================== */
-
-.final-card{
-
-text-align:center;
-
-background:
-linear-gradient(
-135deg,
-#3768ff,
-#6f43ff
-);
-
+.vocabulary-toggle{
+width:100%;
 border:none;
-
+background:linear-gradient(135deg,#f0edff,#f7f4ff);
+padding:19px 22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+cursor:pointer;
+text-align:right;
+color:#5032b8;
+font-size:18px;
+font-weight:bold;
+transition:.25s;
 }
 
+.vocabulary-toggle:hover{
+background:linear-gradient(135deg,#e9e3ff,#f1edff);
+}
+
+.vocabulary-toggle .toggle-label{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.vocabulary-toggle .toggle-icon{
+font-size:21px;
+}
+
+.vocabulary-toggle .toggle-status{
+font-size:14px;
+font-weight:600;
+color:#7968bd;
+}
+
+.vocabulary-content{
+display:none;
+padding:22px;
+}
+
+.vocabulary-content.open{
+display:block;
+animation:fadeUp .35s ease;
+}
+
+.vocabulary-intro{
+font-size:15px;
+line-height:1.9;
+color:#777;
+margin-bottom:20px;
+text-align:right;
+}
+
+.vocab-item{
+background:white;
+border:1px solid #e9e8f5;
+border-radius:17px;
+padding:19px;
+margin-bottom:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.035);
+}
+
+.vocab-item:last-child{
+margin-bottom:0;
+}
+
+.vocab-top{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:12px;
+margin-bottom:12px;
+}
+
+.vocab-word-area{
+direction:ltr;
+text-align:left;
+flex:1;
+}
+
+.vocab-word{
+font-size:21px;
+font-weight:bold;
+color:#1f3c88;
+line-height:1.5;
+}
+
+.vocab-type{
+display:inline-block;
+margin-top:5px;
+padding:5px 10px;
+border-radius:20px;
+background:#f0edff;
+color:#6847c7;
+font-size:12px;
+font-weight:bold;
+}
+
+.speak-btn{
+border:none;
+background:#eeeaff;
+color:#6243c1;
+padding:10px 13px;
+border-radius:12px;
+cursor:pointer;
+font-size:14px;
+font-weight:bold;
+white-space:nowrap;
+transition:.2s;
+}
+
+.speak-btn:hover{
+background:#ded6ff;
+transform:translateY(-2px);
+}
+
+.vocab-meaning{
+font-size:16px;
+font-weight:bold;
+color:#444;
+line-height:1.9;
+text-align:right;
+margin-bottom:10px;
+}
+
+.vocab-explanation{
+background:#f8f7ff;
+border-right:3px solid #9277e8;
+padding:11px 13px;
+border-radius:9px;
+font-size:14px;
+color:#625b78;
+line-height:1.9;
+text-align:right;
+margin-bottom:13px;
+}
+
+.vocab-examples{
+direction:ltr;
+text-align:left;
+}
+
+.example{
+padding:10px 0;
+border-top:1px solid #f0eff5;
+}
+
+.example-en{
+font-size:15px;
+font-weight:600;
+color:#333;
+line-height:1.7;
+}
+
+.example-ar{
+direction:rtl;
+text-align:right;
+font-size:14px;
+color:#777;
+line-height:1.8;
+margin-top:3px;
+}
+
+/* بطاقة النهاية */
+.final-card{
+text-align:center;
+background:linear-gradient(135deg,#3768ff,#6f43ff);
+border:none;
+}
 
 .final-card h2{
-
 font-size:40px;
-
 color:#ffe082;
-
 margin-bottom:20px;
-
 }
-
 
 .final-card p{
-
 font-size:22px;
-
 line-height:2;
-
 font-weight:600;
-
 color:white;
-
 margin-bottom:30px;
-
 }
-
 
 .next-lesson-btn{
-
 width:100%;
-
 padding:22px;
-
 border:none;
-
 border-radius:24px;
-
 font-size:22px;
-
 font-weight:bold;
-
 cursor:pointer;
-
 background:white;
-
 color:#6f43ff;
-
-box-shadow:
-0 14px 35px rgba(0,0,0,.18);
-
+box-shadow:0 14px 35px rgba(0,0,0,.18);
 transition:.3s;
-
 }
-
 
 .next-lesson-btn:hover{
-
 transform:translateY(-5px);
-
-box-shadow:
-0 20px 45px rgba(0,0,0,.22);
-
+box-shadow:0 20px 45px rgba(0,0,0,.22);
 }
-
 
 .next-lesson-btn:active{
-
 transform:scale(.97);
-
 }
 
-
-/* ==========================================================
-   الحركات
-========================================================== */
-
+/* الحركات */
 @keyframes fadeUp{
-
 from{
-
 opacity:0;
-
 transform:translateY(20px);
-
 }
-
 to{
-
 opacity:1;
-
 transform:translateY(0);
-
+}
 }
 
-}
-
-
-/* ==========================================================
-   الجوال
-========================================================== */
-
+/* الجوال */
 @media(max-width:768px){
 
 body{
-
 padding:20px 14px;
-
 }
-
 
 .title{
-
 font-size:38px;
-
 }
-
 
 .subtitle{
-
 font-size:18px;
-
 line-height:2;
-
 }
-
 
 .card{
-
 padding:25px 20px;
-
 margin-bottom:22px;
-
 }
-
-
-/* البومة */
 
 .message-card{
-
 align-items:flex-start;
-
 gap:14px;
-
 }
-
 
 .message-card img{
-
 width:95px;
-
 }
-
 
 .message-content h2{
-
 font-size:24px;
-
 }
-
 
 .message-content p{
-
 font-size:17px;
-
 line-height:1.9;
-
 }
-
-
-/* تمهيد القراءة */
 
 .reading-header{
-
 padding:22px 20px;
-
 gap:15px;
-
 margin:35px 0 25px;
-
 border-radius:25px;
-
 }
-
 
 .reading-header h2{
-
 font-size:26px;
-
 }
-
 
 .reading-header p{
-
 font-size:15px;
-
 line-height:1.8;
-
 }
-
 
 .reading-icon{
-
 width:50px;
-
 height:50px;
-
 font-size:26px;
-
 border-radius:17px;
-
 }
-
-
-/* بطاقات القراءة */
 
 .reading-card{
-
 padding:25px 20px;
-
 margin-bottom:22px;
-
 border-radius:25px;
-
 }
-
 
 .reading-title{
-
 font-size:23px;
-
 line-height:1.7;
-
 margin-bottom:18px;
-
 }
-
 
 .reading-text{
-
 font-size:18px;
-
 line-height:2;
-
 }
-
 
 .reading-translation{
-
 font-size:16px;
-
 line-height:2;
-
 }
 
+.audio-box{
+padding:14px;
+}
 
-/* النهاية */
+.audio-heading{
+font-size:15px;
+}
+
+.vocabulary-toggle{
+padding:16px;
+font-size:16px;
+}
+
+.vocabulary-toggle .toggle-status{
+font-size:12px;
+}
+
+.vocabulary-content{
+padding:14px;
+}
+
+.vocab-item{
+padding:15px;
+}
+
+.vocab-word{
+font-size:19px;
+}
+
+.vocab-meaning{
+font-size:15px;
+}
+
+.vocab-explanation{
+font-size:13px;
+}
+
+.example-en{
+font-size:14px;
+}
+
+.example-ar{
+font-size:13px;
+}
+
+.speak-btn{
+padding:9px 10px;
+font-size:12px;
+}
 
 .final-card h2{
-
 font-size:30px;
-
 }
-
 
 .final-card p{
-
 font-size:18px;
-
 }
-
 
 .next-lesson-btn{
-
 font-size:19px;
-
 padding:20px;
-
 }
 
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="container">
 
-
-<!-- ==========================================================
-     الأعلى
-========================================================== -->
-
+<!-- الأعلى -->
 <div class="top-bar">
 
-<a
-href="intermediate-unit1.html"
-class="back-btn">
-
+<a href="intermediate-unit1.html" class="back-btn">
 ⬅️ رجوع
-
 </a>
 
 <div class="owl-circle">
-
-<img
-src="../okay.owl.PNG"
-alt="Owl">
-
+<img src="../okay.owl.PNG" alt="Owl">
 </div>
 
 </div>
 
-
-
-<!-- ==========================================================
-     عنوان الدرس
-========================================================== -->
-
+<!-- عنوان الدرس -->
 <h1 class="title">
-
 🔢 Sequencing Words | Practice
-
 </h1>
 
-
 <p class="subtitle">
-
 تدرّب على استخدام كلمات التسلسل داخل نصوص حقيقية، وطوّر قدرتك على القراءة وفهم ترتيب الأحداث والأفكار.
-
 </p>
 
-
-
-<!-- ==========================================================
-     فيديو الـ Practice
-========================================================== -->
-
+<!-- فيديو الـ Practice -->
 <div class="video-box">
-
-<video
-controls
-preload="metadata"
-controlsList="nodownload">
-
+<video controls preload="metadata" controlsList="nodownload">
 <source
 src="https://videos.englizaacademy.com/Intermediate/Sequencing%20practice.MOV"
 type="video/mp4">
-
 متصفحك لا يدعم تشغيل الفيديو.
-
 </video>
-
 </div>
 
-
-
-<!-- ==========================================================
-     بطاقة البومة
-========================================================== -->
-
+<!-- بطاقة البومة -->
 <div class="card message-card">
 
-<img
-src="../success.owl.PNG"
-alt="Owl">
+<img src="../success.owl.PNG" alt="Owl">
 
 <div class="message-content">
 
-<h2>
-
-💡 نصيحة للقراءة!
-
-</h2>
+<h2>💡 نصيحة للقراءة!</h2>
 
 <p>
-
 عندما تقرأ فقرة باللغة الإنجليزية، لا تحاول ترجمة كل كلمة على حدة. حاول أولًا أن تفهم الفكرة العامة، وانتبه إلى الكلمات التي تربط الأحداث ببعضها. كلمات مثل <b>first</b> و<b>then</b> و<b>after</b> و<b>finally</b> تساعدك على معرفة ترتيب الأفكار وفهم النص بشكل أسرع. 📖✨
-
 </p>
 
 </div>
-
 </div>
 
-
-
-<!-- ==========================================================
-     تمهيد القراءة
-========================================================== -->
-
+<!-- تمهيد القراءة -->
 <div class="reading-header">
 
-<div class="reading-icon">
-
-📖
-
-</div>
+<div class="reading-icon">📖</div>
 
 <div>
-
-<h2>
-
-حان وقت القراءة!
-
-</h2>
-
+<h2>حان وقت القراءة!</h2>
 <p>
-
 اقرأ الفقرات التالية بهدوء، وانتبه إلى كلمات التسلسل وكيف تساعدك على متابعة الأحداث والأفكار.
-
 </p>
-
 </div>
 
 </div>
 
-
-
-<!-- ==========================================================
-     الفقرة الأولى
-========================================================== -->
-
+<!-- القراءة الأولى -->
 <div class="reading-card">
 
-<h2 class="reading-title">
+<h2 class="reading-title">🌅 A Busy Morning</h2>
 
-🌅 A Busy Morning
-
-</h2>
-
+<div class="audio-box">
+<div class="audio-heading">🎧 استمع إلى القراءة</div>
+<audio controls preload="none">
+<source src="https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/Busy%20morning.mp3" type="audio/mpeg">
+متصفحك لا يدعم تشغيل الصوت.
+</audio>
+</div>
 
 <p class="reading-text">
-
 <span class="sequence-word">First</span>, I wake up early and open the windows to let some fresh air into my room. I make my bed and get ready for the day. <span class="sequence-word">Next</span>, I go to the kitchen and prepare a simple breakfast. I usually have some eggs, bread, and fruit before I leave home. <span class="sequence-word">Then</span>, I check my bag to make sure I have everything I need for school. I take my notebook, my books, and a bottle of water. <span class="sequence-word">Finally</span>, I put on my shoes and leave the house. Starting my morning in this order helps me feel calm and ready for the day.
-
 </p>
 
-
 <div class="reading-translation">
-
 💬 الفكرة بالعربي: يصف الكاتب روتينه الصباحي، ويستخدم كلمات التسلسل لتوضيح ترتيب الخطوات من الاستيقاظ حتى مغادرة المنزل.
+</div>
 
+<div class="vocabulary-section">
+
+<button class="vocabulary-toggle" onclick="toggleVocabulary(this)" aria-expanded="false">
+<span class="toggle-label">
+<span>📚</span>
+<span>Vocabulary & Expressions</span>
+</span>
+<span class="toggle-status">اضغط لعرض المفردات</span>
+</button>
+
+<div class="vocabulary-content">
+<p class="vocabulary-intro">
+تعرّف على كلمات وتعبيرات مهمة من القراءة. لا تكتفِ بحفظ المعنى؛ اقرأ الأمثلة ولاحظ كيف تستخدم التعبير في جمل مختلفة.
+</p>
+<div id="vocab-reading-1"></div>
 </div>
 
 </div>
+</div>
 
-
-
-<!-- ==========================================================
-     الفقرة الثانية
-========================================================== -->
-
+<!-- القراءة الثانية -->
 <div class="reading-card">
 
-<h2 class="reading-title">
+<h2 class="reading-title">🍳 Making Breakfast</h2>
 
-🍳 Making Breakfast
-
-</h2>
-
+<div class="audio-box">
+<div class="audio-heading">🎧 استمع إلى القراءة</div>
+<audio controls preload="none">
+<source src="https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/Making%20breakfast.mp3" type="audio/mpeg">
+متصفحك لا يدعم تشغيل الصوت.
+</audio>
+</div>
 
 <p class="reading-text">
-
 <span class="sequence-word">Firstly</span>, I collect everything I need to make breakfast and place the ingredients on the kitchen table. <span class="sequence-word">Secondly</span>, I prepare the vegetables and cut them into small pieces. <span class="sequence-word">Thirdly</span>, I heat the pan and cook the vegetables with the eggs. <span class="sequence-word">After that</span>, I put the food on a plate and add some bread and fruit. I usually make a cup of tea while I wait for the food to cool down. <span class="sequence-word">Finally</span>, I sit at the table and enjoy my breakfast before starting my work.
-
 </p>
 
-
 <div class="reading-translation">
-
 💬 الفكرة بالعربي: يشرح الكاتب طريقة إعداد وجبة فطور، ويستخدم كلمات التسلسل لعرض الخطوات بالترتيب.
+</div>
 
+<div class="vocabulary-section">
+
+<button class="vocabulary-toggle" onclick="toggleVocabulary(this)" aria-expanded="false">
+<span class="toggle-label">
+<span>📚</span>
+<span>Vocabulary & Expressions</span>
+</span>
+<span class="toggle-status">اضغط لعرض المفردات</span>
+</button>
+
+<div class="vocabulary-content">
+<p class="vocabulary-intro">
+تعرّف على مفردات الطبخ والتحضير، وانتبه إلى الأفعال والتعبيرات التي يمكنك استخدامها عند شرح خطوات إعداد شيء ما.
+</p>
+<div id="vocab-reading-2"></div>
 </div>
 
 </div>
+</div>
 
-
-
-<!-- ==========================================================
-     الفقرة الثالثة
-========================================================== -->
-
+<!-- القراءة الثالثة -->
 <div class="reading-card">
 
-<h2 class="reading-title">
+<h2 class="reading-title">🌳 A Walk in the Park</h2>
 
-🌳 A Walk in the Park
-
-</h2>
-
+<div class="audio-box">
+<div class="audio-heading">🎧 استمع إلى القراءة</div>
+<audio controls preload="none">
+<source src="https://videos.englizaacademy.com/A1-A2%20stories/Practice%20in%20on/A%20walk%20in%20the%20park.mp3" type="audio/mpeg">
+متصفحك لا يدعم تشغيل الصوت.
+</audio>
+</div>
 
 <p class="reading-text">
-
 <span class="sequence-word">Before</span> I went to the park, I finished my homework and prepared a bottle of water. <span class="sequence-word">While</span> I was walking, I listened to music and enjoyed the fresh air. I stopped for a few minutes when I saw some beautiful flowers near the lake. <span class="sequence-word">After</span> I walked around the park, I sat on a bench and watched the people around me. <span class="sequence-word">Then</span>, I called my friend and told her about my day. <span class="sequence-word">Lastly</span>, I went back home because it was getting late. It was a simple walk, but it helped me relax and forget about the stress of the day.
-
 </p>
 
-
 <div class="reading-translation">
-
 💬 الفكرة بالعربي: يحكي الكاتب عن نزهة في الحديقة، ويستخدم كلمات التسلسل لربط الأحداث وتوضيح ما حدث قبل وأثناء وبعد النزهة.
+</div>
 
+<div class="vocabulary-section">
+
+<button class="vocabulary-toggle" onclick="toggleVocabulary(this)" aria-expanded="false">
+<span class="toggle-label">
+<span>📚</span>
+<span>Vocabulary & Expressions</span>
+</span>
+<span class="toggle-status">اضغط لعرض المفردات</span>
+</button>
+
+<div class="vocabulary-content">
+<p class="vocabulary-intro">
+تعلّم مفردات وصف الأنشطة والتجارب اليومية، ولاحظ كيف نربط الأفعال بالأشخاص والأماكن والأحداث.
+</p>
+<div id="vocab-reading-3"></div>
 </div>
 
 </div>
+</div>
 
-
-
-<!-- ==========================================================
-     بطاقة نهاية الدرس
-========================================================== -->
-
+<!-- بطاقة نهاية الدرس -->
 <div class="card final-card">
 
-<h2>
-
-🏆 أحسنت! أنهيت الدرس
-
-</h2>
+<h2>🏆 أحسنت! أنهيت الدرس</h2>
 
 <p>
-
 ممتاز! 🎉
-
 <br><br>
-
 لقد تدربت الآن على قراءة نصوص حقيقية واكتشفت كيف تساعدك كلمات التسلسل على فهم ترتيب الأحداث والأفكار. استمر في القراءة، فكل فقرة تقرؤها تقرّبك خطوة من الطلاقة. ✨
-
 </p>
 
-
-<button
-class="next-lesson-btn"
-onclick="finishLessonPage()">
-
+<button class="next-lesson-btn" onclick="finishLessonPage()">
 🚀 الانتقال إلى الدرس التالي
-
 </button>
 
 </div>
 
+</div>
+
+<script>
+/* ==========================================================
+   فتح وإغلاق المفردات
+========================================================== */
+
+function toggleVocabulary(button){
+
+const content = button.nextElementSibling;
+const status = button.querySelector(".toggle-status");
+
+const isOpen = content.classList.toggle("open");
+
+button.setAttribute("aria-expanded",isOpen);
+
+status.textContent = isOpen
+? "اضغط لإخفاء المفردات"
+: "اضغط لعرض المفردات";
+
+}
+
+/* ==========================================================
+   النطق
+========================================================== */
+
+function speakWord(text){
+
+if(!("speechSynthesis" in window)){
+alert("عذرًا، متصفحك لا يدعم خاصية النطق.");
+return;
+}
+
+window.speechSynthesis.cancel();
+
+const utterance = new SpeechSynthesisUtterance(text);
+
+utterance.lang = "en-US";
+utterance.rate = 0.85;
+utterance.pitch = 1;
+
+window.speechSynthesis.speak(utterance);
+
+}
+
+/* ==========================================================
+   إنشاء بطاقة المفردة
+========================================================== */
+
+function createVocabularyItem(item){
+
+const examplesHTML = item.examples.map(example => `
+<div class="example">
+<div class="example-en">${example.en}</div>
+<div class="example-ar">${example.ar}</div>
+</div>
+`).join("");
+
+return `
+<div class="vocab-item">
+
+<div class="vocab-top">
+
+<div class="vocab-word-area">
+<div class="vocab-word">${item.word}</div>
+<span class="vocab-type">${item.type}</span>
+</div>
+
+<button
+class="speak-btn"
+type="button"
+onclick="speakWord('${item.pronunciation}')">
+🔊 استمع للنطق
+</button>
 
 </div>
 
+<div class="vocab-meaning">
+المعنى: ${item.meaning}
+</div>
 
+${item.explanation ? `
+<div class="vocab-explanation">
+💡 ${item.explanation}
+</div>
+` : ""}
 
-<!-- ==========================================================
-     نظام المكافآت والانتقال
-========================================================== -->
+<div class="vocab-examples">
+${examplesHTML}
+</div>
 
-<script type="module">
+</div>
+`;
 
-import {
-finishLesson
 }
-from "./js/reward.js";
 
+/* ==========================================================
+   مفردات القراءة الأولى
+   A Busy Morning
+========================================================== */
+
+const vocabulary1 = [
+
+{
+word:"Wake up",
+type:"Phrasal Verb",
+pronunciation:"wake up",
+meaning:"يستيقظ من النوم.",
+explanation:"نستخدم wake up عندما يتوقف الشخص عن النوم ويصبح مستيقظًا. انتبهي إلى الفرق بينها وبين get up؛ فالأولى تعني الاستيقاظ، أما الثانية فتعني النهوض من السرير.",
+examples:[
+{en:"I wake up at six every morning.",ar:"أستيقظ في السادسة كل صباح."},
+{en:"She woke up late yesterday.",ar:"استيقظت متأخرة أمس."}
+]
+},
+
+{
+word:"Fresh air",
+type:"Noun Phrase",
+pronunciation:"fresh air",
+meaning:"هواء نقي أو منعش.",
+explanation:"تُستخدم لوصف الهواء النظيف الذي نشعر بالراحة عند استنشاقه، وغالبًا ما تأتي مع أفعال مثل get وenjoy وbreathe.",
+examples:[
+{en:"I like walking outside and getting some fresh air.",ar:"أحب المشي في الخارج واستنشاق بعض الهواء النقي."},
+{en:"Let's open the window to let in some fresh air.",ar:"لنفتح النافذة لندخل بعض الهواء النقي."}
+]
+},
+
+{
+word:"Make my bed",
+type:"Expression",
+pronunciation:"make my bed",
+meaning:"يرتّب سريري.",
+explanation:"هذا تعبير ثابت في الإنجليزية. لا نترجمه حرفيًا إلى صنع سريري؛ بل نستخدمه عندما نرتب السرير بعد الاستيقاظ.",
+examples:[
+{en:"I make my bed before having breakfast.",ar:"أرتب سريري قبل تناول الإفطار."},
+{en:"My brother never makes his bed.",ar:"أخي لا يرتب سريره أبدًا."}
+]
+},
+
+{
+word:"Get ready",
+type:"Expression",
+pronunciation:"get ready",
+meaning:"يستعد أو يجهّز نفسه.",
+explanation:"يمكن استخدامه للاستعداد للمدرسة أو العمل أو السفر أو أي نشاط. يأتي بعده for عندما نذكر الشيء الذي نستعد له.",
+examples:[
+{en:"I need to get ready for school.",ar:"أحتاج إلى الاستعداد للمدرسة."},
+{en:"We are getting ready for the weekend.",ar:"نحن نستعد لعطلة نهاية الأسبوع."}
+]
+},
+
+{
+word:"Prepare",
+type:"Verb",
+pronunciation:"prepare",
+meaning:"يُحضّر أو يُجهّز.",
+explanation:"فعل مفيد في سياقات كثيرة، مثل تحضير الطعام أو تجهيز حقيبة أو الاستعداد لامتحان. الاسم منه preparation.",
+examples:[
+{en:"I prepare my lessons every evening.",ar:"أحضّر دروسي كل مساء."},
+{en:"She prepared a delicious meal.",ar:"حضّرت وجبة لذيذة."}
+]
+},
+
+{
+word:"Usually",
+type:"Adverb",
+pronunciation:"usually",
+meaning:"عادةً.",
+explanation:"تُستخدم للحديث عن العادات والأشياء التي تحدث بشكل متكرر. تأتي غالبًا قبل الفعل الرئيسي، لكنها تأتي بعد فعل be.",
+examples:[
+{en:"I usually drink coffee in the morning.",ar:"عادةً أشرب القهوة في الصباح."},
+{en:"She is usually busy on Mondays.",ar:"تكون مشغولة عادةً أيام الاثنين."}
+]
+},
+
+{
+word:"Make sure",
+type:"Expression",
+pronunciation:"make sure",
+meaning:"يتأكد من شيء أو يحرص على حدوثه.",
+explanation:"من التعبيرات المهمة جدًا. يمكن أن يأتي بعدها that وجملة كاملة، أو يأتي بعدها أن + الفعل بصيغته الأساسية في تركيب make sure to.",
+examples:[
+{en:"Make sure you close the door.",ar:"تأكد من أنك تغلق الباب."},
+{en:"I make sure to check my answers.",ar:"أحرص على التأكد من مراجعة إجاباتي."}
+]
+},
+
+{
+word:"Everything I need",
+type:"Expression",
+pronunciation:"everything I need",
+meaning:"كل ما أحتاج إليه.",
+explanation:"Everything تعني كل شيء، وتُعامل نحويًا كمفرد؛ لذلك نقول everything is وليس everything are.",
+examples:[
+{en:"I have everything I need for the trip.",ar:"لديّ كل ما أحتاج إليه للرحلة."},
+{en:"Everything I need is in my bag.",ar:"كل ما أحتاج إليه موجود في حقيبتي."}
+]
+},
+
+{
+word:"Put on",
+type:"Phrasal Verb",
+pronunciation:"put on",
+meaning:"يرتدي الملابس أو يضع شيئًا على جسمه.",
+explanation:"تُستخدم مع الملابس والإكسسوارات مثل jacket وshoes وglasses. انتبهي إلى الفرق: put on تعني ارتداء الشيء، أما wear فتعني أن الشخص يرتديه بالفعل.",
+examples:[
+{en:"Put on your coat. It is cold outside.",ar:"ارتدِ معطفك، فالجو بارد في الخارج."},
+{en:"She put on her sunglasses.",ar:"ارتدت نظارتها الشمسية."}
+]
+},
+
+{
+word:"Calm",
+type:"Adjective",
+pronunciation:"calm",
+meaning:"هادئ أو يشعر بالسكينة.",
+explanation:"تصف شخصًا لا يشعر بالتوتر أو موقفًا هادئًا. ويمكن أن تأتي مع feel أو stay أو remain.",
+examples:[
+{en:"I feel calm when I listen to music.",ar:"أشعر بالهدوء عندما أستمع إلى الموسيقى."},
+{en:"Try to stay calm during the exam.",ar:"حاول أن تبقى هادئًا أثناء الامتحان."}
+]
+},
+
+{
+word:"In this order",
+type:"Expression",
+pronunciation:"in this order",
+meaning:"بهذا الترتيب.",
+explanation:"نستخدمه عندما نريد التأكيد أن الخطوات أو الأشياء يجب أن تحدث بترتيب معين.",
+examples:[
+{en:"Please complete the tasks in this order.",ar:"يرجى إكمال المهام بهذا الترتيب."},
+{en:"Put the pictures in the correct order.",ar:"ضع الصور بالترتيب الصحيح."}
+]
+},
+
+{
+word:"Ready for",
+type:"Expression",
+pronunciation:"ready for",
+meaning:"مستعد لشيء أو جاهز له.",
+explanation:"بعد ready for يأتي اسم أو ضمير. أما إذا تبعها فعل، فنستخدم غالبًا ready to + verb.",
+examples:[
+{en:"I am ready for the test.",ar:"أنا مستعد للاختبار."},
+{en:"She is ready to leave.",ar:"هي مستعدة للمغادرة."}
+]
+}
+
+];
+
+/* ==========================================================
+   مفردات القراءة الثانية
+   Making Breakfast
+========================================================== */
+
+const vocabulary2 = [
+
+{
+word:"Collect",
+type:"Verb",
+pronunciation:"collect",
+meaning:"يجمع أو يلمّ أشياء.",
+explanation:"نستخدمه عندما نجمع عدة أشياء معًا، مثل المكونات أو المعلومات أو الأوراق.",
+examples:[
+{en:"I collect all the ingredients before cooking.",ar:"أجمع جميع المكونات قبل الطبخ."},
+{en:"The students collected information for their project.",ar:"جمع الطلاب معلومات لمشروعهم."}
+]
+},
+
+{
+word:"Ingredients",
+type:"Noun",
+pronunciation:"ingredients",
+meaning:"مكونات، خصوصًا مكونات الطعام أو الوصفة.",
+explanation:"تُستخدم عند الحديث عن الأشياء التي نحتاج إليها لإعداد طبق معين. المفرد هو ingredient.",
+examples:[
+{en:"What ingredients do we need for this cake?",ar:"ما المكونات التي نحتاج إليها لهذه الكعكة؟"},
+{en:"I bought fresh ingredients for dinner.",ar:"اشتريت مكونات طازجة للعشاء."}
+]
+},
+
+{
+word:"Place",
+type:"Verb",
+pronunciation:"place",
+meaning:"يضع شيئًا في مكان معين.",
+explanation:"تشبه put في المعنى، لكنها تبدو أكثر رسمية قليلًا. غالبًا نستخدمها عندما نريد توضيح المكان الذي نضع فيه شيئًا.",
+examples:[
+{en:"Please place your books on the table.",ar:"يرجى وضع كتبك على الطاولة."},
+{en:"She placed the keys next to the door.",ar:"وضعت المفاتيح بجانب الباب."}
+]
+},
+
+{
+word:"Cut into pieces",
+type:"Expression",
+pronunciation:"cut into pieces",
+meaning:"يقطّع إلى قطع.",
+explanation:"نستخدمها لوصف تقسيم شيء إلى أجزاء باستخدام أداة مثل السكين. يمكن أن نقول cut into small pieces أو cut into two pieces.",
+examples:[
+{en:"Cut the apple into small pieces.",ar:"قطّع التفاحة إلى قطع صغيرة."},
+{en:"He cut the paper into four pieces.",ar:"قطّع الورقة إلى أربعة أجزاء."}
+]
+},
+
+{
+word:"Heat",
+type:"Verb",
+pronunciation:"heat",
+meaning:"يسخّن.",
+explanation:"تُستخدم عند رفع درجة حرارة شيء. في الطبخ نقول heat the pan أو heat the oil. أما hot فهي صفة بمعنى ساخن.",
+examples:[
+{en:"Heat the milk before serving it.",ar:"سخّن الحليب قبل تقديمه."},
+{en:"I heated the soup for two minutes.",ar:"سخّنت الحساء لمدة دقيقتين."}
+]
+},
+
+{
+word:"Pan",
+type:"Noun",
+pronunciation:"pan",
+meaning:"مقلاة.",
+explanation:"أداة نستخدمها في الطبخ، وغالبًا تكون مسطحة نسبيًا. لا تخلطي بينها وبين pot التي تعني قدرًا.",
+examples:[
+{en:"Put some oil in the pan.",ar:"ضع بعض الزيت في المقلاة."},
+{en:"The pan is too hot.",ar:"المقلاة ساخنة جدًا."}
+]
+},
+
+{
+word:"Add",
+type:"Verb",
+pronunciation:"add",
+meaning:"يضيف.",
+explanation:"يُستخدم عند وضع شيء إضافي إلى شيء آخر. من التركيبات الشائعة add something to something.",
+examples:[
+{en:"Add some sugar to your tea.",ar:"أضف بعض السكر إلى الشاي."},
+{en:"She added more details to the story.",ar:"أضافت مزيدًا من التفاصيل إلى القصة."}
+]
+},
+
+{
+word:"While",
+type:"Conjunction",
+pronunciation:"while",
+meaning:"بينما، في أثناء حدوث شيء.",
+explanation:"تربط حدثين يحدثان في الوقت نفسه غالبًا. يمكن أن يأتي بعدها فاعل وفعل، بخلاف during التي يأتي بعدها اسم.",
+examples:[
+{en:"I listened to music while I was cooking.",ar:"استمعت إلى الموسيقى بينما كنت أطبخ."},
+{en:"She called me while I was studying.",ar:"اتصلت بي بينما كنت أدرس."}
+]
+},
+
+{
+word:"Wait for",
+type:"Verb Phrase",
+pronunciation:"wait for",
+meaning:"ينتظر شخصًا أو شيئًا.",
+explanation:"نستخدم for بعد wait عندما نذكر الشخص أو الشيء الذي ننتظره. لا نقول wait the bus، بل wait for the bus.",
+examples:[
+{en:"I am waiting for my friend.",ar:"أنا أنتظر صديقي."},
+{en:"We waited for the bus for twenty minutes.",ar:"انتظرنا الحافلة لمدة عشرين دقيقة."}
+]
+},
+
+{
+word:"Cool down",
+type:"Phrasal Verb",
+pronunciation:"cool down",
+meaning:"يبرد أو تنخفض حرارته، وقد تعني يهدأ.",
+explanation:"تُستخدم للأشياء الساخنة عندما تنخفض حرارتها، وتُستخدم أيضًا للأشخاص عندما يهدؤون بعد الغضب أو الانفعال.",
+examples:[
+{en:"Let the soup cool down before eating it.",ar:"دع الحساء يبرد قبل تناوله."},
+{en:"Take a few minutes to cool down.",ar:"خذ بضع دقائق حتى تهدأ."}
+]
+},
+
+{
+word:"Enjoy",
+type:"Verb",
+pronunciation:"enjoy",
+meaning:"يستمتع بشيء.",
+explanation:"يأتي بعد enjoy اسم أو فعل ينتهي بـ ing، ولا نستخدم to قبل الفعل بعده.",
+examples:[
+{en:"I enjoy reading English stories.",ar:"أستمتع بقراءة القصص الإنجليزية."},
+{en:"They enjoyed their holiday.",ar:"استمتعوا بإجازتهم."}
+]
+},
+
+{
+word:"Before starting",
+type:"Expression",
+pronunciation:"before starting",
+meaning:"قبل البدء.",
+explanation:"بعد before يمكن أن يأتي اسم أو فعل مع ing، كما يمكن أن يأتي بعدها فاعل وفعل كاملان.",
+examples:[
+{en:"Wash your hands before starting to cook.",ar:"اغسل يديك قبل البدء في الطبخ."},
+{en:"Think carefully before making a decision.",ar:"فكر جيدًا قبل اتخاذ قرار."}
+]
+}
+
+];
+
+/* ==========================================================
+   مفردات القراءة الثالثة
+   A Walk in the Park
+========================================================== */
+
+const vocabulary3 = [
+
+{
+word:"Finish",
+type:"Verb",
+pronunciation:"finish",
+meaning:"ينهي أو يُكمل.",
+explanation:"من المهم معرفة أن finish يأتي بعده اسم أو فعل ينتهي بـ ing، ولا نستخدم to قبل الفعل في هذا التركيب.",
+examples:[
+{en:"I finished my homework early.",ar:"أنهيت واجبي المنزلي مبكرًا."},
+{en:"She finished reading the book.",ar:"أنهت قراءة الكتاب."}
+]
+},
+
+{
+word:"While",
+type:"Conjunction",
+pronunciation:"while",
+meaning:"بينما أو في أثناء.",
+explanation:"تُستخدم للربط بين حدثين يحدثان في الوقت نفسه. ويمكن أن نستخدمها مع الماضي المستمر لوصف حدث كان جاريًا عندما حدث شيء آخر.",
+examples:[
+{en:"While I was walking, it started to rain.",ar:"بينما كنت أمشي، بدأ المطر."},
+{en:"He listened to a podcast while he was driving.",ar:"استمع إلى بودكاست بينما كان يقود."}
+]
+},
+
+{
+word:"Listen to",
+type:"Verb Phrase",
+pronunciation:"listen to",
+meaning:"يستمع إلى.",
+explanation:"الفعل listen يحتاج إلى حرف الجر to عندما نذكر ما نستمع إليه. لا تخلطي بين listen وhear؛ فـ listen تعني الاستماع بقصد، بينما hear تعني سماع الصوت.",
+examples:[
+{en:"I listen to English podcasts every day.",ar:"أستمع إلى بودكاست باللغة الإنجليزية كل يوم."},
+{en:"She was listening to her favorite song.",ar:"كانت تستمع إلى أغنيتها المفضلة."}
+]
+},
+
+{
+word:"A few",
+type:"Determiner",
+pronunciation:"a few",
+meaning:"بضعة أو عدد قليل من.",
+explanation:"تُستخدم مع الأسماء المعدودة الجمع، مثل minutes وbooks وfriends. تعني وجود عدد قليل لكنه موجود. أما few دون a فغالبًا تعطي معنى سلبيًا: عدد قليل جدًا.",
+examples:[
+{en:"I need a few minutes to finish.",ar:"أحتاج إلى بضع دقائق حتى أنتهي."},
+{en:"She has a few close friends.",ar:"لديها بضعة أصدقاء مقربين."}
+]
+},
+
+{
+word:"Near",
+type:"Preposition",
+pronunciation:"near",
+meaning:"بالقرب من.",
+explanation:"تُستخدم لتوضيح أن شيئًا أو شخصًا ليس بعيدًا عن مكان آخر. يمكن أن نقول near the lake أو near my house.",
+examples:[
+{en:"There is a small café near my house.",ar:"يوجد مقهى صغير بالقرب من منزلي."},
+{en:"We sat near the window.",ar:"جلسنا بالقرب من النافذة."}
+]
+},
+
+{
+word:"Around",
+type:"Preposition / Adverb",
+pronunciation:"around",
+meaning:"حول أو في أرجاء مكان.",
+explanation:"قد تعني الحركة في محيط مكان، مثل walk around the park، أو تصف الأشياء الموجودة في محيطنا، مثل people around me.",
+examples:[
+{en:"We walked around the city.",ar:"تجولنا في أنحاء المدينة."},
+{en:"Look around you before crossing the road.",ar:"انظر حولك قبل عبور الطريق."}
+]
+},
+
+{
+word:"Bench",
+type:"Noun",
+pronunciation:"bench",
+meaning:"مقعد طويل، غالبًا في حديقة أو مكان عام.",
+explanation:"تُستخدم لوصف المقعد الذي يمكن أن يجلس عليه شخص أو أكثر. تختلف عن chair التي تعني كرسيًا.",
+examples:[
+{en:"We sat on a bench in the park.",ar:"جلسنا على مقعد في الحديقة."},
+{en:"The old man was resting on a bench.",ar:"كان الرجل المسن يستريح على مقعد."}
+]
+},
+
+{
+word:"Tell someone about",
+type:"Verb Pattern",
+pronunciation:"tell someone about",
+meaning:"يخبر شخصًا عن شيء.",
+explanation:"الترتيب مهم هنا: tell + الشخص + about + الموضوع. نقول tell me about your day، وليس tell about me your day.",
+examples:[
+{en:"Tell me about your new job.",ar:"أخبرني عن عملك الجديد."},
+{en:"She told her mother about the trip.",ar:"أخبرت والدتها عن الرحلة."}
+]
+},
+
+{
+word:"Go back",
+type:"Phrasal Verb",
+pronunciation:"go back",
+meaning:"يعود إلى مكان أو حالة سابقة.",
+explanation:"يُستخدم عند العودة إلى مكان سبق أن غادرناه، أو الرجوع إلى نشاط سابق. يمكن أن يأتي بعده المكان مباشرة.",
+examples:[
+{en:"I need to go back home.",ar:"أحتاج إلى العودة إلى المنزل."},
+{en:"He went back to work after lunch.",ar:"عاد إلى العمل بعد الغداء."}
+]
+},
+
+{
+word:"Get late",
+type:"Expression",
+pronunciation:"get late",
+meaning:"يتأخر الوقت.",
+explanation:"في النص جاءت العبارة بصيغة it was getting late، وهي طريقة شائعة للقول إن الوقت أصبح متأخرًا تدريجيًا. ويمكن أيضًا استخدام it is getting dark لوصف حلول الظلام.",
+examples:[
+{en:"We should leave because it is getting late.",ar:"ينبغي أن نغادر لأن الوقت أصبح متأخرًا."},
+{en:"It was getting dark, so we went home.",ar:"كان الظلام يحل، لذلك عدنا إلى المنزل."}
+]
+},
+
+{
+word:"Relax",
+type:"Verb",
+pronunciation:"relax",
+meaning:"يسترخي أو يستريح.",
+explanation:"يُستخدم عندما نتحدث عن التخلص من التوتر أو أخذ قسط من الراحة. ويمكن أن نقول relax after work أو help someone relax.",
+examples:[
+{en:"I listen to music to relax.",ar:"أستمع إلى الموسيقى حتى أسترخي."},
+{en:"A short walk helps me relax.",ar:"تساعدني نزهة قصيرة على الاسترخاء."}
+]
+},
+
+{
+word:"Forget about",
+type:"Phrasal Verb",
+pronunciation:"forget about",
+meaning:"ينسى شيئًا أو يتوقف عن التفكير فيه.",
+explanation:"يمكن أن تعني عدم تذكر شيء، أو محاولة عدم الانشغال بالتفكير فيه. لاحظي أن forget about يأتي بعدها اسم أو ضمير أو فعل ينتهي بـ ing.",
+examples:[
+{en:"Don't forget about your appointment.",ar:"لا تنسَ موعدك."},
+{en:"I want to forget about my worries for a while.",ar:"أريد أن أنسى همومي لبعض الوقت."}
+]
+},
+
+{
+word:"Stress",
+type:"Noun",
+pronunciation:"stress",
+meaning:"التوتر أو الضغط النفسي.",
+explanation:"اسم يُستخدم عند الحديث عن الضغط الناتج عن الدراسة أو العمل أو المسؤوليات. الصفة منه stressed لوصف الشخص المتوتر، وstressful لوصف الشيء المسبب للتوتر.",
+examples:[
+{en:"Exams can cause a lot of stress.",ar:"يمكن أن تسبب الاختبارات الكثير من التوتر."},
+{en:"I feel stressed when I have too much work.",ar:"أشعر بالتوتر عندما يكون لديّ الكثير من العمل."}
+]
+}
+
+];
+
+/* ==========================================================
+   عرض المفردات داخل البطاقات
+========================================================== */
+
+document.getElementById("vocab-reading-1").innerHTML =
+vocabulary1.map(createVocabularyItem).join("");
+
+document.getElementById("vocab-reading-2").innerHTML =
+vocabulary2.map(createVocabularyItem).join("");
+
+document.getElementById("vocab-reading-3").innerHTML =
+vocabulary3.map(createVocabularyItem).join("");
+
+/* ==========================================================
+   نظام المكافآت والانتقال
+========================================================== */
+
+import { finishLesson } from "./js/reward.js";
 
 window.finishLessonPage = function(){
 
 finishLesson(
-
 "intermediate-unit1-lesson3",
-
 "Sequencing Words | Practice",
-
 "sequencing-practice.html"
-
 );
 
 };
 
 </script>
 
-
 </body>
-
 </html>
