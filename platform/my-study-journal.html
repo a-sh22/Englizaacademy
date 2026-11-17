@@ -855,13 +855,13 @@ button {
   }
 
   function openNotebook(id) {
-    const notebook = notebooks.find(item => item.id === id);
-    if (!notebook) return;
+  const notebook = notebooks.find(item => item.id === id);
+  if (!notebook) return;
 
-    alert(
-      "تم اختيار دفتر: " + notebook.name +
-      "\n\nسيتم ربط هذه الخطوة بمحرر صفحات A4 في المرحلة التالية."
-    );
+  window.location.href =
+    "study-journal-editor-final.html?id=" + encodeURIComponent(id);
+}
+  
   }
 
   function openCreateModal() {
