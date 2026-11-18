@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7546d8">
+<title>Future Simple | Reading & Listening Practice - Engliza Academy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1f3c88;
+  --purple:#7546d8;
+  --purple-dark:#5c35b4;
+  --purple-light:#f2edff;
+  --blue-light:#edf3ff;
+  --text:#263452;
+  --muted:#71809d;
+  --border:#e7eaf4;
+  --white:#ffffff;
+  --green:#209b73;
+  --soft-bg:#f8f9ff;
+  --shadow:0 8px 28px rgba(48,53,105,.07);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 8% 5%,rgba(117,70,216,.10),transparent 27%),
+    radial-gradient(circle at 95% 30%,rgba(31,60,136,.08),transparent 25%),
+    linear-gradient(135deg,#faf9ff,#f5f7ff 55%,#fbfaff);
+  line-height:1.8;
+}
+
+button{font-family:inherit}
+.page-container{max-width:1050px;margin:auto;padding:22px 20px 55px}
+
+/* TOP BAR */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:var(--blue);
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:9px 16px;
+  font-size:14px;
+  font-weight:700;
+  box-shadow:0 3px 12px rgba(40,50,100,.04);
+  transition:.2s;
+}
+.back-btn:hover{transform:translateY(-2px);border-color:#cfc2f5}
+
+.brand{
+  color:var(--purple-dark);
+  font-family:'Nunito',sans-serif;
+  font-weight:900;
+  letter-spacing:1.4px;
+  font-size:15px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  padding:35px 32px;
+  background:linear-gradient(125deg,#1f3c88 0%,#5542b5 48%,#8651df 100%);
+  color:white;
+  box-shadow:0 15px 35px rgba(82,62,166,.18);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:230px;height:230px;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+  top:-100px;left:-45px;
+}
+.hero-content{position:relative;z-index:1}
+.hero-label{
+  font-family:'Nunito',sans-serif;
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:900;
+  opacity:.8;
+  direction:ltr;
+  text-align:right;
+}
+.hero h1{
+  margin:8px 0 5px;
+  font-size:clamp(25px,4vw,36px);
+  line-height:1.5;
+  font-weight:800;
+}
+.hero p{margin:0;color:#eeebff;font-size:14px;max-width:590px}
+.hero-owl{
+  width:125px;height:125px;
+  object-fit:contain;
+  position:relative;z-index:1;
+  flex-shrink:0;
+}
+
+/* INTRO TIP */
+.tip-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:21px;
+  padding:17px 20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+  box-shadow:var(--shadow);
+}
+.tip-card img{width:66px;height:66px;object-fit:contain;flex-shrink:0}
+.tip-card h3{margin:0 0 3px;color:var(--purple-dark);font-size:15px}
+.tip-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.9}
+
+/* SECTION HEADING */
+.section-heading{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:35px 0 16px;
+}
+.section-number{
+  width:39px;height:39px;
+  border-radius:13px;
+  background:linear-gradient(135deg,var(--purple),#9470e9);
+  color:white;
+  display:grid;place-items:center;
+  font-family:'Nunito',sans-serif;
+  font-size:17px;font-weight:900;
+  flex-shrink:0;
+}
+.section-heading h2{margin:0;font-size:19px;color:var(--blue);font-weight:800}
+.section-heading span{
+  display:block;
+  font-family:'Nunito',sans-serif;
+  color:var(--muted);
+  font-size:11px;
+  direction:ltr;
+  text-align:right;
+}
+
+/* AUDIO */
+.audio-card{
+  background:linear-gradient(110deg,#f2edff,#edf3ff);
+  border:1px solid #e4dcfa;
+  border-radius:19px;
+  padding:17px 19px;
+  margin-bottom:13px;
+}
+.audio-top{
+  display:flex;align-items:center;gap:11px;margin-bottom:10px
+}
+.audio-icon{
+  width:38px;height:38px;border-radius:12px;
+  background:white;color:var(--purple);
+  display:grid;place-items:center;font-size:18px;
+}
+.audio-top strong{font-size:14px;color:var(--blue)}
+.audio-top small{display:block;color:var(--muted);font-size:11px}
+.audio-card audio{width:100%;height:39px;display:block}
+audio{accent-color:var(--purple)}
+
+/* READING */
+.reading-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:21px;
+  padding:22px 24px;
+  box-shadow:var(--shadow);
+}
+.reading-header{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;flex-wrap:wrap;margin-bottom:13px;
+}
+.reading-header h3{margin:0;color:var(--blue);font-size:18px}
+.level-tag{
+  background:#f0ebff;color:var(--purple-dark);
+  border-radius:20px;padding:4px 12px;
+  font-family:'Nunito',sans-serif;font-size:11px;font-weight:900;
+}
+.reading-text{
+  direction:ltr;
+  text-align:left;
+  font-family:'Nunito',sans-serif;
+  font-size:16px;
+  line-height:2.05;
+  color:#293957;
+  font-weight:600;
+}
+.reading-text p{margin:0 0 12px}
+.reading-text p:last-child{margin-bottom:0}
+
+/* VOCABULARY */
+.vocab-area{margin-top:17px}
+
+.vocab-toggle{
+  width:100%;
+  border:1px solid #dcd0fa;
+  border-radius:15px;
+  padding:12px 16px;
+  background:linear-gradient(110deg,#f4efff,#edf3ff);
+  color:var(--purple-dark);
+  font-weight:800;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  cursor:pointer;
+  transition:all .2s ease;
+  box-shadow:0 3px 10px rgba(85,60,160,.05);
+}
+.vocab-toggle:hover{
+  background:linear-gradient(110deg,#ece3ff,#e5edff);
+  border-color:#bca8ec;
+  transform:translateY(-1px);
+}
+.vocab-toggle:active{transform:scale(.99)}
+.toggle-left{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  text-align:center;
+}
+.vocab-content{display:none;padding-top:15px}
+.vocab-content.open{display:block}
+
+.vocab-intro{
+  background:#f7f8ff;
+  border:1px solid #edf0fa;
+  padding:12px 15px;
+  border-radius:13px;
+  margin-bottom:15px;
+  color:#64728e;
+  font-size:12px;
+  line-height:1.9;
+}
+
+.vocab-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+}
+
+.vocab-item{
+  min-width:0;
+  background:#fff;
+  border:1px solid #e8eaf3;
+  border-radius:16px;
+  padding:15px 16px;
+  box-shadow:0 3px 12px rgba(45,55,100,.035);
+  transition:border-color .2s,transform .2s;
+}
+.vocab-item:hover{
+  border-color:#d6c8f5;
+  transform:translateY(-1px);
+}
+
+.word-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:9px;margin-bottom:7px;
+}
+.word-title{
+  direction:ltr;text-align:left;
+  font-family:'Nunito',sans-serif;
+  color:var(--blue);
+  font-size:18px;font-weight:900;
+  overflow-wrap:anywhere;
+}
+.speak-btn{
+  flex-shrink:0;
+  width:34px;height:34px;
+  border:0;border-radius:11px;
+  background:#f0ebff;color:var(--purple-dark);
+  cursor:pointer;font-size:15px;
+  display:grid;place-items:center;
+  transition:.2s;
+}
+.speak-btn:hover{background:var(--purple);color:white}
+.word-type{
+  display:inline-block;
+  background:#edf3ff;color:#36528d;
+  border-radius:7px;
+  padding:2px 8px;
+  font-size:10px;font-weight:700;
+  margin-bottom:8px;
+}
+.word-meaning{
+  color:#263452;
+  font-size:14px;
+  line-height:1.95;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.word-explanation{
+  color:#66738c;
+  font-size:12px;
+  line-height:1.9;
+  background:#fafaff;
+  border-right:3px solid #c9b6f4;
+  border-radius:8px;
+  padding:8px 10px;
+  margin-bottom:9px;
+}
+.examples-label{
+  color:var(--purple-dark);
+  font-size:11px;font-weight:800;
+  margin:7px 0 5px;
+}
+.example{
+  padding:7px 0;
+  border-top:1px solid #f0f1f6;
+}
+.example-en{
+  direction:ltr;text-align:left;
+  font-family:'Nunito',sans-serif;
+  color:#30466f;font-size:13px;font-weight:800;
+  line-height:1.65;
+}
+.example-ar{
+  color:#596781;
+  font-size:12px;
+  line-height:1.8;
+  margin-top:2px;
+}
+
+/* FINISH */
+.finish-card{
+  margin-top:38px;
+  border-radius:23px;
+  padding:25px 23px;
+  color:white;
+  text-align:center;
+  background:linear-gradient(125deg,#1f3c88,#6545bd,#8651df);
+  box-shadow:0 12px 28px rgba(80,61,160,.17);
+}
+.finish-card h2{margin:0 0 6px;font-size:20px}
+.finish-card p{margin:0 0 16px;color:#eeebff;font-size:13px}
+.finish-btn{
+  border:0;border-radius:13px;
+  padding:11px 25px;
+  background:white;color:var(--purple-dark);
+  font-weight:900;font-size:14px;
+  cursor:pointer;transition:.2s;
+}
+.finish-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px #29205a44}
+
+.footer{
+  text-align:center;margin-top:23px;
+  color:#929bb0;font-family:'Nunito',sans-serif;
+  font-size:11px;font-weight:800;letter-spacing:1px;
+}
+
+@media(max-width:700px){
+  .page-container{padding:14px 13px 38px}
+  .hero{padding:25px 20px;border-radius:22px}
+  .hero-owl{width:88px;height:88px}
+  .hero p{font-size:12px}
+  .tip-card{padding:13px}
+  .tip-card img{width:53px;height:53px}
+  .reading-card{padding:17px 15px}
+  .reading-text{font-size:15px;line-height:1.95}
+  .vocab-grid{grid-template-columns:1fr}
+  .vocab-item{padding:14px 15px}
+  .section-heading h2{font-size:17px}
+}
+@media(max-width:390px){
+  .brand{font-size:12px}
+  .back-btn{padding:8px 11px;font-size:12px}
+  .hero-owl{width:72px;height:72px}
+}
+</style>
+</head>
+
+<body>
+<div class="page-container">
+
+  <div class="topbar">
+    <a class="back-btn" href="intermediate-unit1.html">→ العودة</a>
+    <div class="brand">ENGLIZA ACADEMY</div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-label">READING & LISTENING PRACTICE</div>
+      <h1>Future Simple</h1>
+      <p>طوّر مهارات القراءة والاستماع، وتدرّب على استخدام المستقبل البسيط من خلال ثلاثة نصوص متنوعة ومفردات جديدة.</p>
+    </div>
+    <img class="hero-owl" src="../okay.owl.PNG" alt="Engliza Academy Owl">
+  </header>
+
+  <div class="tip-card">
+    <img src="../earlo .PNG" alt="Learning Owl">
+    <div>
+      <h3>Before You Start | قبل أن تبدأ</h3>
+      <p>استمع إلى المقطع الصوتي أولاً، ثم اقرأ النص وحاول فهمه. بعد ذلك افتح المفردات وتعلّم الكلمات والتعبيرات الجديدة مع أمثلتها. انتبه إلى الجمل المثبتة والمنفية والأسئلة التي تستخدم المستقبل البسيط.</p>
+    </div>
+  </div>
+
+  <main id="readings-container"></main>
+
+  <section class="finish-card">
+    <h2>🎉 Great Work!</h2>
+    <p>أحسنت! أكملت تدريبات القراءة والاستماع والمفردات.</p>
+    <button class="finish-btn" onclick="completeLesson()">إنهاء الدرس</button>
+  </section>
+
+  <footer class="footer">ENGLIZA ACADEMY · LEARN ENGLISH WITH CONFIDENCE</footer>
+</div>
+
+<script>
+const readings = [
+
+/* =========================
+   READING 1
+========================= */
+{
+  title:"My Plans for the Weekend",
+  level:"B1",
+  audio:"https://videos.englizaacademy.com/Intermediate/My%20plans%20for%20the%20weekend.mp3",
+  paragraphs:[
+    "This weekend, I will have a lot of things to do. On Friday morning, I will visit my grandmother because I haven't seen her for a few weeks. I will help her prepare lunch, and we will spend some time talking about our family. In the afternoon, I will probably meet my friends at a new café in town.",
+    "However, I won't spend the entire weekend outside. I have an important English exam next week, so I will study for a few hours on Saturday. I won't waste my time playing video games or watching television all day. Instead, I will review my lessons and practise speaking English.",
+    "Will I have enough time to do everything? I think I will! If I finish my work early, I will watch a movie with my family. It will be a busy weekend, but I believe I will enjoy every moment of it."
+  ],
+  vocabulary:[
+    {
+      word:"a lot of",
+      type:"Quantifier | محدد كمية",
+      meaning:"الكثير من / عدد كبير من / كمية كبيرة من.",
+      explanation:"نستخدم a lot of قبل الأسماء المعدودة الجمع وغير المعدودة للتعبير عن كمية أو عدد كبير. تأتي مع people, books, time, water وغيرها. ويمكن استخدامها في الجمل المثبتة والمنفية والأسئلة.",
+      examples:[
+        ["I have a lot of books.","لدي الكثير من الكتب."],
+        ["She doesn't have a lot of free time.","ليس لديها الكثير من وقت الفراغ."],
+        ["Do you drink a lot of water?","هل تشرب الكثير من الماء؟"]
+      ]
+    },
+    {
+      word:"because",
+      type:"Conjunction | أداة ربط",
+      meaning:"لأن / بسبب أن.",
+      explanation:"نستخدم because لربط جملتين، وتأتي بعدها جملة تشرح السبب. لا تخلطي بينها وبين because of التي يأتي بعدها اسم أو عبارة اسمية.",
+      examples:[
+        ["I stayed home because I was tired.","بقيت في المنزل لأنني كنت متعبة."],
+        ["She is happy because she passed the exam.","هي سعيدة لأنها اجتازت الاختبار."],
+        ["We cancelled the trip because of the rain.","ألغينا الرحلة بسبب المطر."]
+      ]
+    },
+    {
+      word:"probably",
+      type:"Adverb | ظرف",
+      meaning:"على الأرجح / غالباً / من المحتمل.",
+      explanation:"نستخدم probably عندما نعتقد أن شيئاً ما سيحدث، لكننا لسنا متأكدين تماماً. يمكن أن تأتي قبل الفعل الرئيسي، وبعد فعل be، أو بعد الفعل المساعد will.",
+      examples:[
+        ["I will probably visit my aunt tomorrow.","على الأرجح سأزور عمتي غداً."],
+        ["She is probably at home.","من المحتمل أنها في المنزل."],
+        ["They probably won't come today.","على الأرجح لن يأتوا اليوم."]
+      ]
+    },
+    {
+      word:"meet",
+      type:"Verb | فعل",
+      meaning:"يقابل / يلتقي.",
+      explanation:"نستخدم meet عندما نلتقي بشخص أو نقابله، سواء كان اللقاء لأول مرة أو لقاءً عادياً. الماضي والتصريف الثالث: met.",
+      examples:[
+        ["I meet my friends every Friday.","ألتقي بأصدقائي كل يوم جمعة."],
+        ["We met at the café yesterday.","التقينا في المقهى أمس."],
+        ["Would you like to meet my sister?","هل تود مقابلة أختي؟"]
+      ]
+    },
+    {
+      word:"town",
+      type:"Noun | اسم",
+      meaning:"بلدة / مدينة صغيرة.",
+      explanation:"تشير إلى منطقة سكنية أصغر عادةً من city. وقد تُستخدم town أيضاً في أسماء المناطق والبلدات.",
+      examples:[
+        ["I live in a quiet town.","أعيش في بلدة هادئة."],
+        ["There is a new café in town.","يوجد مقهى جديد في البلدة."],
+        ["The town is famous for its old buildings.","تشتهر البلدة بمبانيها القديمة."]
+      ]
+    },
+    {
+      word:"however",
+      type:"Adverb / Linking Word | ظرف وأداة ربط",
+      meaning:"ومع ذلك / لكن / إلا أن.",
+      explanation:"نستخدم however لتقديم فكرة تختلف أو تتعارض مع الفكرة السابقة. غالباً تأتي في بداية جملة جديدة، وبعدها فاصلة. وهي أكثر رسمية من but في كثير من السياقات.",
+      examples:[
+        ["I was tired. However, I finished my homework.","كنت متعبة. ومع ذلك، أنهيت واجبي."],
+        ["The hotel is expensive. However, it is very comfortable.","الفندق غالي الثمن. ومع ذلك، فهو مريح جداً."],
+        ["She studied hard. She didn't pass, however.","درست بجد. لكنها لم تنجح."]
+      ]
+    },
+    {
+      word:"entire",
+      type:"Adjective | صفة",
+      meaning:"كامل / بأكمله / بأكملها.",
+      explanation:"تُستخدم entire للتعبير عن الشيء كاملاً دون استثناء. غالباً تأتي قبل الاسم، مثل the entire day أو the entire weekend.",
+      examples:[
+        ["I spent the entire day studying.","قضيت اليوم بأكمله في الدراسة."],
+        ["He watched the entire movie.","شاهد الفيلم كاملاً."],
+        ["She didn't sleep the entire night.","لم تنم طوال الليل."]
+      ]
+    },
+    {
+      word:"exam",
+      type:"Noun | اسم",
+      meaning:"اختبار / امتحان.",
+      explanation:"هي اختصار لكلمة examination، وتُستخدم كثيراً في الحديث عن الاختبارات الدراسية. نقول take an exam بمعنى يخوض اختباراً.",
+      examples:[
+        ["I have an English exam tomorrow.","لدي اختبار إنجليزي غداً."],
+        ["She passed the exam.","اجتازت الاختبار."],
+        ["Did you study for the exam?","هل درست من أجل الاختبار؟"]
+      ]
+    },
+    {
+      word:"waste / wasted / wasted time",
+      type:"Verb & Noun | فعل واسم",
+      meaning:"waste كفعل: يضيّع أو يهدر. wasted: ضيّع أو مُهدَر. wasted time: وقت ضائع أو وقت مهدور.",
+      explanation:"نستخدم waste عندما نستهلك الوقت أو المال أو الموارد بطريقة غير مفيدة. الماضي والتصريف الثالث هما wasted. ويمكن استخدام wasted كصفة لوصف شيء تم إهداره، مثل wasted time.",
+      examples:[
+        ["Don't waste your time.","لا تضيّع وقتك."],
+        ["He wasted a lot of money.","أهدر الكثير من المال."],
+        ["That was wasted time.","كان ذلك وقتاً ضائعاً."]
+      ]
+    },
+    {
+      word:"video games",
+      type:"Noun | اسم جمع",
+      meaning:"ألعاب الفيديو. المفرد: video game.",
+      explanation:"تُستخدم للحديث عن الألعاب الإلكترونية التي تُلعب على أجهزة الألعاب أو الكمبيوتر أو الهاتف.",
+      examples:[
+        ["My brother loves video games.","أخي يحب ألعاب الفيديو."],
+        ["I don't play video games every day.","لا ألعب ألعاب الفيديو كل يوم."],
+        ["Do you enjoy playing video games?","هل تستمتع بلعب ألعاب الفيديو؟"]
+      ]
+    },
+    {
+      word:"television",
+      type:"Noun | اسم",
+      meaning:"التلفاز / التلفزيون.",
+      explanation:"تشير إلى جهاز التلفاز أو إلى التلفزيون كوسيلة إعلام. ويمكن استخدام TV في المحادثات اليومية بوصفها اختصاراً.",
+      examples:[
+        ["My parents watch television every evening.","يشاهد والداي التلفاز كل مساء."],
+        ["I don't watch television very often.","لا أشاهد التلفاز كثيراً."],
+        ["Is there a television in your room?","هل يوجد تلفاز في غرفتك؟"]
+      ]
+    },
+    {
+      word:"enough",
+      type:"Determiner / Adverb | محدد كمية أو ظرف",
+      meaning:"كافٍ / بما يكفي.",
+      explanation:"نستخدم enough للتعبير عن الكمية أو الدرجة المناسبة. تأتي قبل الاسم: enough time، لكنها تأتي بعد الصفة: good enough. ويمكن استخدامها في السؤال والنفي.",
+      examples:[
+        ["We have enough food for everyone.","لدينا طعام كافٍ للجميع."],
+        ["I am not old enough to drive.","أنا لست كبيرة بما يكفي للقيادة."],
+        ["Do you have enough money?","هل لديك مال كافٍ؟"]
+      ]
+    },
+    {
+      word:"movie",
+      type:"Noun | اسم",
+      meaning:"فيلم.",
+      explanation:"تُستخدم movie في الإنجليزية الأمريكية بمعنى فيلم. أما في الإنجليزية البريطانية فكلمة film شائعة أيضاً.",
+      examples:[
+        ["We watched a funny movie.","شاهدنا فيلماً مضحكاً."],
+        ["I don't like horror movies.","لا أحب أفلام الرعب."],
+        ["What movie do you want to watch?","أي فيلم تريد أن تشاهد؟"]
+      ]
+    },
+    {
+      word:"moment / moments",
+      type:"Noun | اسم",
+      meaning:"moment = لحظة، moments = لحظات.",
+      explanation:"نستخدم moment للإشارة إلى فترة قصيرة جداً من الوقت أو لحظة معينة. وعند الجمع نضيف s لتصبح moments.",
+      examples:[
+        ["Wait a moment, please.","انتظر لحظة من فضلك."],
+        ["I will remember this moment.","سأتذكر هذه اللحظة."],
+        ["We shared many happy moments.","شاركنا لحظات سعيدة كثيرة."]
+      ]
+    }
+  ]
+},
+
+/* =========================
+   READING 2
+========================= */
+{
+  title:"A Better Future for Our City",
+  level:"B1",
+  audio:"https://videos.englizaacademy.com/Intermediate/A%20better%20future%20for%20our%20city.mp3",
+  paragraphs:[
+    "Cities are changing quickly, and life may look very different in the future. In the next twenty years, our city will probably become more modern and environmentally friendly. There will be more public parks, cleaner streets, and better public transportation. People will have more opportunities to enjoy outdoor activities, and families will spend more time in comfortable public spaces.",
+    "Technology will also change the way people live. Smart systems will help control traffic, and electric buses will reduce air pollution. Some buildings will use solar energy to produce electricity. However, not every change will be positive. Traffic problems won't disappear completely, and some people won't have easy access to new technology.",
+    "Will our city become a better place to live? I believe it will, but this will depend on the choices we make today. If people and local authorities work together, they will create a cleaner, safer, and more comfortable city for future generations."
+  ],
+  vocabulary:[
+    {
+      word:"city / cities",
+      type:"Noun | اسم",
+      meaning:"city = مدينة، cities = مدن.",
+      explanation:"city اسم مفرد معدود. عند تحويله إلى الجمع نحذف y ونضيف ies، لذلك تصبح cities وليس citys.",
+      examples:[
+        ["Muscat is a beautiful city.","مسقط مدينة جميلة."],
+        ["Many cities are growing quickly.","تنمو مدن كثيرة بسرعة."],
+        ["Which city do you live in?","في أي مدينة تعيش؟"]
+      ]
+    },
+    {
+      word:"change",
+      type:"Verb & Noun | فعل واسم",
+      meaning:"كفعل: يغيّر / يتغيّر. وكاسم: تغيير / تغيّر.",
+      explanation:"يمكن استخدام change للتعبير عن حدوث اختلاف أو جعل شيء مختلفاً. الماضي والتصريف الثالث: changed.",
+      examples:[
+        ["Technology will change our lives.","ستغيّر التكنولوجيا حياتنا."],
+        ["The weather changes quickly here.","يتغير الطقس بسرعة هنا."],
+        ["We need a change.","نحتاج إلى تغيير."]
+      ]
+    },
+    {
+      word:"future",
+      type:"Noun / Adjective | اسم وصفة",
+      meaning:"المستقبل. وقد تأتي صفة بمعنى مستقبلي.",
+      explanation:"نستخدم future للحديث عن الوقت الذي لم يحدث بعد. من التعبيرات الشائعة in the future بمعنى في المستقبل.",
+      examples:[
+        ["I want to be successful in the future.","أريد أن أكون ناجحة في المستقبل."],
+        ["We should plan for the future.","ينبغي أن نخطط للمستقبل."],
+        ["Future generations need a clean environment.","تحتاج الأجيال القادمة إلى بيئة نظيفة."]
+      ]
+    },
+    {
+      word:"environmentally",
+      type:"Adverb | ظرف",
+      meaning:"بشكل صديق للبيئة / من الناحية البيئية.",
+      explanation:"هي صيغة الظرف من environmental. تُستخدم لوصف طريقة القيام بشيء أو مدى توافقه مع حماية البيئة. تظهر كثيراً في التعبير environmentally friendly.",
+      examples:[
+        ["We should travel environmentally responsibly.","ينبغي أن نسافر بطريقة مسؤولة بيئياً."],
+        ["The company works in an environmentally safe way.","تعمل الشركة بطريقة آمنة بيئياً."]
+      ]
+    },
+    {
+      word:"friendly",
+      type:"Adjective | صفة",
+      meaning:"ودود / صديق / ملائم أو لطيف تجاه شيء.",
+      explanation:"تصف شخصاً لطيفاً وودوداً، وقد تأتي في تراكيب تصف شيئاً بأنه ملائم أو غير ضار بشيء، مثل environmentally friendly أي صديق للبيئة.",
+      examples:[
+        ["Our new teacher is very friendly.","معلمتنا الجديدة ودودة جداً."],
+        ["This is an environmentally friendly product.","هذا منتج صديق للبيئة."],
+        ["The hotel is family-friendly.","الفندق مناسب للعائلات."]
+      ]
+    },
+    {
+      word:"environmentally friendly",
+      type:"Expression | تعبير",
+      meaning:"صديق للبيئة / لا يضر البيئة.",
+      explanation:"تعبير يُستخدم لوصف المنتجات أو الأنشطة أو وسائل النقل التي تقلل الضرر على البيئة وتساعد في حمايتها.",
+      examples:[
+        ["Electric cars are more environmentally friendly.","السيارات الكهربائية أكثر صداقة للبيئة."],
+        ["We need environmentally friendly solutions.","نحتاج إلى حلول صديقة للبيئة."]
+      ]
+    },
+    {
+      word:"public",
+      type:"Adjective / Noun | صفة واسم",
+      meaning:"عام / حكومي أو متاح للجمهور. وقد تعني الجمهور كاسم.",
+      explanation:"تأتي قبل الاسم لوصف شيء متاح للجميع أو تابع للقطاع العام، مثل public parks وpublic transportation.",
+      examples:[
+        ["Children can play in public parks.","يمكن للأطفال اللعب في الحدائق العامة."],
+        ["Public transportation is important.","وسائل النقل العام مهمة."],
+        ["The public wants cleaner streets.","يريد الجمهور شوارع أكثر نظافة."]
+      ]
+    },
+    {
+      word:"street / streets",
+      type:"Noun | اسم",
+      meaning:"street = شارع، streets = شوارع.",
+      explanation:"street اسم مفرد معدود، وعند الجمع نضيف s لتصبح streets.",
+      examples:[
+        ["This street is very quiet.","هذا الشارع هادئ جداً."],
+        ["The city has wide streets.","توجد في المدينة شوارع واسعة."],
+        ["The streets are clean.","الشوارع نظيفة."]
+      ]
+    },
+    {
+      word:"transportation",
+      type:"Noun | اسم",
+      meaning:"النقل / وسائل المواصلات.",
+      explanation:"اسم يشير إلى عملية نقل الأشخاص أو الأشياء من مكان إلى آخر، أو وسائل النقل المستخدمة. وهو اسم غير معدود عادةً.",
+      examples:[
+        ["Public transportation is useful.","وسائل النقل العام مفيدة."],
+        ["The city needs better transportation.","تحتاج المدينة إلى وسائل نقل أفضل."],
+        ["Transportation is expensive in some cities.","النقل مكلف في بعض المدن."]
+      ]
+    },
+    {
+      word:"opportunity / opportunities",
+      type:"Noun | اسم",
+      meaning:"opportunity = فرصة، opportunities = فرص.",
+      explanation:"اسم مفرد معدود. عند تحويله إلى الجمع نحذف y ونضيف ies. من التعبيرات الشائعة opportunity to do something.",
+      examples:[
+        ["This is a great opportunity.","هذه فرصة رائعة."],
+        ["She has many opportunities to learn.","لديها فرص كثيرة للتعلم."],
+        ["I had an opportunity to travel.","حصلت على فرصة للسفر."]
+      ]
+    },
+    {
+      word:"outdoor",
+      type:"Adjective | صفة",
+      meaning:"خارجي / في الهواء الطلق.",
+      explanation:"تُستخدم لوصف الأنشطة أو الأماكن التي تكون خارج المباني، مثل outdoor activities.",
+      examples:[
+        ["I enjoy outdoor activities.","أستمتع بالأنشطة الخارجية."],
+        ["We need outdoor space for children.","نحتاج إلى مساحة خارجية للأطفال."],
+        ["Outdoor games are fun.","الألعاب الخارجية ممتعة."]
+      ]
+    },
+    {
+      word:"activity / activities",
+      type:"Noun | اسم",
+      meaning:"activity = نشاط، activities = أنشطة.",
+      explanation:"اسم مفرد معدود. عند تحويله إلى الجمع نحذف y ونضيف ies. يمكن أن تشير إلى نشاط تعليمي أو رياضي أو ترفيهي.",
+      examples:[
+        ["Swimming is my favorite activity.","السباحة هي نشاطي المفضل."],
+        ["The school organizes outdoor activities.","تنظم المدرسة أنشطة خارجية."],
+        ["There are many activities for children.","هناك أنشطة كثيرة للأطفال."]
+      ]
+    },
+    {
+      word:"family / families",
+      type:"Noun | اسم",
+      meaning:"family = عائلة / أسرة، families = عائلات / أسر.",
+      explanation:"عند تحويل family إلى الجمع نحذف y ونضيف ies. ويمكن أن نتعامل مع family كمجموعة واحدة، لذلك قد يأتي معها فعل مفرد في الإنجليزية.",
+      examples:[
+        ["My family is very supportive.","عائلتي داعمة جداً."],
+        ["Many families live in this area.","تعيش عائلات كثيرة في هذه المنطقة."],
+        ["We visited two families.","زرنا عائلتين."]
+      ]
+    },
+    {
+      word:"comfortable",
+      type:"Adjective | صفة",
+      meaning:"مريح.",
+      explanation:"تصف شيئاً يمنح الراحة الجسدية أو النفسية، مثل كرسي أو منزل أو مكان.",
+      examples:[
+        ["This chair is very comfortable.","هذا الكرسي مريح جداً."],
+        ["I feel comfortable here.","أشعر بالراحة هنا."],
+        ["They live in a comfortable house.","يعيشون في منزل مريح."]
+      ]
+    },
+    {
+      word:"space / spaces",
+      type:"Noun | اسم",
+      meaning:"space = مساحة / فضاء، spaces = مساحات / أماكن.",
+      explanation:"قد تعني مساحة فارغة أو مكاناً متاحاً، وقد تشير إلى الفضاء الخارجي. عند الحديث عن مساحات منفصلة ومحددة يمكن جمعها إلى spaces.",
+      examples:[
+        ["There is enough space in the room.","توجد مساحة كافية في الغرفة."],
+        ["The city needs more green spaces.","تحتاج المدينة إلى المزيد من المساحات الخضراء."],
+        ["I need some space to work.","أحتاج إلى بعض المساحة للعمل."]
+      ]
+    },
+    {
+      word:"technology",
+      type:"Noun | اسم",
+      meaning:"التكنولوجيا / التقنية.",
+      explanation:"تشير إلى الأدوات والأنظمة والوسائل التقنية التي يستخدمها الناس لحل المشكلات وتسهيل الحياة. وهي اسم غير معدود عادةً.",
+      examples:[
+        ["Technology changes our lives.","التكنولوجيا تغيّر حياتنا."],
+        ["Children use technology at school.","يستخدم الأطفال التكنولوجيا في المدرسة."],
+        ["Modern technology saves time.","توفر التكنولوجيا الحديثة الوقت."]
+      ]
+    },
+    {
+      word:"system / systems",
+      type:"Noun | اسم",
+      meaning:"system = نظام، systems = أنظمة.",
+      explanation:"مجموعة من الأجزاء أو القواعد التي تعمل معاً لتحقيق هدف معين. عند الجمع نضيف s.",
+      examples:[
+        ["The school has a new system.","لدى المدرسة نظام جديد."],
+        ["Smart systems can control traffic.","يمكن للأنظمة الذكية التحكم في حركة المرور."],
+        ["These systems save energy.","توفر هذه الأنظمة الطاقة."]
+      ]
+    },
+    {
+      word:"control / controlled",
+      type:"Verb & Adjective | فعل وصفة",
+      meaning:"كفعل: يتحكم في / يسيطر على. controlled: تم التحكم فيه أو مُتحكَّم به.",
+      explanation:"control فعل يعني إدارة شيء أو تنظيمه أو إبقاءه تحت السيطرة. الماضي والتصريف الثالث controlled. ويمكن أن تأتي controlled كصفة لوصف شيء تتم السيطرة عليه أو تنظيمه.",
+      examples:[
+        ["Smart systems control traffic.","تتحكم الأنظمة الذكية في حركة المرور."],
+        ["The machine controlled the temperature.","تحكم الجهاز في درجة الحرارة."],
+        ["The situation is now controlled.","الوضع الآن تحت السيطرة."]
+      ]
+    },
+    {
+      word:"traffic",
+      type:"Noun | اسم غير معدود",
+      meaning:"حركة المرور / ازدحام السير.",
+      explanation:"تشير إلى حركة السيارات والمركبات في الطرق. وهي اسم غير معدود عادةً، فلا نضيف إليها s عند الحديث عن حركة المرور.",
+      examples:[
+        ["Traffic is heavy this morning.","حركة المرور مزدحمة هذا الصباح."],
+        ["The city will control traffic.","ستتحكم المدينة في حركة المرور."],
+        ["We were late because of the traffic.","تأخرنا بسبب الازدحام المروري."]
+      ]
+    },
+    {
+      word:"electric",
+      type:"Adjective | صفة",
+      meaning:"كهربائي.",
+      explanation:"تصف شيئاً يعمل بالكهرباء أو يعتمد عليها، مثل electric cars وelectric buses.",
+      examples:[
+        ["Electric buses are quieter.","الحافلات الكهربائية أكثر هدوءاً."],
+        ["My father bought an electric car.","اشترى أبي سيارة كهربائية."],
+        ["This device uses electric power.","يستخدم هذا الجهاز الطاقة الكهربائية."]
+      ]
+    },
+    {
+      word:"reduce",
+      type:"Verb | فعل",
+      meaning:"يقلّل / يخفّض.",
+      explanation:"نستخدم reduce عندما نجعل كمية أو مستوى أو حجماً أقل. الماضي والتصريف الثالث: reduced.",
+      examples:[
+        ["We should reduce waste.","ينبغي أن نقلل النفايات."],
+        ["Electric buses reduce air pollution.","تقلل الحافلات الكهربائية تلوث الهواء."],
+        ["The company reduced its prices.","خفضت الشركة أسعارها."]
+      ]
+    },
+    {
+      word:"pollution",
+      type:"Noun | اسم",
+      meaning:"التلوث.",
+      explanation:"يشير إلى وجود مواد ضارة في الهواء أو الماء أو البيئة. وهو اسم غير معدود عادةً.",
+      examples:[
+        ["Pollution harms the environment.","يضر التلوث بالبيئة."],
+        ["We must reduce pollution.","يجب أن نقلل التلوث."],
+        ["Air pollution is a serious problem.","تلوث الهواء مشكلة خطيرة."]
+      ]
+    },
+    {
+      word:"air pollution",
+      type:"Expression | تعبير",
+      meaning:"تلوث الهواء.",
+      explanation:"يشير إلى تلوث الهواء بالغازات والدخان والمواد الضارة، وقد ينتج عن السيارات والمصانع وغيرها.",
+      examples:[
+        ["Electric cars can help reduce air pollution.","يمكن للسيارات الكهربائية المساعدة في تقليل تلوث الهواء."],
+        ["Air pollution affects people's health.","يؤثر تلوث الهواء في صحة الناس."]
+      ]
+    },
+    {
+      word:"positive",
+      type:"Adjective | صفة",
+      meaning:"إيجابي.",
+      explanation:"تصف شيئاً جيداً أو مفيداً أو يحمل نتيجة أو تأثيراً حسناً. عكسها negative بمعنى سلبي.",
+      examples:[
+        ["We need positive changes.","نحتاج إلى تغييرات إيجابية."],
+        ["She has a positive attitude.","لديها موقف إيجابي."],
+        ["Not every change will be positive.","لن يكون كل تغيير إيجابياً."]
+      ]
+    },
+    {
+      word:"completely",
+      type:"Adverb | ظرف",
+      meaning:"تماماً / بالكامل / كلياً.",
+      explanation:"تُستخدم لتأكيد أن شيئاً ما حدث بصورة كاملة، وهي مشتقة من الصفة complete.",
+      examples:[
+        ["I completely understand the lesson.","أفهم الدرس تماماً."],
+        ["The road was completely empty.","كان الطريق خالياً تماماً."],
+        ["The problem won't disappear completely.","لن تختفي المشكلة تماماً."]
+      ]
+    },
+    {
+      word:"access",
+      type:"Noun & Verb | اسم وفعل",
+      meaning:"كاسم: إمكانية الوصول أو الحصول على شيء. وكفعل: يصل إلى / يدخل إلى.",
+      explanation:"يُستخدم access عند الحديث عن القدرة على استخدام خدمة أو مكان أو معلومات. من التعبيرات الشائعة have access to.",
+      examples:[
+        ["Students have access to online lessons.","لدى الطلاب إمكانية الوصول إلى الدروس عبر الإنترنت."],
+        ["Some people don't have easy access to technology.","لا يملك بعض الأشخاص إمكانية سهلة للوصول إلى التكنولوجيا."],
+        ["You can access the website here.","يمكنك الوصول إلى الموقع من هنا."]
+      ]
+    },
+    {
+      word:"depend on",
+      type:"Phrasal Verb / Expression | فعل مركب وتعبير",
+      meaning:"يعتمد على.",
+      explanation:"نستخدم depend on عندما يكون حدوث شيء أو نتيجته مرتبطاً بشخص أو عامل آخر. يتبع depend حرف الجر on.",
+      examples:[
+        ["Success depends on hard work.","يعتمد النجاح على العمل الجاد."],
+        ["The result will depend on your choices.","ستعتمد النتيجة على اختياراتك."],
+        ["It depends on the weather.","يعتمد الأمر على الطقس."]
+      ]
+    },
+    {
+      word:"choice / choices",
+      type:"Noun | اسم",
+      meaning:"choice = اختيار / خيار، choices = اختيارات / خيارات.",
+      explanation:"اسم مفرد معدود، وعند الجمع نضيف s. الفعل المرتبط بها choose بمعنى يختار، وماضيه chose.",
+      examples:[
+        ["You have a choice.","لديك خيار."],
+        ["Our choices affect the future.","تؤثر اختياراتنا في المستقبل."],
+        ["It was a difficult choice.","كان اختياراً صعباً."]
+      ]
+    },
+    {
+      word:"local",
+      type:"Adjective | صفة",
+      meaning:"محلي / تابع للمنطقة أو المكان.",
+      explanation:"تصف شيئاً مرتبطاً بمنطقة أو مدينة أو مجتمع معين، مثل local shops وlocal authorities.",
+      examples:[
+        ["I buy food from local shops.","أشتري الطعام من المتاجر المحلية."],
+        ["The local school is very popular.","المدرسة المحلية مشهورة جداً."],
+        ["Local people know the area well.","يعرف السكان المحليون المنطقة جيداً."]
+      ]
+    },
+    {
+      word:"authority / authorities",
+      type:"Noun | اسم",
+      meaning:"authority = سلطة أو جهة مسؤولة، authorities = السلطات أو الجهات المسؤولة.",
+      explanation:"تُستخدم authorities غالباً للإشارة إلى الجهات الرسمية المسؤولة عن إدارة منطقة أو تطبيق القوانين واتخاذ القرارات.",
+      examples:[
+        ["The authorities announced a new plan.","أعلنت السلطات خطة جديدة."],
+        ["Local authorities are responsible for public services.","السلطات المحلية مسؤولة عن الخدمات العامة."]
+      ]
+    },
+    {
+      word:"local authorities",
+      type:"Expression | تعبير",
+      meaning:"السلطات المحلية / الجهات المسؤولة في المنطقة.",
+      explanation:"يشير التعبير إلى الجهات الحكومية أو الرسمية التي تدير شؤون مدينة أو منطقة معينة، مثل تنظيم الطرق والخدمات العامة.",
+      examples:[
+        ["Local authorities will improve public parks.","ستعمل السلطات المحلية على تحسين الحدائق العامة."],
+        ["The local authorities are working together.","تعمل السلطات المحلية معاً."]
+      ]
+    },
+    {
+      word:"create / created",
+      type:"Verb | فعل",
+      meaning:"ينشئ / يبتكر / يخلق. created هي الماضي والتصريف الثالث.",
+      explanation:"نستخدم create عندما نصنع شيئاً جديداً أو نوجده، مثل فرصة أو خطة أو بيئة أو مشروع.",
+      examples:[
+        ["We can create a better future.","يمكننا إنشاء مستقبل أفضل."],
+        ["The team created a new plan.","أنشأ الفريق خطة جديدة."],
+        ["Art creates new opportunities.","يخلق الفن فرصاً جديدة."]
+      ]
+    },
+    {
+      word:"generation / generations",
+      type:"Noun | اسم",
+      meaning:"generation = جيل، generations = أجيال.",
+      explanation:"تشير إلى مجموعة من الأشخاص الذين وُلدوا وعاشوا في فترة زمنية متقاربة. عند الجمع نضيف s.",
+      examples:[
+        ["My generation uses technology every day.","يستخدم جيلي التكنولوجيا كل يوم."],
+        ["We must protect the planet for future generations.","يجب أن نحمي الكوكب من أجل الأجيال القادمة."],
+        ["Older generations have valuable experience.","لدى الأجيال الأكبر سناً خبرة قيّمة."]
+      ]
+    }
+  ]
+},
+
+/* =========================
+   READING 3
+========================= */
+{
+  title:"A Surprise for My Best Friend",
+  level:"B1",
+  audio:"https://videos.englizaacademy.com/Intermediate/A%20surprise%20for%20my%20best%20friend.mp3",
+  paragraphs:[
+    "My best friend Sara will celebrate her birthday next Thursday, and I have decided to organise a surprise party for her. She doesn't know anything about it, and I hope she won't discover our plan before the big day.",
+    "My friends and I will meet at my house on Wednesday evening to prepare everything. We will decorate the living room with colourful balloons, prepare her favourite food, and buy a beautiful birthday cake. Ahmed will bring the decorations, while Lina will take care of the music. I will contact Sara's sister to make sure she brings Sara to my house at the right time.",
+    "Will Sara be surprised when she arrives? I'm sure she will! We won't tell her anything until she opens the door. I think she will feel very happy because she always says that small, thoughtful surprises mean a lot to her. I hope this day will become one of her favourite birthday memories."
+  ],
+  vocabulary:[
+    {
+      word:"celebrate / celebrated",
+      type:"Verb | فعل",
+      meaning:"يحتفل / احتفل.",
+      explanation:"نستخدم celebrate عند الاحتفال بمناسبة سعيدة مثل عيد الميلاد أو النجاح أو الأعياد. الماضي والتصريف الثالث: celebrated.",
+      examples:[
+        ["We celebrate birthdays every year.","نحتفل بأعياد الميلاد كل عام."],
+        ["They celebrated their success.","احتفلوا بنجاحهم."],
+        ["How will you celebrate your birthday?","كيف ستحتفل بعيد ميلادك؟"]
+      ]
+    },
+    {
+      word:"decide / decided",
+      type:"Verb | فعل",
+      meaning:"يقرّر / قرّر.",
+      explanation:"نستخدم decide عندما يختار الشخص القيام بشيء بعد التفكير. غالباً يأتي بعدها to + verb. الماضي والتصريف الثالث: decided.",
+      examples:[
+        ["I decided to learn English.","قررت تعلم الإنجليزية."],
+        ["She decides what to cook every day.","تقرر ماذا تطبخ كل يوم."],
+        ["Have you decided to join us?","هل قررت الانضمام إلينا؟"]
+      ]
+    },
+    {
+      word:"surprise",
+      type:"Verb & Noun | فعل واسم",
+      meaning:"كفعل: يفاجئ. وكاسم: مفاجأة.",
+      explanation:"عندما تأتي surprise كفعل يكون معناها أن تجعل شخصاً يشعر بالدهشة بسبب شيء غير متوقع. ماضي الفعل والتصريف الثالث: surprised. وعندما تأتي اسماً تعني مفاجأة. ويمكن أن تأتي surprised صفة بمعنى متفاجئ، لوصف شعور الشخص.",
+      examples:[
+        ["I want to surprise my friend.","أريد أن أفاجئ صديقتي."],
+        ["The party was a big surprise.","كانت الحفلة مفاجأة كبيرة."],
+        ["She surprised everyone yesterday.","فاجأت الجميع أمس."],
+        ["I was surprised by the news.","تفاجأت بالخبر."]
+      ]
+    },
+    {
+      word:"surprised",
+      type:"Past Verb / Adjective | ماضٍ وصفة",
+      meaning:"كماضٍ للفعل surprise: فاجأ. وكصفة تصف شعور الشخص: متفاجئ.",
+      explanation:"انتبهِي إلى الفرق: في She surprised me تعني أنها فاجأتني، فهي فعل في الماضي. أما في I was surprised فتعني أنني كنت متفاجئاً، وهي صفة تصف شعور الشخص.",
+      examples:[
+        ["Her visit surprised me.","فاجأتني زيارتها."],
+        ["I was surprised to see him.","تفاجأت برؤيته."],
+        ["They were surprised by the gift.","تفاجؤوا بالهدية."]
+      ]
+    },
+    {
+      word:"party / parties",
+      type:"Noun | اسم",
+      meaning:"party = حفلة، parties = حفلات.",
+      explanation:"اسم مفرد معدود. عند الجمع نحذف y ونضيف ies، لذلك تصبح parties. وقد تأتي party في سياقات أخرى بمعانٍ مختلفة مثل حزب سياسي.",
+      examples:[
+        ["We are having a birthday party.","سنقيم حفلة عيد ميلاد."],
+        ["She went to two parties last week.","ذهبت إلى حفلتين الأسبوع الماضي."],
+        ["Do you like surprise parties?","هل تحب حفلات المفاجأة؟"]
+      ]
+    },
+    {
+      word:"discover / discovered",
+      type:"Verb | فعل",
+      meaning:"يكتشف / اكتشف.",
+      explanation:"نستخدم discover عندما نعثر على شيء أو نعرف حقيقة لم نكن نعرفها من قبل. الماضي والتصريف الثالث: discovered.",
+      examples:[
+        ["I want to discover new places.","أريد اكتشاف أماكن جديدة."],
+        ["She discovered the surprise early.","اكتشفت المفاجأة مبكراً."],
+        ["Scientists discovered a new planet.","اكتشف العلماء كوكباً جديداً."]
+      ]
+    },
+    {
+      word:"contact",
+      type:"Verb & Noun | فعل واسم",
+      meaning:"كفعل: يتواصل مع / يتصل بـ. وكاسم: اتصال / تواصل.",
+      explanation:"نستخدم contact عند التواصل مع شخص أو جهة، سواء عبر الهاتف أو البريد الإلكتروني أو غيرهما. عندما تأتي فعلاً لا نحتاج عادةً إلى to بعدها.",
+      examples:[
+        ["I will contact her tomorrow.","سأتواصل معها غداً."],
+        ["Please contact the school.","من فضلك تواصل مع المدرسة."],
+        ["You can contact me by email.","يمكنك التواصل معي عبر البريد الإلكتروني."]
+      ]
+    },
+    {
+      word:"make sure",
+      type:"Expression | تعبير",
+      meaning:"يتأكد من / يحرص على أن.",
+      explanation:"نستخدم make sure للتأكد من حدوث شيء أو أن شيئاً ما صحيح. يمكن أن يأتي بعدها that + جملة، أو to + فعل، أو جملة مباشرة بحسب التركيب.",
+      examples:[
+        ["Make sure the door is locked.","تأكد من أن الباب مغلق."],
+        ["I will make sure everything is ready.","سأتأكد من أن كل شيء جاهز."],
+        ["Make sure to bring your book.","احرص على إحضار كتابك."]
+      ]
+    },
+    {
+      word:"until",
+      type:"Preposition / Conjunction | حرف جر وأداة ربط",
+      meaning:"حتى / إلى أن.",
+      explanation:"تُستخدم لتحديد الوقت الذي يستمر فيه شيء ما أو ينتهي عنده. يمكن أن يأتي بعدها اسم أو وقت، أو جملة تحتوي على فعل.",
+      examples:[
+        ["Wait here until five o'clock.","انتظر هنا حتى الساعة الخامسة."],
+        ["I will stay until you arrive.","سأبقى حتى تصل."],
+        ["She didn't know until yesterday.","لم تكن تعرف حتى أمس."]
+      ]
+    },
+    {
+      word:"thoughtful",
+      type:"Adjective | صفة",
+      meaning:"مراعٍ لمشاعر الآخرين / لطيف ومهتم / يدل على الاهتمام.",
+      explanation:"تصف شخصاً يفكر في مشاعر واحتياجات الآخرين، أو تصف تصرفاً يدل على الاهتمام والتقدير، مثل thoughtful gift.",
+      examples:[
+        ["That was a thoughtful gift.","كانت تلك هدية تعبّر عن الاهتمام."],
+        ["She is a thoughtful friend.","هي صديقة تراعي مشاعر الآخرين."],
+        ["Thank you for your thoughtful message.","شكراً على رسالتك اللطيفة التي تدل على اهتمامك."]
+      ]
+    },
+    {
+      word:"memory / memories",
+      type:"Noun | اسم",
+      meaning:"memory = ذكرى أو ذاكرة، memories = ذكريات.",
+      explanation:"يمكن أن تعني memory قدرة الشخص على التذكر، أو ذكرى معينة من الماضي. وعند الحديث عن ذكريات متعددة نستخدم memories.",
+      examples:[
+        ["I have a happy memory of my childhood.","لدي ذكرى سعيدة من طفولتي."],
+        ["We made beautiful memories together.","صنعنا ذكريات جميلة معاً."],
+        ["This photo brings back old memories.","تعيد هذه الصورة ذكريات قديمة."]
+      ]
+    }
+  ]
+}];
+
+/* BUILD READING SECTIONS */
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
+  })[char]);
+}
+
+function createVocabularyItem(item){
+  const examples = item.examples.map(example => `
+    <div class="example">
+      <div class="example-en">${escapeHTML(example[0])}</div>
+      <div class="example-ar">${escapeHTML(example[1])}</div>
+    </div>
+  `).join("");
+
+  return `
+    <article class="vocab-item">
+      <div class="word-head">
+        <div class="word-title">${escapeHTML(item.word)}</div>
+        <button class="speak-btn" type="button"
+          aria-label="Listen to pronunciation of ${escapeHTML(item.word)}"
+          data-speak="${escapeHTML(item.word)}">🔊</button>
+      </div>
+      <div class="word-type">${escapeHTML(item.type)}</div>
+      <div class="word-meaning">${escapeHTML(item.meaning)}</div>
+      <div class="word-explanation">${escapeHTML(item.explanation)}</div>
+      <div class="examples-label">Examples | أمثلة</div>
+      ${examples}
+    </article>
+  `;
+}
+
+function createReading(reading,index){
+  const paragraphs = reading.paragraphs.map(p=>`<p>${escapeHTML(p)}</p>`).join("");
+  const vocabulary = reading.vocabulary.map(createVocabularyItem).join("");
+
+  return `
+    <section class="reading-section">
+      <div class="section-heading">
+        <div class="section-number">${index+1}</div>
+        <div>
+          <h2>${escapeHTML(reading.title)}</h2>
+          <span>READING ${String(index+1).padStart(2,"0")}</span>
+        </div>
+      </div>
+
+      <div class="audio-card">
+        <div class="audio-top">
+          <div class="audio-icon">🎧</div>
+          <div>
+            <strong>Listen to the passage | استمع إلى النص</strong>
+            <small>استمع جيداً وحاول متابعة الكلمات أثناء القراءة.</small>
+          </div>
+        </div>
+        <audio controls preload="none">
+          <source src="${escapeHTML(reading.audio)}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <article class="reading-card">
+        <div class="reading-header">
+          <h3>${escapeHTML(reading.title)}</h3>
+          <span class="level-tag">${escapeHTML(reading.level)}</span>
+        </div>
+        <div class="reading-text">${paragraphs}</div>
+      </article>
+
+      <div class="vocab-area">
+        <button class="vocab-toggle" type="button" aria-expanded="false">
+          <span class="toggle-left">
+            <span>📚</span>
+            <span>اضغط لعرض المفردات والتعبيرات</span>
+            <span>👆</span>
+          </span>
+        </button>
+
+        <div class="vocab-content">
+          <div class="vocab-intro">
+            تعرّف على معاني الكلمات والتعبيرات، ولاحظ طريقة استخدامها في الجمل.
+            يمكنك الضغط على زر الصوت 🔊 بجانب كل كلمة لسماع نطقها.
+          </div>
+          <div class="vocab-grid">${vocabulary}</div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+document.getElementById("readings-container").innerHTML =
+  readings.map(createReading).join("");
+
+/* OPEN / CLOSE VOCABULARY */
+document.querySelectorAll(".vocab-toggle").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const content=button.nextElementSibling;
+    const isOpen=content.classList.toggle("open");
+    button.setAttribute("aria-expanded",String(isOpen));
+
+    const label=button.querySelector(".toggle-left span:nth-child(2)");
+    if(label){
+      label.textContent=isOpen
+        ? "اضغط لإخفاء المفردات والتعبيرات"
+        : "اضغط لعرض المفردات والتعبيرات";
+    }
+  });
+});
+
+/* PRONUNCIATION */
+let englishVoice=null;
+
+function loadEnglishVoice(){
+  if(!("speechSynthesis" in window))return;
+  const voices=window.speechSynthesis.getVoices();
+
+  englishVoice=
+    voices.find(v=>v.lang==="en-US") ||
+    voices.find(v=>v.lang==="en-GB") ||
+    voices.find(v=>v.lang.toLowerCase().startsWith("en")) ||
+    null;
+}
+
+if("speechSynthesis" in window){
+  loadEnglishVoice();
+  window.speechSynthesis.onvoiceschanged=loadEnglishVoice;
+}
+
+document.addEventListener("click",event=>{
+  const button=event.target.closest(".speak-btn");
+  if(!button)return;
+
+  if(!("speechSynthesis" in window)){
+    alert("Pronunciation is not supported by this browser.");
+    return;
+  }
+
+  const word=button.dataset.speak;
+  window.speechSynthesis.cancel();
+
+  const utterance=new SpeechSynthesisUtterance(word);
+  utterance.lang="en-US";
+  if(englishVoice)utterance.voice=englishVoice;
+  utterance.rate=0.85;
+  utterance.pitch=1;
+
+  window.speechSynthesis.speak(utterance);
+});
+
+/* COMPLETE LESSON */
+function completeLesson(){
+  if(typeof window.finishLesson==="function"){
+    window.finishLesson(
+      "unit2-future-simple-reading-practice",
+      "Future Simple | Reading & Listening Practice",
+      "will-going.htm"
+    );
+  }else{
+    alert("تم إكمال الدرس! يمكنك العودة إلى قائمة الدروس.");
+  }
+}
+</script>
+
+<script type="module">
+import "./js/reward.js";
+</script>
+
+</body>
+</html>
