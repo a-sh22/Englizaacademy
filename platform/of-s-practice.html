@@ -1,0 +1,1602 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7546d8">
+<title>Reading & Listening Practice | Of & ’S - Engliza Academy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1f3c88;
+  --purple:#7546d8;
+  --purple-dark:#5c35b4;
+  --purple-light:#f2edff;
+  --blue-light:#edf3ff;
+  --text:#263452;
+  --muted:#71809d;
+  --border:#e7eaf4;
+  --white:#ffffff;
+  --green:#209b73;
+  --soft-bg:#f8f9ff;
+  --shadow:0 8px 28px rgba(48,53,105,.07);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 8% 5%,rgba(117,70,216,.10),transparent 27%),
+    radial-gradient(circle at 95% 30%,rgba(31,60,136,.08),transparent 25%),
+    linear-gradient(135deg,#faf9ff,#f5f7ff 55%,#fbfaff);
+  line-height:1.8;
+}
+
+button{font-family:inherit}
+.page-container{max-width:1050px;margin:auto;padding:22px 20px 55px}
+
+/* TOP BAR */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:var(--blue);
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:9px 16px;
+  font-size:14px;
+  font-weight:700;
+  box-shadow:0 3px 12px rgba(40,50,100,.04);
+  transition:.2s;
+}
+.back-btn:hover{transform:translateY(-2px);border-color:#cfc2f5}
+
+.brand{
+  color:var(--purple-dark);
+  font-family:'Nunito',sans-serif;
+  font-weight:900;
+  letter-spacing:1.4px;
+  font-size:15px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  padding:35px 32px;
+  background:linear-gradient(125deg,#1f3c88 0%,#5542b5 48%,#8651df 100%);
+  color:white;
+  box-shadow:0 15px 35px rgba(82,62,166,.18);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:230px;height:230px;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+  top:-100px;left:-45px;
+}
+.hero-content{position:relative;z-index:1}
+.hero-label{
+  font-family:'Nunito',sans-serif;
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:900;
+  opacity:.8;
+  direction:ltr;
+  text-align:right;
+}
+.hero h1{
+  margin:8px 0 5px;
+  font-size:clamp(25px,4vw,36px);
+  line-height:1.5;
+  font-weight:800;
+}
+.hero p{margin:0;color:#eeebff;font-size:14px;max-width:590px}
+.hero-owl{
+  width:125px;height:125px;
+  object-fit:contain;
+  position:relative;z-index:1;
+  flex-shrink:0;
+}
+
+/* INTRO TIP */
+.tip-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:21px;
+  padding:17px 20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+  box-shadow:var(--shadow);
+}
+.tip-card img{width:66px;height:66px;object-fit:contain;flex-shrink:0}
+.tip-card h3{margin:0 0 3px;color:var(--purple-dark);font-size:15px}
+.tip-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.9}
+
+/* SECTION HEADING */
+.section-heading{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:35px 0 16px;
+}
+.section-number{
+  width:39px;height:39px;
+  border-radius:13px;
+  background:linear-gradient(135deg,var(--purple),#9470e9);
+  color:white;
+  display:grid;place-items:center;
+  font-family:'Nunito',sans-serif;
+  font-size:17px;font-weight:900;
+  flex-shrink:0;
+}
+.section-heading h2{margin:0;font-size:19px;color:var(--blue);font-weight:800}
+.section-heading span{display:block;font-family:'Nunito',sans-serif;color:var(--muted);font-size:11px;direction:ltr;text-align:right}
+
+/* AUDIO */
+.audio-card{
+  background:linear-gradient(110deg,#f2edff,#edf3ff);
+  border:1px solid #e4dcfa;
+  border-radius:19px;
+  padding:17px 19px;
+  margin-bottom:13px;
+}
+.audio-top{
+  display:flex;align-items:center;gap:11px;margin-bottom:10px
+}
+.audio-icon{
+  width:38px;height:38px;border-radius:12px;
+  background:white;color:var(--purple);
+  display:grid;place-items:center;font-size:18px;
+}
+.audio-top strong{font-size:14px;color:var(--blue)}
+.audio-top small{display:block;color:var(--muted);font-size:11px}
+.audio-card audio{width:100%;height:39px;display:block}
+audio{accent-color:var(--purple)}
+
+/* READING */
+.reading-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:21px;
+  padding:22px 24px;
+  box-shadow:var(--shadow);
+}
+.reading-header{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;flex-wrap:wrap;margin-bottom:13px;
+}
+.reading-header h3{margin:0;color:var(--blue);font-size:18px}
+.level-tag{
+  background:#f0ebff;color:var(--purple-dark);
+  border-radius:20px;padding:4px 12px;
+  font-family:'Nunito',sans-serif;font-size:11px;font-weight:900;
+}
+.reading-text{
+  direction:ltr;
+  text-align:left;
+  font-family:'Nunito',sans-serif;
+  font-size:16px;
+  line-height:2.05;
+  color:#293957;
+  font-weight:600;
+}
+.reading-text p{margin:0 0 12px}
+.reading-text p:last-child{margin-bottom:0}
+
+/* VOCABULARY */
+.vocab-area{margin-top:17px}
+.vocab-toggle{
+  width:100%;
+  border:1px solid #e4dcfa;
+  border-radius:15px;
+  padding:13px 16px;
+  background:#f8f5ff;
+  color:var(--purple-dark);
+  font-weight:800;
+  font-size:14px;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;
+  transition:.2s;
+}
+
+
+.vocab-toggle{
+  width:100%;
+  border:1px solid #dcd0fa;
+  border-radius:15px;
+  padding:14px 17px;
+  background:linear-gradient(110deg,#f4efff,#edf3ff);
+  color:var(--purple-dark);
+  font-weight:800;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  cursor:pointer;
+  transition:all .2s ease;
+  box-shadow:0 3px 10px rgba(85,60,160,.05);
+}
+
+.vocab-toggle:hover{
+  background:linear-gradient(110deg,#ece3ff,#e5edff);
+  border-color:#bca8ec;
+  transform:translateY(-1px);
+}
+
+.vocab-toggle:active{
+  transform:scale(.99);
+}
+
+.toggle-left{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  text-align:center;
+}
+
+.toggle-arrow{
+  display:none;
+}
+  
+
+.vocab-content{display:none;padding-top:15px}
+.vocab-content.open{display:block}
+
+.vocab-intro{
+  background:#f7f8ff;
+  border:1px solid #edf0fa;
+  padding:12px 15px;
+  border-radius:13px;
+  margin-bottom:15px;
+  color:#64728e;
+  font-size:12px;
+  line-height:1.9;
+}
+
+.vocab-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+}
+
+.vocab-item{
+  min-width:0;
+  background:#fff;
+  border:1px solid #e8eaf3;
+  border-radius:16px;
+  padding:15px 16px;
+  box-shadow:0 3px 12px rgba(45,55,100,.035);
+  transition:border-color .2s,transform .2s;
+}
+.vocab-item:hover{
+  border-color:#d6c8f5;
+  transform:translateY(-1px);
+}
+
+.word-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:9px;margin-bottom:7px;
+}
+.word-title{
+  direction:ltr;text-align:left;
+  font-family:'Nunito',sans-serif;
+  color:var(--blue);
+  font-size:18px;font-weight:900;
+  overflow-wrap:anywhere;
+}
+.speak-btn{
+  flex-shrink:0;
+  width:34px;height:34px;
+  border:0;border-radius:11px;
+  background:#f0ebff;color:var(--purple-dark);
+  cursor:pointer;font-size:15px;
+  display:grid;place-items:center;
+  transition:.2s;
+}
+.speak-btn:hover{background:var(--purple);color:white}
+.word-type{
+  display:inline-block;
+  background:#edf3ff;color:#36528d;
+  border-radius:7px;
+  padding:2px 8px;
+  font-size:10px;font-weight:700;
+  margin-bottom:8px;
+}
+.word-meaning{
+  color:#263452;
+  font-size:14px;
+  line-height:1.95;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.word-explanation{
+  color:#66738c;
+  font-size:12px;
+  line-height:1.9;
+  background:#fafaff;
+  border-right:3px solid #c9b6f4;
+  border-radius:8px;
+  padding:8px 10px;
+  margin-bottom:9px;
+}
+.examples-label{
+  color:var(--purple-dark);
+  font-size:11px;font-weight:800;
+  margin:7px 0 5px;
+}
+.example{
+  padding:7px 0;
+  border-top:1px solid #f0f1f6;
+}
+.example-en{
+  direction:ltr;text-align:left;
+  font-family:'Nunito',sans-serif;
+  color:#30466f;font-size:13px;font-weight:800;
+  line-height:1.65;
+}
+.example-ar{
+  color:#596781;
+  font-size:12px;
+  line-height:1.8;
+  margin-top:2px;
+}
+
+/* FINISH */
+.finish-card{
+  margin-top:38px;
+  border-radius:23px;
+  padding:25px 23px;
+  color:white;
+  text-align:center;
+  background:linear-gradient(125deg,#1f3c88,#6545bd,#8651df);
+  box-shadow:0 12px 28px rgba(80,61,160,.17);
+}
+.finish-card h2{margin:0 0 6px;font-size:20px}
+.finish-card p{margin:0 0 16px;color:#eeebff;font-size:13px}
+.finish-btn{
+  border:0;border-radius:13px;
+  padding:11px 25px;
+  background:white;color:var(--purple-dark);
+  font-weight:900;font-size:14px;
+  cursor:pointer;transition:.2s;
+}
+.finish-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px #29205a44}
+
+.footer{
+  text-align:center;margin-top:23px;
+  color:#929bb0;font-family:'Nunito',sans-serif;
+  font-size:11px;font-weight:800;letter-spacing:1px;
+}
+
+@media(max-width:700px){
+  .page-container{padding:14px 13px 38px}
+  .hero{padding:25px 20px;border-radius:22px}
+  .hero-owl{width:88px;height:88px}
+  .hero p{font-size:12px}
+  .tip-card{padding:13px}
+  .tip-card img{width:53px;height:53px}
+  .reading-card{padding:17px 15px}
+  .reading-text{font-size:15px;line-height:1.95}
+  .vocab-grid{grid-template-columns:1fr}
+  .vocab-item{padding:14px 15px}
+  .section-heading h2{font-size:17px}
+}
+@media(max-width:390px){
+  .brand{font-size:12px}
+  .back-btn{padding:8px 11px;font-size:12px}
+  .hero-owl{width:72px;height:72px}
+}
+</style>
+</head>
+
+<body>
+<div class="page-container">
+
+  <div class="topbar">
+    <a class="back-btn" href="unit1-pre.html">→ العودة</a>
+    <div class="brand">ENGLIZA ACADEMY</div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-label">READING & LISTENING PRACTICE</div>
+      <h1>Of & ’S</h1>
+      <p>طوّر مهارات القراءة والاستماع، وتعلّم مفردات وتعبيرات جديدة من خلال أربعة نصوص متنوعة.</p>
+    </div>
+    <img class="hero-owl" src="../okay.owl.PNG" alt="Engliza Academy Owl">
+  </header>
+
+  <div class="tip-card">
+    <img src="../earlo .PNG" alt="Learning Owl">
+    <div>
+      <h3>Before You Start | قبل أن تبدأ</h3>
+      <p>استمع إلى المقطع الصوتي أولاً، ثم اقرأ النص وحاول فهمه. بعد ذلك افتح المفردات وتعلّم الكلمات والتعبيرات الجديدة مع أمثلتها.</p>
+    </div>
+  </div>
+
+  <main id="readings-container"></main>
+
+  <section class="finish-card">
+    <h2>🎉 Great Work!</h2>
+    <p>أحسنت! أكملت تدريبات القراءة والاستماع والمفردات.</p>
+    <button class="finish-btn" onclick="completeLesson()">إنهاء الدرس</button>
+  </section>
+
+  <footer class="footer">ENGLIZA ACADEMY · LEARN ENGLISH WITH CONFIDENCE</footer>
+</div>
+
+<script>
+const readings = [
+
+/* =========================
+   READING 1
+========================= */
+{
+  title:"A Day at Sara’s House",
+  level:"B1",
+  audio:"https://videos.englizaacademy.com/Intermediate/A%20day%20at%20Sara%E2%80%98s%20house.mp3",
+  paragraphs:[
+    "Sara invited her friend Emma to spend the afternoon at her house. When Emma arrived, Sara opened the door and welcomed her with a big smile.",
+    "“Come in! Let me show you around,” Sara said.",
+    "First, they walked into the living room. The walls were light blue, and there was a beautiful painting above the sofa. Sara explained that it was her grandmother’s painting. It had been in the family for many years.",
+    "Next, they visited the kitchen. Sara’s mother was preparing lunch, and the smell of fresh bread filled the room. On the kitchen table, there was a bowl of fruit and a bottle of orange juice.",
+    "After lunch, Sara showed Emma her bedroom. It was small but comfortable. There were books on the shelves, photographs of her friends, and a little plant near the window.",
+    "Emma looked around and said, “I really like your room. It feels so peaceful!”",
+    "Sara smiled. “Thank you! It’s my favorite place in the house.”"
+  ],
+  vocabulary:[
+    {
+      word:"invite / invited",
+      type:"Verb | فعل",
+      meaning:"يدعو / يعزم. invited هي صيغة الماضي من invite.",
+      explanation:"نستخدم invite عندما ندعو شخصاً إلى مكان أو مناسبة أو نشاط. بعد invite يمكن أن يأتي الشخص ثم to.",
+      examples:[
+        ["I invite my friends to my house.","أدعو أصدقائي إلى منزلي."],
+        ["Sara invited Emma to spend the afternoon with her.","دعت سارة إيما لقضاء فترة ما بعد الظهر معها."]
+      ]
+    },
+    {
+      word:"arrive / arrived",
+      type:"Verb | فعل",
+      meaning:"يصل / وصل.",
+      explanation:"نستخدم arrive للتعبير عن الوصول إلى مكان. نقول arrive at مع الأماكن المحددة، وarrive in مع المدن والدول غالباً.",
+      examples:[
+        ["What time do you arrive at school?","في أي وقت تصل إلى المدرسة؟"],
+        ["Emma arrived at Sara’s house.","وصلت إيما إلى منزل سارة."]
+      ]
+    },
+    {
+      word:"welcome / welcomed",
+      type:"Verb | فعل، وأيضاً تعبير ترحيب",
+      meaning:"يرحّب / رحّب. ويمكن استخدام Welcome بمعنى أهلاً وسهلاً.",
+      explanation:"كفعل: welcome someone أي يرحّب بشخص. أما Welcome! فتُقال للترحيب بشخص.",
+      examples:[
+        ["They welcomed the new student.","رحّبوا بالطالب الجديد."],
+        ["Welcome to our home!","أهلاً وسهلاً بك في منزلنا!"]
+      ]
+    },
+    {
+      word:"Come in",
+      type:"Phrasal verb | تعبير",
+      meaning:"تفضّل بالدخول / ادخل.",
+      explanation:"تُستخدم عندما تدعو شخصاً للدخول إلى المنزل أو الغرفة أو أي مكان.",
+      examples:[
+        ["The door is open. Come in!","الباب مفتوح. تفضّل بالدخول!"],
+        ["Please come in and sit down.","تفضّل بالدخول واجلس."]
+      ]
+    },
+    {
+      word:"painting",
+      type:"Noun | اسم",
+      meaning:"لوحة فنية / رسمة مرسومة بالألوان.",
+      explanation:"تُستخدم painting غالباً للحديث عن لوحة فنية مرسومة، وليس صورة فوتوغرافية.",
+      examples:[
+        ["There is a painting above the sofa.","توجد لوحة فنية فوق الأريكة."],
+        ["My grandmother loves painting.","جدتي تحب الرسم."]
+      ]
+    },
+    {
+      word:"sofa",
+      type:"Noun | اسم",
+      meaning:"أريكة / كنبة.",
+      explanation:"قطعة أثاث طويلة ومريحة يجلس عليها أكثر من شخص.",
+      examples:[
+        ["The children are sitting on the sofa.","الأطفال يجلسون على الأريكة."],
+        ["We bought a new sofa.","اشترينا أريكة جديدة."]
+      ]
+    },
+    {
+      word:"prepare / preparing",
+      type:"Verb | فعل",
+      meaning:"يُحضّر / يُجهّز. preparing تعني يُحضّر الآن أو في تلك الفترة.",
+      explanation:"نستخدم prepare عند تجهيز الطعام أو الدروس أو الأشياء قبل استخدامها.",
+      examples:[
+        ["I prepare breakfast every morning.","أُحضّر الإفطار كل صباح."],
+        ["Sara’s mother was preparing lunch.","كانت والدة سارة تحضّر الغداء."]
+      ]
+    },
+    {
+      word:"smell of",
+      type:"Expression | تعبير",
+      meaning:"رائحة شيء ما.",
+      explanation:"نستخدم smell of ثم نذكر الشيء الذي تصدر منه الرائحة. ويمكن أن تكون الرائحة جميلة أو غير محببة بحسب السياق.",
+      examples:[
+        ["I love the smell of fresh coffee.","أحب رائحة القهوة الطازجة."],
+        ["The smell of flowers filled the room.","ملأت رائحة الزهور الغرفة."]
+      ]
+    },
+    {
+      word:"bread",
+      type:"Noun | اسم",
+      meaning:"خبز.",
+      explanation:"اسم غير معدود عادةً في الإنجليزية؛ لذلك نقول some bread أو a piece of bread.",
+      examples:[
+        ["We need some fresh bread.","نحتاج إلى بعض الخبز الطازج."],
+        ["She bought a loaf of bread.","اشترت رغيف خبز."]
+      ]
+    },
+    {
+      word:"fill / filled",
+      type:"Verb | فعل",
+      meaning:"يملأ / ملأ.",
+      explanation:"نستخدم fill عندما يمتلئ مكان أو شيء بشيء آخر. filled هي الماضي والتصريف الثالث.",
+      examples:[
+        ["Please fill the bottle with water.","من فضلك املأ الزجاجة بالماء."],
+        ["The smell of bread filled the room.","ملأت رائحة الخبز الغرفة."]
+      ]
+    },
+    {
+      word:"bowl",
+      type:"Noun | اسم",
+      meaning:"وعاء / زبدية.",
+      explanation:"وعاء عميق نسبياً نستخدمه للطعام مثل الحساء أو الفاكهة.",
+      examples:[
+        ["I ate a bowl of soup.","أكلت وعاءً من الحساء."],
+        ["There is a bowl of fruit on the table.","يوجد وعاء من الفاكهة على الطاولة."]
+      ]
+    },
+    {
+      word:"bottle / a bottle of",
+      type:"Noun | اسم وتعبير",
+      meaning:"bottle = زجاجة. و a bottle of = زجاجة من شيء ما.",
+      explanation:"نستخدم a bottle of قبل السوائل مثل الماء والعصير والحليب.",
+      examples:[
+        ["I bought a bottle of water.","اشتريت زجاجة ماء."],
+        ["She drank a bottle of orange juice.","شربت زجاجة من عصير البرتقال."]
+      ]
+    },
+    {
+      word:"show / showed",
+      type:"Verb | فعل",
+      meaning:"يُري / يعرض / يوضّح. showed هي الماضي.",
+      explanation:"قد تعني show أن تجعل شخصاً يرى شيئاً، أو أن تعرض شيئاً مثل فيلم أو صور.",
+      examples:[
+        ["Can you show me your room?","هل يمكنك أن تريني غرفتك؟"],
+        ["She showed her friends the photographs.","أرتهم الصور لأصدقائها."]
+      ]
+    },
+    {
+      word:"near",
+      type:"Preposition / Adverb | حرف جر أو ظرف",
+      meaning:"بالقرب من / قريب.",
+      explanation:"تُستخدم لوصف قرب شيء من مكان أو شخص. يأتي بعدها المكان أو الشيء عند استخدامها حرف جر.",
+      examples:[
+        ["The school is near my house.","المدرسة بالقرب من منزلي."],
+        ["There is a plant near the window.","توجد نبتة بالقرب من النافذة."]
+      ]
+    },
+    {
+      word:"plant",
+      type:"Noun | اسم",
+      meaning:"نبات / نبتة.",
+      explanation:"تُستخدم للحديث عن النباتات بشكل عام أو نبتة واحدة.",
+      examples:[
+        ["I have a small plant in my room.","لدي نبتة صغيرة في غرفتي."],
+        ["This plant needs water.","هذا النبات يحتاج إلى الماء."]
+      ]
+    },
+    {
+      word:"peaceful",
+      type:"Adjective | صفة",
+      meaning:"هادئ / مريح / يسوده السلام.",
+      explanation:"تصف مكاناً أو وقتاً أو شعوراً يخلو من الضوضاء والتوتر.",
+      examples:[
+        ["This garden is very peaceful.","هذه الحديقة هادئة جداً."],
+        ["I enjoy peaceful mornings.","أستمتع بالصباحات الهادئة."]
+      ]
+    },
+    {
+      word:"favorite",
+      type:"Adjective / Noun | صفة أو اسم",
+      meaning:"المفضّل / المفضّلة.",
+      explanation:"نستخدمها للحديث عن الشيء الذي نحبه أكثر من غيره. والتهجئة البريطانية favourite.",
+      examples:[
+        ["Blue is my favorite color.","الأزرق هو لوني المفضل."],
+        ["This is my favorite place.","هذا مكاني المفضل."]
+      ]
+    },
+    {
+      word:"grandmother’s",
+      type:"Possessive ’s | الملكية",
+      meaning:"الخاص بجدتي / جدتي's.",
+      explanation:"أُضيفت ’s إلى grandmother للدلالة على الملكية: the grandmother’s painting = لوحة الجدة. علامة ’s هنا لا تعني is.",
+      examples:[
+        ["This is my grandmother’s house.","هذا منزل جدتي."],
+        ["My grandmother’s painting is beautiful.","لوحة جدتي جميلة."]
+      ]
+    },
+    {
+      word:"Sara’s mother",
+      type:"Possessive ’s | الملكية",
+      meaning:"والدة سارة.",
+      explanation:"تُستخدم ’s بعد اسم الشخص للدلالة على أن العلاقة أو الشيء يعود إليه. Sara’s mother تعني أم سارة.",
+      examples:[
+        ["Sara’s mother is a teacher.","والدة سارة معلمة."],
+        ["Emma’s bag is on the chair.","حقيبة إيما على الكرسي."]
+      ]
+    }
+  ]
+},
+
+/* =========================
+   READING 2
+========================= */
+{
+  title:"A Busy Week at School",
+  level:"B1",
+  audio:"https://videos.englizaacademy.com/Intermediate/A%20busy%20week%20at%20school.mp3",
+  paragraphs:[
+    "Maya had a very busy week ahead of her. On Sunday evening, she looked at her calendar and realized that she had several important things to do.",
+    "Monday’s lesson was about science, and her teacher had given the students a project to complete before the end of the week. Maya knew that she needed to organize her time carefully.",
+    "On Tuesday, she spent two hours in the library. She searched for information about the history of renewable energy and wrote down the most important ideas.",
+    "By Wednesday, she had finished most of her research. However, she still needed to prepare the presentation. Her brother offered to help her design the slides, while her father gave her some useful advice.",
+    "Thursday was the most stressful day because she had an English exam in the morning. The night before the exam, Maya reviewed her notes and prepared everything she needed.",
+    "On Friday, she finally presented her project. Her teacher was impressed with the quality of her work and praised her effort.",
+    "At the end of the week, Maya felt proud of herself. She had learned an important lesson: good planning can make even the busiest week easier."
+  ],
+  vocabulary:[
+    {
+      word:"ahead / ahead of her",
+      type:"Adverb / Expression | ظرف وتعبير",
+      meaning:"ahead = أمام / في المستقبل. و ahead of her هنا = أمامها أو ينتظرها.",
+      explanation:"في عبارة had a busy week ahead of her، المعنى أن أسبوعاً مزدحماً كان ينتظر مايا في الأيام القادمة.",
+      examples:[
+        ["There are difficult days ahead.","هناك أيام صعبة قادمة."],
+        ["She has a busy week ahead of her.","ينتظرها أسبوع مزدحم."]
+      ]
+    },
+    {
+      word:"calendar",
+      type:"Noun | اسم",
+      meaning:"تقويم / رزنامة.",
+      explanation:"جدول يوضح الأيام والتواريخ، ويمكن استخدامه لتسجيل المواعيد والمهام.",
+      examples:[
+        ["I wrote the date on my calendar.","كتبت التاريخ في تقويمي."],
+        ["Check your calendar before making plans.","تحقق من تقويمك قبل وضع الخطط."]
+      ]
+    },
+    {
+      word:"several",
+      type:"Determiner | محدد كمية",
+      meaning:"عدة / بضعة.",
+      explanation:"تُستخدم مع الأسماء المعدودة للجمع عندما نتحدث عن أكثر من اثنين عادةً، دون تحديد العدد بدقة. وهي أقل تحديداً من a few وقد تشير إلى عدد أكبر بحسب السياق.",
+      examples:[
+        ["I have several books to read.","لدي عدة كتب لأقرأها."],
+        ["She visited several countries.","زارت عدة دول."]
+      ]
+    },
+    {
+      word:"science",
+      type:"Noun | اسم",
+      meaning:"العلوم / العلم.",
+      explanation:"اسم يشير إلى دراسة العالم والطبيعة والظواهر من حولنا.",
+      examples:[
+        ["Science is my favorite subject.","العلوم مادتي المفضلة."],
+        ["We learn about space in science class.","نتعلم عن الفضاء في حصة العلوم."]
+      ]
+    },
+    {
+      word:"project",
+      type:"Noun | اسم",
+      meaning:"مشروع.",
+      explanation:"عمل أو مهمة تتطلب التخطيط والبحث أو التنفيذ، وقد تكون فردية أو جماعية.",
+      examples:[
+        ["We are working on a school project.","نعمل على مشروع مدرسي."],
+        ["She finished her project on time.","أنهت مشروعها في الوقت المحدد."]
+      ]
+    },
+    {
+      word:"complete / completed",
+      type:"Verb & Adjective | فعل وصفة",
+      meaning:"كفعل: يُكمل / أكمل. وكصفة: كامل / مكتمل.",
+      explanation:"يمكن أن تعني complete إنهاء مهمة، أو وصف شيء بأنه مكتمل ولا ينقصه شيء.",
+      examples:[
+        ["I need to complete my homework.","أحتاج إلى إكمال واجبي."],
+        ["The project is complete.","المشروع مكتمل."]
+      ]
+    },
+    {
+      word:"organize / organized",
+      type:"Verb & Adjective | فعل وصفة",
+      meaning:"ينظّم / نظّم. و organized كصفة تعني منظّم.",
+      explanation:"نستخدم organize لترتيب الوقت أو الأشياء أو الأفكار. أما organized فقد تصف شخصاً أو مكاناً مرتباً.",
+      examples:[
+        ["I organize my tasks every morning.","أنظّم مهامي كل صباح."],
+        ["She is an organized student.","هي طالبة منظّمة."]
+      ]
+    },
+    {
+      word:"search / searched",
+      type:"Verb | فعل",
+      meaning:"يبحث / بحث.",
+      explanation:"نستخدم search when looking carefully for information or something missing. ويمكن أن يأتي بعدها for عند ذكر الشيء الذي نبحث عنه.",
+      examples:[
+        ["I searched for the answer online.","بحثت عن الإجابة على الإنترنت."],
+        ["They are searching for a new house.","إنهم يبحثون عن منزل جديد."]
+      ]
+    },
+    {
+      word:"information",
+      type:"Noun | اسم غير معدود",
+      meaning:"معلومات.",
+      explanation:"Information اسم غير معدود؛ لا نضيف إليه s ولا نقول informations. نقول some information أو a piece of information.",
+      examples:[
+        ["I need more information.","أحتاج إلى مزيد من المعلومات."],
+        ["She found a useful piece of information.","وجدت معلومة مفيدة."]
+      ]
+    },
+    {
+      word:"idea / ideas",
+      type:"Noun | اسم",
+      meaning:"idea = فكرة، ideas = أفكار.",
+      explanation:"idea اسم مفرد معدود، لذلك يمكن أن نقول an idea، وعند الجمع نضيف s.",
+      examples:[
+        ["I have a good idea.","لدي فكرة جيدة."],
+        ["She wrote down her ideas.","دوّنت أفكارها."]
+      ]
+    },
+    {
+      word:"renewable",
+      type:"Adjective | صفة",
+      meaning:"متجدّد / قابل للتجدد.",
+      explanation:"تُستخدم كثيراً مع الطاقة والموارد التي يمكن أن تتجدد طبيعياً، مثل الطاقة الشمسية وطاقة الرياح.",
+      examples:[
+        ["Solar energy is renewable.","الطاقة الشمسية متجددة."],
+        ["We should use renewable energy.","ينبغي أن نستخدم الطاقة المتجددة."]
+      ]
+    },
+    {
+      word:"research",
+      type:"Noun / Verb | اسم وفعل",
+      meaning:"بحث / يجري بحثاً.",
+      explanation:"تُستخدم للدلالة على عملية جمع المعلومات ودراستها. وغالباً تأتي كاسم غير معدود: do research أو conduct research.",
+      examples:[
+        ["I did some research about climate change.","أجريت بعض الأبحاث حول تغيّر المناخ."],
+        ["She is researching renewable energy.","هي تبحث في مجال الطاقة المتجددة."]
+      ]
+    },
+    {
+      word:"presentation",
+      type:"Noun | اسم",
+      meaning:"عرض تقديمي / تقديم.",
+      explanation:"عرض معلومات أمام مجموعة من الأشخاص، غالباً باستخدام شرائح أو صور.",
+      examples:[
+        ["I have a presentation tomorrow.","لدي عرض تقديمي غداً."],
+        ["Her presentation was excellent.","كان عرضها التقديمي ممتازاً."]
+      ]
+    },
+    {
+      word:"offer / offered",
+      type:"Verb | فعل",
+      meaning:"يعرض / يقدّم. offered هي الماضي والتصريف الثالث من offer.",
+      explanation:"نستخدم offer عندما يعرض شخص المساعدة أو يقدم شيئاً لشخص آخر. نقول offer someone help أو offer to help.",
+      examples:[
+        ["My brother offered to help me.","عرض أخي مساعدتي."],
+        ["She offered him a cup of tea.","قدّمت له كوباً من الشاي."]
+      ]
+    },
+    {
+      word:"advice",
+      type:"Uncountable Noun | اسم غير معدود",
+      meaning:"نصيحة / نصائح.",
+      explanation:"advice اسم غير معدود، ولا نقول advices. نقول some advice أو a piece of advice. أما advise فهو الفعل بمعنى ينصح.",
+      examples:[
+        ["My teacher gave me some useful advice.","أعطاني معلمي بعض النصائح المفيدة."],
+        ["Can you give me a piece of advice?","هل يمكنك إعطائي نصيحة؟"]
+      ]
+    },
+    {
+      word:"stressful",
+      type:"Adjective | صفة",
+      meaning:"مُسبّب للتوتر / مرهق نفسياً.",
+      explanation:"تصف موقفاً أو يوماً أو عملاً يسبب الضغط والتوتر. لا تخلطي بينها وبين stressed التي تصف الشخص الذي يشعر بالتوتر.",
+      examples:[
+        ["Exams can be stressful.","قد تكون الامتحانات مسببة للتوتر."],
+        ["It was a stressful day.","كان يوماً مرهقاً ومليئاً بالتوتر."]
+      ]
+    },
+    {
+      word:"because",
+      type:"Conjunction | أداة ربط",
+      meaning:"لأن / بسبب أن.",
+      explanation:"تأتي بعدها جملة تشرح السبب. أما because of فيأتي بعدها اسم أو عبارة اسمية.",
+      examples:[
+        ["I stayed home because I was tired.","بقيت في المنزل لأنني كنت متعبة."],
+        ["The match was canceled because of the rain.","أُلغيت المباراة بسبب المطر."]
+      ]
+    },
+    {
+      word:"review / reviewed",
+      type:"Verb & Noun | فعل واسم",
+      meaning:"كفعل: يراجع / راجع. وكاسم: مراجعة.",
+      explanation:"في الدراسة تعني مراجعة الدروس والملاحظات استعداداً للاختبار.",
+      examples:[
+        ["I review my lessons every evening.","أراجع دروسي كل مساء."],
+        ["She reviewed her notes before the exam.","راجعت ملاحظاتها قبل الاختبار."]
+      ]
+    },
+    {
+      word:"impressed",
+      type:"Adjective | صفة",
+      meaning:"مُعجب / منبهر.",
+      explanation:"نستخدم be impressed with عندما يعجبنا شيء أو ننبهر بجودته أو أداء شخص. وهي تصف شعور الشخص.",
+      examples:[
+        ["I was impressed with her English.","أُعجبت بمستواها في الإنجليزية."],
+        ["The teacher was impressed by his work.","أُعجب المعلم بعمله."]
+      ]
+    },
+    {
+      word:"quality",
+      type:"Noun | اسم",
+      meaning:"جودة / نوعية.",
+      explanation:"تُستخدم لوصف مستوى الشيء ومدى إتقانه أو تميّزه.",
+      examples:[
+        ["The quality of this book is excellent.","جودة هذا الكتاب ممتازة."],
+        ["We need to improve the quality of our work.","نحتاج إلى تحسين جودة عملنا."]
+      ]
+    },
+    {
+      word:"quality of",
+      type:"Expression | تعبير",
+      meaning:"جودة شيء ما.",
+      explanation:"نستخدم quality of ثم نذكر الشيء الذي نتحدث عن جودته.",
+      examples:[
+        ["The quality of the food was great.","كانت جودة الطعام رائعة."],
+        ["The quality of her presentation was impressive.","كانت جودة عرضها التقديمي مبهرة."]
+      ]
+    },
+    {
+      word:"praise / praised",
+      type:"Verb | فعل",
+      meaning:"يمدح / أثنى على. praised هي الماضي والتصريف الثالث.",
+      explanation:"نستخدم praise عندما نعبر عن إعجابنا بعمل شخص أو جهده أو إنجازه.",
+      examples:[
+        ["The teacher praised the students.","مدح المعلم الطلاب."],
+        ["Her parents praised her effort.","أثنى والداها على جهدها."]
+      ]
+    },
+    {
+      word:"effort / efforts",
+      type:"Noun | اسم",
+      meaning:"effort = جهد، efforts = جهود.",
+      explanation:"يمكن أن نتحدث عن الجهد بشكل عام بالمفرد، أو عن جهود متعددة بالجمع.",
+      examples:[
+        ["Your effort will make a difference.","جهدك سيُحدث فرقاً."],
+        ["She made great efforts to improve.","بذلت جهوداً كبيرة للتطور."]
+      ]
+    },
+    {
+      word:"at the end of",
+      type:"Expression | تعبير",
+      meaning:"في نهاية / عند نهاية شيء.",
+      explanation:"يأتي بعدها اسم يحدد الشيء الذي وصلنا إلى نهايته، مثل week أو month أو meeting.",
+      examples:[
+        ["At the end of the week, I felt happy.","في نهاية الأسبوع، شعرت بالسعادة."],
+        ["We talked at the end of the lesson.","تحدثنا في نهاية الدرس."]
+      ]
+    },
+    {
+      word:"Monday’s lesson",
+      type:"Possessive ’s | تركيب ملكية",
+      meaning:"درس يوم الاثنين.",
+      explanation:"يمكن استخدام ’s مع أسماء الأيام للإشارة إلى شيء مرتبط بذلك اليوم. Monday’s lesson تعني درس يوم الاثنين.",
+      examples:[
+        ["Monday’s meeting is important.","اجتماع يوم الاثنين مهم."],
+        ["Friday’s exam was difficult.","اختبار يوم الجمعة كان صعباً."]
+      ]
+    }
+  ]
+},
+
+/* =========================
+   READING 3
+========================= */
+{
+  title:"A Visit to Muscat",
+  level:"B1",
+  audio:"https://videos.englizaacademy.com/Intermediate/A%20visit%20to%20Muscat.mp3",
+  paragraphs:[
+    "Last weekend, my family and I went on a trip to Muscat, the capital of Oman. We wanted to explore the city and learn more about its history and culture.",
+    "Our first stop was the Sultan Qaboos Grand Mosque. The beauty of the building was impressive. The walls were decorated with beautiful designs, and the details of the architecture were truly amazing.",
+    "After that, we visited Mutrah Souq. The market was full of traditional products, colorful clothes, and the smell of Omani perfumes. My mother bought a beautiful silver necklace, while my father looked at some traditional souvenirs.",
+    "Later, we walked along the Mutrah Corniche. The view of the sea was wonderful, especially when the sun began to set behind the mountains.",
+    "Before going home, we stopped at a small restaurant to enjoy some traditional Omani food.",
+    "It was a wonderful day. I realized that Muscat is not only a beautiful city but also a place full of history, culture, and unforgettable experiences."
+  ],
+  vocabulary:[
+    {
+      word:"trip",
+      type:"Noun | اسم",
+      meaning:"رحلة.",
+      explanation:"كلمة عامة لرحلة من مكان إلى آخر، وقد تكون قصيرة أو طويلة، للترفيه أو العمل أو غير ذلك.",
+      examples:[
+        ["We went on a trip to Muscat.","ذهبنا في رحلة إلى مسقط."],
+        ["Our school trip was exciting.","كانت رحلتنا المدرسية ممتعة."]
+      ]
+    },
+    {
+      word:"journey",
+      type:"Noun | اسم",
+      meaning:"رحلة أو مسار الانتقال من مكان إلى آخر.",
+      explanation:"تركّز غالباً على عملية السفر والانتقال نفسها، وقد تكون طويلة. تختلف عن trip التي تشير عادةً إلى الرحلة أو الزيارة ككل.",
+      examples:[
+        ["The journey took three hours.","استغرقت الرحلة ثلاث ساعات."],
+        ["It was a long journey across the country.","كانت رحلة طويلة عبر البلاد."]
+      ]
+    },
+    {
+      word:"picnic",
+      type:"Noun | اسم",
+      meaning:"نزهة خارجية لتناول الطعام في الهواء الطلق.",
+      explanation:"تُستخدم عندما يذهب الأشخاص إلى حديقة أو شاطئ أو مكان مفتوح لتناول الطعام والاستمتاع بالوقت.",
+      examples:[
+        ["We had a picnic in the park.","قمنا بنزهة وتناولنا الطعام في الحديقة."],
+        ["They are planning a family picnic.","إنهم يخططون لنزهة عائلية."]
+      ]
+    },
+    {
+      word:"history",
+      type:"Noun | اسم",
+      meaning:"التاريخ.",
+      explanation:"يشير إلى أحداث الماضي وتطور الشعوب والأماكن والحضارات.",
+      examples:[
+        ["I enjoy learning about history.","أستمتع بتعلم التاريخ."],
+        ["Muscat has a long history.","لمسقط تاريخ طويل."]
+      ]
+    },
+    {
+      word:"culture",
+      type:"Noun | اسم",
+      meaning:"الثقافة.",
+      explanation:"تشمل العادات والتقاليد والفنون واللغة وطريقة الحياة لدى مجتمع معين.",
+      examples:[
+        ["I want to learn about Omani culture.","أريد أن أتعلم عن الثقافة العُمانية."],
+        ["Food is an important part of culture.","الطعام جزء مهم من الثقافة."]
+      ]
+    },
+    {
+      word:"city",
+      type:"Noun | اسم",
+      meaning:"مدينة.",
+      explanation:"مكان كبير يضم السكان والمباني والخدمات والمؤسسات.",
+      examples:[
+        ["Muscat is a beautiful city.","مسقط مدينة جميلة."],
+        ["I live in a busy city.","أعيش في مدينة مزدحمة."]
+      ]
+    },
+    {
+      word:"explore / explored",
+      type:"Verb | فعل",
+      meaning:"يستكشف / استكشف.",
+      explanation:"نستخدم explore عندما نزور مكاناً أو نفحص موضوعاً لنتعرف عليه بشكل أعمق.",
+      examples:[
+        ["We want to explore the city.","نريد استكشاف المدينة."],
+        ["They explored the old market.","استكشفوا السوق القديم."]
+      ]
+    },
+    {
+      word:"mosque",
+      type:"Noun | اسم",
+      meaning:"مسجد.",
+      explanation:"مكان عبادة المسلمين.",
+      examples:[
+        ["The mosque is very beautiful.","المسجد جميل جداً."],
+        ["We visited the Grand Mosque.","زرنا الجامع الكبير."]
+      ]
+    },
+    {
+      word:"grand",
+      type:"Adjective | صفة",
+      meaning:"عظيم / فخم / مهيب.",
+      explanation:"تصف شيئاً كبيراً أو مميزاً أو مثيراً للإعجاب من حيث الحجم أو الجمال أو الأهمية.",
+      examples:[
+        ["They visited a grand building.","زاروا مبنى فخماً."],
+        ["The hotel has a grand entrance.","للفندق مدخل مهيب."]
+      ]
+    },
+    {
+      word:"impressive",
+      type:"Adjective | صفة",
+      meaning:"مثير للإعجاب / مبهر.",
+      explanation:"تصف شيئاً يترك انطباعاً قوياً بسبب جماله أو جودته أو حجمه.",
+      examples:[
+        ["The view was impressive.","كان المنظر مبهراً."],
+        ["She gave an impressive speech.","ألقت خطاباً مثيراً للإعجاب."]
+      ]
+    },
+    {
+      word:"decorate / decorated",
+      type:"Verb | فعل",
+      meaning:"يزخرف / زيّن.",
+      explanation:"نستخدم decorate عند إضافة الزينة أو التصاميم إلى مكان أو شيء. decorated هي الماضي والتصريف الثالث.",
+      examples:[
+        ["They decorate the room for parties.","يزينون الغرفة للحفلات."],
+        ["The walls were decorated with beautiful designs.","زُيّنت الجدران بتصاميم جميلة."]
+      ]
+    },
+    {
+      word:"details",
+      type:"Noun | اسم جمع",
+      meaning:"تفاصيل. المفرد detail = تفصيل.",
+      explanation:"نستخدمها للإشارة إلى الأجزاء الصغيرة أو المعلومات الدقيقة التي تكوّن الصورة الكاملة.",
+      examples:[
+        ["Look at the details of the painting.","انظر إلى تفاصيل اللوحة."],
+        ["She explained all the details.","شرحت جميع التفاصيل."]
+      ]
+    },
+    {
+      word:"truly",
+      type:"Adverb | ظرف",
+      meaning:"حقاً / حقًّا / بالفعل.",
+      explanation:"تُستخدم لتأكيد أن شيئاً ما حقيقي أو صادق أو بدرجة كبيرة.",
+      examples:[
+        ["The building is truly beautiful.","المبنى جميل حقاً."],
+        ["I am truly happy for you.","أنا سعيدة حقاً من أجلك."]
+      ]
+    },
+    {
+      word:"architecture",
+      type:"Noun | اسم",
+      meaning:"الهندسة المعمارية / فن العمارة.",
+      explanation:"تشير إلى تصميم المباني وطريقة بنائها وشكلها الفني.",
+      examples:[
+        ["I love the architecture of this building.","أحب الهندسة المعمارية لهذا المبنى."],
+        ["The city is famous for its architecture.","تشتهر المدينة بعمارتها."]
+      ]
+    },
+    {
+      word:"traditional",
+      type:"Adjective | صفة",
+      meaning:"تقليدي / تراثي.",
+      explanation:"تصف الأشياء المرتبطة بالعادات والتقاليد التي انتقلت عبر الأجيال.",
+      examples:[
+        ["We ate traditional Omani food.","تناولنا طعاماً عُمانياً تقليدياً."],
+        ["She wore traditional clothes.","ارتدت ملابس تقليدية."]
+      ]
+    },
+    {
+      word:"perfume / perfumes",
+      type:"Noun | اسم",
+      meaning:"عطر / عطور.",
+      explanation:"perfume قد تشير إلى العطر بشكل عام، وperfumes إلى أنواع أو زجاجات عطور متعددة.",
+      examples:[
+        ["This perfume smells wonderful.","هذا العطر رائحته رائعة."],
+        ["The shop sells Omani perfumes.","يبيع المتجر العطور العُمانية."]
+      ]
+    },
+    {
+      word:"souvenir / souvenirs",
+      type:"Noun | اسم",
+      meaning:"souvenir = تذكار، souvenirs = تذكارات.",
+      explanation:"شيء نشتريه أو نحتفظ به لنتذكر مكاناً زرناه أو تجربة عشناها.",
+      examples:[
+        ["I bought a souvenir from Muscat.","اشتريت تذكاراً من مسقط."],
+        ["They brought souvenirs from their trip.","أحضروا تذكارات من رحلتهم."]
+      ]
+    },
+    {
+      word:"especially",
+      type:"Adverb | ظرف",
+      meaning:"خصوصاً / خاصةً.",
+      explanation:"تُستخدم لتسليط الضوء على شيء معين أو توضيح أنه مميز أكثر من غيره.",
+      examples:[
+        ["I love winter, especially rainy days.","أحب الشتاء، خصوصاً الأيام الممطرة."],
+        ["The city is beautiful, especially at night.","المدينة جميلة، خاصة في الليل."]
+      ]
+    },
+    {
+      word:"realize / realized",
+      type:"Verb | فعل",
+      meaning:"يدرك / أدرك.",
+      explanation:"نستخدم realize عندما نفهم أو ننتبه إلى حقيقة أو أمر لم نكن منتبهين له من قبل.",
+      examples:[
+        ["I realize how important time is.","أدرك مدى أهمية الوقت."],
+        ["She realized her mistake.","أدركت خطأها."]
+      ]
+    },
+    {
+      word:"experience / experiences",
+      type:"Noun | اسم",
+      meaning:"experience = تجربة أو خبرة، experiences = تجارب.",
+      explanation:"قد تعني تجربة يمر بها الشخص، وقد تعني الخبرة والمهارة المكتسبة. المعنى يتحدد من السياق.",
+      examples:[
+        ["It was an unforgettable experience.","كانت تجربة لا تُنسى."],
+        ["Travel gives us new experiences.","السفر يمنحنا تجارب جديدة."],
+        ["She has experience in teaching.","لديها خبرة في التدريس."]
+      ]
+    },
+    {
+      word:"the capital of",
+      type:"Expression | تعبير",
+      meaning:"عاصمة ...",
+      explanation:"نستخدم the capital of ثم نذكر الدولة أو المنطقة التي تكون المدينة عاصمتها.",
+      examples:[
+        ["Muscat is the capital of Oman.","مسقط هي عاصمة عُمان."],
+        ["Paris is the capital of France.","باريس هي عاصمة فرنسا."]
+      ]
+    },
+    {
+      word:"the view of",
+      type:"Expression | تعبير",
+      meaning:"منظر ... / إطلالة على ...",
+      explanation:"نستخدمها عند الحديث عن المنظر الذي نراه لشيء أو مكان.",
+      examples:[
+        ["The view of the sea is amazing.","منظر البحر رائع."],
+        ["We enjoyed the view of the mountains.","استمتعنا بمنظر الجبال."]
+      ]
+    }
+  ]
+},
+
+/* =========================
+   READING 4
+========================= */
+{
+  title:"The Story of a Little Cat",
+  level:"B1",
+  audio:"https://videos.englizaacademy.com/Intermediate/The%20story%20of%20a%20little%20cat.mp3",
+  paragraphs:[
+    "One rainy morning, a young boy named Adam heard a strange sound outside his house. He opened the front door and found a little orange kitten sitting under a tree.",
+    "The kitten looked cold and hungry. Adam carefully picked it up and took it inside.",
+    "His mother brought a small towel and some warm milk. “Poor little thing! I wonder where its family is,” she said.",
+    "Adam decided to take care of the kitten. He gave it the name Milo because of its beautiful orange fur.",
+    "During the first few days, Milo was very shy. He often hid under Adam’s bed, but slowly, he became more comfortable. Soon, the sound of Milo’s tiny paws could be heard throughout the house.",
+    "Adam bought a small bed for him and placed it next to the window. He also bought a red ball, which quickly became Milo’s favorite toy.",
+    "Every evening, Milo waited near the door for Adam to return from school. The little cat had become an important part of the family."
+  ],
+  vocabulary:[
+    {
+      word:"rain / rainy",
+      type:"Noun & Adjective | اسم وصفة",
+      meaning:"rain = مطر، rainy = ماطر / ممطر.",
+      explanation:"rain اسم يشير إلى المطر، أما rainy فهي صفة نصف بها الطقس أو اليوم عندما يكون فيه مطر.",
+      examples:[
+        ["The rain started in the morning.","بدأ المطر في الصباح."],
+        ["It was a rainy morning.","كان صباحاً ماطراً."]
+      ]
+    },
+    {
+      word:"young",
+      type:"Adjective | صفة",
+      meaning:"صغير السن / شاب / يافع.",
+      explanation:"تصف شخصاً أو حيواناً لم يصل إلى عمر كبير.",
+      examples:[
+        ["The young boy loves animals.","الولد الصغير يحب الحيوانات."],
+        ["She is a young teacher.","هي معلمة شابة."]
+      ]
+    },
+    {
+      word:"name / named",
+      type:"Noun & Verb | اسم وفعل",
+      meaning:"كاسم: اسم. وكفعل: يسمّي / سمّى.",
+      explanation:"قد تأتي name اسماً بمعنى الاسم، أو فعلاً عندما نطلق اسماً على شخص أو حيوان أو شيء.",
+      examples:[
+        ["What is your name?","ما اسمك؟"],
+        ["They named the cat Milo.","أطلقوا على القط اسم مايلو."]
+      ]
+    },
+    {
+      word:"strange",
+      type:"Adjective | صفة",
+      meaning:"غريب / غير مألوف.",
+      explanation:"تصف شيئاً غير معتاد أو يصعب فهمه أو تفسيره.",
+      examples:[
+        ["I heard a strange noise.","سمعت صوتاً غريباً."],
+        ["That is a strange story.","تلك قصة غريبة."]
+      ]
+    },
+    {
+      word:"sound / sounded",
+      type:"Noun & Verb | اسم وفعل",
+      meaning:"كاسم: صوت. وكفعل: يبدو / بدا.",
+      explanation:"sound كاسم تعني صوتاً. أما sound كفعل فتُستخدم لوصف الانطباع الذي يعطيه شيء ما، مثل That sounds good.",
+      examples:[
+        ["I heard a strange sound.","سمعت صوتاً غريباً."],
+        ["Your idea sounds interesting.","تبدو فكرتك مثيرة للاهتمام."],
+        ["The story sounded exciting.","بدت القصة مشوقة."]
+      ]
+    },
+    {
+      word:"front",
+      type:"Noun / Adjective | اسم أو صفة",
+      meaning:"الأمام / أمامي.",
+      explanation:"تُستخدم للإشارة إلى الجزء الأمامي من شيء أو مكان. front door تعني الباب الأمامي.",
+      examples:[
+        ["The car is in front of the house.","السيارة أمام المنزل."],
+        ["Please open the front door.","من فضلك افتح الباب الأمامي."]
+      ]
+    },
+    {
+      word:"kitten",
+      type:"Noun | اسم",
+      meaning:"قُطّة صغيرة / هريرة.",
+      explanation:"تُستخدم للصغير من القطط، بينما cat تعني قطاً أو قطة بشكل عام.",
+      examples:[
+        ["The kitten is sleeping.","القطة الصغيرة نائمة."],
+        ["She found a little kitten.","وجدت قطة صغيرة."]
+      ]
+    },
+    {
+      word:"tree",
+      type:"Noun | اسم",
+      meaning:"شجرة.",
+      explanation:"نبات كبير له جذع وفروع وأوراق.",
+      examples:[
+        ["There is a tree in the garden.","توجد شجرة في الحديقة."],
+        ["The cat is sitting under the tree.","القط يجلس تحت الشجرة."]
+      ]
+    },
+    {
+      word:"hungry",
+      type:"Adjective | صفة",
+      meaning:"جائع.",
+      explanation:"تصف الشخص أو الحيوان الذي يحتاج إلى الطعام.",
+      examples:[
+        ["I am hungry.","أنا جائعة."],
+        ["The little kitten looked hungry.","بدت القطة الصغيرة جائعة."]
+      ]
+    },
+    {
+      word:"towel",
+      type:"Noun | اسم",
+      meaning:"منشفة / فوطة.",
+      explanation:"قطعة قماش تُستخدم لتجفيف الجسم أو اليدين أو الأشياء.",
+      examples:[
+        ["I need a clean towel.","أحتاج إلى منشفة نظيفة."],
+        ["She dried her hands with a towel.","جففت يديها بمنشفة."]
+      ]
+    },
+    {
+      word:"warm",
+      type:"Adjective | صفة",
+      meaning:"دافئ.",
+      explanation:"تصف درجة حرارة معتدلة ومريحة، وليست باردة.",
+      examples:[
+        ["I like warm milk.","أحب الحليب الدافئ."],
+        ["The weather is warm today.","الطقس دافئ اليوم."]
+      ]
+    },
+    {
+      word:"decide / decided",
+      type:"Verb | فعل",
+      meaning:"يقرّر / قرّر.",
+      explanation:"نستخدم decide عندما يختار الشخص القيام بشيء بعد التفكير. غالباً يأتي بعدها to + verb.",
+      examples:[
+        ["I decided to study English.","قررت أن أدرس الإنجليزية."],
+        ["Adam decided to take care of the kitten.","قرر آدم الاعتناء بالقطة الصغيرة."]
+      ]
+    },
+    {
+      word:"fur",
+      type:"Noun | اسم",
+      meaning:"فرو / فراء.",
+      explanation:"الشعر الكثيف الذي يغطي أجسام بعض الحيوانات مثل القطط والأرانب.",
+      examples:[
+        ["The cat has soft fur.","للقطة فرو ناعم."],
+        ["The kitten’s fur is orange.","فراء القطة الصغيرة برتقالي."]
+      ]
+    },
+    {
+      word:"paw / paws",
+      type:"Noun | اسم",
+      meaning:"paw = كف الحيوان، paws = أكف الحيوانات.",
+      explanation:"تُستخدم paw لأقدام بعض الحيوانات مثل القطط والكلاب، وليس عادةً لأقدام الإنسان.",
+      examples:[
+        ["The cat hurt its paw.","أصابت القطة كفّها."],
+        ["I could hear the kitten’s tiny paws.","استطعت سماع خطوات أقدام القطة الصغيرة."]
+      ]
+    },
+    {
+      word:"place / placed",
+      type:"Noun & Verb | اسم وفعل",
+      meaning:"كاسم: مكان. وكفعل: يضع / وضع.",
+      explanation:"place كاسم تعني مكاناً، وكفعل تعني وضع شيء في موقع محدد.",
+      examples:[
+        ["This is a beautiful place.","هذا مكان جميل."],
+        ["She placed the book on the table.","وضعت الكتاب على الطاولة."]
+      ]
+    },
+    {
+      word:"important",
+      type:"Adjective | صفة",
+      meaning:"مهم.",
+      explanation:"تصف شيئاً له قيمة أو تأثير أو ضرورة.",
+      examples:[
+        ["Education is important.","التعليم مهم."],
+        ["Family is an important part of life.","العائلة جزء مهم من الحياة."]
+      ]
+    },
+    {
+      word:"take care of",
+      type:"Expression | تعبير",
+      meaning:"يعتني بـ / يهتم بـ.",
+      explanation:"نستخدم التعبير take care of للحديث عن الاهتمام بشخص أو حيوان أو شيء وتحمل مسؤولية رعايته.",
+      examples:[
+        ["I take care of my little sister.","أعتني بأختي الصغيرة."],
+        ["Adam took care of the kitten.","اعتنى آدم بالقطة الصغيرة."]
+      ]
+    },
+    {
+      word:"pick up",
+      type:"Phrasal Verb | فعل مركب",
+      meaning:"يلتقط / يرفع شيئاً من مكانه.",
+      explanation:"يُستخدم عندما ترفع شيئاً عن الأرض أو تلتقطه بيدك. وقد يأتي بمعانٍ أخرى بحسب السياق.",
+      examples:[
+        ["She picked up the little cat.","حملت القطة الصغيرة."],
+        ["Please pick up your bag.","من فضلك التقط حقيبتك."]
+      ]
+    },
+    {
+      word:"throughout",
+      type:"Preposition / Adverb | حرف جر أو ظرف",
+      meaning:"في جميع أنحاء / طوال.",
+      explanation:"قد تشير إلى الانتشار في كل أجزاء المكان، أو الاستمرار طوال فترة زمنية.",
+      examples:[
+        ["The sound could be heard throughout the house.","كان الصوت يُسمع في جميع أنحاء المنزل."],
+        ["It rained throughout the night.","هطلت الأمطار طوال الليل."]
+      ]
+    },
+    {
+      word:"favorite toy",
+      type:"Expression | تعبير",
+      meaning:"اللعبة المفضلة.",
+      explanation:"favorite تعني المفضل، وtoy تعني لعبة. يمكن تغيير toy باسم شيء آخر حسب السياق.",
+      examples:[
+        ["This is my favorite toy.","هذه لعبتي المفضلة."],
+        ["The red ball became the cat’s favorite toy.","أصبحت الكرة الحمراء اللعبة المفضلة للقط."]
+      ]
+    },
+    {
+      word:"return",
+      type:"Verb | فعل",
+      meaning:"يعود / يرجع.",
+      explanation:"نستخدم return للتعبير عن الرجوع إلى مكان أو حالة سابقة. ويمكن أن يأتي بعدها to عند ذكر المكان.",
+      examples:[
+        ["I return home at five.","أعود إلى المنزل في الخامسة."],
+        ["Adam returned from school.","عاد آدم من المدرسة."]
+      ]
+    },
+    {
+      word:"part of",
+      type:"Expression | تعبير",
+      meaning:"جزء من.",
+      explanation:"نستخدمها عندما يكون شيء أو شخص جزءاً من مجموعة أو عائلة أو نظام.",
+      examples:[
+        ["She is part of our team.","هي جزء من فريقنا."],
+        ["The cat became part of the family.","أصبح القط جزءاً من العائلة."]
+      ]
+    },
+    {
+      word:"Milo’s favorite toy",
+      type:"Possessive ’s | تركيب ملكية",
+      meaning:"لعبة مايلو المفضلة.",
+      explanation:"أُضيفت ’s إلى Milo للدلالة على الملكية أو الارتباط. أي أن اللعبة المفضلة تخص مايلو.",
+      examples:[
+        ["Milo’s bed is near the window.","سرير مايلو بالقرب من النافذة."],
+        ["Adam’s cat is very friendly.","قط آدم ودود جداً."]
+      ]
+    },
+    {
+      word:"its",
+      type:"Possessive Determiner | محدد ملكية",
+      meaning:"له / لها لغير العاقل غالباً.",
+      explanation:"its تدل على الملكية لشيء أو حيوان. انتبهي: its بلا فاصلة تعني الملكية، أما it’s فهي اختصار it is أو it has.",
+      examples:[
+        ["The cat moved its tail.","حرّك القط ذيله."],
+        ["The kitten opened its eyes.","فتحت القطة الصغيرة عينيها."]
+      ]
+    }
+  ]
+}
+];
+
+/* BUILD READING SECTIONS */
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  })[char]);
+}
+
+function createVocabularyItem(item,index){
+  const examples = item.examples.map(example => `
+    <div class="example">
+      <div class="example-en">${escapeHTML(example[0])}</div>
+      <div class="example-ar">${escapeHTML(example[1])}</div>
+    </div>
+  `).join("");
+
+  return `
+    <article class="vocab-item">
+      <div class="word-head">
+        <div class="word-title">${escapeHTML(item.word)}</div>
+        <button class="speak-btn" type="button"
+          aria-label="Listen to pronunciation of ${escapeHTML(item.word)}"
+          data-speak="${escapeHTML(item.word)}">🔊</button>
+      </div>
+      <div class="word-type">${escapeHTML(item.type)}</div>
+      <div class="word-meaning">${escapeHTML(item.meaning)}</div>
+      <div class="word-explanation">${escapeHTML(item.explanation)}</div>
+      <div class="examples-label">Examples | أمثلة</div>
+      ${examples}
+    </article>
+  `;
+}
+
+function createReading(reading,index){
+  const paragraphs = reading.paragraphs.map(p=>`<p>${escapeHTML(p)}</p>`).join("");
+  const vocabulary = reading.vocabulary.map(createVocabularyItem).join("");
+
+  return `
+    <section class="reading-section">
+      <div class="section-heading">
+        <div class="section-number">${index+1}</div>
+        <div>
+          <h2>${escapeHTML(reading.title)}</h2>
+          <span>READING ${String(index+1).padStart(2,"0")}</span>
+        </div>
+      </div>
+
+      <div class="audio-card">
+        <div class="audio-top">
+          <div class="audio-icon">🎧</div>
+          <div>
+            <strong>Listen to the passage | استمع إلى النص</strong>
+            <small>استمع جيداً وحاول متابعة الكلمات أثناء القراءة.</small>
+          </div>
+        </div>
+        <audio controls preload="none">
+          <source src="${escapeHTML(reading.audio)}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <article class="reading-card">
+        <div class="reading-header">
+          <h3>${escapeHTML(reading.title)}</h3>
+          <span class="level-tag">${escapeHTML(reading.level)}</span>
+        </div>
+        <div class="reading-text">${paragraphs}</div>
+      </article>
+
+      <div class="vocab-area">
+
+        <button class="vocab-toggle" type="button" aria-expanded="false">
+  <span class="toggle-left">
+    <span>📚</span>
+    <span>اضغط لعرض المفردات والتعبيرات</span>
+    <span>👆</span>
+  </span>
+</button>
+        <div class="vocab-content">
+          <div class="vocab-intro">
+            تعرّف على معاني الكلمات والتعبيرات، ولاحظ طريقة استخدامها في الجمل.
+            يمكنك الضغط على زر الصوت 🔊 بجانب كل كلمة لسماع نطقها.
+          </div>
+          <div class="vocab-grid">${vocabulary}</div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+document.getElementById("readings-container").innerHTML =
+  readings.map(createReading).join("");
+
+/* OPEN / CLOSE VOCABULARY */
+document.querySelectorAll(".vocab-toggle").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const content=button.nextElementSibling;
+    const isOpen=content.classList.toggle("open");
+    button.setAttribute("aria-expanded",String(isOpen));
+  });
+});
+
+/* PRONUNCIATION */
+let englishVoice=null;
+
+function loadEnglishVoice(){
+  if(!("speechSynthesis" in window))return;
+  const voices=window.speechSynthesis.getVoices();
+  englishVoice=
+    voices.find(v=>v.lang==="en-US") ||
+    voices.find(v=>v.lang==="en-GB") ||
+    voices.find(v=>v.lang.toLowerCase().startsWith("en")) ||
+    null;
+}
+
+if("speechSynthesis" in window){
+  loadEnglishVoice();
+  window.speechSynthesis.onvoiceschanged=loadEnglishVoice;
+}
+
+document.addEventListener("click",event=>{
+  const button=event.target.closest(".speak-btn");
+  if(!button)return;
+
+  if(!("speechSynthesis" in window)){
+    alert("Pronunciation is not supported by this browser.");
+    return;
+  }
+
+  const word=button.dataset.speak;
+  window.speechSynthesis.cancel();
+
+  const utterance=new SpeechSynthesisUtterance(word);
+  utterance.lang="en-US";
+  if(englishVoice)utterance.voice=englishVoice;
+  utterance.rate=0.85;
+  utterance.pitch=1;
+
+  window.speechSynthesis.speak(utterance);
+});
+
+/* COMPLETE LESSON */
+function completeLesson(){
+  if(typeof window.finishLesson==="function"){
+    window.finishLesson(
+      "unit2-of-and-s-reading-practice",
+      "Of & ’S | Reading & Listening Practice",
+      "unit3-pre-review.html"
+    );
+  }else{
+    alert("تم إكمال الدرس! يمكنك العودة إلى قائمة الدروس.");
+  }
+}
+</script>
+
+<script type="module">
+import "./js/reward.js";
+</script>
+
+</body>
+</html>
