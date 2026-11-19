@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7046c8">
+<title>Past Simple Practice | Engliza Academy</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --blue: #1f3c88;
+    --purple: #7546d8;
+    --purple-dark: #5c35b4;
+    --purple-light: #f2edff;
+    --blue-light: #edf3ff;
+    --text: #263452;
+    --muted: #71809d;
+    --border: #e7eaf4;
+    --white: #ffffff;
+    --green: #209b73;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        radial-gradient(circle at 8% 5%, rgba(164,130,255,.16), transparent 25%),
+        radial-gradient(circle at 95% 35%, rgba(111,160,255,.13), transparent 27%),
+        linear-gradient(135deg,#f7f5ff 0%,#f2f6ff 50%,#faf8ff 100%);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+}
+
+button, input, audio { font-family: inherit; }
+
+.container {
+    width: min(100% - 32px,1050px);
+    margin: 0 auto;
+    padding: 25px 0 55px;
+}
+
+/* Top bar */
+
+.top-bar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.back-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:var(--blue);
+    background:white;
+    border:1px solid #e5e8f4;
+    padding:10px 19px;
+    border-radius:30px;
+    font-weight:800;
+    font-size:14px;
+    box-shadow:0 5px 16px rgba(39,55,105,.06);
+    transition:.2s;
+}
+
+.back-btn:hover {
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(39,55,105,.12);
+}
+
+.academy-label {
+    color:var(--purple);
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    letter-spacing:.5px;
+    font-size:14px;
+}
+
+/* Hero */
+
+.hero {
+    text-align:center;
+    padding:15px 15px 30px;
+}
+
+.hero-owl {
+    width:125px;
+    height:125px;
+    object-fit:contain;
+    margin-bottom:5px;
+    filter:drop-shadow(0 8px 12px rgba(91,63,161,.13));
+}
+
+.hero h1 {
+    color:var(--blue);
+    font-size:clamp(27px,5vw,39px);
+    line-height:1.35;
+    margin:5px 0 8px;
+    font-weight:900;
+}
+
+.hero h1 span { color:var(--purple); }
+
+.hero p {
+    color:var(--muted);
+    font-size:15px;
+    font-weight:600;
+    margin:0;
+}
+
+/* Cards */
+
+.card {
+    background:var(--white);
+    border:1px solid rgba(222,226,242,.9);
+    border-radius:23px;
+    box-shadow:0 9px 28px rgba(43,55,103,.055);
+}
+
+/* Tip card */
+
+.tip-card {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:22px 25px;
+    margin-bottom:38px;
+    border-right:5px solid var(--purple);
+    background:linear-gradient(110deg,#fff 0%,#f8f5ff 100%);
+}
+
+.tip-owl {
+    width:92px;
+    height:92px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.tip-content h2 {
+    color:var(--purple-dark);
+    font-size:19px;
+    margin:0 0 8px;
+    font-weight:900;
+}
+
+.tip-content p {
+    color:#586783;
+    line-height:1.9;
+    font-size:14px;
+    margin:0;
+}
+
+/* Reading section */
+
+.reading-section {
+    margin-bottom:48px;
+}
+
+.section-heading {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:0 0 15px;
+}
+
+.section-number {
+    width:43px;
+    height:43px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7952dc,#5237b4);
+    color:white;
+    font-family:'Nunito',sans-serif;
+    font-size:19px;
+    font-weight:900;
+    box-shadow:0 5px 13px rgba(105,69,199,.2);
+}
+
+.section-heading h2 {
+    color:var(--blue);
+    font-size:22px;
+    font-weight:900;
+    margin:0;
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+    margin:1px 0 0;
+}
+
+/* Audio */
+
+.audio-card {
+    padding:19px 22px;
+    margin-bottom:15px;
+    background:linear-gradient(120deg,#f0eaff 0%,#f7f4ff 55%,#edf2ff 100%);
+    border:1px solid #e1d8ff;
+    border-radius:19px;
+}
+
+.audio-title {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--purple-dark);
+    font-weight:900;
+    font-size:16px;
+    margin-bottom:12px;
+}
+
+.audio-icon {
+    width:35px;
+    height:35px;
+    display:grid;
+    place-items:center;
+    border-radius:11px;
+    background:white;
+    font-size:18px;
+}
+
+.audio-card audio {
+    display:block;
+    width:100%;
+    height:43px;
+    border-radius:30px;
+}
+
+/* Reading card */
+
+.reading-card {
+    padding:25px 27px;
+    margin-bottom:17px;
+    border-top:4px solid #7b5be0;
+    background:white;
+}
+
+.reading-card-top {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:17px;
+}
+
+.reading-card-top h3 {
+    color:var(--blue);
+    font-size:19px;
+    margin:0;
+    font-weight:900;
+}
+
+.reading-level {
+    color:var(--purple-dark);
+    background:#f1ecff;
+    border:1px solid #e4dbff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-family:'Nunito',sans-serif;
+    font-size:11px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.reading-text {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:20px;
+    line-height:2;
+    font-weight:600;
+    overflow-wrap:break-word;
+}
+
+/* Vocabulary */
+
+.vocab-section {
+    padding:20px;
+    background:linear-gradient(145deg,#f8f6ff,#f2f6ff);
+    border:1px solid #e4e3f5;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.vocab-toggle {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:var(--blue);
+    text-align:right;
+    cursor:pointer;
+}
+
+.vocab-toggle-main {
+    display:flex;
+    align-items:center;
+    gap:11px;
+    min-width:0;
+}
+
+.vocab-toggle-icon {
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:white;
+    box-shadow:0 3px 10px rgba(65,66,130,.08);
+    font-size:19px;
+    flex-shrink:0;
+}
+
+.vocab-toggle h3 {
+    margin:0;
+    font-size:17px;
+    font-weight:900;
+}
+
+.vocab-toggle small {
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:600;
+    margin-top:2px;
+}
+
+.vocab-action-label {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    padding:9px 13px;
+    border-radius:12px;
+    background:var(--purple);
+    color:white;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.vocab-content {
+    display:none;
+    padding-top:20px;
+}
+
+.vocab-section.open .vocab-content {
+    display:block;
+}
+
+.vocab-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:13px;
+}
+
+.vocab-item {
+    background:white;
+    border:1px solid #e7e4f4;
+    border-radius:16px;
+    padding:16px;
+    min-width:0;
+    box-shadow:0 3px 10px rgba(46,54,100,.035);
+}
+
+.vocab-word-row {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin-bottom:6px;
+}
+
+.vocab-word {
+    direction:ltr;
+    text-align:left;
+    color:var(--purple-dark);
+    font-family:'Nunito',sans-serif;
+    font-size:18px;
+    font-weight:900;
+    overflow-wrap:anywhere;
+}
+
+.pronounce-btn {
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+    border:none;
+    border-radius:11px;
+    background:#f0eaff;
+    color:var(--purple-dark);
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+.pronounce-btn:hover {
+    background:var(--purple);
+    color:white;
+    transform:scale(1.06);
+}
+
+/* Pronunciation */
+
+.pronunciation-info {
+    display:flex;
+    align-items:center;
+    gap:9px;
+    direction:ltr;
+    margin:5px 0 9px;
+}
+
+.pronunciation-ipa {
+    color:var(--purple-dark);
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    font-weight:900;
+}
+
+.pronunciation-ar {
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    direction:rtl;
+}
+
+/* Vocabulary meaning */
+
+.vocab-meaning {
+    color:#53617d;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.word-type {
+    display:inline-block;
+    color:#65728e;
+    background:#f2f5fb;
+    border-radius:7px;
+    padding:2px 8px;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:11px;
+}
+
+.examples {
+    border-top:1px solid #edf0f7;
+    padding-top:9px;
+}
+
+.example { margin-bottom:10px; }
+.example:last-child { margin-bottom:0; }
+
+.example-en {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.65;
+}
+
+.example-ar {
+    color:#7b849b;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:2px;
+}
+
+/* Arabic grammar note */
+
+.grammar-note {
+    margin-top:13px;
+    padding:12px;
+    background:#f5f1ff;
+    border-right:3px solid var(--purple);
+    border-radius:11px;
+}
+
+.grammar-note strong {
+    display:block;
+    color:var(--purple-dark);
+    font-size:12px;
+    margin-bottom:6px;
+}
+
+.grammar-note p {
+    color:#53617d;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.9;
+    margin:0;
+}
+
+/* Question cards */
+
+.question-card {
+    padding:25px 27px;
+    margin-bottom:17px;
+}
+
+.question-heading-card {
+    text-align:center;
+    padding:20px;
+    margin:28px 0 17px;
+}
+
+.question-heading-card h2 {
+    color:var(--blue);
+    font-size:22px;
+    margin:0;
+    font-weight:900;
+}
+
+.question-title {
+    font-size:17px;
+    font-weight:900;
+    line-height:1.9;
+    color:var(--purple-dark);
+    margin:0 0 15px;
+}
+
+.question-prompt {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:17px;
+    line-height:1.8;
+    font-weight:800;
+    margin-bottom:17px;
+}
+
+.help-text {
+    font-size:20px;
+    font-weight:800;
+    line-height:1.8;
+    color:#34415d;
+    text-align:left;
+    direction:ltr;
+    margin:20px 0;
+    font-family:'Nunito',sans-serif;
+}
+
+/* Writing input */
+
+.write-box {
+    width:100%;
+    padding:15px 18px;
+    border-radius:15px;
+    border:1.5px solid #dce4ff;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+    margin-bottom:15px;
+    background:white;
+    direction:ltr;
+    text-align:left;
+}
+
+.write-box:focus {
+    border-color:#6f43ff;
+    box-shadow:0 0 0 4px rgba(111,67,255,.10);
+}
+
+/* Results */
+
+.answer-result,
+.result-text {
+    margin-top:15px;
+    font-size:15px;
+    font-weight:800;
+    line-height:1.9;
+    animation:fadeResult .4s ease;
+}
+
+.success-text { color:#0f8b4c; }
+.error-text { color:#c62828; }
+
+.correct-input {
+    background:#e8fff0;
+    border:2px solid #b8ebc8;
+    color:#0f8b4c;
+}
+
+.wrong-input {
+    background:#ffe8e8;
+    border:2px solid #ffb8b8;
+    color:#c62828;
+}
+
+/* Choices and buttons */
+
+.choice-container {
+    display:flex;
+    gap:13px;
+    margin:20px 0 12px;
+}
+
+.choice-btn {
+    flex:1;
+    padding:15px;
+    background:white;
+    border:1.5px solid #dce4ff;
+    border-radius:15px;
+    font-size:15px;
+    font-weight:800;
+    color:var(--blue);
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 4px 12px rgba(0,0,0,.035);
+}
+
+.choice-btn:hover {
+    transform:translateY(-2px);
+    border-color:#a995e8;
+}
+
+.choice-btn:disabled {
+    cursor:default;
+    opacity:.95;
+}
+
+.card button:not(.choice-btn):not(.vocab-toggle):not(.pronounce-btn) {
+    background:#f5f2ff;
+    color:var(--purple-dark);
+    border:1px solid #e2d9ff;
+    padding:12px 20px;
+    border-radius:13px;
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.card button:not(.choice-btn):not(.vocab-toggle):not(.pronounce-btn):hover {
+    background:#ece5ff;
+    transform:translateY(-2px);
+}
+
+.correct {
+    background:#e8fff0 !important;
+    border:2px solid #b8ebc8 !important;
+    color:#0f8b4c !important;
+}
+
+.wrong {
+    background:#ffe8e8 !important;
+    border:2px solid #ffb8b8 !important;
+    color:#c62828 !important;
+}
+
+/* Confetti */
+
+.confetti {
+    position:relative;
+    height:0;
+}
+
+.star {
+    position:absolute;
+    font-size:20px;
+    opacity:0;
+    animation:flyStars 1.4s ease-out forwards;
+}
+
+.star:nth-child(1) { left:10%; }
+.star:nth-child(2) { left:30%; animation-delay:.1s; }
+.star:nth-child(3) { left:50%; animation-delay:.2s; }
+.star:nth-child(4) { left:70%; animation-delay:.15s; }
+.star:nth-child(5) { left:90%; animation-delay:.05s; }
+
+@keyframes flyStars {
+    0% { opacity:0; transform:translateY(20px) scale(.4); }
+    20% { opacity:1; }
+    100% { opacity:0; transform:translateY(-70px) rotate(360deg) scale(1.3); }
+}
+
+.shake { animation:shake .3s; }
+
+@keyframes shake {
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-6px);}
+    50%{transform:translateX(6px);}
+    75%{transform:translateX(-6px);}
+    100%{transform:translateX(0);}
+}
+
+@keyframes fadeResult {
+    from { opacity:0; transform:translateY(10px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* Final card */
+
+.final-card {
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:33px 22px;
+    margin-top:45px;
+    color:white;
+    background:linear-gradient(125deg,#5033a6 0%,#7548d4 55%,#5274d7 100%);
+    border-radius:25px;
+    box-shadow:0 12px 28px rgba(89,59,174,.22);
+}
+
+.final-card::before,
+.final-card::after {
+    content:"";
+    position:absolute;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:50%;
+    width:180px;
+    height:180px;
+}
+
+.final-card::before { top:-100px; right:-50px; }
+.final-card::after { bottom:-120px; left:-55px; }
+
+.final-card h2 {
+    position:relative;
+    z-index:1;
+    font-size:25px;
+    margin:0 0 8px;
+    font-weight:900;
+    color:white;
+}
+
+.final-card p {
+    position:relative;
+    z-index:1;
+    color:rgba(255,255,255,.9);
+    font-size:14px;
+    line-height:1.9;
+    margin:0 auto 20px;
+    max-width:650px;
+}
+
+.next-lesson-btn {
+    position:relative;
+    z-index:1;
+    border:none !important;
+    border-radius:30px !important;
+    padding:13px 28px !important;
+    background:white !important;
+    color:#5b3bb1 !important;
+    font-size:15px !important;
+    font-weight:900 !important;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(32,21,72,.15);
+    transition:.2s;
+}
+
+.next-lesson-btn:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(32,21,72,.2);
+}
+
+.footer {
+    text-align:center;
+    color:#929bb0;
+    font-family:'Nunito',sans-serif;
+    font-size:12px;
+    font-weight:800;
+    padding-top:25px;
+}
+
+/* Responsive */
+
+@media(max-width:650px) {
+    .container {
+        width:min(100% - 22px,1050px);
+        padding-top:15px;
+    }
+
+    .top-bar { margin-bottom:15px; }
+    .hero { padding-bottom:23px; }
+
+    .hero-owl {
+        width:105px;
+        height:105px;
+    }
+
+    .hero p { font-size:13px; }
+
+    .tip-card {
+        padding:16px;
+        gap:12px;
+        margin-bottom:30px;
+        align-items:flex-start;
+    }
+
+    .tip-owl {
+        width:68px;
+        height:68px;
+    }
+
+    .tip-content h2 { font-size:16px; }
+    .tip-content p { font-size:12px; line-height:1.85; }
+
+    .section-heading h2 { font-size:19px; }
+    .section-heading p { font-size:11px; }
+
+    .audio-card { padding:15px; }
+
+    .reading-card { padding:19px 16px; }
+    .reading-card-top h3 { font-size:17px; }
+
+    .reading-text {
+        font-size:17px;
+        line-height:1.95;
+    }
+
+    .vocab-section { padding:16px; }
+
+    .vocab-grid {
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .vocab-item { padding:14px; }
+
+    .vocab-action-label {
+        padding:8px 10px;
+        font-size:11px;
+    }
+
+    .vocab-toggle h3 { font-size:15px; }
+
+    .question-card { padding:19px 16px; }
+
+    .choice-container {
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .question-prompt { font-size:16px; }
+    .help-text { font-size:18px; }
+
+    .final-card { padding:28px 17px; }
+    .final-card h2 { font-size:22px; }
+}
+
+@media(max-width:360px) {
+    .academy-label { font-size:11px; }
+
+    .back-btn {
+        padding:9px 13px;
+        font-size:12px;
+    }
+
+    .reading-text { font-size:16px; }
+
+    .vocab-toggle-main { gap:7px; }
+    .vocab-action-label { padding:7px 8px; }
+}
+
+/* Practice 2 uses the Practice 1 visual identity and collapsible vocabulary layout. */
+
+/* Past Simple Practice refinements */
+.vocab-item .grammar-note p { direction:rtl; text-align:right; }
+.vocab-item .grammar-note b { color:var(--purple-dark); }
+.vocab-item .example-en { direction:ltr; text-align:left; }
+.vocab-item .example-ar { direction:rtl; text-align:right; }
+.vocab-content[aria-hidden="true"] { display:none; }
+.vocab-section.open .vocab-content[aria-hidden="false"] { display:block; }
+.choice-btn:disabled { cursor:default; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="top-bar"><a href="unit1-pre.html" class="back-btn">⬅️ رجوع</a><div class="academy-label">ENGLIZA ACADEMY</div></div>
+<header class="hero">
+<img src="../okay.owl.PNG" alt="Engliza Academy Owl" class="hero-owl">
+<h1>📖 Reading Practice | <span>Past Simple</span></h1>
+<p>تدرّب على الماضي البسيط من خلال القراءة والاستماع والإجابة عن الأسئلة</p>
+</header>
+<section class="card tip-card">
+<img src="../earlo .PNG" alt="Learning Tip" class="tip-owl">
+<div class="tip-content"><h2>✨ نصيحة قبل أن تبدأ</h2>
+<p>استمع إلى كل فقرة، ثم اقرأها وحاول فهم الفكرة العامة. افتح قائمة المفردات أسفل القراءة لتتعرف على المعاني والتصريفات والأمثلة، واستمع إلى نطق كل كلمة من زر الصوت. انتبه إلى الأفعال في الماضي البسيط، ولاحظ كيف نستخدم <b>did / didn't</b> في السؤال والنفي.</p></div>
+</section>
+<main>
+
+<section class="reading-section">
+<div class="section-heading"><div class="section-number">1</div><div><h2>My Last Weekend</h2><p>Reading 1 · Past Simple</p></div></div>
+<div class="card audio-card">
+<div class="audio-title"><span class="audio-icon">🎧</span><span>استمع إلى الفقرة الأولى – My Last Weekend</span></div>
+<audio controls preload="metadata" playsinline aria-label="My Last Weekend listening audio"><source src="https://videos.englizaacademy.com/Tttt/My%20last%20weekend.mp3" type="audio/mpeg">متصفحك لا يدعم تشغيل الملفات الصوتية.</audio>
+</div>
+<article class="card reading-card">
+<div class="reading-card-top"><h3>📖 Reading 1 – My Last Weekend</h3><span class="reading-level">Past Simple</span></div>
+<div class="reading-text">Last weekend, I visited my grandmother with my family. We arrived at her house in the morning. She welcomed us and prepared a delicious lunch. After lunch, my brother and I played in the garden. We also took some pictures together. In the evening, we watched a funny movie and talked about our week. I didn&#x27;t want to leave because I enjoyed every moment. It was a wonderful weekend.</div>
+<section class="vocab-section">
+<button class="vocab-toggle" type="button" aria-expanded="false" aria-controls="vocab-reading-1">
+<span class="vocab-toggle-main"><span class="vocab-toggle-icon">📚</span><span><h3>Vocabulary & Expressions</h3><small>7 مفردات وتراكيب مع أمثلة ونطق</small></span></span>
+<span class="vocab-action-label">اضغط لعرض المفردات</span>
+</button>
+<div class="vocab-content" aria-hidden="true"><div class="vocab-grid" id="vocab-reading-1"></div></div>
+</section>
+</article>
+</section>
+<div class="card question-heading-card"><h2>📝 أسئلة الفقرة الأولى</h2></div>
+<div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">Where did the writer go last weekend?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="false" data-result="r1q1">To the beach</button><button class="choice-btn" type="button" data-correct="true" data-result="r1q1">To the grandmother&#x27;s house</button><button class="choice-btn" type="button" data-correct="false" data-result="r1q1">To the museum</button></div>
+<p class="result-text" id="r1q1"></p>
+</div><div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">What did they do in the evening?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="true" data-result="r1q2">They watched a funny movie</button><button class="choice-btn" type="button" data-correct="false" data-result="r1q2">They played football</button><button class="choice-btn" type="button" data-correct="false" data-result="r1q2">They went shopping</button></div>
+<p class="result-text" id="r1q2"></p>
+</div><div class="card question-card">
+<p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+<p class="question-prompt" dir="ltr" style="text-align:left">She prepared a delicious lunch.</p>
+<input class="write-box" id="r1write1" type="text" placeholder="اكتب إجابتك هنا..." autocomplete="off">
+<br><br>
+<button class="check-btn" type="button" data-input="r1write1" data-result="r1result1">تحقق من الإجابة</button>
+<p class="result-text" id="r1result1"></p>
+</div>
+
+<section class="reading-section">
+<div class="section-heading"><div class="section-number">2</div><div><h2>A Day at the Beach</h2><p>Reading 2 · Past Simple</p></div></div>
+<div class="card audio-card">
+<div class="audio-title"><span class="audio-icon">🎧</span><span>استمع إلى الفقرة الثانية – A Day at the Beach</span></div>
+<audio controls preload="metadata" playsinline aria-label="A Day at the Beach listening audio"><source src="https://videos.englizaacademy.com/Tttt/Day%20at%20beach.mp3" type="audio/mpeg">متصفحك لا يدعم تشغيل الملفات الصوتية.</audio>
+</div>
+<article class="card reading-card">
+<div class="reading-card-top"><h3>📖 Reading 2 – A Day at the Beach</h3><span class="reading-level">Past Simple</span></div>
+<div class="reading-text">Yesterday, my friends and I went to the beach. We left home early and arrived at the beach at nine o&#x27;clock. The weather was sunny, so we decided to swim. My friend Ahmed brought some sandwiches and cold drinks. We ate our lunch under a big tree. Then, we collected beautiful shells and took photos of the sea. Did we enjoy our day? Of course, we did! We returned home in the afternoon, and I felt very happy.</div>
+<section class="vocab-section">
+<button class="vocab-toggle" type="button" aria-expanded="false" aria-controls="vocab-reading-2">
+<span class="vocab-toggle-main"><span class="vocab-toggle-icon">📚</span><span><h3>Vocabulary & Expressions</h3><small>10 مفردات وتراكيب مع أمثلة ونطق</small></span></span>
+<span class="vocab-action-label">اضغط لعرض المفردات</span>
+</button>
+<div class="vocab-content" aria-hidden="true"><div class="vocab-grid" id="vocab-reading-2"></div></div>
+</section>
+</article>
+</section>
+<div class="card question-heading-card"><h2>📝 أسئلة الفقرة الثانية</h2></div>
+<div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">What was the weather like?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="false" data-result="r2q1">Rainy</button><button class="choice-btn" type="button" data-correct="false" data-result="r2q1">Windy</button><button class="choice-btn" type="button" data-correct="true" data-result="r2q1">Sunny</button></div>
+<p class="result-text" id="r2q1"></p>
+</div><div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">What did they collect?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="true" data-result="r2q2">Beautiful shells</button><button class="choice-btn" type="button" data-correct="false" data-result="r2q2">Flowers</button><button class="choice-btn" type="button" data-correct="false" data-result="r2q2">Stones</button></div>
+<p class="result-text" id="r2q2"></p>
+</div><div class="card question-card">
+<p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+<p class="question-prompt" dir="ltr" style="text-align:left">We collected beautiful shells.</p>
+<input class="write-box" id="r2write1" type="text" placeholder="اكتب إجابتك هنا..." autocomplete="off">
+<br><br>
+<button class="check-btn" type="button" data-input="r2write1" data-result="r2result1">تحقق من الإجابة</button>
+<p class="result-text" id="r2result1"></p>
+</div>
+
+<section class="reading-section">
+<div class="section-heading"><div class="section-number">3</div><div><h2>The Day I Lost My Bag</h2><p>Reading 3 · Past Simple</p></div></div>
+<div class="card audio-card">
+<div class="audio-title"><span class="audio-icon">🎧</span><span>استمع إلى الفقرة الثالثة – The Day I Lost My Bag</span></div>
+<audio controls preload="metadata" playsinline aria-label="The Day I Lost My Bag listening audio"><source src="https://videos.englizaacademy.com/Tttt/The%20day%20I%20lost%20my%20bag.mp3" type="audio/mpeg">متصفحك لا يدعم تشغيل الملفات الصوتية.</audio>
+</div>
+<article class="card reading-card">
+<div class="reading-card-top"><h3>📖 Reading 3 – The Day I Lost My Bag</h3><span class="reading-level">Past Simple</span></div>
+<div class="reading-text">Last Monday, I went shopping with my sister. We visited several stores and bought some clothes. When we finished shopping, I couldn&#x27;t find my bag. I looked inside the car, but it wasn&#x27;t there. I felt worried because my phone and money were inside it. My sister asked a shop assistant for help. Luckily, a woman found my bag near the entrance and gave it to the security guard. I thanked her and felt relieved. It was a stressful day, but everything ended well.</div>
+<section class="vocab-section">
+<button class="vocab-toggle" type="button" aria-expanded="false" aria-controls="vocab-reading-3">
+<span class="vocab-toggle-main"><span class="vocab-toggle-icon">📚</span><span><h3>Vocabulary & Expressions</h3><small>9 مفردات وتراكيب مع أمثلة ونطق</small></span></span>
+<span class="vocab-action-label">اضغط لعرض المفردات</span>
+</button>
+<div class="vocab-content" aria-hidden="true"><div class="vocab-grid" id="vocab-reading-3"></div></div>
+</section>
+</article>
+</section>
+<div class="card question-heading-card"><h2>📝 أسئلة الفقرة الثالثة</h2></div>
+<div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">Who did the writer go shopping with?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="false" data-result="r3q1">A friend</button><button class="choice-btn" type="button" data-correct="true" data-result="r3q1">A sister</button><button class="choice-btn" type="button" data-correct="false" data-result="r3q1">A mother</button></div>
+<p class="result-text" id="r3q1"></p>
+</div><div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">Where did the woman find the bag?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="true" data-result="r3q2">Near the entrance</button><button class="choice-btn" type="button" data-correct="false" data-result="r3q2">Inside the car</button><button class="choice-btn" type="button" data-correct="false" data-result="r3q2">At home</button></div>
+<p class="result-text" id="r3q2"></p>
+</div><div class="card question-card">
+<p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+<p class="question-prompt" dir="ltr" style="text-align:left">The woman found my bag.</p>
+<input class="write-box" id="r3write1" type="text" placeholder="اكتب إجابتك هنا..." autocomplete="off">
+<br><br>
+<button class="check-btn" type="button" data-input="r3write1" data-result="r3result1">تحقق من الإجابة</button>
+<p class="result-text" id="r3result1"></p>
+</div>
+
+<section class="reading-section">
+<div class="section-heading"><div class="section-number">4</div><div><h2>My First School Trip</h2><p>Reading 4 · Past Simple</p></div></div>
+<div class="card audio-card">
+<div class="audio-title"><span class="audio-icon">🎧</span><span>استمع إلى الفقرة الرابعة – My First School Trip</span></div>
+<audio controls preload="metadata" playsinline aria-label="My First School Trip listening audio"><source src="https://videos.englizaacademy.com/Tttt/My%20first%20school%20trap.mp3" type="audio/mpeg">متصفحك لا يدعم تشغيل الملفات الصوتية.</audio>
+</div>
+<article class="card reading-card">
+<div class="reading-card-top"><h3>📖 Reading 4 – My First School Trip</h3><span class="reading-level">Past Simple</span></div>
+<div class="reading-text">Two years ago, my school organized a trip to a science museum. All the students arrived at school early in the morning. We travelled by bus with our teachers. At the museum, we saw interesting experiments and learned about space and technology. Our guide explained how some machines worked, and we asked many questions. After the tour, we ate lunch together and bought small gifts from the museum shop. Before we left, our teacher took a group photo. I learned many new things that day, and I never forgot that trip.</div>
+<section class="vocab-section">
+<button class="vocab-toggle" type="button" aria-expanded="false" aria-controls="vocab-reading-4">
+<span class="vocab-toggle-main"><span class="vocab-toggle-icon">📚</span><span><h3>Vocabulary & Expressions</h3><small>11 مفردات وتراكيب مع أمثلة ونطق</small></span></span>
+<span class="vocab-action-label">اضغط لعرض المفردات</span>
+</button>
+<div class="vocab-content" aria-hidden="true"><div class="vocab-grid" id="vocab-reading-4"></div></div>
+</section>
+</article>
+</section>
+<div class="card question-heading-card"><h2>📝 أسئلة الفقرة الرابعة</h2></div>
+<div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">Where did the students go?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="true" data-result="r4q1">To a science museum</button><button class="choice-btn" type="button" data-correct="false" data-result="r4q1">To a beach</button><button class="choice-btn" type="button" data-correct="false" data-result="r4q1">To a library</button></div>
+<p class="result-text" id="r4q1"></p>
+</div><div class="card question-card">
+<p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+<p class="question-prompt">How did they travel?</p>
+<div class="choice-container"><button class="choice-btn" type="button" data-correct="false" data-result="r4q2">By train</button><button class="choice-btn" type="button" data-correct="true" data-result="r4q2">By bus</button><button class="choice-btn" type="button" data-correct="false" data-result="r4q2">By car</button></div>
+<p class="result-text" id="r4q2"></p>
+</div><div class="card question-card">
+<p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+<p class="question-prompt" dir="ltr" style="text-align:left">Our school organized a trip.</p>
+<input class="write-box" id="r4write1" type="text" placeholder="اكتب إجابتك هنا..." autocomplete="off">
+<br><br>
+<button class="check-btn" type="button" data-input="r4write1" data-result="r4result1">تحقق من الإجابة</button>
+<p class="result-text" id="r4result1"></p>
+</div>
+
+<div class="final-card"><h2>🏅 أحسنت!</h2>
+<p>أكملت تدريبات الماضي البسيط بنجاح! 🌟<br><br>راجع المفردات والتصريفات، واستمر في التدريب حتى تصبح أكثر ثقة في استخدام الماضي البسيط.</p>
+<button class="next-lesson-btn" type="button" onclick="finishLessonPage()">✨ الانتقال إلى مراجعة الوحدة</button></div>
+</main>
+<footer class="footer">© Engliza Academy — Learn English with Confidence</footer>
+</div>
+<script>
+function normalizeText(text) {
+return String(text||"").toLowerCase().trim().replace(/’/g,"'")
+.replace(/didn't/g,"did not").replace(/wasn't/g,"was not").replace(/weren't/g,"were not")
+.replace(/[.,!?؟]/g,"").replace(/'/g,"").replace(/\s+/g," ").trim();
+}
+function checkWriting(inputId,resultId,correctAnswers) {
+const input=document.getElementById(inputId), result=document.getElementById(resultId);
+if(!input||!result) return;
+const answer=normalizeText(input.value), accepted=correctAnswers.map(normalizeText);
+input.classList.remove("correct-input","wrong-input","shake");
+if(accepted.includes(answer)) {
+input.classList.add("correct-input");
+result.innerHTML='<div class="confetti"><span class="star">✨</span><span class="star">⭐</span><span class="star">🌟</span></div>✅ أحسنت! إجابة صحيحة.';
+result.className="answer-result success-text";
+} else {
+input.classList.add("wrong-input","shake"); setTimeout(()=>input.classList.remove("shake"),300);
+result.innerHTML="😅 حاول مرة أخرى.<br><br>الإجابة النموذجية: <b>"+correctAnswers[0]+"</b>";
+result.className="answer-result error-text";
+}
+}
+function checkAnswer(button,isCorrect,resultId) {
+const result=document.getElementById(resultId), buttons=button.parentElement.querySelectorAll(".choice-btn");
+buttons.forEach(b=>b.disabled=true);
+if(isCorrect) {
+button.classList.add("correct"); button.innerHTML+=" ✔️";
+result.innerHTML="✨ ⭐ 🌟<br>✅ أحسنت! إجابة صحيحة."; result.className="result-text success-text";
+} else {
+button.classList.add("wrong","shake"); button.innerHTML+=" ✖️"; setTimeout(()=>button.classList.remove("shake"),300);
+result.innerHTML="😅 إجابة غير صحيحة. الإجابة الصحيحة مميزة باللون الأخضر."; result.className="result-text error-text";
+buttons.forEach(b=>{if(b.dataset.correct==="true"){b.classList.add("correct");if(!b.innerHTML.includes("✔️"))b.innerHTML+=" ✔️";}});
+}
+}
+window.toggleVocabulary=function(button) {
+if(!button)return;
+const section=button.closest(".vocab-section"); if(!section)return;
+const open=!section.classList.contains("open"); section.classList.toggle("open",open);
+button.setAttribute("aria-expanded",String(open));
+const content=section.querySelector(".vocab-content"); if(content)content.setAttribute("aria-hidden",String(!open));
+const label=button.querySelector(".vocab-action-label"); if(label)label.textContent=open?"إخفاء المفردات":"اضغط لعرض المفردات";
+};
+const vocabulary={"wonderful": {"word": "wonderful", "type": "Adjective (صفة)", "meaning": "رائع / مذهل", "examples": [{"en": "We had a wonderful weekend.", "ar": "قضينا عطلة نهاية أسبوع رائعة."}, {"en": "It was a wonderful experience.", "ar": "كانت تجربة رائعة."}], "note": ""}, "moment": {"word": "moment", "type": "Noun (اسم)", "meaning": "لحظة", "examples": [{"en": "Wait a moment, please.", "ar": "انتظر لحظة من فضلك."}, {"en": "I enjoyed every moment of the trip.", "ar": "استمتعت بكل لحظة من الرحلة."}], "note": ""}, "funny": {"word": "funny", "type": "Adjective (صفة)", "meaning": "مضحك", "examples": [{"en": "That movie was very funny.", "ar": "كان ذلك الفيلم مضحكًا جدًا."}, {"en": "My brother told a funny story.", "ar": "أخبرني أخي قصة مضحكة."}], "note": ""}, "movie": {"word": "movie", "type": "Noun (اسم)", "meaning": "فيلم", "examples": [{"en": "We watched a movie last night.", "ar": "شاهدنا فيلمًا الليلة الماضية."}, {"en": "This is my favorite movie.", "ar": "هذا فيلمي المفضل."}], "note": ""}, "delicious": {"word": "delicious", "type": "Adjective (صفة)", "meaning": "لذيذ", "examples": [{"en": "My grandmother made a delicious cake.", "ar": "أعدّت جدتي كعكة لذيذة."}, {"en": "The lunch was delicious.", "ar": "كان الغداء لذيذًا."}], "note": ""}, "garden": {"word": "garden", "type": "Noun (اسم)", "meaning": "حديقة", "examples": [{"en": "The children played in the garden.", "ar": "لعب الأطفال في الحديقة."}, {"en": "My mother grows flowers in the garden.", "ar": "تزرع أمي الزهور في الحديقة."}], "note": ""}, "together": {"word": "together", "type": "Adverb (ظرف)", "meaning": "معًا", "examples": [{"en": "We studied together yesterday.", "ar": "درسنا معًا أمس."}, {"en": "They travelled together.", "ar": "سافروا معًا."}], "note": ""}, "beach": {"word": "beach", "type": "Noun (اسم)", "meaning": "شاطئ", "examples": [{"en": "We went to the beach yesterday.", "ar": "ذهبنا إلى الشاطئ أمس."}, {"en": "The beach was quiet in the morning.", "ar": "كان الشاطئ هادئًا في الصباح."}], "note": ""}, "weather": {"word": "weather", "type": "Noun (اسم)", "meaning": "الطقس", "examples": [{"en": "The weather was sunny yesterday.", "ar": "كان الطقس مشمسًا أمس."}, {"en": "The weather changed in the afternoon.", "ar": "تغيّر الطقس بعد الظهر."}], "note": ""}, "sunny": {"word": "sunny", "type": "Adjective (صفة)", "meaning": "مشمس", "examples": [{"en": "It was a sunny day.", "ar": "كان يومًا مشمسًا."}, {"en": "The weather is sunny today.", "ar": "الطقس مشمس اليوم."}], "note": ""}, "decide": {"word": "decide", "type": "Verb (فعل)", "meaning": "يقرر", "examples": [{"en": "I decide what to study every morning.", "ar": "أقرر ماذا أدرس كل صباح."}, {"en": "We decided to swim.", "ar": "قررنا السباحة."}], "note": "الماضي: <b>decided</b>. هذا فعل منتظم؛ نضيف ed إلى الفعل decide."}, "tree": {"word": "tree", "type": "Noun (اسم)", "meaning": "شجرة", "examples": [{"en": "We sat under a big tree.", "ar": "جلسنا تحت شجرة كبيرة."}, {"en": "There are three trees in the garden.", "ar": "توجد ثلاث أشجار في الحديقة."}], "note": ""}, "lunch": {"word": "lunch", "type": "Noun (اسم)", "meaning": "الغداء", "examples": [{"en": "We ate lunch at two o'clock.", "ar": "تناولنا الغداء الساعة الثانية."}, {"en": "I usually have lunch at home.", "ar": "عادةً أتناول الغداء في المنزل."}], "note": ""}, "sea": {"word": "sea", "type": "Noun (اسم)", "meaning": "البحر", "examples": [{"en": "The sea was calm yesterday.", "ar": "كان البحر هادئًا أمس."}, {"en": "They swam in the sea.", "ar": "سبحوا في البحر."}], "note": ""}, "photo / photos": {"word": "photo / photos", "type": "Noun (اسم)", "meaning": "صورة / صور", "examples": [{"en": "I took a photo of the sea.", "ar": "التقطت صورة للبحر."}, {"en": "We looked at our holiday photos.", "ar": "شاهدنا صور عطلتنا."}], "note": "المفرد: <b>photo</b>، والجمع: <b>photos</b>."}, "shell / shells": {"word": "shell / shells", "type": "Noun (اسم)", "meaning": "صدفة / أصداف", "examples": [{"en": "I found a beautiful shell.", "ar": "وجدت صدفة جميلة."}, {"en": "The children collected shells on the beach.", "ar": "جمع الأطفال الأصداف على الشاطئ."}], "note": "المفرد: <b>shell</b>، والجمع: <b>shells</b>."}, "collect": {"word": "collect", "type": "Verb (فعل)", "meaning": "يجمع", "examples": [{"en": "I collect old coins.", "ar": "أجمع العملات القديمة."}, {"en": "We collected shells.", "ar": "جمعنا الأصداف."}], "note": "الماضي: <b>collected</b>. فعل منتظم نضيف إليه ed."}, "shopping": {"word": "shopping", "type": "Noun / Gerund (اسم / مصدر ing)", "meaning": "التسوق", "examples": [{"en": "I went shopping with my sister.", "ar": "ذهبت للتسوق مع أختي."}, {"en": "Shopping can be fun.", "ar": "قد يكون التسوق ممتعًا."}], "note": ""}, "several": {"word": "several", "type": "Determiner (محدد كمية)", "meaning": "عدة / عدد من", "examples": [{"en": "We visited several stores.", "ar": "زرنا عدة متاجر."}, {"en": "I waited for several minutes.", "ar": "انتظرت عدة دقائق."}], "note": ""}, "store / stores": {"word": "store / stores", "type": "Noun (اسم)", "meaning": "متجر / متاجر", "examples": [{"en": "This store sells clothes.", "ar": "هذا المتجر يبيع الملابس."}, {"en": "There are several stores in this street.", "ar": "توجد عدة متاجر في هذا الشارع."}], "note": "المفرد: <b>store</b>، والجمع: <b>stores</b>."}, "clothes": {"word": "clothes", "type": "Plural Noun (اسم جمع)", "meaning": "ملابس", "examples": [{"en": "I bought some new clothes.", "ar": "اشتريت بعض الملابس الجديدة."}, {"en": "These clothes are comfortable.", "ar": "هذه الملابس مريحة."}], "note": "تُستخدم عادةً بصيغة الجمع، ولا نقول <b>a clothes</b>. نقول <b>an item of clothing</b> لقطعة ملابس."}, "worry / worried": {"word": "worry / worried", "type": "Verb / Adjective (فعل / صفة)", "meaning": "يقلق / قَلِق", "examples": [{"en": "I worry about my exams.", "ar": "أقلق بشأن اختباراتي."}, {"en": "She worried about her lost phone.", "ar": "قلقت بشأن هاتفها المفقود."}, {"en": "I felt worried yesterday.", "ar": "شعرت بالقلق أمس."}], "note": "الفعل في المضارع: <b>worry</b> = يقلق. الماضي: <b>worried</b> = قلق / شعر بالقلق. وتأتي <b>worried</b> أيضًا صفة بمعنى قَلِق، مثل: <b>She is worried.</b> = هي قلقة."}, "entrance": {"word": "entrance", "type": "Noun (اسم)", "meaning": "مدخل", "examples": [{"en": "We waited near the entrance.", "ar": "انتظرنا بالقرب من المدخل."}, {"en": "The main entrance is on the left.", "ar": "المدخل الرئيسي على اليسار."}], "note": ""}, "near": {"word": "near", "type": "Preposition (حرف جر)", "meaning": "بالقرب من", "examples": [{"en": "The school is near my house.", "ar": "المدرسة بالقرب من منزلي."}, {"en": "She stood near the door.", "ar": "وقفت بالقرب من الباب."}], "note": ""}, "relieve / relieved": {"word": "relieve / relieved", "type": "Verb / Adjective (فعل / صفة)", "meaning": "يخفف / شعر بالارتياح، مرتاح", "examples": [{"en": "The good news relieved me.", "ar": "أراحتني الأخبار السارة."}, {"en": "I felt relieved after finding my bag.", "ar": "شعرت بالارتياح بعد العثور على حقيبتي."}, {"en": "She was relieved to hear the news.", "ar": "شعرت بالارتياح عندما سمعت الخبر."}], "note": "الفعل: <b>relieve</b> = يخفف أو يريح. الماضي: <b>relieved</b> = خفّف / أراح. وتُستخدم <b>relieved</b> كصفة بمعنى مرتاح أو شعر بالارتياح."}, "stressful": {"word": "stressful", "type": "Adjective (صفة)", "meaning": "مُسبّب للتوتر / مرهق نفسيًا", "examples": [{"en": "Moving to a new city can be stressful.", "ar": "قد يكون الانتقال إلى مدينة جديدة أمرًا مرهقًا نفسيًا."}, {"en": "It was a stressful day.", "ar": "كان يومًا مليئًا بالتوتر."}], "note": ""}, "organize / organized": {"word": "organize / organized", "type": "Verb (فعل)", "meaning": "ينظم / نظّم", "examples": [{"en": "We organize a school event every year.", "ar": "ننظم فعالية مدرسية كل عام."}, {"en": "Our school organized a trip last year.", "ar": "نظمت مدرستنا رحلة العام الماضي."}], "note": "الماضي: <b>organized</b>. نضيف d لأن الفعل ينتهي بحرف e."}, "trip": {"word": "trip", "type": "Noun (اسم)", "meaning": "رحلة", "examples": [{"en": "We went on a school trip.", "ar": "ذهبنا في رحلة مدرسية."}, {"en": "Our trip lasted two days.", "ar": "استغرقت رحلتنا يومين."}], "note": "تُستخدم <b>trip</b> غالبًا للحديث عن رحلة أو سفر إلى وجهة، وقد تكون قصيرة أو طويلة، وغالبًا لها غرض أو وجهة."}, "science": {"word": "science", "type": "Noun (اسم)", "meaning": "العلوم", "examples": [{"en": "I enjoyed science at school.", "ar": "استمتعت بمادة العلوم في المدرسة."}, {"en": "Science helps us understand the world.", "ar": "يساعدنا العلم على فهم العالم."}], "note": ""}, "museum": {"word": "museum", "type": "Noun (اسم)", "meaning": "متحف", "examples": [{"en": "We visited a science museum.", "ar": "زرنا متحفًا علميًا."}, {"en": "The museum has many old objects.", "ar": "يحتوي المتحف على أشياء قديمة كثيرة."}], "note": ""}, "travel / traveled": {"word": "travel / traveled", "type": "Verb (فعل)", "meaning": "يسافر / سافر", "examples": [{"en": "I love to travel.", "ar": "أحب السفر."}, {"en": "We traveled by bus last week.", "ar": "سافرنا بالحافلة الأسبوع الماضي."}], "note": "الماضي: <b>traveled</b> بالتهجئة الأمريكية، و<b>travelled</b> بالتهجئة البريطانية."}, "technology": {"word": "technology", "type": "Noun (اسم)", "meaning": "التكنولوجيا / التقنية", "examples": [{"en": "Technology changes our lives.", "ar": "تغيّر التكنولوجيا حياتنا."}, {"en": "We learned about space and technology.", "ar": "تعلمنا عن الفضاء والتكنولوجيا."}], "note": ""}, "guide": {"word": "guide", "type": "Noun (اسم)", "meaning": "مرشد / دليل", "examples": [{"en": "Our guide explained the museum rules.", "ar": "شرح لنا المرشد قواعد المتحف."}, {"en": "The tour guide answered our questions.", "ar": "أجاب مرشد الجولة عن أسئلتنا."}], "note": ""}, "machine / machines": {"word": "machine / machines", "type": "Noun (اسم)", "meaning": "آلة / آلات", "examples": [{"en": "This machine makes coffee.", "ar": "هذه الآلة تصنع القهوة."}, {"en": "The museum displayed old machines.", "ar": "عرض المتحف آلات قديمة."}], "note": "المفرد: <b>machine</b>، والجمع: <b>machines</b>."}, "tour": {"word": "tour", "type": "Noun (اسم)", "meaning": "جولة", "examples": [{"en": "We took a tour of the museum.", "ar": "قمنا بجولة في المتحف."}, {"en": "The guide gave us a tour of the building.", "ar": "أخذنا المرشد في جولة داخل المبنى."}], "note": "الفرق: <b>trip</b> رحلة إلى مكان أو وجهة، أما <b>tour</b> فهي جولة لزيارة أماكن أو مشاهدة معالم، وغالبًا تكون ضمن الرحلة. مثال: <b>We went on a trip to London and took a tour of the museum.</b> = ذهبنا في رحلة إلى لندن وقمنا بجولة في المتحف."}, "gift / gifts": {"word": "gift / gifts", "type": "Noun (اسم)", "meaning": "هدية / هدايا", "examples": [{"en": "I bought a gift for my friend.", "ar": "اشتريت هدية لصديقي."}, {"en": "They received small gifts.", "ar": "تلقوا هدايا صغيرة."}], "note": "المفرد: <b>gift</b>، والجمع: <b>gifts</b>."}, "group": {"word": "group", "type": "Noun (اسم)", "meaning": "مجموعة", "examples": [{"en": "Our group took a photo.", "ar": "التقطت مجموعتنا صورة."}, {"en": "A group of students visited the museum.", "ar": "زارت مجموعة من الطلاب المتحف."}], "note": ""}};
+const readingVocabulary={"vocab-reading-1": ["wonderful", "moment", "funny", "movie", "delicious", "garden", "together"], "vocab-reading-2": ["beach", "weather", "sunny", "decide", "tree", "lunch", "sea", "photo / photos", "shell / shells", "collect"], "vocab-reading-3": ["shopping", "several", "store / stores", "clothes", "worry / worried", "entrance", "near", "relieve / relieved", "stressful"], "vocab-reading-4": ["organize / organized", "trip", "science", "museum", "travel / traveled", "technology", "guide", "machine / machines", "tour", "gift / gifts", "group"]};
+function escapeHTML(value){return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
+function createVocabularyItem(item) {
+const examples=(item.examples||[]).map(ex=>`<div class="example"><div class="example-en">${escapeHTML(ex.en)}</div><div class="example-ar">${escapeHTML(ex.ar)}</div></div>`).join("");
+const note=item.note?`<div class="grammar-note"><strong>💡 ملاحظة مهمة</strong><p>${item.note}</p></div>`:"";
+const spokenForms=item.word.split(" / ").map(part=>part.trim());
+const pronounceButtons=spokenForms.map(form=>`<button class="pronounce-btn" type="button" data-word="${escapeHTML(form)}" aria-label="استمع إلى نطق ${escapeHTML(form)}" title="استمع إلى نطق ${escapeHTML(form)}">🔊</button>`).join("");
+return `<article class="vocab-item"><div class="vocab-word-row"><div class="vocab-word">${escapeHTML(item.word)}</div><span style="display:flex;gap:5px;flex-shrink:0">${pronounceButtons}</span></div><div class="vocab-meaning">${escapeHTML(item.meaning)}</div><span class="word-type">${escapeHTML(item.type)}</span><div class="examples">${examples}</div>${note}</article>`;
+}
+Object.entries(readingVocabulary).forEach(([id,keys])=>{const el=document.getElementById(id);if(el)el.innerHTML=keys.map(k=>vocabulary[k]).filter(Boolean).map(createVocabularyItem).join("");});
+let englishVoice=null;
+function loadEnglishVoice(){if(!("speechSynthesis"in window))return;const voices=speechSynthesis.getVoices();englishVoice=voices.find(v=>v.lang==="en-US")||voices.find(v=>v.lang.startsWith("en-"))||null;}
+if("speechSynthesis"in window){loadEnglishVoice();speechSynthesis.onvoiceschanged=loadEnglishVoice;}
+function speakWord(word){if(!("speechSynthesis"in window)){alert("عذرًا، متصفحك لا يدعم تشغيل النطق.");return;}if(!word)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang="en-US";u.rate=0.85;if(!englishVoice)loadEnglishVoice();if(englishVoice)u.voice=englishVoice;speechSynthesis.speak(u);}
+document.addEventListener("click",event=>{
+const target=event.target;
+if(!(target instanceof Element))return;
+const vocabButton=target.closest(".vocab-toggle");
+if(vocabButton){window.toggleVocabulary(vocabButton);return;}
+const choiceButton=target.closest(".choice-btn");
+if(choiceButton){checkAnswer(choiceButton,choiceButton.dataset.correct==="true",choiceButton.dataset.result);return;}
+const writingButton=target.closest(".check-btn");
+if(writingButton){
+const answers={
+"r1result1":["She didn't prepare a delicious lunch.","She did not prepare a delicious lunch."],
+"r2result1":["We didn't collect beautiful shells.","We did not collect beautiful shells."],
+"r3result1":["The woman didn't find my bag.","The woman did not find my bag."],
+"r4result1":["Our school didn't organize a trip.","Our school did not organize a trip."]
+};
+checkWriting(writingButton.dataset.input,writingButton.dataset.result,answers[writingButton.dataset.result]||[]);
+return;
+}
+const pronounceButton=target.closest(".pronounce-btn");
+if(pronounceButton)speakWord(pronounceButton.getAttribute("data-word"));
+});
+</script>
+<script type="module">
+import { finishLesson } from "./js/reward.js";
+window.finishLessonPage=function(){
+finishLesson("pre-intermediate-unit1-past-simple","📖 قراءة | Past Simple","unit1-pre-review.html");
+};
+</script>
+</body>
+</html>
