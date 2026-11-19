@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7046c8">
+<title>Reading Practice | Present Continuous - Engliza Academy</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --blue: #1f3c88;
+    --purple: #7546d8;
+    --purple-dark: #5c35b4;
+    --purple-light: #f2edff;
+    --blue-light: #edf3ff;
+    --text: #263452;
+    --muted: #71809d;
+    --border: #e7eaf4;
+    --white: #ffffff;
+    --green: #209b73;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        radial-gradient(circle at 8% 5%, rgba(164,130,255,.16), transparent 25%),
+        radial-gradient(circle at 95% 35%, rgba(111,160,255,.13), transparent 27%),
+        linear-gradient(135deg,#f7f5ff 0%,#f2f6ff 50%,#faf8ff 100%);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+}
+
+button, input, audio { font-family: inherit; }
+
+.container {
+    width: min(100% - 32px,1050px);
+    margin: 0 auto;
+    padding: 25px 0 55px;
+}
+
+/* Top bar */
+
+.top-bar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.back-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:var(--blue);
+    background:white;
+    border:1px solid #e5e8f4;
+    padding:10px 19px;
+    border-radius:30px;
+    font-weight:800;
+    font-size:14px;
+    box-shadow:0 5px 16px rgba(39,55,105,.06);
+    transition:.2s;
+}
+
+.back-btn:hover {
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(39,55,105,.12);
+}
+
+.academy-label {
+    color:var(--purple);
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    letter-spacing:.5px;
+    font-size:14px;
+}
+
+/* Hero */
+
+.hero {
+    text-align:center;
+    padding:15px 15px 30px;
+}
+
+.hero-owl {
+    width:125px;
+    height:125px;
+    object-fit:contain;
+    margin-bottom:5px;
+    filter:drop-shadow(0 8px 12px rgba(91,63,161,.13));
+}
+
+.hero h1 {
+    color:var(--blue);
+    font-size:clamp(27px,5vw,39px);
+    line-height:1.35;
+    margin:5px 0 8px;
+    font-weight:900;
+}
+
+.hero h1 span { color:var(--purple); }
+
+.hero p {
+    color:var(--muted);
+    font-size:15px;
+    font-weight:600;
+    margin:0;
+}
+
+/* Cards */
+
+.card {
+    background:var(--white);
+    border:1px solid rgba(222,226,242,.9);
+    border-radius:23px;
+    box-shadow:0 9px 28px rgba(43,55,103,.055);
+}
+
+/* Tip card */
+
+.tip-card {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:22px 25px;
+    margin-bottom:38px;
+    border-right:5px solid var(--purple);
+    background:linear-gradient(110deg,#fff 0%,#f8f5ff 100%);
+}
+
+.tip-owl {
+    width:92px;
+    height:92px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.tip-content h2 {
+    color:var(--purple-dark);
+    font-size:19px;
+    margin:0 0 8px;
+    font-weight:900;
+}
+
+.tip-content p {
+    color:#586783;
+    line-height:1.9;
+    font-size:14px;
+    margin:0;
+}
+
+/* Reading section */
+
+.reading-section {
+    margin-bottom:48px;
+}
+
+.section-heading {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:0 0 15px;
+}
+
+.section-number {
+    width:43px;
+    height:43px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7952dc,#5237b4);
+    color:white;
+    font-family:'Nunito',sans-serif;
+    font-size:19px;
+    font-weight:900;
+    box-shadow:0 5px 13px rgba(105,69,199,.2);
+}
+
+.section-heading h2 {
+    color:var(--blue);
+    font-size:22px;
+    font-weight:900;
+    margin:0;
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+    margin:1px 0 0;
+}
+
+/* Audio */
+
+.audio-card {
+    padding:19px 22px;
+    margin-bottom:15px;
+    background:linear-gradient(120deg,#f0eaff 0%,#f7f4ff 55%,#edf2ff 100%);
+    border:1px solid #e1d8ff;
+    border-radius:19px;
+}
+
+.audio-title {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--purple-dark);
+    font-weight:900;
+    font-size:16px;
+    margin-bottom:12px;
+}
+
+.audio-icon {
+    width:35px;
+    height:35px;
+    display:grid;
+    place-items:center;
+    border-radius:11px;
+    background:white;
+    font-size:18px;
+}
+
+.audio-card audio {
+    display:block;
+    width:100%;
+    height:43px;
+    border-radius:30px;
+}
+
+/* Reading card */
+
+.reading-card {
+    padding:25px 27px;
+    margin-bottom:17px;
+    border-top:4px solid #7b5be0;
+    background:white;
+}
+
+.reading-card-top {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:17px;
+}
+
+.reading-card-top h3 {
+    color:var(--blue);
+    font-size:19px;
+    margin:0;
+    font-weight:900;
+}
+
+.reading-level {
+    color:var(--purple-dark);
+    background:#f1ecff;
+    border:1px solid #e4dbff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-family:'Nunito',sans-serif;
+    font-size:11px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.reading-text {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:20px;
+    line-height:2;
+    font-weight:600;
+    overflow-wrap:break-word;
+}
+
+/* Vocabulary */
+
+.vocab-section {
+    padding:20px;
+    background:linear-gradient(145deg,#f8f6ff,#f2f6ff);
+    border:1px solid #e4e3f5;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.vocab-toggle {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:var(--blue);
+    text-align:right;
+    cursor:pointer;
+}
+
+.vocab-toggle-main {
+    display:flex;
+    align-items:center;
+    gap:11px;
+    min-width:0;
+}
+
+.vocab-toggle-icon {
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:white;
+    box-shadow:0 3px 10px rgba(65,66,130,.08);
+    font-size:19px;
+    flex-shrink:0;
+}
+
+.vocab-toggle h3 {
+    margin:0;
+    font-size:17px;
+    font-weight:900;
+}
+
+.vocab-toggle small {
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:600;
+    margin-top:2px;
+}
+
+.vocab-action-label {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    padding:9px 13px;
+    border-radius:12px;
+    background:var(--purple);
+    color:white;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.vocab-content {
+    display:none;
+    padding-top:20px;
+}
+
+.vocab-section.open .vocab-content {
+    display:block;
+}
+
+.vocab-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:13px;
+}
+
+.vocab-item {
+    background:white;
+    border:1px solid #e7e4f4;
+    border-radius:16px;
+    padding:16px;
+    min-width:0;
+    box-shadow:0 3px 10px rgba(46,54,100,.035);
+}
+
+.vocab-word-row {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin-bottom:6px;
+}
+
+.vocab-word {
+    direction:ltr;
+    text-align:left;
+    color:var(--purple-dark);
+    font-family:'Nunito',sans-serif;
+    font-size:18px;
+    font-weight:900;
+    overflow-wrap:anywhere;
+}
+
+.pronounce-btn {
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+    border:none;
+    border-radius:11px;
+    background:#f0eaff;
+    color:var(--purple-dark);
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+.pronounce-btn:hover {
+    background:var(--purple);
+    color:white;
+    transform:scale(1.06);
+}
+
+/* Pronunciation */
+
+.pronunciation-info {
+    display:flex;
+    align-items:center;
+    gap:9px;
+    direction:ltr;
+    margin:5px 0 9px;
+}
+
+.pronunciation-ipa {
+    color:var(--purple-dark);
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    font-weight:900;
+}
+
+.pronunciation-ar {
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    direction:rtl;
+}
+
+/* Vocabulary meaning */
+
+.vocab-meaning {
+    color:#53617d;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.word-type {
+    display:inline-block;
+    color:#65728e;
+    background:#f2f5fb;
+    border-radius:7px;
+    padding:2px 8px;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:11px;
+}
+
+.examples {
+    border-top:1px solid #edf0f7;
+    padding-top:9px;
+}
+
+.example { margin-bottom:10px; }
+.example:last-child { margin-bottom:0; }
+
+.example-en {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.65;
+}
+
+.example-ar {
+    color:#7b849b;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:2px;
+}
+
+/* Arabic grammar note */
+
+.grammar-note {
+    margin-top:13px;
+    padding:12px;
+    background:#f5f1ff;
+    border-right:3px solid var(--purple);
+    border-radius:11px;
+}
+
+.grammar-note strong {
+    display:block;
+    color:var(--purple-dark);
+    font-size:12px;
+    margin-bottom:6px;
+}
+
+.grammar-note p {
+    color:#53617d;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.9;
+    margin:0;
+}
+
+/* Question cards */
+
+.question-card {
+    padding:25px 27px;
+    margin-bottom:17px;
+}
+
+.question-heading-card {
+    text-align:center;
+    padding:20px;
+    margin:28px 0 17px;
+}
+
+.question-heading-card h2 {
+    color:var(--blue);
+    font-size:22px;
+    margin:0;
+    font-weight:900;
+}
+
+.question-title {
+    font-size:17px;
+    font-weight:900;
+    line-height:1.9;
+    color:var(--purple-dark);
+    margin:0 0 15px;
+}
+
+.question-prompt {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:17px;
+    line-height:1.8;
+    font-weight:800;
+    margin-bottom:17px;
+}
+
+.help-text {
+    font-size:20px;
+    font-weight:800;
+    line-height:1.8;
+    color:#34415d;
+    text-align:left;
+    direction:ltr;
+    margin:20px 0;
+    font-family:'Nunito',sans-serif;
+}
+
+/* Writing input */
+
+.write-box {
+    width:100%;
+    padding:15px 18px;
+    border-radius:15px;
+    border:1.5px solid #dce4ff;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+    margin-bottom:15px;
+    background:white;
+    direction:ltr;
+    text-align:left;
+}
+
+.write-box:focus {
+    border-color:#6f43ff;
+    box-shadow:0 0 0 4px rgba(111,67,255,.10);
+}
+
+/* Results */
+
+.answer-result,
+.result-text {
+    margin-top:15px;
+    font-size:15px;
+    font-weight:800;
+    line-height:1.9;
+    animation:fadeResult .4s ease;
+}
+
+.success-text { color:#0f8b4c; }
+.error-text { color:#c62828; }
+
+.correct-input {
+    background:#e8fff0;
+    border:2px solid #b8ebc8;
+    color:#0f8b4c;
+}
+
+.wrong-input {
+    background:#ffe8e8;
+    border:2px solid #ffb8b8;
+    color:#c62828;
+}
+
+/* Choices and buttons */
+
+.choice-container {
+    display:flex;
+    gap:13px;
+    margin:20px 0 12px;
+}
+
+.choice-btn {
+    flex:1;
+    padding:15px;
+    background:white;
+    border:1.5px solid #dce4ff;
+    border-radius:15px;
+    font-size:15px;
+    font-weight:800;
+    color:var(--blue);
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 4px 12px rgba(0,0,0,.035);
+}
+
+.choice-btn:hover {
+    transform:translateY(-2px);
+    border-color:#a995e8;
+}
+
+.choice-btn:disabled {
+    cursor:default;
+    opacity:.95;
+}
+
+.card button:not(.choice-btn):not(.vocab-toggle):not(.pronounce-btn) {
+    background:#f5f2ff;
+    color:var(--purple-dark);
+    border:1px solid #e2d9ff;
+    padding:12px 20px;
+    border-radius:13px;
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.card button:not(.choice-btn):not(.vocab-toggle):not(.pronounce-btn):hover {
+    background:#ece5ff;
+    transform:translateY(-2px);
+}
+
+.correct {
+    background:#e8fff0 !important;
+    border:2px solid #b8ebc8 !important;
+    color:#0f8b4c !important;
+}
+
+.wrong {
+    background:#ffe8e8 !important;
+    border:2px solid #ffb8b8 !important;
+    color:#c62828 !important;
+}
+
+/* Confetti */
+
+.confetti {
+    position:relative;
+    height:0;
+}
+
+.star {
+    position:absolute;
+    font-size:20px;
+    opacity:0;
+    animation:flyStars 1.4s ease-out forwards;
+}
+
+.star:nth-child(1) { left:10%; }
+.star:nth-child(2) { left:30%; animation-delay:.1s; }
+.star:nth-child(3) { left:50%; animation-delay:.2s; }
+.star:nth-child(4) { left:70%; animation-delay:.15s; }
+.star:nth-child(5) { left:90%; animation-delay:.05s; }
+
+@keyframes flyStars {
+    0% { opacity:0; transform:translateY(20px) scale(.4); }
+    20% { opacity:1; }
+    100% { opacity:0; transform:translateY(-70px) rotate(360deg) scale(1.3); }
+}
+
+.shake { animation:shake .3s; }
+
+@keyframes shake {
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-6px);}
+    50%{transform:translateX(6px);}
+    75%{transform:translateX(-6px);}
+    100%{transform:translateX(0);}
+}
+
+@keyframes fadeResult {
+    from { opacity:0; transform:translateY(10px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* Final card */
+
+.final-card {
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:33px 22px;
+    margin-top:45px;
+    color:white;
+    background:linear-gradient(125deg,#5033a6 0%,#7548d4 55%,#5274d7 100%);
+    border-radius:25px;
+    box-shadow:0 12px 28px rgba(89,59,174,.22);
+}
+
+.final-card::before,
+.final-card::after {
+    content:"";
+    position:absolute;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:50%;
+    width:180px;
+    height:180px;
+}
+
+.final-card::before { top:-100px; right:-50px; }
+.final-card::after { bottom:-120px; left:-55px; }
+
+.final-card h2 {
+    position:relative;
+    z-index:1;
+    font-size:25px;
+    margin:0 0 8px;
+    font-weight:900;
+    color:white;
+}
+
+.final-card p {
+    position:relative;
+    z-index:1;
+    color:rgba(255,255,255,.9);
+    font-size:14px;
+    line-height:1.9;
+    margin:0 auto 20px;
+    max-width:650px;
+}
+
+.next-lesson-btn {
+    position:relative;
+    z-index:1;
+    border:none !important;
+    border-radius:30px !important;
+    padding:13px 28px !important;
+    background:white !important;
+    color:#5b3bb1 !important;
+    font-size:15px !important;
+    font-weight:900 !important;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(32,21,72,.15);
+    transition:.2s;
+}
+
+.next-lesson-btn:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(32,21,72,.2);
+}
+
+.footer {
+    text-align:center;
+    color:#929bb0;
+    font-family:'Nunito',sans-serif;
+    font-size:12px;
+    font-weight:800;
+    padding-top:25px;
+}
+
+/* Responsive */
+
+@media(max-width:650px) {
+    .container {
+        width:min(100% - 22px,1050px);
+        padding-top:15px;
+    }
+
+    .top-bar { margin-bottom:15px; }
+    .hero { padding-bottom:23px; }
+
+    .hero-owl {
+        width:105px;
+        height:105px;
+    }
+
+    .hero p { font-size:13px; }
+
+    .tip-card {
+        padding:16px;
+        gap:12px;
+        margin-bottom:30px;
+        align-items:flex-start;
+    }
+
+    .tip-owl {
+        width:68px;
+        height:68px;
+    }
+
+    .tip-content h2 { font-size:16px; }
+    .tip-content p { font-size:12px; line-height:1.85; }
+
+    .section-heading h2 { font-size:19px; }
+    .section-heading p { font-size:11px; }
+
+    .audio-card { padding:15px; }
+
+    .reading-card { padding:19px 16px; }
+    .reading-card-top h3 { font-size:17px; }
+
+    .reading-text {
+        font-size:17px;
+        line-height:1.95;
+    }
+
+    .vocab-section { padding:16px; }
+
+    .vocab-grid {
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .vocab-item { padding:14px; }
+
+    .vocab-action-label {
+        padding:8px 10px;
+        font-size:11px;
+    }
+
+    .vocab-toggle h3 { font-size:15px; }
+
+    .question-card { padding:19px 16px; }
+
+    .choice-container {
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .question-prompt { font-size:16px; }
+    .help-text { font-size:18px; }
+
+    .final-card { padding:28px 17px; }
+    .final-card h2 { font-size:22px; }
+}
+
+@media(max-width:360px) {
+    .academy-label { font-size:11px; }
+
+    .back-btn {
+        padding:9px 13px;
+        font-size:12px;
+    }
+
+    .reading-text { font-size:16px; }
+
+    .vocab-toggle-main { gap:7px; }
+    .vocab-action-label { padding:7px 8px; }
+}
+
+/* Practice 2 uses the Practice 1 visual identity and collapsible vocabulary layout. */
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-bar">
+        <a href="unit1-pre.html" class="back-btn">⬅️ رجوع</a>
+        <div class="academy-label">ENGLIZA ACADEMY</div>
+    </div>
+    <header class="hero">
+        <img src="../okay.owl.PNG" alt="Engliza Academy Owl" class="hero-owl">
+        <h1>📖 Reading Practice | <span>Present Continuous</span></h1>
+        <p>تدرّب على المضارع المستمر من خلال قراءة النصوص والإجابة عن أسئلتها</p>
+    </header>
+    <section class="card tip-card">
+        <img src="../earlo .PNG" alt="Learning Tip" class="tip-owl">
+        <div class="tip-content">
+            <h2>✨ نصيحة قبل أن تبدأ</h2>
+            <p>
+                ستلاحظ أن بعض الكلمات كانت مميزة داخل النص. افتح قائمة المفردات أسفل كل قراءة
+                لمعرفة المعنى ونوع الكلمة ومثال عليها وترجمته، والاستماع إلى طريقة نطقها.
+                اقرأ الفقرة أولًا وحاول فهم الفكرة العامة، ثم راجع المفردات وأجب عن الأسئلة.
+            </p>
+        </div>
+    </section>
+    <main>
+
+
+        <section class="reading-section">
+            <div class="section-heading">
+                <div class="section-number">1</div>
+                <div>
+                    <h2>Daily Routine</h2>
+                    <p>Reading 1 · Present Continuous</p>
+                </div>
+            </div>
+            <div class="card audio-card">
+                <div class="audio-title"><span class="audio-icon">🎧</span><span>استمع إلى الفقرة الأولى – Daily Routine</span></div>
+                <audio controls preload="metadata" playsinline aria-label="Daily Routine listening audio">
+                    <source src="https://videos.englizaacademy.com/Tttt/Daily%20routine.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الملفات الصوتية.
+                </audio>
+            </div>
+            <article class="card reading-card">
+                <div class="reading-card-top">
+                    <h3>📖 Reading 1 – Daily Routine</h3>
+                    <span class="reading-level">Reading 1</span>
+                </div>
+                <div class="reading-text">Ahmed is walking in the park now . He is wearing a blue T-shirt and black shoes . His friends are playing football near the trees . Ahmed is not playing football because he is tired . Is he sitting on a bench ? No, he isn&#x27;t. He is drinking water and talking with his friends . Everyone is having a good time in the park .</div>
+                <section class="vocab-section">
+                    <button class="vocab-toggle" type="button" aria-expanded="false" aria-controls="vocab-reading-1" onclick="toggleVocabulary(this)">
+                        <span class="vocab-toggle-main">
+                            <span class="vocab-toggle-icon">📚</span>
+                            <span>
+                                <h3>Vocabulary & Expressions</h3>
+                                <small>19 كلمة وتعبيرًا مع أمثلة</small>
+                            </span>
+                        </span>
+                        <span class="vocab-action-label">اضغط لعرض المفردات</span>
+                    </button>
+                    <div class="vocab-content">
+                        <div class="vocab-grid" id="vocab-reading-1"></div>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <div class="card question-heading-card">
+            <h2>📝 أسئلة الفقرة الأولى</h2>
+        </div>
+    
+<div class="card question-card">
+<h2>
+
+📝 أسئلة الفقرة
+
+</h2>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+<p class="question-prompt">
+
+Where is Ahmed walking?
+
+</p>
+<div class="choice-container">
+<button class="choice-btn" onclick="checkAnswer(this,true,'r1q1')">
+
+In the park
+
+</button>
+<button class="choice-btn" onclick="checkAnswer(this,false,'r1q1')">
+
+At school
+
+</button>
+</div>
+<p class="result-text" id="r1q1"></p>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+<p class="question-prompt">
+
+Is Ahmed playing football?
+
+</p>
+<div class="choice-container">
+<button class="choice-btn" onclick="checkAnswer(this,false,'r1q2')">
+
+Yes, he is.
+
+</button>
+<button class="choice-btn" onclick="checkAnswer(this,true,'r1q2')">
+
+No, he isn't.
+
+</button>
+</div>
+<p class="result-text" id="r1q2"></p>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+✍️ حوّل الجملة إلى النفي.
+
+</p>
+<p class="question-prompt">
+
+Ahmed is wearing a blue T-shirt.
+
+</p>
+<input class="write-box" id="r1write1" placeholder="اكتب إجابتك هنا..." type="text"/>
+<br/><br/>
+<button class="check-btn" onclick="checkWriting(
+'r1write1',
+'r1result1',
+[
+'Ahmed is not wearing a blue T-shirt.',
+'Ahmed isn\'t wearing a blue T-shirt.'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+<p class="result-text" id="r1result1"></p>
+</div>
+
+        <section class="reading-section">
+            <div class="section-heading">
+                <div class="section-number">2</div>
+                <div>
+                    <h2>My Family</h2>
+                    <p>Reading 2 · Present Continuous</p>
+                </div>
+            </div>
+            <div class="card audio-card">
+                <div class="audio-title"><span class="audio-icon">🎧</span><span>استمع إلى الفقرة الثانية – My Family</span></div>
+                <audio controls preload="metadata" playsinline aria-label="My Family listening audio">
+                    <source src="https://videos.englizaacademy.com/Tttt/My%20family.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الملفات الصوتية.
+                </audio>
+            </div>
+            <article class="card reading-card">
+                <div class="reading-card-top">
+                    <h3>📖 Reading 2 – My Family</h3>
+                    <span class="reading-level">Reading 2</span>
+                </div>
+                <div class="reading-text">Sara is helping her mother in the kitchen . Her mother is cooking dinner for the family . Sara is washing the vegetables carefully . Her little brother is not helping because he is doing his homework . Is her father watching TV ? No, he isn&#x27;t. He is setting the table for dinner . Everyone is working together to prepare a nice meal .</div>
+                <section class="vocab-section">
+                    <button class="vocab-toggle" type="button" aria-expanded="false" aria-controls="vocab-reading-2" onclick="toggleVocabulary(this)">
+                        <span class="vocab-toggle-main">
+                            <span class="vocab-toggle-icon">📚</span>
+                            <span>
+                                <h3>Vocabulary & Expressions</h3>
+                                <small>22 كلمة وتعبيرًا مع أمثلة</small>
+                            </span>
+                        </span>
+                        <span class="vocab-action-label">اضغط لعرض المفردات</span>
+                    </button>
+                    <div class="vocab-content">
+                        <div class="vocab-grid" id="vocab-reading-2"></div>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <div class="card question-heading-card">
+            <h2>📝 أسئلة الفقرة الثانية</h2>
+        </div>
+    
+<div class="card question-card">
+<h2>
+
+📝 أسئلة الفقرة
+
+</h2>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+<p class="question-prompt">
+
+Where is Sara helping her mother?
+
+</p>
+<div class="choice-container">
+<button class="choice-btn" onclick="checkAnswer(this,false,'r2q1')">
+
+In the garden
+
+</button>
+<button class="choice-btn" onclick="checkAnswer(this,true,'r2q1')">
+
+In the kitchen
+
+</button>
+</div>
+<p class="result-text" id="r2q1"></p>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+<p class="question-prompt">
+
+Is Sara's father watching TV?
+
+</p>
+<div class="choice-container">
+<button class="choice-btn" onclick="checkAnswer(this,false,'r2q2')">
+
+Yes, he is.
+
+</button>
+<button class="choice-btn" onclick="checkAnswer(this,true,'r2q2')">
+
+No, he isn't.
+
+</button>
+</div>
+<p class="result-text" id="r2q2"></p>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+✍️ حوّل الجملة إلى النفي.
+
+</p>
+<p class="question-prompt">
+
+Sara is washing the vegetables.
+
+</p>
+<input class="write-box" id="r2write1" placeholder="اكتب إجابتك هنا..." type="text"/>
+<br/><br/>
+<button class="check-btn" onclick="checkWriting(
+'r2write1',
+'r2result1',
+[
+'Sara is not washing the vegetables.',
+'Sara isn\'t washing the vegetables.'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+<p class="result-text" id="r2result1"></p>
+</div>
+
+        <section class="reading-section">
+            <div class="section-heading">
+                <div class="section-number">3</div>
+                <div>
+                    <h2>Hobbies</h2>
+                    <p>Reading 3 · Present Continuous</p>
+                </div>
+            </div>
+            <div class="card audio-card">
+                <div class="audio-title"><span class="audio-icon">🎧</span><span>استمع إلى الفقرة الثالثة – Classroom</span></div>
+                <audio controls preload="metadata" playsinline aria-label="Classroom listening audio">
+                    <source src="https://videos.englizaacademy.com/Tttt/Classroom.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم تشغيل الملفات الصوتية.
+                </audio>
+            </div>
+            <article class="card reading-card">
+                <div class="reading-card-top">
+                    <h3>📖 Reading 3 – Hobbies</h3>
+                    <span class="reading-level">Reading 3</span>
+                </div>
+                <div class="reading-text">The students are sitting in the classroom now . The teacher is explaining a new English lesson . Some students are writing in their notebooks . One student is not listening because he is looking out of the window . Is the teacher using the computer ? Yes, she is. She is showing pictures to the class . Everyone is learning something new today .</div>
+                <section class="vocab-section">
+                    <button class="vocab-toggle" type="button" aria-expanded="false" aria-controls="vocab-reading-3" onclick="toggleVocabulary(this)">
+                        <span class="vocab-toggle-main">
+                            <span class="vocab-toggle-icon">📚</span>
+                            <span>
+                                <h3>Vocabulary & Expressions</h3>
+                                <small>22 كلمة وتعبيرًا مع أمثلة</small>
+                            </span>
+                        </span>
+                        <span class="vocab-action-label">اضغط لعرض المفردات</span>
+                    </button>
+                    <div class="vocab-content">
+                        <div class="vocab-grid" id="vocab-reading-3"></div>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <div class="card question-heading-card">
+            <h2>📝 أسئلة الفقرة الثالثة</h2>
+        </div>
+    
+<div class="card question-card">
+<h2>
+
+📝 أسئلة الفقرة
+
+</h2>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+<p class="question-prompt">
+
+What is the teacher explaining?
+
+</p>
+<div class="choice-container">
+<button class="choice-btn" onclick="checkAnswer(this,false,'r3q1')">
+
+A math lesson
+
+</button>
+<button class="choice-btn" onclick="checkAnswer(this,true,'r3q1')">
+
+A new English lesson
+
+</button>
+</div>
+<p class="result-text" id="r3q1"></p>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+🎯 اختر الإجابة الصحيحة.
+
+</p>
+<p class="question-prompt">
+
+Is the teacher using the computer?
+
+</p>
+<div class="choice-container">
+<button class="choice-btn" onclick="checkAnswer(this,true,'r3q2')">
+
+Yes, she is.
+
+</button>
+<button class="choice-btn" onclick="checkAnswer(this,false,'r3q2')">
+
+No, she isn't.
+
+</button>
+</div>
+<p class="result-text" id="r3q2"></p>
+</div>
+<div class="card question-card">
+<p class="question-title">
+
+✍️ حوّل الجملة إلى النفي.
+
+</p>
+<p class="question-prompt">
+
+The students are writing in their notebooks.
+
+</p>
+<input class="write-box" id="r3write1" placeholder="اكتب إجابتك هنا..." type="text"/>
+<br/><br/>
+<button class="check-btn" onclick="checkWriting(
+'r3write1',
+'r3result1',
+[
+'The students are not writing in their notebooks.',
+'The students aren\'t writing in their notebooks.'
+]
+)">
+
+تحقق من الإجابة
+
+</button>
+<p class="result-text" id="r3result1"></p>
+</div>
+<div class="final-card">
+<h2>
+
+🏅 أحسنت!
+
+</h2>
+<p>
+
+أكملت هذا الدرس بنجاح، ووصلت إلى نهاية الوحدة الأولى. 🌟
+
+<br/><br/>
+
+استمر بهذا التقدم، والآن حان وقت مراجعة ما تعلمته قبل الانتقال إلى المرحلة التالية.
+
+</p>
+<button class="next-lesson-btn" onclick="finishLessonPage()">
+
+✨ الانتقال إلى مراجعة الوحدة
+
+</button>
+</div>
+
+    <footer class="footer">
+        © Engliza Academy — Learn English with Confidence
+    </footer>
+</div>
+
+<script>
+
+// ==========================
+// تنظيف النص
+// ==========================
+
+function normalizeText(text){
+
+return text
+
+.toLowerCase()
+
+.trim()
+
+.replace(/’/g,"'")
+
+// ==========================
+// معالجة الاختصارات أولًا
+// قبل حذف علامة '
+// ==========================
+
+.replace(/\bi'm\b/g,"i am")
+.replace(/\bi've\b/g,"i have")
+.replace(/\bi'd\b/g,"i would")
+.replace(/\bi'll\b/g,"i will")
+
+.replace(/\bhe's\b/g,"he is")
+.replace(/\bshe's\b/g,"she is")
+.replace(/\bit's\b/g,"it is")
+
+.replace(/\byou're\b/g,"you are")
+.replace(/\bwe're\b/g,"we are")
+.replace(/\bthey're\b/g,"they are")
+
+.replace(/\bhasn't\b/g,"has not")
+.replace(/\bhaven't\b/g,"have not")
+
+.replace(/\bisn't\b/g,"is not")
+.replace(/\baren't\b/g,"are not")
+.replace(/\bwasn't\b/g,"was not")
+.replace(/\bweren't\b/g,"were not")
+
+.replace(/\bdon't\b/g,"do not")
+.replace(/\bdoesn't\b/g,"does not")
+.replace(/\bdidn't\b/g,"did not")
+
+.replace(/\bcan't\b/g,"cannot")
+.replace(/\bwon't\b/g,"will not")
+
+// ==========================
+// حذف علامات الترقيم
+// ==========================
+
+.replace(/[.,!?؟]/g,"")
+
+.replace(/'/g,"")
+
+.replace(/-/g," ")
+
+.replace(/\s+/g," ")
+
+.trim();
+
+}
+   
+
+// ==========================
+// التحقق من الأسئلة الكتابية
+// ==========================
+
+function checkWriting(
+inputId,
+resultId,
+correctAnswers
+){
+
+let input =
+document.getElementById(inputId);
+
+let result =
+document.getElementById(resultId);
+
+
+let userAnswer =
+normalizeText(
+input.value
+);
+
+
+let answers =
+correctAnswers.map(answer=>
+
+normalizeText(answer)
+
+);
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+if(
+answers.includes(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
+
+
+result.className =
+"answer-result success-text";
+
+}
+
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},300);
+
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br><b>"
++
+correctAnswers[0]
++
+"</b>";
+
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+
+  // ==========================
+// التحقق من إجابة العمر
+// ==========================
+
+function checkAgeAnswer(
+inputId,
+resultId
+){
+
+let input =
+document.getElementById(inputId);
+
+let result =
+document.getElementById(resultId);
+
+
+let userAnswer =
+normalizeText(
+input.value
+);
+
+
+input.classList.remove(
+"correct-input",
+"wrong-input",
+"shake"
+);
+
+
+// قبول:
+// I am 18
+// I'm 18
+// I am 22 years old
+// I'm 22 years old
+
+let agePattern =
+/^i am \d+( years old)?$/;
+
+
+if(
+agePattern.test(userAnswer)
+){
+
+input.classList.add(
+"correct-input"
+);
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد أجبت عن السؤال بطريقة صحيحة.';
+
+
+result.className =
+"answer-result success-text";
+
+}
+
+
+else{
+
+input.classList.add(
+"wrong-input",
+"shake"
+);
+
+
+setTimeout(function(){
+
+input.classList.remove(
+"shake"
+);
+
+},300);
+
+
+result.innerHTML =
+
+"😅❌ إجابتك غير صحيحة.<br><br>💡 أجب باستخدام:<br><br><b>I am + عمرك</b>";
+
+
+result.className =
+"answer-result error-text";
+
+}
+
+}
+
+   
+ // ==========================
+// أسئلة الاختيار
+// ==========================
+
+function checkAnswer(
+button,
+isCorrect,
+resultId
+){
+
+let result =
+document.getElementById(
+resultId
+);
+
+let allButtons =
+button.parentElement
+.querySelectorAll(
+".choice-btn"
+);
+
+
+// منع الضغط مرة أخرى
+
+allButtons.forEach(btn=>{
+
+btn.disabled = true;
+
+});
+
+
+if(isCorrect){
+
+button.classList.add(
+"correct"
+);
+
+button.innerHTML +=
+" ✔️";
+
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
+
+
+result.className =
+"result-text success-text";
+
+}
+
+else{
+
+button.classList.add(
+"wrong",
+"shake"
+);
+
+setTimeout(function(){
+
+button.classList.remove(
+"shake"
+);
+
+},300);
+
+button.innerHTML +=
+" ✖️";
+
+
+result.innerHTML =
+
+"😅❌ لقد اخترت الإجابة الخاطئة.";
+
+
+result.className =
+"result-text error-text";
+
+
+// إظهار الإجابة الصحيحة
+
+allButtons.forEach(btn=>{
+
+if(
+btn.getAttribute("onclick")
+.includes("true")
+){
+
+btn.classList.add(
+"correct"
+);
+
+if(
+!btn.innerHTML.includes("✔️")
+){
+
+btn.innerHTML +=
+" ✔️";
+
+}
+
+}
+
+});
+
+}
+
+}
+
+   // ==========================
+// إضافة كلمة
+// ==========================
+
+function addWord(
+button,
+answerBoxId
+){
+
+if(
+button.style.display==="none"
+){
+
+return;
+
+}
+
+let answerBox =
+document.getElementById(
+answerBoxId
+);
+
+let newWord =
+document.createElement(
+"div"
+);
+
+newWord.className =
+"selected-word";
+
+newWord.innerText =
+button.innerText;
+
+answerBox.appendChild(
+newWord
+);
+
+button.style.display =
+"none";
+
+}
+
+
+
+// ==========================
+// إعادة الترتيب
+// ==========================
+
+function resetSentence(
+wordsId,
+answerBoxId
+){
+
+let container =
+document.getElementById(
+wordsId
+);
+
+container
+.querySelectorAll(
+".word-btn"
+)
+.forEach(button=>{
+
+button.style.display =
+"inline-block";
+
+});
+
+document
+.getElementById(
+answerBoxId
+)
+.innerHTML = "";
+
+}
+
+
+
+// ==========================
+// التحقق من ترتيب الكلمات
+// ==========================
+
+function checkSentence(
+answerBoxId,
+correctSentence,
+resultId
+){
+
+let answerBox =
+document.getElementById(
+answerBoxId
+);
+
+let result =
+document.getElementById(
+resultId
+);
+
+let words =
+answerBox.querySelectorAll(
+".selected-word"
+);
+
+let userSentence = "";
+
+words.forEach(word=>{
+
+userSentence +=
+word.innerText + " ";
+
+});
+
+userSentence =
+normalizeText(
+userSentence
+);
+
+correctSentence =
+normalizeText(
+correctSentence
+);
+
+answerBox.classList.remove(
+"shake"
+);
+
+
+if(
+userSentence===correctSentence
+){
+
+result.innerHTML =
+
+'<div class="confetti">'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'<span class="star">🌟</span>'+
+'<span class="star">✨</span>'+
+'<span class="star">⭐</span>'+
+'</div>'+
+
+'✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
+
+result.className =
+"result-text success-text";
+
+answerBox.style.borderColor =
+"#8fd19e";
+
+answerBox.style.background =
+"#eefdf3";
+
+}
+
+else{
+
+answerBox.classList.add(
+"shake"
+);
+
+setTimeout(function(){
+
+answerBox.classList.remove(
+"shake"
+);
+
+},300);
+
+answerBox.style.borderColor =
+"#ffb8b8";
+
+answerBox.style.background =
+"#fff2f2";
+
+result.innerHTML =
+
+"😅❌ ترتيب الكلمات غير صحيح.";
+
+result.className =
+"result-text error-text";
+
+}
+
+}
+
+
+
+// ==========================
+// خلط الكلمات
+// ==========================
+
+function shuffleWords(
+containerId
+){
+
+let container =
+document.getElementById(
+containerId
+);
+
+if(
+!container){
+
+return;
+
+}
+
+let buttons =
+Array.from(
+container.querySelectorAll(
+".word-btn"
+)
+);
+
+buttons.sort(
+()=>Math.random()-0.5
+);
+
+container.innerHTML="";
+
+buttons.forEach(button=>{
+
+container.appendChild(
+button
+);
+
+});
+
+}
+
+
+
+function toggleExamples(){
+
+let box=document.getElementById("examplesBox");
+
+let btn=box.previousElementSibling;
+
+if(box.style.display==="none"){
+
+box.style.display="block";
+
+btn.innerHTML="📕 إخفاء الجمل";
+
+}else{
+
+box.style.display="none";
+
+btn.innerHTML="📖 عرض الجمل";
+
+}
+
+}
+
+
+   
+   
+ // ==========================
+// خلط كلمات الترتيب
+// ==========================
+
+shuffleWords("words1");
+shuffleWords("words2");
+
+
+    
+// ==========================
+// Interactive Vocabulary
+// ==========================
+
+const vocabulary = {
+
+"walking":{
+word:"walk",
+type:"Verb (فعل)",
+meaning:"يمشي",
+example:"Ahmed is walking in the park.",
+translation:"أحمد يمشي في الحديقة."
+},
+
+"park":{
+word:"park",
+type:"Noun (اسم)",
+meaning:"حديقة",
+example:"The children are playing in the park.",
+translation:"الأطفال يلعبون في الحديقة."
+},
+
+"now":{
+word:"now",
+type:"Adverb (ظرف)",
+meaning:"الآن",
+example:"She is studying now.",
+translation:"هي تدرس الآن."
+},
+
+"wearing":{
+word:"wear",
+type:"Verb (فعل)",
+meaning:"يرتدي",
+example:"She is wearing a red dress.",
+translation:"هي ترتدي فستانًا أحمر."
+},
+
+"blue-tshirt":{
+word:"blue T-shirt",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"قميص أزرق",
+example:"He is wearing a blue T-shirt.",
+translation:"هو يرتدي قميصًا أزرق."
+},
+
+"black-shoes":{
+word:"black shoes",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"حذاء أسود",
+example:"He is wearing black shoes.",
+translation:"هو يرتدي حذاءً أسود."
+},
+
+"playing":{
+word:"play",
+type:"Verb (فعل)",
+meaning:"يلعب",
+example:"The boys are playing football.",
+translation:"الأولاد يلعبون كرة القدم."
+},
+
+"trees":{
+word:"trees",
+type:"Noun (اسم)",
+meaning:"أشجار",
+example:"The trees are very tall.",
+translation:"الأشجار طويلة جدًا."
+},
+
+"tired":{
+word:"tired",
+type:"Adjective (صفة)",
+meaning:"متعب",
+example:"I am tired after work.",
+translation:"أنا متعب بعد العمل."
+},
+
+"sitting":{
+word:"sit",
+type:"Verb (فعل)",
+meaning:"يجلس",
+example:"She is sitting on a chair.",
+translation:"هي تجلس على كرسي."
+},
+
+"bench":{
+word:"bench",
+type:"Noun (اسم)",
+meaning:"مقعد",
+example:"They are sitting on a bench.",
+translation:"هم يجلسون على مقعد."
+},
+
+"drinking":{
+word:"drink",
+type:"Verb (فعل)",
+meaning:"يشرب",
+example:"He is drinking water.",
+translation:"هو يشرب الماء."
+},
+
+"water":{
+word:"water",
+type:"Noun (اسم)",
+meaning:"ماء",
+example:"Water is good for your health.",
+translation:"الماء مفيد لصحتك."
+},
+
+"talking":{
+word:"talk",
+type:"Verb (فعل)",
+meaning:"يتحدث",
+example:"They are talking together.",
+translation:"هم يتحدثون معًا."
+},
+
+"everyone":{
+word:"everyone",
+type:"Pronoun (ضمير)",
+meaning:"الجميع",
+example:"Everyone is happy today.",
+translation:"الجميع سعيد اليوم."
+},
+
+"having":{
+word:"have",
+type:"Verb (فعل)",
+meaning:"يقضي / لديه",
+example:"They are having a good time.",
+translation:"إنهم يقضون وقتًا ممتعًا."
+},
+
+"good-time":{
+word:"good time",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"وقت ممتع",
+example:"We are having a good time.",
+translation:"نحن نقضي وقتًا ممتعًا."
+},
+    
+
+"helping":{
+word:"help",
+type:"Verb (فعل)",
+meaning:"يساعد",
+example:"Sara is helping her mother.",
+translation:"سارة تساعد والدتها."
+},
+
+"mother":{
+word:"mother",
+type:"Noun (اسم)",
+meaning:"أم",
+example:"Her mother is cooking dinner.",
+translation:"والدتها تطبخ العشاء."
+},
+
+"kitchen":{
+word:"kitchen",
+type:"Noun (اسم)",
+meaning:"مطبخ",
+example:"Sara is in the kitchen.",
+translation:"سارة في المطبخ."
+},
+
+"cooking":{
+word:"cook",
+type:"Verb (فعل)",
+meaning:"يطبخ",
+example:"Her mother is cooking dinner.",
+translation:"والدتها تطبخ العشاء."
+},
+
+"dinner":{
+word:"dinner",
+type:"Noun (اسم)",
+meaning:"العشاء",
+example:"The family is eating dinner.",
+translation:"العائلة تتناول العشاء."
+},
+
+"family":{
+word:"family",
+type:"Noun (اسم)",
+meaning:"العائلة",
+example:"The family is together.",
+translation:"العائلة معًا."
+},
+
+"washing":{
+word:"wash",
+type:"Verb (فعل)",
+meaning:"يغسل",
+example:"Sara is washing the vegetables.",
+translation:"سارة تغسل الخضروات."
+},
+
+"vegetables":{
+word:"vegetables",
+type:"Noun (اسم)",
+meaning:"الخضروات",
+example:"Vegetables are healthy.",
+translation:"الخضروات صحية."
+},
+
+"carefully":{
+word:"carefully",
+type:"Adverb (ظرف)",
+meaning:"بعناية",
+example:"She is washing the vegetables carefully.",
+translation:"هي تغسل الخضروات بعناية."
+},
+
+"little-brother":{
+word:"little brother",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"الأخ الصغير",
+example:"Her little brother is doing his homework.",
+translation:"أخوها الصغير يؤدي واجبه المنزلي."
+},
+
+"doing":{
+word:"do",
+type:"Verb (فعل)",
+meaning:"يقوم بـ",
+example:"He is doing his homework.",
+translation:"هو يؤدي واجبه المنزلي."
+},
+
+"homework":{
+word:"homework",
+type:"Noun (اسم)",
+meaning:"الواجب المنزلي",
+example:"He is doing his homework.",
+translation:"هو يؤدي واجبه المنزلي."
+},
+
+"father":{
+word:"father",
+type:"Noun (اسم)",
+meaning:"أب",
+example:"Her father is setting the table.",
+translation:"والدها يجهز الطاولة."
+},
+
+"watching":{
+word:"watch",
+type:"Verb (فعل)",
+meaning:"يشاهد",
+example:"He is watching TV.",
+translation:"هو يشاهد التلفاز."
+},
+
+"tv":{
+word:"TV",
+type:"Noun (اسم)",
+meaning:"التلفاز",
+example:"They are watching TV.",
+translation:"هم يشاهدون التلفاز."
+},
+
+"setting":{
+word:"set",
+type:"Verb (فعل)",
+meaning:"يجهز",
+example:"He is setting the table.",
+translation:"هو يجهز الطاولة."
+},
+
+"table":{
+word:"table",
+type:"Noun (اسم)",
+meaning:"طاولة",
+example:"The plates are on the table.",
+translation:"الأطباق على الطاولة."
+},
+
+"everyone":{
+word:"everyone",
+type:"Pronoun (ضمير)",
+meaning:"الجميع",
+example:"Everyone is working together.",
+translation:"الجميع يعمل معًا."
+},
+
+"working":{
+word:"work",
+type:"Verb (فعل)",
+meaning:"يعمل",
+example:"Everyone is working together.",
+translation:"الجميع يعمل معًا."
+},
+
+"together":{
+word:"together",
+type:"Adverb (ظرف)",
+meaning:"معًا",
+example:"They are working together.",
+translation:"هم يعملون معًا."
+},
+
+"prepare":{
+word:"prepare",
+type:"Verb (فعل)",
+meaning:"يحضّر",
+example:"They are preparing a meal.",
+translation:"هم يحضرون وجبة."
+},
+
+"nice-meal":{
+word:"nice meal",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"وجبة لذيذة",
+example:"They are preparing a nice meal.",
+translation:"هم يحضرون وجبة لذيذة."
+},
+
+
+"students":{
+word:"students",
+type:"Noun (اسم)",
+meaning:"الطلاب",
+example:"The students are sitting in the classroom.",
+translation:"الطلاب يجلسون في الفصل."
+},
+
+"sitting":{
+word:"sit",
+type:"Verb (فعل)",
+meaning:"يجلس",
+example:"The students are sitting in the classroom.",
+translation:"الطلاب يجلسون في الفصل."
+},
+
+"classroom":{
+word:"classroom",
+type:"Noun (اسم)",
+meaning:"الفصل الدراسي",
+example:"The students are in the classroom.",
+translation:"الطلاب في الفصل الدراسي."
+},
+
+"now":{
+word:"now",
+type:"Adverb (ظرف)",
+meaning:"الآن",
+example:"The teacher is teaching now.",
+translation:"المعلمة تشرح الآن."
+},
+
+"teacher":{
+word:"teacher",
+type:"Noun (اسم)",
+meaning:"المعلم / المعلمة",
+example:"The teacher is explaining the lesson.",
+translation:"المعلمة تشرح الدرس."
+},
+
+"explaining":{
+word:"explain",
+type:"Verb (فعل)",
+meaning:"يشرح",
+example:"The teacher is explaining the lesson.",
+translation:"المعلمة تشرح الدرس."
+},
+
+"new":{
+word:"new",
+type:"Adjective (صفة)",
+meaning:"جديد",
+example:"This is a new lesson.",
+translation:"هذا درس جديد."
+},
+
+"english-lesson":{
+word:"English lesson",
+type:"Noun Phrase (عبارة اسمية)",
+meaning:"درس اللغة الإنجليزية",
+example:"The teacher is explaining a new English lesson.",
+translation:"المعلمة تشرح درسًا جديدًا في اللغة الإنجليزية."
+},
+
+"writing":{
+word:"write",
+type:"Verb (فعل)",
+meaning:"يكتب",
+example:"The students are writing.",
+translation:"الطلاب يكتبون."
+},
+
+"notebooks":{
+word:"notebooks",
+type:"Noun (اسم)",
+meaning:"دفاتر",
+example:"The students are writing in their notebooks.",
+translation:"الطلاب يكتبون في دفاترهم."
+},
+
+"student":{
+word:"student",
+type:"Noun (اسم)",
+meaning:"طالب",
+example:"One student is looking out of the window.",
+translation:"أحد الطلاب ينظر خارج النافذة."
+},
+
+"listening":{
+word:"listen",
+type:"Verb (فعل)",
+meaning:"يستمع",
+example:"The student is listening carefully.",
+translation:"الطالب يستمع بعناية."
+},
+
+"looking":{
+word:"look",
+type:"Verb (فعل)",
+meaning:"ينظر",
+example:"He is looking out of the window.",
+translation:"هو ينظر خارج النافذة."
+},
+
+"window":{
+word:"window",
+type:"Noun (اسم)",
+meaning:"نافذة",
+example:"The window is open.",
+translation:"النافذة مفتوحة."
+},
+
+"using":{
+word:"use",
+type:"Verb (فعل)",
+meaning:"يستخدم",
+example:"The teacher is using the computer.",
+translation:"المعلمة تستخدم الحاسوب."
+},
+
+"computer":{
+word:"computer",
+type:"Noun (اسم)",
+meaning:"حاسوب",
+example:"The computer is on the desk.",
+translation:"الحاسوب على المكتب."
+},
+
+"showing":{
+word:"show",
+type:"Verb (فعل)",
+meaning:"يعرض",
+example:"She is showing pictures.",
+translation:"هي تعرض صورًا."
+},
+
+"pictures":{
+word:"pictures",
+type:"Noun (اسم)",
+meaning:"صور",
+example:"The teacher is showing pictures.",
+translation:"المعلمة تعرض صورًا."
+},
+
+"class":{
+word:"class",
+type:"Noun (اسم)",
+meaning:"الفصل",
+example:"The class is quiet.",
+translation:"الفصل هادئ."
+},
+
+"everyone":{
+word:"everyone",
+type:"Pronoun (ضمير)",
+meaning:"الجميع",
+example:"Everyone is learning.",
+translation:"الجميع يتعلم."
+},
+
+"learning":{
+word:"learn",
+type:"Verb (فعل)",
+meaning:"يتعلم",
+example:"Everyone is learning something new.",
+translation:"الجميع يتعلم شيئًا جديدًا."
+},
+
+"today":{
+word:"today",
+type:"Adverb (ظرف)",
+meaning:"اليوم",
+example:"We are studying today.",
+translation:"نحن ندرس اليوم."
+},
+
+"friends":{
+word:"friends",
+type:"Noun (اسم)",
+meaning:"أصدقاء",
+example:"I am playing with my friends.",
+translation:"أنا ألعب مع أصدقائي."
+},
+
+"football":{
+word:"football",
+type:"Noun (اسم)",
+meaning:"كرة القدم",
+example:"They are playing football in the park.",
+translation:"هم يلعبون كرة القدم في الحديقة."
+}
+};
+
+/* =========================================
+   VOCABULARY LISTS FOR EACH READING
+========================================= */
+
+const readingVocabulary = {
+    "vocab-reading-1": ["walking", "park", "now", "wearing", "blue-tshirt", "black-shoes", "friends", "playing", "football", "trees", "tired", "sitting", "bench", "drinking", "water", "talking", "everyone", "having", "good-time"],
+    "vocab-reading-2": ["helping", "mother", "kitchen", "cooking", "dinner", "family", "washing", "vegetables", "carefully", "little-brother", "doing", "homework", "father", "watching", "tv", "setting", "table", "everyone", "working", "together", "prepare", "nice-meal"],
+    "vocab-reading-3": ["students", "sitting", "classroom", "now", "teacher", "explaining", "new", "english-lesson", "writing", "notebooks", "student", "listening", "looking", "window", "using", "computer", "showing", "pictures", "class", "everyone", "learning", "today"]
+};
+
+function escapeHTML(value) {
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function createVocabularyItem(item) {
+    return `
+        <article class="vocab-item">
+            <div class="vocab-word-row">
+                <div class="vocab-word">${escapeHTML(item.word)}</div>
+                <button class="pronounce-btn" type="button"
+                    data-word="${escapeHTML(item.word)}"
+                    aria-label="Listen to pronunciation"
+                    title="Listen to pronunciation">🔊</button>
+            </div>
+            <div class="vocab-meaning">${escapeHTML(item.meaning)}</div>
+            <span class="word-type">${escapeHTML(item.type)}</span>
+            <div class="examples">
+                <div class="example">
+                    <div class="example-en">${escapeHTML(item.example)}</div>
+                    <div class="example-ar">${escapeHTML(item.translation)}</div>
+                </div>
+            </div>
+        </article>
+    `;
+}
+
+function renderVocabulary() {
+    Object.entries(readingVocabulary).forEach(([containerId,keys]) => {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = keys
+            .map(key => vocabulary[key])
+            .filter(Boolean)
+            .map(createVocabularyItem)
+            .join("");
+    });
+}
+
+renderVocabulary();
+
+window.toggleVocabulary = function(button) {
+    if (!button) return;
+    const section = button.closest(".vocab-section");
+    if (!section) return;
+
+    const isOpen = !section.classList.contains("open");
+    section.classList.toggle("open", isOpen);
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+    const content = section.querySelector(".vocab-content");
+    if (content) content.setAttribute("aria-hidden", isOpen ? "false" : "true");
+
+    const label = button.querySelector(".vocab-action-label");
+    if (label) label.textContent = isOpen ? "إخفاء المفردات" : "اضغط لعرض المفردات";
+};
+
+let englishVoice = null;
+
+function loadEnglishVoice() {
+    if (!("speechSynthesis" in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    englishVoice =
+        voices.find(voice => voice.lang === "en-US") ||
+        voices.find(voice => voice.lang.startsWith("en-")) ||
+        null;
+}
+
+if ("speechSynthesis" in window) {
+    loadEnglishVoice();
+    window.speechSynthesis.onvoiceschanged = loadEnglishVoice;
+}
+
+function speakWord(word) {
+    if (!("speechSynthesis" in window)) {
+        alert("عذرًا، متصفحك لا يدعم تشغيل النطق.");
+        return;
+    }
+    if (!word) return;
+    const speech = window.speechSynthesis;
+    speech.cancel();
+    speech.resume();
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "en-US";
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+    if (!englishVoice) loadEnglishVoice();
+    if (englishVoice) utterance.voice = englishVoice;
+    speech.speak(utterance);
+}
+
+document.addEventListener("click",function(event) {
+    const button = event.target.closest(".pronounce-btn");
+    if (!button) return;
+    speakWord(button.getAttribute("data-word"));
+});
+</script>
+<script type="module">
+import {
+    finishLesson
+} from "./js/reward.js";
+
+window.finishLessonPage = function(){
+    finishLesson(
+        "pre-intermediate-unit1-reading",
+        "📖 قراءة | Present Continuous",
+        "unit1-pre-review.html"
+    );
+};
+</script>
+
+</body>
+</html>
