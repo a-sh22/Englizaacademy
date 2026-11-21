@@ -1,0 +1,2025 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7046c8">
+<title>Past Continuous Reading Practice | Engliza Academy</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+ --blue:#1f3c88;
+ --purple:#7546d8;
+ --purple-dark:#5c35b4;
+ --purple-light:#f2edff;
+ --blue-light:#edf3ff;
+ --text:#263452;
+ --muted:#71809d;
+ --border:#e7eaf4;
+ --white:#fff;
+ --green:#209b73;
+}
+
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ background:
+ radial-gradient(circle at 8% 5%,rgba(164,130,255,.16),transparent 25%),
+ radial-gradient(circle at 95% 35%,rgba(111,160,255,.13),transparent 27%),
+ linear-gradient(135deg,#f7f5ff 0%,#f2f6ff 50%,#faf8ff 100%);
+ color:var(--text);
+ font-family:'Cairo',sans-serif;
+ min-height:100vh;
+}
+
+button,input,textarea,audio{font-family:inherit}
+
+.container{
+ width:min(100% - 32px,1050px);
+ margin:0 auto;
+ padding:25px 0 55px;
+}
+
+.top-bar{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:15px;
+ margin-bottom:25px;
+}
+
+.back-btn{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ text-decoration:none;
+ color:var(--blue);
+ background:white;
+ border:1px solid #e5e8f4;
+ padding:10px 19px;
+ border-radius:30px;
+ font-weight:800;
+ font-size:14px;
+ box-shadow:0 5px 16px rgba(39,55,105,.06);
+}
+
+.academy-label{
+ color:var(--purple);
+ font-family:'Nunito',sans-serif;
+ font-weight:900;
+ letter-spacing:.5px;
+ font-size:14px;
+}
+
+.hero{text-align:center;padding:15px 15px 30px}
+
+.hero-owl{
+ width:125px;
+ height:125px;
+ object-fit:contain;
+ margin-bottom:5px;
+ filter:drop-shadow(0 8px 12px rgba(91,63,161,.13));
+}
+
+.hero h1{
+ color:var(--blue);
+ font-size:clamp(27px,5vw,39px);
+ line-height:1.35;
+ margin:5px 0 8px;
+ font-weight:900;
+}
+
+.hero h1 span{color:var(--purple)}
+.hero p{color:var(--muted);font-size:15px;font-weight:600;margin:0}
+
+.card{
+ background:var(--white);
+ border:1px solid rgba(222,226,242,.9);
+ border-radius:23px;
+ box-shadow:0 9px 28px rgba(43,55,103,.055);
+}
+
+.tip-card{
+ display:flex;
+ align-items:center;
+ gap:20px;
+ padding:22px 25px;
+ margin-bottom:38px;
+ border-right:5px solid var(--purple);
+ background:linear-gradient(110deg,#fff 0%,#f8f5ff 100%);
+}
+
+.tip-owl{
+ width:92px;
+ height:92px;
+ object-fit:contain;
+ flex-shrink:0;
+}
+
+.tip-content h2{
+ color:var(--purple-dark);
+ font-size:19px;
+ margin:0 0 8px;
+ font-weight:900;
+}
+
+.tip-content p{
+ color:#586783;
+ line-height:1.9;
+ font-size:14px;
+ margin:0;
+}
+
+.reading-section{margin-bottom:40px}
+
+.section-heading{
+ display:flex;
+ align-items:center;
+ gap:13px;
+ margin:0 0 15px;
+}
+
+.section-number{
+ width:43px;
+ height:43px;
+ flex-shrink:0;
+ display:grid;
+ place-items:center;
+ border-radius:14px;
+ background:linear-gradient(135deg,#7952dc,#5237b4);
+ color:white;
+ font-family:'Nunito',sans-serif;
+ font-size:19px;
+ font-weight:900;
+ box-shadow:0 5px 13px rgba(105,69,199,.2);
+}
+
+.section-heading h2{
+ color:var(--blue);
+ font-size:22px;
+ font-weight:900;
+ margin:0;
+}
+
+.section-heading p{
+ color:var(--muted);
+ font-size:12px;
+ font-weight:600;
+ margin:1px 0 0;
+}
+
+.audio-card{
+ padding:19px 22px;
+ margin-bottom:15px;
+ background:linear-gradient(120deg,#f0eaff 0%,#f7f4ff 55%,#edf2ff 100%);
+ border:1px solid #e1d8ff;
+ border-radius:19px;
+}
+
+.audio-title{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ color:var(--purple-dark);
+ font-weight:900;
+ font-size:16px;
+ margin-bottom:12px;
+}
+
+.audio-icon{
+ width:35px;
+ height:35px;
+ display:grid;
+ place-items:center;
+ border-radius:11px;
+ background:white;
+ font-size:18px;
+}
+
+.audio-card audio{
+ display:block;
+ width:100%;
+ height:43px;
+}
+
+.reading-card{
+ padding:25px 27px;
+ margin-bottom:17px;
+ border-top:4px solid #7b5be0;
+ background:white;
+}
+
+.reading-card-top{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:10px;
+ margin-bottom:17px;
+}
+
+.reading-card-top h3{
+ color:var(--blue);
+ font-size:19px;
+ margin:0;
+ font-weight:900;
+}
+
+.reading-level{
+ color:var(--purple-dark);
+ background:#f1ecff;
+ border:1px solid #e4dbff;
+ padding:5px 12px;
+ border-radius:20px;
+ font-family:'Nunito',sans-serif;
+ font-size:11px;
+ font-weight:900;
+ white-space:nowrap;
+}
+
+.reading-text{
+ direction:ltr;
+ text-align:left;
+ color:#34415d;
+ font-family:'Nunito',sans-serif;
+ font-size:20px;
+ line-height:2;
+ font-weight:600;
+ overflow-wrap:break-word;
+}
+
+.past-continuous{
+ background:#fff2b8;
+ color:#29385b;
+ padding:1px 4px;
+ border-radius:5px;
+ box-decoration-break:clone;
+ -webkit-box-decoration-break:clone;
+}
+
+.vocab-section{
+ padding:20px;
+ background:linear-gradient(145deg,#f8f6ff,#f2f6ff);
+ border:1px solid #e4e3f5;
+ border-radius:20px;
+ margin-top:20px;
+}
+
+.vocab-toggle{
+ width:100%;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
+ padding:0;
+ border:0;
+ background:transparent;
+ color:var(--blue);
+ text-align:right;
+ cursor:pointer;
+}
+
+.vocab-toggle-main{
+ display:flex;
+ align-items:center;
+ gap:11px;
+ min-width:0;
+}
+
+.vocab-toggle-icon{
+ width:40px;
+ height:40px;
+ display:grid;
+ place-items:center;
+ border-radius:13px;
+ background:white;
+ box-shadow:0 3px 10px rgba(65,66,130,.08);
+ font-size:19px;
+ flex-shrink:0;
+}
+
+.vocab-toggle h3{
+ margin:0;
+ font-size:17px;
+ font-weight:900;
+}
+
+.vocab-toggle small{
+ display:block;
+ color:var(--muted);
+ font-size:11px;
+ font-weight:600;
+ margin-top:2px;
+}
+
+.vocab-action-label{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ flex-shrink:0;
+ padding:9px 13px;
+ border-radius:12px;
+ background:var(--purple);
+ color:white;
+ font-size:12px;
+ font-weight:800;
+ white-space:nowrap;
+}
+
+.vocab-content{display:none;padding-top:20px}
+.vocab-section.open .vocab-content{display:block}
+
+.vocab-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:13px;
+}
+
+.vocab-item{
+ background:white;
+ border:1px solid #e7e4f4;
+ border-radius:16px;
+ padding:16px;
+ min-width:0;
+ box-shadow:0 3px 10px rgba(46,54,100,.035);
+}
+
+.vocab-word-row{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:8px;
+ margin-bottom:6px;
+}
+
+.vocab-word{
+ direction:ltr;
+ text-align:left;
+ color:var(--purple-dark);
+ font-family:'Nunito',sans-serif;
+ font-size:18px;
+ font-weight:900;
+ overflow-wrap:anywhere;
+}
+
+.pronounce-btn{
+ width:34px;
+ height:34px;
+ flex-shrink:0;
+ border:none;
+ border-radius:11px;
+ background:#f0eaff;
+ color:var(--purple-dark);
+ cursor:pointer;
+ font-size:16px;
+ transition:.2s;
+}
+
+.pronounce-btn:hover{
+ background:var(--purple);
+ color:white;
+ transform:scale(1.06);
+}
+
+.pronunciation-info{
+ display:flex;
+ align-items:center;
+ gap:9px;
+ direction:ltr;
+ margin:5px 0 9px;
+}
+
+.pronunciation-ipa{
+ color:var(--purple-dark);
+ font-family:'Nunito',sans-serif;
+ font-size:13px;
+ font-weight:900;
+}
+
+.vocab-meaning{
+ color:#53617d;
+ font-size:13px;
+ font-weight:800;
+ margin-bottom:5px;
+}
+
+.word-type{
+ display:inline-block;
+ color:#65728e;
+ background:#f2f5fb;
+ border-radius:7px;
+ padding:2px 8px;
+ font-size:10px;
+ font-weight:800;
+ margin-bottom:11px;
+}
+
+.examples{border-top:1px solid #edf0f7;padding-top:9px}
+.example{margin-bottom:10px}
+.example:last-child{margin-bottom:0}
+
+.example-en{
+ direction:ltr;
+ text-align:left;
+ color:#34415d;
+ font-family:'Nunito',sans-serif;
+ font-size:13px;
+ font-weight:700;
+ line-height:1.65;
+}
+
+.example-ar{
+ color:#7b849b;
+ font-size:11px;
+ line-height:1.7;
+ margin-top:2px;
+}
+
+.grammar-note{
+ margin-top:13px;
+ padding:12px;
+ background:#f5f1ff;
+ border-right:3px solid var(--purple);
+ border-radius:11px;
+}
+
+.grammar-note strong{
+ display:block;
+ color:var(--purple-dark);
+ font-size:12px;
+ margin-bottom:6px;
+}
+
+.grammar-note p{
+ color:#53617d;
+ font-size:12px;
+ font-weight:700;
+ line-height:1.9;
+ margin:0;
+}
+
+.question-heading-card{
+ text-align:center;
+ padding:20px;
+ margin:28px 0 17px;
+}
+
+.question-heading-card h2{
+ color:var(--blue);
+ font-size:22px;
+ margin:0;
+ font-weight:900;
+}
+
+.question-card{
+ padding:25px 27px;
+ margin-bottom:17px;
+}
+
+.question-title{
+ font-size:17px;
+ font-weight:900;
+ line-height:1.9;
+ color:var(--purple-dark);
+ margin:0 0 15px;
+}
+
+.question-prompt{
+ direction:ltr;
+ text-align:left;
+ color:#34415d;
+ font-family:'Nunito',sans-serif;
+ font-size:17px;
+ line-height:1.8;
+ font-weight:800;
+ margin-bottom:17px;
+}
+
+.choice-container{
+ display:flex;
+ gap:13px;
+ margin:20px 0 12px;
+}
+
+.choice-btn{
+ flex:1;
+ padding:15px;
+ background:white;
+ border:1.5px solid #dce4ff;
+ border-radius:15px;
+ font-size:15px;
+ font-weight:800;
+ color:var(--blue);
+ cursor:pointer;
+ transition:.2s;
+ box-shadow:0 4px 12px rgba(0,0,0,.035);
+}
+
+.choice-btn:hover{
+ transform:translateY(-2px);
+ border-color:#a995e8;
+}
+
+.choice-btn:disabled{cursor:default;opacity:.95}
+
+.correct{
+ background:#e8fff0!important;
+ border:2px solid #b8ebc8!important;
+ color:#0f8b4c!important;
+}
+
+.wrong{
+ background:#ffe8e8!important;
+ border:2px solid #ffb8b8!important;
+ color:#c62828!important;
+}
+
+.result-text{
+ margin-top:15px;
+ font-size:14px;
+ font-weight:800;
+ line-height:1.9;
+}
+
+.success-text{color:#0f8b4c}
+.error-text{color:#c62828}
+
+.write-box{
+ width:100%;
+ padding:15px 18px;
+ border-radius:15px;
+ border:1.5px solid #dce4ff;
+ font-size:16px;
+ outline:none;
+ margin-bottom:15px;
+ background:white;
+ direction:ltr;
+ text-align:left;
+}
+
+.write-box:focus{
+ border-color:#6f43ff;
+ box-shadow:0 0 0 4px rgba(111,67,255,.10);
+}
+
+.correct-input{
+ background:#e8fff0;
+ border:2px solid #b8ebc8;
+ color:#0f8b4c;
+}
+
+.wrong-input{
+ background:#ffe8e8;
+ border:2px solid #ffb8b8;
+ color:#c62828;
+}
+
+.check-btn{
+ background:#f5f2ff;
+ color:var(--purple-dark);
+ border:1px solid #e2d9ff;
+ padding:12px 20px;
+ border-radius:13px;
+ font-size:14px;
+ font-weight:800;
+ cursor:pointer;
+}
+
+.final-card{
+ position:relative;
+ overflow:hidden;
+ text-align:center;
+ padding:33px 22px;
+ margin-top:45px;
+ color:white;
+ background:linear-gradient(125deg,#5033a6 0%,#7548d4 55%,#5274d7 100%);
+ border-radius:25px;
+ box-shadow:0 12px 28px rgba(89,59,174,.22);
+}
+
+.final-card h2{
+ font-size:25px;
+ margin:0 0 8px;
+ font-weight:900;
+ color:white;
+}
+
+.final-card p{
+ color:rgba(255,255,255,.9);
+ font-size:14px;
+ line-height:1.9;
+ margin:0 auto 20px;
+ max-width:650px;
+}
+
+.footer{
+ text-align:center;
+ color:#929bb0;
+ font-family:'Nunito',sans-serif;
+ font-size:12px;
+ font-weight:800;
+ padding-top:25px;
+}
+
+
+.next-lesson-btn{
+ position:relative;
+ z-index:1;
+ border:none;
+ border-radius:30px;
+ padding:13px 28px;
+ background:white;
+ color:#5b3bb1;
+ font-size:15px;
+ font-weight:900;
+ cursor:pointer;
+ box-shadow:0 5px 15px rgba(32,21,72,.15);
+ transition:.2s;
+}
+
+.next-lesson-btn:hover{
+ transform:translateY(-3px);
+}
+
+
+  
+@media(max-width:650px){
+ .container{width:min(100% - 22px,1050px);padding-top:15px}
+ .top-bar{margin-bottom:15px}
+ .hero{padding-bottom:23px}
+ .hero-owl{width:105px;height:105px}
+ .hero p{font-size:13px}
+ .tip-card{padding:16px;gap:12px;margin-bottom:30px;align-items:flex-start}
+ .tip-owl{width:68px;height:68px}
+ .tip-content h2{font-size:16px}
+ .tip-content p{font-size:12px;line-height:1.85}
+ .section-heading h2{font-size:19px}
+ .section-heading p{font-size:11px}
+ .audio-card{padding:15px}
+ .reading-card{padding:19px 16px}
+ .reading-card-top h3{font-size:17px}
+ .reading-text{font-size:17px;line-height:1.95}
+ .vocab-section{padding:16px}
+ .vocab-grid{grid-template-columns:1fr;gap:10px}
+ .vocab-item{padding:14px}
+ .vocab-action-label{padding:8px 10px;font-size:11px}
+ .vocab-toggle h3{font-size:15px}
+ .question-card{padding:19px 16px}
+ .choice-container{flex-direction:column;gap:10px}
+ .question-prompt{font-size:16px}
+ .final-card{padding:28px 17px}
+ .final-card h2{font-size:22px}
+}
+
+@media(max-width:360px){
+ .academy-label{font-size:11px}
+ .back-btn{padding:9px 13px;font-size:12px}
+ .reading-text{font-size:16px}
+ .vocab-toggle-main{gap:7px}
+ .vocab-action-label{padding:7px 8px}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="top-bar">
+ <a href="javascript:history.back()" class="back-btn">⬅️ رجوع</a>
+ <div class="academy-label">ENGLIZA ACADEMY</div>
+</div>
+
+<header class="hero">
+ <img src="../okay.owl.PNG" alt="Engliza Academy Owl" class="hero-owl">
+ <h1>📖 Reading Practice | <span>Past Continuous</span></h1>
+ <p>تدرّب على الماضي المستمر من خلال القراءة والاستماع والمفردات والأسئلة</p>
+</header>
+
+<section class="card tip-card">
+ <img src="../earlo .PNG" alt="Learning Tip" class="tip-owl">
+ <div class="tip-content">
+  <h2>✨ نصيحة قبل أن تبدأ</h2>
+  <p>
+   استمع إلى كل فقرة أولًا، ثم اقرأها وحاول فهم معناها. افتح قائمة المفردات لتتعرف على الكلمات والتعبيرات الجديدة، واستمع إلى نطق كل كلمة من زر الصوت الخاص بها. انتبه إلى الأفعال المظللة باللون الأصفر؛ فهي أمثلة على <b>Past Continuous</b>. تذكّر أن هذا الزمن يُستخدم غالبًا لوصف فعل كان مستمرًا في وقت معين في الماضي.
+  </p>
+ </div>
+</section>
+
+<main>
+
+<!-- READING 1 -->
+
+<section class="reading-section">
+ <div class="section-heading">
+  <div class="section-number">1</div>
+  <div>
+   <h2>A Rainy Afternoon</h2>
+   <p>Reading 1 · Past Continuous</p>
+  </div>
+ </div>
+
+ <div class="card audio-card">
+  <div class="audio-title">
+   <span class="audio-icon">🎧</span>
+   <span>استمع إلى الفقرة الأولى – A Rainy Afternoon</span>
+  </div>
+  <audio controls preload="metadata" playsinline>
+   <source src="https://videos.englizaacademy.com/Tttt/A%20rainy%20afternoon.mp3" type="audio/mpeg">
+   متصفحك لا يدعم تشغيل الملفات الصوتية.
+  </audio>
+ </div>
+
+ <article class="card reading-card">
+  <div class="reading-card-top">
+   <h3>📖 Reading 1 – A Rainy Afternoon</h3>
+   <span class="reading-level">Pre-Intermediate</span>
+  </div>
+
+  <div class="reading-text">
+   Last Saturday afternoon, I <mark class="past-continuous">was sitting</mark> in the living room and <mark class="past-continuous">reading</mark> a book. The weather <mark class="past-continuous">was changing</mark>, and it <mark class="past-continuous">was raining</mark> heavily outside. My mother <mark class="past-continuous">was preparing</mark> lunch in the kitchen, while my younger brother <mark class="past-continuous">was playing</mark> with his toys. My father <mark class="past-continuous">was watching</mark> the news on television.
+
+   <br><br>
+
+   Suddenly, we heard a loud noise outside. Everyone stopped what they were doing and looked through the window. A large tree was falling near our garden because of the strong wind. Luckily, nobody was hurt. While my father <mark class="past-continuous">was checking</mark> the garden, my mother <mark class="past-continuous">was calling</mark> our neighbour to make sure everything was okay.
+
+   <br><br>
+
+   After the rain stopped, we went outside and looked at the fallen tree. It was a surprising afternoon, but we were all safe.
+  </div>
+
+  <section class="vocab-section">
+   <button class="vocab-toggle" type="button" aria-expanded="false">
+    <span class="vocab-toggle-main">
+     <span class="vocab-toggle-icon">📚</span>
+     <span>
+      <h3>Vocabulary & Expressions</h3>
+      <small>مفردات وتعبيرات الفقرة الأولى مع النطق والأمثلة</small>
+     </span>
+    </span>
+    <span class="vocab-action-label">اضغط لعرض المفردات</span>
+   </button>
+   <div class="vocab-content">
+    <div class="vocab-grid" id="vocab-reading-1"></div>
+   </div>
+  </section>
+ </article>
+</section>
+
+<div class="card question-heading-card">
+ <h2>📝 أسئلة الفقرة الأولى</h2>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+ <p class="question-prompt">What was the writer doing last Saturday afternoon?</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="false">Watching television</button>
+  <button class="choice-btn" data-correct="true">Reading a book</button>
+  <button class="choice-btn" data-correct="false">Playing outside</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+ <p class="question-prompt">What happened outside?</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="false">A car stopped</button>
+  <button class="choice-btn" data-correct="true">A large tree was falling</button>
+  <button class="choice-btn" data-correct="false">A dog was barking</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">✍️ لاحظ الزمن المستخدم في الجملة.</p>
+ <p class="question-prompt">My mother was preparing lunch.</p>
+ <p>ما التركيب الصحيح الذي تكوّن منه الفعل؟</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="false">Was + past verb</button>
+  <button class="choice-btn" data-correct="true">Was + verb-ing</button>
+  <button class="choice-btn" data-correct="false">Did + verb-ing</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">✍️ أجب بجملة كاملة.</p>
+ <p class="question-prompt">What was your family doing when the tree was falling?</p>
+ <textarea class="write-box" rows="3" placeholder="Write your answer in English..."></textarea>
+ <p class="result-text"></p>
+</div>
+
+
+<!-- READING 2 -->
+
+<section class="reading-section">
+ <div class="section-heading">
+  <div class="section-number">2</div>
+  <div>
+   <h2>An Unexpected Meeting</h2>
+   <p>Reading 2 · Past Continuous</p>
+  </div>
+ </div>
+
+ <div class="card audio-card">
+  <div class="audio-title">
+   <span class="audio-icon">🎧</span>
+   <span>استمع إلى الفقرة الثانية – An Unexpected Meeting</span>
+  </div>
+  <audio controls preload="metadata" playsinline>
+   <source src="https://videos.englizaacademy.com/Tttt/An%20unexpected%20meeting.mp3" type="audio/mpeg">
+   متصفحك لا يدعم تشغيل الملفات الصوتية.
+  </audio>
+ </div>
+
+ <article class="card reading-card">
+  <div class="reading-card-top">
+   <h3>📖 Reading 2 – An Unexpected Meeting</h3>
+   <span class="reading-level">Pre-Intermediate</span>
+  </div>
+
+  <div class="reading-text">
+   Yesterday, I <mark class="past-continuous">was walking</mark> through the park after school when I saw an old friend. His name was Adam, and I hadn't seen him for almost two years. He <mark class="past-continuous">was sitting</mark> on a bench and <mark class="past-continuous">listening</mark> to music. When he noticed me, he smiled and took off his headphones.
+
+   <br><br>
+
+   We started talking about our lives. Adam told me that he <mark class="past-continuous">was studying</mark> at a new school. He <mark class="past-continuous">was also learning</mark> how to play the guitar, and he <mark class="past-continuous">was practising</mark> every evening. I told him that I <mark class="past-continuous">was taking</mark> English lessons and <mark class="past-continuous">trying</mark> to improve my speaking skills.
+
+   <br><br>
+
+   While we <mark class="past-continuous">were talking</mark>, a little boy ran towards us. He <mark class="past-continuous">was looking</mark> for his dog, which was running around the park. Adam helped him find it behind a tree. The boy thanked us and ran home happily.
+
+   <br><br>
+
+   It was a lovely meeting, and we decided to meet again the following weekend.
+  </div>
+
+  <section class="vocab-section">
+   <button class="vocab-toggle" type="button" aria-expanded="false">
+    <span class="vocab-toggle-main">
+     <span class="vocab-toggle-icon">📚</span>
+     <span>
+      <h3>Vocabulary & Expressions</h3>
+      <small>مفردات وتعبيرات الفقرة الثانية مع النطق والأمثلة</small>
+     </span>
+    </span>
+    <span class="vocab-action-label">اضغط لعرض المفردات</span>
+   </button>
+   <div class="vocab-content">
+    <div class="vocab-grid" id="vocab-reading-2"></div>
+   </div>
+  </section>
+ </article>
+</section>
+
+<div class="card question-heading-card">
+ <h2>📝 أسئلة الفقرة الثانية</h2>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+ <p class="question-prompt">Where did the writer meet Adam?</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="false">At school</button>
+  <button class="choice-btn" data-correct="true">In the park</button>
+  <button class="choice-btn" data-correct="false">At the library</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+ <p class="question-prompt">What was Adam learning to play?</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="true">The guitar</button>
+  <button class="choice-btn" data-correct="false">The piano</button>
+  <button class="choice-btn" data-correct="false">The violin</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">✍️ أكمل الجملة بالفعل الصحيح.</p>
+ <p class="question-prompt">While we ______ talking, a little boy ran towards us.</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="false">was</button>
+  <button class="choice-btn" data-correct="true">were</button>
+  <button class="choice-btn" data-correct="false">did</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">✍️ أجب بجملة كاملة.</p>
+ <p class="question-prompt">What was the little boy looking for?</p>
+ <textarea class="write-box" rows="3" placeholder="Write your answer in English..."></textarea>
+ <p class="result-text"></p>
+</div>
+
+
+<!-- READING 3 -->
+
+<section class="reading-section">
+ <div class="section-heading">
+  <div class="section-number">3</div>
+  <div>
+   <h2>A Busy Day at the School</h2>
+   <p>Reading 3 · Past Continuous</p>
+  </div>
+ </div>
+
+ <div class="card audio-card">
+  <div class="audio-title">
+   <span class="audio-icon">🎧</span>
+   <span>استمع إلى الفقرة الثالثة – A Busy Day at the School</span>
+  </div>
+  <audio controls preload="metadata" playsinline>
+   <source src="https://videos.englizaacademy.com/Tttt/Reading%203.mp3" type="audio/mpeg">
+   متصفحك لا يدعم تشغيل الملفات الصوتية.
+  </audio>
+ </div>
+
+ <article class="card reading-card">
+  <div class="reading-card-top">
+   <h3>📖 Reading 3 – A Busy Day at the School</h3>
+   <span class="reading-level">Pre-Intermediate</span>
+  </div>
+
+  <div class="reading-text">
+   Last Thursday, our school <mark class="past-continuous">was preparing</mark> for its annual science exhibition. Students <mark class="past-continuous">were working</mark> in different classrooms, and teachers <mark class="past-continuous">were helping</mark> them with their projects. Some students <mark class="past-continuous">were building</mark> small robots, while others <mark class="past-continuous">were making</mark> posters about the environment.
+
+   <br><br>
+
+   My classmates and I <mark class="past-continuous">were working</mark> on a project about clean energy. I <mark class="past-continuous">was writing</mark> the information for our poster, while Sara <mark class="past-continuous">was preparing</mark> a small model of a solar panel. Our friend Omar <mark class="past-continuous">was searching</mark> for pictures and useful facts on the internet.
+
+   <br><br>
+
+   Everything was going well until the electricity suddenly went off. Some students were using computers, so they couldn't continue their work. Our teacher asked everyone to stay calm. While we <mark class="past-continuous">were waiting</mark> for the electricity to return, we discussed our ideas and planned the final details of our project.
+
+   <br><br>
+
+   Fortunately, the electricity came back after twenty minutes, and we finished our work before the end of the day. The exhibition was a great success!
+  </div>
+
+  <section class="vocab-section">
+   <button class="vocab-toggle" type="button" aria-expanded="false">
+    <span class="vocab-toggle-main">
+     <span class="vocab-toggle-icon">📚</span>
+     <span>
+      <h3>Vocabulary & Expressions</h3>
+      <small>مفردات وتعبيرات الفقرة الثالثة مع النطق والأمثلة</small>
+     </span>
+    </span>
+    <span class="vocab-action-label">اضغط لعرض المفردات</span>
+   </button>
+   <div class="vocab-content">
+    <div class="vocab-grid" id="vocab-reading-3"></div>
+   </div>
+  </section>
+ </article>
+</section>
+
+<div class="card question-heading-card">
+ <h2>📝 أسئلة الفقرة الثالثة</h2>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+ <p class="question-prompt">What was the school preparing for?</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="false">A sports competition</button>
+  <button class="choice-btn" data-correct="true">A science exhibition</button>
+  <button class="choice-btn" data-correct="false">A school trip</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+ <p class="question-prompt">What happened to the electricity?</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="true">It went off</button>
+  <button class="choice-btn" data-correct="false">It became stronger</button>
+  <button class="choice-btn" data-correct="false">It returned immediately</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">✍️ اختر الزمن الصحيح.</p>
+ <p class="question-prompt">The students ______ working in different classrooms.</p>
+ <div class="choice-container">
+  <button class="choice-btn" data-correct="false">was</button>
+  <button class="choice-btn" data-correct="true">were</button>
+  <button class="choice-btn" data-correct="false">did</button>
+ </div>
+ <p class="result-text"></p>
+</div>
+
+<div class="card question-card">
+ <p class="question-title">✍️ أجب بجملة كاملة.</p>
+ <p class="question-prompt">What was Sara preparing for the project?</p>
+ <textarea class="write-box" rows="3" placeholder="Write your answer in English..."></textarea>
+ <p class="result-text"></p>
+</div>
+
+<div class="final-card">
+ <h2>🏅 أحسنت!</h2>
+ <p>
+  أكملت تدريبات القراءة والاستماع والمفردات! 🌟
+  <br><br>
+  راجع الكلمات الجديدة، واستمر في التدريب حتى تصبح أكثر ثقة في استخدام Past Continuous.
+ </p>
+
+  
+ <button class="next-lesson-btn" type="button"
+ onclick="finishLessonPage()">
+  ✨ الانتقال إلى الدرس التالي
+ </button>
+</div>
+  
+</main>
+
+<footer class="footer">
+ © Engliza Academy — Learn English with Confidence
+</footer>
+
+</div>
+
+<script>
+/* =========================
+   VOCABULARY DATA
+========================= */
+
+const vocabulary = {
+
+"heavy":{
+word:"heavy",ipa:"/ˈhev.i/",meaning:"ثقيل، ويُستخدم مع المطر بمعنى غزير.",
+type:"Adjective (صفة)",
+examples:[
+["This bag is heavy.","هذه الحقيبة ثقيلة."],
+["There was heavy rain last night.","كان هناك مطر غزير الليلة الماضية."]
+],
+note:"Heavy صفة تصف الاسم. وعندما نتحدث عن المطر نقول heavy rain، أي مطر غزير."
+},
+
+"heavily":{
+word:"heavily",ipa:"/ˈhev.əl.i/",meaning:"بغزارة / بشدة.",
+type:"Adverb (ظرف)",
+examples:[
+["It was raining heavily.","كانت السماء تمطر بغزارة."],
+["He was breathing heavily.","كان يتنفس بصعوبة وبشدة."]
+],
+note:"Heavily هي الظرف المشتق من heavy. نستخدمها لوصف كيفية حدوث الفعل. لاحظ التحول: heavy ← heavily."
+},
+
+"raining heavily":{
+word:"raining heavily",ipa:"/ˈreɪ.nɪŋ ˈhev.əl.i/",meaning:"تمطر بغزارة.",
+type:"Expression (تعبير)",
+examples:[
+["It was raining heavily yesterday.","كانت السماء تمطر بغزارة أمس."],
+["We stayed inside because it was raining heavily.","بقينا في الداخل لأن المطر كان يهطل بغزارة."]
+],
+note:"نستخدم raining heavily عندما نصف هطول المطر بغزارة. ويمكن أن تأتي داخل الماضي المستمر: It was raining heavily."
+},
+
+"toy":{
+word:"toy",ipa:"/tɔɪ/",meaning:"لعبة (للأطفال).",
+type:"Noun (اسم)",
+examples:[
+["The child has a new toy.","لدى الطفل لعبة جديدة."],
+["This toy is very colorful.","هذه اللعبة ملونة جدًا."]
+],
+note:"المفرد: toy. الجمع: toys. نضيف s فقط."
+},
+
+"toys":{
+word:"toys",ipa:"/tɔɪz/",meaning:"ألعاب.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["The toys are on the floor.","الألعاب على الأرض."],
+["My brother was playing with his toys.","كان أخي يلعب بألعابه."]
+],
+note:"Toys هي صيغة الجمع من toy."
+},
+
+"news":{
+word:"news",ipa:"/njuːz/",meaning:"الأخبار.",
+type:"Uncountable Noun (اسم غير معدود)",
+examples:[
+["I watch the news every evening.","أشاهد الأخبار كل مساء."],
+["The news was surprising.","كانت الأخبار مفاجئة."]
+],
+note:"News اسم غير معدود، وينتهي بحرف s لكنه يُعامل كمفرد. نقول The news is، وليس The news are."
+},
+
+"television":{
+word:"television",ipa:"/ˈtel.ɪ.vɪʒ.ən/",meaning:"التلفاز / التلفزيون.",
+type:"Noun (اسم)",
+examples:[
+["My father watches television at night.","يشاهد أبي التلفاز ليلًا."],
+["There is a television in the living room.","يوجد تلفاز في غرفة المعيشة."]
+],
+note:"يمكن اختصار television إلى TV في الاستخدام اليومي."
+},
+
+"suddenly":{
+word:"suddenly",ipa:"/ˈsʌd.ən.li/",meaning:"فجأة.",
+type:"Adverb (ظرف)",
+examples:[
+["Suddenly, the lights went off.","فجأة، انطفأت الأنوار."],
+["She suddenly heard a loud sound.","سمعت فجأة صوتًا مرتفعًا."]
+],
+note:"نستخدم suddenly عندما يحدث شيء بشكل مفاجئ وغير متوقع."
+},
+
+"loud":{
+word:"loud",ipa:"/laʊd/",meaning:"عالٍ / مرتفع (للصوت).",
+type:"Adjective (صفة)",
+examples:[
+["That is a loud noise.","ذلك صوت مرتفع."],
+["The music was too loud.","كان صوت الموسيقى مرتفعًا جدًا."]
+],
+note:"Loud صفة تصف الاسم، مثل loud noise. أما loudly فهي الظرف."
+},
+
+"noise":{
+word:"noise",ipa:"/nɔɪz/",meaning:"ضوضاء / صوت.",
+type:"Noun (اسم)",
+examples:[
+["I heard a strange noise.","سمعت صوتًا غريبًا."],
+["Please don't make a loud noise.","من فضلك لا تُصدر صوتًا مرتفعًا."]
+],
+note:"Noise غالبًا يشير إلى صوت غير مرغوب فيه أو مزعج، بينما sound كلمة أعم لأي صوت."
+},
+
+"through":{
+word:"through",ipa:"/θruː/",meaning:"عبر / من خلال.",
+type:"Preposition (حرف جر)",
+examples:[
+["I looked through the window.","نظرت من خلال النافذة."],
+["We walked through the forest.","مشينا عبر الغابة."]
+],
+note:"Through تُستخدم عندما نمر داخل شيء أو ننظر من خلاله."
+},
+
+"tree":{
+word:"tree",ipa:"/triː/",meaning:"شجرة.",
+type:"Noun (اسم)",
+examples:[
+["There is a tree in our garden.","توجد شجرة في حديقتنا."],
+["The tree fell during the storm.","سقطت الشجرة أثناء العاصفة."]
+],
+note:"المفرد tree، والجمع trees."
+},
+
+"garden":{
+word:"garden",ipa:"/ˈɡɑːr.dən/",meaning:"حديقة.",
+type:"Noun (اسم)",
+examples:[
+["My mother grows flowers in the garden.","تزرع أمي الزهور في الحديقة."],
+["The children are playing in the garden.","الأطفال يلعبون في الحديقة."]
+],
+note:"Garden غالبًا تشير إلى الحديقة الموجودة بجانب المنزل."
+},
+
+"luckily":{
+word:"luckily",ipa:"/ˈlʌk.əl.i/",meaning:"لحسن الحظ.",
+type:"Adverb (ظرف)",
+examples:[
+["Luckily, nobody was hurt.","لحسن الحظ، لم يُصب أحد."],
+["Luckily, I found my keys.","لحسن الحظ، وجدت مفاتيحي."]
+],
+note:"Luck = حظ، وlucky = محظوظ، وluckily = لحسن الحظ. نستخدم luckily للتعبير عن نتيجة جيدة غير متوقعة."
+},
+
+"neighbour":{
+word:"neighbour",ipa:"/ˈneɪ.bər/",meaning:"جار / جارة.",
+type:"Noun (اسم)",
+examples:[
+["Our neighbour is very kind.","جارنا لطيف جدًا."],
+["I visited my neighbour yesterday.","زرت جاري أمس."]
+],
+note:"Neigh­bour هي الكتابة البريطانية، أما neighbor فهي الكتابة الأمريكية. المعنى واحد."
+},
+
+"neighbours":{
+word:"neighbours",ipa:"/ˈneɪ.bərz/",meaning:"جيران.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["Our neighbours have two children.","لدى جيراننا طفلان."],
+["We invited our neighbours to dinner.","دعونا جيراننا إلى العشاء."]
+],
+note:"المفرد neighbour، والجمع neighbours. في الإنجليزية الأمريكية: neighbor / neighbors."
+},
+
+"make sure":{
+word:"make sure",ipa:"/meɪk ʃʊr/",meaning:"يتأكد / يتأكد من أن شيئًا ما صحيح أو آمن.",
+type:"Expression (تعبير)",
+examples:[
+["Make sure the door is closed.","تأكد من أن الباب مغلق."],
+["I called her to make sure she was safe.","اتصلت بها لأتأكد من أنها بخير."]
+],
+note:"نستخدم make sure عندما نريد التأكد من أمر ما. ويمكن أن يأتي بعدها اسم أو جملة تبدأ بـ that أو جملة مباشرة."
+},
+
+"sure":{
+word:"sure",ipa:"/ʃʊr/",meaning:"متأكد.",
+type:"Adjective (صفة)",
+examples:[
+["Are you sure?","هل أنت متأكد؟"],
+["I am sure everything is fine.","أنا متأكد أن كل شيء على ما يرام."]
+],
+note:"Sure صفة. من التعبيرات الشائعة: be sure = يكون متأكدًا، وmake sure = يتأكد."
+},
+
+"made sure":{
+word:"made sure",ipa:"/meɪd ʃʊr/",meaning:"تأكد / حرص على التأكد.",
+type:"Past Expression (تعبير في الماضي)",
+examples:[
+["I made sure the window was closed.","تأكدت من أن النافذة كانت مغلقة."],
+["She made sure everyone was ready.","تأكدت من أن الجميع كانوا مستعدين."]
+],
+note:"الماضي من make sure هو made sure؛ لأن make فعل غير منتظم، وماضيه made."
+},
+
+"rain":{
+word:"rain",ipa:"/reɪn/",meaning:"مطر / يمطر.",
+type:"Noun / Verb (اسم / فعل)",
+examples:[
+["The rain stopped in the afternoon.","توقف المطر بعد الظهر."],
+["It may rain tomorrow.","قد تمطر غدًا."]
+],
+note:"Rain اسم بمعنى المطر، ويمكن أن يكون فعلًا بمعنى يمطر. الماضي من الفعل rain هو rained."
+},
+
+"safe":{
+word:"safe",ipa:"/seɪf/",meaning:"آمن / سالم.",
+type:"Adjective (صفة)",
+examples:[
+["The children are safe.","الأطفال بأمان."],
+["Luckily, everyone was safe.","لحسن الحظ، كان الجميع سالمين."]
+],
+note:"Safe صفة. والاسم منها safety بمعنى السلامة أو الأمان."
+},
+
+"all":{
+word:"all",ipa:"/ɔːl/",meaning:"كل / جميع.",
+type:"Determiner / Pronoun (محدد / ضمير)",
+examples:[
+["All the students were ready.","كان جميع الطلاب مستعدين."],
+["We were all happy.","كنا جميعًا سعداء."]
+],
+note:"يمكن أن تأتي all قبل اسم، مثل all students، أو بعد الفعل المساعد والضمير، مثل We were all happy."
+},
+
+/* READING 2 */
+
+"park":{
+word:"park",ipa:"/pɑːrk/",meaning:"حديقة عامة / متنزه.",
+type:"Noun (اسم)",
+examples:[
+["We walked in the park.","مشينا في الحديقة العامة."],
+["The children are playing in the park.","الأطفال يلعبون في المتنزه."]
+],
+note:"Park غالبًا مكان عام مفتوح للراحة والمشي واللعب."
+},
+
+"almost":{
+word:"almost",ipa:"/ˈɔːl.moʊst/",meaning:"تقريبًا / على وشك.",
+type:"Adverb (ظرف)",
+examples:[
+["I am almost ready.","أنا مستعد تقريبًا."],
+["It took almost two hours.","استغرق الأمر ساعتين تقريبًا."],
+["She almost missed the bus.","كادت أن تفوّت الحافلة."]
+],
+note:"Almost تعني أن الشيء قريب من الحدوث أو الاكتمال، لكنه لم يصل إليه تمامًا. تأتي غالبًا قبل الكلمة أو العبارة التي تصفها."
+},
+
+"bench":{
+word:"bench",ipa:"/bentʃ/",meaning:"مقعد طويل (غالبًا في الحدائق).",
+type:"Noun (اسم)",
+examples:[
+["He was sitting on a bench.","كان جالسًا على مقعد."],
+["There are two benches near the lake.","يوجد مقعدان بالقرب من البحيرة."]
+],
+note:"الجمع benches، وليس benchs؛ لأن الكلمة تنتهي بـ ch."
+},
+
+"music":{
+word:"music",ipa:"/ˈmjuː.zɪk/",meaning:"موسيقى.",
+type:"Uncountable Noun (اسم غير معدود)",
+examples:[
+["I love listening to music.","أحب الاستماع إلى الموسيقى."],
+["The music was beautiful.","كانت الموسيقى جميلة."]
+],
+note:"Music اسم غير معدود عادةً؛ لا نقول a music. يمكن أن نقول a piece of music."
+},
+
+"notice":{
+word:"notice",ipa:"/ˈnoʊ.tɪs/",meaning:"يلاحظ / ينتبه إلى.",
+type:"Verb (فعل)",
+examples:[
+["I noticed a small mistake.","لاحظت خطأ صغيرًا."],
+["Did you notice the new sign?","هل لاحظت اللافتة الجديدة؟"]
+],
+note:"الماضي من notice هو noticed. نضيف d فقط لأن الفعل ينتهي بحرف e."
+},
+
+"noticed":{
+word:"noticed",ipa:"/ˈnoʊ.tɪst/",meaning:"لاحظ / انتبه إلى (الماضي).",
+type:"Past Verb (فعل ماضٍ)",
+examples:[
+["She noticed me at the door.","لاحظتني عند الباب."],
+["He noticed a change in the weather.","لاحظ تغيرًا في الطقس."]
+],
+note:"Noticed هو الماضي من notice. وهو فعل منتظم."
+},
+
+"take off":{
+word:"take off",ipa:"/teɪk ɔːf/",meaning:"يخلع شيئًا يرتديه، وقد تعني تقلع الطائرة حسب السياق.",
+type:"Phrasal Verb (فعل مركب)",
+examples:[
+["Please take off your shoes.","من فضلك اخلع حذاءك."],
+["The plane will take off soon.","ستقلع الطائرة قريبًا."]
+],
+note:"Take off فعل مركب يتغير معناه حسب السياق. في القراءة: took off his headphones تعني خلع سماعاته."
+},
+
+"took off":{
+word:"took off",ipa:"/tʊk ɔːf/",meaning:"خلع / أزال شيئًا كان يرتديه.",
+type:"Past Phrasal Verb (فعل مركب في الماضي)",
+examples:[
+["He took off his jacket.","خلع سترته."],
+["She took off her headphones.","خلعت سماعاتها."]
+],
+note:"Took هو الماضي من take. لذلك نقول take off في المضارع وtook off في الماضي."
+},
+
+"headphones":{
+word:"headphones",ipa:"/ˈhed.foʊnz/",meaning:"سماعات الرأس.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["I use headphones when I study.","أستخدم سماعات الرأس عندما أدرس."],
+["He was listening to music with his headphones.","كان يستمع إلى الموسيقى باستخدام سماعاته."]
+],
+note:"Headphones تُستخدم غالبًا بصيغة الجمع. يمكن قول a pair of headphones."
+},
+
+"guitar":{
+word:"guitar",ipa:"/ɡɪˈtɑːr/",meaning:"غيتار / آلة الجيتار.",
+type:"Noun (اسم)",
+examples:[
+["She plays the guitar.","هي تعزف على الجيتار."],
+["Adam was learning how to play the guitar.","كان آدم يتعلم العزف على الجيتار."]
+],
+note:"من التعبيرات الشائعة play the guitar = يعزف على الجيتار."
+},
+
+"towards":{
+word:"towards",ipa:"/təˈwɔːrdz/",meaning:"باتجاه / نحو.",
+type:"Preposition (حرف جر)",
+examples:[
+["The boy ran towards his mother.","ركض الصبي باتجاه أمه."],
+["She walked towards the door.","مشت باتجاه الباب."]
+],
+note:"Towards هي الكتابة البريطانية الشائعة، وtoward هي الكتابة الأمريكية. كلاهما صحيح."
+},
+
+"dog":{
+word:"dog",ipa:"/dɔːɡ/",meaning:"كلب.",
+type:"Noun (اسم)",
+examples:[
+["The dog is sleeping.","الكلب نائم."],
+["They were looking for their dog.","كانوا يبحثون عن كلبهم."]
+],
+note:"المفرد dog، والجمع dogs."
+},
+
+"around":{
+word:"around",ipa:"/əˈraʊnd/",meaning:"حول / في أرجاء / تقريبًا حسب السياق.",
+type:"Preposition / Adverb (حرف جر / ظرف)",
+examples:[
+["The children were running around the park.","كان الأطفال يركضون في أرجاء الحديقة."],
+["We sat around the table.","جلسنا حول الطاولة."],
+["I arrived around six o'clock.","وصلت حوالي الساعة السادسة."]
+],
+note:"يتغير معنى around حسب الجملة: حول شيء، أو في أرجاء مكان، أو بمعنى حوالي عند ذكر الوقت أو العدد."
+},
+
+"happily":{
+word:"happily",ipa:"/ˈhæp.əl.i/",meaning:"بسعادة.",
+type:"Adverb (ظرف)",
+examples:[
+["The children played happily.","لعب الأطفال بسعادة."],
+["She smiled happily.","ابتسمت بسعادة."]
+],
+note:"Happily مشتقة من happy. نحذف y ونضيف ily: happy ← happily. Happy صفة، وhappily ظرف يصف طريقة حدوث الفعل."
+},
+
+"lovely":{
+word:"lovely",ipa:"/ˈlʌv.li/",meaning:"جميل / لطيف / رائع.",
+type:"Adjective (صفة)",
+examples:[
+["It was a lovely day.","كان يومًا جميلًا."],
+["We had a lovely meeting.","حظينا بلقاء لطيف."]
+],
+note:"Lovely صفة لوصف الأشخاص أو الأشياء أو التجارب بطريقة إيجابية."
+},
+
+"meeting":{
+word:"meeting",ipa:"/ˈmiː.tɪŋ/",meaning:"لقاء / اجتماع.",
+type:"Noun (اسم)",
+examples:[
+["We have a meeting tomorrow.","لدينا اجتماع غدًا."],
+["It was a lovely meeting.","كان لقاءً لطيفًا."]
+],
+note:"Meeting قد تعني اجتماعًا رسميًا أو لقاءً بين أشخاص. وهي مشتقة من meet."
+},
+
+"again":{
+word:"again",ipa:"/əˈɡen/",meaning:"مرة أخرى / مجددًا.",
+type:"Adverb (ظرف)",
+examples:[
+["Please say that again.","من فضلك قل ذلك مرة أخرى."],
+["I want to visit London again.","أريد زيارة لندن مجددًا."]
+],
+note:"نستخدم again عندما يتكرر الفعل أو يحدث مرة إضافية."
+},
+
+"following":{
+word:"following",ipa:"/ˈfɑː.loʊ.ɪŋ/",meaning:"التالي / الذي يأتي بعد.",
+type:"Adjective (صفة)",
+examples:[
+["We met the following day.","التقينا في اليوم التالي."],
+["The following week was very busy.","كان الأسبوع التالي مزدحمًا جدًا."]
+],
+note:"عندما تأتي following قبل فترة زمنية، مثل day أو week أو month، فإنها تشير إلى الفترة التي تأتي بعد الفترة المذكورة. The following weekend = عطلة نهاية الأسبوع التالية."
+},
+
+"the following weekend":{
+word:"the following weekend",ipa:"/ðə ˈfɑː.loʊ.ɪŋ ˈwiːk.end/",meaning:"عطلة نهاية الأسبوع التالية.",
+type:"Time Expression (تعبير زمني)",
+examples:[
+["We decided to meet the following weekend.","قررنا أن نلتقي في عطلة نهاية الأسبوع التالية."],
+["She visited her family the following weekend.","زارت عائلتها في عطلة نهاية الأسبوع التالية."]
+],
+note:"نستخدم the following + فترة زمنية للحديث عن الفترة التي تأتي بعد الوقت المذكور. أمثلة: the following day = اليوم التالي، the following week = الأسبوع التالي، the following month = الشهر التالي، the following year = السنة التالية."
+},
+
+/* READING 3 */
+
+"annual":{
+word:"annual",ipa:"/ˈæn.ju.əl/",meaning:"سنوي / يحدث كل سنة.",
+type:"Adjective (صفة)",
+examples:[
+["Our school has an annual event.","لدى مدرستنا فعالية سنوية."],
+["The annual meeting is in June.","الاجتماع السنوي في شهر يونيو."]
+],
+note:"Annual تصف شيئًا يحدث مرة كل سنة. والاسم منها annually بمعنى سنويًا."
+},
+
+"exhibition":{
+word:"exhibition",ipa:"/ˌek.sɪˈbɪʃ.ən/",meaning:"معرض.",
+type:"Noun (اسم)",
+examples:[
+["We visited an art exhibition.","زرنا معرضًا فنيًا."],
+["The school organized a science exhibition.","نظمت المدرسة معرضًا علميًا."]
+],
+note:"Exhibition مكان أو فعالية تُعرض فيها أعمال أو منتجات أو مشاريع أمام الزوار."
+},
+
+"student":{
+word:"student",ipa:"/ˈstuː.dənt/",meaning:"طالب / طالبة.",
+type:"Noun (اسم)",
+examples:[
+["The student is reading a book.","الطالب يقرأ كتابًا."],
+["Every student has a project.","لدى كل طالب مشروع."]
+],
+note:"المفرد student، والجمع students."
+},
+
+"students":{
+word:"students",ipa:"/ˈstuː.dənts/",meaning:"طلاب / طالبات.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["The students were working together.","كان الطلاب يعملون معًا."],
+["Many students joined the exhibition.","شارك العديد من الطلاب في المعرض."]
+],
+note:"Students هي صيغة الجمع من student."
+},
+
+"classroom":{
+word:"classroom",ipa:"/ˈklæs.ruːm/",meaning:"غرفة صف / فصل دراسي.",
+type:"Noun (اسم)",
+examples:[
+["Our classroom is large.","غرفة صفنا كبيرة."],
+["The teacher entered the classroom.","دخل المعلم غرفة الصف."]
+],
+note:"المفرد classroom، والجمع classrooms."
+},
+
+"classrooms":{
+word:"classrooms",ipa:"/ˈklæs.ruːmz/",meaning:"غرف صفية / فصول دراسية.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["The school has twenty classrooms.","تضم المدرسة عشرين فصلًا دراسيًا."],
+["Students were working in different classrooms.","كان الطلاب يعملون في فصول مختلفة."]
+],
+note:"Classrooms هي صيغة الجمع من classroom."
+},
+
+"project":{
+word:"project",ipa:"/ˈprɑː.dʒekt/",meaning:"مشروع.",
+type:"Noun (اسم)",
+examples:[
+["We are working on a science project.","نعمل على مشروع علمي."],
+["My project is about clean energy.","مشروعي عن الطاقة النظيفة."]
+],
+note:"المفرد project، والجمع projects."
+},
+
+"projects":{
+word:"projects",ipa:"/ˈprɑː.dʒekts/",meaning:"مشاريع.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["The students presented their projects.","عرض الطلاب مشاريعهم."],
+["These projects are very interesting.","هذه المشاريع ممتعة جدًا."]
+],
+note:"Projects هي صيغة الجمع من project."
+},
+
+"robot":{
+word:"robot",ipa:"/ˈroʊ.bɑːt/",meaning:"روبوت / إنسان آلي.",
+type:"Noun (اسم)",
+examples:[
+["The robot can move its arms.","يستطيع الروبوت تحريك ذراعيه."],
+["They were building a small robot.","كانوا يصنعون روبوتًا صغيرًا."]
+],
+note:"المفرد robot، والجمع robots."
+},
+
+"robots":{
+word:"robots",ipa:"/ˈroʊ.bɑːts/",meaning:"روبوتات.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["The factory uses robots.","يستخدم المصنع روبوتات."],
+["Some students were building small robots.","كان بعض الطلاب يصنعون روبوتات صغيرة."]
+],
+note:"Robots هي صيغة الجمع من robot."
+},
+
+"poster":{
+word:"poster",ipa:"/ˈpoʊ.stər/",meaning:"ملصق / لوحة إعلانية.",
+type:"Noun (اسم)",
+examples:[
+["She made a poster about nature.","صنعت ملصقًا عن الطبيعة."],
+["The poster is on the wall.","الملصق على الحائط."]
+],
+note:"المفرد poster، والجمع posters."
+},
+
+"posters":{
+word:"posters",ipa:"/ˈpoʊ.stərz/",meaning:"ملصقات / لوحات.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["The students made colorful posters.","صنع الطلاب ملصقات ملونة."],
+["There are posters in the classroom.","توجد ملصقات في غرفة الصف."]
+],
+note:"Posters هي صيغة الجمع من poster."
+},
+
+"environment":{
+word:"environment",ipa:"/ɪnˈvaɪ.rən.mənt/",meaning:"البيئة.",
+type:"Noun (اسم)",
+examples:[
+["We should protect the environment.","يجب أن نحمي البيئة."],
+["Pollution is harmful to the environment.","التلوث ضار بالبيئة."]
+],
+note:"Environment تشمل كل ما يحيط بنا من هواء وماء وأرض وكائنات حية."
+},
+
+"classmate":{
+word:"classmate",ipa:"/ˈklæs.meɪt/",meaning:"زميل / زميلة في الصف.",
+type:"Noun (اسم)",
+examples:[
+["My classmate helped me with my homework.","ساعدني زميلي في الصف في واجبي."],
+["Sara is my classmate.","سارة زميلتي في الصف."]
+],
+note:"المفرد classmate، والجمع classmates."
+},
+
+"classmates":{
+word:"classmates",ipa:"/ˈklæs.meɪts/",meaning:"زملاء / زميلات الصف.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["I study with my classmates.","أدرس مع زملائي في الصف."],
+["My classmates and I worked on a project.","عملت أنا وزملائي على مشروع."]
+],
+note:"Classmates هي صيغة الجمع من classmate."
+},
+
+"energy":{
+word:"energy",ipa:"/ˈen.ər.dʒi/",meaning:"طاقة.",
+type:"Noun (اسم)",
+examples:[
+["Children have a lot of energy.","لدى الأطفال الكثير من الطاقة."],
+["We need energy to work.","نحتاج إلى الطاقة للعمل."]
+],
+note:"Energy اسم غالبًا غير معدود عند الحديث عن الطاقة بشكل عام."
+},
+
+"clean energy":{
+word:"clean energy",ipa:"/kliːn ˈen.ər.dʒi/",meaning:"الطاقة النظيفة.",
+type:"Expression (تعبير)",
+examples:[
+["Solar power is a form of clean energy.","الطاقة الشمسية شكل من أشكال الطاقة النظيفة."],
+["Clean energy can help protect the environment.","يمكن للطاقة النظيفة أن تساعد في حماية البيئة."]
+],
+note:"Clean energy هي الطاقة التي تُنتج بطرق تسبب تلوثًا أقل، مثل الطاقة الشمسية وطاقة الرياح."
+},
+
+"information":{
+word:"information",ipa:"/ˌɪn.fərˈmeɪ.ʃən/",meaning:"معلومات.",
+type:"Uncountable Noun (اسم غير معدود)",
+examples:[
+["I need more information.","أحتاج إلى مزيد من المعلومات."],
+["This information is useful.","هذه المعلومات مفيدة."],
+["She gave me a piece of information.","أعطتني معلومة واحدة."]
+],
+note:"Information اسم غير معدود، لذلك لا نضيف إليه s ولا نقول informations. للمفرد نقول a piece of information، وللجمع pieces of information."
+},
+
+"model":{
+word:"model",ipa:"/ˈmɑː.dəl/",meaning:"نموذج / مجسم.",
+type:"Noun (اسم)",
+examples:[
+["We built a model of a house.","صنعنا نموذجًا لمنزل."],
+["Sara prepared a model for the project.","أعدّت سارة نموذجًا للمشروع."]
+],
+note:"Model قد تعني نموذجًا مصغرًا لشيء حقيقي، وقد تعني أيضًا نموذجًا أو مثالًا يُحتذى به حسب السياق."
+},
+
+"solar panel":{
+word:"solar panel",ipa:"/ˈsoʊ.lər ˌpæn.əl/",meaning:"لوح شمسي.",
+type:"Noun (اسم)",
+examples:[
+["The house has a solar panel.","يحتوي المنزل على لوح شمسي."],
+["Solar panels use sunlight to produce electricity.","تستخدم الألواح الشمسية ضوء الشمس لإنتاج الكهرباء."]
+],
+note:"المفرد solar panel، والجمع solar panels. وهي ألواح تحول ضوء الشمس إلى طاقة كهربائية."
+},
+
+"useful":{
+word:"useful",ipa:"/ˈjuːs.fəl/",meaning:"مفيد / نافع.",
+type:"Adjective (صفة)",
+examples:[
+["This book is very useful.","هذا الكتاب مفيد جدًا."],
+["She found some useful information.","وجدت بعض المعلومات المفيدة."]
+],
+note:"Useful صفة تصف شيئًا يساعدنا أو يقدم فائدة. عكسها useless بمعنى عديم الفائدة."
+},
+
+"fact":{
+word:"fact",ipa:"/fækt/",meaning:"حقيقة / معلومة مؤكدة.",
+type:"Noun (اسم)",
+examples:[
+["This is an interesting fact.","هذه حقيقة مثيرة للاهتمام."],
+["I learned a new fact about space.","تعلمت حقيقة جديدة عن الفضاء."]
+],
+note:"المفرد fact، والجمع facts."
+},
+
+"facts":{
+word:"facts",ipa:"/fækts/",meaning:"حقائق.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["We need facts for our project.","نحتاج إلى حقائق لمشروعنا."],
+["The book contains many interesting facts.","يحتوي الكتاب على حقائق ممتعة كثيرة."]
+],
+note:"Facts هي صيغة الجمع من fact."
+},
+
+"electricity":{
+word:"electricity",ipa:"/ɪˌlekˈtrɪs.ə.ti/",meaning:"الكهرباء.",
+type:"Uncountable Noun (اسم غير معدود)",
+examples:[
+["We use electricity every day.","نستخدم الكهرباء كل يوم."],
+["The electricity went off last night.","انقطعت الكهرباء الليلة الماضية."]
+],
+note:"Electricity اسم غير معدود. لا نستخدم معه a ولا نضيف إليه s في الاستخدام المعتاد."
+},
+
+"go off":{
+word:"go off",ipa:"/ɡoʊ ɔːf/",meaning:"ينقطع أو يتوقف، ويُستخدم مع الكهرباء أو الأنوار في هذا السياق.",
+type:"Phrasal Verb (فعل مركب)",
+examples:[
+["The lights may go off during the storm.","قد تنطفئ الأنوار أثناء العاصفة."],
+["Sometimes the electricity goes off in this area.","أحيانًا تنقطع الكهرباء في هذه المنطقة."]
+],
+note:"Go off له معانٍ مختلفة حسب السياق. مع الكهرباء أو الأنوار يعني ينقطع التيار أو تنطفئ الأنوار."
+},
+
+"went off":{
+word:"went off",ipa:"/went ɔːf/",meaning:"انقطعت الكهرباء / انطفأت الأنوار (في هذا السياق).",
+type:"Past Phrasal Verb (فعل مركب في الماضي)",
+examples:[
+["The electricity went off suddenly.","انقطعت الكهرباء فجأة."],
+["The lights went off at midnight.","انطفأت الأنوار عند منتصف الليل."]
+],
+note:"Went هو الماضي من go. لذلك نقول go off في المضارع وwent off في الماضي."
+},
+
+"calm":{
+word:"calm",ipa:"/kɑːm/",meaning:"هادئ / هدوء.",
+type:"Adjective / Noun (صفة / اسم)",
+examples:[
+["Please stay calm.","من فضلك ابقَ هادئًا."],
+["She remained calm during the problem.","بقيت هادئة أثناء المشكلة."]
+],
+note:"Calm صفة تعني هادئ، ويمكن أن تأتي اسمًا بمعنى الهدوء. حرف l لا يُنطق."
+},
+
+"detail":{
+word:"detail",ipa:"/ˈdiː.teɪl/",meaning:"تفصيل.",
+type:"Noun (اسم)",
+examples:[
+["Tell me one important detail.","أخبرني بتفصيل مهم واحد."],
+["I forgot a small detail.","نسيت تفصيلًا صغيرًا."]
+],
+note:"المفرد detail، والجمع details."
+},
+
+"details":{
+word:"details",ipa:"/ˈdiː.teɪlz/",meaning:"تفاصيل.",
+type:"Plural Noun (اسم جمع)",
+examples:[
+["We discussed the final details.","ناقشنا التفاصيل النهائية."],
+["Please check all the details.","من فضلك تحقق من جميع التفاصيل."]
+],
+note:"Details هي صيغة الجمع من detail."
+},
+
+"details of":{
+word:"details of",ipa:"/ˈdiː.teɪlz əv/",meaning:"تفاصيل شيء ما / تفاصيل عن.",
+type:"Expression (تركيب)",
+examples:[
+["I need the details of the project.","أحتاج إلى تفاصيل المشروع."],
+["She explained the details of the plan.","شرحت تفاصيل الخطة."]
+],
+note:"يأتي بعد details of اسم الشيء الذي نريد معرفة تفاصيله، مثل details of the project أو details of the meeting."
+},
+
+"fortunately":{
+word:"fortunately",ipa:"/ˈfɔːr.tʃən.ət.li/",meaning:"لحسن الحظ.",
+type:"Adverb (ظرف)",
+examples:[
+["Fortunately, nobody was injured.","لحسن الحظ، لم يُصب أحد."],
+["Fortunately, we arrived on time.","لحسن الحظ، وصلنا في الوقت المحدد."]
+],
+note:"Fortunately تعني أن النتيجة كانت جيدة. وهي مشتقة من fortunate، أي محظوظ."
+},
+
+"success":{
+word:"success",ipa:"/səkˈses/",meaning:"نجاح.",
+type:"Noun (اسم)",
+examples:[
+["The exhibition was a great success.","كان المعرض نجاحًا كبيرًا."],
+["Hard work can lead to success.","يمكن أن يؤدي العمل الجاد إلى النجاح."]
+],
+note:"Success اسم بمعنى النجاح. لا تخلط بينها وبين succeed، وهو الفعل بمعنى ينجح."
+},
+
+"succeed":{
+word:"succeed",ipa:"/səkˈsiːd/",meaning:"ينجح / يحقق النجاح.",
+type:"Verb (فعل)",
+examples:[
+["I want to succeed in my studies.","أريد أن أنجح في دراستي."],
+["You can succeed if you keep trying.","يمكنك النجاح إذا واصلت المحاولة."]
+],
+note:"Succeed هو الفعل في صورته الأساسية. الماضي منه succeeded، والاسم منه success."
+},
+
+"succeeded":{
+word:"succeeded",ipa:"/səkˈsiː.dɪd/",meaning:"نجح / حقق النجاح.",
+type:"Past Verb (فعل ماضٍ)",
+examples:[
+["She succeeded in finishing the project.","نجحت في إنهاء المشروع."],
+["They succeeded after working hard.","نجحوا بعد العمل بجد."]
+],
+note:"Succeeded هو الماضي من succeed. لاحظ الفرق: succeed فعل، succeeded ماضي الفعل، success اسم بمعنى النجاح."
+}
+
+};
+
+const readingVocabulary = {
+ "vocab-reading-1":[
+  "heavy","heavily","raining heavily","toy","toys","news",
+  "television","suddenly","loud","noise","through","tree",
+  "garden","luckily","neighbour","neighbours","make sure",
+  "sure","made sure","rain","safe","all"
+ ],
+ "vocab-reading-2":[
+  "park","almost","bench","music","notice","noticed",
+  "take off","took off","headphones","guitar","towards",
+  "dog","around","happily","lovely","meeting","again",
+  "following","the following weekend"
+ ],
+ "vocab-reading-3":[
+  "annual","exhibition","student","students","classroom",
+  "classrooms","project","projects","robot","robots",
+  "poster","posters","environment","classmate","classmates",
+  "energy","clean energy","information","model","solar panel",
+  "useful","fact","facts","electricity","go off","went off",
+  "calm","detail","details","details of","fortunately",
+  "success","succeed","succeeded"
+ ]
+};
+
+/* =========================
+   CREATE VOCABULARY CARDS
+========================= */
+
+function escapeHTML(value){
+ return String(value)
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
+}
+
+function createVocabularyItem(key){
+ const item=vocabulary[key];
+ if(!item)return "";
+
+ const examples=item.examples.map(example=>`
+  <div class="example">
+   <div class="example-en">${escapeHTML(example[0])}</div>
+   <div class="example-ar">${escapeHTML(example[1])}</div>
+  </div>
+ `).join("");
+
+ const note=item.note?`
+  <div class="grammar-note">
+   <strong>💡 ملاحظة مهمة</strong>
+   <p>${escapeHTML(item.note)}</p>
+  </div>
+ `:"";
+
+ return `
+  <article class="vocab-item">
+   <div class="vocab-word-row">
+    <div class="vocab-word">${escapeHTML(item.word)}</div>
+    <button class="pronounce-btn"
+     type="button"
+     data-word="${escapeHTML(item.word)}"
+     aria-label="استمع إلى نطق ${escapeHTML(item.word)}"
+     title="استمع إلى النطق">🔊</button>
+   </div>
+
+   <div class="pronunciation-info">
+    <span class="pronunciation-ipa">${escapeHTML(item.ipa)}</span>
+   </div>
+
+   <div class="vocab-meaning">${escapeHTML(item.meaning)}</div>
+   <span class="word-type">${escapeHTML(item.type)}</span>
+
+   <div class="examples">${examples}</div>
+   ${note}
+  </article>
+ `;
+}
+
+Object.entries(readingVocabulary).forEach(([containerId,words])=>{
+ const container=document.getElementById(containerId);
+ if(container){
+  container.innerHTML=words.map(createVocabularyItem).join("");
+ }
+});
+
+/* =========================
+   VOCABULARY OPEN / CLOSE
+========================= */
+
+document.querySelectorAll(".vocab-toggle").forEach(button=>{
+ button.addEventListener("click",()=>{
+  const section=button.closest(".vocab-section");
+  const isOpen=section.classList.toggle("open");
+
+  button.setAttribute("aria-expanded",String(isOpen));
+
+  const content=section.querySelector(".vocab-content");
+  content.setAttribute("aria-hidden",String(!isOpen));
+
+  const label=button.querySelector(".vocab-action-label");
+  label.textContent=isOpen
+   ?"إخفاء المفردات"
+   :"اضغط لعرض المفردات";
+ });
+});
+
+/* =========================
+   ENGLISH PRONUNCIATION
+========================= */
+
+let englishVoice=null;
+
+function loadEnglishVoice(){
+ if(!("speechSynthesis" in window))return;
+
+ const voices=window.speechSynthesis.getVoices();
+
+ englishVoice=
+  voices.find(v=>v.lang==="en-US")||
+  voices.find(v=>v.lang.startsWith("en-"))||
+  null;
+}
+
+if("speechSynthesis" in window){
+ loadEnglishVoice();
+ window.speechSynthesis.onvoiceschanged=loadEnglishVoice;
+}
+
+function speakWord(word){
+ if(!("speechSynthesis" in window)){
+  alert("عذرًا، متصفحك لا يدعم تشغيل النطق.");
+  return;
+ }
+
+ window.speechSynthesis.cancel();
+
+ const utterance=new SpeechSynthesisUtterance(word);
+ utterance.lang="en-US";
+ utterance.rate=0.85;
+
+ if(!englishVoice)loadEnglishVoice();
+ if(englishVoice)utterance.voice=englishVoice;
+
+ window.speechSynthesis.speak(utterance);
+}
+
+document.addEventListener("click",event=>{
+ const button=event.target.closest(".pronounce-btn");
+ if(button){
+  speakWord(button.dataset.word);
+ }
+});
+
+/* =========================
+   MULTIPLE CHOICE QUESTIONS
+========================= */
+
+document.querySelectorAll(".choice-btn").forEach(button=>{
+ button.addEventListener("click",()=>{
+  const container=button.parentElement;
+  if(container.dataset.answered==="true")return;
+
+  container.dataset.answered="true";
+
+  const buttons=container.querySelectorAll(".choice-btn");
+  const result=container.nextElementSibling;
+  const correct=button.dataset.correct==="true";
+
+  buttons.forEach(choice=>{
+   choice.disabled=true;
+
+   if(choice.dataset.correct==="true"){
+    choice.classList.add("correct");
+   }
+  });
+
+  if(correct){
+   button.innerHTML+=" ✔️";
+   result.textContent="✨ أحسنت! إجابة صحيحة.";
+   result.className="result-text success-text";
+  }else{
+   button.classList.add("wrong");
+   button.innerHTML+=" ✖️";
+   result.textContent="😅 إجابة غير صحيحة. الإجابة الصحيحة مميزة باللون الأخضر.";
+   result.className="result-text error-text";
+  }
+ });
+});
+</script>
+
+
+<script type="module">
+import { finishLesson } from "./js/reward.js";
+
+window.finishLessonPage = function(){
+ finishLesson(
+  "pre-intermediate-unit3-past-continuous",
+  "📖 قراءة | Past Continuous",
+  "past-simple-wh.html"
+ );
+};
+</script>
+
+  
+</body>
+</html>
