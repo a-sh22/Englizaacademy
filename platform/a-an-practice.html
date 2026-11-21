@@ -116,6 +116,25 @@ function renderVocabulary(){
 function toggleVocab(btn){const box=btn.closest('.vocab');box.classList.toggle('open');btn.querySelector('.togglelabel').textContent=box.classList.contains('open')?'Hide vocabulary −':'Show vocabulary ＋'}
 function speakWord(word){if(!('speechSynthesis'in window)){alert('Pronunciation is not supported in this browser.');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=.85;speechSynthesis.speak(u)}
 async function copyReading(btn){const card=btn.closest('.reading-card');const txt=Array.from(card.querySelectorAll('.reading-text p')).map(p=>p.innerText).join('\n\n');try{await navigator.clipboard.writeText(txt)}catch(e){const t=document.createElement('textarea');t.value=txt;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}btn.textContent='✓ Copied!';setTimeout(()=>btn.textContent='📋 Copy this reading',1600)}
-function completeLesson(){alert('Great job! You have completed this reading lesson.')}
+
+
+
 renderVocabulary();
-</script></body></html>
+</script>
+
+<script type="module">
+import {
+    finishLesson
+} from "./js/reward.js";
+
+window.completeLesson = function() {
+    finishLesson(
+        "a-an-the-reading",
+        "📖 Reading Practice | A, An & The",
+        "in-on.html"
+    );
+};
+</script>
+
+</body>
+</html>
