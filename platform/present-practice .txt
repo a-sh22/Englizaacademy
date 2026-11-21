@@ -1,0 +1,2579 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7046c8">
+<title>Reading Practice | Present Simple - Engliza Academy</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --blue: #1f3c88;
+    --purple: #7546d8;
+    --purple-dark: #5c35b4;
+    --purple-light: #f2edff;
+    --blue-light: #edf3ff;
+    --text: #263452;
+    --muted: #71809d;
+    --border: #e7eaf4;
+    --white: #ffffff;
+    --green: #209b73;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        radial-gradient(circle at 8% 5%, rgba(164,130,255,.16), transparent 25%),
+        radial-gradient(circle at 95% 35%, rgba(111,160,255,.13), transparent 27%),
+        linear-gradient(135deg,#f7f5ff 0%,#f2f6ff 50%,#faf8ff 100%);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+}
+
+button, input, audio { font-family: inherit; }
+
+.container {
+    width: min(100% - 32px,1050px);
+    margin: 0 auto;
+    padding: 25px 0 55px;
+}
+
+/* Top bar */
+
+.top-bar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.back-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:var(--blue);
+    background:white;
+    border:1px solid #e5e8f4;
+    padding:10px 19px;
+    border-radius:30px;
+    font-weight:800;
+    font-size:14px;
+    box-shadow:0 5px 16px rgba(39,55,105,.06);
+    transition:.2s;
+}
+
+.back-btn:hover {
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(39,55,105,.12);
+}
+
+.academy-label {
+    color:var(--purple);
+    font-family:'Nunito',sans-serif;
+    font-weight:900;
+    letter-spacing:.5px;
+    font-size:14px;
+}
+
+/* Hero */
+
+.hero {
+    text-align:center;
+    padding:15px 15px 30px;
+}
+
+.hero-owl {
+    width:125px;
+    height:125px;
+    object-fit:contain;
+    margin-bottom:5px;
+    filter:drop-shadow(0 8px 12px rgba(91,63,161,.13));
+}
+
+.hero h1 {
+    color:var(--blue);
+    font-size:clamp(27px,5vw,39px);
+    line-height:1.35;
+    margin:5px 0 8px;
+    font-weight:900;
+}
+
+.hero h1 span { color:var(--purple); }
+
+.hero p {
+    color:var(--muted);
+    font-size:15px;
+    font-weight:600;
+    margin:0;
+}
+
+/* Cards */
+
+.card {
+    background:var(--white);
+    border:1px solid rgba(222,226,242,.9);
+    border-radius:23px;
+    box-shadow:0 9px 28px rgba(43,55,103,.055);
+}
+
+/* Tip card */
+
+.tip-card {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:22px 25px;
+    margin-bottom:38px;
+    border-right:5px solid var(--purple);
+    background:linear-gradient(110deg,#fff 0%,#f8f5ff 100%);
+}
+
+.tip-owl {
+    width:92px;
+    height:92px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.tip-content h2 {
+    color:var(--purple-dark);
+    font-size:19px;
+    margin:0 0 8px;
+    font-weight:900;
+}
+
+.tip-content p {
+    color:#586783;
+    line-height:1.9;
+    font-size:14px;
+    margin:0;
+}
+
+/* Reading section */
+
+.reading-section {
+    margin-bottom:48px;
+}
+
+.section-heading {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:0 0 15px;
+}
+
+.section-number {
+    width:43px;
+    height:43px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7952dc,#5237b4);
+    color:white;
+    font-family:'Nunito',sans-serif;
+    font-size:19px;
+    font-weight:900;
+    box-shadow:0 5px 13px rgba(105,69,199,.2);
+}
+
+.section-heading h2 {
+    color:var(--blue);
+    font-size:22px;
+    font-weight:900;
+    margin:0;
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+    margin:1px 0 0;
+}
+
+/* Audio */
+
+.audio-card {
+    padding:19px 22px;
+    margin-bottom:15px;
+    background:linear-gradient(120deg,#f0eaff 0%,#f7f4ff 55%,#edf2ff 100%);
+    border:1px solid #e1d8ff;
+    border-radius:19px;
+}
+
+.audio-title {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--purple-dark);
+    font-weight:900;
+    font-size:16px;
+    margin-bottom:12px;
+}
+
+.audio-icon {
+    width:35px;
+    height:35px;
+    display:grid;
+    place-items:center;
+    border-radius:11px;
+    background:white;
+    font-size:18px;
+}
+
+.audio-card audio {
+    display:block;
+    width:100%;
+    height:43px;
+    border-radius:30px;
+}
+
+/* Reading card */
+
+.reading-card {
+    padding:25px 27px;
+    margin-bottom:17px;
+    border-top:4px solid #7b5be0;
+    background:white;
+}
+
+.reading-card-top {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:17px;
+}
+
+.reading-card-top h3 {
+    color:var(--blue);
+    font-size:19px;
+    margin:0;
+    font-weight:900;
+}
+
+.reading-level {
+    color:var(--purple-dark);
+    background:#f1ecff;
+    border:1px solid #e4dbff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-family:'Nunito',sans-serif;
+    font-size:11px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.reading-text {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:20px;
+    line-height:2;
+    font-weight:600;
+    overflow-wrap:break-word;
+}
+
+/* Vocabulary */
+
+.vocab-section {
+    padding:20px;
+    background:linear-gradient(145deg,#f8f6ff,#f2f6ff);
+    border:1px solid #e4e3f5;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.vocab-toggle {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:var(--blue);
+    text-align:right;
+    cursor:pointer;
+}
+
+.vocab-toggle-main {
+    display:flex;
+    align-items:center;
+    gap:11px;
+    min-width:0;
+}
+
+.vocab-toggle-icon {
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:white;
+    box-shadow:0 3px 10px rgba(65,66,130,.08);
+    font-size:19px;
+    flex-shrink:0;
+}
+
+.vocab-toggle h3 {
+    margin:0;
+    font-size:17px;
+    font-weight:900;
+}
+
+.vocab-toggle small {
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:600;
+    margin-top:2px;
+}
+
+.vocab-action-label {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    padding:9px 13px;
+    border-radius:12px;
+    background:var(--purple);
+    color:white;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.vocab-content {
+    display:none;
+    padding-top:20px;
+}
+
+.vocab-section.open .vocab-content {
+    display:block;
+}
+
+.vocab-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:13px;
+}
+
+.vocab-item {
+    background:white;
+    border:1px solid #e7e4f4;
+    border-radius:16px;
+    padding:16px;
+    min-width:0;
+    box-shadow:0 3px 10px rgba(46,54,100,.035);
+}
+
+.vocab-word-row {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin-bottom:6px;
+}
+
+.vocab-word {
+    direction:ltr;
+    text-align:left;
+    color:var(--purple-dark);
+    font-family:'Nunito',sans-serif;
+    font-size:18px;
+    font-weight:900;
+    overflow-wrap:anywhere;
+}
+
+.pronounce-btn {
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+    border:none;
+    border-radius:11px;
+    background:#f0eaff;
+    color:var(--purple-dark);
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
+
+.pronounce-btn:hover {
+    background:var(--purple);
+    color:white;
+    transform:scale(1.06);
+}
+
+/* Pronunciation */
+
+.pronunciation-info {
+    display:flex;
+    align-items:center;
+    gap:9px;
+    direction:ltr;
+    margin:5px 0 9px;
+}
+
+.pronunciation-ipa {
+    color:var(--purple-dark);
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    font-weight:900;
+}
+
+.pronunciation-ar {
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    direction:rtl;
+}
+
+/* Vocabulary meaning */
+
+.vocab-meaning {
+    color:#53617d;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.word-type {
+    display:inline-block;
+    color:#65728e;
+    background:#f2f5fb;
+    border-radius:7px;
+    padding:2px 8px;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:11px;
+}
+
+.examples {
+    border-top:1px solid #edf0f7;
+    padding-top:9px;
+}
+
+.example { margin-bottom:10px; }
+.example:last-child { margin-bottom:0; }
+
+.example-en {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.65;
+}
+
+.example-ar {
+    color:#7b849b;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:2px;
+}
+
+/* Arabic grammar note */
+
+.grammar-note {
+    margin-top:13px;
+    padding:12px;
+    background:#f5f1ff;
+    border-right:3px solid var(--purple);
+    border-radius:11px;
+}
+
+.grammar-note strong {
+    display:block;
+    color:var(--purple-dark);
+    font-size:12px;
+    margin-bottom:6px;
+}
+
+.grammar-note p {
+    color:#53617d;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.9;
+    margin:0;
+}
+
+/* Question cards */
+
+.question-card {
+    padding:25px 27px;
+    margin-bottom:17px;
+}
+
+.question-heading-card {
+    text-align:center;
+    padding:20px;
+    margin:28px 0 17px;
+}
+
+.question-heading-card h2 {
+    color:var(--blue);
+    font-size:22px;
+    margin:0;
+    font-weight:900;
+}
+
+.question-title {
+    font-size:17px;
+    font-weight:900;
+    line-height:1.9;
+    color:var(--purple-dark);
+    margin:0 0 15px;
+}
+
+.question-prompt {
+    direction:ltr;
+    text-align:left;
+    color:#34415d;
+    font-family:'Nunito',sans-serif;
+    font-size:17px;
+    line-height:1.8;
+    font-weight:800;
+    margin-bottom:17px;
+}
+
+.help-text {
+    font-size:20px;
+    font-weight:800;
+    line-height:1.8;
+    color:#34415d;
+    text-align:left;
+    direction:ltr;
+    margin:20px 0;
+    font-family:'Nunito',sans-serif;
+}
+
+/* Writing input */
+
+.write-box {
+    width:100%;
+    padding:15px 18px;
+    border-radius:15px;
+    border:1.5px solid #dce4ff;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+    margin-bottom:15px;
+    background:white;
+    direction:ltr;
+    text-align:left;
+}
+
+.write-box:focus {
+    border-color:#6f43ff;
+    box-shadow:0 0 0 4px rgba(111,67,255,.10);
+}
+
+/* Results */
+
+.answer-result,
+.result-text {
+    margin-top:15px;
+    font-size:15px;
+    font-weight:800;
+    line-height:1.9;
+    animation:fadeResult .4s ease;
+}
+
+.success-text { color:#0f8b4c; }
+.error-text { color:#c62828; }
+
+.correct-input {
+    background:#e8fff0;
+    border:2px solid #b8ebc8;
+    color:#0f8b4c;
+}
+
+.wrong-input {
+    background:#ffe8e8;
+    border:2px solid #ffb8b8;
+    color:#c62828;
+}
+
+/* Choices and buttons */
+
+.choice-container {
+    display:flex;
+    gap:13px;
+    margin:20px 0 12px;
+}
+
+.choice-btn {
+    flex:1;
+    padding:15px;
+    background:white;
+    border:1.5px solid #dce4ff;
+    border-radius:15px;
+    font-size:15px;
+    font-weight:800;
+    color:var(--blue);
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 4px 12px rgba(0,0,0,.035);
+}
+
+.choice-btn:hover {
+    transform:translateY(-2px);
+    border-color:#a995e8;
+}
+
+.choice-btn:disabled {
+    cursor:default;
+    opacity:.95;
+}
+
+.card button:not(.choice-btn):not(.vocab-toggle):not(.pronounce-btn) {
+    background:#f5f2ff;
+    color:var(--purple-dark);
+    border:1px solid #e2d9ff;
+    padding:12px 20px;
+    border-radius:13px;
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.card button:not(.choice-btn):not(.vocab-toggle):not(.pronounce-btn):hover {
+    background:#ece5ff;
+    transform:translateY(-2px);
+}
+
+.correct {
+    background:#e8fff0 !important;
+    border:2px solid #b8ebc8 !important;
+    color:#0f8b4c !important;
+}
+
+.wrong {
+    background:#ffe8e8 !important;
+    border:2px solid #ffb8b8 !important;
+    color:#c62828 !important;
+}
+
+/* Confetti */
+
+.confetti {
+    position:relative;
+    height:0;
+}
+
+.star {
+    position:absolute;
+    font-size:20px;
+    opacity:0;
+    animation:flyStars 1.4s ease-out forwards;
+}
+
+.star:nth-child(1) { left:10%; }
+.star:nth-child(2) { left:30%; animation-delay:.1s; }
+.star:nth-child(3) { left:50%; animation-delay:.2s; }
+.star:nth-child(4) { left:70%; animation-delay:.15s; }
+.star:nth-child(5) { left:90%; animation-delay:.05s; }
+
+@keyframes flyStars {
+    0% { opacity:0; transform:translateY(20px) scale(.4); }
+    20% { opacity:1; }
+    100% { opacity:0; transform:translateY(-70px) rotate(360deg) scale(1.3); }
+}
+
+.shake { animation:shake .3s; }
+
+@keyframes shake {
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-6px);}
+    50%{transform:translateX(6px);}
+    75%{transform:translateX(-6px);}
+    100%{transform:translateX(0);}
+}
+
+@keyframes fadeResult {
+    from { opacity:0; transform:translateY(10px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* Final card */
+
+.final-card {
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:33px 22px;
+    margin-top:45px;
+    color:white;
+    background:linear-gradient(125deg,#5033a6 0%,#7548d4 55%,#5274d7 100%);
+    border-radius:25px;
+    box-shadow:0 12px 28px rgba(89,59,174,.22);
+}
+
+.final-card::before,
+.final-card::after {
+    content:"";
+    position:absolute;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:50%;
+    width:180px;
+    height:180px;
+}
+
+.final-card::before { top:-100px; right:-50px; }
+.final-card::after { bottom:-120px; left:-55px; }
+
+.final-card h2 {
+    position:relative;
+    z-index:1;
+    font-size:25px;
+    margin:0 0 8px;
+    font-weight:900;
+    color:white;
+}
+
+.final-card p {
+    position:relative;
+    z-index:1;
+    color:rgba(255,255,255,.9);
+    font-size:14px;
+    line-height:1.9;
+    margin:0 auto 20px;
+    max-width:650px;
+}
+
+.next-lesson-btn {
+    position:relative;
+    z-index:1;
+    border:none !important;
+    border-radius:30px !important;
+    padding:13px 28px !important;
+    background:white !important;
+    color:#5b3bb1 !important;
+    font-size:15px !important;
+    font-weight:900 !important;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(32,21,72,.15);
+    transition:.2s;
+}
+
+.next-lesson-btn:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(32,21,72,.2);
+}
+
+.footer {
+    text-align:center;
+    color:#929bb0;
+    font-family:'Nunito',sans-serif;
+    font-size:12px;
+    font-weight:800;
+    padding-top:25px;
+}
+
+/* Responsive */
+
+@media(max-width:650px) {
+    .container {
+        width:min(100% - 22px,1050px);
+        padding-top:15px;
+    }
+
+    .top-bar { margin-bottom:15px; }
+    .hero { padding-bottom:23px; }
+
+    .hero-owl {
+        width:105px;
+        height:105px;
+    }
+
+    .hero p { font-size:13px; }
+
+    .tip-card {
+        padding:16px;
+        gap:12px;
+        margin-bottom:30px;
+        align-items:flex-start;
+    }
+
+    .tip-owl {
+        width:68px;
+        height:68px;
+    }
+
+    .tip-content h2 { font-size:16px; }
+    .tip-content p { font-size:12px; line-height:1.85; }
+
+    .section-heading h2 { font-size:19px; }
+    .section-heading p { font-size:11px; }
+
+    .audio-card { padding:15px; }
+
+    .reading-card { padding:19px 16px; }
+    .reading-card-top h3 { font-size:17px; }
+
+    .reading-text {
+        font-size:17px;
+        line-height:1.95;
+    }
+
+    .vocab-section { padding:16px; }
+
+    .vocab-grid {
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .vocab-item { padding:14px; }
+
+    .vocab-action-label {
+        padding:8px 10px;
+        font-size:11px;
+    }
+
+    .vocab-toggle h3 { font-size:15px; }
+
+    .question-card { padding:19px 16px; }
+
+    .choice-container {
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .question-prompt { font-size:16px; }
+    .help-text { font-size:18px; }
+
+    .final-card { padding:28px 17px; }
+    .final-card h2 { font-size:22px; }
+}
+
+@media(max-width:360px) {
+    .academy-label { font-size:11px; }
+
+    .back-btn {
+        padding:9px 13px;
+        font-size:12px;
+    }
+
+    .reading-text { font-size:16px; }
+
+    .vocab-toggle-main { gap:7px; }
+    .vocab-action-label { padding:7px 8px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+        <a href="unit1-pre.html" class="back-btn">⬅️ رجوع</a>
+        <div class="academy-label">ENGLIZA ACADEMY</div>
+    </div>
+
+    <header class="hero">
+        <img src="../okay.owl.PNG" alt="Engliza Academy Owl" class="hero-owl">
+        <h1>📖 Reading Practice | <span>Present Simple</span></h1>
+        <p>تدرّب على المضارع البسيط من خلال قراءة النصوص والإجابة عن أسئلتها</p>
+    </header>
+
+    <section class="card tip-card">
+        <img src="../earlo .PNG" alt="Learning Tip" class="tip-owl">
+        <div class="tip-content">
+            <h2>✨ نصيحة قبل أن تبدأ</h2>
+            <p>
+                لا تحاول ترجمة كل كلمة تقرؤها. اقرأ الفقرة كاملة أولًا، ثم حاول فهم الفكرة العامة.
+                إذا وجدت كلمة جديدة، فلا تقلق. حاول معرفة معناها من خلال الجملة، ثم أجب عن الأسئلة.
+                استمع إلى التسجيل وتابع القراءة، وبعد ذلك اقرأ الفقرة بنفسك وتعلّم المفردات الجديدة.
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <!-- READING 1 -->
+
+        <section class="reading-section">
+
+            <div class="section-heading">
+                <div class="section-number">1</div>
+                <div>
+                    <h2>Daily Routine</h2>
+                    <p>Reading 1 · Present Simple</p>
+                </div>
+            </div>
+
+            <div class="audio-card">
+                <div class="audio-title">
+                    <span class="audio-icon">🎧</span>
+                    <span>Listen to the Reading</span>
+                </div>
+                <audio controls preload="none">
+                    <source src="https://videos.englizaacademy.com/A1-A2%20stories/Daily%20routine.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <article class="card reading-card">
+                <div class="reading-card-top">
+                    <h3>📖 Reading 1 – Daily Routine</h3>
+                    <span class="reading-level">Reading 1</span>
+                </div>
+
+                <div class="reading-text">
+                    Ahmed wakes up at 7:00 every morning.
+                    He brushes his teeth and washes his face.
+                    Then he eats breakfast with his family.
+                    He drinks tea, but he doesn't drink coffee.
+                    Does he drive to work?
+                    No, he doesn't.
+                    He goes to work by bus at 8:00.
+                    He comes home at 5:00 and watches TV in the evening.
+                </div>
+
+                <section class="vocab-section">
+                    <button class="vocab-toggle" type="button" onclick="toggleVocabulary(this)" aria-expanded="false">
+                        <span class="vocab-toggle-main">
+                            <span class="vocab-toggle-icon">📚</span>
+                            <span>
+                                <h3>Vocabulary & Expressions</h3>
+                                <small>8 كلمات وتعبيرات مع أمثلة</small>
+                            </span>
+                        </span>
+                        <span class="vocab-action-label">اضغط لعرض المفردات</span>
+                    </button>
+                    <div class="vocab-content">
+                        <div class="vocab-grid" id="vocab-reading-1"></div>
+                    </div>
+                </section>
+            </article>
+        </section>
+
+        <div class="card question-heading-card">
+            <h2>📝 أسئلة الفقرة الأولى</h2>
+        </div>
+
+        <section class="card question-card">
+            <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+            <p class="question-prompt">What time does Ahmed wake up?</p>
+            <div class="choice-container">
+                <button class="choice-btn" onclick="checkAnswer(this,true,'r1q1')">At 7:00</button>
+                <button class="choice-btn" onclick="checkAnswer(this,false,'r1q1')">At 9:00</button>
+            </div>
+            <p id="r1q1" class="result-text"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+            <p class="question-prompt">How does Ahmed go to work?</p>
+            <div class="choice-container">
+                <button class="choice-btn" onclick="checkAnswer(this,false,'r1q2')">By car</button>
+                <button class="choice-btn" onclick="checkAnswer(this,true,'r1q2')">By bus</button>
+            </div>
+            <p id="r1q2" class="result-text"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+            <p class="help-text">Ahmed drinks tea.</p>
+            <input id="r1write1" class="write-box" type="text" placeholder="Write your answer...">
+            <button onclick="checkWriting('r1write1','r1result1',['Ahmed does not drink tea.','Ahmed doesn\'t drink tea.'])">تحقق من الإجابة</button>
+            <p id="r1result1" class="answer-result"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ حوّل الجملة إلى سؤال.</p>
+            <p class="help-text">Ahmed watches TV in the evening.</p>
+            <input id="r1write2" class="write-box" type="text" placeholder="Write your answer...">
+            <button onclick="checkWriting('r1write2','r1result2',['Does Ahmed watch TV in the evening?'])">تحقق من الإجابة</button>
+            <p id="r1result2" class="answer-result"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ أجب عن السؤال.</p>
+            <p class="help-text">Does Ahmed drink coffee?</p>
+            <input id="r1write3" class="write-box" type="text" placeholder="Write your answer...">
+            <button onclick="checkWriting('r1write3','r1result3',['No, he does not.','No, he doesn\'t.','No he does not','No he doesn\'t'])">تحقق من الإجابة</button>
+            <p id="r1result3" class="answer-result"></p>
+        </section>
+
+        <!-- READING 2 -->
+
+        <section class="reading-section">
+
+            <div class="section-heading">
+                <div class="section-number">2</div>
+                <div>
+                    <h2>My Family</h2>
+                    <p>Reading 2 · Present Simple</p>
+                </div>
+            </div>
+
+            <div class="audio-card">
+                <div class="audio-title">
+                    <span class="audio-icon">🎧</span>
+                    <span>Listen to the Reading</span>
+                </div>
+                <audio controls preload="none">
+                    <source src="https://videos.englizaacademy.com/A1-A2%20stories/My%20family%20.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <article class="card reading-card">
+                <div class="reading-card-top">
+                    <h3>📖 Reading 2 – My Family</h3>
+                    <span class="reading-level">Reading 2</span>
+                </div>
+
+                <div class="reading-text">
+                    Sara lives with her family in a small house.
+                    She has one brother and two sisters.
+                    Her father works in a hospital.
+                    Her mother teaches English at a school.
+                    Does Sara have a pet?
+                    Yes, she does.
+                    She has a small cat, and she loves it very much.
+                    Every evening, the family eats dinner together.
+                </div>
+
+                <section class="vocab-section">
+                    <button class="vocab-toggle" type="button" onclick="toggleVocabulary(this)" aria-expanded="false">
+                        <span class="vocab-toggle-main">
+                            <span class="vocab-toggle-icon">📚</span>
+                            <span>
+                                <h3>Vocabulary & Expressions</h3>
+                                <small>14 كلمة وتعبيرًا مع أمثلة</small>
+                            </span>
+                        </span>
+                        <span class="vocab-action-label">اضغط لعرض المفردات</span>
+                    </button>
+                    <div class="vocab-content">
+                        <div class="vocab-grid" id="vocab-reading-2"></div>
+                    </div>
+                </section>
+            </article>
+        </section>
+
+        <div class="card question-heading-card">
+            <h2>📝 أسئلة الفقرة الثانية</h2>
+        </div>
+
+        <section class="card question-card">
+            <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+            <p class="question-prompt">Where does Sara's father work?</p>
+            <div class="choice-container">
+                <button class="choice-btn" onclick="checkAnswer(this,true,'r2q1')">In a hospital</button>
+                <button class="choice-btn" onclick="checkAnswer(this,false,'r2q1')">In a bank</button>
+            </div>
+            <p id="r2q1" class="result-text"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+            <p class="question-prompt">Does Sara have a pet?</p>
+            <div class="choice-container">
+                <button class="choice-btn" onclick="checkAnswer(this,true,'r2q2')">Yes, she does.</button>
+                <button class="choice-btn" onclick="checkAnswer(this,false,'r2q2')">No, she doesn't.</button>
+            </div>
+            <p id="r2q2" class="result-text"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+            <p class="help-text">Sara has a small cat.</p>
+            <input id="r2write1" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+            <button onclick="checkWriting('r2write1','r2result1',['Sara does not have a small cat.','Sara doesn\'t have a small cat.'])">تحقق من الإجابة</button>
+            <p id="r2result1" class="answer-result"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ حوّل الجملة إلى سؤال.</p>
+            <p class="help-text">Her mother teaches English.</p>
+            <input id="r2write2" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+            <button onclick="checkWriting('r2write2','r2result2',['Does her mother teach English?'])">تحقق من الإجابة</button>
+            <p id="r2result2" class="answer-result"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ أجب عن السؤال.</p>
+            <p class="help-text">Does the family eat dinner together?</p>
+            <input id="r2write3" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+            <button onclick="checkWriting('r2write3','r2result3',['Yes, they do.','Yes they do'])">تحقق من الإجابة</button>
+            <p id="r2result3" class="answer-result"></p>
+        </section>
+
+        <!-- READING 3 -->
+
+        <section class="reading-section">
+
+            <div class="section-heading">
+                <div class="section-number">3</div>
+                <div>
+                    <h2>Hobbies</h2>
+                    <p>Reading 3 · Present Simple</p>
+                </div>
+            </div>
+
+            <div class="audio-card">
+                <div class="audio-title">
+                    <span class="audio-icon">🎧</span>
+                    <span>Listen to the Reading</span>
+                </div>
+                <audio controls preload="none">
+                    <source src="https://videos.englizaacademy.com/A1-A2%20stories/Hobbies%20.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <article class="card reading-card">
+                <div class="reading-card-top">
+                    <h3>📖 Reading 3 – Hobbies</h3>
+                    <span class="reading-level">Reading 3</span>
+                </div>
+
+                <div class="reading-text">
+                    Omar likes sports very much.
+                    He plays football every Friday with his friends.
+                    He also likes reading books in the evening.
+                    He doesn't watch TV every day.
+                    Does he like swimming?
+                    Yes, he does.
+                    Sometimes he swims with his brother at the beach.
+                    Omar enjoys his free time because he always does something fun.
+                </div>
+
+                <section class="vocab-section">
+                    <button class="vocab-toggle" type="button" onclick="toggleVocabulary(this)" aria-expanded="false">
+                        <span class="vocab-toggle-main">
+                            <span class="vocab-toggle-icon">📚</span>
+                            <span>
+                                <h3>Vocabulary & Expressions</h3>
+                                <small>16 كلمة وتعبيرًا مع أمثلة</small>
+                            </span>
+                        </span>
+                        <span class="vocab-action-label">اضغط لعرض المفردات</span>
+                    </button>
+                    <div class="vocab-content">
+                        <div class="vocab-grid" id="vocab-reading-3"></div>
+                    </div>
+                </section>
+            </article>
+        </section>
+
+        <div class="card question-heading-card">
+            <h2>📝 أسئلة الفقرة الثالثة</h2>
+        </div>
+
+        <section class="card question-card">
+            <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+            <p class="question-prompt">When does Omar play football?</p>
+            <div class="choice-container">
+                <button class="choice-btn" onclick="checkAnswer(this,true,'r3q1')">Every Friday</button>
+                <button class="choice-btn" onclick="checkAnswer(this,false,'r3q1')">Every Monday</button>
+            </div>
+            <p id="r3q1" class="result-text"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+            <p class="question-prompt">Does Omar watch TV every day?</p>
+            <div class="choice-container">
+                <button class="choice-btn" onclick="checkAnswer(this,false,'r3q2')">Yes, he does.</button>
+                <button class="choice-btn" onclick="checkAnswer(this,true,'r3q2')">No, he doesn't.</button>
+            </div>
+            <p id="r3q2" class="result-text"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+            <p class="help-text">Omar likes sports.</p>
+            <input id="r3write1" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+            <button onclick="checkWriting('r3write1','r3result1',['Omar does not like sports.','Omar doesn\'t like sports.'])">تحقق من الإجابة</button>
+            <p id="r3result1" class="answer-result"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ حوّل الجملة إلى سؤال.</p>
+            <p class="help-text">Omar reads books in the evening.</p>
+            <input id="r3write2" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+            <button onclick="checkWriting('r3write2','r3result2',['Does Omar read books in the evening?'])">تحقق من الإجابة</button>
+            <p id="r3result2" class="answer-result"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ أجب عن السؤال.</p>
+            <p class="help-text">Does Omar like swimming?</p>
+            <input id="r3write3" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+            <button onclick="checkWriting('r3write3','r3result3',['Yes, he does.','Yes he does'])">تحقق من الإجابة</button>
+            <p id="r3result3" class="answer-result"></p>
+        </section>
+
+        <section class="card question-card">
+            <p class="question-title">✍️ اكتب جملة واحدة من الفقرة باستخدام الكلمة الآتية.</p>
+            <p class="question-prompt">Use the word: football</p>
+            <input id="r3write4" class="write-box" type="text" placeholder="اكتب جملتك هنا...">
+            <button onclick="checkWriting('r3write4','r3result4',['Omar plays football every Friday.','He plays football every Friday.'])">تحقق من الإجابة</button>
+            <p id="r3result4" class="answer-result"></p>
+        </section>
+
+       
+<!-- READING 4 -->
+
+<section class="reading-section">
+
+    <div class="section-heading">
+        <div class="section-number">4</div>
+        <div>
+            <h2>Our School Activities</h2>
+            <p>Reading 4 · Present Simple</p>
+        </div>
+    </div>
+
+    <div class="audio-card">
+        <div class="audio-title">
+            <span class="audio-icon">🎧</span>
+            <span>Listen to the Reading</span>
+        </div>
+        <audio controls preload="none">
+            <source src="https://videos.englizaacademy.com/A1-A2%20stories/Our%20school%20activities.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <article class="card reading-card">
+        <div class="reading-card-top">
+            <h3>📖 Reading 4 – Our School Activities</h3>
+            <span class="reading-level">Reading 4</span>
+        </div>
+
+        <div class="reading-text">
+            Our students study at the middle school.
+            They go to school from Sunday to Thursday.
+            They learn English, maths, and science.
+            Their teacher explains the lessons and helps them when they have questions.
+            The students don't use their phones during lessons.
+            Do they play sport at school?
+            Yes, they do.
+            They play football and basketball after classes.
+            Some students read books in the library, while others play with their friends.
+            They enjoy their school because they learn new things every day.
+        </div>
+
+        <section class="vocab-section">
+            <button class="vocab-toggle" type="button" onclick="toggleVocabulary(this)" aria-expanded="false">
+                <span class="vocab-toggle-main">
+                    <span class="vocab-toggle-icon">📚</span>
+                    <span>
+                        <h3>Vocabulary & Expressions</h3>
+                        <small>23 كلمة وتعبيرًا مع أمثلة</small>
+                    </span>
+                </span>
+                <span class="vocab-action-label">اضغط لعرض المفردات</span>
+            </button>
+
+            <div class="vocab-content">
+                <div class="vocab-grid" id="vocab-reading-4"></div>
+            </div>
+        </section>
+    </article>
+</section>
+
+<div class="card question-heading-card">
+    <h2>📝 أسئلة الفقرة الرابعة</h2>
+</div>
+
+<!-- QUESTION 1 -->
+
+<section class="card question-card">
+    <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+    <p class="question-prompt">Which subjects do the students learn?</p>
+
+    <div class="choice-container">
+        <button class="choice-btn" onclick="checkAnswer(this,true,'r4q1')">
+            English, maths, and science
+        </button>
+
+        <button class="choice-btn" onclick="checkAnswer(this,false,'r4q1')">
+            English and history
+        </button>
+    </div>
+
+    <p id="r4q1" class="result-text"></p>
+</section>
+
+<!-- QUESTION 2 -->
+
+<section class="card question-card">
+    <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+    <p class="question-prompt">Do the students use their phones during lessons?</p>
+
+    <div class="choice-container">
+        <button class="choice-btn" onclick="checkAnswer(this,false,'r4q2')">
+            Yes, they do.
+        </button>
+
+        <button class="choice-btn" onclick="checkAnswer(this,true,'r4q2')">
+            No, they don't.
+        </button>
+    </div>
+
+    <p id="r4q2" class="result-text"></p>
+</section>
+
+<!-- QUESTION 3 -->
+
+<section class="card question-card">
+    <p class="question-title">🎯 اختر الإجابة الصحيحة.</p>
+    <p class="question-prompt">What sports do the students play after classes?</p>
+
+    <div class="choice-container">
+        <button class="choice-btn" onclick="checkAnswer(this,true,'r4q3')">
+            Football and basketball
+        </button>
+
+        <button class="choice-btn" onclick="checkAnswer(this,false,'r4q3')">
+            Tennis and swimming
+        </button>
+    </div>
+
+    <p id="r4q3" class="result-text"></p>
+</section>
+
+<!-- QUESTION 4 -->
+
+<section class="card question-card">
+    <p class="question-title">✍️ حوّل الجملة إلى النفي.</p>
+    <p class="help-text">The students use their phones during lessons.</p>
+
+    <input id="r4write1" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+
+    <button onclick="checkWriting('r4write1','r4result1',[
+        'The students do not use their phones during lessons.',
+        'The students don\\'t use their phones during lessons.'
+    ])">
+        تحقق من الإجابة
+    </button>
+
+    <p id="r4result1" class="answer-result"></p>
+</section>
+
+<!-- QUESTION 5 -->
+
+<section class="card question-card">
+    <p class="question-title">✍️ حوّل الجملة إلى سؤال.</p>
+    <p class="help-text">They play football and basketball after classes.</p>
+
+    <input id="r4write2" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+
+    <button onclick="checkWriting('r4write2','r4result2',[
+        'Do they play football and basketball after classes?'
+    ])">
+        تحقق من الإجابة
+    </button>
+
+    <p id="r4result2" class="answer-result"></p>
+</section>
+
+<!-- QUESTION 6 -->
+
+<section class="card question-card">
+    <p class="question-title">✍️ أجب عن السؤال.</p>
+    <p class="help-text">Do they play sport at school?</p>
+
+    <input id="r4write3" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+
+    <button onclick="checkWriting('r4write3','r4result3',[
+        'Yes, they do.',
+        'Yes they do'
+    ])">
+        تحقق من الإجابة
+    </button>
+
+    <p id="r4result3" class="answer-result"></p>
+</section>
+
+<!-- QUESTION 7 -->
+
+<section class="card question-card">
+    <p class="question-title">✍️ أجب عن السؤال.</p>
+    <p class="help-text">Where do some students read books?</p>
+
+    <input id="r4write4" class="write-box" type="text" placeholder="اكتب إجابتك هنا...">
+
+    <button onclick="checkWriting('r4write4','r4result4',[
+        'In the library.',
+        'In the library'
+    ])">
+        تحقق من الإجابة
+    </button>
+
+    <p id="r4result4" class="answer-result"></p>
+</section>
+ 
+
+    </main>
+
+    <section class="final-card">
+        <h2>🎉 مبروك!</h2>
+        <p>
+            لقد أنهيت تدريبات القراءة الخاصة بزمن <b>Present Simple</b> بنجاح.
+            أصبحت الآن تستطيع قراءة نصوص قصيرة، وفهم الأفكار الرئيسية، والإجابة عن الأسئلة،
+            واستخدام زمن Present Simple في الكتابة.
+        </p>
+        <button class="next-lesson-btn" onclick="finishLessonPage()">
+            ✨ الانتقال إلى الدرس التالي
+        </button>
+    </section>
+
+    <footer class="footer">
+        © Engliza Academy — Learn English with Confidence
+    </footer>
+
+</div>
+
+<script>
+
+/* =========================================
+   NORMALIZE TEXT
+========================================= */
+
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/’/g,"'")
+        .replace(/\bi'm\b/g,"i am")
+        .replace(/\bi've\b/g,"i have")
+        .replace(/\bi'd\b/g,"i would")
+        .replace(/\bi'll\b/g,"i will")
+        .replace(/\bhe's\b/g,"he is")
+        .replace(/\bshe's\b/g,"she is")
+        .replace(/\bit's\b/g,"it is")
+        .replace(/\byou're\b/g,"you are")
+        .replace(/\bwe're\b/g,"we are")
+        .replace(/\bthey're\b/g,"they are")
+        .replace(/\bhasn't\b/g,"has not")
+        .replace(/\bhaven't\b/g,"have not")
+        .replace(/\bisn't\b/g,"is not")
+        .replace(/\baren't\b/g,"are not")
+        .replace(/\bwasn't\b/g,"was not")
+        .replace(/\bweren't\b/g,"were not")
+        .replace(/\bdon't\b/g,"do not")
+        .replace(/\bdoesn't\b/g,"does not")
+        .replace(/\bdidn't\b/g,"did not")
+        .replace(/\bcan't\b/g,"cannot")
+        .replace(/\bwon't\b/g,"will not")
+        .replace(/[.,!?؟]/g,"")
+        .replace(/'/g,"")
+        .replace(/-/g," ")
+        .replace(/\s+/g," ")
+        .trim();
+}
+
+/* =========================================
+   WRITING ANSWERS
+========================================= */
+
+function checkWriting(inputId,resultId,correctAnswers) {
+    let input = document.getElementById(inputId);
+    let result = document.getElementById(resultId);
+
+    let userAnswer = normalizeText(input.value);
+    let answers = correctAnswers.map(answer => normalizeText(answer));
+
+    input.classList.remove("correct-input","wrong-input","shake");
+
+    if (answers.includes(userAnswer)) {
+        input.classList.add("correct-input");
+
+        result.innerHTML =
+            '<div class="confetti">'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '<span class="star">🌟</span>'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '</div>'+
+            '✅ أحسنت! لقد كتبت الإجابة الصحيحة.';
+
+        result.className = "answer-result success-text";
+    } else {
+        input.classList.add("wrong-input","shake");
+
+        setTimeout(function() {
+            input.classList.remove("shake");
+        },300);
+
+        result.innerHTML =
+            "😅❌ إجابتك غير صحيحة.<br><br>✅ إحدى الإجابات الصحيحة هي:<br><br><b>"+
+            correctAnswers[0]+
+            "</b>";
+
+        result.className = "answer-result error-text";
+    }
+}
+
+/* =========================================
+   AGE ANSWER
+========================================= */
+
+function checkAgeAnswer(inputId,resultId) {
+    let input = document.getElementById(inputId);
+    let result = document.getElementById(resultId);
+
+    let userAnswer = normalizeText(input.value);
+
+    input.classList.remove("correct-input","wrong-input","shake");
+
+    let agePattern = /^i am \d+( years old)?$/;
+
+    if (agePattern.test(userAnswer)) {
+        input.classList.add("correct-input");
+
+        result.innerHTML =
+            '<div class="confetti">'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '<span class="star">🌟</span>'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '</div>'+
+            '✅ أحسنت! لقد أجبت عن السؤال بطريقة صحيحة.';
+
+        result.className = "answer-result success-text";
+    } else {
+        input.classList.add("wrong-input","shake");
+
+        setTimeout(function() {
+            input.classList.remove("shake");
+        },300);
+
+        result.innerHTML =
+            "😅❌ إجابتك غير صحيحة.<br><br>💡 أجب باستخدام:<br><br><b>I am + عمرك</b>";
+
+        result.className = "answer-result error-text";
+    }
+}
+
+/* =========================================
+   MULTIPLE CHOICE
+========================================= */
+
+function checkAnswer(button,isCorrect,resultId) {
+    let result = document.getElementById(resultId);
+
+    let allButtons = button.parentElement.querySelectorAll(".choice-btn");
+
+    allButtons.forEach(btn => {
+        btn.disabled = true;
+    });
+
+    if (isCorrect) {
+        button.classList.add("correct");
+        button.innerHTML += " ✔️";
+
+        result.innerHTML =
+            '<div class="confetti">'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '<span class="star">🌟</span>'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '</div>'+
+            '✅ أحسنت! لقد اخترت الإجابة الصحيحة.';
+
+        result.className = "result-text success-text";
+    } else {
+        button.classList.add("wrong","shake");
+
+        setTimeout(function() {
+            button.classList.remove("shake");
+        },300);
+
+        button.innerHTML += " ✖️";
+
+        result.innerHTML = "😅❌ لقد اخترت الإجابة الخاطئة.";
+        result.className = "result-text error-text";
+
+        allButtons.forEach(btn => {
+            if (btn.getAttribute("onclick").includes("true")) {
+                btn.classList.add("correct");
+
+                if (!btn.innerHTML.includes("✔️")) {
+                    btn.innerHTML += " ✔️";
+                }
+            }
+        });
+    }
+}
+
+/* =========================================
+   WORD ORDER FUNCTIONS
+========================================= */
+
+function addWord(button,answerBoxId) {
+    if (button.style.display === "none") return;
+
+    let answerBox = document.getElementById(answerBoxId);
+    let newWord = document.createElement("div");
+
+    newWord.className = "selected-word";
+    newWord.innerText = button.innerText;
+
+    answerBox.appendChild(newWord);
+    button.style.display = "none";
+}
+
+function resetSentence(wordsId,answerBoxId) {
+    let container = document.getElementById(wordsId);
+
+    container.querySelectorAll(".word-btn").forEach(button => {
+        button.style.display = "inline-block";
+    });
+
+    document.getElementById(answerBoxId).innerHTML = "";
+}
+
+function checkSentence(answerBoxId,correctSentence,resultId) {
+    let answerBox = document.getElementById(answerBoxId);
+    let result = document.getElementById(resultId);
+
+    let words = answerBox.querySelectorAll(".selected-word");
+    let userSentence = "";
+
+    words.forEach(word => {
+        userSentence += word.innerText + " ";
+    });
+
+    userSentence = normalizeText(userSentence);
+    correctSentence = normalizeText(correctSentence);
+
+    answerBox.classList.remove("shake");
+
+    if (userSentence === correctSentence) {
+        result.innerHTML =
+            '<div class="confetti">'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '<span class="star">🌟</span>'+
+            '<span class="star">✨</span>'+
+            '<span class="star">⭐</span>'+
+            '</div>'+
+            '✅ أحسنت! لقد رتبت الكلمات بطريقة صحيحة.';
+
+        result.className = "result-text success-text";
+        answerBox.style.borderColor = "#8fd19e";
+        answerBox.style.background = "#eefdf3";
+    } else {
+        answerBox.classList.add("shake");
+
+        setTimeout(function() {
+            answerBox.classList.remove("shake");
+        },300);
+
+        answerBox.style.borderColor = "#ffb8b8";
+        answerBox.style.background = "#fff2f2";
+
+        result.innerHTML = "😅❌ ترتيب الكلمات غير صحيح.";
+        result.className = "result-text error-text";
+    }
+}
+
+function shuffleWords(containerId) {
+    let container = document.getElementById(containerId);
+
+    if (!container) return;
+
+    let buttons = Array.from(container.querySelectorAll(".word-btn"));
+
+    buttons.sort(() => Math.random() - 0.5);
+
+    container.innerHTML = "";
+
+    buttons.forEach(button => {
+        container.appendChild(button);
+    });
+}
+
+function toggleExamples() {
+    let box = document.getElementById("examplesBox");
+    if (!box) return;
+
+    let btn = box.previousElementSibling;
+
+    if (box.style.display === "none") {
+        box.style.display = "block";
+        btn.innerHTML = "📕 إخفاء الجمل";
+    } else {
+        box.style.display = "none";
+        btn.innerHTML = "📖 عرض الجمل";
+    }
+}
+
+/* =========================================
+   VOCABULARY DATA
+========================================= */
+
+const vocabulary = {
+
+"wakes-up": {
+    word:"wake up",
+    type:"Verb (فعل)",
+    meaning:"يستيقظ",
+    example:"I wake up at 7:00 every day.",
+    translation:"أنا أستيقظ الساعة السابعة كل يوم."
+},
+
+"every": {
+    word:"every",
+    type:"Determiner (محدد)",
+    meaning:"كل",
+    example:"She studies every day.",
+    translation:"هي تدرس كل يوم."
+},
+
+"breakfast": {
+    word:"breakfast",
+    type:"Noun (اسم)",
+    meaning:"وجبة الإفطار",
+    example:"I eat breakfast at 8:00.",
+    translation:"أنا أتناول الإفطار الساعة الثامنة."
+},
+
+"tea": {
+    word:"tea",
+    type:"Noun (اسم)",
+    meaning:"شاي",
+    example:"He drinks tea every morning.",
+    translation:"هو يشرب الشاي كل صباح."
+},
+
+"coffee": {
+    word:"coffee",
+    type:"Noun (اسم)",
+    meaning:"قهوة",
+    example:"She doesn't drink coffee.",
+    translation:"هي لا تشرب القهوة."
+},
+
+"bus": {
+    word:"bus",
+    type:"Noun (اسم)",
+    meaning:"حافلة",
+    example:"They go to school by bus.",
+    translation:"هم يذهبون إلى المدرسة بالحافلة."
+},
+
+"tv": {
+    word:"TV",
+    type:"Noun (اسم)",
+    meaning:"التلفاز",
+    example:"We watch TV every evening.",
+    translation:"نحن نشاهد التلفاز كل مساء."
+},
+
+"brush": {
+    word:"brush",
+    type:"Verb (فعل)",
+    meaning:"يفرّش / ينظّف بالفرشاة",
+    pronunciation:"/brʌʃ/",
+    pronunciationArabic:"بْرَش",
+    example:"I brush my teeth every morning.",
+    translation:"أفرّش أسناني كل صباح.",
+    grammarNote:"الفعل brush ينتهي بالحرفين sh. عندما يكون الفاعل he أو she أو it في المضارع البسيط، نضيف es إلى نهاية الفعل. لذلك تصبح brush: brushes. مثال: He brushes his teeth. (هو يفرّش أسنانه)."
+},
+
+"lives": {
+    word:"live",
+    type:"Verb (فعل)",
+    meaning:"يعيش",
+    example:"Sara lives with her family.",
+    translation:"سارة تعيش مع عائلتها."
+},
+
+"family": {
+    word:"family",
+    type:"Noun (اسم)",
+    meaning:"عائلة",
+    example:"I love my family.",
+    translation:"أنا أحب عائلتي."
+},
+
+"small-house": {
+    word:"small house",
+    type:"Noun Phrase (عبارة اسمية)",
+    meaning:"منزل صغير",
+    example:"They live in a small house.",
+    translation:"هم يعيشون في منزل صغير."
+},
+
+"brother": {
+    word:"brother",
+    type:"Noun (اسم)",
+    meaning:"أخ",
+    example:"My brother is a doctor.",
+    translation:"أخي طبيب."
+},
+
+"sisters": {
+    word:"sisters",
+    type:"Noun (اسم)",
+    meaning:"أخوات",
+    example:"She has two sisters.",
+    translation:"لديها أختان."
+},
+
+"hospital": {
+    word:"hospital",
+    type:"Noun (اسم)",
+    meaning:"مستشفى",
+    example:"He works in a hospital.",
+    translation:"هو يعمل في مستشفى."
+},
+
+"teaches": {
+    word:"teach",
+    type:"Verb (فعل)",
+    meaning:"يدرّس",
+    example:"She teaches English.",
+    translation:"هي تدرّس اللغة الإنجليزية."
+},
+
+"school": {
+    word:"school",
+    type:"Noun (اسم)",
+    meaning:"مدرسة",
+    example:"The children go to school.",
+    translation:"الأطفال يذهبون إلى المدرسة."
+},
+
+"pet": {
+    word:"pet",
+    type:"Noun (اسم)",
+    meaning:"حيوان أليف",
+    example:"Do you have a pet?",
+    translation:"هل لديك حيوان أليف؟"
+},
+
+"cat": {
+    word:"cat",
+    type:"Noun (اسم)",
+    meaning:"قطة",
+    example:"The cat is sleeping.",
+    translation:"القطة نائمة."
+},
+
+"loves": {
+    word:"love",
+    type:"Verb (فعل)",
+    meaning:"يحب",
+    example:"She loves her cat.",
+    translation:"هي تحب قطتها."
+},
+
+"eats": {
+    word:"eat",
+    type:"Verb (فعل)",
+    meaning:"يأكل",
+    example:"They eat dinner together.",
+    translation:"هم يتناولون العشاء معًا."
+},
+
+"dinner": {
+    word:"dinner",
+    type:"Noun (اسم)",
+    meaning:"العشاء",
+    example:"We have dinner at 7:00.",
+    translation:"نتناول العشاء الساعة السابعة."
+},
+
+"likes": {
+    word:"like",
+    type:"Verb (فعل)",
+    meaning:"يحب",
+    example:"Omar likes sports.",
+    translation:"عمر يحب الرياضة."
+},
+
+"sports": {
+    word:"sports",
+    type:"Noun (اسم)",
+    meaning:"الرياضة",
+    example:"Sports are good for your health.",
+    translation:"الرياضة مفيدة لصحتك."
+},
+
+"plays": {
+    word:"play",
+    type:"Verb (فعل)",
+    meaning:"يلعب",
+    example:"He plays football every Friday.",
+    translation:"هو يلعب كرة القدم كل يوم جمعة."
+},
+
+"football": {
+    word:"football",
+    type:"Noun (اسم)",
+    meaning:"كرة القدم",
+    example:"Football is my favorite sport.",
+    translation:"كرة القدم هي رياضتي المفضلة."
+},
+
+"friends": {
+    word:"friends",
+    type:"Noun (اسم)",
+    meaning:"أصدقاء",
+    example:"He plays with his friends.",
+    translation:"هو يلعب مع أصدقائه."
+},
+
+"reading": {
+    word:"reading",
+    type:"Noun (اسم)",
+    meaning:"القراءة",
+    example:"Reading is a useful hobby.",
+    translation:"القراءة هواية مفيدة."
+},
+
+"books": {
+    word:"books",
+    type:"Noun (اسم)",
+    meaning:"كتب",
+    example:"She reads many books.",
+    translation:"هي تقرأ الكثير من الكتب."
+},
+
+"watch": {
+    word:"watch",
+    type:"Verb (فعل)",
+    meaning:"يشاهد",
+    example:"They watch TV every evening.",
+    translation:"هم يشاهدون التلفاز كل مساء."
+},
+
+"swimming": {
+    word:"swimming",
+    type:"Noun (اسم)",
+    meaning:"السباحة",
+    example:"Swimming is good exercise.",
+    translation:"السباحة رياضة مفيدة."
+},
+
+"swims": {
+    word:"swim",
+    type:"Verb (فعل)",
+    meaning:"يسبح",
+    example:"He swims at the beach.",
+    translation:"هو يسبح في الشاطئ."
+},
+
+"beach": {
+    word:"beach",
+    type:"Noun (اسم)",
+    meaning:"شاطئ",
+    example:"We go to the beach in summer.",
+    translation:"نذهب إلى الشاطئ في الصيف."
+},
+
+"enjoys": {
+    word:"enjoy",
+    type:"Verb (فعل)",
+    meaning:"يستمتع",
+    example:"She enjoys reading books.",
+    translation:"هي تستمتع بقراءة الكتب."
+},
+
+"free-time": {
+    word:"free time",
+    type:"Noun Phrase (عبارة اسمية)",
+    meaning:"وقت الفراغ",
+    example:"I read in my free time.",
+    translation:"أقرأ في وقت فراغي."
+},
+
+"fun": {
+    word:"fun",
+    type:"Adjective (صفة)",
+    meaning:"ممتع",
+    example:"The game is fun.",
+    translation:"اللعبة ممتعة."
+},
+
+"student": {
+    word:"student",
+    type:"Noun (اسم)",
+    meaning:"طالب",
+    example:"Ali is a student.",
+    translation:"علي طالب."
+},
+
+"middle-school": {
+    word:"middle school",
+    type:"Noun Phrase (عبارة اسمية)",
+    meaning:"المدرسة المتوسطة",
+    example:"She studies at a middle school.",
+    translation:"هي تدرس في مدرسة متوسطة."
+},
+
+"goes": {
+    word:"go",
+    type:"Verb (فعل)",
+    meaning:"يذهب",
+    example:"He goes to school every day.",
+    translation:"هو يذهب إلى المدرسة كل يوم."
+},
+
+"sunday": {
+    word:"Sunday",
+    type:"Noun (اسم)",
+    meaning:"الأحد",
+    example:"School starts on Sunday.",
+    translation:"تبدأ المدرسة يوم الأحد."
+},
+
+"thursday": {
+    word:"Thursday",
+    type:"Noun (اسم)",
+    meaning:"الخميس",
+    example:"We finish school on Thursday.",
+    translation:"ننهي الدراسة يوم الخميس."
+},
+
+"favorite-subject": {
+    word:"favorite subject",
+    type:"Noun Phrase (عبارة اسمية)",
+    meaning:"المادة المفضلة",
+    example:"English is my favorite subject.",
+    translation:"اللغة الإنجليزية هي مادتي المفضلة."
+},
+
+"english": {
+    word:"English",
+    type:"Noun (اسم)",
+    meaning:"اللغة الإنجليزية",
+    example:"She studies English.",
+    translation:"هي تدرس اللغة الإنجليزية."
+},
+
+"learning": {
+    word:"learning",
+    type:"Noun (اسم)",
+    meaning:"التعلم",
+    example:"Learning English is fun.",
+    translation:"تعلم الإنجليزية ممتع."
+},
+
+"words": {
+    word:"words",
+    type:"Noun (اسم)",
+    meaning:"كلمات",
+    example:"I learn new words every day.",
+    translation:"أتعلم كلمات جديدة كل يوم."
+},
+
+"arrive": {
+    word:"arrive",
+    type:"Verb (فعل)",
+    meaning:"يصل",
+    example:"They arrive at school early.",
+    translation:"هم يصلون إلى المدرسة مبكرًا."
+},
+
+"late": {
+    word:"late",
+    type:"Adjective (صفة)",
+    meaning:"متأخر",
+    example:"He is never late.",
+    translation:"هو لا يتأخر أبدًا."
+},
+
+"homework": {
+    word:"homework",
+    type:"Noun (اسم)",
+    meaning:"الواجب المنزلي",
+    example:"I finish my homework before dinner.",
+    translation:"أنهي واجبي المنزلي قبل العشاء."
+},
+
+"studies": {
+    word:"study",
+    type:"Verb (فعل)",
+    meaning:"يدرس",
+    example:"He studies for one hour.",
+    translation:"هو يدرس لمدة ساعة."
+},
+
+"one-hour": {
+    word:"one hour",
+    type:"Time Expression (تعبير زمني)",
+    meaning:"ساعة واحدة",
+    example:"She studies for one hour.",
+    translation:"هي تدرس لمدة ساعة واحدة."
+},
+
+"learns": {
+    word:"learn",
+    type:"Verb (فعل)",
+    meaning:"يتعلم",
+    example:"He learns something new every day.",
+    translation:"هو يتعلم شيئًا جديدًا كل يوم."
+}
+
+};
+
+
+
+"students": {
+    word:"students",
+    type:"Noun (اسم)",
+    meaning:"الطلاب",
+    example:"The students study English every day.",
+    translation:"يدرس الطلاب اللغة الإنجليزية كل يوم."
+},
+
+"go": {
+    word:"go",
+    type:"Verb (فعل)",
+    meaning:"يذهب",
+    example:"They go to school from Sunday to Thursday.",
+    translation:"يذهبون إلى المدرسة من الأحد إلى الخميس."
+},
+
+"subjects": {
+    word:"subjects",
+    type:"Noun (اسم)",
+    meaning:"المواد الدراسية",
+    example:"My favorite subjects are English and science.",
+    translation:"موادي الدراسية المفضلة هي الإنجليزية والعلوم."
+},
+
+"maths": {
+    word:"maths",
+    type:"Noun (اسم)",
+    meaning:"الرياضيات",
+    example:"We learn maths at school.",
+    translation:"نتعلم الرياضيات في المدرسة."
+},
+
+"science": {
+    word:"science",
+    type:"Noun (اسم)",
+    meaning:"العلوم",
+    example:"Science is an interesting subject.",
+    translation:"العلوم مادة ممتعة."
+},
+
+"teacher": {
+    word:"teacher",
+    type:"Noun (اسم)",
+    meaning:"المعلم",
+    example:"Our teacher explains the lesson.",
+    translation:"معلمنا يشرح الدرس."
+},
+
+"explains": {
+    word:"explain",
+    type:"Verb (فعل)",
+    meaning:"يشرح",
+    example:"She explains the new words.",
+    translation:"هي تشرح الكلمات الجديدة."
+},
+
+"lessons": {
+    word:"lessons",
+    type:"Noun (اسم)",
+    meaning:"الدروس",
+    example:"We have three lessons today.",
+    translation:"لدينا ثلاثة دروس اليوم."
+},
+
+"helps": {
+    word:"help",
+    type:"Verb (فعل)",
+    meaning:"يساعد",
+    example:"My teacher helps me with English.",
+    translation:"معلمي يساعدني في اللغة الإنجليزية."
+},
+
+"questions": {
+    word:"questions",
+    type:"Noun (اسم)",
+    meaning:"أسئلة",
+    example:"The students ask many questions.",
+    translation:"يطرح الطلاب الكثير من الأسئلة."
+},
+
+"during": {
+    word:"during",
+    type:"Preposition (حرف جر)",
+    meaning:"أثناء / خلال",
+    example:"We don't talk during the lesson.",
+    translation:"لا نتحدث أثناء الدرس."
+},
+
+"phones": {
+    word:"phones",
+    type:"Noun (اسم)",
+    meaning:"الهواتف",
+    example:"Students should not use phones in class.",
+    translation:"لا ينبغي للطلاب استخدام الهواتف في الصف."
+},
+
+"sport": {
+    word:"sport",
+    type:"Noun (اسم)",
+    meaning:"رياضة",
+    example:"Do you play sport at school?",
+    translation:"هل تمارس الرياضة في المدرسة؟"
+},
+
+"basketball": {
+    word:"basketball",
+    type:"Noun (اسم)",
+    meaning:"كرة السلة",
+    example:"They play basketball after school.",
+    translation:"يلعبون كرة السلة بعد المدرسة."
+},
+
+"after-classes": {
+    word:"after classes",
+    type:"Time Expression (تعبير زمني)",
+    meaning:"بعد الحصص",
+    example:"We play football after classes.",
+    translation:"نلعب كرة القدم بعد الحصص."
+},
+
+"library": {
+    word:"library",
+    type:"Noun (اسم)",
+    meaning:"المكتبة",
+    example:"I read books in the library.",
+    translation:"أقرأ الكتب في المكتبة."
+},
+
+"while": {
+    word:"while",
+    type:"Conjunction (أداة ربط)",
+    meaning:"بينما",
+    example:"I read while my brother plays.",
+    translation:"أقرأ بينما يلعب أخي."
+},
+
+"others": {
+    word:"others",
+    type:"Pronoun (ضمير)",
+    meaning:"آخرون",
+    example:"Some students study, while others play.",
+    translation:"بعض الطلاب يدرسون بينما يلعب آخرون."
+},
+
+"new-things": {
+    word:"new things",
+    type:"Noun Phrase (عبارة اسمية)",
+    meaning:"أشياء جديدة",
+    example:"We learn new things every day.",
+    translation:"نتعلم أشياء جديدة كل يوم."
+}
+
+
+    
+/* =========================================
+   VOCABULARY KEYS FOR EACH READING
+========================================= */
+
+const readingVocabulary = {
+
+    "vocab-reading-1": [
+        "wakes-up",
+        "every",
+        "breakfast",
+        "tea",
+        "coffee",
+        "bus",
+        "tv",
+        "brush"
+    ],
+
+    "vocab-reading-2": [
+        "lives",
+        "family",
+        "small-house",
+        "brother",
+        "sisters",
+        "hospital",
+        "teaches",
+        "school",
+        "pet",
+        "cat",
+        "loves",
+        "every",
+        "eats",
+        "dinner"
+    ],
+
+    "vocab-reading-3": [
+        "likes",
+        "sports",
+        "plays",
+        "football",
+        "friends",
+        "reading",
+        "books",
+        "watch",
+        "tv",
+        "swimming",
+        "swims",
+        "brother",
+        "beach",
+        "enjoys",
+        "free-time",
+        "fun"
+    ],
+
+    
+"vocab-reading-4": [
+    "students",
+    "middle-school",
+    "go",
+    "subjects",
+    "maths",
+    "science",
+    "teacher",
+    "explains",
+    "lessons",
+    "helps",
+    "questions",
+    "during",
+    "phones",
+    "sport",
+    "football",
+    "basketball",
+    "after-classes",
+    "library",
+    "while",
+    "others",
+    "books",
+    "enjoys",
+    "new-things"
+]
+
+};
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(value) {
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+/* =========================================
+   CREATE VOCABULARY ITEM
+========================================= */
+
+function createVocabularyItem(item) {
+    return `
+        <article class="vocab-item">
+
+            <div class="vocab-word-row">
+                <div class="vocab-word">${escapeHTML(item.word)}</div>
+
+                <button
+                    class="pronounce-btn"
+                    type="button"
+                    data-word="${escapeHTML(item.word)}"
+                    aria-label="Listen to pronunciation"
+                    title="Listen to pronunciation"
+                >🔊</button>
+            </div>
+
+            ${item.pronunciation ? `
+                <div class="pronunciation-info">
+                    <span class="pronunciation-ipa">
+                        ${escapeHTML(item.pronunciation)}
+                    </span>
+
+                    ${item.pronunciationArabic ? `
+                        <span class="pronunciation-ar">
+                            ${escapeHTML(item.pronunciationArabic)}
+                        </span>
+                    ` : ""}
+                </div>
+            ` : ""}
+
+            <div class="vocab-meaning">
+                ${escapeHTML(item.meaning)}
+            </div>
+
+            <span class="word-type">
+                ${escapeHTML(item.type)}
+            </span>
+
+            <div class="examples">
+                <div class="example">
+                    <div class="example-en">
+                        ${escapeHTML(item.example)}
+                    </div>
+
+                    <div class="example-ar">
+                        ${escapeHTML(item.translation)}
+                    </div>
+                </div>
+            </div>
+
+            ${item.grammarNote ? `
+                <div class="grammar-note">
+                    <strong>ملاحظة نحوية</strong>
+                    <p>${escapeHTML(item.grammarNote)}</p>
+                </div>
+            ` : ""}
+
+        </article>
+    `;
+}
+
+/* =========================================
+   RENDER VOCABULARY LISTS
+========================================= */
+
+function renderVocabulary() {
+    Object.entries(readingVocabulary).forEach(([containerId,keys]) => {
+        const container = document.getElementById(containerId);
+
+        if (!container) return;
+
+        container.innerHTML = keys
+            .map(key => vocabulary[key])
+            .filter(Boolean)
+            .map(createVocabularyItem)
+            .join("");
+    });
+}
+
+renderVocabulary();
+
+/* =========================================
+   VOCABULARY COLLAPSE / EXPAND
+========================================= */
+
+function toggleVocabulary(button) {
+    const section = button.closest(".vocab-section");
+    const isOpen = section.classList.toggle("open");
+
+    button.setAttribute("aria-expanded",String(isOpen));
+
+    const label = button.querySelector(".vocab-action-label");
+
+    if (label) {
+        label.textContent = isOpen
+            ? "إخفاء المفردات"
+            : "اضغط لعرض المفردات";
+    }
+}
+
+/* =========================================
+   WORD PRONUNCIATION
+========================================= */
+
+let englishVoice = null;
+
+function loadEnglishVoice() {
+    if (!("speechSynthesis" in window)) return;
+
+    const voices = window.speechSynthesis.getVoices();
+
+    englishVoice =
+        voices.find(voice => voice.lang === "en-US") ||
+        voices.find(voice => voice.lang.startsWith("en-")) ||
+        null;
+}
+
+if ("speechSynthesis" in window) {
+    loadEnglishVoice();
+    window.speechSynthesis.onvoiceschanged = loadEnglishVoice;
+}
+
+function speakWord(word) {
+    if (!("speechSynthesis" in window)) {
+        alert("عذرًا، متصفحك لا يدعم تشغيل النطق.");
+        return;
+    }
+
+    if (!word) return;
+
+    const speech = window.speechSynthesis;
+
+    speech.cancel();
+    speech.resume();
+
+    const utterance = new SpeechSynthesisUtterance(word);
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+
+    if (!englishVoice) {
+        loadEnglishVoice();
+    }
+
+    if (englishVoice) {
+        utterance.voice = englishVoice;
+    }
+
+    speech.speak(utterance);
+}
+
+document.addEventListener("click",function(event) {
+    const button = event.target.closest(".pronounce-btn");
+
+    if (!button) return;
+
+    speakWord(button.getAttribute("data-word"));
+});
+
+/* =========================================
+   SHUFFLE WORDS - ORIGINAL CALLS
+========================================= */
+
+shuffleWords("words1");
+shuffleWords("words2");
+
+</script>
+
+<script type="module">
+import {
+    finishLesson
+} from "./js/reward.js";
+
+window.finishLessonPage = function() {
+    finishLesson(
+        "pre-intermediate-unit1-reading",
+        "📖 قراءة | Present simple",
+        "present-qw.html"
+    );
+};
+</script>
+
+</body>
+</html>
+
