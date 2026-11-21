@@ -1340,84 +1340,278 @@ opacity:.9;">
   </div>
 </div> <!-- إغلاق سكشن course -->
   
-<!-- آراء الطلاب -->
+
+
+
+<!-- ===== آراء الطلاب - ENGLIZA ACADEMY ===== -->
+
+<style>
+/* صور رسائل الطلاب */
+#reviews .review-photo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 10px auto 0;
+}
+
+/* النجوم */
+#reviews .review-card .stars {
+  text-align: center;
+  color: #FACC15;
+  font-size: 19px;
+  letter-spacing: 3px;
+  margin: 4px 0 10px;
+}
+
+/* الحفاظ على هوية البطاقات الأصلية */
+#reviews .review-card {
+  background: linear-gradient(135deg,#1e293b,#2e1065);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 0 18px rgba(37,99,235,.45);
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* شبكة الآراء */
+#reviews .reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* زر عرض المزيد */
+#reviews .reviews-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border: 1px solid rgba(250,204,21,.35);
+  border-radius: 12px;
+  background: linear-gradient(135deg,#1e293b,#2e1065);
+  color: #FACC15;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(37,99,235,.35);
+  transition: .25s ease;
+}
+
+#reviews .reviews-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(37,99,235,.6);
+}
+
+/* توافق الهواتف */
+@media (max-width:600px) {
+
+  #reviews .reviews-grid {
+    grid-template-columns: minmax(0,1fr);
+    gap: 18px;
+  }
+
+  #reviews .review-card {
+    padding: 15px;
+    min-width: 0;
+  }
+
+  #reviews .review-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  #reviews .review-card .stars {
+    font-size: 18px;
+  }
+
+  #reviews .reviews-more-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+</style>
+
 <div class="section-box">
 <div id="reviews">
 
 <h3 id="reviews-title">⭐ آراء الطلاب</h3>
 
+<!-- ===== أول خمسة آراء ظاهرة ===== -->
+
 <div class="reviews-grid" id="reviews-grid">
 
-<!-- خالد -->
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">خ</div><div><div class="name">خالد | Khalid</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">اهلاً و مرحبا مس،قبل كنت ما أفهم في الإنجليزي إلا أشياء بسيطة جدا ولما خذيت كورس معك الكورس فيه أشياء ما كنت أعرفها وبصراحة استفدت كثير معك وطبعاً الكلاس خفيف والشرح ما عليه كلام أبد.</div></div>
+  <!-- 1: الدرجة الكاملة في البرزنتيشن -->
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <img src="review-01.webp"
+         alt="تجربة طالبة في الحصول على الدرجة الكاملة"
+         class="review-photo">
+  </div>
 
-<!-- مروى البرزنتيشن -->
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">ميس  جبت في البرزنتيشن درجة كاملة الحمد لله ما توقعت في التقنية يعطو درجات كاملة خاصة في الإنجليزي الوحيدة في الكلاس  لك جزيل الشكر ما قصرتي معي أبداً في الملاحظات والنطق الله يجزيك الجنة تحمست أجيب في الباقي درجات كاملة.</div></div>
+  <!-- 2: تطور النطق والأكسنت -->
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <img src="review-02.webp"
+         alt="تجربة طالبة في تطور النطق والأكسنت"
+         class="review-photo">
+  </div>
 
-<!-- سلطان -->
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">س</div><div><div class="name">سلطان | Sultan</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">يفهم بسرعة أن في شخص يتعب عشان يوصل له المعلومة بأبسط شيء ممكن، مو من ذكاء سلطان لا لا  لأن حرفياً في شخص تعب وكافح عشان يوصل للمرحلة ذي وصار يشرح بأسهل طريقة لأي شخص يبيه ويحتاج منه يفهم كل معلومة</div></div>
+  <!-- 3: تطور المحادثة باللغة الإنجليزية -->
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <img src="review-03.webp"
+         alt="تجربة طالب في تطور المحادثة"
+         class="review-photo">
+  </div>
 
-<!-- عبدالله -->
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ع</div><div><div class="name">عبدالله | Abdullah</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">السلام عليكم الكورس صدق صدق يستاهل أي مبلغ ينطلب فيه + شكراً على المصداقية</div></div>
+  <!-- 4: تجربة المبتدئ -->
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <img src="review-04.webp"
+         alt="تجربة طالب مبتدئ مع الكورس"
+         class="review-photo">
+  </div>
+
+  <!-- 5: سهولة الشرح وتوصيل المعلومة -->
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <img src="review-05.webp"
+         alt="رأي طالب في أسلوب الشرح"
+         class="review-photo">
+  </div>
 
 </div>
 
-<!-- المخفي -->
+<!-- ===== الآراء السبعة المخفية ===== -->
+
 <div id="moreReviews" style="display:none;">
 
-<div class="reviews-grid">
+  <div class="reviews-grid">
 
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">مروى | Marwa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">٥٠٪؜ من نجاحي مس بفضلك والله. أنا كان نطقي للكلمات الكل ينتقده. مع إني كنت أحب اللغة. وظليت أمارس التحدث والحين في كل مكان الكل يمدح الأكسنت ونطقي.</div></div>
+    <!-- 6 -->
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <img src="review-06.webp"
+           alt="تجربة طالب مع الأكاديمية"
+           class="review-photo">
+    </div>
 
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ع</div><div><div class="name">علي | Ali</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">حرفيا ما في سؤال يجي ببالي إلا وتجاوبينه قبل ما أسأل. الكورس مره رهيب.</div></div>
+    <!-- 7 -->
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <img src="review-07.webp"
+           alt="رأي طالب في الإجابة عن الأسئلة"
+           class="review-photo">
+    </div>
 
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">م</div><div><div class="name">منار | Manar</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">والله تستاهل كل ريال والكورس ولا غلطة وشي رهيب من الآخر وتعليمك واضح انك تعلمي بضمير</div></div>
+    <!-- 8 -->
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <img src="review-08.webp"
+           alt="رأي طالب في قيمة الكورس"
+           class="review-photo">
+    </div>
 
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ز</div><div><div class="name">زهراء | Zahraa</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">أنا خذيت الكورس من مدح صديقتي تسنيم للكورس و تمكنك باللغة ماشاء الله 🌷</div></div>
+    <!-- 9 -->
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <img src="review-09.webp"
+           alt="تجربة طالب مع الكورس"
+           class="review-photo">
+    </div>
 
-<div class="review-card"><i class="fa-solid fa-quote-left quote-icon"></i><div class="review-header"><div class="avatar">ف</div><div><div class="name">فايزه | Faiza</div><div class="verified">✓ مشترك موثّق</div></div></div><div class="stars">★★★★★</div><div class="review-text">😭والله شكراً ما قصرتي خليتيني أحب الإنجليزي أكثر من بداية الكورس وأنا ارتحت لك وأحس في تطور أحبك أستاذة</div></div>
+    <!-- 10 -->
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <img src="review-10.webp"
+           alt="تجربة طالبة في حب اللغة والتطور"
+           class="review-photo">
+    </div>
+
+    <!-- 11 -->
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <img src="review-11.webp"
+           alt="رأي طالب في تجربته التعليمية"
+           class="review-photo">
+    </div>
+
+    <!-- 12 -->
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <img src="review-12.webp"
+           alt="تجربة طالب إضافية مع الأكاديمية"
+           class="review-photo">
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== زر عرض المزيد ===== -->
+
+<div style="text-align:center; margin:28px 0;">
+
+  <button
+    type="button"
+    class="reviews-more-btn"
+    onclick="
+      document.getElementById('moreReviews').style.display='block';
+      this.style.display='none';
+    "
+  >
+    عرض المزيد من آراء الطلاب
+    <span aria-hidden="true">↓</span>
+  </button>
 
 </div>
-</div>
-<div style="text-align:center; margin:20px 0;">
-  
-<button onclick="toggleReviews()" style="
-background:none;
-border:none;
-color:#94a3b8;
-font-size:15px;
-font-weight:600;
-cursor:pointer;
-padding:6px 10px;
-transition:.3s;
+
+<!-- ===== العبارة الختامية ===== -->
+
+<div style="
+  text-align:center;
+  margin:25px 0;
+  font-size:1.1em;
+  font-weight:bold;
+  color:#FACC15;
 ">
-
-عـرض المزيد من آراء الطلاب ⌄
-
-</button>
-
+  كن أنت القصة القادمة وابدأ رحلتك الآن 🚀⭐️
 </div>
 
-<div style="text-align:center; margin:25px 0; font-size:1.1em; font-weight:bold; color:#FACC15;">
-كن انت القصة القادمة و ابدأ رحلتك الآن 🚀⭐️
-</div>
+<!-- ===== زر الشراء ===== -->
 
 <div style="text-align:center; margin:30px 0;">
-<button onclick="buyNow()" class="btn-alt" id="reviews-cta2-btn">ابدأ الآن</button>
 
-<div class="secure-pay">
-🔒 الدفع آمن ومشفر عبر Dodo Payments
+  <button
+    onclick="buyNow()"
+    class="btn-alt"
+    id="reviews-cta2-btn"
+  >
+    ابدأ الآن
+  </button>
+
+  <div class="secure-pay">
+    🔒 الدفع آمن ومشفر عبر Dodo Payments
+  </div>
+
+  <div class="payment-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg">
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<!-- ===== نهاية آراء الطلاب ===== -->
+
   
-</div>
-
-<div class="payment-icons">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg">
-</div>
-
-</div>
-</div>
 </div>
   
 <!-- FAQ -->
