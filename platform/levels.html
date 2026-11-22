@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -498,7 +497,7 @@
       </article>
 
       <!-- PRE-INTERMEDIATE -->
-      <article id="preLevel" class="level locked">
+      <article id="preLevel" class="level">
 
         <span
           id="preBadge"
@@ -527,15 +526,14 @@
           id="preBtn"
           class="btn"
           type="button"
-          disabled
         >
-          🔒 أكمل المستوى السابق
+          ابدأ التعلم
         </button>
 
       </article>
 
       <!-- INTERMEDIATE -->
-      <article id="intermediateLevel" class="level locked">
+      <article id="intermediateLevel" class="level">
 
         <span
           id="intermediateBadge"
@@ -564,15 +562,14 @@
           id="intermediateBtn"
           class="btn"
           type="button"
-          disabled
         >
-          🔒 أكمل المستوى السابق
+          ابدأ التعلم
         </button>
 
       </article>
 
       <!-- ADVANCED -->
-      <article id="advancedLevel" class="level locked">
+      <article id="advancedLevel" class="level">
 
         <span
           id="advancedBadge"
@@ -602,9 +599,8 @@
           id="advancedBtn"
           class="btn"
           type="button"
-          disabled
         >
-          🔒 أكمل المستوى السابق
+          ابدأ التعلم
         </button>
 
       </article>
@@ -722,8 +718,7 @@
     /* LEVEL FUNCTIONS */
 
     function resetLevel(level) {
-      level.classList.remove("current", "completed");
-      level.classList.add("locked");
+      level.classList.remove("current", "completed", "locked");
     }
 
     function unlockLevel(level, button) {
@@ -797,8 +792,8 @@
         intermediateBtn,
         advancedBtn
       ].forEach(button => {
-        button.disabled = true;
-        button.textContent = "🔒 أكمل المستوى السابق";
+        button.disabled = false;
+        button.textContent = "ابدأ التعلم";
       });
 
 
