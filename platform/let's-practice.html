@@ -1,0 +1,864 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7046c8">
+<title>Reading Practice | Unit 3 - Engliza Academy</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --blue:#1f3c88;
+    --purple:#7546d8;
+    --purple-dark:#5c35b4;
+    --purple-light:#f2edff;
+    --blue-light:#edf3ff;
+    --text:#263452;
+    --muted:#71809d;
+    --border:#e7eaf4;
+    --white:#fff;
+    --green:#209b73;
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    background:
+      radial-gradient(circle at 8% 5%,rgba(164,130,255,.16),transparent 25%),
+      radial-gradient(circle at 95% 35%,rgba(111,160,255,.13),transparent 27%),
+      linear-gradient(135deg,#f7f5ff 0%,#f2f6ff 50%,#faf8ff 100%);
+    color:var(--text);
+    font-family:'Cairo',sans-serif;
+    min-height:100vh;
+}
+
+button,a{font-family:inherit}
+.page-container{width:min(100% - 32px,1050px);margin:auto;padding:25px 0 55px}
+
+.top-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:15px;margin-bottom:25px
+}
+.back-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    text-decoration:none;color:var(--blue);background:#fff;
+    border:1px solid #e5e8f4;padding:10px 19px;border-radius:30px;
+    font-weight:800;font-size:14px;
+    box-shadow:0 5px 16px rgba(39,55,105,.06);transition:.2s
+}
+.back-btn:hover{transform:translateY(-2px)}
+.academy-label{
+    color:var(--purple);font-family:'Nunito',sans-serif;
+    font-weight:900;letter-spacing:.5px;font-size:14px
+}
+
+.hero{text-align:center;padding:15px 15px 30px}
+.hero-owl{
+    width:125px;height:125px;object-fit:contain;margin-bottom:5px;
+    filter:drop-shadow(0 8px 12px rgba(91,63,161,.13))
+}
+.hero h1{
+    color:var(--blue);font-size:clamp(27px,5vw,39px);
+    line-height:1.35;margin:5px 0 8px;font-weight:900
+}
+.hero h1 span{color:var(--purple)}
+.hero p{color:var(--muted);font-size:15px;font-weight:600;margin:0}
+
+.card{
+    background:#fff;border:1px solid rgba(222,226,242,.9);
+    border-radius:23px;box-shadow:0 9px 28px rgba(43,55,103,.055)
+}
+.tip-card{
+    display:flex;align-items:center;gap:20px;padding:22px 25px;
+    margin-bottom:38px;border-right:5px solid var(--purple);
+    background:linear-gradient(110deg,#fff 0%,#f8f5ff 100%)
+}
+.tip-owl{width:92px;height:92px;object-fit:contain;flex-shrink:0}
+.tip-content h2{color:var(--purple-dark);font-size:19px;margin:0 0 8px;font-weight:900}
+.tip-content p{color:#586783;line-height:1.9;font-size:14px;margin:0}
+
+.reading-section{margin-bottom:48px}
+.section-heading{display:flex;align-items:center;gap:13px;margin:0 0 15px}
+.section-number{
+    width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;
+    border-radius:14px;background:linear-gradient(135deg,#7952dc,#5237b4);
+    color:#fff;font-family:'Nunito',sans-serif;font-size:19px;font-weight:900;
+    box-shadow:0 5px 13px rgba(105,69,199,.2)
+}
+.section-heading h2{color:var(--blue);font-size:22px;font-weight:900;margin:0}
+.section-heading p{color:var(--muted);font-size:12px;font-weight:600;margin:1px 0 0}
+
+.audio-card{
+    padding:19px 22px;margin-bottom:15px;
+    background:linear-gradient(120deg,#f0eaff 0%,#f7f4ff 55%,#edf2ff 100%);
+    border:1px solid #e1d8ff;border-radius:19px
+}
+.audio-title{
+    display:flex;align-items:center;gap:10px;color:var(--purple-dark);
+    font-weight:900;font-size:16px;margin-bottom:12px
+}
+.audio-icon{
+    width:35px;height:35px;display:grid;place-items:center;
+    border-radius:11px;background:#fff;font-size:18px
+}
+.audio-card audio{display:block;width:100%;height:43px}
+
+.reading-card{
+    padding:25px 27px;margin-bottom:17px;
+    border-top:4px solid #7b5be0;background:#fff
+}
+.reading-card-top{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:10px;margin-bottom:17px
+}
+.reading-card-top h3{color:var(--blue);font-size:19px;margin:0;font-weight:900}
+.reading-level{
+    color:var(--purple-dark);background:#f1ecff;border:1px solid #e4dbff;
+    padding:5px 12px;border-radius:20px;font-family:'Nunito',sans-serif;
+    font-size:11px;font-weight:900;white-space:nowrap
+}
+.reading-text{
+    direction:ltr;text-align:left;color:#34415d;
+    font-family:'Nunito',sans-serif;font-size:20px;line-height:2;font-weight:600;
+    overflow-wrap:break-word;white-space:pre-line
+}
+
+.vocab-section{
+    padding:20px;background:linear-gradient(145deg,#f8f6ff,#f2f6ff);
+    border:1px solid #e4e3f5;border-radius:20px
+}
+.vocab-toggle{
+    width:100%;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:0;border:0;background:transparent;color:var(--blue);
+    text-align:right;cursor:pointer
+}
+.vocab-toggle-main{display:flex;align-items:center;gap:11px;min-width:0}
+.vocab-toggle-icon{
+    width:40px;height:40px;display:grid;place-items:center;border-radius:13px;
+    background:#fff;box-shadow:0 3px 10px rgba(65,66,130,.08);
+    font-size:19px;flex-shrink:0
+}
+.vocab-toggle h3{margin:0;font-size:17px;font-weight:900}
+.vocab-toggle small{
+    display:block;color:var(--muted);font-size:11px;font-weight:600;margin-top:2px
+}
+.vocab-action-label{
+    display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+    padding:9px 13px;border-radius:12px;background:var(--purple);color:#fff;
+    font-size:12px;font-weight:800;white-space:nowrap
+}
+.vocab-content{display:none;padding-top:20px}
+.vocab-section.open .vocab-content{display:block}
+.vocab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.vocab-item{
+    background:#fff;border:1px solid #e7e4f4;border-radius:16px;
+    padding:16px;min-width:0;box-shadow:0 3px 10px rgba(46,54,100,.035)
+}
+.vocab-word-row{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:8px;margin-bottom:6px
+}
+.vocab-word{
+    direction:ltr;text-align:left;color:var(--purple-dark);
+    font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;
+    overflow-wrap:anywhere
+}
+.pronounce-btn{
+    width:34px;height:34px;flex-shrink:0;border:none;border-radius:11px;
+    background:#f0eaff;color:var(--purple-dark);cursor:pointer;font-size:16px;
+    transition:.2s
+}
+.pronounce-btn:hover{background:var(--purple);color:#fff;transform:scale(1.06)}
+.vocab-meaning{color:#53617d;font-size:13px;font-weight:800;margin-bottom:5px}
+.word-note{
+    color:#626f8a;background:#f5f6fc;border-radius:10px;
+    padding:9px 11px;font-size:12px;line-height:1.8;margin:9px 0
+}
+.examples{border-top:1px solid #edf0f7;padding-top:9px}
+.example{margin-bottom:10px}
+.example:last-child{margin-bottom:0}
+.example-en{
+    direction:ltr;text-align:left;color:#34415d;
+    font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;line-height:1.65
+}
+.example-ar{color:#7b849b;font-size:11px;line-height:1.7;margin-top:2px}
+
+/* TOO lesson card */
+.too-lesson{
+    position:relative;overflow:hidden;margin:35px 0 48px;
+    padding:27px;background:linear-gradient(145deg,#fff 0%,#f7f3ff 55%,#eff4ff 100%);
+    border:1px solid #e1dafa;border-radius:24px;
+    box-shadow:0 10px 30px rgba(75,57,135,.08)
+}
+.too-lesson:before{
+    content:"";position:absolute;width:190px;height:190px;
+    border:1px solid rgba(117,70,216,.12);border-radius:50%;
+    top:-110px;left:-55px
+}
+.too-heading{text-align:center;position:relative;margin-bottom:22px}
+.too-heading .mini-icon{
+    width:48px;height:48px;margin:0 auto 9px;display:grid;place-items:center;
+    border-radius:16px;background:#fff;font-size:24px;
+    box-shadow:0 4px 13px rgba(75,57,135,.09)
+}
+.too-heading h2{margin:0;color:var(--blue);font-size:25px;font-weight:900}
+.too-heading p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.too-intro{
+    background:#fff;border:1px solid #ebe6fa;border-radius:16px;
+    padding:15px 18px;color:#586783;font-size:14px;line-height:1.9;margin-bottom:15px
+}
+.too-part{
+    background:#fff;border:1px solid #e9e6f4;border-radius:17px;
+    padding:18px;margin-top:13px
+}
+.too-part h3{color:var(--purple-dark);font-size:18px;margin:0 0 9px;font-weight:900}
+.too-part p{color:#586783;font-size:13px;line-height:1.9;margin:7px 0}
+.too-example{
+    direction:ltr;text-align:left;background:#f7f5ff;border-radius:11px;
+    padding:10px 12px;margin:9px 0 5px;
+    font-family:'Nunito',sans-serif;color:#34415d;font-weight:800;font-size:14px
+}
+.too-translation{font-size:12px;color:#78839b;margin:0 4px 9px}
+.too-tip{
+    margin-top:14px;padding:14px 16px;background:#edf3ff;
+    border-right:4px solid #6c83d6;border-radius:12px;
+    color:#465778;font-size:13px;line-height:1.9
+}
+.too-compare{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px
+}
+.too-compare > div{
+    background:#fff;border:1px solid #e9e6f4;border-radius:14px;padding:13px
+}
+.too-compare strong{
+    display:block;color:var(--purple-dark);font-family:'Nunito',sans-serif;
+    font-size:18px;margin-bottom:5px
+}
+.too-compare p{font-size:12px;color:#65728e;line-height:1.8;margin:0}
+
+.finish-card{
+    position:relative;overflow:hidden;text-align:center;padding:33px 22px;
+    margin-top:45px;color:#fff;
+    background:linear-gradient(125deg,#5033a6 0%,#7548d4 55%,#5274d7 100%);
+    border-radius:25px;box-shadow:0 12px 28px rgba(89,59,174,.22)
+}
+.finish-card:before,.finish-card:after{
+    content:"";position:absolute;border:1px solid rgba(255,255,255,.13);
+    border-radius:50%;width:180px;height:180px
+}
+.finish-card:before{top:-100px;right:-50px}
+.finish-card:after{bottom:-120px;left:-55px}
+.finish-card h2{
+    position:relative;z-index:1;font-size:25px;margin:0 0 8px;font-weight:900
+}
+.finish-card p{
+    position:relative;z-index:1;color:rgba(255,255,255,.87);
+    font-size:14px;line-height:1.9;margin:0 auto 20px;max-width:570px
+}
+.finish-btn{
+    position:relative;z-index:1;border:none;border-radius:30px;
+    padding:13px 28px;background:#fff;color:#5b3bb1;font-size:15px;
+    font-weight:900;cursor:pointer;box-shadow:0 5px 15px rgba(32,21,72,.15);
+    transition:.2s
+}
+.finish-btn:hover{transform:translateY(-3px)}
+.footer{
+    text-align:center;color:#929bb0;font-family:'Nunito',sans-serif;
+    font-size:12px;font-weight:800;padding-top:25px
+}
+
+@media(max-width:650px){
+    .page-container{width:min(100% - 22px,1050px);padding-top:15px}
+    .top-bar{margin-bottom:15px}
+    .hero{padding-bottom:23px}
+    .hero-owl{width:105px;height:105px}
+    .hero p{font-size:13px}
+    .tip-card{padding:16px;gap:12px;margin-bottom:30px;align-items:flex-start}
+    .tip-owl{width:68px;height:68px}
+    .tip-content h2{font-size:16px}
+    .tip-content p{font-size:12px;line-height:1.85}
+    .section-heading h2{font-size:19px}
+    .section-heading p{font-size:11px}
+    .audio-card{padding:15px}
+    .reading-card{padding:19px 16px}
+    .reading-card-top h3{font-size:17px}
+    .reading-text{font-size:17px;line-height:1.95}
+    .vocab-section{padding:16px}
+    .vocab-grid{grid-template-columns:1fr;gap:10px}
+    .vocab-item{padding:14px}
+    .vocab-action-label{padding:8px 10px;font-size:11px}
+    .vocab-toggle h3{font-size:15px}
+    .too-lesson{padding:18px;margin:28px 0 38px}
+    .too-heading h2{font-size:21px}
+    .too-compare{grid-template-columns:1fr}
+    .finish-card{padding:28px 17px}
+    .finish-card h2{font-size:22px}
+}
+@media(max-width:360px){
+    .academy-label{font-size:11px}
+    .back-btn{padding:9px 13px;font-size:12px}
+    .reading-text{font-size:16px}
+    .vocab-action-label{font-size:10px;padding:7px 8px}
+}
+</style>
+</head>
+
+<body>
+<div class="page-container">
+
+    <div class="top-bar">
+        <a href="unit3.html" class="back-btn">⬅️ رجوع</a>
+        <div class="academy-label">ENGLIZA ACADEMY</div>
+    </div>
+
+    <header class="hero">
+        <img src="../okay.owl.PNG" alt="Engliza Academy Owl" class="hero-owl">
+        <h1>📖 Reading Practice | <span>Unit 3</span></h1>
+        <p>اقرأ، استمع، وتعلّم كلمات جديدة خطوة بخطوة</p>
+    </header>
+
+    <section class="card tip-card">
+        <img src="../earlo .PNG" alt="Learning Tip" class="tip-owl">
+        <div class="tip-content">
+            <h2>💡 Before You Start</h2>
+            <p>
+                ابدأ بالاستماع إلى التسجيل وأنت تتابع الكلمات مع القراءة.
+                بعد ذلك، اقرأ الفقرة بنفسك دون الاستماع. وأخيرًا، اضغط على
+                زر المفردات لتتعرف على الكلمات الجديدة ومعانيها وأمثلتها.
+                خذ وقتك في التعلّم، واستمتع بالتدريب!
+            </p>
+        </div>
+    </section>
+
+    <main id="readings-container"></main>
+
+    <section class="finish-card">
+        <h2>🎉 Great Job!</h2>
+        <p>
+            أحسنت! لقد أنهيت تدريبات القراءة والاستماع.
+            لا تنسَ مراجعة الكلمات الجديدة والاستماع إلى الفقرات مرة أخرى
+            حتى تصبح أكثر ثقة في فهم اللغة الإنجليزية.
+        </p>
+        <button class="finish-btn" onclick="completeLesson()">
+            Continue to Unit 3 Review ✨
+        </button>
+    </section>
+
+    <footer class="footer">
+        © Engliza Academy — Learn English with Confidence
+    </footer>
+</div>
+
+<script>
+const readings = [
+{
+    title:"My Family",
+    level:"Reading 1",
+    audio:"https://videos.englizaacademy.com/Tttt/Reading%20one.mp3",
+    text:`My name is Lina. I am twelve years old, and I have a small family. My father is forty-five years old, and my mother is forty. I have two brothers and one sister. My sister has a beautiful pink bag, and my brothers have blue bags. This is my father, and that is my mother. These are my brothers, and those are my grandparents. We are a very happy family.
+
+I have a grandmother and a grandfather too. My grandmother is seventy years old, and my grandfather is seventy-five. My family is not very big, but it is special. I don't have a pet, but my sister has a small cat. Do you have a big family or a small family? How many people are in your family? Maybe your family is very special too!`,
+    vocabulary:[
+        {word:"name",meaning:"اسم",examples:[
+            ["My name is Sara.","اسمي سارة."],
+            ["What is your name?","ما اسمك؟"],
+            ["Her name is Lina.","اسمها لينا."]
+        ]},
+        {word:"grandparents",meaning:"الجد والجدة / الأجداد",note:"كلمة grandparents تعني الجد والجدة معًا. أما grandfather فهو الجد، وgrandmother هي الجدة.",examples:[
+            ["My grandparents are very kind.","جدي وجدتي لطيفان جدًا."],
+            ["I love my grandparents.","أنا أحب جدي وجدتي."],
+            ["These are my grandparents.","هذان جدي وجدتي."]
+        ]},
+        {word:"years old",meaning:"سنة من العمر / يُستخدم للتحدث عن العمر",note:"نستخدم هذه العبارة عندما نتحدث عن عمر شخص. نقول year مع الرقم واحد، وyears مع الأرقام الأخرى.",examples:[
+            ["I am ten years old.","عمري عشر سنوات."],
+            ["My brother is five years old.","عمر أخي خمس سنوات."],
+            ["She is one year old.","عمرها سنة واحدة."]
+        ]},
+        {word:"special",meaning:"مميز / خاص",examples:[
+            ["You are special.","أنت مميز."],
+            ["Today is a special day.","اليوم يوم مميز."],
+            ["My family is special.","عائلتي مميزة."]
+        ]},
+        {word:"people",meaning:"أشخاص / ناس",note:"people تعني مجموعة من الأشخاص. والمفرد منها person.",examples:[
+            ["There are five people here.","هناك خمسة أشخاص هنا."],
+            ["Many people are happy.","الكثير من الناس سعداء."],
+            ["How many people are in your family?","كم شخصًا في عائلتك؟"]
+        ]},
+        {word:"pet",meaning:"حيوان أليف",examples:[
+            ["I have a small pet.","لدي حيوان أليف صغير."],
+            ["My pet is a cat.","حيواني الأليف قطة."],
+            ["Do you have a pet?","هل لديك حيوان أليف؟"]
+        ]}
+    ]
+},
+{
+    title:"My Classroom and My Day",
+    level:"Reading 2",
+    audio:"https://videos.englizaacademy.com/Tttt/Reading%20two.mp3",
+    text:`This is my classroom. It is big and beautiful. These are my books, and those are my friends' books. I have three notebooks, two pens, and five pencils. My friend Sara has four books and a new school bag. Her bag is very nice, but it is too small for her books. Our classroom has thirty students: eighteen girls and twelve boys. We are a happy class.
+
+Today is Monday. It is seven o'clock in the morning. Good morning, everyone! The afternoon is at twelve o'clock, and the evening is at six. Tonight is a special night. Tomorrow is Tuesday. There are seven days in a week and twelve months in a year. My favourite month is March. What is your favourite day? Is it Friday or Saturday? Maybe it is Friday too!`,
+    vocabulary:[
+        {word:"classroom",meaning:"الفصل الدراسي / غرفة الصف",examples:[
+            ["This is my classroom.","هذا فصلي الدراسي."],
+            ["My classroom is big.","فصلي كبير."],
+            ["The classroom is beautiful.","الفصل جميل."]
+        ]},
+        {word:"beautiful",meaning:"جميل / جميلة",examples:[
+            ["This is a beautiful bag.","هذه حقيبة جميلة."],
+            ["My school is beautiful.","مدرستي جميلة."],
+            ["The flowers are beautiful.","الزهور جميلة."]
+        ]},
+        {word:"friend",meaning:"صديق / صديقة",examples:[
+            ["Sara is my friend.","سارة صديقتي."],
+            ["He is a good friend.","هو صديق جيد."],
+            ["I have one friend.","لدي صديق واحد."]
+        ]},
+        {word:"friends",meaning:"أصدقاء / صديقات",note:"friend تعني صديقًا واحدًا، وعندما نتحدث عن أكثر من صديق نضيف s ونقول friends.",examples:[
+            ["These are my friends.","هؤلاء أصدقائي."],
+            ["My friends are happy.","أصدقائي سعداء."],
+            ["I have three friends.","لدي ثلاثة أصدقاء."]
+        ]},
+        {word:"pencil",meaning:"قلم رصاص",examples:[
+            ["This is my pencil.","هذا قلمي الرصاص."],
+            ["I have one pencil.","لدي قلم رصاص واحد."],
+            ["My pencil is blue.","قلمي الرصاص أزرق."]
+        ]},
+        {word:"pencils",meaning:"أقلام رصاص",note:"pencil تعني قلمًا واحدًا، وpencils تعني أكثر من قلم.",examples:[
+            ["I have five pencils.","لدي خمسة أقلام رصاص."],
+            ["These pencils are new.","أقلام الرصاص هذه جديدة."],
+            ["The pencils are on the table.","أقلام الرصاص على الطاولة."]
+        ]},
+        {word:"new",meaning:"جديد / جديدة",examples:[
+            ["I have a new bag.","لدي حقيبة جديدة."],
+            ["This is my new book.","هذا كتابي الجديد."],
+            ["My friend is new here.","صديقي جديد هنا."]
+        ]},
+        {word:"school bag",meaning:"حقيبة مدرسية",examples:[
+            ["My school bag is blue.","حقيبتي المدرسية زرقاء."],
+            ["This is a new school bag.","هذه حقيبة مدرسية جديدة."],
+            ["My books are in my school bag.","كتبي في حقيبتي المدرسية."]
+        ]},
+        {word:"nice",meaning:"لطيف / جميل / رائع",note:"نستخدم nice مع الأشخاص بمعنى لطيف، ونستخدمها مع الأشياء بمعنى جميل أو رائع.",examples:[
+            ["Sara is very nice.","سارة لطيفة جدًا."],
+            ["This is a nice bag.","هذه حقيبة جميلة."],
+            ["My teacher is nice.","معلمي لطيف."]
+        ]},
+        {word:"student",meaning:"طالب / طالبة",examples:[
+            ["I am a student.","أنا طالب."],
+            ["Sara is a good student.","سارة طالبة جيدة."],
+            ["He is a new student.","هو طالب جديد."]
+        ]},
+        {word:"students",meaning:"طلاب / طالبات",note:"student لطالب واحد، وstudents لأكثر من طالب.",examples:[
+            ["We are students.","نحن طلاب."],
+            ["There are ten students.","هناك عشرة طلاب."],
+            ["The students are happy.","الطلاب سعداء."]
+        ]},
+        {word:"girl",meaning:"بنت / فتاة",examples:[
+            ["She is a girl.","هي فتاة."],
+            ["The girl is ten years old.","عمر الفتاة عشر سنوات."],
+            ["I see a girl.","أرى فتاة."]
+        ]},
+        {word:"girls",meaning:"بنات / فتيات",examples:[
+            ["There are five girls.","هناك خمس فتيات."],
+            ["The girls are friends.","الفتيات صديقات."],
+            ["These girls are students.","هؤلاء الفتيات طالبات."]
+        ]},
+        {word:"boy",meaning:"ولد / فتى",examples:[
+            ["He is a boy.","هو ولد."],
+            ["The boy is happy.","الولد سعيد."],
+            ["That boy is my brother.","ذلك الولد أخي."]
+        ]},
+        {word:"boys",meaning:"أولاد / فتيان",examples:[
+            ["There are three boys.","هناك ثلاثة أولاد."],
+            ["The boys are students.","الأولاد طلاب."],
+            ["These boys are brothers.","هؤلاء الأولاد إخوة."]
+        ]},
+        {word:"class",meaning:"صف / فصل دراسي / حصة",examples:[
+            ["Our class is big.","صفنا كبير."],
+            ["I have an English class.","لدي حصة إنجليزية."],
+            ["We are a happy class.","نحن صف سعيد."]
+        ]},
+        {word:"favourite",meaning:"المفضل / المفضلة",note:"تُكتب favourite في الإنجليزية البريطانية، وfavorite في الإنجليزية الأمريكية. والمعنى واحد.",examples:[
+            ["March is my favourite month.","مارس هو شهري المفضل."],
+            ["Blue is my favourite colour.","الأزرق لوني المفضل."],
+            ["What is your favourite day?","ما يومك المفضل؟"]
+        ]}
+    ]
+},
+{
+    title:"A Birthday to Remember",
+    level:"Reading 3",
+    audio:"https://videos.englizaacademy.com/Tttt/Reading%20three.mp3",
+    text:`Today is the first of March. It is my sister's birthday. She is ten years old. She has a beautiful cake, and there are ten candles on it. My father has a big gift for her, but my mother has a small gift. The cake is very beautiful, but it is too big for our small table. We are all happy. It is a very special day for our family.
+
+Last year, my sister had a small birthday party. She had a blue dress, but she didn't have a pink dress. I had a beautiful gift for her too. I didn't have a big gift, but she was very happy. Did you have a birthday party last year? Did you have a big cake or a small cake? Maybe you had a special day too! What is your birthday month? How old are you?`,
+    vocabulary:[
+        {word:"birthday",meaning:"عيد الميلاد / يوم الميلاد",examples:[
+            ["Today is my birthday.","اليوم عيد ميلادي."],
+            ["My birthday is in March.","عيد ميلادي في شهر مارس."],
+            ["Happy birthday, Sara!","عيد ميلاد سعيد يا سارة!"]
+        ]},
+        {word:"cake",meaning:"كعكة / كيكة",examples:[
+            ["This is a birthday cake.","هذه كعكة عيد ميلاد."],
+            ["The cake is beautiful.","الكعكة جميلة."],
+            ["I have a big cake.","لدي كعكة كبيرة."]
+        ]},
+        {word:"candle",meaning:"شمعة",examples:[
+            ["This is one candle.","هذه شمعة واحدة."],
+            ["The candle is small.","الشمعة صغيرة."],
+            ["I have a pink candle.","لدي شمعة وردية."]
+        ]},
+        {word:"candles",meaning:"شموع",note:"candle تعني شمعة واحدة، وcandles تعني أكثر من شمعة.",examples:[
+            ["There are ten candles.","هناك عشر شموع."],
+            ["The candles are on the cake.","الشموع على الكعكة."],
+            ["These candles are beautiful.","هذه الشموع جميلة."]
+        ]},
+        {word:"gift",meaning:"هدية",examples:[
+            ["This is a gift for you.","هذه هدية لك."],
+            ["I have a small gift.","لدي هدية صغيرة."],
+            ["My gift is beautiful.","هديتي جميلة."]
+        ]},
+        {word:"gifts",meaning:"هدايا",examples:[
+            ["I have two gifts.","لدي هديتان."],
+            ["The gifts are for Sara.","الهدايا لسارة."],
+            ["These are birthday gifts.","هذه هدايا عيد ميلاد."]
+        ]},
+        {word:"table",meaning:"طاولة",examples:[
+            ["The cake is on the table.","الكعكة على الطاولة."],
+            ["This is a small table.","هذه طاولة صغيرة."],
+            ["The table is beautiful.","الطاولة جميلة."]
+        ]},
+        {word:"family",meaning:"عائلة / أسرة",examples:[
+            ["I love my family.","أنا أحب عائلتي."],
+            ["My family is happy.","عائلتي سعيدة."],
+            ["We are a big family.","نحن عائلة كبيرة."]
+        ]},
+        {word:"party",meaning:"حفلة",examples:[
+            ["Today is a birthday party.","اليوم حفلة عيد ميلاد."],
+            ["The party is special.","الحفلة مميزة."],
+            ["I have a small party.","لدي حفلة صغيرة."]
+        ]},
+        {word:"dress",meaning:"فستان",examples:[
+            ["She has a blue dress.","لديها فستان أزرق."],
+            ["This dress is beautiful.","هذا الفستان جميل."],
+            ["My dress is pink.","فستاني وردي."]
+        ]},
+        {word:"last",meaning:"الماضي / الأخير",note:"كلمة last لها استخدامان مهمان. عندما نقول last year أو last week نقصد السنة أو الأسبوع الماضي. وعندما نقول the last one نقصد الأخير أو آخر شيء في مجموعة.",examples:[
+            ["I was ten last year.","كان عمري عشر سنوات في السنة الماضية."],
+            ["My birthday was last week.","كان عيد ميلادي الأسبوع الماضي."],
+            ["This is the last candle.","هذه آخر شمعة."]
+        ]},
+        {word:"or",meaning:"أو",note:"نستخدم or عندما نذكر اختيارين أو أكثر، ونترك للشخص اختيار ما يريد.",examples:[
+            ["Do you want tea or water?","هل تريد الشاي أم الماء؟"],
+            ["Is your bag blue or pink?","هل حقيبتك زرقاء أم وردية؟"],
+            ["Do you have a brother or a sister?","هل لديك أخ أم أخت؟"],
+            ["Is it Friday or Saturday?","هل هو يوم الجمعة أم السبت؟"]
+        ]},
+        {word:"How old are you?",meaning:"كم عمرك؟",note:"هذا السؤال نستخدمه عندما نريد معرفة عمر شخص. ويمكنك الإجابة بقول: I am ... years old.",examples:[
+            ["How old are you? — I am twelve years old.","كم عمرك؟ — عمري اثنتا عشرة سنة."],
+            ["How old is your sister? — She is ten.","كم عمر أختك؟ — عمرها عشر سنوات."],
+            ["How old is your brother? — He is five years old.","كم عمر أخيك؟ — عمره خمس سنوات."]
+        ]}
+    ]
+}
+];
+
+/* تجهيز النصوص والبطاقات */
+function escapeHTML(value){
+    return String(value)
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;")
+      .replace(/'/g,"&#039;");
+}
+
+function highlightText(text){
+    const safe = escapeHTML(text);
+    return safe.replace(/\b(too|also)\b/gi,'<span style="color:#7546d8;background:#f0eaff;border-radius:5px;padding:0 3px;font-weight:900">$1</span>');
+}
+
+function createVocabularyItem(item){
+    const examplesHTML = item.examples.map(example=>`
+        <div class="example">
+            <div class="example-en">${escapeHTML(example[0])}</div>
+            <div class="example-ar">${escapeHTML(example[1])}</div>
+        </div>
+    `).join("");
+
+    return `
+      <article class="vocab-item">
+        <div class="vocab-word-row">
+          <div class="vocab-word">${escapeHTML(item.word)}</div>
+          <button class="pronounce-btn" type="button"
+            data-word="${escapeHTML(item.word)}"
+            aria-label="استمع إلى نطق ${escapeHTML(item.word)}"
+            title="استمع إلى النطق">🔊</button>
+        </div>
+        <div class="vocab-meaning">${escapeHTML(item.meaning)}</div>
+        ${item.note ? `<div class="word-note">${escapeHTML(item.note)}</div>` : ""}
+        <div class="examples">${examplesHTML}</div>
+      </article>
+    `;
+}
+
+function createReading(reading,index){
+    const vocabularyHTML = reading.vocabulary.map(createVocabularyItem).join("");
+
+    return `
+      <section class="reading-section">
+        <div class="section-heading">
+          <div class="section-number">${index+1}</div>
+          <div>
+            <h2>${escapeHTML(reading.title)}</h2>
+            <p>${reading.vocabulary.length} useful vocabulary items</p>
+          </div>
+        </div>
+
+        <div class="audio-card">
+          <div class="audio-title">
+            <span class="audio-icon">🎧</span>
+            <span>Listen to the Reading</span>
+          </div>
+          <audio controls preload="none">
+            <source src="${escapeHTML(reading.audio)}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <article class="card reading-card">
+          <div class="reading-card-top">
+            <h3>📖 ${escapeHTML(reading.title)}</h3>
+            <span class="reading-level">${escapeHTML(reading.level)}</span>
+          </div>
+          <div class="reading-text">${highlightText(reading.text)}</div>
+        </article>
+
+        <section class="vocab-section">
+          <button class="vocab-toggle" type="button"
+            onclick="toggleVocabulary(this)" aria-expanded="false">
+            <span class="vocab-toggle-main">
+              <span class="vocab-toggle-icon">📚</span>
+              <span>
+                <h3>Vocabulary & Expressions</h3>
+                <small>${reading.vocabulary.length} كلمات وتعبيرات مع أمثلة</small>
+              </span>
+            </span>
+            <span class="vocab-action-label">اضغط لعرض المفردات</span>
+          </button>
+          <div class="vocab-content">
+            <div class="vocab-grid">${vocabularyHTML}</div>
+          </div>
+        </section>
+      </section>
+    `;
+}
+
+/* بطاقة TOO التعليمية */
+function createTooLesson(){
+    return `
+      <section class="too-lesson">
+        <div class="too-heading">
+          <div class="mini-icon">💡</div>
+          <h2>Let's understand TOO and ALSO!</h2>
+          <p>خلّونا نفهم الكلمتين بطريقة سهلة وبأمثلة بسيطة</p>
+        </div>
+
+        <div class="too-intro">
+          هل تعرف أن كلمة <strong>TOO</strong> لها معنيان مختلفان؟
+          أحيانًا تعني «أيضًا»، وأحيانًا تعني أن الشيء أكثر من اللازم.
+          تعال نشوف الفرق!
+        </div>
+
+        <div class="too-part">
+          <h3>1. TOO = أيضاً 💜</h3>
+          <p>
+            تخيّل أن صديقك قال لك: عندي حقيبة زرقاء.
+            وأنت أيضًا عندك حقيبة زرقاء! ماذا تقول؟
+          </p>
+          <div class="too-example">I have a blue bag too.</div>
+          <div class="too-translation">أنا عندي حقيبة زرقاء أيضًا!</div>
+          <p>لاحظ أن كلمة <strong>too</strong> جاءت في نهاية الجملة.</p>
+
+          <div class="too-example">I am happy too.</div>
+          <div class="too-translation">أنا سعيدة أيضًا.</div>
+          <div class="too-example">My sister is ten years old too.</div>
+          <div class="too-translation">أختي عمرها عشر سنوات أيضًا.</div>
+          <div class="too-example">I like English too.</div>
+          <div class="too-translation">أنا أحب الإنجليزية أيضًا.</div>
+        </div>
+
+        <div class="too-part">
+          <h3>2. TOO = أكثر من اللازم 🌟</h3>
+          <p>
+            أحيانًا نستخدم <strong>too</strong> عندما يكون الشيء زائدًا عن الحد
+            أو أكثر مما نريد.
+          </p>
+          <p>
+            تخيّل أن حقيبتك صغيرة جدًا، وكتبك لا تناسبها.
+            يمكنك أن تقول:
+          </p>
+          <div class="too-example">The bag is too small.</div>
+          <div class="too-translation">الحقيبة صغيرة أكثر من اللازم!</div>
+
+          <div class="too-example">The cake is too big.</div>
+          <div class="too-translation">الكعكة كبيرة أكثر من اللازم.</div>
+          <div class="too-example">The water is too hot.</div>
+          <div class="too-translation">الماء ساخن أكثر من اللازم.</div>
+          <div class="too-example">This bag is too small.</div>
+          <div class="too-translation">هذه الحقيبة صغيرة أكثر من اللازم.</div>
+
+          <div class="too-tip">
+            <strong>كيف أعرف المعنى؟</strong><br>
+            إذا جاءت too في نهاية الجملة، فغالبًا معناها «أيضًا».
+            وإذا جاءت قبل كلمة تصف شيئًا مثل big أو small أو hot،
+            فغالبًا معناها «أكثر من اللازم».
+            اقرأ الجملة كاملة حتى تعرف المقصود!
+          </div>
+        </div>
+
+        <div class="too-part">
+          <h3>3. What about ALSO? 😊</h3>
+          <p>
+            كلمة <strong>also</strong> معناها أيضًا «أيضًا»!
+            يعني عندنا كلمتان يمكن أن نستخدمهما للتعبير عن الفكرة نفسها:
+            too وalso.
+          </p>
+
+          <div class="too-example">I like English too.</div>
+          <div class="too-translation">أنا أحب الإنجليزية أيضًا.</div>
+          <div class="too-example">I also like English.</div>
+          <div class="too-translation">أنا أيضًا أحب الإنجليزية.</div>
+
+          <p>المعنى في الجملتين واحد تقريبًا، لكن مكان الكلمة مختلف.</p>
+
+          <div class="too-example">I also have a sister.</div>
+          <div class="too-translation">لدي أخت أيضًا.</div>
+          <div class="too-example">Sara is also happy.</div>
+          <div class="too-translation">سارة سعيدة أيضًا.</div>
+          <div class="too-example">My father also has a blue car.</div>
+          <div class="too-translation">والدي لديه سيارة زرقاء أيضًا.</div>
+        </div>
+
+        <div class="too-part">
+          <h3>طيب، كيف أختار بين TOO و ALSO؟</h3>
+          <p>
+            خلّها سهلة! إذا استخدمت <strong>too</strong> بمعنى «أيضًا»،
+            فغالبًا تضعها في نهاية الجملة.
+            أما <strong>also</strong> فنضعها عادةً في وسط الجملة،
+            مثل الأمثلة التي رأيناها.
+          </p>
+          <div class="too-compare">
+            <div>
+              <strong>TOO</strong>
+              <p>تأتي غالبًا في نهاية الجملة.</p>
+              <div class="too-example">I am happy too.</div>
+            </div>
+            <div>
+              <strong>ALSO</strong>
+              <p>تأتي غالبًا في وسط الجملة.</p>
+              <div class="too-example">I am also happy.</div>
+            </div>
+          </div>
+          <div class="too-tip">
+            تذكّر: كلمة <strong>too</strong> قد تعني «أيضًا»، وقد تعني
+            «أكثر من اللازم». أما <strong>also</strong> فتعني «أيضًا».
+            لا تقلق، مع الأمثلة والممارسة ستصبح الفكرة سهلة!
+          </div>
+        </div>
+      </section>
+    `;
+}
+
+/* عرض القراءات وإضافة بطاقة TOO بعد القراءة الأولى */
+const container = document.getElementById("readings-container");
+
+container.innerHTML = readings.map((reading,index)=>{
+    let html = createReading(reading,index);
+    if(index===0) html += createTooLesson();
+    return html;
+}).join("");
+
+/* فتح وإغلاق المفردات */
+function toggleVocabulary(button){
+    const section = button.closest(".vocab-section");
+    const isOpen = section.classList.toggle("open");
+    button.setAttribute("aria-expanded",String(isOpen));
+
+    const label = button.querySelector(".vocab-action-label");
+    if(label){
+        label.textContent = isOpen
+          ? "إخفاء المفردات"
+          : "اضغط لعرض المفردات";
+    }
+}
+
+/* نطق الكلمات */
+let englishVoice = null;
+
+function loadEnglishVoice(){
+    if(!("speechSynthesis" in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    englishVoice =
+      voices.find(voice=>voice.lang==="en-US") ||
+      voices.find(voice=>voice.lang.startsWith("en-")) ||
+      null;
+}
+
+if("speechSynthesis" in window){
+    loadEnglishVoice();
+    window.speechSynthesis.onvoiceschanged = loadEnglishVoice;
+}
+
+function speakWord(word){
+    if(!("speechSynthesis" in window)){
+        alert("عذرًا، متصفحك لا يدعم تشغيل النطق.");
+        return;
+    }
+    if(!word) return;
+
+    const speech = window.speechSynthesis;
+    speech.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "en-US";
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+
+    if(!englishVoice) loadEnglishVoice();
+    if(englishVoice) utterance.voice = englishVoice;
+
+    speech.speak(utterance);
+}
+
+document.addEventListener("click",function(event){
+    const button = event.target.closest(".pronounce-btn");
+    if(!button) return;
+    speakWord(button.getAttribute("data-word"));
+});
+
+/* الانتقال إلى مراجعة الوحدة الثالثة */
+function completeLesson(){
+    if(typeof window.finishLesson === "function"){
+        window.finishLesson(
+            "unit3-reading-practice",
+            "Unit 3 | Reading Practice",
+            "unit3-review.html"
+        );
+    }else{
+        window.location.href = "unit3-review.html";
+    }
+}
+</script>
+
+<script type="module">
+import "./js/reward.js";
+</script>
+
+</body>
+</html>
