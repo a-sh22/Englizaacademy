@@ -1,0 +1,1554 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7046c8">
+<title>Reading & Listening | Beginner Unit 1 - Engliza Academy</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --blue: #1f3c88;
+    --purple: #7546d8;
+    --purple-dark: #5c35b4;
+    --purple-light: #f2edff;
+    --blue-light: #edf3ff;
+    --text: #263452;
+    --muted: #71809d;
+    --border: #e7eaf4;
+    --white: #ffffff;
+    --green: #209b73;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        radial-gradient(circle at 8% 5%, rgba(164, 130, 255, .16), transparent 25%),
+        radial-gradient(circle at 95% 35%, rgba(111, 160, 255, .13), transparent 27%),
+        linear-gradient(135deg, #f7f5ff 0%, #f2f6ff 50%, #faf8ff 100%);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    min-height: 100vh;
+}
+
+button, audio {
+    font-family: inherit;
+}
+
+.page-container {
+    width: min(100% - 32px, 1050px);
+    margin: 0 auto;
+    padding: 25px 0 55px;
+}
+
+/* Top bar */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--blue);
+    background: white;
+    border: 1px solid #e5e8f4;
+    padding: 10px 19px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 5px 16px rgba(39, 55, 105, .06);
+    transition: .2s;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(39, 55, 105, .12);
+}
+
+.academy-label {
+    color: var(--purple);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: .5px;
+    font-size: 14px;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 15px 15px 30px;
+}
+
+.hero-owl {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 8px 12px rgba(91, 63, 161, .13));
+}
+
+.hero h1 {
+    color: var(--blue);
+    font-size: clamp(27px, 5vw, 39px);
+    line-height: 1.35;
+    margin: 5px 0 8px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* General cards */
+
+.card {
+    background: var(--white);
+    border: 1px solid rgba(222, 226, 242, .9);
+    border-radius: 23px;
+    box-shadow: 0 9px 28px rgba(43, 55, 103, .055);
+}
+
+/* Before you start */
+
+.tip-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 25px;
+    margin-bottom: 42px;
+    border: 1px solid #d8ccff;
+    border-right: 6px solid var(--purple);
+    background:
+        radial-gradient(circle at 95% 5%, rgba(117, 70, 216, .13), transparent 32%),
+        linear-gradient(120deg, #ffffff 0%, #f3edff 52%, #edf3ff 100%);
+    box-shadow: 0 10px 28px rgba(91, 62, 170, .11);
+    overflow: hidden;
+}
+
+.tip-owl {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 5px 9px rgba(91, 63, 161, .12));
+}
+
+.tip-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.tip-heading-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.tip-content h2 {
+    color: var(--purple-dark);
+    font-size: 21px;
+    margin: 0;
+    font-weight: 900;
+}
+
+.tip-tag {
+    display: inline-block;
+    padding: 4px 11px;
+    border-radius: 20px;
+    background: #e4d9ff;
+    color: #5936ad;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.tip-intro {
+    color: #465575;
+    line-height: 1.9;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
+.steps-list {
+    display: grid;
+    gap: 10px;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 11px 13px;
+    border: 1px solid rgba(117, 70, 216, .12);
+    border-radius: 14px;
+    background: rgba(255,255,255,.83);
+}
+
+.step-number {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: white;
+    background: linear-gradient(135deg, #8058e3, #5937b6);
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    box-shadow: 0 4px 9px rgba(91, 55, 182, .18);
+}
+
+.step-text {
+    color: #465575;
+    font-size: 13px;
+    line-height: 1.8;
+    padding-top: 2px;
+}
+
+.step-text strong {
+    display: block;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 1px;
+}
+
+.tip-reminder {
+    margin-top: 14px;
+    padding: 11px 13px;
+    border-radius: 13px;
+    background: #e8e0ff;
+    color: #51339e;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.8;
+}
+
+/* Reading section */
+
+.reading-section {
+    margin-bottom: 48px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 0 0 15px;
+}
+
+.section-number {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7952dc, #5237b4);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 19px;
+    font-weight: 900;
+    box-shadow: 0 5px 13px rgba(105, 69, 199, .2);
+}
+
+.section-heading h2 {
+    color: var(--blue);
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 1px 0 0;
+}
+
+/* Audio card */
+
+.audio-card {
+    padding: 19px 22px;
+    margin-bottom: 15px;
+    background: linear-gradient(120deg, #f0eaff 0%, #f7f4ff 55%, #edf2ff 100%);
+    border: 1px solid #e1d8ff;
+    border-radius: 19px;
+}
+
+.audio-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--purple-dark);
+    font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.audio-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: white;
+    font-size: 18px;
+}
+
+.audio-card audio {
+    display: block;
+    width: 100%;
+    height: 43px;
+    border-radius: 30px;
+}
+
+/* Reading card */
+
+.reading-card {
+    padding: 25px 27px;
+    margin-bottom: 17px;
+    border-top: 4px solid #7b5be0;
+    background: white;
+}
+
+.reading-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.reading-card-top h3 {
+    color: var(--blue);
+    font-size: 19px;
+    margin: 0;
+    font-weight: 900;
+}
+
+.reading-level {
+    color: var(--purple-dark);
+    background: #f1ecff;
+    border: 1px solid #e4dbff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.reading-text {
+    direction: ltr;
+    text-align: left;
+    color: #34415d;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 600;
+    overflow-wrap: break-word;
+}
+
+.reading-text p {
+    margin: 0 0 12px;
+}
+
+.reading-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Vocabulary */
+
+.vocab-section {
+    padding: 20px;
+    background: linear-gradient(145deg, #f8f6ff, #f2f6ff);
+    border: 1px solid #e4e3f5;
+    border-radius: 20px;
+}
+
+.vocab-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--blue);
+    text-align: right;
+    cursor: pointer;
+}
+
+.vocab-toggle-main {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+
+.vocab-toggle-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 3px 10px rgba(65, 66, 130, .08);
+    font-size: 19px;
+    flex-shrink: 0;
+}
+
+.vocab-toggle h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.vocab-toggle small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.vocab-action-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: var(--purple);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(92, 53, 180, .15);
+    transition: .2s;
+}
+
+.vocab-toggle:hover .vocab-action-label {
+    background: var(--purple-dark);
+    transform: translateY(-1px);
+}
+
+.vocab-content {
+    display: none;
+    padding-top: 20px;
+}
+
+.vocab-section.open .vocab-content {
+    display: block;
+}
+
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.vocab-item {
+    background: white;
+    border: 1px solid #e7e4f4;
+    border-radius: 16px;
+    padding: 16px;
+    min-width: 0;
+    box-shadow: 0 3px 10px rgba(46, 54, 100, .035);
+}
+
+.vocab-word-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.vocab-word {
+    direction: ltr;
+    text-align: left;
+    color: var(--purple-dark);
+    font-family: 'Nunito', sans-serif;
+    font-size: 19px;
+    font-weight: 900;
+    overflow-wrap: anywhere;
+}
+
+.pronounce-btn {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 11px;
+    background: #f0eaff;
+    color: var(--purple-dark);
+    cursor: pointer;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.pronounce-btn:hover {
+    background: var(--purple);
+    color: white;
+    transform: scale(1.06);
+}
+
+.vocab-meaning {
+    color: #53617d;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.word-type {
+    display: inline-block;
+    color: #65728e;
+    background: #f2f5fb;
+    border-radius: 7px;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    margin-bottom: 11px;
+}
+
+.word-note {
+    color: #55418d;
+    background: #f5f1ff;
+    border-right: 3px solid #9a7be8;
+    border-radius: 8px;
+    padding: 8px 9px;
+    margin: 0 0 10px;
+    font-size: 11px;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+.examples {
+    border-top: 1px solid #edf0f7;
+    padding-top: 9px;
+}
+
+.example {
+    margin-bottom: 10px;
+}
+
+.example:last-child {
+    margin-bottom: 0;
+}
+
+.example-en {
+    direction: ltr;
+    text-align: left;
+    color: #34415d;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.example-ar {
+    color: #7b849b;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 2px;
+}
+
+/* Final card */
+
+.finish-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 33px 22px;
+    margin-top: 45px;
+    color: white;
+    background: linear-gradient(125deg, #5033a6 0%, #7548d4 55%, #5274d7 100%);
+    border-radius: 25px;
+    box-shadow: 0 12px 28px rgba(89, 59, 174, .22);
+}
+
+.finish-card::before,
+.finish-card::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+
+.finish-card::before {
+    top: -100px;
+    right: -50px;
+}
+
+.finish-card::after {
+    bottom: -120px;
+    left: -55px;
+}
+
+.finish-card h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 25px;
+    margin: 0 0 8px;
+    font-weight: 900;
+}
+
+.finish-card p {
+    position: relative;
+    z-index: 1;
+    color: rgba(255,255,255,.9);
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0 auto 20px;
+    max-width: 570px;
+}
+
+.finish-btn {
+    position: relative;
+    z-index: 1;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 28px;
+    background: white;
+    color: #5b3bb1;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(32, 21, 72, .15);
+    transition: .2s;
+}
+
+.finish-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(32, 21, 72, .2);
+}
+
+.footer {
+    text-align: center;
+    color: #929bb0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    padding-top: 25px;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+    .page-container {
+        width: min(100% - 22px, 1050px);
+        padding-top: 15px;
+    }
+
+    .top-bar {
+        margin-bottom: 15px;
+    }
+
+    .hero {
+        padding-bottom: 23px;
+    }
+
+    .hero-owl {
+        width: 105px;
+        height: 105px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .tip-card {
+        padding: 16px;
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .tip-owl {
+        width: 65px;
+        height: 65px;
+    }
+
+    .tip-content h2 {
+        font-size: 17px;
+    }
+
+    .tip-intro {
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .step-item {
+        padding: 9px;
+        gap: 9px;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .step-text {
+        font-size: 11px;
+    }
+
+    .step-text strong {
+        font-size: 12px;
+    }
+
+    .tip-reminder {
+        font-size: 11px;
+    }
+
+    .section-heading h2 {
+        font-size: 19px;
+    }
+
+    .section-heading p {
+        font-size: 11px;
+    }
+
+    .audio-card {
+        padding: 15px;
+    }
+
+    .reading-card {
+        padding: 19px 16px;
+    }
+
+    .reading-card-top h3 {
+        font-size: 17px;
+    }
+
+    .reading-text {
+        font-size: 17px;
+        line-height: 1.95;
+    }
+
+    .vocab-section {
+        padding: 16px;
+    }
+
+    .vocab-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .vocab-item {
+        padding: 14px;
+    }
+
+    .vocab-action-label {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .vocab-toggle h3 {
+        font-size: 15px;
+    }
+
+    .finish-card {
+        padding: 28px 17px;
+    }
+
+    .finish-card h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 390px) {
+    .tip-card {
+        display: block;
+    }
+
+    .tip-owl {
+        float: left;
+        margin: 0 0 8px 10px;
+    }
+
+    .tip-heading-row {
+        gap: 6px;
+    }
+
+    .tip-content h2 {
+        font-size: 16px;
+    }
+
+    .tip-tag {
+        font-size: 9px;
+    }
+
+    .tip-intro {
+        clear: both;
+    }
+
+    .reading-text {
+        font-size: 16px;
+    }
+
+    .academy-label {
+        font-size: 11px;
+    }
+
+    .back-btn {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="unit1.html" class="back-btn">⬅️ رجوع</a>
+        <div class="academy-label">ENGLIZA ACADEMY</div>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <img src="../okay.owl.PNG" alt="Engliza Academy Owl" class="hero-owl">
+        <h1>📖 Reading & Listening | <span>My First Readings</span></h1>
+        <p>تدرّب على قراءة الجمل والاستماع إليها باستخدام ما تعلمته في الوحدة الأولى</p>
+    </header>
+
+    <!-- Before you start -->
+    <section class="card tip-card">
+
+        <div class="tip-content">
+            <div class="tip-heading-row">
+                <h2>💡 Before You Start</h2>
+                <span class="tip-tag">Your Reading Guide</span>
+            </div>
+
+            <p class="tip-intro">
+                لا تقلق إذا لم تفهم كل كلمة في الفقرات. لا يُشترط أن تفهم النص بالكامل؛
+                الهدف هو التدرب على ما تعلمته في هذه الوحدة من خلال القراءة والاستماع.
+                اتبع هذه الخطوات:
+            </p>
+
+            <div class="steps-list">
+
+                <div class="step-item">
+                    <span class="step-number">01</span>
+                    <div class="step-text">
+                        <strong>استمع واقرأ 🎧</strong>
+                        شغّل التسجيل وتابع الكلمات بعينيك أثناء الاستماع.
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-number">02</span>
+                    <div class="step-text">
+                        <strong>كرّر التدريب 🔁</strong>
+                        استمع إلى الفقرة واقرأها أكثر من مرة حتى تصبح أكثر ألفة لديك.
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-number">03</span>
+                    <div class="step-text">
+                        <strong>تعلّم المفردات 📚</strong>
+                        افتح ركن المفردات، وتعرّف على الكلمات الجديدة ومعانيها وأمثلتها.
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-number">04</span>
+                    <div class="step-text">
+                        <strong>استمع مرة أخرى 🌟</strong>
+                        بعد تعلّم المفردات، استمع إلى الفقرة مجددًا ولاحظ كيف أصبحت تفهم كلمات أكثر.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tip-reminder">
+                تذكّر: لا تخف من الكلمات التي لا تعرفها. أنت هنا لتتعلّم وتتدرّب، خطوة بخطوة. 💜
+            </div>
+        </div>
+    </section>
+
+    <main id="readings-container"></main>
+
+    <!-- Finish -->
+    <section class="finish-card">
+        <h2>🎉 Great Job!</h2>
+        <p>
+            لقد أنهيت تدريبات القراءة والاستماع في الوحدة الأولى.
+            استمر في الممارسة، وكن فخورًا بكل خطوة تخطوها في رحلتك لتعلّم الإنجليزية.
+        </p>
+        <button class="finish-btn" type="button" onclick="completeLesson()">
+            Complete Lesson ✨
+        </button>
+    </section>
+
+    <footer class="footer">
+        © Engliza Academy — Learn English with Confidence
+    </footer>
+
+</div>
+
+<script>
+/* =========================================
+   READING PARAGRAPHS AND AUDIO LINKS
+========================================= */
+
+const readings = [
+
+{
+    title: "My Family",
+    level: "Reading 1",
+    audio: "https://videos.englizaacademy.com/Tttt/My%20family%20.mp3",
+
+    paragraphs: [
+        "My name is Sara. I am nine years old. I am happy.",
+        "My father is tall. His name is Ali. My mother is kind. Her name is Mona.",
+        "My brother is young. My sister is beautiful.",
+        "We are a small family. Our home is beautiful. It is clean. My old family photo is beautiful, too. They are my family, and I am happy with them."
+    ],
+
+    vocabulary: [
+
+        {
+            word: "old",
+            meaning: "قديم / كبير في السن",
+            type: "Adjective",
+            note: "تُستخدم old لوصف شيء قديم، أو شخص كبير في السن. ويتحدد المعنى حسب الجملة.",
+            examples: [
+                ["My old bag is blue.", "حقيبتي القديمة زرقاء."],
+                ["My father is old.", "أبي كبير في السن."]
+            ]
+        },
+
+        {
+            word: "happy",
+            meaning: "سعيد / سعيدة",
+            type: "Adjective",
+            examples: [
+                ["I am happy.", "أنا سعيدة."],
+                ["She is happy.", "هي سعيدة."],
+                ["We are happy.", "نحن سعداء."]
+            ]
+        },
+
+        {
+            word: "name",
+            meaning: "اسم",
+            type: "Noun",
+            examples: [
+                ["My name is Sara.", "اسمي سارة."],
+                ["His name is Ali.", "اسمه علي."],
+                ["What is your name?", "ما اسمك؟"]
+            ]
+        },
+
+        {
+            word: "mother",
+            meaning: "أم",
+            type: "Noun",
+            examples: [
+                ["My mother is kind.", "أمي لطيفة."],
+                ["Her mother is beautiful.", "أمها جميلة."]
+            ]
+        },
+
+        {
+            word: "father",
+            meaning: "أب",
+            type: "Noun",
+            examples: [
+                ["My father is tall.", "أبي طويل."],
+                ["His father is kind.", "أبوه لطيف."]
+            ]
+        },
+
+        {
+            word: "sister",
+            meaning: "أخت",
+            type: "Noun",
+            examples: [
+                ["My sister is young.", "أختي صغيرة في السن."],
+                ["Her sister is beautiful.", "أختها جميلة."]
+            ]
+        },
+
+        {
+            word: "young",
+            meaning: "صغير في السن / شاب",
+            type: "Adjective",
+            examples: [
+                ["My brother is young.", "أخي صغير في السن."],
+                ["She is young.", "هي صغيرة في السن."]
+            ]
+        },
+
+        {
+            word: "beautiful",
+            meaning: "جميل / جميلة",
+            type: "Adjective",
+            examples: [
+                ["My mother is beautiful.", "أمي جميلة."],
+                ["Our home is beautiful.", "منزلنا جميل."],
+                ["It is a beautiful photo.", "إنها صورة جميلة."]
+            ]
+        },
+
+        {
+            word: "family",
+            meaning: "عائلة / أسرة",
+            type: "Noun",
+            examples: [
+                ["My family is small.", "عائلتي صغيرة."],
+                ["We are a happy family.", "نحن عائلة سعيدة."]
+            ]
+        }
+
+    ]
+},
+
+{
+    title: "My Old Classroom",
+    level: "Reading 2",
+    audio: "https://videos.englizaacademy.com/Tttt/My%20old%20classroom.mp3",
+
+    paragraphs: [
+        "My old classroom was small. It was clean and beautiful.",
+        "My teacher was kind. She was happy. I was happy too.",
+        "My classmates were nice. They were young. We were a happy class.",
+        "Our school was beautiful. It was a special place for us."
+    ],
+
+    vocabulary: [
+
+        {
+            word: "classroom",
+            meaning: "فصل دراسي / غرفة الصف",
+            type: "Noun",
+            examples: [
+                ["My classroom is clean.", "فصلي نظيف."],
+                ["Our classroom is beautiful.", "فصلنا جميل."]
+            ]
+        },
+
+        {
+            word: "clean",
+            meaning: "نظيف",
+            type: "Adjective",
+            examples: [
+                ["My room is clean.", "غرفتي نظيفة."],
+                ["The classroom is clean.", "الفصل نظيف."]
+            ]
+        },
+
+        {
+            word: "beautiful",
+            meaning: "جميل / جميلة",
+            type: "Adjective",
+            examples: [
+                ["My school is beautiful.", "مدرستي جميلة."],
+                ["Her classroom is beautiful.", "فصلها جميل."]
+            ]
+        },
+
+        {
+            word: "teacher",
+            meaning: "معلّم / معلّمة",
+            type: "Noun",
+            examples: [
+                ["My teacher is kind.", "معلمتي لطيفة."],
+                ["He is a good teacher.", "هو معلم جيد."]
+            ]
+        },
+
+        {
+            word: "kind",
+            meaning: "لطيف / طيب",
+            type: "Adjective",
+            examples: [
+                ["My mother is kind.", "أمي لطيفة."],
+                ["Our teacher is kind.", "معلمتنا لطيفة."]
+            ]
+        },
+
+        {
+            word: "classmate",
+            meaning: "زميل / زميلة في الصف",
+            type: "Noun",
+            note: "المفرد هو classmate، والجمع هو classmates. نضيف s عند الحديث عن أكثر من زميل واحد.",
+            examples: [
+                ["Ali is my classmate.", "علي زميلي في الصف."],
+                ["My classmates are nice.", "زملائي في الصف لطفاء."]
+            ]
+        },
+
+        {
+            word: "classmates",
+            meaning: "زملاء / زميلات في الصف",
+            type: "Plural Noun",
+            note: "هي صيغة الجمع من classmate، وتُستخدم عند الحديث عن أكثر من زميل أو زميلة.",
+            examples: [
+                ["My classmates are young.", "زملائي في الصف صغار في السن."],
+                ["We are classmates.", "نحن زملاء في الصف."]
+            ]
+        },
+
+        {
+            word: "nice",
+            meaning: "لطيف / جميل",
+            type: "Adjective",
+            examples: [
+                ["My friend is nice.", "صديقي لطيف."],
+                ["They are nice.", "هم لطفاء."]
+            ]
+        },
+
+        {
+            word: "young",
+            meaning: "صغير في السن / شاب",
+            type: "Adjective",
+            examples: [
+                ["The students are young.", "الطلاب صغار في السن."],
+                ["My teacher is young.", "معلمتي شابة."]
+            ]
+        },
+
+        {
+            word: "class",
+            meaning: "صف / فصل / حصة دراسية",
+            type: "Noun",
+            note: "قد تعني class الصف الذي ينتمي إليه الطلاب، أو الحصة الدراسية حسب السياق.",
+            examples: [
+                ["We are a happy class.", "نحن صف سعيد."],
+                ["My English class is good.", "حصتي الإنجليزية جيدة."]
+            ]
+        },
+
+        {
+            word: "school",
+            meaning: "مدرسة",
+            type: "Noun",
+            examples: [
+                ["My school is big.", "مدرستي كبيرة."],
+                ["Our school is beautiful.", "مدرستنا جميلة."]
+            ]
+        },
+
+        {
+            word: "special",
+            meaning: "مميز / خاص",
+            type: "Adjective",
+            examples: [
+                ["You are special.", "أنت مميز."],
+                ["It is a special place.", "إنه مكان مميز."]
+            ]
+        },
+
+        {
+            word: "place",
+            meaning: "مكان",
+            type: "Noun",
+            examples: [
+                ["My school is a nice place.", "مدرستي مكان جميل."],
+                ["This is a special place.", "هذا مكان مميز."]
+            ]
+        }
+
+    ]
+},
+
+{
+    title: "My Friend and Me",
+    level: "Reading 3",
+    audio: "https://videos.englizaacademy.com/Tttt/My%20friend%20and%20me.mp3",
+
+    paragraphs: [
+        "My name is Adam. I am ten years old. My friend is Omar. He is tall, and I am short.",
+        "His bag is blue. My bag is red. Our teacher is kind. Her name is Sara. She is beautiful.",
+        "We are good friends. Our classroom is clean. It is beautiful.",
+        "Yesterday, we were at school. I was happy, and Omar was happy too. Our teacher was there. She was kind. We were together."
+    ],
+
+    vocabulary: [
+
+        {
+            word: "years",
+            meaning: "سنوات",
+            type: "Plural Noun",
+            note: "المفرد هو year ويعني سنة، والجمع years ويعني سنوات. نستخدم years عند الحديث عن العمر مع الأرقام الأكبر من واحد.",
+            examples: [
+                ["I am ten years old.", "عمري عشر سنوات."],
+                ["She is two years old.", "عمرها سنتان."]
+            ]
+        },
+
+        {
+            word: "bag",
+            meaning: "حقيبة",
+            type: "Noun",
+            examples: [
+                ["My bag is red.", "حقيبتي حمراء."],
+                ["His bag is blue.", "حقيبته زرقاء."],
+                ["Her bag is beautiful.", "حقيبتها جميلة."]
+            ]
+        },
+
+        {
+            word: "blue",
+            meaning: "أزرق / زرقاء",
+            type: "Adjective",
+            examples: [
+                ["My bag is blue.", "حقيبتي زرقاء."],
+                ["The sky is blue.", "السماء زرقاء."]
+            ]
+        },
+
+        {
+            word: "together",
+            meaning: "معًا",
+            type: "Adverb",
+            examples: [
+                ["We are together.", "نحن معًا."],
+                ["They are happy together.", "هم سعداء معًا."]
+            ]
+        },
+
+        {
+            word: "yesterday",
+            meaning: "أمس",
+            type: "Adverb of Time",
+            note: "نستخدم yesterday للحديث عن اليوم السابق. وغالبًا تأتي مع was وwere عند الحديث عن الماضي.",
+            examples: [
+                ["I was at home yesterday.", "كنت في المنزل أمس."],
+                ["We were at school yesterday.", "كنا في المدرسة أمس."]
+            ]
+        }
+
+    ]
+}
+
+];
+
+
+/* =========================================
+   SAFE HTML
+========================================= */
+
+function escapeHTML(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =========================================
+   VOCABULARY HTML
+========================================= */
+
+function createVocabularyItem(item) {
+
+    const examplesHTML = item.examples.map(example => `
+        <div class="example">
+            <div class="example-en">${escapeHTML(example[0])}</div>
+            <div class="example-ar">${escapeHTML(example[1])}</div>
+        </div>
+    `).join("");
+
+    const noteHTML = item.note
+        ? `<div class="word-note">${escapeHTML(item.note)}</div>`
+        : "";
+
+    return `
+        <article class="vocab-item">
+
+            <div class="vocab-word-row">
+                <div class="vocab-word">${escapeHTML(item.word)}</div>
+
+                <button
+                    class="pronounce-btn"
+                    type="button"
+                    data-word="${escapeHTML(item.word)}"
+                    aria-label="Listen to ${escapeHTML(item.word)}"
+                    title="Listen to pronunciation"
+                >🔊</button>
+            </div>
+
+            <div class="vocab-meaning">${escapeHTML(item.meaning)}</div>
+
+            <span class="word-type">${escapeHTML(item.type)}</span>
+
+            ${noteHTML}
+
+            <div class="examples">
+                ${examplesHTML}
+            </div>
+
+        </article>
+    `;
+}
+
+
+/* =========================================
+   CREATE EACH READING SECTION
+========================================= */
+
+function createReading(reading, index) {
+
+    const vocabularyHTML = reading.vocabulary
+        .map(createVocabularyItem)
+        .join("");
+
+    const paragraphsHTML = reading.paragraphs
+        .map(paragraph => `<p>${escapeHTML(paragraph)}</p>`)
+        .join("");
+
+    return `
+        <section class="reading-section">
+
+            <div class="section-heading">
+                <div class="section-number">${index + 1}</div>
+
+                <div>
+                    <h2>${escapeHTML(reading.title)}</h2>
+                    <p>${reading.vocabulary.length} vocabulary items</p>
+                </div>
+            </div>
+
+            <!-- Audio -->
+            <div class="audio-card">
+
+                <div class="audio-title">
+                    <span class="audio-icon">🎧</span>
+                    <span>Listen to the Reading</span>
+                </div>
+
+                <audio controls preload="none">
+                    <source src="${escapeHTML(reading.audio)}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+
+            </div>
+
+            <!-- Reading text -->
+            <article class="card reading-card">
+
+                <div class="reading-card-top">
+                    <h3>📖 ${escapeHTML(reading.title)}</h3>
+                    <span class="reading-level">${escapeHTML(reading.level)}</span>
+                </div>
+
+                <div class="reading-text">
+                    ${paragraphsHTML}
+                </div>
+
+            </article>
+
+            <!-- Vocabulary -->
+            <section class="vocab-section">
+
+                <button
+                    class="vocab-toggle"
+                    type="button"
+                    aria-expanded="false"
+                >
+
+                    <span class="vocab-toggle-main">
+
+                        <span class="vocab-toggle-icon">📚</span>
+
+                        <span>
+                            <h3>Vocabulary & Expressions</h3>
+                            <small>${reading.vocabulary.length} كلمات مع المعاني والأمثلة</small>
+                        </span>
+
+                    </span>
+
+                    <span class="vocab-action-label">اضغط لعرض المفردات</span>
+
+                </button>
+
+                <div class="vocab-content">
+                    <div class="vocab-grid">
+                        ${vocabularyHTML}
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+    `;
+}
+
+
+/* =========================================
+   RENDER ALL READINGS
+========================================= */
+
+document.getElementById("readings-container").innerHTML =
+    readings.map(createReading).join("");
+
+
+/* =========================================
+   VOCABULARY COLLAPSE / EXPAND
+========================================= */
+
+document.addEventListener("click", function(event) {
+
+    const button = event.target.closest(".vocab-toggle");
+
+    if (!button) return;
+
+    const section = button.closest(".vocab-section");
+    const isOpen = section.classList.toggle("open");
+
+    button.setAttribute("aria-expanded", String(isOpen));
+
+    const label = button.querySelector(".vocab-action-label");
+
+    if (label) {
+        label.textContent = isOpen
+            ? "إخفاء المفردات"
+            : "اضغط لعرض المفردات";
+    }
+
+});
+
+
+/* =========================================
+   WORD PRONUNCIATION
+========================================= */
+
+let englishVoice = null;
+
+function loadEnglishVoice() {
+
+    if (!("speechSynthesis" in window)) return;
+
+    const voices = window.speechSynthesis.getVoices();
+
+    englishVoice =
+        voices.find(voice => voice.lang === "en-US") ||
+        voices.find(voice => voice.lang === "en-GB") ||
+        voices.find(voice => voice.lang.startsWith("en-")) ||
+        null;
+}
+
+if ("speechSynthesis" in window) {
+    loadEnglishVoice();
+    window.speechSynthesis.onvoiceschanged = loadEnglishVoice;
+}
+
+function speakWord(word) {
+
+    if (!("speechSynthesis" in window)) {
+        alert("عذرًا، متصفحك لا يدعم تشغيل النطق.");
+        return;
+    }
+
+    if (!word) return;
+
+    const speech = window.speechSynthesis;
+
+    speech.cancel();
+    speech.resume();
+
+    const utterance = new SpeechSynthesisUtterance(word);
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.82;
+    utterance.pitch = 1;
+
+    if (!englishVoice) {
+        loadEnglishVoice();
+    }
+
+    if (englishVoice) {
+        utterance.voice = englishVoice;
+    }
+
+    speech.speak(utterance);
+}
+
+
+/* Connect each pronunciation button to its own word */
+
+document.addEventListener("click", function(event) {
+
+    const button = event.target.closest(".pronounce-btn");
+
+    if (!button) return;
+
+    const word = button.getAttribute("data-word");
+
+    speakWord(word);
+
+});
+
+
+/* =========================================
+   COMPLETE LESSON
+========================================= */
+
+function completeLesson() {
+
+    if (typeof window.finishLesson === "function") {
+
+        window.finishLesson(
+            "beginner-unit1-reading-practice",
+            "📖 Reading & Listening | My First Readings",
+            "unit1-review.html"
+        );
+
+    } else {
+
+        window.location.href = "unit1-beginner-review.html";
+
+    }
+}
+
+</script>
+
+<script type="module">
+import "./js/reward.js";
+</script>
+
+</body>
+</html>
