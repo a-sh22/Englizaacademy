@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>شكرًا لانضمامك – أكاديمية إنجليزا</title>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1698664971657387');
+fbq('track', 'PageView');
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4E5N64PVS"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B4E5N64PVS');
+</script>
+
+<!-- تسجيل الشراء (مرة وحدة فقط وبعد دفع ناجح) -->
+<script>
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var paymentId = p.get('payment_id');
+  var status = (p.get('status') || '').toLowerCase();
+  if (!paymentId) return;
+  if (status && status !== 'succeeded') return;
+
+  var key = 'engliza_purchase_' + paymentId;
+  try { if (localStorage.getItem(key)) return; } catch (e) {}
+
+  fbq('track', 'Purchase',
+    { content_name: 'Engliza Academy – English Course', value: 123, currency: 'USD' },
+    { eventID: paymentId });
+
+  gtag('event', 'purchase', {
+    transaction_id: paymentId, value: 123, currency: 'USD',
+    items: [{ item_name: 'Engliza Academy – English Course', price: 123, quantity: 1 }]
+  });
+
+  try { localStorage.setItem(key, '1'); } catch (e) {}
+})();
+</script>
+
+<style>
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+font-family:system-ui,-apple-system,Arial,sans-serif;background:#0f172a;color:#f1f5f9;
+line-height:1.9;padding:24px;box-sizing:border-box}
+.box{max-width:460px;width:100%;text-align:center;background:linear-gradient(135deg,#0f172a,#1e293b);
+border-radius:20px;padding:36px 24px;box-shadow:0 0 40px rgba(37,99,235,.35)}
+h1{font-size:26px;margin:0 0 10px;color:#FACC15}
+p{font-size:16px;color:#e5e7eb;margin:10px 0}
+.note{font-size:14px;color:#94a3b8}
+a{color:#38bdf8;text-decoration:none}
+.help{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
+.help h2{font-size:17px;color:#f1f5f9;margin:0 0 6px}
+.ig-handle{display:inline-block;margin:10px 0 4px;padding:8px 18px;
+border-radius:12px;background:#0b1220;border:1px solid rgba(250,204,21,.3);
+color:#FACC15;font-weight:800;font-size:18px;direction:ltr}
+.ig-btn{display:block;width:100%;max-width:320px;margin:12px auto 6px;padding:14px;
+box-sizing:border-box;border-radius:12px;text-decoration:none;
+font-weight:800;font-size:16px;color:#fff;
+background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div style="font-size:48px">🎉</div>
+    <h1>أهلًا بك في إنجليزا!</h1>
+    <p>تم استلام دفعتك بنجاح، ورحلتك بدأت رسميًا 🚀</p>
+    <p>بيوصلك خلال دقائق بريد إلكتروني فيه رابط الدخول إلى المنصة.</p>
+
+    <div class="help">
+      <h2>ما وصلك الإيميل خلال 10 دقائق؟</h2>
+      <p class="note">شيّك أول على مجلد Spam. وإذا ما لقيته، راسلنا على حساب الأكاديمية في إنستقرام:</p>
+
+      <div class="ig-handle">@engliza_academy_</div>
+
+      <a href="https://ig.me/m/engliza_academy_" class="ig-btn">📩 راسلنا على إنستقرام</a>
+
+      <p class="note">اكتب لنا <strong style="color:#FACC15">الإيميل اللي دفعت فيه</strong> ونرسل لك رابط الدخول بأسرع وقت 🤍</p>
+
+      <p class="note">أو عبر الإيميل:
+        <a href="mailto:englizaacademy@gmail.com">englizaacademy@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
