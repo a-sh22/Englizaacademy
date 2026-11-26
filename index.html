@@ -15,6 +15,14 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1698664971657387');
 fbq('track', 'PageView');
+
+fbq('track', 'ViewContent', {
+  content_name: 'Engliza Academy – English Course',
+  content_type: 'product',
+  value: 123,
+  currency: 'USD'
+});
+  
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1698664971657387&ev=PageView&noscript=1"
@@ -1873,19 +1881,27 @@ opacity:.9;">
 </footer>
 
 <script>
-function buyNow(){ 
-  gtag('event', 'click_buy', {
-    event_category: 'button',
-    event_label: 'Buy Now'
-  });
 
-  window.open(
-'https://www.checkout.dodopayments.com/buy/pdt_0NqD4LvgSqnhZCJUy7zSx',
-'_blank',
-'noopener,noreferrer'
-);
-  
+var CHECKOUT_URL = 'https://www.checkout.dodopayments.com/buy/pdt_0NqD4LvgSqnhZCJUy7zSx'
+  + '?redirect_url=' + encodeURIComponent('https://www.englizaacademy.com/thank-you.html');
+
+function buyNow(){
+  try {
+    fbq('track', 'InitiateCheckout', {
+      content_name: 'Engliza Academy – English Course',
+      value: 123,
+      currency: 'USD'
+    });
+  } catch (e) {}
+
+  try {
+    gtag('event', 'begin_checkout', { currency: 'USD', value: 123 });
+  } catch (e) {}
+
+  setTimeout(function(){ window.location.href = CHECKOUT_URL; }, 250);
 }
+
+
 </script>
   
   <script>
